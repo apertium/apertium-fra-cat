@@ -221,6 +221,27 @@
           <r>au<b/></r>
         </p>
         <par n="consonants"/>
+      </e> 
+      <e>
+        <p>
+          <l><b/><a/>la<b/></l>
+          <r>à<b/>l'</r>
+        </p>
+        <par n="vocals"/>
+      </e>
+      <e>
+        <p>
+          <l><b/><a/>la<b/></l>
+          <r>à<b/>la<b/></r>
+        </p>
+        <par n="consonants"/>
+      </e>
+      <e>
+        <p>
+          <l><b/><a/>la<b/></l>
+          <r>à<b/>la<b/></r>
+        </p>
+        <par n="caracter_general"/>
       </e>
       <e>
         <p>
@@ -271,6 +292,27 @@
         <p>
           <l><b/><a/>le</l>
           <r>u</r>
+        </p>
+        <par n="caracter_general"/>
+      </e>
+      <e>
+        <p>
+          <l><b/><a/>la<b/></l>
+          <r>e<b/>l'</r>
+        </p>
+        <par n="vocals"/>
+      </e>
+      <e>
+        <p>
+          <l><b/><a/>la<b/></l>
+          <r>e<b/>la<b/></r>
+        </p>
+        <par n="consonants"/>
+      </e>
+      <e>
+        <p>
+          <l><b/><a/>la<b/></l>
+          <r>e<b/>la<b/></r>
         </p>
         <par n="caracter_general"/>
       </e>
@@ -437,7 +479,14 @@
           <r>s'</r>
         </p>
         <par n="vocals"/>
-      </e> 
+      </e>
+      <e>
+        <p>
+          <l><a/>ce<b/></l>
+          <r>cet<b/></r>
+        </p>
+        <par n="vocals"/>
+      </e>  
       <e>
         <p>
           <l><a/>ce<b/>est</l>
@@ -463,6 +512,161 @@
         </p>
         <par n="vocals"/>
       </e>
+       <e>
+        <p>
+          <l><a/>ma<b/></l>
+          <r>mon<b/></r>
+        </p>
+        <par n="vocals"/>
+      </e>  
+      <e>
+        <p>
+          <l><a/>ta<b/></l>
+          <r>ton<b/></r>
+        </p>
+        <par n="vocals"/>
+      </e>
+      <e>
+        <p>
+          <l><a/>sa<b/></l>
+          <r>son<b/></r>
+        </p>
+        <par n="vocals"/>
+      </e>
+    
+  <!-- amb punt-->    
+      
+       <e>
+        <p>
+          <l><a/>.<b/><a/>à</l>
+          <r>.<b/></r>
+        </p>
+        <par n="à"/>
+      </e>
+      <e>
+        <p>
+          <l><a/>.<b/><a/>de</l>
+          <r>.<b/>D</r>
+        </p>
+        <par n="de"/>
+      </e>
+      <e>
+        <p>
+          <l><a/>.<b/><a/>ne<b/></l>
+          <r>.<b/>N'</r>
+        </p>
+        <par n="vocals"/>
+      </e>
+      <e>
+        <p>
+          <l><a/>.<b/><a/>le<b/></l>
+          <r>.<b/>L'</r>
+        </p>
+        <par n="vocals"/>
+      </e>
+      <e>
+        <p>
+          <l><a/>.<b/><a/>la<b/></l>
+          <r>.<b/>L'</r>
+        </p>
+        <par n="vocals"/>
+      </e>
+      <e>
+        <p>
+          <l><a/>.<b/><a/>me<b/></l>
+          <r>.<b/>M'</r>
+        </p>
+        <par n="vocals"/>
+      </e>
+      <e>
+        <p>
+          <l><a/>.<b/><a/>me<b/></l>
+          <r>.<b/>M</r>
+        </p>
+        <par n="le"/>
+      </e>
+      <e>
+        <p>
+          <l><a/>.<b/><a/>te<b/></l>
+          <r>.<b/>T'</r>
+        </p>
+        <par n="vocals"/>
+      </e>
+      <e>
+        <p>
+          <l><a/>.<b/><a/>te<b/></l>
+          <r>.<b/>T</r>
+        </p>
+        <par n="le"/>
+      </e> 
+      <e>
+        <p>
+          <l><a/>.<b/><a/>se<b/></l>
+          <r>.<b/>S</r>
+        </p>
+        <par n="le"/>
+      </e>
+      <e>
+        <p>
+          <l><a/>.<b/><a/>se<b/></l>
+          <r>.<b/>S'</r>
+        </p>
+        <par n="vocals"/>
+      </e> 
+      <e>
+        <p>
+          <l><a/>.<b/><a/>ce<b/>est</l>
+          <r>.<b/>C'est</r>
+        </p>
+      </e> 
+      <e>
+        <p>
+          <l><a/>.<b/><a/>ce<b/>était</l>
+          <r>.<b/>C'était</r>
+        </p>
+      </e> 
+      <e>
+        <p>
+          <l><a/>.<b/><a/>ce<b/>étais</l>
+          <r>.<b/>C'étais</r>
+        </p>
+      </e>
+        <e>
+        <p>
+          <l><a/>.<b/><a/>ma<b/></l>
+          <r>.<b/>Mon<b/></r>
+        </p>
+        <par n="vocals"/>
+      </e>  
+      <e>
+        <p>
+          <l><a/>.<b/><a/>ta<b/></l>
+          <r>.<b/>Ton<b/></r>
+        </p>
+        <par n="vocals"/>
+      </e>
+      <e>
+        <p>
+          <l><a/>.<b/><a/>sa<b/></l>
+          <r>.<b/>Son<b/></r>
+        </p>
+        <par n="vocals"/>
+      </e>
+       
+      <e>
+        <p>
+          <l><a/>.<b/><a/>que<b/></l>
+          <r>.<b/>Qu'</r>
+        </p>
+        <par n="vocals"/>
+      </e>
+      <e>
+        <p>
+          <l><a/>.<b/><a/>ce<b/></l>
+          <r>.<b/>Cet<b/></r>
+        </p>
+        <par n="vocals"/>
+      </e> 
       <e>
         <p>
           <l><a/>.<b/><a/>je<b/></l>
