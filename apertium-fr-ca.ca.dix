@@ -11184,7 +11184,7 @@
       </e>
     </pardef>
 
-    <pardef n="~em__prn">
+    <pardef n="em__prn">
       
       <e>
         <p>
@@ -11245,7 +11245,7 @@
     </pardef>
 
 
-    <pardef n="~es__prn">
+    <pardef n="es__prn">
       <e>
         <p>
           <l/>
@@ -72773,9 +72773,6 @@
       <e lm="el">
         <par n="/el__det"/>
       </e>
-      <e lm="el">
-        <par n="/el__prn"/>
-      </e>
       <e lm="elecció">
         <i>elecci</i>
 	<par n="acci/ó__n"/>
@@ -72961,10 +72958,6 @@
         <i>en</i>
 	<par n="a__pr"/>
       </e>
-      <e lm="en" r="LR">
-        <i>en</i>
-	<par n="en__prn"/>
-      </e>
       <e lm="encaminar">
         <i>encamin</i>
 	<par n="abander/ar__vblex"/>
@@ -73120,10 +73113,6 @@
       <e lm="enriquir">
         <i>enriqu</i>
 	<par n="abarat/ir__vblex"/>
-      </e>
-      <e lm="ens" r="LR">
-        <i>ens</i>
-	<par n="ens__prn"/>
       </e>
       <e lm="ensenyar">
         <i>enseny</i>
@@ -73666,10 +73655,6 @@
       <e lm="estupor">
         <i>estupor</i>
 	<par n="accessibilitat__n"/>
-      </e>
-      <e lm="et" r="LR">
-        <i>et</i>
-	<par n="et__prn"/>
       </e>
       <e lm="etern">
         <i>etern</i>
@@ -74924,11 +74909,7 @@
       <e lm="heroi">
         <i>hero</i>
 	<par n="hero/i__n"/>
-      </e>
-      <e lm="hi" r="LR">
-        <i>hi</i>
-	<par n="en__prn"/>
-      </e>
+     </e>
       <e lm="hi ha">
         <p>
 	  <l>hi<b/>ha</l>
@@ -74959,11 +74940,7 @@
         <i>hivernacle</i>
 	<par n="abric__n"/>
       </e>
-      <e lm="ho" r="LR">
-        <i>ho</i>
-	<par n="ho__prn"/>
-      </e>
-      <e lm="hola">
+       <e lm="hola">
         <i>hola</i>
 	<par n="a_reveure__ij"/>
       </e>
@@ -81723,10 +81700,6 @@
       <e lm="urgent">
         <i>urgent</i>
 	<par n="abdominal__adj"/>
-      </e>
-      <e lm="us" r="LR">
-        <i>us</i>
-	<par n="us__prn"/>
       </e>
       <e lm="ús">
         <p>
@@ -100302,7 +100275,7 @@
 </e>
 <e lm="xiïta" a="gema">
   <i>xiït</i>
-  <par n="abell/a__n"/>
+  <par n="accionist/a__n"/>
 </e>
 <e lm="designació" a="gema">
   <i>designaci</i>
@@ -101637,6 +101610,347 @@
 </e>
 
  
+ <!--proclitics-->
+ 
+ 
+      <e lm="el">
+        <par n="/el__prn"/>
+      </e>
+      
+      <e lm="l'en" r="LR">
+        <p>
+          <l>l'en</l>
+          <r>el<s n="prn"/><s n="pro"/><s n="p3"/><s n="m"/><s n="sg"/><j/>en<s n="prn"/><s n="pro"/><s n="adv"/></r>
+        </p>
+      </e>
+      
+      <e lm="la'n" r="LR">
+        <p>
+          <l>la'n</l>
+          <r>el<s n="prn"/><s n="pro"/><s n="p3"/><s n="f"/><s n="sg"/><j/>en<s n="prn"/><s n="pro"/><s n="adv"/></r>
+        </p>
+      </e>
+
+      <e lm="em" r="LR">
+        <p>
+          <l>em</l>
+          <r>em<s n="prn"/><s n="pro"/><s n="p1"/><s n="mf"/><s n="sg"/></r>
+        </p>
+      </e>
+      
+      <e lm="me" r="LR">
+        <p>
+          <l>me</l>
+          <r>em<s n="prn"/><s n="pro"/><s n="p1"/><s n="mf"/><s n="sg"/></r>
+        </p>
+      </e>
+      
+      <e lm="me'l" r="LR">
+        <p>
+          <l>me'l</l>
+          <r>em<s n="prn"/><s n="pro"/><s n="p1"/><s n="mf"/><s n="sg"/><j/>el<s n="prn"/><s n="pro"/><s n="p3"/><s n="m"/><s n="sg"/></r>
+        </p>
+      </e>
+      
+      <e lm="me'ls" r="LR">
+        <p>
+          <l>me'ls</l>
+          <r>em<s n="prn"/><s n="pro"/><s n="p1"/><s n="mf"/><s n="sg"/><j/>el<s n="prn"/><s n="pro"/><s n="p3"/><s n="m"/><s n="pl"/></r>
+        </p>
+      </e>
+      
+      <e lm="me'n" r="LR">
+        <p>
+          <l>me'n</l>
+          <r>em<s n="prn"/><s n="pro"/><s n="p1"/><s n="mf"/><s n="sg"/><j/>en<s n="prn"/><s n="pro"/><s n="adv"/></r>
+        </p>
+      </e>
+      
+      <e lm="m'hi" r="LR">
+        <p>
+          <l>m'hi</l>
+          <r>em<s n="prn"/><s n="pro"/><s n="p1"/><s n="mf"/><s n="sg"/><j/>hi<s n="prn"/><s n="pro"/><s n="adv"/></r>
+        </p>
+      </e>
+      
+      <e lm="m'ho" r="LR">
+        <p>
+          <l>m'ho</l>
+          <r>em<s n="prn"/><s n="pro"/><s n="p1"/><s n="mf"/><s n="sg"/><j/>ho<s n="prn"/><s n="pro"/><s n="p3"/><s n="nt"/></r>
+        </p>
+      </e>
+      
+      <e lm="en" r="LR">
+        <i>en</i>
+        <par n="en__prn"/>
+      </e>
+      
+      <e lm="n'hi" r="LR">
+        <p>
+          <l>n'hi</l>
+          <r>en<s n="prn"/><s n="pro"/><s n="adv"/><j/>hi<s n="prn"/><s n="pro"/><s n="adv"/></r>
+        </p>
+      </e>
+      
+      <e lm="ens" r="LR">
+        <i>ens</i>
+        <par n="ens__prn"/>
+      </e>
+      
+      <e lm="us" r="LR">
+        <i>us</i>
+	<par n="us__prn"/>
+      </e>
+
+      <e lm="es" r="LR">
+        <p>
+          <l>es</l>
+          <r>es<s n="prn"/><s n="pro"/><s n="ref"/><s n="p3"/><s n="mf"/><s n="sp"/></r>
+        </p>
+      </e>
+      
+      <e lm="se" r="LR">
+        <p>
+          <l>se</l>
+          <r>es<s n="prn"/><s n="pro"/><s n="ref"/><s n="p3"/><s n="mf"/><s n="sp"/></r>
+        </p>
+      </e>
+      
+      <e lm="se'l" r="LR">
+        <p>
+          <l>se'l</l>
+          <r>es<s n="prn"/><s n="pro"/><s n="ref"/><s n="p3"/><s n="mf"/><s n="sp"/><j/>el<s n="prn"/><s n="pro"/><s n="p3"/><s n="m"/><s n="sg"/></r>
+        </p>
+      </e>
+      
+      <e lm="se'ls" r="LR">
+        <p>
+          <l>se'ls</l>
+          <r>es<s n="prn"/><s n="pro"/><s n="ref"/><s n="p3"/><s n="mf"/><s n="sp"/><j/>el<s n="prn"/><s n="pro"/><s n="p3"/><s n="m"/><s n="pl"/></r>
+        </p>
+      </e>
+      
+      <e lm="se'm" r="LR">
+        <p>
+          <l>se'm</l>
+          <r>es<s n="prn"/><s n="pro"/><s n="ref"/><s n="p3"/><s n="mf"/><s n="sp"/><j/>em<s n="prn"/><s n="pro"/><s n="p1"/><s n="mf"/><s n="sg"/></r>
+        </p>
+      </e>
+      
+      <e lm="se'n" r="LR">
+        <p>
+          <l>se'n</l>
+          <r>es<s n="prn"/><s n="pro"/><s n="ref"/><s n="p3"/><s n="mf"/><s n="sp"/><j/>en<s n="prn"/><s n="pro"/><s n="adv"/></r>
+        </p>
+      </e>
+      
+      <e lm="se'ns" r="LR">
+        <p>
+          <l>se'ns</l>
+          <r>es<s n="prn"/><s n="pro"/><s n="ref"/><s n="p3"/><s n="mf"/><s n="sp"/><j/>ens<s n="prn"/><s n="pro"/><s n="p1"/><s n="mf"/><s n="pl"/></r>
+        </p>
+      </e>
+      
+      <e lm="se't" r="LR">
+        <p>
+          <l>se't</l>
+          <r>es<s n="prn"/><s n="pro"/><s n="ref"/><s n="p3"/><s n="mf"/><s n="sp"/><j/>et<s n="prn"/><s n="pro"/><s n="p2"/><s n="mf"/><s n="sg"/></r>
+        </p>
+      </e>
+      
+      <e lm="s'hi" r="LR">
+        <p>
+          <l>s'hi</l>
+          <r>es<s n="prn"/><s n="pro"/><s n="ref"/><s n="p3"/><s n="mf"/><s n="sp"/><j/>hi<s n="prn"/><s n="pro"/><s n="adv"/></r>
+        </p>
+      </e>
+      
+      <e lm="s'ho" r="LR">
+        <p>
+          <l>s'ho</l>
+          <r>es<s n="prn"/><s n="pro"/><s n="ref"/><s n="p3"/><s n="mf"/><s n="sp"/><j/>ho<s n="prn"/><s n="pro"/><s n="p3"/><s n="nt"/></r>
+        </p>
+      </e>
+
+      
+      <e lm="et" r="LR">
+        <i>et</i>
+        <par n="et__prn"/>
+      </e>
+
+      <e lm="te" r="LR">
+	<p>
+          <l>te</l>
+	  <r>et</r>
+	</p>
+        <par n="et__prn"/>
+      </e>
+
+      
+      <e lm="te'l" r="LR">
+        <p>
+          <l>te'l</l>
+          <r>et<s n="prn"/><s n="pro"/><s n="p2"/><s n="mf"/><s n="sg"/><j/>el<s n="prn"/><s n="pro"/><s n="p3"/><s n="m"/><s n="sg"/></r>
+        </p>
+      </e>
+      
+      <e lm="te'ls" r="LR">
+        <p>
+          <l>te'ls</l>
+          <r>et<s n="prn"/><s n="pro"/><s n="p2"/><s n="mf"/><s n="sg"/><j/>el<s n="prn"/><s n="pro"/><s n="p3"/><s n="m"/><s n="pl"/></r>
+        </p>
+      </e>
+      
+      <e lm="te'n" r="LR">
+        <p>
+          <l>te'n</l>
+          <r>et<s n="prn"/><s n="pro"/><s n="p2"/><s n="mf"/><s n="sg"/><j/>en<s n="prn"/><s n="pro"/><s n="adv"/></r>
+        </p>
+      </e>
+      
+      <e lm="te'ns" r="LR">
+        <p>
+          <l>te'ns</l>
+          <r>et<s n="prn"/><s n="pro"/><s n="p2"/><s n="mf"/><s n="sg"/><j/>ens<s n="prn"/><s n="pro"/><s n="p1"/><s n="mf"/><s n="pl"/></r>
+        </p>
+      </e>
+      
+      <e lm="t'hi" r="LR">
+        <p>
+          <l>t'hi</l>
+          <r>et<s n="prn"/><s n="pro"/><s n="p2"/><s n="mf"/><s n="sg"/><j/>hi<s n="prn"/><s n="pro"/><s n="adv"/></r>
+        </p>
+      </e>
+      
+      <e lm="t'ho" r="LR">
+        <p>
+          <l>t'ho</l>
+          <r>et<s n="prn"/><s n="pro"/><s n="p2"/><s n="mf"/><s n="sg"/><j/>ho<s n="prn"/><s n="pro"/><s n="p3"/><s n="nt"/></r>
+        </p>
+      </e>
+
+      <e lm="els" r="LR">
+        <p>
+          <l>els</l>
+          <r>li<s n="prn"/><s n="pro"/><s n="p3"/><s n="mf"/><s n="pl"/></r>
+        </p>
+      </e>
+      
+      <e lm="li" r="LR">
+        <p>
+          <l>li</l>
+          <r>li<s n="prn"/><s n="pro"/><s n="p3"/><s n="mf"/><s n="sg"/></r>
+        </p>
+      </e>
+
+      <e lm="els el" r="LR">
+        <p>
+          <l>els<b/>el</l>
+          <r>li<s n="prn"/><s n="pro"/><s n="p3"/><s n="mf"/><s n="pl"/><j/>el<s n="prn"/><s n="pro"/><s n="p3"/><s n="m"/><s n="sg"/></r>
+        </p>
+      </e>
+      
+      <e lm="els la" r="LR">
+        <p>
+          <l>els<b/>la</l>
+          <r>li<s n="prn"/><s n="pro"/><s n="p3"/><s n="mf"/><s n="pl"/><j/>el<s n="prn"/><s n="pro"/><s n="p3"/><s n="f"/><s n="sg"/></r>
+        </p>
+      </e>
+      
+      <e lm="els els" r="LR">
+        <p>
+          <l>els<b/>els</l>
+          <r>li<s n="prn"/><s n="pro"/><s n="p3"/><s n="mf"/><s n="pl"/><j/>el<s n="prn"/><s n="pro"/><s n="p3"/><s n="m"/><s n="pl"/></r>
+        </p>
+      </e>
+      
+      <e lm="els les" r="LR">
+        <p>
+          <l>els<b/>les</l>
+          <r>li<s n="prn"/><s n="pro"/><s n="p3"/><s n="mf"/><s n="pl"/><j/>el<s n="prn"/><s n="pro"/><s n="p3"/><s n="f"/><s n="pl"/></r>
+        </p>
+      </e>
+      
+      <e lm="els en" r="LR">
+        <p>
+          <l>els<b/>en</l>
+          <r>li<s n="prn"/><s n="pro"/><s n="p3"/><s n="mf"/><s n="pl"/><j/>en<s n="prn"/><s n="pro"/><s n="adv"/></r>
+        </p>
+      </e>
+      
+      <e lm="els hi" r="LR">
+        <p>
+          <l>els<b/>hi</l>
+          <r>li<s n="prn"/><s n="pro"/><s n="p3"/><s n="mf"/><s n="sg"/><j/>el<s n="prn"/><s n="pro"/><s n="p3"/><s n="m"/><s n="pl"/></r>
+        </p>
+      </e>
+      
+      <e lm="els ho" r="LR">
+        <p>
+          <l>els<b/>ho</l>
+          <r>li<s n="prn"/><s n="pro"/><s n="p3"/><s n="mf"/><s n="pl"/><j/>ho<s n="prn"/><s n="pro"/><s n="p3"/><s n="nt"/></r>
+        </p>
+      </e>
+      
+      <e lm="l'hi">
+        <p>
+          <l>l'hi</l>
+          <r>li<s n="prn"/><s n="pro"/><s n="p3"/><s n="mf"/><s n="sg"/><j/>el<s n="prn"/><s n="pro"/><s n="p3"/><s n="m"/><s n="sg"/></r>
+        </p>
+      </e>
+      
+      <e lm="la hi">
+        <p>
+          <l>la<b/>hi</l>
+          <r>li<s n="prn"/><s n="pro"/><s n="p3"/><s n="mf"/><s n="sg"/><j/>el<s n="prn"/><s n="pro"/><s n="p3"/><s n="f"/><s n="sg"/></r>
+        </p>
+      </e>
+      
+      <e lm="les hi">
+        <p>
+          <l>les<b/>hi</l>
+          <r>li<s n="prn"/><s n="pro"/><s n="p3"/><s n="mf"/><s n="sg"/><j/>el<s n="prn"/><s n="pro"/><s n="p3"/><s n="f"/><s n="pl"/></r>
+        </p>
+      </e>
+      
+      <e lm="li'l" r="LR">
+        <p>
+          <l>li'l</l>
+          <r>li<s n="prn"/><s n="pro"/><s n="p3"/><s n="mf"/><s n="sg"/><j/>el<s n="prn"/><s n="pro"/><s n="p3"/><s n="m"/><s n="sg"/></r>
+        </p>
+      </e>
+      
+      <e lm="li'ls" r="LR">
+        <p>
+          <l>li'ls</l>
+          <r>li<s n="prn"/><s n="pro"/><s n="p3"/><s n="mf"/><s n="sg"/><j/>el<s n="prn"/><s n="pro"/><s n="p3"/><s n="m"/><s n="pl"/></r>
+        </p>
+      </e>
+      
+      <e lm="li'n" r="LR">
+        <p>
+          <l>li'n</l>
+          <r>li<s n="prn"/><s n="pro"/><s n="p3"/><s n="mf"/><s n="sg"/><j/>en<s n="prn"/><s n="pro"/><s n="adv"/></r>
+        </p>
+      </e>
+      
+      <e lm="hi" r="LR">
+        <i>hi</i>
+        <par n="en__prn"/>
+      </e>
+      
+      <e lm="ho" r="LR">
+        <i>ho</i>
+        <par n="ho__prn"/>
+      </e>
+      
+      <e lm="hom" r="LR">
+        <i>hom</i>
+        <par n="hom__prn"/>
+      </e>
+ 
+ 
+ 
 <!-- paraules que criden al postgenerador-->
 	  
       <e lm="indi" r="RL">
@@ -101787,7 +102101,7 @@
           <l><a/>em</l>
           <r>em</r>
         </p>
-        <par n="~em__prn"/>
+        <par n="em__prn"/>
       </e>
       
       <e lm="en" r="RL">
@@ -101811,7 +102125,7 @@
           <l><a/>es</l>
           <r>es</r>
         </p>
-        <par n="~es__prn"/>
+        <par n="es__prn"/>
       </e>
       
       <e lm="et" r="RL">

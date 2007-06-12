@@ -419,6 +419,20 @@
       </e>
       <e>
         <p>
+          <l><a/>ne<b/><a/>le<b/></l>
+          <r>ne<b/>l'</r>
+        </p>
+        <par n="vocals"/>
+      </e>
+      <e>
+        <p>
+          <l><a/>ne<b/><a/>la<b/></l>
+          <r>ne<b/>l'</r>
+        </p>
+        <par n="vocals"/>
+      </e>
+      <e>
+        <p>
           <l><a/>le<b/></l>
           <r>l'</r>
         </p>
@@ -438,6 +452,14 @@
         </p>
         <par n="vocals"/>
       </e>
+      
+      <e>
+        <p>
+          <l><a/>ne<b/><a/>me<b/></l>
+          <r>ne<b/>m'</r>
+        </p>
+        <par n="vocals"/>
+      </e>
       <e>
         <p>
           <l><a/>me<b/></l>
@@ -449,6 +471,13 @@
         <p>
           <l><a/>te<b/></l>
           <r>t'</r>
+        </p>
+        <par n="vocals"/>
+      </e> 
+      <e>
+        <p>
+          <l><a/>ne<b/><a/>te<b/></l>
+          <r>ne<b/>t'</r>
         </p>
         <par n="vocals"/>
       </e>
@@ -466,6 +495,15 @@
         </p>
         <par n="le"/>
       </e>
+           
+      <e>
+        <p>
+          <l><a/>ne<b/><a/>se<b/></l>
+          <r>ne<b/>s'</r>
+        </p>
+        <par n="vocals"/>
+      </e>
+      
       <e>
         <p>
           <l><a/>je<b/></l>
@@ -532,7 +570,23 @@
           <r>son<b/></r>
         </p>
         <par n="vocals"/>
-      </e>
+      </e> 
+      
+       <e>
+        <p>
+          <l><a/>nouveau<b/></l>
+          <r>nouvel<b/></r>
+        </p>
+        <par n="vocals"/>
+      </e> 
+
+      <e>
+        <p>
+          <l><a/>le<b/><a/>nouveau<b/></l>
+          <r>le<b/>nouvel<b/></r>
+        </p>
+        <par n="vocals"/>
+      </e> 
     
   <!-- amb punt-->    
       
@@ -715,7 +769,36 @@
           <l><a/>.<b/>vous<b/></l>
           <r>.<b/>Vous<b/></r>
         </p>
+      </e> 
+      <e>
+        <p>
+          <l><a/>.<b/></l>
+          <r>.<b/></r>
+        </p>
       </e>
+      <e>
+        <p>
+          <l><a/>.<a/>.</l>
+          <r>..</r>
+        </p>
+      </e>
+      <e> 
+        <p>
+          <l><a/>.<b/><a/>nouveau<b/></l> 
+          <r>.<b/>Nouvel<b/></r> 
+        </p>
+        <par n="vocals"/>
+      </e> 
+      <e>
+        <p>
+          <l><a/>.<b/><a/>le<b/><a/>nouveau<b/></l>
+          <r>.<b/>Le<b/>nouvel<b/></r>
+        </p>
+        <par n="vocals"/>
+      </e> 
+
+
+
   </section>
 
 </dictionary>

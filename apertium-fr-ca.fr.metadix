@@ -1013,8 +1013,7 @@
         <p>
           <l>aux</l>
           <r>au<s n="adj"/><s n="m"/><s n="pl"/></r>
-        </p>
-        
+        </p>       
       </e>
       
       <e>
@@ -1022,7 +1021,14 @@
           <l>au</l>
           <r>au<s n="adj"/><s n="m"/><s n="sg"/></r>
         </p>
-        
+      </e>
+      
+      
+      <e r="LR">
+        <p>
+          <l>el</l>
+          <r>au<s n="adj"/><s n="m"/><s n="sg"/></r>
+        </p>        
       </e>
     </pardef>
 
@@ -40884,10 +40890,18 @@
       </e>
        
       
-      <e lm="nouveau">
+      <e lm="nouveau" r="LR">
         <i>nouve</i>
         <par n="nouve/au__adj"/>
       </e>
+      
+      <e lm="nouveau" r="RL">
+       <p>
+          <l><a/>nouve</l>
+          <r>nouve</r>
+        </p>
+        <par n="nouve/au__adj"/>
+      </e> 
       
       
       <e lm="fertile">
@@ -43991,7 +44005,7 @@
       </e>
       
       
-      <e lm="en dessus" r="LR">
+      <e lm="en dessus">
         <i>en<b/>dessus</i>
         <par n="hier__adv"/>
       </e>
@@ -45420,12 +45434,18 @@
       </e>
       
       
-      <e lm="ce">
+      <e lm="ce" r="LR">
         <i>ce</i>
         <par n="ce__det"/>
       </e>
       
-      
+       <e lm="ce" r="RL">
+        <p>
+	  <l><a/>ce</l>
+	  <r>ce</r>
+	</p>  
+        <par n="ce__det"/>
+      </e>
       <e lm="certain">
         <i>certain</i>
         <par n="certain__det"/>
@@ -45465,12 +45485,6 @@
       <e lm="leur">
         <i>leur</i>
         <par n="leur__det"/>
-      </e>
-      
-      
-      <e lm="mon">
-        <i>m</i>
-        <par n="m/on__det"/>
       </e>
       
       
@@ -45563,17 +45577,46 @@
         <par n="cinquante_et_un__num"/>
       </e>
       
-      
-      <e lm="son">
+      <e lm="mon" r="LR">
+        <i>m</i>
+        <par n="m/on__det"/>
+      </e>
+         
+      <e lm="son" r="LR">
         <i>s</i>
         <par n="m/on__det"/>
       </e>
       
-      
-      <e lm="ton">
+      <e lm="ton" r="LR">
         <i>t</i>
         <par n="m/on__det"/>
       </e>
+      
+       
+      <e lm="mon" r="RL">
+        <p>  
+	  <l><a/>m</l>
+          <r>m</r>
+	</p>  
+	<par n="m/on__det"/>
+      </e>
+      
+      <e lm="ton" r="RL">
+        <p>  
+	  <l><a/>t</l>
+          <r>t</r>
+	</p>  
+	<par n="m/on__det"/>
+      </e>
+      
+      <e lm="son" r="RL">
+        <p>  
+	  <l><a/>s</l>
+          <r>s</r>
+	</p>  
+	<par n="m/on__det"/>
+      </e>
+      
       
       
       <e lm="trente et un">
@@ -68780,7 +68823,7 @@
       </e>
       
       
-      <e lm="en" r="LR">
+      <e lm="en">
         <i>en</i>
         <par n="en__prn"/>
       </e>
@@ -78556,7 +78599,7 @@
 </e>
 
 <e lm="suffire de" a="gema">
-  <i>suffi</i>
+  <i>suff</i>
   <par n="d/i[]re__vblex" prm=""/>
   <p>
     <l><b/>de</l>
@@ -81183,10 +81226,10 @@
     
       
       
-      <e lm="en" r="RL">
+      <e lm="ne" r="RL">
         <p>
-          <l><a/>en</l>
-          <r>en</r>
+          <l><a/>ne</l>
+          <r>ne</r>
         </p>
         <par n="en__prn"/>
       </e>
