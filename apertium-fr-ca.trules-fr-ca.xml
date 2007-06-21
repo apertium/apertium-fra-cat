@@ -451,212 +451,31 @@
       </choose>
     </def-macro>
     
-    <def-macro n="f_pretind" npar="1">
-<!--Para traducir el pretérito indefinido por la forma perifrástica (dije - vaig dir) y enviar el verbo. Debe ponerse en todas las reglas en las que aparezca un verbo vblex, vbmod o vbser -->
+     
+    <def-macro n="test_pr_i_verb" npar="2">
+<!--Para comprobar según la preposición y el verbo, qué traducción hay que enviar -->
       <choose>
         <when>
           <test>
-            <equal>
-              <clip pos="1" side="sl" part="temps"/>
-              <lit-tag v="ifi"/>
-            </equal>
+            <and>
+              <equal>
+                <clip pos="1" side="tl" part="lem"/>
+                <lit v="venir"/>
+              </equal>
+	       <equal>
+                <clip pos="2" side="tl" part="lem"/>
+                <lit v="de"/>
+              </equal>
+            </and>
           </test>
-          <out>
-            <lu>
-              <get-case-from pos="1">
-                <lit v="anar"/>
-              </get-case-from>
-              <lit-tag v="vaux"/>
-              <clip pos="1" side="sl" part="persona"/>
-              <clip pos="1" side="sl" part="nbr"/>
-            </lu>
-            <b/>
-          </out>
-          <choose>
-            <when>
-              <test>
-                <equal>
-                  <case-of pos="1" side="sl" part="lemh"/>
-                  <lit v="Aa"/>
-                </equal>
-              </test>
-              <modify-case>
-                <clip pos="1" side="tl" part="lemh"/>
-                <lit v="aa"/>
-              </modify-case>
-            </when>
-          </choose>
-          <out>
-            <lu>
-              <clip pos="1" side="tl" part="lemh"/>
-              <clip pos="1" side="tl" part="a_verb"/>
-              <lit-tag v="inf"/>
-              <clip pos="1" side="tl" part="lemq"/>
-            </lu>
-          </out>
+	  <let>
+	   <clip pos="1" side="tl" part="lem"/>
+           <lit v="acabar"/>
+	  </let>                    
         </when>
-        <otherwise>
-          <out>
-            <lu>
-              <clip pos="1" side="tl" part="lemh"/>
-              <clip pos="1" side="tl" part="a_verb"/>
-              <clip pos="1" side="tl" part="temps"/>
-              <clip pos="1" side="tl" part="persona"/>
-              <clip pos="1" side="tl" part="gen"/>
-              <clip pos="1" side="tl" part="nbr"/>
-              <clip pos="1" side="tl" part="lemq"/>
-            </lu>
-          </out>
-        </otherwise>
       </choose>
     </def-macro>
     
-    <def-macro n="f_pretindhaber" npar="1">
-<!--Para traducir el pretérito indefinido por la forma perifrástica únicamente del verbo "haber" cuando es auxiliar. Debe ponerse en todas las reglas en que aparezca el verbo "haber" como auxiliar -->
-      <choose>
-<!-- realiza el cambio de "hubo" por "va haver" (sólo si el tiempo es "ifi") -->
-        <when>
-          <test>
-            <equal>
-              <clip pos="1" side="tl" part="temps"/>
-              <lit-tag v="ifi"/>
-            </equal>
-          </test>
-          <out>
-            <lu>
-              <get-case-from pos="1">
-                <lit v="anar"/>
-              </get-case-from>
-              <lit-tag v="vaux"/>
-              <clip pos="1" side="sl" part="persona"/>
-              <clip pos="1" side="sl" part="nbr"/>
-            </lu>
-            <b/>
-          </out>
-          <choose>
-            <when>
-              <test>
-                <equal>
-                  <case-of pos="1" side="sl" part="lemh"/>
-                  <lit v="Aa"/>
-                </equal>
-              </test>
-              <modify-case>
-                <clip pos="1" side="tl" part="lemh"/>
-                <lit v="aa"/>
-              </modify-case>
-            </when>
-          </choose>
-          <out>
-            <lu>
-              <clip pos="1" side="tl" part="lem"/>
-              <lit-tag v="vaux.inf"/>
-            </lu>
-          </out>
-        </when>
-        <otherwise>
-<!--Cambia el verbo "haber" por la forma auxiliar , ya que la forma "vbhaver" en las terceras formas singulares se traduce en el diccionario por el verbo "haver-hi"-->
-          <out>
-            <lu>
-              <clip pos="1" side="tl" part="lem"/>
-              <lit-tag v="vaux"/>
-              <clip pos="1" side="tl" part="temps"/>
-              <clip pos="1" side="tl" part="persona"/>
-              <clip pos="1" side="tl" part="nbr"/>
-            </lu>
-          </out>
-        </otherwise>
-      </choose>
-    </def-macro>
-    
-    <def-macro n="f_seleccioLex" npar="1">
-      <choose>
-        <when>
-          <test>
-            <and>
-              <equal>
-                <clip pos="1" side="sl" part="lemh"/>
-                <lit v="sentar"/>
-              </equal>
-              <equal>
-                <clip pos="1" side="sl" part="verbototal"/>
-                <lit-tag v="vblex.pri.p1.sg"/>
-              </equal>
-            </and>
-          </test>
-          <let>
-            <clip pos="1" side="tl" part="lemh"/>
-            <lit v="sentir"/>
-          </let>
-        </when>
-        <when>
-          <test>
-            <and>
-              <equal>
-                <clip pos="1" side="sl" part="lemh"/>
-                <lit v="sentar"/>
-              </equal>
-              <equal>
-                <clip pos="1" side="sl" part="verbototal"/>
-                <lit-tag v="vblex.pri.p3.sg"/>
-              </equal>
-            </and>
-          </test>
-          <let>
-            <clip pos="1" side="tl" part="lemh"/>
-            <lit v="sentir"/>
-          </let>
-          <let>
-            <clip pos="1" side="tl" part="verbototal"/>
-            <lit-tag v="vblex.prs.p3.sg"/>
-          </let>
-        </when>
-        <when>
-          <test>
-            <and>
-              <equal>
-                <clip pos="1" side="sl" part="lemh"/>
-                <lit v="sentar"/>
-              </equal>
-              <equal>
-                <clip pos="1" side="sl" part="verbototal"/>
-                <lit-tag v="vblex.pri.p2.sg"/>
-              </equal>
-            </and>
-          </test>
-          <let>
-            <clip pos="1" side="tl" part="lemh"/>
-            <lit v="sentir"/>
-          </let>
-          <let>
-            <clip pos="1" side="tl" part="verbototal"/>
-            <lit-tag v="vblex.prs.p2.sg"/>
-          </let>
-        </when>
-        <when>
-          <test>
-            <and>
-              <equal>
-                <clip pos="1" side="sl" part="lemh"/>
-                <lit v="sentar"/>
-              </equal>
-              <equal>
-                <clip pos="1" side="sl" part="verbototal"/>
-                <lit-tag v="vblex.pri.p3.pl"/>
-              </equal>
-            </and>
-          </test>
-          <let>
-            <clip pos="1" side="tl" part="lemh"/>
-            <lit v="sentir"/>
-          </let>
-          <let>
-            <clip pos="1" side="tl" part="verbototal"/>
-            <lit-tag v="vblex.prs.p3.pl"/>
-          </let>
-        </when>
-      </choose>
-    </def-macro>
     
     <def-macro n="f_concord1" npar="1">
       <choose>
@@ -3427,7 +3246,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     <rule>
-<!--REGLA: DET NUMERAL NOM  NUM le 20 novembre 1998: el 20 de novembre de 1998-->
+<!--REGLA: DET NUMERAL NOM  NUM (le 20 novembre 1998: el 20 de novembre de 1998)-->
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="num"/>
@@ -3589,6 +3408,140 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
+    
+    <rule>
+<!-- REGLA: verb + de +  VERB PREP DET (venir de avoir des: acabar de tenir)-->
+      <pattern> 
+        <pattern-item n="verb"/>
+        <pattern-item n="prep"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+      <call-macro n="test_pr_i_verb">
+        <with-param pos="1"/>
+        <with-param pos="2"/>
+      </call-macro>
+        <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <equal>
+	       	   <clip pos="1" side="sl" part="lem"/>
+		   <lit v="être"/>
+	        </equal> 
+		<equal>
+	           <clip pos="3" side="sl" part="temps"/>
+		   <lit-tag v="inf"/>
+	        </equal>
+	      </and>
+	    </test>
+	  <out>
+	  <lu>
+            <lit v="estar"/>
+	    <lit-tag v="vblex"/>
+            <clip pos="1" side="tl" part="temps"/>
+            <clip pos="1" side="tl" part="persona"/>
+            <clip pos="1" side="tl" part="gen"/>
+            <clip pos="1" side="tl" part="nbr"/>
+          </lu>
+	  <b pos="1"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <lit-tag v="ger"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+	</when>
+	<otherwise>	
+	<out>
+	  <lu>   
+	    <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="a_verb"/>
+            <clip pos="1" side="tl" part="temps"/>
+            <clip pos="1" side="tl" part="persona"/>
+            <clip pos="1" side="tl" part="gen"/>
+            <clip pos="1" side="tl" part="nbr"/>
+          </lu>
+	  <b pos="1"/>
+	  <lu>   
+	    <clip pos="2" side="tl" part="whole"/>
+          </lu>
+	  <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </otherwise>
+     </choose>	
+      </action>
+    </rule>
+    
+    <rule>
+<!-- REGLA: verb +  VERB PREP DET (aller avoir des: tindrà)-->
+      <pattern> 
+        <pattern-item n="verb"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+        <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <equal>
+	       	   <clip pos="1" side="sl" part="lem"/>
+		   <lit v="aller"/>
+	        </equal> 
+		<equal>
+	           <clip pos="2" side="sl" part="temps"/>
+		   <lit-tag v="inf"/>
+	        </equal>
+	      </and>
+	    </test>
+        <out>
+          <lu>
+	   <get-case-from pos="1">
+            <clip pos="2" side="tl" part="lemh"/>
+	   </get-case-from> 
+            <clip pos="2" side="tl" part="a_verb"/>
+            <lit-tag v="fti"/>
+            <clip pos="1" side="tl" part="persona"/>
+            <clip pos="1" side="tl" part="gen"/>
+            <clip pos="1" side="tl" part="nbr"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+	</when>
+	<otherwise>
+	<out>
+	  <lu>   
+	    <clip pos="1" side="tl" part="whole"/>
+          </lu>
+	  <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </otherwise>
+     </choose>	
+      </action>
+    </rule>
     <rule>
 <!-- REGLA:VERB PREP DET (avoir des: tenir)-->
       <pattern>
@@ -3608,6 +3561,182 @@ is not applicable because gender and number cannot be taken from previous rules 
             <clip pos="1" side="tl" part="lemq"/>
           </lu>
         </out>
+      </action>
+    </rule>
+
+    <rule>
+<!-- REGLA: verb de + VERB que PREP DET (venir d'avoir que des: acabar de tenir més que)-->
+      <pattern>
+        <pattern-item n="verb"/>
+        <pattern-item n="prep"/>	
+        <pattern-item n="verb"/>
+        <pattern-item n="que"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+      <call-macro n="test_pr_i_verb">
+        <with-param pos="1"/>
+        <with-param pos="2"/>
+      </call-macro>	
+        <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <equal>
+	       	   <clip pos="1" side="sl" part="lem"/>
+		   <lit v="être"/>
+	        </equal> 
+		<equal>
+	           <clip pos="3" side="sl" part="temps"/>
+		   <lit-tag v="inf"/>
+	        </equal>
+	      </and>
+	    </test>
+        <out>
+	  <lu>
+            <lit v="estar"/>
+	    <lit-tag v="vblex"/>
+	    <clip pos="1" side="tl" part="temps"/>
+            <clip pos="1" side="tl" part="persona"/>
+            <clip pos="1" side="tl" part="gen"/>
+            <clip pos="1" side="tl" part="nbr"/>
+          </lu>
+	  <b pos="1"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>            
+	    <clip pos="3" side="tl" part="a_verb"/>
+            <lit-tag v="ger"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <lit v="més"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+        </out>
+	</when>
+	<otherwise>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="a_verb"/>
+            <clip pos="1" side="tl" part="temps"/>
+            <clip pos="1" side="tl" part="persona"/>
+            <clip pos="1" side="tl" part="gen"/>
+            <clip pos="1" side="tl" part="nbr"/>
+          </lu>
+          <b pos="1"/>
+	  <lu>   
+	    <clip pos="2" side="tl" part="whole"/>
+          </lu>
+	  <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <lit v="més"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </otherwise>
+      </choose>	
+      </action>
+    </rule>
+
+    
+    <rule>
+<!-- REGLA: verb + VERB que PREP DET (aller avoir que des: tenir més que)-->
+      <pattern>
+        <pattern-item n="verb"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="que"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+        <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <equal>
+	       	   <clip pos="1" side="sl" part="lem"/>
+		   <lit v="aller"/>
+	        </equal> 
+		<equal>
+	           <clip pos="2" side="sl" part="temps"/>
+		   <lit-tag v="inf"/>
+	        </equal>
+	      </and>
+	    </test>
+         <out>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <lit-tag v="fti"/>
+            <clip pos="1" side="tl" part="persona"/>
+            <clip pos="1" side="tl" part="gen"/>
+            <clip pos="1" side="tl" part="nbr"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <lit v="més"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+	</when>
+	<otherwise>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="a_verb"/>
+            <clip pos="1" side="tl" part="temps"/>
+            <clip pos="1" side="tl" part="persona"/>
+            <clip pos="1" side="tl" part="gen"/>
+            <clip pos="1" side="tl" part="nbr"/>
+          </lu>  
+	  <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <lit v="més"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </otherwise>
+      </choose>	
       </action>
     </rule>
     
@@ -3643,6 +3772,166 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
+    
+     <rule>
+<!-- REGLA: verb de + VERB toujours PREP DET (venir d'avoir toujours des: acabar de tenir sempre)-->
+      <pattern>
+        <pattern-item n="verb"/>
+        <pattern-item n="prep"/>	
+        <pattern-item n="verb"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+        <call-macro n="test_pr_i_verb">
+        <with-param pos="1"/>
+        <with-param pos="2"/>
+      </call-macro>	
+        <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <equal>
+	       	   <clip pos="1" side="sl" part="lem"/>
+		   <lit v="être"/>
+	        </equal> 
+		<equal>
+	           <clip pos="3" side="sl" part="temps"/>
+		   <lit-tag v="inf"/>
+	        </equal>
+	      </and>
+	    </test>
+        <out>
+	  <lu>
+            <lit v="estar"/>
+	    <lit-tag v="vblex"/>
+	    <clip pos="1" side="tl" part="temps"/>
+            <clip pos="1" side="tl" part="persona"/>
+            <clip pos="1" side="tl" part="gen"/>
+            <clip pos="1" side="tl" part="nbr"/>
+          </lu>
+	  <b pos="1"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+	    <lit-tag v="ger"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+        </out>
+	</when>
+	<otherwise>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="a_verb"/>
+            <clip pos="1" side="tl" part="temps"/>
+            <clip pos="1" side="tl" part="persona"/>
+            <clip pos="1" side="tl" part="gen"/>
+            <clip pos="1" side="tl" part="nbr"/>
+          </lu>
+          <b pos="1"/>
+	  <lu>   
+	    <clip pos="2" side="tl" part="whole"/>
+          </lu>
+	  <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </otherwise>
+      </choose>	
+      </action>
+    </rule>
+
+    
+    <rule>
+<!-- REGLA: verb + VERB toujours PREP DET (aller avoir toujours des: tenir sempre)-->
+      <pattern>
+        <pattern-item n="verb"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+        <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <equal>
+	       	   <clip pos="1" side="sl" part="lem"/>
+		   <lit v="aller"/>
+	        </equal> 
+		<equal>
+	           <clip pos="2" side="sl" part="temps"/>
+		   <lit-tag v="inf"/>
+	        </equal>
+	      </and>
+	    </test>
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <lit-tag v="fti"/>
+            <clip pos="1" side="tl" part="persona"/>
+            <clip pos="1" side="tl" part="gen"/>
+            <clip pos="1" side="tl" part="nbr"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+	</when>
+	<otherwise>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="a_verb"/>
+            <clip pos="1" side="tl" part="temps"/>
+            <clip pos="1" side="tl" part="persona"/>
+            <clip pos="1" side="tl" part="gen"/>
+            <clip pos="1" side="tl" part="nbr"/>
+          </lu>  
+	  <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </otherwise>
+      </choose>	
+      </action>
+    </rule>
+    
+    
+    
+    
     <rule>
 <!-- REGLA:VERB adv PREP DET (avoir toujours des: tenir encara)-->
       <pattern>
@@ -3669,6 +3958,183 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
       </action>
     </rule>
+
+
+    
+     <rule>
+<!-- REGLA: verb de + VERB toujours PREP DET (venir d'avoir toujours des: acabar de tenir sempre)-->
+      <pattern>
+        <pattern-item n="verb"/>
+        <pattern-item n="prep"/>	
+        <pattern-item n="verb"/>
+        <pattern-item n="adv"/> 
+	<pattern-item n="adv"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+        <call-macro n="test_pr_i_verb">
+        <with-param pos="1"/>
+        <with-param pos="2"/>
+      </call-macro>	
+        <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <equal>
+	       	   <clip pos="1" side="sl" part="lem"/>
+		   <lit v="être"/>
+	        </equal> 
+		<equal>
+	           <clip pos="3" side="sl" part="temps"/>
+		   <lit-tag v="inf"/>
+	        </equal>
+	      </and>
+	    </test>
+        <out>
+	  <lu>
+            <lit v="estar"/>
+	    <lit-tag v="vblex"/>
+	    <clip pos="1" side="tl" part="temps"/>
+            <clip pos="1" side="tl" part="persona"/>
+            <clip pos="1" side="tl" part="gen"/>
+            <clip pos="1" side="tl" part="nbr"/>
+          </lu>
+	  <b pos="1"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+	    <clip pos="3" side="tl" part="a_verb"/>
+            <lit-tag v="ger"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="whole"/>
+          </lu>
+        </out>
+	</when>
+	<otherwise>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="a_verb"/>
+            <clip pos="1" side="tl" part="temps"/>
+            <clip pos="1" side="tl" part="persona"/>
+            <clip pos="1" side="tl" part="gen"/>
+            <clip pos="1" side="tl" part="nbr"/>
+          </lu>
+          <b pos="1"/>
+	  <lu>   
+	    <clip pos="2" side="tl" part="whole"/>
+          </lu>
+	  <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </otherwise>
+      </choose>	
+      </action>
+    </rule>
+
+    
+    <rule>
+<!-- REGLA: verb + VERB aujourd'hui encore PREP DET (aller avoir ajourd'hui encore des: tenir hui encara)-->
+      <pattern>
+        <pattern-item n="verb"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="adv"/>      
+	<pattern-item n="adv"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+        <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <equal>
+	       	   <clip pos="1" side="sl" part="lem"/>
+		   <lit v="aller"/>
+	        </equal> 
+		<equal>
+	           <clip pos="2" side="sl" part="temps"/>
+		   <lit-tag v="inf"/>
+	        </equal>
+	      </and>
+	    </test>
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <lit-tag v="fti"/>
+            <clip pos="1" side="tl" part="persona"/>
+            <clip pos="1" side="tl" part="gen"/>
+            <clip pos="1" side="tl" part="nbr"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+        </out>
+	</when>
+	<otherwise>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="a_verb"/>
+            <clip pos="1" side="tl" part="temps"/>
+            <clip pos="1" side="tl" part="persona"/>
+            <clip pos="1" side="tl" part="gen"/>
+            <clip pos="1" side="tl" part="nbr"/>
+          </lu>  
+	  <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </otherwise>
+      </choose>	
+      </action>
+    </rule>
+    
     
     <rule>
 <!-- REGLA:VERB adv adv PREP DET (avoir auhjourd'hui encore des: tenir avui encara-->
@@ -3771,7 +4237,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     <rule>
-<!-- REGLA:PRN ADV VERB que PREP DET -->
+<!-- REGLA:PRN NEADV VERB que PREP DET -->
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="neadv"/>
@@ -3911,7 +4377,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     <rule>
-<!-- REGLA:PRN VERB adv PREP DET -->
+<!-- REGLA:PRN adv VERB PREP DET -->
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="adv"/>
@@ -3975,6 +4441,1412 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
       </action>
     </rule>
+    
+ <rule>
+<!-- REGLA:PRN verb + VERB PREP DET je vais faire des voyages: faré viatges -->
+      <pattern>
+        <pattern-item n="prnsubj"/>
+	<pattern-item n="verb"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern> 
+      <action>
+        <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <equal>
+	       	   <clip pos="2" side="sl" part="lem"/>
+		   <lit v="aller"/>
+	        </equal> 
+		<equal>
+	           <clip pos="3" side="sl" part="temps"/>
+		   <lit-tag v="inf"/>
+	        </equal>
+	      </and>
+	    </test>
+        <out>
+          <lu>
+	   <get-case-from pos="1">
+            <clip pos="3" side="tl" part="lemh"/>
+	   </get-case-from> 
+            <clip pos="3" side="tl" part="a_verb"/>
+            <lit-tag v="fti"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+	</when>
+	<otherwise>
+	<out>
+	  <lu>   
+	    <clip pos="2" side="tl" part="whole"/>
+          </lu>
+	  <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </otherwise>
+     </choose>	
+      </action>
+    </rule>
+    
+    
+    <rule>
+<!-- REGLA:PRN NEADV verb + VERB que PREP DET je ne vais faire que des voyages: no faré més que viatges-->
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="que"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+       <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <equal>
+	       	   <clip pos="3" side="sl" part="lem"/>
+		   <lit v="aller"/>
+	        </equal> 
+		<equal>
+	           <clip pos="4" side="sl" part="temps"/>
+		   <lit-tag v="inf"/>
+	        </equal>
+	      </and>
+	    </test>
+         <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lem"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_adv"/>
+          </lu>
+          <b pos="2"/> 
+	  <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="a_verb"/>
+            <lit-tag v="fti"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <lit v="més"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="5" side="tl" part="whole"/>
+          </lu>
+        </out>
+	</when>
+	<otherwise>
+        <out>
+	 <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lem"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_adv"/>
+          </lu>
+          <b pos="2"/> 
+          <lu>
+            <clip pos="3" side="tl" part="lem"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>  
+	  <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="a_verb"/>
+            <clip pos="4" side="tl" part="temps"/>
+            <clip pos="4" side="tl" part="persona"/>
+            <clip pos="4" side="tl" part="gen"/>
+            <clip pos="4" side="tl" part="nbr"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <lit v="més"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="5" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </otherwise>
+      </choose>	
+      </action>
+    </rule>
+    
+    <rule>
+<!-- REGLA:PRN ADV VERB pas verb PREP DET je ne vais pas faire des voyages-->
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+        <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <equal>
+	       	   <clip pos="3" side="sl" part="lem"/>
+		   <lit v="aller"/>
+	        </equal> 
+		<equal>
+	           <clip pos="5" side="sl" part="temps"/>
+		   <lit-tag v="inf"/>
+	        </equal>
+	      </and>
+	    </test>
+         <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lem"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_adv"/>
+          </lu>
+          <b pos="2"/> 
+	  <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="a_verb"/>
+            <lit-tag v="fti"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+        </out>
+	</when>
+	<otherwise>
+        <out>
+	 <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lem"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_adv"/>
+          </lu>
+          <b pos="2"/> 
+          <lu>
+            <clip pos="3" side="tl" part="lem"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>  
+	  <b pos="3"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="a_verb"/>
+            <clip pos="5" side="tl" part="temps"/>
+            <clip pos="5" side="tl" part="persona"/>
+            <clip pos="5" side="tl" part="gen"/>
+            <clip pos="5" side="tl" part="nbr"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </otherwise>
+      </choose>	
+      </action>
+    </rule>
+    
+    <rule>
+<!-- REGLA:PRN ADV VERB pas verb adv PREP DET je ne vais pas faire toujours des voyages-->
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+        <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <equal>
+	       	   <clip pos="3" side="sl" part="lem"/>
+		   <lit v="aller"/>
+	        </equal> 
+		<equal>
+	           <clip pos="5" side="sl" part="temps"/>
+		   <lit-tag v="inf"/>
+	        </equal>
+	      </and>
+	    </test>
+         <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lem"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_adv"/>
+          </lu>
+          <b pos="2"/> 
+	  <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="a_verb"/>
+            <lit-tag v="fti"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/> 
+	  <lu>
+	   <clip pos="6" side="tl" part="whole"/>
+	  </lu>
+        </out>
+	</when>
+	<otherwise>
+        <out>
+	 <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lem"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_adv"/>
+          </lu>
+          <b pos="2"/> 
+          <lu>
+            <clip pos="3" side="tl" part="lem"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>  
+	  <b pos="3"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="a_verb"/>
+            <clip pos="5" side="tl" part="temps"/>
+            <clip pos="5" side="tl" part="persona"/>
+            <clip pos="5" side="tl" part="gen"/>
+            <clip pos="5" side="tl" part="nbr"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+          <b pos="4"/> 
+	  <lu>
+	   <clip pos="6" side="tl" part="whole"/>
+	  </lu>
+        </out>
+      </otherwise>
+      </choose>	
+      </action>
+    </rule>
+     <rule>
+<!-- REGLA:PRN ADV VERB pas verb adv PREP DET je ne vais pas toujours faire des voyages-->
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="pas"/>
+	 <pattern-item n="adv"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+        <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <equal>
+	       	   <clip pos="3" side="sl" part="lem"/>
+		   <lit v="aller"/>
+	        </equal> 
+		<equal>
+	           <clip pos="6" side="sl" part="temps"/>
+		   <lit-tag v="inf"/>
+	        </equal>
+	      </and>
+	    </test>
+         <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lem"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_adv"/>
+          </lu>
+          <b pos="2"/> 
+	  <lu>
+            <clip pos="6" side="tl" part="lemh"/>
+            <clip pos="6" side="tl" part="a_verb"/>
+            <lit-tag v="fti"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <clip pos="6" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/> 
+	  <lu>
+	   <clip pos="5" side="tl" part="whole"/>
+	  </lu>
+        </out>
+	</when>
+	<otherwise>
+        <out>
+	 <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lem"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_adv"/>
+          </lu>
+          <b pos="2"/> 
+          <lu>
+            <clip pos="3" side="tl" part="lem"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>  
+	  <b pos="3"/>
+          <lu>
+            <clip pos="6" side="tl" part="lemh"/>
+            <clip pos="6" side="tl" part="a_verb"/>
+            <clip pos="6" side="tl" part="temps"/>
+            <clip pos="6" side="tl" part="persona"/>
+            <clip pos="6" side="tl" part="gen"/>
+            <clip pos="6" side="tl" part="nbr"/>
+            <clip pos="6" side="tl" part="lemq"/>
+          </lu>
+          <b pos="4"/> 
+	  <lu>
+	   <clip pos="5" side="tl" part="whole"/>
+	  </lu>
+        </out>
+      </otherwise>
+      </choose>	
+      </action>
+    </rule>
+    
+    <rule>
+<!-- REGLA:PRN verb VERB adv PREP DET je vais faire encore des voyages-->
+      <pattern>
+        <pattern-item n="prnsubj"/>
+	<pattern-item n="verb"/>	
+        <pattern-item n="verb"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+        <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <equal>
+	       	   <clip pos="2" side="sl" part="lem"/>
+		   <lit v="aller"/>
+	        </equal> 
+		<equal>
+	           <clip pos="3" side="sl" part="temps"/>
+		   <lit-tag v="inf"/>
+	        </equal>
+	      </and>
+	    </test>
+        <out>
+          <lu>
+	  <get-case-from pos="1">
+            <clip pos="3" side="tl" part="lemh"/>  
+	  </get-case-from>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <lit-tag v="fti"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+        </out>
+	</when>
+	<otherwise>
+        <out>
+          <lu>  
+	  <get-case-from pos="1">
+            <clip pos="2" side="tl" part="lem"/>
+	  </get-case-from>  
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>  
+	  <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </otherwise>
+      </choose>	
+      </action>
+    </rule>
+    
+    <rule>
+<!-- REGLA:PRN adv verb VERB PREP DET je aujourd'hui vais faire des voyages -->
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+        <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <equal>
+	       	   <clip pos="3" side="sl" part="lem"/>
+		   <lit v="aller"/>
+	        </equal> 
+		<equal>
+	           <clip pos="4" side="sl" part="temps"/>
+		   <lit-tag v="inf"/>
+	        </equal>
+	      </and>
+	    </test>
+        <out>
+	 <lu>
+	   <get-case-from pos="1">
+            <clip pos="2" side="tl" part="lemh"/>
+	   </get-case-from> 
+            <clip pos="2" side="tl" part="a_adv"/>
+          </lu>
+	  <b pos="2"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="a_verb"/>
+            <lit-tag v="fti"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+	</when>
+	<otherwise>
+	<out>
+	 <lu>
+	   <get-case-from pos="1">
+            <clip pos="2" side="tl" part="lemh"/>
+	   </get-case-from> 
+            <clip pos="2" side="tl" part="a_adv"/>
+          </lu>
+	  <b pos="2"/>
+	  <lu>   
+	    <clip pos="3" side="tl" part="whole"/>
+          </lu>
+	  <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="a_verb"/>
+            <clip pos="4" side="tl" part="temps"/>
+            <clip pos="4" side="tl" part="persona"/>
+            <clip pos="4" side="tl" part="gen"/>
+            <clip pos="4" side="tl" part="nbr"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </otherwise>
+     </choose>	
+      </action>
+    </rule>
+    
+    <rule>
+<!-- REGLA:PRN VERB adv adv PREP DET il va faire aujourd'hui encore des voyages -->
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="verb"/>
+	<pattern-item n="verb"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+ <action>
+        <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <equal>
+	       	   <clip pos="2" side="sl" part="lem"/>
+		   <lit v="aller"/>
+	        </equal> 
+		<equal>
+	           <clip pos="3" side="sl" part="temps"/>
+		   <lit-tag v="inf"/>
+	        </equal>
+	      </and>
+	    </test>
+        <out>
+          <lu> 
+	    <get-case-from pos="1">
+              <clip pos="3" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <lit-tag v="fti"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="whole"/>
+          </lu>
+        </out>
+	</when>
+	<otherwise>
+        <out>
+          <lu>
+          <get-case-from pos="1">
+            <clip pos="2" side="tl" part="lem"/>
+          </get-case-from>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>  
+	  <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </otherwise>
+      </choose>	
+      </action>
+    </rule>
+    
+ 
+ <rule>
+<!-- REGLA:PRN verb + prep + VERB PREP DET je viens de faire des voyages: acabe de fer viatges -->
+      <pattern>
+        <pattern-item n="prnsubj"/>
+	<pattern-item n="verb"/>
+	<pattern-item n="prep"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern> 
+      <action>
+      <call-macro n="test_pr_i_verb">
+        <with-param pos="2"/>
+        <with-param pos="3"/>
+      </call-macro>
+        <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <equal>
+	       	   <clip pos="2" side="sl" part="lem"/>
+		   <lit v="être"/>
+	        </equal> 
+		<equal>
+	           <clip pos="4" side="sl" part="temps"/>
+		   <lit-tag v="inf"/>
+	        </equal>
+	      </and>
+	    </test>
+	  <out>
+	  <lu>
+            <lit v="estar"/>
+	    <lit-tag v="vblex"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+	  <b pos="2"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="a_verb"/>
+            <lit-tag v="ger"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+	</when>
+	<otherwise>	
+	<out>
+	  <lu>   
+	    <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+	  <b pos="2"/>
+	  <lu>   
+	    <clip pos="3" side="tl" part="whole"/>
+          </lu>
+	  <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="a_verb"/>
+            <clip pos="4" side="tl" part="temps"/>
+            <clip pos="4" side="tl" part="persona"/>
+            <clip pos="4" side="tl" part="gen"/>
+            <clip pos="4" side="tl" part="nbr"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </otherwise>
+     </choose>	
+      </action>
+    </rule>
+    
+    
+    <rule>
+<!-- REGLA:PRN NEADV verb + de + VERB que PREP DET je ne viens de faire que des voyages: no acabe de fer més que viatges-->
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="verb"/>
+	<pattern-item n="prep"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="que"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+      <call-macro n="test_pr_i_verb">
+        <with-param pos="3"/>
+        <with-param pos="4"/>
+      </call-macro>
+       <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <equal>
+	       	   <clip pos="3" side="sl" part="lem"/>
+		   <lit v="être"/>
+	        </equal> 
+		<equal>
+	           <clip pos="5" side="sl" part="temps"/>
+		   <lit-tag v="inf"/>
+	        </equal>
+	      </and>
+	    </test>
+         <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lem"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_adv"/>
+          </lu>
+          <b pos="2"/> 
+	  <lu>
+            <lit v="estar"/>
+	    <lit-tag v="vblex"/>
+     	    <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>
+	  <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="a_verb"/>
+            <lit-tag v="ger"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+          <b pos="5"/>
+          <lu>
+            <lit v="més"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="6" side="tl" part="whole"/>
+          </lu>
+        </out>
+	</when>
+	<otherwise>
+        <out>
+	 <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lem"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_adv"/>
+          </lu>
+          <b pos="2"/> 
+          <lu>
+            <clip pos="3" side="tl" part="lem"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>  
+	  <b pos="3"/>
+	  <lu>
+             <clip pos="4" side="tl" part="whole"/>
+	  </lu> 
+	  <b/> 
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="a_verb"/>
+            <clip pos="5" side="tl" part="temps"/>
+            <clip pos="5" side="tl" part="persona"/>
+            <clip pos="5" side="tl" part="gen"/>
+            <clip pos="5" side="tl" part="nbr"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+          <b pos="5"/>
+          <lu>
+            <lit v="més"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="6" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </otherwise>
+      </choose>	
+      </action>
+    </rule>
+    
+    <rule>
+<!-- REGLA:PRN ADV VERB pas verb PREP DET je ne vais pas faire des voyages-->
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="prep"/>	
+        <pattern-item n="verb"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+      <call-macro n="test_pr_i_verb">
+        <with-param pos="3"/>
+        <with-param pos="5"/>
+      </call-macro>
+        <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <equal>
+	       	   <clip pos="3" side="sl" part="lem"/>
+		   <lit v="être"/>
+	        </equal> 
+		<equal>
+	           <clip pos="6" side="sl" part="temps"/>
+		   <lit-tag v="inf"/>
+	        </equal>
+	      </and>
+	    </test>
+         <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lem"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_adv"/>
+          </lu>
+          <b pos="2"/> 
+	  <lu>
+            <lit v="estar"/>
+	    <lit-tag v="vblex"/>
+     	    <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+	  <b pos="3"/>
+          <lu>
+            <clip pos="6" side="tl" part="lemh"/>
+            <clip pos="6" side="tl" part="a_verb"/>
+            <lit-tag v="ger"/>
+            <clip pos="6" side="tl" part="lemq"/>
+          </lu>
+        </out>
+	</when>
+	<otherwise>
+        <out>
+	 <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lem"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_adv"/>
+          </lu>
+          <b pos="2"/> 
+          <lu>
+            <clip pos="3" side="tl" part="lem"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>  
+	  <b pos="3"/>
+	  <lu>
+             <clip pos="5" side="tl" part="whole"/>
+	  </lu>
+	  <b pos="5"/>
+          <lu>
+            <clip pos="6" side="tl" part="lemh"/>
+            <clip pos="6" side="tl" part="a_verb"/>
+            <clip pos="6" side="tl" part="temps"/>
+            <clip pos="6" side="tl" part="persona"/>
+            <clip pos="6" side="tl" part="gen"/>
+            <clip pos="6" side="tl" part="nbr"/>
+            <clip pos="6" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </otherwise>
+      </choose>	
+      </action>
+    </rule>
+    
+    <rule>
+<!-- REGLA:PRN ADV VERB pas verb adv PREP DET je ne viens pas de faire toujours des voyages-->
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="pas"/>
+	<pattern-item n="prep"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+      <call-macro n="test_pr_i_verb">
+        <with-param pos="3"/>
+        <with-param pos="5"/>
+      </call-macro>
+          <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <equal>
+	       	   <clip pos="3" side="sl" part="lem"/>
+		   <lit v="être"/>
+	        </equal> 
+		<equal>
+	           <clip pos="6" side="sl" part="temps"/>
+		   <lit-tag v="inf"/>
+	        </equal>
+	      </and>
+	    </test>
+         <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lem"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_adv"/>
+          </lu>
+          <b pos="2"/> 
+	  <lu>
+            <lit v="estar"/>
+	    <lit-tag v="vblex"/>
+     	    <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+	  <b pos="3"/>
+          <lu>
+            <clip pos="6" side="tl" part="lemh"/>
+            <clip pos="6" side="tl" part="a_verb"/>
+            <lit-tag v="ger"/>
+            <clip pos="6" side="tl" part="lemq"/>
+          </lu>
+	  <b pos="4"/>
+          <lu>
+            <clip pos="7" side="tl" part="whole"/>
+          </lu>
+        </out>
+	</when>
+	<otherwise>
+        <out>
+	 <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lem"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_adv"/>
+          </lu>
+          <b pos="2"/> 
+          <lu>
+            <clip pos="3" side="tl" part="lem"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>  
+	  <b pos="3"/>
+	  <lu>
+             <clip pos="5" side="tl" part="whole"/>
+	  </lu>
+	  <b pos="5"/>
+          <lu>
+            <clip pos="6" side="tl" part="lemh"/>
+            <clip pos="6" side="tl" part="a_verb"/>
+            <clip pos="6" side="tl" part="temps"/>
+            <clip pos="6" side="tl" part="persona"/>
+            <clip pos="6" side="tl" part="gen"/>
+            <clip pos="6" side="tl" part="nbr"/>
+            <clip pos="6" side="tl" part="lemq"/>
+          </lu>
+	  <b pos="5"/>
+          <lu>
+            <clip pos="7" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </otherwise>
+      </choose>	
+      </action>       
+    </rule>
+     <rule>
+<!-- REGLA:PRN ADV VERB pas adv prep verb PREP DET je ne viens pas toujours de faire des voyages-->
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="adv"/>
+	<pattern-item n="prep"/> 
+        <pattern-item n="verb"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+         <call-macro n="test_pr_i_verb">
+        <with-param pos="3"/>
+        <with-param pos="6"/>
+      </call-macro>
+          <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <equal>
+	       	   <clip pos="3" side="sl" part="lem"/>
+		   <lit v="être"/>
+	        </equal> 
+		<equal>
+	           <clip pos="7" side="sl" part="temps"/>
+		   <lit-tag v="inf"/>
+	        </equal>
+	      </and>
+	    </test>
+         <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lem"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_adv"/>
+          </lu>
+          <b pos="2"/> 
+	  <lu>
+            <lit v="estar"/>
+	    <lit-tag v="vblex"/>
+     	    <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+	  <b pos="3"/>
+          <lu>
+            <clip pos="7" side="tl" part="lemh"/>
+            <clip pos="7" side="tl" part="a_verb"/>
+            <lit-tag v="ger"/>
+            <clip pos="7" side="tl" part="lemq"/>
+          </lu>
+	  <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="whole"/>
+          </lu>
+        </out>
+	</when>
+	<otherwise>
+        <out>
+	 <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lem"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_adv"/>
+          </lu>
+          <b pos="2"/> 
+          <lu>
+            <clip pos="3" side="tl" part="lem"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>  
+	  <b pos="3"/>
+	  <lu>
+             <clip pos="5" side="tl" part="whole"/>
+	  </lu>
+	  <b pos="5"/>
+	  <lu>
+             <clip pos="6" side="tl" part="whole"/>
+	  </lu>
+	  <b pos="6"/>
+          <lu>
+            <clip pos="7" side="tl" part="lemh"/>
+            <clip pos="7" side="tl" part="a_verb"/>
+            <clip pos="7" side="tl" part="temps"/>
+            <clip pos="7" side="tl" part="persona"/>
+            <clip pos="7" side="tl" part="gen"/>
+            <clip pos="7" side="tl" part="nbr"/>
+            <clip pos="7" side="tl" part="lemq"/>
+          </lu>
+	  <b pos="7"/>
+          <lu>
+            <clip pos="5" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </otherwise>
+      </choose>	
+      </action>       
+    </rule>
+    
+    <rule>
+<!-- REGLA:PRN verb + de +  VERB adv PREP DET je viens de faire encore des voyages-->
+      <pattern>
+        <pattern-item n="prnsubj"/>
+	<pattern-item n="verb"/>	
+	<pattern-item n="prep"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+        <action>
+        <call-macro n="test_pr_i_verb">
+        <with-param pos="2"/>
+        <with-param pos="3"/>
+      </call-macro>	
+        <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <equal>
+	       	   <clip pos="2" side="sl" part="lem"/>
+		   <lit v="être"/>
+	        </equal> 
+		<equal>
+	           <clip pos="4" side="sl" part="temps"/>
+		   <lit-tag v="inf"/>
+	        </equal>
+	      </and>
+	    </test>
+        <out>
+	  <lu>
+            <lit v="estar"/>
+	    <lit-tag v="vblex"/>
+	    <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+	  <b pos="2"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="a_verb"/>
+	    <lit-tag v="ger"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="whole"/>
+          </lu>
+        </out>
+	</when>
+	<otherwise>
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b pos="2"/>
+	  <lu>   
+	    <clip pos="3" side="tl" part="whole"/>
+          </lu>
+	  <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="a_verb"/>
+            <clip pos="4" side="tl" part="temps"/>
+            <clip pos="4" side="tl" part="persona"/>
+            <clip pos="4" side="tl" part="gen"/>
+            <clip pos="4" side="tl" part="nbr"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </otherwise>
+      </choose>	
+      </action>
+    </rule>
+    
+    <rule>
+<!-- REGLA:PRN adv verb VERB PREP DET je aujourd'hui viens de faire des voyages -->
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="verb"/>
+	<pattern-item n="prep"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+  <action>
+      <call-macro n="test_pr_i_verb">
+        <with-param pos="3"/>
+        <with-param pos="4"/>
+      </call-macro>
+       <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <equal>
+	       	   <clip pos="3" side="sl" part="lem"/>
+		   <lit v="être"/>
+	        </equal> 
+		<equal>
+	           <clip pos="5" side="sl" part="temps"/>
+		   <lit-tag v="inf"/>
+	        </equal>
+	      </and>
+	    </test>
+         <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lem"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_adv"/>
+          </lu>
+          <b pos="2"/> 
+	  <lu>
+            <lit v="estar"/>
+	    <lit-tag v="vblex"/>
+     	    <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>
+	  <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="a_verb"/>
+            <lit-tag v="ger"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+        </out>
+	</when>
+	<otherwise>
+        <out>
+	 <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lem"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_adv"/>
+          </lu>
+          <b pos="2"/> 
+          <lu>
+            <clip pos="3" side="tl" part="lem"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>  
+	  <b pos="3"/>
+	  <lu>
+             <clip pos="4" side="tl" part="whole"/>
+	  </lu>
+	  <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="a_verb"/>
+            <clip pos="5" side="tl" part="temps"/>
+            <clip pos="5" side="tl" part="persona"/>
+            <clip pos="5" side="tl" part="gen"/>
+            <clip pos="5" side="tl" part="nbr"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </otherwise>
+      </choose>	
+      </action>    
+    </rule>
+    
+    <rule>
+<!-- REGLA:PRN VERB de verb adv adv PREP DET il vient de faire aujourd'hui encore des voyages -->
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="verb"/>
+	<pattern-item n="prep"/>
+	<pattern-item n="verb"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+        <action>
+        <call-macro n="test_pr_i_verb">
+        <with-param pos="2"/>
+        <with-param pos="3"/>
+      </call-macro>	
+        <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <equal>
+	       	   <clip pos="2" side="sl" part="lem"/>
+		   <lit v="être"/>
+	        </equal> 
+		<equal>
+	           <clip pos="4" side="sl" part="temps"/>
+		   <lit-tag v="inf"/>
+	        </equal>
+	      </and>
+	    </test>
+        <out>
+	  <lu>
+            <lit v="estar"/>
+	    <lit-tag v="vblex"/>
+	    <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+	  <b pos="2"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="a_verb"/>
+	    <lit-tag v="ger"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="whole"/>
+          </lu>
+          <b pos="5"/>
+          <lu>
+            <clip pos="6" side="tl" part="whole"/>
+          </lu>
+        </out>
+	</when>
+	<otherwise>
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b pos="2"/>
+	  <lu>   
+	    <clip pos="3" side="tl" part="whole"/>
+          </lu>
+	  <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="a_verb"/>
+            <clip pos="4" side="tl" part="temps"/>
+            <clip pos="4" side="tl" part="persona"/>
+            <clip pos="4" side="tl" part="gen"/>
+            <clip pos="4" side="tl" part="nbr"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="whole"/>
+          </lu>
+          <b pos="5"/>
+          <lu>
+            <clip pos="6" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </otherwise>
+      </choose>	
+      </action>
+    </rule>
+        
+   
 <!--fi regles per a eliminar el partitiu-->
 <!--<rule>
  REGLA: Passé composé/perifràstic -->
@@ -4395,9 +6267,6 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="pas"/>
       </pattern>
       <action>
-        <call-macro n="f_seleccioLex">
-          <with-param pos="1"/>
-        </call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -5060,10 +6929,6 @@ is not applicable because gender and number cannot be taken from previous rules 
 <!--Envía el blanco sólo si tiene formato -->
               <with-param pos="1"/>
             </call-macro>
-            <call-macro n="f_pretind">
-<!--Traduce el pretérito indefinido si es el caso y envía el verbo -->
-              <with-param pos="2"/>
-            </call-macro>
           </when>
           <otherwise>
 <!--Si no concuerdan el pronombre y el verbo, envíalo todo -->
@@ -5073,9 +6938,6 @@ is not applicable because gender and number cannot be taken from previous rules 
               </lu>
               <b pos="1"/>
             </out>
-            <call-macro n="f_pretind">
-              <with-param pos="2"/>
-            </call-macro>
           </otherwise>
         </choose>
       </action>
