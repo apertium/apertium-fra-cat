@@ -12426,6 +12426,39 @@
       </e>
     </pardef>
 
+    <pardef n="/el_que__rel"> 	 
+      <e>
+        <p>
+	  <l>el<b/>que</l>
+	  <r>el<b/>que<s n="rel"/><s n="m"/><s n="sg"/></r>
+	</p>
+      </e> 	 
+      <e>
+        <p>
+	  <l>la<b/>que</l>
+	  <r>el<b/>que<s n="rel"/><s n="f"/><s n="sg"/></r>
+	</p>
+      </e> 	 
+      <e>
+        <p>
+	  <l>les<b/>que</l>
+	  <r>el<b/>que<s n="rel"/><s n="f"/><s n="pl"/></r>
+	</p>
+      </e> 	 
+      <e>
+        <p>
+	  <l>els<b/>que</l>
+	  <r>el<b/>que<s n="rel"/><s n="m"/><s n="pl"/></r>
+	</p>
+      </e> 	 
+      <e>
+        <p>
+	  <l>el<b/>que</l>
+	  <r>el<b/>que<s n="rel"/><s n="nt"/></r>
+	</p>
+      </e> 	 
+    </pardef>  
+
     <pardef n="que_/el_seu__rel">
       
       <e>
@@ -72828,6 +72861,9 @@
       <e lm="el qual">
         <par n="/el_qual__rel"/>
       </e>
+      <e lm="el que">
+        <par n="/el_que__rel"/>
+      </e>
       <e lm="el seu">
         <par n="/el_seu__det"/>
       </e>
@@ -72974,6 +73010,12 @@
         <i>encara</i>
 	<par n="ahir__adv"/>
       </e>
+      
+      <e lm="en curs">
+        <i>en<b/>curs</i>
+        <par n="ahir__adv"/>
+      </e>
+      
       <e lm="encara que">
         <i>encara<b/>que</i>
 	<par n="a_fe_que__cnjadv"/>
@@ -73216,6 +73258,17 @@
         <i>en<b/>vista<b/></i>
 	<par n="contde__pr"/>
       </e>
+      
+       <e lm="en el caso de">
+        <i>en<b/>el<b/>cas<b/></i>
+        <par n="contde__pr"/>
+      </e>
+      
+       <e lm="en cas de">
+        <i>en<b/>cas<b/></i>
+        <par n="contde__pr"/>
+      </e>
+      
       <e lm="envit">
         <i>envit</i>
 	<par n="abric__n"/>
@@ -96257,6 +96310,11 @@
         <par n="Afganistan__np"/>
       </e>
       
+       <e lm="Pas de la Casa">
+        <i>Pas<b/>de<b/>la<b/>Casa</i>
+        <par n="Afganistan__np"/>
+      </e>
+      
       <e lm="Sotomayor">
         <i>Sotomayor</i>
         <par n="Abad__np"/>
@@ -99048,8 +99106,8 @@
   <par n="abric__n"/>
 </e>
 <e lm="successió" a="gema">
-  <i>successió</i>
-  <par n="abric__n"/>
+  <i>successi</i>
+  <par n="acci/ó__n"/>
 </e>
 <e lm="aeroport" a="gema">
   <i>aeroport</i>

@@ -1026,7 +1026,7 @@
       
       <e r="LR">
         <p>
-          <l>el</l>
+          <l>l</l>
           <r>au<s n="adj"/><s n="m"/><s n="sg"/></r>
         </p>        
       </e>
@@ -3431,6 +3431,31 @@
         
       </e>
     </pardef>
+    
+     <pardef n="ce/lui_que__rel">
+            
+<e><p><l>lle<b/>que</l><r>lui<b/>que<s n="rel"/><s n="f"/><s n="sg"/></r></p></e>
+            
+<e><p><l>lles<b/>que</l><r>lui<b/>que<s n="rel"/><s n="f"/><s n="pl"/></r></p></e>
+            
+<e><p><l>lui<b/>que</l><r>lui<b/>que<s n="rel"/><s n="m"/><s n="sg"/></r></p></e>
+            
+<e><p><l>ux<b/>que</l><r>lui<b/>que<s n="rel"/><s n="m"/><s n="pl"/></r></p></e>
+<e><p><l><b/>que</l><r>lui<b/>que<s n="rel"/><s n="nt"/></r></p></e>
+    </pardef>    
+    
+    <pardef n="ce/lui_qui__rel">
+            
+<e><p><l>lle<b/>qui</l><r>lui<b/>qui<s n="rel"/><s n="f"/><s n="sg"/></r></p></e>
+            
+<e><p><l>lles<b/>qui</l><r>lui<b/>qui<s n="rel"/><s n="f"/><s n="pl"/></r></p></e>
+            
+<e><p><l>lui<b/>qui</l><r>lui<b/>qui<s n="rel"/><s n="m"/><s n="sg"/></r></p></e>
+            
+<e><p><l>ux<b/>qui</l><r>lui<b/>qui<s n="rel"/><s n="m"/><s n="pl"/></r></p></e>
+<e><p><l><b/>qui</l><r>lui<b/>qui<s n="rel"/><s n="nt"/></r></p></e>
+    </pardef>  
+    
 
     <pardef n="ce/lui-ci__prn">
       
@@ -39490,6 +39515,14 @@
         
       </e>
       
+      <e r="LR">
+        <p>
+	  <l>c'est</l>
+	  <r>être<s n="vbser"/><s n="pri"/><s n="p3"/><s n="sg"/></r>
+	</p>
+      </e>
+      
+      
       <e>
         <p>
           <l>soyons</l>
@@ -39837,7 +39870,7 @@
       </e>
       
       
-      <e lm="allant">
+      <e lm="allant" r="LR">
         <i>allant</i>
         <par n="abaissant__adj"/>
       </e>
@@ -43761,6 +43794,11 @@
       
       <e lm="autant que" r="LR">
         <i>autant<b/>que</i>
+        <par n="hier__adv"/>
+      </e> 
+      
+      <e lm="en cours">
+        <i>en<b/>cours</i>
         <par n="hier__adv"/>
       </e>
       
@@ -50766,6 +50804,10 @@
     </e>
     <e lm="Soto">
       <i>Soto</i>
+      <par n="Andorre__np"/>
+    </e>
+    <e lm="Pas de la Casa">
+      <i>Pas<b/>de<b/>la<b/>Casa</i>
       <par n="Andorre__np"/>
     </e>
     <e lm="Sotomayor">
@@ -68540,6 +68582,16 @@
         <i>afin<b/></i>
         <par n="contde__pr"/>
       </e>
+      
+      <e lm="à propos de">
+        <i>à<b/>propos<b/></i>
+        <par n="contde__pr"/>
+      </e> 
+      
+      <e lm="en cas de">
+        <i>à<b/>cas<b/></i>
+        <par n="contde__pr"/>
+      </e>
        
       
       <e lm="dans le cadre de">
@@ -68955,6 +69007,19 @@
         <par n="que__prn"/>
       </e> 
       
+      <e r="LR">
+        <i>est-ce<b/>que</i>
+        <par n="que__prn"/>
+      </e>  
+      
+      <e r="RL"> 
+        <p>
+          <l>est-ce<b/><a/>que</l>
+	  <r>est-ce<b/>que</r>
+	</p>
+        <par n="que__prn"/>
+      </e>
+      
       <e r="RL"> 
         <p>
           <l>qu'est-ce<b/><a/>que</l>
@@ -69143,6 +69208,7 @@
         <i>dans<b/>l</i>
         <par n="l/equel__rel"/>
       </e>
+
       <e lm="où">
         <i>où</i>
         <par n="combien__rel"/>
@@ -69166,7 +69232,25 @@
         <par n="qui__rel"/>
       </e>
       
+            
+      <e lm="celui qui" r="LR">
+        <i>ce</i>
+	<par n="ce/lui_qui__rel"/>
+      </e>
       
+      <e lm="celui qui" r="RL">
+        <p>
+	  <l><a/>ce</l>
+	  <r>ce</r>
+	</p>
+	<par n="ce/lui_qui__rel"/>
+      </e>
+      
+      <e lm="celui que" r="LR">
+        <i>ce</i>
+	<par n="ce/lui_que__rel"/>
+      </e>
+
       <e lm="avoir">
         <par n="/avoir__vbhaver"/>
       </e>
@@ -78709,7 +78793,7 @@
 </e>
 <e lm="succession" a="gema">
   <i>succession</i>
-  <par n="livre__n"/>
+  <par n="abeille__n"/>
 </e>
 <e lm="aéroport" a="gema">
   <i>aéroport</i>
@@ -81542,6 +81626,12 @@
           <l>qu'est-ce<b/>qu'</l>
           <r>qu'est-ce<b/>que<s n="prn"/><s n="itg"/><s n="mf"/><s n="sg"/></r>
         </p>
+      </e>   
+      <e r="LR">
+        <p>
+          <l>est-ce<b/>qu'</l>
+          <r>est-ce<b/>que<s n="prn"/><s n="itg"/><s n="mf"/><s n="sg"/></r>
+        </p>
       </e> 
       <e r="LR">
         <p>
@@ -81784,6 +81874,22 @@
 	  <r>étant<b/>donné<b/>que<s n="cnjadv"/></r>
 	</p>
       </e>
+      
+       <e lm="à propos de">
+       <p>
+        <l>à<b/>propos<b/>d'</l>
+	<r>à<b/>propos<b/>de<s n="pr"/></r>
+       </p>
+      </e> 
+      
+      <e lm="en cas de">
+      <p>
+        <l>en<b/>cas<b/>d'</l>
+	<r>en<b/>cas<b/>de<s n="pr"/></r>
+       </p>
+      </e>
+      
+      
   </section>
 <section id="final" type="inconditional">
 

@@ -2055,7 +2055,7 @@
           <r>alimentació<s n="n"/></r>
         </p>
       </e>
-      <e>
+      <e r="LR">
         <p>
           <l>allant<s n="adj"/></l>
           <r>actiu<s n="adj"/></r>
@@ -31575,6 +31575,12 @@
           <l>autant<b/>que<s n="adv"/></l>
           <r>tant<b/>com<s n="adv"/></r>
         </p>
+      </e> 
+      <e>
+        <p>
+          <l>en<b/>cours<s n="adv"/></l>
+          <r>en<b/>curs<s n="adv"/></r>
+        </p>
       </e>
       <e>
         <p>
@@ -38818,7 +38824,7 @@
           <r>el<b/>seu<s n="det"/><s n="pos"/><s n="GD"/></r>
         </p>
       </e>
-       <e>
+      <e>
         <p>
           <l>mon<s n="det"/><s n="pos"/><s n="m"/><s n="sg"/></l>
           <r>el<b/>meu<s n="det"/><s n="pos"/><s n="m"/><s n="sg"/></r>
@@ -39031,24 +39037,13 @@
           <r>el<b/>seu<s n="det"/><s n="pos"/><s n="f"/><s n="sg"/></r>
         </p>
       </e>
-      <e>
+       <e>
         <p>
           <l>son<s n="det"/><s n="pos"/><s n="m"/><s n="sg"/></l>
           <r>el<b/>seu<s n="det"/><s n="pos"/><s n="m"/><s n="sg"/></r>
         </p>
       </e>
-      <e>
-        <p>
-          <l>ton<s n="det"/><s n="pos"/><s n="m"/><s n="sg"/></l>
-          <r>el<b/>teu<s n="det"/><s n="pos"/><s n="m"/><s n="sg"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ton<s n="det"/><s n="pos"/><s n="f"/><s n="sg"/></l>
-          <r>el<b/>teu<s n="det"/><s n="pos"/><s n="f"/><s n="sg"/></r>
-        </p>
-      </e>
+     
       <e r="LR">
         <p>
           <l>ton<s n="det"/><s n="pos"/><s n="mf"/><s n="pl"/></l>
@@ -39065,6 +39060,18 @@
         <p>
           <l>ton<s n="det"/><s n="pos"/><s n="mf"/><s n="pl"/></l>
           <r>el<b/>teu<s n="det"/><s n="pos"/><s n="m"/><s n="pl"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ton<s n="det"/><s n="pos"/><s n="f"/><s n="sg"/></l>
+          <r>el<b/>teu<s n="det"/><s n="pos"/><s n="f"/><s n="sg"/></r>
+        </p>
+      </e>
+       <e>
+        <p>
+          <l>ton<s n="det"/><s n="pos"/><s n="m"/><s n="sg"/></l>
+          <r>el<b/>teu<s n="det"/><s n="pos"/><s n="m"/><s n="sg"/></r>
         </p>
       </e>
       <e>
@@ -39625,6 +39632,13 @@
         </p>
       </e> 
       
+      <e r="LR">
+        <p>
+          <l>est-ce<b/>que<s n="prn"/></l>
+          <r>què<s n="prn"/></r>
+        </p>
+      </e> 
+      
       <e r="RL">
         <p>
           <l>à<b/>quoi<b/>est-ce<b/>que<s n="prn"/></l>
@@ -39654,7 +39668,10 @@
       </e>
       
       <e r="LR">
-        <i>qui<s n="prn"/></i>
+        <p>
+          <l>qui<s n="prn"/></l>
+          <r>qui<s n="prn"/></r>
+        </p>
       </e>
       
       <e>
@@ -39813,6 +39830,18 @@
       <e r="RL">
         <i>qui<s n="rel"/></i>
       </e>
+      <e>
+        <p>
+	  <l>celui<b/>qui<s n="rel"/></l>
+	  <r>el<b/>que<s n="rel"/></r>
+	</p>
+      </e>
+      <e r="LR">
+        <p>
+	  <l>celui<b/>que<s n="rel"/></l>
+	  <r>el<b/>que<s n="rel"/></r>
+	</p>
+      </e>	  
       <e>
         <p>
           <l>bien<b/>que<s n="cnjadv"/></l>
@@ -44220,6 +44249,9 @@
       <i>Soto<s n="np"/></i>
     </e>
     <e>
+      <i>Pas<b/>de<b/>la<b/>Casa<s n="np"/></i>
+    </e> 
+    <e>
       <i>Stones<s n="np"/></i>
     </e>
     <e>
@@ -45780,6 +45812,19 @@
   <p>
     <l>Charles<s n="np"/></l>
     <r>Charles<s n="np"/></r>
+  </p>
+</e>
+
+<e>
+  <p>
+    <l>à<b/>propos<b/>de<s n="pr"/></l>
+    <r>en<b/>el<b/>cas<b/>de<s n="pr"/></r>
+  </p>
+</e>
+<e>
+  <p>
+    <l>en<b/>cas<b/>de<s n="pr"/></l>
+    <r>en<b/>cas<b/>de<s n="pr"/></r>
   </p>
 </e>
 <e a="gema">
