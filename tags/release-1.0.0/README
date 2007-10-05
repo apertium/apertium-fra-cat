@@ -1,0 +1,28 @@
+TRANSLATOR
+
+You need apertium and lttoolbox, versions 3.0, to use
+this language-pair package with Apertium.  To compile the linguistic
+data simply do:
+
+$ ./configure
+
+to generate a Makefile file and then
+
+$ make
+
+inside of this directory.
+
+TAGGER 
+
+To use this language-pair package with Apertium YOU DO NOT NEED TO
+RETRAIN THE TAGGER. Probabilities and auxiliary data are provided for
+both the fr-ca and the ca-fr translation directions which should be
+acceptable for most applications, and should work even if you change
+the dictionaries in a reasonably way.
+
+If for some reason you need to retrain the tagger (for example, you
+have made really extensive changes to the dictionaries such as
+creating new lexical categories), please see the documentation on
+our wiki at:
+
+  http://xixona.dlsi.ua.es/wiki/index.php/Tagger_training
