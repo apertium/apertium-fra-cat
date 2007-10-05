@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <modes>
-  <mode name="ca-fr">
+  <mode name="ca-fr" install="yes">
     <pipeline>
       <program name="lt-proc">
         <file name="ca-fr.automorf.bin"/>
@@ -23,7 +23,7 @@
     </pipeline>
   </mode>
   
-  <mode name="fr-ca">
+  <mode name="fr-ca" install="yes">
     <pipeline>
       <program name="lt-proc">
         <file name="fr-ca.automorf.bin"/>
