@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-15"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- -*- nxml -*- -->
 <transfer>
 
@@ -398,24 +398,24 @@
   
     <def-list n="mois">
       <list-item v="janvier"/>
-      <list-item v="février"/>
+      <list-item v="fÃ©vrier"/>
       <list-item v="mars"/>
       <list-item v="avril"/>
       <list-item v="mai"/>
       <list-item v="juin"/>
       <list-item v="juillet"/>
-      <list-item v="août"/>
+      <list-item v="aoÃ»t"/>
       <list-item v="septembre"/>
       <list-item v="octobre"/>
       <list-item v="novembre"/>
-      <list-item v="décembre"/>
+      <list-item v="dÃ©cembre"/>
     </def-list>
     <def-list n="vbestat">
       <list-item v="aller"/>
       <list-item v="venir"/>
       <list-item v="arriver"/>
       <list-item v="partir"/>
-      <list-item v="naître"/>
+      <list-item v="naÃ®tre"/>
       <list-item v="mourir"/>
       <list-item v="descendre"/>
       <list-item v="monter"/>
@@ -433,7 +433,7 @@
   <section-def-macros>
   
     <def-macro n="f_bcond" npar="1">
-<!--Para mirar si el blanco contiene o no formato, y enviarlo sólo si tiene formato (para reglas en las que se elimine una o más palabras) -->
+<!--Para mirar si el blanco contiene o no formato, y enviarlo sÃ³lo si tiene formato (para reglas en las que se elimine una o mÃ¡s palabras) -->
       <choose>
         <when>
           <test>
@@ -453,7 +453,7 @@
     
      
     <def-macro n="test_pr_i_verb" npar="2">
-<!--Para comprobar según la preposición y el verbo, qué traducción hay que enviar -->
+<!--Para comprobar segÃºn la preposiciÃ³n y el verbo, quÃ© traducciÃ³n hay que enviar -->
       <choose>
         <when>
           <test>
@@ -2422,7 +2422,7 @@
   </section-def-macros>
   
   <section-rules>
-<!--regles de concordança-->
+<!--regles de concordanÃ§a-->
     <rule>
 <!-- REGLA: DETERMINANT -->
       <pattern>
@@ -3320,7 +3320,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     <rule>
-<!-- REGLA: DET NOM DET ADVERBI ADJECTIU: la fille la plus jolie : la noia més maca -->
+<!-- REGLA: DET NOM DET ADVERBI ADJECTIU: la fille la plus jolie : la noia mÃ©s maca -->
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="nom"/>
@@ -3357,7 +3357,7 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
       </action>
     </rule>
-<!--fi regles de concordança-->
+<!--fi regles de concordanÃ§a-->
 <!--regles per a eliminar el partitiu-->
     <rule>
 <!-- REGLA: SENT PREP DET NOM (sent Des enfants : sent Alguns xiquets) -->
@@ -3429,7 +3429,7 @@ is not applicable because gender and number cannot be taken from previous rules 
 	      <and>
 	        <equal>
 	       	   <clip pos="1" side="sl" part="lem"/>
-		   <lit v="être"/>
+		   <lit v="Ãªtre"/>
 	        </equal> 
 		<equal>
 	           <clip pos="3" side="sl" part="temps"/>
@@ -3486,7 +3486,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     <rule>
-<!-- REGLA: verb +  VERB PREP DET (aller avoir des: tindrà)-->
+<!-- REGLA: verb +  VERB PREP DET (aller avoir des: tindrÃ )-->
       <pattern> 
         <pattern-item n="verb"/>
         <pattern-item n="verb"/>
@@ -3565,7 +3565,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
 
     <rule>
-<!-- REGLA: verb de + VERB que PREP DET (venir d'avoir que des: acabar de tenir més que)-->
+<!-- REGLA: verb de + VERB que PREP DET (venir d'avoir que des: acabar de tenir mÃ©s que)-->
       <pattern>
         <pattern-item n="verb"/>
         <pattern-item n="prep"/>	
@@ -3585,7 +3585,7 @@ is not applicable because gender and number cannot be taken from previous rules 
 	      <and>
 	        <equal>
 	       	   <clip pos="1" side="sl" part="lem"/>
-		   <lit v="être"/>
+		   <lit v="Ãªtre"/>
 	        </equal> 
 		<equal>
 	           <clip pos="3" side="sl" part="temps"/>
@@ -3611,7 +3611,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
           <b pos="3"/>
           <lu>
-            <lit v="més"/>
+            <lit v="mÃ©s"/>
             <lit-tag v="adv"/>
           </lu>
           <b/>
@@ -3646,7 +3646,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
           <b pos="3"/>
           <lu>
-            <lit v="més"/>
+            <lit v="mÃ©s"/>
             <lit-tag v="adv"/>
           </lu>
           <b/>
@@ -3661,7 +3661,7 @@ is not applicable because gender and number cannot be taken from previous rules 
 
     
     <rule>
-<!-- REGLA: verb + VERB que PREP DET (aller avoir que des: tenir més que)-->
+<!-- REGLA: verb + VERB que PREP DET (aller avoir que des: tenir mÃ©s que)-->
       <pattern>
         <pattern-item n="verb"/>
         <pattern-item n="verb"/>
@@ -3696,7 +3696,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
           <b pos="2"/>
           <lu>
-            <lit v="més"/>
+            <lit v="mÃ©s"/>
             <lit-tag v="adv"/>
           </lu>
           <b/>
@@ -3727,7 +3727,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
           <b pos="2"/>
           <lu>
-            <lit v="més"/>
+            <lit v="mÃ©s"/>
             <lit-tag v="adv"/>
           </lu>
           <b/>
@@ -3741,7 +3741,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     <rule>
-<!-- REGLA:VERB que PREP DET (avoir que des: tenir més que)-->
+<!-- REGLA:VERB que PREP DET (avoir que des: tenir mÃ©s que)-->
       <pattern>
         <pattern-item n="verb"/>
         <pattern-item n="que"/>
@@ -3761,7 +3761,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
           <b pos="1"/>
           <lu>
-            <lit v="més"/>
+            <lit v="mÃ©s"/>
             <lit-tag v="adv"/>
           </lu>
           <b/>
@@ -3794,7 +3794,7 @@ is not applicable because gender and number cannot be taken from previous rules 
 	      <and>
 	        <equal>
 	       	   <clip pos="1" side="sl" part="lem"/>
-		   <lit v="être"/>
+		   <lit v="Ãªtre"/>
 	        </equal> 
 		<equal>
 	           <clip pos="3" side="sl" part="temps"/>
@@ -3983,7 +3983,7 @@ is not applicable because gender and number cannot be taken from previous rules 
 	      <and>
 	        <equal>
 	       	   <clip pos="1" side="sl" part="lem"/>
-		   <lit v="être"/>
+		   <lit v="Ãªtre"/>
 	        </equal> 
 		<equal>
 	           <clip pos="3" side="sl" part="temps"/>
@@ -4266,7 +4266,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
           <b pos="2"/>
           <lu>
-            <lit v="més"/>
+            <lit v="mÃ©s"/>
             <lit-tag v="adv"/>
           </lu>
           <b pos="3"/>
@@ -4443,7 +4443,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
  <rule>
-<!-- REGLA:PRN verb + VERB PREP DET je vais faire des voyages: faré viatges -->
+<!-- REGLA:PRN verb + VERB PREP DET je vais faire des voyages: farÃ© viatges -->
       <pattern>
         <pattern-item n="prnsubj"/>
 	<pattern-item n="verb"/>
@@ -4503,7 +4503,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     
     
     <rule>
-<!-- REGLA:PRN NEADV verb + VERB que PREP DET je ne vais faire que des voyages: no faré més que viatges-->
+<!-- REGLA:PRN NEADV verb + VERB que PREP DET je ne vais faire que des voyages: no farÃ© mÃ©s que viatges-->
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="neadv"/>
@@ -4547,7 +4547,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
           <b pos="4"/>
           <lu>
-            <lit v="més"/>
+            <lit v="mÃ©s"/>
             <lit-tag v="adv"/>
           </lu>
           <b/>
@@ -4585,7 +4585,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
           <b pos="4"/>
           <lu>
-            <lit v="més"/>
+            <lit v="mÃ©s"/>
             <lit-tag v="adv"/>
           </lu>
           <b/>
@@ -5102,7 +5102,7 @@ is not applicable because gender and number cannot be taken from previous rules 
 	      <and>
 	        <equal>
 	       	   <clip pos="2" side="sl" part="lem"/>
-		   <lit v="être"/>
+		   <lit v="Ãªtre"/>
 	        </equal> 
 		<equal>
 	           <clip pos="4" side="sl" part="temps"/>
@@ -5160,7 +5160,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     
     
     <rule>
-<!-- REGLA:PRN NEADV verb + de + VERB que PREP DET je ne viens de faire que des voyages: no acabe de fer més que viatges-->
+<!-- REGLA:PRN NEADV verb + de + VERB que PREP DET je ne viens de faire que des voyages: no acabe de fer mÃ©s que viatges-->
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="neadv"/>
@@ -5182,7 +5182,7 @@ is not applicable because gender and number cannot be taken from previous rules 
 	      <and>
 	        <equal>
 	       	   <clip pos="3" side="sl" part="lem"/>
-		   <lit v="être"/>
+		   <lit v="Ãªtre"/>
 	        </equal> 
 		<equal>
 	           <clip pos="5" side="sl" part="temps"/>
@@ -5215,7 +5215,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
           <b pos="5"/>
           <lu>
-            <lit v="més"/>
+            <lit v="mÃ©s"/>
             <lit-tag v="adv"/>
           </lu>
           <b/>
@@ -5257,7 +5257,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
           <b pos="5"/>
           <lu>
-            <lit v="més"/>
+            <lit v="mÃ©s"/>
             <lit-tag v="adv"/>
           </lu>
           <b/>
@@ -5293,7 +5293,7 @@ is not applicable because gender and number cannot be taken from previous rules 
 	      <and>
 	        <equal>
 	       	   <clip pos="3" side="sl" part="lem"/>
-		   <lit v="être"/>
+		   <lit v="Ãªtre"/>
 	        </equal> 
 		<equal>
 	           <clip pos="6" side="sl" part="temps"/>
@@ -5388,7 +5388,7 @@ is not applicable because gender and number cannot be taken from previous rules 
 	      <and>
 	        <equal>
 	       	   <clip pos="3" side="sl" part="lem"/>
-		   <lit v="être"/>
+		   <lit v="Ãªtre"/>
 	        </equal> 
 		<equal>
 	           <clip pos="6" side="sl" part="temps"/>
@@ -5490,7 +5490,7 @@ is not applicable because gender and number cannot be taken from previous rules 
 	      <and>
 	        <equal>
 	       	   <clip pos="3" side="sl" part="lem"/>
-		   <lit v="être"/>
+		   <lit v="Ãªtre"/>
 	        </equal> 
 		<equal>
 	           <clip pos="7" side="sl" part="temps"/>
@@ -5595,7 +5595,7 @@ is not applicable because gender and number cannot be taken from previous rules 
 	      <and>
 	        <equal>
 	       	   <clip pos="2" side="sl" part="lem"/>
-		   <lit v="être"/>
+		   <lit v="Ãªtre"/>
 	        </equal> 
 		<equal>
 	           <clip pos="4" side="sl" part="temps"/>
@@ -5681,7 +5681,7 @@ is not applicable because gender and number cannot be taken from previous rules 
 	      <and>
 	        <equal>
 	       	   <clip pos="3" side="sl" part="lem"/>
-		   <lit v="être"/>
+		   <lit v="Ãªtre"/>
 	        </equal> 
 		<equal>
 	           <clip pos="5" side="sl" part="temps"/>
@@ -5774,7 +5774,7 @@ is not applicable because gender and number cannot be taken from previous rules 
 	      <and>
 	        <equal>
 	       	   <clip pos="2" side="sl" part="lem"/>
-		   <lit v="être"/>
+		   <lit v="Ãªtre"/>
 	        </equal> 
 		<equal>
 	           <clip pos="4" side="sl" part="temps"/>
@@ -5849,7 +5849,7 @@ is not applicable because gender and number cannot be taken from previous rules 
    
 <!--fi regles per a eliminar el partitiu-->
 <!--<rule>
- REGLA: Passé composé/perifràstic -->
+ REGLA: PassÃ© composÃ©/perifrÃ stic -->
 <!-- Per traduir "ai fait" per "vaig fer" 
       <pattern>
 	<pattern-item n="pascomp"/>
@@ -5879,7 +5879,7 @@ is not applicable because gender and number cannot be taken from previous rules 
 
 
    <rule> 
-   REGLA: Passé composé/perifràstic -->
+   REGLA: PassÃ© composÃ©/perifrÃ stic -->
 <!-- Per traduir "ai fait" per "vaig fer" 
       <pattern>
 	<pattern-item n="pascomp"/>
@@ -5914,7 +5914,7 @@ is not applicable because gender and number cannot be taken from previous rules 
 
 
    <rule>
-   REGLA: Passé composé/perifràstic -->
+   REGLA: PassÃ© composÃ©/perifrÃ stic -->
 <!-- Per traduir "ai fait" per "vaig fer" 
       <pattern>
 	<pattern-item n="pascomp"/>
@@ -6289,7 +6289,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     <rule>
-<!--REGLA: PRN ADV VERB QUE (il ne mange que: no menja més que)-->
+<!--REGLA: PRN ADV VERB QUE (il ne mange que: no menja mÃ©s que)-->
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="neadv"/>
@@ -6316,7 +6316,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
           <b pos="2"/>
           <lu>
-            <lit v="més"/>
+            <lit v="mÃ©s"/>
             <lit-tag v="adv"/>
           </lu>
           <b/>
@@ -6406,7 +6406,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     <rule>
-<!--REGLA: PRN ADV PRN VERB QUE (il ne lui dit que: no li diu més que)-->
+<!--REGLA: PRN ADV PRN VERB QUE (il ne lui dit que: no li diu mÃ©s que)-->
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="neadv"/>
@@ -6441,7 +6441,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
           <b pos="3"/>
           <lu>
-            <lit v="més"/>
+            <lit v="mÃ©s"/>
             <lit-tag v="adv"/>
           </lu>
           <b/>
@@ -6586,7 +6586,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     <rule>
-<!--REGLA: VERB (per a multiparaules sense enclítics)-->
+<!--REGLA: VERB (per a multiparaules sense enclÃ­tics)-->
       <pattern>
         <pattern-item n="verb"/>
       </pattern>
@@ -6606,7 +6606,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     <rule>
-<!--REGLA: VERB-PRONOM(suis-je: sóc)-->
+<!--REGLA: VERB-PRONOM(suis-je: sÃ³c)-->
       <pattern>
         <pattern-item n="verb"/>
         <pattern-item n="prnsubj"/>
@@ -6627,7 +6627,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     <rule>
-<!--REGLA: VERBSER-PRONOM(suis-je: sóc)-->
+<!--REGLA: VERBSER-PRONOM(suis-je: sÃ³c)-->
       <pattern>
         <pattern-item n="vbser"/>
         <pattern-item n="prnsubj"/>
@@ -6688,7 +6688,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     <rule>
-<!--REGLA: VERB + ENCLÍTIC -->
+<!--REGLA: VERB + ENCLÃTIC -->
       <pattern>
         <pattern-item n="verb"/>
         <pattern-item n="prnenc"/>
@@ -6719,7 +6719,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 <!--
-<rule> REGLA: VERB + ENCLÍTIC + ENCLÍTIC
+<rule> REGLA: VERB + ENCLÃTIC + ENCLÃTIC
       <pattern>
 	<pattern-item n="verb"/>
 	<pattern-item n="prnenc"/>
@@ -6756,7 +6756,7 @@ is not applicable because gender and number cannot be taken from previous rules 
 </rule>
 -->
     <rule>
-<!--REGLA:  être en train de= estar ger -->
+<!--REGLA:  Ãªtre en train de= estar ger -->
       <pattern>
         <pattern-item n="vbser"/>
         <pattern-item n="enprep"/>
@@ -6897,14 +6897,14 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     <rule>
-<!-- Verbs pronominals en francès i no pronominals en català. Los pronombres enclíticos (pospuestos) se eliminan a través del diccionario catalán -->
+<!-- Verbs pronominals en francÃšs i no pronominals en catalÃ . Los pronombres enclÃ­ticos (pospuestos) se eliminan a travÃ©s del diccionario catalÃ¡n -->
       <pattern>
         <pattern-item n="prnproref"/>
         <pattern-item n="verbospron"/>
       </pattern>
       <action>
         <choose>
-<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+<!--Si la persona del pronombre y el verbo concuerdan, no envÃ­es el pronombre -->
           <when>
             <test>
               <or>
@@ -6914,7 +6914,7 @@ is not applicable because gender and number cannot be taken from previous rules 
                 </equal>
                 <and>
                   <equal>
-<!--Trampeta: perquè de vegades el tagger s'equivoca amb el gènere de "caía" (p1 o p3) -->
+<!--Trampeta: perquÃš de vegades el tagger s'equivoca amb el gÃšnere de "caÃ­a" (p1 o p3) -->
                     <clip pos="1" side="sl" part="persona"/>
                     <lit-tag v="p3"/>
                   </equal>
@@ -6926,12 +6926,12 @@ is not applicable because gender and number cannot be taken from previous rules 
               </or>
             </test>
             <call-macro n="f_bcond">
-<!--Envía el blanco sólo si tiene formato -->
+<!--EnvÃ­a el blanco sÃ³lo si tiene formato -->
               <with-param pos="1"/>
             </call-macro>
           </when>
           <otherwise>
-<!--Si no concuerdan el pronombre y el verbo, envíalo todo -->
+<!--Si no concuerdan el pronombre y el verbo, envÃ­alo todo -->
             <out>
               <lu>
                 <clip pos="1" side="tl" part="whole"/>
@@ -6944,7 +6944,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     <rule>
-<!-- Verbs pronominals en francés i no pronominals en català. Temps compostos-->
+<!-- Verbs pronominals en francÃ©s i no pronominals en catalÃ . Temps compostos-->
       <pattern>
         <pattern-item n="prnproref"/>
         <pattern-item n="pascomp"/>
@@ -6953,7 +6953,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       <action>
         <choose>
           <when>
-<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+<!--Si la persona del pronombre y el verbo concuerdan, no envÃ­es el pronombre -->
             <test>
               <or>
                 <equal>
@@ -6962,7 +6962,7 @@ is not applicable because gender and number cannot be taken from previous rules 
                 </equal>
                 <and>
                   <equal>
-<!--Trampeta: perquè de vegades el tagger s'equivoca amb el gènere de "había" (p1 o p3) -->
+<!--Trampeta: perquÃš de vegades el tagger s'equivoca amb el gÃšnere de "habÃ­a" (p1 o p3) -->
                     <clip pos="1" side="sl" part="persona"/>
                     <lit-tag v="p3"/>
                   </equal>
@@ -6980,7 +6980,7 @@ is not applicable because gender and number cannot be taken from previous rules 
               <lu>
                 <clip pos="2" side="tl" part="lem"/>
                 <lit-tag v="vaux"/>
-<!--Para que traduzca "haber" como auxiliar (lo mismo que hace la regla HABER 3ª persona -->
+<!--Para que traduzca "haber" como auxiliar (lo mismo que hace la regla HABER 3Âª persona -->
                 <clip pos="2" side="tl" part="temps"/>
                 <clip pos="2" side="tl" part="persona"/>
                 <clip pos="2" side="tl" part="nbr"/>
@@ -6997,7 +6997,7 @@ is not applicable because gender and number cannot be taken from previous rules 
             </out>
           </when>
           <otherwise>
-<!--Si no concuerdan el pronombre y el verbo, envíalo todo -->
+<!--Si no concuerdan el pronombre y el verbo, envÃ­alo todo -->
             <out>
               <lu>
                 <clip pos="1" side="tl" part="whole"/>
@@ -7028,7 +7028,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     <rule>
-<!--REGLA: prep "en" + nploc = a + nploc: en France -> a França -->
+<!--REGLA: prep "en" + nploc = a + nploc: en France -> a FranÃ§a -->
       <pattern>
         <pattern-item n="en"/>
         <pattern-item n="nploc"/>
@@ -7086,7 +7086,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     <rule>
-<!-- REGLA: autant/moins/plus de NOM que de: tants/menys/més NOM com/que-->
+<!-- REGLA: autant/moins/plus de NOM que de: tants/menys/mÃ©s NOM com/que-->
       <pattern>
         <pattern-item n="adv"/>
         <pattern-item n="deprep"/>
@@ -7144,7 +7144,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     <rule>
-<!-- REGLA: autant/moins/plus de NOM que: tants/menys/més NOM com/que-->
+<!-- REGLA: autant/moins/plus de NOM que: tants/menys/mÃ©s NOM com/que-->
       <pattern>
         <pattern-item n="adv"/>
         <pattern-item n="deprep"/>
@@ -7231,7 +7231,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     <rule>
-<!-- REGLA: autant/menys/més de ADJ que de: tants/menys/més ADJ com/que-->
+<!-- REGLA: autant/menys/mÃ©s de ADJ que de: tants/menys/mÃ©s ADJ com/que-->
       <pattern>
         <pattern-item n="adv"/>
         <pattern-item n="deprep"/>
@@ -7289,7 +7289,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     <rule>
-<!-- REGLA: autant/menys/més de ADJ que: tants/menys/més ADJ com/que-->
+<!-- REGLA: autant/menys/mÃ©s de ADJ que: tants/menys/mÃ©s ADJ com/que-->
       <pattern>
         <pattern-item n="adv"/>
         <pattern-item n="deprep"/>

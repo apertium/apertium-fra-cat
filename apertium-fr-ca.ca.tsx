@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <tagger name="catalan">
 <tagset>
   <def-label name="QUECNJ" closed="true">
@@ -1488,7 +1488,7 @@
       <label-item label="MOLTPREADV"/>
       <label-item label="SENT"/>
     </label-sequence>
-    <label-sequence><!--Afegides les 3 següents 30/11/05 MG -->
+    <label-sequence><!--Afegides les 3 segÃ¼ents 30/11/05 MG -->
       <label-item label="INTNOM"/>
       <label-item label="NOMF"/>
     </label-sequence>

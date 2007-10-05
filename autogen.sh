@@ -1,6 +1,6 @@
 #! /bin/sh
 
-# $Id: autogen.sh,v 1.1 2006/07/13 11:06:16 sortiz Exp $
+# $Id: autogen.sh,v 1.1 2006/10/06 09:25:33 sortiz Exp $
 #
 # Copyright (c) 2002  Daniel Elstner  <daniel.elstner@gmx.net>
 #
