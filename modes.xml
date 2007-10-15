@@ -14,7 +14,7 @@
         <file name="trules-ca-fr.bin"/>
         <file name="ca-fr.autobil.bin"/>
       </program>
-      <program name="lt-proc -g">
+      <program name="lt-proc $1">
         <file name="ca-fr.autogen.bin"/>
       </program>
       <program name="lt-proc -p">
@@ -37,7 +37,7 @@
         <file name="trules-fr-ca.bin"/>
         <file name="fr-ca.autobil.bin"/>
       </program>
-      <program name="lt-proc -g">
+      <program name="lt-proc $1">
         <file name="fr-ca.autogen.bin"/>
       </program>
       <program name="lt-proc -p">

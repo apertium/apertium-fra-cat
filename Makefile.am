@@ -103,4 +103,4 @@ install-data-local:
 	$(INSTALL_DATA) $(PREFIX2).mode $(apertium_fr_modesdir)
 	$(INSTALL_DATA) $(BASENAME).trules-$(PREFIX2).xml $(BASENAME).trules-$(PREFIX1).xml $(apertium_fr_cadir)
 
-CLEANFILES = -rf $(TARGETS) modes
+CLEANFILES = -rf $(TARGETS) modes $(BASENAME).$(LANG1).dix
