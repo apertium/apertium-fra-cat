@@ -68589,7 +68589,7 @@
       </e> 
       
       <e lm="en cas de">
-        <i>à<b/>cas<b/></i>
+        <i>en<b/>cas<b/></i>
         <par n="contde__pr"/>
       </e>
        
@@ -77194,10 +77194,6 @@
   <i>front</i>
   <par n="livre__n"/>
 </e>
-<e lm="mondial" a="gema">
-  <i>mondial</i>
-  <par n="abaissant__adj"/>
-</e>
 <e lm="FN" a="gema">
   <i>FN</i>
   <par n="BBVA__n"/>
@@ -78863,7 +78859,7 @@
   <i>acti</i>
   <par n="affirmati/f__adj"/>
 </e>
-<e lm="délai" a="gema">
+<e lm="délai" a="gema" r="LR">
   <i>délai</i>
   <par n="livre__n"/>
 </e>
@@ -79252,7 +79248,7 @@
   <i>réalisat</i>
   <par n="administrat/eur__n"/>
 </e>
-<e lm="règlement" a="u21941">
+<e lm="règlement" a="u21941" r="LR">
   <i>règlement</i>
   <par n="livre__n"/>
 </e>
@@ -81337,7 +81333,7 @@
 
 <e lm="sévir" a="ariel">
         <i>sév</i>
-        <par n="about/[]ir__vblex__"/>
+        <par n="about/[]ir__vblex" prm=""/>
       </e>
 
 
@@ -81665,7 +81661,7 @@
       </e>
 
 
-<e lm="neigeux">
+<e lm="neigeux" a="ariel">
   <i>neigeu</i>
   <par n="affectueu/x__adj"/>
 </e>
@@ -81673,7 +81669,7 @@
 
 <e lm="persistir" a="ariel">
         <i>persist</i>
-        <par n="about/[]ir__vblex__"/>
+        <par n="about/[]ir__vblex" prm=""/>
       </e>
 
 
@@ -81731,8 +81727,8 @@
       </e>
 
 
-<e lm="a l’unanimité" a="ariel">
-        <i>a<b/>l’unanimité</i>
+<e lm="à l’unanimité" a="ariel">
+        <i>à<b/>l'unanimité</i>
         <par n="hier__adv"/>
       </e>
 
@@ -81905,8 +81901,8 @@
 
 
 <e lm="approfondir" a="ariel">
-   <i>approfondi</i>
- <par n="about/[]ir__vblex__"/>
+   <i>approfond</i>
+ <par n="about/[]ir__vblex" prm=""/>
       </e>
 
 
@@ -81972,13 +81968,13 @@
 
 <e lm="méthane" a="ariel">
         <i>méthane</i>
-        <par n="mois__n"/>
+        <par n="personnel__n"/>
       </e>
 
 
 <e lm="ozone" a="ariel">
         <i>ozone</i>
-        <par n="mois__n"/>
+        <par n="personnel__n"/>
       </e>
 
 
@@ -82079,7 +82075,7 @@
 
 <e lm="azote" a="ariel">
         <i>azote</i>
-        <par n="mois__n"/>
+        <par n="personnel__n"/>
       </e>
 
 
@@ -82146,6 +82142,12 @@
 <e lm="dégradation" a="ariel">
         <i>dégradation</i>
         <par n="abeille__n"/>
+      </e>
+
+
+<e lm="arrangement" a="ariel">
+        <i>arrangement</i>
+        <par n="livre__n"/>
       </e>
 
 
@@ -82304,6 +82306,10 @@
         <par n="académique__adj"/>
       </e>
 
+<e lm="alarmiste" a="ariel">
+        <i>alarmiste</i>
+        <par n="artiste__n"/>
+      </e>
 
 <e lm="intégrer" a="ariel">
     <i>int</i>
@@ -82318,7 +82324,7 @@
 
 
 <e lm="encouragement" a="ariel">
-        <i>frein</i>
+        <i>encouragement</i>
         <par n="livre__n"/>
       </e>
 
@@ -82371,7 +82377,7 @@
       </e>
 
 	
-<e lm="amenuiser" a="ariel">
+<e lm="amenuiser" a="ariel" r="LR">
     <i>amenuis</i>
      <par n="abaiss/er__vblex"/>
       </e>
@@ -82409,12 +82415,12 @@
 
 <e lm="amendement" a="ariel">
         <i>amendement</i>
-        <par n="abeille__n"/>
+        <par n="livre__n"/>
       </e>
 
 
 <e lm="industrialisé" a="ariel">
-        <i>industrializé</i>
+        <i>industrialisé</i>
         <par n="abaissant__adj"/>
       </e>
 
@@ -82571,7 +82577,7 @@
 
 <e lm="conjoint">
   <i>conjoint</i>
-  <par n="académique__adj"/>
+  <par n="abaissant__adj"/>
 </e>
 
 
@@ -82630,7 +82636,7 @@
 
 
 <e lm="troc" a="ariel">
-        <i>déréglement</i>
+        <i>troc</i>
         <par n="livre__n"/>
       </e>
 
@@ -82768,14 +82774,14 @@
 
 	
 <e lm="émettre" a="ariel">
-    <i>é</i>
+    <i>ém</i>
      <par n="adm/ettre__vblex"/>
       </e>
 
 	
 <e lm="revendre" a="ariel">
-    <i>rev</i>
-     <par n="adm/ettre__vblex"/>
+    <i>revend</i>
+     <par n="attend/re__vblex"/>
       </e>
 
 	
@@ -82810,7 +82816,7 @@
 
 
 <e lm="écueil" a="ariel">
-        <i>écuei</i>
+        <i>écueil</i>
         <par n="livre__n"/>
       </e>
 
@@ -82939,12 +82945,6 @@
      <par n="abaiss/er__vblex"/>
       </e>
 
-	
-<e lm="gisement" a="ariel">
-        <i>gisement</i>
-        <par n="livre__n"/>
-      </e>
-
 
 <e lm="impasse" a="ariel">
         <i>impasse</i>
@@ -83013,7 +83013,7 @@
 
 
 <e lm="incitation" a="ariel">
-        <i>régulation</i>
+        <i>incitation</i>
         <par n="abeille__n"/>
       </e>
 
@@ -83198,7 +83198,7 @@
       </e>
 
 
-<e lm="influer" a="ariel">
+<e lm="influer" a="ariel" r="LR">
      <i>influ</i>
      <par n="abaiss/er__vblex"/>
       </e>
@@ -83244,13 +83244,6 @@
         <i>isolation</i>
         <par n="abeille__n"/>
       </e>
-
-
-<e lm="isolément" a="ariel">
-        <i>isolément</i>
-        <par n="livre__n"/>
-      </e>
-
 
 <e lm="comptitivité" a="ariel">
         <i>competitivité</i>
@@ -83944,14 +83937,14 @@
 	</p>
       </e>
       
-       <e lm="à propos de">
+       <e lm="à propos de" r="LR">
        <p>
         <l>à<b/>propos<b/>d'</l>
 	<r>à<b/>propos<b/>de<s n="pr"/></r>
        </p>
       </e> 
       
-      <e lm="en cas de">
+      <e lm="en cas de" r="LR">
       <p>
         <l>en<b/>cas<b/>d'</l>
 	<r>en<b/>cas<b/>de<s n="pr"/></r>

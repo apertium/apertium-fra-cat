@@ -39556,12 +39556,7 @@
           <r>li<s n="prn"/><s n="pro"/><s n="p3"/><s n="mf"/><s n="sg"/></r>
         </p>
       </e>
-      <e r="LR">
-        <p>
-          <l>n'importe<b/>qui<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></l>
-          <r>qualsevol<s n="prn"/><s n="tn"/><s n="mf"/><s n="ND"/></r>
-        </p>
-      </e>
+     
       <e r="RL">
         <p>
           <l>n'importe<b/>qui<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></l>
@@ -39584,7 +39579,7 @@
       <e r="LR">
         <p>
           <l>n'importe<b/>qui<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></l>
-          <r>hom<s n="prn"/><s n="tn"/><s n="mf"/><s n="ND"/></r>
+          <r>hom<s n="prn"/><s n="pro"/><s n="ref"/><s n="p3"/><s n="mf"/><s n="sp"/></r>
         </p>
       </e>
         
@@ -45712,24 +45707,6 @@
     <r>front<s n="n"/></r>
   </p>
 </e>
-<e a="gema" r="RL">
-  <p>
-    <l>mondial<s n="adj"/><s n="GD"/></l>
-    <r>mundial<s n="adj"/><s n="mf"/></r>
-  </p>
-</e>
-<e a="gema" r="LR">
-  <p>
-    <l>mondial<s n="adj"/><s n="m"/></l>
-    <r>mundial<s n="adj"/><s n="mf"/></r>
-  </p>
-</e>
-<e a="gema" r="LR">
-  <p>
-    <l>mondial<s n="adj"/><s n="f"/></l>
-    <r>mundial<s n="adj"/><s n="mf"/></r>
-  </p>
-</e>
 <e a="gema">
   <p>
     <l>FN<s n="n"/><s n="acr"/></l>
@@ -48291,7 +48268,7 @@
     <r>actiu<s n="adj"/></r>
   </p>
 </e>
-<e a="gema">
+<e a="gema" r="LR">
   <p>
     <l>délai<s n="n"/></l>
     <r>retard<s n="n"/></r>
@@ -48978,7 +48955,7 @@
     <r>realitzador<s n="n"/></r>
   </p>
 </e>
-<e a="u21941">
+<e a="u21941" r="LR">
   <p>
     <l>règlement<s n="n"/></l>
     <r>pagament<s n="n"/></r>
@@ -53065,26 +53042,26 @@
 </e>
 
 
-<e r="RL" a="ariel">
+<e r="LR" a="ariel">
   <p>
-          <l>carbonique<s n="adj"/><s n="GD"/></l>
-          <r>carbònic<s n="adj"/><s n="mf"/></r>
+          <l>carbonique<s n="adj"/><s n="mf"/></l>
+          <r>carbònic<s n="adj"/><s n="GD"/></r>
         </p>
       </e>
 
 
-      <e r="LR">
+      <e r="RL">
         <p>
-          <l>carbonique<s n="adj"/><s n="m"/></l>
-          <r>carbònic<s n="adj"/><s n="mf"/></r>
+          <l>carbonique<s n="adj"/><s n="mf"/></l>
+          <r>carbònic<s n="adj"/><s n="m"/></r>
         </p>
       </e>
 
 
-      <e r="LR">
+      <e r="RL">
         <p>
-          <l>carbonique<s n="adj"/><s n="f"/></l>
-          <r>carbònic<s n="adj"/><s n="mf"/></r>
+          <l>carbonique<s n="adj"/><s n="mf"/></l>
+          <r>carbònic<s n="adj"/><s n="f"/></r>
         </p>
       </e>
 
@@ -53098,26 +53075,26 @@
 </e>
 
 
-<e r="RL" a="ariel">
+<e r="LR" a="ariel">
   <p>
-          <l>atmosphérique<s n="adj"/><s n="GD"/></l>
-          <r>atmosfèric<s n="adj"/><s n="mf"/></r>
+          <l>atmosphérique<s n="adj"/><s n="mf"/></l>
+          <r>atmosfèric<s n="adj"/><s n="GD"/></r>
         </p>
       </e>
 
 
-      <e r="LR">
+      <e r="RL">
         <p>
-          <l>atmosphérique<s n="adj"/><s n="m"/></l>
-          <r>atmosfèric<s n="adj"/><s n="mf"/></r>
+          <l>atmosphérique<s n="adj"/><s n="mf"/></l>
+          <r>atmosfèric<s n="adj"/><s n="m"/></r>
         </p>
       </e>
 
 
-      <e r="LR">
+      <e r="RL">
         <p>
-          <l>atmosphérique<s n="adj"/><s n="f"/></l>
-          <r>atmosfèric<s n="adj"/><s n="mf"/></r>
+          <l>atmosphérique<s n="adj"/><s n="mf"/></l>
+          <r>atmosfèric<s n="adj"/><s n="f"/></r>
         </p>
       </e>
 
@@ -53243,12 +53220,30 @@
 </e>
 
 
-<e a="ariel">
-  <p>
-    <l>neigeux<s n="adj"/></l>
-    <r>nevós<s n="adj"/></r>
-  </p>
-</e>
+      <e r="LR" a="ariel">
+        <p>
+          <l>neigeux<s n="adj"/><s n="m"/><s n="sp"/></l>
+          <r>nevós<s n="adj"/><s n="m"/><s n="ND"/></r>
+        </p>
+      </e>
+      <e r="RL" a="ariel">
+        <p>
+          <l>neigeux<s n="adj"/><s n="m"/><s n="sp"/></l>
+          <r>nevós<s n="adj"/><s n="m"/><s n="sg"/></r>
+        </p>
+      </e>
+      <e r="RL" a="ariel">
+        <p>
+          <l>neigeux<s n="adj"/><s n="m"/><s n="sp"/></l>
+          <r>nevós<s n="adj"/><s n="m"/><s n="pl"/></r>
+        </p>
+      </e>
+      <e a="ariel">
+        <p>
+          <l>neigeux<s n="adj"/><s n="f"/></l>
+          <r>nevós<s n="adj"/><s n="f"/></r>
+        </p>
+      </e>
 
 
 <e a="ariel">
@@ -53365,8 +53360,8 @@
 
 <e a="ariel">
      <p>
-        <l>a<b/>l’unanimité<s n="adv"/></l>
-        <r> per<b/>unanimitat<s n="adv"/></r>
+        <l>à<b/>l'unanimité<s n="adv"/></l>
+        <r>per<b/>unanimitat<s n="adv"/></r>
       </p>
  </e>
 
@@ -53726,7 +53721,7 @@
 <e a="ariel">
   <p>
     <l>quantifier<s n="vblex"/></l>
-    <r>resultar<s n="vblex"/></r>
+    <r>quantificar<s n="vblex"/></r>
   </p>
 </e>
 
@@ -53909,16 +53904,16 @@
 
       <e r="RL">
         <p>
-   <l> ultraviolet<s n="adj"/><s n="mf"/></l>
-   <r> ultraviolat<s n="adj"/><s n="m"/></r>
+   <l>ultraviolet<s n="adj"/><s n="mf"/></l>
+   <r>ultraviolat<s n="adj"/><s n="m"/></r>
         </p>
       </e>
 
 
  <e r="RL">
         <p>
-   <l> ultraviolet<s n="adj"/><s n="mf"/></l>
-   <r> ultraviolat<s n="adj"/><s n="f"/></r>
+   <l>ultraviolet<s n="adj"/><s n="mf"/></l>
+   <r>ultraviolat<s n="adj"/><s n="f"/></r>
         </p>
  </e>
 
@@ -54030,7 +54025,7 @@
 <e a="ariel">
         <p>
           <l>carbone<s n="n"/></l>
-          <r>carbó<s n="n"/></r>
+          <r>carboni<s n="n"/></r>
         </p>
       </e>
 
@@ -54067,13 +54062,32 @@
 </e>
 
 
-<e a="ariel">
-  <p>
-    <l>nitreux<s n="adj"/></l>
-    <r>nitrós<s n="adj"/></r>
-  </p>
-</e>
 
+
+  <e r="LR" a="ariel">
+        <p>
+          <l>nitreux<s n="adj"/><s n="m"/><s n="sp"/></l>
+          <r>nitrós<s n="adj"/><s n="m"/><s n="ND"/></r>
+        </p>
+      </e>
+      <e r="RL" a="ariel">
+        <p>
+          <l>nitreux<s n="adj"/><s n="m"/><s n="sp"/></l>
+          <r>nitrós<s n="adj"/><s n="m"/><s n="sg"/></r>
+        </p>
+      </e>
+      <e r="RL" a="ariel">
+        <p>
+          <l>nitreux<s n="adj"/><s n="m"/><s n="sp"/></l>
+          <r>nitrós<s n="adj"/><s n="m"/><s n="pl"/></r>
+        </p>
+      </e>
+      <e a="ariel">
+        <p>
+          <l>nitreux<s n="adj"/><s n="f"/></l>
+          <r>nitrós<s n="adj"/><s n="f"/></r>
+        </p>
+      </e>
 
 <e a="ariel">
         <p>
@@ -54099,13 +54113,24 @@
       </e>
 
 
-<e a="ariel">
-        <p>
-          <l>engrais<s n="n"/></l>
-          <r>adob<s n="n"/></r>
-        </p>
-      </e>
-
+<e a="gema" r="LR">
+  <p>
+    <l>engrais<s n="n"/><s n="m"/><s n="sp"/></l>
+    <r>adob<s n="n"/><s n="m"/><s n="ND"/></r>
+  </p>
+</e>
+<e a="gema" r="RL">
+  <p>
+    <l>engrais<s n="n"/><s n="m"/><s n="sp"/></l>
+    <r>adob<s n="n"/><s n="m"/><s n="pl"/></r>
+  </p>
+</e>
+<e a="gema" r="RL">
+  <p>
+    <l>engrais<s n="n"/><s n="m"/><s n="sp"/></l>
+    <r>adob<s n="n"/><s n="m"/><s n="sg"/></r>
+  </p>
+</e>
 
 <e a="ariel">
         <p>
@@ -54242,6 +54267,17 @@
         </p>
  </e>
 
+
+
+
+ <e a="ariel">
+   <p>
+     <l>paragraphe<s n="n"/></l>
+     <r>paràgraf<s n="n"/></r>
+   </p>
+ </e>
+
+
 <e r="LR" a="ariel">
         <p>
           <l>planétaire<s n="adj"/><s n="mf"/></l>
@@ -54370,10 +54406,25 @@
       </e>
 
 
-<e a="ariel">
+
+
+
+      <e r="LR">
         <p>
-          <l>univers<s n="n"/></l>
-          <r>univers<s n="n"/></r>
+          <l>univers<s n="n"/><s n="m"/><s n="sp"/></l>
+          <r>univers<s n="n"/><s n="m"/><s n="ND"/></r>
+        </p>
+      </e>
+      <e r="RL">
+        <p>
+          <l>univers<s n="n"/><s n="m"/><s n="sp"/></l>
+          <r>univers<s n="n"/><s n="m"/><s n="sg"/></r>
+        </p>
+      </e>
+      <e r="RL">
+        <p>
+          <l>univers<s n="n"/><s n="m"/><s n="sp"/></l>
+          <r>univers<s n="n"/><s n="m"/><s n="pl"/></r>
         </p>
       </e>
 
@@ -54488,14 +54539,30 @@
   </p>
 </e>
 
-
-<e a="ariel">
-        <p>
-          <l>tenace<s n="adj"/></l>
-          <r>tenaç<s n="adj"/></r>
-        </p>
-      </e>
-
+<e a="gema" r="LR">
+  <p>
+    <l>tenace<s n="adj"/><s n="mf"/><s n="pl"/></l>
+    <r>tenaç<s n="adj"/><s n="GD"/><s n="pl"/></r>
+  </p>
+</e>
+<e a="gema" r="RL">
+  <p>
+    <l>tenace<s n="adj"/><s n="mf"/><s n="pl"/></l>
+    <r>tenaç<s n="adj"/><s n="m"/><s n="pl"/></r>
+  </p>
+</e>
+<e a="gema" r="RL">
+  <p>
+    <l>tenace<s n="adj"/><s n="mf"/><s n="pl"/></l>
+    <r>tenaç<s n="adj"/><s n="f"/><s n="pl"/></r>
+  </p>
+</e>
+<e a="gema">
+  <p>
+    <l>tenace<s n="adj"/><s n="mf"/><s n="sg"/></l>
+    <r>tenaç<s n="adj"/><s n="mf"/><s n="sg"/></r>
+  </p>
+</e>
 
 <e a="ariel">
         <p>
@@ -54664,7 +54731,7 @@
 </e>
 
 
-<e a="ariel">
+<e a="ariel" r="LR">
   <p>
     <l>amenuiser<s n="vblex"/></l>
     <r>disminuir<s n="vblex"/></r>
@@ -54834,8 +54901,8 @@
 
 <e a="ariel">
         <p>
-          <l>paiement<s n="n"/><s n="m"/></l>
-          <r>pagament<s n="n"/><s n="f"/></r>
+          <l>paiement<s n="n"/></l>
+          <r>pagament<s n="n"/></r>
         </p>
       </e>
 
@@ -54850,8 +54917,8 @@
 
 <e a="ariel">
         <p>
-          <l>complément<s n="n"/><s n="m"/></l>
-          <r>complement<s n="n"/><s n="f"/></r>
+          <l>complément<s n="n"/></l>
+          <r>complement<s n="n"/></r>
         </p>
       </e>
 
@@ -54864,12 +54931,33 @@
       </e>
 
 
-<e a="ariel">
-  <p>
-    <l>ambitieux<s n="adj"/></l>
-    <r>ambiciós<s n="adj"/></r>
-  </p>
-</e>
+
+
+  <e r="LR" a="ariel">
+        <p>
+          <l>ambitieux<s n="adj"/><s n="m"/><s n="sp"/></l>
+          <r>ambiciós<s n="adj"/><s n="m"/><s n="ND"/></r>
+        </p>
+      </e>
+      <e r="RL" a="ariel">
+        <p>
+          <l>ambitieux<s n="adj"/><s n="m"/><s n="sp"/></l>
+          <r>ambiciós<s n="adj"/><s n="m"/><s n="sg"/></r>
+        </p>
+      </e>
+      <e r="RL" a="ariel">
+        <p>
+          <l>ambitieux<s n="adj"/><s n="m"/><s n="sp"/></l>
+          <r>ambiciós<s n="adj"/><s n="m"/><s n="pl"/></r>
+        </p>
+      </e>
+      <e a="ariel">
+        <p>
+          <l>ambitieux<s n="adj"/><s n="f"/></l>
+          <r>ambiciós<s n="adj"/><s n="f"/></r>
+        </p>
+      </e>
+
 
 
 <e a="ariel">
@@ -54960,13 +55048,31 @@
       </e>
 
 
-<e a="ariel">
-  <p>
-    <l>coûteux<s n="adj"/></l>
-    <r>costós<s n="adj"/></r>
-  </p>
-</e>
 
+  <e r="LR" a="ariel">
+        <p>
+          <l>coûteux<s n="adj"/><s n="m"/><s n="sp"/></l>
+          <r>costós<s n="adj"/><s n="m"/><s n="ND"/></r>
+        </p>
+      </e>
+      <e r="RL" a="ariel">
+        <p>
+          <l>coûteux<s n="adj"/><s n="m"/><s n="sp"/></l>
+          <r>costós<s n="adj"/><s n="m"/><s n="sg"/></r>
+        </p>
+      </e>
+      <e r="RL" a="ariel">
+        <p>
+          <l>coûteux<s n="adj"/><s n="m"/><s n="sp"/></l>
+          <r>costós<s n="adj"/><s n="m"/><s n="pl"/></r>
+        </p>
+      </e>
+      <e a="ariel">
+        <p>
+          <l>coûteux<s n="adj"/><s n="f"/></l>
+          <r>costós<s n="adj"/><s n="f"/></r>
+        </p>
+      </e>
 
 <e a="ariel">
   <p>
@@ -55055,15 +55161,6 @@
         </p>
       </e>
 
-
-<e a="ariel">
-  <p>
-    <l>divers<s n="adj"/></l>
-    <r>divers<s n="adj"/></r>
-  </p>
-</e>
-
-
 <e a="ariel">
   <p>
     <l>consister<s n="vblex"/></l>
@@ -55075,7 +55172,7 @@
 <e a="ariel">
   <p>
     <l>inéquitable<s n="adj"/></l>
-    <r>nequitable<s n="adj"/></r>
+    <r>inequitable<s n="adj"/></r>
   </p>
 </e>
 
@@ -55090,8 +55187,8 @@
 
 <e a="ariel">
         <p>
-          <l>troc<s n="n"/></l>
-          <r>troc<s n="n"/></r>
+          <l>troc<s n="n"/><s n="m"/></l>
+          <r>barata<s n="n"/><s n="f"/></r>
         </p>
       </e>
 
@@ -55319,26 +55416,26 @@
       </e>
 
 
-<e r="RL" a="ariel">
+<e r="LR" a="ariel">
   <p>
-          <l>théorique<s n="adj"/><s n="GD"/></l>
-          <r>teòric<s n="adj"/><s n="mf"/></r>
+          <l>théorique<s n="adj"/><s n="mf"/></l>
+          <r>teòric<s n="adj"/><s n="GD"/></r>
         </p>
       </e>
 
 
-      <e r="LR">
+      <e r="RL">
         <p>
-          <l>théorique<s n="adj"/><s n="m"/></l>
-          <r>teòric<s n="adj"/><s n="mf"/></r>
+          <l>théorique<s n="adj"/><s n="mf"/></l>
+          <r>teòric<s n="adj"/><s n="m"/></r>
         </p>
       </e>
 
 
-      <e r="LR">
+      <e r="RL">
         <p>
-          <l>théorique<s n="adj"/><s n="f"/></l>
-          <r>teòric<s n="adj"/><s n="mf"/></r>
+          <l>théorique<s n="adj"/><s n="mf"/></l>
+          <r>teòric<s n="adj"/><s n="f"/></r>
         </p>
       </e>
 
@@ -55362,7 +55459,7 @@
 
 <e r="LR" a="ariel">
         <p>
-          <l>excedéntaire<s n="adj"/><s n="mf"/></l>
+          <l>excédentaire<s n="adj"/><s n="mf"/></l>
           <r>excedentari<s n="adj"/><s n="GD"/></r>
         </p>
       </e>
@@ -55387,7 +55484,7 @@
 <e a="ariel">
   <p>
     <l>émettre<s n="vblex"/></l>
-    <r>emitir<s n="vblex"/></r>
+    <r>emetre<s n="vblex"/></r>
   </p>
 </e>
 
@@ -55458,8 +55555,8 @@
 
 <e a="ariel">
         <p>
-          <l>instrument<s n="n"/></l>
-          <r>instrument<s n="n"/></r>
+          <l>dioxyde<s n="n"/></l>
+          <r>diòxid<s n="n"/></r>
         </p>
       </e>
 
@@ -55578,7 +55675,7 @@
 
       <e r="RL">
         <p>
-          <l>économ<s n="adj"/><s n="mf"/></l>
+          <l>économe<s n="adj"/><s n="mf"/></l>
           <r>estalviador<s n="adj"/><s n="f"/></r>
         </p>
       </e>
@@ -55592,13 +55689,30 @@
       </e>
 
 
-<e a="ariel">
-  <p>
-    <l>impérieux<s n="adj"/></l>
-    <r>imperiós<s n="adj"/></r>
-  </p>
-</e>
-
+  <e r="LR" a="ariel">
+        <p>
+          <l>impérieux<s n="adj"/><s n="m"/><s n="sp"/></l>
+          <r>imperiós<s n="adj"/><s n="m"/><s n="ND"/></r>
+        </p>
+      </e>
+      <e r="RL" a="ariel">
+        <p>
+          <l>impérieux<s n="adj"/><s n="m"/><s n="sp"/></l>
+          <r>imperiós<s n="adj"/><s n="m"/><s n="sg"/></r>
+        </p>
+      </e>
+      <e r="RL" a="ariel">
+        <p>
+          <l>impérieux<s n="adj"/><s n="m"/><s n="sp"/></l>
+          <r>imperiós<s n="adj"/><s n="m"/><s n="pl"/></r>
+        </p>
+      </e>
+      <e a="ariel">
+        <p>
+          <l>impérieux<s n="adj"/><s n="f"/></l>
+          <r>imperiós<s n="adj"/><s n="f"/></r>
+        </p>
+      </e>
 
 <e a="ariel">
         <p>
@@ -55674,14 +55788,6 @@
 
 <e a="ariel">
         <p>
-          <l>gisement<s n="n"/></l>
-          <r>jaciment<s n="n"/></r>
-        </p>
-      </e>
-
-
-<e a="ariel">
-        <p>
           <l>impasse<s n="n"/><s n="f"/></l>
           <r>atzucac<s n="n"/><s n="m"/></r>
         </p>
@@ -55739,7 +55845,7 @@
 <e r="RL" a="ariel">
   <p>
           <l>minéral<s n="adj"/><s n="GD"/></l>
-          <r> mineral<s n="adj"/><s n="mf"/></r>
+          <r>mineral<s n="adj"/><s n="mf"/></r>
         </p>
       </e>
 
@@ -55896,13 +56002,30 @@
       </e>
 
 
-<e a="ariel">
-  <p>
-    <l>ligneux<s n="adj"/></l>
-    <r>llenyós<s n="adj"/></r>
-  </p>
-</e>
-
+  <e r="LR" a="ariel">
+        <p>
+          <l>ligneux<s n="adj"/><s n="m"/><s n="sp"/></l>
+          <r>llenyós<s n="adj"/><s n="m"/><s n="ND"/></r>
+        </p>
+      </e>
+      <e r="RL" a="ariel">
+        <p>
+          <l>ligneux<s n="adj"/><s n="m"/><s n="sp"/></l>
+          <r>llenyós<s n="adj"/><s n="m"/><s n="sg"/></r>
+        </p>
+      </e>
+      <e r="RL" a="ariel">
+        <p>
+          <l>ligneux<s n="adj"/><s n="m"/><s n="sp"/></l>
+          <r>llenyós<s n="adj"/><s n="m"/><s n="pl"/></r>
+        </p>
+      </e>
+      <e a="ariel">
+        <p>
+          <l>ligneux<s n="adj"/><s n="f"/></l>
+          <r>llenyós<s n="adj"/><s n="f"/></r>
+        </p>
+      </e>
 
 <e a="ariel">
         <p>
@@ -56112,7 +56235,7 @@
       </e>
 
 
-<e a="ariel">
+<e a="ariel" r="LR">
   <p>
     <l>influer<s n="vblex"/></l>
     <r>influir<s n="vblex"/></r>
@@ -56201,7 +56324,7 @@
 
 <e a="ariel">
   <p>
-    <l>polleur<s n="n"/></l>
+    <l>pollueur<s n="n"/></l>
     <r>contaminador<s n="n"/></r>
   </p>
 </e>
