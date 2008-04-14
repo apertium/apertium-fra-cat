@@ -45,4 +45,45 @@
       </program>
     </pipeline>
   </mode>
+
+  <mode name="ca-fr-anmor">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ca-fr.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ca-fr-tagger">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ca-fr.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g">
+        <file name="ca-fr.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fr-ca-anmor">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="fr-ca.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fr-ca-tagger">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="fr-ca.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g">
+        <file name="fr-ca.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+
 </modes>
