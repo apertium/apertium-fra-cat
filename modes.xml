@@ -5,7 +5,7 @@
       <program name="lt-proc">
         <file name="ca-fr.automorf.bin"/>
       </program>
-      <program name="apertium-tagger -g">
+      <program name="apertium-tagger -g $2">
         <file name="ca-fr.prob"/>
       </program>
       <program name="apertium-pretransfer"/>
@@ -28,7 +28,7 @@
       <program name="lt-proc">
         <file name="fr-ca.automorf.bin"/>
       </program>
-      <program name="apertium-tagger -g">
+      <program name="apertium-tagger -g $2">
         <file name="fr-ca.prob"/>
       </program>
       <program name="apertium-pretransfer"/>
@@ -59,7 +59,7 @@
       <program name="lt-proc">
         <file name="ca-fr.automorf.bin"/>
       </program>
-      <program name="apertium-tagger -g">
+      <program name="apertium-tagger -g $2">
         <file name="ca-fr.prob"/>
       </program>
     </pipeline>
@@ -78,7 +78,7 @@
       <program name="lt-proc">
         <file name="fr-ca.automorf.bin"/>
       </program>
-      <program name="apertium-tagger -g">
+      <program name="apertium-tagger -g $2">
         <file name="fr-ca.prob"/>
       </program>
     </pipeline>
