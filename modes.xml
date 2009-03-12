@@ -10,8 +10,8 @@
       </program>
       <program name="apertium-pretransfer"/>
       <program name="apertium-transfer">
-        <file name="apertium-fr-ca.trules-ca-fr.xml"/>
-        <file name="trules-ca-fr.bin"/>
+        <file name="apertium-fr-ca.ca-fr.t1x"/>
+        <file name="ca-fr.t1x.bin"/>
         <file name="ca-fr.autobil.bin"/>
       </program>
       <program name="lt-proc $1">
@@ -33,8 +33,8 @@
       </program>
       <program name="apertium-pretransfer"/>
       <program name="apertium-transfer">
-        <file name="apertium-fr-ca.trules-fr-ca.xml"/>
-        <file name="trules-fr-ca.bin"/>
+        <file name="apertium-fr-ca.fr-ca.t1x"/>
+        <file name="fr-ca.t1x.bin"/>
         <file name="fr-ca.autobil.bin"/>
       </program>
       <program name="lt-proc $1">
