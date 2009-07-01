@@ -65,6 +65,43 @@
     </pipeline>
   </mode>
 
+  <mode name="ca-fr-transfer">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ca-fr.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ca-fr.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-fr-ca.trules-ca-fr.xml"/>
+        <file name="trules-ca-fr.bin"/>
+        <file name="ca-fr.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ca-fr-gen">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ca-fr.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ca-fr.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-fr-ca.trules-ca-fr.xml"/>
+        <file name="trules-ca-fr.bin"/>
+        <file name="ca-fr.autobil.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="ca-fr.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
   <mode name="fr-ca-anmor">
     <pipeline>
       <program name="lt-proc">
