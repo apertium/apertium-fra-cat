@@ -87,6 +87,9 @@
     <tags-item tags="num.*"/>
     <tags-item tags="num"/>
   </def-label>
+  <def-label name="WEB" closed="true">
+    <tags-item tags="web"/>
+  </def-label>
   <def-label name="PREDETNT" closed="true">
     <tags-item tags="predet.nt.*"/>
   </def-label>
