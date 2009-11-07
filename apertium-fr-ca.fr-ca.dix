@@ -6019,7 +6019,7 @@
           <r>xifra<s n="n"/><s n="f"/></r>
         </p>
       </e>
-      <e>
+      <e r="LR">
         <p>
           <l>chiffrer<s n="vblex"/></l>
           <r>avaluar<s n="vblex"/></r>
@@ -7579,12 +7579,6 @@
       <e>
         <i>correspondre<s n="vblex"/></i>
       </e>
-      <e r="RL">
-        <p>
-          <l>couloir<s n="n"/></l>
-          <r>corredor<s n="n"/></r>
-        </p>
-      </e>
       <e>
         <p>
           <l>cosmopolite<s n="adj"/></l>
@@ -7801,7 +7795,7 @@
           <r>curvatura<s n="n"/></r>
         </p>
       </e>
-      <e>
+      <e r="LR">
         <p>
           <l>coureur<s n="n"/></l>
           <r>corredor<s n="n"/></r>
@@ -7879,9 +7873,15 @@
           <r>curt<s n="adj"/></r>
         </p>
       </e>
-      <e>
+      <e r="LR">
         <p>
           <l>courtier<s n="n"/></l>
+          <r>corredor<s n="n"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>corridor<s n="n"/></l>
           <r>corredor<s n="n"/></r>
         </p>
       </e>
@@ -8413,7 +8413,7 @@
           <r>llicència<s n="n"/></r>
         </p>
       </e>
-      <e>
+      <e r="LR">
         <p>
           <l>déchaîner<s n="vblex"/></l>
           <r>desencadenar<s n="vblex"/></r>
@@ -9865,7 +9865,7 @@
           <r>dolçor<s n="n"/></r>
         </p>
       </e>
-      <e>
+      <e r="LR">
         <p>
           <l>douer<s n="vblex"/></l>
           <r>dotar<s n="vblex"/></r>
@@ -22348,7 +22348,7 @@
           <r>pena<s n="n"/></r>
         </p>
       </e>
-      <e>
+      <e r="LR">
         <p>
           <l>peiner<s n="vblex"/></l>
           <r>penar<s n="vblex"/></r>
@@ -25411,7 +25411,7 @@
           <r>llunyà<s n="adj"/></r>
         </p>
       </e>
-      <e>
+      <e r="LR">
         <p>
           <l>reculer<s n="vblex"/></l>
           <r>retrocedir<s n="vblex"/></r>
@@ -33765,7 +33765,7 @@
           <r>marge<s n="n"/><s n="m"/></r>
         </p>
       </e>
-      <e>
+      <e r="LR">
         <p>
           <l>rive<s n="n"/><s n="f"/></l>
           <r>marge<s n="n"/><s n="m"/></r>
@@ -33850,12 +33850,6 @@
         <p>
           <l>bon<b/>sens<s n="n"/></l>
           <r>seny<s n="n"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>bord<s n="n"/></l>
-          <r>marge<s n="n"/></r>
         </p>
       </e>
       <e>
@@ -48866,7 +48860,7 @@
     <r>luxe<s n="n"/></r>
   </p>
 </e>
-<e a="u21941">
+<e a="u21941" r="LR">
   <p>
     <l>consistir<s n="vblex"/></l>
     <r>consistir<s n="vblex"/></r>
@@ -55963,7 +55957,7 @@
       </e>
 
 
-<e a="ariel">
+<e a="ariel" r="LR">
   <p>
     <l>exploiter<s n="vblex"/></l>
     <r>explotar<s n="vblex"/></r>
