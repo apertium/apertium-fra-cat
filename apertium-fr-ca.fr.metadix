@@ -288,6 +288,164 @@
       </e>
     </pardef>
 
+    <pardef n="dou/x__adj">
+    <e>
+      <p>
+        <l>ce</l> 
+        <r>x<s n="adj"/><s n="f"/><s n="sg"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>ces</l> 
+        <r>x<s n="adj"/><s n="f"/><s n="pl"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>x</l> 
+        <r>x<s n="adj"/><s n="m"/><s n="sp"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>x</l> 
+        <r>x<s n="adj"/><s n="m"/><s n="sg"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>x</l> 
+        <r>x<s n="adj"/><s n="m"/><s n="pl"/></r> 
+      </p>
+    </e>
+
+    </pardef>
+    <pardef n="ambigu__adj">
+    <e>
+      <p>
+        <l></l> 
+        <r><s n="adj"/><s n="m"/><s n="sg"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>ë</l> 
+        <r><s n="adj"/><s n="f"/><s n="sg"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>ës</l> 
+        <r><s n="adj"/><s n="f"/><s n="pl"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>s</l> 
+        <r><s n="adj"/><s n="m"/><s n="pl"/></r> 
+      </p>
+    </e>
+
+    </pardef>
+    <pardef n="andalou__adj">
+    <e>
+      <p>
+        <l></l> 
+        <r><s n="adj"/><s n="m"/><s n="sg"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>s</l> 
+        <r><s n="adj"/><s n="m"/><s n="pl"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>se</l> 
+        <r><s n="adj"/><s n="f"/><s n="sg"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>ses</l> 
+        <r><s n="adj"/><s n="f"/><s n="pl"/></r> 
+      </p>
+    </e>
+
+    </pardef>
+    <pardef n="mali/n__adj">
+    <e>
+      <p>
+        <l>n</l> 
+        <r>n<s n="adj"/><s n="m"/><s n="sg"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>gne</l> 
+        <r>n<s n="adj"/><s n="f"/><s n="sg"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>ges</l> 
+        <r>n<s n="adj"/><s n="f"/><s n="pl"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>ns</l> 
+        <r>n<s n="adj"/><s n="m"/><s n="pl"/></r> 
+      </p>
+    </e>
+
+    </pardef>
+    <pardef n="s/ec__adj">
+    <e>
+      <p>
+        <l>ec</l> 
+        <r>ec<s n="adj"/><s n="m"/><s n="sg"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>èche</l> 
+        <r>ec<s n="adj"/><s n="f"/><s n="sg"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>èches</l> 
+        <r>ec<s n="adj"/><s n="f"/><s n="pl"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>ecs</l> 
+        <r>ec<s n="adj"/><s n="m"/><s n="pl"/></r> 
+      </p>
+    </e>
+
+    </pardef>
+
     <pardef n="fran/c__adj">
       
       <e>
@@ -83609,6 +83767,837 @@
 	  <r>que<s n="rel"/><s n="mf"/><s n="sp"/></r>
 	</p>
       </e>
+
+<!-- New -->
+
+<e lm="absent" a="webform"><i>absent</i><par n="abaissant__adj" /> </e>
+<e lm="accablant" a="eleka"><i>accablant</i><par n="abaissant__adj" /> </e>
+<e lm="accablant" a="webform"><i>accablant</i><par n="abaissant__adj" /> </e>
+<e lm="accompagnateur" a="eleka"><i>accompagnat</i><par n="conduct/eur__adj" /> </e>
+<e lm="actuariel" a="eleka"><i>actuariel</i><par n="annuel__adj" /> </e>
+<e lm="adjacent" a="eleka"><i>adjacent</i><par n="abaissant__adj" /> </e>
+<e lm="aérospatial" a="eleka"><i>aérospatial</i><par n="abaissant__adj" /> </e>
+<e lm="amical"><i>amica</i><par n="amica/l__adj" /> </e>
+<e lm="anal" a="eleka"><i>ana</i><par n="amica/l__adj" /> </e>
+<e lm="ancestral" a="eleka"><i>ancestra</i><par n="amica/l__adj" /> </e>
+<e lm="angoissant" a="eleka"><i>angoissant</i><par n="abaissant__adj" /> </e>
+<e lm="anormal" a="webform"><i>anorma</i><par n="amica/l__adj" /> </e>
+<e lm="anticonstitutionnel" a="eleka"><i>anticonstitutionnel</i><par n="annuel__adj" /> </e>
+<e lm="antigivrant" a="eleka"><i>antigivrant</i><par n="abaissant__adj" /> </e>
+<e lm="antisocial" a="eleka"><i>antisocia</i><par n="amica/l__adj" /> </e>
+<e lm="approprié" a="eleka"><i>approprié</i><par n="abaissant__adj" /> </e>
+<e lm="arbitral" a="webform"><i>arbitra</i><par n="amica/l__adj" /> </e>
+<e lm="artificiel" a="webform"><i>artificiel</i><par n="annuel__adj" /> </e>
+<e lm="artisanal" a="webform"><i>artisana</i><par n="amica/l__adj" /> </e>
+<e lm="ascendant" a="webform"><i>ascendant</i><par n="abaissant__adj" /> </e>
+<e lm="attentif" a="webform"><i>attenti</i><par n="affirmati/f__adj" /> </e>
+<e lm="audiovisuel"><i>audiovisuel</i><par n="annuel__adj" /> </e>
+<e lm="banal" a="webform"><i>banal</i><par n="abaissant__adj" /> </e>
+<e lm="bavard" a="eleka"><i>bavard</i><par n="abaissant__adj" /> </e>
+<e lm="bilatéral" a="webform"><i>bilatéra</i><par n="amica/l__adj" /> </e>
+<e lm="bimensuel" a="prompsit2cdl"><i>bimensuel</i><par n="annuel__adj" /> </e>
+<e lm="bleu-blanc" a="eleka"><i>bleu-blan</i><par n="fran/c__adj" /> </e>
+<e lm="cadastral" a="eleka"><i>cadastral</i><par n="abaissant__adj" /> </e>
+<e lm="capital"><i>capita</i><par n="amica/l__adj" /> </e>
+<e lm="cérébral" a="webform"><i>cérébra</i><par n="amica/l__adj" /> </e>
+<e lm="charnel" a="webform"><i>charnel</i><par n="annuel__adj" /> </e>
+<e lm="cher"><i>ch</i><par n="ch/er__adj" /> </e>
+<e lm="choquant" a="webform"><i>choquant</i><par n="abaissant__adj" /> </e>
+<e lm="choral" a="webform"><i>chora</i><par n="amica/l__adj" /> </e>
+<e lm="circonstanciel" a="eleka"><i>circonstanciel</i><par n="annuel__adj" /> </e>
+<e lm="circulant" a="eleka"><i>circulant</i><par n="abaissant__adj" /> </e>
+<e lm="coïncident" a="eleka"><i>coïncident</i><par n="abaissant__adj" /> </e>
+<e lm="collatéral" a="webform"><i>collatéra</i><par n="amica/l__adj" /> </e>
+<e lm="collectionneur"><i>collectionneu</i><par n="causeu/r__adj" /> </e>
+<e lm="communicant" a="eleka"><i>communicant</i><par n="abaissant__adj" /> </e>
+<e lm="compétent" a="webform"><i>compétent</i><par n="abaissant__adj" /> </e>
+<e lm="concluant" a="webform"><i>concluant</i><par n="abaissant__adj" /> </e>
+<e lm="congruent" a="eleka"><i>congruent</i><par n="abaissant__adj" /> </e>
+<e lm="conjugal" a="webform"><i>conjuga</i><par n="amica/l__adj" /> </e>
+<e lm="conscient" a="webform"><i>conscient</i><par n="abaissant__adj" /> </e>
+<e lm="consensuel" a="webform"><i>consensuel</i><par n="annuel__adj" /> </e>
+<e lm="conséquent"><i>conséquent</i><par n="abaissant__adj" /> </e>
+<e lm="consistant" a="webform"><i>consistant</i><par n="abaissant__adj" /> </e>
+<e lm="constituant" a="webform"><i>constituant</i><par n="abaissant__adj" /> </e>
+<e lm="constitutif" a="eleka"><i>constituti</i><par n="affirmati/f__adj" /> </e>
+<e lm="contractuel" a="webform"><i>contractuel</i><par n="annuel__adj" /> </e>
+<e lm="convaincant" a="webform"><i>convaincant</i><par n="abaissant__adj" /> </e>
+<e lm="convalescent" a="webform"><i>convalescent</i><par n="abaissant__adj" /> </e>
+<e lm="conventionnel" a="webform"><i>conventionnel</i><par n="annuel__adj" /> </e>
+<e lm="cordial" a="webform"><i>cordia</i><par n="amica/l__adj" /> </e>
+<e lm="criminel"><i>criminel</i><par n="tel__adj" /> </e>
+<e lm="cruel" a="webform"><i>cruel</i><par n="annuel__adj" /> </e>
+<e lm="décent" a="webform"><i>décent</i><par n="abaissant__adj" /> </e>
+<e lm="dégradant" a="webform"><i>dégradant</i><par n="abaissant__adj" /> </e>
+<e lm="délinquant" a="webform"><i>délinquant</i><par n="abaissant__adj" /> </e>
+<e lm="déloyal" a="webform"><i>déloyal</i><par n="abaissant__adj" /> </e>
+<e lm="dépendant" a="webform"><i>dépendant</i><par n="abaissant__adj" /> </e>
+<e lm="descendant" a="webform"><i>descendant</i><par n="abaissant__adj" /> </e>
+<e lm="détonant" a="webform"><i>détonant</i><par n="abaissant__adj" /> </e>
+<e lm="digital" a="webform"><i>digita</i><par n="amica/l__adj" /> </e>
+<e lm="dissident" a="webform"><i>dissident</i><par n="abaissant__adj" /> </e>
+<e lm="distant" a="webform"><i>distant</i><par n="abaissant__adj" /> </e>
+<e lm="distinctif" a="eleka"><i>distincti</i><par n="affirmati/f__adj" /> </e>
+<e lm="doctoral" a="webform"><i>doctora</i><par n="amica/l__adj" /> </e>
+<e lm="doctrinal" a="eleka"><i>doctrina</i><par n="amica/l__adj" /> </e>
+<e lm="dominical" a="webform"><i>dominica</i><par n="amica/l__adj" /> </e>
+<e lm="dorsal" a="eleka"><i>dorsa</i><par n="amica/l__adj" /> </e>
+<e lm="doux" a="eleka"><i>dou</i><par n="dou/x__adj" /> </e>
+<e lm="doux"><i>dou</i><par n="dou/x__adj" /> </e>
+<e lm="éditorial" a="eleka"><i>éditoria</i><par n="amica/l__adj" /> </e>
+<e lm="électoral"><i>électora</i><par n="amica/l__adj" /> </e>
+<e lm="éloquent" a="webform"><i>éloquent</i><par n="abaissant__adj" /> </e>
+<e lm="émergent" a="webform"><i>émergent</i><par n="abaissant__adj" /> </e>
+<e lm="émotionnel" a="webform"><i>émotionnel</i><par n="annuel__adj" /> </e>
+<e lm="émouvant" a="webform"><i>émouvant</i><par n="abaissant__adj" /> </e>
+<e lm="enfantin" a="eleka"><i>enfantin</i><par n="abaissant__adj" /> </e>
+<e lm="enfantin" a="webform"><i>enfantin</i><par n="abaissant__adj" /> </e>
+<e lm="environnemental" a="eleka"><i>environnementa</i><par n="amica/l__adj" /> </e>
+<e lm="environnemental" a="webform"><i>environnementa</i><par n="amica/l__adj" /> </e>
+<e lm="épiscopal" a="eleka"><i>épiscopa</i><par n="amica/l__adj" /> </e>
+<e lm="estival" a="eleka"><i>estiva</i><par n="amica/l__adj" /> </e>
+<e lm="estival" a="webform"><i>estiva</i><par n="amica/l__adj" /> </e>
+<e lm="euphorisant" a="eleka"><i>euphorisant</i><par n="abaissant__adj" /> </e>
+<e lm="évident" a="webform"><i>évident</i><par n="abaissant__adj" /> </e>
+<e lm="exceptionnel" a="webform"><i>exceptionnel</i><par n="annuel__adj" /> </e>
+<e lm="exigeant" a="webform"><i>exigeant</i><par n="abaissant__adj" /> </e>
+<e lm="existentiel" a="webform"><i>existentiel</i><par n="annuel__adj" /> </e>
+<e lm="exorbitant" a="webform"><i>exorbitant</i><par n="abaissant__adj" /> </e>
+<e lm="extracontractuel" a="eleka"><i>extracontractuel</i><par n="annuel__adj" /> </e>
+<e lm="facial" a="webform"><i>facia</i><par n="amica/l__adj" /> </e>
+<e lm="familier" a="webform"><i>famili</i><par n="ch/er__adj" /> </e>
+<e lm="fascinant" a="webform"><i>fascinant</i><par n="abaissant__adj" /> </e>
+<e lm="filial"><i>filia</i><par n="amica/l__adj" /> </e>
+<e lm="fluorescent" a="eleka"><i>fluorescent</i><par n="abaissant__adj" /> </e>
+<e lm="fonctionnel" a="webform"><i>fonctionnel</i><par n="annuel__adj" /> </e>
+<e lm="foral" a="eleka"><i>fora</i><par n="amica/l__adj" /> </e>
+<e lm="formel" a="webform"><i>formel</i><par n="annuel__adj" /> </e>
+<e lm="foudroyant" a="webform"><i>foudroyant</i><par n="abaissant__adj" /> </e>
+<e lm="frontal" a="webform"><i>fronta</i><par n="amica/l__adj" /> </e>
+<e lm="gai" a="webform"><i>gai</i><par n="abaissant__adj" /> </e>
+<e lm="générationnel" a="webform"><i>générationnel</i><par n="annuel__adj" /> </e>
+<e lm="génial" a="webform"><i>génia</i><par n="amica/l__adj" /> </e>
+<e lm="gestuel" a="webform"><i>gestuel</i><par n="annuel__adj" /> </e>
+<e lm="grammatical" a="eleka"><i>grammatica</i><par n="amica/l__adj" /> </e>
+<e lm="hallucinant" a="webform"><i>hallucinant</i><par n="abaissant__adj" /> </e>
+<e lm="haussier" a="eleka"><i>haussi</i><par n="ch/er__adj" /> </e>
+<e lm="hindou" a="eleka"><i>hindou</i><par n="abaissant__adj" /> </e>
+<e lm="horizontal" a="webform"><i>horizonta</i><par n="amica/l__adj" /> </e>
+<e lm="ignorant" a="webform"><i>ignorant</i><par n="abaissant__adj" /> </e>
+<e lm="illégal" a="webform"><i>illéga</i><par n="amica/l__adj" /> </e>
+<e lm="immigrant" a="webform"><i>immigrant</i><par n="abaissant__adj" /> </e>
+<e lm="imminent" a="webform"><i>imminent</i><par n="abaissant__adj" /> </e>
+<e lm="immortel" a="webform"><i>immortel</i><par n="annuel__adj" /> </e>
+<e lm="immun" a="webform"><i>immun</i><par n="abaissant__adj" /> </e>
+<e lm="impartial" a="webform"><i>impartia</i><par n="amica/l__adj" /> </e>
+<e lm="imposant" a="eleka"><i>imposant</i><par n="abaissant__adj" /> </e>
+<e lm="impressionant" a="webform"><i>impressionant</i><par n="abaissant__adj" /> </e>
+<e lm="impuissant" a="webform"><i>impuissant</i><par n="abaissant__adj" /> </e>
+<e lm="impuni" a="webform"><i>impuni</i><par n="abaissant__adj" /> </e>
+<e lm="inaugural" a="webform"><i>inaugura</i><par n="amica/l__adj" /> </e>
+<e lm="incompétent" a="webform"><i>incompétent</i><par n="abaissant__adj" /> </e>
+<e lm="inconditionnel" a="webform"><i>inconditionnel</i><par n="annuel__adj" /> </e>
+<e lm="inconscient"><i>inconscient</i><par n="abaissant__adj" /> </e>
+<e lm="incontesté" a="eleka"><i>incontesté</i><par n="abaissant__adj" /> </e>
+<e lm="inconvenant" a="eleka"><i>inconvenant</i><par n="abaissant__adj" /> </e>
+<e lm="indépendant"><i>indépendant</i><par n="abaissant__adj" /> </e>
+<e lm="indifférent" a="webform"><i>indifférent</i><par n="abaissant__adj" /> </e>
+<e lm="inexistant" a="webform"><i>inexistant</i><par n="abaissant__adj" /> </e>
+<e lm="inférieur" a="webform"><i>inférieur</i><par n="abaissant__adj" /> </e>
+<e lm="informel" a="webform"><i>informel</i><par n="annuel__adj" /> </e>
+<e lm="inhérent" a="webform"><i>inhérent</i><par n="abaissant__adj" /> </e>
+<e lm="initial" a="webform"><i>initia</i><par n="amica/l__adj" /> </e>
+<e lm="inopérant" a="webform"><i>inopérant</i><par n="abaissant__adj" /> </e>
+<e lm="instrumental" a="webform"><i>instrumenta</i><par n="amica/l__adj" /> </e>
+<e lm="intellectuel"><i>intellectuel</i><par n="tel__adj" /> </e>
+<e lm="intemporel" a="eleka"><i>intemporel</i><par n="annuel__adj" /> </e>
+<e lm="intemporel" a="webform"><i>intemporel</i><par n="annuel__adj" /> </e>
+<e lm="intéressant" a="webform"><i>intéressant</i><par n="abaissant__adj" /> </e>
+<e lm="interprofessionnel" a="webform"><i>interprofessionnel</i><par n="annuel__adj" /> </e>
+<e lm="intolérant" a="webform"><i>intolérant</i><par n="abaissant__adj" /> </e>
+<e lm="intransigeant" a="webform"><i>intransigeant</i><par n="abaissant__adj" /> </e>
+<e lm="irréel" a="webform"><i>irréel</i><par n="annuel__adj" /> </e>
+<e lm="irrégulier" a="webform"><i>irréguli</i><par n="ch/er__adj" /> </e>
+<e lm="latéral" a="webform"><i>latéra</i><par n="amica/l__adj" /> </e>
+<e lm="légal" a="webform"><i>léga</i><par n="amica/l__adj" /> </e>
+<e lm="létal" a="webform"><i>léta</i><par n="amica/l__adj" /> </e>
+<e lm="libéral"><i>libéra</i><par n="amica/l__adj" /> </e>
+<e lm="littéral" a="eleka"><i>littéral</i><par n="abaissant__adj" /> </e>
+<e lm="magistral" a="webform"><i>magistra</i><par n="amica/l__adj" /> </e>
+<e lm="manuel" a="webform"><i>manuel</i><par n="annuel__adj" /> </e>
+<e lm="marginal" a="webform"><i>margina</i><par n="amica/l__adj" /> </e>
+<e lm="maternel" a="eleka"><i>maternel</i><par n="annuel__adj" /> </e>
+<e lm="maternel" a="webform"><i>maternel</i><par n="annuel__adj" /> </e>
+<e lm="médiéval" a="webform"><i>médiéva</i><par n="amica/l__adj" /> </e>
+<e lm="mensuel" a="webform"><i>mensuel</i><par n="annuel__adj" /> </e>
+<e lm="meurtrier" a="webform"><i>meurtri</i><par n="ch/er__adj" /> </e>
+<e lm="migrant" a="webform"><i>migrant</i><par n="abaissant__adj" /> </e>
+<e lm="mitochondrial" a="eleka"><i>mitochondria</i><par n="amica/l__adj" /> </e>
+<e lm="modal" a="webform"><i>moda</i><par n="amica/l__adj" /> </e>
+<e lm="monumental" a="webform"><i>monumenta</i><par n="amica/l__adj" /> </e>
+<e lm="moral"><i>mora</i><par n="amica/l__adj" /> </e>
+<e lm="multiculturel" a="webform"><i>multiculturel</i><par n="annuel__adj" /> </e>
+<e lm="musical" a="webform"><i>musica</i><par n="amica/l__adj" /> </e>
+<e lm="naval" a="webform"><i>naval</i><par n="abaissant__adj" /> </e>
+<e lm="navigant" a="eleka"><i>navigant</i><par n="abaissant__adj" /> </e>
+<e lm="néolibéral" a="webform"><i>néolibéra</i><par n="amica/l__adj" /> </e>
+<e lm="notarial" a="eleka"><i>notaria</i><par n="amica/l__adj" /> </e>
+<e lm="ombilical" a="webform"><i>ombilica</i><par n="amica/l__adj" /> </e>
+<e lm="omniprésent" a="webform"><i>omniprésent</i><par n="abaissant__adj" /> </e>
+<e lm="opérationnel" a="eleka"><i>opérationnel</i><par n="annuel__adj" /> </e>
+<e lm="opportun"><i>opportun</i><par n="abaissant__adj" /> </e>
+<e lm="optionnel" a="webform"><i>optionnel</i><par n="annuel__adj" /> </e>
+<e lm="oral" a="webform"><i>ora</i><par n="amica/l__adj" /> </e>
+<e lm="papal" a="webform"><i>papa</i><par n="amica/l__adj" /> </e>
+<e lm="paradoxal" a="webform"><i>paradoxa</i><par n="amica/l__adj" /> </e>
+<e lm="participant" a="webform"><i>participant</i><par n="abaissant__adj" /> </e>
+<e lm="partiel" a="webform"><i>partiel</i><par n="annuel__adj" /> </e>
+<e lm="pastoral" a="webform"><i>pastora</i><par n="amica/l__adj" /> </e>
+<e lm="patent" a="webform"><i>patent</i><par n="abaissant__adj" /> </e>
+<e lm="patient" a="webform"><i>patient</i><par n="abaissant__adj" /> </e>
+<e lm="patrimonial" a="webform"><i>patrimonia</i><par n="amica/l__adj" /> </e>
+<e lm="pendant"><i>pendant</i><par n="abaissant__adj" /> </e>
+<e lm="performant" a="webform"><i>performant</i><par n="abaissant__adj" /> </e>
+<e lm="phénoménal" a="webform"><i>phénoména</i><par n="amica/l__adj" /> </e>
+<e lm="pliant" a="eleka"><i>pliant</i><par n="abaissant__adj" /> </e>
+<e lm="pluriannuel" a="webform"><i>pluriannuel</i><par n="annuel__adj" /> </e>
+<e lm="pluriel" a="webform"><i>pluriel</i><par n="annuel__adj" /> </e>
+<e lm="pluvial" a="webform"><i>pluvia</i><par n="amica/l__adj" /> </e>
+<e lm="policier" a="eleka"><i>polici</i><par n="ch/er__adj" /> </e>
+<e lm="polyvalent" a="eleka"><i>polyvalent</i><par n="académique__adj" /> </e>
+<e lm="polyvalent" a="webform"><i>polyvalent</i><par n="abaissant__adj" /> </e>
+<e lm="postal" a="webform"><i>posta</i><par n="amica/l__adj" /> </e>
+<e lm="postural" a="eleka"><i>postura</i><par n="amica/l__adj" /> </e>
+<e lm="potentiel" a="webform"><i>potentiel</i><par n="annuel__adj" /> </e>
+<e lm="préférentiel" a="webform"><i>préférentiel</i><par n="annuel__adj" /> </e>
+<e lm="présidentiel"><i>présidentiel</i><par n="annuel__adj" /> </e>
+<e lm="préventif" a="eleka"><i>préventi</i><par n="affirmati/f__adj" /> </e>
+<e lm="prochain"><i>prochain</i><par n="abaissant__adj" /> </e>
+<e lm="promotionnel" a="webform"><i>promotionnel</i><par n="annuel__adj" /> </e>
+<e lm="proportionnel" a="webform"><i>proportionnel</i><par n="annuel__adj" /> </e>
+<e lm="provincial" a="webform"><i>provincia</i><par n="amica/l__adj" /> </e>
+<e lm="puissant" a="eleka"><i>puissant</i><par n="abaissant__adj" /> </e>
+<e lm="puissant"><i>puissant</i><par n="abaissant__adj" /> </e>
+<e lm="racial" a="webform"><i>racia</i><par n="amica/l__adj" /> </e>
+<e lm="radical" a="webform"><i>radica</i><par n="amica/l__adj" /> </e>
+<e lm="radieux" a="webform"><i>radieu</i><par n="affectueu/x__adj" /> </e>
+<e lm="récurrent" a="eleka"><i>récurrent</i><par n="abaissant__adj" /> </e>
+<e lm="régional"><i>régiona</i><par n="amica/l__adj" /> </e>
+<e lm="régulier"><i>réguli</i><par n="ch/er__adj" /> </e>
+<e lm="relaxant" a="eleka"><i>relaxant</i><par n="abaissant__adj" /> </e>
+<e lm="résidentiel" a="webform"><i>résidentiel</i><par n="annuel__adj" /> </e>
+<e lm="résiduel" a="webform"><i>résiduel</i><par n="annuel__adj" /> </e>
+<e lm="résistant" a="webform"><i>résistant</i><par n="abaissant__adj" /> </e>
+<e lm="restant" a="eleka"><i>restant</i><par n="abaissant__adj" /> </e>
+<e lm="résultant" a="eleka"><i>résultant</i><par n="abaissant__adj" /> </e>
+<e lm="rituel" a="webform"><i>rituel</i><par n="annuel__adj" /> </e>
+<e lm="rural" a="webform"><i>rura</i><par n="amica/l__adj" /> </e>
+<e lm="salarial" a="webform"><i>salaria</i><par n="amica/l__adj" /> </e>
+<e lm="sanglant" a="webform"><i>sanglant</i><par n="abaissant__adj" /> </e>
+<e lm="sectoriel" a="eleka"><i>sectoriel</i><par n="annuel__adj" /> </e>
+<e lm="semestriel" a="eleka"><i>semestriel</i><par n="annuel__adj" /> </e>
+<e lm="sensoriel" a="eleka"><i>sensoriel</i><par n="annuel__adj" /> </e>
+<e lm="sensuel" a="webform"><i>sensuel</i><par n="annuel__adj" /> </e>
+<e lm="sentimental" a="webform"><i>sentimenta</i><par n="amica/l__adj" /> </e>
+<e lm="sexuel" a="webform"><i>sexuel</i><par n="annuel__adj" /> </e>
+<e lm="solennel" a="webform"><i>solennel</i><par n="annuel__adj" /> </e>
+<e lm="somalien" a="webform"><i>somalien</i><par n="ancien__adj" /> </e>
+<e lm="souriant" a="webform"><i>souriant</i><par n="abaissant__adj" /> </e>
+<e lm="spatial" a="webform"><i>spatia</i><par n="amica/l__adj" /> </e>
+<e lm="spirituel" a="webform"><i>spirituel</i><par n="annuel__adj" /> </e>
+<e lm="sportif" a="eleka"><i>sporti</i><par n="affirmati/f__adj" /> </e>
+<e lm="sportif"><i>sporti</i><par n="affirmati/f__adj" /> </e>
+<e lm="stimulant" a="eleka"><i>stimulant</i><par n="abaissant__adj" /> </e>
+<e lm="structural" a="eleka"><i>structura</i><par n="amica/l__adj" /> </e>
+<e lm="subtil" a="eleka"><i>subtil</i><par n="abaissant__adj" /> </e>
+<e lm="subtil" a="webform"><i>subtil</i><par n="abaissant__adj" /> </e>
+<e lm="superficiel" a="webform"><i>superficiel</i><par n="annuel__adj" /> </e>
+<e lm="suppléant" a="webform"><i>suppléant</i><par n="abaissant__adj" /> </e>
+<e lm="survivant" a="webform"><i>survivant</i><par n="abaissant__adj" /> </e>
+<e lm="suspendu"><i>suspendu</i><par n="abaissant__adj" /> </e>
+<e lm="syndical" a="webform"><i>syndica</i><par n="amica/l__adj" /> </e>
+<e lm="temporel" a="webform"><i>temporel</i><par n="annuel__adj" /> </e>
+<e lm="tendant" a="eleka"><i>tendant</i><par n="abaissant__adj" /> </e>
+<e lm="terminal" a="webform"><i>termina</i><par n="amica/l__adj" /> </e>
+<e lm="testimonial" a="eleka"><i>testimonia</i><par n="amica/l__adj" /> </e>
+<e lm="théâtral" a="webform"><i>théâtra</i><par n="amica/l__adj" /> </e>
+<e lm="transnational" a="eleka"><i>transnationa</i><par n="amica/l__adj" /> </e>
+<e lm="transparent" a="webform"><i>transparent</i><par n="abaissant__adj" /> </e>
+<e lm="trimestriel" a="webform"><i>trimestriel</i><par n="annuel__adj" /> </e>
+<e lm="triomphal" a="eleka"><i>triompha</i><par n="amica/l__adj" /> </e>
+<e lm="triomphal" a="webform"><i>triompha</i><par n="amica/l__adj" /> </e>
+<e lm="trivial" a="webform"><i>trivia</i><par n="amica/l__adj" /> </e>
+<e lm="unidirectionnel" a="webform"><i>unidirectionnel</i><par n="annuel__adj" /> </e>
+<e lm="unilatéral" a="eleka"><i>unilatéra</i><par n="amica/l__adj" /> </e>
+<e lm="unipersonnel" a="eleka"><i>unipersonnel</i><par n="annuel__adj" /> </e>
+<e lm="universel" a="webform"><i>universel</i><par n="annuel__adj" /> </e>
+<e lm="vacant" a="webform"><i>vacant</i><par n="abaissant__adj" /> </e>
+<e lm="vertical" a="webform"><i>vertica</i><par n="amica/l__adj" /> </e>
+<e lm="vibrant" a="webform"><i>vibrant</i><par n="abaissant__adj" /> </e>
+<e lm="viral" a="webform"><i>vira</i><par n="amica/l__adj" /> </e>
+<e lm="virtuel" a="webform"><i>virtuel</i><par n="annuel__adj" /> </e>
+<e lm="viscéral" a="webform"><i>viscéra</i><par n="amica/l__adj" /> </e>
+<e lm="visuel" a="webform"><i>visuel</i><par n="annuel__adj" /> </e>
+<e lm="vital" a="eleka"><i>vita</i><par n="amica/l__adj" /> </e>
+<e lm="vocal" a="webform"><i>voca</i><par n="amica/l__adj" /> </e>
+<e r="LR" lm="absorbant" a="eleka"><i>absorbant</i><par n="abaissant__adj" /> </e>
+<e r="LR" lm="électoral"><p><l>Electora</l><r>électora</r></p><par n="amica/l__adj" /> </e>
+<e r="LR" lm="éloquent" a="webform"><p><l>Eloquent</l><r>éloquent</r></p><par n="abaissant__adj" /> </e>
+<e r="LR" lm="émergent" a="webform"><p><l>Emergent</l><r>émergent</r></p><par n="abaissant__adj" /> </e>
+<e r="LR" lm="émotionnel" a="webform"><p><l>Emotionnel</l><r>émotionnel</r></p><par n="annuel__adj" /> </e>
+<e r="LR" lm="émouvant" a="webform"><p><l>Emouvant</l><r>émouvant</r></p><par n="abaissant__adj" /> </e>
+<e r="LR" lm="évident" a="webform"><p><l>Evident</l><r>évident</r></p><par n="abaissant__adj" /> </e>
+<e r="RL" lm="aberrant" a="eleka"><i>aberrant</i><par n="abaissant__adj" /> </e>
+<e r="RL" lm="abyssal" a="eleka"><i>abyssal</i><par n="abaissant__adj" /> </e>
+<e r="RL" lm="accidentel" a="eleka"><i>accidentel</i><par n="annuel__adj" /> </e>
+<e r="RL" lm="changeant" a="eleka"><i>changeant</i><par n="abaissant__adj" /> </e>
+<e r="RL" lm="déficient" a="eleka"><i>déficient</i><par n="abaissant__adj" /> </e>
+<e r="RL" lm="dégradant" a="eleka"><i>dégradant</i><par n="abaissant__adj" /> </e>
+<e r="RL" lm="patronal" a="eleka"><i>patrona</i><par n="amica/l__adj" /> </e>
+<e r="RL" lm="patronal" a="webform"><i>patrona</i><par n="amica/l__adj" /> </e>
+<e r="RL" lm="provincial" a="webform"><i>provincia</i><par n="amica/l__adj" /> </e>
+<e r="RL" lm="textuel" a="eleka"><i>textuel</i><par n="annuel__adj" /> </e>
+<e lm="abattu" a="eleka"><i>abattu</i><par n="abaissant__adj" /> </e>
+<e lm="abertzale" a="eleka"><i>abertzale</i><par n="académique__adj" /> </e>
+<e lm="abominable" a="eleka"><i>abominable</i><par n="académique__adj" /> </e>
+<e lm="abordable" a="webform"><i>abordable</i><par n="académique__adj" /> </e>
+<e lm="abrasif" a="eleka"><i>abrasi</i><par n="affirmati/f__adj" /> </e>
+<e lm="abusif" a="webform"><i>abusi</i><par n="affirmati/f__adj" /> </e>
+<e lm="accélérateur" a="eleka"><i>accélérat</i><par n="conduct/eur__adj" /> </e>
+<e lm="accréditif" a="eleka"><i>accréditi</i><par n="affirmati/f__adj" /> </e>
+<e lm="accueillant" a="eleka"><i>accueillant</i><par n="abaissant__adj" /> </e>
+<e lm="accumulable" a="eleka"><i>accumulable</i><par n="académique__adj" /> </e>
+<e lm="acquisitif" a="eleka"><i>acquisiti</i><par n="affirmati/f__adj" /> </e>
+<e lm="actualisable" a="eleka"><i>actualisable</i><par n="académique__adj" /> </e>
+<e lm="additif" a="eleka"><i>additi</i><par n="affirmati/f__adj" /> </e>
+<e lm="adhésif"><i>adhési</i><par n="affirmati/f__adj" /> </e>
+<e lm="administratif"><i>administrati</i><par n="affirmati/f__adj" /> </e>
+<e lm="admissible" a="eleka"><i>admissible</i><par n="académique__adj" /> </e>
+<e lm="adoptif" a="webform"><i>adopti</i><par n="affirmati/f__adj" /> </e>
+<e lm="affectif" a="webform"><i>affecti</i><par n="affirmati/f__adj" /> </e>
+<e lm="affectueux" a="eleka"><i>affectueu</i><par n="affectueu/x__adj" /> </e>
+<e lm="affectueux"><i>affectueu</i><par n="affectueu/x__adj" /> </e>
+<e lm="afghan" a="webform"><i>afghan</i><par n="abaissant__adj" /> </e>
+<e lm="âgé" a="eleka"><i>âgé</i><par n="abaissant__adj" /> </e>
+<e lm="agrandissable" a="eleka"><i>agrandissable</i><par n="académique__adj" /> </e>
+<e lm="agressif" a="eleka"><i>agressi</i><par n="affirmati/f__adj" /> </e>
+<e lm="agropastoral" a="eleka"><i>agropastora</i><par n="amica/l__adj" /> </e>
+<e lm="aigu" a="eleka"><i>aigu</i><par n="abaissant__adj" /> </e>
+<e lm="allemand"><i>allemand</i><par n="abaissant__adj" /> </e>
+<e lm="allusif" a="eleka"><i>allusi</i><par n="affirmati/f__adj" /> </e>
+<e lm="alpin" a="eleka"><i>alpin</i><par n="abaissant__adj" /> </e>
+<e lm="alternatif" a="webform"><i>alternati</i><par n="affirmati/f__adj" /> </e>
+<e lm="ambigu" a="webform"><i>ambigu</i><par n="ambigu__adj" /> </e>
+<e lm="amer" a="webform"><i>am</i><par n="ch/er__adj" /> </e>
+<e lm="amortissable" a="eleka"><i>amortissable</i><par n="académique__adj" /> </e>
+<e lm="amphitryon" a="eleka"><i>amphitryon</i><par n="ancien__adj" /> </e>
+<e lm="anarchiste" a="webform"><i>anarchiste</i><par n="académique__adj" /> </e>
+<e lm="andalou" a="webform"><i>andalou</i><par n="andalou__adj" /> </e>
+<e lm="andorran" a="eleka"><i>andorran</i><par n="abaissant__adj" /> </e>
+<e lm="anglican" a="webform"><i>anglican</i><par n="abaissant__adj" /> </e>
+<e lm="anglo-saxon" a="webform"><i>anglo-saxon</i><par n="ancien__adj" /> </e>
+<e lm="angulaire" a="eleka"><i>angulaire</i><par n="académique__adj" /> </e>
+<e lm="animiste" a="eleka"><i>animiste</i><par n="académique__adj" /> </e>
+<e lm="annotateur" a="eleka"><i>annotat</i><par n="conduct/eur__adj" /> </e>
+<e lm="annulable" a="eleka"><i>annulable</i><par n="académique__adj" /> </e>
+<e lm="anodin" a="eleka"><i>anodin</i><par n="abaissant__adj" /> </e>
+<e lm="anthropoïde" a="eleka"><i>anthropoïde</i><par n="académique__adj" /> </e>
+<e lm="anticapitaliste" a="eleka"><i>anticapitaliste</i><par n="académique__adj" /> </e>
+<e lm="antidrogue" a="webform"><i>antidrogue</i><par n="arrière__adj" /> </e>
+<e lm="antifasciste" a="eleka"><i>antifasciste</i><par n="académique__adj" /> </e>
+<e lm="antifranquiste" a="eleka"><i>antifranquiste</i><par n="académique__adj" /> </e>
+<e lm="antimilitariste" a="eleka"><i>antimilitariste</i><par n="académique__adj" /> </e>
+<e lm="antinucléaire" a="eleka"><i>antinucléaire</i><par n="académique__adj" /> </e>
+<e lm="antiraciste" a="eleka"><i>antiraciste</i><par n="académique__adj" /> </e>
+<e lm="antisémite" a="eleka"><i>antisémite</i><par n="académique__adj" /> </e>
+<e lm="antitabac" a="eleka"><i>antitabac</i><par n="arrière__adj" /> </e>
+<e lm="antiterroriste" a="eleka"><i>antiterroriste</i><par n="académique__adj" /> </e>
+<e lm="antiterroriste" a="webform"><i>antiterroriste</i><par n="académique__adj" /> </e>
+<e lm="antivirus" a="webform"><i>antivirus</i><par n="arrière__adj" /> </e>
+<e lm="appétissant" a="eleka"><i>appétissant</i><par n="abaissant__adj" /> </e>
+<e lm="appétissant" a="webform"><i>appétissant</i><par n="abaissant__adj" /> </e>
+<e lm="applicable" a="webform"><i>applicable</i><par n="académique__adj" /> </e>
+<e lm="applicateur" a="eleka"><i>applicat</i><par n="conduct/eur__adj" /> </e>
+<e lm="appréciable" a="eleka"><i>appréciable</i><par n="académique__adj" /> </e>
+<e lm="approprié" a="eleka"><i>approprié</i><par n="abaissant__adj" /> </e>
+<e lm="ardu" a="webform"><i>ardu</i><par n="abaissant__adj" /> </e>
+<e lm="argentin"><i>argentin</i><par n="abaissant__adj" /> </e>
+<e lm="arménien" a="webform"><i>arménien</i><par n="ancien__adj" /> </e>
+<e lm="aspirateur" a="eleka"><i>aspirat</i><par n="conduct/eur__adj" /> </e>
+<e lm="assidu" a="webform"><i>assidu</i><par n="abaissant__adj" /> </e>
+<e lm="associatif" a="eleka"><i>associati</i><par n="affirmati/f__adj" /> </e>
+<e lm="associé" a="eleka"><i>associé</i><par n="abaissant__adj" /> </e>
+<e lm="asturien" a="eleka"><i>asturien</i><par n="ancien__adj" /> </e>
+<e lm="athlète"><i>athlète</i><par n="académique__adj" /> </e>
+<e lm="attenant" a="webform"><i>attenant</i><par n="abaissant__adj" /> </e>
+<e lm="attentif" a="webform"><i>attenti</i><par n="affirmati/f__adj" /> </e>
+<e lm="attractif"><i>attracti</i><par n="affirmati/f__adj" /> </e>
+<e lm="australien" a="webform"><i>australien</i><par n="ancien__adj" /> </e>
+<e lm="autrichien" a="webform"><i>autrichien</i><par n="ancien__adj" /> </e>
+<e lm="avant-dernier" a="webform"><i>avant-derni</i><par n="ch/er__adj" /> </e>
+<e lm="aventurier" a="webform"><i>aventuri</i><par n="ch/er__adj" /> </e>
+<e lm="avoué" a="eleka"><i>avoué</i><par n="abaissant__adj" /> </e>
+<e lm="bavard" a="eleka"><i>bavard</i><par n="abaissant__adj" /> </e>
+<e lm="beau"><i>be</i><par n="be/au__adj" /> </e>
+<e lm="belge" a="webform"><i>belge</i><par n="académique__adj" /> </e>
+<e lm="bête" a="eleka"><i>bête</i><par n="académique__adj" /> </e>
+<e lm="bête"><i>bête</i><par n="académique__adj" /> </e>
+<e lm="bienfaisant" a="eleka"><i>bienfaisant</i><par n="abaissant__adj" /> </e>
+<e lm="bilingue" a="webform"><i>bilingue</i><par n="académique__adj" /> </e>
+<e lm="biomédical" a="eleka"><i>biomédica</i><par n="amica/l__adj" /> </e>
+<e lm="birman" a="eleka"><i>birman</i><par n="abaissant__adj" /> </e>
+<e lm="biscayen" a="eleka"><i>biscayen</i><par n="ancien__adj" /> </e>
+<e lm="bon"><i>bon</i><par n="ancien__adj" /> </e>
+<e lm="bouddhiste" a="eleka"><i>bouddhiste</i><par n="académique__adj" /> </e>
+<e lm="braillard" a="webform"><i>braillard</i><par n="abaissant__adj" /> </e>
+<e lm="brésilien" a="eleka"><i>brésilien</i><par n="ancien__adj" /> </e>
+<e lm="brésilien" a="webform"><i>brésilien</i><par n="ancien__adj" /> </e>
+<e lm="brun"><i>brun</i><par n="abaissant__adj" /> </e>
+<e lm="buteur" a="webform"><i>buteu</i><par n="causeu/r__adj" /> </e>
+<e lm="calculable" a="eleka"><i>calculable</i><par n="académique__adj" /> </e>
+<e lm="calculateur" a="webform"><i>calculat</i><par n="conduct/eur__adj" /> </e>
+<e lm="californien" a="eleka"><i>californien</i><par n="ancien__adj" /> </e>
+<e lm="canarien" a="webform"><i>canarien</i><par n="ancien__adj" /> </e>
+<e lm="carcéral" a="eleka"><i>carcéra</i><par n="amica/l__adj" /> </e>
+<e lm="castillan" a="eleka"><i>castillan</i><par n="abaissant__adj" /> </e>
+<e lm="causant" a="webform"><i>causant</i><par n="abaissant__adj" /> </e>
+<e lm="cellulaire" a="eleka"><i>cellulaire</i><par n="académique__adj" /> </e>
+<e lm="chirurgical" a="webform"><i>chirurgica</i><par n="amica/l__adj" /> </e>
+<e lm="clandestin" a="webform"><i>clandestin</i><par n="abaissant__adj" /> </e>
+<e lm="clef"><i>clef</i><par n="académique__adj" /> </e>
+<e lm="cognitif" a="eleka"><i>cogniti</i><par n="affirmati/f__adj" /> </e>
+<e lm="collectif" a="webform"><i>collecti</i><par n="affirmati/f__adj" /> </e>
+<e lm="collectif"><i>collecti</i><par n="affirmati/f__adj" /> </e>
+<e lm="colombien" a="webform"><i>colombien</i><par n="ancien__adj" /> </e>
+<e lm="commémoratif" a="webform"><i>commémorati</i><par n="affirmati/f__adj" /> </e>
+<e lm="compact" a="webform"><i>compact</i><par n="abaissant__adj" /> </e>
+<e lm="comparable"><i>comparable</i><par n="académique__adj" /> </e>
+<e lm="comparatif" a="webform"><i>comparati</i><par n="affirmati/f__adj" /> </e>
+<e lm="compétitif" a="webform"><i>compétiti</i><par n="affirmati/f__adj" /> </e>
+<e lm="compréhensible" a="webform"><i>compréhensible</i><par n="académique__adj" /> </e>
+<e lm="comptable" a="eleka"><i>comptable</i><par n="académique__adj" /> </e>
+<e lm="concret" a="webform"><i>concr</i><par n="secr/et__adj" /> </e>
+<e lm="condamnable" a="webform"><i>condamnable</i><par n="académique__adj" /> </e>
+<e lm="conflictuel" a="webform"><i>conflictuel</i><par n="annuel__adj" /> </e>
+<e lm="conforme" a="webform"><i>conforme</i><par n="académique__adj" /> </e>
+<e lm="conquérant" a="webform"><i>conquérant</i><par n="abaissant__adj" /> </e>
+<e lm="consécutif" a="webform"><i>consécuti</i><par n="affirmati/f__adj" /> </e>
+<e lm="conseillable" a="eleka"><i>conseillable</i><par n="académique__adj" /> </e>
+<e lm="constructif" a="webform"><i>constructi</i><par n="affirmati/f__adj" /> </e>
+<e lm="consultatif" a="webform"><i>consultati</i><par n="affirmati/f__adj" /> </e>
+<e lm="contraceptif" a="eleka"><i>contracepti</i><par n="affirmati/f__adj" /> </e>
+<e lm="contributif" a="eleka"><i>contributi</i><par n="affirmati/f__adj" /> </e>
+<e lm="controversé" a="eleka"><i>controversé</i><par n="abaissant__adj" /> </e>
+<e lm="controversé" a="webform"><i>controversé</i><par n="abaissant__adj" /> </e>
+<e lm="convertible" a="eleka"><i>convertible</i><par n="académique__adj" /> </e>
+<e lm="coopératif" a="eleka"><i>coopérati</i><par n="affirmati/f__adj" /> </e>
+<e lm="coordinateur" a="webform"><i>coordinat</i><par n="conduct/eur__adj" /> </e>
+<e lm="corporatif" a="webform"><i>corporati</i><par n="affirmati/f__adj" /> </e>
+<e lm="correct" a="webform"><i>correct</i><par n="abaissant__adj" /> </e>
+<e lm="correcteur" a="eleka"><i>correct</i><par n="conduct/eur__adj" /> </e>
+<e lm="côtier" a="webform"><i>côti</i><par n="ch/er__adj" /> </e>
+<e lm="cotonnier" a="eleka"><i>cotonni</i><par n="ch/er__adj" /> </e>
+<e lm="créatif" a="eleka"><i>créati</i><par n="affirmati/f__adj" /> </e>
+<e lm="crédible" a="webform"><i>crédible</i><par n="académique__adj" /> </e>
+<e lm="criant" a="webform"><i>criant</i><par n="abaissant__adj" /> </e>
+<e lm="cubain" a="webform"><i>cubain</i><par n="abaissant__adj" /> </e>
+<e lm="cumulatif" a="eleka"><i>cumulati</i><par n="affirmati/f__adj" /> </e>
+<e lm="décisif" a="webform"><i>décisi</i><par n="affirmati/f__adj" /> </e>
+<e lm="déductible" a="eleka"><i>déductible</i><par n="académique__adj" /> </e>
+<e lm="défavorable" a="webform"><i>défavorable</i><par n="académique__adj" /> </e>
+<e lm="défavorisé" a="eleka"><i>défavorisé</i><par n="abaissant__adj" /> </e>
+<e lm="délibéré" a="webform"><i>délibéré</i><par n="abaissant__adj" /> </e>
+<e lm="demandeur" a="eleka"><i>demandeu</i><par n="causeu/r__adj" /> </e>
+<e lm="démesuré" a="webform"><i>démesuré</i><par n="abaissant__adj" /> </e>
+<e lm="démonstratif" a="eleka"><i>démonstrati</i><par n="affirmati/f__adj" /> </e>
+<e lm="démuni" a="webform"><i>démuni</i><par n="abaissant__adj" /> </e>
+<e lm="dentaire" a="eleka"><i>dentaire</i><par n="académique__adj" /> </e>
+<e lm="départamentale" a="webform"><i>départamentale</i><par n="académique__adj" /> </e>
+<e lm="dépensier" a="eleka"><i>dépensi</i><par n="ch/er__adj" /> </e>
+<e lm="désagréable" a="webform"><i>désagréable</i><par n="académique__adj" /> </e>
+<e lm="déséquilibré" a="webform"><i>déséquilibré</i><par n="abaissant__adj" /> </e>
+<e lm="destructeur" a="webform"><i>destruct</i><par n="conduct/eur__adj" /> </e>
+<e lm="détaillé" a="webform"><i>détaillé</i><par n="abaissant__adj" /> </e>
+<e lm="détenu" a="eleka"><i>détenu</i><par n="abaissant__adj" /> </e>
+<e lm="détestable"><i>détestable</i><par n="académique__adj" /> </e>
+<e lm="diminué" a="eleka"><i>diminué</i><par n="abaissant__adj" /> </e>
+<e lm="directif" a="webform"><i>directi</i><par n="affirmati/f__adj" /> </e>
+<e lm="discret" a="webform"><i>discr</i><par n="secr/et__adj" /> </e>
+<e lm="discutable" a="webform"><i>discutable</i><par n="académique__adj" /> </e>
+<e lm="dispositif"><i>dispositi</i><par n="affirmati/f__adj" /> </e>
+<e lm="distinctif" a="eleka"><i>distincti</i><par n="affirmati/f__adj" /> </e>
+<e lm="distrait" a="eleka"><i>distrait</i><par n="abaissant__adj" /> </e>
+<e lm="distributeur" a="webform"><i>distribut</i><par n="conduct/eur__adj" /> </e>
+<e lm="divers"><i>divers</i><par n="anglais__adj" /> </e>
+<e lm="divorcé" a="eleka"><i>divorcé</i><par n="abaissant__adj" /> </e>
+<e lm="dominicain" a="eleka"><i>dominicain</i><par n="abaissant__adj" /> </e>
+<e lm="double"><i>double</i><par n="académique__adj" /> </e>
+<e lm="éducatif" a="webform"><i>éducati</i><par n="affirmati/f__adj" /> </e>
+<e lm="effrayant" a="webform"><i>effrayant</i><par n="abaissant__adj" /> </e>
+<e lm="égoïste" a="webform"><i>égoïste</i><par n="académique__adj" /> </e>
+<e lm="électeur"><i>élect</i><par n="conduct/eur__adj" /> </e>
+<e lm="électoraliste" a="webform"><i>électoraliste</i><par n="académique__adj" /> </e>
+<e lm="élégant" a="eleka"><i>élégant</i><par n="abaissant__adj" /> </e>
+<e lm="élégant"><i>élégant</i><par n="abaissant__adj" /> </e>
+<e lm="éligible" a="eleka"><i>éligible</i><par n="académique__adj" /> </e>
+<e lm="éludable" a="eleka"><i>éludable</i><par n="académique__adj" /> </e>
+<e lm="émotif" a="eleka"><i>émoti</i><par n="affirmati/f__adj" /> </e>
+<e lm="encourageant" a="eleka"><i>encourageant</i><par n="abaissant__adj" /> </e>
+<e lm="encourageant" a="webform"><i>encourageant</i><par n="abaissant__adj" /> </e>
+<e lm="enthousiaste" a="webform"><i>enthousiaste</i><par n="académique__adj" /> </e>
+<e lm="entier"><i>enti</i><par n="ch/er__adj" /> </e>
+<e lm="entreprenant" a="webform"><i>entreprenant</i><par n="abaissant__adj" /> </e>
+<e lm="enviable"><i>enviable</i><par n="académique__adj" /> </e>
+<e lm="éolien" a="webform"><i>éolien</i><par n="ancien__adj" /> </e>
+<e lm="erroné" a="eleka"><i>erroné</i><par n="abaissant__adj" /> </e>
+<e lm="erroné" a="webform"><i>erroné</i><par n="abaissant__adj" /> </e>
+<e lm="érudit" a="webform"><i>érudit</i><par n="abaissant__adj" /> </e>
+<e lm="estival" a="eleka"><i>estiva</i><par n="amica/l__adj" /> </e>
+<e lm="estival" a="webform"><i>estiva</i><par n="amica/l__adj" /> </e>
+<e lm="étourdi" a="eleka"><i>étourdi</i><par n="abaissant__adj" /> </e>
+<e lm="évocateur" a="webform"><i>évocat</i><par n="conduct/eur__adj" /> </e>
+<e lm="évolutif" a="webform"><i>évoluti</i><par n="affirmati/f__adj" /> </e>
+<e lm="exclusif" a="webform"><i>exclusi</i><par n="affirmati/f__adj" /> </e>
+<e lm="exemplaire"><i>exemplaire</i><par n="académique__adj" /> </e>
+<e lm="exhaustif" a="webform"><i>exhausti</i><par n="affirmati/f__adj" /> </e>
+<e lm="exigible" a="eleka"><i>exigible</i><par n="académique__adj" /> </e>
+<e lm="exonéré" a="eleka"><i>exonéré</i><par n="abaissant__adj" /> </e>
+<e lm="explicatif" a="eleka"><i>explicati</i><par n="affirmati/f__adj" /> </e>
+<e lm="explicatif" a="webform"><i>explicati</i><par n="affirmati/f__adj" /> </e>
+<e lm="explosif"><i>explosi</i><par n="affirmati/f__adj" /> </e>
+<e lm="extensible" a="eleka"><i>extensible</i><par n="académique__adj" /> </e>
+<e lm="extrajudiciaire" a="eleka"><i>extrajudiciaire</i><par n="académique__adj" /> </e>
+<e lm="facultatif" a="eleka"><i>facultati</i><par n="affirmati/f__adj" /> </e>
+<e lm="faible"><i>faible</i><par n="académique__adj" /> </e>
+<e lm="fasciste" a="webform"><i>fasciste</i><par n="académique__adj" /> </e>
+<e lm="fédératif" a="eleka"><i>fédérati</i><par n="affirmati/f__adj" /> </e>
+<e lm="féministe" a="webform"><i>féministe</i><par n="académique__adj" /> </e>
+<e lm="férié" a="eleka"><i>férié</i><par n="abaissant__adj" /> </e>
+<e lm="fermé" a="eleka"><i>fermé</i><par n="abaissant__adj" /> </e>
+<e lm="féroce" a="webform"><i>féroce</i><par n="académique__adj" /> </e>
+<e lm="fiable" a="webform"><i>fiable</i><par n="académique__adj" /> </e>
+<e lm="fictif" a="webform"><i>ficti</i><par n="affirmati/f__adj" /> </e>
+<e lm="fier" a="webform"><i>fi</i><par n="ch/er__adj" /> </e>
+<e lm="fiscal"><i>fisca</i><par n="amica/l__adj" /> </e>
+<e lm="flamand" a="webform"><i>flamand</i><par n="abaissant__adj" /> </e>
+<e lm="flemmard" a="eleka"><i>flemmard</i><par n="abaissant__adj" /> </e>
+<e lm="forcé" a="eleka"><i>forcé</i><par n="abaissant__adj" /> </e>
+<e lm="formatif" a="eleka"><i>formati</i><par n="affirmati/f__adj" /> </e>
+<e lm="fragile" a="webform"><i>fragile</i><par n="académique__adj" /> </e>
+<e lm="franquiste" a="eleka"><i>franquiste</i><par n="académique__adj" /> </e>
+<e lm="gaditan" a="eleka"><i>gaditan</i><par n="abaissant__adj" /> </e>
+<e lm="galicien" a="eleka"><i>galicien</i><par n="ancien__adj" /> </e>
+<e lm="galicien"><i>galicien</i><par n="ancien__adj" /> </e>
+<e lm="gascon" a="eleka"><i>gascon</i><par n="ancien__adj" /> </e>
+<e lm="gênant" a="eleka"><i>gênant</i><par n="abaissant__adj" /> </e>
+<e lm="généraliste" a="eleka"><i>généraliste</i><par n="académique__adj" /> </e>
+<e lm="générateur" a="eleka"><i>générat</i><par n="conduct/eur__adj" /> </e>
+<e lm="glissant" a="webform"><i>glissant</i><par n="abaissant__adj" /> </e>
+<e lm="grossier" a="webform"><i>grossi</i><par n="ch/er__adj" /> </e>
+<e lm="guerrier" a="webform"><i>guerri</i><par n="ch/er__adj" /> </e>
+<e lm="guipuzcoain" a="eleka"><i>guipuzcoain</i><par n="abaissant__adj" /> </e>
+<e lm="handicapé" a="webform"><i>handicapé</i><par n="abaissant__adj" /> </e>
+<e lm="hebdomadaire" a="webform"><i>hebdomadaire</i><par n="académique__adj" /> </e>
+<e lm="héritier" a="eleka"><i>hériti</i><par n="ch/er__adj" /> </e>
+<e lm="horticole" a="eleka"><i>horticole</i><par n="académique__adj" /> </e>
+<e lm="hospitalier" a="webform"><i>hospitali</i><par n="ch/er__adj" /> </e>
+<e lm="hôtelier" a="webform"><i>hôteli</i><par n="ch/er__adj" /> </e>
+<e lm="illustratif" a="eleka"><i>illustrati</i><par n="affirmati/f__adj" /> </e>
+<e lm="immergé" a="eleka"><i>immergé</i><par n="abaissant__adj" /> </e>
+<e lm="immobilier" a="webform"><i>immobili</i><par n="ch/er__adj" /> </e>
+<e lm="immobilisé" a="eleka"><i>immobilisé</i><par n="abaissant__adj" /> </e>
+<e lm="imparable" a="eleka"><i>imparable</i><par n="académique__adj" /> </e>
+<e lm="impeccable" a="webform"><i>impeccable</i><par n="académique__adj" /> </e>
+<e lm="impensable" a="webform"><i>impensable</i><par n="académique__adj" /> </e>
+<e lm="impératif"><i>impérati</i><par n="affirmati/f__adj" /> </e>
+<e lm="impopulaire" a="webform"><i>impopulaire</i><par n="académique__adj" /> </e>
+<e lm="imposable" a="eleka"><i>imposable</i><par n="académique__adj" /> </e>
+<e lm="imprécis" a="eleka"><i>imprécis</i><par n="abaissant__adj" /> </e>
+<e lm="imprévisible" a="webform"><i>imprévisible</i><par n="académique__adj" /> </e>
+<e lm="improbable" a="webform"><i>improbable</i><par n="académique__adj" /> </e>
+<e lm="impulsif" a="webform"><i>impulsi</i><par n="affirmati/f__adj" /> </e>
+<e lm="imputable" a="webform"><i>imputable</i><par n="académique__adj" /> </e>
+<e lm="inacceptable" a="webform"><i>inacceptable</i><par n="académique__adj" /> </e>
+<e lm="inadmissible"><i>inadmissible</i><par n="académique__adj" /> </e>
+<e lm="inassouvi" a="webform"><i>inassouvi</i><par n="abaissant__adj" /> </e>
+<e lm="incapable" a="webform"><i>incapable</i><par n="académique__adj" /> </e>
+<e lm="incertain" a="webform"><i>incertain</i><par n="abaissant__adj" /> </e>
+<e lm="incisif" a="webform"><i>incisi</i><par n="affirmati/f__adj" /> </e>
+<e lm="inclusif" a="eleka"><i>inclusi</i><par n="affirmati/f__adj" /> </e>
+<e lm="incomparable" a="eleka"><i>incomparable</i><par n="académique__adj" /> </e>
+<e lm="incompatible" a="webform"><i>incompatible</i><par n="académique__adj" /> </e>
+<e lm="incomplet" a="webform"><i>incompl</i><par n="secr/et__adj" /> </e>
+<e lm="incompréhensible" a="webform"><i>incompréhensible</i><par n="académique__adj" /> </e>
+<e lm="incontrôlable" a="webform"><i>incontrôlable</i><par n="académique__adj" /> </e>
+<e lm="incorrect" a="webform"><i>incorrect</i><par n="abaissant__adj" /> </e>
+<e lm="indéniable" a="webform"><i>indéniable</i><par n="académique__adj" /> </e>
+<e lm="indésirable" a="webform"><i>indésirable</i><par n="académique__adj" /> </e>
+<e lm="indéteminé" a="eleka"><i>indéteminé</i><par n="abaissant__adj" /> </e>
+<e lm="indicatif" a="eleka"><i>indicati</i><par n="affirmati/f__adj" /> </e>
+<e lm="indirect" a="webform"><i>indirect</i><par n="abaissant__adj" /> </e>
+<e lm="indispensable" a="eleka"><i>indispensable</i><par n="académique__adj" /> </e>
+<e lm="indispensable"><i>indispensable</i><par n="académique__adj" /> </e>
+<e lm="indonésien" a="webform"><i>indonésien</i><par n="ancien__adj" /> </e>
+<e lm="indu" a="webform"><i>indu</i><par n="abaissant__adj" /> </e>
+<e lm="indubitable" a="eleka"><i>indubitable</i><par n="académique__adj" /> </e>
+<e lm="infatigable" a="webform"><i>infatigable</i><par n="académique__adj" /> </e>
+<e lm="infidèle" a="webform"><i>infidèle</i><par n="académique__adj" /> </e>
+<e lm="inflammable" a="eleka"><i>inflammable</i><par n="académique__adj" /> </e>
+<e lm="informatif" a="eleka"><i>informati</i><par n="affirmati/f__adj" /> </e>
+<e lm="inhumain" a="webform"><i>inhumain</i><par n="abaissant__adj" /> </e>
+<e lm="inimaginable" a="webform"><i>inimaginable</i><par n="académique__adj" /> </e>
+<e lm="inimitable" a="eleka"><i>inimitable</i><par n="académique__adj" /> </e>
+<e lm="injustifié" a="webform"><i>injustifié</i><par n="abaissant__adj" /> </e>
+<e lm="innombrable"><i>innombrable</i><par n="académique__adj" /> </e>
+<e lm="innovateur" a="eleka"><i>innovat</i><par n="conduct/eur__adj" /> </e>
+<e lm="inopportun" a="eleka"><i>inopportun</i><par n="abaissant__adj" /> </e>
+<e lm="inoubliable" a="webform"><i>inoubliable</i><par n="académique__adj" /> </e>
+<e lm="inoxydable" a="webform"><i>inoxydable</i><par n="académique__adj" /> </e>
+<e lm="insoluble" a="eleka"><i>insoluble</i><par n="académique__adj" /> </e>
+<e lm="insolvable" a="eleka"><i>insolvable</i><par n="académique__adj" /> </e>
+<e lm="instable"><i>instable</i><par n="académique__adj" /> </e>
+<e lm="instantané" a="eleka"><i>instantané</i><par n="abaissant__adj" /> </e>
+<e lm="intact" a="webform"><i>intact</i><par n="abaissant__adj" /> </e>
+<e lm="intenable" a="webform"><i>intenable</i><par n="académique__adj" /> </e>
+<e lm="intensif" a="webform"><i>intensi</i><par n="affirmati/f__adj" /> </e>
+<e lm="interactif" a="webform"><i>interacti</i><par n="affirmati/f__adj" /> </e>
+<e lm="intolérable" a="webform"><i>intolérable</i><par n="académique__adj" /> </e>
+<e lm="intuitif" a="webform"><i>intuiti</i><par n="affirmati/f__adj" /> </e>
+<e lm="invariable" a="eleka"><i>invariable</i><par n="académique__adj" /> </e>
+<e lm="invétéré" a="eleka"><i>invétéré</i><par n="abaissant__adj" /> </e>
+<e lm="inviolable" a="eleka"><i>inviolable</i><par n="académique__adj" /> </e>
+<e lm="invisible" a="webform"><i>invisible</i><par n="académique__adj" /> </e>
+<e lm="irréfutable" a="eleka"><i>irréfutable</i><par n="académique__adj" /> </e>
+<e lm="irrémédiable" a="webform"><i>irrémédiable</i><par n="académique__adj" /> </e>
+<e lm="irremplaçable" a="webform"><i>irremplaçable</i><par n="académique__adj" /> </e>
+<e lm="irréversible" a="webform"><i>irréversible</i><par n="académique__adj" /> </e>
+<e lm="irrévocable" a="eleka"><i>irrévocable</i><par n="académique__adj" /> </e>
+<e lm="isolationniste" a="eleka"><i>isolationniste</i><par n="académique__adj" /> </e>
+<e lm="jordanien" a="webform"><i>jordanien</i><par n="ancien__adj" /> </e>
+<e lm="jumeau" a="eleka"><i>jume</i><par n="nouve/au__adj" /> </e>
+<e lm="juvénile" a="webform"><i>juvénile</i><par n="académique__adj" /> </e>
+<e lm="laid" a="webform"><i>laid</i><par n="abaissant__adj" /> </e>
+<e lm="latin"><i>latin</i><par n="abaissant__adj" /> </e>
+<e lm="linéaire" a="webform"><i>linéaire</i><par n="académique__adj" /> </e>
+<e lm="liquidable" a="eleka"><i>liquidable</i><par n="académique__adj" /> </e>
+<e lm="liquidatif" a="eleka"><i>liquidati</i><par n="affirmati/f__adj" /> </e>
+<e lm="localisable" a="eleka"><i>localisable</i><par n="académique__adj" /> </e>
+<e lm="lointain" a="eleka"><i>lointain</i><par n="abaissant__adj" /> </e>
+<e lm="lointain"><i>lointain</i><par n="abaissant__adj" /> </e>
+<e lm="louable" a="webform"><i>louable</i><par n="académique__adj" /> </e>
+<e lm="lourd" a="webform"><i>lourd</i><par n="abaissant__adj" /> </e>
+<e lm="lucratif" a="webform"><i>lucrati</i><par n="affirmati/f__adj" /> </e>
+<e lm="lunaire" a="webform"><i>lunaire</i><par n="académique__adj" /> </e>
+<e lm="malheureux" a="eleka"><i>malheureu</i><par n="affectueu/x__adj" /> </e>
+<e lm="malheureux"><i>malheureu</i><par n="affectueu/x__adj" /> </e>
+<e lm="malin" a="webform"><i>mali</i><par n="mali/n__adj" /> </e>
+<e lm="malintentionné" a="eleka"><i>malintentionné</i><par n="abaissant__adj" /> </e>
+<e lm="manipulateur" a="webform"><i>manipulat</i><par n="conduct/eur__adj" /> </e>
+<e lm="manuscrit" a="webform"><i>manuscrit</i><par n="abaissant__adj" /> </e>
+<e lm="marin"><i>marin</i><par n="abaissant__adj" /> </e>
+<e lm="marrant"><i>marrant</i><par n="abaissant__adj" /> </e>
+<e lm="marxiste" a="webform"><i>marxiste</i><par n="académique__adj" /> </e>
+<e lm="masculin" a="eleka"><i>masculin</i><par n="abaissant__adj" /> </e>
+<e lm="masculin" a="webform"><i>masculin</i><par n="abaissant__adj" /> </e>
+<e lm="maternel" a="eleka"><i>maternel</i><par n="annuel__adj" /> </e>
+<e lm="maternel" a="webform"><i>maternel</i><par n="annuel__adj" /> </e>
+<e lm="maximal" a="webform"><i>maxima</i><par n="amica/l__adj" /> </e>
+<e lm="mécanicien"><i>mécanicien</i><par n="ancien__adj" /> </e>
+<e lm="mécontent" a="webform"><i>mécontent</i><par n="abaissant__adj" /> </e>
+<e lm="médiateur" a="webform"><i>médiat</i><par n="conduct/eur__adj" /> </e>
+<e lm="méditerranéen" a="webform"><i>méditerranéen</i><par n="ancien__adj" /> </e>
+<e lm="meilleur"><i>meilleur</i><par n="abaissant__adj" /> </e>
+<e lm="mesurable" a="eleka"><i>mesurable</i><par n="académique__adj" /> </e>
+<e lm="mexicain" a="eleka"><i>mexicain</i><par n="abaissant__adj" /> </e>
+<e lm="migrateur" a="eleka"><i>migrat</i><par n="conduct/eur__adj" /> </e>
+<e lm="minier" a="webform"><i>mini</i><par n="ch/er__adj" /> </e>
+<e lm="monolingue" a="eleka"><i>monolingue</i><par n="académique__adj" /> </e>
+<e lm="moribond" a="eleka"><i>moribond</i><par n="abaissant__adj" /> </e>
+<e lm="moyen"><i>moyen</i><par n="ancien__adj" /> </e>
+<e lm="multilingue" a="eleka"><i>multilingue</i><par n="académique__adj" /> </e>
+<e lm="multimédia" a="webform"><i>multimédia</i><par n="arrière__adj" /> </e>
+<e lm="multirisque" a="eleka"><i>multirisque</i><par n="arrière__adj" /> </e>
+<e lm="murcien" a="eleka"><i>murcien</i><par n="ancien__adj" /> </e>
+<e lm="musulman" a="eleka"><i>musulman</i><par n="abaissant__adj" /> </e>
+<e lm="musulman"><i>musulman</i><par n="abaissant__adj" /> </e>
+<e lm="mutuel" a="webform"><i>mutuel</i><par n="annuel__adj" /> </e>
+<e lm="naïf" a="webform"><i>naï</i><par n="affirmati/f__adj" /> </e>
+<e lm="narcissique" a="webform"><i>narcissique</i><par n="académique__adj" /> </e>
+<e lm="narratif" a="webform"><i>narrati</i><par n="affirmati/f__adj" /> </e>
+<e lm="natif" a="eleka"><i>nati</i><par n="affirmati/f__adj" /> </e>
+<e lm="naturaliste" a="eleka"><i>naturaliste</i><par n="académique__adj" /> </e>
+<e lm="nominatif" a="eleka"><i>nominati</i><par n="affirmati/f__adj" /> </e>
+<e lm="nord-américain" a="eleka"><i>nord-américain</i><par n="abaissant__adj" /> </e>
+<e lm="nord-coréen" a="eleka"><i>nord-coréen</i><par n="ancien__adj" /> </e>
+<e lm="normalisé" a="eleka"><i>normalisé</i><par n="abaissant__adj" /> </e>
+<e lm="normatif" a="eleka"><i>normati</i><par n="affirmati/f__adj" /> </e>
+<e lm="norvégien" a="webform"><i>norvégien</i><par n="ancien__adj" /> </e>
+<e lm="nouveau-né" a="eleka"><i>nouveau-né</i><par n="abaissant__adj" /> </e>
+<e lm="obligatoire" a="eleka"><i>obligatoire</i><par n="académique__adj" /> </e>
+<e lm="obligatoire"><i>obligatoire</i><par n="académique__adj" /> </e>
+<e lm="obscur"><i>obscur</i><par n="abaissant__adj" /> </e>
+<e lm="obsessionnel" a="webform"><i>obsessionnel</i><par n="annuel__adj" /> </e>
+<e lm="occitan" a="eleka"><i>occitan</i><par n="abaissant__adj" /> </e>
+<e lm="opérationnel" a="eleka"><i>opérationnel</i><par n="annuel__adj" /> </e>
+<e lm="opportuniste" a="webform"><i>opportuniste</i><par n="académique__adj" /> </e>
+<e lm="opposable" a="webform"><i>opposable</i><par n="académique__adj" /> </e>
+<e lm="opposé"><i>opposé</i><par n="abaissant__adj" /> </e>
+<e lm="optimal" a="eleka"><i>optima</i><par n="amica/l__adj" /> </e>
+<e lm="optimiste" a="webform"><i>optimiste</i><par n="académique__adj" /> </e>
+<e lm="organisationnel" a="eleka"><i>organisationnel</i><par n="annuel__adj" /> </e>
+<e lm="originaire" a="eleka"><i>originaire</i><par n="académique__adj" /> </e>
+<e lm="originaire" a="webform"><i>originaire</i><par n="académique__adj" /> </e>
+<e lm="osasuniste" a="eleka"><i>osasuniste</i><par n="académique__adj" /> </e>
+<e lm="ouvrable" a="eleka"><i>ouvrable</i><par n="académique__adj" /> </e>
+<e lm="pacifiste" a="webform"><i>pacifiste</i><par n="académique__adj" /> </e>
+<e lm="païen" a="webform"><i>païen</i><par n="ancien__adj" /> </e>
+<e lm="paisible" a="eleka"><i>paisible</i><par n="académique__adj" /> </e>
+<e lm="palpable" a="webform"><i>palpable</i><par n="académique__adj" /> </e>
+<e lm="parachutiste" a="eleka"><i>parachutiste</i><par n="académique__adj" /> </e>
+<e lm="pareil" a="eleka"><i>pareil</i><par n="annuel__adj" /> </e>
+<e lm="participatif" a="eleka"><i>participati</i><par n="affirmati/f__adj" /> </e>
+<e lm="passif" a="webform"><i>passi</i><par n="affirmati/f__adj" /> </e>
+<e lm="paternel" a="webform"><i>paternel</i><par n="annuel__adj" /> </e>
+<e lm="payeur" a="eleka"><i>payeu</i><par n="causeu/r__adj" /> </e>
+<e lm="perceptible" a="webform"><i>perceptible</i><par n="académique__adj" /> </e>
+<e lm="perpétuel" a="webform"><i>perpétuel</i><par n="annuel__adj" /> </e>
+<e lm="persécuteur" a="eleka"><i>persécut</i><par n="conduct/eur__adj" /> </e>
+<e lm="péruvien" a="webform"><i>péruvien</i><par n="ancien__adj" /> </e>
+<e lm="petit"><i>petit</i><par n="abaissant__adj" /> </e>
+<e lm="phalangiste" a="eleka"><i>phalangiste</i><par n="académique__adj" /> </e>
+<e lm="pictural" a="webform"><i>pictura</i><par n="amica/l__adj" /> </e>
+<e lm="pionnier"><i>pionni</i><par n="ch/er__adj" /> </e>
+<e lm="plat"><i>plat</i><par n="abaissant__adj" /> </e>
+<e lm="poilu" a="webform"><i>poilu</i><par n="abaissant__adj" /> </e>
+<e lm="polaire" a="webform"><i>polaire</i><par n="académique__adj" /> </e>
+<e lm="porno" a="eleka"><i>porno</i><par n="académique__adj" /> </e>
+<e lm="pourvu" a="eleka"><i>pourvu</i><par n="abaissant__adj" /> </e>
+<e lm="prédateur" a="webform"><i>prédat</i><par n="conduct/eur__adj" /> </e>
+<e lm="préférable" a="webform"><i>préférable</i><par n="académique__adj" /> </e>
+<e lm="prescriptif" a="eleka"><i>prescripti</i><par n="affirmati/f__adj" /> </e>
+<e lm="présumable" a="eleka"><i>présumable</i><par n="académique__adj" /> </e>
+<e lm="présumé" a="eleka"><i>présumé</i><par n="abaissant__adj" /> </e>
+<e lm="prêt" a="webform"><i>prêt</i><par n="abaissant__adj" /> </e>
+<e lm="préventif" a="eleka"><i>préventi</i><par n="affirmati/f__adj" /> </e>
+<e lm="proche"><i>proche</i><par n="académique__adj" /> </e>
+<e lm="producteur"><i>product</i><par n="conduct/eur__adj" /> </e>
+<e lm="productif" a="webform"><i>producti</i><par n="affirmati/f__adj" /> </e>
+<e lm="programmable" a="eleka"><i>programmable</i><par n="académique__adj" /> </e>
+<e lm="progressif" a="webform"><i>progressi</i><par n="affirmati/f__adj" /> </e>
+<e lm="progressiste" a="webform"><i>progressiste</i><par n="académique__adj" /> </e>
+<e lm="prometteur" a="eleka"><i>prometteu</i><par n="causeu/r__adj" /> </e>
+<e lm="promoteur" a="webform"><i>promot</i><par n="conduct/eur__adj" /> </e>
+<e lm="provocateur" a="webform"><i>provocat</i><par n="conduct/eur__adj" /> </e>
+<e lm="pyrénéen" a="eleka"><i>pyrénéen</i><par n="ancien__adj" /> </e>
+<e lm="qualitatif" a="eleka"><i>qualitati</i><par n="affirmati/f__adj" /> </e>
+<e lm="quotidien"><i>quotidien</i><par n="ancien__adj" /> </e>
+<e lm="raté" a="eleka"><i>raté</i><par n="abaissant__adj" /> </e>
+<e lm="réceptif" a="webform"><i>récepti</i><par n="affirmati/f__adj" /> </e>
+<e lm="récidiviste" a="webform"><i>récidiviste</i><par n="académique__adj" /> </e>
+<e lm="reçu et signé" a="eleka"><i>reçu<b/>et<b/>signé</i><par n="arrière__adj" /> </e>
+<e lm="réitéré" a="webform"><i>réitéré</i><par n="abaissant__adj" /> </e>
+<e lm="remarquable" a="eleka"><i>remarquable</i><par n="académique__adj" /> </e>
+<e lm="remarquable"><i>remarquable</i><par n="académique__adj" /> </e>
+<e lm="rémunéré" a="eleka"><i>rémunéré</i><par n="abaissant__adj" /> </e>
+<e lm="renchéri" a="webform"><i>renchéri</i><par n="abaissant__adj" /> </e>
+<e lm="rentable" a="webform"><i>rentable</i><par n="académique__adj" /> </e>
+<e lm="représentatif" a="webform"><i>représentati</i><par n="affirmati/f__adj" /> </e>
+<e lm="répressif" a="eleka"><i>répressi</i><par n="affirmati/f__adj" /> </e>
+<e lm="respectable" a="webform"><i>respectable</i><par n="académique__adj" /> </e>
+<e lm="retraité" a="eleka"><i>retraité</i><par n="abaissant__adj" /> </e>
+<e lm="rétributif" a="eleka"><i>rétributi</i><par n="affirmati/f__adj" /> </e>
+<e lm="rétroactif" a="eleka"><i>rétroacti</i><par n="affirmati/f__adj" /> </e>
+<e lm="réussi" a="eleka"><i>réussi</i><par n="abaissant__adj" /> </e>
+<e lm="révélateur" a="webform"><i>révélat</i><par n="conduct/eur__adj" /> </e>
+<e lm="réversible" a="webform"><i>réversible</i><par n="académique__adj" /> </e>
+<e lm="rond"><i>rond</i><par n="abaissant__adj" /> </e>
+<e lm="rouge-blanc" a="eleka"><i>rouge-blan</i><par n="fran/c__adj" /> </e>
+<e lm="roumain" a="webform"><i>roumain</i><par n="abaissant__adj" /> </e>
+<e lm="salarié" a="webform"><i>salarié</i><par n="abaissant__adj" /> </e>
+<e lm="salin" a="eleka"><i>salin</i><par n="abaissant__adj" /> </e>
+<e lm="salutaire" a="webform"><i>salutaire</i><par n="académique__adj" /> </e>
+<e lm="sanguin" a="eleka"><i>sanguin</i><par n="abaissant__adj" /> </e>
+<e lm="sec" a="webform"><i>s</i><par n="s/ec__adj" /> </e>
+<e lm="sélectif" a="webform"><i>sélecti</i><par n="affirmati/f__adj" /> </e>
+<e lm="sélectionneur" a="webform"><i>sélectionneu</i><par n="causeu/r__adj" /> </e>
+<e lm="séparatiste" a="webform"><i>séparatiste</i><par n="académique__adj" /> </e>
+<e lm="serein" a="webform"><i>serein</i><par n="abaissant__adj" /> </e>
+<e lm="sexiste" a="webform"><i>sexiste</i><par n="académique__adj" /> </e>
+<e lm="similaire" a="webform"><i>similaire</i><par n="académique__adj" /> </e>
+<e lm="sinistré" a="eleka"><i>sinistré</i><par n="abaissant__adj" /> </e>
+<e lm="snob" a="eleka"><i>snob</i><par n="académique__adj" /> </e>
+<e lm="solvable" a="eleka"><i>solvable</i><par n="académique__adj" /> </e>
+<e lm="soudain" a="webform"><i>soudain</i><par n="abaissant__adj" /> </e>
+<e lm="sous-développé" a="webform"><i>sous-développé</i><par n="abaissant__adj" /> </e>
+<e lm="sous-marin" a="webform"><i>sous-marin</i><par n="abaissant__adj" /> </e>
+<e lm="soutenable" a="webform"><i>soutenable</i><par n="académique__adj" /> </e>
+<e lm="souterrain" a="eleka"><i>souterrain</i><par n="abaissant__adj" /> </e>
+<e lm="souterrain" a="webform"><i>souterrain</i><par n="abaissant__adj" /> </e>
+<e lm="souverain"><i>souverain</i><par n="abaissant__adj" /> </e>
+<e lm="spéculatif" a="webform"><i>spéculati</i><par n="affirmati/f__adj" /> </e>
+<e lm="spontané" a="eleka"><i>spontané</i><par n="abaissant__adj" /> </e>
+<e lm="stable"><i>stable</i><par n="académique__adj" /> </e>
+<e lm="stérile" a="webform"><i>stérile</i><par n="académique__adj" /> </e>
+<e lm="subjectif" a="eleka"><i>subjecti</i><par n="affirmati/f__adj" /> </e>
+<e lm="sublime" a="webform"><i>sublime</i><par n="académique__adj" /> </e>
+<e lm="substantif"><i>substanti</i><par n="affirmati/f__adj" /> </e>
+<e lm="successif" a="eleka"><i>successi</i><par n="affirmati/f__adj" /> </e>
+<e lm="sud-coréen" a="eleka"><i>sud-coréen</i><par n="ancien__adj" /> </e>
+<e lm="sunnite" a="eleka"><i>sunnite</i><par n="académique__adj" /> </e>
+<e lm="super" a="webform"><i>super</i><par n="arrière__adj" /> </e>
+<e lm="superflu" a="eleka"><i>superflu</i><par n="abaissant__adj" /> </e>
+<e lm="surdoué" a="eleka"><i>surdoué</i><par n="abaissant__adj" /> </e>
+<e lm="sûr"><i>sûr</i><par n="abaissant__adj" /> </e>
+<e lm="syrien" a="eleka"><i>syrien</i><par n="ancien__adj" /> </e>
+<e lm="tardif" a="webform"><i>tardi</i><par n="affirmati/f__adj" /> </e>
+<e lm="télévisuel" a="webform"><i>télévisuel</i><par n="annuel__adj" /> </e>
+<e lm="textile" a="webform"><i>textile</i><par n="académique__adj" /> </e>
+<e lm="tibétain" a="eleka"><i>tibétain</i><par n="abaissant__adj" /> </e>
+<e lm="titulaire"><i>titulaire</i><par n="académique__adj" /> </e>
+<e lm="transfrontalier" a="eleka"><i>transfrontali</i><par n="ch/er__adj" /> </e>
+<e lm="travailleur" a="eleka"><i>travailleu</i><par n="causeu/r__adj" /> </e>
+<e lm="travailliste" a="webform"><i>travailliste</i><par n="académique__adj" /> </e>
+<e lm="triple" a="webform"><i>triple</i><par n="académique__adj" /> </e>
+<e lm="trompeur" a="eleka"><i>trompeu</i><par n="causeu/r__adj" /> </e>
+<e lm="unanime" a="webform"><i>unanime</i><par n="académique__adj" /> </e>
+<e lm="uruguayen" a="eleka"><i>uruguayen</i><par n="ancien__adj" /> </e>
+<e lm="vacciné" a="webform"><i>vacciné</i><par n="abaissant__adj" /> </e>
+<e lm="valencianiste" a="eleka"><i>valencianiste</i><par n="académique__adj" /> </e>
+<e lm="valencien" a="eleka"><i>valencien</i><par n="ancien__adj" /> </e>
+<e lm="variable" a="webform"><i>variable</i><par n="académique__adj" /> </e>
+<e lm="vénézuélien" a="webform"><i>vénézuélien</i><par n="ancien__adj" /> </e>
+<e lm="véritable" a="webform"><i>véritable</i><par n="académique__adj" /> </e>
+<e lm="véritable"><i>véritable</i><par n="académique__adj" /> </e>
+<e lm="versatile" a="webform"><i>versatile</i><par n="académique__adj" /> </e>
+<e lm="viable" a="webform"><i>viable</i><par n="académique__adj" /> </e>
+<e lm="viager" a="eleka"><i>viag</i><par n="ch/er__adj" /> </e>
+<e lm="vice"><i>vice</i><par n="arrière__adj" /> </e>
+<e lm="vierge"><i>vierge</i><par n="académique__adj" /> </e>
+<e lm="vif" a="webform"><i>vi</i><par n="affirmati/f__adj" /> </e>
+<e lm="volant"><i>volant</i><par n="abaissant__adj" /> </e>
+<e lm="vrai" a="webform"><i>vrai</i><par n="abaissant__adj" /> </e>
+<e lm="vulgaire" a="webform"><i>vulgaire</i><par n="académique__adj" /> </e>
+<e lm="vulgarisateur" a="eleka"><i>vulgarisat</i><par n="conduct/eur__adj" /> </e>
+<e lm="vulnérable" a="webform"><i>vulnérable</i><par n="académique__adj" /> </e>
+<e r="LR" lm="âgé"><i>âgé</i><par n="abaissant__adj" /> </e>
+<e r="LR" lm="éducatif" a="webform"><p><l>Educati</l><r>éducati</r></p><par n="affirmati/f__adj" /> </e>
+<e r="LR" lm="égoïste" a="webform"><p><l>Egoïste</l><r>égoïste</r></p><par n="académique__adj" /> </e>
+<e r="LR" lm="électeur"><p><l>Elect</l><r>élect</r></p><par n="conduct/eur__adj" /> </e>
+<e r="LR" lm="électoraliste" a="webform"><p><l>Electoraliste</l><r>électoraliste</r></p><par n="académique__adj" /> </e>
+<e r="LR" lm="élégant"><p><l>Elégant</l><r>élégant</r></p><par n="abaissant__adj" /> </e>
+<e r="LR" lm="éolien" a="webform"><p><l>Eolien</l><r>éolien</r></p><par n="ancien__adj" /> </e>
+<e r="LR" lm="érudit" a="webform"><p><l>Erudit</l><r>érudit</r></p><par n="abaissant__adj" /> </e>
+<e r="LR" lm="évocateur" a="webform"><p><l>Evocat</l><r>évocat</r></p><par n="conduct/eur__adj" /> </e>
+<e r="LR" lm="évolutif" a="webform"><p><l>Evoluti</l><r>évoluti</r></p><par n="affirmati/f__adj" /> </e>
+<e r="LR" lm="mécontent" a="webform"><i>mécontent</i><par n="abaissant__adj" /> </e>
+<e r="LR" lm="présumé" a="webform"><i>présumé</i><par n="abaissant__adj" /> </e>
+<e r="RL" lm="assurable" a="eleka"><i>assurable</i><par n="académique__adj" /> </e>
+<e r="RL" lm="attenant" a="webform"><i>attenant</i><par n="abaissant__adj" /> </e>
+<e r="RL" lm="braillard" a="webform"><i>braillard</i><par n="abaissant__adj" /> </e>
+<e r="RL" lm="obligatoire" a="eleka"><i>obligatoire</i><par n="académique__adj" /> </e>
+<e r="RL" lm="sunnite" a="eleka"><i>sunnite</i><par n="académique__adj" /> </e>
+<e lm="super" a="webform"><i>super</i><par n="arrière__adj" /> </e>
+
   </section>
 <section id="apostrophes" type="postblank">
 
