@@ -7885,6 +7885,12 @@
           <r>corredor<s n="n"/><s n="m"/></r>
         </p>
       </e>
+      <e r="RL">
+        <p>
+          <l>corridor<s n="n"/><s n="m"/></l>
+          <r>corredor<s n="n"/><s n="f"/></r>
+        </p>
+      </e>
       <e r="LR">
         <p>
           <l>courtine<s n="n"/></l>
@@ -20883,7 +20889,7 @@
           <r>obligar<s n="vblex"/></r>
         </p>
       </e>
-      <e>
+      <e r="RL">
         <p>
           <l>obscur<s n="adj"/></l>
           <r>fosc<s n="adj"/></r>
@@ -24886,16 +24892,22 @@
           <r>encara<b/>que<s n="cnjadv"/></r>
         </p>
       </e>
-      <e>
+      <e r="RL">
         <p>
           <l>quotidien<s n="adj"/></l>
           <r>quotidià<s n="adj"/></r>
         </p>
       </e>
-      <e r="RL">
+      <e>
         <p>
           <l>quotidien<s n="n"/></l>
           <r>diari<s n="n"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>quotidien<s n="adj"/></l>
+          <r>diari<s n="adj"/></r>
         </p>
       </e>
       <e>
@@ -56529,7 +56541,6 @@
 <e r="RL"><p><l>distrait<s n="adj"/></l><r>despistat<s n="adj"/></r></p></e>
 <e><p><l>destructeur<s n="adj"/></l><r>destructor<s n="adj"/></r></p></e>
 <e><p><l>détaillé<s n="adj"/></l><r>detallat<s n="adj"/></r></p></e>
-<e><p><l>quotidien<s n="adj"/></l><r>diari<s n="adj"/></r></p></e>
 <e><p><l>handicapé<s n="adj"/></l><r>discapacitat<s n="adj"/></r></p></e>
 <e><p><l>discret<s n="adj"/></l><r>discret<s n="adj"/></r></p></e>
 <e><p><l>dispositif<s n="adj"/></l><r>dispositiu<s n="adj"/></r></p></e>
@@ -56632,7 +56643,6 @@
 <e><p><l>normalisé<s n="adj"/></l><r>normalitzat<s n="adj"/></r></p></e>
 <e><p><l>normatif<s n="adj"/></l><r>normatiu<s n="adj"/></r></p></e>
 <e><p><l>norvégien<s n="adj"/></l><r>noruec<s n="adj"/></r></p></e>
-<e r="RL"><p><l>obscur<s n="adj"/></l><r>fosc<s n="adj"/></r></p></e>
 <e><p><l>obscur<s n="adj"/></l><r>obscur<s n="adj"/></r></p></e>
 <e><p><l>obsessionnel<s n="adj"/></l><r>obsessiu<s n="adj"/></r></p></e>
 <e><p><l>opérationnel<s n="adj"/></l><r>operatiu<s n="adj"/></r></p></e>
@@ -56673,7 +56683,7 @@
 <e><p><l>rétroactif<s n="adj"/></l><r>retroactiu<s n="adj"/></r></p></e>
 <e><p><l>révélateur<s n="adj"/></l><r>revelador<s n="adj"/></r></p></e>
 <e><p><l>roumain<s n="adj"/></l><r>romanès<s n="adj"/></r></p></e>
-<e><p><l>répressif<s n="adj"/></l><r>sancionador<s n="adj"/></r></p></e>
+<e r="RL"><p><l>répressif<s n="adj"/></l><r>sancionador<s n="adj"/></r></p></e>
 <e><p><l>sanguin<s n="adj"/></l><r>sanguini<s n="adj"/></r></p></e>
 <e><p><l>sec<s n="adj"/></l><r>sec<s n="adj"/></r></p></e>
 <e><p><l>sûr<s n="adj"/></l><r>segur<s n="adj"/></r></p></e>
@@ -56783,7 +56793,7 @@
 <e><p><l>abrasif<s n="adj"/></l><r>abrasiu<s n="adj"/></r></p></e>
 <e r="RL"><p><l>cumulatif<s n="adj"/></l><r>acumulatiu<s n="adj"/></r></p></e>
 <e><p><l>cumulatif<s n="adj"/></l><r>cumulatiu<s n="adj"/></r></p></e>
-<e><p><l>vrai<s n="adj"/></l><r>vertader<s n="adj"/></r></p></e>
+<e r="RL"><p><l>vrai<s n="adj"/></l><r>vertader<s n="adj"/></r></p></e>
 <e><p><l>explicatif<s n="adj"/></l><r>aclaridor<s n="adj"/></r></p></e>
 <e><p><l>additif<s n="adj"/></l><r>additiu<s n="adj"/></r></p></e>
 <e><p><l>agropastoral<s n="adj"/></l><r>agropecuari<s n="adj"/></r></p></e>
@@ -56816,7 +56826,7 @@
 <e><p><l>volant<s n="adj"/></l><r>volador<s n="adj"/></r></p></e>
 
 <e><p><l>conseillable<s n="adj"/><s n="mf"/></l><r>aconsellable<s n="adj"/><s n="mf"/></r></p></e>
-<e><p><l>paisible<s n="adj"/><s n="mf"/></l><r>afable<s n="adj"/><s n="mf"/></r></p></e>
+<e r="RL"><p><l>paisible<s n="adj"/><s n="mf"/></l><r>afable<s n="adj"/><s n="mf"/></r></p></e>
 <e r="RL"><p><l>proche<s n="adj"/><s n="mf"/></l><r>afí<s n="adj"/><s n="mf"/></r></p></e>
 <e><p><l>anarchiste<s n="adj"/><s n="mf"/></l><r>anarquista<s n="adj"/><s n="mf"/></r></p></e>
 <e><p><l>applicable<s n="adj"/><s n="mf"/></l><r>aplicable<s n="adj"/><s n="mf"/></r></p></e>
@@ -57126,6 +57136,8 @@
 <e r="RL"><p><l>intellectuel<s n="adj"/><s n="GD"/></l><r>intel·lectual<s n="adj"/><s n="mf"/></r></p></e>
 <e r="RL"><p><l>intemporel<s n="adj"/><s n="GD"/></l><r>intemporal<s n="adj"/><s n="mf"/></r></p></e>
 <e r="RL"><p><l>intéressant<s n="adj"/><s n="GD"/></l><r>interessant<s n="adj"/><s n="mf"/></r></p></e>
+<e r="RL"><p><l>intéressant<s n="adj"/></l><r>interessant<s n="adj"/><s n="sup"/></r></p></e>
+<e r="LR"><p><l>intéressant<s n="adj"/></l><r>interessant<s n="adj"/><s n="mf"/></r></p></e>
 <e r="RL"><p><l>interprofessionnel<s n="adj"/><s n="GD"/></l><r>interprofessional<s n="adj"/><s n="mf"/></r></p></e>
 <e r="RL"><p><l>intolérant<s n="adj"/><s n="GD"/></l><r>intolerant<s n="adj"/><s n="mf"/></r></p></e>
 <e r="RL"><p><l>intransigeant<s n="adj"/><s n="GD"/></l><r>intransigent<s n="adj"/><s n="mf"/></r></p></e>
@@ -57328,7 +57340,6 @@
 <e r="LR"><p><l>capital<s n="adj"/></l><r>cabdal<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>cadastral<s n="adj"/></l><r>cadastral<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>charnel<s n="adj"/></l><r>carnal<s n="adj"/><s n="mf"/></r></p></e>
-<e r="LR"><p><l>préventif<s n="adj"/></l><r>cautelar<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>cérébral<s n="adj"/></l><r>cerebral<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>collatéral<s n="adj"/></l><r>col·lateral<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>collectionneur<s n="adj"/></l><r>col·leccionista<s n="adj"/><s n="mf"/></r></p></e>
@@ -57424,7 +57435,6 @@
 <e r="LR"><p><l>instrumental<s n="adj"/></l><r>instrumental<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>intellectuel<s n="adj"/></l><r>intel·lectual<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>intemporel<s n="adj"/></l><r>intemporal<s n="adj"/><s n="mf"/></r></p></e>
-<e r="LR"><p><l>intéressant<s n="adj"/></l><r>interessant<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>interprofessionnel<s n="adj"/></l><r>interprofessional<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>intolérant<s n="adj"/></l><r>intolerant<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>intransigeant<s n="adj"/></l><r>intransigent<s n="adj"/><s n="mf"/></r></p></e>
@@ -57486,10 +57496,11 @@
 <e r="LR"><p><l>proportionnel<s n="adj"/></l><r>proporcional<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>provincial<s n="adj"/></l><r>provincial<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>racial<s n="adj"/></l><r>racial<s n="adj"/><s n="mf"/></r></p></e>
-<e r="LR"><p><l>radieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>radiant<s n="adj"/><s n="m"/><s n="ND"/></r></p></e>
-<e r="RL"><p><l>radieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>radiant<s n="adj"/><s n="m"/><s n="sg"/></r></p></e>
-<e r="RL"><p><l>radieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>radiant<s n="adj"/><s n="m"/><s n="pl"/></r></p></e>
-<e><p><l>radieux<s n="adj"/><s n="f"/></l><r>radiant<s n="adj"/><s n="f"/></r></p></e>
+<e r="LR"><p><l>radieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>radiant<s n="adj"/><s n="mf"/><s n="ND"/></r></p></e>
+<e r="LR"><p><l>radieux<s n="adj"/><s n="f"/><s n="sg"/></l><r>radiant<s n="adj"/><s n="mf"/><s n="ND"/></r></p></e>
+<e r="LR"><p><l>radieux<s n="adj"/><s n="f"/><s n="pl"/></l><r>radiant<s n="adj"/><s n="mf"/><s n="ND"/></r></p></e>
+<e r="RL"><p><l>radieux<s n="adj"/><s n="GD"/><s n="sp"/></l><r>radiant<s n="adj"/><s n="mf"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>radieux<s n="adj"/><s n="GD"/><s n="sp"/></l><r>radiant<s n="adj"/><s n="mf"/><s n="pl"/></r></p></e>
 <e r="LR"><p><l>radical<s n="adj"/></l><r>radical<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>irrégulier<s n="adj"/></l><r>irregular<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>régulier<s n="adj"/></l><r>regular<s n="adj"/><s n="mf"/></r></p></e>
@@ -57510,6 +57521,7 @@
 <e r="LR"><p><l>sexuel<s n="adj"/></l><r>sexual<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>syndical<s n="adj"/></l><r>sindical<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>solennel<s n="adj"/></l><r>solemne<s n="adj"/><s n="mf"/></r></p></e>
+<e r="RL"><p><l>solennel<s n="adj"/></l><r>solemne<s n="adj"/><s n="sup"/></r></p></e>
 <e r="LR"><p><l>souriant<s n="adj"/></l><r>somrient<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>subtil<s n="adj"/></l><r>subtil<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>superficiel<s n="adj"/></l><r>superficial<s n="adj"/><s n="mf"/></r></p></e>
@@ -57600,7 +57612,6 @@
 <e r="LR"><p><l>inconvenant<s n="adj"/></l><r>inconvenient<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>relaxant<s n="adj"/></l><r>relaxant<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>restant<s n="adj"/></l><r>restant<s n="adj"/><s n="mf"/></r></p></e>
-<e><p><l>intéressant<s n="adj"/></l><r>interessant<s n="adj"/></r></p></e>
 <e r="LR"><p><l>doux<s n="adj"/><s n="f"/></l><r>suau<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>doux<s n="adj"/><s n="m"/><s n="sp"/></l><r>suau<s n="adj"/><s n="mf"/><s n="ND"/></r></p></e>
 <e r="RL"><p><l>doux<s n="adj"/><s n="GD"/><s n="sp"/></l><r>suau<s n="adj"/><s n="mf"/><s n="sg"/></r></p></e>

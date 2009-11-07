@@ -7733,6 +7733,36 @@
       </e>
     </pardef>
     
+    <pardef n="senyor__n">
+    <e>
+      <p>
+        <l>es</l> 
+        <r><s n="n"/><s n="f"/><s n="pl"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>a</l> 
+        <r><s n="n"/><s n="f"/><s n="sg"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>s</l> 
+        <r><s n="n"/><s n="m"/><s n="pl"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l></l> 
+        <r><s n="n"/><s n="m"/><s n="sg"/></r> 
+      </p>
+    </e>
+
+    </pardef>
     <pardef n="formaci/ó_de_grups__n">
       <e>
         <p>
@@ -80324,6 +80354,7 @@
 <e lm="musulmà"><i>musulm</i><par n="afric/à__adj" /> </e>
 <e lm="divers"><i>divers</i><par n="annex__adj" /> </e>
 <e lm="d'Almeria" a="prompsit2adn"><i>d'Almeria</i><par n="multimèdia__adj" /> </e>
+<e lm="corredor"><i>corredor</i><par n="senyor__n" /> </e>
 	</section>
 	<section id="apostrophes" type="postblank">
       
