@@ -73,6 +73,8 @@
     <sdef n="rpar"/>
     <sdef n="lquest"/>
     <sdef n="web" /> 
+    <sdef n="ND" /> 
+    <sdef n="ppres" /> 
   </sdefs>
 <pardefs>
 
@@ -4843,6 +4845,254 @@
         </p>
         
       </e>
+    </pardef>
+   <pardef n="S__encimp">
+            
+<e><p><l>-en</l><r>en<s n="prn"/><s n="enc"/><s n="adv"/></r></p></e>
+            
+<e><p><l>-la</l><r>le<s n="prn"/><s n="enc"/><s n="p3"/><s n="f"/><s n="sg"/></r></p></e>
+            
+<e><p><l>-le</l><r>le<s n="prn"/><s n="enc"/><s n="p3"/><s n="m"/><s n="sg"/></r></p></e>
+            
+<e><p><l>-le</l><r>le<s n="prn"/><s n="enc"/><s n="p3"/><s n="nt"/></r></p></e>
+            
+<e><p><l>-les</l><r>le<s n="prn"/><s n="enc"/><s n="p3"/><s n="mf"/><s n="pl"/></r></p></e>
+            
+<e><p><l>-les</l><r>leur<s n="prn"/><s n="enc"/><s n="p3"/><s n="mf"/><s n="pl"/></r></p></e>
+            
+<e><p><l>-les</l><r>lui<s n="prn"/><s n="enc"/><s n="p3"/><s n="mf"/><s n="sg"/></r></p></e>
+            
+<e><p><l>-moi</l><r>me<s n="prn"/><s n="enc"/><s n="p1"/><s n="mf"/><s n="sg"/></r></p></e>
+            
+<e><p><l>-nous</l><r>nous<s n="prn"/><s n="enc"/><s n="p1"/><s n="mf"/><s n="pl"/></r></p></e>
+<!--             
+<e><p><l>-soi</l><r>se<s n="prn"/><s n="enc"/><s n="ref"/><s n="p3"/><s n="mf"/><s n="sp"/></r></p></e> -->
+            
+<e><p><l>-toi</l><r>te<s n="prn"/><s n="enc"/><s n="p2"/><s n="mf"/><s n="sg"/></r></p></e>
+            
+<e><p><l>-vous</l><r>vous<s n="prn"/><s n="enc"/><s n="p2"/><s n="mf"/><s n="pl"/></r></p></e>
+            
+<e><p><l>-y</l><r>y<s n="prn"/><s n="enc"/><s n="adv"/></r></p></e>
+    </pardef>
+
+ <pardef n="ass/eoir__vblex">
+            
+<e><p><l>it</l><r>eoir<s n="vblex"/><s n="ifi"/><s n="p3"/><s n="sg"/></r></p></e>
+            
+<e><p><l>is</l><r>eoir<s n="vblex"/><s n="ifi"/><s n="p1"/><s n="sg"/></r></p></e>
+            
+<e r="LR" ><p><l>oyaient</l><r>eoir<s n="vblex"/><s n="pii"/><s n="p3"/><s n="pl"/></r></p></e>
+
+<e><p><l>eyaient</l><r>eoir<s n="vblex"/><s n="pii"/><s n="p3"/><s n="pl"/></r></p></e>
+            
+<e r="LR" ><p><l>oyais</l><r>eoir<s n="vblex"/><s n="pii"/><s n="p1"/><s n="sg"/></r></p></e>
+
+<e><p><l>eyais</l><r>eoir<s n="vblex"/><s n="pii"/><s n="p1"/><s n="sg"/></r></p></e>
+            
+<e r="LR" ><p><l>oyais</l><r>eoir<s n="vblex"/><s n="pii"/><s n="p2"/><s n="sg"/></r></p></e>
+
+<e><p><l>eyais</l><r>eoir<s n="vblex"/><s n="pii"/><s n="p2"/><s n="sg"/></r></p></e>
+            
+<e r="LR" ><p><l>oyait</l><r>eoir<s n="vblex"/><s n="pii"/><s n="p3"/><s n="sg"/></r></p></e>
+
+<e><p><l>eyait</l><r>eoir<s n="vblex"/><s n="pii"/><s n="p3"/><s n="sg"/></r></p></e>
+            
+<e r="LR" ><p><l>oyant</l><r>eoir<s n="vblex"/><s n="ger"/></r></p></e>
+
+<e><p><l>eyant</l><r>eoir<s n="vblex"/><s n="ger"/></r></p></e>
+
+<!--            
+<e r="LR" ><p><l>oyant</l><r>eoir<s n="vblex"/><s n="ppres"/><s n="p3"/><s n="ND"/></r></p></e>
+
+<e><p><l>eyant</l><r>eoir<s n="vblex"/><s n="ppres"/><s n="p3"/><s n="ND"/></r></p></e>
+-->        
+<e><p><l>is</l><r>eoir<s n="vblex"/><s n="ifi"/><s n="p2"/><s n="sg"/></r></p></e>
+            
+<e><p><l>isse</l><r>eoir<s n="vblex"/><s n="pis"/><s n="p1"/><s n="sg"/></r></p></e>
+            
+<e><p><l>issent</l><r>eoir<s n="vblex"/><s n="pis"/><s n="p3"/><s n="pl"/></r></p></e>
+            
+<e><p><l>isses</l><r>eoir<s n="vblex"/><s n="pis"/><s n="p2"/><s n="sg"/></r></p></e>
+            
+<e><p><l>issiez</l><r>eoir<s n="vblex"/><s n="pis"/><s n="p2"/><s n="pl"/></r></p></e>
+            
+<e><p><l>issions</l><r>eoir<s n="vblex"/><s n="pis"/><s n="p1"/><s n="pl"/></r></p></e>
+            
+<e r="LR" ><p><l>ois</l><r>eoir<s n="vblex"/><s n="imp"/><s n="p2"/><s n="sg"/></r></p></e>
+            
+<e r="LR" ><p><l>ois</l><r>eoir<s n="vblex"/><s n="imp"/><s n="p2"/><s n="sg"/><j/></r></p><par n="S__encimp"/></e>
+
+<e><p><l>ieds</l><r>eoir<s n="vblex"/><s n="imp"/><s n="p2"/><s n="sg"/></r></p></e>
+            
+<e><p><l>ieds</l><r>eoir<s n="vblex"/><s n="imp"/><s n="p2"/><s n="sg"/><j/></r></p><par n="S__encimp"/></e>
+            
+<e r="LR" ><p><l>ois</l><r>eoir<s n="vblex"/><s n="pri"/><s n="p1"/><s n="sg"/></r></p></e>
+
+<e><p><l>ieds</l><r>eoir<s n="vblex"/><s n="pri"/><s n="p1"/><s n="sg"/></r></p></e>
+            
+<e r="LR" ><p><l>oit</l><r>eoir<s n="vblex"/><s n="pri"/><s n="p3"/><s n="sg"/></r></p></e>
+
+<e><p><l>ied</l><r>eoir<s n="vblex"/><s n="pri"/><s n="p3"/><s n="sg"/></r></p></e>
+            
+<e r="LR" ><p><l>oie</l><r>eoir<s n="vblex"/><s n="prs"/><s n="p1"/><s n="sg"/></r></p></e>
+
+<e><p><l>eye</l><r>eoir<s n="vblex"/><s n="prs"/><s n="p1"/><s n="sg"/></r></p></e>
+            
+<e r="LR" ><p><l>oie</l><r>eoir<s n="vblex"/><s n="prs"/><s n="p3"/><s n="sg"/></r></p></e>
+
+<e><p><l>eye</l><r>eoir<s n="vblex"/><s n="prs"/><s n="p3"/><s n="sg"/></r></p></e>
+            
+<e r="LR" ><p><l>oient</l><r>eoir<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r></p></e>
+
+<e><p><l>eyent</l><r>eoir<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r></p></e>
+            
+<e r="LR" ><p><l>oient</l><r>eoir<s n="vblex"/><s n="prs"/><s n="p3"/><s n="pl"/></r></p></e>
+
+<e><p><l>eyent</l><r>eoir<s n="vblex"/><s n="prs"/><s n="p3"/><s n="pl"/></r></p></e>
+            
+<e><p><l>eoir</l><r>eoir<s n="vblex"/><s n="inf"/></r></p></e>
+            
+<e r="LR" ><p><l>oira</l><r>eoir<s n="vblex"/><s n="fti"/><s n="p3"/><s n="sg"/></r></p></e>
+
+<e><p><l>iéra</l><r>eoir<s n="vblex"/><s n="fti"/><s n="p3"/><s n="sg"/></r></p></e>
+            
+<e r="LR" ><p><l>oirai</l><r>eoir<s n="vblex"/><s n="fti"/><s n="p1"/><s n="sg"/></r></p></e>
+
+<e><p><l>iérai</l><r>eoir<s n="vblex"/><s n="fti"/><s n="p1"/><s n="sg"/></r></p></e>
+            
+<e r="LR" ><p><l>oiraient</l><r>eoir<s n="vblex"/><s n="cni"/><s n="p3"/><s n="pl"/></r></p></e>
+
+<e><p><l>iéraient</l><r>eoir<s n="vblex"/><s n="cni"/><s n="p3"/><s n="pl"/></r></p></e>
+            
+<e r="LR" ><p><l>oirais</l><r>eoir<s n="vblex"/><s n="cni"/><s n="p1"/><s n="sg"/></r></p></e>
+
+<e><p><l>iérais</l><r>eoir<s n="vblex"/><s n="cni"/><s n="p1"/><s n="sg"/></r></p></e>
+            
+<e r="LR" ><p><l>oirais</l><r>eoir<s n="vblex"/><s n="cni"/><s n="p2"/><s n="sg"/></r></p></e>
+
+<e><p><l>iérais</l><r>eoir<s n="vblex"/><s n="cni"/><s n="p2"/><s n="sg"/></r></p></e>
+            
+<e r="LR" ><p><l>oirait</l><r>eoir<s n="vblex"/><s n="cni"/><s n="p3"/><s n="sg"/></r></p></e>
+
+<e><p><l>iérait</l><r>eoir<s n="vblex"/><s n="cni"/><s n="p3"/><s n="sg"/></r></p></e>
+            
+<e r="LR" ><p><l>oiras</l><r>eoir<s n="vblex"/><s n="fti"/><s n="p2"/><s n="sg"/></r></p></e>
+
+<e><p><l>iéras</l><r>eoir<s n="vblex"/><s n="fti"/><s n="p2"/><s n="sg"/></r></p></e>
+            
+<e r="LR" ><p><l>oirez</l><r>eoir<s n="vblex"/><s n="fti"/><s n="p2"/><s n="pl"/></r></p></e>
+
+<e><p><l>iérez</l><r>eoir<s n="vblex"/><s n="fti"/><s n="p2"/><s n="pl"/></r></p></e>
+            
+<e r="LR" ><p><l>oiriez</l><r>eoir<s n="vblex"/><s n="cni"/><s n="p2"/><s n="pl"/></r></p></e>
+
+<e><p><l>iériez</l><r>eoir<s n="vblex"/><s n="cni"/><s n="p2"/><s n="pl"/></r></p></e>
+            
+<e r="LR" ><p><l>oirions</l><r>eoir<s n="vblex"/><s n="cni"/><s n="p1"/><s n="pl"/></r></p></e>
+
+<e><p><l>iérions</l><r>eoir<s n="vblex"/><s n="cni"/><s n="p1"/><s n="pl"/></r></p></e>
+            
+<e r="LR" ><p><l>oirons</l><r>eoir<s n="vblex"/><s n="fti"/><s n="p1"/><s n="pl"/></r></p></e>
+
+<e><p><l>iérons</l><r>eoir<s n="vblex"/><s n="fti"/><s n="p1"/><s n="pl"/></r></p></e>
+            
+<e r="LR" ><p><l>oiront</l><r>eoir<s n="vblex"/><s n="fti"/><s n="p3"/><s n="pl"/></r></p></e>
+
+<e><p><l>iéront</l><r>eoir<s n="vblex"/><s n="fti"/><s n="p3"/><s n="pl"/></r></p></e>
+            
+<e r="LR" ><p><l>ois</l><r>eoir<s n="vblex"/><s n="pri"/><s n="p2"/><s n="sg"/></r></p></e>
+
+<e><p><l>ieds</l><r>eoir<s n="vblex"/><s n="pri"/><s n="p2"/><s n="sg"/></r></p></e>
+            
+<e r="LR" ><p><l>oies</l><r>eoir<s n="vblex"/><s n="prs"/><s n="p2"/><s n="sg"/></r></p></e>
+
+<e><p><l>eyes</l><r>eoir<s n="vblex"/><s n="prs"/><s n="p2"/><s n="sg"/></r></p></e>
+            
+<e r="LR" ><p><l>oyez</l><r>eoir<s n="vblex"/><s n="imp"/><s n="p2"/><s n="pl"/></r></p></e>
+
+<e><p><l>eyez</l><r>eoir<s n="vblex"/><s n="imp"/><s n="p2"/><s n="pl"/></r></p></e>
+            
+<e r="LR" ><p><l>oyez</l><r>eoir<s n="vblex"/><s n="imp"/><s n="p2"/><s n="pl"/><j/></r></p><par n="S__encimp"/></e>
+
+<e><p><l>eyez</l><r>eoir<s n="vblex"/><s n="imp"/><s n="p2"/><s n="pl"/><j/></r></p><par n="S__encimp"/></e>
+            
+<e r="LR" ><p><l>oyez</l><r>eoir<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r></p></e>
+
+<e><p><l>eyez</l><r>eoir<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r></p></e>
+            
+<e r="LR" ><p><l>oyiez</l><r>eoir<s n="vblex"/><s n="pii"/><s n="p2"/><s n="pl"/></r></p></e>
+
+<e><p><l>eyiez</l><r>eoir<s n="vblex"/><s n="pii"/><s n="p2"/><s n="pl"/></r></p></e>
+            
+<e r="LR" ><p><l>oyiez</l><r>eoir<s n="vblex"/><s n="prs"/><s n="p2"/><s n="pl"/></r></p></e>
+
+<e><p><l>eyiez</l><r>eoir<s n="vblex"/><s n="prs"/><s n="p2"/><s n="pl"/></r></p></e>
+            
+<e r="LR" ><p><l>oyions</l><r>eoir<s n="vblex"/><s n="pii"/><s n="p1"/><s n="pl"/></r></p></e>
+
+<e><p><l>eyions</l><r>eoir<s n="vblex"/><s n="pii"/><s n="p1"/><s n="pl"/></r></p></e>
+            
+<e r="LR" ><p><l>oyions</l><r>eoir<s n="vblex"/><s n="prs"/><s n="p1"/><s n="pl"/></r></p></e>
+
+<e><p><l>eyions</l><r>eoir<s n="vblex"/><s n="prs"/><s n="p1"/><s n="pl"/></r></p></e>
+            
+<e r="LR" ><p><l>oyons</l><r>eoir<s n="vblex"/><s n="imp"/><s n="p1"/><s n="pl"/></r></p></e>
+
+<e><p><l>eyons</l><r>eoir<s n="vblex"/><s n="imp"/><s n="p1"/><s n="pl"/></r></p></e>
+            
+<e r="LR" ><p><l>oyons</l><r>eoir<s n="vblex"/><s n="imp"/><s n="p1"/><s n="pl"/><j/></r></p><par n="S__encimp"/></e>
+
+<e><p><l>eyons</l><r>eoir<s n="vblex"/><s n="imp"/><s n="p1"/><s n="pl"/><j/></r></p><par n="S__encimp"/></e>
+            
+<e><p><l>eyons</l><r>eoir<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r></p></e>
+
+<e r="LR" ><p><l>oyons</l><r>eoir<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r></p></e>
+            
+<e><p><l>îmes</l><r>eoir<s n="vblex"/><s n="ifi"/><s n="p1"/><s n="pl"/></r></p></e>
+            
+<e><p><l>ît</l><r>eoir<s n="vblex"/><s n="pis"/><s n="p3"/><s n="sg"/></r></p></e>
+            
+<e><p><l>îtes</l><r>eoir<s n="vblex"/><s n="ifi"/><s n="p2"/><s n="pl"/></r></p></e>
+            
+<e><p><l>irent</l><r>eoir<s n="vblex"/><s n="ifi"/><s n="p3"/><s n="pl"/></r></p></e>
+            
+<e><p><l>is</l><r>eoir<s n="vblex"/><s n="pp"/><s n="m"/><s n="sg"/></r></p></e>
+            
+<e><p><l>ise</l><r>eoir<s n="vblex"/><s n="pp"/><s n="f"/><s n="sg"/></r></p></e>
+            
+<e><p><l>ises</l><r>eoir<s n="vblex"/><s n="pp"/><s n="f"/><s n="pl"/></r></p></e>
+            
+<e><p><l>is</l><r>eoir<s n="vblex"/><s n="pp"/><s n="m"/><s n="pl"/></r></p></e>
+    </pardef>
+   <pardef n="commen/cer_def__vblex">
+            
+<e><p><l>ce</l><r>cer<s n="vblex"/><s n="pri"/><s n="p3"/><s n="sg"/></r></p></e>
+            
+<e><p><l>ce</l><r>cer<s n="vblex"/><s n="prs"/><s n="p3"/><s n="sg"/></r></p></e>
+            
+<e><p><l>ça</l><r>cer<s n="vblex"/><s n="ifi"/><s n="p3"/><s n="sg"/></r></p></e>
+            
+<e><p><l>çait</l><r>cer<s n="vblex"/><s n="pii"/><s n="p3"/><s n="sg"/></r></p></e>
+            
+<e><p><l>çant</l><r>cer<s n="vblex"/><s n="ger"/></r></p></e>
+<!--            
+<e><p><l>çant</l><r>cer<s n="vblex"/><s n="ppres"/><s n="p3"/><s n="ND"/></r></p></e>
+-->            
+<e><p><l>cer</l><r>cer<s n="vblex"/><s n="inf"/></r></p></e>
+            
+<e><p><l>cera</l><r>cer<s n="vblex"/><s n="fti"/><s n="p3"/><s n="sg"/></r></p></e>
+            
+<e><p><l>cerait</l><r>cer<s n="vblex"/><s n="cni"/><s n="p3"/><s n="sg"/></r></p></e>
+            
+<e><p><l>cât</l><r>cer<s n="vblex"/><s n="pis"/><s n="p3"/><s n="sg"/></r></p></e>
+            
+<e><p><l>cé</l><r>cer<s n="vblex"/><s n="pp"/><s n="m"/><s n="sg"/></r></p></e>
+            
+<e><p><l>cée</l><r>cer<s n="vblex"/><s n="pp"/><s n="f"/><s n="sg"/></r></p></e>
+            
+<e><p><l>ées</l><r>cer<s n="vblex"/><s n="pp"/><s n="f"/><s n="pl"/></r></p></e>
+            
+<e><p><l>cés</l><r>cer<s n="vblex"/><s n="pp"/><s n="m"/><s n="pl"/></r></p></e>
     </pardef>
 
     <pardef n="/avoir__vblex">
@@ -84596,6 +84846,888 @@
 <e r="RL" lm="sunnite" a="eleka"><i>sunnite</i><par n="académique__adj" /> </e>
 <e lm="super" a="webform"><i>super</i><par n="arrière__adj" /> </e>
 <e lm="d'Almería" a="eleka"><p><l>d'Almería</l><r>d'almería</r></p><par n="arrière__adj" /> </e>
+
+<e lm="élancer" a="eleka"><i>élan</i><par n="annon/cer__vblex" /> </e>
+<e lm="bourrer" a="eleka"><i>bourr</i><par n="abaiss/er__vblex" /> </e>
+<e lm="obtenir"><i>obt</i><par n="appart/enir__vblex" /> </e>
+<e lm="abstenir" a="eleka"><i>abst</i><par n="appart/enir__vblex" /> </e>
+<e lm="accaparer" a="eleka"><i>accapar</i><par n="abaiss/er__vblex" /> </e>
+<e lm="obéir"><i>obé</i><par n="about/[]ir__vblex" prm=""/> </e>
+<e lm="accéder" a="webform"><i>acc</i><par n="accél/é[R]er__vblex" prm="d" /> </e>
+<e lm="acclamer" a="eleka"><i>acclam</i><par n="abaiss/er__vblex" /> </e>
+<e lm="accabler" a="eleka"><i>accabl</i><par n="abaiss/er__vblex" /> </e>
+<e r="RL" lm="poignarder" a="eleka"><i>poignard</i><par n="abaiss/er__vblex" /> </e>
+<e lm="poignarder" a="eleka"><i>poignard</i><par n="abaiss/er__vblex" /> </e>
+<e lm="licencier" a="eleka"><i>licenci</i><par n="abaiss/er__vblex" /> </e>
+<e lm="accomplir"><i>accompl</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="traquer" a="eleka"><i>traqu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="rapprocher"><i>rapproch</i><par n="abaiss/er__vblex" /> </e>
+<e lm="intimider" a="eleka"><i>intimid</i><par n="abaiss/er__vblex" /> </e>
+<e lm="accréditer" a="eleka"><i>accrédit</i><par n="abaiss/er__vblex" /> </e>
+<e lm="accroître" a="eleka"><i>accr</i><par n="accr/oître__vblex" /> </e>
+<e lm="déclencher" a="webform"><i>déclench</i><par n="abaiss/er__vblex" /> </e>
+<e lm="actualiser" a="eleka"><i>actualis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="agir"><i>ag</i><par n="about/[]ir__vblex" /> </e>
+<e lm="adapter" a="eleka"><i>adapt</i><par n="abaiss/er__vblex" /> </e>
+<e lm="alléguer" a="eleka"><i>all</i><par n="accél/é[R]er__vblex" prm="gu" /> </e>
+<e lm="adapter" a="webform"><i>adapt</i><par n="abaiss/er__vblex" /> </e>
+<e lm="adhérer" a="eleka"><i>adh</i><par n="accél/é[R]er__vblex" prm="r" /> </e>
+<e lm="attribuer"><i>attribu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="adosser" a="eleka"><i>adoss</i><par n="abaiss/er__vblex" /> </e>
+<e lm="attribuer"><i>attribu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="dénaturer" a="eleka"><i>dénatur</i><par n="abaiss/er__vblex" /> </e>
+<e lm="plaider" a="eleka"><i>plaid</i><par n="abaiss/er__vblex" /> </e>
+<e lm="crocher" a="eleka"><i>croch</i><par n="abaiss/er__vblex" /> </e>
+<e lm="passionner"><i>passionn</i><par n="abaiss/er__vblex" /> </e>
+<e lm="affilier" a="eleka"><i>affili</i><par n="abaiss/er__vblex" /> </e>
+<e lm="affliger" a="eleka"><i>afflig</i><par n="allong/er__vblex" /> </e>
+<e lm="affleurer" a="eleka"><i>affleur</i><par n="abaiss/er__vblex" /> </e>
+<e lm="saisir"><i>sais</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="agresser" a="eleka"><i>agress</i><par n="abaiss/er__vblex" /> </e>
+<e lm="agréger" a="eleka"><i>agr</i><par n="abr/é[G]er__vblex" prm="g" /> </e>
+<e lm="aggraver" a="webform"><i>aggrav</i><par n="abaiss/er__vblex" /> </e>
+<e lm="guetter" a="eleka"><i>guett</i><par n="abaiss/er__vblex" /> </e>
+<e lm="résister"><i>résist</i><par n="abaiss/er__vblex" /> </e>
+<e lm="baisser"><i>baiss</i><par n="abaiss/er__vblex" /> </e>
+<e lm="alarmer" a="eleka"><i>alarm</i><par n="abaiss/er__vblex" /> </e>
+<e lm="héberger" a="eleka"><i>héberg</i><par n="allong/er__vblex" /> </e>
+<e lm="apercevoir" a="eleka"><i>aper</i><par n="aper/cevoir__vblex" /> </e>
+<e lm="allier" a="eleka"><i>alli</i><par n="abaiss/er__vblex" /> </e>
+<e lm="soulager" a="eleka"><i>soulag</i><par n="allong/er__vblex" /> </e>
+<e lm="libérer" a="webform"><i>lib</i><par n="accél/é[R]er__vblex" prm="r" /> </e>
+<e lm="alterner" a="eleka"><i>altern</i><par n="abaiss/er__vblex" /> </e>
+<e lm="alléguer" a="eleka"><i>all</i><par n="accél/é[R]er__vblex" prm="gu"/> </e>
+<e r="RL" lm="alléguer" a="eleka"><i>all</i><par n="accél/é[R]er__vblex" prm="gu" /> </e>
+<e lm="tremper" a="eleka"><i>tremp</i><par n="abaiss/er__vblex" /> </e>
+<e lm="gâcher" a="eleka"><i>gâch</i><par n="abaiss/er__vblex" /> </e>
+<e lm="situer"><i>situ</i><par n="abaiss/er__vblex" /> </e>
+<e lm="situer" a="eleka"><i>situ</i><par n="abaiss/er__vblex" /> </e>
+<e r="LR" lm="situer" a="eleka"><i>situ</i><par n="abaiss/er__vblex" /> </e>
+<e lm="entasser"><i>entass</i><par n="abaiss/er__vblex" /> </e>
+<e lm="entasser" a="eleka"><i>entass</i><par n="abaiss/er__vblex" /> </e>
+<e lm="anesthésier" a="eleka"><i>anesthési</i><par n="abaiss/er__vblex" /> </e>
+<e lm="souhaiter"><i>souhait</i><par n="abaiss/er__vblex" /> </e>
+<e lm="souhaiter" a="eleka"><i>souhait</i><par n="abaiss/er__vblex" /> </e>
+<e lm="dénommer" a="eleka"><i>dénomm</i><par n="abaiss/er__vblex" /> </e>
+<e lm="anticiper" a="eleka"><i>anticip</i><par n="abaiss/er__vblex" /> </e>
+<e lm="parrainer" a="eleka"><i>parrain</i><par n="abaiss/er__vblex" /> </e>
+<e lm="désirer"><i>désir</i><par n="abaiss/er__vblex" /> </e>
+<e lm="applaudir" a="eleka"><i>applaud</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="réunir"><i>réun</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="emparer" a="eleka"><i>empar</i><par n="abaiss/er__vblex" /> </e>
+<e lm="hâter" a="eleka"><i>hât</i><par n="abaiss/er__vblex" /> </e>
+<e r="LR" lm="éclabousser" a="webform"><p><l>Eclabouss</l><r>éclabouss</r></p><par n="abaiss/er__vblex" /> </e>
+<e lm="éclabousser" a="webform"><i>éclabouss</i><par n="abaiss/er__vblex" /> </e>
+<e lm="approcher"><i>approch</i><par n="abaiss/er__vblex" /> </e>
+<e lm="approcher" a="eleka"><i>approch</i><par n="abaiss/er__vblex" /> </e>
+<e lm="monter"><i>mont</i><par n="abaiss/er__vblex" /> </e>
+<e r="RL" lm="poignarder" a="eleka"><i>poignard</i><par n="abaiss/er__vblex" /> </e>
+<e lm="poignarder" a="eleka"><i>poignard</i><par n="abaiss/er__vblex" /> </e>
+<e lm="épuiser" a="eleka"><i>épuis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="argumenter" a="eleka"><i>argument</i><par n="abaiss/er__vblex" /> </e>
+<e lm="arracher"><i>arrach</i><par n="abaiss/er__vblex" /> </e>
+<e lm="détruire"><i>détru</i><par n="lu/i[]re__vblex" prm="" /> </e>
+<e lm="détruire" a="eleka"><i>détru</i><par n="lu/i[]re__vblex" prm="" /> </e>
+<e r="LR" lm="foncer"><i>fon</i><par n="annon/cer__vblex" /> </e>
+<e lm="foncer" a="eleka"><i>fon</i><par n="annon/cer__vblex" /> </e>
+<e lm="louer"><i>lou</i><par n="abaiss/er__vblex" /> </e>
+<e lm="louer" a="eleka"><i>lou</i><par n="abaiss/er__vblex" /> </e>
+<e lm="louer" a="eleka"><i>lou</i><par n="abaiss/er__vblex" /> </e>
+<e lm="louer" a="eleka"><i>lou</i><par n="abaiss/er__vblex" /> </e>
+<e lm="louer" a="eleka"><i>lou</i><par n="abaiss/er__vblex" /> </e>
+<e lm="ramasser"><i>ramass</i><par n="abaiss/er__vblex" /> </e>
+<e lm="arrêter"><i>arrêt</i><par n="abaiss/er__vblex" /> </e>
+<e lm="arrêter" a="eleka"><i>arrêt</i><par n="abaiss/er__vblex" /> </e>
+<e lm="monter"><i>mont</i><par n="abaiss/er__vblex" /> </e>
+<e lm="apprendre"><i>appr</i><par n="appr/endre__vblex" /> </e>
+<e lm="apprendre" a="eleka"><i>appr</i><par n="appr/endre__vblex" /> </e>
+<e r="LR" lm="établir"><p><l>Etabl</l><r>établ</r></p><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="établir"><i>établ</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="acquiescer" a="eleka"><i>acquies</i><par n="annon/cer__vblex" /> </e>
+<e lm="conseiller"><i>conseill</i><par n="abaiss/er__vblex" /> </e>
+<e lm="asseoir" a="eleka"><i>ass</i><par n="ass/eoir__vblex" /> </e>
+<e lm="confirmer"><i>confirm</i><par n="abaiss/er__vblex" /> </e>
+<e lm="assigner" a="webform"><i>assign</i><par n="abaiss/er__vblex" /> </e>
+<e lm="assimiler" a="webform"><i>assimil</i><par n="abaiss/er__vblex" /> </e>
+<e lm="frapper" a="webform"><i>frapp</i><par n="abaiss/er__vblex" /> </e>
+<e r="RL" lm="frapper" a="eleka"><i>frapp</i><par n="abaiss/er__vblex" /> </e>
+<e lm="frapper" a="eleka"><i>frapp</i><par n="abaiss/er__vblex" /> </e>
+<e lm="assumer" a="webform"><i>assum</i><par n="abaiss/er__vblex" /> </e>
+<e lm="accabler" a="eleka"><i>accabl</i><par n="abaiss/er__vblex" /> </e>
+<e lm="accabler" a="eleka"><i>accabl</i><par n="abaiss/er__vblex" /> </e>
+<e lm="couper"><i>coup</i><par n="abaiss/er__vblex" /> </e>
+<e lm="répondre"><i>répond</i><par n="attend/re__vblex" /> </e>
+<e lm="répondre" a="eleka"><i>répond</i><par n="attend/re__vblex" /> </e>
+<e lm="atterrir" a="eleka"><i>atterr</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="attribuer"><i>attribu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="attribuer" a="eleka"><i>attribu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="attribuer" a="eleka"><i>attribu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="attraper" a="eleka"><i>attrap</i><par n="abaiss/er__vblex" /> </e>
+<e r="LR" lm="écraser"><p><l>Ecras</l><r>écras</r></p><par n="abaiss/er__vblex" /> </e>
+<e lm="écraser"><i>écras</i><par n="abaiss/er__vblex" /> </e>
+<e lm="aider"><i>aid</i><par n="abaiss/er__vblex" /> </e>
+<e lm="aider" a="eleka"><i>aid</i><par n="abaiss/er__vblex" /> </e>
+<e lm="dépasser"><i>dépass</i><par n="abaiss/er__vblex" /> </e>
+<e lm="dépasser" a="eleka"><i>dépass</i><par n="abaiss/er__vblex" /> </e>
+<e lm="approcher"><i>approch</i><par n="abaiss/er__vblex" /> </e>
+<e lm="approcher" a="eleka"><i>approch</i><par n="abaiss/er__vblex" /> </e>
+<e lm="prévenir"><i>prév</i><par n="appart/enir__vblex" /> </e>
+<e r="RL" lm="prévenir" a="eleka"><i>prév</i><par n="appart/enir__vblex" /> </e>
+<e lm="ennuyer" a="eleka"><i>ennu</i><par n="bala/yer__vblex" /> </e>
+<e lm="avorter" a="eleka"><i>avort</i><par n="abaiss/er__vblex" /> </e>
+<e lm="baptiser" a="webform"><i>baptis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="chavirer" a="eleka"><i>chavir</i><par n="abaiss/er__vblex" /> </e>
+<e lm="bombarder" a="eleka"><i>bombard</i><par n="abaiss/er__vblex" /> </e>
+<e lm="trinquer" a="eleka"><i>trinqu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="rigoler" a="webform"><i>rigol</i><par n="abaiss/er__vblex" /> </e>
+<e lm="rentrer"><i>rentr</i><par n="abaiss/er__vblex" /> </e>
+<e lm="expirer"><i>expir</i><par n="abaiss/er__vblex" /> </e>
+<e lm="expirer" a="eleka"><i>expir</i><par n="abaiss/er__vblex" /> </e>
+<e lm="chier" a="eleka"><i>chi</i><par n="abaiss/er__vblex" /> </e>
+<e lm="annuler"><i>annul</i><par n="abaiss/er__vblex" /> </e>
+<e lm="annuler" a="eleka"><i>annul</i><par n="abaiss/er__vblex" /> </e>
+<e lm="saisir"><i>sais</i><par n="about/[]ir__vblex" /> </e>
+<e r="RL" lm="saisir" a="eleka"><i>sais</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="saisir" a="eleka"><i>sais</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="capturer" a="webform"><i>captur</i><par n="abaiss/er__vblex" /> </e>
+<e lm="causer"><i>caus</i><par n="abaiss/er__vblex" /> </e>
+<e lm="causer" a="eleka"><i>caus</i><par n="abaiss/er__vblex" /> </e>
+<e lm="censurer" a="webform"><i>censur</i><par n="abaiss/er__vblex" /> </e>
+<e lm="chercher"><i>cherch</i><par n="abaiss/er__vblex" /> </e>
+<e lm="chercher"><i>cherch</i><par n="abaiss/er__vblex" /> <p><l><b/>à</l><r><g><b/>à</g></r></p></e>
+<e lm="clôturer" a="eleka"><i>clôtur</i><par n="abaiss/er__vblex" /> </e>
+<e lm="fermer"><i>ferm</i><par n="abaiss/er__vblex" /> </e>
+<e lm="toucher"><i>touch</i><par n="abaiss/er__vblex" /> </e>
+<e lm="bloquer"><i>bloqu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="heurter" a="eleka"><i>heurt</i><par n="abaiss/er__vblex" /> </e>
+<e lm="commercialiser" a="eleka"><i>commercialis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="compenser" a="eleka"><i>compens</i><par n="abaiss/er__vblex" /> </e>
+<e r="RL" lm="concourir" a="eleka"><i>concour</i><par n="accour/ir__vblex" /> </e>
+<e lm="concourir" a="eleka"><i>concour</i><par n="accour/ir__vblex" /> </e>
+<e lm="compléter"><i>compl</i><par n="accél/é[R]er__vblex" /> </e>
+<e lm="comptabiliser" a="eleka"><i>comptabilis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="concrétiser" a="eleka"><i>concrétis</i><par n="abaiss/er__vblex" /> </e>
+<e r="RL" lm="concourir" a="eleka"><i>concour</i><par n="accour/ir__vblex" /> </e>
+<e lm="concourir" a="eleka"><i>concour</i><par n="accour/ir__vblex" /> </e>
+<e lm="confectionner" a="eleka"><i>confectionn</i><par n="abaiss/er__vblex" /> </e>
+<e r="LR" lm="conférer" a="webform"><i>conf</i><par n="accél/é[R]er__vblex" prm="r" /> </e>
+<e lm="conférer" a="eleka"><i>conf</i><par n="accél/é[R]er__vblex" prm="r" /> </e>
+<e lm="conformer" a="eleka"><i>conform</i><par n="abaiss/er__vblex" /> </e>
+<e lm="geler" a="eleka"><i>g</i><par n="ach/e[T]er__vblex" prm="l" /> </e>
+<e lm="rassembler"><i>rassembl</i><par n="abaiss/er__vblex" /> </e>
+<e lm="conquérir" a="webform"><i>conqu</i><par n="acqu/érir__vblex" /> </e>
+<e lm="conscientiser" a="eleka"><i>conscientis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="consigner" a="eleka"><i>consign</i><par n="abaiss/er__vblex" /> </e>
+<e lm="consolider" a="webform"><i>consolid</i><par n="abaiss/er__vblex" /> </e>
+<e lm="figurer"><i>figur</i><par n="abaiss/er__vblex" /> </e>
+<e lm="constater"><i>constat</i><par n="abaiss/er__vblex" /> </e>
+<e lm="contacter" a="eleka"><i>contact</i><par n="abaiss/er__vblex" /> </e>
+<e lm="contaminer" a="webform"><i>contamin</i><par n="abaiss/er__vblex" /> </e>
+<e lm="contaminer" a="webform"><i>contamin</i><par n="abaiss/er__vblex" /> </e>
+<e lm="répondre"><i>répond</i><par n="attend/re__vblex" /> </e>
+<e lm="répondre" a="eleka"><i>répond</i><par n="attend/re__vblex" /> </e>
+<e lm="embaucher" a="eleka"><i>embauch</i><par n="abaiss/er__vblex" /> </e>
+<e lm="coordonner" a="eleka"><i>coordonn</i><par n="abaiss/er__vblex" /> </e>
+<e lm="accaparer" a="eleka"><i>accapar</i><par n="abaiss/er__vblex" /> </e>
+<e lm="frapper" a="webform"><i>frapp</i><par n="abaiss/er__vblex" /> </e>
+<e r="RL" lm="frapper" a="eleka"><i>frapp</i><par n="abaiss/er__vblex" /> </e>
+<e lm="frapper" a="eleka"><i>frapp</i><par n="abaiss/er__vblex" /> </e>
+<e lm="copier"><i>copi</i><par n="abaiss/er__vblex" /> </e>
+<e lm="corriger" a="eleka"><i>corrig</i><par n="allong/er__vblex" /> </e>
+<e lm="criminaliser" a="eleka"><i>criminalis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="soigner" a="webform"><i>soign</i><par n="abaiss/er__vblex" /> </e>
+<e lm="terminer"><i>termin</i><par n="abaiss/er__vblex" /> </e>
+<e lm="terminer" a="eleka"><i>termin</i><par n="abaiss/er__vblex" /> </e>
+<e lm="terminer" a="eleka"><i>termin</i><par n="abaiss/er__vblex" /> </e>
+<e r="RL" lm="terminer" a="eleka"><i>termin</i><par n="abaiss/er__vblex" /> </e>
+<e lm="cultiver"><i>cultiv</i><par n="abaiss/er__vblex" /> </e>
+<e lm="suivre"><i>sui</i><par n="poursui/vre__vblex" /> </e>
+<e lm="danser"><i>dans</i><par n="abaiss/er__vblex" /> </e>
+<e lm="débuter" a="webform"><i>début</i><par n="abaiss/er__vblex" /> </e>
+<e lm="décréter" a="eleka"><i>décr</i><par n="accél/é[R]er__vblex" prm="t" /> </e>
+<e lm="consacrer"><i>consacr</i><par n="abaiss/er__vblex" /> </e>
+<e lm="consacrer" a="eleka"><i>consacr</i><par n="abaiss/er__vblex" /> </e>
+<e lm="déduire" a="eleka"><i>dédui</i><par n="condui/re__vblex" /> </e>
+<e lm="dégrader" a="webform"><i>dégrad</i><par n="abaiss/er__vblex" /> </e>
+<e lm="déguster" a="eleka"><i>dégust</i><par n="abaiss/er__vblex" /> </e>
+<e lm="poursuivre"><i>poursui</i><par n="poursui/vre__vblex" /> </e>
+<e lm="dénommer" a="eleka"><i>dénomm</i><par n="abaiss/er__vblex" /> </e>
+<e lm="épurer" a="eleka"><i>épur</i><par n="abaiss/er__vblex" /> </e>
+<e lm="abattre"><i>abat</i><par n="abat/tre__vblex" /> </e>
+<e lm="abattre" a=" elhuyar"><i>abat</i><par n="abat/tre__vblex" /> </e>
+<e lm="évacuer" a="eleka"><i>évacu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="évacuer" a="eleka"><i>évacu</i><par n="abaiss/er__vblex" /> </e>
+<e r="RL" lm="évacuer" a="eleka"><i>évacu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="avarier"><i>avari</i><par n="abaiss/er__vblex" /> </e>
+<e lm="débloquer" a="eleka"><i>débloqu</i><par n="abaiss/er__vblex" /> </e>
+<e r="LR" lm="écarter"><p><l>Ecart</l><r>écart</r></p><par n="abaiss/er__vblex" /> </e>
+<e lm="écarter"><i>écart</i><par n="abaiss/er__vblex" /> </e>
+<e lm="écarter" a="eleka"><i>écart</i><par n="abaiss/er__vblex" /> </e>
+<e lm="escompter" a="eleka"><i>escompt</i><par n="abaiss/er__vblex" /> </e>
+<e lm="méconnaître" a="eleka"><i>méconn</i><par n="appar/aître__vblex" /> </e>
+<e lm="petit-déjeuner" a="eleka"><i>petit-déjeun</i><par n="abaiss/er__vblex" /> </e>
+<e lm="débourser" a="eleka"><i>débours</i><par n="abaiss/er__vblex" /> </e>
+<e lm="déséquilibrer" a="webform"><i>déséquilibr</i><par n="abaiss/er__vblex" /> </e>
+<e lm="rejeter"><i>rejet</i><par n="cachet/er__vblex" /> </e>
+<e lm="défavoriser" a="eleka"><i>défavoris</i><par n="abaiss/er__vblex" /> </e>
+<e lm="énumérer" a="eleka"><i>énum</i><par n="accél/é[R]er__vblex" prm="r" /> </e>
+<e lm="démarquer" a="eleka"><i>démarqu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="démentir" a="webform"><i>démen</i><par n="consen/tir__vblex" /> </e>
+<e lm="écrouler" a="eleka"><i>écroul</i><par n="abaiss/er__vblex" /> </e>
+<e lm="destituer" a="eleka"><i>destitu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="dévoiler" a="eleka"><i>dévoil</i><par n="abaiss/er__vblex" /> </e>
+<e lm="déchiffrer" a="webform"><i>déchiffr</i><par n="abaiss/er__vblex" /> </e>
+<e lm="détailler" a="eleka"><i>détaill</i><par n="abaiss/er__vblex" /> </e>
+<e lm="détecter" a="webform"><i>détect</i><par n="abaiss/er__vblex" /> </e>
+<e lm="diagnostiquer" a="webform"><i>diagnostiqu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="dialoguer" a="eleka"><i>dialogu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="dicter" a="eleka"><i>dict</i><par n="abaiss/er__vblex" /> </e>
+<e lm="différencier" a="eleka"><i>différenci</i><par n="abaiss/er__vblex" /> </e>
+<e lm="gêner"><i>gên</i><par n="abaiss/er__vblex" /> </e>
+<e lm="numériser" a="eleka"><i>numéris</i><par n="abaiss/er__vblex" /> </e>
+<e lm="démissionner" a="eleka"><i>démissionn</i><par n="abaiss/er__vblex" /> </e>
+<e lm="discriminer" a="prompsit2cdl"><i>discrimin</i><par n="abaiss/er__vblex" /> </e>
+<e lm="excuser"><i>excus</i><par n="abaiss/er__vblex" /> </e>
+<e lm="réfléchir"><i>réfléch</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="dispenser" a="eleka"><i>dispens</i><par n="abaiss/er__vblex" /> </e>
+<e lm="dissoudre" a="webform"><i>disso</i><par n="réso/udre__vblex" /> </e>
+<e lm="dissuader" a="eleka"><i>dissuad</i><par n="abaiss/er__vblex" /> </e>
+<e lm="distancer"><i>distan</i><par n="annon/cer__vblex" /> </e>
+<e lm="divorcer"><i>divor</i><par n="annon/cer__vblex" /> </e>
+<e lm="divulguer" a="eleka"><i>divulgu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="documenter" a="eleka"><i>document</i><par n="abaiss/er__vblex" /> </e>
+<e lm="domicilier" a="webform"><i>domicili</i><par n="abaiss/er__vblex" /> </e>
+<e lm="éditer" a="eleka"><i>édit</i><par n="abaiss/er__vblex" /> </e>
+<e lm="dépasser"><i>dépass</i><par n="abaiss/er__vblex" /> </e>
+<e lm="éluder" a="eleka"><i>élud</i><par n="abaiss/er__vblex" /> </e>
+<e lm="embellir" a="eleka"><i>embell</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="enivrer"><i>enivr</i><par n="abaiss/er__vblex" /> </e>
+<e lm="émigrer" a="eleka"><i>émigr</i><par n="abaiss/er__vblex" /> </e>
+<e lm="protéger"><i>prot</i><par n="abr/é[G]er__vblex" prm="g" /> </e>
+<e lm="égaliser" a="eleka"><i>égalis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="remplir"><i>rempl</i><par n="about/[]ir__vblex" /> </e>
+<e lm="commencer"><i>commen</i><par n="annon/cer__vblex" /> </e>
+<e lm="deviner"><i>devin</i><par n="abaiss/er__vblex" /> </e>
+<e lm="confier"><i>confi</i><par n="abaiss/er__vblex" /> </e>
+<e lm="frapper" a="webform"><i>frapp</i><par n="abaiss/er__vblex" /> </e>
+<e lm="enfoncer" a="eleka"><i>enfon</i><par n="annon/cer__vblex" /> </e>
+<e lm="fortifier" a="eleka"><i>fortifi</i><par n="abaiss/er__vblex" /> </e>
+<e lm="englober" a="eleka"><i>englob</i><par n="abaiss/er__vblex" /> </e>
+<e lm="agrandir" a="eleka"><i>agrand</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e r="LR" lm="éclairer"><p><l>Eclair</l><r>éclair</r></p><par n="abaiss/er__vblex" /> </e>
+<e lm="éclairer"><i>éclair</i><par n="abaiss/er__vblex" /> </e>
+<e lm="enregistrer"><i>enregistr</i><par n="abaiss/er__vblex" /> </e>
+<e lm="emparer" a="eleka"><i>empar</i><par n="abaiss/er__vblex" /> </e>
+<e lm="entonner" a="webform"><i>entonn</i><par n="abaiss/er__vblex" /> </e>
+<e lm="entraver" a="eleka"><i>entrav</i><par n="abaiss/er__vblex" /> </e>
+<e lm="livrer"><i>livr</i><par n="abaiss/er__vblex" /> </e>
+<e lm="comparer"><i>compar</i><par n="abaiss/er__vblex" /> </e>
+<e lm="tromper"><i>tromp</i><par n="abaiss/er__vblex" /> </e>
+<e lm="éradiquer" a="eleka"><i>éradiqu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="découvrir"><i>découv</i><par n="couv/rir__vblex" /> </e>
+<e r="LR" lm="échapper" a="webform"><p><l>Echapp</l><r>échapp</r></p><par n="abaiss/er__vblex" /> </e>
+<e lm="échapper" a="webform"><i>échapp</i><par n="abaiss/er__vblex" /> </e>
+<e lm="manquer"><i>manqu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="scolariser" a="webform"><i>scolaris</i><par n="abaiss/er__vblex" /> </e>
+<e lm="entreprendre"><i>entrepr</i><par n="appr/endre__vblex" /> </e>
+<e lm="enregistrer"><i>enregistr</i><par n="abaiss/er__vblex" /> </e>
+<e lm="dépouiller" a="eleka"><i>dépouill</i><par n="abaiss/er__vblex" /> </e>
+<e lm="raccourcir" a="eleka"><i>raccourc</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="abattre"><i>abat</i><par n="abat/tre__vblex" /> </e>
+<e lm="abattre" a=" elhuyar"><i>abat</i><par n="abat/tre__vblex" /> </e>
+<e lm="efforcer" a="eleka"><i>effor</i><par n="annon/cer__vblex" /> </e>
+<e lm="brandir" a="eleka"><i>brand</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="mentionner" a="eleka"><i>mentionn</i><par n="abaiss/er__vblex" /> </e>
+<e lm="déjeuner"><i>déjeun</i><par n="abaiss/er__vblex" /> </e>
+<e lm="spécialiser" a="webform"><i>spécialis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="préciser"><i>précis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="pousser"><i>pouss</i><par n="abaiss/er__vblex" /> </e>
+<e lm="décharger"><i>décharg</i><par n="allong/er__vblex" /> </e>
+<e lm="décharger" a="eleka"><i>décharg</i><par n="allong/er__vblex" /> </e>
+<e r="LR" lm="éclabousser" a="webform"><p><l>Eclabouss</l><r>éclabouss</r></p><par n="abaiss/er__vblex" /> </e>
+<e lm="éclabousser" a="webform"><i>éclabouss</i><par n="abaiss/er__vblex" /> </e>
+<e lm="lancer"><i>lan</i><par n="annon/cer__vblex" /> </e>
+<e lm="stimuler" a="webform"><i>stimul</i><par n="abaiss/er__vblex" /> </e>
+<e r="RL" lm="stimuler" a="webform"><i>stimul</i><par n="abaiss/er__vblex" /> </e>
+<e lm="étrenner" a="eleka"><i>étrenn</i><par n="abaiss/er__vblex" /> </e>
+<e lm="évacuer" a="eleka"><i>évacu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="évacuer" a="eleka"><i>évacu</i><par n="abaiss/er__vblex" /> </e>
+<e r="RL" lm="évacuer" a="eleka"><i>évacu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="évoluer" a="eleka"><i>évolu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="exercer"><i>exer</i><par n="annon/cer__vblex" /> </e>
+<e lm="exercer" a="eleka"><i>exer</i><par n="annon/cer__vblex" /> </e>
+<e lm="exempter" a="eleka"><i>exempt</i><par n="abaiss/er__vblex" /> </e>
+<e lm="développer"><i>développ</i><par n="abaiss/er__vblex" /> </e>
+<e lm="exproprier" a="eleka"><i>expropri</i><par n="abaiss/er__vblex" /> </e>
+<e lm="expulser" a="webform"><i>expuls</i><par n="abaiss/er__vblex" /> </e>
+<e lm="facturer" a="webform"><i>factur</i><par n="abaiss/er__vblex" /> </e>
+<e lm="fédérer" a="eleka"><i>féd</i><par n="accél/é[R]er__vblex" prm="r" /> </e>
+<e lm="fêter"><i>fêt</i><par n="abaiss/er__vblex" /> </e>
+<e lm="fêter" a="eleka"><i>fêt</i><par n="abaiss/er__vblex" /> </e>
+<e r="LR" lm="ficher"><i>fich</i><par n="abaiss/er__vblex" /> </e>
+<e lm="ficher" a="eleka"><i>fich</i><par n="abaiss/er__vblex" /> </e>
+<e lm="promouvoir" a="webform"><i>prom</i><par n="m/ouvoir__vblex" /> </e>
+<e lm="promouvoir" a="eleka"><i>prom</i><par n="m/ouvoir__vblex" /> </e>
+<e lm="fonder"><i>fond</i><par n="abaiss/er__vblex" /> </e>
+<e lm="percer"><i>per</i><par n="annon/cer__vblex" /> </e>
+<e lm="percer" a="eleka"><i>per</i><par n="annon/cer__vblex" /> </e>
+<e lm="formaliser" a="eleka"><i>formalis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="photocopier" a="eleka"><i>photocopi</i><par n="abaiss/er__vblex" /> </e>
+<e lm="frustrer" a="eleka"><i>frustr</i><par n="abaiss/er__vblex" /> </e>
+<e lm="amuser"><i>amus</i><par n="abaiss/er__vblex" /> </e>
+<e lm="généraliser" a="eleka"><i>généralis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="soigner" a="webform"><i>soign</i><par n="abaiss/er__vblex" /> </e>
+<e lm="habiliter" a="eleka"><i>habilit</i><par n="abaiss/er__vblex" /> </e>
+<e lm="habiliter" a="eleka"><i>habilit</i><par n="abaiss/er__vblex" /> </e>
+<e lm="habiter"><i>habit</i><par n="abaiss/er__vblex" /> </e>
+<e lm="hériter" a="eleka"><i>hérit</i><par n="abaiss/er__vblex" /> </e>
+<e lm="hypothéquer" a="eleka"><i>hypoth</i><par n="accél/é[R]er__vblex" prm="qu" /> </e>
+<e lm="homologuer" a="eleka"><i>homologu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="hospitaliser" a="webform"><i>hospitalis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="stimuler" a="webform"><i>stimul</i><par n="abaiss/er__vblex" /> </e>
+<e r="RL" lm="stimuler" a="webform"><i>stimul</i><par n="abaiss/er__vblex" /> </e>
+<e lm="imputer" a="webform"><i>imput</i><par n="abaiss/er__vblex" /> </e>
+<e lm="inaugurer" a="eleka"><i>inaugur</i><par n="abaiss/er__vblex" /> </e>
+<e lm="encourager" a="webform"><i>encourag</i><par n="allong/er__vblex" /> </e>
+<e lm="influer" a="eleka"><i>influ</i><par n="abaiss/er__vblex" /> </e>
+<e lm="inciter" a="webform"><i>incit</i><par n="abaiss/er__vblex" /> </e>
+<e lm="accroître" a="eleka"><i>accr</i><par n="accr/oître__vblex" /> </e>
+<e lm="indemniser" a="eleka"><i>indemnis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="induire" a="webform"><i>indui</i><par n="condui/re__vblex" /> </e>
+<e lm="industrialiser" a="webform"><i>industrialis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="enfreindre" a="eleka"><i>enfrei</i><par n="cei/ndre__vblex" /> </e>
+<e lm="enfreindre" a="eleka"><i>enfrei</i><par n="cei/ndre__vblex" /> </e>
+<e lm="encaisser" a="eleka"><i>encaiss</i><par n="abaiss/er__vblex" /> </e>
+<e lm="inhiber" a="eleka"><i>inhib</i><par n="abaiss/er__vblex" /> </e>
+<e lm="injecter" a="eleka"><i>inject</i><par n="abaiss/er__vblex" /> </e>
+<e lm="inspecter" a="eleka"><i>inspect</i><par n="abaiss/er__vblex" /> </e>
+<e lm="appeler" a="webform" c="modificar crier por gritar"><p><l>appel</l><r>appel</r></p><par n="appel/er__vblex" /> </e>
+<e lm="instaurer" a="webform"><i>instaur</i><par n="abaiss/er__vblex" /> </e>
+<e lm="intercepter" a="eleka"><i>intercept</i><par n="abaiss/er__vblex" /> </e>
+<e lm="intérioriser" a="eleka"><i>intérioris</i><par n="abaiss/er__vblex" /> </e>
+<e lm="interposer" a="eleka"><i>interpos</i><par n="abaiss/er__vblex" /> </e>
+<e lm="intoxiquer" a="eleka"><i>intoxiqu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="pressentir"><i>pressen</i><par n="consen/tir__vblex" /> </e>
+<e lm="pressentir" a="eleka"><i>pressen</i><par n="consen/tir__vblex" /> </e>
+<e r="RL" lm="inonder" a="eleka"><i>inond</i><par n="abaiss/er__vblex" /> </e>
+<e lm="inonder" a="eleka"><i>inond</i><par n="abaiss/er__vblex" /> </e>
+<e lm="invoquer" a="webform"><i>invoqu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="impliquer" a="webform"><i>impliqu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="retraiter" a="webform"><i>retrait</i><par n="abaiss/er__vblex" /> </e>
+<e lm="blesser"><i>bless</i><par n="abaiss/er__vblex" /> </e>
+<e lm="blesser" a="eleka"><i>bless</i><par n="abaiss/er__vblex" /> </e>
+<e lm="enchérir" a="eleka"><i>enchér</i><par n="about/[]ir__vblex" prm="r" /> </e>
+<e lm="dominer"><i>domin</i><par n="abaiss/er__vblex" /> </e>
+<e lm="jeter"><i>jet</i><par n="cachet/er__vblex" /> </e>
+<e lm="laver" a="eleka"><i>lav</i><par n="abaiss/er__vblex" /> </e>
+<e lm="glisser"><i>gliss</i><par n="abaiss/er__vblex" /> </e>
+<e lm="localiser" a="eleka"><i>localis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="maltraiter" a="eleka"><i>maltrait</i><par n="abaiss/er__vblex" /> </e>
+<e lm="manquer"><i>manqu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="matérialiser" a="eleka"><i>matérialis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="mentir" a="webform"><i>men</i><par n="consen/tir__vblex" /> </e>
+<e lm="minimiser" a="eleka"><i>minimis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="mobiliser" a="webform"><i>mobilis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="nager"><i>nag</i><par n="allong/er__vblex" /> </e>
+<e lm="neutraliser" a="webform"><i>neutralis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="nourrir"><i>nourr</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="nominer" a="eleka"><i>nomin</i><par n="abaiss/er__vblex" /> </e>
+<e lm="normaliser" a="eleka"><i>normalis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="remarquer"><i>remarqu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="notifier" a="eleka"><i>notifi</i><par n="abaiss/er__vblex" /> </e>
+<e lm="offrir"><i>off</i><par n="couv/rir__vblex" /> </e>
+<e lm="offrir" a="eleka"><i>off</i><par n="couv/rir__vblex" /> </e>
+<e r="RL" lm="offrir" a="eleka"><i>off</i><par n="couv/rir__vblex" /> </e>
+<e lm="obséder" a="eleka"><i>obs</i><par n="accél/é[R]er__vblex" prm="d" /> </e>
+<e lm="entraver" a="eleka"><i>entrav</i><par n="abaiss/er__vblex" /> </e>
+<e lm="dérober"><i>dérob</i><par n="abaiss/er__vblex" /> </e>
+<e lm="arriver"><i>arriv</i><par n="abaiss/er__vblex" /> </e>
+<e lm="arriver" a="eleka"><i>arriv</i><par n="abaiss/er__vblex" /> </e>
+<e lm="arriver" a="eleka"><i>arriv</i><par n="abaiss/er__vblex" /> </e>
+<e lm="arriver" a="eleka"><i>arriv</i><par n="abaiss/er__vblex" /> </e>
+<e lm="officier" a="webform"><i>offici</i><par n="abaiss/er__vblex" /> </e>
+<e lm="penser"><i>pens</i><par n="abaiss/er__vblex" /> </e>
+<e r="LR" lm="penser" a="eleka"><i>pens</i><par n="abaiss/er__vblex" /> </e>
+<e lm="désorganiser" a="webform"><i>désorganis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="causer"><i>caus</i><par n="abaiss/er__vblex" /> </e>
+<e lm="causer" a="eleka"><i>caus</i><par n="abaiss/er__vblex" /> </e>
+<e lm="afficher"><i>affich</i><par n="abaiss/er__vblex" /> </e>
+<e lm="palper" a="eleka"><i>palp</i><par n="abaiss/er__vblex" /> </e>
+<e lm="paralyser" a="webform"><i>paralys</i><par n="abaiss/er__vblex" /> </e>
+<e lm="bouleverser" a="eleka"><i>boulevers</i><par n="abaiss/er__vblex" /> </e>
+<e lm="sponsoriser" a="eleka"><i>sponsoris</i><par n="abaiss/er__vblex" /> </e>
+<e lm="périr" a="eleka"><i>pér</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="prolonger" a="webform"><i>prolong</i><par n="allong/er__vblex" /> </e>
+<e lm="perpétrer" a="eleka"><i>perp</i><par n="accél/é[R]er__vblex" prm="tr" /> </e>
+<e lm="présenter"><i>présent</i><par n="abaiss/er__vblex" /> </e>
+<e lm="planifier" a="eleka"><i>planifi</i><par n="abaiss/er__vblex" /> </e>
+<e lm="poser"><i>pos</i><par n="abaiss/er__vblex" /> </e>
+<e lm="poser" a="eleka"><i>pos</i><par n="abaiss/er__vblex" /> </e>
+<e lm="refléter"><i>refl</i><par n="accél/é[R]er__vblex" prm="t" /> </e>
+<e lm="mettre"><i>m</i><par n="adm/ettre__vblex" /> </e>
+<e lm="mettre"><i>m</i><par n="adm/ettre__vblex" /> <p><l><b/>en<b/>place</l><r><g><b/>en<b/>place</g></r></p></e>
+<e lm="positionner" a="eleka"><i>positionn</i><par n="abaiss/er__vblex" /> </e>
+<e lm="permettre"><i>perm</i><par n="adm/ettre__vblex" /> </e>
+<e lm="renforcer"><i>renfor</i><par n="annon/cer__vblex" /> </e>
+<e lm="renforcer" a="eleka"><i>renfor</i><par n="annon/cer__vblex" /> </e>
+<e lm="sceller" a="eleka"><i>scell</i><par n="abaiss/er__vblex" /> </e>
+<e lm="supplier" a="eleka"><i>suppli</i><par n="abaiss/er__vblex" /> </e>
+<e lm="demander"><i>demand</i><par n="abaiss/er__vblex" /> </e>
+<e lm="demander" a="eleka"><i>demand</i><par n="abaiss/er__vblex" /> </e>
+<e lm="prescrire" a="eleka"><i>prescri</i><par n="décri/re__vblex" /> </e>
+<e lm="budgétiser" a="eleka"><i>budgétis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="privilégier" a="webform"><i>privilégi</i><par n="abaiss/er__vblex" /> </e>
+<e lm="accuser"><i>accus</i><par n="abaiss/er__vblex" /> </e>
+<e lm="proclamer" a="eleka"><i>proclam</i><par n="abaiss/er__vblex" /> </e>
+<e lm="projeter" a="eleka"><i>projet</i><par n="cachet/er__vblex" /> </e>
+<e lm="projeter" a="eleka"><i>projet</i><par n="cachet/er__vblex" /> </e>
+<e lm="promouvoir" a="webform"><i>prom</i><par n="m/ouvoir__vblex" /> </e>
+<e lm="promouvoir" a="eleka"><i>prom</i><par n="m/ouvoir__vblex" /> </e>
+<e lm="promouvoir" a="webform"><i>prom</i><par n="m/ouvoir__vblex" /> </e>
+<e lm="promouvoir" a="eleka"><i>prom</i><par n="m/ouvoir__vblex" /> </e>
+<e lm="favoriser"><i>favoris</i><par n="abaiss/er__vblex" /> </e>
+<e lm="favoriser" a="eleka"><i>favoris</i><par n="abaiss/er__vblex" /> </e>
+<e lm="préciser"><i>précis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="évaluer" a="eleka"><i>évalu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="qualifier" a="webform"><i>qualifi</i><par n="abaiss/er__vblex" /> </e>
+<e lm="plaindre" a="eleka"><i>plai</i><par n="cei/ndre__vblex" /> </e>
+<e lm="ralentir" a="eleka"><i>ralent</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="réagir" a="webform"><i>réag</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e r="LR" lm="éclater"><p><l>Eclat</l><r>éclat</r></p><par n="abaiss/er__vblex" /> </e>
+<e lm="éclater"><i>éclat</i><par n="abaiss/er__vblex" /> </e>
+<e lm="apparaître"><i>appar</i><par n="appar/aître__vblex" /> </e>
+<e lm="apparaître" a="eleka"><i>appar</i><par n="appar/aître__vblex" /> </e>
+<e lm="souligner"><i>soulign</i><par n="abaiss/er__vblex" /> </e>
+<e lm="percevoir" a="eleka"><i>per</i><par n="aper/cevoir__vblex" /> </e>
+<e lm="recycler" a="eleka"><i>recycl</i><par n="abaiss/er__vblex" /> </e>
+<e r="LR" lm="soutenir"><i>sout</i><par n="appart/enir__vblex" /> </e>
+<e lm="soutenir" a="eleka"><i>sout</i><par n="appart/enir__vblex" /> </e>
+<e lm="soutenir" a="eleka"><i>sout</i><par n="appart/enir__vblex" /> </e>
+<e lm="récompenser" a="eleka"><i>récompens</i><par n="abaiss/er__vblex" /> </e>
+<e r="LR" lm="reprocher" a="webform"><i>reproch</i><par n="abaiss/er__vblex" /> </e>
+<e lm="reprocher" a="eleka"><i>reproch</i><par n="abaiss/er__vblex" /> </e>
+<e lm="rééditer" a="eleka"><i>réédit</i><par n="abaiss/er__vblex" /> </e>
+<e lm="rapporter"><i>rapport</i><par n="abaiss/er__vblex" /> </e>
+<e lm="rapporter" a="eleka"><i>rapport</i><par n="abaiss/er__vblex" /> </e>
+<e lm="réformer" a="webform"><i>réform</i><par n="abaiss/er__vblex" /> </e>
+<e lm="offrir"><i>off</i><par n="couv/rir__vblex" /> </e>
+<e lm="offrir" a="eleka"><i>off</i><par n="couv/rir__vblex" /> </e>
+<e r="RL" lm="offrir" a="eleka"><i>off</i><par n="couv/rir__vblex" /> </e>
+<e lm="rentrer"><i>rentr</i><par n="abaiss/er__vblex" /> </e>
+<e lm="réhabiliter" a="eleka"><i>réhabilit</i><par n="abaiss/er__vblex" /> </e>
+<e lm="réitérer" a="eleka"><i>réit</i><par n="accél/é[R]er__vblex" prm="r" /> </e>
+<e lm="revendiquer" a="webform"><i>revendiqu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="lier"><i>li</i><par n="abaiss/er__vblex" /> </e>
+<e lm="lier" a="eleka"><i>li</i><par n="abaiss/er__vblex" /> </e>
+<e lm="réléguer" a="eleka"><i>rél</i><par n="accél/é[R]er__vblex" prm="gu" /> </e>
+<e lm="parachever" a="eleka"><i>parach</i><par n="ach/e[T]er__vblex" prm="v" /> </e>
+<e lm="brasser"><i>brass</i><par n="abaiss/er__vblex" /> </e>
+<e lm="expédier" a="eleka"><i>expédi</i><par n="abaiss/er__vblex" /> </e>
+<e lm="rémunérer" a="webform"><i>rémun</i><par n="accél/é[R]er__vblex" prm="r" /> </e>
+<e lm="rentabiliser" a="eleka"><i>rentabilis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="rendre" a="webform"><i>rend</i><par n="attend/re__vblex" /> </e>
+<e r="RL" lm="rendre" a="eleka"><i>rend</i><par n="attend/re__vblex" /> </e>
+<e lm="rendre" a="eleka"><i>rend</i><par n="attend/re__vblex" /> </e>
+<e lm="laver" a="eleka"><i>lav</i><par n="abaiss/er__vblex" /> </e>
+<e lm="rouvrir"><i>rouv</i><par n="couv/rir__vblex" /> </e>
+<e lm="rouvrir" a="eleka"><i>rouv</i><par n="couv/rir__vblex" /> </e>
+<e lm="retentir"><i>retent</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="réprimer" a="webform"><i>réprim</i><par n="abaiss/er__vblex" /> </e>
+<e lm="requérir" a="webform"><i>requ</i><par n="acqu/érir__vblex" /> </e>
+<e lm="sauver"><i>sauv</i><par n="abaiss/er__vblex" /> </e>
+<e lm="résilier" a="prompsit2cdl"><i>résili</i><par n="abaiss/er__vblex" /> </e>
+<e lm="responsabiliser" a="eleka"><i>responsabilis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="ressortir" a="eleka"><i>ressor</i><par n="consen/tir__vblex" /> </e>
+<e lm="ressentir"><i>ressen</i><par n="consen/tir__vblex" /> </e>
+<e lm="soustraire"><i>soustra</i><par n="distra/ire__vblex" /> </e>
+<e lm="soustraire" a="eleka"><i>soustra</i><par n="distra/ire__vblex" /> </e>
+<e lm="soustraire" a="eleka"><i>soustra</i><par n="distra/ire__vblex" /> </e>
+<e lm="restreindre" a="eleka"><i>restrei</i><par n="cei/ndre__vblex" /> </e>
+<e lm="rendre" a="webform"><i>rend</i><par n="attend/re__vblex" /> </e>
+<e r="RL" lm="rendre" a="eleka"><i>rend</i><par n="attend/re__vblex" /> </e>
+<e lm="rendre" a="eleka"><i>rend</i><par n="attend/re__vblex" /> </e>
+<e lm="bouleverser" a="eleka"><i>boulevers</i><par n="abaiss/er__vblex" /> </e>
+<e lm="retransmettre" a="eleka"><i>retransm</i><par n="adm/ettre__vblex" /> </e>
+<e lm="retrouver"><i>retrouv</i><par n="abaiss/er__vblex" /> </e>
+<e lm="retrouver" a="eleka"><i>retrouv</i><par n="abaiss/er__vblex" /> </e>
+<e lm="réviser" a="webform"><i>révis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="voler"><i>vol</i><par n="abaiss/er__vblex" /> </e>
+<e lm="voler" a="eleka"><i>vol</i><par n="abaiss/er__vblex" /> </e>
+<e lm="rôder" a="eleka"><i>rôd</i><par n="abaiss/er__vblex" /> </e>
+<e lm="sanctionner" a="eleka"><i>sanctionn</i><par n="abaiss/er__vblex" /> </e>
+<e lm="sensibiliser" a="eleka"><i>sensibilis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="condamner"><i>condamn</i><par n="abaiss/er__vblex" /> </e>
+<e lm="condamner" a="eleka"><i>condamn</i><par n="abaiss/er__vblex" /> </e>
+<e lm="simuler" a="eleka"><i>simul</i><par n="abaiss/er__vblex" /> </e>
+<e lm="synthétiser" a="webform"><i>synthétis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="dépasser"><i>dépass</i><par n="abaiss/er__vblex" /> </e>
+<e lm="dépasser" a="eleka"><i>dépass</i><par n="abaiss/er__vblex" /> </e>
+<e lm="résoudre"><i>réso</i><par n="réso/udre__vblex" /> </e>
+<e lm="solliciter" a="webform"><i>sollicit</i><par n="abaiss/er__vblex" /> </e>
+<e lm="tenir"><i>t</i><par n="appart/enir__vblex" /> </e>
+<e lm="plonger" a="eleka"><i>plong</i><par n="allong/er__vblex" /> </e>
+<e lm="distribuer"><i>distribu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="subventionner" a="eleka"><i>subventionn</i><par n="abaiss/er__vblex" /> </e>
+<e lm="suffoquer" a="eleka"><i>suffoqu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="supplier" a="eleka"><i>suppli</i><par n="abaiss/er__vblex" /> </e>
+<e lm="remplacer"><i>rempla</i><par n="annon/cer__vblex" /> </e>
+<e lm="remplacer" a="eleka"><i>rempla</i><par n="annon/cer__vblex" /> </e>
+<e lm="supprimer" a="webform"><i>supprim</i><par n="abaiss/er__vblex" /> </e>
+<e r="LR" lm="soutenir"><i>sout</i><par n="appart/enir__vblex" /> </e>
+<e lm="soutenir" a="eleka"><i>sout</i><par n="appart/enir__vblex" /> </e>
+<e lm="soutenir" a="eleka"><i>sout</i><par n="appart/enir__vblex" /> </e>
+<e lm="suicider" a="eleka"><i>suicid</i><par n="abaiss/er__vblex" /> </e>
+<e lm="boucher"><i>bouch</i><par n="abaiss/er__vblex" /> </e>
+<e lm="boucher" a="eleka"><i>bouch</i><par n="abaiss/er__vblex" /> </e>
+<e lm="tarder"><i>tard</i><par n="abaiss/er__vblex" /> </e>
+<e lm="taper"><i>tap</i><par n="abaiss/er__vblex" /> </e>
+<e r="LR" lm="teindre"><i>tei</i><par n="cei/ndre__vblex" /> </e>
+<e lm="teindre" a="eleka"><i>tei</i><par n="cei/ndre__vblex" /> </e>
+<e r="LR" lm="étudier"><p><l>Etudi</l><r>étudi</r></p><par n="abaiss/er__vblex" /> </e>
+<e lm="étudier"><i>étudi</i><par n="abaiss/er__vblex" /> </e>
+<e lm="passer"><i>pass</i><par n="abaiss/er__vblex" /> </e>
+<e lm="transiter" a="eleka"><i>transit</i><par n="abaiss/er__vblex" /> </e>
+<e lm="transmettre" a="webform"><i>transm</i><par n="adm/ettre__vblex" /> </e>
+<e lm="déplacer"><i>dépla</i><par n="annon/cer__vblex" /> </e>
+<e lm="déplacer" a="eleka"><i>dépla</i><par n="annon/cer__vblex" /> </e>
+<e lm="traverser"><i>travers</i><par n="abaiss/er__vblex" /> </e>
+<e lm="traverser" a="eleka"><i>travers</i><par n="abaiss/er__vblex" /> </e>
+<e lm="tripler" a="eleka"><i>tripl</i><par n="abaiss/er__vblex" /> </e>
+<e lm="protéger"><i>prot</i><par n="abr/é[G]er__vblex" prm="g" /> </e>
+<e lm="conclure"><i>concl</i><par n="concl/u[]re__vblex" prm="" /> </e>
+<e lm="unifier" a="eleka"><i>unifi</i><par n="abaiss/er__vblex" /> </e>
+<e lm="vaticiner" a="eleka"><i>vaticin</i><par n="abaiss/er__vblex" /> </e>
+<e lm="traiter" a="eleka"><i>trait</i><par n="abaiss/er__vblex" /> </e>
+<e lm="vibrer" a="eleka"><i>vibr</i><par n="abaiss/er__vblex" /> </e>
+<e lm="lier"><i>li</i><par n="abaiss/er__vblex" /> </e>
+<e lm="lier" a="eleka"><i>li</i><par n="abaiss/er__vblex" /> </e>
+<e lm="visualiser" a="eleka"><i>visualis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="discuter"><i>discut</i><par n="abaiss/er__vblex" /> </e>
+<e lm="discuter"><i>discut</i><par n="abaiss/er__vblex" /> </e>
+<e lm="chiffrer"><i>chiffr</i><par n="abaiss/er__vblex" /> </e>
+<e lm="tremper" a="eleka"><i>tremp</i><par n="abaiss/er__vblex" /> </e>
+<e lm="remarquer"><i>remarqu</i><par n="abaiss/er__vblex" /> </e>
+<e r="RL" lm="taxer"><i>tax</i><par n="abaiss/er__vblex" /> </e>
+<e lm="bonifier" a="eleka"><i>bonifi</i><par n="abaiss/er__vblex" /> </e>
+<e lm="différer" a="eleka"><i>diff</i><par n="accél/é[R]er__vblex" prm="r" /> </e>
+<e lm="associer" a="webform"><i>associ</i><par n="abaiss/er__vblex" /> </e>
+<e lm="sous-traiter" a="eleka"><i>sous-trait</i><par n="abaiss/er__vblex" /> </e>
+<e lm="séparer"><i>sépar</i><par n="abaiss/er__vblex" /> </e>
+<e lm="joindre"><i>joi</i><par n="cei/ndre__vblex" /> </e>
+<e lm="joindre" a="eleka"><i>joi</i><par n="cei/ndre__vblex" /> </e>
+<e lm="allaiter" a="eleka"><i>allait</i><par n="abaiss/er__vblex" /> </e>
+<e lm="configurer" a="eleka"><i>configur</i><par n="abaiss/er__vblex" /> </e>
+<e lm="rapporter"><i>rapport</i><par n="abaiss/er__vblex" /> </e>
+<e lm="rapporter" a="eleka"><i>rapport</i><par n="abaiss/er__vblex" /> </e>
+<e lm="restructurer" a="eleka"><i>restructur</i><par n="abaiss/er__vblex" /> </e>
+<e lm="huer" a="eleka"><i>hu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="encercler" a="eleka"><i>encercl</i><par n="abaiss/er__vblex" /> </e>
+<e r="LR" lm="borner"><i>born</i><par n="abaiss/er__vblex" /> </e>
+<e lm="borner" a="eleka"><i>born</i><par n="abaiss/er__vblex" /> </e>
+<e lm="cribler" a="eleka"><i>cribl</i><par n="abaiss/er__vblex" /> </e>
+<e lm="dresser"><i>dress</i><par n="abaiss/er__vblex" /> </e>
+<e lm="dresser" a="eleka"><i>dress</i><par n="abaiss/er__vblex" /> </e>
+<e lm="cautionner" a="webform"><i>cautionn</i><par n="abaiss/er__vblex" /> </e>
+<e lm="agglutiner" a="eleka"><i>agglutin</i><par n="abaiss/er__vblex" /> </e>
+<e lm="offenser" a="eleka"><i>offens</i><par n="abaiss/er__vblex" /> </e>
+<e lm="accentuer"><i>accentu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="accentuer" a="eleka"><i>accentu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="accentuer" a="eleka"><i>accentu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="chasser"><i>chass</i><par n="abaiss/er__vblex" /> </e>
+<e lm="chasser" a="eleka"><i>chass</i><par n="abaiss/er__vblex" /> </e>
+<e r="RL" lm="aplanir" a="eleka"><i>aplan</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="aplanir" a="eleka"><i>aplan</i><par n="about/[]ir__vblex" /> </e>
+<e lm="effrayer"><i>effra</i><par n="bala/yer__vblex" /> </e>
+<e lm="effrayer" a="eleka"><i>effra</i><par n="bala/yer__vblex" /> </e>
+<e lm="diminuer"><i>diminu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="diminuer" a="eleka"><i>diminu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="amnistier" a="eleka"><i>amnisti</i><par n="abaiss/er__vblex" /> </e>
+<e lm="museler" a="webform"><i>musel</i><par n="abaiss/er__vblex" /> </e>
+<e lm="amortir" a="eleka"><i>amort</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="révolter" a="eleka"><i>révolt</i><par n="abaiss/er__vblex" /> </e>
+<e lm="amplifier" a="webform"><i>amplifi</i><par n="abaiss/er__vblex" /> </e>
+<e lm="lapider" a="eleka"><i>lapid</i><par n="abaiss/er__vblex" /> </e>
+<e r="RL" lm="lapider" a="eleka"><i>lapid</i><par n="abaiss/er__vblex" /> </e>
+<e lm="surnommer" a="eleka"><i>surnomm</i><par n="abaiss/er__vblex" /> </e>
+<e lm="surnommer" a="eleka"><i>surnomm</i><par n="abaiss/er__vblex" /> </e>
+<e lm="arbitrer" a="eleka"><i>arbitr</i><par n="abaiss/er__vblex" /> </e>
+<e lm="harmoniser" a="eleka"><i>harmonis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="ressembler" a="webform"><i>ressembl</i><par n="abaiss/er__vblex" /> </e>
+<e lm="allier" a="eleka"><i>alli</i><par n="abaiss/er__vblex" /> </e>
+<e lm="automatiser" a="eleka"><i>automatis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="attiser" a="webform"><i>attis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="cataloguer" a="eleka"><i>catalogu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="cimenter" a="eleka"><i>ciment</i><par n="abaiss/er__vblex" /> </e>
+<e lm="médailler" a="eleka"><i>médaill</i><par n="abaiss/er__vblex" /> </e>
+<e lm="coopérer" a="eleka"><i>coop</i><par n="accél/é[R]er__vblex" prm="r" /> </e>
+<e lm="affaiblir" a="webform"><p><l>affaibl</l><r>affaibl</r></p><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="décliner" a="eleka"><i>déclin</i><par n="abaiss/er__vblex" /> </e>
+<e lm="égorger" a="eleka"><i>égorg</i><par n="allong/er__vblex" /> </e>
+<e lm="discréditer" a="eleka"><i>discrédit</i><par n="abaiss/er__vblex" /> </e>
+<e lm="désapprouver" a="eleka"><i>désapprouv</i><par n="abaiss/er__vblex" /> </e>
+<e lm="déchaîner"><i>déchaîn</i><par n="abaiss/er__vblex" /> </e>
+<e lm="élucider" a="eleka"><i>élucid</i><par n="abaiss/er__vblex" /> </e>
+<e lm="annuler"><i>annul</i><par n="abaiss/er__vblex" /> </e>
+<e lm="annuler" a="eleka"><i>annul</i><par n="abaiss/er__vblex" /> </e>
+<e lm="louer"><i>lou</i><par n="abaiss/er__vblex" /> </e>
+<e lm="charger"><i>charg</i><par n="allong/er__vblex" /> </e>
+<e lm="apparenter" a="eleka"><i>apparent</i><par n="abaiss/er__vblex" /> </e>
+<e lm="convoquer"><i>convoqu</i><par n="abaiss/er__vblex" /> </e>
+<e r="RL" lm="convoquer" a="eleka"><i>convoqu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="appauvrir" a="webform"><p><l>appauvr</l><r>appauvr</r></p><par n="about/[]ir__vblex" prm="" /> </e>
+<e r="LR" lm="échouer"><p><l>Echou</l><r>échou</r></p><par n="abaiss/er__vblex" /> </e>
+<e lm="échouer"><i>échou</i><par n="abaiss/er__vblex" /> </e>
+<e lm="encadrer"><i>encadr</i><par n="abaiss/er__vblex" /> </e>
+<e lm="souligner"><i>soulign</i><par n="abaiss/er__vblex" /> </e>
+<e lm="souligner" a="eleka"><i>soulign</i><par n="abaiss/er__vblex" /> </e>
+<e lm="souligner" a="eleka"><i>soulign</i><par n="abaiss/er__vblex" /> </e>
+<e lm="souligner" a="eleka"><i>soulign</i><par n="abaiss/er__vblex" /> </e>
+<e lm="scanner" a="eleka"><i>scann</i><par n="abaiss/er__vblex" /> </e>
+<e lm="innocenter" a="eleka"><i>innocent</i><par n="abaiss/er__vblex" /> </e>
+<e lm="exhorter" a="webform"><i>exhort</i><par n="abaiss/er__vblex" /> </e>
+<e lm="extrader" a="eleka"><i>extrad</i><par n="abaiss/er__vblex" /> </e>
+<e lm="autoriser"><i>autoris</i><par n="abaiss/er__vblex" /> </e>
+<e lm="filmer" a="webform"><i>film</i><par n="abaiss/er__vblex" /> </e>
+<e lm="concevoir"><i>con</i><par n="aper/cevoir__vblex" /> </e>
+<e lm="implémenter" a="eleka"><i>implément</i><par n="abaiss/er__vblex" /> </e>
+<e lm="incinérer" a="eleka"><i>incin</i><par n="accél/é[R]er__vblex" prm="r" /> </e>
+<e lm="entamer"><i>entam</i><par n="abaiss/er__vblex" /> </e>
+<e lm="individualiser" a="eleka"><i>individualis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="immobiliser" a="eleka"><i>immobilis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="interférer" a="eleka"><i>interf</i><par n="accél/é[R]er__vblex" prm="r" /> </e>
+<e lm="investir" a="webform"><i>invest</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="ironiser" a="webform"><i>ironis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="libéraliser" a="eleka"><i>libéralis</i><par n="abaiss/er__vblex" /> </e>
+<e r="LR" lm="éclaircir"><p><l>Eclairc</l><r>éclairc</r></p><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="éclaircir"><i>éclairc</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="ondoyer" a="eleka"><i>ondo</i><par n="bala/yer__vblex" /> </e>
+<e lm="préétablir" a="eleka"><i>préétabl</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="profaner" a="eleka"><i>profan</i><par n="abaiss/er__vblex" /> </e>
+<e lm="promulguer" a="webform"><i>promulgu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="rationaliser" a="eleka"><i>rationalis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="radicaliser" a="webform"><i>radicalis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="enlever"><i>enl</i><par n="ach/e[T]er__vblex" prm="v" /> </e>
+<e lm="réactiver" a="eleka"><i>réactiv</i><par n="abaiss/er__vblex" /> </e>
+<e lm="réaffirmer" a="webform"><i>réaffirm</i><par n="abaiss/er__vblex" /> </e>
+<e lm="rebaptiser" a="eleka"><i>rebaptis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="recruter" a="eleka"><i>recrut</i><par n="abaiss/er__vblex" /> </e>
+<e lm="redéfinir" a="webform"><p><l>redéfin</l><r>redéfin</r></p><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="redistribuer" a="webform"><i>redistribu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="rembourser" a="webform"><i>rembours</i><par n="abaiss/er__vblex" /> </e>
+<e lm="réincorporer" a="eleka"><i>réincorpor</i><par n="abaiss/er__vblex" /> </e>
+<e lm="réinitialiser" a="eleka"><i>réinitialis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="ramer" a="eleka"><i>ram</i><par n="abaiss/er__vblex" /> </e>
+<e lm="renaître" a="eleka"><i>ren</i><par n="n/aître__vblex" /> </e>
+<e lm="réorganiser" a="webform"><i>réorganis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="rétribuer" a="eleka"><i>rétribu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="revaloriser" a="eleka"><i>revaloris</i><par n="abaiss/er__vblex" /> </e>
+<e lm="révoquer" a="webform"><i>révoqu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="rasséréner"><i>rassér</i><par n="accél/é[R]er__vblex" prm="n" /> </e>
+<e lm="simplifier" a="eleka"><i>simplifi</i><par n="abaiss/er__vblex" /> </e>
+<e lm="calmer"><i>calm</i><par n="abaiss/er__vblex" /> </e>
+<e lm="superposer" a="eleka"><i>superpos</i><par n="abaiss/er__vblex" /> </e>
+<e lm="fournir"><i>fourn</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="téléviser" a="webform"><i>télévis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="transférer" a="eleka"><i>transf</i><par n="accél/é[R]er__vblex" prm="r" /> </e>
+<e lm="structurer" a="eleka"><i>structur</i><par n="abaiss/er__vblex" /> </e>
+<e lm="chavirer" a="eleka"><i>chavir</i><par n="abaiss/er__vblex" /> </e>
+<e lm="assener" a="eleka"><i>ass</i><par n="ach/e[T]er__vblex" prm="n" /> </e>
+<e lm="apostiller" a="eleka"><i>apostill</i><par n="abaiss/er__vblex" /> </e>
+<e lm="calciner" a="eleka"><i>calcin</i><par n="abaiss/er__vblex" /> </e>
+<e lm="ranimer" a="webform"><i>ranim</i><par n="abaiss/er__vblex" /> </e>
+<e lm="présager" a="eleka"><i>présag</i><par n="allong/er__vblex" /> </e>
+<e lm="apaiser" a="webform"><i>apais</i><par n="abaiss/er__vblex" /> </e>
+<e lm="apaiser" a="eleka"><i>apais</i><par n="abaiss/er__vblex" /> </e>
+<e lm="relancer"><i>relan</i><par n="annon/cer__vblex" /> </e>
+<e lm="parapher" a="eleka"><i>paraph</i><par n="abaiss/er__vblex" /> </e>
+<e lm="mesurer"><i>mesur</i><par n="abaiss/er__vblex" /> </e>
+<e lm="fragmenter" a="eleka"><i>fragment</i><par n="abaiss/er__vblex" /> </e>
+<e lm="correspondre"><i>correspond</i><par n="attend/re__vblex" /> </e>
+<e lm="poser"><i>pos</i><par n="abaiss/er__vblex" /> </e>
+<e lm="poser" a="eleka"><i>pos</i><par n="abaiss/er__vblex" /> </e>
+<e lm="frotter"><i>frott</i><par n="abaiss/er__vblex" /> </e>
+<e lm="agoniser" a="eleka"><i>agonis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="envelopper"><i>envelopp</i><par n="abaiss/er__vblex" /> </e>
+<e lm="tester" a="eleka"><i>test</i><par n="abaiss/er__vblex" /> </e>
+<e lm="couvrir"><i>couv</i><par n="couv/rir__vblex" /> </e>
+<e lm="innover" a="webform"><i>innov</i><par n="abaiss/er__vblex" /> </e>
+<e r="LR" lm="égayer"><p><l>Ega</l><r>éga</r></p><par n="bala/yer__vblex" /> </e>
+<e lm="égayer"><i>éga</i><par n="bala/yer__vblex" /> </e>
+<e lm="égayer" a="eleka"><i>éga</i><par n="bala/yer__vblex" /> </e>
+<e lm="remplir"><i>rempl</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="enrôler" a="eleka"><i>enrôl</i><par n="abaiss/er__vblex" /> </e>
+<e lm="effrayer"><i>effra</i><par n="bala/yer__vblex" /> </e>
+<e lm="effrayer" a="eleka"><i>effra</i><par n="bala/yer__vblex" /> </e>
+<e lm="reloger" a="eleka"><i>relog</i><par n="allong/er__vblex" /> </e>
+<e lm="signaler"><i>signal</i><par n="abaiss/er__vblex" /> </e>
+<e lm="affoler"><i>affol</i><par n="abaiss/er__vblex" /> </e>
+<e lm="descendre"><i>descend</i><par n="attend/re__vblex" /> </e>
+<e lm="discuter"><i>discut</i><par n="abaiss/er__vblex" /> </e>
+<e lm="mouiller"><i>mouill</i><par n="abaiss/er__vblex" /> </e>
+<e lm="sonner"><i>sonn</i><par n="abaiss/er__vblex" /> </e>
+<e lm="croiser"><i>crois</i><par n="abaiss/er__vblex" /> </e>
+<e lm="croiser" a="eleka"><i>crois</i><par n="abaiss/er__vblex" /> </e>
+<e lm="jeter"><i>jet</i><par n="cachet/er__vblex" /> </e>
+<e lm="jeter" a="eleka"><i>jet</i><par n="cachet/er__vblex" /> </e>
+<e r="RL" lm="jeter" a="eleka"><i>jet</i><par n="cachet/er__vblex" /> </e>
+<e lm="bâtir"><i>bât</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="bloquer"><i>bloqu</i><par n="abaiss/er__vblex" /> </e>
+<e r="LR" lm="élever"><p><l>El</l><r>él</r></p><par n="ach/e[T]er__vblex" prm="v" /> </e>
+<e lm="élever"><i>él</i><par n="ach/e[T]er__vblex" prm="v" /> </e>
+<e lm="faillir"><i>fa</i><par n="fa/illir__vblex" /> </e>
+<e lm="reformuler" a="eleka"><i>reformul</i><par n="abaiss/er__vblex" /> </e>
+<e lm="prendre"><i>pr</i><par n="appr/endre__vblex" /> </e>
+<e lm="frapper" a="webform"><i>frapp</i><par n="abaiss/er__vblex" /> </e>
+<e r="RL" lm="frapper" a="eleka"><i>frapp</i><par n="abaiss/er__vblex" /> </e>
+<e lm="frapper" a="eleka"><i>frapp</i><par n="abaiss/er__vblex" /> </e>
+<e lm="isoler"><i>isol</i><par n="abaiss/er__vblex" /> </e>
+<e lm="libérer" a="webform"><i>lib</i><par n="accél/é[R]er__vblex" prm="r" /> </e>
+<e lm="déchirer"><i>déchir</i><par n="abaiss/er__vblex" /> </e>
+<e lm="avancer"><i>avan</i><par n="annon/cer__vblex" /> </e>
+<e lm="avancer" a="eleka"><i>avan</i><par n="annon/cer__vblex" /> </e>
+<e lm="auditer" a="eleka"><i>audit</i><par n="abaiss/er__vblex" /> </e>
+<e lm="saisir"><i>sais</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="enchérir" a="eleka"><i>enchér</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="permuter" a="eleka"><i>permut</i><par n="abaiss/er__vblex" /> </e>
+<e lm="subroger" a="eleka"><i>subrog</i><par n="allong/er__vblex" /> </e>
+<e lm="approvisionner" a="eleka"><i>approvisionn</i><par n="abaiss/er__vblex" /> </e>
+<e lm="ridiculiser" a="eleka"><i>ridiculis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="diminuer"><i>diminu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="diminuer" a="eleka"><i>diminu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="entourer"><i>entour</i><par n="abaiss/er__vblex" /> </e>
+<e lm="standardiser" a="eleka"><i>standardis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="abdiquer" a="eleka"><i>abdiqu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="déclasser" a="prompsit2cdl"><i>déclass</i><par n="abaiss/er__vblex" /> </e>
+<e lm="crypter" a="prompsit2cdl"><i>crypt</i><par n="abaiss/er__vblex" /> </e>
+<e lm="machiner" a="prompsit2cdl"><i>machin</i><par n="abaiss/er__vblex" /> </e>
+<e lm="glisser"><i>gliss</i><par n="abaiss/er__vblex" /> </e>
+<e lm="glisser" a="eleka"><i>gliss</i><par n="abaiss/er__vblex" /> </e>
+<e r="RL" lm="glisser" a="eleka"><i>gliss</i><par n="abaiss/er__vblex" /> </e>
+<e lm="diriger"><i>dirig</i><par n="allong/er__vblex" /> </e>
+<e lm="brûler"><i>brûl</i><par n="abaiss/er__vblex" /> </e>
+<e lm="brûler" a="eleka"><i>brûl</i><par n="abaiss/er__vblex" /> </e>
+<e lm="amputer" a="eleka"><i>amput</i><par n="abaiss/er__vblex" /> </e>
+<e lm="baisser"><i>baiss</i><par n="abaiss/er__vblex" /> </e>
+<e lm="baisser" a="eleka"><i>baiss</i><par n="abaiss/er__vblex" /> </e>
+<e lm="actionner" a="eleka"><i>actionn</i><par n="abaiss/er__vblex" /> </e>
+<e lm="acclimater" a="eleka"><i>acclimat</i><par n="abaiss/er__vblex" /> </e>
+<e lm="presser" a="eleka"><i>press</i><par n="abaiss/er__vblex" /> </e>
+<e lm="additionner" a="eleka"><i>additionn</i><par n="abaiss/er__vblex" /> </e>
+<e lm="apprêter" a="eleka"><i>apprêt</i><par n="abaiss/er__vblex" /> </e>
+<e lm="accorder"><i>accord</i><par n="abaiss/er__vblex" /> </e>
+<e lm="accorder" a="eleka"><i>accord</i><par n="abaiss/er__vblex" /> </e>
+<e lm="attraper" a="eleka"><i>attrap</i><par n="abaiss/er__vblex" /> </e>
+<e lm="ensevelir" a="eleka"><i>ensevel</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="rafistoler" a="eleka"><i>rafistol</i><par n="abaiss/er__vblex" /> </e>
+<e lm="accoupler" a="eleka"><i>accoupl</i><par n="abaiss/er__vblex" /> </e>
+<e r="RL" lm="affliger" a="eleka"><i>afflig</i><par n="allong/er__vblex" /> </e>
+<e lm="affliger" a="eleka"><i>afflig</i><par n="allong/er__vblex" /> </e>
+<e lm="affliger" a="eleka"><i>afflig</i><par n="allong/er__vblex" /> </e>
+<e lm="empiler" a="eleka"><i>empil</i><par n="abaiss/er__vblex" /> </e>
+<e r="RL" lm="empiler" a="eleka"><i>empil</i><par n="abaiss/er__vblex" /> </e>
+<e lm="caserner" a="eleka"><i>casern</i><par n="abaiss/er__vblex" /> </e>
+<e lm="arracher"><i>arrach</i><par n="abaiss/er__vblex" /> </e>
+<e lm="accorder"><i>accord</i><par n="abaiss/er__vblex" /> </e>
+<e lm="accorder" a="eleka"><i>accord</i><par n="abaiss/er__vblex" /> </e>
+<e lm="banaliser" a="webform"><i>banalis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="caricaturer" a="eleka"><i>caricatur</i><par n="abaiss/er__vblex" /> </e>
+<e lm="cohabiter" a="eleka"><i>cohabit</i><par n="abaiss/er__vblex" /> </e>
+<e lm="cristalliser" a="webform"><i>cristallis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="délibérer" a="eleka"><i>délib</i><par n="accél/é[R]er__vblex" prm="r" /> </e>
+<e lm="désajuster" a="eleka"><i>désajust</i><par n="abaiss/er__vblex" /> </e>
+<e lm="désavouer" a="eleka"><i>désavou</i><par n="abaiss/er__vblex" /> </e>
+<e lm="déduire" a="eleka"><i>dédui</i><par n="condui/re__vblex" /> </e>
+<e lm="désinhiber" a="eleka"><i>désinhib</i><par n="abaiss/er__vblex" /> </e>
+<e lm="démoraliser" a="eleka"><i>démoralis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="dévoiler" a="eleka"><i>dévoil</i><par n="abaiss/er__vblex" /> </e>
+<e r="LR" lm="édulcorer" a="webform"><p><l>Edulcor</l><r>édulcor</r></p><par n="abaiss/er__vblex" /> </e>
+<e lm="édulcorer" a="webform"><i>édulcor</i><par n="abaiss/er__vblex" /> </e>
+<e lm="enfermer"><i>enferm</i><par n="abaiss/er__vblex" /> </e>
+<e lm="boucher"><i>bouch</i><par n="abaiss/er__vblex" /> </e>
+<e lm="boucher" a="eleka"><i>bouch</i><par n="abaiss/er__vblex" /> </e>
+<e lm="adopter"><i>adopt</i><par n="abaiss/er__vblex" /> </e>
+<e r="RL" lm="adopter" a="eleka"><i>adopt</i><par n="abaiss/er__vblex" /> </e>
+<e lm="adopter"><i>adopt</i><par n="abaiss/er__vblex" /> </e>
+<e r="RL" lm="adopter" a="eleka"><i>adopt</i><par n="abaiss/er__vblex" /> </e>
+<e lm="endormir"><i>endor</i><par n="dor/mir__vblex" /> </e>
+<e lm="embuer" a="eleka"><i>embu</i><par n="abaiss/er__vblex" /> </e>
+<e lm="scruter" a="eleka"><i>scrut</i><par n="abaiss/er__vblex" /> </e>
+<e lm="balayer"><i>bala</i><par n="bala/yer__vblex" /> </e>
+<e lm="instrumenter" a="eleka"><i>instrument</i><par n="abaiss/er__vblex" /> </e>
+<e lm="extrapoler" a="eleka"><i>extrapol</i><par n="abaiss/er__vblex" /> </e>
+<e lm="philosopher" a="eleka"><i>philosoph</i><par n="abaiss/er__vblex" /> </e>
+<e lm="focaliser" a="eleka"><i>focalis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="formater" a="eleka"><i>format</i><par n="abaiss/er__vblex" /> </e>
+<e lm="fraterniser" a="eleka"><i>fraternis</i><par n="abaiss/er__vblex" /> </e>
+<e lm="immigrer" a="webform"><i>immigr</i><par n="abaiss/er__vblex" /> </e>
+<e lm="initialiser" a="eleka"><i>initialis</i><par n="abaiss/er__vblex" /> </e>
+<e r="LR" lm="échanger"><p><l>Echang</l><r>échang</r></p><par n="allong/er__vblex" /> </e>
+<e lm="échanger"><i>échang</i><par n="allong/er__vblex" /> </e>
+<e lm="lapider" a="eleka"><i>lapid</i><par n="abaiss/er__vblex" /> </e>
+<e r="RL" lm="lapider" a="eleka"><i>lapid</i><par n="abaiss/er__vblex" /> </e>
+<e lm="meurtrir" a="eleka"><i>meurtr</i><par n="about/[]ir__vblex" prm="" /> </e>
+<e lm="changer"><i>chang</i><par n="allong/er__vblex" /> </e>
+<e r="RL" lm="changer" a="eleka"><i>chang</i><par n="allong/er__vblex" /> </e>
+<e lm="changer" a="eleka"><i>chang</i><par n="allong/er__vblex" /> </e>
+<e lm="mitrailler" a="eleka"><i>mitraill</i><par n="abaiss/er__vblex" /> </e>
+<e lm="intervenir"><i>interv</i><par n="appart/enir__vblex" /> </e>
+<e lm="intervenir" a="eleka"><i>interv</i><par n="appart/enir__vblex" /> </e>
+<e lm="pressurer" a="eleka"><i>pressur</i><par n="abaiss/er__vblex" /> </e>
+<e lm="relâcher"><i>relâch</i><par n="abaiss/er__vblex" /> </e>
+<e lm="résumer"><i>résum</i><par n="abaiss/er__vblex" /> </e>
+<e lm="bouleverser" a="eleka"><i>boulevers</i><par n="abaiss/er__vblex" /> </e>
+<e lm="vanter" a="eleka"><i>vant</i><par n="abaiss/er__vblex" /> </e>
+<e lm="veiller"><i>veill</i><par n="abaiss/er__vblex" /> </e>
+<e lm="ramer" a="eleka"><i>ram</i><par n="abaiss/er__vblex" /> </e>
+<e lm="alterner" a="eleka"><i>altern</i><par n="abaiss/er__vblex" /> </e>
+<e lm="rentrer"><i>rentr</i><par n="abaiss/er__vblex" /> </e>
+<e lm="asseoir" a="eleka"><i>ass</i><par n="ass/eoir__vblex" /> </e>
+<e lm="laver" a="eleka"><i>lav</i><par n="abaiss/er__vblex" /> </e>
+<e lm="entreprendre"><i>entrepr</i><par n="appr/endre__vblex" /> </e>
+<e r="LR" lm="éclater"><p><l>Eclat</l><r>éclat</r></p><par n="abaiss/er__vblex" /> </e>
+<e lm="éclater"><i>éclat</i><par n="abaiss/er__vblex" /> </e>
+<e lm="couvrir"><i>couv</i><par n="couv/rir__vblex" /> </e>
+<e r="LR" lm="être le porte-drapeau de" a="eleka"><i></i><par n="/être__vblex" /> <p><l><b/>le<b/>porte-drapeau<b/>de</l><r><g><b/>le<b/>porte-drapeau<b/>de</g></r></p></e>
+<e r="RL" lm="être le porte-drapeau de" a="eleka"><i></i><par n="/être__vblex" /> <p><l><b/>le<b/>porte-drapeau<b/><a/>de</l><r><g><b/>le<b/>porte-drapeau<b/>de</g></r></p></e>
+<e r="LR" lm="baisser le prix de" a="eleka"><i>baiss</i><par n="abaiss/er__vblex" /> <p><l><b/>le<b/>prix<b/>de</l><r><g><b/>le<b/>prix<b/>de</g></r></p></e>
+<e r="RL" lm="baisser le prix de" a="eleka"><i>baiss</i><par n="abaiss/er__vblex" /> <p><l><b/>le<b/>prix<b/><a/>de</l><r><g><b/>le<b/>prix<b/>de</g></r></p></e>
+<e lm="déboucher sur" a="eleka"><i>débouch</i><par n="abaiss/er__vblex" /> <p><l><b/>sur</l><r><g><b/>sur</g></r></p></e>
+<e lm="rendre agile" a="eleka"><i>rend</i><par n="attend/re__vblex" /> <p><l><b/>agile</l><r><g><b/>agile</g></r></p></e>
+<e r="LR" lm="faire allusion à" a="eleka"><i>f</i><par n="déf/aire__vblex" /> <p><l><b/>allusion<b/>à</l><r><g><b/>allusion<b/>à</g></r></p></e>
+<e r="RL" lm="faire allusion à" a="eleka"><i>f</i><par n="déf/aire__vblex" /> <p><l><b/>allusion<b/><a/>à</l><r><g><b/>allusion<b/>à</g></r></p></e>
+<e r="LR" lm="faire semblant de" a="eleka"><i>f</i><par n="déf/aire__vblex" /> <p><l><b/>semblant<b/>de</l><r><g><b/>semblant<b/>de</g></r></p></e>
+<e r="RL" lm="faire semblant de" a="eleka"><i>f</i><par n="déf/aire__vblex" /> <p><l><b/>semblant<b/><a/>de</l><r><g><b/>semblant<b/>de</g></r></p></e>
+<e lm="faire appel" a="webform"><i>f</i><par n="déf/aire__vblex" /> <p><l><b/>appel</l><r><g><b/>appel</g></r></p></e>
+<e lm="entourer de murailles" a="eleka"><i>entour</i><par n="abaiss/er__vblex" /> <p><l><b/>de<b/>murailles</l><r><g><b/>de<b/>murailles</g></r></p></e>
+<e lm="commencer à faire jour"><i>commen</i><par n="commen/cer_def__vblex" /> <p><l><b/>à<b/>faire<b/>jour</l><r><g><b/>à<b/>faire<b/>jour</g></r></p></e>
+<e lm="vivre ensemble" a="eleka"><i>v</i><par n="rev/ivre__vblex" /> <p><l><b/>ensemble</l><r><g><b/>ensemble</g></r></p></e>
+<e lm="tirer sur" a="eleka"><i>tir</i><par n="abaiss/er__vblex" /> <p><l><b/>sur</l><r><g><b/>sur</g></r></p></e>
+<e lm="tomber amoureux"><i>tomb</i><par n="abaiss/er__vblex" /> <p><l><b/>amoureux</l><r><g><b/>amoureux</g></r></p></e>
+<e r="LR" lm="faire face à" a="eleka"><i>f</i><par n="déf/aire__vblex" /> <p><l><b/>face<b/>à</l><r><g><b/>face<b/>à</g></r></p></e>
+<e r="RL" lm="faire face à" a="eleka"><i>f</i><par n="déf/aire__vblex" /> <p><l><b/>face<b/><a/>à</l><r><g><b/>face<b/>à</g></r></p></e>
+<e r="RL" lm="prendre la place" a="eleka"><i>pr</i><par n="appr/endre__vblex" /> <p><l><b/>la<b/>place</l><r><g><b/>la<b/>place</g></r></p></e>
+<e lm="faire scandale" a="webform"><i>f</i><par n="déf/aire__vblex" /> <p><l><b/>scandale</l><r><g><b/>scandale</g></r></p></e>
+<e lm="tirer au clair" a="eleka"><i>tir</i><par n="abaiss/er__vblex" /> <p><l><b/>au<b/>clair</l><r><g><b/>au<b/>clair</g></r></p></e>
+<e lm="commencer à faire nuit" a="eleka"><i>commen</i><par n="annon/cer__vblex" /> <p><l><b/>à<b/>faire<b/>nuit</l><r><g><b/>à<b/>faire<b/>nuit</g></r></p></e>
+<e lm="rendre illégal" a="eleka"><i>rend</i><par n="attend/re__vblex" /> <p><l><b/>illégal</l><r><g><b/>illégal</g></r></p></e>
+<e lm="rendre illégal" a="eleka"><i>rend</i><par n="attend/re__vblex" /> <p><l><b/>illégal</l><r><g><b/>illégal</g></r></p></e>
+<e lm="remplir de joie" a="eleka"><i>rempl</i><par n="about/[]ir__vblex" prm="" /> <p><l><b/>de<b/>joie</l><r><g><b/>de<b/>joie</g></r></p></e>
+<e r="LR" lm="manquer à" a="eleka"><i>manqu</i><par n="abaiss/er__vblex" /> <p><l><b/>à</l><r><g><b/>à</g></r></p></e>
+<e r="RL" lm="manquer à" a="eleka"><i>manqu</i><par n="abaiss/er__vblex" /> <p><l><b/><a/>à</l><r><g><b/>à</g></r></p></e>
+<e lm="faire irruption" a="eleka"><i>f</i><par n="déf/aire__vblex" /> <p><l><b/>irruption</l><r><g><b/>irruption</g></r></p></e>
+<e lm="faire irruption" a="eleka"><i>f</i><par n="déf/aire__vblex" /> <p><l><b/>irruption</l><r><g><b/>irruption</g></r></p></e>
+<e lm="donner la préférence" a="eleka"><i>donn</i><par n="abaiss/er__vblex" /> <p><l><b/>la<b/>préférence</l><r><g><b/>la<b/>préférence</g></r></p></e>
+<e lm="décerner un prix" a="eleka"><i>décern</i><par n="abaiss/er__vblex" /> <p><l><b/>un<b/>prix</l><r><g><b/>un<b/>prix</g></r></p></e>
+<e r="LR" lm="assister à" a="eleka"><i>assist</i><par n="abaiss/er__vblex" /> <p><l><b/>à</l><r><g><b/>à</g></r></p></e>
+<e r="RL" lm="assister à" a="eleka"><i>assist</i><par n="abaiss/er__vblex" /> <p><l><b/><a/>à</l><r><g><b/>à</g></r></p></e>
+<e lm="donner la priorité à" a="eleka"><i>donn</i><par n="abaiss/er__vblex" /> <p><l><b/>la<b/>priorité<b/>à</l><r><g><b/>la<b/>priorité<b/>à</g></r></p></e>
+<e lm="jouer le rôle principal" a="eleka"><i>jou</i><par n="abaiss/er__vblex" /> <p><l><b/>le<b/>rôle<b/>principal</l><r><g><b/>le<b/>rôle<b/>principal</g></r></p></e>
+<e lm="appuyer sur" a="eleka"><i>appuy</i><par n="abaiss/er__vblex" /> <p><l><b/>sur</l><r><g><b/>sur</g></r></p></e>
+<e lm="remettre en question" a="eleka"><i>rem</i><par n="adm/ettre__vblex" /> <p><l><b/>en<b/>question</l><r><g><b/>en<b/>question</g></r></p></e>
+<e r="LR" lm="prendre la relève de" a="eleka"><i>pr</i><par n="appr/endre__vblex" /> <p><l><b/>la<b/>relève<b/>de</l><r><g><b/>la<b/>relève<b/>de</g></r></p></e>
+<e r="RL" lm="prendre la relève de" a="eleka"><i>pr</i><par n="appr/endre__vblex" /> <p><l><b/>la<b/>relève<b/><a/>de</l><r><g><b/>la<b/>relève<b/>de</g></r></p></e>
+<e lm="poser à nouveau" a="eleka"><i>pos</i><par n="abaiss/er__vblex" /> <p><l><b/>à<b/>nouveau</l><r><g><b/>à<b/>nouveau</g></r></p></e>
+<e lm="prendre en otage" a="eleka"><i>pr</i><par n="appr/endre__vblex" /> <p><l><b/>en<b/>otage</l><r><g><b/>en<b/>otage</g></r></p></e>
   </section>
 <section id="apostrophes" type="postblank">
 
