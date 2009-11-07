@@ -7881,8 +7881,8 @@
       </e>
       <e>
         <p>
-          <l>corridor<s n="n"/></l>
-          <r>corredor<s n="n"/></r>
+          <l>corridor<s n="n"/><s n="m"/></l>
+          <r>corredor<s n="n"/><s n="m"/></r>
         </p>
       </e>
       <e r="LR">
@@ -56496,7 +56496,9 @@
 <e><p><l>amer<s n="adj"/></l><r>amarg<s n="adj"/></r></p></e>
 <e><p><l>ambigu<s n="adj"/></l><r>ambigu<s n="adj"/></r></p></e>
 <e><p><l>amphitryon<s n="adj"/></l><r>amfitrió<s n="adj"/></r></p></e>
-<e><p><l>affectueux<s n="adj"/></l><r>amorós<s n="adj"/></r></p></e>
+<e r="RL"><p><l>affectueux<s n="adj"/><s n="f"/></l><r>amorós<s n="adj"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>affectueux<s n="adj"/><s n="m"/><s n="sp"/></l><r>amorós<s n="adj"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>affectueux<s n="adj"/><s n="m"/><s n="sp"/></l><r>amorós<s n="adj"/><s n="m"/><s n="pl"/></r></p></e>
 <e><p><l>andalou<s n="adj"/></l><r>andalús<s n="adj"/></r></p></e>
 <e><p><l>anglican<s n="adj"/></l><r>anglicà<s n="adj"/></r></p></e>
 <e><p><l>anglo-saxon<s n="adj"/></l><r>anglosaxó<s n="adj"/></r></p></e>
@@ -56790,9 +56792,14 @@
 <e><p><l>californien<s n="adj"/></l><r>californià<s n="adj"/></r></p></e>
 <e><p><l>controversé<s n="adj"/></l><r>controvertit<s n="adj"/></r></p></e>
 <e><p><l>défavorisé<s n="adj"/></l><r>desfavorit<s n="adj"/></r></p></e>
-<e><p><l>malheureux<s n="adj"/></l><r>malaurat<s n="adj"/></r></p></e>
 <e><p><l>pionnier<s n="adj"/></l><r>capdavanter<s n="adj"/></r></p></e>
-<e><p><l>malheureux<s n="adj"/></l><r>dissortat<s n="adj"/></r></p></e>
+<e r="RL"><p><l>malheureux<s n="adj"/><s n="f"/></l><r>malaurat<s n="adj"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>malheureux<s n="adj"/><s n="m"/><s n="sp"/></l><r>malaurat<s n="adj"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>malheureux<s n="adj"/><s n="m"/><s n="sp"/></l><r>malaurat<s n="adj"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>malheureux<s n="adj"/><s n="f"/></l><r>dissortat<s n="adj"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>malheureux<s n="adj"/><s n="m"/><s n="sp"/></l><r>dissortat<s n="adj"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>malheureux<s n="adj"/><s n="m"/><s n="sp"/></l><r>dissortat<s n="adj"/><s n="m"/><s n="pl"/></r></p></e>
+
 <e><p><l>arménien<s n="adj"/></l><r>armeni<s n="adj"/></r></p></e>
 <e><p><l>diminué<s n="adj"/></l><r>minorat<s n="adj"/></r></p></e>
 <e><p><l>accréditif<s n="adj"/></l><r>acreditatiu<s n="adj"/></r></p></e>
@@ -56821,7 +56828,9 @@
 <e><p><l>héritier<s n="adj"/></l><r>hereu<s n="adj"/></r></p></e>
 <e><p><l>illustratif<s n="adj"/></l><r>il·lustratiu<s n="adj"/></r></p></e>
 <e><p><l>inclusif<s n="adj"/></l><r>inclusiu<s n="adj"/></r></p></e>
-<e><p><l>malheureux<s n="adj"/></l><r>infaust<s n="adj"/></r></p></e>
+<e r="RL"><p><l>malheureux<s n="adj"/><s n="f"/></l><r>infaust<s n="adj"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>malheureux<s n="adj"/><s n="m"/><s n="sp"/></l><r>infaust<s n="adj"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>malheureux<s n="adj"/><s n="m"/><s n="sp"/></l><r>infaust<s n="adj"/><s n="m"/><s n="pl"/></r></p></e>
 <e><p><l>inopportun<s n="adj"/></l><r>inoportú<s n="adj"/></r></p></e>
 <e><p><l>natif<s n="adj"/></l><r>nadiu<s n="adj"/></r></p></e>
 <e><p><l>opposé<s n="adj"/></l><r>oposat<s n="adj"/></r></p></e>
@@ -56928,7 +56937,9 @@
 <e><p><l>intenable<s n="adj"/><s n="mf"/></l><r>insostenible<s n="adj"/><s n="mf"/></r></p></e>
 <e><p><l>soutenable<s n="adj"/><s n="mf"/></l><r>sostenible<s n="adj"/><s n="mf"/></r></p></e>
 <e><p><l>sublime<s n="adj"/><s n="mf"/></l><r>sublim<s n="adj"/><s n="mf"/></r></p></e>
-<e><p><l>super<s n="adj"/><s n="mf"/></l><r>súper<s n="adj"/><s n="mf"/></r></p></e>
+<e r="LR"><p><l>super<s n="adj"/><s n="mf"/><s n="sp"/></l><r>súper<s n="adj"/><s n="mf"/><s n="ND"/></r></p></e>
+<e r="RL"><p><l>super<s n="adj"/><s n="mf"/><s n="sp"/></l><r>súper<s n="adj"/><s n="mf"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>super<s n="adj"/><s n="mf"/><s n="sp"/></l><r>súper<s n="adj"/><s n="mf"/><s n="pl"/></r></p></e>
 <e><p><l>triple<s n="adj"/><s n="mf"/></l><r>triple<s n="adj"/><s n="mf"/></r></p></e>
 <e><p><l>textile<s n="adj"/><s n="mf"/></l><r>tèxtil<s n="adj"/><s n="mf"/></r></p></e>
 <e><p><l>unanime<s n="adj"/><s n="mf"/></l><r>unànime<s n="adj"/><s n="mf"/></r></p></e>
@@ -57204,7 +57215,6 @@
 <e r="RL"><p><l>proportionnel<s n="adj"/><s n="GD"/></l><r>proporcional<s n="adj"/><s n="mf"/></r></p></e>
 <e r="RL"><p><l>provincial<s n="adj"/><s n="GD"/></l><r>provincial<s n="adj"/><s n="mf"/></r></p></e>
 <e r="RL"><p><l>racial<s n="adj"/><s n="GD"/></l><r>racial<s n="adj"/><s n="mf"/></r></p></e>
-<e r="RL"><p><l>radieux<s n="adj"/><s n="GD"/></l><r>radiant<s n="adj"/><s n="mf"/></r></p></e>
 <e r="RL"><p><l>radical<s n="adj"/><s n="GD"/></l><r>radical<s n="adj"/><s n="mf"/></r></p></e>
 <e r="RL"><p><l>irrégulier<s n="adj"/><s n="GD"/></l><r>irregular<s n="adj"/><s n="mf"/></r></p></e>
 <e r="RL"><p><l>régulier<s n="adj"/><s n="GD"/></l><r>regular<s n="adj"/><s n="mf"/></r></p></e>
@@ -57502,7 +57512,9 @@
 <e r="LR"><p><l>proportionnel<s n="adj"/></l><r>proporcional<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>provincial<s n="adj"/></l><r>provincial<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>racial<s n="adj"/></l><r>racial<s n="adj"/><s n="mf"/></r></p></e>
-<e r="LR"><p><l>radieux<s n="adj"/></l><r>radiant<s n="adj"/><s n="mf"/></r></p></e>
+<e r="LR"><p><l>radieux<s n="adj"/><s n="mf"/><s n="sp"/></l><r>radiant<s n="adj"/><s n="mf"/><s n="ND"/></r></p></e>
+<e r="RL"><p><l>radieux<s n="adj"/><s n="mf"/><s n="sp"/></l><r>radiant<s n="adj"/><s n="mf"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>radieux<s n="adj"/><s n="mf"/><s n="sp"/></l><r>radiant<s n="adj"/><s n="mf"/><s n="pl"/></r></p></e>
 <e r="LR"><p><l>radical<s n="adj"/></l><r>radical<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>irrégulier<s n="adj"/></l><r>irregular<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>régulier<s n="adj"/></l><r>regular<s n="adj"/><s n="mf"/></r></p></e>
