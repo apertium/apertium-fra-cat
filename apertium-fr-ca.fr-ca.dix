@@ -1920,7 +1920,7 @@
       </e>
       <e r="RL">
         <p>
-          <l>aigre<s n="adj"/></l>
+          <l>aigre<s n="adj"/><s n="mf"/></l>
           <r>agre<s n="adj"/><s n="sup"/></r>
         </p>
       </e>
@@ -20492,8 +20492,14 @@
       </e>
       <e r="LR">
         <p>
-          <l>nègre<s n="adj"/><s n="mf"/></l>
-          <r>negre<s n="adj"/><s n="mf"/></r>
+          <l>nègre<s n="adj"/><s n="mf"/><s n="pl"/></l>
+          <r>negre<s n="adj"/><s n="mf"/><s n="pl"/></r>
+        </p>
+      </e>
+      <e r="LR">
+        <p>
+          <l>nègre<s n="adj"/><s n="mf"/><s n="sg"/></l>
+          <r>negre<s n="adj"/><s n="GD"/><s n="sg"/></r>
         </p>
       </e>
       <e>
@@ -56505,6 +56511,9 @@
 <e r="RL"><p><l>affectueux<s n="adj"/><s n="f"/></l><r>amorós<s n="adj"/><s n="f"/></r></p></e>
 <e r="RL"><p><l>affectueux<s n="adj"/><s n="m"/><s n="sp"/></l><r>amorós<s n="adj"/><s n="m"/><s n="sg"/></r></p></e>
 <e r="RL"><p><l>affectueux<s n="adj"/><s n="m"/><s n="sp"/></l><r>amorós<s n="adj"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>affectueux<s n="adj"/><s n="f"/></l><r>amorós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>affectueux<s n="adj"/><s n="m"/><s n="sp"/></l><r>amorós<s n="adj"/><s n="m"/><s n="sup"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>affectueux<s n="adj"/><s n="m"/><s n="sp"/></l><r>amorós<s n="adj"/><s n="m"/><s n="sup"/><s n="pl"/></r></p></e>
 <e><p><l>andalou<s n="adj"/></l><r>andalús<s n="adj"/></r></p></e>
 <e><p><l>anglican<s n="adj"/></l><r>anglicà<s n="adj"/></r></p></e>
 <e><p><l>anglo-saxon<s n="adj"/></l><r>anglosaxó<s n="adj"/></r></p></e>
@@ -58359,6 +58368,195 @@
 <e><p><l>entreprendre<s n="vblex"/></l><r>endegar<s n="vblex"/></r></p></e>
 <e><p><l>éclater<s n="vblex"/></l><r>petar<s n="vblex"/></r></p></e>
 <e r="RL"><p><l>couvrir<s n="vblex"/></l><r>colgar<s n="vblex"/></r></p></e>
+
+<e r="RL"><p><l>arabique<s n="adj"/><s n="mf"/></l><r>aràbic<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>aride<s n="adj"/><s n="mf"/></l><r>àrid<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>austère<s n="adj"/><s n="mf"/></l><r>auster<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>avare<s n="adj"/><s n="mf"/></l><r>avar<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>bizarre<s n="adj"/><s n="mf"/></l><r>estrany<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>complexe<s n="adj"/><s n="mf"/></l><r>complex<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>digne<s n="adj"/><s n="mf"/></l><r>digne<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>dommageable<s n="adj"/><s n="mf"/></l><r>danyós<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>drôle<s n="adj"/><s n="mf"/></l><r>graciós<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>économe<s n="adj"/><s n="mf"/></l><r>estalviador<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>funeste<s n="adj"/><s n="mf"/></l><r>funest<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>honnête<s n="adj"/><s n="mf"/></l><r>honest<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>immense<s n="adj"/><s n="mf"/></l><r>immens<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>infrarouge<s n="adj"/><s n="mf"/></l><r>infraroig<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>intense<s n="adj"/><s n="mf"/></l><r>intens<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>intrépide<s n="adj"/><s n="mf"/></l><r>intrèpid<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>invalide<s n="adj"/><s n="mf"/></l><r>invàlid<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>jaune<s n="adj"/><s n="mf"/></l><r>groc<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>juste<s n="adj"/><s n="mf"/></l><r>just<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>maigre<s n="adj"/><s n="mf"/></l><r>prim<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>maigre<s n="adj"/><s n="mf"/></l><r>magre<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>malade<s n="adj"/><s n="mf"/></l><r>malalt<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>mélancolique<s n="adj"/><s n="mf"/></l><r>malenconiós<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>missionnaire<s n="adj"/><s n="mf"/></l><r>missioner<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>moderne<s n="adj"/><s n="mf"/></l><r>modern<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>paisible<s n="adj"/><s n="mf"/></l><r>plàcid<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>profitable<s n="adj"/><s n="mf"/></l><r>profitós<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>rapide<s n="adj"/><s n="mf"/></l><r>ràpid<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>riche<s n="adj"/><s n="mf"/></l><r>ric<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>robuste<s n="adj"/><s n="mf"/></l><r>robust<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>rouge<s n="adj"/><s n="mf"/></l><r>vermell<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>infrarouge<s n="adj"/><s n="mf"/></l><r>infraroig<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>sale<s n="adj"/><s n="mf"/></l><r>brut<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>sévère<s n="adj"/><s n="mf"/></l><r>sever<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>sincère<s n="adj"/><s n="mf"/></l><r>sincer<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>sonore<s n="adj"/><s n="mf"/></l><r>sonor<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>tendre<s n="adj"/><s n="mf"/></l><r>tendre<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>ultraviolet<s n="adj"/><s n="mf"/></l><r>ultraviolat<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>vaste<s n="adj"/><s n="mf"/></l><r>vast<s n="adj"/><s n="sup"/></r></p></e>
+<e r="RL"><p><l>vide<s n="adj"/><s n="mf"/></l><r>buit<s n="adj"/><s n="sup"/></r></p></e>
+
+<e r="RL"><p><l>affectueux<s n="adj"/><s n="m"/><s n="sp"/></l><r>afectuós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>affectueux<s n="adj"/><s n="m"/><s n="sp"/></l><r>afectuós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>affectueux<s n="adj"/><s n="f"/></l><r>afectuós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>affectueux<s n="adj"/><s n="m"/><s n="sp"/></l><r>amorós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>affectueux<s n="adj"/><s n="m"/><s n="sp"/></l><r>amorós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>affectueux<s n="adj"/><s n="f"/></l><r>amorós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>affreux<s n="adj"/><s n="m"/><s n="sp"/></l><r>horrorós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>affreux<s n="adj"/><s n="m"/><s n="sp"/></l><r>horrorós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>affreux<s n="adj"/><s n="f"/></l><r>horrorós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>ambitieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>ambiciós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>ambitieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>ambiciós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>ambitieux<s n="adj"/><s n="f"/></l><r>ambiciós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>amoureux<s n="adj"/><s n="m"/><s n="sp"/></l><r>enamorat<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>amoureux<s n="adj"/><s n="m"/><s n="sp"/></l><r>enamorat<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>amoureux<s n="adj"/><s n="f"/></l><r>enamorat<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>bas<s n="adj"/><s n="m"/><s n="sp"/></l><r>baix<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>bas<s n="adj"/><s n="m"/><s n="sp"/></l><r>baix<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>bas<s n="adj"/><s n="f"/></l><r>baix<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>capricieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>capritxós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>capricieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>capritxós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>capricieux<s n="adj"/><s n="f"/></l><r>capritxós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>coûteux<s n="adj"/><s n="m"/><s n="sp"/></l><r>costós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>coûteux<s n="adj"/><s n="m"/><s n="sp"/></l><r>costós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>coûteux<s n="adj"/><s n="f"/></l><r>costós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>curieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>curiós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>curieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>curiós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>curieux<s n="adj"/><s n="f"/></l><r>curiós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>dangereux<s n="adj"/><s n="m"/><s n="sp"/></l><r>perillós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>dangereux<s n="adj"/><s n="m"/><s n="sp"/></l><r>perillós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>dangereux<s n="adj"/><s n="f"/></l><r>perillós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>douteux<s n="adj"/><s n="m"/><s n="sp"/></l><r>dubtós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>douteux<s n="adj"/><s n="m"/><s n="sp"/></l><r>dubtós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>douteux<s n="adj"/><s n="f"/></l><r>dubtós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>épineux<s n="adj"/><s n="m"/><s n="sp"/></l><r>espinós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>épineux<s n="adj"/><s n="m"/><s n="sp"/></l><r>espinós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>épineux<s n="adj"/><s n="f"/></l><r>espinós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>fabuleux<s n="adj"/><s n="m"/><s n="sp"/></l><r>fabulós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>fabuleux<s n="adj"/><s n="m"/><s n="sp"/></l><r>fabulós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>fabuleux<s n="adj"/><s n="f"/></l><r>fabulós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>fâcheux<s n="adj"/><s n="m"/><s n="sp"/></l><r>enutjós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>fâcheux<s n="adj"/><s n="m"/><s n="sp"/></l><r>enutjós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>fâcheux<s n="adj"/><s n="f"/></l><r>enutjós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>furieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>furiós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>furieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>furiós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>furieux<s n="adj"/><s n="f"/></l><r>furiós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>généreux<s n="adj"/><s n="m"/><s n="sp"/></l><r>generós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>généreux<s n="adj"/><s n="m"/><s n="sp"/></l><r>generós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>généreux<s n="adj"/><s n="f"/></l><r>generós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>glorieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>gloriós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>glorieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>gloriós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>glorieux<s n="adj"/><s n="f"/></l><r>gloriós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>gros<s n="adj"/><s n="m"/><s n="sp"/></l><r>gros<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>gros<s n="adj"/><s n="m"/><s n="sp"/></l><r>gros<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>gros<s n="adj"/><s n="f"/></l><r>gros<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>honteux<s n="adj"/><s n="m"/><s n="sp"/></l><r>vergonyós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>honteux<s n="adj"/><s n="m"/><s n="sp"/></l><r>vergonyós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>honteux<s n="adj"/><s n="f"/></l><r>vergonyós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>impérieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>imperiós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>impérieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>imperiós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>impérieux<s n="adj"/><s n="f"/></l><r>imperiós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>ingénieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>enginyós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>ingénieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>enginyós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>ingénieux<s n="adj"/><s n="f"/></l><r>enginyós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>laborieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>laboriós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>laborieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>laboriós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>laborieux<s n="adj"/><s n="f"/></l><r>laboriós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>ligneux<s n="adj"/><s n="m"/><s n="sp"/></l><r>llenyós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>ligneux<s n="adj"/><s n="m"/><s n="sp"/></l><r>llenyós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>ligneux<s n="adj"/><s n="f"/></l><r>llenyós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>majestueux<s n="adj"/><s n="m"/><s n="sp"/></l><r>majestuós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>majestueux<s n="adj"/><s n="m"/><s n="sp"/></l><r>majestuós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>majestueux<s n="adj"/><s n="f"/></l><r>majestuós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>malheureux<s n="adj"/><s n="m"/><s n="sp"/></l><r>desgraciat<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>malheureux<s n="adj"/><s n="m"/><s n="sp"/></l><r>desgraciat<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>malheureux<s n="adj"/><s n="f"/></l><r>desgraciat<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>malheureux<s n="adj"/><s n="m"/><s n="sp"/></l><r>dissortat<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>malheureux<s n="adj"/><s n="m"/><s n="sp"/></l><r>dissortat<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>malheureux<s n="adj"/><s n="f"/></l><r>dissortat<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>malheureux<s n="adj"/><s n="m"/><s n="sp"/></l><r>malaurat<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>malheureux<s n="adj"/><s n="m"/><s n="sp"/></l><r>malaurat<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>malheureux<s n="adj"/><s n="f"/></l><r>malaurat<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>malicieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>maliciós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>malicieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>maliciós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>malicieux<s n="adj"/><s n="f"/></l><r>maliciós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>mauvais<s n="adj"/><s n="m"/><s n="sp"/></l><r>dolent<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>mauvais<s n="adj"/><s n="m"/><s n="sp"/></l><r>dolent<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>mauvais<s n="adj"/><s n="f"/></l><r>dolent<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>merveilleux<s n="adj"/><s n="m"/><s n="sp"/></l><r>meravellós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>merveilleux<s n="adj"/><s n="m"/><s n="sp"/></l><r>meravellós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>merveilleux<s n="adj"/><s n="f"/></l><r>meravellós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>méticuleux<s n="adj"/><s n="m"/><s n="sp"/></l><r>meticulós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>méticuleux<s n="adj"/><s n="m"/><s n="sp"/></l><r>meticulós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>méticuleux<s n="adj"/><s n="f"/></l><r>meticulós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>miraculeux<s n="adj"/><s n="m"/><s n="sp"/></l><r>miraculós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>miraculeux<s n="adj"/><s n="m"/><s n="sp"/></l><r>miraculós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>miraculeux<s n="adj"/><s n="f"/></l><r>miraculós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>monstrueux<s n="adj"/><s n="m"/><s n="sp"/></l><r>monstruós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>monstrueux<s n="adj"/><s n="m"/><s n="sp"/></l><r>monstruós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>monstrueux<s n="adj"/><s n="f"/></l><r>monstruós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>mystérieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>misteriós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>mystérieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>misteriós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>mystérieux<s n="adj"/><s n="f"/></l><r>misteriós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>nerveux<s n="adj"/><s n="m"/><s n="sp"/></l><r>nerviós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>nerveux<s n="adj"/><s n="m"/><s n="sp"/></l><r>nerviós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>nerveux<s n="adj"/><s n="f"/></l><r>nerviós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>nitreux<s n="adj"/><s n="m"/><s n="sp"/></l><r>nitrós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>nitreux<s n="adj"/><s n="m"/><s n="sp"/></l><r>nitrós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>nitreux<s n="adj"/><s n="f"/></l><r>nitrós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>paresseux<s n="adj"/><s n="m"/><s n="sp"/></l><r>mandrós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>paresseux<s n="adj"/><s n="m"/><s n="sp"/></l><r>mandrós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>paresseux<s n="adj"/><s n="f"/></l><r>mandrós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>précieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>preciós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>précieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>preciós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>précieux<s n="adj"/><s n="f"/></l><r>preciós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>prestigieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>prestigiós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>prestigieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>prestigiós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>prestigieux<s n="adj"/><s n="f"/></l><r>prestigiós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>prodigieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>prodigiós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>prodigieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>prodigiós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>prodigieux<s n="adj"/><s n="f"/></l><r>prodigiós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>ras<s n="adj"/><s n="m"/><s n="sp"/></l><r>ras<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>ras<s n="adj"/><s n="m"/><s n="sp"/></l><r>ras<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>ras<s n="adj"/><s n="f"/></l><r>ras<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>religieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>religiós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>religieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>religiós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>religieux<s n="adj"/><s n="f"/></l><r>religiós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>respectueux<s n="adj"/><s n="m"/><s n="sp"/></l><r>respectuós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>respectueux<s n="adj"/><s n="m"/><s n="sp"/></l><r>respectuós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>respectueux<s n="adj"/><s n="f"/></l><r>respectuós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>rigoureux<s n="adj"/><s n="m"/><s n="sp"/></l><r>rigorós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>rigoureux<s n="adj"/><s n="m"/><s n="sp"/></l><r>rigorós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>rigoureux<s n="adj"/><s n="f"/></l><r>rigorós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>rocheux<s n="adj"/><s n="m"/><s n="sp"/></l><r>rocós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>rocheux<s n="adj"/><s n="m"/><s n="sp"/></l><r>rocós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>rocheux<s n="adj"/><s n="f"/></l><r>rocós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>silencieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>silenciós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>silencieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>silenciós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>silencieux<s n="adj"/><s n="f"/></l><r>silenciós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>soyeux<s n="adj"/><s n="m"/><s n="sp"/></l><r>sedós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>soyeux<s n="adj"/><s n="m"/><s n="sp"/></l><r>sedós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>soyeux<s n="adj"/><s n="f"/></l><r>sedós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>vieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>vell<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>vieux<s n="adj"/><s n="m"/><s n="sp"/></l><r>vell<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>vieux<s n="adj"/><s n="f"/></l><r>vell<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>vigoureux<s n="adj"/><s n="m"/><s n="sp"/></l><r>vigorós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>vigoureux<s n="adj"/><s n="m"/><s n="sp"/></l><r>vigorós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>vigoureux<s n="adj"/><s n="f"/></l><r>vigorós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
   </section>
 
 </dictionary>
