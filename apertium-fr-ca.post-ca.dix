@@ -1,4 +1,4 @@
-ï»¿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="iso-8859-1"?>
 <dictionary>
   <alphabet/>
   <sdefs>
@@ -41,7 +41,7 @@
         <i>@</i>
       </e>
       <e>
-        <i>Â«</i>
+        <i>«</i>
       </e>
       <e>
         <i>-</i>
@@ -59,10 +59,10 @@
         <i>`</i>
       </e>
       <e>
-        <i>Â±</i>
+        <i>±</i>
       </e>
       <e>
-        <i>Â­</i>
+        <i>­</i>
       </e>
       <e>
         <i>$</i>
@@ -146,7 +146,7 @@
         <i>b</i>
       </e>
       <e>
-        <i>Ã§</i>
+        <i>ç</i>
       </e>
       <e>
         <i>f</i>
@@ -223,6 +223,30 @@
       <e>
         <i>d</i>
       </e>
+      <e>
+        <i>ia</i>
+      </e>
+      <e>
+        <i>ie</i>
+      </e>
+      <e>
+        <i>io</i>
+      </e>
+      <e>
+        <i>iu</i>
+      </e>
+      <e>
+        <i>hia</i>
+      </e>
+      <e>
+        <i>hie</i>
+      </e>
+      <e>
+        <i>hio</i>
+      </e>
+      <e>
+        <i>hiu</i>
+      </e> 
     </pardef>
 
     <pardef n="vocals">
@@ -242,28 +266,28 @@
         <i>u</i>
       </e>
       <e>
-        <i>Ã©</i>
+        <i>é</i>
       </e>
       <e>
-        <i>Ã­</i>
+        <i>í</i>
       </e>
       <e>
-        <i>Ã³</i>
+        <i>ó</i>
       </e>
       <e>
-        <i>Ãº</i>
+        <i>ú</i>
       </e>
       <e>
-        <i>Ã </i>
+        <i>à</i>
       </e>
       <e>
-        <i>Ã¡</i>
+        <i>á</i>
       </e>
       <e>
-        <i>Ã¨</i>
+        <i>è</i>
       </e>
       <e>
-        <i>Ã²</i>
+        <i>ò</i>
       </e>
     </pardef>
 
@@ -273,6 +297,28 @@
       </e>
       <e>
         <i>h</i>
+      </e>
+      <e>
+        <i>@</i>
+	<par n="consonant"/>
+      </e>
+      <e>
+        <i>@</i>
+	<par n="vocals"/>
+      </e>
+      <e>
+        <i>1<b/></i>
+      </e>
+      <e>
+        <i>11<b/></i>
+      </e>
+      <e>
+        <i>1</i>
+        <par n="caracter_general"/>
+      </e>
+      <e>
+        <i>11</i>
+        <par n="caracter_general"/>
       </e>
     </pardef>
 
@@ -401,19 +447,19 @@
         <i>u</i>
       </e>
       <e>
-        <i>Ã³</i>
+        <i>ó</i>
       </e>
       <e>
-        <i>Ãº</i>
+        <i>ú</i>
       </e>
       <e>
-        <i>Ã </i>
+        <i>à</i>
       </e>
       <e>
-        <i>Ã¡</i>
+        <i>á</i>
       </e>
       <e>
-        <i>Ã²</i>
+        <i>ò</i>
       </e>
     </pardef>
 
@@ -422,31 +468,31 @@
         <i>a</i>
       </e>
       <e>
-        <i>Ã </i>
+        <i>à</i>
       </e>
       <e>
-        <i>Ã¡</i>
+        <i>á</i>
       </e>
       <e>
         <i>e</i>
       </e>
       <e>
-        <i>Ã©</i>
+        <i>é</i>
       </e>
       <e>
-        <i>Ã¨</i>
+        <i>è</i>
       </e>
       <e>
         <i>o</i>
       </e>
       <e>
-        <i>Ã³</i>
+        <i>ó</i>
       </e>
       <e>
-        <i>Ã²</i>
+        <i>ò</i>
       </e>
       <e>
-        <i>Ã­</i>
+        <i>í</i>
       </e>
       <e>
         <i>ha</i>
@@ -458,67 +504,67 @@
         <i>ho</i>
       </e>
       <e>
-        <i>hÃ </i>
+        <i>hà</i>
       </e>
       <e>
-        <i>hÃ¡</i>
+        <i>há</i>
       </e>
       <e>
-        <i>hÃ¨</i>
+        <i>hè</i>
       </e>
       <e>
-        <i>hÃ²</i>
+        <i>hò</i>
       </e>
       <e>
-        <i>hÃ©</i>
+        <i>hé</i>
       </e>
       <e>
-        <i>hÃ­</i>
+        <i>hí</i>
       </e>
       <e>
-        <i>hÃ³</i>
+        <i>hó</i>
       </e>
       <e>
-        <i>hÃº</i>
+        <i>hú</i>
       </e>
       <e>
-        <i>Ãº</i>
+        <i>ú</i>
       </e>
     </pardef>
 
     <pardef n="vocal_general_menys_ae">
       <e>
-        <i>Ã </i>
+        <i>à</i>
       </e>
       <e>
-        <i>Ã¡</i>
+        <i>á</i>
       </e>
       <e>
-        <i>Ã¨</i>
+        <i>è</i>
       </e>
       <e>
-        <i>Ã©</i>
+        <i>é</i>
       </e>
       <e>
         <i>i</i>
       </e>
       <e>
-        <i>Ã­</i>
+        <i>í</i>
       </e>
       <e>
         <i>o</i>
       </e>
       <e>
-        <i>Ã²</i>
+        <i>ò</i>
       </e>
       <e>
-        <i>Ã³</i>
+        <i>ó</i>
       </e>
       <e>
         <i>u</i>
       </e>
       <e>
-        <i>Ãº</i>
+        <i>ú</i>
       </e>
       <e>
         <i>h</i>
@@ -530,37 +576,37 @@
         <i>a</i>
       </e>
       <e>
-        <i>Ã </i>
+        <i>à</i>
       </e>
       <e>
-        <i>Ã¡</i>
+        <i>á</i>
       </e>
       <e>
-        <i>Ã¨</i>
+        <i>è</i>
       </e>
       <e>
-        <i>Ã©</i>
+        <i>é</i>
       </e>
       <e>
         <i>i</i>
       </e>
       <e>
-        <i>Ã­</i>
+        <i>í</i>
       </e>
       <e>
         <i>o</i>
       </e>
       <e>
-        <i>Ã²</i>
+        <i>ò</i>
       </e>
       <e>
-        <i>Ã³</i>
+        <i>ó</i>
       </e>
       <e>
         <i>u</i>
       </e>
       <e>
-        <i>Ãº</i>
+        <i>ú</i>
       </e>
       <e>
         <i>h</i>
@@ -923,13 +969,13 @@
         </p>
         <par n="duplica_marcats_no_apostrofen"/>
       </e>
-      <e>
+   <!--   <e>
         <p>
           <l/>
           <r>de</r>
         </p>
         <par n="consonant"/>
-      </e>
+      </e> eliminat per MG, canviava 'de a.' per 'de.'"-->
       <e>
         <p>
           <l><b/></l>
@@ -1003,12 +1049,12 @@
       <e>
         <i>s</i>
       </e>
-      <e>
+<!--      <e>
         <i>i</i>
       </e>
       <e>
         <i>u</i>
-      </e>
+      </e>-->
       <e>
         <i>h</i>
         <par n="consonantic"/>
@@ -1067,50 +1113,50 @@
       </e>
       <e>
         <p>
-          <l>Ã </l>
-          <r><b/>Ã </r>
+          <l>à</l>
+          <r><b/>à</r>
         </p>
       </e>
       <e>
         <p>
-          <l>Ã¡</l>
-          <r><b/>Ã¡</r>
+          <l>á</l>
+          <r><b/>á</r>
         </p>
       </e>
       <e>
         <p>
-          <l>Ã­</l>
-          <r><b/>Ã­</r>
+          <l>í</l>
+          <r><b/>í</r>
         </p>
       </e>
       <e>
         <p>
-          <l>Ãº</l>
-          <r><b/>Ãº</r>
+          <l>ú</l>
+          <r><b/>ú</r>
         </p>
       </e>
       <e>
         <p>
-          <l>Ã³</l>
-          <r><b/>Ã³</r>
+          <l>ó</l>
+          <r><b/>ó</r>
         </p>
       </e>
       <e>
         <p>
-          <l>Ã²</l>
-          <r><b/>Ã²</r>
+          <l>ò</l>
+          <r><b/>ò</r>
         </p>
       </e>
       <e>
         <p>
-          <l>Ã¨</l>
-          <r><b/>Ã¨</r>
+          <l>è</l>
+          <r><b/>è</r>
         </p>
       </e>
       <e>
         <p>
-          <l>Ã©</l>
-          <r><b/>Ã©</r>
+          <l>é</l>
+          <r><b/>é</r>
         </p>
       </e>
       <e>
@@ -1127,8 +1173,8 @@
       </e>
       <e>
         <p>
-          <l>Ã§</l>
-          <r><b/>Ã§</r>
+          <l>ç</l>
+          <r><b/>ç</r>
         </p>
       </e>
       <e>
@@ -1362,8 +1408,8 @@
       </e>
       <e>
         <p>
-          <l>Â«</l>
-          <r><b/>Â«</r>
+          <l>«</l>
+          <r><b/>«</r>
         </p>
       </e>
       <e>
@@ -1392,14 +1438,14 @@
       </e>
       <e>
         <p>
-          <l>Â±</l>
-          <r><b/>Â±</r>
+          <l>±</l>
+          <r><b/>±</r>
         </p>
       </e>
       <e>
         <p>
-          <l>Â­</l>
-          <r><b/>Â­</r>
+          <l>­</l>
+          <r><b/>­</r>
         </p>
       </e>
       <e>
@@ -1475,6 +1521,9 @@
         <i>l</i>
         <par n="apostrofa_la"/>
       </e>
+    <!--  <e>
+        <i>io</i>
+      </e> mireia -->
     </pardef>
 
     <pardef n="consonant_menys_s_reduit">
@@ -1845,10 +1894,10 @@
         </p>
         <par n="vocal_general"/>
       </e>
-      <e>
+<!--      <e>
         <i>s<b/></i>
         <par n="consonant"/>
-      </e>
+      </e>-->
       <e>
         <p>
           <l>ll<b/></l>
@@ -1888,7 +1937,7 @@
       </e>
     </pardef>
 
-    <pardef n="de">
+    <pardef n="de"> 
       <e>
         <p>
           <l><b/><a/>e</l>
@@ -1903,7 +1952,7 @@
         </p>
         <par n="vocal_general_menys_ae"/>
       </e>
-      <e>
+     <e>
         <p>
           <l><b/><a/>a</l>
           <r/>
@@ -2044,6 +2093,18 @@
           <r>la<b/></r>
         </p>
         <par n="consonants_per_a_la_menys_d"/>
+      </e>
+      <e>
+        <p>
+          <l><b/><a/>u</l>
+          <r>l'u</r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l><b/><a/>i</l>
+          <r>l'i</r>
+        </p>
       </e>
       <e>
         <p>
@@ -2395,20 +2456,20 @@
       </e>
       <e>
         <p>
-          <l><b/>cÃ©</l>
-          <r>se<b/>cÃ©</r>
+          <l><b/>cé</l>
+          <r>se<b/>cé</r>
         </p>
       </e>
       <e>
         <p>
-          <l><b/>cÃ­</l>
-          <r>se<b/>cÃ­</r>
+          <l><b/>cí</l>
+          <r>se<b/>cí</r>
         </p>
       </e>
       <e>
         <p>
-          <l><b/>cÃ¨</l>
-          <r>se<b/>cÃ¨</r>
+          <l><b/>cè</l>
+          <r>se<b/>cè</r>
         </p>
       </e>
       <e>
@@ -2561,6 +2622,37 @@
         </p>
         <par n="vocal_general"/>
       </e>
+<!--      <e alt="cat">
+        <p>
+          <l><b/><a/>el<b/></l>
+          <r>l'hi<b/></r>
+        </p>
+      </e>
+      <e alt="val">
+        <p>
+          <l><b/><a/>el<b/></l>
+          <r>li'l<b/></r>
+        </p>
+      </e>
+      <e alt="val">
+        <p>
+          <l><b/><a/>el<b/></l>
+          <r>li<b/>l'</r>
+        </p>
+        <par n="vocal_general"/>
+      </e>
+      <e alt="cat">
+        <p>
+          <l><b/><a/>els<b/></l>
+          <r>els<b/>hi<b/></r>
+        </p>
+      </e>
+      <e alt="val">
+        <p>
+          <l><b/><a/>els<b/></l>
+          <r>li'ls<b/></r>
+        </p>
+      </e> -->
       <e>
         <p>
           <l><b/><a/>el<b/></l>
@@ -2573,18 +2665,31 @@
           <r>els<b/>hi<b/></r>
         </p>
       </e>
-      <e>
+<!--      <e alt="cat">
         <p>
           <l><b/><a/>la<b/></l>
           <r>la<b/>hi<b/></r>
         </p>
       </e>
-      <e>
+      <e alt="val">
+        <p>
+          <l><b/><a/>la<b/></l>
+          <r>li<b/>l'</r>
+        </p>
+        <par n="vocal_general"/>
+      </e>
+      <e alt="cat">
         <p>
           <l><b/><a/>les<b/></l>
           <r>les<b/>hi<b/></r>
         </p>
       </e>
+      <e alt="val">
+        <p>
+          <l><b/><a/>les<b/></l>
+          <r>li<b/>les<b/></r>
+        </p>
+      </e>-->
       <e>
         <p>
           <l><b/><a/>en<b/></l>
@@ -2847,7 +2952,16 @@
           <l><a/>ho</l>
           <r>ho</r>
         </p>
+      </e> 
+      <e>
+        <p>
+          <l><a/>ex<b/></l>
+          <r>ex</r>
+        </p>
+        <par n="consonant"/>
       </e>
+
+
   </section>
 
 </dictionary>

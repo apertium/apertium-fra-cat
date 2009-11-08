@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <dictionary>
   <alphabet/>
   <pardefs>
@@ -103,6 +103,9 @@
         <i>u</i>
       </e>
       <e>
+        <i>è</i>
+      </e>
+      <e>
         <i>á</i>
       </e>
       <e>
@@ -200,72 +203,6 @@
       </e>
     </pardef>
 
-    <pardef n="à">
-      <e>
-        <p>
-          <l><b/><a/>les</l>
-          <r>aux</r>
-        </p>
-        <par n="caracter_general"/>
-      </e>
-      <e>
-        <p>
-          <l><b/><a/>le<b/></l>
-          <r>à<b/>l'</r>
-        </p>
-        <par n="vocals"/>
-      </e>
-      <e>
-        <p>
-          <l><b/><a/>le<b/></l>
-          <r>au<b/></r>
-        </p>
-        <par n="consonants"/>
-      </e> 
-      <e>
-        <p>
-          <l><b/><a/>la<b/></l>
-          <r>à<b/>l'</r>
-        </p>
-        <par n="vocals"/>
-      </e>
-      <e>
-        <p>
-          <l><b/><a/>la<b/></l>
-          <r>à<b/>la<b/></r>
-        </p>
-        <par n="consonants"/>
-      </e>
-      <e>
-        <p>
-          <l><b/><a/>la<b/></l>
-          <r>à<b/>la<b/></r>
-        </p>
-        <par n="caracter_general"/>
-      </e>
-      <e>
-        <p>
-          <l><b/><a/>le</l>
-          <r>au</r>
-        </p>
-        <par n="caracter_general"/>
-      </e>
-      <e>
-        <p>
-          <l><b/></l>
-          <r>à<b/></r>
-        </p>
-        <par n="consonants"/>
-      </e>
-      <e>
-        <p>
-          <l><b/></l>
-          <r>à<b/></r>
-        </p>
-        <par n="vocals"/>
-      </e>
-    </pardef>
-
     <pardef n="de">
       <e>
         <p>
@@ -325,13 +262,81 @@
       </e>
       <e>
         <p>
+          <l><b/><a/>ma<b/></l>
+          <r>e<b/>mon<b/></r>
+        </p>
+        <par n="vocals"/>
+      </e>
+
+      <e>
+        <p>
+          <l><b/><a/>ta<b/></l>
+          <r>e<b/>ton<b/></r>
+        </p>
+        <par n="vocals"/>
+      </e>
+      <e>
+        <p>
+          <l><b/><a/>sa<b/></l>
+          <r>e<b/>son<b/></r>
+        </p>
+        <par n="vocals"/>
+      </e>
+      <e>
+        <p>
           <l><b/></l>
           <r>e<b/></r>
         </p>
         <par n="consonants"/>
       </e>
+      <e>
+        <p>
+          <l><b/>lequel</l>
+          <r>uquel</r>
+        </p>
+        <par n="caracter_general"/>
+      </e>
+        <e>
+        <p>
+          <l><b/>lesquels</l>
+          <r>esquels</r>
+        </p>
+        <par n="caracter_general"/>
+      </e>
+	<e>
+        <p>
+          <l><b/>lesquelles</l>
+          <r>esquelles</r>
+        </p>
+        <par n="caracter_general"/>
+      </e>
     </pardef>
     
+    
+    <pardef n="se_le">
+  
+    <e>
+        <p>
+          <l><a/>se<b/><a/>les<b/></l>
+          <r>les<b/>leur<b/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l><a/>se<b/><a/>le<b/></l>
+          <r>le<b/>lui<b/></r>
+        </p>
+      </e>
+
+      <e>
+        <p>
+          <l><a/>se<b/><a/>la<b/></l>
+          <r>la<b/>lui<b/></r>
+        </p>
+      </e>
+
+    </pardef>
+
     <pardef n="le">
       <e>
         <p>
@@ -348,8 +353,138 @@
         <par n="vocals"/>
       </e>
     </pardef>
+
+    <pardef n="à">
+      <e>
+        <p>
+          <l><b/><a/>les</l>
+          <r>aux</r>
+        </p>
+        <par n="caracter_general"/>
+      </e>
+      <e>
+        <p>
+          <l><b/><a/>le<b/></l>
+          <r>à<b/>l'</r>
+        </p>
+        <par n="vocals"/>
+      </e>
+      <e>
+        <p>
+          <l><b/><a/>le<b/></l>
+          <r>au<b/></r>
+        </p>
+        <par n="consonants"/>
+      </e> 
+      <e>
+        <p>
+          <l><b/><a/>la<b/></l>
+          <r>à<b/>l'</r>
+        </p>
+        <par n="vocals"/>
+      </e>
+      <e>
+        <p>
+          <l><b/><a/>la<b/></l>
+          <r>à<b/>la<b/></r>
+        </p>
+        <par n="consonants"/>
+      </e>
+      <e>
+        <p>
+          <l><b/><a/>la<b/></l>
+          <r>à<b/>la<b/></r>
+        </p>
+        <par n="caracter_general"/>
+      </e>
+      <e>
+        <p>
+          <l><b/><a/>le</l>
+          <r>au</r>
+        </p>
+        <par n="caracter_general"/>
+      </e>
+      <e>
+        <p>
+          <l><b/><a/>de</l>
+          <r>à<b/>d</r>
+        </p>
+        <par n="de"/>
+      </e>
+      <e>
+        <p>
+          <l><b/><a/>ma<b/></l>
+          <r>à<b/>mon<b/></r>
+        </p>
+        <par n="vocals"/>
+      </e>
+
+      <e>
+        <p>
+          <l><b/><a/>ta<b/></l>
+          <r>à<b/>ton<b/></r>
+        </p>
+        <par n="vocals"/>
+      </e>
+      <e>
+        <p>
+          <l><b/><a/>sa<b/></l>
+          <r>à<b/>son<b/></r>
+        </p>
+        <par n="vocals"/>
+      </e>
+     
+       <e>
+        <p>
+          <l><b/></l>
+          <r>à<b/></r>
+        </p>
+        <par n="consonants"/>
+      </e>
+      <e>
+        <p>
+          <l><b/></l>
+          <r>à<b/></r>
+        </p>
+        <par n="vocals"/>
+      </e>
+      <e>
+        <p>
+          <l><b/>lequel</l>
+          <r>auquel</r>
+        </p>
+        <par n="caracter_general"/>
+      </e>
+
+      <e>
+        <p>
+          <l><b/>lesquels</l>
+          <r>auxquels</r>
+        </p>
+        <par n="caracter_general"/>
+      </e>
+       <e>
+        <p>
+          <l><b/>lesquelles</l>
+          <r>auxquelles</r>
+        </p>
+        <par n="caracter_general"/>
+      </e>
+    </pardef>
+
+     
+    
+
     
   <pardef n="je">
+      <e>
+        <p>
+          <l><a/>ne<b/></l>
+          <r>e<b/>n'</r>
+        </p>
+        <par n="vocals"/>
+      </e>
+
       <e>
         <p>
           <l><a/>me<b/></l>
@@ -371,6 +506,13 @@
         </p>
         <par n="vocals"/>
       </e>
+      <e>
+        <p>
+          <l></l>
+          <r>e<b/></r>
+        </p>
+       <par n="se_le"/>
+     </e>
       <e>
         <p>
           <l><a/>se<b/></l>
@@ -403,11 +545,19 @@
         </p>
         <par n="à"/>
       </e> 
+ 
+     <e>
+        <p>
+          <l><a/>plus<b/><a/>de<b/><a/>les</l>
+          <r>plus<b/>d</r>
+        </p>
+        <par n="de"/>
+      </e>
 
       <e>
         <p>
-          <l><a/>à<b/><a/>de</l>
-          <r>à<b/>d</r>
+          <l><a/>moins<b/><a/>de<b/><a/>les</l>
+          <r>moins<b/>d</r>
         </p>
         <par n="de"/>
       </e>
@@ -419,6 +569,7 @@
         </p>
         <par n="de"/>
       </e>
+
       <e>
         <p>
           <l><a/>ne<b/></l>
@@ -426,6 +577,7 @@
         </p>
         <par n="vocals"/>
       </e>
+
       <e>
         <p>
           <l><a/>ne<b/><a/>le<b/></l>
@@ -433,6 +585,7 @@
         </p>
         <par n="vocals"/>
       </e>
+
       <e>
         <p>
           <l><a/>ne<b/><a/>la<b/></l>
@@ -440,6 +593,7 @@
         </p>
         <par n="vocals"/>
       </e>
+
       <e>
         <p>
           <l><a/>le<b/></l>
@@ -496,15 +650,20 @@
           <r>t</r>
         </p>
         <par n="le"/>
+      </e>
+
+      <e>
+       <par n="se_le"/>
       </e> 
       <e>
+
         <p>
           <l><a/>se<b/></l>
           <r>s</r>
         </p>
         <par n="le"/>
       </e>
-           
+
       <e>
         <p>
           <l><a/>ne<b/><a/>se<b/></l>
@@ -527,6 +686,13 @@
         </p>
         <par n="vocals"/>
       </e>
+      <e>
+        <p>
+          <l><a/>de<b/><a/>ce<b/></l>
+          <r>de<b/>cet<b/></r>
+        </p>
+        <par n="vocals"/>
+      </e>  
       <e>
         <p>
           <l><a/>ce<b/></l>
@@ -559,6 +725,33 @@
         </p>
         <par n="vocals"/>
       </e> 
+     <e>
+        <p>
+          <l><a/>que<b/></l>
+          <r>que<b/></r>
+        </p>
+      </e> 
+      <e>
+        <p>
+          <l><a/>lorsque<b/></l>
+          <r>lorsqu'</r>
+        </p>
+        <par n="vocals"/>
+      </e> 
+      <e>
+        <p>
+          <l><a/>puisque<b/></l>
+          <r>puisqu'</r>
+        </p>
+        <par n="vocals"/>
+      </e>
+      <e>
+        <p>
+          <l><a/>quoique<b/></l>
+          <r>quoiqu'</r>
+        </p>
+        <par n="vocals"/>
+      </e>
       <e>
         <p>
           <l><a/>celui<b/>qui<b/>il<b/></l>
@@ -608,8 +801,48 @@
         </p>
         <par n="vocals"/>
       </e> 
+<!-- para cambiar la preposición "en" por "dans"; ahora se hace en el transfer      
+      <e>
+        <p>
+          <l><a/>en<b/><a/>le<b/></l>
+          <r>dans<b/>l'</r>
+        </p>
+        <par n="vocals"/>
+      </e> 
+      
+      <e>
+        <p>
+          <l><a/>en<b/><a/>les<b/></l>
+          <r>dans<b/>les<b/></r>
+        </p>
+      </e> 
+
+      <e>
+        <p>
+          <l><a/>en<b/><a/>la<b/></l>
+          <r>dans<b/>l'</r>
+        </p>
+	<par n="vocals"/>
+      </e>
+
+     <e>
+        <p>
+          <l><a/>en<b/><a/>la<b/></l>
+          <r>dans<b/>la<b/></r>
+        </p>
+	<par n="consonants"/>
+      </e> 
+-->
+
+      <e>
+        <p>
+          <l><a/>de<b/><a/>les<b/>beaucoup</l>
+          <r>beaucoup</r>
+        </p>
+      </e> 
+      
     
-  <!-- amb punt-->    
+  <!-- amb punt   
       
        <e>
         <p>
@@ -737,6 +970,27 @@
       </e>
       <e>
         <p>
+          <l><a/>.<b/><a/>lorsque<b/></l>
+          <r>.<b/>Lorsqu'</r>
+        </p>
+        <par n="vocals"/>
+      </e>
+      <e>
+        <p>
+          <l><a/>.<b/><a/>puisque<b/></l>
+          <r>.<b/>Puisqu'</r>
+        </p>
+        <par n="vocals"/>
+      </e>
+      <e>
+        <p>
+          <l><a/>.<b/><a/>quoique<b/></l>
+          <r>.<b/>quoiqu'</r>
+        </p>
+        <par n="vocals"/>
+      </e>
+      <e>
+        <p>
           <l><a/>.<b/><a/>ce<b/></l>
           <r>.<b/>Cet<b/></r>
         </p>
@@ -791,14 +1045,12 @@
           <r>.<b/>Vous<b/></r>
         </p>
       </e> 
-<!--
       <e>
         <p>
           <l><a/>.<b/></l>
           <r>.<b/></r>
         </p>
       </e>
--->
       <e>
         <p>
           <l><a/>.<a/>.</l>
@@ -818,7 +1070,7 @@
           <r>.<b/>Le<b/>nouvel<b/></r>
         </p>
         <par n="vocals"/>
-      </e> 
+      </e> --> 
 
 
 
