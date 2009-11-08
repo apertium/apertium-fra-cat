@@ -88158,13 +88158,14 @@
       
 <e r="RL" lm="el"><p><l><a/></l> <r>e</r> </p><par n="~/l__prn"/></e>
       
-<e r="RL" lm="em"><p><l><a/>em</l> <r>em</r> </p><par n="em__prn"/></e>
-      
+<e r="LR" lm="em"><p><l>em</l>                    <r>em<s n="prn"/><s n="pro"/><s n="p1"/><s n="mf"/><s n="sg"/></r></p></e>
+<e r="RL" lm="em"><p><l><a/>em</l>                <r>em</r></p><par n="~em__prn"/></e>
+
 <e r="RL" lm="en"><p><l><a/>en</l> <r>en</r> </p><par n="en__prn"/></e>
       
 <e r="RL" lm="ens"><p><l><a/>ens</l> <r>ens</r> </p><par n="ens__prn"/></e>
       
-<e r="RL" lm="es"><p><l><a/>es</l> <r>es</r> </p><par n="es__prn"/></e>
+<e r="RL" lm="es"><p><l><a/>es</l>                <r>es</r></p><par n="hom__prn"/></e>
       
 <e r="RL" lm="et"><p><l><a/>et</l> <r>et</r> </p><par n="et__prn"/></e>
       
@@ -88178,7 +88179,6 @@
       
 <e r="RL" lm="us"><p><l><a/>us</l> <r>us</r> </p><par n="us__prn"/></e>
       
-<e r="RL" lm="el qual"><p><l><a/>el</l> <r>el<b/></r> </p><par n="~el/qual__rel"/></e>
 
 <!-- New -->
 
