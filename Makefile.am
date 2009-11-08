@@ -6,9 +6,15 @@ PREFIX2=$(LANG2)-$(LANG1)
 
 BASENAME=apertium-$(PREFIX1)
 
+VAR1=std
+VAR2=val-
+PREFVAR1=#dejar en blanco
+PREFVAR2=val-
+
 TARGETS_COMMON = $(PREFIX1).automorf.bin $(PREFIX1).autobil.bin $(PREFIX1).autogen.bin \
      $(PREFIX1).autopgen.bin $(PREFIX2).automorf.bin $(PREFIX2).autobil.bin \
-     $(PREFIX2).autogen.bin $(PREFIX2).autopgen.bin $(MODES)
+     $(PREFVAR1)$(PREFIX1).autopgen.bin \
+     $(PREFIX2).autogen.bin $(MODES)
 
 TARGETS = $(TARGETS_COMMON) $(PREFIX1).t1x.bin $(PREFIX2).t1x.bin 
 
@@ -21,19 +27,34 @@ $(PREFIX1).autobil.bin: $(BASENAME).$(PREFIX1).dix
 #	apertium-validate-dictionary $(BASENAME).$(PREFIX1).dix
 	lt-comp lr $(BASENAME).$(PREFIX1).dix $@
 
-$(PREFIX1).autogen.bin: $(BASENAME).$(LANG2).dix
-	apertium-validate-dictionary $(BASENAME).$(LANG2).dix
+$(PREFVAR1)$(LANG2).dix: $(BASENAME).$(LANG2).dix
+	xsltproc --stringparam lang cat --stringparam side left filter.xsl $< > $@
+
+$(PREFVAR1)$(PREFIX1).autogen.bin: $(PREFVAR1)$(LANG2).dix
+	apertium-validate-dictionary $(PREFVAR1)$(LANG2).dix
 	lt-comp rl $(BASENAME).$(LANG2).dix $@
+
+#$(PREFVAR2)$(LANG2).dix: $(BASENAME).$(LANG2).dix
+#	xsltproc --stringparam lang val --stringparam side left filter.xsl $< > $@
+#
+#$(PREFVAR2)$(PREFIX1).autogen.bin: $(PREFVAR2)$(LANG2).dix
+#	apertium-validate-dictionary $(PREFVAR2)$(LANG2).dix
+#	lt-comp rl $(BASENAME).$(LANG2).dix $@
 
 $(PREFIX1).autopgen.bin: $(BASENAME).post-$(LANG2).dix
 	apertium-validate-dictionary $(BASENAME).post-$(LANG2).dix
 	lt-comp lr $(BASENAME).post-$(LANG2).dix $@
 
-$(PREFIX2).automorf.bin: $(BASENAME).$(LANG2).dix
+$(PREFVAR1)$(PREFIX2).automorf.bin: $(PREFVAR1)$(LANG2).dix
 	apertium-validate-acx $(BASENAME).$(LANG2).acx
-	apertium-validate-dictionary $(BASENAME).$(LANG2).dix
-	lt-comp lr $(BASENAME).$(LANG2).dix $@ $(BASENAME).$(LANG2).acx
+	apertium-validate-dictionary $(PREFVAR1)$(LANG2).dix
+	lt-comp lr $(PREFVAR1)$(LANG2).dix $@ $(BASENAME).$(LANG2).acx
 
+#$(PREFVAR2)$(PREFIX2).automorf.bin: $(PREFVAR2)$(LANG2).dix
+#	apertium-validate-acx $(BASENAME).$(LANG2).acx
+#	apertium-validate-dictionary $(PREFVAR2)$(LANG2).dix
+#	lt-comp lr $(PREFVAR2)$(LANG2).dix $@ $(BASENAME).$(LANG2).acx
+#
 $(PREFIX2).autobil.bin: $(BASENAME).$(PREFIX1).dix
 #	apertium-validate-dictionary $(BASENAME).$(PREFIX1).dix
 	lt-comp rl $(BASENAME).$(PREFIX1).dix $@
