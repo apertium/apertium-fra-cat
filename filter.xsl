@@ -18,7 +18,7 @@
  02111-1307, USA.
 -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-  <xsl:output method="xml" encoding="ISO-8859-1"/>
+  <xsl:output method="xml" encoding="UTF-8"/>
   <xsl:param name="lang"/> <!-- language of the variant being generated -->
   <xsl:param name="side"/> <!-- one of 'left' or 'right' -->
 
