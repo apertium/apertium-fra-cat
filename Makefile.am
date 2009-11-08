@@ -13,8 +13,8 @@ PREFVAR2=val-
 
 TARGETS_COMMON = $(PREFIX1).automorf.bin $(PREFIX1).autobil.bin $(PREFIX1).autogen.bin \
      $(PREFIX1).autopgen.bin $(PREFIX2).automorf.bin $(PREFIX2).autobil.bin \
-     $(PREFVAR1)$(PREFIX1).autopgen.bin \
-     $(PREFIX2).autogen.bin $(MODES)
+     $(PREFVAR1)$(PREFIX1).autogen.bin \
+     $(PREFIX2).autopgen.bin $(MODES)
 
 TARGETS = $(TARGETS_COMMON) $(PREFIX1).t1x.bin $(PREFIX2).t1x.bin 
 
@@ -32,14 +32,14 @@ $(PREFVAR1)$(LANG2).dix: $(BASENAME).$(LANG2).dix
 
 $(PREFVAR1)$(PREFIX1).autogen.bin: $(PREFVAR1)$(LANG2).dix
 	apertium-validate-dictionary $(PREFVAR1)$(LANG2).dix
-	lt-comp rl $(BASENAME).$(LANG2).dix $@
+	lt-comp rl $(PREFVAR1)$(LANG2).dix $@
 
 #$(PREFVAR2)$(LANG2).dix: $(BASENAME).$(LANG2).dix
 #	xsltproc --stringparam lang val --stringparam side left filter.xsl $< > $@
 #
 #$(PREFVAR2)$(PREFIX1).autogen.bin: $(PREFVAR2)$(LANG2).dix
 #	apertium-validate-dictionary $(PREFVAR2)$(LANG2).dix
-#	lt-comp rl $(BASENAME).$(LANG2).dix $@
+#	lt-comp rl $(PREFVAR2)$(LANG2).dix $@
 
 $(PREFIX1).autopgen.bin: $(BASENAME).post-$(LANG2).dix
 	apertium-validate-dictionary $(BASENAME).post-$(LANG2).dix

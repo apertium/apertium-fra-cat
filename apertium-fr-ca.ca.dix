@@ -88160,6 +88160,15 @@
       
 <e r="LR" lm="em"><p><l>em</l>                    <r>em<s n="prn"/><s n="pro"/><s n="p1"/><s n="mf"/><s n="sg"/></r></p></e>
 <e r="RL" lm="em"><p><l><a/>em</l>                <r>em</r></p><par n="~em__prn"/></e>
+<e r="RL" lm="el"><p><l><a/></l>                  <r>e</r></p><par n="~/l__det"/></e>
+<e r="RL" lm="el meu"><p><l><a/>el</l>            <r>el<b/></r></p><par n="~el/meu__det"/></e>
+<e r="RL" lm="el nostre"><p><l><a/>el</l>         <r>el<b/></r></p><par n="~el/nostre__det"/></e>
+<e r="RL" lm="el seu"><p><l><a/>el</l>            <r>el<b/></r></p><par n="~el/seu__det"/></e>
+<e r="RL" lm="el teu"><p><l><a/>el</l>            <r>el<b/></r></p><par n="~el/teu__det"/></e>
+<e r="RL" lm="el vostre"><p><l><a/>el</l>         <r>el<b/></r></p><par n="~el/vostre__det"/></e>
+<e r="RL" lm="el"><p><l><a/></l>                  <r>e</r></p><par n="~/l__prn"/></e>
+<e r="RL" lm="em"><p><l><a/>em</l>                <r>em</r></p><par n="~em__prn"/></e>
+<e r="RL" lm="li"><p><l><a/></l>                  <r>l</r></p><par n="~/i__prn"/></e>
 
 <e r="RL" lm="en"><p><l><a/>en</l> <r>en</r> </p><par n="en__prn"/></e>
       
