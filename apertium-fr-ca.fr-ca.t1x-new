@@ -6287,26 +6287,64 @@
 	<call-macro n="firstWord">
 	  <with-param pos="1"/>
 	</call-macro>
-	<out>
-	  <chunk name="verb" case="caseFirstWord">
-	    <tags>
-	      <tag><lit-tag v="SV"/></tag>
-	      <tag><clip pos="1" side="tl" part="a_verb"/></tag>
-	      <tag><clip pos="1" side="tl" part="temps"/></tag>
-	      <tag><clip pos="1" side="tl" part="pers"/></tag>
-	      <tag><clip pos="1" side="tl" part="nbr"/></tag>
-	      <tag><var n="tipusverb"/></tag>
-	    </tags>
-	    <lu>
-	      <clip pos="1" side="tl" part="lemh"/> 
-	      <clip pos="1" side="tl" part="a_verb"/>
-	      <clip pos="1" side="tl" part="temps"/>
-	      <clip pos="1" side="tl" part="pers"/>
-	      <clip pos="1" side="tl" part="nbr" link-to="5"/>
-	      <clip pos="1" side="tl" part="lemq"/> 
-	    </lu>
-	  </chunk>
-	</out>
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="1" side="sl" part="pers"/>
+                <lit-tag v="ifi"/>
+              </equal>
+            </test>
+    	    <out>
+	      <chunk name="anar_inf" case="caseFirstWord">
+	        <tags>
+	          <tag><lit-tag v="SV"/></tag>
+	          <tag><clip pos="1" side="tl" part="a_verb"/></tag>
+	          <tag><lit-tag v="pri"/></tag>
+	          <tag><clip pos="1" side="tl" part="pers"/></tag>
+	          <tag><clip pos="1" side="tl" part="nbr"/></tag>
+	          <tag><var n="tipusverb"/></tag>
+	        </tags>
+	        <lu>
+	          <lit v="anar"/> 
+	          <lit-tag v="vblex"/>
+	          <lit-tag v="pri"/>
+	          <clip pos="1" side="tl" part="pers" link-to="4"/>
+	          <clip pos="1" side="tl" part="nbr" link-to="5"/>
+	          <clip pos="1" side="tl" part="lemq"/> 
+	        </lu>
+                <b/>
+	        <lu>
+	          <clip pos="1" side="tl" part="lemh"/> 
+	          <clip pos="1" side="tl" part="a_verb"/>
+                  <lit-tag v="inf"/>
+	        </lu>
+	      </chunk>
+	    </out>
+          </when>
+          <otherwise>
+    	    <out>
+	      <chunk name="verb" case="caseFirstWord">
+	        <tags>
+	          <tag><lit-tag v="SV"/></tag>
+	          <tag><clip pos="1" side="tl" part="a_verb"/></tag>
+	          <tag><clip pos="1" side="tl" part="temps"/></tag>
+	          <tag><clip pos="1" side="tl" part="pers"/></tag>
+	          <tag><clip pos="1" side="tl" part="nbr"/></tag>
+	          <tag><var n="tipusverb"/></tag>
+	        </tags>
+	        <lu>
+	          <clip pos="1" side="tl" part="lemh"/> 
+	          <clip pos="1" side="tl" part="a_verb"/>
+	          <clip pos="1" side="tl" part="temps"/>
+	          <clip pos="1" side="tl" part="pers" link-to="4"/>
+	          <clip pos="1" side="tl" part="nbr" link-to="5"/>
+	          <clip pos="1" side="tl" part="lemq"/> 
+	        </lu>
+	      </chunk>
+	    </out>
+          </otherwise>
+        </choose>
 	<let>
 	  <var n="caseFirstWord"/>
 	  <lit v="aa"/>
@@ -6621,7 +6659,7 @@
 	  <with-param pos="1"/>
 	</call-macro>
 	<out>
-	  <chunk name="ir_a_inf" case="caseFirstWord">
+	  <chunk name="anar_a_inf" case="caseFirstWord">
 	    <tags>
 	      <tag><lit-tag v="SV"/></tag>
 	      <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -6686,7 +6724,7 @@
 	      </equal>
 	    </test>
 	    <out>
-	      <chunk name="pro_ir_a_inf" case="caseFirstWord">
+	      <chunk name="pro_anar_a_inf" case="caseFirstWord">
 		<tags>
 		  <tag><lit-tag v="SV"/></tag>
 		  <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -6733,7 +6771,7 @@
 	  <otherwise>
 
 	    <out>
-	      <chunk name="ir_a_inf" case="caseFirstWord">
+	      <chunk name="anar_a_inf" case="caseFirstWord">
 		<tags>
 		  <tag><lit-tag v="SV"/></tag>
 		  <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -6809,7 +6847,7 @@
               </equal>
 	     </test>
 	    <out>
-	      <chunk name="ir_a_inf" case="caseFirstWord">
+	      <chunk name="anar_a_inf" case="caseFirstWord">
 		<tags>
 		  <tag><lit-tag v="SV"/></tag>
 		  <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -6843,7 +6881,7 @@
 	    </when>
 	    <otherwise>
             <out>
-	      <chunk name="no_ir_a_inf" case="caseFirstWord">
+	      <chunk name="no_anar_a_inf" case="caseFirstWord">
 		<tags>
 		  <tag><lit-tag v="SV"/></tag>
 		  <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -6884,7 +6922,7 @@
 	  </when>
 	  <otherwise>
 	    <out>
-	      <chunk name="ir_a_inf" case="caseFirstWord">
+	      <chunk name="anar_a_inf" case="caseFirstWord">
 		<tags>
 		  <tag><lit-tag v="SV"/></tag>
 		  <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -6960,7 +6998,7 @@
 	      </equal>
 	    </test>
 	    <out>
-	      <chunk name="ir_a_inf" case="caseFirstWord">
+	      <chunk name="anar_a_inf" case="caseFirstWord">
 		<tags>
 		  <tag><lit-tag v="SV"/></tag>
 		  <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -6994,7 +7032,7 @@
 	  </when>
 	  <otherwise>
 	    <out>
-	      <chunk name="ir_a_inf" case="caseFirstWord">
+	      <chunk name="anar_a_inf" case="caseFirstWord">
 		<tags>
 		  <tag><lit-tag v="SV"/></tag>
 		  <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -8448,7 +8486,7 @@
 	      </or>
 	    </test>
 	    <out>
-	      <chunk name="ir_a_inf" case="caseFirstWord">
+	      <chunk name="anar_a_inf" case="caseFirstWord">
 		<tags>
 		  <tag><lit-tag v="SV"/></tag>
 		  <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -8488,7 +8526,7 @@
 	  </when>
 	  <otherwise>
 	    <out>
-	      <chunk name="ir_a_inf_enc" case="caseFirstWord">
+	      <chunk name="anar_a_inf_enc" case="caseFirstWord">
 		<tags>
 		  <tag><lit-tag v="SV"/></tag>
 		  <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -8596,7 +8634,7 @@
 		  </or>
 		</test>
 		<out>
-		  <chunk name="pro_ir_a_inf" case="caseFirstWord">
+		  <chunk name="pro_anar_a_inf" case="caseFirstWord">
 		    <tags>
 		      <tag><lit-tag v="SV"/></tag>
 		      <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -8646,7 +8684,7 @@
 	      </when>
 	      <otherwise>
 		<out>
-		  <chunk name="pro_ir_a_inf_enc" case="caseFirstWord">
+		  <chunk name="pro_anar_a_inf_enc" case="caseFirstWord">
 		    <tags>
 		      <tag><lit-tag v="SV"/></tag>
 		      <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -8724,7 +8762,7 @@
 		  </or>
 		</test>
 		<out>
-		  <chunk name="ir_a_inf" case="caseFirstWord">
+		  <chunk name="anar_a_inf" case="caseFirstWord">
 		    <tags>
 		      <tag><lit-tag v="SV"/></tag>
 		      <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -8765,7 +8803,7 @@
 
 	      <otherwise>
 		<out>
-		  <chunk name="ir_a_inf_enc" case="caseFirstWord">
+		  <chunk name="anar_a_inf_enc" case="caseFirstWord">
 		    <tags>
 		      <tag><lit-tag v="SV"/></tag>
 		      <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -8867,7 +8905,7 @@
 	      </or>
 	    </test>
 	    <out>
-	      <chunk name="ir_a_inf" case="caseFirstWord">
+	      <chunk name="anar_a_inf" case="caseFirstWord">
 		<tags>
 		  <tag><lit-tag v="SV"/></tag>
 		  <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -8907,7 +8945,7 @@
 	  </when>
 	  <otherwise>
 	    <out>
-	      <chunk name="ir_a_inf_enc" case="caseFirstWord">
+	      <chunk name="anar_a_inf_enc" case="caseFirstWord">
 		<tags>
 		  <tag><lit-tag v="SV"/></tag>
 		  <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -9041,7 +9079,7 @@
 	      </or>
 	    </test>
 	    <out>
-	      <chunk name="ir_a_inf" case="caseFirstWord">
+	      <chunk name="anar_a_inf" case="caseFirstWord">
 		<tags>
 		  <tag><lit-tag v="SV"/></tag>
 		  <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -9081,7 +9119,7 @@
 	  </when>
 	  <otherwise>
 	    <out>
-	      <chunk name="ir_a_inf_enc" case="caseFirstWord">
+	      <chunk name="anar_a_inf_enc" case="caseFirstWord">
 		<tags>
 		  <tag><lit-tag v="SV"/></tag>
 		  <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -9211,7 +9249,7 @@
 		  </equal>
 		</test>
 		<out>
-		  <chunk name="ir_a_inf" case="caseFirstWord">
+		  <chunk name="anar_a_inf" case="caseFirstWord">
 		    <tags>
 		      <tag><lit-tag v="SV"/></tag>
 		      <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -9255,7 +9293,7 @@
 	      </when>
 	      <otherwise>
 		<out>
-		  <chunk name="ir_a_inf_enc" case="caseFirstWord">
+		  <chunk name="anar_a_inf_enc" case="caseFirstWord">
 		    <tags>
 		      <tag><lit-tag v="SV"/></tag>
 		      <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -9322,7 +9360,7 @@
 		  </or>
 		</test>
 		<out>
-		  <chunk name="ir_a_inf_enc" case="caseFirstWord">
+		  <chunk name="anar_a_inf_enc" case="caseFirstWord">
 		    <tags>
 		      <tag><lit-tag v="SV"/></tag>
 		      <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -9373,7 +9411,7 @@
 	      </when>
 	      <otherwise>
 		<out>
-		  <chunk name="ir_a_inf_enc_enc" case="caseFirstWord">
+		  <chunk name="anar_a_inf_enc_enc" case="caseFirstWord">
 		    <tags>
 		      <tag><lit-tag v="SV"/></tag>
 		      <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -9478,7 +9516,7 @@
 		  </equal>
 		</test>
 		<out>
-		  <chunk name="ir_a_inf" case="caseFirstWord">
+		  <chunk name="anar_a_inf" case="caseFirstWord">
 		    <tags>
 		      <tag><lit-tag v="SV"/></tag>
 		      <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -9522,7 +9560,7 @@
 	      </when>
 	      <otherwise>
 		<out>
-		  <chunk name="ir_a_inf_enc" case="caseFirstWord">
+		  <chunk name="anar_a_inf_enc" case="caseFirstWord">
 		    <tags>
 		      <tag><lit-tag v="SV"/></tag>
 		      <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -9589,7 +9627,7 @@
 		  </or>
 		</test>
 		<out>
-		  <chunk name="ir_a_inf_enc" case="caseFirstWord">
+		  <chunk name="anar_a_inf_enc" case="caseFirstWord">
 		    <tags>
 		      <tag><lit-tag v="SV"/></tag>
 		      <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -9640,7 +9678,7 @@
 	      </when>
 	      <otherwise>
 		<out>
-		  <chunk name="ir_a_inf_enc_enc" case="caseFirstWord">
+		  <chunk name="anar_a_inf_enc_enc" case="caseFirstWord">
 		    <tags>
 		      <tag><lit-tag v="SV"/></tag>
 		      <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -9745,7 +9783,7 @@
 		  </equal>
 		</test>
 		<out>
-		  <chunk name="ir_a_inf" case="caseFirstWord">
+		  <chunk name="anar_a_inf" case="caseFirstWord">
 		    <tags>
 		      <tag><lit-tag v="SV"/></tag>
 		      <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -9789,7 +9827,7 @@
 	      </when>
 	      <otherwise>
 		<out>
-		  <chunk name="ir_a_inf_enc" case="caseFirstWord">
+		  <chunk name="anar_a_inf_enc" case="caseFirstWord">
 		    <tags>
 		      <tag><lit-tag v="SV"/></tag>
 		      <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -9856,7 +9894,7 @@
 		  </or>
 		</test>
 		<out>
-		  <chunk name="ir_a_inf_enc" case="caseFirstWord">
+		  <chunk name="anar_a_inf_enc" case="caseFirstWord">
 		    <tags>
 		      <tag><lit-tag v="SV"/></tag>
 		      <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -9907,7 +9945,7 @@
 	      </when>
 	      <otherwise>
 		<out>
-		  <chunk name="ir_a_inf_enc_enc" case="caseFirstWord">
+		  <chunk name="anar_a_inf_enc_enc" case="caseFirstWord">
 		    <tags>
 		      <tag><lit-tag v="SV"/></tag>
 		      <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -10044,7 +10082,7 @@
 		  </equal>
 		</test>
 		<out>
-		  <chunk name="ir_a_inf" case="caseFirstWord">
+		  <chunk name="anar_a_inf" case="caseFirstWord">
 		    <tags>
 		      <tag><lit-tag v="SV"/></tag>
 		      <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -10088,7 +10126,7 @@
 	      </when>
 	      <otherwise>
 		<out>
-		  <chunk name="ir_a_inf_enc" case="caseFirstWord">
+		  <chunk name="anar_a_inf_enc" case="caseFirstWord">
 		    <tags>
 		      <tag><lit-tag v="SV"/></tag>
 		      <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -10155,7 +10193,7 @@
 		  </or>
 		</test>
 		<out>
-		  <chunk name="ir_a_inf_enc" case="caseFirstWord">
+		  <chunk name="anar_a_inf_enc" case="caseFirstWord">
 		    <tags>
 		      <tag><lit-tag v="SV"/></tag>
 		      <tag><clip pos="1" side="tl" part="a_verb"/></tag>
@@ -10206,7 +10244,7 @@
 	      </when>
 	      <otherwise>
 		<out>
-		  <chunk name="ir_a_inf_enc_enc" case="caseFirstWord">
+		  <chunk name="anar_a_inf_enc_enc" case="caseFirstWord">
 		    <tags>
 		      <tag><lit-tag v="SV"/></tag>
 		      <tag><clip pos="1" side="tl" part="a_verb"/></tag>

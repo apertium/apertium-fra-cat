@@ -71,7 +71,22 @@ $(PREFIX1).t1x.bin: $(BASENAME).$(PREFIX1).t1x
 	apertium-validate-transfer $(BASENAME).$(PREFIX1).t1x
 	apertium-preprocess-transfer $(BASENAME).$(PREFIX1).t1x \
 	                             $(PREFIX1).t1x.bin
-	                             
+                             
+$(PREFIX1).t1x-new.bin: $(BASENAME).$(PREFIX1).t1x-new
+	apertium-validate-transfer $(BASENAME).$(PREFIX1).t1x-new
+	apertium-preprocess-transfer $(BASENAME).$(PREFIX1).t1x-new \
+	                             $(PREFIX1).t1x-new.bin
+
+$(PREFIX1).t2x.bin: $(BASENAME).$(PREFIX1).t2x
+	apertium-validate-transfer $(BASENAME).$(PREFIX1).t2x
+	apertium-preprocess-transfer $(BASENAME).$(PREFIX1).t2x \
+	                             $(PREFIX1).t2x.bin
+                             
+$(PREFIX1).t3x.bin: $(BASENAME).$(PREFIX1).t3x
+	apertium-validate-transfer $(BASENAME).$(PREFIX1).t3x
+	apertium-preprocess-transfer $(BASENAME).$(PREFIX1).t3x \
+	                             $(PREFIX1).t3x.bin
+                             
 $(PREFIX2).t1x.bin: $(BASENAME).$(PREFIX2).t1x
 	apertium-validate-transfer $(BASENAME).$(PREFIX2).t1x
 	apertium-preprocess-transfer $(BASENAME).$(PREFIX2).t1x \

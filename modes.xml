@@ -139,6 +139,68 @@
     </pipeline>
   </mode>
 
+  <mode name="fr-ca-chunker">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="fr-ca.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fr-ca.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-fr-ca.fr-ca.t1x-new"/>
+        <file name="fr-ca.t1x-new.bin"/>
+        <file name="fr-ca.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fr-ca-interchunk">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="fr-ca.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fr-ca.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-fr-ca.fr-ca.t1x-new"/>
+        <file name="fr-ca.t1x-new.bin"/>
+        <file name="fr-ca.autobil.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fr-ca.fr-ca.t2x"/>
+        <file name="fr-ca.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fr-ca-postchunk">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="fr-ca.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fr-ca.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-fr-ca.fr-ca.t1x-new"/>
+        <file name="fr-ca.t1x-new.bin"/>
+        <file name="fr-ca.autobil.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fr-ca.fr-ca.t2x"/>
+        <file name="fr-ca.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fr-ca.fr-ca.t3x"/>
+        <file name="fr-ca.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
 
   <mode name="fr-ca-gen">
     <pipeline>
