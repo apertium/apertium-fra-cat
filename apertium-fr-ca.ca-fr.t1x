@@ -700,7 +700,7 @@
       </choose>
     </def-macro>
     
-    <def-macro n="f_bcond" npar="1">
+    <def-macro n="f_bcond" npar="2">
 <!--Per mirar si el blanc conté o no format -->
       <choose>
         <when>

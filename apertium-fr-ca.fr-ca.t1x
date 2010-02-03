@@ -432,7 +432,7 @@
   
   <section-def-macros>
   
-    <def-macro n="f_bcond" npar="1">
+    <def-macro n="f_bcond" npar="2">
 <!--Para mirar si el blanco contiene o no formato, y enviarlo sólo si tiene formato (para reglas en las que se elimine una o más palabras) -->
       <choose>
         <when>
@@ -6804,6 +6804,7 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
         <call-macro n="f_bcond">
           <with-param pos="1"/>
+          <with-param pos="2"/>
         </call-macro>
       </action>
     </rule>
@@ -6928,6 +6929,7 @@ is not applicable because gender and number cannot be taken from previous rules 
             <call-macro n="f_bcond">
 <!--Envía el blanco sólo si tiene formato -->
               <with-param pos="1"/>
+              <with-param pos="2"/>
             </call-macro>
           </when>
           <otherwise>
@@ -6975,6 +6977,7 @@ is not applicable because gender and number cannot be taken from previous rules 
             </test>
             <call-macro n="f_bcond">
               <with-param pos="1"/>
+              <with-param pos="2"/>
             </call-macro>
             <out>
               <lu>
