@@ -18,7 +18,7 @@ TARGETS_COMMON = $(PREFIX1).automorf.bin $(PREFIX1).autobil.bin $(PREFIX1).autog
 
 TARGETS = $(TARGETS_COMMON) $(PREFIX1).t1x.bin $(PREFIX2).t1x.bin 
 
-$(PREFIX1).automorf.bin: $(BASENAME).$(LANG1).dix
+$(PREFIX1).automorf.bin: $(BASENAME).$(LANG1).dix $(BASENAME).$(LANG1).acx
 	apertium-validate-acx $(BASENAME).$(LANG1).acx
 	apertium-validate-dictionary $(BASENAME).$(LANG1).dix
 	lt-comp lr $(BASENAME).$(LANG1).dix $@ $(BASENAME).$(LANG1).acx
@@ -45,7 +45,7 @@ $(PREFIX1).autopgen.bin: $(BASENAME).post-$(LANG2).dix
 	apertium-validate-dictionary $(BASENAME).post-$(LANG2).dix
 	lt-comp lr $(BASENAME).post-$(LANG2).dix $@
 
-$(PREFVAR1)$(PREFIX2).automorf.bin: $(PREFVAR1)$(LANG2).dix
+$(PREFVAR1)$(PREFIX2).automorf.bin: $(PREFVAR1)$(LANG2).dix $(BASENAME).$(LANG2).acx
 	apertium-validate-acx $(BASENAME).$(LANG2).acx
 	apertium-validate-dictionary $(PREFVAR1)$(LANG2).dix
 	lt-comp lr $(PREFVAR1)$(LANG2).dix $@ $(BASENAME).$(LANG2).acx
@@ -101,7 +101,9 @@ EXTRA_DIST=$(BASENAME).$(PREFIX1).dix \
            buscaPar.xsl principal.xsl $(BASENAME).$(LANG1).metadix modes.xml \
            $(PREFIX1)-supervised.make $(PREFIX1)-unsupervised.make \
            $(PREFIX2)-supervised.make $(PREFIX2)-unsupervised.make \
-           $(LANG1)-tagger-data/README $(LANG2)-tagger-data/README
+           $(LANG1)-tagger-data/README $(LANG2)-tagger-data/README \
+           $(BASENAME).$(LANG1).acx $(BASENAME).$(LANG2).acx \
+           filter.xsl
            
 apertium-fr-ca.fr.dix: apertium-fr-ca.fr.metadix
 	@xsltproc buscaPar.xsl apertium-fr-ca.fr.metadix | uniq > $$gen.xsl
