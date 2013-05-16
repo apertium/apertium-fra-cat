@@ -30,6 +30,69 @@
       <e><i><b/></i></e>
     </pardef>
 
+    <pardef n="article_complet">
+      <e><i>hache</i></e>
+      <e><i>haie</i></e>
+      <e><i>haine</i></e>
+      <e><i>haïr</i></e>
+      <e><i>haleter</i></e>
+      <e><i>hall</i></e>
+      <e><i>halle</i></e>
+      <e><i>halot</i></e>
+      <e><i>halte</i></e>
+      <e><i>hamac</i></e>
+      <e><i>hameau</i></e>
+      <e><i>hampe</i></e>
+      <e><i>hamster</i></e>
+      <e><i>hanche</i></e>
+      <e><i>handicap</i></e>
+      <e><i>hangar</i></e>
+      <e><i>hanneton</i></e>
+      <e><i>hanter</i></e>
+      <e><i>harceler</i></e>
+      <e><i>hardi</i></e>
+      <e><i>harem</i></e>
+      <e><i>hareng</i></e>
+      <e><i>hargne</i></e>
+      <e><i>haricot</i></e>
+      <e><i>harnais</i></e>
+      <e><i>harpe</i></e>
+      <e><i>harpon</i></e>
+      <e><i>hasard</i></e>
+      <e><i>hâte</i></e>
+      <e><i>hauban</i></e>
+      <e><i>hausse</i></e>
+      <e><i>haut</i></e>
+      <e><i>hautain</i></e>
+      <e><i>hautbois</i></e>
+      <e><i>Havane</i></e>
+      <e><i>havre</i></e>
+      <e><i>hère</i></e>
+      <e><i>hérisson</i></e>
+      <e><i>héron</i></e>
+      <e><i>héros</i></e>
+      <e><i>herse</i></e>
+      <e><i>hibou</i></e>
+      <e><i>hiéroglyphe</i></e>
+      <e><i>hochet</i></e>
+      <e><i>hockey</i></e>
+      <e><i>Hollande</i></e>
+      <e><i>homard</i></e>
+      <e><i>Hongrie</i></e>
+      <e><i>honte</i></e>
+      <e><i>hoquet</i></e>
+      <e><i>horde</i></e>
+      <e><i>houblon</i></e>
+      <e><i>housse</i></e>
+      <e><i>hublot</i></e>
+      <e><i>huisclos</i></e>
+      <e><i>huit</i></e>
+      <e><i>hure</i></e>
+      <e><i>hurler</i></e>
+      <e><i>hussard</i></e>
+      <e><i>hutte</i></e>
+    </pardef>
+
     <pardef n="vocals">
       <e><i>a</i></e>
       <e><p><l><a/>e</l><r>e</r></p></e>
@@ -142,7 +205,9 @@
       <e><p><l><a/>ne<b/></l><r>n'</r></p><par n="vocals"/></e>
       <e><p><l><a/>ne<b/><a/>le<b/></l><r>ne<b/>l'</r></p><par n="vocals"/></e>
       <e><p><l><a/>ne<b/><a/>la<b/></l><r>ne<b/>l'</r></p><par n="vocals"/></e>
+      <e><p><l><a/>le<b/></l><r>le<b/></r></p><par n="article_complet"/></e>
       <e><p><l><a/>le<b/></l><r>l'</r></p><par n="vocals"/></e>
+      <e><p><l><a/>la<b/></l><r>la<b/></r></p><par n="article_complet"/></e>
       <e><p><l><a/>la<b/></l><r>l'</r></p><par n="vocals"/></e>
       <e><p><l><a/>me<b/></l><r>m'</r></p><par n="vocals"/></e>
       <e><p><l><a/>ne<b/><a/>me<b/></l><r>ne<b/>m'</r></p><par n="vocals"/></e>
@@ -179,7 +244,6 @@
       <e><p><l><a/>en<b/><a/>la<b/></l><r>dans<b/>l'</r></p> <par n="vocals"/></e>
       <e><p><l><a/>en<b/><a/>la<b/></l><r>dans<b/>la<b/></r></p> <par n="consonants"/></e>
 -->
-
       <e><p><l><a/>de<b/><a/>les<b/>beaucoup</l><r>beaucoup</r></p></e>
 
   <!-- amb punt
