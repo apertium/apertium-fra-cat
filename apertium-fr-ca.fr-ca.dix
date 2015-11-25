@@ -180,8 +180,7 @@
     <e r="LR"><p><l>à<b/>vous<s n="adj"/><s n="pos"/><s n="mf"/><s n="sp"/></l><r>vostre<s n="adj"/><s n="pos"/><s n="GD"/><s n="ND"/></r></p></e>
     <e r="RL"><p><l>à<b/>vous<s n="adj"/><s n="pos"/><s n="mf"/><s n="sp"/></l><r>vostre<s n="adj"/><s n="pos"/><s n="f"/><s n="pl"/></r></p></e>
     <e r="RL"><p><l>à<b/>vous<s n="adj"/><s n="pos"/><s n="mf"/><s n="sp"/></l><r>vostre<s n="adj"/><s n="pos"/><s n="f"/><s n="sg"/></r></p></e>
-    <e r="RL"><p><l>à<b/>vous<s n="adj"/><s n="pos"/><s n="mf"/><s n="sp"/></l><r>vostre<s n="adj"/><s n="pos"/><s n="m"/><s n="pl"/></r></p></e>
-    <e r="RL"><p><l>à<b/>vous<s n="adj"/><s n="pos"/><s n="mf"/><s n="sp"/></l><r>vostre<s n="adj"/><s n="pos"/><s n="m"/><s n="sg"/></r></p></e>
+    <e r="RL"><p><l>à<b/>vous<s n="adj"/><s n="pos"/><s n="mf"/><s n="sp"/></l><r>vostre<s n="adj"/><s n="pos"/><s n="mf"/><s n="pl"/></r></p></e>
     <e r="LR"><p><l>abyssal<s n="adj"/></l>           <r>abissal<s n="adj"/><s n="mf"/></r></p></e>
     <e r="RL"><p><l>abyssal<s n="adj"/><s n="GD"/></l><r>abissal<s n="adj"/><s n="mf"/></r></p></e>
     <e>       <p><l>académie<s n="n"/></l>            <r>acadèmia<s n="n"/></r></p></e>
@@ -485,7 +484,9 @@
     <e>       <p><l>aider<s n="vblex"/></l>           <r>ajudar<s n="vblex"/></r></p></e>
     <e r="RL"><p><l>aider<s n="vblex"/></l>           <r>auxiliar<s n="vblex"/></r></p></e>
     <e>       <p><l>aigle<s n="n"/><s n="mf"/></l>    <r>àguila<s n="n"/><s n="f"/></r></p></e>
-    <e>       <p><l>aigre<s n="adj"/><s n="mf"/></l>  <r>agre<s n="adj"/><s n="mf"/></r></p></e>
+    <e r="RL">       <p><l>aigre<s n="adj"/><s n="mf"/></l>  <r>agre<s n="adj"/><s n="m"/></r></p></e>
+    <e r="RL">       <p><l>aigre<s n="adj"/><s n="mf"/></l>  <r>agre<s n="adj"/><s n="f"/></r></p></e>
+    <e r="LR">       <p><l>aigre<s n="adj"/><s n="mf"/></l>  <r>agre<s n="adj"/><s n="GD"/></r></p></e>
     <e r="RL"><p><l>aigre<s n="adj"/><s n="mf"/></l>  <r>agre<s n="adj"/><s n="sup"/></r></p></e>
     <e>       <p><l>aigu<s n="adj"/></l>              <r>agut<s n="adj"/></r></p></e>
     <e>       <p><l>aigu<s n="n"/></l>                <r>agut<s n="n"/></r></p></e>
@@ -756,7 +757,6 @@
     <e r="RL"><p><l>anglais<s n="n"/><s n="m"/><s n="sp"/></l><r>anglès<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
     <e>       <i>angle<s n="n"/></i></e>
     <e r="RL"><p><l>angle<s n="n"/></l>               <r>cantó<s n="n"/></r></p></e>
-    <e>       <p><l>Angleterre<s n="n"/></l>          <r>Anglaterra<s n="n"/></r></p></e>
     <e>       <p><l>Angleterre<s n="np"/></l>         <r>Anglaterra<s n="np"/></r></p></e>
     <e>       <p><l>anglican<s n="adj"/></l>          <r>anglicà<s n="adj"/></r></p></e>
     <e>       <p><l>anglo-saxon<s n="adj"/></l>       <r>anglosaxó<s n="adj"/></r></p></e>
@@ -934,7 +934,9 @@
     <e>       <p><l>approximation<s n="n"/></l>       <r>aproximació<s n="n"/></r></p></e>
     <e>       <p><l>appui<s n="n"/></l>               <r>recolzament<s n="n"/></r></p></e>
     <e>       <p><l>appuyer<g><b/>sur</g><s n="vblex"/></l><r>prémer<s n="vblex"/></r></p></e>
-    <e>       <p><l>âpre<s n="adj"/><s n="mf"/></l>   <r>aspre<s n="adj"/><s n="mf"/></r></p></e>
+    <e r="RL"><p><l>âpre<s n="adj"/><s n="mf"/></l>   <r>aspre<s n="adj"/><s n="m"/></r></p></e>
+    <e r="RL"><p><l>âpre<s n="adj"/><s n="mf"/></l>   <r>aspre<s n="adj"/><s n="f"/></r></p></e>
+    <e>       <p><l>âpre<s n="adj"/><s n="mf"/><s n="pl"/></l>   <r>aspre<s n="adj"/><s n="mf"/><s n="pl"/></r></p></e>
     <e r="RL"><p><l>âpre<s n="adj"/><s n="mf"/></l>   <r>aspre<s n="adj"/><s n="sup"/></r></p></e>
     <e>       <p><l>après<s n="adv"/></l>             <r>després<s n="adv"/></r></p></e>
     <e>       <p><l>après<s n="pr"/></l>              <r>després<b/>de<s n="pr"/></r></p></e>
@@ -1230,8 +1232,8 @@
     <e>       <p><l>aumône<s n="n"/></l>              <r>almoina<s n="n"/></r></p></e>
     <e>       <p><l>auparavant<s n="adv"/></l>        <r>per<b/>endavant<s n="adv"/></r></p></e>
     <e>       <p><l>auprès<s n="adv"/></l>            <r>a<b/>prop<s n="adv"/></r></p></e>
-    <e>       <p><l>auquel<s n="rel"/></l>            <r>al<b/>qual<s n="rel"/></r></p></e>
-    <e r="RL"><p><l>auquel<s n="rel"/><s n="GD"/><s n="ND"/></l><r>a<b/>què<s n="rel"/><s n="mf"/><s n="sp"/></r></p></e>
+    <e>       <p><l>auquel<s n="rel"/></l>            <r>al<b/>qual<s n="rel"/><s n="aa"/></r></p></e>
+    <e r="RL"><p><l>auquel<s n="rel"/><s n="GD"/><s n="ND"/></l><r>a<b/>què<s n="rel"/><s n="an"/><s n="mf"/><s n="sp"/></r></p></e>
     <e>       <i>Aura<s n="np"/></i></e>
     <e>       <i>Aurelio<s n="np"/></i></e>
     <e>       <i>Aurora<s n="np"/></i></e>
@@ -1381,7 +1383,7 @@
     <e a="gema"><p><l>Balladur<s n="np"/></l>         <r>Balladur<s n="np"/></r></p></e>
     <e>       <p><l>balle<s n="n"/></l>               <r>pilota<s n="n"/></r></p></e>
     <e r="RL"><p><l>balle<s n="n"/></l>               <r>bala<s n="n"/></r></p></e>
-    <e>       <p><l>baller<s n="vblex"/></l>          <r>ballar<s n="vblex"/></r></p></e>
+    <e>       <p><l>danser<s n="vblex"/></l>          <r>ballar<s n="vblex"/></r></p></e>
     <e>       <i>Ballester<s n="np"/></i></e>
     <e>       <i>Ballesteros<s n="np"/></i></e>
     <e r="LR"><p><l>ballon<s n="n"/><s n="m"/></l>    <r>pilota<s n="n"/><s n="f"/></r></p></e>
@@ -2106,8 +2108,8 @@
     <e>       <p><l>cellulaire<s n="adj"/><s n="mf"/></l><r>cel·lular<s n="adj"/><s n="mf"/></r></p></e>
     <e a="u21941"><p><l>cellule<s n="n"/></l>         <r>cèl·lula<s n="n"/></r></p></e>
     <e>       <p><l>celui<s n="prn"/></l>             <r>aquell<s n="prn"/></r></p></e>
-    <e r="LR"><p><l>celui<b/>que<s n="rel"/></l>      <r>el<b/>que<s n="rel"/></r></p></e>
-    <e>       <p><l>celui<b/>qui<s n="rel"/></l>      <r>el<b/>que<s n="rel"/></r></p></e>
+    <e r="LR"><p><l>celui<b/>que<s n="rel"/></l>      <r>el<b/>que<s n="rel"/><s n="an"/></r></p></e>
+    <e>       <p><l>celui<b/>qui<s n="rel"/></l>      <r>el<b/>que<s n="rel"/><s n="an"/></r></p></e>
     <e>       <p><l>celui-ci<s n="prn"/></l>          <r>aquest<s n="prn"/></r></p></e>
     <e r="LR"><p><l>celui-là<s n="prn"/></l>          <r>aquell<s n="prn"/></r></p></e>
     <e a="gema"><p><l>Cème<s n="adj"/></l>            <r>C<s n="adj"/></r></p></e>
@@ -2119,7 +2121,10 @@
     <e>       <p><l>centaine<s n="n"/><s n="f"/></l>  <r>centenar<s n="n"/><s n="m"/></r></p></e>
     <e r="LR"><p><l>centaine<s n="n"/><s n="f"/></l>  <r>centenar<s n="n"/><s n="m"/></r></p></e>
     <e>       <i>Centelles<s n="np"/></i></e>
-    <e>       <p><l>centième<s n="adj"/></l>          <r>centèsim<s n="adj"/></r></p></e>
+    <e r="LR"><p><l>centième<s n="n"/><s n="mf"/></l><r>centèsim<s n="n"/><s n="GD"/></r></p></e>    
+    <e r="RL"><p><l>centième<s n="adj"/><s n="mf"/></l><r>centèsim<s n="adj"/><s n="f"/></r></p></e>
+    <e r="RL"><p><l>centième<s n="adj"/><s n="mf"/></l><r>centèsim<s n="adj"/><s n="m"/></r></p></e>
+
     <e a="ariel"><p><l>centimètre<s n="n"/></l>       <r>centímetre<s n="n"/></r></p></e>
     <e r="LR"><p><l>central<s n="adj"/><s n="f"/></l> <r>central<s n="adj"/><s n="mf"/></r></p></e>
     <e r="LR"><p><l>central<s n="adj"/><s n="m"/></l> <r>central<s n="adj"/><s n="mf"/></r></p></e>
@@ -3743,7 +3748,7 @@
     <e>       <p><l>donner<g><b/>la<b/>préférence</g><s n="vblex"/></l><r>anteposar<s n="vblex"/></r></p></e>
     <e>       <p><l>donner<g><b/>la<b/>priorité<b/>à</g><s n="vblex"/></l><r>prioritzar<s n="vblex"/></r></p></e>
     <e r="LR"><p><l>dont<s n="rel"/><s n="mf"/><s n="sp"/></l><r>del<b/>qual<s n="rel"/><s n="GD"/><s n="ND"/></r></p></e>
-    <e r="RL"><p><l>dont<s n="rel"/></l>              <r>de<b/>què<s n="rel"/></r></p></e>
+    <e r="RL"><p><l>dont<s n="rel"/></l>              <r>de<b/>què<s n="rel"/><s n="an"/></r></p></e>
     <e r="RL"><p><l>dont<s n="rel"/><s n="mf"/><s n="sp"/></l><r>del<b/>qual<s n="rel"/><s n="f"/><s n="pl"/></r></p></e>
     <e r="RL"><p><l>dont<s n="rel"/><s n="mf"/><s n="sp"/></l><r>del<b/>qual<s n="rel"/><s n="f"/><s n="sg"/></r></p></e>
     <e r="RL"><p><l>dont<s n="rel"/><s n="mf"/><s n="sp"/></l><r>del<b/>qual<s n="rel"/><s n="m"/><s n="pl"/></r></p></e>
@@ -6707,6 +6712,7 @@
     <e r="LR"><p><l>large<s n="adj"/><s n="mf"/></l>  <r>ample<s n="adj"/><s n="GD"/></r></p></e>
     <e r="RL"><p><l>large<s n="adj"/><s n="mf"/></l>  <r>ample<s n="adj"/><s n="f"/></r></p></e>
     <e r="RL"><p><l>large<s n="adj"/><s n="mf"/></l>  <r>ample<s n="adj"/><s n="m"/></r></p></e>
+    <e><p><l>large<s n="adj"/><s n="mf"/><s n="pl"/></l>  <r>ample<s n="adj"/><s n="mf"/><s n="pl"/></r></p></e>
     <e r="RL"><p><l>large<s n="adj"/><s n="mf"/></l>  <r>ample<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
     <e r="RL"><p><l>large<s n="adj"/><s n="mf"/></l>  <r>ample<s n="adj"/><s n="sup"/><s n="m"/></r></p></e>
     <e>       <p><l>largement<s n="adv"/></l>         <r>àmpliament<s n="adv"/></r></p></e>
@@ -6798,7 +6804,7 @@
     <e>       <i>Leonardo<s n="np"/></i></e>
     <e a="gema"><i>Léon</i></e>
     <e>       <i>Leonor<s n="np"/></i></e>
-    <e>       <p><l>lequel<s n="rel"/></l>            <r>el<b/>qual<s n="rel"/></r></p></e>
+    <e>       <p><l>lequel<s n="rel"/></l>            <r>el<b/>qual<s n="rel"/><s n="an"/></r></p></e>
     <e>       <p><l>Lérida<s n="np"/></l>             <r>Lleida<s n="np"/></r></p></e>
     <e>       <p><l>les<b/>deux<s n="det"/></l>       <r>sengles<s n="det"/></r></p></e>
     <e>       <p><l>lésion<s n="n"/></l>              <r>lesió<s n="n"/></r></p></e>
@@ -11711,7 +11717,7 @@
     <e r="LR"><p><l>vendredi<s n="n"/><s n="m"/><s n="pl"/></l><r>divendres<s n="n"/><s n="m"/><s n="sp"/></r></p></e>
     <e r="LR"><p><l>vendredi<s n="n"/><s n="m"/><s n="sg"/></l><r>divendres<s n="n"/><s n="m"/><s n="sp"/></r></p></e>
     <e r="RL"><p><l>vendredi<s n="n"/><s n="m"/><s n="ND"/></l><r>divendres<s n="n"/><s n="m"/><s n="sp"/></r></p></e>
-    <e>       <p><l>vendre<g><b/>aux<b/>enchères</g><s n="vblex"/></l><r>subhastar<s n="vblex"/></r></p></e>
+    <e>       <p><l>vendre<g><b/>aux<b/>enchères</g><s n="vblex"/></l><r>subastar<s n="vblex"/></r></p></e>
     <e>       <p><l>vénérer<s n="vblex"/></l>         <r>venerar<s n="vblex"/></r></p></e>
     <e>       <p><l>Venezuela<s n="np"/></l>          <r>Veneçuela<s n="np"/></r></p></e>
     <e>       <p><l>vénézuélien<s n="adj"/></l>       <r>veneçolà<s n="adj"/></r></p></e>
@@ -12080,5 +12086,74 @@
     <e>       <i>Zorrilla<s n="np"/></i></e>
     <e>       <i>Zurbarán<s n="np"/><s n="ant"/></i></e>
     <e>       <i>Zurita<s n="np"/></i></e>
+
+ <e a="joan"><p><l>mystérieusement<s n="adv"/></l><r>misteriosament<s n="adv"/></r></p></e>
+ <e a="joan"><p><l>impartialement<s n="adv"/></l><r>imparcialment<s n="adv"/></r></p></e>
+ <e a="joan"><p><l>secrètement<s n="adv"/></l><r>secretament<s n="adv"/></r></p></e>
+ <e a="joan"><p><l>ironiquement<s n="adv"/></l><r>irònicament<s n="adv"/></r></p></e>
+ <e a="joan"><p><l>littéralement<s n="adv"/></l><r>literalment<s n="adv"/></r></p></e>
+ <e a="joan"><p><l>positionnement<s n="n"/></l><r>posicionament<s n="n"/></r></p></e>
+ <e a="joan"><p><l>otage<s n="n"/></l><r>hostatge<s n="n"/></r></p></e>
+ <e a="joan"><p><l>soulevement<s n="n"/></l><r>aixecament<s n="n"/></r></p></e>
+ <e a="joan"><p><l>auditoire<s n="n"/></l><r>auditori<s n="n"/></r></p></e>
+ <e a="joan"><p><l>apogée<s n="n"/></l><r>apogeu<s n="n"/></r></p></e>
+ <e a="joan"><p><l>téléfilm<s n="n"/></l><r>telefilm<s n="n"/></r></p></e>
+ <e a="joan"><p><l>anecdote<s n="n"/></l><r>anècdota<s n="n"/></r></p></e>
+ <e a="joan"><p><l>légèreté<s n="n"/></l><r>lleugeresa<s n="n"/></r></p></e>
+ <e a="joan"><p><l>séquence<s n="n"/></l><r>sequència<s n="n"/></r></p></e>
+ <e a="joan"><p><l>comédie<s n="n"/></l><r>comèdia<s n="n"/></r></p></e>
+ <e a="joan"><p><l>franchise<s n="n"/></l><r>franquícia<s n="n"/></r></p></e>
+ <e a="joan"><p><l>leucémie<s n="n"/></l><r>leucèmia<s n="n"/></r></p></e>
+ <e a="joan"><p><l>interview<s n="n"/></l><r>entrevista<s n="n"/></r></p></e>
+ <e a="joan"><p><l>sérénité<s n="n"/></l><r>serenitat<s n="n"/></r></p></e>
+ <e a="joan"><p><l>fidélité<s n="n"/></l><r>fidelitat<s n="n"/></r></p></e>
+ <e a="joan"><p><l>notoriété<s n="n"/></l><r>notorietat<s n="n"/></r></p></e>
+ <e a="joan"><p><l>compositeur<s n="n"/></l><r>compositor<s n="n"/></r></p></e>
+ <e a="joan"><p><l>séducteur<s n="n"/></l><r>seductor<s n="n"/></r></p></e>
+ <e a="joan"><p><l>technicien<s n="n"/></l><r>tècnic<s n="n"/></r></p></e>
+
+ <e a="joan" r="LR"><p><l>aveugle<s n="n"/><s n="mf"/></l><r>cec<s n="n"/><s n="GD"/></r></p></e>
+ <e a="joan" r="RL"><p><l>aveugle<s n="n"/><s n="mf"/></l><r>cec<s n="n"/><s n="f"/></r></p></e>
+ <e a="joan" r="RL"><p><l>aveugle<s n="n"/><s n="mf"/></l><r>cec<s n="n"/><s n="m"/></r></p></e>
+
+ <e a="joan" r="LR"><p><l>aveugle<s n="adj"/><s n="mf"/></l><r>cec<s n="adj"/><s n="GD"/></r></p></e>
+ <e a="joan" r="RL"><p><l>aveugle<s n="adj"/><s n="mf"/></l><r>cec<s n="adj"/><s n="f"/></r></p></e>
+ <e a="joan" r="RL"><p><l>aveugle<s n="adj"/><s n="mf"/></l><r>cec<s n="adj"/><s n="m"/></r></p></e>
+
+ <e a="joan" r="LR"><p><l>millionnaire<s n="n"/><s n="mf"/></l><r>milionari<s n="n"/><s n="GD"/></r></p></e>
+ <e a="joan" r="RL"><p><l>millionnaire<s n="n"/><s n="mf"/></l><r>milionari<s n="n"/><s n="f"/></r></p></e>
+ <e a="joan" r="RL"><p><l>millionnaire<s n="n"/><s n="mf"/></l><r>milionari<s n="n"/><s n="m"/></r></p></e>
+
+ <e a="joan" r="RL"><p><l>thermal<s n="adj"/><s n="GD"/></l><r>termal<s n="adj"/><s n="mf"/></r></p></e>
+ <e a="joan" r="LR"><p><l>thermal<s n="adj"/><s n="m"/></l><r>termal<s n="adj"/><s n="mf"/></r></p></e>
+ <e a="joan" r="LR"><p><l>thermal<s n="adj"/><s n="f"/></l><r>termal<s n="adj"/><s n="mf"/></r></p></e>
+
+ <e a="joan" r="LR"><p><l>satirique<s n="adj"/><s n="mf"/></l><r>satíric<s n="adj"/><s n="GD"/></r></p></e>
+ <e a="joan" r="RL"><p><l>satirique<s n="adj"/><s n="mf"/></l><r>satíric<s n="adj"/><s n="f"/></r></p></e>
+ <e a="joan" r="RL"><p><l>satirique<s n="adj"/><s n="mf"/></l><r>satíric<s n="adj"/><s n="m"/></r></p></e>
+
+ <e a="joan" r="LR"><p><l>psychologique<s n="adj"/><s n="mf"/></l><r>psicològic<s n="adj"/><s n="GD"/></r></p></e>
+ <e a="joan" r="RL"><p><l>psychologique<s n="adj"/><s n="mf"/></l><r>psicològic<s n="adj"/><s n="f"/></r></p></e>
+ <e a="joan" r="RL"><p><l>psychologique<s n="adj"/><s n="mf"/></l><r>psicològic<s n="adj"/><s n="m"/></r></p></e>
+
+ <e a="joan" r="LR"><p><l>cinématographique<s n="adj"/><s n="mf"/></l><r>cinematogràfic<s n="adj"/><s n="GD"/></r></p></e>
+ <e a="joan" r="RL"><p><l>cinématographique<s n="adj"/><s n="mf"/></l><r>cinematogràfic<s n="adj"/><s n="f"/></r></p></e>
+ <e a="joan" r="RL"><p><l>cinématographique<s n="adj"/><s n="mf"/></l><r>cinematogràfic<s n="adj"/><s n="m"/></r></p></e>
+ <e a="joan" r="LR"><p><l>tragique<s n="adj"/><s n="mf"/></l><r>tràgic<s n="adj"/><s n="GD"/></r></p></e>
+ <e a="joan" r="RL"><p><l>tragique<s n="adj"/><s n="mf"/></l><r>tràgic<s n="adj"/><s n="f"/></r></p></e>
+ <e a="joan" r="RL"><p><l>tragique<s n="adj"/><s n="mf"/></l><r>tràgic<s n="adj"/><s n="m"/></r></p></e>
+
+ <e a="joan" r="LR"><p><l>cardiaque<s n="adj"/><s n="mf"/></l><r>cardíac<s n="adj"/><s n="GD"/></r></p></e>
+ <e a="joan" r="RL"><p><l>cardiaque<s n="adj"/><s n="mf"/></l><r>cardíac<s n="adj"/><s n="f"/></r></p></e>
+ <e a="joan" r="RL"><p><l>cardiaque<s n="adj"/><s n="mf"/></l><r>cardíac<s n="adj"/><s n="m"/></r></p></e>
+
+ <e a="joan"><p><l>sophistiqué<s n="adj"/></l><r>sofisticat<s n="vblex"/></r></p></e> 
+
+<e a="joan" r="LR"><p><l>pencher<s n="vblex"/></l><r>inclinar<s n="vblex"/></r></p></e>
+ <e a="joan"><p><l>réutiliser<s n="vblex"/></l><r>reutilitzar<s n="vblex"/></r></p></e> 
+ <e a="joan" r="LR"><p><l>comédien<s n="n"/></l><r>actor<s n="n"/></r></p></e>
+
+
+
   </section>
 </dictionary>
