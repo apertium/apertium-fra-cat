@@ -54,6 +54,9 @@
       <program name="lt-proc -b">
         <file name="fra-cat.autobil.bin"/>
       </program>
+      <program name="lrx-proc -m">
+        <file name="fra-cat.autolex.bin"/>
+      </program>
       <program name="apertium-transfer -b">
         <file name="apertium-fra-cat.fra-cat.t1x"/>
         <file name="fra-cat.t1x.bin"/>
@@ -240,6 +243,9 @@
       <program name="lt-proc -b">
         <file name="cat-fra.autobil.bin"/>
       </program>
+      <program name="lrx-proc -m">
+        <file name="cat-fra.autolex.bin"/>
+      </program>
       <program name="apertium-transfer -b">
         <file name="apertium-fra-cat.cat-fra.t1x"/>
         <file name="cat-fra.t1x.bin"/>
@@ -362,6 +368,9 @@
       <program name="apertium-pretransfer"/>
       <program name="lt-proc -b">
         <file name="cat-fra.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="cat-fra.autolex.bin"/>
       </program>
       <program name="apertium-transfer -b -t">
         <file name="apertium-fra-cat.cat-fra.t1x"/>

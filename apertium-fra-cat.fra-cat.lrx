@@ -1,5 +1,40 @@
 <rules>
   <rule weight="0.8" v="val">
+    <match lemma="mais" tags="n.*"><select lemma="dacsa" tags="n.*"/></match>
+  </rule>
+  <rule weight="1.0" v="cat">
+    <match lemma="mais" tags="n.*"><select lemma="blat# de moro" tags="n.*"/></match>
+  </rule>
+
+  <rule weight="0.8" v="val">
+    <match lemma="fille" tags="n.*"><select lemma="xic" tags="n.*"/></match>
+  </rule>
+  <rule weight="1.0" v="cat">
+    <match lemma="fille" tags="n.*"><select lemma="noi" tags="n.*"/></match>
+  </rule>
+
+  <rule weight="0.8" v="val">
+    <match lemma="garçon" tags="n.*"><select lemma="xic" tags="n.*"/></match>
+  </rule>
+  <rule weight="1.0" v="cat">
+    <match lemma="garçon" tags="n.*"><select lemma="noi" tags="n.*"/></match>
+  </rule>
+
+  <rule weight="0.8" v="val">
+    <match lemma="cheminée" tags="n.*"><select lemma="ximenera" tags="n.*"/></match>
+  </rule>
+  <rule weight="1.0" v="cat">
+    <match lemma="cheminée" tags="n.*"><select lemma="xemeneia" tags="n.*"/></match>
+  </rule>
+
+  <rule weight="0.8" v="val">
+    <match lemma="citron" tags="n.*"><select lemma="llimó" tags="n.*"/></match>
+  </rule>
+  <rule weight="1.0" v="cat">
+    <match lemma="citron" tags="n.*"><select lemma="llimona" tags="n.*"/></match>
+  </rule>
+
+  <rule weight="0.8" v="val">
     <match lemma="soustraction" tags="n.*"><select lemma="sostració" tags="n.*"/></match>
   </rule>
   <rule weight="1.0" v="cat">
@@ -17,6 +52,21 @@
   <rule weight="1.0" v="cat">
     <match lemma="vernir" tags="vblex.*"><select lemma="vernissar" tags="vblex.*"/></match>
   </rule>
+
+  <rule weight="1.0">
+    <match lemma="beau" tags="adj.*"><select lemma="bonic" tags="adj.*"/></match>
+  </rule>
+  <rule weight="0.3">
+    <match lemma="beau" tags="adj.*"><select lemma="bell" tags="adj.*"/></match>
+  </rule>
+  <rule weight="0.6">
+    <match lemma="beau" tags="adj.*"><select lemma="bo" tags="adj.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="faire" tags="vblex.*"/>
+    <match lemma="beau" tags="adj.*"><select lemma="bo" tags="adj.*"/></match>
+  </rule>
+
 
 
 </rules>

@@ -2442,8 +2442,7 @@
   
   <section-rules>
 <!--regles de concordança-->
-    <rule>
-<!-- REGLA: DETERMINANT -->
+    <rule comment="REGLA: DETERMINANT">
       <pattern>
         <pattern-item n="det"/>
       </pattern>
@@ -2459,8 +2458,7 @@
       </action>
     </rule>
     
-    <rule>
-<!-- REGLA: NOM -->
+    <rule comment="REGLA: NOM">
       <pattern>
         <pattern-item n="nom"/>
       </pattern>
@@ -2483,17 +2481,17 @@
         <pattern-item n="adjec"/>
       </pattern>
       <action>
-        <call-macro n="f_concord1">
-          <with-param pos="1"/>
-        </call-macro>
         <choose>
           <when>
             <test><and><equal><clip pos="1" side="tl" part="a_adjec"/><lit-tag v="vblex.pp"/></equal>
-                       <equal><clip pos="1" side="tl" part="a_gen"/><lit-tag v="mf"/></equal>
-                       <equal><clip pos="1" side="tl" part="a_nbr"/><lit-tag v="sp"/></equal></and></test>
-            <let><clip pos="1" side="tl" part="a_gen"/><lit-tag v="m"/></let>
-            <let><clip pos="1" side="tl" part="a_nbr"/><lit-tag v="sg"/></let></when>
+                       <equal><clip pos="1" side="sl" part="gen"/><lit-tag v="mf"/></equal>
+                       <equal><clip pos="1" side="sl" part="nbr"/><lit-tag v="sp"/></equal></and></test>
+            <let><clip pos="1" side="tl" part="gen"/><lit-tag v="GD"/></let>
+            <let><clip pos="1" side="tl" part="nbr"/><lit-tag v="ND"/></let></when>
         </choose>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="lemh"/>
