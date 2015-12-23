@@ -1,0 +1,23 @@
+<rules>
+  <rule weight="0.8" v="val">
+    <match lemma="soustraction" tags="n.*"><select lemma="sostració" tags="n.*"/></match>
+  </rule>
+  <rule weight="1.0" v="cat">
+    <match lemma="soustraction" tags="n.*"><select lemma="substracció" tags="n.*"/></match>
+  </rule>
+  <rule weight="0.8" v="val">
+    <match lemma="chauffer" tags="vblex.*"><select lemma="calfar" tags="vblex.*"/></match>
+  </rule>
+  <rule weight="1.0" v="cat">
+    <match lemma="chauffer" tags="vblex.*"><select lemma="escalfar" tags="vblex.*"/></match>
+  </rule>
+  <rule weight="0.8" v="val">
+    <match lemma="vernir" tags="vblex.*"><select lemma="envernissar" tags="vblex.*"/></match>
+  </rule>
+  <rule weight="1.0" v="cat">
+    <match lemma="vernir" tags="vblex.*"><select lemma="vernissar" tags="vblex.*"/></match>
+  </rule>
+
+
+</rules>
+

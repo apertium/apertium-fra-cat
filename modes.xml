@@ -1,241 +1,374 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <modes>
-  <mode name="ca-fr" install="yes">
+
+  <!-- fra → cat -->
+
+  <mode name="fra-cat" install="yes">
     <pipeline>
-      <program name="lt-proc">
-        <file name="ca-fr.automorf.bin"/>
+      <program name="lt-proc -w">
+        <file name="fra-cat.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="fra-cat.rlx.bin"/>
       </program>
       <program name="apertium-tagger -g $2">
-        <file name="ca-fr.prob"/>
-      </program>
-      <program name="apertium-pretransfer"/>
-      <program name="apertium-transfer">
-        <file name="apertium-fr-ca.ca-fr.t1x"/>
-        <file name="ca-fr.t1x.bin"/>
-        <file name="ca-fr.autobil.bin"/>
-      </program>
-      <program name="lt-proc $1">
-        <file name="ca-fr.autogen.bin"/>
-      </program>
-      <program name="lt-proc -p">
-        <file name="ca-fr.autopgen.bin"/>
-      </program>
-    </pipeline>
-  </mode>
-  
-  <mode name="fr-ca" install="yes">
-    <pipeline>
-      <program name="lt-proc">
-        <file name="fr-ca.automorf.bin"/>
-      </program>
-      <program name="apertium-tagger -g $2">
-        <file name="fr-ca.prob"/>
-      </program>
-      <program name="apertium-pretransfer"/>
-      <program name="apertium-transfer">
-        <file name="apertium-fr-ca.fr-ca.t1x"/>
-        <file name="fr-ca.t1x.bin"/>
-        <file name="fr-ca.autobil.bin"/>
-      </program>
-      <program name="lt-proc $1">
-        <file name="fr-ca.autogen.bin"/>
-      </program>
-      <program name="lt-proc -p">
-        <file name="fr-ca.autopgen.bin"/>
-      </program>
-    </pipeline>
-  </mode>
-
-  <mode name="ca-fr-anmor">
-    <pipeline>
-      <program name="lt-proc">
-        <file name="ca-fr.automorf.bin"/>
-      </program>
-    </pipeline>
-  </mode>
-
-  <mode name="ca-fr-tagger">
-    <pipeline>
-      <program name="lt-proc">
-        <file name="ca-fr.automorf.bin"/>
-      </program>
-      <program name="apertium-tagger -g $2">
-        <file name="ca-fr.prob"/>
-      </program>
-    </pipeline>
-  </mode>
-
-  <mode name="ca-fr-transfer">
-    <pipeline>
-      <program name="lt-proc">
-        <file name="ca-fr.automorf.bin"/>
-      </program>
-      <program name="apertium-tagger -g $2">
-        <file name="ca-fr.prob"/>
-      </program>
-      <program name="apertium-pretransfer"/>
-      <program name="apertium-transfer">
-        <file name="apertium-fr-ca.trules-ca-fr.xml"/>
-        <file name="trules-ca-fr.bin"/>
-        <file name="ca-fr.autobil.bin"/>
-      </program>
-    </pipeline>
-  </mode>
-
-  <mode name="ca-fr-gen">
-    <pipeline>
-      <program name="lt-proc">
-        <file name="ca-fr.automorf.bin"/>
-      </program>
-      <program name="apertium-tagger -g $2">
-        <file name="ca-fr.prob"/>
-      </program>
-      <program name="apertium-pretransfer"/>
-      <program name="apertium-transfer">
-        <file name="apertium-fr-ca.trules-ca-fr.xml"/>
-        <file name="trules-ca-fr.bin"/>
-        <file name="ca-fr.autobil.bin"/>
-      </program>
-      <program name="lt-proc $1">
-        <file name="ca-fr.autogen.bin"/>
-      </program>
-    </pipeline>
-  </mode>
-
-  <mode name="fr-ca-anmor">
-    <pipeline>
-      <program name="lt-proc">
-        <file name="fr-ca.automorf.bin"/>
-      </program>
-    </pipeline>
-  </mode>
-
-  <mode name="fr-ca-tagger">
-    <pipeline>
-      <program name="lt-proc">
-        <file name="fr-ca.automorf.bin"/>
-      </program>
-      <program name="apertium-tagger -g $2">
-        <file name="fr-ca.prob"/>
-      </program>
-    </pipeline>
-  </mode>
-
-  <mode name="fr-ca-biltrans">
-    <pipeline>
-      <program name="lt-proc">
-        <file name="fr-ca.automorf.bin"/>
-      </program>
-      <program name="apertium-tagger -g $2">
-        <file name="fr-ca.prob"/>
+        <file name="fra-cat.prob"/>
       </program>
       <program name="apertium-pretransfer"/>
       <program name="lt-proc -b">
-        <file name="fr-ca.autobil.bin"/>
+        <file name="fra-cat.autobil.bin"/>
       </program>
-    </pipeline>
-  </mode>
-
-
-
-  <mode name="fr-ca-transfer">
-    <pipeline>
-      <program name="lt-proc">
-        <file name="fr-ca.automorf.bin"/>
+      <program name="lrx-proc -m">
+        <file name="fra-cat.autolex.bin"/>
       </program>
-      <program name="apertium-tagger -g $2">
-        <file name="fr-ca.prob"/>
-      </program>
-      <program name="apertium-pretransfer"/>
-      <program name="apertium-transfer">
-        <file name="apertium-fr-ca.fr-ca.t1x"/>
-        <file name="fr-ca.t1x.bin"/>
-        <file name="fr-ca.autobil.bin"/>
-      </program>
-    </pipeline>
-  </mode>
-
-  <mode name="fr-ca-chunker">
-    <pipeline>
-      <program name="lt-proc">
-        <file name="fr-ca.automorf.bin"/>
-      </program>
-      <program name="apertium-tagger -g $2">
-        <file name="fr-ca.prob"/>
-      </program>
-      <program name="apertium-pretransfer"/>
-      <program name="apertium-transfer">
-        <file name="apertium-fr-ca.fr-ca.t1x-new"/>
-        <file name="fr-ca.t1x-new.bin"/>
-        <file name="fr-ca.autobil.bin"/>
-      </program>
-    </pipeline>
-  </mode>
-
-  <mode name="fr-ca-interchunk">
-    <pipeline>
-      <program name="lt-proc">
-        <file name="fr-ca.automorf.bin"/>
-      </program>
-      <program name="apertium-tagger -g $2">
-        <file name="fr-ca.prob"/>
-      </program>
-      <program name="apertium-pretransfer"/>
-      <program name="apertium-transfer">
-        <file name="apertium-fr-ca.fr-ca.t1x-new"/>
-        <file name="fr-ca.t1x-new.bin"/>
-        <file name="fr-ca.autobil.bin"/>
-      </program>
-      <program name="apertium-interchunk">
-        <file name="apertium-fr-ca.fr-ca.t2x"/>
-        <file name="fr-ca.t2x.bin"/>
-      </program>
-    </pipeline>
-  </mode>
-
-  <mode name="fr-ca-postchunk">
-    <pipeline>
-      <program name="lt-proc">
-        <file name="fr-ca.automorf.bin"/>
-      </program>
-      <program name="apertium-tagger -g $2">
-        <file name="fr-ca.prob"/>
-      </program>
-      <program name="apertium-pretransfer"/>
-      <program name="apertium-transfer">
-        <file name="apertium-fr-ca.fr-ca.t1x-new"/>
-        <file name="fr-ca.t1x-new.bin"/>
-        <file name="fr-ca.autobil.bin"/>
-      </program>
-      <program name="apertium-interchunk">
-        <file name="apertium-fr-ca.fr-ca.t2x"/>
-        <file name="fr-ca.t2x.bin"/>
-      </program>
-      <program name="apertium-postchunk">
-        <file name="apertium-fr-ca.fr-ca.t3x"/>
-        <file name="fr-ca.t3x.bin"/>
-      </program>
-    </pipeline>
-  </mode>
-
-  <mode name="fr-ca-gen">
-    <pipeline>
-      <program name="lt-proc">
-        <file name="fr-ca.automorf.bin"/>
-      </program>
-      <program name="apertium-tagger -g $2">
-        <file name="fr-ca.prob"/>
-      </program>
-      <program name="apertium-pretransfer"/>
-      <program name="apertium-transfer">
-        <file name="apertium-fr-ca.fr-ca.t1x"/>
-        <file name="fr-ca.t1x.bin"/>
-        <file name="fr-ca.autobil.bin"/>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fra-cat.fra-cat.t1x"/>
+        <file name="fra-cat.t1x.bin"/>
       </program>
       <program name="lt-proc $1">
-        <file name="fr-ca.autogen.bin"/>
+        <file name="fra-cat.autogen.bin"/>
+      </program>
+
+      <program name="lt-proc -p">
+        <file name="fra-cat.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fra-cat-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="fra-cat.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="fra-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fra-cat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fra-cat.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fra-cat.fra-cat.t1x"/>
+        <file name="fra-cat.t1x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="fra-cat.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fra-cat-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="fra-cat.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fra-cat-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="fra-cat.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="fra-cat.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fra-cat-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="fra-cat.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="fra-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fra-cat.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fra-cat-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="fra-cat.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="fra-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fra-cat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="fra-cat-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="fra-cat.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="fra-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fra-cat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fra-cat.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fra-cat-lextor" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="fra-cat.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="fra-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fra-cat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fra-cat.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m -t">
+        <file name="fra-cat.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fra-cat-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="fra-cat.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="fra-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fra-cat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fra-cat.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="fra-cat.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-fra-cat.fra-cat.t1x"/>
+        <file name="fra-cat.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- cat → fra -->
+
+  <mode name="cat-fra" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-fra.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-fra.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="cat-fra.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="cat-fra.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fra-cat.cat-fra.t1x"/>
+        <file name="cat-fra.t1x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="cat-fra.autogen.bin"/>
+      </program>
+
+      <program name="lt-proc -p">
+        <file name="cat-fra.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-fra-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-fra.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-fra.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="cat-fra.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fra-cat.cat-fra.t1x"/>
+        <file name="cat-fra.t1x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="cat-fra.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-fra-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-fra.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-fra-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-fra.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="cat-fra.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-fra-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-fra.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-fra.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-fra-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-fra.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-fra.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-fra-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-fra.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-fra.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="cat-fra.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-fra-lextor" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-fra.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-fra.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="cat-fra.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="cat-fra.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-fra-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-fra.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-fra.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="cat-fra.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-fra-cat.cat-fra.t1x"/>
+        <file name="cat-fra.t1x.bin"/>
       </program>
     </pipeline>
   </mode>
 
 </modes>
+
