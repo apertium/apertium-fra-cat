@@ -1,7 +1,7 @@
 AC_PREREQ(2.52)
 
-AC_INIT([apertium-fra-cat], [0.2.0], [francis.tyers@uit.no])
-AM_INIT_AUTOMAKE([apertium-fra-cat], [0.2.0], no-define)
+AC_INIT([apertium-fra-cat], [1.1.0], [gema@prompsit.com])
+AM_INIT_AUTOMAKE([apertium-fra-cat], [1.1.0], no-define)
 AC_PROG_LN_S
 AC_PROG_AWK
 

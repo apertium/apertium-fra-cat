@@ -2,7 +2,7 @@
 ## Makefile for French--Catalan
 ###############################################################################
 
-VERSION=0.1.0
+VERSION=1.1.0
 LANG1=fra
 LANG2=cat
 PREFIX1=$(LANG1)-$(LANG2)
