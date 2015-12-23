@@ -23,6 +23,11 @@
     <def-cat n="predet">
       <cat-item tags="predet.*"/>
     </def-cat>
+    <def-cat n="auxpp">
+      <cat-item tags="vbser.pp.*"/>
+      <cat-item tags="vbmod.pp.*"/>
+      <cat-item tags="vbhaver.pp.*"/>
+    </def-cat>
     <def-cat n="adjec">
       <cat-item tags="adj.*"/>
       <cat-item tags="vblex.pp.*"/>
@@ -2476,6 +2481,24 @@
       </action>
     </rule>
     
+    <rule comment="REGLA: AUXPP">
+      <pattern>
+        <pattern-item n="auxpp"/>
+      </pattern>
+      <action>
+        <!-- haver# de, etc. no té formes -->
+        <let><clip pos="1" side="tl" part="gen"/><lit-tag v="m"/></let>
+        <let><clip pos="1" side="tl" part="nbr"/><lit-tag v="sg"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+ 
     <rule comment="REGLA: ADJECTIU">
       <pattern>
         <pattern-item n="adjec"/>
