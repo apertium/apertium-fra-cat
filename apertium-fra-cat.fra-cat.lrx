@@ -67,7 +67,14 @@
     <match lemma="beau" tags="adj.*"><select lemma="bo" tags="adj.*"/></match>
   </rule>
 
-
-
+  <rule weight="1.0">
+    <match lemma="être" tags="vblex.*"><select lemma="ser" tags="vbser.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="être" tags="vblex.*"><select lemma="estar" tags="vblex.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="être" tags="vblex.*"><select lemma="ser" tags="vbser.*"/></match>
+    <match lemma="dans" tags="pr"><select lemma="a" tags="pr"/></match>
+  </rule>
 </rules>
-
