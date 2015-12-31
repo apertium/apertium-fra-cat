@@ -27,6 +27,7 @@
       <cat-item tags="vbser.pp.*"/>
       <cat-item tags="vbmod.pp.*"/>
       <cat-item tags="vbhaver.pp.*"/>
+      <cat-item lemma="être" tags="vblex.pp.*"/>
     </def-cat>
     <def-cat n="adjec">
       <cat-item tags="adj.*"/>
@@ -247,6 +248,7 @@
       <attr-item tags="adj.pos"/>
       <attr-item tags="adj"/>
       <attr-item tags="vblex.pp"/>
+      <attr-item tags="vbser.pp"/>
     </def-attr>
     <def-attr n="a_adj">
       <attr-item tags="adj.ind"/>
