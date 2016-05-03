@@ -73,6 +73,53 @@
     <sdef n="web"/>
   </sdefs>
 
+  <pardefs>
+    <pardef n="sp_ND">
+      <e r="LR"><p><l><s n="sp"/></l><r><s n="ND"/></r></p></e>
+      <e r="RL"><p><l><s n="sp"/></l><r><s n="sg"/></r></p></e>
+      <e r="RL"><p><l><s n="sp"/></l><r><s n="pl"/></r></p></e>
+    </pardef>
+
+    <pardef n="mf_GD">
+      <e r="LR"><p><l><s n="mf"/></l><r><s n="GD"/></r></p></e>
+      <e r="RL"><p><l><s n="mf"/></l><r><s n="f"/></r></p></e>
+      <e r="RL"><p><l><s n="mf"/></l><r><s n="m"/></r></p></e>
+    </pardef>
+
+    <pardef n="ND_sp">
+      <e r="LR"><p><l><s n="sg"/></l><r><s n="sp"/></r></p></e>
+      <e r="LR"><p><l><s n="pl"/></l><r><s n="sp"/></r></p></e>
+      <e r="RL"><p><l><s n="ND"/></l><r><s n="sp"/></r></p></e>
+    </pardef>
+
+    <pardef n="GD_mf">
+      <e r="LR"><p><l><s n="f"/></l><r><s n="mf"/></r></p></e>
+      <e r="LR"><p><l><s n="m"/></l><r><s n="mf"/></r></p></e>
+      <e r="RL"><p><l><s n="GD"/></l><r><s n="mf"/></r></p></e>
+    </pardef>
+
+    <pardef n="GD_mf|ND_sp">
+      <e r="LR"><p><l><s n="f"/></l><r><s n="mf"/></r></p><par n="ND_sp"/></e>
+      <e r="LR"><p><l><s n="m"/></l><r><s n="mf"/></r></p><par n="ND_sp"/></e>
+      <e r="RL"><p><l><s n="GD"/></l><r><s n="mf"/></r></p><par n="ND_sp"/></e>
+    </pardef>
+
+    <pardef n="mf_GD|sp_ND">
+      <e r="LR"><p><l><s n="mf"/></l><r><s n="GD"/></r></p><par n="sp_ND"/></e>
+      <e r="RL"><p><l><s n="mf"/></l><r><s n="f"/></r></p><par n="sp_ND"/></e>
+      <e r="RL"><p><l><s n="mf"/></l><r><s n="m"/></r></p><par n="sp_ND"/></e>
+    </pardef>
+
+    <pardef n="mf|sp_ND">
+      <e r="LR"><p><l><s n="mf"/><s n="sp"/></l><r><s n="mf"/><s n="ND"/></r></p></e>
+      <e r="RL"><p><l><s n="mf"/><s n="sp"/></l><r><s n="mf"/><s n="sg"/></r></p></e>
+      <e r="RL"><p><l><s n="mf"/><s n="sp"/></l><r><s n="mf"/><s n="pl"/></r></p></e>
+    </pardef>
+
+
+
+  </pardefs>
+
 
   <section id="main" type="standard">
 <!-- -->
@@ -5073,10 +5120,6 @@
     <e>       <p><l>franquiste<s n="adj"/><s n="mf"/></l><r>franquista<s n="adj"/><s n="mf"/></r></p></e>
     <e r="LR"><p><l>frappant<s n="adj"/><s n="f"/></l><r>sorprenent<s n="adj"/><s n="mf"/></r></p></e>
     <e r="LR"><p><l>frappant<s n="adj"/><s n="m"/></l><r>sorprenent<s n="adj"/><s n="mf"/></r></p></e>
-    <e r="RL"><p><l>frapper<s n="vblex"/></l>         <r>assotar<s n="vblex"/></r></p></e>
-    <e r="RL"><p><l>frapper<s n="vblex"/></l>         <r>colpejar<s n="vblex"/></r></p></e>
-    <e r="RL"><p><l>frapper<s n="vblex"/></l>         <r>copejar<s n="vblex"/></r></p></e>
-    <e r="RL"><p><l>frapper<s n="vblex"/></l>         <r>encunyar<s n="vblex"/></r></p></e>
     <e>       <p><l>fraterniser<s n="vblex"/></l>     <r>germanar<s n="vblex"/></r></p></e>
     <e a="gema"><p><l>Frédéric<s n="np"/></l><r>Frédéric<s n="np"/></r></p></e>
     <e a="ariel"><p><l>frein<s n="n"/></l>            <r>fre<s n="n"/></r></p></e>
@@ -14969,7 +15012,60 @@
 
 <e a="joan" r="LR"><p><l>pencher<s n="vblex"/></l><r>inclinar<s n="vblex"/></r></p></e>
  <e a="joan"><p><l>réutiliser<s n="vblex"/></l><r>reutilitzar<s n="vblex"/></r></p></e> 
- <e a="joan" r="LR"><p><l>comédien<s n="n"/></l><r>actor<s n="n"/></r></p></e>
+
+<e><p><l>comptitivité<s n="n"/><s n="f"/></l><r>competitivitat<s n="n"/><s n="f"/></r></p><par n="sp_ND"/></e>
+<e><p><l>injustement<s n="adv"/></l><r>injustament<s n="adv"/></r></p></e>
+<e><p><l>principalement<s n="adv"/></l><r>principalment<s n="adv"/></r></p></e>
+<e><p><l>sauvagement<s n="adv"/></l><r>salvatgement<s n="adv"/></r></p></e>
+<e><p><l>longuement<s n="adv"/></l><r>detingudament<s n="adv"/></r></p></e>
+<e><p><l>biographie<s n="n"/><s n="f"/></l><r>biografia<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>filmographie<s n="n"/><s n="f"/></l><r>filmografia<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>comédie<s n="n"/><s n="f"/></l><r>comèdia<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>scénariste<s n="n"/><s n="mf"/></l><r>guionista<s n="n"/><s n="mf"/></r></p></e>
+<e><p><l>authenticité<s n="n"/><s n="f"/></l><r>autenticitat<s n="n"/><s n="f"/></r></p><par n="sp_ND"/></e>
+<e><p><l>par<b/>ailleurs<s n="adv"/></l><r>d'altra<b/>banda<s n="adv"/></r></p></e>
+<e><p><l>fois<s n="n"/><s n="f"/></l><r>vegada<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>secrètement<s n="adv"/></l><r>secretament<s n="adv"/></r></p></e>
+<e><p><l>physiquement<s n="adv"/></l><r>físicament<s n="adv"/></r></p></e>
+<e><p><l>subterfuge<s n="n"/><s n="m"/></l><r>subterfugi<s n="n"/><s n="m"/></r></p><par n="sp_ND"/></e>
+<e><p><l>inné<s n="adj"/></l><r>innat<s n="adj"/></r></p></e>
+<e><p><l>comédien<s n="n"/><s n="m"/></l><r>actor<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>comédien<s n="n"/><s n="f"/></l><r>artista<s n="n"/><s n="mf"/></r></p></e>
+<e><p><l>avérer<s n="vblex"/></l><r>resultar<s n="vblex"/></r></p></e>
+<e><p><l>visionner<s n="vblex"/></l><r>visionar<s n="vblex"/></r></p></e>
+<e><p><l>supercherie<s n="n"/><s n="f"/></l><r>estafa<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>couvent<s n="n"/><s n="m"/></l><r>convent<s n="n"/><s n="m"/></r></p><par n="sp_ND"/></e>
+<e><p><l>additionnel<s n="adj"/></l><r>addicional<s n="adj"/></r></p></e>
+<e><p><l>ténor<s n="n"/><s n="m"/></l><r>tenor<s n="n"/><s n="m"/></r></p><par n="sp_ND"/></e>
+<e><p><l>séquence<s n="n"/><s n="m"/></l><r>seqüència<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>flic<s n="n"/><s n="mf"/></l><r>policia<s n="n"/><s n="mf"/></r></p></e>
+<e><p><l>commercialement<s n="adv"/></l><r>comercialment<s n="adv"/></r></p></e>
+<e><p><l>échec<s n="n"/><s n="m"/></l><r>fracàs<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>audition<s n="n"/><s n="m"/></l><r>audició<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>tenancier<s n="n"/><s n="m"/></l><r>encarregat<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>oeuf<s n="n"/><s n="m"/></l><r>ou<s n="n"/><s n="m"/></r></p><par n="sp_ND"/></e>
+<e><p><l>peninsule<s n="n"/><s n="m"/></l><r>península<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>panne<s n="n"/><s n="m"/></l><r>averia<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>traumatiser<s n="vblex"/></l><r>traumatitzar<s n="vblex"/></r></p></e>
+<e><p><l>homosexuel<s n="n"/><s n="m"/></l><r>homosexual<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>protagoniste<s n="n"/><s n="mf"/></l><r>protagonista<s n="n"/><s n="mf"/></r></p></e>
+<e><p><l>insensibilité<s n="n"/><s n="f"/></l><r>insensibilitat<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>typographe<s n="n"/><s n="m"/></l><r>tipògraf<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>sociologue<s n="n"/><s n="m"/></l><r>sociòleg<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>énigme<s n="n"/><s n="m"/></l><r>enigma<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>interview<s n="n"/><s n="f"/></l><r>entrevista<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>surprenant<s n="adj"/></l><r>sorprenent<s n="adj"/></r></p></e>
+<e><p><l>téléphonique<s n="adj"/></l><r>telefònic<s n="adj"/></r></p><par n="mf_GD"/></e>
+<e><p><l>spécialité<s n="n"/><s n="f"/></l><r>especialitat<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>fiancé<s n="n"/><s n="m"/></l><r>promès<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>miteux<s n="adj"/></l><r>miserable<s n="adj"/></r></p></e>
+<e><p><l>cinématographique<s n="adj"/></l><r>cinematogràfic<s n="adj"/></r></p></e>
+<e><p><l>prostituée<s n="n"/><s n="f"/></l><r>prostituta<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>psychiatre<s n="n"/><s n="mf"/></l><r>psiquiatra<s n="n"/><s n="mf"/></r></p></e>
+<e><p><l>soupçonner<s n="vblex"/></l><r>sospitar<s n="vblex"/></r></p></e>
+<e><p><l>enquêteur<s n="n"/><s n="m"/></l><r>investigador<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>enquêteur<s n="n"/><s n="f"/></l><r>investigador<s n="n"/><s n="f"/></r></p></e>
+
 
 
 
