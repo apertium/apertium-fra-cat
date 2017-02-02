@@ -1,15 +1,17 @@
 <rules>
   <!-- 
-    This rule chooses "energía" as the translation of "power" when it is preceded by "wind". 
-    Add your own rules within <rule> here, using the resources below as a guide 
+    dues vegades DE cinc >> deux fois sur cinq
   -->
-
-  <rule>
-    <match lemma="wind"/>
-    <match lemma="power" tags="n.*">
-      <select lemma="energía" tags="n.*"/>
-    </match>
+  <rule weight="1.0">
+    <match tags="num.*"/>
+    <match lemma="vegada" tags="n.*"/>
+    <match lemma="de" tags="pr"><select lemma="sur" tags="pr"/></match>
+    <match tags="num.*"/>
   </rule>
+  <rule weight="0.8">
+    <match lemma="de" tags="pr"><select lemma="sur" tags="pr"/></match>
+  </rule>
+
 </rules>
 
 <!-- 

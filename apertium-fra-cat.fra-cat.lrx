@@ -77,4 +77,18 @@
     <match lemma="être" tags="vblex.*"><select lemma="ser" tags="vbser.*"/></match>
     <match lemma="dans" tags="pr"><select lemma="a" tags="pr"/></match>
   </rule>
+
+  <!-- 
+    deux fois sur cinq >> dues vegades DE cinc
+  -->
+  <rule weight="1.0">
+    <match tags="num.*"/>
+    <match lemma="fois" tags="n.*"/>
+    <match lemma="sur" tags="pr"><select lemma="de" tags="pr"/></match>
+    <match tags="num.*"/>
+  </rule>
+  <rule weight="0.8">
+    <match lemma="sur" tags="pr"><select lemma="sobre" tags="pr"/></match>
+  </rule>
+
 </rules>
