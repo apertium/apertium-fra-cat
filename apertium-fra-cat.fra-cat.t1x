@@ -3296,8 +3296,72 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
+   <rule>
+<!--REGLA: NUMERAL NOM NUM (20 novembre 1998: 20 de novembre de 1998)-->
+      <pattern>
+        <pattern-item n="num"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="num"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord3">
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <choose>
+          <when>
+            <test>
+              <in caseless="yes">
+                <clip pos="2" side="sl" part="lem"/>
+                <list n="mois"/>
+              </in>
+            </test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <lit v="de"/>
+                <lit-tag v="pr"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <lit v="de"/>
+                <lit-tag v="pr"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+    
     <rule>
-<!--REGLA: DET NUMERAL NOM  NUM (le 20 novembre 1998: el 20 de novembre de 1998)-->
+<!--REGLA: DET NUMERAL NOM NUM (le 20 novembre 1998: el 20 de novembre de 1998)-->
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="num"/>
