@@ -203,11 +203,11 @@ clean-local:
 ###############################################################################
 
 test: all
-	echo "house" | apertium -d . fra-cat | tee .test-mt
-	@echo "house" > .test-ref
+	echo "La plume de ma tante" | apertium -d . fra-cat | tee .test-mt
+	@echo "La ploma de la meva tia" > .test-ref
 	@diff .test-ref .test-mt
-	echo "house" | apertium -d . cat-fra | tee .test-mt
-	@echo "house" > .test-ref
+	echo "La tia" | apertium -d . cat-fra | tee .test-mt
+	@echo "La tante" > .test-ref
 	@diff .test-ref .test-mt
 	@rm .test-ref .test-mt
 
