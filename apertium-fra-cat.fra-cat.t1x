@@ -6178,17 +6178,14 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="verb"/>
       </pattern>
       <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
-              <clip pos="2" side="tl" part="lemh"/>
+              <clip pos="2" side="tl" part="whole"/>
             </get-case-from>
-            <clip pos="2" side="tl" part="a_verb"/>
-            <clip pos="2" side="tl" part="temps"/>
-            <clip pos="2" side="tl" part="persona"/>
-            <clip pos="2" side="tl" part="gen"/>
-            <clip pos="2" side="tl" part="nbr"/>
-            <clip pos="2" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
@@ -6321,6 +6318,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord1">
           <with-param pos="2"/>
         </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -6332,13 +6332,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
           <b pos="1"/>
           <lu>
-            <clip pos="3" side="tl" part="lemh"/>
-            <clip pos="3" side="tl" part="a_verb"/>
-            <clip pos="3" side="tl" part="temps"/>
-            <clip pos="3" side="tl" part="persona"/>
-            <clip pos="3" side="tl" part="gen"/>
-            <clip pos="3" side="tl" part="nbr"/>
-            <clip pos="3" side="tl" part="lemq"/>
+            <clip pos="3" side="tl" part="whole"/>
           </lu>
         </out>
       </action>
@@ -6352,6 +6346,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="verb"/>
       </pattern>
       <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -6361,13 +6358,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
           <b pos="1"/>
           <lu>
-            <clip pos="3" side="tl" part="lemh"/>
-            <clip pos="3" side="tl" part="a_verb"/>
-            <clip pos="3" side="tl" part="temps"/>
-            <clip pos="3" side="tl" part="persona"/>
-            <clip pos="3" side="tl" part="gen"/>
-            <clip pos="3" side="tl" part="nbr"/>
-            <clip pos="3" side="tl" part="lemq"/>
+            <clip pos="3" side="tl" part="whole"/>
           </lu>
         </out>
       </action>
@@ -6382,6 +6373,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="pas"/>
       </pattern>
       <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -6391,13 +6385,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
           <b pos="1"/>
           <lu>
-            <clip pos="3" side="tl" part="lemh"/>
-            <clip pos="3" side="tl" part="a_verb"/>
-            <clip pos="3" side="tl" part="temps"/>
-            <clip pos="3" side="tl" part="persona"/>
-            <clip pos="3" side="tl" part="gen"/>
-            <clip pos="3" side="tl" part="nbr"/>
-            <clip pos="3" side="tl" part="lemq"/>
+            <clip pos="3" side="tl" part="whole"/>
           </lu>
         </out>
       </action>
@@ -6412,6 +6400,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="que"/>
       </pattern>
       <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -6421,13 +6412,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
           <b pos="1"/>
           <lu>
-            <clip pos="3" side="tl" part="lemh"/>
-            <clip pos="3" side="tl" part="a_verb"/>
-            <clip pos="3" side="tl" part="temps"/>
-            <clip pos="3" side="tl" part="persona"/>
-            <clip pos="3" side="tl" part="gen"/>
-            <clip pos="3" side="tl" part="nbr"/>
-            <clip pos="3" side="tl" part="lemq"/>
+            <clip pos="3" side="tl" part="whole"/>
           </lu>
           <b pos="2"/>
           <lu>
@@ -6454,6 +6439,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord1">
           <with-param pos="3"/>
         </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="4"/>
+        </call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -6470,13 +6458,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
           <b pos="2"/>
           <lu>
-            <clip pos="4" side="tl" part="lemh"/>
-            <clip pos="4" side="tl" part="a_verb"/>
-            <clip pos="4" side="tl" part="temps"/>
-            <clip pos="4" side="tl" part="persona"/>
-            <clip pos="4" side="tl" part="gen"/>
-            <clip pos="4" side="tl" part="nbr"/>
-            <clip pos="4" side="tl" part="lemq"/>
+            <clip pos="4" side="tl" part="whole"/>
           </lu>
         </out>
       </action>
@@ -6495,6 +6477,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord1">
           <with-param pos="3"/>
         </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="4"/>
+        </call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -6508,13 +6493,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
           <b pos="2"/>
           <lu>
-            <clip pos="4" side="tl" part="lemh"/>
-            <clip pos="4" side="tl" part="a_verb"/>
-            <clip pos="4" side="tl" part="temps"/>
-            <clip pos="4" side="tl" part="persona"/>
-            <clip pos="4" side="tl" part="gen"/>
-            <clip pos="4" side="tl" part="nbr"/>
-            <clip pos="4" side="tl" part="lemq"/>
+            <clip pos="4" side="tl" part="whole"/>
           </lu>
         </out>
       </action>
@@ -6533,6 +6512,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord1">
           <with-param pos="3"/>
         </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="4"/>
+        </call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -6546,13 +6528,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
           <b pos="2"/>
           <lu>
-            <clip pos="4" side="tl" part="lemh"/>
-            <clip pos="4" side="tl" part="a_verb"/>
-            <clip pos="4" side="tl" part="temps"/>
-            <clip pos="4" side="tl" part="persona"/>
-            <clip pos="4" side="tl" part="gen"/>
-            <clip pos="4" side="tl" part="nbr"/>
-            <clip pos="4" side="tl" part="lemq"/>
+            <clip pos="4" side="tl" part="whole"/>
           </lu>
           <b pos="3"/>
           <lu>
@@ -6582,6 +6558,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord1">
           <with-param pos="3"/>
         </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="4"/>
+        </call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -6597,13 +6576,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
           <b pos="2"/>
           <lu>
-            <clip pos="4" side="tl" part="lemh"/>
-            <clip pos="4" side="tl" part="a_verb"/>
-            <clip pos="4" side="tl" part="temps"/>
-            <clip pos="4" side="tl" part="persona"/>
-            <clip pos="4" side="tl" part="gen"/>
-            <clip pos="4" side="tl" part="nbr"/>
-            <clip pos="4" side="tl" part="lemq"/>
+            <clip pos="4" side="tl" part="whole"/>
           </lu>
         </out>
       </action>
@@ -6625,6 +6598,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord1">
           <with-param pos="4"/>
         </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="5"/>
+        </call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -6642,13 +6618,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
           <b pos="3"/>
           <lu>
-            <clip pos="5" side="tl" part="lemh"/>
-            <clip pos="5" side="tl" part="a_verb"/>
-            <clip pos="5" side="tl" part="temps"/>
-            <clip pos="5" side="tl" part="persona"/>
-            <clip pos="5" side="tl" part="gen"/>
-            <clip pos="5" side="tl" part="nbr"/>
-            <clip pos="5" side="tl" part="lemq"/>
+            <clip pos="5" side="tl" part="whole"/>
           </lu>
         </out>
       </action>
@@ -6671,6 +6641,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord1">
           <with-param pos="4"/>
         </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="5"/>
+        </call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -6688,13 +6661,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
           <b pos="3"/>
           <lu>
-            <clip pos="5" side="tl" part="lemh"/>
-            <clip pos="5" side="tl" part="a_verb"/>
-            <clip pos="5" side="tl" part="temps"/>
-            <clip pos="5" side="tl" part="persona"/>
-            <clip pos="5" side="tl" part="gen"/>
-            <clip pos="5" side="tl" part="nbr"/>
-            <clip pos="5" side="tl" part="lemq"/>
+            <clip pos="5" side="tl" part="whole"/>
           </lu>
         </out>
       </action>
