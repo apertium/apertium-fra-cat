@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!-- -*- nxml -*- -->
 <transfer>
 
@@ -399,6 +398,7 @@
     <def-var n="exclamativa"/>
     <def-var n="auxg"/>
     <def-var n="auxn"/>
+    <def-var n="aux"/>
   </section-def-vars>
   
   <section-def-lists>
@@ -439,6 +439,58 @@
   
   <section-def-macros>
 
+  <def-macro n="f_prn_prn" npar="2">
+<!-- analiza els dos pronoms (típicament CD i CI) i, si cal, en canvia l'ordre -->
+     <choose>
+<!-- opcio valenciana
+      <when>
+        <test>
+          <and>
+            <equal><clip pos="1" side="sl" part="lem"/><lit v="le"/></equal>
+            <equal><clip pos="2" side="sl" part="lem"/><lit v="lui"/></equal>
+         </and>
+        </test>
+        <let><clip pos="1" side="tl" part="whole"/><clip pos="2" side="tl" part="whole"/></let>
+        <let><clip pos="2" side="tl" part="whole"/><clip pos="1" side="tl" part="whole"/></let>
+      </when>
+-->
+<!-- opcio principatina
+-->
+      <when>
+        <test>
+          <and>
+            <equal><clip pos="1" side="sl" part="lem"/><lit v="le"/></equal>
+            <equal><clip pos="1" side="sl" part="gen"/><lit-tag v="f"/></equal>
+            <equal><clip pos="2" side="sl" part="lem"/><lit v="lui"/></equal>
+         </and>
+        </test>
+        <let><clip pos="2" side="tl" part="whole"/><concat><lit v="hi"/><lit-tag v="prn.pro.adv"/></concat></let>
+      </when>
+      <when>
+        <test>
+          <and>
+            <equal><clip pos="1" side="sl" part="lem"/><lit v="le"/></equal>
+            <equal><clip pos="1" side="sl" part="gen"/><lit-tag v="m"/></equal>
+            <equal><clip pos="2" side="sl" part="lem"/><lit v="lui"/></equal>
+         </and>
+        </test>
+        <let><clip pos="2" side="tl" part="whole"/><concat><lit v="hi"/><lit-tag v="prn.pro.adv"/></concat></let>
+      </when>
+      <when>
+        <test>
+          <and>
+            <equal><clip pos="1" side="sl" part="lem"/><lit v="le"/></equal>
+            <equal><clip pos="1" side="sl" part="gen"/><lit-tag v="nt"/></equal>
+            <equal><clip pos="2" side="sl" part="lem"/><lit v="lui"/></equal>
+         </and>
+        </test>
+        <let><var n="aux"/><clip pos="1" side="tl" part="whole"/></let>
+        <let><clip pos="1" side="tl" part="whole"/><clip pos="2" side="tl" part="whole"/></let>
+        <let><clip pos="2" side="tl" part="whole"/><var n="aux"/></let>
+      </when>
+    </choose>
+  </def-macro>
+ 
   <def-macro n="f_ifi1" npar="1">
      <choose>
       <when>
@@ -6560,6 +6612,10 @@ is not applicable because gender and number cannot be taken from previous rules 
         </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="4"/>
+        </call-macro>
+        <call-macro n="f_prn_prn">
+          <with-param pos="2"/>
+          <with-param pos="3"/>
         </call-macro>
         <out>
           <lu>
