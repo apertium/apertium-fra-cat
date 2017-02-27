@@ -118,6 +118,13 @@
       <e r="RL"><p><l><s n="mf"/><s n="sp"/></l><r><s n="mf"/><s n="pl"/></r></p></e>
     </pardef>
 
+    <pardef n="m_f|sp_ND">
+      <e r="LR"><p><l><s n="m"/><s n="sp"/></l><r><s n="m"/><s n="ND"/></r></p></e>
+      <e r="RL"><p><l><s n="m"/><s n="sp"/></l><r><s n="m"/><s n="sg"/></r></p></e>
+      <e r="RL"><p><l><s n="m"/><s n="sp"/></l><r><s n="m"/><s n="pl"/></r></p></e>
+      <e>       <p><l><s n="f"/></l><r><s n="f"/></r></p></e>
+    </pardef>
+
 
 
   </pardefs>
@@ -1308,6 +1315,7 @@
     <e>       <p><l>autrement<s n="adv"/></l>         <r>d'una<b/>altra<b/>manera<s n="adv"/></r></p></e>
     <e>       <p><l>Autriche<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Àustria<s n="np"/><s n="loc"/></r></p></e>
     <e>       <p><l>autrichien<s n="adj"/></l>        <r>austríac<s n="adj"/></r></p></e>
+    <e>       <p><l>autrichien<s n="n"/></l>        <r>austríac<s n="n"/></r></p></e>
     <e r="LR"><p><l>autrui<s n="prn"/><s n="tn"/><s n="mf"/><s n="sg"/></l><r>un<b/>altre<s n="prn"/><s n="tn"/><s n="GD"/><s n="sg"/></r></p></e>
     <e r="RL"><p><l>autrui<s n="prn"/><s n="tn"/><s n="mf"/><s n="sg"/></l><r>un<b/>altre<s n="prn"/><s n="tn"/><s n="f"/><s n="pl"/></r></p></e>
     <e r="RL"><p><l>autrui<s n="prn"/><s n="tn"/><s n="mf"/><s n="sg"/></l><r>un<b/>altre<s n="prn"/><s n="tn"/><s n="f"/><s n="sg"/></r></p></e>
@@ -1783,8 +1791,10 @@
     <e r="RL"><p><l>bref<s n="adj"/><s n="GD"/></l>   <r>breu<s n="adj"/><s n="mf"/></r></p></e>
     <e>       <p><l>Brésil<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Brasil<s n="np"/><s n="loc"/></r></p></e>
     <e>       <p><l>brésilien<s n="adj"/></l>         <r>brasiler<s n="adj"/></r></p></e>
-    <e>       <p><l>Bretagne<s n="np"/><s n="top"/><s n="un"/><s n="sg"/></l><r>Bretanya<s n="np"/><s n="loc"/></r></p></e>
+    <e>       <p><l>Bretagne<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Bretanya<s n="np"/><s n="loc"/></r></p></e>
+    <e>       <p><l>Grande-Bretagne<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Gran<b/>Bretanya<s n="np"/><s n="loc"/></r></p></e>
     <e>       <p><l>breton<s n="n"/></l>              <r>bretó<s n="n"/></r></p></e>
+    <e>       <p><l>breton<s n="adj"/></l>            <r>bretó<s n="adj"/></r></p></e>
     <e a="gema"><p><l>Brian<s n="np"/></l><r>Brian<s n="np"/></r></p></e>
     <e>       <p><l>brider<s n="vblex"/></l>          <r>embridar<s n="vblex"/></r></p></e>
     <e a="u21941"><p><l>brigade<s n="n"/></l>         <r>brigada<s n="n"/></r></p></e>
@@ -2299,14 +2309,6 @@
     <e>       <p><l>chimie<s n="n"/><s n="f"/><s n="sg"/></l><r>química<s n="n"/><s n="f"/><s n="sg"/></r></p></e>
     <e>       <p><l>Chine<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Xina<s n="np"/><s n="loc"/></r></p></e>
     <e r="LR"><p><l>chiner<s n="vblex"/></l>          <r>tenyir<s n="vblex"/></r></p></e>
-    <e>       <p><l>chinois<s n="adj"/><s n="f"/></l> <r>xinès<s n="adj"/><s n="f"/></r></p></e>
-    <e>       <p><l>chinois<s n="n"/><s n="f"/></l>   <r>xinès<s n="n"/><s n="f"/></r></p></e>
-    <e r="LR"><p><l>chinois<s n="adj"/><s n="m"/><s n="sp"/></l><r>xinès<s n="adj"/><s n="m"/><s n="ND"/></r></p></e>
-    <e r="LR"><p><l>chinois<s n="n"/><s n="m"/><s n="sp"/></l><r>xinès<s n="n"/><s n="m"/><s n="ND"/></r></p></e>
-    <e r="RL"><p><l>chinois<s n="adj"/><s n="m"/><s n="sp"/></l><r>xinès<s n="adj"/><s n="m"/><s n="pl"/></r></p></e>
-    <e r="RL"><p><l>chinois<s n="adj"/><s n="m"/><s n="sp"/></l><r>xinès<s n="adj"/><s n="m"/><s n="sg"/></r></p></e>
-    <e r="RL"><p><l>chinois<s n="n"/><s n="m"/><s n="sp"/></l><r>xinès<s n="n"/><s n="m"/><s n="pl"/></r></p></e>
-    <e r="RL"><p><l>chinois<s n="n"/><s n="m"/><s n="sp"/></l><r>xinès<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
     <e>       <p><l>Chirac<s n="np"/></l><r>Chirac<s n="np"/></r></p></e>
     <e>       <p><l>Chirivella<s n="np"/><s n="top"/><s n="un"/><s n="sg"/></l><r>Xirivella<s n="np"/><s n="loc"/></r></p></e>
     <e>       <p><l>chirurgical<s n="adj"/></l>       <r>quirúrgic<s n="adj"/></r></p></e>
@@ -2939,7 +2941,8 @@
     <e r="RL"><p><l>corridor<s n="n"/><s n="m"/></l>  <r>corredor<s n="n"/><s n="f"/></r></p></e>
     <e>       <p><l>corriger<s n="vblex"/></l>        <r>corregir<s n="vblex"/></r></p></e>
     <e>       <p><l>corruption<s n="n"/></l>          <r>corrupció<s n="n"/></r></p></e>
-    <e>       <p><l>Corse<s n="np"/><s n="top"/><s n="un"/><s n="sg"/></l><r>Còrsega<s n="np"/><s n="loc"/></r></p></e>
+    <e>       <p><l>Corse<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Còrsega<s n="np"/><s n="loc"/></r></p></e>
+    <e>       <p><l>Haute-Corse<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Alta<b/>Còrsega<s n="np"/><s n="loc"/></r></p></e>
     <e>       <p><l>cosmopolite<s n="adj"/></l>       <r>cosmopolita<s n="adj"/></r></p></e>
     <e>       <p><l>cosmopolite<s n="n"/></l>         <r>cosmopolita<s n="n"/></r></p></e>
     <e r="LR"><p><l>costumer<s n="vblex"/></l>        <r>disfressar<s n="vblex"/></r></p></e>
@@ -3988,7 +3991,10 @@
     <e>       <p><l>égoïste<s n="adj"/><s n="mf"/></l><r>egoista<s n="adj"/><s n="mf"/></r></p></e>
     <e>       <p><l>égorger<s n="vblex"/></l>         <r>degollar<s n="vblex"/></r></p></e>
     <e>       <p><l>Égypte<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Egipte<s n="np"/><s n="loc"/></r></p></e>
+    <e>       <p><l>Haute-Égypte<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Alt<b/>Egipte<s n="np"/><s n="loc"/></r></p></e>
+    <e>       <p><l>Basse-Égypte<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Baix<b/>Egipte<s n="np"/><s n="loc"/></r></p></e>
     <e>       <p><l>égyptien<s n="adj"/></l>          <r>egipci<s n="adj"/></r></p></e>
+    <e>       <p><l>égyptien<s n="n"/></l>          <r>egipci<s n="n"/></r></p></e>
     <e>       <p><l>eh<s n="ij"/></l><r>eh<s n="ij"/></r></p></e>
     <e>       <p><l>Eizaguirre<s n="np"/></l><r>Eizaguirre<s n="np"/></r></p></e>
     <e>       <p><l>élaboration<s n="n"/></l>         <r>elaboració<s n="n"/></r></p></e>
@@ -5445,7 +5451,6 @@
 <e r="LR"><p><l>grand<s n="adj"/><s n="m"/></l>   <r>gran<s n="adj"/><s n="mf"/></r></p></e>
 <e r="RL"><p><l>grand<s n="adj"/></l>             <r>alt<s n="adj"/></r></p></e>
 <e r="RL"><p><l>grand<s n="adj"/><s n="GD"/></l>  <r>gran<s n="adj"/><s n="mf"/></r></p></e>
-<e>       <p><l>Grande-Bretagne<s n="np"/></l>    <r>Gran<b/>Bretanya<s n="np"/></r></p></e>
 <e>       <p><l>grandir<s n="vblex"/></l>         <r>créixer<s n="vblex"/></r></p></e>
 <e>       <p><l>grand-mère<s n="n"/><s n="f"/></l>          <r>avi<s n="n"/><s n="f"/></r></p></e>
 <e>       <p><l>grand-père<s n="n"/><s n="m"/></l>          <r>avi<s n="n"/><s n="m"/></r></p></e>
@@ -6478,6 +6483,7 @@
 <e>       <p><l>Javier<s n="np"/></l><r>Javier<s n="np"/></r></p></e>
 <e a="gema"><p><l>jazz<s n="n"/></l>              <r>jazz<s n="n"/></r></p></e>
 <e>       <p><l>je<s n="prn"/></l>                <r>jo<s n="prn"/></r></p></e>
+<e>       <p><l>René<s n="np"/></l><r>René<s n="np"/></r></p></e>
 <e>       <p><l>Jean<s n="np"/></l><r>Jean<s n="np"/></r></p></e>
 <e>       <p><l>Marie<s n="np"/></l><r>Marie<s n="np"/></r></p></e>
 <e>       <p><l>jean<s n="n"/><s n="m"/><s n="pl"/></l><r>texà<s n="n"/><s n="m"/><s n="pl"/></r></p></e>
@@ -7233,7 +7239,6 @@
 <e r="LR"><p><l>mars<s n="n"/><s n="m"/><s n="sp"/></l><r>març<s n="n"/><s n="m"/><s n="ND"/></r></p></e>
 <e r="RL"><p><l>mars<s n="n"/><s n="m"/><s n="sp"/></l><r>març<s n="n"/><s n="m"/><s n="pl"/></r></p></e>
 <e r="RL"><p><l>mars<s n="n"/><s n="m"/><s n="sp"/></l><r>març<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
-<e a="gema"><p><l>Marseille<s n="np"/></l>        <r>Marsella<s n="np"/></r></p></e>
 <e>       <p><l>Marta<s n="np"/></l><r>Marta<s n="np"/></r></p></e>
 <e>       <p><l>Martha<s n="np"/></l><r>Martha<s n="np"/></r></p></e>
 <e>       <p><l>Martí<s n="np"/></l><r>Martí<s n="np"/></r></p></e>
@@ -7311,10 +7316,11 @@
 <e>       <p><l>mécontent<s n="adj"/></l>         <r>descontent<s n="adj"/></r></p></e>
 <e>       <p><l>mécontenter<s n="vblex"/></l>     <r>descontentar<s n="vblex"/></r></p></e>
 <e>       <p><l>médailler<s n="vblex"/></l>       <r>condecorar<s n="vblex"/></r></p></e>
-<e r="LR"><p><l>médecin<s n="n"/><s n="mf"/></l>  <r>metge<s n="n"/><s n="GD"/></r></p></e>
-<e r="RL"><p><l>médecin<s n="n"/><s n="mf"/></l>  <r>metge<s n="n"/><s n="f"/></r></p></e>
-<e r="RL"><p><l>médecin<s n="n"/><s n="mf"/></l>  <r>metge<s n="n"/><s n="m"/></r></p></e>
+<e>       <p><l>médecin<s n="n"/></l>             <r>metge<s n="n"/></r></p><par n="mf_GD"/></e>
+<e>       <p><l>médecin<g><b/>de<b/>garde</g><s n="n"/></l><r>metge<g><b/>de<b/>guàrdia</g><s n="n"/></r></p><par n="mf_GD"/></e>
+<e>       <p><l>médecin<g><b/>de<b/>famille</g><s n="n"/></l><r>metge<g><b/>de<b/>família</g><s n="n"/></r></p><par n="mf_GD"/></e>
 <e>       <p><l>médecine<s n="n"/></l>            <r>medicina<s n="n"/></r></p></e>
+<e>       <p><l>média<s n="n"/><s n="m"/><s n="sg"/></l><r>mitjà<g><b/>de<b/>comunicació</g><s n="n"/><s n="m"/><s n="sg"/></r></p></e>
 <e a="gema"><p><l>média<s n="n"/><s n="m"/><s n="pl"/></l><r>mitjà<g><b/>de<b/>comunicació</g><s n="n"/><s n="m"/><s n="pl"/></r></p></e>
 <e a="gema"><p><l>médias<s n="n"/><s n="m"/><s n="pl"/></l><r>mitjà<g><b/>de<b/>comunicació</g><s n="n"/><s n="m"/><s n="pl"/></r></p></e>
 <e>       <p><l>médiateur<s n="adj"/></l>         <r>mediador<s n="adj"/></r></p></e>
@@ -8000,11 +8006,10 @@
 <e>       <p><l>normalisé<s n="adj"/></l>         <r>normalitzat<s n="adj"/></r></p></e>
 <e>       <p><l>normaliser<s n="vblex"/></l>      <r>normalitzar<s n="vblex"/></r></p></e>
 <e>       <p><l>normand<s n="adj"/></l>           <r>normand<s n="adj"/></r></p></e>
-<e>       <p><l>normand<s n="n"/><s n="mf"/></l> <r>normand<s n="n"/><s n="m"/></r></p></e>
-<e>       <p><l>Normandie<s n="n"/></l>           <r>Normandia<s n="n"/></r></p></e>
+<e>       <p><l>normand<s n="n"/></l> <r>normand<s n="n"/></r></p></e>
 <e>       <p><l>normatif<s n="adj"/></l>          <r>normatiu<s n="adj"/></r></p></e>
 <e>       <p><l>norme<s n="n"/></l>               <r>norma<s n="n"/></r></p></e>
-    <e>       <p><l>Norvège<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Noruega<s n="np"/><s n="loc"/></r></p></e>
+<e>       <p><l>Norvège<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Noruega<s n="np"/><s n="loc"/></r></p></e>
 <e>       <p><l>norvégien<s n="adj"/></l>         <r>noruec<s n="adj"/></r></p></e>
 <e>       <p><l>notable<s n="adj"/></l><r>notable<s n="adj"/></r></p></e>
 <e>       <p><l>notablement<s n="adv"/></l><r>notablement<s n="adv"/></r></p></e>
@@ -9495,7 +9500,6 @@
 <e>       <p><l>pyjama<s n="n"/></l>              <r>pijama<s n="n"/></r></p></e>
 <e>       <p><l>pyramide<s n="n"/></l>            <r>piràmide<s n="n"/></r></p></e>
 <e>       <p><l>pyrénéen<s n="adj"/></l>          <r>pirinenc<s n="adj"/></r></p></e>
-<e>       <p><l>Pyrénées<s n="np"/><s n="loc"/></l><r>Pirineus<s n="np"/><s n="loc"/></r></p></e>
     <e>       <p><l>Qatar<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Qatar<s n="np"/><s n="loc"/></r></p></e>
 <e>       <p><l>quai<s n="n"/></l>                <r>moll<s n="n"/></r></p></e>
 <e r="RL"><p><l>quai<s n="n"/><s n="m"/></l>      <r>andana<s n="n"/><s n="f"/></r></p></e>
@@ -10533,7 +10537,6 @@
 <e r="LR"><p><l>seigneur<s n="n"/></l>            <r>senyor<s n="n"/></r></p></e>
 <e r="LR"><p><l>seigneurie<s n="n"/></l>          <r>distinció<s n="n"/></r></p></e>
 <e>       <p><l>sein<s n="n"/></l>                <r>si<s n="n"/></r></p></e>
-<e>       <p><l>Seine<s n="n"/><s n="f"/></l>     <r>Sena<s n="n"/><s n="m"/></r></p></e>
 <e>       <p><l>seize<s n="num"/></l>             <r>setze<s n="num"/></r></p></e>
 <e>       <p><l>séjour<s n="n"/><s n="m"/></l>    <r>estada<s n="n"/><s n="f"/></r></p></e>
 <e>       <p><l>sel<s n="n"/><s n="m"/></l>       <r>sal<s n="n"/><s n="f"/></r></p></e>
@@ -11434,7 +11437,9 @@
 <e>       <p><l>toucher<s n="vblex"/></l>         <r>tocar<s n="vblex"/></r></p></e>
 <e r="RL"><p><l>toucher<s n="vblex"/></l>         <r>cobrar<s n="vblex"/></r></p></e>
 <e>       <p><l>toujours<s n="adv"/></l>          <r>sempre<s n="adv"/></r></p></e>
-    <e>       <p><l>Toulouse<s n="np"/><s n="top"/><s n="un"/><s n="sg"/></l><r>Tolosa<s n="np"/><s n="loc"/></r></p></e>
+<e>       <p><l>Toulouse<s n="np"/><s n="top"/><s n="un"/><s n="sg"/></l><r>Tolosa<s n="np"/><s n="loc"/></r></p></e>
+<e r="RL"><p><l>Toulouse<s n="np"/><s n="top"/><s n="un"/><s n="sg"/></l><r>Tolosa<b/>de<b/>Llenguadoc<s n="np"/><s n="loc"/></r></p></e>
+<e>       <p><l>Marseille<s n="np"/><s n="top"/><s n="un"/><s n="sg"/></l><r>Marsella<s n="np"/><s n="loc"/></r></p></e>
 <e>       <p><l>toupie<s n="n"/></l>              <r>baldufa<s n="n"/></r></p></e>
 <e a="gema" r="RL"><p><l>tour<s n="n"/></l>       <r>torn<s n="n"/></r></p></e>
 <e>       <p><l>tour<s n="n"/><s n="m"/></l>      <r>volta<s n="n"/><s n="f"/></r></p></e>
@@ -15139,7 +15144,10 @@
 <e><p><l>Lorraine<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Lorena<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Bourgogne<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Borgonya<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Provence<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Provença<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Auvergne<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Alvèrnia<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Francophonie<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Francofonia<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Normandie<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Normandia<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Champagne<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Xampanya<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Savoie<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Savoia<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Haute-Savoie<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Alta<b/>Savoia<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Prusse<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Prússia<s n="np"/><s n="loc"/></r></p></e>
@@ -15147,7 +15155,24 @@
 <e>       <p><l>prussien<s n="n"/></l>             <r>prussià<s n="n"/></r></p></e>
 <e>       <p><l>québécois<s n="adj"/></l>           <r>quebequès<s n="adj"/></r></p></e>
 <e>       <p><l>québécois<s n="n"/></l>             <r>quebequès<s n="n"/></r></p></e>
+<e>       <p><l>corse<s n="adj"/></l>           <r>cors<s n="adj"/></r></p><par n="mf_GD"/></e>
+<e>       <p><l>corse<s n="n"/></l>             <r>cors<s n="n"/></r></p><par n="mf_GD"/></e>
+<e>       <p><l>suisse<s n="adj"/></l>           <r>suís<s n="adj"/></r></p><par n="mf_GD"/></e>
+<e>       <p><l>suisse<s n="n"/></l>             <r>suís<s n="n"/></r></p><par n="mf_GD"/></e>
+<e>       <p><l>belge<s n="adj"/></l>           <r>belga<s n="adj"/></r></p></e>
+<e>       <p><l>belge<s n="n"/></l>             <r>belga<s n="n"/></r></p></e>
+<e>       <p><l>canadien<s n="adj"/></l>           <r>canadenc<s n="adj"/></r></p></e>
+<e>       <p><l>canadien<s n="n"/></l>             <r>canadenc<s n="n"/></r></p></e>
+<e>       <p><l>hongrois<s n="adj"/></l>           <r>hongarès<s n="adj"/></r></p><par n="m_f|sp_ND"/></e>
+<e>       <p><l>hongrois<s n="n"/></l>             <r>hongarès<s n="n"/></r></p><par n="m_f|sp_ND"/></e>
+<e>       <p><l>irlandais<s n="adj"/></l>           <r>irlandès<s n="adj"/></r></p><par n="m_f|sp_ND"/></e>
+<e>       <p><l>irlandais<s n="n"/></l>             <r>irlandès<s n="n"/></r></p><par n="m_f|sp_ND"/></e>
+<e>       <p><l>islandais<s n="adj"/></l>           <r>islandès<s n="adj"/></r></p><par n="m_f|sp_ND"/></e>
+<e>       <p><l>islandais<s n="n"/></l>             <r>islandès<s n="n"/></r></p><par n="m_f|sp_ND"/></e>
+<e>       <p><l>chinois<s n="adj"/></l>           <r>xinès<s n="adj"/></r></p><par n="m_f|sp_ND"/></e>
+<e>       <p><l>chinois<s n="n"/></l>             <r>xinès<s n="n"/></r></p><par n="m_f|sp_ND"/></e>
 <e><p><l>Côte<b/>d'Azur<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Costa<b/>Blava<s n="np"/><s n="loc"/></r></p></e>
+<e r="LR"><p><l>Côte-d'Azur<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Costa<b/>Blava<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Côte<b/>d'Ivoire<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Costa<b/>d'Ivori<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Paris<s n="np"/><s n="top"/><s n="un"/><s n="sg"/></l><r>París<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Strasbourg<s n="np"/><s n="top"/><s n="un"/><s n="sg"/></l><r>Estrasburg<s n="np"/><s n="loc"/></r></p></e>
@@ -15158,6 +15183,26 @@
 <e><p><l>Lausanne<s n="np"/><s n="top"/><s n="un"/><s n="sg"/></l><r>Lausana<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Toulouse<s n="np"/><s n="top"/><s n="un"/><s n="sg"/></l><r>Tolosa<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Perpignan<s n="np"/><s n="top"/><s n="un"/><s n="sg"/></l><r>Perpinyà<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Seine<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Sena<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Seine-Maritime<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Sena<b/>Marítim<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Loire<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Loira<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Haut-Loire<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Alt<b/>Loira<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Garonne<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Garona<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Haute-Garonne<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Alta<b/>Garona<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Saône<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Saona<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Haute-Saône<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Alta<b/>Saona<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Rhône<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Roine<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Rhin<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Rin<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Bas-Rhin<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Baix<b/>Rin<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Haut-Rhin<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Alt<b/>Rin<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Ardennes<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Ardenes<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Pyrénées<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Pirineus<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Hautes-Pyrénées<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Alts<b/>Pirineus<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Pyrénées-Orientales<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Pirineus<b/>Orientals<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Pyrénées Atlantiques<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Pirineus<b/>Atlàntics<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Alpes<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Alps<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Alpes-Maritimes<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Alps<b/>Marítims<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Alpes-de-Haute-Provence<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Alps<b/>de<b/>l'Alta<b/>Provença<s n="np"/><s n="loc"/></r></p></e>
 
 
   </section>
