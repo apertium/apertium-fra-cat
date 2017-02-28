@@ -15135,6 +15135,7 @@
 <e><p><l>francophone<s n="adj"/></l><r>francòfon<s n="adj"/></r></p><par n="mf_GD"/></e>
 <e><p><l>asiatique<s n="adj"/></l><r>asiàtic<s n="adj"/></r></p><par n="mf_GD"/></e>
 <e><p><l>Asiatique<s n="n"/></l><r>asiàtic<s n="n"/></r></p><par n="mf_GD"/></e>
+<e><p><l>mythique<s n="adj"/></l><r>mític<s n="adj"/></r></p><par n="mf_GD"/></e>
 <e><p><l>Tchad<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Txad<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Mali<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Mali<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Bénin<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Benín<s n="np"/><s n="loc"/></r></p></e>
@@ -15153,8 +15154,15 @@
 <e><p><l>Haute-Savoie<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Alta<b/>Savoia<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Prusse<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Prússia<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Wallonie<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Valònia<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Flandre<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Flandres<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Flandre<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Flandes<s n="np"/><s n="loc"/></r></p></e>
+<e r="LR"><p><l>Flandres<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Flandes<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Tchétchénie<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Txetxènia<s n="np"/><s n="loc"/></r></p></e>
+<e>       <p><l>savoyard<s n="adj"/></l>           <r>savoià<s n="adj"/></r></p></e>
+<e>       <p><l>savoyard<s n="n"/></l>             <r>savoià<s n="n"/></r></p></e>
+<e>       <p><l>wallon<s n="adj"/></l>           <r>való<s n="adj"/></r></p></e>
+<e>       <p><l>wallon<s n="n"/></l>             <r>való<s n="n"/></r></p></e>
+<e>       <p><l>flamand<s n="adj"/></l>           <r>flamenc<s n="adj"/></r></p></e>
+<e>       <p><l>flamand<s n="n"/></l>             <r>flamenc<s n="n"/></r></p></e>
 <e>       <p><l>prussien<s n="adj"/></l>           <r>prussià<s n="adj"/></r></p></e>
 <e>       <p><l>prussien<s n="n"/></l>             <r>prussià<s n="n"/></r></p></e>
 <e>       <p><l>québécois<s n="adj"/></l>           <r>quebequès<s n="adj"/></r></p></e>
@@ -15192,7 +15200,8 @@
 <e><p><l>Seine<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Sena<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Seine-Maritime<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Sena<b/>Marítim<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Loire<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Loira<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Haut-Loire<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Alt<b/>Loira<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Loire-Atlantique<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Loira<b/>Atlàntic<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Haute-Loire<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Alt<b/>Loira<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Garonne<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Garona<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Haute-Garonne<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Alta<b/>Garona<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Saône<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Saona<s n="np"/><s n="loc"/></r></p></e>
@@ -15210,6 +15219,22 @@
 <e><p><l>Alpes-Maritimes<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Alps<b/>Marítims<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Alpes-de-Haute-Provence<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Alps<b/>de<b/>l'Alta<b/>Provença<s n="np"/><s n="loc"/></r></p></e>
 
+<e><p><l>Andes<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Andes<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Danube<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Danubi<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Nil<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Nil<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Volga<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Volga<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Don<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Don<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Amazone<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Amazones<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Congo<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Congo<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Limpopo<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Limpopo<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Mississipi<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Mississipí<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Missouri<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Missouri<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Saint-Laurent<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Sant<b/>Llorenç<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Hudson<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Hudson<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Colorado<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Colorado<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Suriname<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Surinam<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Marne<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Marne<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Haute-Marne<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Alt<b/>Marne<s n="np"/><s n="loc"/></r></p></e>
 
   </section>
 </dictionary>
