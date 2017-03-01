@@ -35,6 +35,15 @@
     <def-cat n="noadv">
       <cat-item lemma="no" tags="adv"/>
     </def-cat>
+    <def-cat n="negadv"> <!-- adverbis negatius que segueixen un no: no canta pas, mai, enlloc -->
+      <cat-item lemma="pas" tags="adv"/>
+      <cat-item lemma="mai" tags="adv"/>
+      <cat-item lemma="enlloc" tags="adv"/>
+      <cat-item lemma="gens" tags="adv"/>
+      <cat-item lemma="gens ni mica" tags="adv"/>
+      <cat-item lemma="de cap manera" tags="adv"/>
+      <cat-item lemma="gaire" tags="adv"/>
+    </def-cat>
     <def-cat n="prep">
       <cat-item tags="pr"/>
     </def-cat>
@@ -4201,6 +4210,114 @@ is not applicable because gender and number can not be taken from previous rules
             	<clip pos="2" side="tl" part="lemq"/>
           </lu>
 	      <b/>
+	  <lu>
+                <lit v="pas"/>
+                <lit-tag v="adv"/>
+	  </lu>
+        </out>
+      </action>
+  </rule> 
+  
+  
+    <rule>
+<!--REGLA: no+ verb en forma personal + pas, gens, gaire, etc.-->
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="negadv"/>
+      </pattern>
+      <action>
+        <out>
+	  <lu>
+             <clip pos="1" side="tl" part="whole"/>
+          </lu>
+	       <b pos="1"/>
+          <lu>
+        	<clip pos="2" side="tl" part="lemh"/>
+           	<clip pos="2" side="tl" part="a_verb"/>
+            	<clip pos="2" side="tl" part="temps"/>
+            	<clip pos="2" side="tl" part="persona"/>
+		<clip pos="2" side="tl" part="gen"/>		
+            	<clip pos="2" side="tl" part="nbr"/>
+            	<clip pos="2" side="tl" part="lemq"/>
+          </lu>
+	      <b pos="2"/>
+	  <lu>
+             <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+  </rule> 
+  
+  
+    <rule>
+<!--REGLA: no+ prnpro + verb en forma personal: no en vull > je n'en veux pas-->
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="prnpro"/>
+        <pattern-item n="verb"/>
+      </pattern>
+      <action>
+        <out>
+	  <lu>
+             <clip pos="1" side="tl" part="whole"/>
+          </lu>
+	       <b pos="1"/>
+	  <lu>
+             <clip pos="2" side="tl" part="whole"/>
+          </lu>
+	       <b pos="2"/>
+          <lu>
+        	<clip pos="3" side="tl" part="lemh"/>
+           	<clip pos="3" side="tl" part="a_verb"/>
+            	<clip pos="3" side="tl" part="temps"/>
+            	<clip pos="3" side="tl" part="persona"/>
+		<clip pos="3" side="tl" part="gen"/>		
+            	<clip pos="3" side="tl" part="nbr"/>
+            	<clip pos="3" side="tl" part="lemq"/>
+          </lu>
+	       <b/>
+	  <lu>
+                <lit v="pas"/>
+                <lit-tag v="adv"/>
+	  </lu>
+        </out>
+      </action>
+  </rule> 
+  
+  
+    <rule>
+<!--REGLA: no+ prnpro + prnpro ++ verb en forma personal: no n'hi vull > je n'en y veux pas-->
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="prnpro"/>
+        <pattern-item n="prnpro"/>
+        <pattern-item n="verb"/>
+      </pattern>
+      <action>
+        <out>
+	  <lu>
+             <clip pos="1" side="tl" part="whole"/>
+          </lu>
+	       <b pos="1"/>
+	  <lu>
+             <clip pos="2" side="tl" part="whole"/>
+          </lu>
+	       <b pos="2"/>
+	  <lu>
+             <clip pos="3" side="tl" part="whole"/>
+          </lu>
+	       <b pos="3"/>
+          <lu>
+        	<clip pos="4" side="tl" part="lemh"/>
+           	<clip pos="4" side="tl" part="a_verb"/>
+            	<clip pos="4" side="tl" part="temps"/>
+            	<clip pos="4" side="tl" part="persona"/>
+		<clip pos="4" side="tl" part="gen"/>		
+            	<clip pos="4" side="tl" part="nbr"/>
+            	<clip pos="4" side="tl" part="lemq"/>
+          </lu>
+	       <b/>
 	  <lu>
                 <lit v="pas"/>
                 <lit-tag v="adv"/>

@@ -5525,6 +5525,9 @@
     <e>       <p><l>Guardamar<s n="np"/><s n="top"/><s n="un"/><s n="sg"/></l><r>Guardamar<s n="np"/><s n="loc"/></r></p></e>
     <e>       <p><l>Guatemala<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Guatemala<s n="np"/><s n="loc"/></r></p></e>
 <e r="LR"><p><l>guère<s n="preadv"/></l>          <r>gaire<s n="preadv"/></r></p></e>
+<e>       <p><l>pas<b/>beaucoup<s n="adv"/></l>   <r>gaire<s n="adv"/></r></p></e>
+<e>       <p><l>pas<b/>du<b/>tout<s n="adv"/></l> <r>gens<s n="adv"/></r></p></e>
+<!-- <e r="LR"><p><l>point<s n="adv"/></l>             <r>gens<s n="adv"/></r></p></e> dóna massa problemes -->
 <e>       <p><l>guerre<s n="n"/></l>              <r>guerra<s n="n"/></r></p></e>
 <e>       <p><l>Guerrero<s n="np"/></l><r>Guerrero<s n="np"/></r></p></e>
 <e>       <p><l>guerrier<s n="adj"/></l>          <r>guerrer<s n="adj"/></r></p></e>
@@ -14724,8 +14727,9 @@
 <e><p><l>défausser<s n="vblex"/></l><r>lliurar<s n="vblex"/></r></p></e>
 <e><p><l>défier<s n="vblex"/></l><r>desafiar<s n="vblex"/></r></p></e>
 <e><p><l>déloger<s n="vblex"/></l><r>desallotjar<s n="vblex"/></r></p></e>
-<e><p><l>démarrer<s n="vblex"/></l><r>arrancar<s n="vblex"/></r></p></e>
-<e><p><l>démarrer<s n="vblex"/></l><r>arrencar<s n="vblex"/></r></p></e>
+<e vr="val"><p><l>démarrer<s n="vblex"/></l><r>arrancar<s n="vblex"/></r></p></e>
+<e vr="cat"><p><l>démarrer<s n="vblex"/></l><r>arrencar<s n="vblex"/></r></p></e>
+<e a="cat"><p><l>démarrer<s n="vblex"/></l><r>arrencar<s n="vblex"/></r></p></e>
 <e><p><l>dénigrer<s n="vblex"/></l><r>denigrar<s n="vblex"/></r></p></e>
 <e><p><l>dénommer<s n="vblex"/></l><r>anomenar<s n="vblex"/></r></p></e>
 <e><p><l>dénommer<s n="vblex"/></l><r>denominar<s n="vblex"/></r></p></e>
