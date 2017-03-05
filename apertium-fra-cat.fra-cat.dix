@@ -661,7 +661,9 @@
     <e>       <p><l>Almunia<s n="np"/></l><r>Almunia<s n="np"/></r></p></e>
     <e>       <p><l>Alonso<s n="np"/></l><r>Alonso<s n="np"/></r></p></e>
     <e>       <p><l>alors<s n="adv"/></l>             <r>llavors<s n="adv"/></r></p></e>
+    <e r="RL"><p><l>alors<s n="adv"/></l>             <r>aleshores<s n="adv"/></r></p></e>
     <e>       <p><l>alors<s n="cnjadv"/></l>          <r>llavors<s n="cnjadv"/></r></p></e>
+    <e r="RL"><p><l>alors<s n="cnjadv"/></l>          <r>aleshores<s n="cnjadv"/></r></p></e>
     <e>       <p><l>alors<b/>que<s n="cnjadv"/></l>   <r>mentre<b/>que<s n="cnjadv"/></r></p></e>
     <e>       <p><l>alouette<s n="n"/></l>            <r>alosa<s n="n"/></r></p></e>
     <e r="LR"><p><l>alourdir<s n="vblex"/></l>        <r>sobrecarregar<s n="vblex"/></r></p></e>
@@ -12058,6 +12060,8 @@
     <e>       <p><l>vouloir<s n="vbmod"/></l>         <r>voler<s n="vbmod"/></r></p></e>
     <e>       <p><l>vous<s n="prn"/></l>              <r>us<s n="prn"/></r></p></e>
     <e>       <p><l>vous<s n="prn"/><s n="tn"/></l>   <r>vosaltres<s n="prn"/><s n="tn"/></r></p></e>
+    <e r="RL"><p><l>vous<s n="prn"/><s n="tn"/><s n="p2"/><s n="mf"/><s n="pl"/></l>   <r>vostè<s n="prn"/><s n="tn"/><s n="p3"/><s n="mf"/><s n="sg"/></r></p></e>
+    <e r="RL"><p><l>vous<s n="prn"/><s n="tn"/><s n="p2"/><s n="mf"/><s n="pl"/></l>   <r>vostè<s n="prn"/><s n="tn"/><s n="p3"/><s n="mf"/><s n="pl"/></r></p></e>
     <e a="mikel"><p><l>voyage<s n="n"/></l>           <r>viatge<s n="n"/></r></p></e>
     <e>       <p><l>voyager<s n="vblex"/></l>         <r>viatjar<s n="vblex"/></r></p></e>
     <e>       <p><l>voyageur<s n="adj"/></l>          <r>viatger<s n="adj"/></r></p></e>
@@ -15201,34 +15205,42 @@
 <e><p><l>Lausanne<s n="np"/><s n="top"/><s n="un"/><s n="sg"/></l><r>Lausana<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Toulouse<s n="np"/><s n="top"/><s n="un"/><s n="sg"/></l><r>Tolosa<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Perpignan<s n="np"/><s n="top"/><s n="un"/><s n="sg"/></l><r>Perpinyà<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Seine<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Sena<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Seine-Maritime<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Sena<b/>Marítim<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Loire<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Loira<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Loire-Atlantique<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Loira<b/>Atlàntic<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Haute-Loire<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Alt<b/>Loira<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Garonne<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Garona<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Haute-Garonne<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Alta<b/>Garona<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Saône<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Saona<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Haute-Saône<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Alta<b/>Saona<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Rhône<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Roine<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Rhin<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Rin<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Bas-Rhin<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Baix<b/>Rin<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Haut-Rhin<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Alt<b/>Rin<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Ardennes<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Ardenes<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Pyrénées<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Pirineus<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Marroc<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Marroc<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Algérie<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Algèria<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Tunisie<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Tunísia<s n="np"/><s n="loc"/></r></p></e>
+<!-- <e><p><l>Seine<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Sena<s n="np"/><s n="loc"/></r></p></e> -->
+<e><p><l>Jura<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Jura<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
+<e><p><l>Seine<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Sena<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
+<e><p><l>Seine-Maritime<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Sena<b/>Marítim<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
+<e><p><l>Loire<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Loira<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
+<e><p><l>Loire-Atlantique<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Loira<b/>Atlàntic<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
+<e><p><l>Haute-Loire<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Alt<b/>Loira<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
+<e><p><l>Garonne<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Garona<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></r></p></e>
+<e><p><l>Moselle<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Mosel·la<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></r></p></e>
+<e><p><l>Jura<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Jura<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
+<e><p><l>Haute-Garonne<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Alta<b/>Garona<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></r></p></e>
+<e><p><l>Saône<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Saona<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></r></p></e>
+<e><p><l>Haute-Saône<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Alta<b/>Saona<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></r></p></e>
+<e><p><l>Rhône<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Roine<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
+<e><p><l>Rhin<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Rin<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
+<e><p><l>Bas-Rhin<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Baix<b/>Rin<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
+<e><p><l>Haut-Rhin<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Alt<b/>Rin<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
+<e><p><l>Ardennes<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Ardenes<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></r></p></e>
+<e><p><l>Pyrénées<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Pirineus<s n="np"/><s n="top"/><s n="m"/><s n="pl"/></r></p></e>
+<e><p><l>Vosges<s n="np"/><s n="top"/><s n="m"/><s n="pl"/></l><r>Vosges<s n="np"/><s n="top"/><s n="m"/><s n="pl"/></r></p></e>
 <e><p><l>Hautes-Pyrénées<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Alts<b/>Pirineus<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Pyrénées-Orientales<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Pirineus<b/>Orientals<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Pyrénées Atlantiques<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Pirineus<b/>Atlàntics<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Alpes<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Alps<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Alpes-Maritimes<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Alps<b/>Marítims<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Alpes-de-Haute-Provence<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Alps<b/>de<b/>l'Alta<b/>Provença<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Pyrénées-Orientales<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Pirineus<b/>Orientals<s n="np"/><s n="top"/><s n="m"/><s n="pl"/></r></p></e>
+<e><p><l>Pyrénées Atlantiques<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Pirineus<b/>Atlàntics<s n="np"/><s n="top"/><s n="m"/><s n="pl"/></r></p></e>
+<e><p><l>Alpes<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Alps<s n="np"/><s n="top"/><s n="m"/><s n="pl"/></r></p></e>
+<e><p><l>Alpes-Maritimes<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Alps<b/>Marítims<s n="np"/><s n="top"/><s n="m"/><s n="pl"/></r></p></e>
+<e><p><l>Alpes-de-Haute-Provence<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Alps<b/>de<b/>l'Alta<b/>Provença<s n="np"/><s n="top"/><s n="m"/><s n="pl"/></r></p></e>
 
-<e><p><l>Andes<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Andes<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Danube<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Danubi<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Nil<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Nil<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Volga<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Volga<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Don<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Don<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Amazone<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Amazones<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Andes<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Andes<s n="np"/><s n="top"/><s n="m"/><s n="pl"/></r></p></e>
+<e><p><l>Danube<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Danubi<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
+<e><p><l>Nil<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Nil<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
+<e><p><l>Volga<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Volga<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
+<e><p><l>Don<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Don<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
+<e><p><l>Amazone<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Amazones<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
 <e><p><l>Congo<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Congo<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Limpopo<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Limpopo<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Mississipi<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Mississipí<s n="np"/><s n="loc"/></r></p></e>
@@ -15237,8 +15249,8 @@
 <e><p><l>Hudson<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Hudson<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Colorado<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Colorado<s n="np"/><s n="loc"/></r></p></e>
 <e><p><l>Suriname<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Surinam<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Marne<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Marne<s n="np"/><s n="loc"/></r></p></e>
-<e><p><l>Haute-Marne<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Alt<b/>Marne<s n="np"/><s n="loc"/></r></p></e>
+<e><p><l>Marne<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Marne<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
+<e><p><l>Haute-Marne<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Alt<b/>Marne<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
 
   </section>
 </dictionary>

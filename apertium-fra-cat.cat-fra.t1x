@@ -4258,6 +4258,9 @@ is not applicable because gender and number can not be taken from previous rules
         <pattern-item n="verb"/>
       </pattern>
       <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
         <out>
 	  <lu>
              <clip pos="1" side="tl" part="whole"/>
@@ -4287,7 +4290,7 @@ is not applicable because gender and number can not be taken from previous rules
   
   
     <rule>
-<!--REGLA: no+ prnpro + prnpro ++ verb en forma personal: no n'hi vull > je n'en y veux pas-->
+<!--REGLA: no+ prnpro + prnpro + verb en forma personal: no n'hi vull > je n'en y veux pas-->
       <pattern>
         <pattern-item n="noadv"/>
         <pattern-item n="prnpro"/>
@@ -4295,6 +4298,12 @@ is not applicable because gender and number can not be taken from previous rules
         <pattern-item n="verb"/>
       </pattern>
       <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_concord1">
+          <with-param pos="3"/>
+        </call-macro>
         <out>
 	  <lu>
              <clip pos="1" side="tl" part="whole"/>

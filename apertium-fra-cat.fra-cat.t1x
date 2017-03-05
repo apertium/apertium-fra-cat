@@ -233,7 +233,7 @@
     </def-attr>
     <def-attr n="a_nploc">
       <attr-item tags="np.loc"/>
-      <attr-item tags="np.top.*"/>
+      <attr-item tags="np.top"/>
     </def-attr>
     <def-attr n="a_det">
       <attr-item tags="det.def"/>
@@ -7336,8 +7336,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
           <b pos="1"/>
           <lu>
-            <clip pos="2" side="tl" part="lem"/>
-            <clip pos="2" side="tl" part="a_nploc"/>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
@@ -7350,9 +7351,25 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="nploc"/>
       </pattern>
       <action>
-        <call-macro n="f_concord1">
-          <with-param pos="1"/>
-        </call-macro>
+        <choose>
+          <when>
+            <test>
+              <equal> <!-- en el cas de np.loc cal no cridar la macro -->
+                <clip pos="2" side="tl" part="a_nploc"/>
+                <lit-tag v="np.top"/>
+              </equal>
+            </test>
+            <call-macro n="f_concord2">
+              <with-param pos="2"/>
+              <with-param pos="1"/>
+            </call-macro>
+          </when>
+          <otherwise>
+            <call-macro n="f_concord1">
+              <with-param pos="1"/>
+            </call-macro>
+          </otherwise>
+        </choose>
 
         <choose>
           <when>
