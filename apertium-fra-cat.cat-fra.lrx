@@ -9,7 +9,7 @@
     <match tags="num.*"/>
   </rule>
   <rule weight="0.8">
-    <match lemma="de" tags="pr"><select lemma="sur" tags="pr"/></match>
+    <match lemma="de" tags="pr"><select lemma="de" tags="pr"/></match>
   </rule>
 
 </rules>

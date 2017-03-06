@@ -512,6 +512,7 @@
   
   <section-def-macros>
     <def-macro n="f_setpronom" npar="1">
+<!--
       <choose>
         <when>
           <test>
@@ -526,6 +527,7 @@
           </modify-case>
         </when>
       </choose>
+-->
       <choose>
         <when>
           <test>
@@ -624,6 +626,11 @@
           </choose>
         </otherwise>
       </choose>
+
+      <modify-case>
+        <clip pos="1" side="sl" part="lem"/>
+        <case-of pos="1" side="tl" part="lem"/>
+      </modify-case>
     </def-macro>
     
     <def-macro n="f_setgen" npar="1">
@@ -4578,6 +4585,10 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_setpronom">
           <with-param pos="2"/>
         </call-macro>
+        <modify-case>
+          <clip pos="2" side="sl" part="lem"/>
+          <case-of pos="1" side="sl" part="lemh"/>
+        </modify-case>
         <choose>
           <when>
             <test>
@@ -4610,7 +4621,11 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
               <lu>
-                <clip pos="1" side="tl" part="whole"/>
+                <get-case-from pos="2">
+                  <clip pos="1" side="tl" part="lemh"/>
+                </get-case-from>
+                <clip pos="1" side="tl" part="tags"/>
+                <clip pos="1" side="tl" part="lemq"/>
               </lu>
               <b pos="1"/>
               <lu>
@@ -4635,7 +4650,11 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
               <lu>
-                <clip pos="1" side="tl" part="whole"/>
+                <get-case-from pos="2">
+                  <clip pos="1" side="tl" part="lemh"/>
+                </get-case-from>
+                <clip pos="1" side="tl" part="tags"/>
+                <clip pos="1" side="tl" part="lemq"/>
               </lu>
               <b pos="1"/>
               <lu>
@@ -4682,7 +4701,9 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
               <lu>
-	        <lit v="venir"/>
+                <get-case-from pos="2">
+	          <lit v="venir"/>
+		</get-case-from>
                 <clip pos="1" side="tl" part="a_verb"/>
                 <clip pos="1" side="tl" part="temps"/>
                 <clip pos="1" side="tl" part="persona"/>
@@ -4713,7 +4734,9 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
              <lu>
-	        <lit v="venir"/>
+                <get-case-from pos="2">
+	          <lit v="venir"/>
+                </get-case-from>
                 <clip pos="1" side="tl" part="a_verb"/>
                 <clip pos="1" side="tl" part="temps"/>
                 <clip pos="1" side="tl" part="persona"/>
@@ -4767,7 +4790,9 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
               <lu>
-	        <lit v="venir"/>
+                <get-case-from pos="2">
+	          <lit v="venir"/>
+                </get-case-from>
                 <clip pos="1" side="tl" part="a_verb"/>
                 <clip pos="1" side="tl" part="temps"/>
                 <clip pos="1" side="tl" part="persona"/>
@@ -4804,7 +4829,9 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
              <lu>
-	        <lit v="venir"/>
+                <get-case-from pos="2">
+	          <lit v="venir"/>
+                </get-case-from>
                 <clip pos="1" side="tl" part="a_verb"/>
                 <clip pos="1" side="tl" part="temps"/>
                 <clip pos="1" side="tl" part="persona"/>
@@ -4833,6 +4860,7 @@ is not applicable because gender and number can not be taken from previous rules
         </choose>
       </action>
     </rule>
+
 <!-- regles de generació de pronoms-->
     <rule>
 <!--REGLA: SENT,que,coma,i VERB -->
@@ -4869,10 +4897,18 @@ is not applicable because gender and number can not be taken from previous rules
                   </lu>
                   <b pos="1"/>
                   <lu>
-                    <lit v="ce"/>
+                    <get-case-from pos="2">
+                      <lit v="ce"/>
+                    </get-case-from>
                     <lit-tag v="prn.tn.nt"/>
                   </lu>
                   <b/>
+                </out>
+                <modify-case>
+                  <clip pos="2" side="tl" part="lemh"/>
+                  <lit v="aa"/>
+                </modify-case>
+                <out>
                   <lu>
                     <clip pos="2" side="tl" part="lemh"/>
                     <clip pos="2" side="tl" part="a_verb"/>
@@ -4898,6 +4934,12 @@ is not applicable because gender and number can not be taken from previous rules
                     <clip pos="2" side="sl" part="nbr"/>
                   </lu>
                   <b/>
+                </out>
+                <modify-case>
+                  <clip pos="2" side="tl" part="lemh"/>
+                  <lit v="aa"/>
+                </modify-case>
+                <out>
                   <lu>
                     <clip pos="2" side="tl" part="lemh"/>
                     <clip pos="2" side="tl" part="a_verb"/>
@@ -4925,6 +4967,12 @@ is not applicable because gender and number can not be taken from previous rules
                 <clip pos="2" side="sl" part="nbr"/>
               </lu>
               <b/>
+            </out>
+            <modify-case>
+              <clip pos="2" side="tl" part="lemh"/>
+              <lit v="aa"/>
+            </modify-case>
+            <out>
               <lu>
                 <clip pos="2" side="tl" part="lemh"/>
                 <clip pos="2" side="tl" part="a_verb"/>
@@ -4971,15 +5019,20 @@ is not applicable because gender and number can not be taken from previous rules
                   <lu>
                     <clip pos="1" side="tl" part="whole"/>
                   </lu>
-                  <b pos="1"/>
+                  <b pos="2"/>
                   <lu>
-                    <lit v="ce"/>
+                    <get-case-from pos="2">
+                      <lit v="ce"/>
+                    </get-case-from>
                     <lit-tag v="prn.tn.nt"/>
                   </lu>
                   <b/>
                   <lu>
-                    <clip pos="2" side="tl" part="lemh"/>
+                    <get-case-from pos="3">
+                      <clip pos="2" side="tl" part="lemh"/>
+                    </get-case-from>
                     <clip pos="2" side="tl" part="a_adv"/>
+                    <clip pos="2" side="tl" part="lemq"/>
                   </lu>
                   <b pos="2"/>
                   <lu>
@@ -5005,7 +5058,9 @@ is not applicable because gender and number can not be taken from previous rules
                   </lu>
                   <b pos="1"/>
                   <lu>
-                    <clip pos="3" side="sl" part="lem"/>
+                    <get-case-from pos="2">
+                      <clip pos="3" side="sl" part="lem"/>
+                    </get-case-from>
                     <lit-tag v="prn.tn"/>
                     <clip pos="3" side="sl" part="persona"/>
                     <lit-tag v="m"/>
@@ -5013,7 +5068,9 @@ is not applicable because gender and number can not be taken from previous rules
                   </lu>
                   <b/>
                   <lu>
-                    <clip pos="2" side="tl" part="lemh"/>
+                    <get-case-from pos="3">
+                      <clip pos="2" side="tl" part="lemh"/>
+                    </get-case-from>
                     <clip pos="2" side="tl" part="a_adv"/>
                   </lu>
                   <b pos="2"/>
@@ -5042,7 +5099,9 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
               <lu>
-                <clip pos="3" side="sl" part="lem"/>
+                <get-case-from pos="2">
+                  <clip pos="3" side="sl" part="lem"/>
+                </get-case-from>
                 <lit-tag v="prn.tn"/>
                 <clip pos="3" side="sl" part="persona"/>
                 <lit-tag v="mf"/>
@@ -5050,7 +5109,9 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
               <lu>
-                <clip pos="2" side="tl" part="lemh"/>
+                <get-case-from pos="3">
+                  <clip pos="2" side="tl" part="lemh"/>
+                </get-case-from>
                 <clip pos="2" side="tl" part="a_adv"/>
               </lu>
               <b pos="2"/>
@@ -5073,6 +5134,285 @@ is not applicable because gender and number can not be taken from previous rules
         </choose>
       </action>
     </rule>
+
+<!-- ara amb pronom -->
+    <rule>
+<!--REGLA: SENT,que,coma,i PRN VERB: Li escriuen >> Ils lui écrivent -->
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="prnpro"/>
+        <pattern-item n="verb"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="p3"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="3" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="m"/>
+                <clip pos="3" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="3" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="mf"/>
+                <clip pos="3" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+        <modify-case>
+          <clip pos="2" side="tl" part="lemh"/>
+          <lit v="aa"/>
+        </modify-case>
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+    
+    <rule>
+<!--REGLA: SENT,que,coma,i No PRN VERB: No li escriuen >> Ils ne lui écrivent pas -->
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="noadv"/>
+        <pattern-item n="prnpro"/>
+        <pattern-item n="verb"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="4"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="4" side="sl" part="persona"/>
+                <lit-tag v="p3"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="4" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="4" side="sl" part="persona"/>
+                <lit-tag v="m"/>
+                <clip pos="4" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="4" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="4" side="sl" part="persona"/>
+                <lit-tag v="mf"/>
+                <clip pos="4" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+        <modify-case>
+          <clip pos="2" side="tl" part="lemh"/>
+          <lit v="aa"/>
+        </modify-case>
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+    
+    <rule>
+<!--REGLA: SENT,que,coma,i PRN VERB : Li vas dir >> Tu lui as dit, Hi vas anar >> Tu y es allé -->
+<!-- ERROR!!!: Em vaig mirar >> Je m'ai regardé (en comptes de: je me suis regardé) -->
+<!-- FALTA l'equivalent negatiu d'aquesta regla -->
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="prnpro"/>
+        <pattern-item n="anar"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="p3"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="3" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="m"/>
+                <clip pos="3" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="3" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="mf"/>
+                <clip pos="3" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+        <modify-case>
+          <clip pos="2" side="tl" part="lemh"/>
+          <lit v="aa"/>
+        </modify-case>
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+        </out>
+        <choose>
+          <when>
+            <test>
+              <in caseless="yes">
+                <clip pos="4" side="sl" part="lem"/>
+                <list n="vbambser"/>
+              </in>
+            </test>
+	    <out>
+              <lu>
+                <lit v="être"/>
+                <lit-tag v="vbser"/>
+                <lit-tag v="pri"/>
+                <clip pos="3" side="tl" part="persona"/>
+                <clip pos="3" side="tl" part="nbr"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <lit v="avoir"/>
+                <lit-tag v="vbhaver"/>
+                <lit-tag v="pri"/>
+                <clip pos="3" side="tl" part="persona"/>
+                <clip pos="3" side="tl" part="nbr"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+          <out>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="a_verb"/>
+            <lit-tag v="pp.m.sg"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+    
 <!--ara amb nom-->
     <rule>
 <!--REGLA: SENT,que,coma,i + VERB + NOM -->
@@ -5113,12 +5453,16 @@ is not applicable because gender and number can not be taken from previous rules
                   </lu>
                   <b pos="1"/>
                   <lu>
-                    <lit v="ce"/>
+                    <get-case-from pos="2">
+                      <lit v="ce"/>
+                    </get-case-from>
                     <lit-tag v="prn.tn.nt"/>
                   </lu>
                   <b/>
                   <lu>
-                    <clip pos="2" side="tl" part="lemh"/>
+                    <get-case-from pos="3">
+                      <clip pos="2" side="tl" part="lemh"/>
+                    </get-case-from>
                     <clip pos="2" side="tl" part="a_verb"/>
                     <clip pos="2" side="tl" part="temps"/>
                     <clip pos="2" side="tl" part="persona"/>
@@ -5139,7 +5483,9 @@ is not applicable because gender and number can not be taken from previous rules
                   </lu>
                   <b pos="1"/>
                   <lu>
-                    <clip pos="2" side="sl" part="lem"/>
+                    <get-case-from pos="2">
+                      <clip pos="2" side="sl" part="lem"/>
+                    </get-case-from>
                     <lit-tag v="prn.tn"/>
                     <clip pos="2" side="sl" part="persona"/>
                     <lit-tag v="m"/>
@@ -5190,7 +5536,9 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
               <lu>
-                <clip pos="2" side="tl" part="lemh"/>
+                <get-case-from pos="3">
+                  <clip pos="2" side="tl" part="lemh"/>
+                </get-case-from>
                 <clip pos="2" side="tl" part="a_verb"/>
                 <clip pos="2" side="tl" part="temps"/>
                 <clip pos="2" side="tl" part="persona"/>
@@ -5279,7 +5627,9 @@ is not applicable because gender and number can not be taken from previous rules
                   </lu>
                   <b/>
                   <lu>
-                    <clip pos="2" side="tl" part="lemh"/>
+                    <get-case-from pos="3">
+                      <clip pos="2" side="tl" part="lemh"/>
+                    </get-case-from>
                     <clip pos="2" side="tl" part="a_verb"/>
                     <clip pos="2" side="tl" part="temps"/>
                     <clip pos="2" side="tl" part="persona"/>
@@ -5320,7 +5670,9 @@ is not applicable because gender and number can not be taken from previous rules
                   </lu>
                   <b/>
                   <lu>
-                    <clip pos="2" side="tl" part="lemh"/>
+                    <get-case-from pos="3">
+                      <clip pos="2" side="tl" part="lemh"/>
+                    </get-case-from>
                     <clip pos="2" side="tl" part="a_verb"/>
                     <clip pos="2" side="tl" part="temps"/>
                     <clip pos="2" side="tl" part="persona"/>
@@ -5372,7 +5724,9 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
               <lu>
-                <clip pos="2" side="tl" part="lemh"/>
+                <get-case-from pos="3">
+                  <clip pos="2" side="tl" part="lemh"/>
+                </get-case-from>
                 <clip pos="2" side="tl" part="a_verb"/>
                 <clip pos="2" side="tl" part="temps"/>
                 <clip pos="2" side="tl" part="persona"/>
@@ -5451,12 +5805,16 @@ is not applicable because gender and number can not be taken from previous rules
                   </lu>
                   <b pos="1"/>
                   <lu>
-                    <lit v="ce"/>
+                    <get-case-from pos="2">
+                      <lit v="ce"/>
+                    </get-case-from>
                     <lit-tag v="prn.tn.nt"/>
                   </lu>
                   <b/>
                   <lu>
-                    <clip pos="2" side="tl" part="lemh"/>
+                    <get-case-from pos="3">
+                      <clip pos="2" side="tl" part="lemh"/>
+                    </get-case-from>
                     <clip pos="2" side="tl" part="a_adv"/>
                   </lu>
                   <b pos="2"/>
@@ -5483,7 +5841,9 @@ is not applicable because gender and number can not be taken from previous rules
                   </lu>
                   <b pos="1"/>
                   <lu>
-                    <clip pos="3" side="sl" part="lem"/>
+                    <get-case-from pos="2">
+                      <clip pos="3" side="sl" part="lem"/>
+                    </get-case-from>
                     <lit-tag v="prn.tn"/>
                     <clip pos="3" side="sl" part="persona"/>
                     <lit-tag v="m"/>
@@ -5491,7 +5851,9 @@ is not applicable because gender and number can not be taken from previous rules
                   </lu>
                   <b/>
                   <lu>
-                    <clip pos="2" side="tl" part="lemh"/>
+                    <get-case-from pos="3">
+                      <clip pos="2" side="tl" part="lemh"/>
+                    </get-case-from>
                     <clip pos="2" side="tl" part="a_adv"/>
                   </lu>
                   <b pos="2"/>
@@ -5544,7 +5906,9 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
               <lu>
-                <clip pos="2" side="tl" part="lemh"/>
+                <get-case-from pos="3">
+                  <clip pos="2" side="tl" part="lemh"/>
+                </get-case-from>
                 <clip pos="2" side="tl" part="a_adv"/>
               </lu>
               <b pos="2"/>
@@ -5625,12 +5989,16 @@ is not applicable because gender and number can not be taken from previous rules
                   </lu>
                   <b pos="1"/>
                   <lu>
-                    <lit v="ce"/>
+                    <get-case-from pos="2">
+                      <lit v="ce"/>
+                    </get-case-from>
                     <lit-tag v="prn.tn.nt"/>
                   </lu>
                   <b/>
                   <lu>
-                    <clip pos="2" side="tl" part="lemh"/>
+                    <get-case-from pos="3">
+                      <clip pos="2" side="tl" part="lemh"/>
+                    </get-case-from>
                     <clip pos="2" side="tl" part="a_adv"/>
                   </lu>
                   <b pos="2"/>
@@ -5666,7 +6034,9 @@ is not applicable because gender and number can not be taken from previous rules
                   </lu>
                   <b pos="1"/>
                   <lu>
-                    <clip pos="3" side="sl" part="lem"/>
+                    <get-case-from pos="2">
+                      <clip pos="3" side="sl" part="lem"/>
+                    </get-case-from>
                     <lit-tag v="prn.tn"/>
                     <clip pos="3" side="sl" part="persona"/>
                     <lit-tag v="m"/>
@@ -5674,7 +6044,9 @@ is not applicable because gender and number can not be taken from previous rules
                   </lu>
                   <b/>
                   <lu>
-                    <clip pos="2" side="tl" part="lemh"/>
+                    <get-case-from pos="3">
+                      <clip pos="2" side="tl" part="lemh"/>
+                    </get-case-from>
                     <clip pos="2" side="tl" part="a_adv"/>
                   </lu>
                   <b pos="2"/>
@@ -5728,7 +6100,9 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
               <lu>
-                <clip pos="3" side="sl" part="lem"/>
+                <get-case-from pos="2">
+                  <clip pos="3" side="sl" part="lem"/>
+                </get-case-from>
                 <lit-tag v="prn.tn"/>
                 <clip pos="3" side="sl" part="persona"/>
                 <lit-tag v="mf"/>
@@ -5736,7 +6110,9 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
               <lu>
-                <clip pos="2" side="tl" part="lemh"/>
+                <get-case-from pos="3">
+                  <clip pos="2" side="tl" part="lemh"/>
+                </get-case-from>
                 <clip pos="2" side="tl" part="a_adv"/>
               </lu>
               <b pos="2"/>
@@ -5785,6 +6161,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
     </rule>
 <!-- fi ara amb nom-->
+
 <!--ara amb pronom-->
     <rule>
 <!--REGLA: PRN + VERB-->
