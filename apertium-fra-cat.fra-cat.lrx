@@ -78,6 +78,10 @@
     <match lemma="dans" tags="pr"><select lemma="a" tags="pr"/></match>
   </rule>
 
+  <rule weight="1.0">
+    <match lemma="argent" tags="n.*"><select lemma="diners" tags="n.*"/></match>
+  </rule>
+
   <!-- 
     deux fois sur cinq >> dues vegades DE cinc
   -->
@@ -176,6 +180,37 @@
   </rule>
   <rule weight="0.8">
     <match lemma="prix" tags="n.*"><select lemma="premi" tags="n"/></match>
+  </rule>
+
+
+<!-- verser >> pagar / vessar -->
+
+  <rule weight="0.8">
+    <match lemma="verser" tags="vblex.*"><select lemma="pagar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="verser" tags="vblex.*"><select lemma="vessar"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="le" tags="det.*"/>
+    <or>
+      <match lemma="eau"/>
+      <match lemma="huile"/>
+      <match lemma="lait"/>
+      <match lemma="soupe"/>
+      <match lemma="vin"/>
+      <match lemma="bière"/>
+      <match lemma="champagne"/>
+    </or>
+  </rule>
+
+<!-- voler >> volar / robar -->
+
+  <rule weight="0.8">
+    <match lemma="voler" tags="vblex.*"><select lemma="volar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="voler" tags="vblex.*"><select lemma="robar"/></match>
+    <match tags="det.*"/>
   </rule>
 
 </rules>

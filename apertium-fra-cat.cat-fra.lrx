@@ -1,4 +1,12 @@
 <rules>
+
+  <rule weight="0.8">
+    <match lemma="pagar" tags="vblex.*"><select lemma="payer"/></match>
+  </rule>
+  <rule weight="0.8">
+    <match lemma="canviar" tags="vblex.*"><select lemma="changer"/></match>
+  </rule>
+
   <!-- 
     dues vegades DE cinc >> deux fois sur cinq
   -->
