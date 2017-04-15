@@ -106,6 +106,15 @@
       <cat-item lemma="en" tags="prn.pro.adv"/>
       <cat-item lemma="y" tags="prn.pro.adv"/>
     </def-cat>
+    <def-cat n="a_lui">
+      <cat-item lemma="à lui" tags="adj.pos.m.sg"/>
+    </def-cat>
+    <def-cat n="a_nous">
+      <cat-item lemma="à nous" tags="adj.pos.mf.sp"/>
+    </def-cat>
+    <def-cat n="a_vous">
+      <cat-item lemma="à vous" tags="adj.pos.mf.sp"/>
+    </def-cat>
     <def-cat n="vbser">
       <cat-item tags="vbser.*"/>
     </def-cat>
@@ -7181,6 +7190,93 @@ is not applicable because gender and number cannot be taken from previous rules 
               <lit-tag v="prn.enc"/>
               <clip pos="1" side="tl" part="tipoenc_pro"/>
               <clip pos="2" side="tl" part="lemq"/>
+            </lu>
+          </mlu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule>
+<!--REGLA:  à lui +inf = inf+pro (à lui dire > a dir-li) -->
+      <pattern>
+        <pattern-item n="a_lui"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="a"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="1"/>
+          <mlu>
+            <lu>
+              <clip pos="2" side="tl" part="lemh"/>
+              <clip pos="2" side="tl" part="a_inf"/>
+            </lu>
+            <lu>
+              <lit v="li"/>
+              <lit-tag v="prn.enc.p3.mf.sg"/>
+            </lu>
+          </mlu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule>
+<!--REGLA:  à nous +inf = inf+pro (à nous aider > a ajudar-nos) -->
+      <pattern>
+        <pattern-item n="a_nous"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="a"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="1"/>
+          <mlu>
+            <lu>
+              <clip pos="2" side="tl" part="lemh"/>
+              <clip pos="2" side="tl" part="a_inf"/>
+            </lu>
+            <lu>
+              <lit v="ens"/>
+              <lit-tag v="prn.enc.p1.mf.pl"/>
+            </lu>
+          </mlu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule>
+<!--REGLA:  à vous +inf = inf+pro (à vous aider > a ajudar-vos) -->
+      <pattern>
+        <pattern-item n="a_vous"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="a"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="1"/>
+          <mlu>
+            <lu>
+              <clip pos="2" side="tl" part="lemh"/>
+              <clip pos="2" side="tl" part="a_inf"/>
+            </lu>
+            <lu>
+              <lit v="us"/>
+              <lit-tag v="prn.enc.p2.mf.pl"/>
             </lu>
           </mlu>
         </out>
