@@ -1,9 +1,12 @@
 <rules>
   <rule weight="0.8" v="val">
-    <match lemma="mais" tags="n.*"><select lemma="dacsa" tags="n.*"/></match>
+    <match lemma="maïs" tags="n.*"><select lemma="dacsa" tags="n.*"/></match>
   </rule>
   <rule weight="1.0" v="cat">
-    <match lemma="mais" tags="n.*"><select lemma="blat# de moro" tags="n.*"/></match>
+    <match lemma="maïs" tags="n.*"><select lemma="blat# de moro" tags="n.*"/></match>
+  </rule>
+  <rule weight="1.0"> <!-- 15.04.2017 sembla que la v="cat" no està funcionant. Se selecciona "dacsa" però està restringit en aperitum-cat -->
+    <match lemma="maïs" tags="n.*"><select lemma="blat# de moro" tags="n.*"/></match>
   </rule>
 
   <rule weight="0.8" v="val">

@@ -106,6 +106,13 @@
       <e r="RL"><p><l><s n="GD"/></l><r><s n="mf"/></r></p><par n="ND_sp"/></e>
     </pardef>
 
+    <pardef n="mfsg_GDsg">
+      <e r="RL"><p><l><s n="mf"/><s n="sg"/></l><r><s n="m"/><s n="sg"/></r></p></e>
+      <e r="RL"><p><l><s n="mf"/><s n="sg"/></l><r><s n="f"/><s n="sg"/></r></p></e>
+      <e r="LR"><p><l><s n="mf"/><s n="sg"/></l><r><s n="GD"/><s n="sg"/></r></p></e>
+      <e>       <p><l><s n="mf"/><s n="pl"/></l><r><s n="mf"/><s n="pl"/></r></p></e>
+    </pardef>
+
     <pardef n="mf_GD|sp_ND">
       <e r="LR"><p><l><s n="mf"/></l><r><s n="GD"/></r></p><par n="sp_ND"/></e>
       <e r="RL"><p><l><s n="mf"/></l><r><s n="f"/></r></p><par n="sp_ND"/></e>
@@ -1001,7 +1008,7 @@
     <e r="RL"><p><l>arbitraire<s n="adj"/><s n="mf"/></l><r>arbitrari<s n="adj"/><s n="m"/></r></p></e>
     <e r="LR"><p><l>arbitral<s n="adj"/></l>          <r>arbitral<s n="adj"/><s n="mf"/></r></p></e>
     <e r="RL"><p><l>arbitral<s n="adj"/><s n="GD"/></l><r>arbitral<s n="adj"/><s n="mf"/></r></p></e>
-    <e>       <p><l>arbitre<s n="n"/></l>             <r>àrbitre<s n="n"/></r></p></e>
+    <e>       <p><l>arbitre<s n="n"/></l>             <r>àrbitre<s n="n"/></r></p><par n="mfsg_GDsg"/></e>
     <e>       <p><l>arbitrer<s n="vblex"/></l>        <r>arbitrar<s n="vblex"/></r></p></e>
     <e>       <p><l>arbre<s n="n"/></l><r>arbre<s n="n"/></r></p></e>
     <e>       <p><l>arbrisseau<s n="n"/></l>          <r>arbust<s n="n"/></r></p></e>
@@ -6344,7 +6351,8 @@
 <e r="RL"><p><l>inverse<s n="adj"/><s n="mf"/></l><r>contrari<s n="adj"/><s n="f"/></r></p></e>
 <e r="RL"><p><l>inverse<s n="adj"/><s n="mf"/></l><r>contrari<s n="adj"/><s n="m"/></r></p></e>
 <e>       <p><l>inverser<s n="vblex"/></l>        <r>invertir<s n="vblex"/></r></p></e>
-<e>       <p><l>investir<s n="vblex"/></l>        <r>investir<s n="vblex"/></r></p></e>
+<e r="RL"><p><l>investir<s n="vblex"/></l>        <r>investir<s n="vblex"/></r></p></e>
+<e>       <p><l>investir<s n="vblex"/></l>        <r>invertir<s n="vblex"/></r></p></e>
 <e>       <p><l>investissement<s n="n"/><s n="m"/></l><r>inversió<s n="n"/><s n="f"/></r></p></e>
 <e a="gema"><p><l>investisseur<s n="adj"/></l>    <r>inversor<s n="adj"/></r></p></e>
 <e a="gema" r="LR"><p><l>investisseur<s n="n"/><s n="f"/></l><r>inversionista<s n="n"/><s n="mf"/></r></p></e>
@@ -7052,9 +7060,9 @@
 <e r="RL"><p><l>maïs<s n="n"/><s n="m"/><s n="sp"/></l><r>dacsa<s n="n"/><s n="f"/><s n="pl"/></r></p></e>
 <e r="RL"><p><l>maïs<s n="n"/><s n="m"/><s n="sp"/></l><r>dacsa<s n="n"/><s n="f"/><s n="sg"/></r></p></e>
 
-<e r="LR"><p><l>maïs<s n="n"/><s n="m"/><s n="sp"/></l><r>blat<g><b/>de<b/>moro</g><s n="n"/><s n="f"/><s n="ND"/></r></p></e>
-<e r="RL"><p><l>maïs<s n="n"/><s n="m"/><s n="sp"/></l><r>blat<g><b/>de<b/>moro</g><s n="n"/><s n="f"/><s n="pl"/></r></p></e>
-<e r="RL"><p><l>maïs<s n="n"/><s n="m"/><s n="sp"/></l><r>blat<g><b/>de<b/>moro</g><s n="n"/><s n="f"/><s n="sg"/></r></p></e>
+<e r="LR"><p><l>maïs<s n="n"/><s n="m"/><s n="sp"/></l><r>blat<g><b/>de<b/>moro</g><s n="n"/><s n="m"/><s n="ND"/></r></p></e>
+<e r="RL"><p><l>maïs<s n="n"/><s n="m"/><s n="sp"/></l><r>blat<g><b/>de<b/>moro</g><s n="n"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>maïs<s n="n"/><s n="m"/><s n="sp"/></l><r>blat<g><b/>de<b/>moro</g><s n="n"/><s n="m"/><s n="sg"/></r></p></e>
 
 <e>       <p><l>maison<s n="n"/></l>              <r>casa<s n="n"/></r></p></e>
 <e>       <p><l>Maite<s n="np"/></l><r>Maite<s n="np"/></r></p></e>
@@ -13481,14 +13489,14 @@
 <e><p><l>islamiste<s n="n"/><s n="mf"/></l><r>islamista<s n="n"/><s n="mf"/></r></p></e>
 <e><p><l>isobare<s n="n"/><s n="f"/></l><r>isòbara<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>isolant<s n="n"/><s n="m"/></l><r>aïllant<s n="n"/><s n="m"/></r></p></e>
-<e><p><l>Jamaïcain<s n="n"/><s n="m"/></l><r>jamaicà<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>Jamaïcain<s n="n"/></l><r>jamaicà<s n="n"/></r></p></e>
 <e><p><l>jambon<s n="n"/><s n="m"/></l><r>pernil<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>jan.<s n="n"/><s n="m"/></l><r>gen.<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>jardinier<s n="n"/><s n="m"/></l><r>jardiner<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>jaugeag<s n="n"/><s n="m"/></l><r>aforament<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>joaillier<s n="n"/><s n="m"/></l><r>joier<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>jubilation<s n="n"/><s n="f"/></l><r>jubilació<s n="n"/><s n="f"/></r></p></e>
-<e><p><l>juge-arbitre<s n="n"/><s n="mf"/></l><r>àrbitre<s n="n"/><s n="mf"/></r></p></e>
+<e r="LR"><p><l>juge-arbitre<s n="n"/><s n="mf"/></l><r>àrbitre<s n="n"/><s n="mf"/></r></p><par n="mfsg_GDsg"/></e>
 <e><p><l>juil.<s n="n"/><s n="m"/></l><r>jul.<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>jumeau<s n="n"/><s n="m"/></l><r>bessó<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>jument<s n="n"/><s n="f"/></l><r>egua<s n="n"/><s n="f"/></r></p></e>
