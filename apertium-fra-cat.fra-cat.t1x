@@ -214,9 +214,6 @@
       <cat-item lemma="appeler" tags="vblex.pii.*"/>
       <cat-item lemma="appeler" tags="vblex.fti.*"/>
     </def-cat>
-    <def-cat n="caer">
-      <cat-item lemma="caer" tags="vblex.*"/>
-    </def-cat>
     <def-cat n="verbospron">
       <cat-item lemma="assoir" tags="vblex.*"/>
       <cat-item lemma="taire" tags="vblex.*"/>
@@ -224,6 +221,9 @@
     <def-cat n="verbospron_pp">
       <cat-item lemma="taire" tags="vblex.pp.*"/>
       <cat-item lemma="assoir" tags="vblex.pp.*"/>
+    </def-cat>
+    <def-cat n="defense">
+      <cat-item lemma="défense" tags="n.f.sg"/>
     </def-cat>
     <def-cat n="sent">
       <cat-item tags="sent"/>
@@ -7903,6 +7903,27 @@ is not applicable because gender and number cannot be taken from previous rules 
             </out>
           </otherwise>
         </choose>
+      </action>
+    </rule>
+    
+    <rule>
+<!--REGLA: défense de fumer > prohibit fumar -->
+      <pattern>
+        <pattern-item n="defense"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <lit v="prohibir"/>
+            <lit-tag v="vblex.pp.m.sg"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
       </action>
     </rule>
     
