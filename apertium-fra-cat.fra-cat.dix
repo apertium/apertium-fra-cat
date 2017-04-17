@@ -6920,6 +6920,7 @@
 <e>       <p><l>jouer<s n="vblex"/></l>           <r>jugar<s n="vblex"/></r></p></e>
 <e>       <p><l>jouer<g><b/>le<b/>rôle<b/>principal</g><s n="vblex"/></l><r>protagonitzar<s n="vblex"/></r></p></e>
 <e>       <p><l>jouet<s n="n"/><s n="m"/></l>     <r>joguina<s n="n"/><s n="f"/></r></p></e>
+<e vr="val"><p><l>jouet<s n="n"/><s n="m"/></l>     <r>joguet<s n="n"/><s n="m"/></r></p></e>
 <e>       <p><l>joueur<s n="adj"/></l>            <r>jugador<s n="adj"/></r></p></e>
 <e>       <p><l>joueur<s n="n"/></l>              <r>jugador<s n="n"/></r></p></e>
 <e>       <p><l>jour<s n="n"/></l>                <r>dia<s n="n"/></r></p></e>
@@ -6929,7 +6930,11 @@
 <e>       <p><l>journaliste<s n="n"/></l>         <r>periodista<s n="n"/></r></p></e>
 <e>       <p><l>journée<s n="n"/></l>             <r>jornada<s n="n"/></r></p></e>
 <e>       <p><l>Jover<s n="np"/></l><r>Jover<s n="np"/></r></p></e>
+<e r="RL"><p><l>joyeux<s n="adj"/><s n="f"/></l><r>feliç<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>joyeux<s n="adj"/><s n="m"/><s n="sp"/></l><r>feliç<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>joyeux<s n="adj"/><s n="m"/><s n="sp"/></l><r>feliç<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
 <e>       <p><l>joyeusement<s n="adv"/></l>       <r>feliçment<s n="adv"/></r></p></e>
+<e r="LR"><p><l>instituteur<s n="n"/></l>         <r>professor<s n="n"/></r></p></e>
 <e>       <p><l>Juana<s n="np"/></l><r>Juana<s n="np"/></r></p></e>
 <e>       <p><l>Juan<s n="np"/></l><r>Juan<s n="np"/></r></p></e>
 <e>       <p><l>Juárez<s n="np"/></l><r>Juárez<s n="np"/></r></p></e>
@@ -7157,6 +7162,7 @@
 <e>       <p><l>leur<s n="prn"/><s n="enc"/><s n="p3"/><s n="mf"/><s n="pl"/></l><r>li<s n="prn"/><s n="enc"/><s n="p3"/><s n="mf"/><s n="pl"/></r></p></e>
 <e>       <p><l>leur<s n="prn"/><s n="pro"/><s n="p3"/><s n="mf"/><s n="pl"/></l><r>li<s n="prn"/><s n="pro"/><s n="p3"/><s n="mf"/><s n="pl"/></r></p></e>
 <e r="LR"><p><l>leur<s n="det"/><s n="pos"/><s n="mf"/></l><r>el<b/>seu<s n="det"/><s n="pos"/><s n="GD"/></r></p></e>
+<e r="RL"><p><l>leur<s n="det"/><s n="pos"/><s n="mf"/></l><r>llur<s n="det"/><s n="pos"/><s n="mf"/></r></p></e>
 <e>       <p><l>lever<s n="vblex"/></l>           <r>llevar<s n="vblex"/></r></p></e>
 <e r="RL"><p><l>lever<s n="vblex"/></l>           <r>aixecar<s n="vblex"/></r></p></e>
 <e r="RL"><p><l>lever<s n="vblex"/></l>           <r>alçar<s n="vblex"/></r></p></e>
@@ -7166,10 +7172,14 @@
     <e>       <p><l>L'Hospitalet<b/>de<b/>Llobregat<s n="np"/><s n="top"/><s n="un"/><s n="sg"/></l><r>L'Hospitalet<b/>de<b/>Llobregat<s n="np"/><s n="loc"/></r></p></e>
 <e a="gema" r="LR"><p><l>liaison<s n="n"/></l>    <r>connexió<s n="n"/></r></p></e>
     <e>       <p><l>Liban<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Líban<s n="np"/><s n="loc"/></r></p></e>
-<e a="gema"><p><l>libanais<s n="n"/><s n="f"/></l><r>libanès<s n="n"/><s n="f"/></r></p></e>
-<e a="gema" r="LR"><p><l>libanais<s n="n"/><s n="m"/><s n="sp"/></l><r>libanès<s n="n"/><s n="m"/><s n="ND"/></r></p></e>
-<e a="gema" r="RL"><p><l>libanais<s n="n"/><s n="m"/><s n="sp"/></l><r>libanès<s n="n"/><s n="m"/><s n="pl"/></r></p></e>
-<e a="gema" r="RL"><p><l>libanais<s n="n"/><s n="m"/><s n="sp"/></l><r>libanès<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
+<e><p><l>libanais<s n="adj"/><s n="f"/></l><r>libanès<s n="adj"/><s n="f"/></r></p></e>
+<e r="LR"><p><l>libanais<s n="adj"/><s n="m"/><s n="sp"/></l><r>libanès<s n="adj"/><s n="m"/><s n="ND"/></r></p></e>
+<e r="RL"><p><l>libanais<s n="adj"/><s n="m"/><s n="sp"/></l><r>libanès<s n="adj"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>libanais<s n="adj"/><s n="m"/><s n="sp"/></l><r>libanès<s n="adj"/><s n="m"/><s n="sg"/></r></p></e>
+<e a="gema"><p><l>Libanais<s n="adj"/><s n="f"/></l><r>libanès<s n="adj"/><s n="f"/></r></p></e>
+<e a="gema" r="LR"><p><l>Libanais<s n="n"/><s n="m"/><s n="sp"/></l><r>libanès<s n="n"/><s n="m"/><s n="ND"/></r></p></e>
+<e a="gema" r="RL"><p><l>Libanais<s n="n"/><s n="m"/><s n="sp"/></l><r>libanès<s n="n"/><s n="m"/><s n="pl"/></r></p></e>
+<e a="gema" r="RL"><p><l>Libanais<s n="n"/><s n="m"/><s n="sp"/></l><r>libanès<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
 <e r="LR"><p><l>libeller<s n="vblex"/></l>        <r>redactar<s n="vblex"/></r></p></e>
 <e r="LR"><p><l>antilibéral<s n="adj"/><s n="f"/></l> <r>antiliberal<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>antilibéral<s n="adj"/><s n="m"/></l> <r>antiliberal<s n="adj"/><s n="mf"/></r></p></e>
@@ -8936,16 +8946,17 @@
 <e r="RL"><p><l>gastronomique<s n="adj"/><s n="mf"/></l>     <r>gastronòmic<s n="adj"/><s n="f"/></r></p></e>
 
 <!-- ho fara sempre malament // HIC SUNT DRACONES -->
-<e r="LR"><p><l>joyeux<s n="adj"/><s n="f"/><s n="sg"/></l>  <r>feliç<s n="adj"/><s n="mf"/><s n="sg"/></r></p></e>
-<e r="LR"><p><l>joyeux<s n="adj"/><s n="f"/><s n="pl"/></l>  <r>feliç<s n="adj"/><s n="f"/><s n="pl"/></r></p></e>
-<e r="LR"><p><l>joyeux<s n="adj"/><s n="m"/><s n="sp"/></l><r>feliç<s n="adj"/><s n="mf"/><s n="sg"/></r></p></e>
+<e r="LR"><p><l>joyeux<s n="adj"/><s n="f"/><s n="sg"/></l><r>feliç<s n="adj"/><s n="mf"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>joyeux<s n="adj"/><s n="GD"/><s n="sg"/></l><r>feliç<s n="adj"/><s n="mf"/><s n="sg"/></r></p></e>
+<e>       <p><l>joyeux<s n="adj"/><s n="f"/><s n="pl"/></l><r>feliç<s n="adj"/><s n="f"/><s n="pl"/></r></p></e>
+<e r="LR"><p><l>joyeux<s n="adj"/><s n="m"/><s n="sp"/></l><r>feliç<s n="adj"/><s n="m"/><s n="ND"/></r></p></e>
+<e r="RL"><p><l>joyeux<s n="adj"/><s n="m"/><s n="sp"/></l><r>feliç<s n="adj"/><s n="m"/><s n="pl"/></r></p></e>
 
-<e r="LR"><p><l>heureux<s n="adj"/><s n="f"/><s n="sg"/></l> <r>feliç<s n="adj"/><s n="mf"/><s n="sg"/></r></p></e>
-<e r="LR"><p><l>heureux<s n="adj"/><s n="m"/><s n="sp"/></l><r>feliç<s n="adj"/><s n="mf"/><s n="sg"/></r></p></e>
-<e>       <p><l>heureux<s n="adj"/><s n="f"/><s n="pl"/></l> <r>feliç<s n="adj"/><s n="f"/><s n="pl"/></r></p></e>
+<e r="LR"><p><l>heureux<s n="adj"/><s n="f"/><s n="sg"/></l><r>feliç<s n="adj"/><s n="mf"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>heureux<s n="adj"/><s n="m"/><s n="sp"/></l><r>feliç<s n="adj"/><s n="mf"/><s n="sg"/></r></p></e>
+<e>       <p><l>heureux<s n="adj"/><s n="f"/><s n="pl"/></l><r>feliç<s n="adj"/><s n="f"/><s n="pl"/></r></p></e>
+<e r="LR"><p><l>heureux<s n="adj"/><s n="m"/><s n="sp"/></l><r>feliç<s n="adj"/><s n="m"/><s n="ND"/></r></p></e>
 <e r="RL"><p><l>heureux<s n="adj"/><s n="m"/><s n="sp"/></l><r>feliç<s n="adj"/><s n="m"/><s n="pl"/></r></p></e>
-<e r="RL"><p><l>heureux<s n="adj"/><s n="m"/><s n="sp"/></l><r>feliç<s n="adj"/><s n="m"/><s n="sg"/></r></p></e>
-<e r="RL"><p><l>heureux<s n="adj"/><s n="m"/><s n="sp"/></l><r>feliç<s n="adj"/><s n="f"/><s n="sg"/></r></p></e>
 
 <e>       <p><l>présumé<s n="adj"/><s n="m"/><s n="sg"/></l> <r>presumpte<s n="adj"/><s n="m"/><s n="sg"/></r></p></e>
 <e>       <p><l>présumé<s n="adj"/><s n="f"/><s n="sg"/></l> <r>presumpte<s n="adj"/><s n="f"/><s n="sg"/></r></p></e>
@@ -13669,7 +13680,7 @@
 <e><p><l>équerre<s n="n"/><s n="f"/></l><r>esquadra<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>équilibrage<s n="n"/><s n="m"/></l><r>ajustatge<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>équilibrage<s n="n"/><s n="m"/></l><r>ajust<s n="n"/><s n="m"/></r></p></e>
-<e><p><l>équipier<s n="n"/><s n="m"/></l><r>jugador<s n="n"/><s n="m"/></r></p></e>
+<e r="LR"><p><l>équipier<s n="n"/><s n="m"/></l><r>jugador<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>équitation<s n="n"/><s n="f"/></l><r>equitació<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>équité<s n="n"/><s n="f"/></l><r>equitat<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>éradication<s n="n"/><s n="f"/></l><r>eradicació<s n="n"/><s n="f"/></r></p></e>

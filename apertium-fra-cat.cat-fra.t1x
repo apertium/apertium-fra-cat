@@ -4018,10 +4018,18 @@ is not applicable because gender and number can not be taken from previous rules
       <action>
         <out>
           <lu>
-            <lit v="en"/>
+            <get-case-from pos="1">
+              <lit v="en"/>
+            </get-case-from>
             <lit-tag v="pr"/>
           </lu>
           <b/>
+          </out>
+          <modify-case>
+            <clip pos="1" side="tl" part="lemh"/>
+            <lit v="aa"/>
+          </modify-case>
+          <out>
           <lu>
             <clip pos="1" side="tl" part="lemh"/>
             <clip pos="1" side="tl" part="a_verb"/>
@@ -8141,7 +8149,7 @@ is not applicable because gender and number can not be taken from previous rules
       </pattern>
       <action>
         <let>
-          <var n="numero"/>
+         <var n="numero"/>
           <lit-tag v="sg"/>
         </let>
         <let>
