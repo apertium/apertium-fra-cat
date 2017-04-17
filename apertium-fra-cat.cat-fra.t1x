@@ -86,6 +86,15 @@
       <cat-item lemma="ens" tags="prn.pro.p1.mf.pl"/>
       <cat-item lemma="us" tags="prn.pro.p2.mf.pl"/>
     </def-cat>
+    <def-cat n="tu">
+      <cat-item lemma="tu" tags="prn.tn.*"/>
+    </def-cat>
+    <def-cat n="ell">
+      <cat-item lemma="ell" tags="prn.tn.p3.m.sg"/>
+    </def-cat>
+    <def-cat n="ells">
+      <cat-item lemma="ell" tags="prn.tn.p3.m.pl"/>
+    </def-cat>
     <def-cat n="verb">
       <cat-item tags="vblex.*.p1.*"/>
       <cat-item tags="vblex.*.p2.*"/>
@@ -4572,6 +4581,66 @@ is not applicable because gender and number can not be taken from previous rules
             </out>
           </otherwise>
         </choose> 
+      </action>
+  </rule>
+    
+     <rule>
+<!--REGLA: prep + tu -->
+      <pattern>
+        <pattern-item n="prep"/>
+	<pattern-item n="tu"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+            <b pos="1"/>
+          <lu>
+            <lit v="toi"/>
+            <lit-tag v="prn.tn.p2.mf.sg"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+    
+     <rule>
+<!--REGLA: prep + ell -->
+      <pattern>
+        <pattern-item n="prep"/>
+	<pattern-item n="ell"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+            <b pos="1"/>
+          <lu>
+            <lit v="lui"/>
+            <lit-tag v="prn.pro.p3.mf.sg"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+    
+     <rule>
+<!--REGLA: prep + ells -->
+      <pattern>
+        <pattern-item n="prep"/>
+	<pattern-item n="ells"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+            <b pos="1"/>
+          <lu>
+            <lit v="eux"/>
+            <lit-tag v="prn.tn.p3.m.pl"/>
+          </lu>
+        </out>
       </action>
   </rule>
     

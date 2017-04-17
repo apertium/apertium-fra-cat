@@ -86,6 +86,21 @@
   </rule>
 
   <!-- 
+    pour >> per, per a
+  -->
+  <rule weight="0.8">
+    <match lemma="pour" tags="pr"><select lemma="per a"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pour" tags="pr"><select lemma="per"/></match>
+    <match tags="*.inf"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="avoir" tags="*.ger"/>
+    <match lemma="pour" tags="pr"><select lemma="per"/></match>
+  </rule>
+
+  <!-- 
     deux fois sur cinq >> dues vegades DE cinc
   -->
   <rule weight="1.0">

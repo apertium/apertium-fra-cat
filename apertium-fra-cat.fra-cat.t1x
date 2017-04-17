@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- -*- nxml -*- -->
 <transfer>
 
@@ -105,6 +106,9 @@
       <cat-item lemma="le" tags="prn.pro.p3.nt"/>
       <cat-item lemma="en" tags="prn.pro.adv"/>
       <cat-item lemma="y" tags="prn.pro.adv"/>
+    </def-cat>
+    <def-cat n="lui">
+      <cat-item lemma="lui" tags="prn.pro.p3.mf.sg"/>
     </def-cat>
     <def-cat n="a_lui">
       <cat-item lemma="à lui" tags="adj.pos.m.sg"/>
@@ -2697,6 +2701,27 @@
       </action>
     </rule>
     
+     <rule>
+<!--REGLA: prep + lui -->
+      <pattern>
+        <pattern-item n="prep"/>
+	<pattern-item n="lui"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+            <b pos="1"/>
+          <lu>
+            <lit v="ell"/>
+            <lit-tag v="prn.tn.p3.m.sg"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+    
+
     <rule>
 <!-- REGLA: PRONOM -->
 <!--Special case, macro f_concord1 
