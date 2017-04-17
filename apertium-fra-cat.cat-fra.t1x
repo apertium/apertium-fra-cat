@@ -4130,6 +4130,20 @@ is not applicable because gender and number can not be taken from previous rules
        <call-macro n="f_concord1">
           <with-param pos="2"/>
         </call-macro>  
+      <choose>
+        <when>
+          <test>
+            <equal>
+              <clip pos="2" side="tl" part="nbr"/>
+              <lit-tag v="sp"/>
+            </equal>
+          </test>
+          <let>
+            <var n="numero"/>
+            <clip pos="2" side="sl" part="nbr"/>
+          </let>
+        </when>
+      </choose>
 	<choose>
 	  <when>
 	    <test>
@@ -4175,11 +4189,15 @@ is not applicable because gender and number can not be taken from previous rules
               <b/>
               <lu>
                 <lit v="le"/>
-                <lit-tag v="det.def.mf.pl"/>
+                <lit-tag v="det.def"/>
+		<clip pos="2" side="tl" part="gen"/>
+                <var n="numero"/>
               </lu>
               <b/>
               <lu>
-              <clip pos="2" side="tl" part="whole"/>
+              <clip pos="2" side="tl" part="lemh"/>
+              <clip pos="2" side="tl" part="tags"/>
+              <clip pos="2" side="tl" part="lemq"/>
               </lu>
 	    </out> 
 	   </when>
@@ -4196,7 +4214,9 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
 	      <b pos="1"/>
               <lu>
-              <clip pos="2" side="tl" part="whole"/>
+              <clip pos="2" side="tl" part="lemh"/>
+              <clip pos="2" side="tl" part="tags"/>
+              <clip pos="2" side="tl" part="lemq"/>
               </lu>
             </out>
           </otherwise>
@@ -4366,6 +4386,20 @@ is not applicable because gender and number can not be taken from previous rules
 	<call-macro n="f_setgen">
           <with-param pos="3"/>
         </call-macro>
+      <choose>
+        <when>
+          <test>
+            <equal>
+              <clip pos="3" side="tl" part="nbr"/>
+              <lit-tag v="sp"/>
+            </equal>
+          </test>
+          <let>
+            <var n="numero"/>
+            <clip pos="3" side="sl" part="nbr"/>
+          </let>
+        </when>
+      </choose>
 	<choose>
           <when>
             <test>
@@ -4410,11 +4444,13 @@ is not applicable because gender and number can not be taken from previous rules
                 <lit v="le"/>
                 <lit-tag v="det.def"/>
 		<clip pos="3" side="sl" part="gen"/>
-                <clip pos="3" side="sl" part="nbr"/>
+                <var n="numero"/>
               </lu>
               <b/>
               <lu>
-              <clip pos="3" side="tl" part="whole"/>
+              <clip pos="3" side="tl" part="lemh"/>
+              <clip pos="3" side="tl" part="tags"/>
+              <clip pos="3" side="tl" part="lemq"/>
               </lu>
         </out>
 	</when>
@@ -4457,6 +4493,20 @@ is not applicable because gender and number can not be taken from previous rules
 	<call-macro n="f_concord1">
           <with-param pos="2"/>
         </call-macro> 
+      <choose>
+        <when>
+          <test>
+            <equal>
+              <clip pos="2" side="tl" part="nbr"/>
+              <lit-tag v="sp"/>
+            </equal>
+          </test>
+          <let>
+            <var n="numero"/>
+            <clip pos="2" side="sl" part="nbr"/>
+          </let>
+        </when>
+      </choose>
 	<choose>
           <when>
             <test>
@@ -4489,11 +4539,15 @@ is not applicable because gender and number can not be taken from previous rules
               <b/>
               <lu>
                 <lit v="le"/>
-                <lit-tag v="det.def.mf.pl"/>
+                <lit-tag v="det.def"/>
+		<clip pos="2" side="tl" part="gen"/>
+                <var n="numero"/>
               </lu>
               <b/>
               <lu>
-              <clip pos="2" side="tl" part="whole"/>
+              <clip pos="2" side="tl" part="lemh"/>
+              <clip pos="2" side="tl" part="tags"/>
+              <clip pos="2" side="tl" part="lemq"/>
               </lu>
             </out> 
 	  </when>
@@ -4531,6 +4585,20 @@ is not applicable because gender and number can not be taken from previous rules
 	<call-macro n="f_setgen">
           <with-param pos="2"/>
         </call-macro>
+      <choose>
+        <when>
+          <test>
+            <equal>
+              <clip pos="2" side="tl" part="nbr"/>
+              <lit-tag v="sp"/>
+            </equal>
+          </test>
+          <let>
+            <var n="numero"/>
+            <clip pos="2" side="sl" part="nbr"/>
+          </let>
+        </when>
+      </choose>
 	<choose>
           <when>
           <test>
@@ -4561,11 +4629,13 @@ is not applicable because gender and number can not be taken from previous rules
                 <lit v="le"/>
                 <lit-tag v="det.def"/>
 		<clip pos="2" side="sl" part="gen"/>
-                <clip pos="2" side="sl" part="nbr"/>
+                <var n="numero"/>
               </lu>
               <b/>
               <lu>
-                <clip pos="2" side="tl" part="whole"/>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
               </lu>
 	    </out> 
 	  </when>
@@ -5500,6 +5570,20 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_setgen">
           <with-param pos="3"/>
         </call-macro>
+      <choose>
+        <when>
+          <test>
+            <equal>
+              <clip pos="3" side="tl" part="nbr"/>
+              <lit-tag v="sp"/>
+            </equal>
+          </test>
+          <let>
+            <var n="numero"/>
+            <clip pos="3" side="sl" part="nbr"/>
+          </let>
+        </when>
+      </choose>
         <choose>
           <when>
             <test>
@@ -5580,11 +5664,13 @@ is not applicable because gender and number can not be taken from previous rules
                     <lit v="le"/>
                     <lit-tag v="det.def"/>
                     <clip pos="3" side="sl" part="gen"/>
-                    <clip pos="3" side="sl" part="nbr"/>
+                    <var n="numero"/>
                   </lu>
                   <b/>
                   <lu>
-                    <clip pos="3" side="tl" part="whole"/>
+                    <clip pos="3" side="tl" part="lemh"/>
+                    <clip pos="3" side="tl" part="tags"/>
+                    <clip pos="3" side="tl" part="lemq"/>
                   </lu>
                 </out>
               </otherwise>
@@ -5625,11 +5711,13 @@ is not applicable because gender and number can not be taken from previous rules
                 <lit v="le"/>
                 <lit-tag v="det.def"/>
                 <clip pos="3" side="sl" part="gen"/>
-                <clip pos="3" side="sl" part="nbr"/>
+                <var n="numero"/>
               </lu>
               <b/>
               <lu>
-                <clip pos="3" side="tl" part="whole"/>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
               </lu>
             </out>
           </otherwise>
@@ -5652,6 +5740,20 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_concord1">
           <with-param pos="4"/>
         </call-macro>
+      <choose>
+        <when>
+          <test>
+            <equal>
+              <clip pos="4" side="tl" part="nbr"/>
+              <lit-tag v="sp"/>
+            </equal>
+          </test>
+          <let>
+            <var n="numero"/>
+            <clip pos="4" side="sl" part="nbr"/>
+          </let>
+        </when>
+      </choose>
         <choose>
           <when>
             <test>
@@ -5725,6 +5827,20 @@ is not applicable because gender and number can not be taken from previous rules
 	       <call-macro n="f_setgen">
           	<with-param pos="4"/>
                </call-macro>
+      <choose>
+        <when>
+          <test>
+            <equal>
+              <clip pos="4" side="tl" part="nbr"/>
+              <lit-tag v="sp"/>
+            </equal>
+          </test>
+          <let>
+            <var n="numero"/>
+            <clip pos="4" side="sl" part="nbr"/>
+          </let>
+        </when>
+      </choose>
                 <out>
                   <lu>
                     <clip pos="1" side="tl" part="whole"/>
@@ -5768,11 +5884,13 @@ is not applicable because gender and number can not be taken from previous rules
                     <lit v="le"/>
                     <lit-tag v="det.def"/>
                     <clip pos="4" side="sl" part="gen"/>
-                    <clip pos="4" side="sl" part="nbr"/>
+                    <var n="numero"/>
                   </lu>
                   <b/>
                   <lu>
-                    <clip pos="4" side="tl" part="whole"/>
+                    <clip pos="4" side="tl" part="lemh"/>
+                    <clip pos="4" side="tl" part="tags"/>
+                    <clip pos="4" side="tl" part="lemq"/>
                   </lu>
                 </out>
               </otherwise>
@@ -5822,11 +5940,13 @@ is not applicable because gender and number can not be taken from previous rules
                 <lit v="le"/>
                 <lit-tag v="det.def"/>
                 <clip pos="4" side="sl" part="gen"/>
-                <clip pos="4" side="sl" part="nbr"/>
+                <var n="numero"/>
               </lu>
               <b/>
               <lu>
-                <clip pos="4" side="tl" part="whole"/>
+                <clip pos="4" side="tl" part="lemh"/>
+                <clip pos="4" side="tl" part="tags"/>
+                <clip pos="4" side="tl" part="lemq"/>
               </lu>
             </out>
           </otherwise>
@@ -5852,6 +5972,20 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_setgen">
           <with-param pos="4"/>
         </call-macro>
+      <choose>
+        <when>
+          <test>
+            <equal>
+              <clip pos="4" side="tl" part="nbr"/>
+              <lit-tag v="sp"/>
+            </equal>
+          </test>
+          <let>
+            <var n="numero"/>
+            <clip pos="4" side="sl" part="nbr"/>
+          </let>
+        </when>
+      </choose>
         <choose>
           <when>
             <test>
@@ -5950,11 +6084,13 @@ is not applicable because gender and number can not be taken from previous rules
                     <lit v="le"/>
                     <lit-tag v="det.def"/>
                     <clip pos="4" side="sl" part="gen"/>
-                    <clip pos="4" side="sl" part="nbr"/>
+                    <var n="numero"/>
                   </lu>
                   <b/>
                   <lu>
-                    <clip pos="4" side="tl" part="whole"/>
+                    <clip pos="4" side="tl" part="lemh"/>
+                    <clip pos="4" side="tl" part="tags"/>
+                    <clip pos="4" side="tl" part="lemq"/>
                   </lu>
                 </out>
               </otherwise>
@@ -6005,11 +6141,13 @@ is not applicable because gender and number can not be taken from previous rules
                 <lit v="le"/>
                 <lit-tag v="det.def"/>
                 <clip pos="4" side="sl" part="gen"/>
-                <clip pos="4" side="sl" part="nbr"/>
+                <var n="numero"/>
               </lu>
               <b/>
               <lu>
-                <clip pos="4" side="tl" part="whole"/>
+                <clip pos="4" side="tl" part="lemh"/>
+                <clip pos="4" side="tl" part="tags"/>
+                <clip pos="4" side="tl" part="lemq"/>
               </lu>
             </out>
           </otherwise>
@@ -6036,6 +6174,20 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_setgen">
           <with-param pos="5"/>
         </call-macro>
+      <choose>
+        <when>
+          <test>
+            <equal>
+              <clip pos="5" side="tl" part="nbr"/>
+              <lit-tag v="sp"/>
+            </equal>
+          </test>
+          <let>
+            <var n="numero"/>
+            <clip pos="5" side="sl" part="nbr"/>
+          </let>
+        </when>
+      </choose>
         <choose>
           <when>
             <test>
@@ -6152,11 +6304,13 @@ is not applicable because gender and number can not be taken from previous rules
                     <lit v="le"/>
                     <lit-tag v="det.def"/>
                     <clip pos="5" side="sl" part="gen"/>
-                    <clip pos="5" side="sl" part="nbr"/>
+                    <var n="numero"/>
                   </lu>
                   <b/>
                   <lu>
-                    <clip pos="5" side="tl" part="whole"/>
+                    <clip pos="5" side="tl" part="lemh"/>
+                    <clip pos="5" side="tl" part="tags"/>
+                    <clip pos="5" side="tl" part="lemq"/>
                   </lu>
                 </out>
               </otherwise>
@@ -6218,11 +6372,13 @@ is not applicable because gender and number can not be taken from previous rules
                 <lit v="le"/>
                 <lit-tag v="det.def"/>
                 <clip pos="5" side="sl" part="gen"/>
-                <clip pos="5" side="sl" part="nbr"/>
+                <var n="numero"/>
               </lu>
               <b/>
               <lu>
-                <clip pos="5" side="tl" part="whole"/>
+                <clip pos="5" side="tl" part="lemh"/>
+                <clip pos="5" side="tl" part="tags"/>
+                <clip pos="5" side="tl" part="lemq"/>
               </lu>
             </out>
           </otherwise>
@@ -6306,6 +6462,20 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_setgen">
           <with-param pos="3"/>
         </call-macro>
+      <choose>
+        <when>
+          <test>
+            <equal>
+              <clip pos="3" side="tl" part="nbr"/>
+              <lit-tag v="sp"/>
+            </equal>
+          </test>
+          <let>
+            <var n="numero"/>
+            <clip pos="3" side="sl" part="nbr"/>
+          </let>
+        </when>
+      </choose>
         <choose>
           <when>
             <test>
@@ -6359,11 +6529,13 @@ is not applicable because gender and number can not be taken from previous rules
                 <lit v="le"/>
                 <lit-tag v="det.def"/>
                 <clip pos="3" side="sl" part="gen"/>
-                <clip pos="3" side="sl" part="nbr"/>
+                <var n="numero"/>
               </lu>
               <b/>
               <lu>
-                <clip pos="3" side="tl" part="whole"/>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
               </lu>
             </out>
           </otherwise>
@@ -6383,6 +6555,20 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_concord1">
           <with-param pos="4"/>
         </call-macro>
+      <choose>
+        <when>
+          <test>
+            <equal>
+              <clip pos="4" side="tl" part="nbr"/>
+              <lit-tag v="sp"/>
+            </equal>
+          </test>
+          <let>
+            <var n="numero"/>
+            <clip pos="4" side="sl" part="nbr"/>
+          </let>
+        </when>
+      </choose>
         <choose>
           <when>
             <test>
@@ -6471,11 +6657,13 @@ is not applicable because gender and number can not be taken from previous rules
                 <lit v="le"/>
                 <lit-tag v="det.def"/>
                 <clip pos="4" side="sl" part="gen"/>
-                <clip pos="4" side="sl" part="nbr"/>
+                <var n="numero"/>
               </lu>
               <b/>
               <lu>
-                <clip pos="4" side="tl" part="whole"/>
+                <clip pos="4" side="tl" part="lemh"/>
+                <clip pos="4" side="tl" part="tags"/>
+                <clip pos="4" side="tl" part="lemq"/>
               </lu>
             </out>
           </otherwise>
@@ -6498,6 +6686,20 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_setgen">
           <with-param pos="4"/>
         </call-macro>
+      <choose>
+        <when>
+          <test>
+            <equal>
+              <clip pos="4" side="tl" part="nbr"/>
+              <lit-tag v="sp"/>
+            </equal>
+          </test>
+          <let>
+            <var n="numero"/>
+            <clip pos="4" side="sl" part="nbr"/>
+          </let>
+        </when>
+      </choose>
         <choose>
           <when>
             <test>
@@ -6569,11 +6771,13 @@ is not applicable because gender and number can not be taken from previous rules
                 <lit v="le"/>
                 <lit-tag v="det.def"/>
                 <clip pos="4" side="sl" part="gen"/>
-                <clip pos="4" side="sl" part="nbr"/>
+                <var n="numero"/>
               </lu>
               <b/>
               <lu>
-                <clip pos="4" side="tl" part="whole"/>
+                <clip pos="4" side="tl" part="lemh"/>
+                <clip pos="4" side="tl" part="tags"/>
+                <clip pos="4" side="tl" part="lemq"/>
               </lu>
             </out>
           </otherwise>
@@ -6597,6 +6801,20 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_setgen">
           <with-param pos="5"/>
         </call-macro>
+      <choose>
+        <when>
+          <test>
+            <equal>
+              <clip pos="5" side="tl" part="nbr"/>
+              <lit-tag v="sp"/>
+            </equal>
+          </test>
+          <let>
+            <var n="numero"/>
+            <clip pos="5" side="sl" part="nbr"/>
+          </let>
+        </when>
+      </choose>
         <choose>
           <when>
             <test>
@@ -6686,11 +6904,13 @@ is not applicable because gender and number can not be taken from previous rules
                 <lit v="le"/>
                 <lit-tag v="det.def"/>
                 <clip pos="5" side="sl" part="gen"/>
-                <clip pos="5" side="sl" part="nbr"/>
+                <var n="numero"/>
               </lu>
               <b/>
               <lu>
-                <clip pos="5" side="tl" part="whole"/>
+                <clip pos="5" side="tl" part="lemh"/>
+                <clip pos="5" side="tl" part="tags"/>
+                <clip pos="5" side="tl" part="lemq"/>
               </lu>
             </out>
           </otherwise>
