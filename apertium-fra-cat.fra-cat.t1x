@@ -119,6 +119,10 @@
     <def-cat n="a_vous">
       <cat-item lemma="à vous" tags="adj.pos.mf.sp"/>
     </def-cat>
+    <def-cat n="nombreux">
+      <cat-item lemma="nombreux" tags="adj.m.sp"/>
+      <cat-item lemma="nombreux" tags="adj.f.pl"/>
+    </def-cat>
     <def-cat n="vbser">
       <cat-item tags="vbser.*"/>
     </def-cat>
@@ -3747,6 +3751,36 @@ is not applicable because gender and number cannot be taken from previous rules 
             <clip pos="4" side="tl" part="lemh"/>
             <clip pos="4" side="tl" part="tags"/>
             <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule>
+<!-- REGLA: DE NOMBREUX NOM (de nombreux enfants : molts xiquets) -->
+      <pattern>
+        <pattern-item n="deprep"/>
+        <pattern-item n="nombreux"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="molt"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
