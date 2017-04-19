@@ -945,6 +945,22 @@
       </choose>
     </def-macro>
     
+    <def-macro n="f_concord_pedac" npar="1">
+<!--Pedaç totalment ad-hoc per solucionar problmes amb l'assignació del gènere i nombre a heureux, feliç > joyeux -->
+      <choose>
+        <when>
+          <test>
+            <and>
+              <equal><clip pos="1" side="tl" part="lem"/><lit v="joyeux"/></equal>
+              <equal><clip pos="1" side="tl" part="gen"/><lit-tag v="m"/></equal>
+              <equal><clip pos="1" side="tl" part="nbr"/><lit-tag v="sg"/></equal>
+            </and>
+          </test>
+          <let><clip pos="1" side="tl" part="nbr"/><lit-tag v="sp"/></let>
+        </when>
+      </choose>
+    </def-macro>
+    
     <def-macro n="f_concord1" npar="1">
       <choose>
 <!--To determine value of variables of gender and
@@ -1065,6 +1081,7 @@
           </choose>
         </when>
       </choose>
+      <call-macro n="f_concord_pedac"><with-param pos="1"/></call-macro>
     </def-macro>
     
     <def-macro n="f_concord2" npar="2">
@@ -1495,6 +1512,8 @@
           </let>
         </when>
       </choose>
+      <call-macro n="f_concord_pedac"><with-param pos="1"/></call-macro>
+      <call-macro n="f_concord_pedac"><with-param pos="2"/></call-macro>
     </def-macro>
     
     <def-macro n="f_concord3" npar="3">
@@ -2157,6 +2176,9 @@
           </let>
         </when>
       </choose>
+      <call-macro n="f_concord_pedac"><with-param pos="1"/></call-macro>
+      <call-macro n="f_concord_pedac"><with-param pos="2"/></call-macro>
+      <call-macro n="f_concord_pedac"><with-param pos="3"/></call-macro>
     </def-macro>
     
     <def-macro n="f_concord4" npar="4">
@@ -2886,6 +2908,10 @@
           </let>
         </when>
       </choose>
+      <call-macro n="f_concord_pedac"><with-param pos="1"/></call-macro>
+      <call-macro n="f_concord_pedac"><with-param pos="2"/></call-macro>
+      <call-macro n="f_concord_pedac"><with-param pos="3"/></call-macro>
+      <call-macro n="f_concord_pedac"><with-param pos="4"/></call-macro>
     </def-macro>
     
     <def-macro n="f_lexicAdj" npar="1">
@@ -2895,7 +2921,7 @@
             <and>
               <equal caseless="yes">
                 <clip pos="1" side="tl" part="lem"/>
-                <lit v="bueno"/>
+                <lit v="bo"/>
               </equal>
               <equal>
                 <clip pos="1" side="tl" part="gen"/>
@@ -2910,79 +2936,7 @@
           <let>
             <clip pos="1" side="tl" part="lem"/>
             <get-case-from pos="1">
-              <lit v="buen"/>
-            </get-case-from>
-          </let>
-        </when>
-        <when>
-          <test>
-            <and>
-              <equal caseless="yes">
-                <clip pos="1" side="tl" part="lem"/>
-                <lit v="grande"/>
-              </equal>
-              <equal>
-                <clip pos="1" side="tl" part="gen"/>
-                <lit-tag v="mf"/>
-              </equal>
-              <equal>
-                <clip pos="1" side="tl" part="nbr"/>
-                <lit-tag v="sg"/>
-              </equal>
-            </and>
-          </test>
-          <let>
-            <clip pos="1" side="tl" part="lem"/>
-            <get-case-from pos="1">
-              <lit v="gran"/>
-            </get-case-from>
-          </let>
-        </when>
-        <when>
-          <test>
-            <and>
-              <equal caseless="yes">
-                <clip pos="1" side="tl" part="lem"/>
-                <lit v="primero"/>
-              </equal>
-              <equal>
-                <clip pos="1" side="tl" part="gen"/>
-                <lit-tag v="m"/>
-              </equal>
-              <equal>
-                <clip pos="1" side="tl" part="nbr"/>
-                <lit-tag v="sg"/>
-              </equal>
-            </and>
-          </test>
-          <let>
-            <clip pos="1" side="tl" part="lem"/>
-            <get-case-from pos="1">
-              <lit v="primer"/>
-            </get-case-from>
-          </let>
-        </when>
-        <when>
-          <test>
-            <and>
-              <equal caseless="yes">
-                <clip pos="1" side="tl" part="lem"/>
-                <lit v="tercero"/>
-              </equal>
-              <equal>
-                <clip pos="1" side="tl" part="gen"/>
-                <lit-tag v="m"/>
-              </equal>
-              <equal>
-                <clip pos="1" side="tl" part="nbr"/>
-                <lit-tag v="sg"/>
-              </equal>
-            </and>
-          </test>
-          <let>
-            <clip pos="1" side="tl" part="lem"/>
-            <get-case-from pos="1">
-              <lit v="tercer"/>
+              <lit v="bon"/>
             </get-case-from>
           </let>
         </when>

@@ -107,6 +107,8 @@
       <cat-item lemma="vous" tags="prn.pro.p2.mf.pl"/>
       <cat-item lemma="leur" tags="prn.pro.p3.mf.pl"/>
       <cat-item lemma="le" tags="prn.pro.p3.mf.sg"/>
+      <cat-item lemma="le" tags="prn.pro.p3.m.sg"/>
+      <cat-item lemma="le" tags="prn.pro.p3.f.sg"/>
       <cat-item lemma="le" tags="prn.pro.p3.nt"/>
       <cat-item lemma="en" tags="prn.pro.adv"/>
       <cat-item lemma="y" tags="prn.pro.adv"/>
@@ -683,6 +685,23 @@
     </def-macro>
     
     
+    <def-macro n="f_concord_pedac" npar="1">
+<!--Pedaç totalment ad-hoc per solucionar problmes amb l'assignació del gènere i nombre a heureux, joyeux > feliç -->
+      <choose>
+        <when>
+          <test>
+            <and>
+              <equal><clip pos="1" side="tl" part="lem"/><lit v="feliç"/></equal>
+              <equal><clip pos="1" side="tl" part="gen"/><lit-tag v="m"/></equal>
+              <equal><clip pos="1" side="tl" part="nbr"/><lit-tag v="sg"/></equal>
+            </and>
+          </test>
+          <let><clip pos="1" side="tl" part="gen"/><lit-tag v="mf"/></let>
+        </when>
+      </choose>
+    </def-macro>
+    
+    
     <def-macro n="f_concord1" npar="1">
       <choose>
 <!--To determine value of variables of gender and
@@ -803,6 +822,7 @@
           </choose>
         </when>
       </choose>
+      <call-macro n="f_concord_pedac"><with-param pos="1"/></call-macro>
     </def-macro>
     
     <def-macro n="f_concord2" npar="2">
@@ -1233,6 +1253,8 @@
           </let>
         </when>
       </choose>
+      <call-macro n="f_concord_pedac"><with-param pos="1"/></call-macro>
+      <call-macro n="f_concord_pedac"><with-param pos="2"/></call-macro>
     </def-macro>
     
     <def-macro n="f_concord3" npar="3">
@@ -1895,6 +1917,9 @@
           </let>
         </when>
       </choose>
+      <call-macro n="f_concord_pedac"><with-param pos="1"/></call-macro>
+      <call-macro n="f_concord_pedac"><with-param pos="2"/></call-macro>
+      <call-macro n="f_concord_pedac"><with-param pos="3"/></call-macro>
     </def-macro>
     
     <def-macro n="f_concord4" npar="4">
@@ -2624,6 +2649,10 @@
           </let>
         </when>
       </choose>
+      <call-macro n="f_concord_pedac"><with-param pos="1"/></call-macro>
+      <call-macro n="f_concord_pedac"><with-param pos="2"/></call-macro>
+      <call-macro n="f_concord_pedac"><with-param pos="3"/></call-macro>
+      <call-macro n="f_concord_pedac"><with-param pos="4"/></call-macro>
     </def-macro>
   </section-def-macros>
   
@@ -7309,6 +7338,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     <rule>
+
 <!--REGLA:  pro +inf = inf+pro -->
       <pattern>
         <pattern-item n="prnproobj"/>
