@@ -8099,6 +8099,21 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     <rule>
+<!--REGLA: ne pas fumer > no fumar, ne pas le dire > no dir-ho -->
+      <pattern>
+        <pattern-item n="neadv"/>
+        <pattern-item n="pas"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule>
 <!-- REGLA: reset variables-->
       <pattern>
         <pattern-item n="sent"/>
