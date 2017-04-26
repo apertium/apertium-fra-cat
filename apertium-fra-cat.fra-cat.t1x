@@ -76,6 +76,9 @@
       <cat-item lemma="il" tags="prn.tn.p3.m.pl"/>
       <cat-item lemma="il" tags="prn.tn.p3.f.pl"/>
     </def-cat>
+    <def-cat n="on">
+      <cat-item lemma="on" tags="prn.pro.ref.p3.mf.sp"/>
+    </def-cat>
     <def-cat n="prn">
       <cat-item tags="prn.tn.*"/>
       <cat-item tags="prn.itg.*"/>
@@ -161,6 +164,9 @@
       <cat-item tags="vbser.ifi.*"/>
       <cat-item tags="vbmod.ifi.*"/>
     </def-cat>
+    <def-cat n="aller">
+      <cat-item lemma="aller" tags="vblex.*"/>
+    </def-cat>
     <def-cat n="lquest">
       <cat-item tags="lquest"/>
     </def-cat>
@@ -200,6 +206,11 @@
       <cat-item tags="vbser.fts.*"/>
       <cat-item tags="vbser.fti.*"/>
       <cat-item tags="vbser.cni.*"/>
+    </def-cat>
+    <def-cat n="verbconj">
+      <cat-item tags="vblex.*.p1.*"/>
+      <cat-item tags="vblex.*.p2.*"/>
+      <cat-item tags="vblex.*.p3.*"/>
     </def-cat>
     <def-cat n="haber3p">
 <!--	  <cat-item tags="vbhaver.pri.p3.sg"/> -->
@@ -3991,6 +4002,73 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     <rule>
+<!-- REGLA: aller +  INF (aller manger : anar a menjar)-->
+<!-- difícil de dir si és "anar a" o futur, però segur que cal canviar l'estructura -->
+      <pattern> 
+        <pattern-item n="aller"/>
+        <pattern-item n="inf"/>
+     </pattern>	
+      <action>
+        <out>
+	  <lu>   
+	    <clip pos="1" side="tl" part="lemh"/>
+	    <clip pos="1" side="tl" part="tags"/>
+	    <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="a"/>
+            <lit-tag v="pr"/>
+          </lu>
+	  <b pos="1"/>
+	  <lu>   
+	    <clip pos="2" side="tl" part="lemh"/>
+	    <clip pos="2" side="tl" part="tags"/>
+	    <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule>
+<!-- REGLA: aller + PRO+ INF (aller en manger : anar a menjar-ne)-->
+<!-- difícil de dir si és "anar a" o futur, però segur que cal canviar l'estructura -->
+      <pattern> 
+        <pattern-item n="aller"/>
+        <pattern-item n="prnproref"/>
+        <pattern-item n="inf"/>
+     </pattern>	
+      <action>
+        <out>
+	  <lu>   
+	    <clip pos="1" side="tl" part="lemh"/>
+	    <clip pos="1" side="tl" part="tags"/>
+	    <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+	  <b pos="1"/>
+          <lu>
+            <lit v="a"/>
+            <lit-tag v="pr"/>
+          </lu>
+	  <b pos="2"/>
+          <mlu>
+	    <lu>   
+	      <clip pos="3" side="tl" part="lemh"/>
+	      <clip pos="3" side="tl" part="tags"/>
+	      <clip pos="3" side="tl" part="lemq"/>
+            </lu>
+            <lu>
+              <clip pos="2" side="tl" part="lem"/>
+              <lit-tag v="prn.enc"/>
+              <clip pos="2" side="tl" part="tipoenc_pro"/>
+              <clip pos="3" side="tl" part="lemq"/>
+            </lu>
+          </mlu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule>
 <!-- REGLA: verb +  VERB PREP DET (aller avoir des: tindrà)-->
       <pattern> 
         <pattern-item n="verb"/>
@@ -6582,12 +6660,39 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     
+    <rule>
+<!--REGLA: PRN NE VERB PAS (il n'arrive pas: no arriba) -->
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="pas"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    
         <rule>
 <!--REGLA: PRN VERB PRNENC -->
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="verb"/>
-	   <pattern-item n="prnenc"/>
+	<pattern-item n="prnenc"/>
       </pattern>
       <action>
         <call-macro n="f_concord1">
@@ -6694,7 +6799,6 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
       </action>
     </rule>
-    
     
     
     <rule>
@@ -8108,6 +8212,65 @@ is not applicable because gender and number cannot be taken from previous rules 
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule>
+<!--REGLA: ne mange pas > no menja -->
+      <pattern>
+        <pattern-item n="neadv"/>
+        <pattern-item n="verbconj"/>
+        <pattern-item n="pas"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule>
+<!--REGLA: on ne mange pas > no es menja -->
+      <pattern>
+        <pattern-item n="on"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="verbconj"/>
+        <pattern-item n="pas"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <clip pos="1" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
           </lu>
         </out>
       </action>
