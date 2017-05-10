@@ -12,6 +12,59 @@
   </rule>
 
   <!-- 
+    a >> à, en
+  -->
+  <rule weight="0.8">
+    <match lemma="a" tags="pr"><select lemma="à"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="a" tags="pr"><select lemma="en"/></match>
+    <or>
+      <match lemma="Catalunya"/>
+      <match lemma="Espanya"/>
+      <match lemma="França"/>
+      <match lemma="Alemanya"/>
+      <match lemma="Itàlia"/>
+      <match lemma="Anglaterra"/>
+      <match lemma="Rússia"/>
+      <match lemma="Xina"/>
+    </or>
+  </rule>
+
+  <!-- 
+    en >> en, dans
+  -->
+  <rule weight="0.8">
+    <match lemma="en" tags="pr"><select lemma="dans"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="classificar"/>
+      <match lemma="consistir"/>
+      <match lemma="dividir"/>
+      <match lemma="organitzar"/>
+      <match lemma="pensar"/>
+    </or>
+    <match lemma="en" tags="pr"><select lemma="en"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="en" tags="pr"><select lemma="en"/></match>
+    <match tags="*.inf"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="en" tags="pr"><select lemma="en"/></match>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="en" tags="pr"><select lemma="en"/></match>
+    <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="en" tags="pr"><select lemma="dans"/></match>
+    <match tags="adj.ind.*"/>
+  </rule>
+
+  <!-- 
     dues vegades DE cinc >> deux fois sur cinq
   -->
   <rule weight="1.0">

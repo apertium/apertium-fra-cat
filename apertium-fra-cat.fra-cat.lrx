@@ -101,6 +101,26 @@
   </rule>
 
   <!-- 
+    en >> en, a
+  -->
+  <rule weight="0.8">
+    <match lemma="en" tags="pr"><select lemma="en"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="en" tags="pr"><select lemma="a"/></match>
+    <or>
+      <match lemma="Catalogne"/>
+      <match lemma="Espagne"/>
+      <match lemma="France"/>
+      <match lemma="Alemagne"/>
+      <match lemma="Italie"/>
+      <match lemma="Angleterre"/>
+      <match lemma="Russie"/>
+      <match lemma="Chine"/>
+    </or>
+  </rule>
+
+  <!-- 
     deux fois sur cinq >> dues vegades DE cinc
   -->
   <rule weight="1.0">
