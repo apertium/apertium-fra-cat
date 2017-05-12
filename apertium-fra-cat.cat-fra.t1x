@@ -6600,6 +6600,9 @@ is not applicable because gender and number can not be taken from previous rules
         <pattern-item n="verb"/>
       </pattern>
       <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
