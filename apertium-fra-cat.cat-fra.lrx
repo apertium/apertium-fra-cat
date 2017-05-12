@@ -111,6 +111,31 @@
     <match lemma="canviar" tags="vblex.*"><select lemma="changer"/></match>
   </rule>
 
+  <!-- 
+    policia >> police, policier
+  -->
+  <rule weight="0.8">
+    <match lemma="policia" tags="n.*"><select lemma="police"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="policia" tags="n.*.pl"><select lemma="policier"/></match>
+  </rule>
+  <rule weight="1.2">
+    <or>
+      <match tags="det.*.f.*"/>
+      <match tags="adj.*.f.*"/>
+    </or>
+    <match lemma="policia" tags="n.*.pl"><select lemma="police"/></match>
+  </rule>
+  <rule weight="1.2">
+    <or>
+      <match tags="det.*.m.*"/>
+      <match tags="adj.*.m.*"/>
+      <match lemma="dona" tags="n.*"/>
+    </or>
+    <match lemma="policia" tags="n.*"><select lemma="policier"/></match>
+  </rule>
+
 </rules>
 
 <!-- 
