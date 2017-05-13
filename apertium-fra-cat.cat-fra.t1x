@@ -4073,10 +4073,7 @@ is not applicable because gender and number can not be taken from previous rules
         <out>
           <lu>
             <clip pos="1" side="tl" part="lemh"/>
-            <clip pos="1" side="tl" part="a_verb"/>
-            <clip pos="1" side="tl" part="temps"/>
-            <clip pos="1" side="tl" part="persona"/>
-            <clip pos="1" side="tl" part="nbr"/>
+            <clip pos="1" side="tl" part="tags"/>
             <clip pos="1" side="tl" part="lemq"/>
           </lu>
         </out>
