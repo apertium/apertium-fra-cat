@@ -277,4 +277,18 @@
     <match tags="det.*"/>
   </rule>
 
+<!-- garde >> guarda / guàrdia -->
+
+  <rule weight="0.8">
+    <match lemma="garde" tags="n.*"><select lemma="guàrdia"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.*.n.*"/>
+    <match lemma="garde" tags="n.*"><select lemma="guarda"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="adj.*.n.*"/>
+    <match lemma="garde" tags="n.*"><select lemma="guarda"/></match>
+  </rule>
+
 </rules>
