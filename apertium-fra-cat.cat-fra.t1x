@@ -520,6 +520,23 @@
   </section-def-lists>
   
   <section-def-macros>
+    <def-macro n="f_pis2prs" npar="1"> <!-- canviem tots els pis per prs -->
+      <choose>
+        <when>
+          <test>
+            <equal>
+              <clip pos="1" side="sl" part="temps"/>
+              <lit-tag v="pis"/>
+            </equal>
+          </test>
+          <let>
+            <clip pos="1" side="tl" part="temps"/>
+            <lit-tag v="prs"/>
+          </let>
+        </when>
+      </choose>
+    </def-macro>
+
     <def-macro n="f_setpronom" npar="1">
 <!--
       <choose>
@@ -3794,10 +3811,30 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="1"/>
           <with-param pos="5"/>
         </call-macro>
+        <choose>
+          <when>
+            <test>
+	      <equal>
+	       	 <clip pos="1" side="sl" part="lem"/>
+		  <lit v="1"/>
+	      </equal> 
+            </test>
+            <out>
+              <lu>
+                <lit v="1er"/>
+                <lit-tag v="adj.m.sg"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
         <out>
-          <lu>
-            <clip pos="1" side="tl" part="whole"/>
-          </lu>
           <b pos="1"/>
           <lu>
             <clip pos="3" side="tl" part="whole"/>
@@ -3822,10 +3859,30 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="3"/>
           <with-param pos="1"/>
         </call-macro>
+        <choose>
+          <when>
+            <test>
+	      <equal>
+	       	 <clip pos="1" side="sl" part="lem"/>
+		  <lit v="1"/>
+	      </equal> 
+            </test>
+            <out>
+              <lu>
+                <lit v="1er"/>
+                <lit-tag v="adj.m.sg"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
         <out>
-          <lu>
-            <clip pos="1" side="tl" part="whole"/>
-          </lu>
           <b pos="1"/>
           <lu>
             <clip pos="3" side="tl" part="whole"/>
@@ -5118,6 +5175,9 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="1"/>
         </call-macro>
         <call-macro n="f_setpronom">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_pis2prs">
           <with-param pos="2"/>
         </call-macro>
         <choose>
@@ -6599,6 +6659,9 @@ is not applicable because gender and number can not be taken from previous rules
       <action>
         <call-macro n="f_concord1">
           <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_pis2prs">
+          <with-param pos="2"/>
         </call-macro>
         <out>
           <lu>

@@ -795,7 +795,6 @@
     <e>       <p><l>amputer<s n="vblex"/></l>         <r>amputar<s n="vblex"/></r></p></e>
     <e r="LR"><p><l>amusement<s n="n"/><s n="m"/></l> <r>diversió<s n="n"/><s n="f"/></r></p></e>
     <e>       <p><l>amuser<s n="vblex"/></l>          <r>divertir<s n="vblex"/></r></p></e>
-    <e r="RL"><p><l>amuser<s n="vblex"/></l>          <r>gaudir<s n="vblex"/></r></p></e>
     <e>       <p><l>Ana<s n="np"/></l><r>Ana<s n="np"/></r></p></e>
     <e r="LR"><p><l>an<s n="n"/></l>                  <r>any<s n="n"/></r></p></e>
     <e r="LR"><p><l>anal<s n="adj"/><s n="f"/></l>    <r>anal<s n="adj"/><s n="mf"/></r></p></e>
@@ -7951,15 +7950,17 @@
 <e>       <p><l>Mayte<s n="np"/></l><r>Mayte<s n="np"/></r></p></e>
 <e>       <p><l>me<s n="prn"/><s n="enc"/></l>    <r>em<s n="prn"/><s n="enc"/></r></p></e>
 <e>       <p><l>me<s n="prn"/><s n="pro"/></l>    <r>em<s n="prn"/><s n="pro"/></r></p></e>
-<e>       <p><l>mécanicien<s n="adj"/></l>        <r>mecànic<s n="adj"/></r></p></e>
-<e>       <p><l>mécanicien<s n="n"/></l>          <r>mecànic<s n="n"/></r></p></e>
+<e>       <p><l>mécanique<s n="adj"/></l>         <r>mecànic<s n="adj"/></r></p><par n="mf_GD"/></e>
+<e>       <p><l>mécanicien<s n="n"/><s n="m"/></l><r>mecànic<s n="n"/><s n="m"/></r></p></e>
+<e r="LR"><p><l>mécanicien<s n="n"/><s n="f"/></l><r>mecànic<s n="n"/><s n="f"/></r></p></e>
 <e>       <p><l>mécanique<s n="n"/></l>           <r>mecànica<s n="n"/></r></p></e>
 <e>       <p><l>mécaniquement<s n="adv"/></l>     <r>mecànicament<s n="adv"/></r></p></e>
 <e>       <p><l>mécanisation<s n="n"/></l>        <r>mecanització<s n="n"/></r></p></e>
 <e a="gema"><p><l>mécanisme<s n="n"/></l>         <r>mecanisme<s n="n"/></r></p></e>
 <e>       <p><l>mécénat<s n="n"/></l>             <r>mecenatge<s n="n"/></r></p></e>
 <e>       <p><l>mèche<s n="n"/></l>               <r>metxa<s n="n"/></r></p></e>
-<e>       <p><l>mécompte<s n="n"/><s n="m"/></l>  <r>equivocació<s n="n"/><s n="f"/></r></p></e>
+<e r="LR"><p><l>mécompte<s n="n"/><s n="m"/></l>  <r>equivocació<s n="n"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>erreur<s n="n"/><s n="f"/></l>    <r>equivocació<s n="n"/><s n="f"/></r></p></e>
 <e>       <p><l>méconnaître<s n="vblex"/></l>     <r>desconèixer<s n="vblex"/></r></p></e>
 <e>       <p><l>mécontent<s n="adj"/></l>         <r>descontent<s n="adj"/></r></p></e>
 <e>       <p><l>mécontenter<s n="vblex"/></l>     <r>descontentar<s n="vblex"/></r></p></e>
@@ -9874,7 +9875,7 @@
 <e>       <p><l>pour<s n="pr"/></l>               <r>per<s n="pr"/></r></p></e>
 <e>       <p><l>pour<s n="pr"/></l>               <r>per<b/>a<s n="pr"/></r></p></e>
 <e a="gema" r="LR"><p><l>pour<b/>ce<b/>qui<b/>est<b/>de<s n="pr"/></l><r>pel<b/>que<b/>fa<b/>a<s n="pr"/></r></p></e>
-<e r="LR"><p><l>pour<b/>que<s n="cnjadv"/></l>    <r>perquè<s n="cnjadv"/></r></p></e>
+<e>       <p><l>pour<b/>que<s n="cnjadv"/></l>    <r>perquè<s n="cnjadv"/></r></p></e>
 <e>       <p><l>pourcentage<s n="n"/></l>         <r>percentatge<s n="n"/></r></p></e>
 <e>       <p><l>pourquoi<s n="n"/></l>            <r>perquè<s n="n"/></r></p></e>
 <e>       <p><l>poursuite<s n="n"/></l>           <r>persecució<s n="n"/></r></p></e>
@@ -16611,7 +16612,7 @@
 <e>       <p><l>tactique<s n="adj"/></l><r>tàctic<s n="adj"/></r></p><par n="mf_GD"/></e>
 <e>       <p><l>typique<s n="adj"/></l><r>típic<s n="adj"/></r></p><par n="mf_GD"/></e>
 <e r="LR"><p><l>dorénavant<s n="adv"/></l><r>d'ara<b/>endavant<s n="adv"/></r></p></e>
-<e r="RL"><p><l>statut<s n="n"/></l><r>estatus<s n="n"/></r></p></e>
+<e r="RL"><p><l>statut<s n="n"/><s n="m"/></l><r>estatus<s n="n"/><s n="m"/></r></p><par n="ND_sp"/></e>
 <e>       <p><l>gaulois<s n="n"/><s n="f"/></l><r>gal<s n="n"/><s n="f"/></r></p></e>
 <e>       <p><l>gaulois<s n="n"/><s n="m"/></l><r>gal<s n="n"/><s n="m"/></r></p><par n="sp_ND"/></e>
 <e>       <p><l>gaulois<s n="adj"/><s n="f"/></l><r>gal<s n="adj"/><s n="f"/></r></p></e>

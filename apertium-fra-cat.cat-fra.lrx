@@ -21,6 +21,11 @@
     <match lemma="a" tags="pr"><select lemma="en"/></match>
     <or>
       <match lemma="Catalunya"/>
+      <match lemma="Aragó"/>
+      <match lemma="Castella"/>
+      <match lemma="Andalusia"/>
+      <match lemma="Occitània"/>
+      <match lemma="Provença"/>
       <match lemma="Espanya"/>
       <match lemma="França"/>
       <match lemma="Alemanya"/>
@@ -29,6 +34,11 @@
       <match lemma="Finlàndia"/>
       <match lemma="Islàndia"/>
       <match lemma="Itàlia"/>
+      <match lemma="Bèlgica"/>
+      <match lemma="Holanda"/>
+      <match lemma="Suïssa"/>
+      <match lemma="Àustria"/>
+      <match lemma="Hongria"/>
       <match lemma="Grècia"/>
       <match lemma="Anglaterra"/>
       <match lemma="Gal·les"/>
@@ -89,6 +99,28 @@
   <rule weight="1.2">
     <match lemma="en" tags="pr"><select lemma="dans"/></match>
     <match tags="adj.ind.*"/>
+  </rule>
+
+  <!-- 
+    perquè (cnjadv) >> parce que, pour que
+  -->
+  <rule weight="0.8">
+    <match lemma="perquè" tags="cnjadv"><select lemma="parce que"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="perquè" tags="cnjadv"><select lemma="pour que"/></match>
+    <or>
+      <match tags="*.prs.*"/>
+      <match tags="*.pis.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="perquè" tags="cnjadv"><select lemma="pour que"/></match>
+    <match tags="prn.tn.*"/>
+    <or>
+      <match tags="*.prs.*"/>
+      <match tags="*.pis.*"/>
+    </or>
   </rule>
 
   <!-- 

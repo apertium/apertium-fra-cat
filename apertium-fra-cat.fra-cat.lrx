@@ -110,6 +110,12 @@
     <match lemma="en" tags="pr"><select lemma="a"/></match>
     <or>
       <match lemma="Catalogne"/>
+      <match lemma="Aragon"/>
+      <match lemma="Castille"/>
+      <match lemma="Andalousie"/>
+      <match lemma="Occitanie"/>
+      <match lemma="Provence"/>
+      <match lemma="Catalogne"/>
       <match lemma="Espagne"/>
       <match lemma="France"/>
       <match lemma="Alemagne"/>
@@ -118,6 +124,11 @@
       <match lemma="Finlande"/>
       <match lemma="Islande"/>
       <match lemma="Italie"/>
+      <match lemma="Belgique"/>
+      <match lemma="Holande"/>
+      <match lemma="Suisse"/>
+      <match lemma="Autriche"/>
+      <match lemma="Hongrie"/>
       <match lemma="Grèce"/>
       <match lemma="Angleterre"/>
       <match lemma="Écosse"/>
