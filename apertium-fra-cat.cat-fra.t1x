@@ -3951,6 +3951,82 @@ is not applicable because gender and number can not be taken from previous rules
 </rule>
     
     <rule>
+<!-- REGLA: PRETÈRIT INDEFINIT -->
+<!-- Per traduir "vaig fer" per "ai fait" -->
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="anar"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+      <choose>
+          <when>
+            <test>
+              <in caseless="yes">
+                <clip pos="3" side="sl" part="lem"/>
+                <list n="vbambser"/>
+              </in>
+            </test>
+	 <out>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="être"/>
+            </get-case-from>
+            <lit-tag v="vbser"/>
+            <lit-tag v="pri"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <lit-tag v="pp.m.sg"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+       </when>
+       <otherwise>  
+        <out>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="avoir"/>
+            </get-case-from>
+            <lit-tag v="vbhaver"/>
+            <lit-tag v="pri"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <lit-tag v="pp.m.sg"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </otherwise>
+    </choose>  	
+  </action>
+</rule>
+    
+    <rule>
 <!-- REGLA: PRETÈRIT INDEFINIT + ENCLÍTIC -->
 <!-- Per a traduir "van comprar-me" per "m'ont acheté" -->
       <pattern>
@@ -6711,6 +6787,190 @@ is not applicable because gender and number can not be taken from previous rules
           <lu>
             <lit v="pas"/>
             <lit-tag v="adv"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+    
+    <rule>
+<!-- REGLA: PRETÈRIT INDEFINIT -->
+<!-- Per traduir "vaig fer" per "ai fait" -->
+      <pattern>
+        <pattern-item n="prntn"/>
+        <pattern-item n="anar"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+      <choose>
+          <when>
+            <test>
+              <in caseless="yes">
+                <clip pos="3" side="sl" part="lem"/>
+                <list n="vbambser"/>
+              </in>
+            </test>
+	 <out>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="être"/>
+            </get-case-from>
+            <lit-tag v="vbser"/>
+            <lit-tag v="pri"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <lit-tag v="pp.m.sg"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+       </when>
+       <otherwise>  
+        <out>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="avoir"/>
+            </get-case-from>
+            <lit-tag v="vbhaver"/>
+            <lit-tag v="pri"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <lit-tag v="pp.m.sg"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </otherwise>
+    </choose>  	
+  </action>
+</rule>
+    
+    <rule>
+<!-- REGLA: PRETÈRIT INDEFINIT -->
+<!-- Per traduir "vaig fer" per "ai fait" -->
+      <pattern>
+        <pattern-item n="prntn"/>
+        <pattern-item n="noadv"/>
+        <pattern-item n="anar"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+        </out>
+      <choose>
+          <when>
+            <test>
+              <in caseless="yes">
+                <clip pos="4" side="sl" part="lem"/>
+                <list n="vbambser"/>
+              </in>
+            </test>
+	 <out>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="être"/>
+            </get-case-from>
+            <lit-tag v="vbser"/>
+            <lit-tag v="pri"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="a_verb"/>
+            <lit-tag v="pp.m.sg"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+       </when>
+       <otherwise>  
+        <out>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="avoir"/>
+            </get-case-from>
+            <lit-tag v="vbhaver"/>
+            <lit-tag v="pri"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="a_verb"/>
+            <lit-tag v="pp.m.sg"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </otherwise>
+    </choose>  	
+  </action>
+</rule>
+    
+    <rule>
+<!--REGLA: PRN + VERB-->
+      <pattern>
+        <pattern-item n="prntn"/>
+        <pattern-item n="verb"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_pis2prs">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+            <clip pos="2" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
