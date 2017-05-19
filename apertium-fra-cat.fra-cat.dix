@@ -4620,8 +4620,10 @@
     <e r="LR"><p><l>énervé<s n="adj"/></l>            <r>nerviós<s n="adj"/></r></p></e>
     <e>       <p><l>énerver<s n="vblex"/></l>         <r>exasperar<s n="vblex"/></r></p></e>
     <e>       <p><l>enfance<s n="n"/></l>             <r>infantesa<s n="n"/></r></p></e>
-    <e>       <p><l>enfant<s n="n"/><s n="m"/></l>    <r>nen<s n="n"/><s n="m"/></r></p></e>
-    <e r="RL"><p><l>enfant<s n="n"/><s n="m"/></l>    <r>nen<s n="n"/><s n="f"/></r></p></e>
+    <e r="RL"><p><l>garçon<s n="n"/><s n="m"/><s n="sg"/></l>    <r>nen<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
+    <e r="LR"><p><l>enfant<s n="n"/><s n="m"/><s n="sg"/></l>    <r>nen<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
+    <e>       <p><l>enfant<s n="n"/><s n="m"/><s n="pl"/></l>    <r>nen<s n="n"/><s n="m"/><s n="pl"/></r></p></e>
+    <e r="RL"><p><l>fille<s n="n"/><s n="f"/></l>     <r>nen<s n="n"/><s n="f"/></r></p></e>
     <e r="LR"><p><l>enfantin<s n="adj"/><s n="f"/></l><r>infantil<s n="adj"/><s n="mf"/></r></p></e>
     <e r="LR"><p><l>enfantin<s n="adj"/><s n="m"/></l><r>infantil<s n="adj"/><s n="mf"/></r></p></e>
     <e r="RL"><p><l>enfantin<s n="adj"/><s n="GD"/></l><r>infantil<s n="adj"/><s n="mf"/></r></p></e>
@@ -5406,7 +5408,7 @@
 <e a="gema"><p><l>filiale<s n="n"/></l>           <r>filial<s n="n"/></r></p></e>
 <e>       <p><l>filialement<s n="adv"/></l>      <r>filialment<s n="adv"/></r></p></e>
 <e>       <p><l>fille<s n="n"/><s n="f"/></l>    <r>noi<s n="n"/><s n="f"/></r></p></e>
-<e>       <p><l>fille<s n="n"/><s n="f"/></l>    <r>xic<s n="n"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>fille<s n="n"/><s n="f"/></l>    <r>xic<s n="n"/><s n="f"/></r></p></e>
 <e>       <p><l>film<s n="n"/><s n="m"/></l>      <r>pel·lícula<s n="n"/><s n="f"/></r></p></e>
 <e>       <p><l>filmer<s n="vblex"/></l>          <r>filmar<s n="vblex"/></r></p></e>
 <!--<e>       <p><l>filmographie<s n="n"/></l>        <r>filmografia<s n="n"/></r></p></e>-->
@@ -5747,9 +5749,9 @@
 <e>       <p><l>García<s n="np"/></l><r>García<s n="np"/></r></p></e>
 <e>       <p><l>Garcilaso<s n="np"/></l><r>Garcilaso<s n="np"/></r></p></e>
 <e>       <p><l>garçon<s n="n"/><s n="m"/></l>              <r>noi<s n="n"/><s n="m"/></r></p></e>
-<e>       <p><l>garçon<s n="n"/><s n="m"/></l>              <r>xic<s n="n"/><s n="m"/></r></p></e>
-<e><p><l>garçon<s n="n"/><s n="m"/></l>    <r>cambrer<s n="n"/><s n="f"/></r></p></e>
-<e><p><l>garçon<s n="n"/><s n="m"/></l>    <r>cambrer<s n="n"/><s n="m"/></r></p></e>
+<e r="RL"><p><l>garçon<s n="n"/><s n="m"/></l>              <r>xic<s n="n"/><s n="m"/></r></p></e>
+<e r="RL"><p><l>garçon<s n="n"/><s n="m"/></l>    <r>cambrer<s n="n"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>garçon<s n="n"/><s n="m"/></l>    <r>cambrer<s n="n"/><s n="m"/></r></p></e>
 <e a="gema"><p><l>garde<s n="n"/><s n="mf"/></l>  <r>guarda<s n="n"/><s n="mf"/></r></p></e>
 <e>       <p><l>garde<s n="n"/><s n="mf"/></l>    <r>guàrdia<s n="n"/><s n="mf"/></r></p></e>
 <e>       <p><l>garder<s n="vblex"/></l>          <r>guardar<s n="vblex"/></r></p></e>
@@ -12368,7 +12370,7 @@
 <e>       <p><l>tout<s n="n"/></l>                <r>tot<s n="n"/></r></p></e>
 
 <e>       <p><l>tout<s n="predet"/><s n="m"/></l> <r>tot<s n="predet"/><s n="m"/></r></p></e>
-<e>       <p><l>tout<s n="predet"/><s n="f"/></l> <r>tot<s n="predet"/><s n="m"/></r></p></e>
+<e>       <p><l>tout<s n="predet"/><s n="f"/></l> <r>tot<s n="predet"/><s n="f"/></r></p></e>
 <e r="RL"><p><l>tout<s n="predet"/><s n="m"/><s n="sg"/></l><r>tot<s n="predet"/><s n="nt"/><s n="sp"/></r></p></e>
 
 <e>       <p><l>tout<s n="prn"/></l>              <r>tot<s n="prn"/></r></p></e>
