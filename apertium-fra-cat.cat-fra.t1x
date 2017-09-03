@@ -15,6 +15,9 @@
       <cat-item tags="det.*"/>
       <cat-item tags="predet.*"/>
     </def-cat>
+    <def-cat n="cada">
+      <cat-item lemma="cada" tags="det.*"/>
+    </def-cat>
     <def-cat n="detdef">
       <cat-item tags="det.def.*"/>
     </def-cat>
@@ -185,6 +188,19 @@
     </def-cat>
     <def-cat n="any">
       <cat-item lemma="any" tags="n.*"/>
+    </def-cat>
+    <def-cat n="n_temps">
+      <cat-item lemma="dia" tags="n.*"/>
+      <cat-item lemma="setmana" tags="n.*"/>
+      <cat-item lemma="mes" tags="n.*"/>
+      <cat-item lemma="any" tags="n.*"/>
+      <cat-item lemma="dilluns" tags="n.*"/>
+      <cat-item lemma="dimarts" tags="n.*"/>
+      <cat-item lemma="dimecres" tags="n.*"/>
+      <cat-item lemma="dijous" tags="n.*"/>
+      <cat-item lemma="divendres" tags="n.*"/>
+      <cat-item lemma="dissabte" tags="n.*"/>
+      <cat-item lemma="diumenge" tags="n.*"/>
     </def-cat>
     <def-cat n="multiHiha">
       <cat-item lemma="hi ha" tags="vblex.pri.p3.sg"/>
