@@ -98,7 +98,10 @@
     <def-cat n="ells">
       <cat-item lemma="ell" tags="prn.tn.p3.m.pl"/>
     </def-cat>
-    <def-cat n="verb">
+    <def-cat n="vbser">
+      <cat-item tags="vbser.*"/>
+    </def-cat>
+    <def-cat n="verb_conj">
       <cat-item tags="vblex.*.p1.*"/>
       <cat-item tags="vblex.*.p2.*"/>
       <cat-item tags="vblex.*.p3.*"/>
@@ -4216,7 +4219,7 @@ is not applicable because gender and number can not be taken from previous rules
     <rule>
 <!--REGLA: verb en forma personal-->
       <pattern>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
       </pattern>
       <action>
         <out>
@@ -4233,7 +4236,7 @@ is not applicable because gender and number can not be taken from previous rules
      <rule>
 <!--REGLA: verb en forma personal + nom -->
       <pattern>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
 	<pattern-item n="nom"/>
       </pattern>
       <action>
@@ -4338,7 +4341,7 @@ is not applicable because gender and number can not be taken from previous rules
 <!--REGLA: no+ verb en forma personal-->
       <pattern>
         <pattern-item n="noadv"/>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
       </pattern>
       <action>
         <out>
@@ -4400,7 +4403,7 @@ is not applicable because gender and number can not be taken from previous rules
 <!--REGLA: no+ verb en forma personal + pas, gens, gaire, etc.-->
       <pattern>
         <pattern-item n="noadv"/>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
         <pattern-item n="negadv"/>
       </pattern>
       <action>
@@ -4432,7 +4435,7 @@ is not applicable because gender and number can not be taken from previous rules
       <pattern>
         <pattern-item n="noadv"/>
         <pattern-item n="prnpro"/>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
       </pattern>
       <action>
         <call-macro n="f_concord1">
@@ -4472,7 +4475,7 @@ is not applicable because gender and number can not be taken from previous rules
         <pattern-item n="noadv"/>
         <pattern-item n="prnpro"/>
         <pattern-item n="prnpro"/>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
       </pattern>
       <action>
         <call-macro n="f_concord1">
@@ -4517,7 +4520,7 @@ is not applicable because gender and number can not be taken from previous rules
 <!--REGLA: no+ verb en forma personal + nom-->
       <pattern>
         <pattern-item n="noadv"/>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
 	<pattern-item n="nom"/>
       </pattern>
       <action>
@@ -5127,7 +5130,7 @@ is not applicable because gender and number can not be taken from previous rules
      <rule>
 <!--REGLA: acabar de + inf -> venir de + inf -->
       <pattern>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
 	<pattern-item n="deprep"/>
         <pattern-item n="inf"/>
       </pattern>
@@ -5215,7 +5218,7 @@ is not applicable because gender and number can not be taken from previous rules
      <rule>
 <!--REGLA: acabar de + inf + enc -> venir de + enc + inf -->
       <pattern>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
 	<pattern-item n="deprep"/>
         <pattern-item n="inf"/>
 	<pattern-item n="prnenc"/>
@@ -5318,7 +5321,7 @@ is not applicable because gender and number can not be taken from previous rules
 <!--REGLA: SENT,que,coma,i VERB -->
       <pattern>
         <pattern-item n="sentquecm"/>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
       </pattern>
       <action>
         <call-macro n="f_concord1">
@@ -5444,11 +5447,113 @@ is not applicable because gender and number can not be taken from previous rules
   </rule>
     
     <rule>
+<!--REGLA: SENT,que,coma,i ser pp: seria expulsada > elle serait expulséeю -->
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="pp"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_pis2prs">
+          <with-param pos="2"/>
+        </call-macro>
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="2" side="sl" part="persona"/>
+                <lit-tag v="p3"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="sl" part="lem"/>
+                <lit-tag v="prn.tn"/>
+                <clip pos="2" side="sl" part="persona"/>
+                <clip pos="3" side="sl" part="gen"/>
+                <clip pos="2" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+            <modify-case>
+              <clip pos="2" side="tl" part="lemh"/>
+              <lit v="aa"/>
+            </modify-case>
+            <out>
+              <lu>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="a_verb"/>
+                <clip pos="2" side="tl" part="temps"/>
+                <clip pos="2" side="tl" part="persona"/>
+                <clip pos="2" side="tl" part="gen"/>
+                <clip pos="2" side="tl" part="nbr"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="sl" part="lem"/>
+                <lit-tag v="prn.tn"/>
+                <clip pos="2" side="sl" part="persona"/>
+                <lit-tag v="mf"/>
+                <clip pos="2" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+            <modify-case>
+              <clip pos="2" side="tl" part="lemh"/>
+              <lit v="aa"/>
+            </modify-case>
+            <out>
+              <lu>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="a_verb"/>
+                <clip pos="2" side="tl" part="temps"/>
+                <clip pos="2" side="tl" part="persona"/>
+                <clip pos="2" side="tl" part="gen"/>
+                <clip pos="2" side="tl" part="nbr"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+  </rule>
+    
+    <rule>
 <!--REGLA: SENT,que,coma,i + No + VERB -->
       <pattern>
         <pattern-item n="sentquecm"/>
         <pattern-item n="noadv"/>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
       </pattern>
       <action>
         <call-macro n="f_setpronom">
@@ -5596,7 +5701,7 @@ is not applicable because gender and number can not be taken from previous rules
       <pattern>
         <pattern-item n="sentquecm"/>
         <pattern-item n="prnpro"/>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
       </pattern>
       <action>
         <call-macro n="f_concord1">
@@ -5875,7 +5980,7 @@ is not applicable because gender and number can not be taken from previous rules
         <pattern-item n="sentquecm"/>
         <pattern-item n="noadv"/>
         <pattern-item n="prnpro"/>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
       </pattern>
       <action>
         <call-macro n="f_concord1">
@@ -6075,7 +6180,7 @@ is not applicable because gender and number can not be taken from previous rules
 <!--REGLA: SENT,que,coma,i + VERB + NOM -->
       <pattern>
         <pattern-item n="sentquecm"/>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
         <pattern-item n="nom"/>
       </pattern>
       <action>
@@ -6247,7 +6352,7 @@ is not applicable because gender and number can not be taken from previous rules
 <!--REGLA: SENT,que,coma,i + VERB + VERB + NOM-->
       <pattern>
         <pattern-item n="sentquecm"/>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
         <pattern-item n="verbnp"/>
         <pattern-item n="nom"/>
       </pattern>
@@ -6477,7 +6582,7 @@ is not applicable because gender and number can not be taken from previous rules
       <pattern>
         <pattern-item n="sentquecm"/>
         <pattern-item n="noadv"/>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
         <pattern-item n="nom"/>
       </pattern>
       <action>
@@ -6678,7 +6783,7 @@ is not applicable because gender and number can not be taken from previous rules
       <pattern>
         <pattern-item n="sentquecm"/>
         <pattern-item n="noadv"/>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
         <pattern-item n="verbnp"/>
         <pattern-item n="nom"/>
       </pattern>
@@ -6910,7 +7015,7 @@ is not applicable because gender and number can not be taken from previous rules
 <!--REGLA: PRN + VERB-->
       <pattern>
         <pattern-item n="prntn"/>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
       </pattern>
       <action>
         <call-macro n="f_concord1">
@@ -6942,7 +7047,7 @@ is not applicable because gender and number can not be taken from previous rules
       <pattern>
         <pattern-item n="prntn"/>
         <pattern-item n="noadv"/>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
       </pattern>
       <action>
         <out>
@@ -7129,7 +7234,7 @@ is not applicable because gender and number can not be taken from previous rules
 <!--REGLA: PRN + VERB-->
       <pattern>
         <pattern-item n="prntn"/>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
       </pattern>
       <action>
         <call-macro n="f_concord1">
@@ -7160,7 +7265,7 @@ is not applicable because gender and number can not be taken from previous rules
 <!--REGLA: PRN + VERB + NOM -->
       <pattern>
         <pattern-item n="prntn"/>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
         <pattern-item n="nom"/>
       </pattern>
       <action>
@@ -7255,7 +7360,7 @@ is not applicable because gender and number can not be taken from previous rules
 <!--REGLA: PRN + VERB + VERB + NOM-->
       <pattern>
         <pattern-item n="prntn"/>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
         <pattern-item n="verbnp"/>
         <pattern-item n="nom"/>
       </pattern>
@@ -7384,7 +7489,7 @@ is not applicable because gender and number can not be taken from previous rules
       <pattern>
         <pattern-item n="prntn"/>
         <pattern-item n="noadv"/>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
         <pattern-item n="nom"/>
       </pattern>
       <action>
@@ -7498,7 +7603,7 @@ is not applicable because gender and number can not be taken from previous rules
       <pattern>
         <pattern-item n="prntn"/>
         <pattern-item n="noadv"/>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
         <pattern-item n="verbnp"/>
         <pattern-item n="nom"/>
       </pattern>
@@ -7632,7 +7737,7 @@ is not applicable because gender and number can not be taken from previous rules
 <!--REGLA: prn + acabar de + inf -> prn + venir de + inf -->
       <pattern>
         <pattern-item n="prntn"/>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
 	<pattern-item n="deprep"/>
         <pattern-item n="inf"/>
       </pattern>
@@ -7669,7 +7774,7 @@ is not applicable because gender and number can not be taken from previous rules
 <!--REGLA: acabar de + inf + enc-> venir de + enc + inf -->
       <pattern>
         <pattern-item n="prntn"/>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
 	<pattern-item n="deprep"/>
         <pattern-item n="inf"/>
 	<pattern-item n="prnenc"/>
@@ -8107,7 +8212,7 @@ is not applicable because gender and number can not be taken from previous rules
        <rule>
 <!--REGLA: estar + ger -> être à + ger -->
       <pattern>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
         <pattern-item n="ger"/>
       </pattern>
       <action>
@@ -8212,7 +8317,7 @@ is not applicable because gender and number can not be taken from previous rules
      <rule>
 <!--REGLA: estar + ger + enc -> être à + enc + inf -->
       <pattern>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
         <pattern-item n="ger"/>
 	<pattern-item n="prnenc"/>
       </pattern>
@@ -8331,7 +8436,7 @@ is not applicable because gender and number can not be taken from previous rules
  <rule>
 <!--REGLA: estar GER + ENCLÍTIC + ENCLÍTIC : être à pro inf-->
       <pattern>
-        <pattern-item n="verb"/>
+        <pattern-item n="verb_conj"/>
         <pattern-item n="ger"/>
         <pattern-item n="prnenc"/>
         <pattern-item n="prnenc"/>
