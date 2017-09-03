@@ -8811,6 +8811,8 @@
 <e a="u21941" r="LR"><p><l>officiel<s n="n"/><s n="m"/></l><r>oficial<s n="n"/><s n="mf"/></r></p></e>
 <e a="u21941" r="RL"><p><l>officiel<s n="adj"/><s n="GD"/></l><r>oficial<s n="adj"/><s n="mf"/></r></p></e>
 <e a="u21941" r="RL"><p><l>officiel<s n="n"/><s n="GD"/></l><r>oficial<s n="n"/><s n="mf"/></r></p></e>
+<e a="hector" r="LR"><p><l>officier<s n="n"/><s n="f"/></l><r>oficial<s n="n"/><s n="mf"/></r></p></e>
+<e a="hector" r="LR"><p><l>officier<s n="n"/><s n="m"/></l><r>oficial<s n="n"/><s n="mf"/></r></p></e>
 <e a="u21941"><p><l>officiellement<s n="adv"/></l><r>oficialment<s n="adv"/></r></p></e>
 <e>       <p><l>officier<s n="vblex"/></l>        <r>oficiar<s n="vblex"/></r></p></e>
 <e>       <p><l>offre<s n="n"/></l>               <r>oferta<s n="n"/></r></p></e>
@@ -9216,6 +9218,8 @@
 
 <e>       <p><l>parfaitement<s n="adv"/></l>      <r>perfectament<s n="adv"/></r></p></e>
 <e>       <p><l>parfois<s n="adv"/></l>           <r>de<b/>vegades<s n="adv"/></r></p></e>
+<e r="RL"><p><l>parfois<s n="adv"/></l>           <r>a<b/>vegades<s n="adv"/></r></p></e>
+<e r="RL"><p><l>parfois<s n="adv"/></l>           <r>a<b/>voltes<s n="adv"/></r></p></e>
 <e>       <p><l>parfum<s n="n"/></l>              <r>perfum<s n="n"/></r></p></e>
 <e>       <p><l>parfumé<s n="adj"/></l>           <r>perfumat<s n="adj"/></r></p></e>
 <e>       <p><l>parfumer<s n="vblex"/></l>        <r>perfumar<s n="vblex"/></r></p></e>
@@ -13401,8 +13405,7 @@
 <e><p><l>BBVA<s n="n"/><s n="acr"/><s n="m"/></l><r>BBVA<s n="n"/><s n="acr"/><s n="m"/></r></p></e>
 <e><p><l>BDD<s n="n"/><s n="acr"/><s n="f"/></l><r>BBDD<s n="n"/><s n="acr"/><s n="f"/></r></p></e>
 <e><p><l>beau-frère<s n="n"/><s n="m"/></l><r>cunyat<s n="n"/><s n="m"/></r></p></e>
-<e><p><l>bébé<s n="n"/><s n="m"/></l><r>bebé<s n="n"/><s n="m"/></r></p></e>
-<e><p><l>bébé<s n="n"/><s n="m"/></l><r>bebè<s n="n"/><s n="m"/></r></p></e>
+<e r="RL"><p><l>bébé<s n="n"/><s n="m"/></l><r>bebè<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>bébé<s n="n"/><s n="m"/></l><r>nadó<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>belle-fille<s n="n"/><s n="f"/></l><r>nora<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>béquille<s n="n"/><s n="f"/></l><r>crossa<s n="n"/><s n="f"/></r></p></e>
@@ -15037,7 +15040,8 @@
 <e><p><l>prononciation<s n="n"/><s n="f"/></l><r>pronunciació<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>prononciation<s n="n"/><s n="f"/></l><r>pronúncia<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>propagation<s n="n"/><s n="f"/></l><r>propagació<s n="n"/><s n="f"/></r></p></e>
-<e><p><l>propreté<s n="n"/><s n="f"/></l><r>neteja<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>propreté<s n="n"/><s n="f"/></l><r>netedat<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>nettoyage<s n="n"/><s n="m"/></l><r>neteja<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>prorogation<s n="n"/><s n="f"/></l><r>prorrogació<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>prorogation<s n="n"/><s n="f"/></l><r>pròrroga<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>prospection<s n="n"/><s n="f"/></l><r>prospecció<s n="n"/><s n="f"/></r></p></e>
@@ -15647,7 +15651,8 @@
 <e><p><l>vitrine<s n="n"/><s n="f"/></l><r>vitrina<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>vitrocéramique<s n="n"/><s n="f"/></l><r>vitroceràmica<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>vivacité<s n="n"/><s n="f"/></l><r>vivacitat<s n="n"/><s n="f"/></r></p></e>
-<e><p><l>voeu<s n="n"/><s n="m"/></l><r>vot<s n="n"/><s n="m"/></r></p></e>
+<e r="LR"><p><l>voeu<s n="n"/><s n="m"/></l><r>vot<s n="n"/><s n="m"/></r></p></e>
+<e i="yes"><p><l>voeu<s n="n"/><s n="m"/></l><r>desig<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>voilier<s n="n"/><s n="m"/></l><r>veler<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>volatilité<s n="n"/><s n="f"/></l><r>volatilitat<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>volcan<s n="n"/><s n="m"/></l><r>volcà<s n="n"/><s n="m"/></r></p></e>
@@ -16457,7 +16462,7 @@
 <e r="RL"><p><l>bénévolement<s n="adv"/></l><r>benèvolament<s n="adv"/></r></p></e>
 <e>       <p><l>le<b/>lendemain<s n="adv"/></l><r>l'endemà<s n="adv"/></r></p></e>
 <e>       <p><l>cordon<s n="n"/></l><r>cordó<s n="n"/></r></p></e>
-<e>       <p><l>gendarme<s n="n"/><s n="mf"/></l><r>gendarme<s n="n"/><s n="m"/></r></p></e>
+<e>       <p><l>gendarme<s n="n"/><s n="mf"/></l><r>gendarme<s n="n"/><s n="mf"/></r></p></e>
 <e>       <p><l>gendarmerie<s n="n"/></l><r>gendarmeria<s n="n"/></r></p></e>
 <e>       <p><l>anciennement<s n="adv"/></l><r>antigament<s n="adv"/></r></p></e>
 <e r="LR"><p><l>nocturne<s n="adj"/><s n="mf"/></l><r>nocturn<s n="adj"/><s n="GD"/></r></p></e>
