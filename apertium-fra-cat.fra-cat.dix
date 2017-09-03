@@ -1713,8 +1713,9 @@
     <e>       <p><l>Beatles<s n="np"/></l><r>Beatles<s n="np"/></r></p></e>
     <e>       <p><l>Beatriz<s n="np"/></l><r>Beatriz<s n="np"/></r></p></e>
     <e>       <p><l>beau<s n="adj"/></l>              <r>bonic<s n="adj"/></r></p></e>
-    <e>       <p><l>beau<s n="adj"/></l>              <r>bell<s n="adj"/></r></p></e>
-    <e>       <p><l>beau<s n="adj"/></l>              <r>bo<s n="adj"/></r></p></e>
+    <e r="RL"><p><l>beau<s n="adj"/></l>              <r>bell<s n="adj"/></r></p></e>
+    <e r="RL"><p><l>beau<s n="adj"/></l>              <r>maco<s n="adj"/></r></p></e>
+    <e r="RL"><p><l>beau<s n="adj"/></l>              <r>guapo<s n="adj"/></r></p></e>
     <e>       <p><l>beaucoup<s n="adv"/></l>          <r>molt<s n="adv"/></r></p></e>
     <e r="LR"><p><l>beaucoup<b/>de<s n="adj"/><s n="mf"/><s n="sp"/></l><r>molt<s n="adj"/><s n="GD"/><s n="ND"/></r></p></e>
     <e r="RL"><p><l>beaucoup<b/>de<s n="adj"/><s n="mf"/><s n="sp"/></l><r>molt<s n="adj"/><s n="f"/><s n="pl"/></r></p></e>
@@ -3922,6 +3923,7 @@
     <e>       <p><l>deviner<s n="vblex"/></l>         <r>endevinar<s n="vblex"/></r></p></e>
     <e r="RL"><p><l>deviner<s n="vblex"/></l>         <r>encertar<s n="vblex"/></r></p></e>
     <e r="LR"><p><l>dévisager<s n="vblex"/></l>       <r>mirar<s n="vblex"/></r></p></e>
+    <e a="u21941"><p><l>devise<s n="n"/><s n="f"/></l><r>lema<s n="n"/><s n="m"/></r></p></e>
     <e r="LR"><p><l>dévoiler<s n="vblex"/></l>        <r>descobrir<s n="vblex"/></r></p></e>
     <e r="RL"><p><l>dévoiler<s n="vblex"/></l>        <r>desvetlar<s n="vblex"/></r></p></e>
     <e r="RL"><p><l>dévoiler<s n="vblex"/></l>        <r>desvetllar<s n="vblex"/></r></p></e>
@@ -5603,13 +5605,9 @@
 <e>       <p><l>franc<s n="adj"/></l><r>franc<s n="adj"/></r></p></e>
 <e>       <p><l>franc<s n="n"/><s n="m"/></l><r>franc<s n="n"/><s n="m"/></r></p></e>
 <e>       <p><l>français<s n="adj"/><s n="f"/></l><r>francès<s n="adj"/><s n="f"/></r></p></e>
+<e>       <p><l>français<s n="adj"/><s n="m"/></l><r>francès<s n="adj"/><s n="m"/></r></p><par n="sp_ND"/></e>
 <e>       <p><l>français<s n="n"/><s n="f"/></l>  <r>francès<s n="n"/><s n="f"/></r></p></e>
-<e r="LR"><p><l>français<s n="adj"/><s n="m"/><s n="sp"/></l><r>francès<s n="adj"/><s n="m"/><s n="ND"/></r></p></e>
-<e r="LR"><p><l>français<s n="n"/><s n="m"/><s n="sp"/></l><r>francès<s n="n"/><s n="m"/><s n="ND"/></r></p></e>
-<e r="RL"><p><l>français<s n="adj"/><s n="m"/><s n="sp"/></l><r>francès<s n="adj"/><s n="m"/><s n="pl"/></r></p></e>
-<e r="RL"><p><l>français<s n="adj"/><s n="m"/><s n="sp"/></l><r>francès<s n="adj"/><s n="m"/><s n="sg"/></r></p></e>
-<e r="RL"><p><l>français<s n="n"/><s n="m"/><s n="sp"/></l><r>francès<s n="n"/><s n="m"/><s n="pl"/></r></p></e>
-<e r="RL"><p><l>français<s n="n"/><s n="m"/><s n="sp"/></l><r>francès<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
+<e>       <p><l>français<s n="n"/><s n="m"/></l>  <r>francès<s n="n"/><s n="m"/></r></p><par n="sp_ND"/></e>
     <e>       <p><l>France<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>França<s n="np"/><s n="loc"/></r></p></e>
 <e>       <p><l>Francesc<s n="np"/></l><r>Francesc<s n="np"/></r></p></e>
     <e>       <p><l>Francfort<s n="np"/><s n="top"/><s n="un"/><s n="sg"/></l><r>Frankfurt<s n="np"/><s n="loc"/></r></p></e>
@@ -5617,6 +5615,7 @@
 <e>       <p><l>franchir<s n="vblex"/></l>        <r>franquejar<s n="vblex"/></r></p></e>
 <e>       <p><l>Francisca<s n="np"/></l><r>Francisca<s n="np"/></r></p></e>
 <e>       <p><l>franciscain<s n="n"/></l>         <r>franciscà<s n="n"/></r></p></e>
+<e>       <p><l>franciscain<s n="adj"/></l>       <r>franciscà<s n="adj"/></r></p></e>
 <e>       <p><l>Francisco<s n="np"/></l><r>Francisco<s n="np"/></r></p></e>
 <e a="gema"><p><l>Franck<s n="np"/></l><r>Franck<s n="np"/></r></p></e>
 <e>       <p><l>Franco<s n="np"/></l>             <r>Franco<s n="np"/></r></p></e>
@@ -7111,7 +7110,7 @@
 <e a="gema"><p><l>joie<s n="n"/></l>              <r>alegria<s n="n"/></r></p></e>
 <e>       <p><l>joindre<s n="vblex"/></l>         <r>ajuntar<s n="vblex"/></r></p></e>
 <e r="RL"><p><l>joindre<s n="vblex"/></l>         <r>adjuntar<s n="vblex"/></r></p></e>
-<e>       <p><l>joli<s n="adj"/></l>              <r>maco<s n="adj"/></r></p></e>
+<e r="LR"><p><l>joli<s n="adj"/></l>              <r>bonic<s n="adj"/></r></p></e>
 <e>       <p><l>Jon<s n="np"/></l><r>Jon<s n="np"/></r></p></e>
 <e r="LR"><p><l>joncher<s n="vblex"/></l>         <r>cobrir<s n="vblex"/></r></p></e>
 <e>       <p><l>Jones<s n="np"/></l><r>Jones<s n="np"/></r></p></e>
@@ -11385,6 +11384,8 @@
 <e>       <p><l>semaine<s n="n"/></l>             <r>setmana<s n="n"/></r></p></e>
 <e>       <p><l>semblable<s n="adj"/></l>         <r>semblant<s n="adj"/></r></p></e>
 <e a="gema"><p><l>sembler<s n="vblex"/></l>       <r>semblar<s n="vblex"/></r></p></e>
+<e a="hector" r="LR"><p><l>avoir<g><b/>l'air</g><s n="vblex"/></l><r>semblar<s n="vblex"/></r></p></e>
+<e a="hector" r="LR"><p><l>avoir<g><b/>l'air<b/>de</g><s n="vblex"/></l><r>semblar<s n="vblex"/></r></p></e>
 <e>       <p><l>semer<s n="vblex"/></l>           <r>sembrar<s n="vblex"/></r></p></e>
 <e a="u21941"><p><l>semestre<s n="n"/></l>        <r>semestre<s n="n"/></r></p></e>
 <e r="LR"><p><l>semestriel<s n="adj"/><s n="f"/></l><r>semestral<s n="adj"/><s n="mf"/></r></p></e>
@@ -12146,6 +12147,7 @@
 <e>       <p><l>télévision<s n="n"/></l>          <r>televisió<s n="n"/></r></p></e>
 <e>       <p><l>télévisuel<s n="adj"/></l>        <r>televisiu<s n="adj"/></r></p></e>
 <e>       <p><l>tellement<s n="preadv"/></l>      <r>tan<s n="preadv"/></r></p></e>
+<e r="LR"><p><l>si<s n="preadv"/></l>             <r>tan<s n="preadv"/></r></p></e>
 <e r="LR"><p><l>tellement<b/>de<s n="adj"/><s n="mf"/><s n="sp"/></l><r>tant<s n="adj"/><s n="GD"/><s n="ND"/></r></p></e>
 <e r="RL"><p><l>tellement<b/>de<s n="adj"/><s n="mf"/><s n="sp"/></l><r>tant<s n="adj"/><s n="f"/><s n="pl"/></r></p></e>
 <e r="RL"><p><l>tellement<b/>de<s n="adj"/><s n="mf"/><s n="sp"/></l><r>tant<s n="adj"/><s n="f"/><s n="sg"/></r></p></e>
@@ -12495,6 +12497,7 @@
 <e>       <p><l>trivialement<s n="adv"/></l><r>trivialment<s n="adv"/></r></p></e>
 <e a="ariel"><p><l>troc<s n="n"/><s n="m"/></l>   <r>barata<s n="n"/><s n="f"/></r></p></e>
     <e>       <p><l>Troie<s n="np"/><s n="top"/><s n="un"/><s n="sg"/></l><r>Troia<s n="np"/><s n="loc"/></r></p></e>
+<e>       <p><l>tiers<b/>monde<s n="n"/><s n="m"/><s n="sg"/></l><r>tercer<b/>món<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
 <e>       <p><l>trois<s n="num"/></l>             <r>tres<s n="num"/></r></p></e>
 <e r="LR"><p><l>troisième<s n="adj"/><s n="mf"/></l><r>tercer<s n="adj"/><s n="GD"/></r></p></e>
 <e r="RL"><p><l>troisième<s n="adj"/><s n="mf"/></l><r>tercer<s n="adj"/><s n="f"/></r></p></e>
@@ -13428,7 +13431,7 @@
 <e><p><l>bonification<s n="n"/><s n="f"/></l><r>bonificació<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>bonnet<s n="n"/><s n="m"/></l><r>capell<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>bon<s n="n"/><s n="m"/></l><r>bo<s n="n"/><s n="m"/></r></p></e>
-<e><p><l>bon<s n="n"/><s n="m"/></l><r>val<s n="n"/><s n="m"/></r></p></e>
+<e r="RL"><p><l>bon<s n="n"/><s n="m"/></l><r>val<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>bordure<s n="n"/><s n="f"/></l><r>vorada<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>bouchon<s n="n"/><s n="m"/></l><r>tap<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>bouclier<s n="n"/><s n="m"/></l><r>escut<s n="n"/><s n="m"/></r></p></e>
@@ -13802,7 +13805,6 @@
 <e><p><l>développeur<s n="n"/><s n="m"/></l><r>desenvolupador<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>déversoir<s n="n"/><s n="m"/></l><r>abocador<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>devise<s n="n"/><s n="f"/></l><r>divisa<s n="n"/><s n="f"/></r></p></e>
-<!--  <e a="u21941"><p><l>devise<s n="n"/><s n="f"/></l><r>lema<s n="n"/><s n="m"/></r></p></e> (étrange) -->
 <e><p><l>dextérité<s n="n"/><s n="f"/></l><r>destresa<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>diablerie<s n="n"/><s n="f"/></l><r>diableria<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>diablerie<s n="n"/><s n="f"/></l><r>entremaliadura<s n="n"/><s n="f"/></r></p></e>
@@ -16606,7 +16608,7 @@
 <e>       <p><l>etymologie<s n="n"/></l><r>etimologia<s n="n"/></r></p></e>
 <e>       <p><l>phénicien<s n="adj"/></l><r>fenici<s n="adj"/></r></p></e>
 <e>       <p><l>phénicien<s n="n"/></l><r>fenici<s n="n"/></r></p></e>
-<e>       <p><l>voyelle<s n="n"/></l><r>vocal<s n="n"/></r></p></e>
+<e>       <p><l>voyelle<s n="n"/><s n="f"/></l><r>vocal<s n="n"/><s n="mf"/></r></p></e>
 <e>       <p><l>consonne<s n="n"/></l><r>consonant<s n="n"/></r></p></e>
 <e>       <p><l>arrière-garde<s n="n"/></l><r>rereguarda<s n="n"/></r></p></e>
 <e>       <p><l>codifier<s n="vblex"/></l><r>codificar<s n="vblex"/></r></p></e>
@@ -16735,6 +16737,8 @@
 <e a="hector"><p><l>siège<s n="n"/><s n="m"/></l><r>seu<s n="n"/><s n="f"/></r></p></e>
 <e a="hector"><p><l>suffisamment<s n="adv"/></l><r>suficientment<s n="adv"/></r></p></e>
 <e a="hector"><p><l>insuffisamment<s n="adv"/></l><r>insuficientment<s n="adv"/></r></p></e>
+<e a="hector"><p><l>magicien<s n="n"/></l><r>mag<s n="n"/></r></p></e>
+<e a="hector"><p><l>varié<s n="adj"/></l><r>variat<s n="adj"/></r></p></e>
 
   </section>
 </dictionary>
