@@ -5964,7 +5964,7 @@
 <e>       <p><l>grammaticalement<s n="adv"/></l>  <r>gramaticalment<s n="adv"/></r></p></e>
 <e r="LR"><p><l>grand<s n="adj"/><s n="f"/></l>   <r>gran<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>grand<s n="adj"/><s n="m"/></l>   <r>gran<s n="adj"/><s n="mf"/></r></p></e>
-<e r="RL"><p><l>grand<s n="adj"/></l>             <r>alt<s n="adj"/></r></p></e>
+<e i="yes"><p><l>grand<s n="adj"/></l>            <r>alt<s n="adj"/></r></p></e>
 <e r="RL"><p><l>grand<s n="adj"/><s n="GD"/></l>  <r>gran<s n="adj"/><s n="mf"/></r></p></e>
 <e>       <p><l>grandir<s n="vblex"/></l>         <r>créixer<s n="vblex"/></r></p></e>
 <e>       <p><l>grand-père<s n="n"/></l>          <r>avi<s n="n"/></r></p></e>
@@ -6133,7 +6133,8 @@
 <e r="LR"><p><l>haussier<s n="adj"/><s n="f"/></l><r>alcista<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>haussier<s n="adj"/><s n="m"/></l><r>alcista<s n="adj"/><s n="mf"/></r></p></e>
 <e r="RL"><p><l>haussier<s n="adj"/><s n="GD"/></l><r>alcista<s n="adj"/><s n="mf"/></r></p></e>
-<e r="LR"><p><l>haut<s n="adj"/></l>              <r>elevat<s n="adj"/></r></p></e>
+<e i="yes"><p><l>haut<s n="adj"/></l>             <r>elevat<s n="adj"/></r></p></e>
+<e r="RL"><p><l>haut<s n="adj"/></l>              <r>alt<s n="adj"/></r></p></e>
 <e r="LR"><p><l>haut<s n="n"/><s n="m"/></l>      <r>altura<s n="n"/><s n="f"/></r></p></e>
 <e>       <p><l>hauteur<s n="n"/></l>             <r>altura<s n="n"/></r></p></e>
 <e>       <p><l>hebdomadaire<s n="adj"/><s n="mf"/></l><r>setmanal<s n="adj"/><s n="mf"/></r></p></e>
@@ -15700,7 +15701,7 @@
 <e><p><l>nationaliser<s n="vblex"/></l><r>nacionalitzar<s n="vblex"/></r></p></e>
 <e><p><l>naturaliser<s n="vblex"/></l><r>naturalitzar<s n="vblex"/></r></p></e>
 <e><p><l>chevaucher<s n="vblex"/></l><r>cavalcar<s n="vblex"/></r></p></e>
-<e><p><l>chuter<s n="vblex"/></l><r>caure<s n="vblex"/></r></p></e>
+<e r="LR"><p><l>chuter<s n="vblex"/></l><r>caure<s n="vblex"/></r></p></e>
 <e><p><l>cogner<s n="vblex"/></l><r>bastonejar<s n="vblex"/></r></p></e>
 <e><p><l>collecter<s n="vblex"/></l><r>recaptar<s n="vblex"/></r></p></e>
 <e><p><l>compiler<s n="vblex"/></l><r>compilar<s n="vblex"/></r></p></e>
