@@ -1,0 +1,10 @@
+FRA > CAT
+
+plus dépressive que lui > més depressiva que ELL
+que moi, que toi
+
+echo "va implicar-se" | apertium -d . cat-fra
+s'a impliqué
+echo ", va implicar-se" | apertium -d . cat-fra
+, il va s'impliquer
+
