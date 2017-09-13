@@ -308,4 +308,17 @@
     <match lemma="garde" tags="n.*"><select lemma="guarda"/></match>
   </rule>
 
+<!-- d'ailleurs >> d'altra banda / d'un altre lloc -->
+
+  <rule weight="0.8">
+    <match lemma="d'ailleurs" tags="adv"><select lemma="d'un altre lloc"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="D'ailleurs" tags="adv"><select lemma="d'altra banda"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="cm"/>
+    <match lemma="d'ailleurs" tags="adv"><select lemma="d'altra banda"/></match>
+  </rule>
+
 </rules>
