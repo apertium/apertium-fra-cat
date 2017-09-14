@@ -10510,6 +10510,7 @@
 <e r="LR"><p><l>rasséréner<s n="vblex"/></l>      <r>calmar<s n="vblex"/></r></p></e>
 <e r="RL"><p><l>rasséréner<s n="vblex"/></l>      <r>asserenar<s n="vblex"/></r></p></e>
 <e>       <p><l>rassurer<s n="vblex"/></l>        <r>tranquil·litzar<s n="vblex"/></r></p></e>
+<e r="LR"><p><l>calmer<s n="vblex"/></l>          <r>tranquil·litzar<s n="vblex"/></r></p></e>
 <e>       <p><l>raté<s n="adj"/></l>              <r>fallit<s n="adj"/></r></p></e>
 <e a="ariel"><p><l>ratification<s n="n"/></l>     <r>ratificació<s n="n"/></r></p></e>
 <e a="ariel"><p><l>ratifier<s n="vblex"/></l>     <r>ratificar<s n="vblex"/></r></p></e>
@@ -10861,6 +10862,7 @@
 <e r="LR"><p><l>requête<s n="n"/><s n="f"/></l>   <r>encàrrec<s n="n"/><s n="m"/></r></p></e>
 <e>       <p><l>réseau<s n="n"/><s n="m"/></l>    <r>xarxa<s n="n"/><s n="f"/></r></p></e>
 <e>       <p><l>réserve<s n="n"/></l>             <r>reserva<s n="n"/></r></p></e>
+<e r="LR"><p><l>réservation<s n="n"/></l>         <r>reserva<s n="n"/></r></p></e>
 <e>       <p><l>réserver<s n="vblex"/></l>        <r>reservar<s n="vblex"/></r></p></e>
 <e a="u21941"><p><l>résidence<s n="n"/></l>       <r>residència<s n="n"/></r></p></e>
 <e r="LR"><p><l>résidentiel<s n="adj"/><s n="f"/></l><r>residencial<s n="adj"/><s n="mf"/></r></p></e>
@@ -12653,6 +12655,7 @@
     <e>       <p><l>utile<s n="n"/></l>               <r>útil<s n="n"/></r></p></e>
     <e a="ariel"><p><l>utilisable<s n="adj"/></l>     <r>utilitzable<s n="adj"/></r></p></e>
     <e>       <p><l>utilisateur<s n="n"/></l>         <r>usuari<s n="n"/></r></p></e>
+    <e r="LR"><p><l>usager<s n="n"/></l>              <r>usuari<s n="n"/></r></p></e>
     <e>       <p><l>utilisation<s n="n"/></l>         <r>utilització<s n="n"/></r></p></e>
     <e>       <p><l>utiliser<s n="vblex"/></l>        <r>utilitzar<s n="vblex"/></r></p></e>
     <e>       <p><l>utilité<s n="n"/></l>             <r>utilitat<s n="n"/></r></p></e>
@@ -15076,7 +15079,8 @@
 <e><p><l>puisard<s n="n"/><s n="m"/></l><r>albelló<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>puisard<s n="n"/><s n="m"/></l><r>embornal<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>pulsation<s n="n"/><s n="f"/></l><r>pulsació<s n="n"/><s n="f"/></r></p></e>
-<e><p><l>punition<s n="n"/><s n="f"/></l><r>punició<s n="n"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>punition<s n="n"/><s n="f"/></l><r>punició<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>punition<s n="n"/><s n="f"/></l><r>càstic<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>purification<s n="n"/><s n="f"/></l><r>purificació<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>putréfaction<s n="n"/><s n="f"/></l><r>putrefacció<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>puzzle<s n="n"/><s n="m"/></l><r>puzle<s n="n"/><s n="m"/></r></p></e>
@@ -16755,6 +16759,12 @@
 <e a="hector"><p><l>élu<s n="n"/></l><r>elegit<s n="n"/></r></p></e>
 <e r="LR" a="hector"><p><l>d'ailleurs<s n="adv"/></l><r>d'altra<b/>banda<s n="adv"/></r></p></e>
 <e r="LR" a="hector"><p><l>d'ailleurs<s n="adv"/></l><r>d'un<b/>altre<b/>lloc<s n="adv"/></r></p></e>
+<e a="hector"><p><l>un<b/>peu<s n="adv"/></l><r>una<b/>mica<s n="adv"/></r></p></e>
+<e a="hector"><p><l>un<b/>peu<b/>plus<s n="adv"/></l><r>una<b/>mica<b/>més<s n="adv"/></r></p></e>
+<e a="hector"><p><l>un<b/>peu<b/>moins<s n="adv"/></l><r>una<b/>mica<b/>menys<s n="adv"/></r></p></e>
+<e a="hector"><p><l>un<b/>peu<b/>de<s n="pr"/></l><r>una<b/>mica<b/>de<s n="pr"/></r></p></e>
+<e a="hector"><p><l>un<b/>peu<b/>plus<b/>de<s n="pr"/></l><r>una<b/>mica<b/>més<b/>de<s n="pr"/></r></p></e>
+<e a="hector"><p><l>un<b/>peu<b/>moins<b/>de<s n="pr"/></l><r>una<b/>mica<b/>menys<b/>de<s n="pr"/></r></p></e>
 
   </section>
 </dictionary>
