@@ -89,6 +89,9 @@
       <cat-item lemma="ens" tags="prn.pro.p1.mf.pl"/>
       <cat-item lemma="us" tags="prn.pro.p2.mf.pl"/>
     </def-cat>
+    <def-cat n="es">
+      <cat-item lemma="es" tags="prn.pro.ref.p3.mf.sp"/>
+    </def-cat>
     <def-cat n="tu">
       <cat-item lemma="tu" tags="prn.tn.*"/>
     </def-cat>
@@ -167,6 +170,16 @@
       <cat-item tags="vblex.pp.f.sg"/>
       <cat-item tags="vbhaver.pp.f.sg"/>
       <cat-item tags="vbmod.pp.f.sg"/>
+    </def-cat>
+    <def-cat n="haver-tmp-srd-cnj-p3">	<!-- verb amb els temps verbals conjugats (amb persona) del sard -->
+      <cat-item lemma="haver" tags="vbhaver.pri.p3.*"/>
+      <cat-item lemma="haver" tags="vbhaver.prs.p3.*"/>
+      <cat-item lemma="haver" tags="vbhaver.pii.p3.*"/>
+      <cat-item lemma="haver" tags="vbhaver.pis.p3.*"/>
+      <cat-item lemma="haver" tags="vbhaver.cni.p3.*"/>
+      <cat-item lemma="haver" tags="vbhaver.ifi.p3.*"/>
+      <cat-item lemma="haver" tags="vbhaver.fti.p3.*"/>
+      <cat-item lemma="haver" tags="vbhaver.imp.p3.*"/>
     </def-cat>
     <def-cat n="num">
       <cat-item tags="num.*"/>
@@ -526,15 +539,15 @@
     </def-list>
     
     
-		<def-list n="part_sing">
-			<list-item v="eau"/>
-			<list-item v="beurre"/>
-			<list-item v="limonade"/>
-			<list-item v="vin"/>
-			<list-item v="bière"/>
-			<list-item v="viande"/>
-			<list-item v="pain"/>
-		</def-list>
+	<def-list n="part_sing">
+		<list-item v="eau"/>
+		<list-item v="beurre"/>
+		<list-item v="limonade"/>
+		<list-item v="vin"/>
+		<list-item v="bière"/>
+		<list-item v="viande"/>
+		<list-item v="pain"/>
+	</def-list>
     
   </section-def-lists>
   
@@ -803,14 +816,14 @@
               <clip pos="1" side="tl" part="a_sup"/>
               <lit-tag v="sup"/>
             </equal>  
-	  </test>   
-	  <out>
-	    <lu>
+  </test>   
+  <out>
+    <lu>
               <lit v="très"/>
-	      <lit-tag v="preadv"/>
+      <lit-tag v="preadv"/>
             </lu>
-	    <b/>
-	  </out>  
+    <b/>
+  </out>  
         </when>   
       </choose>
     </def-macro>
@@ -3173,7 +3186,7 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="1"/>
           <with-param pos="2"/>
         </call-macro>
-	   <call-macro n="superlatiu">
+   <call-macro n="superlatiu">
           <with-param pos="2"/>
         </call-macro>
         <out>
@@ -3202,7 +3215,7 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_lexicAdj">
           <with-param pos="1"/>
         </call-macro>
-	   <call-macro n="superlatiu">
+   <call-macro n="superlatiu">
           <with-param pos="1"/>
         </call-macro>
         <out>
@@ -3230,7 +3243,7 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="3"/>
           <with-param pos="1"/>
         </call-macro>
-	   <call-macro n="superlatiu">
+   <call-macro n="superlatiu">
           <with-param pos="3"/>
         </call-macro>
         <out>
@@ -3264,10 +3277,10 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="4"/>
           <with-param pos="1"/>
         </call-macro>
-	<call-macro n="superlatiu">
+<call-macro n="superlatiu">
           <with-param pos="3"/>       
         </call-macro>
-	<call-macro n="superlatiu">
+<call-macro n="superlatiu">
           <with-param pos="4"/>       
         </call-macro>
         <out>
@@ -3303,10 +3316,10 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="2"/>
           <with-param pos="3"/>
         </call-macro>
-	<call-macro n="superlatiu">
+<call-macro n="superlatiu">
           <with-param pos="2"/>
         </call-macro>
-	<call-macro n="superlatiu">
+<call-macro n="superlatiu">
           <with-param pos="3"/>
         </call-macro>
         <out>
@@ -3341,7 +3354,7 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_lexicAdj">
           <with-param pos="2"/>
         </call-macro>
-	<call-macro n="superlatiu">
+<call-macro n="superlatiu">
           <with-param pos="2"/>
         </call-macro>
         <out>
@@ -3404,7 +3417,7 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="2"/>
           <with-param pos="1"/>
         </call-macro>
-	<call-macro n="superlatiu">
+<call-macro n="superlatiu">
           <with-param pos="4"/>
         </call-macro>
         <out>
@@ -3438,7 +3451,7 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="2"/>
           <with-param pos="1"/>
         </call-macro>
-	<call-macro n="superlatiu">
+<call-macro n="superlatiu">
           <with-param pos="2"/>
         </call-macro>
         <out>
@@ -3469,10 +3482,10 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_lexicAdj">
           <with-param pos="1"/>
         </call-macro>
-	<call-macro n="superlatiu">
+<call-macro n="superlatiu">
           <with-param pos="1"/>
         </call-macro>
-	<call-macro n="superlatiu">
+<call-macro n="superlatiu">
           <with-param pos="3"/>
         </call-macro>
         <out>
@@ -3509,10 +3522,10 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_lexicAdj">
           <with-param pos="2"/>
         </call-macro>
-	<call-macro n="superlatiu">
+<call-macro n="superlatiu">
           <with-param pos="2"/>
         </call-macro>
-	<call-macro n="superlatiu">
+<call-macro n="superlatiu">
           <with-param pos="4"/>
         </call-macro>
         <out>
@@ -3547,10 +3560,10 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="1"/>
           <with-param pos="3"/>
         </call-macro>
-	<call-macro n="superlatiu">
+<call-macro n="superlatiu">
           <with-param pos="3"/>
         </call-macro> 
-	<out>
+<out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
           </lu>
@@ -3580,7 +3593,7 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="1"/>
           <with-param pos="4"/>
         </call-macro>
-	<call-macro n="superlatiu">
+<call-macro n="superlatiu">
           <with-param pos="4"/>
         </call-macro>
         <choose>
@@ -3704,7 +3717,7 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="2"/>
           <with-param pos="1"/>
         </call-macro>
-	<call-macro n="superlatiu">
+<call-macro n="superlatiu">
           <with-param pos="2"/>
         </call-macro>
         <out>
@@ -3732,7 +3745,7 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="1"/>
           <with-param pos="3"/>
         </call-macro>
-	<call-macro n="superlatiu">
+<call-macro n="superlatiu">
           <with-param pos="3"/>
         </call-macro>
         <out>
@@ -3767,7 +3780,7 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_lexicAdj">
           <with-param pos="2"/>
         </call-macro>
-	<call-macro n="superlatiu">
+<call-macro n="superlatiu">
           <with-param pos="2"/>
         </call-macro>
         <out>
@@ -3833,10 +3846,10 @@ is not applicable because gender and number can not be taken from previous rules
         <choose>
           <when>
             <test>
-	      <equal>
-	       	 <clip pos="1" side="sl" part="lem"/>
-		  <lit v="1"/>
-	      </equal> 
+      <equal>
+       	 <clip pos="1" side="sl" part="lem"/>
+	  <lit v="1"/>
+      </equal> 
             </test>
             <out>
               <lu>
@@ -3881,10 +3894,10 @@ is not applicable because gender and number can not be taken from previous rules
         <choose>
           <when>
             <test>
-	      <equal>
-	       	 <clip pos="1" side="sl" part="lem"/>
-		  <lit v="1"/>
-	      </equal> 
+      <equal>
+       	 <clip pos="1" side="sl" part="lem"/>
+	  <lit v="1"/>
+      </equal> 
             </test>
             <out>
               <lu>
@@ -3926,7 +3939,7 @@ is not applicable because gender and number can not be taken from previous rules
                 <list n="vbambser"/>
               </in>
             </test>
-	 <out>
+ <out>
           <lu>
             <get-case-from pos="1">
               <lit v="être"/>
@@ -3992,7 +4005,7 @@ is not applicable because gender and number can not be taken from previous rules
                 <list n="vbambser"/>
               </in>
             </test>
-	 <out>
+ <out>
           <lu>
             <get-case-from pos="2">
               <lit v="être"/>
@@ -4237,7 +4250,7 @@ is not applicable because gender and number can not be taken from previous rules
 <!--REGLA: verb en forma personal + nom -->
       <pattern>
         <pattern-item n="verb_conj"/>
-	<pattern-item n="nom"/>
+<pattern-item n="nom"/>
       </pattern>
       <action>
        <call-macro n="f_concord1">
@@ -4257,45 +4270,45 @@ is not applicable because gender and number can not be taken from previous rules
           </let>
         </when>
       </choose>
-	<choose>
-	  <when>
-	    <test>
-	      <equal>
-	        <clip pos="1" side="tl" part="temps"/>
-		<lit-tag v="imp"/>
-	      </equal>
-	    </test>
-	  <call-macro n="f_modimp">
+<choose>
+  <when>
+    <test>
+      <equal>
+        <clip pos="1" side="tl" part="temps"/>
+	<lit-tag v="imp"/>
+      </equal>
+    </test>
+  <call-macro n="f_modimp">
           <with-param pos="1"/>
         </call-macro>
-	</when>
-	</choose>
-	<choose>
+</when>
+</choose>
+<choose>
           <when>
             <test>
-	     <or>
+     <or>
               <equal>
                 <clip pos="2" side="sl" part="nbr"/>
                 <lit-tag v="pl"/>
               </equal>
-	      <in caseless="yes">
-		 <clip pos="2" side="tl" part="lem"/>
-		 <list n="part_sing"/>
-		</in>
-	     </or> 
+      <in caseless="yes">
+	 <clip pos="2" side="tl" part="lem"/>
+	 <list n="part_sing"/>
+	</in>
+     </or> 
             </test>
             <out>
-	      <lu>
+      <lu>
             	<clip pos="1" side="tl" part="lemh"/>
            	<clip pos="1" side="tl" part="a_verb"/>
             	<clip pos="1" side="tl" part="temps"/>
             	<clip pos="1" side="tl" part="persona"/>
-		<clip pos="1" side="tl" part="gen"/>
+	<clip pos="1" side="tl" part="gen"/>
             	<clip pos="1" side="tl" part="nbr"/>
             	<clip pos="1" side="tl" part="lemq"/>
               </lu>
-	      <b pos="1"/>
-	      <lu>
+      <b pos="1"/>
+      <lu>
                 <lit v="de"/>
                 <lit-tag v="pr"/>
               </lu>
@@ -4303,7 +4316,7 @@ is not applicable because gender and number can not be taken from previous rules
               <lu>
                 <lit v="le"/>
                 <lit-tag v="det.def"/>
-		<clip pos="2" side="tl" part="gen"/>
+	<clip pos="2" side="tl" part="gen"/>
                 <var n="numero"/>
               </lu>
               <b/>
@@ -4312,8 +4325,8 @@ is not applicable because gender and number can not be taken from previous rules
               <clip pos="2" side="tl" part="tags"/>
               <clip pos="2" side="tl" part="lemq"/>
               </lu>
-	    </out> 
-	   </when>
+    </out> 
+   </when>
           <otherwise>
             <out>
                 <lu>
@@ -4321,11 +4334,11 @@ is not applicable because gender and number can not be taken from previous rules
            	<clip pos="1" side="tl" part="a_verb"/>
             	<clip pos="1" side="tl" part="temps"/>
             	<clip pos="1" side="tl" part="persona"/>
-		<clip pos="1" side="tl" part="gen"/>
+	<clip pos="1" side="tl" part="gen"/>
             	<clip pos="1" side="tl" part="nbr"/>
             	<clip pos="1" side="tl" part="lemq"/>
               </lu>
-	      <b pos="1"/>
+      <b pos="1"/>
               <lu>
               <clip pos="2" side="tl" part="lemh"/>
               <clip pos="2" side="tl" part="tags"/>
@@ -4345,24 +4358,24 @@ is not applicable because gender and number can not be taken from previous rules
       </pattern>
       <action>
         <out>
-	  <lu>
+  <lu>
              <clip pos="1" side="tl" part="whole"/>
           </lu>
-	       <b pos="1"/>
+       <b pos="1"/>
           <lu>
         	<clip pos="2" side="tl" part="lemh"/>
            	<clip pos="2" side="tl" part="a_verb"/>
             	<clip pos="2" side="tl" part="temps"/>
             	<clip pos="2" side="tl" part="persona"/>
-		<clip pos="2" side="tl" part="gen"/>		
+	<clip pos="2" side="tl" part="gen"/>		
             	<clip pos="2" side="tl" part="nbr"/>
             	<clip pos="2" side="tl" part="lemq"/>
           </lu>
-	      <b/>
-	  <lu>
+      <b/>
+  <lu>
                 <lit v="pas"/>
                 <lit-tag v="adv"/>
-	  </lu>
+  </lu>
         </out>
       </action>
   </rule> 
@@ -4376,21 +4389,21 @@ is not applicable because gender and number can not be taken from previous rules
       </pattern>
       <action>
         <out>
-	  <lu>
+  <lu>
              <clip pos="1" side="tl" part="whole"/>
           </lu>
-	      <b/>
-	  <lu>
+      <b/>
+  <lu>
                 <lit v="pas"/>
                 <lit-tag v="adv"/>
-	  </lu>
-	       <b pos="1"/>
+  </lu>
+       <b pos="1"/>
           <lu>
         	<clip pos="2" side="tl" part="lemh"/>
            	<clip pos="2" side="tl" part="a_verb"/>
             	<clip pos="2" side="tl" part="temps"/>
             	<clip pos="2" side="tl" part="persona"/>
-		<clip pos="2" side="tl" part="gen"/>		
+	<clip pos="2" side="tl" part="gen"/>		
             	<clip pos="2" side="tl" part="nbr"/>
             	<clip pos="2" side="tl" part="lemq"/>
           </lu>
@@ -4408,21 +4421,21 @@ is not applicable because gender and number can not be taken from previous rules
       </pattern>
       <action>
         <out>
-	  <lu>
+  <lu>
              <clip pos="1" side="tl" part="whole"/>
           </lu>
-	       <b pos="1"/>
+       <b pos="1"/>
           <lu>
         	<clip pos="2" side="tl" part="lemh"/>
            	<clip pos="2" side="tl" part="a_verb"/>
             	<clip pos="2" side="tl" part="temps"/>
             	<clip pos="2" side="tl" part="persona"/>
-		<clip pos="2" side="tl" part="gen"/>		
+	<clip pos="2" side="tl" part="gen"/>		
             	<clip pos="2" side="tl" part="nbr"/>
             	<clip pos="2" side="tl" part="lemq"/>
           </lu>
-	      <b pos="2"/>
-	  <lu>
+      <b pos="2"/>
+  <lu>
              <clip pos="3" side="tl" part="whole"/>
           </lu>
         </out>
@@ -4442,28 +4455,28 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="2"/>
         </call-macro>
         <out>
-	  <lu>
+  <lu>
              <clip pos="1" side="tl" part="whole"/>
           </lu>
-	       <b pos="1"/>
-	  <lu>
+       <b pos="1"/>
+  <lu>
              <clip pos="2" side="tl" part="whole"/>
           </lu>
-	       <b pos="2"/>
+       <b pos="2"/>
           <lu>
         	<clip pos="3" side="tl" part="lemh"/>
            	<clip pos="3" side="tl" part="a_verb"/>
             	<clip pos="3" side="tl" part="temps"/>
             	<clip pos="3" side="tl" part="persona"/>
-		<clip pos="3" side="tl" part="gen"/>		
+	<clip pos="3" side="tl" part="gen"/>		
             	<clip pos="3" side="tl" part="nbr"/>
             	<clip pos="3" side="tl" part="lemq"/>
           </lu>
-	       <b/>
-	  <lu>
+       <b/>
+  <lu>
                 <lit v="pas"/>
                 <lit-tag v="adv"/>
-	  </lu>
+  </lu>
         </out>
       </action>
   </rule> 
@@ -4485,32 +4498,32 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="3"/>
         </call-macro>
         <out>
-	  <lu>
+  <lu>
              <clip pos="1" side="tl" part="whole"/>
           </lu>
-	       <b pos="1"/>
-	  <lu>
+       <b pos="1"/>
+  <lu>
              <clip pos="2" side="tl" part="whole"/>
           </lu>
-	       <b pos="2"/>
-	  <lu>
+       <b pos="2"/>
+  <lu>
              <clip pos="3" side="tl" part="whole"/>
           </lu>
-	       <b pos="3"/>
+       <b pos="3"/>
           <lu>
         	<clip pos="4" side="tl" part="lemh"/>
            	<clip pos="4" side="tl" part="a_verb"/>
             	<clip pos="4" side="tl" part="temps"/>
             	<clip pos="4" side="tl" part="persona"/>
-		<clip pos="4" side="tl" part="gen"/>		
+	<clip pos="4" side="tl" part="gen"/>		
             	<clip pos="4" side="tl" part="nbr"/>
             	<clip pos="4" side="tl" part="lemq"/>
           </lu>
-	       <b/>
-	  <lu>
+       <b/>
+  <lu>
                 <lit v="pas"/>
                 <lit-tag v="adv"/>
-	  </lu>
+  </lu>
         </out>
       </action>
   </rule> 
@@ -4521,13 +4534,13 @@ is not applicable because gender and number can not be taken from previous rules
       <pattern>
         <pattern-item n="noadv"/>
         <pattern-item n="verb_conj"/>
-	<pattern-item n="nom"/>
+<pattern-item n="nom"/>
       </pattern>
       <action>
-	<call-macro n="f_concord1">
+<call-macro n="f_concord1">
           <with-param pos="3"/>
         </call-macro>  
-	<call-macro n="f_setgen">
+<call-macro n="f_setgen">
           <with-param pos="3"/>
         </call-macro>
       <choose>
@@ -4544,42 +4557,42 @@ is not applicable because gender and number can not be taken from previous rules
           </let>
         </when>
       </choose>
-	<choose>
+<choose>
           <when>
             <test>
-	     <or>
+     <or>
               <equal>
                 <clip pos="3" side="sl" part="nbr"/>
                 <lit-tag v="pl"/>
               </equal>
-	      <in caseless="yes">
-		 <clip pos="3" side="tl" part="lem"/>
-		 <list n="part_sing"/>
-		</in>
-	     </or> 
+      <in caseless="yes">
+	 <clip pos="3" side="tl" part="lem"/>
+	 <list n="part_sing"/>
+	</in>
+     </or> 
             </test>
           <out>
-	  <lu>
+  <lu>
              <clip pos="1" side="tl" part="whole"/>
           </lu>
-	       <b pos="1"/>
+       <b pos="1"/>
           <lu>
         	<clip pos="2" side="tl" part="lemh"/>
            	<clip pos="2" side="tl" part="a_verb"/>
             	<clip pos="2" side="tl" part="temps"/>
             	<clip pos="2" side="tl" part="persona"/>
-		<clip pos="2" side="tl" part="gen"/>
+	<clip pos="2" side="tl" part="gen"/>
             	<clip pos="2" side="tl" part="nbr"/>
             	<clip pos="2" side="tl" part="lemq"/>
           </lu>
-	      <b pos="2"/>
-	  <lu>
+      <b pos="2"/>
+  <lu>
                 <lit v="pas"/>
                 <lit-tag v="adv"/>
-	  </lu>
-	  
-	      <b/>
-	      <lu>
+  </lu>
+  
+      <b/>
+      <lu>
                 <lit v="de"/>
                 <lit-tag v="pr"/>
               </lu>
@@ -4587,7 +4600,7 @@ is not applicable because gender and number can not be taken from previous rules
               <lu>
                 <lit v="le"/>
                 <lit-tag v="det.def"/>
-		<clip pos="3" side="sl" part="gen"/>
+	<clip pos="3" side="sl" part="gen"/>
                 <var n="numero"/>
               </lu>
               <b/>
@@ -4597,28 +4610,28 @@ is not applicable because gender and number can not be taken from previous rules
               <clip pos="3" side="tl" part="lemq"/>
               </lu>
         </out>
-	</when>
-	<otherwise>
-	 <out>
-	  <lu>
+</when>
+<otherwise>
+ <out>
+  <lu>
              <clip pos="1" side="tl" part="whole"/>
           </lu>
-	       <b pos="1"/>
+       <b pos="1"/>
           <lu>
         	<clip pos="2" side="tl" part="lemh"/>
            	<clip pos="2" side="tl" part="a_verb"/>
             	<clip pos="2" side="tl" part="temps"/>
             	<clip pos="2" side="tl" part="persona"/>
-		<clip pos="2" side="tl" part="gen"/>
+	<clip pos="2" side="tl" part="gen"/>
             	<clip pos="2" side="tl" part="nbr"/>
             	<clip pos="2" side="tl" part="lemq"/>
           </lu>
-	      <b pos="2"/>
-	  <lu>
+      <b pos="2"/>
+  <lu>
                 <lit v="pas"/>
                 <lit-tag v="adv"/>
-	  </lu>
-	  <b/>
+  </lu>
+  <b/>
           <lu>
               <clip pos="3" side="tl" part="whole"/>
            </lu>
@@ -4631,10 +4644,10 @@ is not applicable because gender and number can not be taken from previous rules
 <!--REGLA: verb en forma no personal + nom -->
       <pattern>
         <pattern-item n="verbnp"/>
-	<pattern-item n="nom"/>
+<pattern-item n="nom"/>
       </pattern>
       <action>
-	<call-macro n="f_concord1">
+<call-macro n="f_concord1">
           <with-param pos="2"/>
         </call-macro> 
       <choose>
@@ -4651,19 +4664,19 @@ is not applicable because gender and number can not be taken from previous rules
           </let>
         </when>
       </choose>
-	<choose>
+<choose>
           <when>
             <test>
-	     <or>
+     <or>
               <equal>
                 <clip pos="2" side="sl" part="nbr"/>
                 <lit-tag v="pl"/>
               </equal>
-	      <in caseless="yes">
-		 <clip pos="2" side="tl" part="lem"/>
-		 <list n="part_sing"/>
-		</in>
-	     </or> 
+      <in caseless="yes">
+	 <clip pos="2" side="tl" part="lem"/>
+	 <list n="part_sing"/>
+	</in>
+     </or> 
             </test>
             <out>
                 <lu>
@@ -4671,12 +4684,12 @@ is not applicable because gender and number can not be taken from previous rules
            	<clip pos="1" side="tl" part="a_verb"/>
             	<clip pos="1" side="tl" part="temps"/>
             	<clip pos="1" side="tl" part="persona"/>
-		<clip pos="1" side="tl" part="gen"/>
+	<clip pos="1" side="tl" part="gen"/>
             	<clip pos="1" side="tl" part="nbr"/>
             	<clip pos="1" side="tl" part="lemq"/>
               </lu>
-	      <b pos="1"/>
-	      <lu>
+      <b pos="1"/>
+      <lu>
                 <lit v="de"/>
                 <lit-tag v="pr"/>
               </lu>
@@ -4684,7 +4697,7 @@ is not applicable because gender and number can not be taken from previous rules
               <lu>
                 <lit v="le"/>
                 <lit-tag v="det.def"/>
-		<clip pos="2" side="tl" part="gen"/>
+	<clip pos="2" side="tl" part="gen"/>
                 <var n="numero"/>
               </lu>
               <b/>
@@ -4694,7 +4707,7 @@ is not applicable because gender and number can not be taken from previous rules
               <clip pos="2" side="tl" part="lemq"/>
               </lu>
             </out> 
-	  </when>
+  </when>
           <otherwise>
             <out>
                 <lu>
@@ -4702,11 +4715,11 @@ is not applicable because gender and number can not be taken from previous rules
            	<clip pos="1" side="tl" part="a_verb"/>
             	<clip pos="1" side="tl" part="temps"/>
             	<clip pos="1" side="tl" part="persona"/>
-		<clip pos="1" side="tl" part="gen"/>
+	<clip pos="1" side="tl" part="gen"/>
             	<clip pos="1" side="tl" part="nbr"/>
             	<clip pos="1" side="tl" part="lemq"/>
               </lu>
-	      <b pos="1"/>
+      <b pos="1"/>
               <lu>
               <clip pos="2" side="tl" part="whole"/>
               </lu>
@@ -4720,13 +4733,13 @@ is not applicable because gender and number can not be taken from previous rules
 <!--REGLA: prep + nom -->
       <pattern>
         <pattern-item n="prep"/>
-	<pattern-item n="nom"/>
+<pattern-item n="nom"/>
       </pattern>
       <action>
-	<call-macro n="f_concord1">
+<call-macro n="f_concord1">
           <with-param pos="2"/>
         </call-macro>  
-	<call-macro n="f_setgen">
+<call-macro n="f_setgen">
           <with-param pos="2"/>
         </call-macro>
       <choose>
@@ -4743,28 +4756,28 @@ is not applicable because gender and number can not be taken from previous rules
           </let>
         </when>
       </choose>
-	<choose>
+<choose>
           <when>
           <test>
-	    <and>
-	      <not>
+    <and>
+      <not>
                 <equal>
                   <clip pos="1" side="sl" part="lem"/>
                   <lit v="de"/>
                 </equal>
-	       </not>
+       </not>
                 <equal>
                   <clip pos="2" side="sl" part="nbr"/>
                   <lit-tag v="pl"/>
                 </equal>
-	    </and>    
+    </and>    
             </test>
             <out>
               <lu>
                 <clip pos="1" side="tl" part="whole"/>
               </lu>
-	      <b pos="1"/>
-	      <lu>
+      <b pos="1"/>
+      <lu>
                 <lit v="de"/>
                 <lit-tag v="pr"/>
               </lu>
@@ -4772,7 +4785,7 @@ is not applicable because gender and number can not be taken from previous rules
               <lu>
                 <lit v="le"/>
                 <lit-tag v="det.def"/>
-		<clip pos="2" side="sl" part="gen"/>
+	<clip pos="2" side="sl" part="gen"/>
                 <var n="numero"/>
               </lu>
               <b/>
@@ -4781,14 +4794,14 @@ is not applicable because gender and number can not be taken from previous rules
                 <clip pos="2" side="tl" part="tags"/>
                 <clip pos="2" side="tl" part="lemq"/>
               </lu>
-	    </out> 
-	  </when>
+    </out> 
+  </when>
           <otherwise>
             <out>
               <lu>
                 <clip pos="1" side="tl" part="whole"/>
               </lu>
-	      <b pos="1"/>
+      <b pos="1"/>
               <lu>
               <clip pos="2" side="tl" part="whole"/>
               </lu>
@@ -4802,7 +4815,7 @@ is not applicable because gender and number can not be taken from previous rules
 <!--REGLA: prep + tu -->
       <pattern>
         <pattern-item n="prep"/>
-	<pattern-item n="tu"/>
+<pattern-item n="tu"/>
       </pattern>
       <action>
         <out>
@@ -4822,7 +4835,7 @@ is not applicable because gender and number can not be taken from previous rules
 <!--REGLA: prep + ell -->
       <pattern>
         <pattern-item n="prep"/>
-	<pattern-item n="ell"/>
+<pattern-item n="ell"/>
       </pattern>
       <action>
         <out>
@@ -4842,7 +4855,7 @@ is not applicable because gender and number can not be taken from previous rules
 <!--REGLA: prep + ells -->
       <pattern>
         <pattern-item n="prep"/>
-	<pattern-item n="ells"/>
+<pattern-item n="ells"/>
       </pattern>
       <action>
         <out>
@@ -5131,7 +5144,7 @@ is not applicable because gender and number can not be taken from previous rules
 <!--REGLA: acabar de + inf -> venir de + inf -->
       <pattern>
         <pattern-item n="verb_conj"/>
-	<pattern-item n="deprep"/>
+<pattern-item n="deprep"/>
         <pattern-item n="inf"/>
       </pattern>
       <action>
@@ -5157,8 +5170,8 @@ is not applicable because gender and number can not be taken from previous rules
               <b/>
               <lu>
                 <get-case-from pos="2">
-	          <lit v="venir"/>
-		</get-case-from>
+          <lit v="venir"/>
+	</get-case-from>
                 <clip pos="1" side="tl" part="a_verb"/>
                 <clip pos="1" side="tl" part="temps"/>
                 <clip pos="1" side="tl" part="persona"/>
@@ -5167,9 +5180,9 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
               <lu>
-	        <clip pos="2" side="tl" part="whole"/>
-	      </lu>
-	      <b pos="2"/>   
+        <clip pos="2" side="tl" part="whole"/>
+      </lu>
+      <b pos="2"/>   
               <lu>
                 <clip pos="3" side="tl" part="lemh"/>
                 <clip pos="3" side="tl" part="a_verb"/>
@@ -5190,7 +5203,7 @@ is not applicable because gender and number can not be taken from previous rules
               <b/>
              <lu>
                 <get-case-from pos="2">
-	          <lit v="venir"/>
+          <lit v="venir"/>
                 </get-case-from>
                 <clip pos="1" side="tl" part="a_verb"/>
                 <clip pos="1" side="tl" part="temps"/>
@@ -5200,9 +5213,9 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
               <lu>
-	        <clip pos="2" side="tl" part="whole"/>
-	      </lu>
-	      <b pos="2"/>
+        <clip pos="2" side="tl" part="whole"/>
+      </lu>
+      <b pos="2"/>
               <lu>
                 <clip pos="3" side="tl" part="lemh"/>
                 <clip pos="3" side="tl" part="a_verb"/>
@@ -5219,9 +5232,9 @@ is not applicable because gender and number can not be taken from previous rules
 <!--REGLA: acabar de + inf + enc -> venir de + enc + inf -->
       <pattern>
         <pattern-item n="verb_conj"/>
-	<pattern-item n="deprep"/>
+<pattern-item n="deprep"/>
         <pattern-item n="inf"/>
-	<pattern-item n="prnenc"/>
+<pattern-item n="prnenc"/>
       </pattern>
       <action>
         <call-macro n="f_setpronom">
@@ -5246,7 +5259,7 @@ is not applicable because gender and number can not be taken from previous rules
               <b/>
               <lu>
                 <get-case-from pos="2">
-	          <lit v="venir"/>
+          <lit v="venir"/>
                 </get-case-from>
                 <clip pos="1" side="tl" part="a_verb"/>
                 <clip pos="1" side="tl" part="temps"/>
@@ -5256,15 +5269,15 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
               <lu>
-	        <clip pos="2" side="tl" part="whole"/>
-	      </lu>
-	      <b pos="2"/>
-	      <lu>
+        <clip pos="2" side="tl" part="whole"/>
+      </lu>
+      <b pos="2"/>
+      <lu>
  	        <clip pos="4" side="tl" part="lem"/>
                 <lit-tag v="prn.pro"/>
                 <clip pos="4" side="tl" part="tipoenc_pro"/>
-	      </lu> 
-	      <b pos="3"/>    
+      </lu> 
+      <b pos="3"/>    
               <lu>
                 <clip pos="3" side="tl" part="lemh"/>
                 <clip pos="3" side="tl" part="a_verb"/>
@@ -5285,7 +5298,7 @@ is not applicable because gender and number can not be taken from previous rules
               <b/>
              <lu>
                 <get-case-from pos="2">
-	          <lit v="venir"/>
+          <lit v="venir"/>
                 </get-case-from>
                 <clip pos="1" side="tl" part="a_verb"/>
                 <clip pos="1" side="tl" part="temps"/>
@@ -5295,15 +5308,15 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
               <lu>
-	        <clip pos="2" side="tl" part="whole"/>
-	      </lu>
-	      <b pos="2"/>
-	      <lu>
-	        <clip pos="4" side="tl" part="lem"/>
+        <clip pos="2" side="tl" part="whole"/>
+      </lu>
+      <b pos="2"/>
+      <lu>
+        <clip pos="4" side="tl" part="lem"/>
                 <lit-tag v="prn.pro"/>
                 <clip pos="4" side="tl" part="tipoenc_pro"/>
-	      </lu> 
-	      <b pos="3"/>  
+      </lu> 
+      <b pos="3"/>  
               <lu>
                 <clip pos="3" side="tl" part="lemh"/>
                 <clip pos="3" side="tl" part="a_verb"/>
@@ -6142,7 +6155,7 @@ is not applicable because gender and number can not be taken from previous rules
                 <list n="vbambser"/>
               </in>
             </test>
-	    <out>
+    <out>
               <lu>
                 <lit v="être"/>
                 <lit-tag v="vbser"/>
@@ -6389,24 +6402,24 @@ is not applicable because gender and number can not be taken from previous rules
             <choose>
               <when>
             <test>
-	    <or>
+    <or>
               <equal>
                 <clip pos="3" side="sl" part="a_verb"/>
                 <lit-tag v="vbser"/>
               </equal>
-	      <not>
-	      <equal>
+      <not>
+      <equal>
                   <clip pos="2" side="sl" part="nbr"/>
                   <lit-tag v="pl"/>
                 </equal>
-	      </not>
-	      <not>
-	        <in caseless="yes">
-		  <clip pos="2" side="tl" part="lem"/>
-		  <list n="part_sing"/>
-		</in>
-	      </not>	
-	    </or>  
+      </not>
+      <not>
+        <in caseless="yes">
+	  <clip pos="2" side="tl" part="lem"/>
+	  <list n="part_sing"/>
+	</in>
+      </not>	
+    </or>  
             </test>
                 <out>
                   <lu>
@@ -6448,7 +6461,7 @@ is not applicable because gender and number can not be taken from previous rules
                 </out>
               </when>
               <otherwise>
-	       <call-macro n="f_setgen">
+       <call-macro n="f_setgen">
           	<with-param pos="4"/>
                </call-macro>
       <choose>
@@ -7012,8 +7025,7 @@ is not applicable because gender and number can not be taken from previous rules
 <!-- fi ara amb nom-->
 
 <!--ara amb pronom-->
-    <rule>
-<!--REGLA: PRN + VERB-->
+    <rule comment="PRN + VERB">
       <pattern>
         <pattern-item n="prntn"/>
         <pattern-item n="verb_conj"/>
@@ -7043,8 +7055,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
     
-    <rule>
-<!--REGLA: PRN + No + VERB -->
+    <rule comment="PRN + No + VERB">
       <pattern>
         <pattern-item n="prntn"/>
         <pattern-item n="noadv"/>
@@ -7078,9 +7089,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
     
-    <rule>
-<!-- REGLA: PRETÈRIT INDEFINIT -->
-<!-- Per traduir "vaig fer" per "ai fait" -->
+    <rule comment="PRETÈRIT INDEFINIT.  Per traduir 'vaig fer' per 'ai fait'">
       <pattern>
         <pattern-item n="prntn"/>
         <pattern-item n="anar"/>
@@ -7104,7 +7113,7 @@ is not applicable because gender and number can not be taken from previous rules
                 <list n="vbambser"/>
               </in>
             </test>
-	 <out>
+ <out>
           <lu>
             <get-case-from pos="2">
               <lit v="être"/>
@@ -7147,9 +7156,7 @@ is not applicable because gender and number can not be taken from previous rules
   </action>
 </rule>
     
-    <rule>
-<!-- REGLA: PRETÈRIT INDEFINIT -->
-<!-- Per traduir "vaig fer" per "ai fait" -->
+    <rule comment="PRETÈRIT INDEFINIT.  Per traduir 'vaig fer' per 'ai fait'">
       <pattern>
         <pattern-item n="prntn"/>
         <pattern-item n="noadv"/>
@@ -7178,7 +7185,7 @@ is not applicable because gender and number can not be taken from previous rules
                 <list n="vbambser"/>
               </in>
             </test>
-	 <out>
+ <out>
           <lu>
             <get-case-from pos="3">
               <lit v="être"/>
@@ -7231,39 +7238,7 @@ is not applicable because gender and number can not be taken from previous rules
   </action>
 </rule>
     
-    <rule>
-<!--REGLA: PRN + VERB-->
-      <pattern>
-        <pattern-item n="prntn"/>
-        <pattern-item n="verb_conj"/>
-      </pattern>
-      <action>
-        <call-macro n="f_concord1">
-          <with-param pos="1"/>
-        </call-macro>
-        <call-macro n="f_pis2prs">
-          <with-param pos="2"/>
-        </call-macro>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="whole"/>
-          </lu>
-          <b pos="1"/>
-          <lu>
-            <clip pos="2" side="tl" part="lemh"/>
-            <clip pos="2" side="tl" part="a_verb"/>
-            <clip pos="2" side="tl" part="temps"/>
-            <clip pos="2" side="tl" part="persona"/>
-            <clip pos="2" side="tl" part="gen"/>
-            <clip pos="2" side="tl" part="nbr"/>
-            <clip pos="2" side="tl" part="lemq"/>
-          </lu>
-        </out>
-      </action>
-  </rule>
-    
-    <rule>
-<!--REGLA: PRN + VERB + NOM -->
+    <rule comment="PRN + VERB + NOM">
       <pattern>
         <pattern-item n="prntn"/>
         <pattern-item n="verb_conj"/>
@@ -7357,8 +7332,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
     
-    <rule>
-<!--REGLA: PRN + VERB + VERB + NOM-->
+    <rule comment="PRN + VERB + VERB + NOM">
       <pattern>
         <pattern-item n="prntn"/>
         <pattern-item n="verb_conj"/>
@@ -7386,24 +7360,24 @@ is not applicable because gender and number can not be taken from previous rules
         <choose>
           <when>
             <test>
-	    <or>
+    <or>
               <equal>
                 <clip pos="3" side="sl" part="a_verb"/>
                 <lit-tag v="vbser"/>
               </equal>
-	      <not>
-	      <equal>
+      <not>
+      <equal>
                   <clip pos="2" side="sl" part="nbr"/>
                   <lit-tag v="pl"/>
                 </equal>
-	      </not>
-	      <not>
-	        <in caseless="yes">
-		  <clip pos="2" side="tl" part="lem"/>
-		  <list n="part_sing"/>
-		</in>
-	      </not>	
-	    </or>  
+      </not>
+      <not>
+        <in caseless="yes">
+	  <clip pos="2" side="tl" part="lem"/>
+	  <list n="part_sing"/>
+	</in>
+      </not>	
+    </or>  
             </test>
             <out>
               <lu>
@@ -7485,8 +7459,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
     
-    <rule>
-<!--REGLA: PRN + No + VERB + NOM-->
+    <rule comment="PRN + No + VERB + NOM">
       <pattern>
         <pattern-item n="prntn"/>
         <pattern-item n="noadv"/>
@@ -7599,8 +7572,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
     
-    <rule>
-<!--REGLA: PRN + No + VERB + VERB + NOM-->
+    <rule comment="PRN + No + VERB + VERB + NOM">
       <pattern>
         <pattern-item n="prntn"/>
         <pattern-item n="noadv"/>
@@ -7734,12 +7706,11 @@ is not applicable because gender and number can not be taken from previous rules
     
     
     
-     <rule>
-<!--REGLA: prn + acabar de + inf -> prn + venir de + inf -->
+     <rule comment="prn + acabar de + inf -> prn + venir de + inf">
       <pattern>
         <pattern-item n="prntn"/>
         <pattern-item n="verb_conj"/>
-	<pattern-item n="deprep"/>
+<pattern-item n="deprep"/>
         <pattern-item n="inf"/>
       </pattern>
       <action>
@@ -7749,7 +7720,7 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
              <lu>
-	        <lit v="venir"/>
+        <lit v="venir"/>
                 <clip pos="2" side="tl" part="a_verb"/>
                 <clip pos="2" side="tl" part="temps"/>
                 <clip pos="2" side="tl" part="persona"/>
@@ -7758,9 +7729,9 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="2"/>
               <lu>
-	        <clip pos="3" side="tl" part="whole"/>
-	      </lu>
-	      <b pos="3"/>   
+        <clip pos="3" side="tl" part="whole"/>
+      </lu>
+      <b pos="3"/>   
               <lu>
                 <clip pos="4" side="tl" part="lemh"/>
                 <clip pos="4" side="tl" part="a_verb"/>
@@ -7771,14 +7742,13 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
     </rule>
     
-     <rule>
-<!--REGLA: acabar de + inf + enc-> venir de + enc + inf -->
+     <rule comment="acabar de + inf + enc-> venir de + enc + inf">
       <pattern>
         <pattern-item n="prntn"/>
         <pattern-item n="verb_conj"/>
-	<pattern-item n="deprep"/>
+<pattern-item n="deprep"/>
         <pattern-item n="inf"/>
-	<pattern-item n="prnenc"/>
+<pattern-item n="prnenc"/>
       </pattern>
       <action>
            <out>
@@ -7787,7 +7757,7 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
              <lu>
-	        <lit v="venir"/>
+        <lit v="venir"/>
                 <clip pos="2" side="tl" part="a_verb"/>
                 <clip pos="2" side="tl" part="temps"/>
                 <clip pos="2" side="tl" part="persona"/>
@@ -7796,15 +7766,15 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="2"/>
               <lu>
-	        <clip pos="3" side="tl" part="whole"/>
-	      </lu>
-	      <b pos="3"/>  
-	      <lu>
-	        <clip pos="5" side="tl" part="lem"/>
+        <clip pos="3" side="tl" part="whole"/>
+      </lu>
+      <b pos="3"/>  
+      <lu>
+        <clip pos="5" side="tl" part="lem"/>
                 <lit-tag v="prn.pro"/>
                 <clip pos="5" side="tl" part="tipoenc_pro"/>
-	      </lu> 
-	      <b pos="4"/>
+      </lu> 
+      <b pos="4"/>
               <lu>
                 <clip pos="4" side="tl" part="lemh"/>
                 <clip pos="4" side="tl" part="a_verb"/>
@@ -7817,8 +7787,8 @@ is not applicable because gender and number can not be taken from previous rules
     
 <!-- fi ara amb pronom-->
 <!-- fi regles generació pronom -->  
-<rule>
-<!--REGLA: SENT + IMP + ENCLÍTIC-->
+
+<rule comment="SENT + IMP + ENCLÍTIC">
       <pattern>
         <pattern-item n="sentquecm"/>
         <pattern-item n="imp"/>
@@ -7829,7 +7799,7 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="2"/>
         </call-macro>
         <out>
-	 <lu>
+ <lu>
             <clip pos="1" side="tl" part="whole"/>
           </lu>
           <b pos="1"/>
@@ -7854,8 +7824,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
     
-    <rule>
-<!--REGLA: IMP + ENCLÍTIC-->
+    <rule comment="IMP + ENCLÍTIC">
       <pattern>
         <pattern-item n="imp"/>
         <pattern-item n="prnenc"/>
@@ -7886,8 +7855,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
     
-    <rule>
-<!--REGLA: GER + ENCLÍTIC-->
+    <rule comment="GER + ENCLÍTIC">
       <pattern>
         <pattern-item n="ger"/>
         <pattern-item n="prnenc"/>
@@ -7915,8 +7883,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
     
-    <rule>
-<!--REGLA: INF + ENCLÍTIC-->
+    <rule comment="INF + ENCLÍTIC">
       <pattern>
         <pattern-item n="inf"/>
         <pattern-item n="prnenc"/>
@@ -7941,8 +7908,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
     
-    <rule>
-<!--REGLA: NO + INF + ENCLÍTIC-->
+    <rule comment="NO + INF + ENCLÍTIC">
       <pattern>
         <pattern-item n="noadv"/>
         <pattern-item n="inf"/>
@@ -7952,13 +7918,13 @@ is not applicable because gender and number can not be taken from previous rules
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
-	  </lu>
-	  <b/>
-	  <lu>
+  </lu>
+  <b/>
+  <lu>
                 <lit v="pas"/>
                 <lit-tag v="adv"/>
-	  </lu>
-	  <b/>
+  </lu>
+  <b/>
           <lu>
             <clip pos="3" side="tl" part="lem"/>
             <lit-tag v="prn.pro"/>
@@ -7977,8 +7943,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
     
-    <rule>
-<!--REGLA: INF + ENCLÍTIC + ENCLÍTIC-->
+    <rule comment="INF + ENCLÍTIC + ENCLÍTIC">
       <pattern>
         <pattern-item n="inf"/>
         <pattern-item n="prnenc"/>
@@ -8048,8 +8013,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
     
-    <rule>
-<!--REGLA: NO + INF + ENCLÍTIC + ENCLÍTIC-->
+    <rule comment="NO + INF + ENCLÍTIC + ENCLÍTIC: no donar-li'n > ne pas lui en donner">
       <pattern>
         <pattern-item n="noadv"/>
         <pattern-item n="inf"/>
@@ -8060,13 +8024,13 @@ is not applicable because gender and number can not be taken from previous rules
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
-	  </lu>
-	  <b/>
-	  <lu>
+  </lu>
+  <b/>
+  <lu>
                 <lit v="pas"/>
                 <lit-tag v="adv"/>
-	  </lu>
-	  <b/>
+  </lu>
+  <b/>
         </out>
         <choose>
           <when>
@@ -8131,8 +8095,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
     
-    <rule>
-<!--REGLA: GER + ENCLÍTIC + ENCLÍTIC-->
+    <rule comment="GER + ENCLÍTIC + ENCLÍTIC">
       <pattern>
         <pattern-item n="ger"/>
         <pattern-item n="prnenc"/>
@@ -8210,8 +8173,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
   
-       <rule>
-<!--REGLA: estar + ger -> être à + ger -->
+       <rule comment="estar + ger -> être en train de + inf">
       <pattern>
         <pattern-item n="verb_conj"/>
         <pattern-item n="ger"/>
@@ -8238,7 +8200,7 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
               <lu>
-	        <lit v="être"/>
+        <lit v="être"/>
                 <lit-tag v="vbser"/>
                 <clip pos="1" side="tl" part="temps"/>
                 <clip pos="1" side="tl" part="persona"/>
@@ -8247,20 +8209,20 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
               <lu>
-	        <lit v="en"/>
-		<lit-tag v="pr"/>
-	      </lu>
-	      <b/>
+        <lit v="en"/>
+	<lit-tag v="pr"/>
+      </lu>
+      <b/>
               <lu>
-	        <lit v="train"/>
-		<lit-tag v="n.m.sg"/>
-	      </lu>
-	      <b/>
-	      <lu>
-	        <lit v="de"/>
-		<lit-tag v="pr"/>
-	      </lu>
-	      <b/>   
+        <lit v="train"/>
+	<lit-tag v="n.m.sg"/>
+      </lu>
+      <b/>
+      <lu>
+        <lit v="de"/>
+	<lit-tag v="pr"/>
+      </lu>
+      <b/>   
               <lu>
                 <clip pos="2" side="tl" part="lemh"/>
                 <clip pos="2" side="tl" part="a_verb"/>
@@ -8280,7 +8242,7 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
                  <lu>
-	        <lit v="être"/>
+        <lit v="être"/>
                 <lit-tag v="vbser"/>
                 <clip pos="1" side="tl" part="temps"/>
                 <clip pos="1" side="tl" part="persona"/>
@@ -8289,20 +8251,20 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
               <lu>
-	        <lit v="en"/>
-		<lit-tag v="pr"/>
-	      </lu>
-	      <b/>
+        <lit v="en"/>
+	<lit-tag v="pr"/>
+      </lu>
+      <b/>
               <lu>
-	        <lit v="train"/>
-		<lit-tag v="n.m.sg"/>
-	      </lu>
-	      <b/>
-	      <lu>
-	        <lit v="de"/>
-		<lit-tag v="pr"/>
-	      </lu>
-	      <b/>   
+        <lit v="train"/>
+	<lit-tag v="n.m.sg"/>
+      </lu>
+      <b/>
+      <lu>
+        <lit v="de"/>
+	<lit-tag v="pr"/>
+      </lu>
+      <b/>   
               <lu>
                 <clip pos="2" side="tl" part="lemh"/>
                 <clip pos="2" side="tl" part="a_verb"/>
@@ -8315,12 +8277,11 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
     </rule>
     
-     <rule>
-<!--REGLA: estar + ger + enc -> être à + enc + inf -->
+     <rule comment="estar + ger + enc -> être en train de + enc + inf">
       <pattern>
         <pattern-item n="verb_conj"/>
         <pattern-item n="ger"/>
-	<pattern-item n="prnenc"/>
+<pattern-item n="prnenc"/>
       </pattern>
       <action>
         <call-macro n="f_setpronom">
@@ -8344,7 +8305,7 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
                  <lu>
-	        <lit v="être"/>
+        <lit v="être"/>
                 <lit-tag v="vbser"/>
                 <clip pos="1" side="tl" part="temps"/>
                 <clip pos="1" side="tl" part="persona"/>
@@ -8353,26 +8314,26 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
               <lu>
-	        <lit v="en"/>
-		<lit-tag v="pr"/>
-	      </lu>
-	      <b/>
+        <lit v="en"/>
+	<lit-tag v="pr"/>
+      </lu>
+      <b/>
               <lu>
-	        <lit v="train"/>
-		<lit-tag v="n.m.sg"/>
-	      </lu>
-	      <b/>
-	      <lu>
-	        <lit v="de"/>
-		<lit-tag v="pr"/>
-	      </lu>
-	      <b/>
-	      <lu>
+        <lit v="train"/>
+	<lit-tag v="n.m.sg"/>
+      </lu>
+      <b/>
+      <lu>
+        <lit v="de"/>
+	<lit-tag v="pr"/>
+      </lu>
+      <b/>
+      <lu>
  	        <clip pos="3" side="tl" part="lem"/>
                 <lit-tag v="prn.pro"/>
                 <clip pos="3" side="tl" part="tipoenc_pro"/>
-	      </lu> 
-	     <b/>   
+      </lu> 
+     <b/>   
               <lu>
                 <clip pos="2" side="tl" part="lemh"/>
                 <clip pos="2" side="tl" part="a_verb"/>
@@ -8392,7 +8353,7 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
                  <lu>
-	        <lit v="être"/>
+        <lit v="être"/>
                 <lit-tag v="vbser"/>
                 <clip pos="1" side="tl" part="temps"/>
                 <clip pos="1" side="tl" part="persona"/>
@@ -8401,26 +8362,26 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
               <lu>
-	        <lit v="en"/>
-		<lit-tag v="pr"/>
-	      </lu>
-	      <b/>
+        <lit v="en"/>
+	<lit-tag v="pr"/>
+      </lu>
+      <b/>
               <lu>
-	        <lit v="train"/>
-		<lit-tag v="n.m.sg"/>
-	      </lu>
-	      <b/>
-	      <lu>
-	        <lit v="de"/>
-		<lit-tag v="pr"/>
-	      </lu>
-	      <b/>
-	      <lu>
-	        <clip pos="3" side="tl" part="lem"/>
+        <lit v="train"/>
+	<lit-tag v="n.m.sg"/>
+      </lu>
+      <b/>
+      <lu>
+        <lit v="de"/>
+	<lit-tag v="pr"/>
+      </lu>
+      <b/>
+      <lu>
+        <clip pos="3" side="tl" part="lem"/>
                 <lit-tag v="prn.pro"/>
                 <clip pos="3" side="tl" part="tipoenc_pro"/>
-	      </lu> 
-	       <b/>   
+      </lu> 
+       <b/>   
               <lu>
                 <clip pos="2" side="tl" part="lemh"/>
                 <clip pos="2" side="tl" part="a_verb"/>
@@ -8434,8 +8395,7 @@ is not applicable because gender and number can not be taken from previous rules
     </rule>
 
 
- <rule>
-<!--REGLA: estar GER + ENCLÍTIC + ENCLÍTIC : être à pro inf-->
+ <rule comment="estar GER + ENCLÍTIC + ENCLÍTIC : être à pro inf">
       <pattern>
         <pattern-item n="verb_conj"/>
         <pattern-item n="ger"/>
@@ -8459,7 +8419,7 @@ is not applicable because gender and number can not be taken from previous rules
             </test>
             <out>
              <lu>
-	        <lit v="être"/>
+        <lit v="être"/>
                 <lit-tag v="vbser"/>
                 <clip pos="1" side="tl" part="temps"/>
                 <clip pos="1" side="tl" part="persona"/>
@@ -8468,19 +8428,19 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
               <lu>
-	        <lit v="en"/>
-		<lit-tag v="pr"/>
-	      </lu>
-	      <b/>
+        <lit v="en"/>
+	<lit-tag v="pr"/>
+      </lu>
+      <b/>
               <lu>
-	        <lit v="train"/>
-		<lit-tag v="n.m.sg"/>
-	      </lu>
-	      <b/>
-	      <lu>
-	        <lit v="de"/>
-		<lit-tag v="pr"/>
-	      </lu>
+        <lit v="train"/>
+	<lit-tag v="n.m.sg"/>
+      </lu>
+      <b/>
+      <lu>
+        <lit v="de"/>
+	<lit-tag v="pr"/>
+      </lu>
               <b/>
               <lu>
                 <clip pos="4" side="tl" part="lem"/>
@@ -8504,8 +8464,8 @@ is not applicable because gender and number can not be taken from previous rules
           </when>
           <otherwise>
             <out>
-	     <lu>
-	        <lit v="être"/>
+     <lu>
+        <lit v="être"/>
                 <lit-tag v="vbser"/>
                 <clip pos="1" side="tl" part="temps"/>
                 <clip pos="1" side="tl" part="persona"/>
@@ -8514,19 +8474,19 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
               <lu>
-	        <lit v="en"/>
-		<lit-tag v="pr"/>
-	      </lu>
-	      <b/>
+        <lit v="en"/>
+	<lit-tag v="pr"/>
+      </lu>
+      <b/>
               <lu>
-	        <lit v="train"/>
-		<lit-tag v="n.m.sg"/>
-	      </lu>
-	      <b/>
-	      <lu>
-	        <lit v="de"/>
-		<lit-tag v="pr"/>
-	      </lu>
+        <lit v="train"/>
+	<lit-tag v="n.m.sg"/>
+      </lu>
+      <b/>
+      <lu>
+        <lit v="de"/>
+	<lit-tag v="pr"/>
+      </lu>
               <b/>
               <lu>
                 <clip pos="3" side="tl" part="lem"/>
@@ -8551,10 +8511,8 @@ is not applicable because gender and number can not be taken from previous rules
         </choose>
       </action>
   </rule>
-  
 
-    <rule>
-<!--REGLA: SENT + IMP + ENCLÍTIC + ENCLÍTIC-->
+    <rule comment="SENT + IMP + ENCLÍTIC + ENCLÍTIC">
       <pattern>        
         <pattern-item n="sentquecm"/>
         <pattern-item n="imp"/>
@@ -8566,21 +8524,21 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="2"/>
         </call-macro>
 <!--  llevar fins que hi haja dobles enclítics al dic.fr  <choose>
-	<when>
+<when>
           <test>
-	    <and>
+    <and>
      	      <equal>
      	        <clip pos="3" side="sl" part="lem"/>
      	        <lit v="li"/>
      	       </equal>
-	       <equal>
+       <equal>
      	         <clip pos="4" side="sl" part="lem"/>
      	         <lit v="el"/>
      	       </equal>
-	     </and>  
+     </and>  
            </test>-->
         <out>
-	 <lu>
+ <lu>
             <clip pos="1" side="tl" part="whole"/>
           </lu>
           <b pos="1"/>
@@ -8601,53 +8559,53 @@ is not applicable because gender and number can not be taken from previous rules
               <clip pos="1" side="tl" part="lemq"/>
             </lu>
 <!--  <lu>
-	        <clip pos="3" side="tl" part="lem"/>
-	        <clip pos="3" side="tl" part="a_prnenc"/>
-	        <clip pos="3" side="tl" part="persona"/>
-	        <clip pos="3" side="tl" part="gen"/>
-	        <clip pos="3" side="tl" part="nbr"/>
-	        <clip pos="1" side="tl" part="lemq"/>
-	      </lu>-->
+        <clip pos="3" side="tl" part="lem"/>
+        <clip pos="3" side="tl" part="a_prnenc"/>
+        <clip pos="3" side="tl" part="persona"/>
+        <clip pos="3" side="tl" part="gen"/>
+        <clip pos="3" side="tl" part="nbr"/>
+        <clip pos="1" side="tl" part="lemq"/>
+      </lu>-->
           </mlu>
         </out>
 <!--	</when>
-	<otherwise>
-	<out>
-	 <lu>
+<otherwise>
+<out>
+ <lu>
             <clip pos="1" side="tl" part="whole"/>
           </lu>
           <b pos="1"/>
-	    <mlu>
-	      <lu>
-	        <clip pos="2" side="tl" part="lemh"/>
-	        <clip pos="2" side="tl" part="a_verb"/>
-	        <clip pos="2" side="tl" part="temps"/>
-	        <clip pos="2" side="tl" part="persona"/>
-	        <clip pos="2" side="tl" part="nbr"/>
-	      </lu>
-	      <lu>
-	        <clip pos="3" side="tl" part="lem"/>
-	        <clip pos="3" side="tl" part="a_prnenc"/>
-	        <clip pos="3" side="tl" part="persona"/>
-	        <clip pos="3" side="tl" part="gen"/>
-	        <clip pos="3" side="tl" part="nbr"/>
-	      </lu>  
-	      <lu>
-	        <clip pos="4" side="tl" part="lem"/>
-	        <clip pos="4" side="tl" part="a_prnenc"/>
-	        <clip pos="4" side="tl" part="persona"/>
-	        <clip pos="4" side="tl" part="gen"/>
-	        <clip pos="4" side="tl" part="nbr"/>
-	        <clip pos="1" side="tl" part="lemq"/>
-	      </lu>  
-	    </mlu>
+    <mlu>
+      <lu>
+        <clip pos="2" side="tl" part="lemh"/>
+        <clip pos="2" side="tl" part="a_verb"/>
+        <clip pos="2" side="tl" part="temps"/>
+        <clip pos="2" side="tl" part="persona"/>
+        <clip pos="2" side="tl" part="nbr"/>
+      </lu>
+      <lu>
+        <clip pos="3" side="tl" part="lem"/>
+        <clip pos="3" side="tl" part="a_prnenc"/>
+        <clip pos="3" side="tl" part="persona"/>
+        <clip pos="3" side="tl" part="gen"/>
+        <clip pos="3" side="tl" part="nbr"/>
+      </lu>  
+      <lu>
+        <clip pos="4" side="tl" part="lem"/>
+        <clip pos="4" side="tl" part="a_prnenc"/>
+        <clip pos="4" side="tl" part="persona"/>
+        <clip pos="4" side="tl" part="gen"/>
+        <clip pos="4" side="tl" part="nbr"/>
+        <clip pos="1" side="tl" part="lemq"/>
+      </lu>  
+    </mlu>
           </out>
            </otherwise>
          </choose>-->
       </action>
   </rule>    
-    <rule>
-<!--REGLA: IMP + ENCLÍTIC + ENCLÍTIC-->
+
+    <rule comment="IMP + ENCLÍTIC + ENCLÍTIC">
       <pattern>
         <pattern-item n="imp"/>
         <pattern-item n="prnenc"/>
@@ -8658,18 +8616,18 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="1"/>
         </call-macro>
 <!--  llevar fins que hi haja dobles enclítics al dic.fr  <choose>
-	<when>
+<when>
           <test>
-	    <and>
+    <and>
      	      <equal>
      	        <clip pos="2" side="sl" part="lem"/>
      	        <lit v="li"/>
      	       </equal>
-	       <equal>
+       <equal>
      	         <clip pos="3" side="sl" part="lem"/>
      	         <lit v="el"/>
      	       </equal>
-	     </and>  
+     </and>  
            </test>-->
         <out>
           <mlu>
@@ -8689,50 +8647,49 @@ is not applicable because gender and number can not be taken from previous rules
               <clip pos="1" side="tl" part="lemq"/>
             </lu>
 <!--  <lu>
-	        <clip pos="2" side="tl" part="lem"/>
-	        <clip pos="2" side="tl" part="a_prnenc"/>
-	        <clip pos="2" side="tl" part="persona"/>
-	        <clip pos="2" side="tl" part="gen"/>
-	        <clip pos="2" side="tl" part="nbr"/>
-	        <clip pos="1" side="tl" part="lemq"/>
-	      </lu>-->
+        <clip pos="2" side="tl" part="lem"/>
+        <clip pos="2" side="tl" part="a_prnenc"/>
+        <clip pos="2" side="tl" part="persona"/>
+        <clip pos="2" side="tl" part="gen"/>
+        <clip pos="2" side="tl" part="nbr"/>
+        <clip pos="1" side="tl" part="lemq"/>
+      </lu>-->
           </mlu>
         </out>
 <!--	</when>
-	<otherwise>
-	<out>
-	    <mlu>
-	      <lu>
-	        <clip pos="1" side="tl" part="lemh"/>
-	        <clip pos="1" side="tl" part="a_verb"/>
-	        <clip pos="1" side="tl" part="temps"/>
-	        <clip pos="1" side="tl" part="persona"/>
-	        <clip pos="1" side="tl" part="nbr"/>
-	      </lu>
-	      <lu>
-	        <clip pos="2" side="tl" part="lem"/>
-	        <clip pos="2" side="tl" part="a_prnenc"/>
-	        <clip pos="2" side="tl" part="persona"/>
-	        <clip pos="2" side="tl" part="gen"/>
-	        <clip pos="2" side="tl" part="nbr"/>
-	      </lu>  
-	      <lu>
-	        <clip pos="3" side="tl" part="lem"/>
-	        <clip pos="3" side="tl" part="a_prnenc"/>
-	        <clip pos="3" side="tl" part="persona"/>
-	        <clip pos="3" side="tl" part="gen"/>
-	        <clip pos="3" side="tl" part="nbr"/>
-	        <clip pos="1" side="tl" part="lemq"/>
-	      </lu>  
-	    </mlu>
+<otherwise>
+<out>
+    <mlu>
+      <lu>
+        <clip pos="1" side="tl" part="lemh"/>
+        <clip pos="1" side="tl" part="a_verb"/>
+        <clip pos="1" side="tl" part="temps"/>
+        <clip pos="1" side="tl" part="persona"/>
+        <clip pos="1" side="tl" part="nbr"/>
+      </lu>
+      <lu>
+        <clip pos="2" side="tl" part="lem"/>
+        <clip pos="2" side="tl" part="a_prnenc"/>
+        <clip pos="2" side="tl" part="persona"/>
+        <clip pos="2" side="tl" part="gen"/>
+        <clip pos="2" side="tl" part="nbr"/>
+      </lu>  
+      <lu>
+        <clip pos="3" side="tl" part="lem"/>
+        <clip pos="3" side="tl" part="a_prnenc"/>
+        <clip pos="3" side="tl" part="persona"/>
+        <clip pos="3" side="tl" part="gen"/>
+        <clip pos="3" side="tl" part="nbr"/>
+        <clip pos="1" side="tl" part="lemq"/>
+      </lu>  
+    </mlu>
           </out>
            </otherwise>
          </choose>-->
       </action>
   </rule>
     
-    <rule>
-<!--REGLA: EN + INF - EN + GERUNDI Comprovar traducció-->
+    <rule comment="EN + INF - EN + GERUNDI Comprovar traducció">
       <pattern>
         <pattern-item n="en"/>
         <pattern-item n="infnm"/>
@@ -8756,8 +8713,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
     
-    <rule>
-<!--REGLA: EN + INF'S - EN + GERUNDI Comprovar traducció-->
+    <rule comment="EN + INF'S - EN + GERUNDI Comprovar traducció">
       <pattern>
         <pattern-item n="en"/>
         <pattern-item n="infnm"/>
@@ -8788,8 +8744,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
     
-    <rule>
-<!--REGLA: l'any 1998 > en 1998 -->
+    <rule comment="l'any 1998 > en 1998">
       <pattern>
         <pattern-item n="detdef"/>
         <pattern-item n="any"/>
@@ -8808,9 +8763,9 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
     </rule>
+
 <!--comparatives-->
-    <rule>
-<!-- REGLA: tants/menys/més NOM com/que : autant/moins/plus de NOM que -->
+    <rule comment="tants/menys/més NOM com/que : autant/moins/plus de NOM que">
       <pattern>
         <pattern-item n="comp"/>
         <pattern-item n="nom"/>
@@ -8874,8 +8829,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
     </rule>
     
-    <rule>
-<!-- REGLA: tants/menys/més NOM com/que : autant/moins/plus de NOM que de-->
+    <rule comment="tants/menys/més NOM com/que : autant/moins/plus de NOM que de">
       <pattern>
         <pattern-item n="comp"/>
         <pattern-item n="nom"/>
@@ -8958,8 +8912,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
     
-    <rule>
-<!-- REGLA: tan ADJ com: aussi ADJ que -->
+    <rule comment="tan ADJ com: aussi ADJ que">
       <pattern>
         <pattern-item n="adv"/>
         <pattern-item n="adj"/>
@@ -8969,7 +8922,7 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_concord1">
           <with-param pos="2"/>
         </call-macro>
-	<call-macro n="superlatiu">
+        <call-macro n="superlatiu">
           <with-param pos="2"/>
         </call-macro>
         <choose>
@@ -9015,8 +8968,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
     
-    <rule>
-<!-- REGLA: tan ADV com: aussi ADV que -->
+    <rule comment="tan ADV com: aussi ADV que">
       <pattern>
         <pattern-item n="adv"/>
         <pattern-item n="adv"/>
@@ -9066,6 +9018,53 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
     </rule>
 <!-- fi comparatives -->
+
+<!-- canvi de verb auxiliar en oracions reflexives o impersonals -->
+
+<!--
+<rule comment="regla: es haver pp">
+   <pattern>
+     <pattern-item n="es"/>
+     <pattern-item n="haver-tmp-srd-cnj-p3"/>
+     <pattern-item n="pp"/>
+   </pattern>
+   <action>
+     <out>
+       <chunk name="prn_aux_pp">
+         <tags>
+           <tag><lit-tag v="SV"/></tag>
+         </tags>
+           <lu>
+             <clip pos="1" side="tl" part="lemh"/>
+             <clip pos="1" side="tl" part="tags"/>
+             <clip pos="1" side="tl" part="lemq"/>
+           </lu>
+           <b pos="1"/>
+           <lu>
+             <lit v="èssere"/>
+             <lit-tag v="vbser"/>
+             <clip pos="2" side="tl" part="temps"/>
+             <clip pos="2" side="tl" part="pers"/>
+             <clip pos="2" side="tl" part="nbr"/>
+           </lu>
+           <b pos="2"/>
+           <lu>
+             <clip pos="3" side="tl" part="lemh"/>
+             <clip pos="3" side="tl" part="a_verb"/>
+             <lit-tag v="pp"/>
+             <var n="genero"/>
+             <clip pos="2" side="tl" part="nbr"/>
+             <clip pos="3" side="tl" part="lemq"/>
+           </lu>
+       </chunk>
+     </out>
+   </action>
+</rule>
+-->
+
+
+
+<!-- fi canvi de verb auxiliar en oracions reflexives o impersonals -->
 
     <rule>
 <!-- REGLA: reset variables-->

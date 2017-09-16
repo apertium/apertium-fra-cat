@@ -1,4 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <rules>
+
+<!-- PR -->
 
   <!-- 
     per >> par, pour
@@ -148,6 +151,22 @@
   <rule weight="0.8">
     <match lemma="canviar" tags="vblex.*"><select lemma="changer"/></match>
   </rule>
+
+<!-- ADV -->
+
+  <!-- 
+    no >> ne, non
+  -->
+  <rule weight="0.8">
+    <match lemma="no" tags="adv"><select lemma="ne"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="o" tags="cnjcoo"/>
+    <match lemma="no" tags="adv"><select lemma="non"/></match>
+    <or><match tags="cm"/><match tags="sent"/></or>
+  </rule>
+
+<!-- N -->
 
   <!-- 
     policia >> police, policier

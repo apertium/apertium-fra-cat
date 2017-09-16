@@ -8,3 +8,9 @@ s'a impliqué
 echo ", va implicar-se" | apertium -d . cat-fra
 , il va s'impliquer
 
+
+CAT > FRA
+
+echo "no es va fer gran" | apertium -d . cat-fra
+ne se va pas faire grand
+
