@@ -4981,13 +4981,16 @@ is not applicable because gender and number can not be taken from previous rules
         <choose>
           <when>
             <test>
-              <and>
-                <equal><clip pos="1" side="sl" part="persona"/><clip pos="2" side="sl" part="persona"/></equal>
-                <or>
-                  <equal><clip pos="1" side="sl" part="nbr"/><clip pos="2" side="sl" part="nbr"/></equal>
-                  <equal><clip pos="1" side="sl" part="nbr"/><lit-tag v="sp"/></equal>
-                </or>
-              </and>
+              <or>
+                <and>
+                  <equal><clip pos="1" side="sl" part="persona"/><clip pos="2" side="sl" part="persona"/></equal>
+                  <or>
+                    <equal><clip pos="1" side="sl" part="nbr"/><clip pos="2" side="sl" part="nbr"/></equal>
+                    <equal><clip pos="1" side="sl" part="nbr"/><lit-tag v="sp"/></equal>
+                  </or>
+                </and>
+                <in caseless="yes"><clip pos="3" side="tl" part="lemh"/><list n="vbambser"/></in>
+              </or>
             </test>
             <let><clip pos="2" side="tl" part="lem"/><lit v="être"/></let>
             <let><clip pos="2" side="tl" part="a_verb"/><lit-tag v="vbser"/></let>
@@ -5113,6 +5116,7 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b pos="1"/>
         </out>
+<!--
         <choose>
           <when>
             <test>
@@ -5124,6 +5128,37 @@ is not applicable because gender and number can not be taken from previous rules
             <let><clip pos="3" side="tl" part="lem"/><lit v="être"/></let>
             <let><clip pos="3" side="tl" part="a_verb"/><lit-tag v="vbser"/></let>
             <let><clip pos="4" side="tl" part="nbr"/><clip pos="3" side="sl" part="nbr"/></let>
+          </when>
+        </choose>
+-->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <and>
+                  <equal><clip pos="2" side="sl" part="persona"/><clip pos="3" side="sl" part="persona"/></equal>
+                  <or>
+                    <equal><clip pos="2" side="sl" part="nbr"/><clip pos="3" side="sl" part="nbr"/></equal>
+                    <equal><clip pos="2" side="sl" part="nbr"/><lit-tag v="sp"/></equal>
+                  </or>
+                </and>
+                <in caseless="yes"><clip pos="4" side="tl" part="lemh"/><list n="vbambser"/></in>
+              </or>
+            </test>
+            <let><clip pos="3" side="tl" part="lem"/><lit v="être"/></let>
+            <let><clip pos="3" side="tl" part="a_verb"/><lit-tag v="vbser"/></let>
+            <let><clip pos="4" side="tl" part="nbr"/><clip pos="3" side="sl" part="nbr"/></let>
+            <choose>
+              <when>
+                <test>
+                    <or>
+                      <equal><var n="genero"/><lit-tag v="m"/></equal>
+                      <equal><var n="genero"/><lit-tag v="f"/></equal>
+                    </or>
+                </test>
+                <let><clip pos="4" side="tl" part="gen"/><var n="genero"/></let>
+              </when>
+            </choose>
           </when>
         </choose>
         <out>
@@ -5860,6 +5895,7 @@ is not applicable because gender and number can not be taken from previous rules
           <clip pos="2" side="tl" part="lemh"/>
           <lit v="aa"/>
         </modify-case>
+<!--
         <choose>
           <when>
             <test>
@@ -5871,6 +5907,39 @@ is not applicable because gender and number can not be taken from previous rules
             <let><clip pos="3" side="tl" part="lem"/><lit v="être"/></let>
             <let><clip pos="3" side="tl" part="a_verb"/><lit-tag v="vbser"/></let>
             <let><clip pos="4" side="tl" part="nbr"/><clip pos="3" side="sl" part="nbr"/></let>
+          </when>
+        </choose>
+-->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <and>
+                  <equal><clip pos="2" side="sl" part="persona"/><clip pos="3" side="sl" part="persona"/></equal>
+                  <or>
+                    <equal><clip pos="2" side="sl" part="nbr"/><clip pos="3" side="sl" part="nbr"/></equal>
+                    <equal><clip pos="2" side="sl" part="nbr"/><lit-tag v="sp"/></equal>
+                  </or>
+                </and>
+                <in caseless="yes"><clip pos="4" side="tl" part="lemh"/><list n="vbambser"/></in>
+              </or>
+            </test>
+            <let><clip pos="3" side="tl" part="lem"/><lit v="être"/></let>
+            <let><clip pos="3" side="tl" part="a_verb"/><lit-tag v="vbser"/></let>
+            <let><clip pos="4" side="tl" part="nbr"/><clip pos="3" side="sl" part="nbr"/></let>
+<!-- el pronom subjecte es crea en masculí, per tant deixem igual el gènere del participi
+            <choose>
+              <when>
+                <test>
+                    <or>
+                      <equal><var n="genero"/><lit-tag v="m"/></equal>
+                      <equal><var n="genero"/><lit-tag v="f"/></equal>
+                    </or>
+                </test>
+                <let><clip pos="4" side="tl" part="gen"/><var n="genero"/></let>
+              </when>
+            </choose>
+-->
           </when>
         </choose>
         <out>
@@ -5957,6 +6026,7 @@ is not applicable because gender and number can not be taken from previous rules
           <clip pos="3" side="tl" part="lemh"/>
           <lit v="aa"/>
         </modify-case>
+<!--
         <choose>
           <when>
             <test>
@@ -5964,6 +6034,26 @@ is not applicable because gender and number can not be taken from previous rules
                 <clip pos="3" side="sl" part="persona"/>
                 <clip pos="3" side="sl" part="persona"/>
               </equal>
+            </test>
+            <let><clip pos="4" side="tl" part="lem"/><lit v="être"/></let>
+            <let><clip pos="4" side="tl" part="a_verb"/><lit-tag v="vbser"/></let>
+            <let><clip pos="5" side="tl" part="nbr"/><clip pos="4" side="sl" part="nbr"/></let>
+          </when>
+        </choose>
+-->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <and>
+                  <equal><clip pos="3" side="sl" part="persona"/><clip pos="4" side="sl" part="persona"/></equal>
+                  <or>
+                    <equal><clip pos="3" side="sl" part="nbr"/><clip pos="4" side="sl" part="nbr"/></equal>
+                    <equal><clip pos="3" side="sl" part="nbr"/><lit-tag v="sp"/></equal>
+                  </or>
+                </and>
+                <in caseless="yes"><clip pos="5" side="tl" part="lemh"/><list n="vbambser"/></in>
+              </or>
             </test>
             <let><clip pos="4" side="tl" part="lem"/><lit v="être"/></let>
             <let><clip pos="4" side="tl" part="a_verb"/><lit-tag v="vbser"/></let>
