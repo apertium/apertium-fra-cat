@@ -3579,8 +3579,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
     
-    <rule>
-<!-- REGLA: DET NOM ADVERBI ADJECTIU -->
+    <rule comment="DET NOM ADVERBI ADJECTIU: l'home molt alt > l'homme très haut, l'home més alt > l'homme le plus haut">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="nom"/>
@@ -3593,22 +3592,19 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="1"/>
           <with-param pos="4"/>
         </call-macro>
-<call-macro n="superlatiu">
+        <call-macro n="superlatiu">
           <with-param pos="4"/>
         </call-macro>
         <choose>
           <when>
             <test>
-              <or>
-                <equal>
-                  <clip pos="3" side="sl" part="lem"/>
-                  <lit v="més"/>
-                </equal>
-                <equal>
-                  <clip pos="3" side="sl" part="lem"/>
-                  <lit v="menys"/>
-                </equal>
-              </or>
+              <and>
+                <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="el"/></equal>
+                <or>
+                  <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="més"/></equal>
+                  <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="menys"/></equal>
+                </or>
+              </and>
             </test>
             <out>
               <lu>
@@ -3616,11 +3612,17 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
               <lu>
-                <clip pos="2" side="tl" part="whole"/>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
               </lu>
               <b pos="2"/>
               <lu>
-                <clip pos="1" side="tl" part="whole"/>
+                <get-case-from pos="3">
+                  <clip pos="1" side="tl" part="lemh"/>
+                </get-case-from>
+                <clip pos="1" side="tl" part="tags"/>
+                <clip pos="1" side="tl" part="lemq"/>
               </lu>
               <b/>
               <lu>
@@ -3639,7 +3641,9 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
               <lu>
-                <clip pos="2" side="tl" part="whole"/>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
               </lu>
               <b pos="2"/>
               <lu>

@@ -15,3 +15,6 @@ echo "no es va fer gran" | apertium -d . cat-fra
 ne se va pas faire grand
 
 00910. En des époques anciennes, s'y avait cultivé riz
+
+echo ", van proposar" | apertium -d . cat-fra
+, ils vont proposer
