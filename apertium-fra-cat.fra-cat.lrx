@@ -1,4 +1,7 @@
 <rules>
+  <rule weight="1.8">
+    <match lemma="qui" tags="rel.*"><select lemma="que" tags="rel.*"/></match>
+  </rule>
   <rule weight="0.8" v="val">
     <match lemma="maïs" tags="n.*"><select lemma="dacsa" tags="n.*"/></match>
   </rule>
