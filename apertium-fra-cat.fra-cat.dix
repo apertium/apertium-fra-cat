@@ -138,6 +138,13 @@
       <e>       <p><l><s n="f"/></l><r><s n="f"/></r></p></e>
     </pardef>
 
+    <pardef n="anglais_anglès">
+      <e>       <p><l><s n="f"/></l><r><s n="f"/></r></p></e>
+      <e r="LR"><p><l><s n="m"/><s n="sp"/></l><r><s n="m"/><s n="ND"/></r></p></e>
+      <e r="RL"><p><l><s n="m"/><s n="sp"/></l><r><s n="m"/><s n="sg"/></r></p></e>
+      <e r="RL"><p><l><s n="m"/><s n="sp"/></l><r><s n="m"/><s n="pl"/></r></p></e>
+    </pardef>
+
   </pardefs>
 
 
@@ -890,14 +897,8 @@
     <e r="RL"><p><l>aranais<s n="n"/><s n="m"/><s n="sp"/></l><r>aranès<s n="n"/><s n="m"/><s n="pl"/></r></p></e>
     <e r="RL"><p><l>aranais<s n="n"/><s n="m"/><s n="sp"/></l><r>aranès<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
 
-    <e>       <p><l>anglais<s n="adj"/><s n="f"/></l> <r>anglès<s n="adj"/><s n="f"/></r></p></e>
-    <e>       <p><l>anglais<s n="n"/><s n="f"/></l>   <r>anglès<s n="n"/><s n="f"/></r></p></e>
-    <e r="LR"><p><l>anglais<s n="adj"/><s n="m"/><s n="sp"/></l><r>anglès<s n="adj"/><s n="m"/><s n="ND"/></r></p></e>
-    <e r="LR"><p><l>anglais<s n="n"/><s n="m"/><s n="sp"/></l><r>anglès<s n="n"/><s n="m"/><s n="ND"/></r></p></e>
-    <e r="RL"><p><l>anglais<s n="adj"/><s n="m"/><s n="sp"/></l><r>anglès<s n="adj"/><s n="m"/><s n="pl"/></r></p></e>
-    <e r="RL"><p><l>anglais<s n="adj"/><s n="m"/><s n="sp"/></l><r>anglès<s n="adj"/><s n="m"/><s n="sg"/></r></p></e>
-    <e r="RL"><p><l>anglais<s n="n"/><s n="m"/><s n="sp"/></l><r>anglès<s n="n"/><s n="m"/><s n="pl"/></r></p></e>
-    <e r="RL"><p><l>anglais<s n="n"/><s n="m"/><s n="sp"/></l><r>anglès<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
+    <e>       <p><l>anglais<s n="n"/></l>             <r>anglès<s n="n"/></r></p><par n="anglais_anglès"/></e>
+    <e>       <p><l>anglais<s n="adj"/></l>           <r>anglès<s n="adj"/></r></p><par n="anglais_anglès"/></e>
 
     <e>       <p><l>angle<s n="n"/></l><r>angle<s n="n"/></r></p></e>
     <e r="RL"><p><l>angle<s n="n"/></l>               <r>cantó<s n="n"/></r></p></e>
@@ -14802,7 +14803,8 @@
 <e><p><l>orographie<s n="n"/><s n="f"/></l><r>orografia<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>orphelinat<s n="n"/><s n="m"/></l><r>orfenat<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>orthodoxie<s n="n"/><s n="f"/></l><r>ortodòxia<s n="n"/><s n="f"/></r></p></e>
-<e><p><l>ortographie<s n="n"/><s n="f"/></l><r>ortografia<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>ortographe<s n="n"/><s n="f"/></l><r>ortografia<s n="n"/><s n="f"/></r></p></e>
+<e r="LR"><p><l>ortographie<s n="n"/><s n="f"/></l><r>ortografia<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>oscillation<s n="n"/><s n="f"/></l><r>oscil·lació<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>ostentation<s n="n"/><s n="f"/></l><r>ostentació<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>otorrinolaryngologie<s n="n"/><s n="f"/></l><r>otorinolaringologia<s n="n"/><s n="f"/></r></p></e>
@@ -14817,7 +14819,9 @@
 <e><p><l>pacifisme<s n="n"/><s n="m"/></l><r>pacifisme<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>pacifiste<s n="n"/><s n="mf"/></l><r>pacifista<s n="n"/><s n="mf"/></r></p></e>
 <e><p><l>pagination<s n="n"/><s n="f"/></l><r>paginació<s n="n"/><s n="f"/></r></p></e>
-<e><p><l>palestinien<s n="n"/><s n="m"/></l><r>palestí<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>Palestinien<s n="n"/></l><r>palestí<s n="n"/></r></p></e>
+<e><p><l>Pakistanais<s n="n"/></l><r>paquistanès<s n="n"/></r></p><par n="anglais_anglès"/></e>
+<e><p><l>pakistanais<s n="adj"/></l><r>paquistanès<s n="adj"/></r></p><par n="anglais_anglès"/></e>
 <e><p><l>palestre<s n="n"/><s n="f"/></l><r>palestra<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>palette<s n="n"/><s n="f"/></l><r>paleta<s n="n"/><s n="mf"/></r></p></e>
 <e><p><l>palourde<s n="n"/><s n="f"/></l><r>cloïssa<s n="n"/><s n="f"/></r></p></e>
