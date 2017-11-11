@@ -757,6 +757,7 @@
     <e r="LR"><p><l>amener<s n="vblex"/></l>          <r>portar<s n="vblex"/></r></p></e>
     <e a="ariel" r="LR"><p><l>amenuiser<s n="vblex"/></l><r>disminuir<s n="vblex"/></r></p></e>
     <e>       <p><l>amer<s n="adj"/></l>              <r>amarg<s n="adj"/></r></p></e>
+    <e r="RL"><p><l>amer<s n="adj"/></l>              <r>amargant<s n="adj"/></r></p></e>
     <e>       <p><l>américain<s n="adj"/></l>         <r>americà<s n="adj"/></r></p></e>
     <e>       <p><l>afro-américain<s n="adj"/></l>    <r>afroamericà<s n="adj"/></r></p></e>
     <e>       <p><l>Américain<s n="n"/></l>           <r>americà<s n="n"/></r></p></e>
@@ -1598,11 +1599,12 @@
     <e a="gema"><p><l>Balladur<s n="np"/></l>         <r>Balladur<s n="np"/></r></p></e>
     <e>       <p><l>balle<s n="n"/></l>               <r>pilota<s n="n"/></r></p></e>
     <e r="RL"><p><l>balle<s n="n"/></l>               <r>bala<s n="n"/></r></p></e>
+    <e r="RL"><p><l>ballon<s n="n"/><s n="m"/></l>    <r>baló<s n="n"/><s n="m"/></r></p></e>
+    <e>       <p><l>ballon<s n="n"/><s n="m"/></l>    <r>pilota<s n="n"/><s n="f"/></r></p></e>
     <e>       <p><l>danse<s n="n"/></l>               <r>dansa<s n="n"/></r></p></e>
     <e>       <p><l>danser<s n="vblex"/></l>          <r>ballar<s n="vblex"/></r></p></e>
     <e>       <p><l>Ballester<s n="np"/></l><r>Ballester<s n="np"/></r></p></e>
     <e>       <p><l>Ballesteros<s n="np"/></l><r>Ballesteros<s n="np"/></r></p></e>
-    <e r="LR"><p><l>ballon<s n="n"/><s n="m"/></l>    <r>pilota<s n="n"/><s n="f"/></r></p></e>
     <e r="LR"><p><l>banal<s n="adj"/><s n="m"/></l>   <r>banal<s n="adj"/><s n="mf"/></r></p></e>
     <e r="LR"><p><l>banal<s n="adj"/><s n="f"/></l>   <r>banal<s n="adj"/><s n="mf"/></r></p></e>
     <e r="RL"><p><l>banal<s n="adj"/><s n="GD"/></l>  <r>banal<s n="adj"/><s n="mf"/></r></p></e>
@@ -2768,6 +2770,7 @@
     <e>       <p><l>Colom<s n="np"/></l><r>Colom<s n="np"/></r></p></e>
     <e>       <p><l>Colombie<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Colòmbia<s n="np"/><s n="loc"/></r></p></e>
     <e>       <p><l>colombien<s n="adj"/></l>         <r>colombià<s n="adj"/></r></p></e>
+    <e>       <p><l>Colombien<s n="n"/></l>           <r>colombià<s n="n"/></r></p></e>
     <e>       <p><l>Colón<s n="np"/></l><r>Colón<s n="np"/></r></p></e>
     <e r="LR"><p><l>colonel<s n="n"/><s n="f"/></l>   <r>coronel<s n="n"/><s n="mf"/></r></p></e>
     <e r="LR"><p><l>colonel<s n="n"/><s n="m"/></l>   <r>coronel<s n="n"/><s n="mf"/></r></p></e>
@@ -4296,14 +4299,15 @@
     <e>       <p><l>échiquier<s n="n"/></l>           <r>tauler<s n="n"/></r></p></e>
     <e>       <p><l>échouer<s n="vblex"/></l>         <r>fracassar<s n="vblex"/></r></p></e>
     <e r="RL"><p><l>échouer<s n="vblex"/></l>         <r>encallar<s n="vblex"/></r></p></e>
-    <e>       <p><l>éclabousser<s n="vblex"/></l>     <r>esguitar<s n="vblex"/></r></p></e>
-    <e r="RL"><p><l>éclabousser<s n="vblex"/></l>     <r>esquitxar<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>éclabousser<s n="vblex"/></l>     <r>esguitar<s n="vblex"/></r></p></e>
+    <e>       <p><l>éclabousser<s n="vblex"/></l>     <r>esquitxar<s n="vblex"/></r></p></e>
     <e>       <p><l>éclair<s n="n"/></l>              <r>llampec<s n="n"/></r></p></e>
     <e>       <p><l>éclaircir<s n="vblex"/></l>       <r>aclarir<s n="vblex"/></r></p></e>
     <e r="RL"><p><l>éclaircir<s n="vblex"/></l>       <r>clarificar<s n="vblex"/></r></p></e>
     <e r="LR"><p><l>éclairer<s n="vblex"/></l>        <r>il·luminar<s n="vblex"/></r></p></e>
     <e r="RL"><p><l>éclairer<s n="vblex"/></l>        <r>enllumenar<s n="vblex"/></r></p></e>
-    <e>       <p><l>éclat<s n="n"/><s n="m"/></l>     <r>estella<s n="n"/><s n="f"/></r></p></e>
+    <e r="RL"><p><l>éclat<s n="n"/><s n="m"/></l>     <r>estella<s n="n"/><s n="f"/></r></p></e>
+    <e>       <p><l>éclat<s n="n"/><s n="m"/></l>     <r>esclat<s n="n"/><s n="m"/></r></p></e>
     <e r="LR"><p><l>éclatant<s n="adj"/><s n="f"/></l><r>brillant<s n="adj"/><s n="mf"/></r></p></e>
     <e r="LR"><p><l>éclatant<s n="adj"/><s n="m"/></l><r>brillant<s n="adj"/><s n="mf"/></r></p></e>
     <e>       <p><l>éclater<s n="vblex"/></l>         <r>esclatar<s n="vblex"/></r></p></e>
@@ -4761,7 +4765,7 @@
     <e r="RL"><p><l>environnemental<s n="adj"/><s n="GD"/></l><r>mediambiental<s n="adj"/><s n="mf"/></r></p></e>
     <e a="gema" r="LR"><p><l>environs<s n="n"/></l>   <r>voltant<s n="n"/></r></p></e>
     <e>       <p><l>envisager<s n="vblex"/></l>       <r>considerar<s n="vblex"/></r></p></e>
-    <e r="LR"><p><l>envoler<s n="vblex"/></l>         <r>volar<s n="vblex"/></r></p></e>
+    <e r="LR"><p><l>envoler<s n="vblex"/></l>         <r>enlairar<s n="vblex"/></r></p></e>
     <e>       <p><l>envoyer<s n="vblex"/></l>         <r>enviar<s n="vblex"/></r></p></e>
     <e>       <p><l>éolien<s n="adj"/></l>            <r>eòlic<s n="adj"/></r></p></e>
     <e>       <p><l>épaisseur<s n="n"/><s n="f"/></l> <r>espessor<s n="n"/><s n="m"/></r></p></e>
@@ -13402,7 +13406,6 @@
 <e><p><l>baisse<s n="n"/><s n="f"/></l><r>baixa<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>balise<s n="n"/><s n="f"/></l><r>balisa<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>balkanisation<s n="n"/><s n="f"/></l><r>balcanització<s n="n"/><s n="f"/></r></p></e>
-<e><p><l>ballon<s n="n"/><s n="m"/></l><r>baló<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>ballottage<s n="n"/><s n="m"/></l><r>empat<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>banalisation<s n="n"/><s n="f"/></l><r>banalització<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>banalité<s n="n"/><s n="f"/></l><r>banalitat<s n="n"/><s n="f"/></r></p></e>
@@ -14117,7 +14120,6 @@
 <e><p><l>firmament<s n="n"/><s n="m"/></l><r>firmament<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>fisc<s n="n"/><s n="m"/></l><r>fisc<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>fissure<s n="n"/><s n="f"/></l><r>fissura<s n="n"/><s n="f"/></r></p></e>
-<e><p><l>flash<s n="n"/><s n="m"/></l><r>esclat<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>flash<s n="n"/><s n="m"/></l><r>flaix<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>fleuve<s n="n"/><s n="m"/></l><r>riu<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>flexibilité<s n="n"/><s n="f"/></l><r>flexibilitat<s n="n"/><s n="f"/></r></p></e>
@@ -15754,7 +15756,8 @@
 <e r="RL"><p><l>effondrer<s n="vblex"/></l><r>afonar<s n="vblex"/></r></p></e>
 <e><p><l>effondrer<s n="vblex"/></l><r>enfonsar<s n="vblex"/></r></p></e>
 <e r="RL"><p><l>effondrer<s n="vblex"/></l><r>ensorrar<s n="vblex"/></r></p></e>
-<e><p><l>enfuir<s n="vblex"/></l><r>escapolir<s n="vblex"/></r></p></e>
+<e r="RL"><p><l>enfuir<s n="vblex"/></l><r>escapolir<s n="vblex"/></r></p></e>
+<e r="LR"><p><l>enfuir<s n="vblex"/></l><r>escapar<s n="vblex"/></r></p></e>
 <e><p><l>enterrer<s n="vblex"/></l><r>enterrar<s n="vblex"/></r></p></e>
 <e><p><l>entraver<s n="vblex"/></l><r>entorpir<s n="vblex"/></r></p></e>
 <e><p><l>entraver<s n="vblex"/></l><r>obstaculitzar<s n="vblex"/></r></p></e>
