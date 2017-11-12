@@ -193,6 +193,13 @@
     <match lemma="policia" tags="n.*"><select lemma="policier"/></match>
   </rule>
 
+  <!-- 
+    prova >> preuve, essai
+  -->
+  <rule weight="0.8">
+    <match lemma="prova" tags="n.*"><select lemma="preuve"/></match>
+  </rule>
+
 </rules>
 
 <!-- 

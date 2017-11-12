@@ -42,6 +42,7 @@
     <sdef n="nt"/>
     <sdef n="vbser"/>
     <sdef n="vbhaver"/>
+    <sdef n="vaux"/>
     <sdef n="vblex"/>
     <sdef n="vbmod"/>
     <sdef n="inf"/>
@@ -1546,7 +1547,8 @@
     <e r="LR"><p><l>aviser<s n="vblex"/></l>          <r>pensar<s n="vblex"/></r></p></e>
     <e a="gema" r="RL"><p><l>avocat<s n="n"/></l>     <r>alvocat<s n="n"/></r></p></e>
     <e>       <p><l>avocat<s n="n"/></l>              <r>advocat<s n="n"/></r></p></e>
-    <e>       <p><l>avoir<s n="vbhaver"/></l>         <r>haver<s n="vbhaver"/></r></p></e>
+    <e r="LR"><p><l>avoir<s n="vbhaver"/></l>         <r>haver<s n="vaux"/></r></p></e>
+    <e r="RL"><p><l>avoir<s n="vbhaver"/></l>         <r>haver<s n="vbhaver"/></r></p></e>
     <e>       <p><l>avoir<s n="vblex"/></l>           <r>tenir<s n="vblex"/></r></p></e>
     <e r="RL"><p><l>avoir<s n="vblex"/></l>           <r>tindre<s n="vblex"/></r></p></e>
     <e r="LR"><p><l>avoir<g><b/>envie<b/>de</g><s n="vblex"/></l><r>voler<s n="vblex"/></r></p></e>
@@ -2087,7 +2089,7 @@
     <e>       <p><l>Butragueño<s n="np"/></l><r>Butragueño<s n="np"/></r></p></e>
 <!--C1 Serpis-->
     <e a="gema"><p><l>C<s n="num"/></l>               <r>C<s n="num"/></r></p></e>
-    <e r="LR"><p><l>ça<s n="prn"/></l>                <r>això<s n="prn"/></r></p></e>
+    <e>       <p><l>ça<s n="prn"/></l>                <r>això<s n="prn"/></r></p></e>
     <e>       <p><l>Caballer<s n="np"/></l><r>Caballer<s n="np"/></r></p></e>
     <e>       <p><l>cabine<s n="n"/></l>              <r>cabina<s n="n"/></r></p></e>
     <e>       <p><l>cabinet<s n="n"/></l>             <r>gabinet<s n="n"/></r></p></e>
@@ -2329,7 +2331,7 @@
     <e a="u21941"><p><l>CDS<s n="n"/><s n="acr"/></l> <r>CDS<s n="n"/><s n="acr"/></r></p></e>
     <e>       <p><l>ce<s n="det"/><s n="dem"/><s n="f"/><s n="sg"/></l><r>aquest<s n="det"/><s n="dem"/><s n="f"/><s n="sg"/></r></p></e>
     <e>       <p><l>ce<s n="det"/><s n="dem"/><s n="m"/><s n="sg"/></l><r>aquest<s n="det"/><s n="dem"/><s n="m"/><s n="sg"/></r></p></e>
-    <e>       <p><l>ce<s n="prn"/></l>                <r>això<s n="prn"/></r></p></e>
+    <!-- <e>       <p><l>ce<s n="prn"/></l>                <r>això<s n="prn"/></r></p></e> -->
     <e r="LR"><p><l>ce<s n="det"/><s n="dem"/><s n="mf"/><s n="pl"/></l><r>aquest<s n="det"/><s n="dem"/><s n="GD"/><s n="pl"/></r></p></e>
     <e r="RL"><p><l>ce<s n="det"/><s n="dem"/><s n="f"/><s n="sg"/></l><r>aquell<s n="det"/><s n="dem"/><s n="f"/><s n="sg"/></r></p></e>
     <e r="RL"><p><l>ce<s n="det"/><s n="dem"/><s n="mf"/><s n="pl"/></l><r>aquell<s n="det"/><s n="dem"/><s n="f"/><s n="pl"/></r></p></e>
@@ -4871,7 +4873,7 @@
     <e r="RL"><p><l>esprit<s n="n"/></l>              <r>esperit<s n="n"/></r></p></e>
     <e>       <p><l>Esquerdo<s n="np"/></l><r>Esquerdo<s n="np"/></r></p></e>
     <e>       <p><l>essai<s n="n"/></l>               <r>assaig<s n="n"/></r></p></e>
-    <e r="LR"><p><l>essai<s n="n"/><s n="m"/></l>     <r>prova<s n="n"/><s n="f"/></r></p></e>
+    <e r="RL"><p><l>essai<s n="n"/><s n="m"/></l>     <r>prova<s n="n"/><s n="f"/></r></p></e>
     <e>       <p><l>essayer<s n="vblex"/></l>         <r>provar<s n="vblex"/></r></p></e>
     <e r="RL"><p><l>essayer<s n="vblex"/></l>         <r>intentar<s n="vblex"/></r></p></e>
     <e>       <p><l>essence<s n="n"/></l>             <r>essència<s n="n"/></r></p></e>
@@ -10062,7 +10064,7 @@
 <e>       <p><l>prêter<s n="vblex"/></l>          <r>prestar<s n="vblex"/></r></p></e>
 <e>       <p><l>prétexte<s n="n"/></l>            <r>pretext<s n="n"/></r></p></e>
 <e>       <p><l>prêtre<s n="n"/></l>              <r>sacerdot<s n="n"/></r></p></e>
-<e>       <p><l>preuve<s n="n"/></l>              <r>prova<s n="n"/></r></p></e>
+<e>       <p><l>preuve<s n="n"/><s n="f"/></l>    <r>prova<s n="n"/><s n="f"/></r></p></e>
 <e>       <p><l>prévarication<s n="n"/></l>       <r>prevaricació<s n="n"/></r></p></e>
 <e>       <p><l>prévenir<s n="vblex"/></l>        <r>prevenir<s n="vblex"/></r></p></e>
 <e r="RL"><p><l>prévenir<s n="vblex"/></l>        <r>avisar<s n="vblex"/></r></p></e>

@@ -322,24 +322,28 @@
       <attr-item tags="vblex"/>
       <attr-item tags="vbser"/>
       <attr-item tags="vbhaver"/>
+      <attr-item tags="vaux"/>
       <attr-item tags="vbmod"/>
     </def-attr>
     <def-attr n="a_inf">
       <attr-item tags="vblex.inf"/>
       <attr-item tags="vbser.inf"/>
       <attr-item tags="vbhaver.inf"/>
+      <attr-item tags="vaux.inf"/>
       <attr-item tags="vbmod.inf"/>
     </def-attr>
     <def-attr n="a_ger">
       <attr-item tags="vblex.ger"/>
       <attr-item tags="vbser.ger"/>
       <attr-item tags="vbhaver.ger"/>
+      <attr-item tags="vaux.ger"/>
       <attr-item tags="vbmod.ger"/>
     </def-attr>
     <def-attr n="a_pretind">
       <attr-item tags="vblex.ifi"/>
       <attr-item tags="vbser.ifi"/>
 <!--	  <attr-item tags="vbhaver.ifi"/> -->
+<!--	  <attr-item tags="vaux.ifi"/> -->
       <attr-item tags="vbmod.ifi"/>
     </def-attr>
     <def-attr n="a_lquest">
@@ -4873,7 +4877,7 @@ is not applicable because gender and number cannot be taken from previous rules 
                 <get-case-from pos="1">
                   <lit v="haver"/>
                 </get-case-from>
-                <lit-tag v="vbhaver"/>
+                <lit-tag v="vaux"/>
                 <clip pos="2" side="tl" part="temps"/>
                 <clip pos="2" side="tl" part="persona"/>
                 <clip pos="2" side="tl" part="nbr"/>
@@ -6652,7 +6656,7 @@ is not applicable because gender and number cannot be taken from previous rules 
                 <get-case-from pos="1">
                   <lit v="haver"/>
                 </get-case-from>
-                <lit-tag v="vbhaver"/>
+                <lit-tag v="vaux"/>
                 <clip pos="1" side="tl" part="temps"/>
                 <clip pos="1" side="tl" part="persona"/>
                 <clip pos="1" side="tl" part="nbr"/>
@@ -6693,7 +6697,7 @@ is not applicable because gender and number cannot be taken from previous rules 
                 <get-case-from pos="1">
                   <lit v="haver"/>
                 </get-case-from>
-                <lit-tag v="vbhaver"/>
+                <lit-tag v="vaux"/>
                 <clip pos="2" side="tl" part="temps"/>
                 <clip pos="2" side="tl" part="persona"/>
                 <clip pos="2" side="tl" part="nbr"/>
@@ -7292,7 +7296,7 @@ is not applicable because gender and number cannot be taken from previous rules 
             <out>
               <lu>
                 <lit v="haver"/>
-                <lit-tag v="vbhaver"/>
+                <lit-tag v="vaux"/>
                 <clip pos="1" side="tl" part="temps"/>
                 <clip pos="1" side="tl" part="persona"/>
                 <clip pos="1" side="tl" part="nbr"/>
