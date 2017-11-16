@@ -1,4 +1,8 @@
-Je me lève à dix heures du matin. -> Em llevo a les deu del matí
+Ant no trobat l. 4430:     <e>       <p><l>El<b/>Greco<s n="np"/><s n="ant"/></l><r>El<b/>Greco<s n="np"/><s n="ant"/></r></p></e>
+Ant no trobat l. 9379: <e>       <p><l>Pau<s n="np"/><s n="ant"/></l><r>Pau<s n="np"/><s n="ant"/></r></p></e>
+Ant no trobat l. 12714:     <e>       <p><l>Valverde<s n="np"/><s n="ant"/></l><r>Valverde<s n="np"/><s n="ant"/></r></p></e>
+
+cat f_bi.dix.txt | grep '"np"' | grep -v '"cog"' | grep -v '"top"' | grep -v '"sg"' | grep -v '"al"'
 
 
 FRA > CAT
@@ -16,6 +20,70 @@ par d'autres cultures > per altres cultures
 nous l'espérons > l'esperem
 nous nous l'espérons > ens l'esperem
 
+Je me lève à dix heures du matin. -> Em llevo a les deu del matí
+
+< 000032. En el moment de l'última meitat-etapa, això era Jean-Patrick *Nazon el corredor de la *FDJ protegit.
+---
+> 000032. En el moment de l'última meitat-etapa, *c'era Jean-Patrick *Nazon el corredor de la *FDJ protegit.
+
+< 000061. Final del concurs : això són dos *doublettes de la *Boroillotte de *Valentigney que s'han afrontat per a la final.
+---
+> 000061. Final del concurs : aquest són dos *doublettes de la *Boroillotte de *Valentigney que s'han afrontat per a la final.
+
+< 000145. Els nens eren molt feliços de conèixer-ne breument el seu història i sobretot que ho-va dir *scalp era un costum ben francès provenint *trappeurs del Gran Nor
+d.
+---
+> 000145. Els nens eren molt feliços de conèixer-ne breument el seu història i sobretot que ho-va dir *scalp era un costum ben francès provenint *trappeurs del Grand No
+rd.
+
+< 000289. Marie-*Thérèse *Levadoux, divorciat *Tollard, 81 anys, comerciant jubilada, a *Verdun.
+---
+> 000289. Casa-*Thérèse *Levadoux, divorciat *Tollard, 81 anys, comerciant jubilada, a *Verdun.
+
+< 000400. L'És Republicà : *Clovis *Mathieu, tel.
+---
+> 000400. L'És Republicà : *Clovis Mathieu, tel.
+
+< 000405. Això són éssers humans increïbles.
+---
+> 000405. Aquest són éssers humans increïbles.
+
+< 000477. Pierre *Moscovici s'afanya a portar queixada contra ell per a difamació, i de sobte M. *Souvet recomença, portant de les acusacions que surten des no sap on..
+. Què tractant així, vol *contrecarrer l'efecte de la seva posta en examen ? Aquest no són pas mètodes... »
+---
+> 000477. Pedra *Moscovici s'afanya a portar queixada contra ell per a difamació, i de sobte M. *Souvet recomença, portant de les acusacions que surten des no sap on...
+ Què tractant així, vol *contrecarrer l'efecte de la seva posta en examen ? Aquest no són pas mètodes... »
+
+< 000502. Un romanç del qual l'acció se situa sota l'Ocupació, l'any 1944. L'ocasió d'abordar el Nou Romanç a la literatura moderna.
+---
+> 000502. Un romanç del qual l'acció se situa sota l'Ocupació, l'any 1944. L'ocasió d'abordar el Nou Roman a la literatura moderna.
+
+< 000679. Marie-*Noëlle *Hartmann respon a totes les vostres qüestions.
+---
+> 000679. Casa-*Noëlle *Hartmann respon a totes les vostres qüestions.
+
+< 001042. *Intelligemment, això nou recorregut assenyala el conjunt de les realitzacions ( de les cases d'arquitectes als immobles col·lectius ) que han estat construïd
+es en boscos i s'inscriuen al paisatge.
+---
+> 001042. *Intelligemment, aquest nou recorregut assenyala el conjunt de les realitzacions ( de les cases d'arquitectes als immobles col·lectius ) que han estat constru
+ïdes en boscos i s'inscriuen al paisatge.
+
+< 001106. Una vegada a l'avió, el públic havia guiat per l'hostessa de l'aire Virginie que feia descobrir els països *survolés amb de vegades certes *escales.
+---
+> 001106. Una vegada a l'avió, el públic havia guiat per l'hostessa de l'aire Virgínia que feia descobrir els països *survolés amb de vegades certes *escales.
+
+< 001112. Per a això fer, han apel·lat a *Mafik *Arbaoui, *conteur, de la Botiga del conte a *Besançon.
+---
+> 001112. Per a aquest fer, han apel·lat a *Mafik *Arbaoui, *conteur, de la Botiga del conte a *Besançon.
+
+< 001368. Cap cap d'Estat o de govern, pas mateix el Primer ministre Tony Blair retingut a la cimera de les nacions més industrialitzades a *Cologne, no presenciava la 
+benedicció *nuptiale en el transcurs de la qual Sophie *Rhys-Jones, una publicitària de 34 anys, *roturière i filla d'un venedor de *pneus oferint una *ressemblance sor
+prenent amb la difunta *Diana, ha jurat de *chérir *Edward, d'un any el seu *aîné.
+---
+> 001368. Cap cap d'Estat o de govern, pas mateix el Primer ministre Tony Blair retingut a la cimera de les nacions més industrialitzades a *Cologne, no presenciava la 
+benedicció *nuptiale en el transcurs de la qual Sophie Rhys-Jones, una publicitària de 34 anys, *roturière i filla d'un venedor de *pneus oferint una *ressemblance sorp
+renent amb la difunta *Diana, ha jurat de *chérir Edward, d'un any el seu *aîné.
+
 CAT > FRA
 
 echo "no es va fer gran" | apertium -d . cat-fra
@@ -27,3 +95,8 @@ echo ", van proposar" | apertium -d . cat-fra
 , ils vont proposer
 
 se sol caracteritzar > se caractérise d'habitude
+
+* (cat) ''nombrosos turons'' → #nombreux collines
+
+00095. Au 394 *aC déjà s'étaient disputés 293 Jeux Olympiques, tous ils à la Vallée Olimpia Vall d'Olimpia.
+
