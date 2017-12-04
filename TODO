@@ -86,6 +86,11 @@ renent amb la difunta *Diana, ha jurat de *chérir Edward, d'un any el seu *aîn
 
 > 003486. Jean-Louis Llegit, vivint a Sena-Sant-Denis, ha perdut un *virage sortint de *Andernay i el seu vehicle ha anat immobilitzar-se sobre el baix-costat.
 
+> 007623. A *Sanaa, al *Yémen, on *Dick *Cheney, el vicepresident *US ha efectuat una curta visita dijous, una magrana ha estat llançada ahir en fi segons-migdia contra
+ l'ambaixada dels Estats Units.
+
+
+
 CAT > FRA
 
 echo "no es va fer gran" | apertium -d . cat-fra
@@ -102,3 +107,14 @@ se sol caracteritzar > se caractérise d'habitude
 
 00095. Au 394 *aC déjà s'étaient disputés 293 Jeux Olympiques, tous ils à la Vallée Olimpia Vall d'Olimpia.
 
+cap de > aucun/e
+> 00087. Aussi il y a autres *dojos que ne forment pas partie d'aucun de ces organisations.
+
+< 01171. Les trois astronautes du *Apollo 11 ont été *honorats avec un défilé à la ville de New York peu après son retour
+---
+> 01171. Les trois astronautes du *Apollo 11 ont été *honorats avec un défilé à la ville de New York peu d'après son retour
+
+> 02487. À cause de ça, quelques études de la *NASA posent ramasser moyennant des champs magnétiques le *antimatèria que se génère de façon naturelle dans les *cinturon
+s de Vont Allen de la Terre, ou même dans les *cinturons des grandes planètes *gasosos comment Jupiter (planète) Jupiter
+
+al cap de > après
