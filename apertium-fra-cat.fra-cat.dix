@@ -463,8 +463,8 @@
     <e r="LR"><p><l>adversaire<s n="n"/><s n="mf"/></l><r>adversari<s n="n"/><s n="GD"/></r></p></e>
     <e r="RL"><p><l>adversaire<s n="n"/><s n="mf"/></l><r>adversari<s n="n"/><s n="f"/></r></p></e>
     <e r="RL"><p><l>adversaire<s n="n"/><s n="mf"/></l><r>adversari<s n="n"/><s n="m"/></r></p></e>
-    <e>       <p><l>Aena<s n="np"/><s n="al"/></l><r>Aena<s n="np"/><s n="al"/></r></p></e>
-    <e a="u21941" c="quin exemple més bonic..."><p><l>aérien<s n="adj"/></l><r>aeri<s n="adj"/></r></p></e>
+    <e>       <p><l>Aena<s n="np"/><s n="al"/></l>    <r>Aena<s n="np"/><s n="al"/></r></p></e>
+    <e a="u21941"><p><l>aérien<s n="adj"/></l>        <r>aeri<s n="adj"/></r></p></e>
     <e a="gema"><p><l>aéroport<s n="n"/></l>          <r>aeroport<s n="n"/></r></p></e>
     <e a="ariel"><p><l>aérosol<s n="n"/></l>          <r>aerosol<s n="n"/></r></p></e>
     <e r="LR"><p><l>aérospatial<s n="adj"/><s n="f"/></l><r>aeroespacial<s n="adj"/><s n="mf"/></r></p></e>
@@ -2966,6 +2966,7 @@
     <e a="gema"><p><l>compte<s n="n"/></l>            <r>compte<s n="n"/></r></p></e>
     <e a="gema"><p><l>compte<b/>rendu<s n="n"/></l>   <r>resum<s n="n"/></r></p></e>
     <e a="gema"><p><l>compter<s n="vblex"/></l>       <r>comptar<s n="vblex"/></r></p></e>
+    <e>       <p><l>compter<g><b/>sur</g><s n="vblex"/></l><r>comptar<g><b/>amb</g><s n="vblex"/></r></p></e>
     <e>       <p><l>comptoir<s n="n"/></l>            <r>taulell<s n="n"/></r></p></e>
     <e>       <p><l>comté<s n="n"/></l>               <r>comtat<s n="n"/></r></p></e>
     <e>       <p><l>concentration<s n="n"/></l>       <r>concentració<s n="n"/></r></p></e>
@@ -4717,6 +4718,7 @@
     <e>       <p><l>énormement<s n="adv"/></l>        <r>enormement<s n="adv"/></r></p></e>
     <e>       <p><l>enquête<s n="n"/></l>             <r>enquesta<s n="n"/></r></p></e>
     <e r="LR"><p><l>enquêter<s n="vblex"/></l>        <r>investigar<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>enquêter<s n="vblex"/></l>        <r>enquestar<s n="vblex"/></r></p></e>
     <e>       <p><l>enraciner<s n="vblex"/></l>       <r>arrelar<s n="vblex"/></r></p></e>
     <e>       <p><l>enregistrement<s n="n"/></l>      <r>enregistrament<s n="n"/></r></p></e>
     <e>       <p><l>enregistrer<s n="vblex"/></l>     <r>gravar<s n="vblex"/></r></p></e>
@@ -10410,8 +10412,8 @@
 <e>       <p><l>qualifier<s n="vblex"/></l>       <r>qualificar<s n="vblex"/></r></p></e>
 <e>       <p><l>qualitatif<s n="adj"/></l>        <r>qualitatiu<s n="adj"/></r></p></e>
 <e>       <p><l>qualité<s n="n"/></l>             <r>qualitat<s n="n"/></r></p></e>
-<e>       <p><l>quand<s n="adv"/></l>             <r>quan<s n="adv"/></r></p></e>
-<e>       <p><l>quand<s n="rel"/></l>             <r>quan<s n="rel"/></r></p></e>
+<e>       <p><l>quand<s n="adv"/><s n="itg"/></l> <r>quan<s n="adv"/><s n="itg"/></r></p></e>
+<e>       <p><l>quand<s n="rel"/><s n="adv"/></l> <r>quan<s n="rel"/><s n="adv"/></r></p></e>
 <e a="gema"><p><l>quant<b/>à<s n="pr"/></l>       <r>pel<b/>que<b/>fa<b/>a<s n="pr"/></r></p></e>
 <e a="ariel"><p><l>quantifier<s n="vblex"/></l>   <r>quantificar<s n="vblex"/></r></p></e>
 <e a="ariel"><p><l>quantitatif<s n="adj"/></l>    <r>quantitatiu<s n="adj"/></r></p></e>
