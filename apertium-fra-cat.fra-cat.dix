@@ -147,6 +147,38 @@
       <e r="RL"><p><l><s n="m"/><s n="sp"/></l><r><s n="m"/><s n="pl"/></r></p></e>
     </pardef>
 
+    <pardef n="anglais_esquimal">
+      <e r="RL"><p><l><s n="GD"/><s n="sg"/></l><r><s n="mf"/><s n="sg"/></r></p></e>
+      <e r="RL"><p><l><s n="GD"/><s n="pl"/></l><r><s n="mf"/><s n="pl"/></r></p></e>
+      <e r="LR"><p><l><s n="f"/><s n="sg"/></l><r><s n="mf"/><s n="sg"/></r></p></e>
+      <e r="LR"><p><l><s n="f"/><s n="pl"/></l><r><s n="mf"/><s n="sg"/></r></p></e>
+      <e r="LR"><p><l><s n="m"/><s n="sp"/></l><r><s n="mf"/><s n="ND"/></r></p></e>
+    </pardef>
+
+    <pardef n="anglais_adepte">
+      <e r="RL"><p><l><s n="m"/><s n="sp"/></l><r><s n="m"/><s n="sg"/></r></p></e>
+      <e r="LR"><p><l><s n="m"/><s n="sp"/></l><r><s n="m"/><s n="ND"/></r></p></e>
+      <e>       <p><l><s n="f"/><s n="sp"/></l><r><s n="f"/><s n="sg"/></r></p></e>
+      <e r="RL"><p><l><s n="GD"/><s n="pl"/></l><r><s n="mf"/><s n="pl"/></r></p></e>
+      <e r="LR"><p><l><s n="f"/><s n="pl"/></l><r><s n="mf"/><s n="pl"/></r></p></e>
+    </pardef>
+
+    <pardef n="neutre_neutre">
+      <e r="RL"><p><l><s n="mf"/><s n="sg"/></l><r><s n="m"/><s n="sg"/></r></p></e>
+      <e r="RL"><p><l><s n="mf"/><s n="sg"/></l><r><s n="f"/><s n="sg"/></r></p></e>
+      <e r="RL"><p><l><s n="mf"/><s n="pl"/></l><r><s n="mf"/><s n="pl"/></r></p></e>
+      <e r="LR"><p><l><s n="mf"/><s n="sg"/></l><r><s n="GD"/><s n="sg"/></r></p></e>
+      <e r="LR"><p><l><s n="mf"/><s n="pl"/></l><r><s n="mf"/><s n="pl"/></r></p></e>
+    </pardef>
+
+    <pardef n="abaissant_abstracte">
+      <e>       <p><l><s n="m"/><s n="sg"/></l><r><s n="m"/><s n="sg"/></r></p></e>
+      <e>       <p><l><s n="f"/><s n="sg"/></l><r><s n="f"/><s n="sg"/></r></p></e>
+      <e r="RL"><p><l><s n="ND"/><s n="pl"/></l><r><s n="mf"/><s n="pl"/></r></p></e>
+      <e r="LR"><p><l><s n="m"/><s n="pl"/></l><r><s n="mf"/><s n="pl"/></r></p></e>
+      <e r="LR"><p><l><s n="f"/><s n="pl"/></l><r><s n="mf"/><s n="pl"/></r></p></e>
+    </pardef>
+
   </pardefs>
 
 
