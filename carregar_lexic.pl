@@ -17,8 +17,8 @@ my $MOT = 'crever les yeux';	# paraula a debugar
 my $MOT = 'desenterrar';	# paraula a debugar
 my $MOT = 'convertir';	# paraula a debugar
 my $MOT = 'rus';	# paraula a debugar
-my $MOT = 'byzantin';	# paraula a debugar
-my $MOT = '';
+my $MOT = 'laboral';	# paraula a debugar
+#my $MOT = '';
 
 my $MORF_TRACT = 'adj';
 #my $MORF_TRACT = '';
@@ -52,7 +52,6 @@ my %dix_fran = ();
 my %dix_fran_def = ();
 my %dix_fraadj = ();
 my %dix_fraadj_def = ();
-my %dix_bi = ();		# CAL ELIMINAR-HO (NO HO FAIG DE SEGUIDA PER EVITAR ERRORS SINTACTICS)
 my %dix_fra_cat = ();
 my %dix_cat_fra = ();
 
@@ -228,7 +227,6 @@ print "1. fitxer bidix, $linia\n" if $MOT && $linia =~ /$MOT/o;
 
 print "3. fitxer bidix, $linia, morf=$morf\n" if $MOT && $linia =~ /$MOT/o;
 
-		$dix_bi{$morf}{$lemma_cat} = $lemma_fra;		# PROVISIONAL (CAL TREURE-HO)
 		push @{$r_struct_lr->{$morf}{$lemma_fra}}, $lemma_cat if $dir eq 'bi' || $dir eq 'lr';
 		push @{$r_struct_rl->{$morf}{$lemma_cat}}, $lemma_fra if $dir eq 'bi' || $dir eq 'rl';
 print "r_struct_lr->{$morf}{$lemma_fra}[$#{$r_struct_lr->{$morf}{$lemma_fra}}] = $r_struct_lr->{$morf}{$lemma_fra}[$#{$r_struct_lr->{$morf}{$lemma_fra}}]\n" if $MOT && $lemma_fra =~ /$MOT/o;
@@ -431,14 +429,18 @@ print "escriure_bidix_adj ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_f
 	} elsif ($par_fra eq 'académique__adj' && $par_cat eq 'mixt__adj') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"mf_GD\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'académique__adj' && $par_cat eq 'quals/evol__adj') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"mf_GD\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'académique__adj' && $par_cat eq 'ros__adj') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"mf_GD\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'affectueu/x__adj' && $par_cat eq 'abdominal__adj') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"anglais_esquimal\"/></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'affectueu/x__adj' && $par_cat eq 'absolut__adj') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"anglais_anglès\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'affectueu/x__adj' && $par_cat eq 'afectu/ós__adj') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"anglais_anglès\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'affectueu/x__adj' && $par_cat eq 'aliment/ós__adj') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"anglais_anglès\"/></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'affectueu/x__adj' && $par_cat eq 'complex__adj') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"anglais_anglès\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'affectueu/x__adj' && $par_cat eq '/ossi__adj') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"anglais_anglès\"/></e>\n", $stem_fra, $stem_cat;
@@ -474,6 +476,8 @@ print "escriure_bidix_adj ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_f
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'ancien__adj' && $par_cat eq 'far/ingi__adj') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'ancien__adj' && $par_cat eq 'fict/ici__adj') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'anglais__adj' && $par_cat eq 'absolut__adj') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"anglais_anglès\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'anglais__adj' && $par_cat eq 'adept/e__adj') {
@@ -481,6 +485,8 @@ print "escriure_bidix_adj ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_f
 	} elsif ($par_fra eq 'anglais__adj' && $par_cat eq 'afgan/ès__adj') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"anglais_anglès\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'anglais__adj' && $par_cat eq 'afortuna/t__adj') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"anglais_anglès\"/></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'anglais__adj' && $par_cat eq 'alacant/í__adj') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"anglais_anglès\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'anglais__adj' && $par_cat eq 'annex__adj') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"anglais_anglès\"/></e>\n", $stem_fra, $stem_cat;
@@ -498,6 +504,10 @@ print "escriure_bidix_adj ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_f
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'conduct/eur__adj' && $par_cat eq 'adjudicat/ari__adj') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'dou/x__adj' && $par_cat eq 'dol/ç__adj') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"anglais_anglès\"/></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'publi/c__adj' && $par_cat eq 'abdominal__adj') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"GD_mf\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'secr/et__adj' && $par_cat eq 'abdominal__adj') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"GD_mf\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'secr/et__adj' && $par_cat eq 'absolut__adj') {
@@ -596,8 +606,8 @@ sub lema_fra_existeix_o_es_pot_crear {
 		} elsif ($morf_fra eq 'adj') {
 			my $tmp = $dix_fraadj_def{$morf_fra}{$lemma_fra};
 			if ($tmp) {
-				$tmp =~ s/><i/ a="jortola"><i/o;
-				printf $ffra $tmp, "\n";
+				$tmp =~ s/><i/ a="jaumeortola"><i/o;
+				print $ffra $tmp, "\n";
 				$dix_fra{$morf_fra}{$lemma_fra} = $dix_fraadj{$morf_fra}{$lemma_fra};
 				return 1;
 			} else {
@@ -614,7 +624,7 @@ sub tractar_parella {
 	my ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $autor, $n_linia) = @_;
 
 #print "tractar_parella ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $autor)\n";
-print "tractar_parella ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $autor)\n" if $lemma_fra eq 'MOT';
+print "tractar_parella ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $autor)\n" if $lemma_cat eq $MOT || $lemma_fra eq $MOT;
 #print "5. fra dix_fra{$MORF_TRACT}{$MOT} = $dix_fra{$MORF_TRACT}{$MOT}\n";
 	if (exists $dix_fra_cat{$morf_fra}{$lemma_fra}) {
 		# ja existeix una traducció per al lema fra
@@ -632,7 +642,7 @@ print "tractar_parella ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra,
 					return;
 				} else {
 					# introduïm la parella perquè en quedi constància (algun dia es pot activar), però fem que s'ignori
-					escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, 'i=yes', $autor);
+					escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, 'i="yes"', $autor);
 					return;
 				}
 			} else {
@@ -648,7 +658,11 @@ print "tractar_parella ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra,
 		# no existeix una traducció per al lema fra
 		if (exists $dix_cat_fra{$morf_cat}{$lemma_cat}) {
 			# ja existeix una traducció per al lema cat
-			if (lema_fra_existeix_o_es_pot_crear ($lemma_fra, $morf_fra, $autor)) {
+			if (is_in($dix_cat_fra{$morf_cat}{$lemma_cat}, $lemma_fra)) {
+				# ja existeix aquesta traducció per al lema cat
+				# no fem res
+				return;
+			} elsif (lema_fra_existeix_o_es_pot_crear ($lemma_fra, $morf_fra, $autor)) {
 				escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, 'r="LR"', $autor);
 				return;
 			} else {
@@ -678,7 +692,8 @@ print "3. nfitx = fra dix_fran{$MORF_TRACT}{$MOT} = $dix_fran{$MORF_TRACT}{$MOT}
 llegir_dix_ortola('fra', $fdixfraadj, \%dix_fraadj, \%dix_fraadj_def) if $MORF_TRACT eq 'adj';
 print "4. nfitx = fra dix_fraadj{$MORF_TRACT}{$MOT} = $dix_fraadj{$MORF_TRACT}{$MOT}\n";
 llegir_bidix($fdixbi, \%dix_fra_cat, \%dix_cat_fra);
-print "5. dix_fra_cat{$MORF_TRACT}{$MOT} = $dix_fra_cat{$MORF_TRACT}{$MOT}\n";
+print "5. dix_cat_fra{$MORF_TRACT}{$MOT}[0] = $dix_cat_fra{$MORF_TRACT}{$MOT}[0]\n";
+print "5. dix_fra_cat{$MORF_TRACT}{$MOT}[0] = $dix_fra_cat{$MORF_TRACT}{$MOT}[0]\n";
 
 <STDIN>;	# saltem la primera línia
 my ($stem_cat, $stem_fra, $gen_cat, $gen_fra, $num_cat, $num_fra, $lemma_cat, $lemma_fra, $lemma_cat_ini, $lemma_fra_ini);
