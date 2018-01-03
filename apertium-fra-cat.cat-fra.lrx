@@ -193,11 +193,37 @@
     <match lemma="policia" tags="n.*"><select lemma="policier"/></match>
   </rule>
 
-  <!-- 
-    prova >> preuve, essai
-  -->
+<!-- prova >> preuve, essai -->
   <rule weight="0.8">
     <match lemma="prova" tags="n.*"><select lemma="preuve"/></match>
+  </rule>
+
+<!-- cap >> chef, tête, cap -->
+  <rule weight="0.8">
+    <match lemma="cap" tags="n.*"><select lemma="chef"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cap" tags="n.*"><select lemma="cap"/></match>
+    <or><match tags="np.top.*"/><match tags="np.loc"/></or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cap" tags="n.*"><select lemma="cap"/></match>
+    <match lemma="de" tags="pr"/>
+    <or><match tags="np.top.*"/><match tags="np.loc"/></or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cap" tags="n.*"><select lemma="tête"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="comarca" tags="n.*"/>
+
+      <match lemma="animal" tags="n.*"/>
+      <match lemma="peix" tags="n.*"/>
+      <match lemma="gos" tags="n.*"/>
+      <match lemma="gat" tags="n.*"/>
+      <match lemma="bou" tags="n.*"/>
+      <match lemma="vaca" tags="n.*"/>
+    </or>
   </rule>
 
 </rules>

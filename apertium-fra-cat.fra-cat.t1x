@@ -7,8 +7,12 @@
     <def-cat n="nom">
       <cat-item tags="n.*"/>
     </def-cat>
-    <def-cat n="nomp">
+    <def-cat n="np">
+      <cat-item tags="np.*"/>
+    </def-cat>
+    <def-cat n="npant">
       <cat-item tags="np.ant"/>
+      <cat-item tags="np.ant.*"/>
     </def-cat>
     <def-cat n="nploc">
       <cat-item tags="np.loc"/>
@@ -1165,6 +1169,28 @@
             <lit-tag v="pl"/>
           </let>
         </when>
+
+        <when>
+          <test>
+            <and>
+            <equal>
+              <clip pos="2" side="tl" part="a_num"/>
+              <lit-tag v="num"/>
+            </equal>
+            <not>
+            <equal>
+              <clip pos="2" side="tl" part="lem"/>
+              <lit v="1"/>
+            </equal>
+            </not>
+            </and>
+          </test>
+          <let>
+            <var n="numero"/>
+            <lit-tag v="pl"/>
+          </let>
+        </when>
+
         <when>
           <test>
             <and>
@@ -2693,6 +2719,24 @@
     <rule comment="REGLA: NOM">
       <pattern>
         <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule comment="REGLA: NP">
+      <pattern>
+        <pattern-item n="np"/>
       </pattern>
       <action>
         <call-macro n="f_concord1">

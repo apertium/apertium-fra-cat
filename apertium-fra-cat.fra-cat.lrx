@@ -253,6 +253,15 @@
     <match lemma="garde" tags="n.*"><select lemma="guarda"/></match>
   </rule>
 
+<!-- maître >> amo / mestre -->
+  <rule weight="0.8">
+    <match lemma="maître" tags="n.*"><select lemma="amo"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="maître" tags="n.*"><select lemma="mestre"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
+
 <!-- **************** ADJ **************** -->
 
   <rule weight="1.0">

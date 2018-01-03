@@ -18,9 +18,9 @@ my $MOT = 'desenterrar';	# paraula a debugar
 my $MOT = 'convertir';	# paraula a debugar
 my $MOT = 'rus';	# paraula a debugar
 my $MOT = 'laboral';	# paraula a debugar
-#my $MOT = '';
+my $MOT = '';
 
-my $MORF_TRACT = 'adj';
+my $MORF_TRACT = 'n';
 #my $MORF_TRACT = '';
 
 my ($ffra, $fbi, $fdixfra, $fdixcat, $fdixbi, $fdixfran, $fdixfraadj);
@@ -767,6 +767,7 @@ next if $linia !~ /$MORF_TRACT/o;
 	$autor =~ s| +| |og;
 	$autor =~ s|^ ||o;
 	$autor =~ s| $||o;
+	$autor =~ s|^jl$|joan|o;
 #print "autor = $autor\n";
 
 print "11. $linia - stem_cat=$stem_cat, lemma_cat=$lemma_cat, gram_cat = $gram_cat, dades[3]=$dades[3]\n" if $MOT && $lemma_cat =~ /$MOT/o;
