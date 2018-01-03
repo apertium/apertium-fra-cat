@@ -2,14 +2,11 @@
 <modes>
 
   <!-- fra → cat -->
-
   <mode name="fra-cat" install="yes">
     <pipeline>
       <program name="lt-proc -w">
         <file name="fra-cat.automorf.bin"/>
       </program>
-
-
       <program name="cg-proc -w">
         <file name="fra-cat.rlx.bin"/>
       </program>
@@ -30,7 +27,6 @@
       <program name="lt-proc $1">
         <file name="fra-cat.autogen.bin"/>
       </program>
-
       <program name="lt-proc -p">
         <file name="fra-cat.autopgen.bin"/>
       </program>
@@ -42,8 +38,6 @@
       <program name="lt-proc -w">
         <file name="fra-cat.automorf.bin"/>
       </program>
-
-
       <program name="cg-proc -w">
         <file name="fra-cat.rlx.bin"/>
       </program>
@@ -92,8 +86,6 @@
       <program name="lt-proc -w">
         <file name="fra-cat.automorf.bin"/>
       </program>
-
-
       <program name="cg-proc -w">
         <file name="fra-cat.rlx.bin"/>
       </program>
@@ -108,8 +100,6 @@
       <program name="lt-proc -w">
         <file name="fra-cat.automorf.bin"/>
       </program>
-
-
       <program name="cg-proc -w">
         <file name="fra-cat.rlx.bin"/>
       </program>
@@ -125,8 +115,6 @@
       <program name="lt-proc -w">
         <file name="fra-cat.automorf.bin"/>
       </program>
-
-
       <program name="cg-proc -w">
         <file name="fra-cat.rlx.bin"/>
       </program>
@@ -145,8 +133,6 @@
       <program name="lt-proc -w">
         <file name="fra-cat.automorf.bin"/>
       </program>
-
-
       <program name="cg-proc -w">
         <file name="fra-cat.rlx.bin"/>
       </program>
@@ -168,8 +154,6 @@
       <program name="lt-proc -w">
         <file name="fra-cat.automorf.bin"/>
       </program>
-
-
       <program name="cg-proc -w">
         <file name="fra-cat.rlx.bin"/>
       </program>
@@ -197,8 +181,6 @@
       <program name="lt-proc -w">
         <file name="cat-fra.automorf.bin"/>
       </program>
-
-
       <program name="cg-proc -w">
         <file name="cat-fra.rlx.bin"/>
       </program>
@@ -219,7 +201,6 @@
       <program name="lt-proc $1">
         <file name="cat-fra.autogen.bin"/>
       </program>
-
       <program name="lt-proc -p">
         <file name="cat-fra.autopgen.bin"/>
       </program>
@@ -231,8 +212,6 @@
       <program name="lt-proc -w">
         <file name="cat-fra.automorf.bin"/>
       </program>
-
-
       <program name="cg-proc -w">
         <file name="cat-fra.rlx.bin"/>
       </program>
@@ -281,8 +260,6 @@
       <program name="lt-proc -w">
         <file name="cat-fra.automorf.bin"/>
       </program>
-
-
       <program name="cg-proc -w">
         <file name="cat-fra.rlx.bin"/>
       </program>
@@ -297,8 +274,6 @@
       <program name="lt-proc -w">
         <file name="cat-fra.automorf.bin"/>
       </program>
-
-
       <program name="cg-proc -w">
         <file name="cat-fra.rlx.bin"/>
       </program>
@@ -314,8 +289,6 @@
       <program name="lt-proc -w">
         <file name="cat-fra.automorf.bin"/>
       </program>
-
-
       <program name="cg-proc -w">
         <file name="cat-fra.rlx.bin"/>
       </program>
@@ -334,8 +307,6 @@
       <program name="lt-proc -w">
         <file name="cat-fra.automorf.bin"/>
       </program>
-
-
       <program name="cg-proc -w">
         <file name="cat-fra.rlx.bin"/>
       </program>
@@ -357,8 +328,6 @@
       <program name="lt-proc -w">
         <file name="cat-fra.automorf.bin"/>
       </program>
-
-
       <program name="cg-proc -w">
         <file name="cat-fra.rlx.bin"/>
       </program>
@@ -378,6 +347,5 @@
       </program>
     </pipeline>
   </mode>
-
 </modes>
 
