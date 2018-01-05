@@ -143,6 +143,7 @@ print "2. fitxer $nfitx, $linia, par=$par, morf=$morf\n" if $MOT && $linia =~ /$
 			next;
 		}
 print "3. fitxer $nfitx, $linia, par=$par, morf=$morf\n" if $MOT && $linia =~ /$MOT/o;
+next if $morf ne $MORF_TRACT;
 
 		if ($r_struct->{$morf}{$lemma} && $morf ne 'vblex') {
 			print STDERR "Error llegir_dix $nfitx: lemma $lemma (morf = $morf, par = $par) ja definit com a morf = $morf, par = $r_struct->{$morf}{$lemma}\n"
@@ -209,6 +210,7 @@ print "1. fitxer bidix, $linia\n" if $MOT && $linia =~ /$MOT/o;
 #			print STDERR "línia $.: $linia - morf $morf\n";
 			next;
 		}
+next if $morf ne $MORF_TRACT;
 
 		# en el cas de n i np busco el segon membre de la definició morfològica
 		if ($morf eq 'n' || $morf eq 'np') {
@@ -256,16 +258,21 @@ sub crear_g {
 	$cua =~ s/ $//o;
 	$cua =~ s/ /<b\/>/og;
 	my $cua_par = $dix_fra{$gram_fra}{$cap};
-	$cua_par =~ s/__vblex$//o;
-	$cua_par =~ s/__n$//o;
-	$cua_par =~ s/^.*\///o;
-	$cua_par =~ s/\[.*\]//o;
+	if ($cua_par =~ m|/|o) {
+		$cua_par =~ s/__vblex$//o;
+		$cua_par =~ s/__n$//o;
+		$cua_par =~ s/^.*\///o;
+		$cua_par =~ s/\[.*\]//o;
+	} else {
+		$cua_par = '';
+	}
 	my $lcua_par = length($cua_par) + length($dix_fra_prm{$gram_fra}{$cap});
 	my $arrel = substr($cap, 0, length($cap)-$lcua_par);
-#printf $ffra "$arrel, $cua_par, $lcua_par\n";
+#printf "$arrel, $cua_par, $lcua_par\n";
 	if ($dix_fra_prm{$gram_fra}{$cap}) {
 		printf $ffra "    <e lm=\"%s\"><p><l>%s</l><r>%s</r></p><par n=\"%s\" prm=\"%s\"/><p><l>%s</l><r><g>%s</g></r></p></e>\n",
 			$lemma_fra, $arrel, $arrel, $dix_fra{$gram_fra}{$cap}, $dix_fra_prm{$gram_fra}{$cap}, $cua, $cua;
+exit 0;
 	} else {
 		if ($lemma_fra =~ / à$/o) {
 #    <e lm="consister à" r="LR"><i>consist</i><par n="abaiss/er__vblex"/><p><l><b/>à</l><r><g><b/>à</g></r></p></e>
@@ -322,6 +329,30 @@ sub escriure_mono_vblex {
 	} else {
 		printf $ffra "    <e lm=\"%s\"$a>         <i>%s</i><par n=\"%s\"/></e>\n",
 			$lemma_fra, $arrel, $dix_fra{$morf_fra}{$lemma_model_fra}; 
+	}
+}
+
+sub escriure_bidix_n {
+	my ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $lr_rl, $autor) = @_;
+
+print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $autor)\n" if $lemma_cat eq $MOT || $lemma_fra eq $MOT;
+#print "dix_fra{$morf_fra}{$lemma_fra} = $dix_fra{$morf_fra}{$lemma_fra}\n";
+	my $par_fra = $dix_fra{$morf_fra}{$lemma_fra};
+	my $par_cat = $dix_cat{$morf_cat}{$lemma_cat};
+	my $a = " a=\"$autor\"" if $autor;
+	if ($par_fra eq 'abeille__n' && $par_cat eq 'abell/a__n') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'abeille__n' && $par_cat eq 'accessibilitat__n') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'artiste__n' && $par_cat eq 'accionist/a__n') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"mf\"/></l><r>%s<s n=\"n\"/><s n=\"mf\"/></r></p></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'livre__n' && $par_cat eq 'abric__n') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'livre__n' && $par_cat eq 'abell/a__n') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
+	} else {
+		print STDERR "No hi ha regla per a escriure_bidix_n: par_fra = $par_fra ($lemma_fra) par_cat = $par_cat ($lemma_cat)\n";
+print STDERR "dix_fra{$morf_fra}{$lemma_fra} = $dix_fra{$morf_fra}{$lemma_fra}\n";
 	}
 }
 
@@ -524,6 +555,8 @@ sub escriure_bidix {
 	my $a = " a=\"$autor\"" if $autor;
 	if ($morf_cat eq 'vblex' && $morf_fra eq 'vblex') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"%s\"/></l><r>%s<s n=\"%s\"/></r></p></e>\n", $stem_fra, $morf_fra, $stem_cat, $morf_cat;
+	} elsif ($morf_cat eq 'n' && $morf_fra eq 'n') {
+		escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $lr_rl, $autor);
 	} elsif ($morf_cat eq 'adj' && $morf_fra eq 'adj') {
 		escriure_bidix_adj ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $lr_rl, $autor);
 	} else {
@@ -609,6 +642,16 @@ sub lema_fra_existeix_o_es_pot_crear {
 				$tmp =~ s/><i/ a="jaumeortola"><i/o;
 				print $ffra $tmp, "\n";
 				$dix_fra{$morf_fra}{$lemma_fra} = $dix_fraadj{$morf_fra}{$lemma_fra};
+				return 1;
+			} else {
+				return 0;
+			}
+		} elsif ($morf_fra eq 'n') {
+			my $tmp = $dix_fran_def{$morf_fra}{$lemma_fra};
+			if ($tmp) {
+				$tmp =~ s/><i/ a="jaumeortola"><i/o;
+				print $ffra $tmp, "\n";
+				$dix_fra{$morf_fra}{$lemma_fra} = $dix_fran{$morf_fra}{$lemma_fra};
 				return 1;
 			} else {
 				return 0;
@@ -699,7 +742,8 @@ print "5. dix_fra_cat{$MORF_TRACT}{$MOT}[0] = $dix_fra_cat{$MORF_TRACT}{$MOT}[0]
 my ($stem_cat, $stem_fra, $gen_cat, $gen_fra, $num_cat, $num_fra, $lemma_cat, $lemma_fra, $lemma_cat_ini, $lemma_fra_ini);
 while (my $linia = <STDIN>) {
 next if $linia !~ /$MORF_TRACT/o;
-	next if $linia =~ /xxx/o;
+	next if $linia =~ /xxx/io;
+	next if $linia =~ /---/o;
 	chop $linia;
 
 	if ($linia =~ /\(/o) {
@@ -710,6 +754,7 @@ next if $linia !~ /$MORF_TRACT/o;
 	$linia =~ s/[^a-z\t]+$//o;
 	$linia =~ s|\r| |og;
 	$linia =~ s|#|# |og;	# per evitar errors com "faire#pression sur"
+	$linia =~ s|' |'|og;	# coup d' État
 	$linia =~ s| +| |og;
 
 	# arreglem majúscules
@@ -733,6 +778,7 @@ next if $linia !~ /$MORF_TRACT/o;
 	$stem_cat =~ s| +| |og;
 	$stem_cat =~ s|^ ||o;
 	$stem_cat =~ s| $||o;
+	$stem_cat =~ s|#$||o;
 	$lemma_cat_ini = $lemma_cat = $stem_cat;
 	if ($stem_cat =~ m/\#/o) {
 		$stem_cat = $` . '<g>' . $' . '</g>';
@@ -740,6 +786,7 @@ next if $linia !~ /$MORF_TRACT/o;
 	$stem_cat =~ s| |<b/>|og;
 
 	my $gram_cat = $dades[2];
+next if $gram_cat !~ /^<$MORF_TRACT>/o;
 	$gram_cat =~ s/^ *<//og;
 	$gram_cat =~ s/> *$//og;
 	$gram_cat =~ s/><//og;
