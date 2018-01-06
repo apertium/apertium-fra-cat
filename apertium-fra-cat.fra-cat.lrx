@@ -103,6 +103,17 @@
 
 <!-- **************** N **************** -->
 
+  <!-- internet >> internet, web -->
+<!--
+  <rule weight="0.8">
+    <match lemma="internet" tags="n.*"><select lemma="internet"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="site" tags="n.*"/>
+    <match lemma="internet" tags="n.*"><select lemma="web"/></match>
+  </rule>
+-->
+
   <rule weight="0.8" v="val">
     <match lemma="maïs" tags="n.*"><select lemma="dacsa" tags="n.*"/></match>
   </rule>

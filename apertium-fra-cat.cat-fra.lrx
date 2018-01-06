@@ -168,6 +168,90 @@
 
 <!-- N -->
 
+  <!-- tauleta >> petite table, tablette -->
+  <rule weight="0.8">
+    <match lemma="tauleta" tags="n.*"><select lemma="petite table"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tauleta" tags="n.*"><select lemma="tablette"/></match>
+    <match lemma="tàctil" tags="adj.*"/>
+  </rule>
+
+  <!-- cor >> coeur, choeur -->
+  <rule weight="0.8">
+    <match lemma="cor" tags="n.*"><select lemma="coeur"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cor" tags="n.*"><select lemma="choeur"/></match>
+    <or>
+      <match lemma="infantil" tags="adj.*"/>
+      <match lemma="masculí" tags="adj.*"/>
+      <match lemma="femení" tags="adj.*"/>
+      <match lemma="mixt" tags="adj.*"/>
+      <match lemma="polifònic" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cor" tags="n.*"><select lemma="choeur"/></match>
+    <match lemma="de" tags="pr"/>
+    <or><match tags="np.top.*"/><match tags="np.loc"/></or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cor" tags="n.*"><select lemma="choeur"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="església" tags="adj.*"/>
+      <match lemma="catedral" tags="adj.*"/>
+      <match lemma="abadia" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cor" tags="n.*"><select lemma="choeur"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="església" tags="adj.*"/>
+      <match lemma="catedral" tags="adj.*"/>
+      <match lemma="abadia" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match tags="num.*"/>
+    <match lemma="cor" tags="n.*"><select lemma="choeur"/></match>
+  </rule>
+
+  <!-- vestit >> robe, costume -->
+  <rule weight="0.8">
+    <match lemma="vestit" tags="n.*"><select lemma="robe"/></match>
+  </rule>
+
+  <!-- web >> web, internet -->
+<!--
+  <rule weight="0.8">
+    <match lemma="web" tags="n.*"><select lemma="web"/></match>
+  <rule weight="1.0">
+    <match lemma="lloc" tags="n.*"><select lemma="site"/></match>
+    <match lemma="web" tags="n.*"><select lemma="internet"/></match>
+  </rule>
+-->
+
+  <!-- volt >> robe, volt -->
+  <rule weight="0.8">
+    <match lemma="volt" tags="n.*"><select lemma="tour"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or><match tags="num.*"/><match tags="num"/></or>
+    <match lemma="volt" tags="n.*"><select lemma="volt"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="volt" tags="n.*"><select lemma="tour"/></match>
+    <or>
+      <match lemma="a" tags="pr"/>
+      <match lemma="per" tags="pr"/>
+    </or>
+  </rule>
+
+
   <!-- 
     policia >> police, policier
   -->
@@ -196,6 +280,41 @@
 <!-- prova >> preuve, essai -->
   <rule weight="0.8">
     <match lemma="prova" tags="n.*"><select lemma="preuve"/></match>
+  </rule>
+
+  <!-- conseller >> conseiller, ministre -->
+  <rule weight="0.8">
+    <match lemma="conseller" tags="n.*"><select lemma="conseiller"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.*"/>
+    <match lemma="conseller" tags="n.*"><select lemma="ministre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="conseller" tags="n.*"><select lemma="ministre"/></match>
+    <match tags="np.ant.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="conseller" tags="n.*"><select lemma="ministre"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="economia" tags="n..*"/>
+      <match lemma="educació" tags="n..*"/>
+      <match lemma="sanitat" tags="n..*"/>
+      <match lemma="presidència" tags="n..*"/>
+      <match lemma="cultura" tags="n..*"/>
+      <match lemma="salut" tags="n..*"/>
+      <match lemma="interior" tags="n..*"/>
+      <match lemma="justícia" tags="n..*"/>
+      <match lemma="transparència" tags="n..*"/>
+      <match lemma="territori" tags="n..*"/>
+      <match lemma="agricultura" tags="n..*"/>
+      <match lemma="portaveu" tags="n..*"/>
+      <match lemma="governació" tags="n..*"/>
+      <match lemma="igualtat" tags="n..*"/>
+      <match lemma="hisenda" tags="n..*"/>
+      <match lemma="habitatge" tags="n..*"/>
+    </or>
   </rule>
 
 <!-- cap >> chef, tête, cap -->

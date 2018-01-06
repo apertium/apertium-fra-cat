@@ -80,6 +80,9 @@
       <cat-item lemma="il" tags="prn.tn.p3.m.pl"/>
       <cat-item lemma="il" tags="prn.tn.p3.f.pl"/>
     </def-cat>
+    <def-cat n="il">
+      <cat-item lemma="il" tags="prn.tn.p3.m.pl"/>
+    </def-cat>
     <def-cat n="on">
       <cat-item lemma="on" tags="prn.pro.ref.p3.mf.sp"/>
     </def-cat>
@@ -133,12 +136,19 @@
     <def-cat n="a_vous">
       <cat-item lemma="à vous" tags="adj.pos.mf.sp"/>
     </def-cat>
+    <def-cat n="y">
+      <cat-item lemma="y" tags="prn.pro.adv"/>
+    </def-cat>
     <def-cat n="nombreux">
       <cat-item lemma="nombreux" tags="adj.m.sp"/>
       <cat-item lemma="nombreux" tags="adj.f.pl"/>
     </def-cat>
     <def-cat n="vbser">
       <cat-item tags="vbser.*"/>
+    </def-cat>
+    <def-cat n="vbhaver">
+      <cat-item tags="vbhaver.*"/>
+      <cat-item lemma="avoir" tags="vblex.*"/>
     </def-cat>
     <def-cat n="verb">
       <cat-item tags="vblex.*"/>
@@ -4266,6 +4276,7 @@ is not applicable because gender and number cannot be taken from previous rules 
      </choose>	
       </action>
     </rule>
+
     <rule>
 <!-- REGLA:VERB PREP DET (avoir des: tenir)-->
       <pattern>
@@ -4931,7 +4942,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           <when>
             <test>
               <in caseless="yes">
-                <clip pos="3" side="sl" part="lem"/>
+                <clip pos="3" side="sl" part="lemh"/>
                 <list n="vbestat"/>
               </in>
             </test>
@@ -6751,7 +6762,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           <when>
             <test>
               <in caseless="yes">
-                <clip pos="3" side="sl" part="lem"/>
+                <clip pos="3" side="sl" part="lemh"/>
                 <list n="vbestat"/>
               </in>
             </test>-->
@@ -7062,8 +7073,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!--REGLA: PRN ADV PRN VERB (il toujours lui dit: sempre li diu)-->
+    <rule comment="REGLA: PRN ADV PRN VERB (il toujours lui dit: sempre li diu)">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="adv"/>
@@ -7099,8 +7109,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!--REGLA: PRN ADV PRN VERB PAS (il ne lui dit pas: no li diu)-->
+    <rule comment="REGLA: PRN ADV PRN VERB PAS (il ne lui dit pas: no li diu; il n'y a pas: no hi ha)">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="adv"/>
@@ -7109,12 +7118,21 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="pas"/>
       </pattern>
       <action>
-        <call-macro n="f_concord1">
-          <with-param pos="3"/>
-        </call-macro>
-        <call-macro n="f_ifi1">
-          <with-param pos="4"/>
-        </call-macro>
+        <call-macro n="f_concord1"><with-param pos="3"/></call-macro>
+        <call-macro n="f_ifi1"><with-param pos="4"/></call-macro>
+        <choose>
+          <when>
+            <test>
+              <and>
+                <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="il"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="y"/></equal>
+                <equal caseless="yes"><clip pos="4" side="sl" part="lem"/><lit v="avoir"/></equal>
+              </and>
+            </test>
+            <let><clip pos="4" side="tl" part="lem"/><lit v="haver"/></let>
+            <let><clip pos="4" side="tl" part="a_verb"/><lit-tag v="vbhaver"/></let>
+          </when>
+        </choose>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -7134,8 +7152,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!--REGLA: PRN ADV PRN VERB QUE (il ne lui dit que: no li diu més que)-->
+    <rule comment="REGLA: PRN ADV PRN VERB QUE (il ne lui dit que: no li diu més que)">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="neadv"/>
@@ -7144,12 +7161,21 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="que"/>
       </pattern>
       <action>
-        <call-macro n="f_concord1">
-          <with-param pos="3"/>
-        </call-macro>
-        <call-macro n="f_ifi1">
-          <with-param pos="4"/>
-        </call-macro>
+        <call-macro n="f_concord1"><with-param pos="3"/></call-macro>
+        <call-macro n="f_ifi1"><with-param pos="4"/></call-macro>
+        <choose>
+          <when>
+            <test>
+              <and>
+                <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="il"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="y"/></equal>
+                <equal caseless="yes"><clip pos="4" side="sl" part="lem"/><lit v="avoir"/></equal>
+              </and>
+            </test>
+            <let><clip pos="4" side="tl" part="lem"/><lit v="haver"/></let>
+            <let><clip pos="4" side="tl" part="a_verb"/><lit-tag v="vbhaver"/></let>
+          </when>
+        </choose>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -7352,7 +7378,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           <when>
             <test>
               <in caseless="yes">
-                <clip pos="3" side="sl" part="lem"/>
+                <clip pos="3" side="sl" part="lemh"/>
                 <list n="vbestat"/>
               </in>
             </test>-->
@@ -8381,8 +8407,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!--REGLA: on ne mange pas > no es menja -->
+    <rule comment="REGLA: on ne mange pas > no es menja">
       <pattern>
         <pattern-item n="on"/>
         <pattern-item n="neadv"/>

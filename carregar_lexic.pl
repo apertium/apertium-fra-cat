@@ -346,6 +346,8 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'artiste__n' && $par_cat eq 'accionist/a__n') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"mf\"/></l><r>%s<s n=\"n\"/><s n=\"mf\"/></r></p></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'artiste__n' && $par_cat eq 'addict/e__adj') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"neutre_neutre\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'livre__n' && $par_cat eq 'abric__n') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'livre__n' && $par_cat eq 'abell/a__n') {
