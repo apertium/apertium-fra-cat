@@ -14,6 +14,17 @@
     <match tags="*.inf"/>
   </rule>
   <rule weight="1.0">
+    <match lemma="pour" tags="pr"><select lemma="per"/></match>
+    <match tags="prn.pro.*"/>
+    <match tags="*.inf"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pour" tags="pr"><select lemma="per"/></match>
+    <match tags="prn.pro.*"/>
+    <match tags="prn.pro.*"/>
+    <match tags="*.inf"/>
+  </rule>
+  <rule weight="1.0">
     <match lemma="avoir" tags="*.ger"/>
     <match lemma="pour" tags="pr"><select lemma="per"/></match>
   </rule>
@@ -129,6 +140,15 @@
   </rule>
   <rule weight="1.0" v="cat">
     <match lemma="fille" tags="n.*"><select lemma="noi" tags="n.*"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match tags="det.pos.*"/>
+    <match lemma="fille" tags="n.*"><select lemma="fill" tags="n.*"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="avoir"/>
+    <or><match tags="det.*"/><match tags="num.*"/><match tags="num"/></or>
+    <match lemma="fille" tags="n.*"><select lemma="fill" tags="n.*"/></match>
   </rule>
 
   <rule weight="0.8" v="val">

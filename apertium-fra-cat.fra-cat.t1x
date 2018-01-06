@@ -595,6 +595,12 @@
       <list-item v="Paraguay"/>
       <list-item v="Uruguay"/>
     </def-list>
+  
+    <def-list n="pp_estat">
+      <list-item v="marier"/>
+      <list-item v="divorcer"/>
+      <list-item v="mourir"/>
+    </def-list>
   </section-def-lists>
   
   <section-def-macros>
@@ -6714,8 +6720,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
    </rule>-->  
    
-   <rule>
-<!-- REGLA:VBSER PP > haver + participi -->
+   <rule comment="REGLA:VBSER PP > haver + participi">
       <pattern>
         <pattern-item n="vbser"/>
         <pattern-item n="pp"/>
@@ -6724,10 +6729,10 @@ is not applicable because gender and number cannot be taken from previous rules 
       <choose>
        <when>
          <test>
-	   <equal>
-             <clip pos="1" side="sl" part="temps"/>           
-	     <lit-tag v="pp"/>
-           </equal>
+           <or>
+	     <equal><clip pos="1" side="sl" part="temps"/><lit-tag v="pp"/></equal>
+             <in caseless="yes"><clip pos="2" side="sl" part="lemh"/><list n="pp_estat"/></in>
+           </or>
 	  </test>
             <out>
               <lu>
