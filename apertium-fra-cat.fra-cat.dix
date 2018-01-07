@@ -859,6 +859,7 @@
     <e>       <p><l>ancre<s n="n"/></l>               <r>àncora<s n="n"/></r></p></e>
     <e>       <p><l>ancrer<s n="vblex"/></l>          <r>ancorar<s n="vblex"/></r></p></e>
     <e>       <p><l>andalou<s n="adj"/></l>           <r>andalús<s n="adj"/></r></p></e>
+    <e>       <p><l>Andalou<s n="n"/></l>             <r>andalús<s n="n"/></r></p></e>
     <e>       <p><l>Andalousie<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Andalusia<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></r></p></e>
     <e>       <p><l>andorran<s n="adj"/></l>          <r>andorrà<s n="adj"/></r></p></e>
     <e>       <p><l>Andorre<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Andorra<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></r></p></e>
@@ -2908,9 +2909,10 @@
     <e>       <p><l>comment<s n="adv"/></l>           <r>com<s n="adv"/></r></p></e>
     <e>       <p><l>commentaire<s n="n"/></l>         <r>comentari<s n="n"/></r></p></e>
     <e>       <p><l>commenter<s n="vblex"/></l>       <r>comentar<s n="vblex"/></r></p></e>
-    <e r="LR"><p><l>attaquant<s n="n"/><s n="m"/></l><r>atacant<s n="n"/><s n="mf"/></r></p></e>
-    <e r="LR"><p><l>attaquant<s n="n"/><s n="f"/></l><r>atacant<s n="n"/><s n="mf"/></r></p></e>
-    <e r="RL"><p><l>attaquant<s n="n"/><s n="GD"/></l><r>atacant<s n="n"/><s n="mf"/></r></p></e>
+    <e>       <p><l>attaquant<s n="n"/><s n="m"/></l> <r>davanter<s n="n"/><s n="m"/></r></p></e>
+    <e r="LR"><p><l>attaquant<s n="n"/><s n="f"/></l> <r>atacant<s n="n"/><s n="mf"/></r></p></e>
+    <e r="RL"><p><l>attaquant<s n="n"/></l>           <r>atacant<s n="n"/></r></p><par n="GD_mf"/></e>
+    <e>       <p><l>attaquant<s n="n"/></l>           <r>atacant<s n="n"/></r></p><par n="GD_mf"/></e>
     <e r="LR"><p><l>commerçant<s n="n"/><s n="m"/></l><r>comerciant<s n="n"/><s n="mf"/></r></p></e>
     <e r="LR"><p><l>commerçant<s n="n"/><s n="f"/></l><r>comerciant<s n="n"/><s n="mf"/></r></p></e>
     <e r="RL"><p><l>commerçant<s n="n"/><s n="GD"/></l><r>comerciant<s n="n"/><s n="mf"/></r></p></e>
@@ -11331,6 +11333,7 @@
 <e r="RL"><p><l>royal<s n="adj"/><s n="GD"/></l>  <r>reial<s n="adj"/><s n="mf"/></r></p></e>
 <e a="u21941"><p><l>royaume<s n="n"/></l>         <r>regne<s n="n"/></r></p></e>
     <e>       <p><l>Royaume-Uni<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Regne<b/>Unit<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
+    <e r="RL"><p><l>Royaume-Uni<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>UK<s n="n"/><s n="acr"/><s n="m"/><s n="sg"/></r></p></e>
 <e>       <p><l>Royo<s n="np"/></l><r>Royo<s n="np"/></r></p></e>
 <e a="gema"><p><l>RPR<s n="n"/><s n="acr"/></l>   <r>RPR<s n="n"/><s n="acr"/></r></p></e>
 <e>       <p><l>RTVE<s n="np"/></l><r>RTVE<s n="np"/></r></p></e>
@@ -21747,6 +21750,7 @@
 <e><p><l>nasal<s n="adj"/></l><r>nasal<s n="adj"/></r></p><par n="GD_mf"/></e>
 <e><p><l>nasillard<s n="adj"/></l><r>nasal<s n="adj"/></r></p><par n="GD_mf"/></e>
 <e><p><l>navarrais<s n="adj"/></l><r>navarrès<s n="adj"/></r></p><par n="anglais_anglès"/></e>
+<e><p><l>Navarrais<s n="m"/></l><r>navarrès<s n="m"/></r></p><par n="anglais_anglès"/></e>
 <e><p><l>navigable<s n="adj"/></l><r>navegable<s n="adj"/></r></p></e>
 <e><p><l>néerlandais<s n="adj"/></l><r>neerlandès<s n="adj"/></r></p><par n="anglais_anglès"/></e>
 <e><p><l>néoclassique<s n="adj"/></l><r>neoclàssic<s n="adj"/></r></p><par n="mf_GD"/></e>
@@ -22071,6 +22075,11 @@
 <e><p><l>retour<s n="n"/><s n="m"/></l><r>tornada<s n="n"/><s n="f"/></r></p></e>
 <e r="LR"><p><l>rentrée<s n="n"/><s n="f"/></l><r>tornada<s n="n"/><s n="f"/></r></p></e>
     <e>       <p><l>Croix-Rouge<s n="np"/><s n="al"/></l><r>Creu<b/>Roja<s n="np"/><s n="al"/><s n="f"/><s n="sg"/></r></p></e>
+<e><p><l>aquifère<s n="adj"/></l><r>aqüífer<s n="adj"/></r></p></e>
+<e><p><l>numéral<s n="adj"/></l><r>numeral<s n="adj"/></r></p><par n="GD_mf"/></e>
+<e><p><l>effectif<b/>scolaire<s n="n"/><s n="m"/></l><r>alumnat<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>ovale<s n="adj"/></l><r>oval<s n="adj"/></r></p></e>
+<e><p><l>culinaire<s n="adj"/></l><r>culinari<s n="adj"/></r></p><par n="mf_GD"/></e>
 
   </section>
 </dictionary>

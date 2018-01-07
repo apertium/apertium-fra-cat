@@ -393,6 +393,19 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'livre__n' && $par_cat eq 'accessibilitat__n') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'mois__n' && $par_cat eq 'campus__n') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'fois__n' && $par_cat eq 'càries__n') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
+
+	} elsif ($par_fra eq 'BBVA__n' && $par_cat eq 'BBVA__n') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'IRPF__n' && $par_cat eq 'IRPF__n') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'BBC__n' && $par_cat eq 'BBC__n') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'ATS__n' && $par_cat eq 'ATS__n') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"mf\"/></l><r>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"mf\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} else {
 		print STDERR "No hi ha regla per a escriure_bidix_n: par_fra = $par_fra ($lemma_fra) par_cat = $par_cat ($lemma_cat)\n";
 print STDERR "dix_fra{$morf_fra}{$lemma_fra} = $dix_fra{$morf_fra}{$lemma_fra}\n";
