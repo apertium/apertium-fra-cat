@@ -17,10 +17,11 @@ my $MOT = 'crever les yeux';	# paraula a debugar
 my $MOT = 'desenterrar';	# paraula a debugar
 my $MOT = 'convertir';	# paraula a debugar
 my $MOT = 'rus';	# paraula a debugar
-my $MOT = 'laboral';	# paraula a debugar
+my $MOT = 'fusil';	# paraula a debugar
+#my $MOT = 'rifle';	# paraula a debugar
 my $MOT = '';
 
-my $MORF_TRACT = 'n';
+my $MORF_TRACT = 'adj';
 #my $MORF_TRACT = '';
 
 my ($ffra, $fbi, $fdixfra, $fdixcat, $fdixbi, $fdixfran, $fdixfraadj);
@@ -342,15 +343,55 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 	my $a = " a=\"$autor\"" if $autor;
 	if ($par_fra eq 'abeille__n' && $par_cat eq 'abell/a__n') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'abeille__n' && $par_cat eq 'abric__n') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'abeille__n' && $par_cat eq 'accessibilitat__n') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
+#	} elsif ($par_fra eq 'admis_n' && $par_cat eq 'accionist/a__n') {
+#		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"mf\"/></l><r>%s<s n=\"n\"/><s n=\"mf\"/></r></p></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'admis_n' && $par_cat eq 'angl/ès__n') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/>r>%s<s n=\"n\"/>/p><par n=\"anglais_anglès\"/></l><</e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'admis_n' && $par_cat eq 'senyor__n') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/>r>%s<s n=\"n\"/>/p><par n=\"anglais_anglès\"/></l><</e>\n", $stem_fra, $stem_cat;
+	} elsif (($par_fra eq 'affecté__n'
+			|| $par_fra eq 'administrat/eur__n'
+			|| $par_fra eq 'ancien__n'
+			|| $par_fra eq 'bouch/er__n'
+			|| $par_fra eq 'causeu/r__n'
+			|| $par_fra eq 'clown__n'
+			|| $par_fra eq 'colonel__n'
+			|| $par_fra eq 'commercia/l__n'
+			|| $par_fra eq 'débit/eur__n'
+			|| $par_fra eq 'maire__n'
+			|| $par_fra eq 'support/er__n'
+			|| $par_fra eq 'vende/ur__n') && $par_cat eq 'addict/e__n') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"abaissant_abstracte\"/></e>\n", $stem_fra, $stem_cat;
+	} elsif (($par_fra eq 'affecté__n'
+			|| $par_fra eq 'administrat/eur__n'
+			|| $par_fra eq 'ancien__n'
+			|| $par_fra eq 'bouch/er__n'
+			|| $par_fra eq 'causeu/r__n'
+			|| $par_fra eq 'clown__n'
+			|| $par_fra eq 'colonel__n'
+			|| $par_fra eq 'commercia/l__n'
+			|| $par_fra eq 'débit/eur__n'
+			|| $par_fra eq 'maire__n'
+			|| $par_fra eq 'support/er__n'
+			|| $par_fra eq 'vende/ur__n')
+		&& ($par_cat eq 'senyor__n'
+			|| $par_cat eq 'angl/ès__n')) {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'artiste__n' && $par_cat eq 'accionist/a__n') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"mf\"/></l><r>%s<s n=\"n\"/><s n=\"mf\"/></r></p></e>\n", $stem_fra, $stem_cat;
-	} elsif ($par_fra eq 'artiste__n' && $par_cat eq 'addict/e__adj') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"neutre_neutre\"/></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'artiste__n' && $par_cat eq 'addict/e__n') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"neutre_neutre\"/></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'artiste__n' && $par_cat eq 'senyor__n') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"mf_GD\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'livre__n' && $par_cat eq 'abric__n') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'livre__n' && $par_cat eq 'abell/a__n') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'livre__n' && $par_cat eq 'accessibilitat__n') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} else {
 		print STDERR "No hi ha regla per a escriure_bidix_n: par_fra = $par_fra ($lemma_fra) par_cat = $par_cat ($lemma_cat)\n";
@@ -568,7 +609,7 @@ sub escriure_bidix {
 
 sub lema_fra_existeix_o_es_pot_crear {
 	my ($lemma_fra, $morf_fra, $autor) = @_;
-#print "dix_fra{$morf_fra}{$lemma_fra} = $dix_fra{$morf_fra}{$lemma_fra}\n";
+#print STDERR "lema_fra_existeix_o_es_pot_crear: dix_fra{$morf_fra}{$lemma_fra} = $dix_fra{$morf_fra}{$lemma_fra}\n";
 	return 1 if $dix_fra{$morf_fra}{$lemma_fra};
 
 	# no existeix
@@ -687,6 +728,8 @@ print "tractar_parella ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra,
 					return;
 				} else {
 					# introduïm la parella perquè en quedi constància (algun dia es pot activar), però fem que s'ignori
+print STDERR "1. escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, 'i=\"yes\"', $autor)\n" if $MOT && ($lemma_cat =~ /$MOT/o || $lemma_fra =~ /$MOT/o);
+#print STDERR "1. escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, 'i=\"yes\"', $autor)\n" if $lemma_fra eq 'rifle';
 					escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, 'i="yes"', $autor);
 					return;
 				}
@@ -694,6 +737,8 @@ print "tractar_parella ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra,
 				# no existeix encara una traducció per al lema cat
 				# recordatori: ja existeix una traducció per al lema fra (ergo: està en el monodix fra)
 				# traducció en la direcció cat > fra
+print STDERR "2. escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, 'r=\"RL\"', $autor)\n" if $MOT && ($lemma_cat =~ /$MOT/o || $lemma_fra =~ /$MOT/o);
+#print STDERR "2. escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, 'r=\"RL\"', $autor)\n" if $lemma_fra eq 'rifle';
 				escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, 'r="RL"', $autor);
 				return;
 			}
@@ -708,6 +753,8 @@ print "tractar_parella ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra,
 				# no fem res
 				return;
 			} elsif (lema_fra_existeix_o_es_pot_crear ($lemma_fra, $morf_fra, $autor)) {
+print STDERR "3. escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, 'r=\"LR\"', $autor)\n" if $MOT && ($lemma_cat =~ /$MOT/o || $lemma_fra =~ /$MOT/o);
+#print STDERR "3. escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, 'r=\"LR\"', $autor)\n" if $lemma_fra eq 'rifle';
 				escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, 'r="LR"', $autor);
 				return;
 			} else {
@@ -716,6 +763,7 @@ print "tractar_parella ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra,
 			}
 		} else {
 			if (lema_fra_existeix_o_es_pot_crear ($lemma_fra, $morf_fra)) {
+#print STDERR "4. escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, '', $autor)\n" if $lemma_fra eq 'rifle';
 				escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, '', $autor);
 				return;
 			} else {
@@ -824,10 +872,13 @@ print "11. $linia - stem_cat=$stem_cat, lemma_cat=$lemma_cat, gram_cat = $gram_c
 	my $primer = 1;
 	my $n = 0; 	# index en @stem_fra
 	foreach my $stem_fra (@stem_fra) {
+#print STDERR "stem_fra = #$stem_fra#\n";
 		$stem_fra =~ s| +| |og;
 		$stem_fra =~ s|^ ||o;
 		$stem_fra =~ s| $||o;
+		$stem_fra =~ s| $||o;	# no és un espai en blanc (no sé què és però apareix en el fitxer: ho posa l'Open Office davant de ; en francès)
 		next unless $stem_fra;
+#print STDERR "stem_fra = #$stem_fra#\n";
 		$lemma_fra_ini = $lemma_fra = $stem_fra;
 		if ($stem_fra =~ m/\#/o) {
 			$stem_fra = $` . '<g>' . $' . '</g>';
