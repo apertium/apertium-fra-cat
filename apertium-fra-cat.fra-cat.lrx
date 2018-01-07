@@ -15,12 +15,12 @@
   </rule>
   <rule weight="1.0">
     <match lemma="pour" tags="pr"><select lemma="per"/></match>
-    <match tags="prn.pro.*"/>
+    <or><match tags="prn.pro.*"/><match tags="prn.itg.*"/></or>
     <match tags="*.inf"/>
   </rule>
   <rule weight="1.0">
     <match lemma="pour" tags="pr"><select lemma="per"/></match>
-    <match tags="prn.pro.*"/>
+    <or><match tags="prn.pro.*"/><match tags="prn.itg.*"/></or>
     <match tags="prn.pro.*"/>
     <match tags="*.inf"/>
   </rule>
