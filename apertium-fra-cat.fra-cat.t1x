@@ -18,6 +18,9 @@
       <cat-item tags="np.loc"/>
       <cat-item tags="np.top.*"/>
     </def-cat>
+    <def-cat n="detdef">
+      <cat-item tags="det.def.*"/>
+    </def-cat>
     <def-cat n="detdefpl">
       <cat-item tags="det.def.mf.pl"/>
     </def-cat>
@@ -575,6 +578,10 @@
       <list-item v="Iran"/>
       <list-item v="Iraq"/>
       <list-item v="Irak"/>
+      <list-item v="Arabie"/>
+      <list-item v="Jordanie"/>
+      <list-item v="Syrie"/>
+      <list-item v="Liban"/>
       <list-item v="Pakistan"/>
       <list-item v="Inde"/>
       <list-item v="Marroc"/>
@@ -582,7 +589,13 @@
       <list-item v="Tunisie"/>
       <list-item v="Lybie"/>
       <list-item v="Égypte"/>
-      <list-item v="Arabie"/>
+      <list-item v="Burkina Faso"/>
+      <list-item v="Mali"/>
+      <list-item v="Niger"/>
+      <list-item v="Nigerie"/>
+      <list-item v="Tchad"/>
+      <list-item v="Sénégal"/>
+      <list-item v="Gambie"/>
       <list-item v="Canada"/>
       <list-item v="Québec"/>
       <list-item v="Mexique"/>
@@ -2771,6 +2784,7 @@
       </action>
     </rule>
     
+    
     <rule comment="REGLA: AUXPP">
       <pattern>
         <pattern-item n="auxpp"/>
@@ -2982,14 +2996,14 @@ is not applicable because gender and number cannot be taken from previous rules 
         </call-macro>
         <out>
           <lu>
-            <clip pos="1" side="tl" part="whole"/>
+    	    <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
           </lu>
           <b pos="1"/>
           <lu>
-	    <clip pos="2" side="tl" part="lemh"/>
-            <clip pos="2" side="tl" part="a_adjec"/>
-            <clip pos="2" side="tl" part="gen"/>
-            <clip pos="2" side="tl" part="nbr"/>
+    	    <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
             <clip pos="2" side="tl" part="lemq"/>
           </lu>
         </out>
@@ -8196,7 +8210,7 @@ is not applicable because gender and number cannot be taken from previous rules 
 <!--REGLA: le + nploc (pays) = nploc: la France -> França -->
       <pattern>
         <pattern-item n="le"/>
-        <pattern-item n="nploc"/>
+        <pattern-item n="np"/>
       </pattern>
       <action>
         <choose>
@@ -8204,16 +8218,16 @@ is not applicable because gender and number cannot be taken from previous rules 
             <test>
               <equal> <!-- en el cas de np.loc cal no cridar la macro -->
                 <clip pos="2" side="tl" part="a_nploc"/>
-                <lit-tag v="np.top"/>
+                <lit-tag v="np.loc"/>
               </equal>
             </test>
-            <call-macro n="f_concord2">
-              <with-param pos="2"/>
+            <call-macro n="f_concord1">
               <with-param pos="1"/>
             </call-macro>
           </when>
           <otherwise>
-            <call-macro n="f_concord1">
+            <call-macro n="f_concord2">
+              <with-param pos="2"/>
               <with-param pos="1"/>
             </call-macro>
           </otherwise>

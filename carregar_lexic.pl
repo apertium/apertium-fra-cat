@@ -18,10 +18,10 @@ my $MOT = 'desenterrar';	# paraula a debugar
 my $MOT = 'convertir';	# paraula a debugar
 my $MOT = 'rus';	# paraula a debugar
 my $MOT = 'fusil';	# paraula a debugar
-#my $MOT = 'rifle';	# paraula a debugar
+my $MOT = 'UICN';	# paraula a debugar
 my $MOT = '';
 
-my $MORF_TRACT = 'adj';
+my $MORF_TRACT = 'n';
 #my $MORF_TRACT = '';
 
 my ($ffra, $fbi, $fdixfra, $fdixcat, $fdixbi, $fdixfran, $fdixfraadj);
@@ -114,7 +114,7 @@ print "1. fitxer $nfitx, $linia\n" if $MOT && $linia =~ /$MOT/o;
 			$lemma = $1;
 			$par = $2;
 		} elsif ($linia =~ m|<e lm="([^"]*)".*<i>.*</i>.*<par n="([^"]*)" prm="(.)"/></e>|o) {
-			$lemma = $1;
+					$lemma = $1;
 			$par = $2;
 			$prm = $3;
 		} elsif ($linia =~ m|<e lm="([^"]*)".*<i>.*</i>.*<par n="(.*)"/><p>|o) {
@@ -336,7 +336,7 @@ sub escriure_mono_vblex {
 sub escriure_bidix_n {
 	my ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $lr_rl, $autor) = @_;
 
-print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $autor)\n" if $lemma_cat eq $MOT || $lemma_fra eq $MOT;
+print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $lr_rl, $autor)\n" if $lemma_cat eq $MOT || $lemma_fra eq $MOT;
 #print "dix_fra{$morf_fra}{$lemma_fra} = $dix_fra{$morf_fra}{$lemma_fra}\n";
 	my $par_fra = $dix_fra{$morf_fra}{$lemma_fra};
 	my $par_cat = $dix_cat{$morf_cat}{$lemma_cat};
@@ -415,7 +415,7 @@ print STDERR "dix_fra{$morf_fra}{$lemma_fra} = $dix_fra{$morf_fra}{$lemma_fra}\n
 sub escriure_bidix_adj {
 	my ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $lr_rl, $autor) = @_;
 
-print "escriure_bidix_adj ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $autor)\n" if $lemma_cat eq $MOT || $lemma_fra eq $MOT;
+print "escriure_bidix_adj ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $lr_rl, $autor)\n" if $lemma_cat eq $MOT || $lemma_fra eq $MOT;
 #print "dix_fra{$morf_fra}{$lemma_fra} = $dix_fra{$morf_fra}{$lemma_fra}\n";
 	my $par_fra = $dix_fra{$morf_fra}{$lemma_fra};
 	my $par_cat = $dix_cat{$morf_cat}{$lemma_cat};
@@ -741,7 +741,7 @@ print "tractar_parella ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra,
 					return;
 				} else {
 					# introduïm la parella perquè en quedi constància (algun dia es pot activar), però fem que s'ignori
-print STDERR "1. escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, 'i=\"yes\"', $autor)\n" if $MOT && ($lemma_cat =~ /$MOT/o || $lemma_fra =~ /$MOT/o);
+print "1. escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, 'i=\"yes\"', $autor)\n" if $MOT && ($lemma_cat =~ /$MOT/o || $lemma_fra =~ /$MOT/o);
 #print STDERR "1. escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, 'i=\"yes\"', $autor)\n" if $lemma_fra eq 'rifle';
 					escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, 'i="yes"', $autor);
 					return;
@@ -798,8 +798,8 @@ print "3. nfitx = fra dix_fran{$MORF_TRACT}{$MOT} = $dix_fran{$MORF_TRACT}{$MOT}
 llegir_dix_ortola('fra', $fdixfraadj, \%dix_fraadj, \%dix_fraadj_def) if $MORF_TRACT eq 'adj';
 print "4. nfitx = fra dix_fraadj{$MORF_TRACT}{$MOT} = $dix_fraadj{$MORF_TRACT}{$MOT}\n";
 llegir_bidix($fdixbi, \%dix_fra_cat, \%dix_cat_fra);
-print "5. dix_cat_fra{$MORF_TRACT}{$MOT}[0] = $dix_cat_fra{$MORF_TRACT}{$MOT}[0]\n";
-print "5. dix_fra_cat{$MORF_TRACT}{$MOT}[0] = $dix_fra_cat{$MORF_TRACT}{$MOT}[0]\n";
+#print "5. dix_cat_fra{$MORF_TRACT}{$MOT}[0] = $dix_cat_fra{$MORF_TRACT}{$MOT}[0]\n"; COMPTE! No descomentar pqè crea l'entrada i crear pbs amb els exists posteriors
+#print "5. dix_fra_cat{$MORF_TRACT}{$MOT}[0] = $dix_fra_cat{$MORF_TRACT}{$MOT}[0]\n"; COMPTE! No descomentar pqè crea l'entrada i crear pbs amb els exists posteriors
 
 <STDIN>;	# saltem la primera línia
 my ($stem_cat, $stem_fra, $gen_cat, $gen_fra, $num_cat, $num_fra, $lemma_cat, $lemma_fra, $lemma_cat_ini, $lemma_fra_ini);
@@ -821,8 +821,8 @@ next if $linia !~ /$MORF_TRACT/o;
 	$linia =~ s| +| |og;
 
 	# arreglem majúscules
-	# passo tot a minúscules, excepte si hi ha noms propis
-	if ($linia !~ /<np>/) {
+	# passo tot a minúscules, excepte si hi ha noms propis o acrònims
+	if ($linia !~ /<np>/o && $linia !~ /<acr>/o) {
 		$linia =~ tr/[A-ZÀÈÉíÒÓÚÇ]/[a-zàèéíòóúç/;
 	}
 
