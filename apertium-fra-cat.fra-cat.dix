@@ -737,7 +737,7 @@
     <e r="RL"><p><l>alors<s n="adv"/></l>             <r>aleshores<s n="adv"/></r></p></e>
     <e>       <p><l>alors<s n="cnjadv"/></l>          <r>llavors<s n="cnjadv"/></r></p></e>
     <e r="RL"><p><l>alors<s n="cnjadv"/></l>          <r>aleshores<s n="cnjadv"/></r></p></e>
-    <e>       <p><l>alors<b/>que<s n="cnjadv"/></l>   <r>mentre<b/>que<s n="cnjadv"/></r></p></e>
+    <e r="LR"><p><l>alors<b/>que<s n="cnjadv"/></l>   <r>mentre<b/>que<s n="cnjadv"/></r></p></e>
     <e>       <p><l>alouette<s n="n"/></l>            <r>alosa<s n="n"/></r></p></e>
     <e r="LR"><p><l>alourdir<s n="vblex"/></l>        <r>sobrecarregar<s n="vblex"/></r></p></e>
     <e>       <p><l>Alperi<s n="np"/><s n="cog"/></l><r>Alperi<s n="np"/><s n="cog"/></r></p></e>
@@ -1005,10 +1005,6 @@
     <e r="RL"><p><l>anthropophage<s n="adj"/><s n="mf"/></l><r>antropòfag<s n="adj"/><s n="m"/></r></p></e>
     <e>       <p><l>anticapitaliste<s n="adj"/><s n="mf"/></l><r>anticapitalista<s n="adj"/><s n="mf"/></r></p></e>
     <e>       <p><l>anticiper<s n="vblex"/></l>       <r>anticipar<s n="vblex"/></r></p></e>
-    <e r="LR"><p><l>anticonstitutionnel<s n="adj"/><s n="f"/></l><r>anticonstitucional<s n="adj"/><s n="mf"/></r></p></e>
-    <e r="LR"><p><l>anticonstitutionnel<s n="adj"/><s n="m"/></l><r>anticonstitucional<s n="adj"/><s n="mf"/></r></p></e>
-    <e r="RL"><p><l>anticonstitutionnel<s n="adj"/><s n="GD"/></l><r>anticonstitucional<s n="adj"/><s n="mf"/></r></p></e>
-    <e>       <p><l>anticonstitutionnellement<s n="adv"/></l>     <r>anticonstitucionalment<s n="adv"/></r></p></e>
     <e>       <p><l>antidrogue<s n="adj"/><s n="mf"/><s n="sp"/></l><r>antidroga<s n="adj"/><s n="mf"/><s n="sp"/></r></p></e>
     <e>       <p><l>antifasciste<s n="adj"/><s n="mf"/></l><r>antifeixista<s n="adj"/><s n="mf"/></r></p></e>
     <e>       <p><l>antifasciste<s n="n"/><s n="mf"/></l><r>antifeixista<s n="n"/><s n="mf"/></r></p></e>
@@ -3176,10 +3172,10 @@
     <e>       <p><l>consommer<s n="vblex"/></l>       <r>consumir<s n="vblex"/></r></p></e>
     <e>       <p><l>conspiration<s n="n"/></l>        <r>conspiració<s n="n"/></r></p></e>
     <e>       <p><l>constante<s n="n"/></l>           <r>constant<s n="n"/></r></p></e>
-    <e r="LR"><p><l>constant<s n="adj"/><s n="f"/></l><r>constant<s n="adj"/><s n="mf"/></r></p></e>
-    <e r="LR"><p><l>constant<s n="adj"/><s n="m"/></l><r>constant<s n="adj"/><s n="mf"/></r></p></e>
-    <e r="RL"><p><l>constant<s n="adj"/><s n="GD"/></l><r>constant<s n="adj"/><s n="mf"/></r></p></e>
+    <e>       <p><l>constant<s n="adj"/></l>          <r>constant<s n="adj"/></r></p><par n="GD_mf"/></e>
     <e>       <p><l>constamment<s n="adv"/></l>       <r>constantment<s n="adv"/></r></p></e>
+    <e>       <p><l>inconstant<s n="adj"/></l>        <r>inconstant<s n="adj"/></r></p><par n="GD_mf"/></e>
+    <e>       <p><l>inconstamment<s n="adv"/></l>     <r>inconstantment<s n="adv"/></r></p></e>
     <e a="u21941"><p><l>constat<s n="n"/><s n="m"/></l><r>conclusió<s n="n"/><s n="f"/></r></p></e>
     <e>       <p><l>constater<s n="vblex"/></l>       <r>comprovar<s n="vblex"/></r></p></e>
     <e r="RL"><p><l>constater<s n="vblex"/></l>       <r>constatar<s n="vblex"/></r></p></e>
@@ -3194,10 +3190,12 @@
     <e>       <p><l>constitutif<s n="adj"/></l>      <r>constitutiu<s n="adj"/></r></p></e>
     <e>       <p><l>constitutivement<s n="adv"/></l> <r>constitutivament<s n="adv"/></r></p></e>
     <e>       <p><l>constitution<s n="n"/></l>        <r>constitució<s n="n"/></r></p></e>
-    <e a="gema" r="LR"><p><l>constitutionnel<s n="adj"/><s n="f"/></l><r>constitucional<s n="adj"/><s n="mf"/></r></p></e>
-    <e a="gema" r="LR"><p><l>constitutionnel<s n="adj"/><s n="m"/></l><r>constitucional<s n="adj"/><s n="mf"/></r></p></e>
-    <e a="gema" r="RL"><p><l>constitutionnel<s n="adj"/><s n="GD"/></l><r>constitucional<s n="adj"/><s n="mf"/></r></p></e>
+    <e a="gema"><p><l>constitutionnel<s n="adj"/></l><r>constitucional<s n="adj"/>></r></p><par n="GD_mf"/></e>
     <e>       <p><l>constitutionnellement<s n="adv"/></l> <r>constitucionalment<s n="adv"/></r></p></e>
+    <e>       <p><l>inconstitutionnel<s n="adj"/></l><r>inconstitucional<s n="adj"/>></r></p><par n="GD_mf"/></e>
+    <e>       <p><l>inconstitutionnellement<s n="adv"/></l><r>inconstitucionalment<s n="adv"/></r></p></e>
+    <e>       <p><l>anticonstitutionnel<s n="adj"/></l><r>anticonstitucional<s n="adj"/>></r></p><par n="GD_mf"/></e>
+    <e>       <p><l>anticonstitutionnellement<s n="adv"/></l><r>anticonstitucionalment<s n="adv"/></r></p></e>
     <e a="gema"><p><l>constructeur<s n="n"/></l>      <r>constructor<s n="n"/></r></p></e>
     <e>       <p><l>constructif<s n="adj"/></l>       <r>constructiu<s n="adj"/></r></p></e>
     <e>       <p><l>construction<s n="n"/></l>        <r>construcció<s n="n"/></r></p></e>
@@ -14171,6 +14169,7 @@
 <e><p><l>empatement<s n="n"/><s n="m"/></l><r>gruix<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>empêchement<s n="n"/><s n="m"/></l><r>impediment<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>emploi<s n="n"/><s n="m"/></l><r>ús<s n="n"/><s n="m"/></r></p></e>
+<e r="LR"><p><l>emploi<s n="n"/><s n="m"/></l><r>ocupació<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>employé<s n="n"/><s n="m"/></l><r>empleat<s n="n"/><s n="m"/></r></p></e>
 <e r="RL"><p><l>empoisonnement<s n="n"/><s n="m"/></l><r>emmetzinament<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>empoisonnement<s n="n"/><s n="m"/></l><r>enverinament<s n="n"/><s n="m"/></r></p></e>
@@ -22080,6 +22079,20 @@
 <e><p><l>effectif<b/>scolaire<s n="n"/><s n="m"/></l><r>alumnat<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>ovale<s n="adj"/></l><r>oval<s n="adj"/></r></p></e>
 <e><p><l>culinaire<s n="adj"/></l><r>culinari<s n="adj"/></r></p><par n="mf_GD"/></e>
+<e r="LR"><p><l>c'est-à-dire<s n="adv"/></l><r>és<b/>a<b/>dir<s n="adv"/></r></p></e>
+<e r="LR"><p><l>c'est-à-dire<b/>que<s n="cnjadv"/></l><r>és<b/>a<b/>dir<b/>que<s n="cnjadv"/></r></p></e>
+<e><p><l>vertueux<s n="adj"/></l><r>virtuós<s n="adj"/></r></p><par n="anglais_anglès"/></e>
+<e><p><l>constitutionnalité<s n="n"/><s n="f"/></l><r>constitucionalitat<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>inconstitutionnalité<s n="n"/><s n="f"/></l><r>inconstitucionalitat<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>Est<b/>républicain<s n="np"/><s n="al"/><s n="m"/><s n="sg"/></l><r>Est<b/>Républicain<s n="np"/><s n="al"/><s n="m"/><s n="sg"/></r></p></e>
+<e><p><l>travailleur<b/>indépendant<s n="n"/></l><r>autònom<s n="n"/></r></p></e>
+<e><p><l>télécopie<s n="n"/><s n="f"/></l><r>fax<s n="n"/><s n="m"/></r></p></e>
+<e r="LR"><p><l>fax<s n="n"/><s n="m"/></l><r>fax<s n="n"/><s n="m"/></r></p><par n="sp_ND"/></e>
+<e><p><l>condoléance<s n="n"/><s n="f"/><s n="sg"/></l><r>condol<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
+<e><p><l>condoléance<s n="n"/><s n="f"/><s n="pl"/></l><r>condol<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>condoléance<s n="n"/><s n="f"/><s n="pl"/></l><r>condol<s n="n"/><s n="m"/><s n="pl"/></r></p></e>
+<e><p><l>médecin<b/>légiste<s n="n"/><s n="m"/></l><r>forense<s n="n"/><s n="mf"/></r></p></e>
+<e><p><l>répondeur<s n="n"/><s n="m"/></l><r>contestador<s n="n"/><s n="m"/></r></p></e>
 
   </section>
 </dictionary>

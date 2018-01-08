@@ -114,6 +114,25 @@
 
 <!-- **************** N **************** -->
 
+  <!-- emploi >> ús, ocupació -->
+  <rule weight="0.8">
+    <match lemma="emploi" tags="n.*"><select lemma="ús"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pôle" tags="n.*"/>
+    <match lemma="emploi" tags="n.*"><select lemma="ocupació"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="emploi" tags="n.*"><select lemma="ocupació"/></match>
+    <or><match lemma="de"/><match lemma="comme"/></or>
+    <or>
+      <match lemma="directeur" tags="n.*"/>
+      <match lemma="informaticien" tags="n.*"/>
+      <match lemma="professeur" tags="n.*"/>
+      <match lemma="chauffeur" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- internet >> internet, web -->
 <!--
   <rule weight="0.8">

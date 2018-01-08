@@ -265,6 +265,9 @@
     <def-cat n="defense">
       <cat-item lemma="défense" tags="n.f.sg"/>
     </def-cat>
+    <def-cat n="cnjcoo">
+      <cat-item tags="cnjcoo"/>
+    </def-cat>
     <def-cat n="sent">
       <cat-item tags="sent"/>
     </def-cat>
@@ -3986,7 +3989,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule comment="REGLA: SENT PREP DET NOM ADJ (sent Des enfants : sent Alguns xiquets)">
+    <rule comment="REGLA: SENT PREP DET NOM ADJ (sent Des enfants : sent Uns xiquets)">
       <pattern>
         <pattern-item n="sent"/>
         <pattern-item n="deprep"/>
@@ -4001,6 +4004,51 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord2">
           <with-param pos="4"/>
           <with-param pos="5"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="un"/>
+            </get-case-from>
+            <lit-tag v="det.ind"/>
+            <var n="genero"/>
+            <var n="numero"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="tags"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule comment="REGLA: SENT PREP DET ADJ NOM (sent Des grands enfants : sent Uns grans xiquets)">
+      <pattern>
+        <pattern-item n="sent"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <!-- reset variables -->
+        <let><var n="genero"/><lit-tag v="m"/></let>
+        <let><var n="numero"/><lit-tag v="sg"/></let>
+        <call-macro n="f_concord2">
+          <with-param pos="5"/>
+          <with-param pos="4"/>
         </call-macro>
         <out>
           <lu>
@@ -4061,8 +4109,50 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!-- REGLA: APRES DE NOMBREUX NOM (après de nombreuses années :n després de molts xiquets) -->
+    <rule comment="REGLA: DE NOMBREUX ET ADJ NOM (de nombreuses et profondes différencies : moltes i profundes diferències)">
+      <pattern>
+        <pattern-item n="deprep"/>
+        <pattern-item n="nombreux"/>
+        <pattern-item n="cnjcoo"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord3">
+          <with-param pos="5"/>
+          <with-param pos="4"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="molt"/>
+            </get-case-from>
+            <lit-tag v="adj"/>
+            <var n="genero"/>
+            <var n="numero"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="tags"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule comment="REGLA: APRES DE NOMBREUX NOM (après de nombreuses années :n després de molts xiquets)">
       <pattern>
         <pattern-item n="apres"/>
         <pattern-item n="deprep"/>
@@ -4099,8 +4189,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!-- REGLA: DE NOMBREUX ADJ NOM (de nombreux petits enfants : molts petits xiquets) -->
+    <rule comment="REGLA: DE NOMBREUX ADJ NOM (de nombreux petits enfants : molts petits xiquets)">
       <pattern>
         <pattern-item n="deprep"/>
         <pattern-item n="nombreux"/>
@@ -4138,8 +4227,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!-- REGLA:PREP PREP DET (avec des: amb) -->
+    <rule comment="REGLA:PREP PREP DET (avec des: amb)">
       <pattern>
         <pattern-item n="prep"/>
         <pattern-item n="deprep"/>
