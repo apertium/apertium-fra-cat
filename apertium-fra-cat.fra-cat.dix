@@ -3190,11 +3190,11 @@
     <e>       <p><l>constitutif<s n="adj"/></l>      <r>constitutiu<s n="adj"/></r></p></e>
     <e>       <p><l>constitutivement<s n="adv"/></l> <r>constitutivament<s n="adv"/></r></p></e>
     <e>       <p><l>constitution<s n="n"/></l>        <r>constitució<s n="n"/></r></p></e>
-    <e a="gema"><p><l>constitutionnel<s n="adj"/></l><r>constitucional<s n="adj"/>></r></p><par n="GD_mf"/></e>
+    <e a="gema"><p><l>constitutionnel<s n="adj"/></l><r>constitucional<s n="adj"/></r></p><par n="GD_mf"/></e>
     <e>       <p><l>constitutionnellement<s n="adv"/></l> <r>constitucionalment<s n="adv"/></r></p></e>
-    <e>       <p><l>inconstitutionnel<s n="adj"/></l><r>inconstitucional<s n="adj"/>></r></p><par n="GD_mf"/></e>
+    <e>       <p><l>inconstitutionnel<s n="adj"/></l><r>inconstitucional<s n="adj"/></r></p><par n="GD_mf"/></e>
     <e>       <p><l>inconstitutionnellement<s n="adv"/></l><r>inconstitucionalment<s n="adv"/></r></p></e>
-    <e>       <p><l>anticonstitutionnel<s n="adj"/></l><r>anticonstitucional<s n="adj"/>></r></p><par n="GD_mf"/></e>
+    <e>       <p><l>anticonstitutionnel<s n="adj"/></l><r>anticonstitucional<s n="adj"/></r></p><par n="GD_mf"/></e>
     <e>       <p><l>anticonstitutionnellement<s n="adv"/></l><r>anticonstitucionalment<s n="adv"/></r></p></e>
     <e a="gema"><p><l>constructeur<s n="n"/></l>      <r>constructor<s n="n"/></r></p></e>
     <e>       <p><l>constructif<s n="adj"/></l>       <r>constructiu<s n="adj"/></r></p></e>
@@ -8060,7 +8060,7 @@
 <e r="LR"><p><l>matériel<s n="adj"/><s n="m"/></l><r>material<s n="adj"/><s n="mf"/></r></p></e>
 <e r="RL"><p><l>matériel<s n="adj"/><s n="GD"/></l><r>material<s n="adj"/><s n="mf"/></r></p></e>
 <e>       <p><l>matériellement<s n="adv"/></l>    <r>materialment<s n="adv"/></r></p></e>
-<e>       <p><l>maternel<s n="adj"/></l>          <r>maternal<s n="adj"/>></r></p><par n="GD_mf"/></e>
+<e>       <p><l>maternel<s n="adj"/></l>          <r>maternal<s n="adj"/></r></p><par n="GD_mf"/></e>
 <e>       <p><l>maternelle<s n="n"/><s n="f"/></l> <r>parvulari<s n="n"/><s n="m"/></r></p></e>
 <e>       <p><l>école<b/>maternelle<s n="n"/><s n="f"/></l><r>escola<g><b/>bressol</g><s n="n"/><s n="f"/></r></p></e>
 <e>       <p><l>maternellement<s n="adv"/></l>    <r>maternalment<s n="adv"/></r></p></e>
@@ -9390,9 +9390,6 @@
 <e>       <p><l>Paris<s n="np"/></l>              <r>París<s n="np"/></r></p></e>
 <e>       <p><l>Parisien<s n="n"/></l>            <r>parisenc<s n="n"/></r></p></e>
 <e a="gema"><p><l>parlement<s n="n"/></l>         <r>parlament<s n="n"/></r></p></e>
-<e r="LR"><p><l>parlementaire<s n="n"/><s n="mf"/></l><r>parlamentari<s n="n"/><s n="GD"/></r></p></e>
-<e r="RL"><p><l>parlementaire<s n="n"/><s n="mf"/></l><r>parlamentari<s n="n"/><s n="f"/></r></p></e>
-<e r="RL"><p><l>parlementaire<s n="n"/><s n="mf"/></l><r>parlamentari<s n="n"/><s n="m"/></r></p></e>
 <e>       <p><l>parler<s n="vblex"/></l>          <r>parlar<s n="vblex"/></r></p></e>
 <e r="LR"><p><l>parmi<s n="pr"/></l>              <r>entre<s n="pr"/></r></p></e>
 <e>       <p><l>Parnasse<s n="n"/></l>            <r>Parnàs<s n="n"/></r></p></e>
@@ -9922,9 +9919,14 @@
 <e>       <p><l>polémique<s n="n"/></l>           <r>polèmica<s n="n"/></r></p></e>
 <e>       <p><l>poli<s n="adj"/></l>              <r>educat<s n="adj"/></r></p></e>
 <e>       <p><l>police<s n="n"/><s n="f"/></l>    <r>policia<s n="n"/><s n="mf"/></r></p></e>
+<e r="RL"><p><l>police<s n="n"/><s n="f"/><s n="sg"/></l><r>mosso<g><b/>d'esquadra</g><s n="n"/><s n="m"/><s n="pl"/></r></p></e>
 <e r="RL"><p><l>police<s n="n"/><s n="f"/></l>    <r>bòfia<s n="n"/><s n="f"/></r></p></e>
 <e r="LR"><p><l>policer<s n="vblex"/></l>         <r>civilitzar<s n="vblex"/></r></p></e>
 <e>       <p><l>policier<s n="n"/></l>            <r>policia<s n="n"/></r></p><par n="GD_mf"/></e>
+<e r="RL"><p><l>policier<s n="n"/><s n="m"/><s n="sg"/></l><r>mosso<g><b/>d'esquadra</g><s n="n"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>policier<s n="n"/><s n="f"/><s n="sg"/></l><r>mosso<g><b/>d'esquadra</g><s n="n"/><s n="f"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>policier<s n="n"/><s n="m"/><s n="pl"/></l><r>mosso<g><b/>d'esquadra</g><s n="n"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>policier<s n="n"/><s n="f"/><s n="pl"/></l><r>mosso<g><b/>d'esquadra</g><s n="n"/><s n="f"/><s n="pl"/></r></p></e>
 <e a="u21941"><p><l>policier<s n="adj"/></l>      <r>policíac<s n="adj"/></r></p></e>
 <e r="RL"><p><l>policier<s n="adj"/><s n="GD"/></l><r>policial<s n="adj"/><s n="mf"/></r></p></e>
 <e>       <p><l>politesse<s n="n"/></l>           <r>cortesia<s n="n"/></r></p></e>
@@ -22093,6 +22095,12 @@
 <e r="RL"><p><l>condoléance<s n="n"/><s n="f"/><s n="pl"/></l><r>condol<s n="n"/><s n="m"/><s n="pl"/></r></p></e>
 <e><p><l>médecin<b/>légiste<s n="n"/><s n="m"/></l><r>forense<s n="n"/><s n="mf"/></r></p></e>
 <e><p><l>répondeur<s n="n"/><s n="m"/></l><r>contestador<s n="n"/><s n="m"/></r></p></e>
+<e r="RL"><p><l>de<b/>la<b/>Renaissance<s n="adj"/><s n="mf"/></l><r>renaixentista<s n="adj"/><s n="mf"/></r></p><par n="sp_ND"/></e>
+<e><p><l>député<b/>européen<s n="n"/></l><r>eurodiputat<s n="n"/></r></p></e>
+<e r="RL"><p><l>député<b/>européen<s n="n"/></l><r>europarlamentari<s n="n"/></r></p></e>
+<e r="RL"><p><l>député<s n="n"/></l><r>parlamentari<s n="n"/></r></p></e>
+<e><p><l>baléare<s n="adj"/></l><r>balear<s n="adj"/></r></p></e>
+<e><p><l>Baléare<s n="n"/></l><r>Balear<s n="n"/></r></p></e>
 
   </section>
 </dictionary>

@@ -252,9 +252,7 @@
   </rule>
 
 
-  <!-- 
-    policia >> police, policier
-  -->
+  <!-- policia >> police, policier -->
   <rule weight="0.8">
     <match lemma="policia" tags="n.*"><select lemma="police"/></match>
   </rule>
@@ -275,6 +273,15 @@
       <match lemma="dona" tags="n.*"/>
     </or>
     <match lemma="policia" tags="n.*"><select lemma="policier"/></match>
+  </rule>
+
+  <!-- mosso d'esquadra >> police, policier -->
+  <rule weight="0.8">
+    <match lemma="mosso# d'esquadra" tags="n.*"><select lemma="policier"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.m.pl"/>
+    <match lemma="mosso# d'esquadra" tags="n.m.pl"><select lemma="police"/></match>
   </rule>
 
 <!-- prova >> preuve, essai -->

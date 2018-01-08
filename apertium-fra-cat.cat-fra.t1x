@@ -999,7 +999,31 @@
     </def-macro>
     
     <def-macro n="f_concord_pedac" npar="1">
-<!--Pedaç totalment ad-hoc per solucionar problmes amb l'assignació del gènere i nombre a heureux, feliç > joyeux -->
+<!--Pedaç totalment ad-hoc per solucionar problemes amb el canvi de pl a sg en els articles des/les
+  (no s'expandeix el gènere perquè no es fa si està previst posar mf) -->
+      <choose>
+        <when>
+          <test>
+            <or>
+              <and>
+                <equal><clip pos="1" side="tl" part="lem"/><lit v="le"/></equal>
+                <equal><clip pos="1" side="tl" part="a_det"/><lit-tag v="det.def"/></equal>
+                <equal><clip pos="1" side="tl" part="gen"/><lit-tag v="mf"/></equal>
+                <equal><clip pos="1" side="tl" part="nbr"/><lit-tag v="sg"/></equal>
+              </and>
+              <and>
+                <equal><clip pos="1" side="tl" part="lem"/><lit v="un"/></equal>
+                <equal><clip pos="1" side="tl" part="a_det"/><lit-tag v="det.ind"/></equal>
+                <equal><clip pos="1" side="tl" part="gen"/><lit-tag v="mf"/></equal>
+                <equal><clip pos="1" side="tl" part="nbr"/><lit-tag v="sg"/></equal>
+              </and>
+            </or>
+          </test>
+          <let><clip pos="1" side="tl" part="gen"/><var n="genero"/></let>
+        </when>
+      </choose>
+ 
+<!--Pedaç totalment ad-hoc per solucionar problemes amb l'assignació del gènere i nombre a heureux, feliç > joyeux -->
       <choose>
         <when>
           <test>
@@ -3296,7 +3320,9 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b pos="1"/>
           <lu>
-            <clip pos="2" side="tl" part="whole"/>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
@@ -3313,12 +3339,14 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="1"/>
           <with-param pos="2"/>
         </call-macro>
-   <call-macro n="superlatiu">
+       <call-macro n="superlatiu">
           <with-param pos="2"/>
         </call-macro>
         <out>
           <lu>
-            <clip pos="1" side="tl" part="whole"/>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
           </lu>
           <b pos="1"/>
           <lu>
@@ -3342,7 +3370,7 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_lexicAdj">
           <with-param pos="1"/>
         </call-macro>
-   <call-macro n="superlatiu">
+       <call-macro n="superlatiu">
           <with-param pos="1"/>
         </call-macro>
         <out>
@@ -3351,7 +3379,9 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b pos="1"/>
           <lu>
-            <clip pos="2" side="tl" part="whole"/>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
@@ -3370,7 +3400,7 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="3"/>
           <with-param pos="1"/>
         </call-macro>
-	<call-macro n="superlatiu">
+    	<call-macro n="superlatiu">
           <with-param pos="3"/>
         </call-macro>
         <choose>
@@ -3434,10 +3464,10 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="4"/>
           <with-param pos="1"/>
         </call-macro>
-<call-macro n="superlatiu">
+        <call-macro n="superlatiu">
           <with-param pos="3"/>       
         </call-macro>
-<call-macro n="superlatiu">
+        <call-macro n="superlatiu">
           <with-param pos="4"/>       
         </call-macro>
         <out>
@@ -3446,7 +3476,9 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b pos="1"/>
           <lu>
-            <clip pos="2" side="tl" part="whole"/>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
           </lu>
           <b pos="2"/>
           <lu>
@@ -3476,12 +3508,14 @@ is not applicable because gender and number can not be taken from previous rules
 <call-macro n="superlatiu">
           <with-param pos="2"/>
         </call-macro>
-<call-macro n="superlatiu">
+        <call-macro n="superlatiu">
           <with-param pos="3"/>
         </call-macro>
         <out>
           <lu>
-            <clip pos="1" side="tl" part="whole"/>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
           </lu>
           <b pos="1"/>
           <lu>
@@ -3511,7 +3545,7 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_lexicAdj">
           <with-param pos="2"/>
         </call-macro>
-<call-macro n="superlatiu">
+        <call-macro n="superlatiu">
           <with-param pos="2"/>
         </call-macro>
         <out>
@@ -3524,7 +3558,9 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b pos="2"/>
           <lu>
-            <clip pos="3" side="tl" part="whole"/>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
@@ -3553,7 +3589,9 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b pos="2"/>
           <lu>
-            <clip pos="3" side="tl" part="whole"/>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
@@ -3574,7 +3612,7 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="2"/>
           <with-param pos="1"/>
         </call-macro>
-<call-macro n="superlatiu">
+        <call-macro n="superlatiu">
           <with-param pos="4"/>
         </call-macro>
         <out>
@@ -3587,7 +3625,9 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b pos="2"/>
           <lu>
-            <clip pos="3" side="tl" part="whole"/>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
           </lu>
           <b pos="3"/>
           <lu>
@@ -3608,7 +3648,7 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="2"/>
           <with-param pos="1"/>
         </call-macro>
-<call-macro n="superlatiu">
+        <call-macro n="superlatiu">
           <with-param pos="2"/>
         </call-macro>
         <out>
@@ -3639,10 +3679,10 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_lexicAdj">
           <with-param pos="1"/>
         </call-macro>
-<call-macro n="superlatiu">
+        <call-macro n="superlatiu">
           <with-param pos="1"/>
         </call-macro>
-<call-macro n="superlatiu">
+        <call-macro n="superlatiu">
           <with-param pos="3"/>
         </call-macro>
         <out>
@@ -3651,7 +3691,9 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b pos="1"/>
           <lu>
-            <clip pos="2" side="tl" part="whole"/>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
           </lu>
           <b pos="2"/>
           <lu>
@@ -3679,10 +3721,10 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_lexicAdj">
           <with-param pos="2"/>
         </call-macro>
-<call-macro n="superlatiu">
+        <call-macro n="superlatiu">
           <with-param pos="2"/>
         </call-macro>
-<call-macro n="superlatiu">
+        <call-macro n="superlatiu">
           <with-param pos="4"/>
         </call-macro>
         <out>
@@ -3695,7 +3737,9 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b pos="2"/>
           <lu>
-            <clip pos="3" side="tl" part="whole"/>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
           </lu>
           <b pos="3"/>
           <lu>
@@ -3717,12 +3761,14 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="1"/>
           <with-param pos="3"/>
         </call-macro>
-<call-macro n="superlatiu">
+        <call-macro n="superlatiu">
           <with-param pos="3"/>
         </call-macro> 
-<out>
+        <out>
           <lu>
-            <clip pos="1" side="tl" part="whole"/>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
           </lu>
           <b pos="1"/>
           <lu>
@@ -3838,7 +3884,9 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b pos="2"/>
           <lu>
-            <clip pos="3" side="tl" part="whole"/>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
@@ -3861,7 +3909,9 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b pos="1"/>
           <lu>
-            <clip pos="2" side="tl" part="whole"/>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
@@ -3878,7 +3928,7 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="2"/>
           <with-param pos="1"/>
         </call-macro>
-<call-macro n="superlatiu">
+        <call-macro n="superlatiu">
           <with-param pos="2"/>
         </call-macro>
         <out>
@@ -3906,7 +3956,7 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="1"/>
           <with-param pos="3"/>
         </call-macro>
-<call-macro n="superlatiu">
+        <call-macro n="superlatiu">
           <with-param pos="3"/>
         </call-macro>
         <out>
@@ -3915,7 +3965,9 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b pos="1"/>
           <lu>
-            <clip pos="2" side="tl" part="whole"/>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
           </lu>
           <b pos="2"/>
           <lu>
@@ -3941,7 +3993,7 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_lexicAdj">
           <with-param pos="2"/>
         </call-macro>
-<call-macro n="superlatiu">
+        <call-macro n="superlatiu">
           <with-param pos="2"/>
         </call-macro>
         <out>
@@ -3954,7 +4006,9 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b pos="2"/>
           <lu>
-            <clip pos="3" side="tl" part="whole"/>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
@@ -3983,7 +4037,9 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b pos="2"/>
           <lu>
-            <clip pos="3" side="tl" part="whole"/>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
