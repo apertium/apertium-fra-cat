@@ -61,6 +61,9 @@
     <def-cat n="que">
       <cat-item lemma="que" tags="cnjsub"/>
     </def-cat>
+    <def-cat n="que_rel">
+      <cat-item lemma="que" tags="rel.an.*"/>
+    </def-cat>
     <def-cat n="com">
       <cat-item lemma="com" tags="pr"/>
       <cat-item lemma="com" tags="rel.adv"/>
@@ -6199,8 +6202,7 @@ is not applicable because gender and number can not be taken from previous rules
     </rule>
 
 <!-- regles de generació de pronoms-->
-    <rule>
-<!--REGLA: SENT,que,coma,i VERB -->
+    <rule comment="REGLA: SENT,que,coma,i VERB">
       <pattern>
         <pattern-item n="sentquecm"/>
         <pattern-item n="verb_conj"/>
@@ -6324,6 +6326,159 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
             </out>
           </otherwise>
+        </choose>
+      </action>
+  </rule>
+    
+    <rule comment="REGLA: Que_rel VERB">
+      <pattern>
+        <pattern-item n="que_rel"/>
+        <pattern-item n="verb_conj"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_pis2prs">
+          <with-param pos="2"/>
+        </call-macro>
+
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="1" side="tl" part="lem"/>
+                <lit v="qui"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </when>
+        <otherwise>
+	<!-- el que segueix és una còpia de la regla anterior -->
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="2" side="sl" part="persona"/>
+                <lit-tag v="p3"/>
+              </equal>
+            </test>
+            <choose>
+              <when>
+                <test>
+                  <equal>
+                    <clip pos="2" side="sl" part="a_verb"/>
+                    <lit-tag v="vbser"/>
+                  </equal>
+                </test>
+                <out>
+                  <lu>
+                    <clip pos="1" side="tl" part="whole"/>
+                  </lu>
+                  <b pos="1"/>
+                  <lu>
+                    <get-case-from pos="2">
+                      <lit v="ce"/>
+                    </get-case-from>
+                    <lit-tag v="prn.tn.nt"/>
+                  </lu>
+                  <b/>
+                </out>
+                <modify-case>
+                  <clip pos="2" side="tl" part="lemh"/>
+                  <lit v="aa"/>
+                </modify-case>
+                <out>
+                  <lu>
+                    <clip pos="2" side="tl" part="lemh"/>
+                    <clip pos="2" side="tl" part="a_verb"/>
+                    <clip pos="2" side="tl" part="temps"/>
+                    <clip pos="2" side="tl" part="persona"/>
+                    <clip pos="2" side="tl" part="gen"/>
+                    <clip pos="2" side="tl" part="nbr"/>
+                    <clip pos="2" side="tl" part="lemq"/>
+                  </lu>
+                </out>
+              </when>
+              <otherwise>
+                <out>
+                  <lu>
+                    <clip pos="1" side="tl" part="whole"/>
+                  </lu>
+                  <b pos="1"/>
+                  <lu>
+                    <clip pos="2" side="sl" part="lem"/>
+                    <lit-tag v="prn.tn"/>
+                    <clip pos="2" side="sl" part="persona"/>
+                    <lit-tag v="m"/>
+                    <clip pos="2" side="sl" part="nbr"/>
+                  </lu>
+                  <b/>
+                </out>
+                <modify-case>
+                  <clip pos="2" side="tl" part="lemh"/>
+                  <lit v="aa"/>
+                </modify-case>
+                <out>
+                  <lu>
+                    <clip pos="2" side="tl" part="lemh"/>
+                    <clip pos="2" side="tl" part="a_verb"/>
+                    <clip pos="2" side="tl" part="temps"/>
+                    <clip pos="2" side="tl" part="persona"/>
+                    <clip pos="2" side="tl" part="gen"/>
+                    <clip pos="2" side="tl" part="nbr"/>
+                    <clip pos="2" side="tl" part="lemq"/>
+                  </lu>
+                </out>
+              </otherwise>
+            </choose>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="sl" part="lem"/>
+                <lit-tag v="prn.tn"/>
+                <clip pos="2" side="sl" part="persona"/>
+                <lit-tag v="mf"/>
+                <clip pos="2" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+            <modify-case>
+              <clip pos="2" side="tl" part="lemh"/>
+              <lit v="aa"/>
+            </modify-case>
+            <out>
+              <lu>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="a_verb"/>
+                <clip pos="2" side="tl" part="temps"/>
+                <clip pos="2" side="tl" part="persona"/>
+                <clip pos="2" side="tl" part="gen"/>
+                <clip pos="2" side="tl" part="nbr"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+        </otherwise>
         </choose>
       </action>
   </rule>

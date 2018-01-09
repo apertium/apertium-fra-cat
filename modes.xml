@@ -317,7 +317,7 @@
       <program name="lt-proc -b">
         <file name="cat-fra.autobil.bin"/>
       </program>
-      <program name="lrx-proc -m">
+      <program name="lrx-proc -m -t">
         <file name="cat-fra.autolex.bin"/>
       </program>
     </pipeline>

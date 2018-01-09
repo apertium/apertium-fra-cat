@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rules>
 
+<!-- REL -->
+
+  <!-- 
+    que >> que, qui
+  -->
+  <rule weight="0.8">
+    <match lemma="que" tags="rel.an.*"><select lemma="que"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
+    <match tags="vblex.*.p3.*"/>
+    <or>
+      <match tags="det.*"/>
+      <match tags="n.*"/>
+      <match tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
+    <match lemma="li" tags="prn.*"/>
+    <match tags="vblex.*.p3.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
+    <match tags="adv"/>
+    <match tags="vblex.*.p3.*"/>
+    <or>
+      <match tags="det.*"/>
+      <match tags="n.*"/>
+      <match tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
+    <match tags="adv"/>
+    <match lemma="li" tags="prn.*"/>
+    <match tags="vblex.*.p3.*"/>
+  </rule>
+
 <!-- PR -->
 
   <!-- 
