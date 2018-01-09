@@ -7225,6 +7225,8 @@
 <e>       <p><l>je<s n="prn"/></l>                <r>jo<s n="prn"/></r></p></e>
 <e>       <p><l>René<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>René<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
 <e>       <p><l>Renée<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></l><r>Renée<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></r></p></e>
+<e>       <p><l>Kelvin<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Kelvin<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
+<e>       <p><l>Kelvin<s n="np"/><s n="cog"/><s n="mf"/><s n="sp"/></l><r>Kelvin<s n="np"/><s n="cog"/><s n="mf"/><s n="sp"/></r></p></e>
 <e>       <p><l>Jean<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Jean<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
 <e>       <p><l>Jeanne<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></l><r>Jeanne<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></r></p></e>
 <e>       <p><l>Anne<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></l><r>Anne<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></r></p></e>
@@ -14922,8 +14924,9 @@
 <e><p><l>médiateur<s n="n"/><s n="m"/></l><r>mediador<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>médiation<s n="n"/><s n="f"/></l><r>mediació<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>médiatisation<s n="n"/><s n="f"/></l><r>mediatització<s n="n"/><s n="f"/></r></p></e>
-<e><p><l>médicament<s n="n"/><s n="m"/></l><r>fàrmac<s n="n"/><s n="m"/></r></p></e>
+<e r="RL"><p><l>médicament<s n="n"/><s n="m"/></l><r>fàrmac<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>médicament<s n="n"/><s n="m"/></l><r>medicament<s n="n"/><s n="m"/></r></p></e>
+<e r="RL"><p><l>médicament<s n="n"/><s n="m"/></l><r>medicació<s n="n"/><s n="f"/></r></p><par n="pl_ND"/></e>
 <e><p><l>médiocrité<s n="n"/><s n="f"/></l><r>mediocritat<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>mégaphone<s n="n"/><s n="m"/></l><r>megàfon<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>mélancolie<s n="n"/><s n="f"/></l><r>malenconia<s n="n"/><s n="f"/></r></p></e>
@@ -22064,6 +22067,7 @@
 <e r="RL"><p><l>tour<s n="n"/><s n="m"/></l><r>volt<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>volt<s n="n"/><s n="m"/></l><r>volt<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>dessert<s n="n"/><s n="m"/></l><r>postres<s n="n"/><s n="f"/></r></p><par n="ND_pl"/></e>
+<e><p><l>grande<b/>ville<s n="n"/><s n="f"/></l><r>urbs<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>vieille<b/>ville<s n="n"/><s n="f"/></l><r>nucli<b/>antic<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>enchères<s n="n"/><s n="f"/></l><r>subhasta<s n="n"/><s n="f"/></r></p><par n="pl_ND"/></e>
 <e><p><l>extra<s n="adj"/><s n="mf"/><s n="sp"/></l><r>extra<s n="adj"/><s n="mf"/><s n="sp"/></r></p></e>
@@ -22167,6 +22171,8 @@
 <e><p><l>inca<s n="adj"/></l><r>inca<s n="adj"/></r></p></e>
 <e><p><l>Maya<s n="n"/></l><r>maia<s n="n"/></r></p></e>
 <e><p><l>maya<s n="adj"/></l><r>maia<s n="adj"/></r></p></e>
+<e><p><l>Moscovite<s n="n"/></l><r>moscovita<s n="n"/></r></p></e>
+<e><p><l>moscovite<s n="adj"/></l><r>moscovita<s n="adj"/></r></p></e>
 <e><p><l>cosmique<s n="adj"/></l><r>còsmic<s n="adj"/></r></p><par n="mf_GD"/></e>
 <e><p><l>charité<s n="n"/><s n="f"/></l><r>beneficència<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>pas<b/>tout<s n="predet"/></l><r>no<b/>tot<s n="predet"/></r></p></e>
@@ -22178,6 +22184,17 @@
 <e><p><l>ordre<b/>sacerdotal<s n="n"/><s n="m"/></l><r>orde<b/>sacerdotal<s n="n"/><s n="m"/></r></p></e>
 <e r="LR"><p><l>outre-Manche<s n="adv"/></l><r>més<b/>enllà<b/>de<b/>la<b/>Mànega<s n="adv"/></r></p></e>
 <e r="LR"><p><l>outre-Atlantique<s n="adv"/></l><r>més<b/>enllà<b/>de<b/>l'Atlàntic<s n="adv"/></r></p></e>
+<e><p><l>béton<b/>armé<s n="n"/><s n="m"/></l><r>formigó<b/>armat<s n="n"/><s n="m"/></r></p></e>
+<e r="RL"><p><l>deux<b/>ans<s n="n"/><s n="m"/></l><r>bieni<s n="n"/><s n="m"/></r></p><par n="pl_ND"/></e>
+<e><p><l>ciseau<s n="n"/><s n="m"/><s n="pl"/></l><r>tisores<s n="n"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>ciseau<s n="n"/><s n="m"/><s n="pl"/></l><r>estisores<s n="n"/><s n="m"/><s n="pl"/></r></p></e>
+<e><p><l>petit<b/>palais<s n="n"/><s n="m"/></l><r>palauet<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>feuilleton<b/>télévisé<s n="n"/><s n="m"/></l><r>telenovel·la<s n="n"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>têtes<b/>géantes<s n="n"/><s n="f"/><s n="pl"/></l><r>capgròs<s n="n"/><s n="m"/><s n="pl"/></r></p></e>
+<e><p><l>têtard<s n="n"/><s n="m"/></l><r>capgròs<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>exécuteur<b/>testamentaire<s n="n"/><s n="m"/></l><r>marmessor<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>vin<b/>blanc<s n="n"/><s n="m"/></l><r>vi<b/>blanc<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>vin<b/>rouge<s n="n"/><s n="m"/></l><r>vi<b/>negre<s n="n"/><s n="m"/></r></p></e>
 
   </section>
 </dictionary>

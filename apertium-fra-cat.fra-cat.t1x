@@ -8281,7 +8281,9 @@ is not applicable because gender and number cannot be taken from previous rules 
       <action>
         <out>
           <lu>
-            <lit v="el"/>
+            <get-case-from pos="1">
+              <lit v="el"/>
+            </get-case-from>
             <lit-tag v="det.def.m.sg"/>
           </lu>
           <b/>

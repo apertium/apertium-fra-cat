@@ -350,9 +350,9 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 #	} elsif ($par_fra eq 'admis_n' && $par_cat eq 'accionist/a__n') {
 #		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"mf\"/></l><r>%s<s n=\"n\"/><s n=\"mf\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'admis_n' && $par_cat eq 'angl/ès__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/>r>%s<s n=\"n\"/>/p><par n=\"anglais_anglès\"/></l><</e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"anglais_anglès\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'admis_n' && $par_cat eq 'senyor__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/>r>%s<s n=\"n\"/>/p><par n=\"anglais_anglès\"/></l><</e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"anglais_anglès\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif (($par_fra eq 'affecté__n'
 			|| $par_fra eq 'administrat/eur__n'
 			|| $par_fra eq 'ancien__n'
@@ -397,6 +397,8 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'fois__n' && $par_cat eq 'càries__n') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'personnel_n' && $par_cat eq 'atletisme__n') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"m\"/><s n=\"sg\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/><s n=\"sg\"/></r></p></e>\n", $stem_fra, $stem_cat;
 
 	} elsif ($par_fra eq 'BBVA__n' && $par_cat eq 'BBVA__n') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
