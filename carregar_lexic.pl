@@ -399,6 +399,10 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'personnel_n' && $par_cat eq 'atletisme__n') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"m\"/><s n=\"sg\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/><s n=\"sg\"/></r></p></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'vacances__n' && $par_cat eq 'afores__n') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/><s n=\"pl\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/><s n=\"pl\"/></r></p></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'vacances__n' && $par_cat eq 'escombraries__n') {
+		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/><s n=\"pl\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/><s n=\"pl\"/></r></p></e>\n", $stem_fra, $stem_cat;
 
 	} elsif ($par_fra eq 'BBVA__n' && $par_cat eq 'BBVA__n') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
