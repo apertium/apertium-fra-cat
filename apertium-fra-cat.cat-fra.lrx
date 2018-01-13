@@ -216,12 +216,12 @@
     <match lemma="tàctil" tags="adj.*"/>
   </rule>
 
-  <!-- cor >> coeur, choeur -->
+  <!-- cor >> cœur, chœur -->
   <rule weight="0.8">
-    <match lemma="cor" tags="n.*"><select lemma="coeur"/></match>
+    <match lemma="cor" tags="n.*"><select lemma="cœur"/></match>
   </rule>
   <rule weight="1.0">
-    <match lemma="cor" tags="n.*"><select lemma="choeur"/></match>
+    <match lemma="cor" tags="n.*"><select lemma="chœur"/></match>
     <or>
       <match lemma="infantil" tags="adj.*"/>
       <match lemma="masculí" tags="adj.*"/>
@@ -231,12 +231,12 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match lemma="cor" tags="n.*"><select lemma="choeur"/></match>
+    <match lemma="cor" tags="n.*"><select lemma="chœur"/></match>
     <match lemma="de" tags="pr"/>
     <or><match tags="np.top.*"/><match tags="np.loc"/></or>
   </rule>
   <rule weight="1.0">
-    <match lemma="cor" tags="n.*"><select lemma="choeur"/></match>
+    <match lemma="cor" tags="n.*"><select lemma="chœur"/></match>
     <match lemma="de" tags="pr"/>
     <or>
       <match lemma="església" tags="adj.*"/>
@@ -245,7 +245,7 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match lemma="cor" tags="n.*"><select lemma="choeur"/></match>
+    <match lemma="cor" tags="n.*"><select lemma="chœur"/></match>
     <match lemma="de" tags="pr"/>
     <match tags="det.*"/>
     <or>
@@ -256,23 +256,13 @@
   </rule>
   <rule weight="1.0">
     <match tags="num.*"/>
-    <match lemma="cor" tags="n.*"><select lemma="choeur"/></match>
+    <match lemma="cor" tags="n.*"><select lemma="chœur"/></match>
   </rule>
 
   <!-- vestit >> robe, costume -->
   <rule weight="0.8">
     <match lemma="vestit" tags="n.*"><select lemma="robe"/></match>
   </rule>
-
-  <!-- web >> web, internet -->
-<!--
-  <rule weight="0.8">
-    <match lemma="web" tags="n.*"><select lemma="web"/></match>
-  <rule weight="1.0">
-    <match lemma="lloc" tags="n.*"><select lemma="site"/></match>
-    <match lemma="web" tags="n.*"><select lemma="internet"/></match>
-  </rule>
--->
 
   <!-- volt >> robe, volt -->
   <rule weight="0.8">
@@ -289,7 +279,6 @@
       <match lemma="per" tags="pr"/>
     </or>
   </rule>
-
 
   <!-- policia >> police, policier -->
   <rule weight="0.8">
@@ -323,7 +312,7 @@
     <match lemma="mosso# d'esquadra" tags="n.m.pl"><select lemma="police"/></match>
   </rule>
 
-<!-- prova >> preuve, essai -->
+  <!-- prova >> preuve, essai -->
   <rule weight="0.8">
     <match lemma="prova" tags="n.*"><select lemma="preuve"/></match>
   </rule>
@@ -363,7 +352,7 @@
     </or>
   </rule>
 
-<!-- cap >> chef, tête, cap -->
+  <!-- cap >> chef, tête, cap -->
   <rule weight="0.8">
     <match lemma="cap" tags="n.*"><select lemma="chef"/></match>
   </rule>
@@ -389,6 +378,129 @@
       <match lemma="bou" tags="n.*"/>
       <match lemma="vaca" tags="n.*"/>
     </or>
+  </rule>
+
+  <!--
+  # molts cops, alguns cops
+  # cops forts, cop molt dur, cops al pit
+  -->
+
+  <!-- cop > coup, fois -->
+
+  <rule weight="0.6">
+     <match lemma="cop" tags="n.*"><select lemma="fois"/></match>
+  </rule>
+  <rule weight="1.0">
+     <match lemma="cop" tags="n.*"><select lemma="coup"/></match>
+     <match lemma="de" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+     <match lemma="cop" tags="n.*"><select lemma="coup"/></match>
+     <match lemma="a" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+     <match lemma="cop" tags="n.*"><select lemma="coup"/></match>
+     <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+     <match lemma="cop" tags="n.*"><select lemma="coup"/></match>
+     <match tags="adv"/>
+     <match tags="adj.*"/>
+  </rule>
+
+<!-- paper > papier, rôle -->
+
+  <rule weight="0.6">
+     <match lemma="paper" tags="n.*"><select lemma="papier"/></match>
+  </rule>
+  <rule weight="1.0">
+     <match lemma="paper" tags="n.*"><select lemma="rôle"/></match>
+     <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+     <match lemma="paper" tags="n.*"><select lemma="rôle"/></match>
+     <match tags="adv.*"/>
+     <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.2">
+     <match lemma="paper" tags="n.*"><select lemma="papier"/></match>
+     <or>
+       <match lemma="blanc" tags="adj.*"/>
+       <match lemma="groc" tags="adj.*"/>
+       <match lemma="blau" tags="adj.*"/>
+
+       <match lemma="gran" tags="adj.*"/>
+       <match lemma="petit" tags="adj.*"/>
+     </or>
+  </rule>
+  <rule weight="1.0">
+     <match tags="adj.*"/>
+     <match lemma="paper" tags="n.*"><select lemma="rôle"/></match>
+  </rule>
+  <rule weight="1.0">
+     <or>
+       <match lemma="tenir" tags="vblex.*"/>
+       <match lemma="fer" tags="vblex.*"/>
+       <match lemma="jugar" tags="vblex.*"/>
+
+       <match lemma="entendre" tags="vblex.*"/>
+       <match lemma="comprendre" tags="vblex.*"/>
+       <match lemma="saber" tags="vblex.*"/>
+       <match lemma="conèixer" tags="vblex.*"/>
+     </or>
+     <match tags="det.*"/>
+     <match lemma="paper" tags="n.*"><select lemma="rôle"/></match>
+  </rule>
+  <rule weight="1.0">
+     <match lemma="paper" tags="n.*"><select lemma="rôle"/></match>
+     <match lemma="de" tags="pr"/>
+  </rule>
+  <rule weight="1.2">
+     <match lemma="paper" tags="n.*"><select lemma="papier"/></match>
+     <match lemma="de" tags="pr"/>
+     <match lemma="estrassa" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+     <match lemma="paper" tags="n.*"><select lemma="rôle"/></match>
+     <match lemma="com"/>
+  </rule>
+
+<!-- recurs > ressource, recours -->
+
+  <rule weight="0.6">
+     <match lemma="recurs" tags="n.*"><select lemma="ressource"/></match>
+  </rule>
+  <rule weight="1.0">
+     <match lemma="recurs" tags="n.*"><select lemma="recours"/></match>
+     <match lemma="contra" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+     <match lemma="recurs" tags="n.*"><select lemma="recours"/></match>
+     <match lemma="de" tags="pr"/>
+     <or>
+       <match lemma="inconstitucionalitat" tags="n.*"/>
+       <match lemma="apel·lació" tags="n.*"/>
+       <match lemma="cassació" tags="n.*"/>
+       <match lemma="nul·litat" tags="n.*"/>
+       <match lemma="ampara" tags="n.*"/>
+     </or>
+  </rule>
+  <rule weight="1.0">
+     <or>
+       <match lemma="presentar" tags="vblex.*"/>
+       <match lemma="interposar" tags="vblex.*"/>
+       <match lemma="resoldre" tags="vblex.*"/>
+     </or>
+     <match tags="det.*"/>
+     <match lemma="recurs" tags="n.*"><select lemma="recours"/></match>
+  </rule>
+  <rule weight="1.0">
+     <or>
+       <match lemma="presentar" tags="vblex.*"/>
+       <match lemma="interposar" tags="vblex.*"/>
+       <match lemma="resoldre" tags="vblex.*"/>
+     </or>
+     <match lemma="recurs" tags="n.*"><select lemma="recours"/></match>
   </rule>
 
 </rules>

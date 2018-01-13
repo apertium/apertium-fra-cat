@@ -90,6 +90,11 @@
       <e r="RL"><p><l><s n="pl"/></l><r><s n="pl"/></r></p></e>
     </pardef>
 
+    <!-- això és pro forma perquè la traducció pugui competir per longitud amb altres traduccions possibles -->
+    <pardef n="sgpl_sgpl">
+      <e>       <p><l><s n="sg"/></l><r><s n="sg"/></r></p></e>
+      <e>       <p><l><s n="pl"/></l><r><s n="pl"/></r></p></e>
+    </pardef>
     <pardef n="mf_GD">
       <e r="LR"><p><l><s n="mf"/></l><r><s n="GD"/></r></p></e>
       <e r="RL"><p><l><s n="mf"/></l><r><s n="f"/></r></p></e>
@@ -241,6 +246,7 @@
     <e>       <p><l>aberrantement<s n="adv"/></l><r>aberrantment<s n="adv"/></r></p></e>
     <e>       <p><l>abertzale<s n="adj"/><s n="mf"/></l><r>abertzale<s n="adj"/><s n="mf"/></r></p></e>
     <e r="LR"><p><l>abîmer<s n="vblex"/></l>          <r>espatllar<s n="vblex"/></r></p></e>
+    <e r="LR"><p><l>abîmer<s n="vblex"/></l>          <r>fer<g><b/>malbé</g><s n="vblex"/></r></p></e>
     <e a="gema" r="RL"><p><l>à<b/>la<b/>fois<s n="adv"/></l><r>alhora<s n="adv"/></r></p></e>
     <e a="gema" r="LR"><p><l>à<b/>l'égard<b/>de<s n="pr"/></l><r>respecte<b/>a<s n="pr"/></r></p></e>
     <e a="u21941"><p><l>à<b/>l'encontre<s n="pr"/></l><r>en<b/>contra<b/>de<s n="pr"/></r></p></e>
@@ -3394,7 +3400,8 @@
     <e>       <p><l>couler<s n="vblex"/></l>          <r>fluir<s n="vblex"/></r></p></e>
     <e>       <p><l>couleur<s n="n"/><s n="f"/></l>   <r>color<s n="n"/><s n="m"/></r></p></e>
     <e>       <p><l>couloir<s n="n"/></l>             <r>passadís<s n="n"/></r></p></e>
-    <e>       <p><l>coup<s n="n"/></l>                <r>cop<s n="n"/></r></p></e>
+    <e>       <p><l>coup<s n="n"/><s n="m"/></l>      <r>cop<s n="n"/><s n="m"/></r></p><par n="sgpl_sgpl"/></e>
+    <e r="RL"><p><l>fois<s n="n"/><s n="f"/></l>      <r>cop<s n="n"/><s n="m"/></r></p><par n="sp_ND"/></e>
     <e a="gema"><p><l>coupable<s n="adj"/></l>        <r>culpable<s n="adj"/></r></p></e>
     <e r="LR"><p><l>coupant<s n="adj"/><s n="f"/></l> <r>tallant<s n="adj"/><s n="mf"/></r></p></e>
     <e r="LR"><p><l>coupant<s n="adj"/><s n="m"/></l> <r>tallant<s n="adj"/><s n="mf"/></r></p></e>
@@ -9274,6 +9281,8 @@
 <e r="LR"><p><l>paperassier<s n="n"/><s n="m"/></l><r>buròcrata<s n="n"/><s n="mf"/></r></p></e>
 <e r="RL"><p><l>paperassier<s n="n"/><s n="GD"/></l><r>buròcrata<s n="n"/><s n="mf"/></r></p></e>
 <e>       <p><l>papier<s n="n"/></l>              <r>paper<s n="n"/></r></p></e>
+<e>       <p><l>rôle<s n="n"/></l>                <r>paper<s n="n"/></r></p></e>
+<e r="RL"><p><l>rôle<s n="n"/></l>                <r>rol<s n="n"/></r></p></e>
 <e>       <p><l>papillon<s n="n"/><s n="m"/></l>  <r>papallona<s n="n"/><s n="f"/></r></p></e>
 <e r="LR"><p><l>papyrus<s n="n"/><s n="m"/><s n="sp"/></l><r>papir<s n="n"/><s n="m"/><s n="ND"/></r></p></e>
 <e r="RL"><p><l>papyrus<s n="n"/><s n="m"/><s n="sp"/></l><r>papir<s n="n"/><s n="m"/><s n="pl"/></r></p></e>
@@ -10804,9 +10813,8 @@
 <e>       <p><l>reconnaissance<s n="n"/><s n="f"/></l><r>reconeixement<s n="n"/><s n="m"/></r></p></e>
 <e>       <p><l>reconnaître<s n="vblex"/></l>     <r>reconèixer<s n="vblex"/></r></p></e>
 <e a="u21941"><p><l>record<s n="n"/></l>          <r>rècord<s n="n"/></r></p></e>
-<e a="gema" r="LR"><p><l>recours<s n="n"/><s n="m"/><s n="sp"/></l><r>recurs<s n="n"/><s n="m"/><s n="ND"/></r></p></e>
-<e a="gema" r="RL"><p><l>recours<s n="n"/><s n="m"/><s n="sp"/></l><r>recurs<s n="n"/><s n="m"/><s n="pl"/></r></p></e>
-<e a="gema" r="RL"><p><l>recours<s n="n"/><s n="m"/><s n="sp"/></l><r>recurs<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
+<e a="gema"><p><l>recours<s n="n"/><s n="m"/></l> <r>recurs<s n="n"/><s n="m"/></r></p><par n="sp_ND"/></e>
+<e a="hector"><p><l>ressource<s n="n"/><s n="f"/></l> <r>recurs<s n="n"/><s n="m"/></r></p><par n="sgpl_sgpl"/></e>
 <e>       <p><l>recouvrer<s n="vblex"/></l>       <r>recobrar<s n="vblex"/></r></p></e>
 <e>       <p><l>recouvrir<s n="vblex"/></l>       <r>recobrir<s n="vblex"/></r></p></e>
 <e>       <p><l>recruter<s n="vblex"/></l>        <r>reclutar<s n="vblex"/></r></p></e>
@@ -11321,7 +11329,6 @@
 <!--<e>       <p><l>Roig<s n="np"/></l><r>Roig<s n="np"/></r></p></e>-->
 <e a="gema"><p><l>Roland<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Roland<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
 <e>       <p><l>Roldán<s n="np"/><s n="cog"/></l><r>Roldán<s n="np"/><s n="cog"/></r></p></e>
-<e r="LR"><p><l>rôle<s n="n"/></l>                <r>paper<s n="n"/></r></p></e>
 <e>       <p><l>Rolling<s n="np"/></l><r>Rolling<s n="np"/></r></p></e>
 <e>       <p><l>romain<s n="adj"/></l>            <r>romà<s n="adj"/></r></p></e>
 <e>       <p><l>romain<s n="n"/><s n="m"/></l>              <r>romà<s n="n"/><s n="m"/></r></p></e>
@@ -12916,6 +12923,7 @@
     <e r="LR"><p><l>usager<s n="n"/></l>              <r>usuari<s n="n"/></r></p></e>
     <e>       <p><l>utilisation<s n="n"/></l>         <r>utilització<s n="n"/></r></p></e>
     <e>       <p><l>utiliser<s n="vblex"/></l>        <r>utilitzar<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>utiliser<s n="vblex"/></l>        <r>fer<g><b/>servir</g><s n="vblex"/></r></p></e>
     <e>       <p><l>utilité<s n="n"/></l>             <r>utilitat<s n="n"/></r></p></e>
     <e a="gema"><p><l>V<s n="num"/></l>               <r>V<s n="num"/></r></p></e>
     <e>       <p><l>vacances<s n="n"/></l><r>vacances<s n="n"/></r></p></e>
@@ -14199,7 +14207,6 @@
 <e><p><l>égout<s n="n"/><s n="m"/></l><r>embornal<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>éjaculation<s n="n"/><s n="f"/></l><r>ejaculació<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>élan<s n="n"/><s n="m"/></l><r>ímpetu<s n="n"/><s n="m"/></r></p></e>
-<e><p><l>election<s n="n"/><s n="f"/></l><r>elecció<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>électrification<s n="n"/><s n="f"/></l><r>electrificació<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>électrocution<s n="n"/><s n="f"/></l><r>electrocució<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>électroménager<s n="n"/><s n="m"/></l><r>electrodomèstic<s n="n"/><s n="m"/></r></p></e>
@@ -15908,9 +15915,8 @@
 <e><p><l>variété<s n="n"/><s n="f"/></l><r>varietat<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>vedette<s n="n"/><s n="f"/></l><r>estela<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>vedette<s n="n"/><s n="f"/></l><r>estrela<s n="n"/><s n="f"/></r></p></e>
-<e><p><l>vedette<s n="n"/><s n="f"/></l><r>estrella<s n="n"/><s n="f"/></r></p></e>
+<e r="LR"><p><l>vedette<s n="n"/><s n="f"/></l><r>estrella<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>végétal<s n="n"/><s n="m"/></l><r>vegetal<s n="n"/><s n="m"/></r></p></e>
-<e><p><l>velero<s n="n"/><s n="m"/></l><r>veler<s n="n"/><s n="m"/></r></p></e>
 <e r="LR"><p><l>vélocité<s n="n"/><s n="f"/></l><r>velocitat<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>vélodrome<s n="n"/><s n="m"/></l><r>velòdrom<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>Vénézuélien<s n="n"/></l><r>veneçolà<s n="n"/></r></p></e>
