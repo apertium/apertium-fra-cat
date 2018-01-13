@@ -7759,8 +7759,8 @@ is not applicable because gender and number cannot be taken from previous rules 
     </action>
 </rule>
 -->
-    <rule>
-<!--REGLA:  être en train de= estar ger -->
+
+    <rule comment="REGLA: être en train de = estar ger">
       <pattern>
         <pattern-item n="vbser"/>
         <pattern-item n="enprep"/>
@@ -7790,8 +7790,214 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!--REGLA: prep "en" + ger = ger  : "en chantant -> cantant -->
+    <rule comment="REGLA: prn être en train de = estar ger">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="enprep"/>
+        <pattern-item n="train"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="estar"/>
+            </get-case-from>
+            <lit-tag v="vblex"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="6" side="tl" part="lemh"/>
+            <clip pos="6" side="tl" part="a_verb"/>
+            <lit-tag v="ger"/>
+            <clip pos="6" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule comment="REGLA: prn être adv en train de = estar adv ger : il est toujours en train de manger > està sempre menjant">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="enprep"/>
+        <pattern-item n="train"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="estar"/>
+            </get-case-from>
+            <lit-tag v="vblex"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="6"/>
+          <lu>
+            <clip pos="7" side="tl" part="lemh"/>
+            <clip pos="7" side="tl" part="a_verb"/>
+            <lit-tag v="ger"/>
+            <clip pos="7" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule comment="REGLA: n'être pas en train de = no estar ger">
+      <pattern>
+        <pattern-item n="neadv"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="enprep"/>
+        <pattern-item n="train"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="estar"/>
+            </get-case-from>
+            <lit-tag v="vblex"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b pos="6"/>
+          <lu>
+            <clip pos="7" side="tl" part="lemh"/>
+            <clip pos="7" side="tl" part="a_verb"/>
+            <lit-tag v="ger"/>
+            <clip pos="7" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule comment="REGLA: prn n'être pas en train de = no estar ger">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="enprep"/>
+        <pattern-item n="train"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="estar"/>
+            </get-case-from>
+            <lit-tag v="vblex"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>
+          <b pos="7"/>
+          <lu>
+            <clip pos="8" side="tl" part="lemh"/>
+            <clip pos="8" side="tl" part="a_verb"/>
+            <lit-tag v="ger"/>
+            <clip pos="8" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule comment="REGLA: prn n'être adv en train de = no estar adv ger">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="enprep"/>
+        <pattern-item n="train"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="estar"/>
+            </get-case-from>
+            <lit-tag v="vblex"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b pos="7"/>
+          <lu>
+            <clip pos="8" side="tl" part="lemh"/>
+            <clip pos="8" side="tl" part="a_verb"/>
+            <lit-tag v="ger"/>
+            <clip pos="8" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule comment="REGLA: prep 'en' + ger = ger : en chantant -> cantant">
       <pattern>
         <pattern-item n="en"/>
         <pattern-item n="ger"/>

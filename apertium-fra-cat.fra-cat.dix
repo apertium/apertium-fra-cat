@@ -5932,9 +5932,11 @@
 <e r="RL"><p><l>gaz<s n="n"/><s n="m"/><s n="sp"/></l><r>gas<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
 <e>       <p><l>gaze<s n="n"/></l>                <r>gasa<s n="n"/></r></p></e>
 <e>       <p><l>gazette<s n="n"/></l>             <r>gaceta<s n="n"/></r></p></e>
+<e>       <p><l>supergéant<s n="adj"/></l>        <r>supergegant<s n="adj"/></r></p><par n="GD_mf"/></e>
 <e>       <p><l>géant<s n="adj"/></l>             <r>gegant<s n="adj"/></r></p></e>
 <e>       <p><l>géant<s n="n"/></l>               <r>gegant<s n="n"/></r></p></e>
 <e>       <p><l>geler<s n="vblex"/></l>           <r>congelar<s n="vblex"/></r></p></e>
+<e>       <p><l>congeler<s n="vblex"/></l>        <r>congelar<s n="vblex"/></r></p></e>
 <e>       <p><l>Gema<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></l><r>Gema<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></r></p></e>
 <e>       <p><l>Gemma<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></l><r>Gemma<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></r></p></e>
 <e>       <p><l>gênant<s n="adj"/></l>            <r>incòmode<s n="adj"/></r></p></e>
@@ -21954,7 +21956,7 @@
 <e r="RL"><p><l>inclusif<s n="adj"/></l><r>incloent<s n="adj"/></r></p><par n="GD_mf"/></e>
 <e r="RL"><p><l>informatique<s n="adj"/></l><r>computacional<s n="adj"/></r></p></e>
 <e r="RL"><p><l>inverse<s n="adj"/></l><r>invers<s n="adj"/></r></p><par n="mf_GD"/></e>
-<e r="RL"><p><l>magnifique<s n="adj"/></l><r>estel·lar<s n="adj"/></r></p></e>
+<e i="yes"><p><l>magnifique<s n="adj"/></l><r>estel·lar<s n="adj"/></r></p></e>
 <e r="RL"><p><l>majestueux<s n="adj"/></l><r>senyorial<s n="adj"/></r></p><par n="anglais_esquimal"/></e>
 <e r="RL"><p><l>mauvais<s n="adj"/></l><r>mal<s n="adj"/></r></p><par n="anglais_anglès"/></e>
 <e r="RL"><p><l>naissant<s n="adj"/></l><r>incipient<s n="adj"/></r></p><par n="GD_mf"/></e>
@@ -22188,7 +22190,8 @@
 <e>       <p><l>Saint-Empire<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Sacre<b/>Imperi<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
 <e a="JL"><p><l>art<b/>oratoire<s n="n"/><s n="m"/></l><r>oratòria<s n="n"/><s n="f"/></r></p></e>
 <e a="JL"><p><l>petite<b/>place<s n="n"/><s n="f"/></l><r>placeta<s n="n"/><s n="f"/></r></p></e>
-<e a="JL"><p><l>ordre<b/>sacerdotal<s n="n"/><s n="m"/></l><r>orde<b/>sacerdotal<s n="n"/><s n="m"/></r></p></e>
+<e a="JL"><p><l>ordre<b/>sacerdotal<s n="n"/><s n="m"/></l><r>orde<g><b/>sacerdotal</g><s n="n"/><s n="m"/></r></p></e>
+<e a="JL"><p><l>ordre<b/>franciscain<s n="n"/><s n="m"/></l><r>orde<g><b/>franciscà</g><s n="n"/><s n="m"/></r></p></e>
 <e r="LR"><p><l>outre-Manche<s n="adv"/></l><r>més<b/>enllà<b/>de<b/>la<b/>Mànega<s n="adv"/></r></p></e>
 <e r="LR"><p><l>outre-Atlantique<s n="adv"/></l><r>més<b/>enllà<b/>de<b/>l'Atlàntic<s n="adv"/></r></p></e>
 <e a="JL"><p><l>béton<b/>armé<s n="n"/><s n="m"/></l><r>formigó<b/>armat<s n="n"/><s n="m"/></r></p></e>
@@ -22218,6 +22221,36 @@
 <e a="JL"><p><l>latifundium<s n="n"/><s n="m"/></l><r>latifundi<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>athénien<s n="adj"/></l><r>athénien<s n="adj"/></r></p></e>
 <e><p><l>Athénien<s n="n"/></l><r>athénien<s n="n"/></r></p></e>
+<e a="JL"><p><l>retrouvaille<s n="n"/><s n="f"/></l><r>retrobament<s n="n"/><s n="m"/></r></p><par n="pl_ND"/></e>
+<e a="JL"><p><l>garde<b/>forestier<s n="n"/><s n="m"/></l><r>forestal<s n="n"/><s n="mf"/></r></p></e>
+<e><p><l>Congolais<s n="n"/></l><r>congolès<s n="n"/></r></p></e>
+<e><p><l>piémontais<s n="n"/></l><r>piemontès<s n="n"/></r></p></e>
+<e><p><l>Lusitanien<s n="n"/></l><r>lusità<s n="n"/></r></p></e>
+<e r="RL" a="JL"><p><l>arbre<s n="n"/><s n="f"/></l><r>arbrat<s n="n"/><s n="m"/></r></p><par n="pl_ND"/></e>
+<e><p><l>Noël<s n="n"/><s n="m"/></l><r>nadal<s n="n"/><s n="m"/></r></p><par n="sp_ND"/></e>
+<e a="JL"><p><l>décret<b/>royal<s n="n"/><s n="m"/></l><r>reial<b/>decret<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>déclancher<s n="vblex"/></l><r>desencadenar<s n="vblex"/></r></p></e>
+<e r="LR"><p><l>déchaîner<s n="vblex"/></l><r>desencadenar<s n="vblex"/></r></p></e>
+<e r="LR"><p><l>désenchaîner<s n="vblex"/></l><r>desencadenar<s n="vblex"/></r></p></e>
+<e><p><l>en<b/>voiture<s n="adv"/></l><r>en<b/>cotxe<s n="adv"/></r></p></e>
+<e r="RL"><p><l>en<b/>voiture<s n="adv"/></l><r>amb<b/>cotxe<s n="adv"/></r></p></e>
+<e r="LR"><p><l>en<b/>auto<s n="adv"/></l><r>en<b/>cotxe<s n="adv"/></r></p></e>
+<e><p><l>en<b/>métro<s n="adv"/></l><r>en<b/>metro<s n="adv"/></r></p></e>
+<e r="RL"><p><l>en<b/>métro<s n="adv"/></l><r>amb<b/>metro<s n="adv"/></r></p></e>
+<e><p><l>en<b/>bus<s n="adv"/></l><r>en<b/>autobús<s n="adv"/></r></p></e>
+<e r="RL"><p><l>en<b/>bus<s n="adv"/></l><r>amb<b/>autobús<s n="adv"/></r></p></e>
+<e r="RL"><p><l>en<b/>train<s n="adv"/></l><r>en<b/>tren<s n="adv"/></r></p></e>
+<e r="RL"><p><l>en<b/>train<s n="adv"/></l><r>amb<b/>tren<s n="adv"/></r></p></e>
+<e><p><l>en<b/>avion<s n="adv"/></l><r>en<b/>avió<s n="adv"/></r></p></e>
+<e r="RL"><p><l>en<b/>avion<s n="adv"/></l><r>amb<b/>avió<s n="adv"/></r></p></e>
+<e><p><l>en<b/>bateau<s n="adv"/></l><r>en<b/>vaixell<s n="adv"/></r></p></e>
+<e r="RL"><p><l>en<b/>bateau<s n="adv"/></l><r>amb<b/>vaixell<s n="adv"/></r></p></e>
+<e><p><l>en<b/>voiture<s n="adv"/></l><r>en<b/>cotxe<s n="adv"/></r></p></e>
+<e r="RL"><p><l>en<b/>voiture<s n="adv"/></l><r>amb<b/>cotxe<s n="adv"/></r></p></e>
+<e><p><l>en<b/>vélo<s n="adv"/></l><r>en<b/>bicicleta<s n="adv"/></r></p></e>
+<e r="RL"><p><l>en<b/>vélo<s n="adv"/></l><r>amb<b/>bicicleta<s n="adv"/></r></p></e>
+<e r="RL"><p><l>en<b/>vélo<s n="adv"/></l><r>en<b/>bici<s n="adv"/></r></p></e>
+<e r="RL"><p><l>en<b/>vélo<s n="adv"/></l><r>amb<b/>bici<s n="adv"/></r></p></e>
 
   </section>
 </dictionary>

@@ -205,6 +205,18 @@
     <or><match tags="cm"/><match tags="sent"/></or>
   </rule>
 
+<!-- V -->
+
+  <!-- congelar >> congeler, geler -->
+  <rule weight="0.8">
+    <match lemma="congelar" tags="n.*"><select lemma="congeler"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="congelar" tags="n.*"><select lemma="geler"/></match>
+    <match tags="det.*"/>
+    <match lemma="negociació" tags="n.*"/>
+  </rule>
+
 <!-- N -->
 
   <!-- tauleta >> petite table, tablette -->
