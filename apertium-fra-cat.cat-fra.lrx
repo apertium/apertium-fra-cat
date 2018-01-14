@@ -209,12 +209,25 @@
 
   <!-- congelar >> congeler, geler -->
   <rule weight="0.8">
-    <match lemma="congelar" tags="n.*"><select lemma="congeler"/></match>
+    <match lemma="congelar" tags="vblex.*"><select lemma="congeler"/></match>
   </rule>
   <rule weight="1.0">
-    <match lemma="congelar" tags="n.*"><select lemma="geler"/></match>
+    <match lemma="congelar" tags="vblex.*"><select lemma="geler"/></match>
     <match tags="det.*"/>
     <match lemma="negociació" tags="n.*"/>
+  </rule>
+
+  <!-- il·lusionar >> donner# des espoirs, illusionner -->
+  <rule weight="0.8">
+    <match lemma="il·lusionar" tags="vblex.*"><select lemma="donner# des espoirs"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.ref.*"/>
+    <match lemma="il·lusionar" tags="vblex.*"><select lemma="illusionner"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="il·lusionar" tags="vblex.*"><select lemma="illusionner"/></match>
+    <match tags="prn.enc.ref.*"/>
   </rule>
 
 <!-- N -->
@@ -226,6 +239,15 @@
   <rule weight="1.0">
     <match lemma="tauleta" tags="n.*"><select lemma="tablette"/></match>
     <match lemma="tàctil" tags="adj.*"/>
+  </rule>
+
+  <!-- grafit >> graffiti, graphite -->
+  <rule weight="0.8">
+    <match lemma="grafit" tags="n.*"><select lemma="graffiti"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="de" tags="pr"/>
+    <match lemma="grafit" tags="n.*"><select lemma="graphite"/></match>
   </rule>
 
   <!-- cor >> cœur, chœur -->
