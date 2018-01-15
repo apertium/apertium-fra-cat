@@ -19,7 +19,9 @@ my $MOT = 'convertir';	# paraula a debugar
 my $MOT = 'rus';	# paraula a debugar
 my $MOT = 'fusil';	# paraula a debugar
 my $MOT = 'UICN';	# paraula a debugar
-my $MOT = '';
+my $MOT = 'nombre premier';	# paraula a debugar
+#my $MOT = 'nombre primer';	# paraula a debugar
+#my $MOT = '';
 
 my $MORF_TRACT = 'n';
 #my $MORF_TRACT = '';
@@ -163,7 +165,7 @@ print "4. fitxer $nfitx r_struct->{$MORF_TRACT}{$MOT} = $r_struct->{$MORF_TRACT}
 
 # llegeixo el fitxer bilingüe: n, adj, adv, abbr
 sub llegir_bidix {
-	my ($fitx, $r_struct_lr, $r_struct_rl) = @_;
+	my ($fitx, $r_struct_rl, $r_struct_lr) = @_;
 	my ($lemma_cat, $lemma_fra, $morf, $morf2, $dir);
 
 #       <e><p><l>derrota<s n="n"/><s n="f"/></l><r>derrota<s n="n"/><s n="f"/></r></p></e>
@@ -214,7 +216,8 @@ print "1. fitxer bidix, $linia\n" if $MOT && $linia =~ /$MOT/o;
 next if $morf ne $MORF_TRACT;
 
 		# en el cas de n i np busco el segon membre de la definició morfològica
-		if ($morf eq 'n' || $morf eq 'np') {
+#		if ($morf eq 'n' || $morf eq 'np') {
+		if ($morf eq 'np') {
 			if ($linia =~ m|<e> *<p><l>([^<]*)<s n="([^"]*)".><s n="([^"]*)".>.*<r>([^<]*)<s|o) {
 				$lemma_cat = $1;
 				$morf = $2 . $3;
@@ -230,10 +233,10 @@ next if $morf ne $MORF_TRACT;
 
 print "3. fitxer bidix, $linia, morf=$morf\n" if $MOT && $linia =~ /$MOT/o;
 
-		push @{$r_struct_lr->{$morf}{$lemma_fra}}, $lemma_cat if $dir eq 'bi' || $dir eq 'lr';
-		push @{$r_struct_rl->{$morf}{$lemma_cat}}, $lemma_fra if $dir eq 'bi' || $dir eq 'rl';
-print "r_struct_lr->{$morf}{$lemma_fra}[$#{$r_struct_lr->{$morf}{$lemma_fra}}] = $r_struct_lr->{$morf}{$lemma_fra}[$#{$r_struct_lr->{$morf}{$lemma_fra}}]\n" if $MOT && $lemma_fra =~ /$MOT/o;
-print "r_struct_rl->{$morf}{$lemma_cat}[$#{$r_struct_rl->{$morf}{$lemma_cat}}] = $r_struct_rl->{$morf}{$lemma_cat}[$#{$r_struct_rl->{$morf}{$lemma_cat}}]\n" if $MOT && $lemma_cat =~ /$MOT/o;
+		push @{$r_struct_rl->{$morf}{$lemma_fra}}, $lemma_cat if $dir eq 'bi' || $dir eq 'rl';
+		push @{$r_struct_lr->{$morf}{$lemma_cat}}, $lemma_fra if $dir eq 'bi' || $dir eq 'lr';
+print "r_struct_rl->{$morf}{$lemma_fra}[$#{$r_struct_rl->{$morf}{$lemma_fra}}] = $r_struct_rl->{$morf}{$lemma_fra}[$#{$r_struct_rl->{$morf}{$lemma_fra}}]\n" if $MOT && $lemma_fra =~ /$MOT/o;
+print "r_struct_lr->{$morf}{$lemma_cat}[$#{$r_struct_lr->{$morf}{$lemma_cat}}] = $r_struct_lr->{$morf}{$lemma_cat}[$#{$r_struct_lr->{$morf}{$lemma_cat}}]\n" if $MOT && $lemma_cat =~ /$MOT/o;
 	}
 }
 
@@ -787,12 +790,11 @@ print STDERR "3. escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $
 				return;
 			} else {
 				print STDERR "3. Falta fra $lemma_fra <$morf_fra> (2), l. $n_linia\n";
+print "dix_fra_cat{$morf_fra}{$lemma_fra} =  $dix_fra_cat{$morf_fra}{$lemma_fra}\n" if $lemma_fra eq $MOT;
 				return;
 			}
 		}
 	}
-
-
 }
 
 llegir_dix('fra', $fdixfra, \%dix_fra, \%dix_fra_prm);
@@ -805,7 +807,8 @@ llegir_dix_ortola('fra', $fdixfraadj, \%dix_fraadj, \%dix_fraadj_def) if $MORF_T
 print "4. nfitx = fra dix_fraadj{$MORF_TRACT}{$MOT} = $dix_fraadj{$MORF_TRACT}{$MOT}\n";
 llegir_bidix($fdixbi, \%dix_fra_cat, \%dix_cat_fra);
 #print "5. dix_cat_fra{$MORF_TRACT}{$MOT}[0] = $dix_cat_fra{$MORF_TRACT}{$MOT}[0]\n"; COMPTE! No descomentar pqè crea l'entrada i crear pbs amb els exists posteriors
-#print "5. dix_fra_cat{$MORF_TRACT}{$MOT}[0] = $dix_fra_cat{$MORF_TRACT}{$MOT}[0]\n"; COMPTE! No descomentar pqè crea l'entrada i crear pbs amb els exists posteriors
+#print "5. dix_fra_cat{$MORF_TRACT}{$MOT}[0] = $dix_fra_cat{$MORF_TRACT}{$MOT}[0]\n"; # COMPTE! No descomentar pqè crea l'entrada i crear pbs amb els exists posteriors
+#print "6. dix_fra_cat{$MORF_TRACT}{$MOT} = $dix_fra_cat{$MORF_TRACT}{$MOT}\n";
 
 <STDIN>;	# saltem la primera línia
 my ($stem_cat, $stem_fra, $gen_cat, $gen_fra, $num_cat, $num_fra, $lemma_cat, $lemma_fra, $lemma_cat_ini, $lemma_fra_ini);

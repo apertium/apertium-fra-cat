@@ -5370,7 +5370,8 @@
 <e>       <p><l>facilement<s n="adv"/></l>        <r>fàcilment<s n="adv"/></r></p></e>
 <e>       <p><l>faciliter<s n="vblex"/></l>       <r>facilitar<s n="vblex"/></r></p></e>
 <e>       <p><l>façon<s n="n"/></l>               <r>manera<s n="n"/></r></p></e>
-<e r="RL"><p><l>facteur<s n="n"/><s n="m"/></l>  <r>carter<s n="n"/><s n="m"/></r></p></e>
+<e r="RL"><p><l>facteur<s n="n"/><s n="m"/></l>   <r>carter<s n="n"/><s n="m"/></r></p></e>
+<e>       <p><l>cartable<s n="n"/><s n="m"/></l>  <r>cartera<s n="n"/><s n="f"/></r></p></e>
 <e>       <p><l>facteur<s n="n"/><s n="m"/></l>   <r>factor<s n="n"/><s n="m"/></r></p></e>
 <e a="ariel"><p><l>facture<s n="n"/></l>          <r>factura<s n="n"/></r></p></e>
 <e>       <p><l>facturer<s n="vblex"/></l>        <r>facturar<s n="vblex"/></r></p></e>
@@ -10326,6 +10327,7 @@
 <e>       <p><l>prisme<s n="n"/></l>              <r>prisma<s n="n"/></r></p></e>
 <e>       <p><l>prison<s n="n"/></l>              <r>presó<s n="n"/></r></p></e>
 <e>       <p><l>prisonnier<s n="n"/></l>          <r>presoner<s n="n"/></r></p></e>
+<e r="RL"><p><l>prisonnier<s n="n"/></l>          <r>pres<s n="n"/></r></p></e>
 <e>       <p><l>privation<s n="n"/></l>           <r>privació<s n="n"/></r></p></e>
 <e a="u21941"><p><l>privatisation<s n="n"/></l>   <r>privatització<s n="n"/></r></p></e>
 <e>       <p><l>privé<s n="adj"/></l>             <r>privat<s n="adj"/></r></p></e>
@@ -14464,7 +14466,7 @@
 <e><p><l>gérance<s n="n"/><s n="f"/></l><r>gerència<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>gestation<s n="n"/><s n="f"/></l><r>gestació<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>gesticulation<s n="n"/><s n="f"/></l><r>gesticulació<s n="n"/><s n="f"/></r></p></e>
-<e><p><l>gitan<s n="n"/><s n="m"/></l><r>gitano<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>gitan<s n="n"/></l><r>gitano<s n="n"/></r></p></e>
 <e><p><l>glaciation<s n="n"/><s n="f"/></l><r>glaciació<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>globalité<s n="n"/><s n="f"/></l><r>globalitat<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>globule<s n="n"/><s n="m"/></l><r>glòbul<s n="n"/><s n="m"/></r></p></e>
@@ -22181,6 +22183,8 @@
 <e><p><l>baléare<s n="adj"/></l><r>balear<s n="adj"/></r></p></e>
 <e><p><l>Baléare<s n="n"/></l><r>balear<s n="n"/></r></p></e>
 <e><p><l>carte<b/>postale<s n="n"/><s n="f"/></l><r>postal<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>Aztèque<s n="n"/></l><r>asteca<s n="n"/></r></p></e>
+<e><p><l>aztèque<s n="adj"/></l><r>asteca<s n="adj"/></r></p></e>
 <e><p><l>Inca<s n="n"/></l><r>inca<s n="n"/></r></p></e>
 <e><p><l>inca<s n="adj"/></l><r>inca<s n="adj"/></r></p></e>
 <e><p><l>Maya<s n="n"/></l><r>maia<s n="n"/></r></p></e>
@@ -22269,11 +22273,31 @@
 <e r="RL" a="hector"><p><l>sans<b/>protection<s n="adj"/></l><r>desprotegit<s n="adj"/></r></p><par n="sp_ND"/><par n="mf_GD"/><par n="sp_ND"/></e>
 <e a="ester"><p><l>trésor<b/>public<s n="n"/><s n="m"/></l><r>erari<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>DVD<s n="n"/><s n="acr"/></l><r>DVD<s n="n"/><s n="acr"/></r></p></e>
+<e><p><l>IBM<s n="n"/><s n="acr"/></l><r>IBM<s n="n"/><s n="acr"/></r></p></e>
+<e><p><l>PSC<s n="n"/><s n="acr"/></l><r>PSC<s n="n"/><s n="acr"/></r></p></e>
+<e><p><l>DJ<s n="n"/><s n="acr"/></l><r>DJ<s n="n"/><s n="acr"/></r></p></e>
+<e><p><l>WWF<s n="n"/><s n="acr"/></l><r>WWF<s n="n"/><s n="acr"/></r></p></e>
 <e><p><l>Cantabre<s n="n"/></l><r>càntabre<s n="n"/></r></p></e>
 <e><p><l>cantabre<s n="adj"/></l><r>càntabre<s n="adj"/></r></p></e>
 <e><p><l>repopulateur<s n="n"/></l><r>repoblador<s n="n"/></r></p></e>
 <e><p><l>repopulateur<s n="adj"/></l><r>repoblador<s n="adj"/></r></p></e>
 <e><p><l>orangé<s n="adj"/></l><r>ataronjat<s n="adj"/></r></p></e>
+<e r="RL"><p><l>terre<b/>aride<s n="n"/><s n="f"/></l><r>secà<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>être<b/>vivant<s n="n"/><s n="m"/></l><r>ésser<b/>viu<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="JL"><p><l>endroit<b/>insoleillé<s n="n"/><s n="m"/></l><r>solana<s n="n"/><s n="f"/></r></p></e>
+<e r="LR" a="JL"><p><l>véranda<s n="n"/><s n="m"/></l><r>solana<s n="n"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>personne<b/>âgée<s n="n"/><s n="m"/><s n="pl"/></l><r>gent<b/>gran<s n="n"/><s n="f"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>jeune<b/>homme<s n="n"/><s n="m"/></l><r>senyoret<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>mademoiselle<s n="n"/><s n="f"/></l><r>senyoret<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>maîtresse<g><b/>de<b/>maison</g><s n="n"/><s n="f"/></l><r>mestressa<g><b/>de<b/>casa</g><s n="n"/><s n="f"/></r></p></e>
+<e r="LR"><p><l>salaud<s n="adj"/></l><r>cabró<s n="adj"/></r></p></e>
+<e r="LR"><p><l>salaud<s n="n"/></l><r>cabró<s n="n"/></r></p></e>
+<e r="RL"><p><l>connard<s n="adj"/></l><r>cabró<s n="adj"/></r></p></e>
+<e><p><l>connard<s n="n"/></l><r>cabró<s n="n"/></r></p></e>
+<e><p><l>connard<s n="n"/></l><r>malparit<s n="n"/></r></p></e>
+<e><p><l>s'il<b/>vous<b/>plaît<s n="ij"/></l><r>si<b/>us<b/>plau<s n="ij"/></r></p></e>
+<e r="RL"><p><l>s'il<b/>vous<b/>plaît<s n="ij"/></l><r>sisplau<s n="ij"/></r></p></e>
+
 
   </section>
 </dictionary>
