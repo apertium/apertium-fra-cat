@@ -114,6 +114,27 @@
 
 <!-- **************** N **************** -->
 
+  <!-- monde >> món, gent -->
+  <rule weight="0.8">
+    <match lemma="monde" tags="n.*"><select lemma="món"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="beaucoup de" tags="adj.*"/>
+      <match lemma="peu de" tags="adj.*"/>
+    </or>
+    <match lemma="monde" tags="n.*"><select lemma="gent"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="beaucoup"/>
+      <match lemma="peu"/>
+      <match lemma="guère"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <match lemma="monde" tags="n.*"><select lemma="gent"/></match>
+  </rule>
+
   <!-- emploi >> ús, ocupació -->
   <rule weight="0.8">
     <match lemma="emploi" tags="n.*"><select lemma="ús"/></match>

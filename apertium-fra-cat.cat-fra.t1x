@@ -554,6 +554,39 @@
       <list-item v="novembre"/>
       <list-item v="desembre"/>
     </def-list>
+    <def-list n="pr_de">
+      <list-item v="de"/>
+      <list-item v="afin de"/>
+      <list-item v="à l'encontre de"/>
+      <list-item v="à l'exception de"/>
+      <list-item v="à l'instar de"/>
+      <list-item v="à l'occasion de"/>
+      <list-item v="à l'égard de"/>
+      <list-item v="à moins de"/>
+      <list-item v="à propos de"/>
+      <list-item v="à partir de"/>
+      <list-item v="à proximité de"/>
+      <list-item v="au-delà de"/>
+      <list-item v="au bout de"/>
+      <list-item v="au cours de"/>
+      <list-item v="au delà de"/>
+      <list-item v="au dire de"/>
+      <list-item v="au gré de"/>
+      <list-item v="au milieu de"/>
+      <list-item v="au profit de"/>
+      <list-item v="au prétexte de"/>
+      <list-item v="au sujet de"/>
+      <list-item v="dans bien de"/>
+      <list-item v="dans le cadre de"/>
+      <list-item v="en cas de"/>
+      <list-item v="en plus de"/>
+      <list-item v="en raison de"/>
+      <list-item v="en échange de"/>
+      <list-item v="lors de"/>
+      <list-item v="par l'intermédiaire de"/>
+      <list-item v="pour ce qui est de"/>
+      <list-item v="sur la rêquete de"/>
+    </def-list>
     
     
 	<def-list n="part_sing">
@@ -4987,17 +5020,16 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
     
-     <rule>
-<!--REGLA: prep + nom -->
+     <rule comment="REGLA: prep + nom">
       <pattern>
         <pattern-item n="prep"/>
-<pattern-item n="nom"/>
+	<pattern-item n="nom"/>
       </pattern>
       <action>
-<call-macro n="f_concord1">
+	<call-macro n="f_concord1">
           <with-param pos="2"/>
         </call-macro>  
-<call-macro n="f_setgen">
+	<call-macro n="f_setgen">
           <with-param pos="2"/>
         </call-macro>
       <choose>
@@ -5014,28 +5046,28 @@ is not applicable because gender and number can not be taken from previous rules
           </let>
         </when>
       </choose>
-<choose>
+	<choose>
           <when>
           <test>
-    <and>
-      <not>
-                <equal>
-                  <clip pos="1" side="sl" part="lem"/>
-                  <lit v="de"/>
-                </equal>
-       </not>
-                <equal>
-                  <clip pos="2" side="sl" part="nbr"/>
-                  <lit-tag v="pl"/>
-                </equal>
-    </and>    
+	    <and>
+	      <not>
+	        <in caseless="yes">
+		 <clip pos="1" side="tl" part="lem"/>
+		 <list n="pr_de"/>
+		</in>
+	      </not>
+              <equal>
+                <clip pos="2" side="sl" part="nbr"/>
+                <lit-tag v="pl"/>
+              </equal>
+	    </and>    
             </test>
             <out>
               <lu>
                 <clip pos="1" side="tl" part="whole"/>
               </lu>
-      <b pos="1"/>
-      <lu>
+	      <b pos="1"/>
+	      <lu>
                 <lit v="de"/>
                 <lit-tag v="pr"/>
               </lu>
