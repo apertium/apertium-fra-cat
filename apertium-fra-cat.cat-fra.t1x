@@ -282,7 +282,7 @@
       <cat-item lemma="meridional" tags="n.*"/>
     </def-cat>
   </section-def-cats>
-  
+
   <section-def-attrs>
     <def-attr n="a_nom">
       <attr-item tags="n"/>
@@ -309,7 +309,7 @@
       <attr-item tags="predet"/>
     </def-attr>
     <def-attr n="a_adjec">
-      <attr-item tags="adj.ind"/>     
+      <attr-item tags="adj.ind"/>
       <attr-item tags="adj.itg"/>
       <attr-item tags="adj.pos"/>
       <attr-item tags="adj"/>
@@ -441,7 +441,7 @@
       <attr-item tags="imp"/>
     </def-attr>
   </section-def-attrs>
-  
+
   <section-def-vars>
     <def-var n="uno"/>
     <def-var n="genero"/>
@@ -454,6 +454,7 @@
     <def-var n="interrogativa"/>
     <def-var n="exclamativa"/>
   </section-def-vars>
+
   <section-def-lists>
     <def-list n="verbs_moviment">
       <list-item v="anar"/>
@@ -480,6 +481,7 @@
       <list-item v="arribar"/>
       <list-item v="marxar"/>
     </def-list>
+
     <def-list n="verbs_estat">
       <list-item v="conviure"/>
       <list-item v="viure"/>
@@ -519,11 +521,12 @@
       <list-item v="ubicar"/>
       <list-item v="estudiar"/>
     </def-list>
+
     <def-list n="vbambser">
       <list-item v="anar"/>
-      <list-item v="tornar"/>      
+      <list-item v="tornar"/>
       <list-item v="venir"/>
-      <list-item v="vindre"/>      
+      <list-item v="vindre"/>
       <list-item v="arribar"/>
       <list-item v="partir"/>
       <list-item v="néixer"/>
@@ -540,6 +543,7 @@
       <list-item v="esdevenir"/>
       <list-item v="enamorar"/> <!-- tomber amoureux -->
     </def-list>
+
     <def-list n="mesos">
       <list-item v="gener"/>
       <list-item v="febrer"/>
@@ -553,6 +557,102 @@
       <list-item v="octubre"/>
       <list-item v="novembre"/>
       <list-item v="desembre"/>
+    </def-list>
+
+    <def-list n="lang_dial">
+      <list-item v="latin"/>
+      <list-item v="gaulois"/>
+      <list-item v="portugais"/>
+      <list-item v="espagnol"/>
+      <list-item v="catalan"/>
+      <list-item v="valencien"/>
+      <list-item v="majorquin"/>
+      <list-item v="minorquin"/>
+      <list-item v="baléare"/>
+      <list-item v="aragonais"/>
+      <list-item v="asturien"/>
+      <list-item v="basque"/>
+      <list-item v="castillan"/>
+      <list-item v="espagnol"/>
+      <list-item v="andaloux"/>
+      <list-item v="français"/>
+      <list-item v="breton"/>
+      <list-item v="normand"/>
+      <list-item v="occitan"/>
+      <list-item v="aranais"/>
+      <list-item v="auvergnat"/>
+      <list-item v="limousin"/>
+      <list-item v="gascon"/>
+      <list-item v="provençal"/>
+      <list-item v="anglais"/>
+      <list-item v="écossais"/>
+      <list-item v="gallois"/>
+      <list-item v="irlandais"/>
+      <list-item v="wallon"/>
+      <list-item v="picard"/>
+      <list-item v="flamand"/>
+      <list-item v="hollandais"/>
+      <list-item v="allemand"/>
+      <list-item v="danois"/>
+      <list-item v="islandais"/>
+      <list-item v="norvégien"/>
+      <list-item v="suédois"/>
+      <list-item v="finlandais"/>
+      <list-item v="russe"/>
+      <list-item v="tchétchène"/>
+      <list-item v="tchouvache"/>
+      <list-item v="tatare"/>
+      <list-item v="bachkir"/>
+      <list-item v="yakoute"/>
+      <list-item v="estonien"/>
+      <list-item v="letton"/>
+      <list-item v="lithuanien"/>
+      <list-item v="polonais"/>
+      <list-item v="tchèque"/>
+      <list-item v="slovake"/>
+      <list-item v="hongrois"/>
+      <list-item v="italien"/>
+      <list-item v="sarde"/>
+      <list-item v="sicilien"/>
+      <list-item v="maltais"/>
+      <list-item v="slovène"/>
+      <list-item v="croate"/>
+      <list-item v="serbe"/>
+      <list-item v="bosnien"/>
+      <list-item v="monténégrin"/>
+      <list-item v="macédoinien"/>
+      <list-item v="roumain"/>
+      <list-item v="bulgare"/>
+      <list-item v="grec"/>
+      <list-item v="ukrainien"/>
+      <list-item v="biélorusse"/>
+      <list-item v="moldave"/>
+      <list-item v="turc"/>
+      <list-item v="kurde"/>
+      <list-item v="arménien"/>
+      <list-item v="géorgien"/>
+      <list-item v="azerbaïdjanais"/>
+      <list-item v="kazakh"/>
+      <list-item v="turkmène"/>
+      <list-item v="ouzbek"/>
+      <list-item v="kirghiz"/>
+      <list-item v="tadjik"/>
+      <list-item v="mongol"/>
+      <list-item v="ouïghour"/>
+      <list-item v="cachemiri"/>
+      <list-item v="cachemirien"/>
+      <list-item v="arabe"/>
+      <list-item v="népalais"/>
+      <list-item v="chinois"/>
+      <list-item v="japonais"/>
+      <list-item v="vietnamien"/>
+      <list-item v="thaïlandais"/>
+    </def-list>
+
+    <def-list n="pp_estat">
+      <list-item v="marier"/>
+      <list-item v="divorcer"/>
+      <list-item v="mourir"/>
     </def-list>
     <def-list n="pr_de">
       <list-item v="de"/>
@@ -587,8 +687,8 @@
       <list-item v="pour ce qui est de"/>
       <list-item v="sur la rêquete de"/>
     </def-list>
-    
-    
+
+
 	<def-list n="part_sing">
 		<list-item v="eau"/>
 		<list-item v="beurre"/>
@@ -598,9 +698,9 @@
 		<list-item v="viande"/>
 		<list-item v="pain"/>
 	</def-list>
-    
+
   </section-def-lists>
-  
+
   <section-def-macros>
     <def-macro n="f_pis2prs" npar="1"> <!-- canviem tots els pis per prs -->
       <choose>
@@ -740,7 +840,7 @@
         <case-of pos="1" side="tl" part="lem"/>
       </modify-case>
     </def-macro>
-    
+
     <def-macro n="f_setgen" npar="1">
       <choose>
         <when>
@@ -837,7 +937,7 @@
         </otherwise>
       </choose>
     </def-macro>
-    
+
     <def-macro n="f_bcond" npar="2">
 <!--Per mirar si el blanc conté o no format -->
       <choose>
@@ -855,8 +955,8 @@
           </out>
         </when>
       </choose>
-    </def-macro>  
-    
+    </def-macro>
+
     <def-macro n="superlatiu" npar="1">
 <!--Per modificar el superlatiu per très + adj -->
       <choose>
@@ -865,19 +965,19 @@
             <equal>
               <clip pos="1" side="tl" part="a_sup"/>
               <lit-tag v="sup"/>
-            </equal>  
-  </test>   
+            </equal>
+  </test>
   <out>
     <lu>
               <lit v="très"/>
       <lit-tag v="preadv"/>
             </lu>
     <b/>
-  </out>  
-        </when>   
+  </out>
+        </when>
       </choose>
     </def-macro>
-    
+
     <def-macro n="f_modimp" npar="1">
 <!--Per canviar la 3a persona d'imperatiu per 2a del plural -->
       <choose>
@@ -909,7 +1009,7 @@
         </when>
       </choose>
     </def-macro>
-    
+
     <def-macro n="f_outverb2" npar="2">
 <!--Comprueba si hay pronombres que se traducen por nada de catalán a español según el diccionario ("hi" y "en") y envía el verbo con o sin pronombres de acuerdo con esta comprobación. Esta función es para el caso de verbo + 1 enclítico.-->
       <choose>
@@ -956,7 +1056,7 @@
         </otherwise>
       </choose>
     </def-macro>
-    
+
     <def-macro n="f_outverb3" npar="3">
 <!--Comprueba si hay pronombres que se traducen por nada de catalán a español según el diccionario ("hi" y "en") y envía el verbo con o sin pronombres de acuerdo con esta comprobación. Esta función es para el caso de verbo + 2 enclíticos.-->
       <choose>
@@ -1043,7 +1143,7 @@
         </otherwise>
       </choose>
     </def-macro>
-    
+
     <def-macro n="f_concord_pedac" npar="1">
 <!--Pedaç totalment ad-hoc per solucionar problemes amb el canvi de pl a sg en els articles des/les
   (no s'expandeix el gènere perquè no es fa si està previst posar mf) -->
@@ -1068,7 +1168,7 @@
           <let><clip pos="1" side="tl" part="gen"/><var n="genero"/></let>
         </when>
       </choose>
- 
+
 <!--Pedaç totalment ad-hoc per solucionar problemes amb l'assignació del gènere i nombre a heureux, feliç > joyeux -->
       <choose>
         <when>
@@ -1083,7 +1183,7 @@
         </when>
       </choose>
     </def-macro>
-    
+
     <def-macro n="f_concord1" npar="1">
       <choose>
 <!--To determine value of variables of gender and
@@ -1206,7 +1306,7 @@
       </choose>
       <call-macro n="f_concord_pedac"><with-param pos="1"/></call-macro>
     </def-macro>
-    
+
     <def-macro n="f_concord2" npar="2">
       <choose>
         <when>
@@ -1660,7 +1760,7 @@
       <call-macro n="f_concord_pedac"><with-param pos="1"/></call-macro>
       <call-macro n="f_concord_pedac"><with-param pos="2"/></call-macro>
     </def-macro>
-    
+
     <def-macro n="f_concord3" npar="3">
       <choose>
 <!-- Look if in source language there is concordance between first and second element -->
@@ -2325,7 +2425,7 @@
       <call-macro n="f_concord_pedac"><with-param pos="2"/></call-macro>
       <call-macro n="f_concord_pedac"><with-param pos="3"/></call-macro>
     </def-macro>
-    
+
     <def-macro n="f_concord4" npar="4">
       <choose>
         <when>
@@ -3058,7 +3158,7 @@
       <call-macro n="f_concord_pedac"><with-param pos="3"/></call-macro>
       <call-macro n="f_concord_pedac"><with-param pos="4"/></call-macro>
     </def-macro>
-    
+
     <def-macro n="f_lexicAdj" npar="1">
       <choose>
         <when>
@@ -3084,6 +3184,71 @@
               <lit v="bon"/>
             </get-case-from>
           </let>
+        </when>
+      </choose>
+    </def-macro>
+
+    <def-macro n="f_lang_dial1" npar="1">
+<!-- mirem si (segur) que no es tracta de la llengua, en aquest cas posem majúscula -->
+      <choose>
+        <when>
+          <test>
+            <and>
+              <equal><clip pos="1" side="sl" part="nbr"/><lit-tag v="pl"/></equal>
+              <in caseless="yes">
+                <clip pos="1" side="tl" part="lem"/>
+                <list n="lang_dial"/>
+              </in>
+            </and>
+          </test>
+          <modify-case>
+            <clip pos="1" side="tl" part="lemh"/>
+            <lit v="Aa"/>
+          </modify-case>
+        </when>
+      </choose>
+    </def-macro>
+
+    <def-macro n="f_lang_dial0" npar="1">
+<!-- mirem si que no es tracta de la llengua, en aquest cas posem majúscula (aquí no es mira si hi ha plural) -->
+      <choose>
+        <when>
+          <test>
+            <in caseless="yes">
+              <clip pos="1" side="tl" part="lem"/>
+              <list n="lang_dial"/>
+            </in>
+          </test>
+          <modify-case>
+            <clip pos="1" side="tl" part="lemh"/>
+            <lit v="Aa"/>
+          </modify-case>
+        </when>
+      </choose>
+    </def-macro>
+
+    <def-macro n="f_lang_dial2" npar="2">
+<!-- mirem si (segur) que no es tracta de la llengua, en aquest cas posem majúscula -->
+<!-- p1 = det, p2 = n -->
+      <choose>
+        <when>
+          <test>
+            <and>
+              <or>
+                <equal><clip pos="1" side="sl" part="nbr"/><lit-tag v="pl"/></equal>
+                <equal><clip pos="2" side="sl" part="nbr"/><lit-tag v="pl"/></equal>
+                <equal><clip pos="1" side="sl" part="lem"/><lit v="un"/></equal>
+              </or>
+              <in caseless="yes">
+                <clip pos="2" side="tl" part="lem"/>
+                <list n="lang_dial"/>
+              </in>
+            </and>
+          </test>
+          <modify-case>
+            <clip pos="2" side="tl" part="lemh"/>
+            <lit v="Aa"/>
+          </modify-case>
         </when>
       </choose>
     </def-macro>
@@ -3171,7 +3336,7 @@
    </choose>
 </def-macro>
   </section-def-macros>
-  
+
   <section-rules>
 <!--regles de concordança-->
     <rule>
@@ -3190,7 +3355,7 @@
         </out>
       </action>
   </rule>
-     
+
     <rule comment="REGLA: LOPRONOM">
       <pattern>
         <pattern-item n="lopronom"/>
@@ -3206,7 +3371,7 @@
         </out>
       </action>
   </rule>
-    
+
 
     <rule comment="REGLA: NOM">
       <pattern>
@@ -3214,6 +3379,9 @@
       </pattern>
       <action>
         <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_lang_dial1">
           <with-param pos="1"/>
         </call-macro>
         <out>
@@ -3225,7 +3393,7 @@
         </out>
       </action>
   </rule>
-    
+
     <rule comment="REGLA: NP">
       <pattern>
         <pattern-item n="np"/>
@@ -3275,7 +3443,7 @@
       <pattern>
         <pattern-item n="adjec"/>
       </pattern>
-      <action> 
+      <action>
         <call-macro n="f_concord1">
           <with-param pos="1"/>
         </call-macro>
@@ -3293,10 +3461,10 @@
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!-- REGLA: PRONOM -->
-<!--Special case, macro f_concord1 
+<!--Special case, macro f_concord1
 is not applicable because gender and number can not be taken from previous rules -->
       <pattern>
         <pattern-item n="prn"/>
@@ -3340,7 +3508,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!-- REGLA: NUMERAL-->
       <pattern>
@@ -3357,7 +3525,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!-- REGLA: RELAT -->
       <pattern>
@@ -3374,9 +3542,8 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
-    <rule>
-<!-- REGLA: DETERMINANT NOM -->
+
+    <rule comment="REGLA: DETERMINANT NOM">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="nom"/>
@@ -3385,6 +3552,10 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_concord2">
           <with-param pos="2"/>
           <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_lang_dial2">
+          <with-param pos="1"/>
+          <with-param pos="2"/>
         </call-macro>
         <out>
           <lu>
@@ -3399,7 +3570,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!-- REGLA: NOM ADJECTIU-->
       <pattern>
@@ -3410,6 +3581,10 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_concord2">
           <with-param pos="1"/>
           <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_lang_dial2">
+          <with-param pos="2"/>
+          <with-param pos="1"/>
         </call-macro>
        <call-macro n="superlatiu">
           <with-param pos="2"/>
@@ -3429,7 +3604,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!-- REGLA: ADJECTIU NOM -->
       <pattern>
@@ -3440,6 +3615,10 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_concord2">
           <with-param pos="2"/>
           <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_lang_dial2">
+          <with-param pos="1"/>
+          <with-param pos="2"/>
         </call-macro>
         <call-macro n="f_lexicAdj">
           <with-param pos="1"/>
@@ -3460,7 +3639,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!-- REGLA: DET NOM ADJECTIU-->
       <pattern>
@@ -3473,6 +3652,10 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="2"/>
           <with-param pos="3"/>
           <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_lang_dial2">
+          <with-param pos="1"/>
+          <with-param pos="2"/>
         </call-macro>
     	<call-macro n="superlatiu">
           <with-param pos="3"/>
@@ -3522,7 +3705,7 @@ is not applicable because gender and number can not be taken from previous rules
         </choose>
       </action>
   </rule>
-    
+
     <rule>
 <!-- REGLA: DET NOM ADJECTIU ADJECTIU-->
       <pattern>
@@ -3538,11 +3721,15 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="4"/>
           <with-param pos="1"/>
         </call-macro>
-        <call-macro n="superlatiu">
-          <with-param pos="3"/>       
+        <call-macro n="f_lang_dial2">
+          <with-param pos="1"/>
+          <with-param pos="2"/>
         </call-macro>
         <call-macro n="superlatiu">
-          <with-param pos="4"/>       
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="superlatiu">
+          <with-param pos="4"/>
         </call-macro>
         <out>
           <lu>
@@ -3565,7 +3752,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!-- REGLA: NOM ADJECTIU ADJECTIU-->
       <pattern>
@@ -3578,6 +3765,10 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="1"/>
           <with-param pos="2"/>
           <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_lang_dial2">
+          <with-param pos="2"/>
+          <with-param pos="1"/>
         </call-macro>
 <call-macro n="superlatiu">
           <with-param pos="2"/>
@@ -3602,7 +3793,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!-- REGLA: DET ADJECTIU NOM-->
       <pattern>
@@ -3615,6 +3806,10 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="3"/>
           <with-param pos="2"/>
           <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_lang_dial2">
+          <with-param pos="1"/>
+          <with-param pos="3"/>
         </call-macro>
         <call-macro n="f_lexicAdj">
           <with-param pos="2"/>
@@ -3639,7 +3834,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!-- REGLA: PREDET DET NOM-->
       <pattern>
@@ -3652,6 +3847,10 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="3"/>
           <with-param pos="2"/>
           <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_lang_dial2">
+          <with-param pos="2"/>
+          <with-param pos="3"/>
         </call-macro>
         <out>
           <lu>
@@ -3670,7 +3869,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!-- REGLA: PREDET DET NOM ADJECTIU-->
       <pattern>
@@ -3685,6 +3884,10 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="4"/>
           <with-param pos="2"/>
           <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_lang_dial2">
+          <with-param pos="2"/>
+          <with-param pos="3"/>
         </call-macro>
         <call-macro n="superlatiu">
           <with-param pos="4"/>
@@ -3710,7 +3913,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!-- REGLA: DETERMINANT ADJECTIU-->
       <pattern>
@@ -3736,7 +3939,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!-- REGLA: ADJECTIU NOM ADJECTIU-->
       <pattern>
@@ -3749,6 +3952,10 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="2"/>
           <with-param pos="3"/>
           <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_lang_dial2">
+          <with-param pos="1"/>
+          <with-param pos="2"/>
         </call-macro>
         <call-macro n="f_lexicAdj">
           <with-param pos="1"/>
@@ -3776,7 +3983,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!-- REGLA: DET ADJECTIU NOM ADJECTIU -->
       <pattern>
@@ -3791,6 +3998,10 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="4"/>
           <with-param pos="2"/>
           <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_lang_dial2">
+          <with-param pos="1"/>
+          <with-param pos="3"/>
         </call-macro>
         <call-macro n="f_lexicAdj">
           <with-param pos="2"/>
@@ -3822,7 +4033,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!-- REGLA: NOM ADVERBI ADJECTIU-->
       <pattern>
@@ -3835,9 +4046,13 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="1"/>
           <with-param pos="3"/>
         </call-macro>
+        <call-macro n="f_lang_dial2">
+          <with-param pos="3"/>
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="superlatiu">
           <with-param pos="3"/>
-        </call-macro> 
+        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="lemh"/>
@@ -3855,7 +4070,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule comment="DET NOM ADVERBI ADJECTIU: l'home molt alt > l'homme très haut, l'home més alt > l'homme le plus haut">
       <pattern>
         <pattern-item n="det"/>
@@ -3868,6 +4083,10 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="2"/>
           <with-param pos="1"/>
           <with-param pos="4"/>
+        </call-macro>
+        <call-macro n="f_lang_dial2">
+          <with-param pos="1"/>
+          <with-param pos="2"/>
         </call-macro>
         <call-macro n="superlatiu">
           <with-param pos="4"/>
@@ -3935,7 +4154,7 @@ is not applicable because gender and number can not be taken from previous rules
         </choose>
       </action>
   </rule>
-    
+
     <rule>
 <!-- REGLA: DET ADVERBI NOM-->
       <pattern>
@@ -3947,6 +4166,10 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_concord2">
           <with-param pos="3"/>
           <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_lang_dial2">
+          <with-param pos="1"/>
+          <with-param pos="3"/>
         </call-macro>
         <out>
           <lu>
@@ -3965,7 +4188,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!-- REGLA: NUMERAL NOM -->
       <pattern>
@@ -3976,6 +4199,9 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_concord2">
           <with-param pos="2"/>
           <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_lang_dial0">
+          <with-param pos="2"/>
         </call-macro>
         <out>
           <lu>
@@ -3990,7 +4216,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!-- REGLA: NUMERAL ADJECTIU -->
       <pattern>
@@ -4016,7 +4242,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!-- REGLA: NUMERAL NOM ADJECTIU -->
       <pattern>
@@ -4029,6 +4255,9 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="2"/>
           <with-param pos="1"/>
           <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_lang_dial0">
+          <with-param pos="2"/>
         </call-macro>
         <call-macro n="superlatiu">
           <with-param pos="3"/>
@@ -4050,7 +4279,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!-- REGLA: NUMERAL ADJECTIU NOM -->
       <pattern>
@@ -4066,6 +4295,9 @@ is not applicable because gender and number can not be taken from previous rules
         </call-macro>
         <call-macro n="f_lexicAdj">
           <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_lang_dial0">
+          <with-param pos="3"/>
         </call-macro>
         <call-macro n="superlatiu">
           <with-param pos="2"/>
@@ -4087,7 +4319,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!-- REGLA: DET NUMERAL NOM -->
       <pattern>
@@ -4100,6 +4332,9 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="3"/>
           <with-param pos="2"/>
           <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_lang_dial0">
+          <with-param pos="3"/>
         </call-macro>
         <out>
           <lu>
@@ -4118,7 +4353,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!--REGLA: NUMERAL de MES de NUM  20 de novembre de 1998: 20 novembre 1998-->
       <pattern>
@@ -4140,7 +4375,7 @@ is not applicable because gender and number can not be taken from previous rules
       <equal>
        	 <clip pos="1" side="sl" part="lem"/>
 	  <lit v="1"/>
-      </equal> 
+      </equal>
             </test>
             <out>
               <lu>
@@ -4169,7 +4404,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!--REGLA: NUMERAL de MES , 20 de novembre: 20 novembre-->
       <pattern>
@@ -4188,7 +4423,7 @@ is not applicable because gender and number can not be taken from previous rules
       <equal>
        	 <clip pos="1" side="sl" part="lem"/>
 	  <lit v="1"/>
-      </equal> 
+      </equal>
             </test>
             <out>
               <lu>
@@ -4249,7 +4484,7 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
         </out>
        </when>
-       <otherwise>  
+       <otherwise>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -4272,7 +4507,7 @@ is not applicable because gender and number can not be taken from previous rules
     </choose>  	
   </action>
 </rule>
-    
+
     <rule>
 <!-- REGLA: PRETÈRIT INDEFINIT -->
 <!-- Per traduir "vaig fer" per "ai fait" -->
@@ -4320,7 +4555,7 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
         </out>
        </when>
-       <otherwise>  
+       <otherwise>
         <out>
           <lu>
             <get-case-from pos="2">
@@ -4348,7 +4583,7 @@ is not applicable because gender and number can not be taken from previous rules
     </choose>  	
   </action>
 </rule>
-    
+
     <rule>
 <!-- REGLA: PRETÈRIT INDEFINIT + ENCLÍTIC -->
 <!-- Per a traduir "van comprar-me" per "m'ont acheté" -->
@@ -4384,7 +4619,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!-- REGLA: PRETÈRIT INDEFINIT + ENCLÍTIC + ENCLÍTIC -->
 <!-- Per traduir "van acabar-se'ls" per "les ont fini" -->
@@ -4421,7 +4656,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!--REGLA: GERUNDI -->
       <pattern>
@@ -4451,7 +4686,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!--REGLA: imp -->
       <pattern>
@@ -4473,7 +4708,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!--REGLA: sent imp -->
       <pattern>
@@ -4500,7 +4735,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!--REGLA: inf -->
       <pattern>
@@ -4519,7 +4754,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!--REGLA: verb en forma personal-->
       <pattern>
@@ -4538,8 +4773,8 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-  
-  
+
+
      <rule>
 <!--REGLA: verb en forma personal + nom -->
       <pattern>
@@ -4549,7 +4784,10 @@ is not applicable because gender and number can not be taken from previous rules
       <action>
        <call-macro n="f_concord1">
           <with-param pos="2"/>
-        </call-macro>  
+        </call-macro>
+        <call-macro n="f_lang_dial1">
+          <with-param pos="2"/>
+        </call-macro>
         <call-macro n="f_pis2prs">
           <with-param pos="1"/>
         </call-macro>
@@ -4592,7 +4830,7 @@ is not applicable because gender and number can not be taken from previous rules
 	 <clip pos="2" side="tl" part="lem"/>
 	 <list n="part_sing"/>
 	</in>
-     </or> 
+     </or>
             </test>
             <out>
       <lu>
@@ -4622,7 +4860,7 @@ is not applicable because gender and number can not be taken from previous rules
               <clip pos="2" side="tl" part="tags"/>
               <clip pos="2" side="tl" part="lemq"/>
               </lu>
-    </out> 
+    </out>
    </when>
           <otherwise>
             <out>
@@ -4643,10 +4881,10 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
             </out>
           </otherwise>
-        </choose> 
+        </choose>
       </action>
   </rule>
-    
+
     <rule>
 <!--REGLA: no+ verb en forma personal-->
       <pattern>
@@ -4678,9 +4916,9 @@ is not applicable because gender and number can not be taken from previous rules
   </lu>
         </out>
       </action>
-  </rule> 
-  
-  
+  </rule>
+
+
     <rule>
 <!--REGLA: no+ verb en infinitiu -->
       <pattern>
@@ -4709,9 +4947,9 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
         </out>
       </action>
-  </rule> 
-  
-  
+  </rule>
+
+
     <rule>
 <!--REGLA: no+ verb en forma personal + pas, gens, gaire, etc.-->
       <pattern>
@@ -4743,9 +4981,9 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
         </out>
       </action>
-  </rule> 
-  
-  
+  </rule>
+
+
     <rule>
 <!--REGLA: no+ prnpro + verb en forma personal: no en vull > je n'en veux pas-->
       <pattern>
@@ -4785,9 +5023,9 @@ is not applicable because gender and number can not be taken from previous rules
   </lu>
         </out>
       </action>
-  </rule> 
-  
-  
+  </rule>
+
+
     <rule>
 <!--REGLA: no+ prnpro + prnpro + verb en forma personal: no n'hi vull > je n'en y veux pas-->
       <pattern>
@@ -4835,9 +5073,9 @@ is not applicable because gender and number can not be taken from previous rules
   </lu>
         </out>
       </action>
-  </rule> 
-  
-  
+  </rule>
+
+
     <rule>
 <!--REGLA: no+ verb en forma personal + nom-->
       <pattern>
@@ -4848,7 +5086,10 @@ is not applicable because gender and number can not be taken from previous rules
       <action>
 	<call-macro n="f_concord1">
           <with-param pos="3"/>
-        </call-macro>  
+        </call-macro>
+        <call-macro n="f_lang_dial1">
+          <with-param pos="3"/>
+        </call-macro>
 	<call-macro n="f_setgen">
           <with-param pos="3"/>
         </call-macro>
@@ -4881,7 +5122,7 @@ is not applicable because gender and number can not be taken from previous rules
 	 <clip pos="3" side="tl" part="lem"/>
 	 <list n="part_sing"/>
 	</in>
-     </or> 
+     </or>
             </test>
           <out>
   <lu>
@@ -4902,7 +5143,7 @@ is not applicable because gender and number can not be taken from previous rules
                 <lit v="pas"/>
                 <lit-tag v="adv"/>
   </lu>
-  
+
       <b/>
       <lu>
                 <lit v="de"/>
@@ -4951,17 +5192,20 @@ is not applicable because gender and number can not be taken from previous rules
       </otherwise>
     </choose>
    </action>
-  </rule> 
+  </rule>
   <rule>
 <!--REGLA: verb en forma no personal + nom -->
       <pattern>
         <pattern-item n="verbnp"/>
-<pattern-item n="nom"/>
+	<pattern-item n="nom"/>
       </pattern>
       <action>
-<call-macro n="f_concord1">
+	<call-macro n="f_concord1">
           <with-param pos="2"/>
-        </call-macro> 
+        </call-macro>
+        <call-macro n="f_lang_dial1">
+          <with-param pos="2"/>
+        </call-macro>
       <choose>
         <when>
           <test>
@@ -4988,7 +5232,7 @@ is not applicable because gender and number can not be taken from previous rules
 	 <clip pos="2" side="tl" part="lem"/>
 	 <list n="part_sing"/>
 	</in>
-     </or> 
+     </or>
             </test>
             <out>
                 <lu>
@@ -5018,7 +5262,7 @@ is not applicable because gender and number can not be taken from previous rules
               <clip pos="2" side="tl" part="tags"/>
               <clip pos="2" side="tl" part="lemq"/>
               </lu>
-            </out> 
+            </out>
   </when>
           <otherwise>
             <out>
@@ -5037,10 +5281,10 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
             </out>
           </otherwise>
-        </choose>    
+        </choose>
       </action>
   </rule>
-    
+
      <rule comment="REGLA: prep + nom">
       <pattern>
         <pattern-item n="prep"/>
@@ -5049,7 +5293,10 @@ is not applicable because gender and number can not be taken from previous rules
       <action>
 	<call-macro n="f_concord1">
           <with-param pos="2"/>
-        </call-macro>  
+        </call-macro>
+        <call-macro n="f_lang_dial1">
+          <with-param pos="2"/>
+        </call-macro>
 	<call-macro n="f_setgen">
           <with-param pos="2"/>
         </call-macro>
@@ -5081,7 +5328,7 @@ is not applicable because gender and number can not be taken from previous rules
                 <clip pos="2" side="sl" part="nbr"/>
                 <lit-tag v="pl"/>
               </equal>
-	    </and>    
+	    </and>
             </test>
             <out>
               <lu>
@@ -5105,7 +5352,7 @@ is not applicable because gender and number can not be taken from previous rules
                 <clip pos="2" side="tl" part="tags"/>
                 <clip pos="2" side="tl" part="lemq"/>
               </lu>
-    </out> 
+    </out>
   </when>
           <otherwise>
             <out>
@@ -5118,10 +5365,10 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
             </out>
           </otherwise>
-        </choose> 
+        </choose>
       </action>
   </rule>
-    
+
      <rule>
 <!--REGLA: prep + tu -->
       <pattern>
@@ -5141,7 +5388,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
      <rule>
 <!--REGLA: prep + ell -->
       <pattern>
@@ -5161,7 +5408,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
      <rule>
 <!--REGLA: prep + ells -->
       <pattern>
@@ -5181,7 +5428,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!--REGLA: dir-se -> s'apeller -->
       <pattern>
@@ -5277,8 +5524,8 @@ is not applicable because gender and number can not be taken from previous rules
           </otherwise>
         </choose>
       </action>
-    </rule>  
-    
+    </rule>
+
 <rule comment="regla: haver pp: he caigut > suis tombé">
    <pattern>
      <pattern-item n="haver"/>
@@ -5358,6 +5605,9 @@ is not applicable because gender and number can not be taken from previous rules
      <call-macro n="f_concord1">
        <with-param pos="3"/>
      </call-macro>
+        <call-macro n="f_lang_dial1">
+          <with-param pos="3"/>
+        </call-macro>
      <call-macro n="f_setgen">
        <with-param pos="3"/>
      </call-macro>
@@ -5410,6 +5660,9 @@ is not applicable because gender and number can not be taken from previous rules
        <with-param pos="3"/>
      </call-macro>
      <call-macro n="f_concord1">
+       <with-param pos="4"/>
+     </call-macro>
+     <call-macro n="f_lang_dial1">
        <with-param pos="4"/>
      </call-macro>
      <call-macro n="f_setgen">
@@ -5649,6 +5902,9 @@ is not applicable because gender and number can not be taken from previous rules
      <call-macro n="f_concord1">
        <with-param pos="4"/>
      </call-macro>
+     <call-macro n="f_lang_dial1">
+       <with-param pos="4"/>
+     </call-macro>
      <call-macro n="f_setgen">
        <with-param pos="4"/>
      </call-macro>
@@ -5752,6 +6008,9 @@ is not applicable because gender and number can not be taken from previous rules
      <call-macro n="f_concord1">
        <with-param pos="5"/>
      </call-macro>
+     <call-macro n="f_lang_dial1">
+       <with-param pos="5"/>
+     </call-macro>
      <call-macro n="f_setgen">
        <with-param pos="5"/>
      </call-macro>
@@ -5847,7 +6106,7 @@ is not applicable because gender and number can not be taken from previous rules
 </rule>
 
 
-    <rule comment="PRNREF HAVER PP > PRNREF SER PP: s'ha incorporat > s'est incorporé, m'ha dit > m'a dit"> 
+    <rule comment="PRNREF HAVER PP > PRNREF SER PP: s'ha incorporat > s'est incorporé, m'ha dit > m'a dit">
       <pattern>
         <pattern-item n="prnproref"/>
         <pattern-item n="haver"/>
@@ -5975,9 +6234,9 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
         </out>
       </action>
-    </rule>  
-    
-    <rule comment="NO PRNREF HAVER PP > NO PRNREF SER PP: no s'ha incorporat > ne s'est pas incorporé, no m'ha dit > ne m'a pas dit"> 
+    </rule>
+
+    <rule comment="NO PRNREF HAVER PP > NO PRNREF SER PP: no s'ha incorporat > ne s'est pas incorporé, no m'ha dit > ne m'a pas dit">
 <!--REGLA: NO PRNREF HAVER PP > NE PRNREF SER PAS PP: no s'ha incorporat > ne s'est pas incorporé -->
       <pattern>
         <pattern-item n="noadv"/>
@@ -6065,8 +6324,8 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
         </out>
       </action>
-    </rule>  
-    
+    </rule>
+
      <rule>
 <!--REGLA: acabar de + inf -> venir de + inf -->
       <pattern>
@@ -6112,7 +6371,7 @@ is not applicable because gender and number can not be taken from previous rules
               <lu>
         <clip pos="2" side="tl" part="whole"/>
       </lu>
-      <b pos="2"/>   
+      <b pos="2"/>
               <lu>
                 <clip pos="3" side="tl" part="lemh"/>
                 <clip pos="3" side="tl" part="a_verb"/>
@@ -6157,7 +6416,7 @@ is not applicable because gender and number can not be taken from previous rules
         </choose>
       </action>
     </rule>
-    
+
      <rule>
 <!--REGLA: acabar de + inf + enc -> venir de + enc + inf -->
       <pattern>
@@ -6209,8 +6468,8 @@ is not applicable because gender and number can not be taken from previous rules
  	        <clip pos="4" side="tl" part="lem"/>
                 <lit-tag v="prn.pro"/>
                 <clip pos="4" side="tl" part="tipoenc_pro"/>
-      </lu> 
-      <b pos="3"/>    
+      </lu>
+      <b pos="3"/>
               <lu>
                 <clip pos="3" side="tl" part="lemh"/>
                 <clip pos="3" side="tl" part="a_verb"/>
@@ -6248,8 +6507,8 @@ is not applicable because gender and number can not be taken from previous rules
         <clip pos="4" side="tl" part="lem"/>
                 <lit-tag v="prn.pro"/>
                 <clip pos="4" side="tl" part="tipoenc_pro"/>
-      </lu> 
-      <b pos="3"/>  
+      </lu>
+      <b pos="3"/>
               <lu>
                 <clip pos="3" side="tl" part="lemh"/>
                 <clip pos="3" side="tl" part="a_verb"/>
@@ -6390,7 +6649,7 @@ is not applicable because gender and number can not be taken from previous rules
         </choose>
       </action>
   </rule>
-    
+
     <rule comment="REGLA: Que_rel VERB">
       <pattern>
         <pattern-item n="que_rel"/>
@@ -6543,7 +6802,7 @@ is not applicable because gender and number can not be taken from previous rules
         </choose>
       </action>
   </rule>
-    
+
     <rule>
 <!--REGLA: SENT,que,coma,i ser pp: seria expulsada > elle serait expulséeю -->
 <!-- TBD després de coma, millor no afegir prn -->
@@ -6646,7 +6905,7 @@ is not applicable because gender and number can not be taken from previous rules
         </choose>
       </action>
   </rule>
-    
+
     <rule>
 <!--REGLA: SENT,que,coma,i + No + VERB -->
       <pattern>
@@ -6876,7 +7135,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!--REGLA: PRNREF HAVER PP > PRNREF SER PP: s'ha incorporat > il s'est incorporé -->
       <pattern>
@@ -7006,7 +7265,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!--REGLA: NO PRNREF HAVER PP > NE PRNREF SER PAS PP: no s'ha incorporat > il ne s'est pas incorporé -->
       <pattern>
@@ -7224,7 +7483,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule>
 <!--REGLA: SENT,que,coma,i PRN VERB : Li vas dir >> Tu lui as dit, Hi vas anar >> Tu y es allé -->
 <!-- ERROR!!!: Em vaig mirar >> Je m'ai regardé (en comptes de: je me suis regardé) -->
@@ -7337,7 +7596,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
 <!--ara amb nom-->
     <rule>
 <!--REGLA: SENT,que,coma,i + VERB + NOM -->
@@ -7351,6 +7610,9 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="2"/>
         </call-macro>
         <call-macro n="f_concord1">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_lang_dial1">
           <with-param pos="3"/>
         </call-macro>
         <call-macro n="f_setgen">
@@ -7515,7 +7777,7 @@ is not applicable because gender and number can not be taken from previous rules
         </choose>
       </action>
   </rule>
-    
+
     <rule>
 <!--REGLA: SENT,que,coma,i + VERB + VERB + NOM-->
       <pattern>
@@ -7529,6 +7791,9 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="2"/>
         </call-macro>
         <call-macro n="f_concord1">
+          <with-param pos="4"/>
+        </call-macro>
+        <call-macro n="f_lang_dial1">
           <with-param pos="4"/>
         </call-macro>
         <call-macro n="f_pis2prs">
@@ -7576,7 +7841,7 @@ is not applicable because gender and number can not be taken from previous rules
 	  <list n="part_sing"/>
 	</in>
       </not>	
-    </or>  
+    </or>
             </test>
                 <out>
                   <lu>
@@ -7747,7 +8012,7 @@ is not applicable because gender and number can not be taken from previous rules
         </choose>
       </action>
   </rule>
-    
+
     <rule>
 <!--REGLA: sentquecm No + VERB + NOM-->
       <pattern>
@@ -7764,6 +8029,9 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="3"/>
         </call-macro>
         <call-macro n="f_concord1">
+          <with-param pos="4"/>
+        </call-macro>
+        <call-macro n="f_lang_dial1">
           <with-param pos="4"/>
         </call-macro>
         <call-macro n="f_setgen">
@@ -7951,7 +8219,7 @@ is not applicable because gender and number can not be taken from previous rules
         </choose>
       </action>
   </rule>
-    
+
     <rule>
 <!--REGLA: sentquecm No + VERB + VERB + NOM-->
       <pattern>
@@ -7969,6 +8237,9 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="3"/>
         </call-macro>
         <call-macro n="f_concord1">
+          <with-param pos="5"/>
+        </call-macro>
+        <call-macro n="f_lang_dial1">
           <with-param pos="5"/>
         </call-macro>
         <call-macro n="f_setgen">
@@ -8217,7 +8488,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule comment="PRN + No + VERB">
       <pattern>
         <pattern-item n="prntn"/>
@@ -8254,7 +8525,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule comment="PRETÈRIT INDEFINIT.  Per traduir 'vaig fer' per 'ai fait'">
       <pattern>
         <pattern-item n="prntn"/>
@@ -8298,7 +8569,7 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
         </out>
        </when>
-       <otherwise>  
+       <otherwise>
         <out>
           <lu>
             <get-case-from pos="2">
@@ -8321,7 +8592,7 @@ is not applicable because gender and number can not be taken from previous rules
     </choose>  	
   </action>
 </rule>
-    
+
     <rule comment="PRETÈRIT INDEFINIT.  Per traduir 'vaig fer' per 'ai fait'">
       <pattern>
         <pattern-item n="prntn"/>
@@ -8375,7 +8646,7 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
         </out>
        </when>
-       <otherwise>  
+       <otherwise>
         <out>
           <lu>
             <get-case-from pos="3">
@@ -8403,7 +8674,7 @@ is not applicable because gender and number can not be taken from previous rules
     </choose>  	
   </action>
 </rule>
-    
+
     <rule comment="PRN + VERB + NOM">
       <pattern>
         <pattern-item n="prntn"/>
@@ -8415,6 +8686,9 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="2"/>
         </call-macro>
         <call-macro n="f_concord1">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_lang_dial1">
           <with-param pos="3"/>
         </call-macro>
         <call-macro n="f_setgen">
@@ -8500,7 +8774,7 @@ is not applicable because gender and number can not be taken from previous rules
         </choose>
       </action>
   </rule>
-    
+
     <rule comment="PRN + VERB + VERB + NOM">
       <pattern>
         <pattern-item n="prntn"/>
@@ -8513,6 +8787,9 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="2"/>
         </call-macro>
         <call-macro n="f_concord1">
+          <with-param pos="4"/>
+        </call-macro>
+        <call-macro n="f_lang_dial1">
           <with-param pos="4"/>
         </call-macro>
       <choose>
@@ -8549,7 +8826,7 @@ is not applicable because gender and number can not be taken from previous rules
 	  <list n="part_sing"/>
 	</in>
       </not>	
-    </or>  
+    </or>
             </test>
             <out>
               <lu>
@@ -8630,7 +8907,7 @@ is not applicable because gender and number can not be taken from previous rules
         </choose>
       </action>
   </rule>
-    
+
     <rule comment="PRN + No + VERB + NOM">
       <pattern>
         <pattern-item n="prntn"/>
@@ -8643,6 +8920,9 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="3"/>
         </call-macro>
         <call-macro n="f_concord1">
+          <with-param pos="4"/>
+        </call-macro>
+        <call-macro n="f_lang_dial1">
           <with-param pos="4"/>
         </call-macro>
         <call-macro n="f_setgen">
@@ -8746,7 +9026,7 @@ is not applicable because gender and number can not be taken from previous rules
         </choose>
       </action>
   </rule>
-    
+
     <rule comment="PRN + No + VERB + VERB + NOM">
       <pattern>
         <pattern-item n="prntn"/>
@@ -8760,6 +9040,9 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="3"/>
         </call-macro>
         <call-macro n="f_concord1">
+          <with-param pos="5"/>
+        </call-macro>
+        <call-macro n="f_lang_dial1">
           <with-param pos="5"/>
         </call-macro>
         <call-macro n="f_setgen">
@@ -8881,9 +9164,9 @@ is not applicable because gender and number can not be taken from previous rules
         </choose>
       </action>
     </rule>
-    
-    
-    
+
+
+
      <rule comment="prn + acabar de + inf -> prn + venir de + inf">
       <pattern>
         <pattern-item n="prntn"/>
@@ -8912,7 +9195,7 @@ is not applicable because gender and number can not be taken from previous rules
               <lu>
         <clip pos="3" side="tl" part="whole"/>
       </lu>
-      <b pos="3"/>   
+      <b pos="3"/>
               <lu>
                 <clip pos="4" side="tl" part="lemh"/>
                 <clip pos="4" side="tl" part="a_verb"/>
@@ -8922,7 +9205,7 @@ is not applicable because gender and number can not be taken from previous rules
             </out>
       </action>
     </rule>
-    
+
      <rule comment="acabar de + inf + enc-> venir de + enc + inf">
       <pattern>
         <pattern-item n="prntn"/>
@@ -8952,12 +9235,12 @@ is not applicable because gender and number can not be taken from previous rules
               <lu>
         <clip pos="3" side="tl" part="whole"/>
       </lu>
-      <b pos="3"/>  
+      <b pos="3"/>
       <lu>
         <clip pos="5" side="tl" part="lem"/>
                 <lit-tag v="prn.pro"/>
                 <clip pos="5" side="tl" part="tipoenc_pro"/>
-      </lu> 
+      </lu>
       <b pos="4"/>
               <lu>
                 <clip pos="4" side="tl" part="lemh"/>
@@ -8968,9 +9251,9 @@ is not applicable because gender and number can not be taken from previous rules
             </out>
       </action>
     </rule>
-    
+
 <!-- fi ara amb pronom-->
-<!-- fi regles generació pronom -->  
+<!-- fi regles generació pronom -->
 
 <rule comment="SENT + IMP + ENCLÍTIC">
       <pattern>
@@ -9007,7 +9290,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule comment="IMP + ENCLÍTIC">
       <pattern>
         <pattern-item n="imp"/>
@@ -9038,7 +9321,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule comment="GER + ENCLÍTIC">
       <pattern>
         <pattern-item n="ger"/>
@@ -9066,7 +9349,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule comment="INF + ENCLÍTIC">
       <pattern>
         <pattern-item n="inf"/>
@@ -9091,7 +9374,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule comment="NO + INF + ENCLÍTIC">
       <pattern>
         <pattern-item n="noadv"/>
@@ -9126,7 +9409,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule comment="INF + ENCLÍTIC + ENCLÍTIC">
       <pattern>
         <pattern-item n="inf"/>
@@ -9196,7 +9479,7 @@ is not applicable because gender and number can not be taken from previous rules
         </choose>
       </action>
   </rule>
-    
+
     <rule comment="NO + INF + ENCLÍTIC + ENCLÍTIC: no donar-li'n > ne pas lui en donner">
       <pattern>
         <pattern-item n="noadv"/>
@@ -9278,7 +9561,7 @@ is not applicable because gender and number can not be taken from previous rules
         </choose>
       </action>
   </rule>
-    
+
     <rule comment="GER + ENCLÍTIC + ENCLÍTIC">
       <pattern>
         <pattern-item n="ger"/>
@@ -9356,7 +9639,7 @@ is not applicable because gender and number can not be taken from previous rules
         </choose>
       </action>
   </rule>
-  
+
        <rule comment="estar + ger -> être en train de + inf">
       <pattern>
         <pattern-item n="verb_conj"/>
@@ -9409,7 +9692,7 @@ is not applicable because gender and number can not be taken from previous rules
         <lit v="de"/>
 	<lit-tag v="pr"/>
       </lu>
-      <b/>   
+      <b/>
               <lu>
                 <clip pos="2" side="tl" part="lemh"/>
                 <clip pos="2" side="tl" part="a_verb"/>
@@ -9451,7 +9734,7 @@ is not applicable because gender and number can not be taken from previous rules
         <lit v="de"/>
 	<lit-tag v="pr"/>
       </lu>
-      <b/>   
+      <b/>
               <lu>
                 <clip pos="2" side="tl" part="lemh"/>
                 <clip pos="2" side="tl" part="a_verb"/>
@@ -9463,7 +9746,7 @@ is not applicable because gender and number can not be taken from previous rules
         </choose>
       </action>
     </rule>
-    
+
      <rule comment="estar + ger + enc -> être en train de + enc + inf">
       <pattern>
         <pattern-item n="verb_conj"/>
@@ -9522,8 +9805,8 @@ is not applicable because gender and number can not be taken from previous rules
  	        <clip pos="3" side="tl" part="lem"/>
                 <lit-tag v="prn.pro"/>
                 <clip pos="3" side="tl" part="tipoenc_pro"/>
-      </lu> 
-     <b/>   
+      </lu>
+     <b/>
               <lu>
                 <clip pos="2" side="tl" part="lemh"/>
                 <clip pos="2" side="tl" part="a_verb"/>
@@ -9570,8 +9853,8 @@ is not applicable because gender and number can not be taken from previous rules
         <clip pos="3" side="tl" part="lem"/>
                 <lit-tag v="prn.pro"/>
                 <clip pos="3" side="tl" part="tipoenc_pro"/>
-      </lu> 
-       <b/>   
+      </lu>
+       <b/>
               <lu>
                 <clip pos="2" side="tl" part="lemh"/>
                 <clip pos="2" side="tl" part="a_verb"/>
@@ -9706,7 +9989,7 @@ is not applicable because gender and number can not be taken from previous rules
   </rule>
 
     <rule comment="SENT + IMP + ENCLÍTIC + ENCLÍTIC">
-      <pattern>        
+      <pattern>
         <pattern-item n="sentquecm"/>
         <pattern-item n="imp"/>
         <pattern-item n="prnenc"/>
@@ -9728,7 +10011,7 @@ is not applicable because gender and number can not be taken from previous rules
      	         <clip pos="4" side="sl" part="lem"/>
      	         <lit v="el"/>
      	       </equal>
-     </and>  
+     </and>
            </test>-->
         <out>
  <lu>
@@ -9782,7 +10065,7 @@ is not applicable because gender and number can not be taken from previous rules
         <clip pos="3" side="tl" part="persona"/>
         <clip pos="3" side="tl" part="gen"/>
         <clip pos="3" side="tl" part="nbr"/>
-      </lu>  
+      </lu>
       <lu>
         <clip pos="4" side="tl" part="lem"/>
         <clip pos="4" side="tl" part="a_prnenc"/>
@@ -9790,13 +10073,13 @@ is not applicable because gender and number can not be taken from previous rules
         <clip pos="4" side="tl" part="gen"/>
         <clip pos="4" side="tl" part="nbr"/>
         <clip pos="1" side="tl" part="lemq"/>
-      </lu>  
+      </lu>
     </mlu>
           </out>
            </otherwise>
          </choose>-->
       </action>
-  </rule>    
+  </rule>
 
     <rule comment="IMP + ENCLÍTIC + ENCLÍTIC">
       <pattern>
@@ -9820,7 +10103,7 @@ is not applicable because gender and number can not be taken from previous rules
      	         <clip pos="3" side="sl" part="lem"/>
      	         <lit v="el"/>
      	       </equal>
-     </and>  
+     </and>
            </test>-->
         <out>
           <mlu>
@@ -9866,7 +10149,7 @@ is not applicable because gender and number can not be taken from previous rules
         <clip pos="2" side="tl" part="persona"/>
         <clip pos="2" side="tl" part="gen"/>
         <clip pos="2" side="tl" part="nbr"/>
-      </lu>  
+      </lu>
       <lu>
         <clip pos="3" side="tl" part="lem"/>
         <clip pos="3" side="tl" part="a_prnenc"/>
@@ -9874,14 +10157,14 @@ is not applicable because gender and number can not be taken from previous rules
         <clip pos="3" side="tl" part="gen"/>
         <clip pos="3" side="tl" part="nbr"/>
         <clip pos="1" side="tl" part="lemq"/>
-      </lu>  
+      </lu>
     </mlu>
           </out>
            </otherwise>
          </choose>-->
       </action>
   </rule>
-    
+
     <rule comment="EN + INF - EN + GERUNDI Comprovar traducció">
       <pattern>
         <pattern-item n="en"/>
@@ -9905,7 +10188,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule comment="EN + INF'S - EN + GERUNDI Comprovar traducció">
       <pattern>
         <pattern-item n="en"/>
@@ -9936,7 +10219,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
-    
+
     <rule comment="l'any 1998 > en 1998">
       <pattern>
         <pattern-item n="detdef"/>
@@ -9968,6 +10251,9 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_concord1">
           <with-param pos="2"/>
         </call-macro>
+        <call-macro n="f_lang_dial1">
+          <with-param pos="2"/>
+        </call-macro>
         <choose>
           <when>
             <test>
@@ -10021,7 +10307,7 @@ is not applicable because gender and number can not be taken from previous rules
         </choose>
       </action>
     </rule>
-    
+
     <rule comment="tants/menys/més NOM com/que : autant/moins/plus de NOM que de">
       <pattern>
         <pattern-item n="comp"/>
@@ -10032,6 +10318,12 @@ is not applicable because gender and number can not be taken from previous rules
       <action>
         <call-macro n="f_concord1">
           <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_lang_dial1">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_lang_dial1">
+          <with-param pos="4"/>
         </call-macro>
         <choose>
           <when>
@@ -10104,7 +10396,7 @@ is not applicable because gender and number can not be taken from previous rules
         </choose>
       </action>
   </rule>
-    
+
     <rule comment="tan ADJ com: aussi ADJ que">
       <pattern>
         <pattern-item n="adv"/>
@@ -10160,7 +10452,7 @@ is not applicable because gender and number can not be taken from previous rules
         </choose>
       </action>
   </rule>
-    
+
     <rule comment="tan ADV com: aussi ADV que">
       <pattern>
         <pattern-item n="adv"/>
@@ -10280,6 +10572,6 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
     </rule>
-    
+
   </section-rules>
 </transfer>

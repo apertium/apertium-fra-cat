@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- -*- nxml -*- -->
 <transfer>
-
   <section-def-cats>
-  
     <def-cat n="nom">
       <cat-item tags="n.*"/>
     </def-cat>
@@ -466,7 +464,6 @@
   </section-def-vars>
   
   <section-def-lists>
-  
     <def-list n="mois">
       <list-item v="janvier"/>
       <list-item v="février"/>
@@ -481,6 +478,7 @@
       <list-item v="novembre"/>
       <list-item v="décembre"/>
     </def-list>
+
     <def-list n="vbestat">
       <list-item v="aller"/>
       <list-item v="venir"/>
@@ -499,6 +497,7 @@
       <list-item v="devenir"/>
       <list-item v="revenir"/>
     </def-list>
+
     <def-list n="pays">
       <list-item v="Europe"/>
       <list-item v="Asie"/>
@@ -527,7 +526,7 @@
       <list-item v="Wallonie"/>
       <list-item v="Flandre"/>
       <list-item v="Hollande"/>
-      <list-item v="Alemagne"/>
+      <list-item v="Allemagne"/>
       <list-item v="Danemark"/>
       <list-item v="Islande"/>
       <list-item v="Norvège"/>
@@ -540,7 +539,7 @@
       <list-item v="Bashkortostan"/>
       <list-item v="Yakoutie"/>
       <list-item v="Estonie"/>
-      <list-item v="Létonie"/>
+      <list-item v="Lettonie"/>
       <list-item v="Lithuanie"/>
       <list-item v="Pologne"/>
       <list-item v="Tchécoslovaquie"/>
@@ -573,7 +572,7 @@
       <list-item v="Kazakhstan"/>
       <list-item v="Turkménistan"/>
       <list-item v="Ouzbékistan"/>
-      <list-item v="Kirgizistan"/>
+      <list-item v="Kirghizistan"/>
       <list-item v="Tadjikistan"/>
       <list-item v="Iran"/>
       <list-item v="Iraq"/>
@@ -610,6 +609,72 @@
       <list-item v="Bolivie"/>
       <list-item v="Paraguay"/>
       <list-item v="Uruguay"/>
+    </def-list>
+  
+    <def-list n="lang_dial">
+      <list-item v="portugais"/>
+      <list-item v="espagnol"/>
+      <list-item v="catalan"/>
+      <list-item v="valencien"/>
+      <list-item v="castillan"/>
+      <list-item v="andaloux"/>
+      <list-item v="français"/>
+      <list-item v="breton"/>
+      <list-item v="normand"/>
+      <list-item v="auvergnat"/>
+      <list-item v="provençal"/>
+      <list-item v="anglais"/>
+      <list-item v="écossais"/>
+      <list-item v="irlandais"/>
+      <list-item v="wallon"/>
+      <list-item v="picard"/>
+      <list-item v="flamand"/>
+      <list-item v="hollandais"/>
+      <list-item v="alleman"/>
+      <list-item v="danois"/>
+      <list-item v="islandais"/>
+      <list-item v="norvégien"/>
+      <list-item v="suédois"/>
+      <list-item v="finlandais"/>
+      <list-item v="russe"/>
+      <list-item v="tchétchène"/>
+      <list-item v="tchouvache"/>
+      <list-item v="tatare"/>
+      <list-item v="bashkir"/>
+      <list-item v="yakoute"/>
+      <list-item v="estonien"/>
+      <list-item v="letton"/>
+      <list-item v="lithuanien"/>
+      <list-item v="polonais"/>
+      <list-item v="tchèque"/>
+      <list-item v="slovake"/>
+      <list-item v="hongrois"/>
+      <list-item v="italien"/>
+      <list-item v="sarde"/>
+      <list-item v="sicilien"/>
+      <list-item v="slovène"/>
+      <list-item v="croate"/>
+      <list-item v="serbe"/>
+      <list-item v="bosnien"/>
+      <list-item v="monténégrin"/>
+      <list-item v="macédoinien"/>
+      <list-item v="roumain"/>
+      <list-item v="bulgare"/>
+      <list-item v="grec"/>
+      <list-item v="ukrainien"/>
+      <list-item v="biélorusse"/>
+      <list-item v="moldave"/>
+      <list-item v="turc"/>
+      <list-item v="kurde"/>
+      <list-item v="arménien"/>
+      <list-item v="géorgien"/>
+      <list-item v="azerbaïdjanais"/>
+      <list-item v="kazakh"/>
+      <list-item v="turkmène"/>
+      <list-item v="ouzbek"/>
+      <list-item v="kirghiz"/>
+      <list-item v="tadjik"/>
+      <list-item v="arabe"/>
     </def-list>
   
     <def-list n="pp_estat">
@@ -2728,6 +2793,7 @@
       <call-macro n="f_concord_pedac"><with-param pos="3"/></call-macro>
       <call-macro n="f_concord_pedac"><with-param pos="4"/></call-macro>
     </def-macro>
+
   </section-def-macros>
   
   <section-rules>

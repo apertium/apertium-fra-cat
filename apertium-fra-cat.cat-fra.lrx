@@ -204,6 +204,10 @@
     <match lemma="no" tags="adv"><select lemma="non"/></match>
     <or><match tags="cm"/><match tags="sent"/></or>
   </rule>
+  <rule weight="1.0">
+    <match lemma="no" tags="adv"><select lemma="non"/></match>
+    <match tags="adj.*"/>
+  </rule>
 
 <!-- V -->
 
@@ -215,6 +219,28 @@
     <match lemma="congelar" tags="vblex.*"><select lemma="geler"/></match>
     <match tags="det.*"/>
     <match lemma="negociació" tags="n.*"/>
+  </rule>
+
+  <!-- cridar >> appeler, crier -->
+  <rule weight="0.8">
+    <match lemma="cridar" tags="vblex.*"><select lemma="appeler"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cridar" tags="vblex.*"><select lemma="crier"/></match>
+    <match lemma="a" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cridar" tags="vblex.*"><select lemma="crier"/></match>
+    <match tags="adv"/>
+    <match lemma="a" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="li" tags="prn.pro.*"/>
+    <match lemma="cridar" tags="vblex.*"><select lemma="crier"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cridar" tags="vblex.*"><select lemma="crier"/></match>
+    <match lemma="li" tags="prn.enc.*"/>
   </rule>
 
   <!-- il·lusionar >> donner# des espoirs, illusionner -->
