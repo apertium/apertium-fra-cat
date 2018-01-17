@@ -125,6 +125,12 @@
       <e r="RL"><p><l><s n="GD"/></l><r><s n="mf"/></r></p></e>
     </pardef>
 
+    <pardef n="GD_m">
+      <e r="LR"><p><l><s n="f"/></l><r><s n="m"/></r></p></e>
+      <e r="LR"><p><l><s n="m"/></l><r><s n="m"/></r></p></e>
+      <e r="RL"><p><l><s n="GD"/></l><r><s n="m"/></r></p></e>
+    </pardef>
+
     <pardef n="GD_mf|ND_sp">
       <e r="LR"><p><l><s n="f"/></l><r><s n="mf"/></r></p><par n="ND_sp"/></e>
       <e r="LR"><p><l><s n="m"/></l><r><s n="mf"/></r></p><par n="ND_sp"/></e>
@@ -2256,11 +2262,8 @@
     <e r="LR"><p><l>capitaine<s n="n"/><s n="mf"/></l><r>capità<s n="n"/><s n="GD"/></r></p></e>
     <e r="RL"><p><l>capitaine<s n="n"/><s n="mf"/></l><r>capità<s n="n"/><s n="f"/></r></p></e>
     <e r="RL"><p><l>capitaine<s n="n"/><s n="mf"/></l><r>capità<s n="n"/><s n="m"/></r></p></e>
-    <e r="LR"><p><l>capital<s n="adj"/><s n="f"/></l> <r>capital<s n="adj"/><s n="mf"/></r></p></e>
-    <e r="LR"><p><l>capital<s n="adj"/><s n="m"/></l> <r>capital<s n="adj"/><s n="mf"/></r></p></e>
-    <e r="RL"><p><l>capital<s n="adj"/><s n="GD"/></l><r>cabdal<s n="adj"/><s n="mf"/></r></p></e>
-    <e r="RL"><p><l>capital<s n="adj"/><s n="GD"/></l><r>capital<s n="adj"/><s n="mf"/></r></p></e>
-    <e>       <p><l>capitale<s n="n"/><s n="f"/></l>  <r>capital<s n="n"/><s n="f"/></r></p></e>
+    <e>       <p><l>capital<s n="adj"/></l>           <r>capital<s n="adj"/></r></p><par n="GD_mf"/></e>
+    <e r="RL"><p><l>capital<s n="adj"/></l>           <r>cabdal<s n="adj"/></r></p><par n="GD_mf"/></e>
     <e>       <p><l>capitaliste<s n="adj"/><s n="mf"/></l><r>capitalista<s n="adj"/><s n="mf"/></r></p></e>
     <e>       <p><l>capitaliste<s n="n"/><s n="mf"/></l><r>capitalista<s n="n"/><s n="mf"/></r></p></e>
     <e>       <p><l>capitalisation<s n="n"/><s n="f"/></l><r>capitalització<s n="n"/><s n="f"/></r></p></e>
@@ -2624,6 +2627,12 @@
     <e>       <p><l>Chicago<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Xicago<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
     <e>       <p><l>chien<s n="n"/></l>               <r>gos<s n="n"/></r></p></e>
     <e r="RL"><p><l>chien<s n="n"/></l>               <r>ca<s n="n"/></r></p></e>
+    <e>       <p><l>chien<g><b/>d'aveugle</g><s n="n"/></l><r>gos<b/>pigall<s n="n"/></r></p></e>
+    <e r="LR"><p><l>chien<g><b/>guide<b/>d'aveugle</g><s n="n"/></l><r>gos<b/>pigall<s n="n"/></r></p></e>
+    <e r="LR"><p><l>chien<g><b/>guide</g><s n="n"/></l><r>gos<b/>pigall<s n="n"/></r></p></e>
+    <e>       <p><l>chien<g><b/>de<b/>berger</g><s n="n"/></l><r>gos<b/>pastor<s n="n"/></r></p></e>
+    <e r="RL"><p><l>chien<g><b/>de<b/>berger</g><s n="n"/></l><r>ca<b/>pastor<s n="n"/></r></p></e>
+    <e r="RL"><p><l>chien<g><b/>de<b/>berger</g><s n="n"/></l><r>gos<g><b/>d'atura</g><s n="n"/></r></p></e>
     <e>       <p><l>chier<s n="vblex"/></l>           <r>cagar<s n="vblex"/></r></p></e>
     <e>       <p><l>chiffre<s n="n"/><s n="m"/></l>   <r>xifra<s n="n"/><s n="f"/></r></p></e>
     <e r="LR"><p><l>chiffrer<s n="vblex"/></l>        <r>avaluar<s n="vblex"/></r></p></e>
@@ -2917,12 +2926,12 @@
     <e>       <p><l>combiner<s n="vblex"/></l>        <r>combinar<s n="vblex"/></r></p></e>
     <e>       <p><l>combustible<s n="n"/></l><r>combustible<s n="n"/></r></p></e>
     <e a="ariel"><p><l>combustion<s n="n"/></l>       <r>combustió<s n="n"/></r></p></e>
-    <e r="LR"><p><l>comique<s n="n"/><s n="mf"/></l>  <r>còmic<s n="n"/><s n="GD"/></r></p></e>
-    <e r="RL"><p><l>comique<s n="n"/><s n="mf"/></l>  <r>còmic<s n="n"/><s n="f"/></r></p></e>
-    <e r="RL"><p><l>comique<s n="n"/><s n="mf"/></l>  <r>còmic<s n="n"/><s n="m"/></r></p></e>
+    <e>       <p><l>comique<s n="n"/></l>             <r>còmic<s n="n"/></r></p><par n="mf_GD"/></e>
+    <e r="LR"><p><l>bande<b/>dessinée<s n="n"/><s n="f"/></l><r>còmic<s n="n"/><s n="m"/></r></p></e>
     <e>       <p><l>comiquement<s n="adv"/></l>       <r>còmicament<s n="adv"/></r></p></e>
     <e>       <p><l>comité<s n="n"/></l>              <r>comitè<s n="n"/></r></p></e>
     <e>       <p><l>commander<s n="vblex"/></l>       <r>manar<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>commander<s n="vblex"/></l>       <r>comandar<s n="vblex"/></r></p></e>
     <e>       <p><l>comme<s n="pr"/></l>              <r>com<s n="pr"/></r></p></e>
     <e>       <p><l>comme<s n="rel"/></l>             <r>com<s n="rel"/></r></p></e>
     <e r="RL"><p><l>comme<s n="pr"/></l>              <r>com<b/>a<s n="pr"/></r></p></e>
@@ -13783,7 +13792,8 @@
 <e><p><l>canoë-kayak<s n="n"/><s n="m"/><s n="sg"/></l><r>piragüisme<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
 <e><p><l>capitalisation<s n="n"/><s n="f"/></l><r>capitalització<s n="n"/><s n="f"/></r></p></e>
 <e r="RL"><p><l>capital<s n="n"/><s n="m"/></l><r>cabal<s n="n"/><s n="m"/></r></p></e>
-<e><p><l>capital<s n="n"/><s n="m"/></l><r>capital<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>capitale<s n="n"/><s n="f"/></l><r>capital<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>capital<s n="n"/><s n="m"/></l><r>capital<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>caprice<s n="n"/><s n="m"/></l><r>caprici<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>caprice<s n="n"/><s n="m"/></l><r>capritx<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>capteur<s n="n"/><s n="m"/></l><r>sensor<s n="n"/><s n="m"/></r></p></e>
@@ -22288,6 +22298,8 @@
 <e><p><l>WWF<s n="n"/><s n="acr"/></l><r>WWF<s n="n"/><s n="acr"/></r></p></e>
 <e><p><l>Cantabre<s n="n"/></l><r>càntabre<s n="n"/></r></p></e>
 <e><p><l>cantabre<s n="adj"/></l><r>càntabre<s n="adj"/></r></p></e>
+<e><p><l>Latino<s n="n"/></l><r>hispà<s n="n"/></r></p></e>
+<e><p><l>latino<s n="adj"/></l><r>hispà<s n="adj"/></r></p></e>
 <e><p><l>repopulateur<s n="n"/></l><r>repoblador<s n="n"/></r></p></e>
 <e><p><l>repopulateur<s n="adj"/></l><r>repoblador<s n="adj"/></r></p></e>
 <e><p><l>orangé<s n="adj"/></l><r>ataronjat<s n="adj"/></r></p></e>
@@ -22317,6 +22329,9 @@
 <e r="LR"><p><l>faubourg<s n="n"/><s n="m"/></l><r>barri<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>demi-journée<s n="n"/><s n="f"/></l><r>mitja<b/>jornada<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>demi-heure<s n="n"/><s n="f"/></l><r>mitja<b/>hora<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>musique<g><b/>de<b/>chambre</g><s n="n"/><s n="f"/></l><r>música<g><b/>de<b/>cambra</g><s n="n"/><s n="f"/></r></p></e>
+<e><p><l>passager<b/>clandestin<s n="n"/></l><r>polissó<s n="n"/></r></p><par n="GD_m"/></e>
+
 
   </section>
 </dictionary>

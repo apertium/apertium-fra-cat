@@ -19,9 +19,11 @@ my $MOT = 'convertir';	# paraula a debugar
 my $MOT = 'rus';	# paraula a debugar
 my $MOT = 'fusil';	# paraula a debugar
 my $MOT = 'UICN';	# paraula a debugar
-my $MOT = 'nombre premier';	# paraula a debugar
+my $MOT = 'musique';	# paraula a debugar
+my $MOT = 'musique de chambre';	# paraula a debugar
 #my $MOT = 'nombre primer';	# paraula a debugar
-#my $MOT = '';
+my $MOT = '';
+my $MOT = 'comarca';	# paraula a debugar
 
 my $MORF_TRACT = 'n';
 #my $MORF_TRACT = '';
@@ -340,21 +342,33 @@ sub escriure_bidix_n {
 	my ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $lr_rl, $autor) = @_;
 
 print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $lr_rl, $autor)\n" if $lemma_cat eq $MOT || $lemma_fra eq $MOT;
+#print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $lr_rl, $autor)\n" if $lemma_cat eq $MOT || $lemma_fra =~ /musique/o;
 #print "dix_fra{$morf_fra}{$lemma_fra} = $dix_fra{$morf_fra}{$lemma_fra}\n";
 	my $par_fra = $dix_fra{$morf_fra}{$lemma_fra};
+	if ($lemma_fra =~ /#/o) {
+		my $x = $lemma_fra;
+		$x =~ s/#//;
+		$par_fra = $dix_fra{$morf_fra}{$x};
+	}
 	my $par_cat = $dix_cat{$morf_cat}{$lemma_cat};
+	if ($lemma_cat =~ /#/o) {
+		my $x = $lemma_cat;
+		$x =~ s/#//;
+		$par_cat = $dix_cat{$morf_cat}{$x};
+	}
 	my $a = " a=\"$autor\"" if $autor;
-	if ($par_fra eq 'abeille__n' && $par_cat eq 'abell/a__n') {
+	if ($par_fra eq 'abeille__n'
+		&& ($par_cat eq 'abell/a__n'
+		|| $par_cat eq 'accessibilitat__n'
+		|| $par_cat eq 'acústi/ca__n')) {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'abeille__n' && $par_cat eq 'abric__n') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
-	} elsif ($par_fra eq 'abeille__n' && $par_cat eq 'accessibilitat__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
 #	} elsif ($par_fra eq 'admis_n' && $par_cat eq 'accionist/a__n') {
 #		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"mf\"/></l><r>%s<s n=\"n\"/><s n=\"mf\"/></r></p></e>\n", $stem_fra, $stem_cat;
-	} elsif ($par_fra eq 'admis_n' && $par_cat eq 'angl/ès__n') {
+	} elsif ($par_fra eq 'admis__n' && $par_cat eq 'angl/ès__n') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"anglais_anglès\"/></e>\n", $stem_fra, $stem_cat;
-	} elsif ($par_fra eq 'admis_n' && $par_cat eq 'senyor__n') {
+	} elsif ($par_fra eq 'admis__n' && $par_cat eq 'senyor__n') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"anglais_anglès\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif (($par_fra eq 'affecté__n'
 			|| $par_fra eq 'administrat/eur__n'
@@ -389,7 +403,9 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"mf\"/></l><r>%s<s n=\"n\"/><s n=\"mf\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'artiste__n' && $par_cat eq 'addict/e__n') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"neutre_neutre\"/></e>\n", $stem_fra, $stem_cat;
-	} elsif ($par_fra eq 'artiste__n' && $par_cat eq 'senyor__n') {
+	} elsif ($par_fra eq 'artiste__n'
+		&& ($par_cat eq 'asiàti/c__n'
+			|| $par_cat eq 'senyor__n')) {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"mf_GD\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'livre__n'
 			&& ($par_cat eq 'abric__n'
@@ -399,6 +415,7 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'livre__n'
 			&& ($par_cat eq 'abell/a__n'
+			|| $par_cat eq 'acústi/ca__n'
 			||  $par_cat eq 'accessibilitat__n')) {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'mois__n' && $par_cat eq 'campus__n') {
@@ -834,7 +851,7 @@ next if $linia !~ /$MORF_TRACT/o;
 		next;
 	}
 
-	$linia =~ s/[^a-z\t]+$//o;
+	$linia =~ s/[^a-zàèéíòóúçA-ZÀÈÉíÒÓÚÇ\t]+$//o;
 	$linia =~ s|\r| |og;
 	$linia =~ s|#|# |og;	# per evitar errors com "faire#pression sur"
 	$linia =~ s|' |'|og;	# coup d' État
@@ -898,7 +915,8 @@ next if $gram_cat !~ /^<$MORF_TRACT>/o;
 	$autor =~ s|^ ||o;
 	$autor =~ s| $||o;
 	$autor =~ s|^jl$|joan|o;
-#print "autor = $autor\n";
+print "$linia\n" if $MOT && $lemma_cat eq $MOT;;
+print "autor = $autor\n" if $MOT && $lemma_cat eq $MOT;;
 
 print "11. $linia - stem_cat=$stem_cat, lemma_cat=$lemma_cat, gram_cat = $gram_cat, dades[3]=$dades[3]\n" if $MOT && $lemma_cat =~ /$MOT/o;
 	my @stem_fra = split /;/o, $dades[3];
