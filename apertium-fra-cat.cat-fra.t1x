@@ -4465,7 +4465,7 @@ is not applicable because gender and number can not be taken from previous rules
                 <list n="vbambser"/>
               </in>
             </test>
- <out>
+ 	<out>
           <lu>
             <get-case-from pos="1">
               <lit v="être"/>
@@ -4479,7 +4479,8 @@ is not applicable because gender and number can not be taken from previous rules
           <lu>
             <clip pos="2" side="tl" part="lemh"/>
             <clip pos="2" side="tl" part="a_verb"/>
-            <lit-tag v="pp.m.sg"/>
+            <lit-tag v="pp.m"/>
+            <clip pos="1" side="tl" part="nbr"/>
             <clip pos="2" side="tl" part="lemq"/>
           </lu>
         </out>
@@ -6647,6 +6648,88 @@ is not applicable because gender and number can not be taken from previous rules
             </out>
           </otherwise>
         </choose>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: SENT,que,coma,i VERB">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="anar"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_pis2prs">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="sl" part="lem"/>
+            <lit-tag v="prn.tn"/>
+            <clip pos="2" side="sl" part="persona"/>
+            <lit-tag v="m"/>
+            <clip pos="2" side="sl" part="nbr"/>
+          </lu>
+          <b/>
+        </out>
+      <choose>
+          <when>
+            <test>
+              <in caseless="yes">
+                <clip pos="3" side="sl" part="lem"/>
+                <list n="vbambser"/>
+              </in>
+            </test>
+ 	<out>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="être"/>
+            </get-case-from>
+            <lit-tag v="vbser"/>
+            <lit-tag v="pri"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <lit-tag v="pp.m"/>
+            <clip pos="2" side="tl" part="nbr"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+       </when>
+       <otherwise>
+        <out>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="avoir"/>
+            </get-case-from>
+            <lit-tag v="vbhaver"/>
+            <lit-tag v="pri"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <lit-tag v="pp.m.sg"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </otherwise>
+    </choose>  	
       </action>
   </rule>
 
