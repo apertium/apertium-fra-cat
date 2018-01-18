@@ -112,6 +112,78 @@
     <match lemma="qui" tags="rel.*"><select lemma="que" tags="rel.*"/></match>
   </rule>
 
+<!-- **************** V **************** -->
+
+  <!-- 
+    appeler >> cridar, dir, anomenar
+  -->
+  <rule weight="0.8">
+    <match lemma="appeler" tags="vblex.*"><select lemma="cridar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.p1.*.sg"/>
+    <match lemma="appeler" tags="vblex.*.p1.sg"><select lemma="dir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.p2.*.sg"/>
+    <match lemma="appeler" tags="vblex.*.p2.sg"><select lemma="dir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.ref.p3.*.sp"/>
+    <or>
+      <match lemma="appeler" tags="vblex.*.p3.sg"><select lemma="dir"/></match>
+      <match lemma="appeler" tags="vblex.*.p3.pl"><select lemma="dir"/></match>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.p1.*.pl"/>
+    <match lemma="appeler" tags="vblex.*.p1.pl"><select lemma="dir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.p2.*.pl"/>
+    <match lemma="appeler" tags="vblex.*.p2.pl"><select lemma="dir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="aller" tags="vblex.*.p3.sg"/>
+      <match lemma="aller" tags="vblex.*.p3.pl"/>
+    </or>
+    <match tags="prn.pro.ref.p3.*.sp"/>
+    <match lemma="appeler" tags="vblex.inf"><select lemma="dir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="aller" tags="vblex.*.p3.sg"/>
+      <match lemma="aller" tags="vblex.*.p3.pl"/>
+    </or>
+    <or>
+      <match tags="adv"/>
+      <match tags="preadv"/>
+    </or>
+    <match tags="prn.pro.ref.p3.*.sp"/>
+    <match lemma="appeler" tags="vblex.inf"><select lemma="dir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="quelqu'un" tags="prn.*"/>
+    <match lemma="appeler" tags="vblex.pp.m.*"><select lemma="anomenar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="n.*"/>
+    <match lemma="appeler" tags="vblex.pp.*"><select lemma="anomenar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="n.*"/>
+    <match tags="adj.*"/>
+    <match lemma="appeler" tags="vblex.pp.*"><select lemma="anomenar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="," tags="cm"/>
+      <match tags="lpar"/>
+    </or>
+    <match lemma="appeler" tags="vblex.pp.*"><select lemma="anomenar"/></match>
+  </rule>
+
 <!-- **************** N **************** -->
 
   <!-- monde >> món, gent -->

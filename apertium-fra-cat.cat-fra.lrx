@@ -243,6 +243,47 @@
     <match lemma="li" tags="prn.enc.*"/>
   </rule>
 
+  <!-- 
+    dir >> dire, appeler
+  -->
+  <rule weight="0.8">
+    <match lemma="dir" tags="vblex.*"><select lemma="dire"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.p1.*.sg"/>
+    <match lemma="dir" tags="vblex.*.p1.sg"><select lemma="appeler"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.p2.*.sg"/>
+    <match lemma="dir" tags="vblex.*.p2.sg"><select lemma="appeler"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.ref.p3.*.sp"/>
+    <match lemma="dir" tags="vblex.*.p3.sg"><select lemma="appeler"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.p1.*.pl"/>
+    <match lemma="dir" tags="vblex.*.p1.pl"><select lemma="appeler"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.p2.*.pl"/>
+    <match lemma="dir" tags="vblex.*.p2.pl"><select lemma="appeler"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.ref.p3.*.sp"/>
+    <match lemma="dir" tags="vblex.*.p3.pl"><select lemma="appeler"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="dir" tags="vblex.*"><select lemma="dire"/></match>
+    <match lemma="que" tags="cnjsub"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="dir" tags="vblex.*"><select lemma="dire"/></match>
+    <match tags="adv"/>
+    <match lemma="que" tags="cnjsub"/>
+  </rule>
+
+
   <!-- il·lusionar >> donner# des espoirs, illusionner -->
   <rule weight="0.8">
     <match lemma="il·lusionar" tags="vblex.*"><select lemma="donner# des espoirs"/></match>
@@ -393,22 +434,22 @@
     <match lemma="conseller" tags="n.*"><select lemma="ministre"/></match>
     <match lemma="de" tags="pr"/>
     <or>
-      <match lemma="economia" tags="n..*"/>
-      <match lemma="educació" tags="n..*"/>
-      <match lemma="sanitat" tags="n..*"/>
-      <match lemma="presidència" tags="n..*"/>
-      <match lemma="cultura" tags="n..*"/>
-      <match lemma="salut" tags="n..*"/>
-      <match lemma="interior" tags="n..*"/>
-      <match lemma="justícia" tags="n..*"/>
-      <match lemma="transparència" tags="n..*"/>
-      <match lemma="territori" tags="n..*"/>
-      <match lemma="agricultura" tags="n..*"/>
-      <match lemma="portaveu" tags="n..*"/>
-      <match lemma="governació" tags="n..*"/>
-      <match lemma="igualtat" tags="n..*"/>
-      <match lemma="hisenda" tags="n..*"/>
-      <match lemma="habitatge" tags="n..*"/>
+      <match lemma="economia" tags="n.*"/>
+      <match lemma="educació" tags="n.*"/>
+      <match lemma="sanitat" tags="n.*"/>
+      <match lemma="presidència" tags="n.*"/>
+      <match lemma="cultura" tags="n.*"/>
+      <match lemma="salut" tags="n.*"/>
+      <match lemma="interior" tags="n.*"/>
+      <match lemma="justícia" tags="n.*"/>
+      <match lemma="transparència" tags="n.*"/>
+      <match lemma="territori" tags="n.*"/>
+      <match lemma="agricultura" tags="n.*"/>
+      <match lemma="portaveu" tags="n.*"/>
+      <match lemma="governació" tags="n.*"/>
+      <match lemma="igualtat" tags="n.*"/>
+      <match lemma="hisenda" tags="n.*"/>
+      <match lemma="habitatge" tags="n.*"/>
     </or>
   </rule>
 

@@ -1105,9 +1105,12 @@
     <e a="ariel"><p><l>appauvrissant<s n="adj"/></l>  <r>empobridor<s n="adj"/></r></p></e>
     <e a="ariel"><p><l>appauvrissement<s n="n"/></l>  <r>empobriment<s n="n"/></r></p></e>
     <e>       <p><l>appel<s n="n"/><s n="m"/></l>     <r>crida<s n="n"/><s n="f"/></r></p></e>
-    <e>       <p><l>appeler<s n="vblex"/></l><r>anomenar<s n="vblex"/></r></p></e>
+    <e>       <p><l>appeler<s n="vblex"/></l>         <r>anomenar<s n="vblex"/></r></p></e>
     <e r="RL"><p><l>appeler<s n="vblex"/></l>         <r>trucar<s n="vblex"/></r></p></e>
     <e r="RL"><p><l>appeler<s n="vblex"/></l>         <r>instar<s n="vblex"/></r></p></e>
+    <e>       <p><l>appeler<s n="vblex"/></l>         <r>cridar<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>appeler<s n="vblex"/></l>         <r>denominar<s n="vblex"/></r></p></e>
+    <e>       <p><l>appeler<s n="vblex"/></l>         <r>dir<s n="vblex"/></r></p></e>
     <e>       <p><l>appellation<s n="n"/></l>         <r>denominació<s n="n"/></r></p></e>
     <e>       <p><l>appendice<s n="n"/></l>           <r>apèndix<s n="n"/></r></p></e>
     <e>       <p><l>appétissant<s n="adj"/></l>       <r>apetitós<s n="adj"/></r></p></e>
@@ -3509,7 +3512,6 @@
     <e>       <p><l>criant<s n="adj"/></l>            <r>escandalós<s n="adj"/></r></p></e>
     <e>       <p><l>cribler<s n="vblex"/></l>         <r>crivellar<s n="vblex"/></r></p></e>
     <e>       <p><l>crier<s n="vblex"/></l>           <r>cridar<s n="vblex"/></r></p></e>
-    <e r="RL"><p><l>appeler<s n="vblex"/></l>         <r>cridar<s n="vblex"/></r></p></e>
     <e a="u21941"><p><l>crime<s n="n"/></l>           <r>crim<s n="n"/></r></p></e>
     <e>       <p><l>criminaliser<s n="vblex"/></l>    <r>criminalitzar<s n="vblex"/></r></p></e>
     <e r="LR"><p><l>criminel<s n="adj"/><s n="f"/></l><r>criminal<s n="adj"/><s n="mf"/></r></p></e>
@@ -3877,7 +3879,6 @@
     <e a="ariel"><p><l>dénitrification<s n="n"/></l>  <r>desnitrificació<s n="n"/></r></p></e>
     <e>       <p><l>dénomination<s n="n"/></l>        <r>denominació<s n="n"/></r></p></e>
     <e r="LR"><p><l>dénommer<s n="vblex"/></l>        <r>anomenar<s n="vblex"/></r></p></e>
-    <e r="RL"><p><l>appeler<s n="vblex"/></l>         <r>denominar<s n="vblex"/></r></p></e>
     <e a="gema"><p><l>dénoncer<s n="vblex"/></l>      <r>denunciar<s n="vblex"/></r></p></e>
     <e>       <p><l>dénoter<s n="vblex"/></l>         <r>denotar<s n="vblex"/></r></p></e>
     <e>       <p><l>dénouement<s n="n"/></l>          <r>desenllaç<s n="n"/></r></p></e>
@@ -9899,7 +9900,9 @@
 <e>       <p><l>pistolet<s n="n"/><s n="m"/></l>  <r>pistola<s n="n"/><s n="f"/></r></p></e>
 <e>       <p><l>Pizarro<s n="np"/><s n="cog"/></l><r>Pizarro<s n="np"/><s n="cog"/></r></p></e>
 <e>       <p><l>place<s n="n"/><s n="f"/></l>     <r>lloc<s n="n"/><s n="m"/></r></p></e>
-<e r="RL"><p><l>place<s n="n"/></l>               <r>plaça<s n="n"/></r></p></e>
+<e r="RL"><p><l>place<s n="n"/><s n="f"/></l>     <r>plaça<s n="n"/><s n="f"/></r></p></e>
+<e r="LR"><p><l>square<s n="n"/><s n="m"/></l>    <r>plaça<s n="n"/><s n="f"/></r></p></e>
+<e i="yes"><p><l>square<s n="n"/><s n="m"/></l>   <r>parc<s n="n"/><s n="m"/></r></p></e>
 <e r="LR"><p><l>placer<s n="vblex"/></l>          <r>posar<s n="vblex"/></r></p></e>
 <e>       <p><l>plafond<s n="n"/></l>             <r>sostre<s n="n"/></r></p></e>
 <e>       <p><l>plage<s n="n"/></l>               <r>platja<s n="n"/></r></p></e>
@@ -22047,6 +22050,15 @@
 <e r="RL"><p><l>soi-même<s n="prn"/><s n="tn"/><s n="ref"/><s n="p3"/><s n="mf"/><s n="sp"/></l><r>si<b/>mateix<s n="prn"/><s n="tn"/><s n="ref"/><s n="p3"/><s n="f"/><s n="sg"/></r></p></e>
 <e r="RL"><p><l>lui-même<s n="prn"/><s n="tn"/><s n="p3"/><s n="m"/><s n="pl"/></l><r>si<b/>mateix<s n="prn"/><s n="tn"/><s n="ref"/><s n="p3"/><s n="m"/><s n="pl"/></r></p></e>
 <e r="RL"><p><l>lui-même<s n="prn"/><s n="tn"/><s n="p3"/><s n="m"/><s n="pl"/></l><r>si<b/>mateix<s n="prn"/><s n="tn"/><s n="ref"/><s n="p3"/><s n="f"/><s n="pl"/></r></p></e>
+    <e r="RL"><p><l>vous-même<s n="prn"/><s n="tn"/><s n="p2"/><s n="mf"/><s n="pl"/></l>   <r>vostè<b/>mateix<s n="prn"/><s n="tn"/><s n="p3"/><s n="m"/><s n="sg"/></r></p></e>
+    <e r="RL"><p><l>vous-même<s n="prn"/><s n="tn"/><s n="p2"/><s n="mf"/><s n="pl"/></l>   <r>vostè<b/>mateix<s n="prn"/><s n="tn"/><s n="p3"/><s n="f"/><s n="sg"/></r></p></e>
+    <e r="RL"><p><l>vous-même<s n="prn"/><s n="tn"/><s n="p2"/><s n="mf"/><s n="pl"/></l>   <r>vostè<b/>mateix<s n="prn"/><s n="tn"/><s n="p3"/><s n="m"/><s n="pl"/></r></p></e>
+    <e r="RL"><p><l>vous-même<s n="prn"/><s n="tn"/><s n="p2"/><s n="mf"/><s n="pl"/></l>   <r>vostè<b/>mateix<s n="prn"/><s n="tn"/><s n="p3"/><s n="f"/><s n="pl"/></r></p></e>
+
+<e>       <p><l>nous<b/>tous<s n="prn"/><s n="tn"/><s n="p1"/></l><r>tots<b/>nosaltres<s n="prn"/><s n="tn"/><s n="p1"/></r></p><par n="mf_GD"/></e>
+<e>       <p><l>vous<b/>tous<s n="prn"/><s n="tn"/><s n="p1"/></l><r>tots<b/>vosaltres<s n="prn"/><s n="tn"/><s n="p1"/></r></p><par n="mf_GD"/></e>
+<e>       <p><l>eux<b/>tous<s n="prn"/><s n="tn"/><s n="p1"/></l><r>tots<b/>ells<s n="prn"/><s n="tn"/><s n="p1"/></r></p><par n="m_GD"/></e>
+<e r="RL"><p><l>vous<b/>tous<s n="prn"/><s n="tn"/><s n="p1"/></l><r>tots<b/>vostès<s n="prn"/><s n="tn"/><s n="p1"/></r></p><par n="mf_GD"/></e>
 
 <e>       <p><l>bissextil<s n="adj"/></l><r>de<b/>traspàs<s n="adj"/></r></p><par n="GD_mf"/><par n="ND_sp"/></e>
 <e>       <p><l>social-démocrate<s n="adj"/></l><r>socialdemòcrata<s n="adj"/></r></p><par n="GD_mf"/></e>
@@ -22386,6 +22398,13 @@
 <e><p><l>Cyrus<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Cir<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
 <e>       <p><l>av.<b/>J.-C.<s n="adv"/></l>             <r>aC<s n="adv"/></r></p></e>
 <e>       <p><l>ap.<b/>J.-C.<s n="adv"/></l>             <r>dC<s n="adv"/></r></p></e>
+<e>       <p><l>épais<s n="adj"/></l>             <r>espès<s n="adj"/></r></p><par n="anglais_anglès"/></e>
+<e><p><l>inclinable<s n="adj"/><s n="mf"/></l><r>inclinable<s n="adj"/><s n="mf"/></r></p></e>
+<e><p><l>pentatonique<s n="adj"/></l><r>pentatònic<s n="adj"/></r></p><par n="mf_GD"/></e>
+<e><p><l>dodécaphonique<s n="adj"/></l><r>dodecafònic<s n="adj"/></r></p><par n="mf_GD"/></e>
+<e><p><l>dodécaphoniste<s n="adj"/><s n="mf"/></l><r>dodecafonista<s n="adj"/><s n="mf"/></r></p></e>
+<e><p><l>dodécaphoniste<s n="n"/><s n="mf"/></l><r>dodecafonista<s n="n"/><s n="mf"/></r></p></e>
+<e><p><l>dodécaphonisme<s n="n"/><s n="m"/></l><r>dodecafonisme<s n="n"/><s n="m"/></r></p></e>
 
 
   </section>
