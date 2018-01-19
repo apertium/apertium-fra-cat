@@ -207,6 +207,30 @@
     <match lemma="monde" tags="n.*"><select lemma="gent"/></match>
   </rule>
 
+  <!-- cour >> cort, tribunal, pati -->
+  <rule weight="0.8">
+    <match lemma="cour" tags="n.*"><select lemma="cort"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cour" tags="n.*"><select lemma="tribunal"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="justice" tags="n.*"/>
+      <match lemma="cassation" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cour" tags="n.*"><select lemma="pati"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="récréation" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cour" tags="n.*"><select lemma="pati"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.def.*"/>
+    <match lemma="école" tags="n.*"/>
+  </rule>
+
   <!-- emploi >> ús, ocupació -->
   <rule weight="0.8">
     <match lemma="emploi" tags="n.*"><select lemma="ús"/></match>

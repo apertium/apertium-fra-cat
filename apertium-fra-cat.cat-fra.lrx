@@ -317,6 +317,15 @@
     <match lemma="grafit" tags="n.*"><select lemma="graphite"/></match>
   </rule>
 
+  <!-- cort >> cour, parlement -->
+  <rule weight="0.8">
+    <match lemma="cort" tags="n.*"><select lemma="cour"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.*"/>
+    <match lemma="cort" tags="n.f.pl"><select lemma="parlement"/></match>
+  </rule>
+
   <!-- cor >> cœur, chœur -->
   <rule weight="0.8">
     <match lemma="cor" tags="n.*"><select lemma="cœur"/></match>
