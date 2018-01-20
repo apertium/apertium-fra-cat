@@ -317,6 +317,36 @@
     <match lemma="grafit" tags="n.*"><select lemma="graphite"/></match>
   </rule>
 
+  <!-- any >> année, an -->
+  <rule weight="0.8">
+    <match lemma="any" tags="n.*"><select lemma="année"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or><match tags="num"/><match tags="num.*"/></or>
+    <match lemma="any" tags="n.*"><select lemma="an"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="any" tags="n.*"><select lemma="an"/></match>
+    <or><match tags="num"/><match tags="num.*"/></or>
+  </rule>
+  <rule weight="1.2">
+    <match tags="det.def.m.pl"/>
+    <match lemma="any" tags="n.*"><select lemma="année"/></match>
+    <or><match tags="num"/><match tags="num.*"/></or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="dia" tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.def.*"/>
+    <match lemma="any" tags="n.*"><select lemma="an"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match tags="det.dem.*"/>
+    <match lemma="any" tags="n.*"><select lemma="année"/></match>
+  </rule>
+<!--
+-->
+
   <!-- cort >> cour, parlement -->
   <rule weight="0.8">
     <match lemma="cort" tags="n.*"><select lemma="cour"/></match>

@@ -272,6 +272,31 @@
     <def-cat n="sent">
       <cat-item tags="sent"/>
     </def-cat>
+
+    <def-cat n="jour_n">
+      <cat-item lemma="lundi" tags="n.*"/>
+      <cat-item lemma="mardi" tags="n.*"/>
+      <cat-item lemma="mercredi" tags="n.*"/>
+      <cat-item lemma="jeudi" tags="n.*"/>
+      <cat-item lemma="vendredi" tags="n.*"/>
+      <cat-item lemma="samedi" tags="n.*"/>
+      <cat-item lemma="dimanche" tags="n.*"/>
+    </def-cat>
+
+    <def-cat n="jour_adv">
+      <cat-item lemma="avant-hier" tags="adv"/>
+      <cat-item lemma="hier" tags="adv"/>
+      <cat-item lemma="aujourd'hui" tags="adv"/>
+      <cat-item lemma="demain" tags="adv"/>
+      <cat-item lemma="après-demain" tags="adv"/>
+      <cat-item lemma="le lendemain" tags="adv"/>
+    </def-cat>
+
+    <def-cat n="part_jour">
+      <cat-item lemma="matin" tags="n.*"/>
+      <cat-item lemma="après-midi" tags="n.*"/>
+      <cat-item lemma="soir" tags="n.*"/>
+    </def-cat>
     
   </section-def-cats>
   
@@ -612,25 +637,39 @@
     </def-list>
   
     <def-list n="lang_dial">
+      <list-item v="latin"/>
+      <list-item v="gaulois"/>
       <list-item v="portugais"/>
       <list-item v="espagnol"/>
       <list-item v="catalan"/>
       <list-item v="valencien"/>
+      <list-item v="majorquin"/>
+      <list-item v="minorquin"/>
+      <list-item v="baléare"/>
+      <list-item v="aragonais"/>
+      <list-item v="asturien"/>
+      <list-item v="basque"/>
       <list-item v="castillan"/>
+      <list-item v="espagnol"/>
       <list-item v="andaloux"/>
       <list-item v="français"/>
       <list-item v="breton"/>
       <list-item v="normand"/>
+      <list-item v="occitan"/>
+      <list-item v="aranais"/>
       <list-item v="auvergnat"/>
+      <list-item v="limousin"/>
+      <list-item v="gascon"/>
       <list-item v="provençal"/>
       <list-item v="anglais"/>
       <list-item v="écossais"/>
+      <list-item v="gallois"/>
       <list-item v="irlandais"/>
       <list-item v="wallon"/>
       <list-item v="picard"/>
       <list-item v="flamand"/>
       <list-item v="hollandais"/>
-      <list-item v="alleman"/>
+      <list-item v="allemand"/>
       <list-item v="danois"/>
       <list-item v="islandais"/>
       <list-item v="norvégien"/>
@@ -640,7 +679,7 @@
       <list-item v="tchétchène"/>
       <list-item v="tchouvache"/>
       <list-item v="tatare"/>
-      <list-item v="bashkir"/>
+      <list-item v="bachkir"/>
       <list-item v="yakoute"/>
       <list-item v="estonien"/>
       <list-item v="letton"/>
@@ -652,6 +691,7 @@
       <list-item v="italien"/>
       <list-item v="sarde"/>
       <list-item v="sicilien"/>
+      <list-item v="maltais"/>
       <list-item v="slovène"/>
       <list-item v="croate"/>
       <list-item v="serbe"/>
@@ -674,9 +714,18 @@
       <list-item v="ouzbek"/>
       <list-item v="kirghiz"/>
       <list-item v="tadjik"/>
+      <list-item v="mongol"/>
+      <list-item v="ouïghour"/>
+      <list-item v="cachemiri"/>
+      <list-item v="cachemirien"/>
       <list-item v="arabe"/>
+      <list-item v="népalais"/>
+      <list-item v="chinois"/>
+      <list-item v="japonais"/>
+      <list-item v="vietnamien"/>
+      <list-item v="thaïlandais"/>
     </def-list>
-  
+
     <def-list n="pp_estat">
       <list-item v="marier"/>
       <list-item v="divorcer"/>
@@ -757,6 +806,31 @@
     </choose>
   </def-macro>
  
+    <def-macro n="f_maj_gentilici" npar="1">
+<!-- si es tracta d'un gentilici, traiem la majúscula -->
+<!-- p1 = det, p2 = n -->
+      <choose>
+        <when>
+          <test>
+            <and>
+              <in caseless="yes">
+                <clip pos="1" side="sl" part="lem"/>
+                <list n="lang_dial"/>
+              </in>
+              <equal>
+                <case-of pos="1" side="sl" part="lem"/>
+                <lit v="Aa"/>
+              </equal>
+            </and>
+          </test>
+          <modify-case>
+            <clip pos="1" side="tl" part="lemh"/>
+            <lit v="aa"/>
+          </modify-case>
+        </when>
+      </choose>
+    </def-macro>
+
     <def-macro n="f_bcond" npar="2">
 <!--Para mirar si el blanco contiene o no formato, y enviarlo sólo si tiene formato (para reglas en las que se elimine una o más palabras) -->
       <choose>
@@ -2822,6 +2896,9 @@
         <call-macro n="f_concord1">
           <with-param pos="1"/>
         </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="1"/>
+        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="lemh"/>
@@ -3035,6 +3112,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="2"/>
           <with-param pos="1"/>
         </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="2"/>
+        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -3059,6 +3139,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord2">
           <with-param pos="1"/>
           <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="1"/>
         </call-macro>
         <out>
           <lu>
@@ -3086,6 +3169,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord2">
           <with-param pos="2"/>
           <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="2"/>
         </call-macro>
         <choose>
           <when>
@@ -3151,6 +3237,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="3"/>
           <with-param pos="1"/>
         </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="2"/>
+        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -3187,6 +3276,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="3"/>
           <with-param pos="4"/>
           <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="2"/>
         </call-macro>
         <out>
           <lu>
@@ -3231,6 +3323,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="2"/>
           <with-param pos="3"/>
         </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="1"/>
+        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="lemh"/>
@@ -3269,6 +3364,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="3"/>
           <with-param pos="2"/>
           <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="3"/>
         </call-macro>
         <choose>
           <when>
@@ -3362,6 +3460,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="2"/>
           <with-param pos="1"/>
         </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="3"/>
+        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -3394,6 +3495,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="4"/>
           <with-param pos="2"/>
           <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="3"/>
         </call-macro>
         <out>
           <lu>
@@ -3461,6 +3565,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="3"/>
           <with-param pos="1"/>
         </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="2"/>
+        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -3497,6 +3604,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="4"/>
           <with-param pos="2"/>
           <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="3"/>
         </call-macro>
         <out>
           <lu>
@@ -3540,6 +3650,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="1"/>
           <with-param pos="3"/>
         </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="1"/>
+        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="lemh"/>
@@ -3575,6 +3688,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="2"/>
           <with-param pos="1"/>
           <with-param pos="4"/>
+        </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="2"/>
         </call-macro>
         <out>
           <lu>
@@ -3614,6 +3730,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="3"/>
           <with-param pos="1"/>
         </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="3"/>
+        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -3642,6 +3761,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord2">
           <with-param pos="2"/>
           <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="2"/>
         </call-macro>
         <choose>
           <when>
@@ -3725,6 +3847,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="1"/>
           <with-param pos="3"/>
         </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="2"/>
+        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -3760,6 +3885,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="2"/>
           <with-param pos="1"/>
         </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="3"/>
+        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -3794,6 +3922,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="3"/>
           <with-param pos="2"/>
           <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="3"/>
         </call-macro>
         <choose>
           <when>
@@ -3857,6 +3988,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="2"/>
           <with-param pos="1"/>
           <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="2"/>
         </call-macro>
         <choose>
           <when>
@@ -3927,6 +4061,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="2"/>
           <with-param pos="1"/>
           <with-param pos="4"/>
+        </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="3"/>
         </call-macro>
         <choose>
           <when>
@@ -4006,6 +4143,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="1"/>
           <with-param pos="5"/>
         </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="2"/>
+        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -4046,6 +4186,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <let><var n="genero"/><lit-tag v="m"/></let>
         <let><var n="numero"/><lit-tag v="sg"/></let>
         <call-macro n="f_concord1"><with-param pos="4"/></call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="4"/>
+        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -4084,6 +4227,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord2">
           <with-param pos="4"/>
           <with-param pos="5"/>
+        </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="4"/>
         </call-macro>
         <out>
           <lu>
@@ -4130,6 +4276,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="5"/>
           <with-param pos="4"/>
         </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="5"/>
+        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -4170,6 +4319,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="3"/>
           <with-param pos="2"/>
         </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="3"/>
+        </call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -4202,6 +4354,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="5"/>
           <with-param pos="4"/>
           <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="5"/>
         </call-macro>
         <out>
           <lu>
@@ -4244,6 +4399,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="4"/>
           <with-param pos="3"/>
         </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="4"/>
+        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -4282,6 +4440,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="3"/>
           <with-param pos="2"/>
         </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="4"/>
+        </call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -4317,6 +4478,104 @@ is not applicable because gender and number cannot be taken from previous rules 
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule comment="REGLA: jour (n) part_jour: lundi matin > el dilluns al matí">
+      <pattern>
+        <pattern-item n="jour_n"/>
+        <pattern-item n="part_jour"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="el"/>
+            </get-case-from>
+            <lit-tag v="det.def.m.sg"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="2">
+              <clip pos="1" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="a"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="el"/>
+            </get-case-from>
+            <lit-tag v="det.def"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <lit-tag v="sg"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="a_nom"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <lit-tag v="sg"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule comment="REGLA: jour (adv) part_jour: demain matin > demà al matí">
+      <pattern>
+        <pattern-item n="jour_adv"/>
+        <pattern-item n="part_jour"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="a"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="el"/>
+            </get-case-from>
+            <lit-tag v="det.def"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <lit-tag v="sg"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="a_nom"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <lit-tag v="sg"/>
+            <clip pos="2" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
@@ -8584,6 +8843,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord1">
           <with-param pos="3"/>
         </call-macro>
+        <call-macro n="f_maj_gentilici">
+          <with-param pos="3"/>
+        </call-macro>
         <choose>
           <when>
             <test>
@@ -8643,6 +8905,9 @@ is not applicable because gender and number cannot be taken from previous rules 
       </pattern>
       <action>
         <call-macro n="f_concord1">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_maj_gentilici">
           <with-param pos="3"/>
         </call-macro>
         <choose>
