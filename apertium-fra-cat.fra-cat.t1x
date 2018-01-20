@@ -82,7 +82,7 @@
       <cat-item lemma="il" tags="prn.tn.p3.f.pl"/>
     </def-cat>
     <def-cat n="il">
-      <cat-item lemma="il" tags="prn.tn.p3.m.pl"/>
+      <cat-item lemma="il" tags="prn.tn.p3.m.sg"/>
     </def-cat>
     <def-cat n="on">
       <cat-item lemma="on" tags="prn.pro.ref.p3.mf.sp"/>
@@ -296,6 +296,23 @@
       <cat-item lemma="matin" tags="n.*"/>
       <cat-item lemma="après-midi" tags="n.*"/>
       <cat-item lemma="soir" tags="n.*"/>
+    </def-cat>
+
+    <def-cat n="unite_temps">
+      <cat-item lemma="seconde" tags="n.*"/>
+      <cat-item lemma="minute" tags="n.*"/>
+      <cat-item lemma="heure" tags="n.*"/>
+      <cat-item lemma="jour" tags="n.*"/>
+      <cat-item lemma="journée" tags="n.*"/>
+      <cat-item lemma="semaine" tags="n.*"/>
+      <cat-item lemma="mois" tags="n.*"/>
+      <cat-item lemma="an" tags="n.*"/>
+      <cat-item lemma="année" tags="n.*"/>
+      <cat-item lemma="lustre" tags="n.*"/>
+      <cat-item lemma="décennie" tags="n.*"/>
+      <cat-item lemma="décade" tags="n.*"/>
+      <cat-item lemma="siècle" tags="n.*"/>
+      <cat-item lemma="millénaire" tags="n.*"/>
     </def-cat>
     
   </section-def-cats>
@@ -7498,8 +7515,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     
-    <rule>
-<!--REGLA: PRN PRN VERB (il lui dit: li diu)-->
+    <rule comment="REGLA: PRN PRN VERB (il lui dit: li diu)">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="prn"/>
@@ -7529,8 +7545,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!--REGLA: PRN ADV VERB (il toujours arrive: sempre arriba)-->
+    <rule comment="REGLA: PRN ADV VERB (il toujours arrive: sempre arriba)">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="adv"/>
@@ -9300,6 +9315,47 @@ is not applicable because gender and number cannot be taken from previous rules 
           <b pos="2"/>
           <lu>
             <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule comment="REGLA: il y a X temps > fa X temps">
+      <pattern>
+        <pattern-item n="il"/>
+        <pattern-item n="y"/>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="num"/>
+        <pattern-item n="unite_temps"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_concord1">
+          <with-param pos="5"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+               <lit v="fer"/>
+            </get-case-from>
+            <lit-tag v="vblex"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="tags"/>
+            <clip pos="5" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
