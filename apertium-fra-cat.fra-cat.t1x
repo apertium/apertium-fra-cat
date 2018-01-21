@@ -19,6 +19,9 @@
     <def-cat n="detdef">
       <cat-item tags="det.def.*"/>
     </def-cat>
+    <def-cat n="detdefsg">
+      <cat-item tags="det.def.*.sg"/>
+    </def-cat>
     <def-cat n="detdefpl">
       <cat-item tags="det.def.mf.pl"/>
     </def-cat>
@@ -65,8 +68,22 @@
       <cat-item lemma="après" tags="pr"/>
       <cat-item lemma="après" tags="adv"/>
     </def-cat>
-    <def-cat n="pas">
+    <def-cat n="pas_strict">
       <cat-item lemma="pas" tags="adv"/>
+    </def-cat>
+    <def-cat n="pas"> <!-- adverbes négatifs qui doivent être éliminés pendant la traduction -->
+      <cat-item lemma="pas" tags="adv"/>
+      <cat-item lemma="point" tags="adv"/>
+      <cat-item lemma="point" tags="n.*"/>
+    </def-cat>
+    <def-cat n="adv_neg"> <!-- adverbes négatifs qui doivent être se conserver pendant la traduction-->
+      <cat-item lemma="jamais" tags="adv"/>
+      <cat-item lemma="nullement" tags="adv"/>
+      <cat-item lemma="aucunement" tags="adv"/>
+      <cat-item lemma="guère" tags="adv"/>
+      <cat-item lemma="plus" tags="adv"/>
+      <cat-item lemma="nulle part" tags="adv"/>
+      <cat-item lemma="rien" tags="prn.*"/>
     </def-cat>
     <def-cat n="train">
       <cat-item lemma="train" tags="n.*"/>
@@ -151,6 +168,17 @@
       <cat-item tags="vbhaver.*"/>
       <cat-item lemma="avoir" tags="vblex.*"/>
     </def-cat>
+    <def-cat n="verb_partitiu">
+      <cat-item tags="vbhaver.*"/>
+      <cat-item lemma="avoir" tags="vblex.*"/>
+      <cat-item lemma="acheter" tags="vblex.*"/>
+      <cat-item lemma="chercher" tags="vblex.*"/>
+      <cat-item lemma="désirer" tags="vblex.*"/>
+      <cat-item lemma="falloir" tags="vblex.*"/>
+      <cat-item lemma="imaginer" tags="vblex.*"/>
+      <cat-item lemma="sentir" tags="vblex.*"/>
+      <cat-item lemma="vouloir" tags="vblex.*"/>
+    </def-cat>
     <def-cat n="verb">
       <cat-item tags="vblex.*"/>
       <cat-item tags="vbser.*"/>
@@ -168,6 +196,12 @@
       <cat-item tags="vbser.pp.*"/>
       <cat-item tags="vbhaver.pp.*"/>
       <cat-item tags="vbmod.pp.*"/>
+    </def-cat>
+    <def-cat n="pp_m_sg">
+      <cat-item tags="vblex.pp.m.sg"/>
+      <cat-item tags="vbser.pp.m.sg"/>
+      <cat-item tags="vbhaver.pp.m.sg"/>
+      <cat-item tags="vbmod.pp.m.sg"/>
     </def-cat>
     <def-cat n="ger">
       <cat-item tags="vblex.ger"/>
@@ -4599,8 +4633,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     
-    <rule>
-<!-- REGLA: verb + de +  VERB PREP DET (venir de avoir des: acabar de tenir)-->
+    <rule comment="REGLA: verb + de +  VERB PREP DET (venir de avoir des: acabar de tenir)">
       <pattern> 
         <pattern-item n="verb"/>
         <pattern-item n="prep"/>
@@ -4741,8 +4774,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!-- REGLA: verb +  VERB PREP DET (aller avoir des: tindrà)-->
+    <rule comment="REGLA: verb +  VERB PREP DET (aller avoir des: tindrà)">
       <pattern> 
         <pattern-item n="verb"/>
         <pattern-item n="verb"/>
@@ -4915,8 +4947,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
 
     
-    <rule>
-<!-- REGLA: verb + VERB que PREP DET (aller avoir que des: tenir més que)-->
+    <rule comment="REGLA: verb + VERB que PREP DET (aller avoir que des: tenir més que)">
       <pattern>
         <pattern-item n="verb"/>
         <pattern-item n="verb"/>
@@ -4995,8 +5026,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!-- REGLA:VERB que PREP DET (avoir que des: tenir més que)-->
+    <rule comment="REGLA:VERB que PREP DET (avoir que des: tenir més que)">
       <pattern>
         <pattern-item n="verb"/>
         <pattern-item n="que"/>
@@ -5028,8 +5058,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     
-     <rule>
-<!-- REGLA: verb de + VERB toujours PREP DET (venir d'avoir toujours des: acabar de tenir sempre)-->
+     <rule comment="REGLA: verb de + VERB toujours PREP DET (venir d'avoir toujours des: acabar de tenir sempre)">
       <pattern>
         <pattern-item n="verb"/>
         <pattern-item n="prep"/>	
@@ -5114,8 +5143,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
 
     
-    <rule>
-<!-- REGLA: verb + VERB toujours PREP DET (aller avoir toujours des: tenir sempre)-->
+    <rule comment="REGLA: verb + VERB toujours PREP DET (aller avoir toujours des: tenir sempre)">
       <pattern>
         <pattern-item n="verb"/>
         <pattern-item n="verb"/>
@@ -5185,10 +5213,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     
-    
-    
-    <rule>
-<!-- REGLA:VERB adv PREP DET (avoir toujours des: tenir encara)-->
+    <rule comment="REGLA:VERB adv PREP DET (avoir toujours des: tenir encara)">
       <pattern>
         <pattern-item n="verb"/>
         <pattern-item n="adv"/>
@@ -5215,9 +5240,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
 
 
-    
-     <rule>
-<!-- REGLA: verb de + VERB toujours PREP DET (venir d'avoir toujours des: acabar de tenir sempre)-->
+     <rule comment="REGLA: verb de + VERB toujours PREP DET (venir d'avoir toujours des: acabar de tenir sempre)">
       <pattern>
         <pattern-item n="verb"/>
         <pattern-item n="prep"/>	
@@ -5311,8 +5334,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
 
     
-    <rule>
-<!-- REGLA: verb + VERB aujourd'hui encore PREP DET (aller avoir ajourd'hui encore des: tenir hui encara)-->
+    <rule comment="REGLA: verb + VERB aujourd'hui encore PREP DET (aller avoir ajourd'hui encore des: tenir hui encara)">
       <pattern>
         <pattern-item n="verb"/>
         <pattern-item n="verb"/>
@@ -5391,8 +5413,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     
-    <rule>
-<!-- REGLA:VERB adv adv PREP DET (avoir auhjourd'hui encore des: tenir avui encara-->
+    <rule comment="REGLA:VERB adv adv PREP DET (avoir auhjourd'hui encore des: tenir avui encara">
       <pattern>
         <pattern-item n="verb"/>
         <pattern-item n="adv"/>
@@ -5423,8 +5444,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!-- REGLA:PRN VERB PREP DET -->
+    <rule comment="REGLA: PRN VERB DES (il croit des choses, creu coses)">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="verb"/>
@@ -5437,19 +5457,52 @@ is not applicable because gender and number cannot be taken from previous rules 
             <get-case-from pos="1">
               <clip pos="2" side="tl" part="lemh"/>
             </get-case-from>
-            <clip pos="2" side="tl" part="a_verb"/>
-            <clip pos="2" side="tl" part="temps"/>
-            <clip pos="2" side="tl" part="persona"/>
-            <clip pos="2" side="tl" part="gen"/>
-            <clip pos="2" side="tl" part="nbr"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
+      </action>
+    </rule>
+    
+    <rule comment="REGLA: PRN VERB DE LE (il veut de l'eau: vol aigua)">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="verb_partitiu"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefsg"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="tags"/>
             <clip pos="2" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
     </rule>
     
-    <rule>
-<!-- REGLA:PRN VERBSER PP PREP DET -->
+    <rule comment="REGLA:PRN VERBSER PP DE DET">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="vbser"/>
@@ -5491,8 +5544,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!-- REGLA:PRN NEADV VERB que PREP DET -->
+    <rule comment="REGLA:PRN NEADV VERB que DE DET">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="neadv"/>
@@ -7358,7 +7410,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
     
-    <rule comment="REGLA: PRN NE VERB PAS DE (il ne veux pas de: no vol)">
+    <rule comment="REGLA: PRN NE VERB PAS DE (il ne veut pas de: no vol)">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="neadv"/>
@@ -7378,7 +7430,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
           <b pos="2"/>
           <lu>
-            <clip pos="3" side="tl" part="whole"/>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
           </lu>
         </out>
         <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
@@ -7388,12 +7442,809 @@ is not applicable because gender and number cannot be taken from previous rules 
               <or>
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="agir"/></equal>
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="finir"/></equal>
               </or>
             </test>
             <out>
               <b pos="4"/>
               <lu>
                 <clip pos="5" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
+      </action>
+    </rule>
+    
+    
+    <rule comment="REGLA: PRN NE VERB ADV_NEG DE (il ne veut jamais de: no vol mai)">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="adv_neg"/>
+        <pattern-item n="deprep"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="4"/>
+              <lu>
+                <clip pos="5" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
+      </action>
+    </rule>
+    
+    
+    <rule comment="REGLA: PRN NE VBHAVER PAS PP DE (il n'a pas eu de: no ha tingut, ils n'ont pas parlé de: no han parlat de)">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="pp_m_sg"/>
+        <pattern-item n="deprep"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="tags"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="4"/>
+              <lu>
+                <clip pos="5" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
+      </action>
+    </rule>
+    
+    
+    <rule comment="REGLA: PRN NE VBHAVER ADV_NEG PP DE (il n'a jamais eu de: no ha tingut mai, ils n'ont jamais parlé de: no han parlat mai de)">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="adv_neg"/>
+        <pattern-item n="pp_m_sg"/>
+        <pattern-item n="deprep"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="tags"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="4"/>
+              <lu>
+                <clip pos="5" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
+      </action>
+    </rule>
+    
+    
+<!-- les quatre regles que segueixen sembla que només s'utilitzen amb el verb être -->
+    <rule comment="REGLA: PRN NE VERB PAS DE LE (il ne veut pas de l'eau: no vol aigua, il ne veut pas des bombons, no vol bombons)">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdef"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="4"/>
+              <lu>
+                <clip pos="5" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
+      </action>
+    </rule>
+    
+    
+    <rule comment="REGLA: PRN NE VERB ADV_NEG DE LE (il ne veut jamais de l'eau: no vol mai aigua, il ne veut jamais des bombons, no vol mai bombons)">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="adv_neg"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdef"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="4"/>
+              <lu>
+                <clip pos="5" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
+      </action>
+    </rule>
+    
+    
+    <rule comment="REGLA: PRN NE VBHAVER PAS PP DE DET (il n'a pas voulu de l'eau: no ha volgut aigua, ils n'ont pas parlé du: no han parlat del)">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="pp_m_sg"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdef"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="tags"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="4"/>
+              <lu>
+                <clip pos="5" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
+      </action>
+    </rule>
+    
+    
+    <rule comment="REGLA: PRN NE VBHAVER ADV_NEG PP DE DET (il n'a jamais voulu de l'eau: no ha volgut mai aigua, ils n'ont jamais parlé du: no han parlat mai del)">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="adv_neg"/>
+        <pattern-item n="pp_m_sg"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdef"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="tags"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="4"/>
+              <lu>
+                <clip pos="5" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
+      </action>
+    </rule>
+    
+    
+<!-- les següent 8 regles són com les anteriors, però sense prn inicial -->
+    <rule comment="REGLA: NE VERB PAS DE (ne veut pas de: no vol)">
+      <pattern>
+        <pattern-item n="neadv"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="deprep"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
+      </action>
+    </rule>
+    
+    
+    <rule comment="REGLA: NE VERB ADV_NEG DE (ne veut jamais de: no vol mai)">
+      <pattern>
+        <pattern-item n="neadv"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="adv_neg"/>
+        <pattern-item n="deprep"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
+      </action>
+    </rule>
+    
+    
+    <rule comment="REGLA: NE VBHAVER PAS PP DE (n'a pas eu de: no ha tingut, n'ont pas parlé de: no han parlat de)">
+      <pattern>
+        <pattern-item n="neadv"/>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="pp_m_sg"/>
+        <pattern-item n="deprep"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
+      </action>
+    </rule>
+    
+    
+    <rule comment="REGLA: NE VBHAVER ADV_NEG PP DE (n'a jamais eu de: no ha tingut mai, n'ont jamais parlé de: no han parlat mai de)">
+      <pattern>
+        <pattern-item n="neadv"/>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="adv_neg"/>
+        <pattern-item n="pp_m_sg"/>
+        <pattern-item n="deprep"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
+      </action>
+    </rule>
+    
+    
+<!-- les quatre regles que segueixen sembla que només s'utilitzen amb el verb être -->
+    <rule comment="REGLA: NE VERB PAS DE LE (ne veut pas de l'eau: no vol aigua, ne veut pas des bomboms: no vol bombons)">
+      <pattern>
+        <pattern-item n="neadv"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdef"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
+      </action>
+    </rule>
+    
+    
+    <rule comment="REGLA: NE VERB ADV_NEG DE LE (ne veut jamais de l'eau: no vol mai aigua, ne veut jamais des bomboms: no vol mai bombons)">
+      <pattern>
+        <pattern-item n="neadv"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="adv_neg"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdef"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
+      </action>
+    </rule>
+    
+    
+    <rule comment="REGLA: NE VBHAVER PAS PP DE LE (n'a pas voulu de l'eau: no ha volgut aigua, n'ont pas voulu des bombons: no han volgut bombons)">
+      <pattern>
+        <pattern-item n="neadv"/>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="pp_m_sg"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdef"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
+      </action>
+    </rule>
+    
+    
+    <rule comment="REGLA: NE VBHAVER ADV_NEG PP DE LE (n'a jamais voulu de l'eau: no ha volgut mai aigua, n'ont jamais voulu des bombons: no han volgut mai bombons)">
+      <pattern>
+        <pattern-item n="neadv"/>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="adv_neg"/>
+        <pattern-item n="pp_m_sg"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdef"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="whole"/>
               </lu>
             </out>
           </when>
@@ -8811,11 +9662,11 @@ is not applicable because gender and number cannot be taken from previous rules 
     <rule>
 <!--REGLA: pas de: -->
       <pattern>
-        <pattern-item n="pas"/>
+        <pattern-item n="pas_strict"/>
         <pattern-item n="deprep"/>
       </pattern>
       <action>
- </action>
+      </action>
     </rule>
     
     <rule>
