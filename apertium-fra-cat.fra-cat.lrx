@@ -431,6 +431,7 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- beau >> bonic, bell, bo -->
   <rule weight="1.0">
     <match lemma="beau" tags="adj.*"><select lemma="bonic" tags="adj.*"/></match>
   </rule>
@@ -443,6 +444,15 @@
   <rule weight="1.0">
     <match lemma="faire" tags="vblex.*"/>
     <match lemma="beau" tags="adj.*"><select lemma="bo" tags="adj.*"/></match>
+  </rule>
+
+  <!-- seul >> sol, únic -->
+  <rule weight="0.8">
+    <match lemma="seul" tags="adj.*"><select lemma="sol"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="seul" tags="adj.*"><select lemma="únic"/></match>
+    <match tags="n.*"/>
   </rule>
 
 <!-- **************** VBLEX **************** -->

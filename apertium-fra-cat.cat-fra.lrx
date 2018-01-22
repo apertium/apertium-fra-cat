@@ -40,6 +40,17 @@
     <match tags="vblex.*.p3.*"/>
   </rule>
 
+  <!-- 
+    la qual cosa >> ce qui, lequel
+  -->
+  <rule weight="0.8">
+    <match lemma="la qual cosa" tags="rel.an.*"><select lemma="ce qui"/></match>
+  </rule>
+  <rule weight="0.8">
+    <match tags="pr"/>
+    <match lemma="la qual cosa" tags="rel.an.*"><select lemma="lequel"/></match>
+  </rule>
+
 <!-- PR -->
 
   <!-- 
@@ -221,6 +232,61 @@
     <match lemma="negociació" tags="n.*"/>
   </rule>
 
+  <!-- intentar >> essayer, essayer# de -->
+  <rule weight="0.8">
+    <match lemma="intentar" tags="vblex.*"><select lemma="essayer"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="intentar" tags="vblex.*"><select lemma="essayer# de"/></match>
+    <match tags="*.inf"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="intentar" tags="vblex.*"><select lemma="essayer# de"/></match>
+    <match tags="adv"/>
+    <match tags="*.inf"/>
+  </rule>
+
+  <!-- tractar >> traiter, tâcher, agir -->
+  <rule weight="0.8">
+    <match lemma="tractar" tags="vblex.*"><select lemma="traiter"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tractar" tags="vblex.*"><select lemma="tâcher"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tractar" tags="vblex.*"><select lemma="tâcher"/></match>
+    <match tags="adv"/>
+    <match lemma="de" tags="pr"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="tractar" tags="vblex.*"><select lemma="traiter"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.def.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="tractar" tags="vblex.*"><select lemma="traiter"/></match>
+    <match tags="adv"/>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.def.*"/>
+  </rule>
+  <rule weight="3.2">
+    <match tags="prn.pro.ref.*"/>
+    <match lemma="tractar" tags="vblex.*"><select lemma="agir"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
+  <rule weight="3.2">
+    <match tags="prn.pro.ref.*"/>
+    <match lemma="tractar" tags="vblex.*"><select lemma="agir"/></match>
+    <match tags="adv"/>
+    <match lemma="de" tags="pr"/>
+  </rule>
+  <rule weight="3.2">
+    <match lemma="tractar" tags="vblex.*"><select lemma="agir"/></match>
+    <match tags="prn.pro.ref.*"/>
+    <match lemma="de" tags="pr"/>
+  </rule>
+
   <!-- cridar >> appeler, crier -->
   <rule weight="0.8">
     <match lemma="cridar" tags="vblex.*"><select lemma="appeler"/></match>
@@ -297,7 +363,27 @@
     <match tags="prn.enc.ref.*"/>
   </rule>
 
+<!-- ADJ -->
+
+  <!-- únic >> unique, seul -->
+  <rule weight="0.8">
+    <match lemma="únic" tags="adj.*"><select lemma="unique"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="únic" tags="adj.*"><select lemma="seul"/></match>
+    <match tags="n.*"/>
+  </rule>
+
 <!-- N -->
+
+  <!-- partit >> parti, match -->
+  <rule weight="0.8">
+    <match lemma="partit" tags="n.*"><select lemma="parti"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="partit" tags="n.*"><select lemma="match"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
 
   <!-- tauleta >> petite table, tablette -->
   <rule weight="0.8">
@@ -306,6 +392,19 @@
   <rule weight="1.0">
     <match lemma="tauleta" tags="n.*"><select lemma="tablette"/></match>
     <match lemma="tàctil" tags="adj.*"/>
+  </rule>
+
+  <!-- pare >> père, parent -->
+  <rule weight="0.8">
+    <match lemma="pare" tags="n.*"><select lemma="père"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pare" tags="n.m.pl"><select lemma="parent"/></match>
+  </rule>
+
+  <!-- poll >> peuplier, poussin, pou -->
+  <rule weight="0.8">
+    <match lemma="poll" tags="n.*"><select lemma="peuplier"/></match>
   </rule>
 
   <!-- grafit >> graffiti, graphite -->
@@ -321,6 +420,7 @@
   <rule weight="0.8">
     <match lemma="any" tags="n.*"><select lemma="année"/></match>
   </rule>
+<!--
   <rule weight="1.0">
     <or><match tags="num"/><match tags="num.*"/></or>
     <match lemma="any" tags="n.*"><select lemma="an"/></match>
@@ -344,7 +444,6 @@
     <match tags="det.dem.*"/>
     <match lemma="any" tags="n.*"><select lemma="année"/></match>
   </rule>
-<!--
 -->
 
   <!-- cort >> cour, parlement -->

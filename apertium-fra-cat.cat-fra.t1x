@@ -656,6 +656,7 @@
     </def-list>
     <def-list n="pr_de">
       <list-item v="de"/>
+      <list-item v="à côté de"/>
       <list-item v="afin de"/>
       <list-item v="à l'encontre de"/>
       <list-item v="à l'exception de"/>
@@ -676,9 +677,11 @@
       <list-item v="au profit de"/>
       <list-item v="au prétexte de"/>
       <list-item v="au sujet de"/>
+      <list-item v="autour de"/>
       <list-item v="dans bien de"/>
       <list-item v="dans le cadre de"/>
       <list-item v="en cas de"/>
+      <list-item v="en dehors de"/>
       <list-item v="en plus de"/>
       <list-item v="en raison de"/>
       <list-item v="en échange de"/>
@@ -4689,6 +4692,33 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
     </rule>
 <!--fi regles de concordança-->
+
+    <rule comment="REGLA: DETDEF DE: el de l'esquerra: celui de la gauche">
+      <pattern>
+        <pattern-item n="detdef"/>
+        <pattern-item n="deprep"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="celui"/>
+            </get-case-from>
+            <lit-tag v="prn.tn"/>
+            <clip pos="1" side="sl" part="gen"/>
+            <clip pos="1" side="tl" part="nbr"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
     <rule>
 <!-- REGLA: PRETÈRIT INDEFINIT -->
 <!-- Per traduir "vaig fer" per "ai fait" -->
@@ -5596,7 +5626,9 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
       <b pos="1"/>
               <lu>
-              <clip pos="2" side="tl" part="whole"/>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
               </lu>
             </out>
           </otherwise>
