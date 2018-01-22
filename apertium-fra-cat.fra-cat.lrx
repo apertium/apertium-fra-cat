@@ -108,8 +108,23 @@
 
 <!-- **************** REL **************** -->
 
-  <rule weight="1.8">
+  <!-- qui >> que -->
+  <rule weight="0.8">
     <match lemma="qui" tags="rel.*"><select lemma="que" tags="rel.*"/></match>
+  </rule>
+
+  <!-- ce qui >> la qual cosa, el que -->
+  <rule weight="0.8">
+    <match lemma="ce qui" tags="rel.*"><select lemma="la qual cosa" tags="rel.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="vblex.*"/>
+    <match lemma="ce qui" tags="rel.*"><select lemma="el que" tags="rel.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="vblex.*"/>
+    <match tags="adv"/>
+    <match lemma="ce qui" tags="rel.*"><select lemma="el que" tags="rel.*"/></match>
   </rule>
 
 <!-- **************** V **************** -->
@@ -452,6 +467,15 @@
   </rule>
   <rule weight="1.0">
     <match lemma="seul" tags="adj.*"><select lemma="únic"/></match>
+    <match tags="n.*"/>
+  </rule>
+
+  <!-- mauvais >> dolent, mal -->
+  <rule weight="0.8">
+    <match lemma="mauvais" tags="adj.*"><select lemma="dolent"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="mauvais" tags="adj.*"><select lemma="mal"/></match>
     <match tags="n.*"/>
   </rule>
 
