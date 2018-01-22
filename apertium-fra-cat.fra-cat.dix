@@ -738,7 +738,7 @@
     <e>       <p><l>allaiter<s n="vblex"/></l>        <r>alletar<s n="vblex"/></r></p></e>
     <e r="LR"><p><l>allant<s n="adj"/></l>            <r>actiu<s n="adj"/></r></p></e>
     <e r="LR"><p><l>allant<s n="n"/><s n="m"/></l>    <r>disposició<s n="n"/><s n="f"/></r></p></e>
-    <e>       <p><l>allée<s n="n"/></l>               <r>albereda<s n="n"/></r></p></e>
+    <e r="LR"><p><l>allée<s n="n"/><s n="f"/></l>     <r>camí<s n="n"/><s n="m"/></r></p></e>
     <e>       <p><l>allégation<s n="n"/></l>          <r>al·legació<s n="n"/></r></p></e>
     <e>       <p><l>allège<s n="n"/><s n="f"/></l>    <r>ampit<s n="n"/><s n="m"/></r></p></e>
     <e>       <p><l>alléger<s n="vblex"/></l>         <r>alleugerir<s n="vblex"/></r></p></e>
@@ -15377,7 +15377,8 @@
 <e><p><l>pétrolier<s n="n"/><s n="m"/></l><r>petrolier<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>pétrolier<s n="adj"/></l><r>petrolier<s n="adj"/></r></p></e>
 <e><p><l>pétrolifère<s n="adj"/></l><r>petrolífer<s n="adj"/></r></p></e>
-<e><p><l>peupleraie<s n="n"/><s n="f"/></l><r>albereda<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>peupleraie<s n="n"/><s n="f"/></l><r>pollandreda<s n="n"/><s n="f"/></r></p></e>
+<e r="LR"><p><l>peupleraie<s n="n"/><s n="f"/></l><r>albereda<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>phare<s n="n"/><s n="m"/></l><r>far<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>pharmacien<s n="n"/><s n="m"/></l><r>farmacèutic<s n="n"/><s n="m"/></r></p></e>
 <e r="LR"><p><l>pharmacien<s n="n"/><s n="f"/></l><r>farmacèutic<s n="n"/><s n="f"/></r></p></e>
@@ -16696,6 +16697,7 @@
 <e a="ester"><p><l>parachute<s n="n"/><s n="m"/></l><r>paracaigudes<s n="n"/><s n="m"/></r></p><par n="ND_sp"/></e>
 <e a="ester"><p><l>repérage<s n="n"/><s n="f"/></l><r>localització<s n="n"/><s n="f"/></r></p></e>
 <e a="ester" r="LR"><p><l>reporter<s n="n"/><s n="m"/></l><r>periodista<s n="n"/><s n="mf"/></r></p></e>
+<e a="hector" r="LR"><p><l>reporter<s n="n"/><s n="f"/></l><r>periodista<s n="n"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>reporteur<s n="n"/></l><r>periodista<s n="n"/></r></p><par n="GD_mf"/></e>
 <e a="ester"><p><l>tailleur<s n="n"/><s n="m"/></l><r>sastre<s n="n"/><s n="m"/></r></p></e>
 <e a="ester"><p><l>tract<s n="n"/><s n="m"/></l><r>octaveta<s n="n"/><s n="f"/></r></p></e>
@@ -17253,7 +17255,8 @@
 <e a="hector"><p><l>insuffisamment<s n="adv"/></l><r>insuficientment<s n="adv"/></r></p></e>
 <e a="hector"><p><l>magicien<s n="n"/></l><r>mag<s n="n"/></r></p></e>
 <e a="hector"><p><l>varié<s n="adj"/></l><r>variat<s n="adj"/></r></p></e>
-<e a="hector"><p><l>élu<s n="n"/></l><r>elegit<s n="n"/></r></p></e>
+<e r="RL" a="hector"><p><l>élu<s n="n"/></l><r>elegit<s n="n"/></r></p></e>
+<e r="LR" a="hector"><p><l>élu<s n="n"/></l><r>representant<s n="n"/></r></p><par n="GD_mf"/></e>
 <e r="LR" a="hector"><p><l>d'ailleurs<s n="adv"/></l><r>d'altra<b/>banda<s n="adv"/></r></p></e>
 <e r="LR" a="hector"><p><l>d'ailleurs<s n="adv"/></l><r>d'un<b/>altre<b/>lloc<s n="adv"/></r></p></e>
 <e a="hector"><p><l>un<b/>peu<s n="adv"/></l><r>una<b/>mica<s n="adv"/></r></p></e>
@@ -22592,6 +22595,8 @@
 <e><p><l>randonnée<s n="n"/><s n="f"/></l><r>caminada<s n="n"/><s n="f"/></r></p></e>
 <e r="LR"><p><l>randonnée<b/>pédestre<s n="n"/><s n="f"/></l><r>caminada<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>fort<s n="n"/><s n="m"/></l><r>fort<s n="n"/><s n="m"/></r></p></e>
+    <e>       <p><l>Breton<s n="np"/><s n="cog"/></l><r>Breton<s n="np"/><s n="cog"/></r></p></e>
+<e><p><l>convaincu<s n="adj"/></l><r>convençut<s n="adj"/></r></p></e>
 
 
   </section>

@@ -9353,7 +9353,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule comment="REGLA: prep 'en' + ger = ger : en chantant -> cantant">
+    <rule comment="REGLA: en + ger = ger : en chantant -> cantant">
       <pattern>
         <pattern-item n="en"/>
         <pattern-item n="ger"/>
@@ -9375,9 +9375,34 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!--REGLA:  "en" + pro +ger= ger+enc -->
+    <rule comment="REGLA: en ne + ger + pas = no ger : en ne chantant pas -> no cantant">
       <pattern>
+        <pattern-item n="en"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="ger"/>
+        <pattern-item n="pas"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule comment="REGLA: en + pro + ger= ger+enc">
+     <pattern>
         <pattern-item n="en"/>
         <pattern-item n="prnproobj"/>
         <pattern-item n="ger"/>
@@ -9405,8 +9430,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!--REGLA:  pro +ger = ger+enc -->
+    <rule comment="REGLA: pro +ger = ger+enc">
       <pattern>
         <pattern-item n="prnproobj"/>
         <pattern-item n="ger"/>
@@ -9744,8 +9768,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!--REGLA: prep "en" + nploc = a + nploc: en France -> a França -->
+    <rule comment="REGLA: en + nploc = a + nploc: en France -> a França">
       <pattern>
         <pattern-item n="en"/>
         <pattern-item n="nploc"/>
