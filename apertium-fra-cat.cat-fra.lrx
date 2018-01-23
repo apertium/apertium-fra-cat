@@ -385,6 +385,15 @@
     <match lemma="de" tags="pr"/>
   </rule>
 
+  <!-- col·legi >> école, collège -->
+  <rule weight="0.8">
+    <match lemma="col·legi" tags="n.*"><select lemma="école"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="col·legi" tags="n.*"><select lemma="collège"/></match>
+    <match lemma="electoral" tags="adj.*"/>
+  </rule>
+
   <!-- tauleta >> petite table, tablette -->
   <rule weight="0.8">
     <match lemma="tauleta" tags="n.*"><select lemma="petite table"/></match>

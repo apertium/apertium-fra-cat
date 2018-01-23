@@ -470,6 +470,11 @@
     <match tags="n.*"/>
   </rule>
 
+  <!-- ancien >> antic, ancià -->
+  <rule weight="0.8">
+    <match lemma="ancien" tags="adj.*"><select lemma="antic"/></match>
+  </rule>
+
   <!-- mauvais >> dolent, mal -->
   <rule weight="0.8">
     <match lemma="mauvais" tags="adj.*"><select lemma="dolent"/></match>
