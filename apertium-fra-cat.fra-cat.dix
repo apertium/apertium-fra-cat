@@ -4221,7 +4221,7 @@
     <e a="gema" r="RL"><p><l>dirigeant<s n="n"/><s n="GD"/></l><r>dirigent<s n="n"/><s n="mf"/></r></p></e>
     <e>       <p><l>diriger<s n="vblex"/></l>         <r>dirigir<s n="vblex"/></r></p></e>
     <e r="RL"><p><l>diriger<s n="vblex"/></l>         <r>menar<s n="vblex"/></r></p></e>
-    <e>       <p><l>disciple<s n="n"/><s n="mf"/></l><r>deixeble<s n="n"/><s n="mf"/></r></p></e>
+    <e>       <p><l>disciple<s n="n"/></l>            <r>deixeble<s n="n"/></r></p><par n="neutre_neutre"/></e>
     <e a="gema"><p><l>discipline<s n="n"/></l>        <r>disciplina<s n="n"/></r></p></e>
     <e>       <p><l>discordance<s n="n"/></l>         <r>discordança<s n="n"/></r></p></e>
     <e r="LR" a="gema"><p><l>discours<s n="n"/><s n="m"/><s n="sp"/></l><r>discurs<s n="n"/><s n="m"/><s n="ND"/></r></p></e>
@@ -4232,8 +4232,9 @@
     <e>       <p><l>discriminer<s n="vblex"/></l>     <r>discriminar<s n="vblex"/></r></p></e>
     <e>       <p><l>discussion<s n="n"/></l>          <r>discussió<s n="n"/></r></p></e>
     <e>       <p><l>discutable<s n="adj"/><s n="mf"/></l><r>discutible<s n="adj"/><s n="mf"/></r></p></e>
-    <e>       <p><l>discuter<s n="vblex"/></l>        <r>conversar<s n="vblex"/></r></p></e>
-    <e r="RL"><p><l>parlar<s n="vblex"/></l>          <r>enraonar<s n="vblex"/></r></p></e>
+    <e>       <p><l>discuter<s n="vblex"/></l>        <r>discutir<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>parler<s n="vblex"/></l>          <r>conversar<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>parler<s n="vblex"/></l>          <r>enraonar<s n="vblex"/></r></p></e>
     <!--<e a="gema"><p><l>Disney<s n="np"/></l><r>Disney<s n="np"/></r></p></e>-->
     <e>       <p><l>disparaître<s n="vblex"/></l>     <r>desaparèixer<s n="vblex"/></r></p></e>
     <e a="ariel"><p><l>disparité<s n="n"/></l>        <r>disparitat<s n="n"/></r></p></e>
@@ -4247,7 +4248,6 @@
     <e>       <p><l>dispositif<s n="n"/></l>          <r>dispositiu<s n="n"/></r></p></e>
     <e>       <p><l>disposition<s n="n"/></l>         <r>disposició<s n="n"/></r></p></e>
     <e>       <p><l>disputer<s n="vblex"/></l>        <r>disputar<s n="vblex"/></r></p></e>
-    <e r="RL"><p><l>disputer<s n="vblex"/></l>        <r>discutir<s n="vblex"/></r></p></e>
     <e>       <p><l>disque<s n="n"/></l>              <r>disc<s n="n"/></r></p></e>
     <e>       <p><l>dissidence<s n="n"/></l>          <r>dissidència<s n="n"/></r></p></e>
     <e r="LR"><p><l>dissident<s n="adj"/><s n="f"/></l><r>dissident<s n="adj"/><s n="mf"/></r></p></e>
@@ -11473,7 +11473,7 @@
 <e>       <p><l>Romain<s n="n"/><s n="m"/></l>    <r>romà<s n="n"/><s n="m"/></r></p></e>
 <e>       <p><l>Romain<s n="n"/><s n="f"/></l>    <r>romà<s n="n"/><s n="f"/></r></p></e>
 <e a="gema"><p><l>roman<s n="n"/><s n="m"/></l>   <r>novel·la<s n="n"/><s n="f"/></r></p></e>
-<e a="gema" r="RL"><p><l>roman<s n="adj"/></l>    <r>romànic<s n="adj"/></r></p></e>
+<e a="gema"><p><l>roman<s n="adj"/></l>           <r>romànic<s n="adj"/></r></p></e>
 <e>       <p><l>Román<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Román<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
 <e>       <p><l>romanisation<s n="n"/></l>        <r>romanització<s n="n"/></r></p></e>
 <e>       <p><l>romantisme<s n="n"/></l>          <r>romanticisme<s n="n"/></r></p></e>
@@ -14208,7 +14208,9 @@
 <e><p><l>dégrèvement<s n="n"/><s n="m"/></l><r>desgravament<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>dégustation<s n="n"/><s n="f"/></l><r>degustació<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>délectation<s n="n"/><s n="f"/></l><r>delectació<s n="n"/><s n="f"/></r></p></e>
-<e><p><l>délégué<s n="n"/><s n="m"/></l><r>delegat<s n="n"/><s n="m"/></r></p></e>
+<!-- xx
+<e><p><l>délégué<s n="n"/></l><r>delegat<s n="n"/></r></p></e>
+-->
 <e><p><l>délocalisation<s n="n"/><s n="f"/></l><r>deslocalització<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>délogement<s n="n"/><s n="m"/></l><r>desallotjament<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>démarcation<s n="n"/><s n="f"/></l><r>demarcació<s n="n"/><s n="f"/></r></p></e>
@@ -14942,6 +14944,8 @@
 <e><p><l>dm<s n="n"/><s n="m"/><s n="sp"/></l><r>dm<s n="n"/><s n="m"/><s n="sp"/></r></p></e>
 <e><p><l>dl<s n="n"/><s n="m"/><s n="sp"/></l><r>dl<s n="n"/><s n="m"/><s n="sp"/></r></p></e>
 <e><p><l>kg<s n="n"/><s n="m"/><s n="sp"/></l><r>kg<s n="n"/><s n="m"/><s n="sp"/></r></p></e>
+<e><p><l>kW<s n="n"/><s n="m"/><s n="sp"/></l><r>kW<s n="n"/><s n="m"/><s n="sp"/></r></p></e>
+<e><p><l>kWh<s n="n"/><s n="m"/><s n="sp"/></l><r>kWh<s n="n"/><s n="m"/><s n="sp"/></r></p></e>
 <e><p><l>kJ<s n="n"/><s n="m"/><s n="sp"/></l><r>kJ<s n="n"/><s n="m"/><s n="sp"/></r></p></e>
 <e><p><l>Hz<s n="n"/><s n="m"/><s n="sp"/></l><r>Hz<s n="n"/><s n="m"/><s n="sp"/></r></p></e>
 <e><p><l>kHz<s n="n"/><s n="m"/><s n="sp"/></l><r>kHz<s n="n"/><s n="m"/><s n="sp"/></r></p></e>
@@ -15755,7 +15759,7 @@
 <e><p><l>robinet<s n="n"/><s n="m"/></l><r>griu<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>robot<s n="n"/><s n="m"/></l><r>robot<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>robustesse<s n="n"/><s n="f"/></l><r>robustesa<s n="n"/><s n="f"/></r></p></e>
-<e><p><l>roman<s n="n"/><s n="m"/></l><r>romanç<s n="n"/><s n="m"/></r></p></e>
+<e r="RL"><p><l>roman<s n="n"/><s n="m"/></l><r>romanç<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>romarin<s n="n"/><s n="m"/></l><r>romaní<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>rosaire<s n="n"/><s n="m"/></l><r>rosari<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>rossignol<s n="n"/><s n="m"/></l><r>rossinyol<s n="n"/><s n="m"/></r></p></e>
@@ -16213,7 +16217,7 @@
 <e><p><l>conditionner<s n="vblex"/></l><r>condicionar<s n="vblex"/></r></p></e>
 <e><p><l>conforter<s n="vblex"/></l><r>reforçar<s n="vblex"/></r></p></e>
 <e><p><l>conjuguer<s n="vblex"/></l><r>conjugar<s n="vblex"/></r></p></e>
-<e><p><l>contester<s n="vblex"/></l><r>discutir<s n="vblex"/></r></p></e>
+<e r="LR"><p><l>contester<s n="vblex"/></l><r>discutir<s n="vblex"/></r></p></e>
 <e><p><l>convertir<s n="vblex"/></l><r>convertir<s n="vblex"/></r></p></e>
 <e><p><l>décaler<s n="vblex"/></l><r>desplaçar<s n="vblex"/></r></p></e>
 <e><p><l>décoller<s n="vblex"/></l><r>desenganxar<s n="vblex"/></r></p></e>
@@ -22675,6 +22679,30 @@
     <e>       <p><l>Nouvelle-Castille<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Castella<b/>la<b/>Nova<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></r></p></e>
     <e>       <p><l>Vieille-Castille<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Castella<b/>la<b/>Vella<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></r></p></e>
 <e><p><l>engageant<s n="adj"/></l><r>motivador<s n="adj"/></r></p></e>
+    <e>       <p><l>Hanse<s n="np"/><s n="al"/><s n="f"/><s n="sg"/></l><r>Hansa<s n="np"/><s n="al"/><s n="f"/><s n="sg"/></r></p></e>
+<e><p><l>faire<g><b/>tourner<b/>la<b/>tête</g><s n="vblex"/></l><r>marejar<s n="vblex"/></r></p></e>
+<e r="RL"><p><l>sentir<g><b/>mal</g><s n="vblex"/></l><r>marejar<s n="vblex"/></r></p></e>
+<e r="LR"><p><l>sentir<g><b/>mal</g><s n="vblex"/></l><r>trobar<g><b/>malament</g><s n="vblex"/></r></p></e>
+<e a="ester"><p><l>table<b/>mobile<s n="n"/><s n="f"/></l><r>carret<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>albigeois<s n="adj"/></l><r>albigès<s n="adj"/></r></p><par n="anglais_anglès"/></e>
+<e><p><l>Albigeois<s n="n"/></l><r>albigès<s n="n"/></r></p><par n="anglais_anglès"/></e>
+<e><p><l>jumeau<s n="n"/><s n="f"/><s n="pl"/></l><r>prismàtics<s n="n"/><s n="m"/><s n="pl"/></r></p></e>
+<e><p><l>chapeau<b/>haut<b/>de<b/>forme<s n="n"/><s n="m"/></l><r>barret<g><b/>de<b/>copa</g><s n="n"/><s n="m"/></r></p></e>
+<e><p><l>tricorne<s n="n"/><s n="m"/></l><r>tricorni<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>Mb<s n="n"/><s n="m"/></l><r>Mb<s n="n"/><s n="m"/></r></p></e>
+<e r="RL"><p><l>octet<s n="n"/><s n="m"/></l><r>byte<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>kilooctet<s n="n"/><s n="m"/></l><r>kilobyte<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>mégaoctet<s n="n"/><s n="m"/></l><r>kilobyte<s n="n"/><s n="m"/></r></p></e>
+<e r="LR"><p><l>byte<s n="n"/><s n="m"/></l><r>byte<s n="n"/><s n="m"/></r></p></e>
+<e r="LR"><p><l>kilobyte<s n="n"/><s n="m"/></l><r>kilobyte<s n="n"/><s n="m"/></r></p></e>
+<e r="LR"><p><l>mégabyte<s n="n"/><s n="m"/></l><r>kilobyte<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>bit<s n="n"/><s n="m"/></l><r>bit<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>kilobit<s n="n"/><s n="m"/></l><r>kilobit<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>mégabit<s n="n"/><s n="m"/></l><r>kilobit<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>marc<b/>légal<s n="n"/><s n="m"/></l><r>marc<g><b/>legal</g><s n="n"/><s n="m"/></r></p></e>
 
-  </section>
+<e><p><l>disputé<s n="adj"/></l><r>discutit<s n="adj"/></r></p></e>
+<e><p><l>frère<s n="adj"/></l><r>germà<s n="adj"/></r></p></e>
+
+	  </section>
 </dictionary>

@@ -25,7 +25,7 @@ my $MOT = 'musique de chambre';	# paraula a debugar
 my $MOT = '';
 my $MOT = 'comarca';	# paraula a debugar
 
-my $MORF_TRACT = 'n';
+my $MORF_TRACT = 'adj';
 #my $MORF_TRACT = '';
 
 my ($ffra, $fbi, $fdixfra, $fdixcat, $fdixbi, $fdixfran, $fdixfraadj);

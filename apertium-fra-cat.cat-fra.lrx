@@ -246,6 +246,57 @@
     <match tags="*.inf"/>
   </rule>
 
+  <!-- marejar >> faire# tourner la tête, sentir# mal -->
+  <rule weight="0.8">
+    <match lemma="marejar" tags="vblex.*"><select lemma="faire# tourner la tête"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.ref.*"/>
+    <match lemma="marejar" tags="vblex.*"><select lemma="sentir# mal"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.p1.*"/>
+    <match lemma="marejar" tags="vblex.*.p1.*"><select lemma="sentir# mal"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.p2.*"/>
+    <match lemma="marejar" tags="vblex.*.p2.*"><select lemma="sentir# mal"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.ref.*"/>
+    <match lemma="haver" tags="vbhaver.*"/>
+    <match lemma="marejar" tags="vblex.pp.*"><select lemma="sentir# mal"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.p1.*"/>
+    <match lemma="haver" tags="vbhaver.*.p1.*"/>
+    <match lemma="marejar" tags="vblex.pp.*"><select lemma="sentir# mal"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.p2.*"/>
+    <match lemma="haver" tags="vbhaver.*.p2.*"/>
+    <match lemma="marejar" tags="vblex.pp.*"><select lemma="sentir# mal"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.ref.*"/>
+    <match lemma="anar" tags="vblex.pri.p3.*"/>
+    <match lemma="marejar" tags="vblex.inf"><select lemma="sentir# mal"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.p1.*"/>
+    <match lemma="anar" tags="vblex.pri.p1.*"/>
+    <match lemma="marejar" tags="vblex.inf"><select lemma="sentir# mal"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.p2.*"/>
+    <match lemma="anar" tags="vblex.pri.p2.*"/>
+    <match lemma="marejar" tags="vblex.inf"><select lemma="sentir# mal"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="marejar" tags="vblex.*"><select lemma="sentir# mal"/></match>
+    <match tags="prn.pro.ref.*"/>
+  </rule>
+
   <!-- tractar >> traiter, tâcher, agir -->
   <rule weight="0.8">
     <match lemma="tractar" tags="vblex.*"><select lemma="traiter"/></match>
