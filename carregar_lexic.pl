@@ -22,10 +22,11 @@ my $MOT = 'UICN';	# paraula a debugar
 my $MOT = 'musique';	# paraula a debugar
 my $MOT = 'musique de chambre';	# paraula a debugar
 #my $MOT = 'nombre primer';	# paraula a debugar
-my $MOT = '';
 my $MOT = 'comarca';	# paraula a debugar
+my $MOT = '';
 
 my $MORF_TRACT = 'adj';
+my $MORF_TRACT = 'n';
 #my $MORF_TRACT = '';
 
 my ($ffra, $fbi, $fdixfra, $fdixcat, $fdixbi, $fdixfran, $fdixfraadj);

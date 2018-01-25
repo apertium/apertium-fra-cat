@@ -201,6 +201,24 @@
 
 <!-- **************** N **************** -->
 
+  <!-- moelle >> medu·la, moll -->
+  <rule weight="0.8">
+    <match lemma="moelle" tags="n.*"><select lemma="medul·la"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="moelle" tags="n.*"><select lemma="moll"/></match>
+    <or>
+      <match lemma="osseuse" tags="adj.*"/>
+      <match lemma="jaune" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="moelle" tags="n.*"><select lemma="moll"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="os" tags="n.*"/>
+  </rule>
+
   <!-- monde >> món, gent -->
   <rule weight="0.8">
     <match lemma="monde" tags="n.*"><select lemma="món"/></match>

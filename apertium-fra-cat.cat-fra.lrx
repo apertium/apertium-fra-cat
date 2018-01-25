@@ -425,6 +425,33 @@
     <match tags="n.*"/>
   </rule>
 
+  <!-- bàltic >> baltique, balte -->
+  <rule weight="0.8">
+    <match lemma="bàltic" tags="adj.*"><select lemma="baltique"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="llengua" tags="n.*"/>
+      <match lemma="idioma" tags="n.*"/>
+      <match lemma="país" tags="n.*"/>
+      <match lemma="nació" tags="n.*"/>
+      <match lemma="estat" tags="n.*"/>
+      <match lemma="govern" tags="n.*"/>
+      <match lemma="parlament" tags="n.*"/>
+      <match lemma="ciutadà" tags="n.*"/>
+    </or>
+    <match lemma="bàltic" tags="adj.*"><select lemma="balte"/></match>
+  </rule>
+
+  <!-- mig >> demi_post, demi_pre -->
+  <rule weight="0.8">
+    <match lemma="únic" tags="adj.*"><select lemma="demi_post"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="únic" tags="adj.*"><select lemma="demi_pre"/></match>
+    <match tags="n.*"/>
+  </rule>
+
 <!-- N -->
 
   <!-- partit >> parti, match -->
@@ -434,6 +461,36 @@
   <rule weight="1.0">
     <match lemma="partit" tags="n.*"><select lemma="match"/></match>
     <match lemma="de" tags="pr"/>
+  </rule>
+
+  <!-- nau >> navire, nef -->
+  <rule weight="0.8">
+    <match lemma="nau" tags="n.*"><select lemma="navire"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="nau" tags="n.*"><select lemma="nef"/></match>
+    <or>
+      <match lemma="principal" tags="adj.*"/>
+      <match lemma="lateral" tags="adj.*"/>
+      <match lemma="romànic" tags="adj.*"/>
+      <match lemma="gòtic" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="nau" tags="n.*"><select lemma="nef"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="estil" tags="n.*"/>
+  </rule>
+
+  <!-- moll >> quai, moelle -->
+  <rule weight="0.8">
+    <match lemma="moll" tags="n.*"><select lemma="quai"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="moll" tags="n.*"><select lemma="moelle"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="os" tags="n.*"/>
   </rule>
 
   <!-- col·legi >> école, collège -->
