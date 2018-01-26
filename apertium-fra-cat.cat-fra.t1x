@@ -1247,7 +1247,7 @@
           </test>
           <let>
             <var n="numero"/>
-            <lit-tag v="sg1"/>
+            <lit-tag v="sg"/>
           </let>
         </when>
         <when>
@@ -1321,7 +1321,7 @@
             <otherwise>
               <let>
                 <clip pos="1" side="tl" part="nbr"/>
-                <lit-tag v="sg2"/>
+                <lit-tag v="sg"/>
               </let>
             </otherwise>
           </choose>
@@ -3457,9 +3457,7 @@
         <out>
           <lu>
             <clip pos="1" side="tl" part="lemh"/>
-            <clip pos="1" side="tl" part="a_nom"/>
-            <clip pos="1" side="tl" part="gen"/>
-            <clip pos="1" side="tl" part="nbr"/>
+            <clip pos="1" side="tl" part="tags"/>
             <clip pos="1" side="tl" part="lemq"/>
           </lu>
         </out>
