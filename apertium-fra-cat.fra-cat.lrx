@@ -219,6 +219,15 @@
     <match lemma="os" tags="n.*"/>
   </rule>
 
+  <!-- milieu >> mig, entorn -->
+  <rule weight="0.8">
+    <match lemma="milieu" tags="n.*"><select lemma="mig"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="milieu" tags="n.*"><select lemma="entorn"/></match>
+    <match tags="adj.*"/>
+  </rule>
+
   <!-- monde >> món, gent -->
   <rule weight="0.8">
     <match lemma="monde" tags="n.*"><select lemma="món"/></match>

@@ -362,6 +362,21 @@
       <cat-item lemma="millénaire" tags="n.*"/>
     </def-cat>
     
+    <def-cat n="nom_mois">
+      <cat-item lemma="janvier" tags="n.*"/>
+      <cat-item lemma="février" tags="n.*"/>
+      <cat-item lemma="mars" tags="n.*"/>
+      <cat-item lemma="avril" tags="n.*"/>
+      <cat-item lemma="mai" tags="n.*"/>
+      <cat-item lemma="juin" tags="n.*"/>
+      <cat-item lemma="juillet" tags="n.*"/>
+      <cat-item lemma="août" tags="n.*"/>
+      <cat-item lemma="septembre" tags="n.*"/>
+      <cat-item lemma="octobre" tags="n.*"/>
+      <cat-item lemma="novembre" tags="n.*"/>
+      <cat-item lemma="décembre" tags="n.*"/>
+    </def-cat>
+
   </section-def-cats>
   
   <section-def-attrs>
@@ -725,11 +740,11 @@
       <list-item v="occitan"/>
       <list-item v="aranais"/>
       <list-item v="corse"/>
-      <list-item v="aranais"/>
       <list-item v="auvergnat"/>
       <list-item v="limousin"/>
       <list-item v="gascon"/>
       <list-item v="provençal"/>
+      <list-item v="luxembourgeois"/>
       <list-item v="anglais"/>
       <list-item v="écossais"/>
       <list-item v="gallois"/>
@@ -763,6 +778,7 @@
       <list-item v="sicilien"/>
       <list-item v="piémontais"/>
       <list-item v="napolitain"/>
+      <list-item v="toscan"/>
       <list-item v="venétien"/>
       <list-item v="maltais"/>
       <list-item v="slovène"/>
@@ -4058,11 +4074,10 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-   <rule>
-<!--REGLA: NUMERAL NOM NUM (20 novembre 1998: 20 de novembre de 1998)-->
+   <rule comment="REGLA: NUMERAL NOM NUM (20 novembre 1998: 20 de novembre de 1998)">
       <pattern>
         <pattern-item n="num"/>
-        <pattern-item n="nom"/>
+        <pattern-item n="nom_mois"/>
         <pattern-item n="num"/>
       </pattern>
       <action>
@@ -4129,12 +4144,11 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!--REGLA: DET NUMERAL NOM NUM (le 20 novembre 1998: el 20 de novembre de 1998)-->
+    <rule comment="REGLA: DET NUMERAL NOM NUM (le 20 novembre 1998: el 20 de novembre de 1998)">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="num"/>
-        <pattern-item n="nom"/>
+        <pattern-item n="nom_mois"/>
         <pattern-item n="num"/>
       </pattern>
       <action>

@@ -589,6 +589,7 @@
       <list-item v="limousin"/>
       <list-item v="gascon"/>
       <list-item v="provençal"/>
+      <list-item v="luxembourgeois"/>
       <list-item v="anglais"/>
       <list-item v="écossais"/>
       <list-item v="gallois"/>
@@ -621,6 +622,7 @@
       <list-item v="sarde"/>
       <list-item v="sicilien"/>
       <list-item v="napolitain"/>
+      <list-item v="toscan"/>
       <list-item v="venétien"/>
       <list-item v="maltais"/>
       <list-item v="maltais"/>
@@ -1245,7 +1247,7 @@
           </test>
           <let>
             <var n="numero"/>
-            <lit-tag v="sg"/>
+            <lit-tag v="sg1"/>
           </let>
         </when>
         <when>
@@ -1319,7 +1321,7 @@
             <otherwise>
               <let>
                 <clip pos="1" side="tl" part="nbr"/>
-                <lit-tag v="sg"/>
+                <lit-tag v="sg2"/>
               </let>
             </otherwise>
           </choose>
@@ -3455,7 +3457,9 @@
         <out>
           <lu>
             <clip pos="1" side="tl" part="lemh"/>
-            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="a_nom"/>
+            <clip pos="1" side="tl" part="gen"/>
+            <clip pos="1" side="tl" part="nbr"/>
             <clip pos="1" side="tl" part="lemq"/>
           </lu>
         </out>
