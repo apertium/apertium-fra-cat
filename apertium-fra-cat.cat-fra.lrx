@@ -149,7 +149,7 @@
   </rule>
   <rule weight="1.0">
     <match lemma="en" tags="pr"><select lemma="en"/></match>
-    <match tags="n.*"/>
+    <match tags="n.*.sg"/>
   </rule>
   <rule weight="1.0">
     <match lemma="en" tags="pr"><select lemma="en"/></match>

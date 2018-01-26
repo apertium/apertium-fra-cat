@@ -494,7 +494,7 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif (($par_fra eq 'argent__n'
 		|| $par_fra eq 'personnel__n')
-			&& $par_cat eq 'atletisme__n')
+			&& $par_cat eq 'atletisme__n') {
 		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"sg\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/><s n=\"sg\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif (($par_fra eq 'argent__n'
 		|| $par_fra eq 'personnel__n')
