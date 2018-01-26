@@ -271,8 +271,10 @@
     <def-cat n="sentquecm">
       <cat-item tags="sent"/>
       <cat-item tags="cnjsub"/>
+      <cat-item tags="cnjadv"/>
       <cat-item tags="cm"/>
       <cat-item tags="cnjcoo"/>
+      <cat-item lemma="comme que" tags="cnjadv"/>
     </def-cat>
     <def-cat n="occ_or_etc">
       <cat-item lemma="occidental" tags="n.*"/>
@@ -655,6 +657,9 @@
       <list-item v="cachemiri"/>
       <list-item v="cachemirien"/>
       <list-item v="arabe"/>
+      <list-item v="berbère"/>
+      <list-item v="kabyle"/>
+      <list-item v="touareg"/>
       <list-item v="népalais"/>
       <list-item v="chinois"/>
       <list-item v="japonais"/>
@@ -667,6 +672,10 @@
       <list-item v="taïwanais"/>
       <list-item v="éthiopien"/>
       <list-item v="malgache"/>
+      <list-item v="gaulois"/>
+      <list-item v="ibère"/>
+      <list-item v="étrusque"/>
+      <list-item v="latin"/>
     </def-list>
 
     <def-list n="pp_estat">

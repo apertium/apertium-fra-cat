@@ -159,6 +159,10 @@
     <match lemma="en" tags="pr"><select lemma="dans"/></match>
     <match tags="adj.ind.*"/>
   </rule>
+  <rule weight="1.2">
+    <match lemma="com"/>
+    <match lemma="en" tags="pr"><select lemma="dans"/></match>
+  </rule>
 
   <!-- 
     perquè (cnjadv) >> parce que, pour que

@@ -211,6 +211,22 @@
     <or><match tags="num"/><match tags="num.*"/></or>
   </rule>
 
+  <!-- chambre >> habitació, cambra -->
+  <rule weight="0.8">
+    <match lemma="chambre" tags="n.*"><select lemma="habitació"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="chambre" tags="n.*"><select lemma="cambra"/></match>
+    <or>
+      <match lemma="à" tags="pr"/>
+      <match lemma="de" tags="pr"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="de" tags="pr"/>
+    <match lemma="chambre" tags="n.*"><select lemma="cambra"/></match>
+  </rule>
+
   <!-- moelle >> medu·la, moll -->
   <rule weight="0.8">
     <match lemma="moelle" tags="n.*"><select lemma="medul·la"/></match>
