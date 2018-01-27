@@ -376,6 +376,11 @@
       <cat-item lemma="novembre" tags="n.*"/>
       <cat-item lemma="décembre" tags="n.*"/>
     </def-cat>
+    
+    <def-cat n="combien">
+      <cat-item lemma="combien" tags="prn.*"/>
+      <cat-item lemma="combien" tags="rel.*"/>
+    </def-cat>
 
   </section-def-cats>
   
@@ -10325,6 +10330,39 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
+    <rule comment="REGLA: combien de NOM > quant(s) NOM">
+      <pattern>
+        <pattern-item n="combien"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="3"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond">
+          <with-param pos="1"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
     <rule>
 <!--REGLA: ne pas fumer > no fumar, ne pas le dire > no dir-ho -->
       <pattern>

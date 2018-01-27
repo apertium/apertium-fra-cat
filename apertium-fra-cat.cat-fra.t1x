@@ -283,6 +283,9 @@
       <cat-item lemma="septentrional" tags="n.*"/>
       <cat-item lemma="meridional" tags="n.*"/>
     </def-cat>
+    <def-cat n="quants">
+      <cat-item lemma="quant" tags="*.pl"/>
+    </def-cat>
   </section-def-cats>
 
   <section-def-attrs>
@@ -11037,6 +11040,39 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
     </rule>
 <!-- fi comparatives -->
+
+    <rule comment="REGLA: quants NOM > combien de">
+      <pattern>
+        <pattern-item n="quants"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_lang_dial1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+            <b/>
+            <lu>
+              <lit v="de"/>
+              <lit-tag v="pr"/>
+            </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
 
 <!-- canvi de verb auxiliar en oracions reflexives o impersonals -->
 

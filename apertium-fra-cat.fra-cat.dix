@@ -8213,7 +8213,8 @@
 <e>       <p><l>école<b/>maternelle<s n="n"/><s n="f"/></l><r>escola<g><b/>bressol</g><s n="n"/><s n="f"/></r></p></e>
 <e>       <p><l>maternellement<s n="adv"/></l>    <r>maternalment<s n="adv"/></r></p></e>
 <e>       <p><l>botanique<s n="n"/></l>           <r>botànica<s n="n"/></r></p></e>
-<e>       <p><l>botaniste<s n="n"/><s n="mf"/></l><r>botànic<s n="n"/><s n="m"/></r></p></e>
+<e r="RL"><p><l>botaniste<s n="n"/><s n="mf"/></l><r>botànic<s n="n"/><s n="m"/></r></p></e>
+<e r="LR"><p><l>botaniste<s n="n"/><s n="mf"/></l><r>botànic<s n="n"/><s n="GD"/></r></p></e>
 <e>       <p><l>mathématique<s n="n"/></l>        <r>matemàtica<s n="n"/></r></p></e>
 <e r="LR"><p><l>maths<s n="n"/></l>        <r>matemàtica<s n="n"/></r></p></e>
 <e>       <p><l>statisticien<s n="n"/><s n="m"/></l><r>estadístic<s n="n"/><s n="m"/></r></p></e>
@@ -10108,16 +10109,11 @@
 <e a="u21941"><p><l>policier<s n="adj"/></l>      <r>policíac<s n="adj"/></r></p></e>
 <e r="RL"><p><l>policier<s n="adj"/><s n="GD"/></l><r>policial<s n="adj"/><s n="mf"/></r></p></e>
 <e>       <p><l>politesse<s n="n"/></l>           <r>cortesia<s n="n"/></r></p></e>
-<e>       <p><l>politique<s n="n"/></l>           <r>política<s n="n"/></r></p></e>
-
-<e r="LR"><p><l>phylogénétique<s n="adj"/><s n="mf"/></l><r>filogenètic<s n="adj"/><s n="GD"/></r></p></e>
-<e r="RL"><p><l>phylogénétique<s n="adj"/><s n="mf"/></l><r>filogenètic<s n="adj"/><s n="f"/></r></p></e>
-<e r="RL"><p><l>phylogénétique<s n="adj"/><s n="mf"/></l><r>filogenètic<s n="adj"/><s n="m"/></r></p></e>
-
-<e r="LR"><p><l>politique<s n="adj"/><s n="mf"/></l><r>polític<s n="adj"/><s n="GD"/></r></p></e>
-<e r="RL"><p><l>politique<s n="adj"/><s n="mf"/></l><r>polític<s n="adj"/><s n="f"/></r></p></e>
-<e r="RL"><p><l>politique<s n="adj"/><s n="mf"/></l><r>polític<s n="adj"/><s n="m"/></r></p></e>
-
+<e>       <p><l>politique<s n="n"/><s n="f"/></l> <r>política<s n="n"/><s n="f"/></r></p></e>
+<e>       <p><l>politicien<s n="n"/><s n="m"/></l><r>polític<s n="n"/><s n="m"/></r></p></e>
+<e r="LR"><p><l>politicien<s n="n"/><s n="f"/></l><r>polític<s n="n"/><s n="f"/></r></p></e>
+<e>       <p><l>politique<s n="adj"/></l>         <r>polític<s n="adj"/></r></p><par n="mf_GD"/></e>
+<e>       <p><l>phylogénétique<s n="adj"/></l>    <r>filogenètic<s n="adj"/></r></p><par n="mf_GD"/></e>
 <e r="LR"><p><l>polluant<s n="adj"/><s n="f"/></l><r>contaminant<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>polluant<s n="adj"/><s n="m"/></l><r>contaminant<s n="adj"/><s n="mf"/></r></p></e>
 <e r="RL" a="ariel"><p><l>polluant<s n="adj"/><s n="GD"/></l><r>contaminant<s n="adj"/><s n="mf"/></r></p></e>
@@ -10713,13 +10709,14 @@
 <e>       <p><l>quel<s n="adj"/></l>              <r>quin<s n="adj"/></r></p></e>
 <e>       <p><l>quel<s n="prn"/></l>              <r>quin<s n="prn"/></r></p></e>
 <e r="LR"><p><l>quelque<s n="adv"/></l>           <r>aproximadament<s n="adv"/></r></p></e>
-<e r="LR"><p><l>quelque<s n="det"/><s n="ind"/><s n="mf"/></l><r>algun<s n="det"/><s n="ind"/><s n="GD"/></r></p></e>
-<e r="RL"><p><l>quelque<s n="det"/><s n="ind"/><s n="mf"/></l><r>algun<s n="det"/><s n="ind"/><s n="f"/></r></p></e>
-<e r="RL"><p><l>quelque<s n="det"/><s n="ind"/><s n="mf"/></l><r>algun<s n="det"/><s n="ind"/><s n="m"/></r></p></e>
+<e>       <p><l>quelque<s n="det"/><s n="ind"/></l><r>algun<s n="det"/><s n="ind"/></r></p><par n="mf_GD"/></e>
+<e r="RL"><p><l>quelque<s n="det"/><s n="ind"/></l><r>uns<b/>quants<s n="det"/><s n="ind"/></r></p><par n="mf_GD"/></e>
 <e>       <p><l>quelque<b/>chose<s n="prn"/></l>  <r>alguna<b/>cosa<s n="prn"/></r></p></e>
 <e>       <p><l>quelquefois<s n="adv"/></l>       <r>alguna<b/>vegada<s n="adv"/></r></p></e>
 <e>       <p><l>quelques<b/>uns<s n="prn"/><s n="tn"/><s n="m"/><s n="pl"/></l><r>algun<s n="prn"/><s n="tn"/><s n="m"/><s n="pl"/></r></p></e>
 <e>       <p><l>quelques<b/>uns<s n="prn"/><s n="tn"/><s n="f"/><s n="pl"/></l><r>algun<s n="prn"/><s n="tn"/><s n="f"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>quelques<b/>uns<s n="prn"/><s n="tn"/><s n="m"/><s n="pl"/></l><r>uns<b/>quants<s n="prn"/><s n="tn"/><s n="m"/><s n="pl"/></r></p></e>
+<e r="RL"><p><l>quelques<b/>uns<s n="prn"/><s n="tn"/><s n="f"/><s n="pl"/></l><r>uns<b/>quants<s n="prn"/><s n="tn"/><s n="f"/><s n="pl"/></r></p></e>
 <e>       <p><l>quelqu'un<s n="prn"/><s n="tn"/><s n="mf"/></l><r>algú<s n="prn"/><s n="tn"/><s n="mf"/></r></p></e>
 <e>       <p><l>querelle<s n="n"/></l>            <r>disputa<s n="n"/></r></p></e>
 <e>       <p><l>quereller<s n="vblex"/></l>       <r>renyir<s n="vblex"/></r></p></e>
@@ -15476,8 +15473,6 @@
 <e r="RL"><p><l>poison<s n="n"/><s n="m"/></l><r>metzina<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>poivron<s n="n"/><s n="m"/></l><r>pebrot<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>polarisation<s n="n"/><s n="f"/></l><r>polarització<s n="n"/><s n="f"/></r></p></e>
-<e><p><l>politicien<s n="n"/><s n="m"/></l><r>polític<s n="n"/><s n="m"/></r></p></e>
-<e r="LR"><p><l>politicien<s n="n"/><s n="f"/></l><r>polític<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>politisation<s n="n"/><s n="f"/></l><r>politització<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>pollen<s n="n"/><s n="m"/></l><r>pol·len<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>polonium<s n="n"/><s n="m"/><s n="sg"/></l><r>poloni<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
