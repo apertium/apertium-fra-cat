@@ -3546,9 +3546,10 @@
     <e>       <p><l>Cristóbal<s n="np"/><s n="cog"/></l><r>Cristóbal<s n="np"/><s n="cog"/></r></p></e>
     <e>       <p><l>Cristóbal<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Cristóbal<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
     <e>       <p><l>critère<s n="n"/></l>             <r>criteri<s n="n"/></r></p></e>
-    <e r="LR"><p><l>critique<s n="n"/><s n="mf"/></l> <r>crític<s n="n"/><s n="GD"/></r></p></e>
-    <e r="RL"><p><l>critique<s n="n"/><s n="mf"/></l> <r>crític<s n="n"/><s n="f"/></r></p></e>
-    <e r="RL"><p><l>critique<s n="n"/><s n="mf"/></l> <r>crític<s n="n"/><s n="m"/></r></p></e>
+<e>       <p><l>critique<s n="n"/><s n="f"/></l> <r>crítica<s n="n"/><s n="f"/></r></p></e>
+<e>       <p><l>critique<s n="n"/><s n="m"/></l><r>crític<s n="n"/><s n="m"/></r></p></e>
+<e i="yes"><p><l>critique<s n="n"/><s n="f"/></l><r>crític<s n="n"/><s n="f"/></r></p></e>
+<e>       <p><l>critique<s n="adj"/></l>         <r>crític<s n="adj"/></r></p><par n="mf_GD"/></e>
     <e a="gema"><p><l>critiquer<s n="vblex"/></l>     <r>criticar<s n="vblex"/></r></p></e>
     <e r="LR"><p><l>croate<s n="n"/><s n="mf"/></l>   <r>croat<s n="n"/><s n="GD"/></r></p></e>
     <e r="RL"><p><l>croate<s n="n"/><s n="mf"/></l>   <r>croat<s n="n"/><s n="f"/></r></p></e>
@@ -12524,6 +12525,8 @@
 <e>       <p><l>te<s n="prn"/></l>                <r>et<s n="prn"/></r></p></e>
 <e a="gema"><p><l>technique<s n="n"/></l>         <r>tècnica<s n="n"/></r></p></e>
 <e a="hector"><p><l>technique<s n="adj"/></l>     <r>tècnic<s n="adj"/></r></p><par n="mf_GD"/></e>
+ <e a="joan"><p><l>technicien<s n="n"/><s n="m"/></l><r>tècnic<s n="n"/><s n="m"/></r></p></e>
+ <e a="joan" r="LR"><p><l>technicien<s n="n"/><s n="f"/></l><r>tècnic<s n="n"/><s n="f"/></r></p></e>
 <e>       <p><l>technologie<s n="n"/></l>         <r>tecnologia<s n="n"/></r></p></e>
 <e r="LR" a="ariel"><p><l>técnologique<s n="adj"/><s n="mf"/></l><r>tecnològic<s n="adj"/><s n="GD"/></r></p></e>
 <e r="RL"><p><l>técnologique<s n="adj"/><s n="mf"/></l><r>tecnològic<s n="adj"/><s n="f"/></r></p></e>
@@ -16541,8 +16544,6 @@
  <e a="joan"><p><l>notoriété<s n="n"/></l><r>notorietat<s n="n"/></r></p></e>
  <e a="joan"><p><l>compositeur<s n="n"/></l><r>compositor<s n="n"/></r></p></e>
  <e a="joan"><p><l>séducteur<s n="n"/></l><r>seductor<s n="n"/></r></p></e>
- <e a="joan"><p><l>technicien<s n="n"/><s n="m"/></l><r>tècnic<s n="n"/><s n="m"/></r></p></e>
- <e a="joan" r="LR"><p><l>technicien<s n="n"/><s n="f"/></l><r>tècnic<s n="n"/><s n="f"/></r></p></e>
 
  <e a="joan" r="LR"><p><l>aveugle<s n="n"/><s n="mf"/></l><r>cec<s n="n"/><s n="GD"/></r></p></e>
  <e a="joan" r="RL"><p><l>aveugle<s n="n"/><s n="mf"/></l><r>cec<s n="n"/><s n="f"/></r></p></e>
@@ -21909,7 +21910,6 @@
 <e><p><l>corporel<s n="adj"/></l><r>corporal<s n="adj"/></r></p><par n="GD_mf"/></e>
 <e><p><l>courbe<s n="adj"/></l><r>corb<s n="adj"/></r></p><par n="mf_GD"/></e>
 <e><p><l>cristallin<s n="adj"/></l><r>cristal·lí<s n="adj"/></r></p></e>
-<e><p><l>critique<s n="adj"/></l><r>crític<s n="adj"/></r></p><par n="mf_GD"/></e>
 <e><p><l>cubique<s n="adj"/></l><r>cúbic<s n="adj"/></r></p><par n="mf_GD"/></e>
 <e><p><l>cultivé<s n="adj"/></l><r>culte<s n="adj"/></r></p><par n="abaissant_abstracte"/></e>
 <e><p><l>cyclique<s n="adj"/></l><r>cíclic<s n="adj"/></r></p><par n="mf_GD"/></e>
@@ -22829,6 +22829,17 @@
 <e a="joan"><p><l>diocèse<s n="n"/><s n="m"/></l><r>diòcesi<s n="n"/><s n="f"/></r></p></e>
 <e a="joan"><p><l>ravin<s n="n"/><s n="m"/></l><r>barranc<s n="n"/><s n="m"/></r></p></e>
 <e a="joan" r="RL"><p><l>échec<s n="n"/><s n="m"/></l><r>escac<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>alentours<s n="n"/><s n="m"/></l><r>rodalia<s n="n"/><s n="f"/></r></p><par n="pl_ND"></e>
+<e a="joan"><p><l>petit<s n="n"/><s n="m"/></l><r>cria<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>éditorial<s n="n"/><s n="m"/></l><r>editorial<s n="n"/><s n="m"/></r></p></e>
+<e a="hector"><p><l>maison<g><b/>d'édition</g><s n="n"/><s n="f"/></l><r>editorial<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>pharaon<s n="n"/><s n="m"/></l><r>faraó<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>pion<s n="n"/><s n="m"/></l><r>peó<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>enzyme<s n="n"/><s n="mf"/></l><r>enzim<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>coenzyme<s n="n"/><s n="mf"/></l><r>coenzim<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>chauve-souris<s n="n"/><s n="f"/></l><r>ratpenat<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>compte-rendu<s n="n"/><s n="m"/></l><r>acta<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>latéral<s n="n"/><s n="m"/></l><r>lateral<s n="n"/><s n="m"/></r></p></e>
 
 
 	  </section>
