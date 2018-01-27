@@ -590,8 +590,9 @@
 
     <def-list n="vbestat">
       <list-item v="aller"/>
-      <list-item v="venir"/>
+      <list-item v="apparaître"/>
       <list-item v="arriver"/>
+      <list-item v="venir"/>
       <list-item v="partir"/>
       <list-item v="naître"/>
       <list-item v="mourir"/>
@@ -738,7 +739,7 @@
       <list-item v="basque"/>
       <list-item v="castillan"/>
       <list-item v="espagnol"/>
-      <list-item v="andaloux"/>
+      <list-item v="andalou"/>
       <list-item v="français"/>
       <list-item v="breton"/>
       <list-item v="normand"/>
@@ -1003,7 +1004,7 @@
     </def-macro>
     
     
-    <def-macro n="f_concord1" npar="1">
+    <def-macro n="f_concord0" npar="1">
       <choose>
 <!--To determine value of variables of gender and
                  number and propagate to other rules.  Variables are
@@ -1059,6 +1060,10 @@
           </let>
         </when>
       </choose>
+    </def-macro>
+
+    <def-macro n="f_concord1" npar="1">
+      <call-macro n="f_concord0"><with-param pos="1"/></call-macro>
       <choose>
         <when>
           <test>
@@ -3019,6 +3024,24 @@
       </action>
     </rule>
     
+    <rule comment="REGLA: PRNSUBJ">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
     <rule comment="REGLA: NP">
       <pattern>
         <pattern-item n="np"/>
@@ -3037,6 +3060,25 @@
       </action>
     </rule>
     
+    
+    <rule comment="REGLA: VBSER">
+      <pattern>
+        <pattern-item n="vbser"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord0"> <!-- per a la concordança de l'atribut que vingui després -->
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
     
     <rule comment="REGLA: AUXPP">
       <pattern>
@@ -7579,6 +7621,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="verb"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="2"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="2"/>
         </call-macro>
@@ -9019,6 +9064,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="prnsubj"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="2"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="1"/>
         </call-macro>

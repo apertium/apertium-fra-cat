@@ -63,6 +63,10 @@
     <match lemma="per" tags="pr"><select lemma="pour"/></match>
     <match tags="*.inf"/>
   </rule>
+  <rule weight="1.2">
+    <match lemma="felicitar" tags="vblex.*"/>
+    <match lemma="per" tags="pr"><select lemma="pour"/></match>
+  </rule>
 
   <!-- 
     a >> à, en
@@ -234,6 +238,34 @@
     <match lemma="congelar" tags="vblex.*"><select lemma="geler"/></match>
     <match tags="det.*"/>
     <match lemma="negociació" tags="n.*"/>
+  </rule>
+
+  <!-- passar >> passer, arriver -->
+  <rule weight="0.8">
+    <match lemma="passar" tags="vblex.*"><select lemma="passer"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="passar" tags="vblex.*"><select lemma="arriver"/></match>
+    <match lemma="que"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="el"/>
+    <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
+    <match lemma="passar" tags="vblex.*"><select lemma="arriver"/></match>
+  </rule>
+
+  <!-- succeir >> succéder, arriver -->
+  <rule weight="0.8">
+    <match lemma="succeir" tags="vblex.*"><select lemma="succéder"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="succeir" tags="vblex.*"><select lemma="arriver"/></match>
+    <match lemma="que"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="el"/>
+    <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
+    <match lemma="succeir" tags="vblex.*"><select lemma="arriver"/></match>
   </rule>
 
   <!-- intentar >> essayer, essayer# de -->
@@ -465,6 +497,38 @@
   <rule weight="1.0">
     <match lemma="partit" tags="n.*"><select lemma="match"/></match>
     <match lemma="de" tags="pr"/>
+  </rule>
+
+  <!-- lloc >> endroit, place, lieu -->
+  <rule weight="0.8">
+    <match lemma="lloc" tags="n.*"><select lemma="endroit"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="hi" tags="prn.*"/>
+    <match lemma="haver"/>
+    <match lemma="lloc" tags="n.*"><select lemma="place"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="tenir" tags="vblex.*"/>
+      <match lemma="donar" tags="vblex.*"/>
+    </or>
+    <match lemma="lloc" tags="n.*"><select lemma="lieu"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="tenir" tags="vblex.*"/>
+      <match lemma="donar" tags="vblex.*"/>
+      <match lemma="atorgar" tags="vblex.*"/>
+      <match lemma="rebre" tags="vblex.*"/>
+    </or>
+    <or>
+      <match tags="num"/>
+      <match tags="num.*"/>
+      <match tags="det.*"/>
+      <match tags="adj.*"/>
+      </or>
+    <match lemma="lloc" tags="n.*"><select lemma="place"/></match>
   </rule>
 
   <!-- nau >> navire, nef -->

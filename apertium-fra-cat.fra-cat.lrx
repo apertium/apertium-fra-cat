@@ -28,6 +28,10 @@
     <match lemma="avoir" tags="*.ger"/>
     <match lemma="pour" tags="pr"><select lemma="per"/></match>
   </rule>
+  <rule weight="1.0">
+    <match lemma="feliciter" tags="vblex.*"/>
+    <match lemma="pour" tags="pr"><select lemma="per"/></match>
+  </rule>
 
   <!-- 
     en >> en, a
@@ -199,6 +203,20 @@
     <match lemma="appeler" tags="vblex.pp.*"><select lemma="anomenar"/></match>
   </rule>
 
+  <!-- arriver >> arribar, passar -->
+  <rule weight="0.8">
+    <match lemma="arriver" tags="vblex.*"><select lemma="arribar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="arriver" tags="vblex.*"><select lemma="passar"/></match>
+    <match lemma="que"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ce"/>
+    <match lemma="qui" tags="rel."/>
+    <match lemma="arriver" tags="vblex.*"><select lemma="passar"/></match>
+  </rule>
+
 <!-- **************** N **************** -->
 
   <!-- poule >> gallina, grup -->
@@ -209,6 +227,32 @@
     <match lemma="poule" tags="n.*"><select lemma="grup"/></match>
     <match lemma="de" tags="pr"/>
     <or><match tags="num"/><match tags="num.*"/></or>
+  </rule>
+
+  <!-- argent >> diners, plata -->
+  <rule weight="0.8">
+    <match lemma="argent" tags="n.*"><select lemma="diners"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="medaille" tags="n.*"/>
+      <match lemma="coupe" tags="n.*"/>
+      <match lemma="plat" tags="n.*"/>
+      <match lemma="plateau" tags="n.*"/>
+      <match lemma="service" tags="n.*"/>
+      <match lemma="couvert" tags="n.*"/>
+      <match lemma="cuillère" tags="n.*"/>
+      <match lemma="fourchette" tags="n.*"/>
+      <match lemma="couteau" tags="n.*"/>
+      <match lemma="pièce" tags="n.*"/>
+      <match lemma="mine" tags="n.*"/>
+      <match lemma="veine" tags="n.*"/>
+      <match lemma="noce" tags="n.*"/>
+      <match lemma="solution" tags="n.*"/>
+      <match lemma="nitrate" tags="n.*"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <match lemma="argent" tags="n.*"><select lemma="plata"/></match>
   </rule>
 
   <!-- chambre >> habitació, cambra -->
