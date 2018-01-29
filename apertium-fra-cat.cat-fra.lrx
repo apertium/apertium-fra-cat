@@ -497,6 +497,57 @@
   <rule weight="1.0">
     <match lemma="partit" tags="n.*"><select lemma="match"/></match>
     <match lemma="de" tags="pr"/>
+    <match tags="n.*.sg"/>
+  </rule>
+
+  <!-- infant >> enfant, infant, infante -->
+  <rule weight="0.8">
+    <match lemma="infant" tags="n.m.*"><select lemma="enfant"/></match>
+  </rule>
+  <rule weight="0.8">
+    <match lemma="infant" tags="n.f.*"><select lemma="infant"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="infant" tags="n.m.*"><select lemma="infant"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="Castella" tags="np.*"/>
+      <match lemma="Espanya" tags="np.*"/>
+      <match lemma="Portugal" tags="np.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="infant" tags="n.m.*"><select lemma="infante"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="marina" tags="n.*"/>
+  </rule>
+
+  <!-- truita >> omelette, truite -->
+  <rule weight="0.8">
+    <match lemma="truita" tags="n.*"><select lemma="omelette"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pescar" tags="vblex.*"/>
+    <match lemma="truita" tags="n.*"><select lemma="truite"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pescar" tags="vblex.*"/>
+    <or>
+      <match tags="num"/>
+      <match tags="num.*"/>
+      <match tags="det.*"/>
+      <match tags="adj.*"/>
+    </or>
+    <match lemma="truita" tags="n.*"><select lemma="truite"/></match>
+  </rule>
+
+  <!-- tir >> tir, portée -->
+  <rule weight="0.8">
+    <match lemma="tir" tags="n.*"><select lemma="tir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="a" tags="pr"/>
+    <match lemma="tir" tags="n.*"><select lemma="portée"/></match>
   </rule>
 
   <!-- lloc >> endroit, place, lieu -->
@@ -527,7 +578,7 @@
       <match tags="num.*"/>
       <match tags="det.*"/>
       <match tags="adj.*"/>
-      </or>
+    </or>
     <match lemma="lloc" tags="n.*"><select lemma="place"/></match>
   </rule>
 

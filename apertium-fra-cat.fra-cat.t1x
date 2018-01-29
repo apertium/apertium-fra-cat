@@ -2,6 +2,9 @@
 <!-- -*- nxml -*- -->
 <transfer>
   <section-def-cats>
+    <def-cat n="unknown"> <!-- unknown words -->
+      <cat-item tags=""/>
+    </def-cat>
     <def-cat n="nom">
       <cat-item tags="n.*"/>
     </def-cat>
@@ -11,6 +14,11 @@
     <def-cat n="npant">
       <cat-item tags="np.ant"/>
       <cat-item tags="np.ant.*"/>
+    </def-cat>
+    <def-cat n="npant_unk">
+      <cat-item tags="np.ant"/>
+      <cat-item tags="np.ant.*"/>
+      <cat-item tags=""/>
     </def-cat>
     <def-cat n="nploc">
       <cat-item tags="np.loc"/>
@@ -722,8 +730,6 @@
     </def-list>
   
     <def-list n="lang_dial">
-      <list-item v="latin"/>
-      <list-item v="gaulois"/>
       <list-item v="portugais"/>
       <list-item v="espagnol"/>
       <list-item v="catalan"/>
@@ -835,6 +841,7 @@
       <list-item v="ibère"/>
       <list-item v="étrusque"/>
       <list-item v="latin"/>
+      <list-item v="troyen"/>
     </def-list>
 
     <def-list n="pp_estat">
@@ -3281,6 +3288,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
+
     <rule>
 <!-- REGLA: NOM ADJECTIU-->
       <pattern>
@@ -7614,8 +7622,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!--REGLA: PRN VERB (il arrive: arriba) -->
+    <rule comment="REGLA: PRN VERB (il arrive: arriba)">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="verb"/>
@@ -7632,6 +7639,73 @@ is not applicable because gender and number cannot be taken from previous rules 
             <get-case-from pos="1">
               <clip pos="2" side="tl" part="whole"/>
             </get-case-from>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    
+    <rule comment="REGLA: PRN VBHAVER PP (il a mangé: ha menjat)">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="pp_m_sg"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    
+    <rule comment="REGLA: PRN VBHAVER ADV PP (il a toujours mangé: ha menjat sempre)">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="pp_m_sg"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>

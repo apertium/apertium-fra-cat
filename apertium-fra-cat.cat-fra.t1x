@@ -2,6 +2,9 @@
 <!-- -*- nxml -*- -->
 <transfer>
   <section-def-cats>
+    <def-cat n="unknown"> <!-- unknown words -->
+      <cat-item tags=""/>
+    </def-cat>
     <def-cat n="nom">
       <cat-item tags="n.*"/>
     </def-cat>
@@ -11,6 +14,13 @@
     <def-cat n="npant">
       <cat-item tags="np.ant"/>
       <cat-item tags="np.ant.*"/>
+      <cat-item tags="np.cog.*"/>
+    </def-cat>
+    <def-cat n="npant_unk">
+      <cat-item tags="np.ant"/>
+      <cat-item tags="np.ant.*"/>
+      <cat-item tags="np.cog.*"/>
+      <cat-item tags=""/>
     </def-cat>
     <def-cat n="nptop">
       <cat-item tags="np.top.*"/>
@@ -567,8 +577,6 @@
     </def-list>
 
     <def-list n="lang_dial">
-      <list-item v="latin"/>
-      <list-item v="gaulois"/>
       <list-item v="portugais"/>
       <list-item v="espagnol"/>
       <list-item v="catalan"/>
@@ -681,6 +689,7 @@
       <list-item v="ibère"/>
       <list-item v="étrusque"/>
       <list-item v="latin"/>
+      <list-item v="troyen"/>
     </def-list>
 
     <def-list n="pp_estat">
@@ -3226,7 +3235,7 @@
     </def-macro>
 
     <def-macro n="f_lang_dial1" npar="1">
-<!-- mirem si (segur) que no es tracta de la llengua, en aquest cas posem majúscula -->
+<!-- mirem si que és a la llista de llengües, però segur que no es tracta d'una llengua; en aquest cas posem majúscula (aquí es mira si hi ha plural) -->
       <choose>
         <when>
           <test>
@@ -3247,7 +3256,7 @@
     </def-macro>
 
     <def-macro n="f_lang_dial0" npar="1">
-<!-- mirem si que no es tracta de la llengua, en aquest cas posem majúscula (aquí no es mira si hi ha plural) -->
+<!-- mirem si que és a la llista de llengües, en aquest cas posem majúscula (aquí no es mira si hi ha plural) -->
       <choose>
         <when>
           <test>
@@ -3655,6 +3664,43 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
+    <rule comment="REGLA: det nom npant_unk: l'anglais Smith > l'Anglais Smith">
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="npant_unk"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_lang_dial0">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    
     <rule>
 <!-- REGLA: NOM ADJECTIU-->
       <pattern>
@@ -3724,8 +3770,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule>
-<!-- REGLA: DET NOM ADJECTIU-->
+    <rule comment="REGLA: DET NOM ADJECTIU">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="nom"/>
@@ -3759,13 +3804,15 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
               <lu>
-                <clip pos="3" side="tl" part="whole"/>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
               </lu>
               <b pos="2"/>
               <lu>
                 <clip pos="2" side="tl" part="lemh"/>
                 <clip pos="2" side="tl" part="tags"/>
-                <clip pos="2" side="tl" part="lemg"/>
+                <clip pos="2" side="tl" part="lemq"/>
               </lu>
             </out>
           </when>
@@ -3778,11 +3825,13 @@ is not applicable because gender and number can not be taken from previous rules
               <lu>
                 <clip pos="2" side="tl" part="lemh"/>
                 <clip pos="2" side="tl" part="tags"/>
-                <clip pos="2" side="tl" part="lemg"/>
+                <clip pos="2" side="tl" part="lemq"/>
               </lu>
               <b pos="2"/>
               <lu>
-                <clip pos="3" side="tl" part="whole"/>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
               </lu>
             </out>
           </otherwise>
@@ -3827,11 +3876,15 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b pos="2"/>
           <lu>
-            <clip pos="3" side="tl" part="whole"/>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
           </lu>
           <b pos="3"/>
           <lu>
-            <clip pos="4" side="tl" part="whole"/>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
@@ -3868,11 +3921,15 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b pos="1"/>
           <lu>
-            <clip pos="2" side="tl" part="whole"/>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
           </lu>
           <b pos="2"/>
           <lu>
-            <clip pos="3" side="tl" part="whole"/>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
@@ -3907,7 +3964,9 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b pos="1"/>
           <lu>
-            <clip pos="2" side="tl" part="whole"/>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
           </lu>
           <b pos="2"/>
           <lu>
@@ -3992,7 +4051,9 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b pos="3"/>
           <lu>
-            <clip pos="4" side="tl" part="whole"/>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
@@ -4018,7 +4079,9 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b pos="1"/>
           <lu>
-            <clip pos="2" side="tl" part="whole"/>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
@@ -4062,7 +4125,9 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b pos="2"/>
           <lu>
-            <clip pos="3" side="tl" part="whole"/>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
@@ -4102,7 +4167,9 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b pos="1"/>
           <lu>
-            <clip pos="2" side="tl" part="whole"/>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
           </lu>
           <b pos="2"/>
           <lu>
@@ -4112,7 +4179,9 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b pos="3"/>
           <lu>
-            <clip pos="4" side="tl" part="whole"/>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
@@ -4149,7 +4218,9 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b pos="2"/>
           <lu>
-            <clip pos="3" side="tl" part="whole"/>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>

@@ -217,6 +217,19 @@
     <match lemma="arriver" tags="vblex.*"><select lemma="passar"/></match>
   </rule>
 
+  <!-- couler >> (intr) fluir, (tr) enfonsar -->
+  <rule weight="0.8">
+    <match lemma="couler" tags="vblex.*"><select lemma="fluir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="couler" tags="vblex.*"><select lemma="enfonsar"/></match>
+    <match tags="det.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.*"/>
+    <match lemma="marejar" tags="vblex.*."><select lemma="enfonsar"/></match>
+  </rule>
+
 <!-- **************** N **************** -->
 
   <!-- poule >> gallina, grup -->
@@ -227,6 +240,40 @@
     <match lemma="poule" tags="n.*"><select lemma="grup"/></match>
     <match lemma="de" tags="pr"/>
     <or><match tags="num"/><match tags="num.*"/></or>
+  </rule>
+
+  <!-- licence >> llicència, llicenciatura -->
+  <rule weight="0.8">
+    <match lemma="licence" tags="n.*"><select lemma="llicència"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="licence" tags="n.*"><select lemma="llicenciatura"/></match>
+    <or>
+      <match lemma="en" tags="pr"/>
+      <match lemma="ès" tags="pr"/>
+    </or>
+  </rule>
+
+  <!-- pêche >> pesca, préssec -->
+  <rule weight="0.8">
+    <match lemma="pêche" tags="n.*"><select lemma="pesca"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pêche" tags="n.f.pl"><select lemma="préssec"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="un" tags="det.*"/>
+    <match lemma="pêche" tags="n.*"><select lemma="préssec"/></match>
+  </rule>
+
+  <!-- portée >> abast, tir, pentagrama, ventrada -->
+  <rule weight="0.8">
+    <match lemma="portée" tags="n.*"><select lemma="abast"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="à" tags="pr"/>
+    <match lemma="portée" tags="n.*"><select lemma="abast"/></match>
+    <match lemma="de" tags="pr"/>
   </rule>
 
   <!-- argent >> diners, plata -->
@@ -454,6 +501,9 @@
       <match lemma="neuvième" tags="adj.*"/>
       <match lemma="dixième" tags="adj.*"/>
       <match lemma="dernier" tags="adj.*"/>
+      <match lemma="1er" tags="adj.*"/>
+      <match lemma="2nd" tags="adj.*"/>
+      <match lemma="3ème" tags="adj.*"/>
     </or>
     <match lemma="prix" tags="n.*"><select lemma="premi"/></match>
   </rule>
