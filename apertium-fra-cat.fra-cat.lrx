@@ -242,6 +242,19 @@
     <or><match tags="num"/><match tags="num.*"/></or>
   </rule>
 
+  <!-- dauphin >> dofí, delfí -->
+  <rule weight="0.8">
+    <match lemma="dauphin" tags="n.m.*"><select lemma="dofí"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="dauphin" tags="n.m.*"><select lemma="delfí"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="France" tags="np.*"/>
+      <match lemma="Viennois" tags="np.*"/>
+    </or>
+  </rule>
+
   <!-- licence >> llicència, llicenciatura -->
   <rule weight="0.8">
     <match lemma="licence" tags="n.*"><select lemma="llicència"/></match>

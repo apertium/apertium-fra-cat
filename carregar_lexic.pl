@@ -23,7 +23,7 @@ my $MOT = 'musique';	# paraula a debugar
 my $MOT = 'musique de chambre';	# paraula a debugar
 #my $MOT = 'nombre primer';	# paraula a debugar
 my $MOT = 'entusiasme';	# paraula a debugar
-#my $MOT = '';
+my $MOT = '';
 
 my $MORF_TRACT = 'adj';
 my $MORF_TRACT = 'n';
@@ -367,7 +367,7 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_cat eq 'alg/a__n'
 			|| $par_cat eq 'barre/ja__n'
 			|| $par_cat eq 'acústi/ca__n')) {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'abeille__n'
 			&& ($par_cat eq 'abric__n'
 			|| $par_cat eq 'aband/ó__n'
@@ -386,28 +386,47 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_cat eq 'carism/a__n'
 			|| $par_cat eq 'impr/ès__n'
 			|| $par_cat eq 'or/igen__n'
+			|| $par_cat eq 'passad/ís__n'
 			|| $par_cat eq 'rebu/ig__n'
 			|| $par_cat eq 'r/és__n'
 			|| $par_cat eq 'pa__n')) {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'abeille__n' && $par_cat eq 'mois__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p><par n=\"ND_sp\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p><par n=\"ND_sp\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'abeille__n' && $par_cat eq 'escombraries__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p><par n=\"ND_pl\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p><par n=\"ND_pl\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'abeille__n' && $par_cat eq 'càries__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p><par n=\"ND_sp\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p><par n=\"ND_sp\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'abeille__n' && $par_cat eq 'atletisme__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p><par n=\"ND_sg\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p><par n=\"ND_sg\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'abeille__n' && $par_cat eq 'campus__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p><par n=\"ND_sp\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p><par n=\"ND_sp\"/></e>\n", $stem_fra, $stem_cat;
 #	} elsif ($par_fra eq 'admis_n' && $par_cat eq 'accionist/a__n') {
-#		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"mf\"/></l><r>%s<s n=\"n\"/><s n=\"mf\"/></r></p></e>\n", $stem_fra, $stem_cat;
+#		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"mf\"/></l><r>%s<s n=\"n\"/><s n=\"mf\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif (($par_fra eq 'admis__n' || $par_fra eq 'épou/x__n')
 			&& ($par_cat eq 'angl/ès__n'
 			|| $par_cat eq 'religi/ós__n')) {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"anglais_anglès\"/></e>\n", $stem_fra, $stem_cat;
-	} elsif (($par_fra eq 'admis__n' || $par_fra eq 'épou/x__n') && $par_cat eq 'senyor__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"anglais_anglès\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"anglais_anglès\"/></e>\n", $stem_fra, $stem_cat;
+	} elsif (($par_fra eq 'admis__n' || $par_fra eq 'épou/x__n')
+		&& ($par_cat eq 'senyor__n'
+			|| $par_cat eq 'adjudicat/ari__n'
+			|| $par_cat eq 'administrati/u__n'
+			|| $par_cat eq 'advoca/t__n'
+			|| $par_cat eq 'alacant/í__n'
+			|| $par_cat eq 'americ/à__n'
+			|| $par_cat eq 'amfitri/ó__n'
+			|| $par_cat eq 'ami/c__n'
+			|| $par_cat eq 'asiàti/c__n'
+			|| $par_cat eq 'bas/c__n'
+			|| $par_cat eq 'biòl/eg__n'
+			|| $par_cat eq 'gitan/o__n'
+			|| $par_cat eq 'mag__n'
+			|| $par_cat eq 'pres__n'
+			|| $par_cat eq 'sum/eri__n'
+			|| $par_cat eq 've/í__n'
+			|| $par_cat eq 'angl/ès__n')) {
+
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"anglais_anglès\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif (($par_fra eq 'affecté__n'
 			|| $par_fra eq 'administrat/eur__n'
 			|| $par_fra eq 'ancien__n'
@@ -422,7 +441,7 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_fra eq 'maire__n'
 			|| $par_fra eq 'support/er__n'
 			|| $par_fra eq 'vende/ur__n') && $par_cat eq 'addict/e__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"abaissant_abstracte\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"abaissant_abstracte\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif (($par_fra eq 'affecté__n'
 			|| $par_fra eq 'administrat/eur__n'
 			|| $par_fra eq 'ancien__n'
@@ -443,11 +462,18 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_cat eq 'advoca/t__n'
 			|| $par_cat eq 'alacant/í__n'
 			|| $par_cat eq 'americ/à__n'
+			|| $par_cat eq 'amfitri/ó__n'
+			|| $par_cat eq 'ami/c__n'
 			|| $par_cat eq 'asiàti/c__n'
 			|| $par_cat eq 'bas/c__n'
+			|| $par_cat eq 'biòl/eg__n'
+			|| $par_cat eq 'gitan/o__n'
+			|| $par_cat eq 'mag__n'
+			|| $par_cat eq 'pres__n'
+			|| $par_cat eq 'sum/eri__n'
 			|| $par_cat eq 've/í__n'
 			|| $par_cat eq 'angl/ès__n')) {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif (($par_fra eq 'affecté__n'
 			|| $par_fra eq 'administrat/eur__n'
 			|| $par_fra eq 'ancien__n'
@@ -463,14 +489,20 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_fra eq 'support/er__n'
 			|| $par_fra eq 'vende/ur__n')
 		&& ($par_cat eq 'accionist/a__n'
-			|| $par_cat eq 'acompanyant__n')) {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"GD_mf\"/></e>\n", $stem_fra, $stem_cat;
+			|| $par_cat eq 'acompanyant__n'
+			|| $par_cat eq 'monar/ca__n'
+)) {
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"GD_mf\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'artiste__n' &&
 			($par_cat eq 'accionist/a__n'
-			|| $par_cat eq 'acompanyant__n')) {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"mf\"/></l><r>%s<s n=\"n\"/><s n=\"mf\"/></r></p></e>\n", $stem_fra, $stem_cat;
+			|| $par_cat eq 'acompanyant__n'
+			|| $par_cat eq 'monar/ca__n'
+)) {
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"mf\"/></l><r>%s<s n=\"n\"/><s n=\"mf\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'artiste__n' && $par_cat eq 'addict/e__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"neutre_neutre\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"neutre_neutre\"/></e>\n", $stem_fra, $stem_cat;
+	} elsif ($par_fra eq 'artiste__n' && $par_cat eq 'guardaespatlles__n') {
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"mf\"/></l><r>%s<s n=\"n\"/><s n=\"mf\"/></r></p><par n=\"ND_sp\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'artiste__n'
 		&& ($par_cat eq 'senyor__n'
 			|| $par_cat eq 'adjudicat/ari__n'
@@ -478,11 +510,18 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_cat eq 'advoca/t__n'
 			|| $par_cat eq 'alacant/í__n'
 			|| $par_cat eq 'americ/à__n'
+			|| $par_cat eq 'amfitri/ó__n'
+			|| $par_cat eq 'ami/c__n'
 			|| $par_cat eq 'asiàti/c__n'
 			|| $par_cat eq 'bas/c__n'
+			|| $par_cat eq 'biòl/eg__n'
+			|| $par_cat eq 'gitan/o__n'
+			|| $par_cat eq 'mag__n'
+			|| $par_cat eq 'pres__n'
+			|| $par_cat eq 'sum/eri__n'
 			|| $par_cat eq 've/í__n'
 			|| $par_cat eq 'angl/ès__n')) {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"mf_GD\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"mf_GD\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif (($par_fra eq 'livre__n'
 		|| $par_fra eq 'brand/y__n'
 		|| $par_fra eq 'cie/l__n'
@@ -509,10 +548,11 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_cat eq 'carism/a__n'
 			|| $par_cat eq 'impr/ès__n'
 			|| $par_cat eq 'or/igen__n'
+			|| $par_cat eq 'passad/ís__n'
 			|| $par_cat eq 'rebu/ig__n'
 			|| $par_cat eq 'r/és__n'
 			|| $par_cat eq 'pa__n')) {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif (($par_fra eq 'livre__n'
 		|| $par_fra eq 'brand/y__n'
 		|| $par_fra eq 'cie/l__n'
@@ -529,7 +569,7 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_cat eq 'alg/a__n'
 			|| $par_cat eq 'barre/ja__n'
 			|| $par_cat eq 'acústi/ca__n')) {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif (($par_fra eq 'livre__n'
 		|| $par_fra eq 'brand/y__n'
 		|| $par_fra eq 'cie/l__n'
@@ -540,17 +580,17 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 #		|| $par_fra eq 'administrat/eur__n' # molts casos d'ús d'administrat/eur__n per a aparells
 		|| $par_fra eq 'anima/l__n')
 			&& $par_cat eq 'campus__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p><par n=\"ND_sp\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p><par n=\"ND_sp\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'mois__n' && $par_cat eq 'campus__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif (($par_fra eq 'argent__n'
 		|| $par_fra eq 'personnel__n')
 			&& $par_cat eq 'atletisme__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"sg\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/><s n=\"sg\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"sg\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/><s n=\"sg\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif (($par_fra eq 'argent__n'
 		|| $par_fra eq 'personnel__n')
 			&& $par_cat eq 'soif__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"sg\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/><s n=\"sg\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"sg\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/><s n=\"sg\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'mois__n'
 			&& ($par_cat eq 'abric__n'
 			|| $par_cat eq 'aband/ó__n'
@@ -569,10 +609,11 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_cat eq 'carism/a__n'
 			|| $par_cat eq 'impr/ès__n'
 			|| $par_cat eq 'or/igen__n'
+			|| $par_cat eq 'passad/ís__n'
 			|| $par_cat eq 'rebu/ig__n'
 			|| $par_cat eq 'r/és__n'
 			|| $par_cat eq 'pa__n')) {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p><par n=\"sp_ND\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p><par n=\"sp_ND\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'mois__n'
 			&& ($par_cat eq 'abell/a__n'
 			|| $par_cat eq 'accessibilitat__n'
@@ -581,9 +622,9 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_cat eq 'alg/a__n'
 			|| $par_cat eq 'barre/ja__n'
 			|| $par_cat eq 'acústi/ca__n')) {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p><par n=\"sp_ND\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p><par n=\"sp_ND\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'fois__n' && $par_cat eq 'càries__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'fois__n'
 			&& ($par_cat eq 'abell/a__n'
 			|| $par_cat eq 'accessibilitat__n'
@@ -592,25 +633,25 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_cat eq 'alg/a__n'
 			|| $par_cat eq 'barre/ja__n'
 			|| $par_cat eq 'acústi/ca__n')) {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p><par n=\"sp_ND\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/></r></p><par n=\"sp_ND\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'personnel_n' && $par_cat eq 'atletisme__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"m\"/><s n=\"sg\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/><s n=\"sg\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"m\"/><s n=\"sg\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/><s n=\"sg\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'abords__n' && $par_cat eq 'afores__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"m\"/><s n=\"pl\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/><s n=\"pl\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"m\"/><s n=\"pl\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/><s n=\"pl\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'abords__n'&& $par_cat eq 'escombraries__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"m\"/><s n=\"pl\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/><s n=\"pl\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"m\"/><s n=\"pl\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/><s n=\"pl\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'vacances__n' && $par_cat eq 'afores__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/><s n=\"pl\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/><s n=\"pl\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"f\"/><s n=\"pl\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/><s n=\"pl\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'vacances__n'&& $par_cat eq 'escombraries__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"f\"/><s n=\"pl\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/><s n=\"pl\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"f\"/><s n=\"pl\"/></l><r>%s<s n=\"n\"/><s n=\"f\"/><s n=\"pl\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'BBVA__n' && $par_cat eq 'BBVA__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'IRPF__n' && $par_cat eq 'IRPF__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'BBC__n' && $par_cat eq 'BBC__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"f\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'ATS__n' && $par_cat eq 'ATS__n') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"mf\"/></l><r>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"mf\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"mf\"/></l><r>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"mf\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} else {
 		print STDERR "No hi ha regla per a escriure_bidix_n: par_fra = $par_fra ($lemma_fra) par_cat = $par_cat ($lemma_cat)\n";
 print STDERR "dix_fra{$morf_fra}{$lemma_fra} = $dix_fra{$morf_fra}{$lemma_fra}\n";
@@ -650,6 +691,7 @@ print "escriure_bidix_adj ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_f
 		|| $par_cat eq 'aliment/ós__adj'
 		|| $par_cat eq 'al/isi__adj'
 		|| $par_cat eq 'alt__adj'
+		|| $par_cat eq 'amfitri/ó__adj'
 		|| $par_cat eq 'andal/ús__adj'
 		|| $par_cat eq 'annex__adj'
 		|| $par_cat eq 'ate/u__adj'
@@ -669,10 +711,10 @@ print "escriure_bidix_adj ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_f
 		|| $par_cat eq 'sangu/ini__adj'
 		|| $par_cat eq 'sup/erflu__adj'
 		|| $par_cat eq 'triparti/t__adj')) {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p></e>\n", $stem_fra, $stem_cat;
 		next if $lr_rl =~ /LR/o;
 		$lr_rl = ' r="RL"';
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/><s n=\"sup\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/><s n=\"sup\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif (($par_fra eq 'abaissant__adj'
 		|| $par_fra eq 'affirmati/f__adj'
 		|| $par_fra eq 'amica/l__adj'
@@ -689,10 +731,10 @@ print "escriure_bidix_adj ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_f
 		|| $par_cat eq 'agrícol/a__adj'
 		|| $par_cat eq 'alegr/e__adj'
 )) {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"GD_mf\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"GD_mf\"/></e>\n", $stem_fra, $stem_cat;
 		next if $lr_rl =~ /LR/o;
 		$lr_rl = ' r="RL"';
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/><s n=\"sup\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/><s n=\"sup\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif (($par_fra eq 'abaissant__adj'
 		|| $par_fra eq 'affirmati/f__adj'
 		|| $par_fra eq 'amica/l__adj'
@@ -706,10 +748,10 @@ print "escriure_bidix_adj ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_f
 		|| $par_fra eq 'secr/et__adj'
 )
 		&& $par_cat eq 'abstract/e__adj') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"abaissant_abstracte\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"abaissant_abstracte\"/></e>\n", $stem_fra, $stem_cat;
 		next if $lr_rl =~ /LR/o;
 		$lr_rl = ' r="RL"';
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/><s n=\"sup\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/><s n=\"sup\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif (($par_fra eq 'abaissant__adj'
 		|| $par_fra eq 'affirmati/f__adj'
 		|| $par_fra eq 'amica/l__adj'
@@ -723,7 +765,7 @@ print "escriure_bidix_adj ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_f
 		|| $par_fra eq 'secr/et__adj'
 )
 		&& $par_cat eq 'adept/e__adj') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"abaissant_abstracte\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"abaissant_abstracte\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif (($par_fra eq 'académique__adj'
 )
 		&& ($par_cat eq 'afortuna/t__adj'
@@ -739,6 +781,7 @@ print "escriure_bidix_adj ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_f
 		|| $par_cat eq 'aliment/ós__adj'
 		|| $par_cat eq 'al/isi__adj'
 		|| $par_cat eq 'alt__adj'
+		|| $par_cat eq 'amfitri/ó__adj'
 		|| $par_cat eq 'andal/ús__adj'
 		|| $par_cat eq 'annex__adj'
 		|| $par_cat eq 'ate/u__adj'
@@ -758,31 +801,31 @@ print "escriure_bidix_adj ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_f
 		|| $par_cat eq 'sangu/ini__adj'
 		|| $par_cat eq 'sup/erflu__adj'
 		|| $par_cat eq 'triparti/t__adj')) {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"mf_GD\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"mf_GD\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'académique__adj' && $par_cat eq 'abdominal__adj') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'académique__adj' && $par_cat eq 'abstract/e__adj') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"neutre_neutre\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"neutre_neutre\"/></e>\n", $stem_fra, $stem_cat;
 		next if $lr_rl =~ /LR/o;
 		$lr_rl = ' r="RL"';
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/><s n=\"sup\"/></r></p><par n=\"mf_GD\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/><s n=\"sup\"/></r></p><par n=\"mf_GD\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'académique__adj' && $par_cat eq 'adept/e__adj') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"neutre_neutre\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"neutre_neutre\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'académique__adj' && $par_cat eq 'agrícol/a__adj') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'académique__adj' && $par_cat eq 'alegr/e__adj') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p></e>\n", $stem_fra, $stem_cat;
 		next if $lr_rl =~ /LR/o;
 		$lr_rl = ' r="RL"';
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/><s n=\"sup\"/></r></p><par n=\"mf_GD\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/><s n=\"sup\"/></r></p><par n=\"mf_GD\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'académique__adj' && $par_cat eq 'quals/evol__adj') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'affectueu/x__adj' && $par_cat eq 'abdominal__adj') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"anglais_esquimal\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"anglais_esquimal\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'affectueu/x__adj' && $par_cat eq 'absolut__adj') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"anglais_anglès\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"anglais_anglès\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'anglais__adj' && $par_cat eq 'adept/e__adj') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"anglais_adepte\"/></e>\n", $stem_fra, $stem_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"anglais_adepte\"/></e>\n", $stem_fra, $stem_cat;
 	} else {
 		print STDERR "No hi ha regla per a escriure_bidix_adj: par_fra = $par_fra ($lemma_fra) par_cat = $par_cat ($lemma_cat)\n";
 print STDERR "dix_fra{$morf_fra}{$lemma_fra} = $dix_fra{$morf_fra}{$lemma_fra}\n";
@@ -794,7 +837,7 @@ sub escriure_bidix {
 	$lr_rl = " $lr_rl" if $lr_rl;
 	my $a = " a=\"$autor\"" if $autor;
 	if ($morf_cat eq 'vblex' && $morf_fra eq 'vblex') {
-		printf $fbi "<e$a$lr_rl><p><l>%s<s n=\"%s\"/></l><r>%s<s n=\"%s\"/></r></p></e>\n", $stem_fra, $morf_fra, $stem_cat, $morf_cat;
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"%s\"/></l><r>%s<s n=\"%s\"/></r></p></e>\n", $stem_fra, $morf_fra, $stem_cat, $morf_cat;
 	} elsif ($morf_cat eq 'n' && $morf_fra eq 'n') {
 		escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $lr_rl, $autor);
 	} elsif ($morf_cat eq 'adj' && $morf_fra eq 'adj') {
