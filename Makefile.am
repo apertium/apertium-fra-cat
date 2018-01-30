@@ -106,10 +106,18 @@ $(PREFIX2).autobil.bin: $(BASENAME).$(PREFIX1).dix
 ## Lexical selection rules
 ###############################################################################
 
-$(PREFIX1).autolex.bin: $(BASENAME).$(PREFIX1).lrx
+.deps/%.metalrx: %.metalrx .deps/.d
+	python3 metalrx.py $< $@
+
+.deps/%.lrx: metalrx-to-lrx.xslt .deps/%.metalrx
+	xsltproc $^ > $@.tmp
+	@xmllint --format $@.tmp > $@
+	@rm $@.tmp
+
+$(PREFIX1).autolex.bin: .deps/$(BASENAME).$(PREFIX1).lrx
 	lrx-comp $< $@
 
-$(PREFIX2).autolex.bin: $(BASENAME).$(PREFIX2).lrx
+$(PREFIX2).autolex.bin: .deps/$(BASENAME).$(PREFIX2).lrx
 	lrx-comp $< $@
 
 ###############################################################################
@@ -156,9 +164,9 @@ $(PREFIX2).autopgen.bin: $(AP_SRC1)/$(LANG1).autopgen.bin
 ###############################################################################
 
 EXTRA_DIST=					\
-		$(BASENAME).$(PREFIX1).lrx	\
+		.deps/$(BASENAME).$(PREFIX1).lrx	\
+		.deps/$(BASENAME).$(PREFIX2).lrx	\
 		$(BASENAME).$(PREFIX1).dix	\
-		$(BASENAME).$(PREFIX2).lrx	\
 		$(BASENAME).$(PREFIX1).t1x	\
 		$(BASENAME).$(PREFIX2).t1x	\
 		modes.xml
