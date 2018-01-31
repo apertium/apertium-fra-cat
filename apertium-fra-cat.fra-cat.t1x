@@ -3700,6 +3700,9 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="2"/>
           <with-param pos="1"/>
         </call-macro>
+        <call-macro n="f_maj_gentilici"> <!-- problemes de mala anàsi en el cas p.ex. de: "l'Italien NomInconnu" -->
+          <with-param pos="2"/>
+        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>

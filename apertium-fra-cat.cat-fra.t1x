@@ -3705,8 +3705,7 @@ is not applicable because gender and number can not be taken from previous rules
     </rule>
     
     
-    <rule>
-<!-- REGLA: NOM ADJECTIU-->
+    <rule comment="REGLA: NOM ADJECTIU">
       <pattern>
         <pattern-item n="nom"/>
         <pattern-item n="adjec"/>

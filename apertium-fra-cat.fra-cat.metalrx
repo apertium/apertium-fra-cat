@@ -2,7 +2,7 @@
 <metalrx>
 
   <def-macros>
-	<def-macro name="noms_propis">
+	<def-macro name="noms_propres">
 	  <rule weight="0.6">
 		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p1}}"/></match>
 	  </rule>
@@ -54,36 +54,40 @@
 	  </rule>
 	  <rule weight="1.0">
 		 <or>
-		   <match lemma="papa" tags="n.*"/>
-		   <match lemma="bisbe" tags="n.*"/>
-		   <match lemma="arquebisbe" tags="n.*"/>
-		   <match lemma="sant" tags="n.*"/>
-		   <match lemma="sant" tags="adj.*"/>
-		   <match lemma="apòstol" tags="n.*"/>
-		   <match lemma="emperador" tags="n.*"/>
-		   <match lemma="rei" tags="n.*"/>
+		   <match lemma="pape" tags="n.*"/>
+		   <match lemma="évêque" tags="n.*"/>
+		   <match lemma="archevêque" tags="n.*"/>
+		   <match lemma="saint" tags="n.*"/>
+		   <match lemma="saint" tags="adj.*"/>
+		   <match lemma="apôtre" tags="n.*"/>
+		   <match lemma="empereur" tags="n.*"/>
+		   <match lemma="roi" tags="n.*"/>
 		   <match lemma="tsar" tags="n.*"/>
-		   <match lemma="virrei" tags="n.*"/>
-		   <match lemma="príncep" tags="n.*"/>
+		   <match lemma="vice-roi" tags="n.*"/>
+		   <match lemma="prince" tags="n.*"/>
 		   <match lemma="infant" tags="n.*"/>
-		   <match lemma="delfí" tags="n.*"/>
+		   <match lemma="dauphin" tags="n.*"/>
 		   <match lemma="comte" tags="n.*"/>
-		   <match lemma="vescomte" tags="n.*"/>
+		   <match lemma="comtesse" tags="n.*"/>
+		   <match lemma="vicomte" tags="n.*"/>
+		   <match lemma="vicomtesse" tags="n.*"/>
 		   <match lemma="duc" tags="n.*"/>
-		   <match lemma="arxiduc" tags="n.*"/>
-		   <match lemma="marquès" tags="n.*"/>
-		   <match lemma="baró" tags="n.*"/>
+		   <match lemma="duchesse" tags="n.*"/>
+		   <match lemma="archiduc" tags="n.*"/>
+		   <match lemma="archiduchesse" tags="n.*"/>
+		   <match lemma="marquis" tags="n.*"/>
+		   <match lemma="baron" tags="n.*"/>
 		 </or>
 		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
 	  </rule>
 	  <rule weight="1.0">
 		 <or>
-		   <match lemma="papat" tags="n.*"/>
+		   <match lemma="papauté" tags="n.*"/>
 		   <match lemma="pontificat" tags="n.*"/>
-		   <match lemma="imperi" tags="n.*"/>
-		   <match lemma="regne" tags="n.*"/>
-		   <match lemma="regnat" tags="n.*"/>
-		   <match lemma="regència" tags="n.*"/>
+		   <match lemma="empire" tags="n.*"/>
+		   <match lemma="règne" tags="n.*"/>
+		   <match lemma="régence" tags="n.*"/>
+		   <match lemma="vice-royauté" tags="n.*"/>
 		 </or>
 		 <match lemma="de" tags="pr"/>
 		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
@@ -879,6 +883,49 @@
     <match lemma="d'ailleurs" tags="adv"><select lemma="d'altra banda"/></match>
   </rule>
 -->
+
+<!-- **************** NP **************** -->
+
+  <macro name="noms_propres" p1="Charles" p2="Carles" />
+  <macro name="noms_propres" p1="Philippe" p2="Felip" />
+  <macro name="noms_propres" p1="Guifred" p2="Guifré" />
+  <macro name="noms_propres" p1="Grégoire" p2="Gregori" />
+  <macro name="noms_propres" p1="Ramire" p2="Ramir" />
+  <macro name="noms_propres" p1="Armengol" p2="Ermengol" />
+  <macro name="noms_propres" p1="Isabelle" p2="Isabel" />
+  <macro name="noms_propres" p1="Élisabeth" p2="Isabel" />
+  <macro name="noms_propres" p1="Marie" p2="Maria" />
+  <macro name="noms_propres" p1="Jeanne" p2="Joana" />
+  <macro name="noms_propres" p1="Jean" p2="Joan" />
+  <macro name="noms_propres" p1="Juan Carlos" p2="Joan Carles" />
+  <macro name="noms_propres" p1="Sophie" p2="Sofia" />
+  <macro name="noms_propres" p1="Paul" p2="Pau" />
+  <macro name="noms_propres" p1="Jean-Paul" p2="Joan Pau" />
+  <macro name="noms_propres" p1="Benoît" p2="Benet" />
+  <macro name="noms_propres" p1="François" p2="Francesc" />
+  <macro name="noms_propres" p1="Sixte" p2="Sixt" />
+  <macro name="noms_propres" p1="Innocent" p2="Innocenci" />
+  <macro name="noms_propres" p1="Léon" p2="Lleó" />
+  <macro name="noms_propres" p1="Pierre" p2="Pere" />
+  <macro name="noms_propres" p1="Jacques" p2="Jaume" />
+  <macro name="noms_propres" p1="Ferdinand" p2="Ferran" />
+  <macro name="noms_propres" p1="Richard" p2="Ricard" />
+  <macro name="noms_propres" p1="Martin" p2="Martí" />
+  <macro name="noms_propres" p1="Alphonse" p2="Alfons" />
+  <macro name="noms_propres" p1="Louis" p2="Lluís" />
+  <macro name="noms_propres" p1="Guillaume" p2="Guillem" />
+  <macro name="noms_propres" p1="Henri" p2="Enric" />
+  <macro name="noms_propres" p1="Nicolas" p2="Nicolau" />
+  <macro name="noms_propres" p1="Maximilien" p2="Maximilià" />
+  <macro name="noms_propres" p1="Catherine" p2="Caterina" />
+  <macro name="noms_propres" p1="Bernard" p2="Bernat" />
+  <macro name="noms_propres" p1="Frédéric" p2="Frederic" />
+  <macro name="noms_propres" p1="Joseph" p2="Josep" />
+  <macro name="noms_propres" p1="Jules" p2="Juli" />
+  <macro name="noms_propres" p1="Luc" p2="Lluc" />
+<!--
+-->
+<!-- Letícia -->
 
 </rules>
 </metalrx>
