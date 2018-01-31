@@ -1,4 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<metalrx>
+
+  <def-macros>
+	<def-macro name="noms_propis">
+	  <rule weight="0.6">
+		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p1}}"/></match>
+	  </rule>
+	  <rule weight="1.0">
+		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
+		 <match lemma="de" tags="pr"/>
+		 <or><match tags="np.loc"/><match tags="np.top.*"/></or>
+	  </rule>
+	  <rule weight="1.0">
+		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
+		 <match tags="det.*"/>
+		 <match tags="adj.*"/>
+	  </rule>
+	  <rule weight="1.0">
+		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
+		 <or>
+		   <match tags="num.*"/>
+		   <match lemma="I" tags="adj.*"/>
+		   <match lemma="II" tags="adj.*"/>
+		   <match lemma="III" tags="adj.*"/>
+		   <match lemma="IV" tags="adj.*"/>
+		   <match lemma="V" tags="adj.*"/>
+		   <match lemma="VI" tags="adj.*"/>
+		   <match lemma="VII" tags="adj.*"/>
+		   <match lemma="VIII" tags="adj.*"/>
+		   <match lemma="IX" tags="adj.*"/>
+		   <match lemma="X" tags="adj.*"/>
+		   <match lemma="XI" tags="adj.*"/>
+		   <match lemma="XII" tags="adj.*"/>
+		   <match lemma="XIII" tags="adj.*"/>
+		   <match lemma="XIV" tags="adj.*"/>
+		   <match lemma="XV" tags="adj.*"/>
+		   <match lemma="XVI" tags="adj.*"/>
+		   <match lemma="XVII" tags="adj.*"/>
+		   <match lemma="XVIII" tags="adj.*"/>
+		   <match lemma="XIX" tags="adj.*"/>
+		   <match lemma="XX" tags="adj.*"/>
+		   <match lemma="XXI" tags="adj.*"/>
+		   <match lemma="XXII" tags="adj.*"/>
+		   <match lemma="XXIII" tags="adj.*"/>
+		   <match lemma="XXIV" tags="adj.*"/>
+		   <match lemma="XXV" tags="adj.*"/>
+		   <match lemma="XXVI" tags="adj.*"/>
+		   <match lemma="XXVII" tags="adj.*"/>
+		   <match lemma="XXVIII" tags="adj.*"/>
+		   <match lemma="XXIX" tags="adj.*"/>
+		   <match lemma="XXX" tags="adj.*"/>
+		 </or>
+	  </rule>
+	  <rule weight="1.0">
+		 <or>
+		   <match lemma="papa" tags="n.*"/>
+		   <match lemma="bisbe" tags="n.*"/>
+		   <match lemma="arquebisbe" tags="n.*"/>
+		   <match lemma="sant" tags="n.*"/>
+		   <match lemma="sant" tags="adj.*"/>
+		   <match lemma="apòstol" tags="n.*"/>
+		   <match lemma="emperador" tags="n.*"/>
+		   <match lemma="rei" tags="n.*"/>
+		   <match lemma="tsar" tags="n.*"/>
+		   <match lemma="virrei" tags="n.*"/>
+		   <match lemma="príncep" tags="n.*"/>
+		   <match lemma="infant" tags="n.*"/>
+		   <match lemma="delfí" tags="n.*"/>
+		   <match lemma="comte" tags="n.*"/>
+		   <match lemma="vescomte" tags="n.*"/>
+		   <match lemma="duc" tags="n.*"/>
+		   <match lemma="arxiduc" tags="n.*"/>
+		   <match lemma="marquès" tags="n.*"/>
+		   <match lemma="baró" tags="n.*"/>
+		 </or>
+		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
+	  </rule>
+	  <rule weight="1.0">
+		 <or>
+		   <match lemma="papat" tags="n.*"/>
+		   <match lemma="pontificat" tags="n.*"/>
+		   <match lemma="imperi" tags="n.*"/>
+		   <match lemma="regne" tags="n.*"/>
+		   <match lemma="regnat" tags="n.*"/>
+		   <match lemma="regència" tags="n.*"/>
+		 </or>
+		 <match lemma="de" tags="pr"/>
+		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
+	  </rule>
+	</def-macro>
+  </def-macros>
+
 <rules>
 
 <!-- REL -->
@@ -128,6 +220,8 @@
       <match lemma="Àsia"/>
       <match lemma="Europa"/>
       <match lemma="Oceania"/>
+      <match lemma="occident"/>
+      <match lemma="orient"/>
     </or>
   </rule>
 
@@ -500,6 +594,59 @@
     <match tags="n.*.sg"/>
   </rule>
 
+  <!-- coll >> cou, col -->
+  <rule weight="0.8">
+    <match lemma="coll" tags="n.*"><select lemma="cou"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="coll" tags="n.*"><select lemma="col"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="coll" tags="n.*"><select lemma="cou"/></match>
+    <match lemma="de" tags="pr"/>
+    <or><match tags="np.ant.*"/><match tags="np.cog.*"/></or>
+  </rule>
+
+  <!-- principi >> principe, début -->
+  <rule weight="0.8">
+    <match lemma="principi" tags="n.*"><select lemma="principe"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="a" tags="pr"/>
+      <match lemma="abans" tags="pr"/>
+      <match lemma="a partir de" tags="pr"/>
+      <match lemma="després" tags="pr"/>
+      <match lemma="des de" tags="pr"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <match lemma="principi" tags="n.*"><select lemma="début"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="principi" tags="n.*"><select lemma="début"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <or>
+      <match lemma="dia" tags="n.*"/>
+      <match lemma="setmana" tags="n.*"/>
+      <match lemma="mes" tags="n.*"/>
+      <match lemma="any" tags="n.*"/>
+      <match lemma="lustre" tags="n.*"/>
+      <match lemma="dècada" tags="n.*"/>
+      <match lemma="segle" tags="n.*"/>
+      <match lemma="mil·lenni" tags="n.*"/>
+      <match lemma="època" tags="n.*"/>
+      <match lemma="era" tags="n.*"/>
+      <match lemma="període" tags="n.*"/>
+      <match lemma="temps" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- infant >> enfant, infant, infante -->
   <rule weight="0.8">
     <match lemma="infant" tags="n.m.*"><select lemma="enfant"/></match>
@@ -802,7 +949,7 @@
   </rule>
   <rule weight="1.0">
     <match lemma="conseller" tags="n.*"><select lemma="ministre"/></match>
-    <match tags="np.ant.*"/>
+    <or><match tags="np.ant.*"/><match tags="np.cog.*"/></or>
   </rule>
   <rule weight="1.0">
     <match lemma="conseller" tags="n.*"><select lemma="ministre"/></match>
@@ -978,7 +1125,67 @@
      <match lemma="recurs" tags="n.*"><select lemma="recours"/></match>
   </rule>
 
+
+<!-- **************** NP **************** -->
+
+<!-- Virgili > Virgili, Virgile -->
+
+  <rule weight="0.6">
+     <match lemma="Virgili" tags="np.*"><select lemma="Virgile"/></match>
+  </rule>
+  <rule weight="1.0">
+     <or><match tags="np.ant.*"/><match tags="np.cog.*"/></or>
+     <match lemma="Virgili" tags="np.*"><select lemma="Virgili"/></match>
+  </rule>
+  <rule weight="1.0">
+     <or><match tags="np.cog.*"/><match lemma="Rovira"/></or>
+     <match lemma="i" tags="pr"/>
+     <match lemma="Virgili" tags="np.*"><select lemma="Virgili"/></match>
+  </rule>
+
+  <macro name="noms_propis" p1="Carles" p2="Charles" />
+  <macro name="noms_propis" p1="Felip" p2="Philippe" />
+  <macro name="noms_propis" p1="Guifré" p2="Guifred" />
+  <macro name="noms_propis" p1="Gregori" p2="Gregorio" />
+  <macro name="noms_propis" p1="Ramir" p2="Ramiro" />
+  <macro name="noms_propis" p1="Ramon" p2="Ramón" />
+  <macro name="noms_propis" p1="Ermengol" p2="Armengol" />
+  <macro name="noms_propis" p1="Joana" p2="Juana" />
+  <macro name="noms_propis" p1="Joan" p2="Juan" />
+  <macro name="noms_propis" p1="Joan Manuel" p2="Juan Manuel" />
+  <macro name="noms_propis" p1="Joan Carles" p2="Juan Carlos" />
+  <macro name="noms_propis" p1="Pau" p2="Pablo" />
+  <macro name="noms_propis" p1="Joan Pau" p2="Juan Pablo" />
+  <macro name="noms_propis" p1="Benet" p2="Benedicto" />
+  <macro name="noms_propis" p1="Francesc" p2="Francisco" />
+  <macro name="noms_propis" p1="Francesc Xavier" p2="Francisco Javier" />
+  <macro name="noms_propis" p1="Sixt" p2="Sixto" />
+  <macro name="noms_propis" p1="Innocenci" p2="Inocencio" />
+  <macro name="noms_propis" p1="Lleó" p2="León" />
+  <macro name="noms_propis" p1="Pere" p2="Pedro" />
+  <macro name="noms_propis" p1="Jaume" p2="Jaime" />
+  <macro name="noms_propis" p1="Ferran" p2="Fernando" />
+  <macro name="noms_propis" p1="Ricard" p2="Ricardo" />
+  <macro name="noms_propis" p1="Martí" p2="Martín" />
+  <macro name="noms_propis" p1="Alfons" p2="Alfonso" />
+  <macro name="noms_propis" p1="Humbert" p2="Humberto" />
+  <macro name="noms_propis" p1="Lluís" p2="Luis" />
+  <macro name="noms_propis" p1="Guillem" p2="Guillermo" />
+  <macro name="noms_propis" p1="Enric" p2="Enrique" />
+  <macro name="noms_propis" p1="Nicolau" p2="Nicolás" />
+  <macro name="noms_propis" p1="Maximilià" p2="Maximiliano" />
+  <macro name="noms_propis" p1="Caterina" p2="Catalina" />
+  <macro name="noms_propis" p1="Bernat" p2="Bernardo" />
+  <macro name="noms_propis" p1="Frederic" p2="Federico" />
+  <macro name="noms_propis" p1="Llúcia" p2="Lucía" />
+  <macro name="noms_propis" p1="Josep" p2="José" />
+  <macro name="noms_propis" p1="Juli" p2="Julio" />
+  <macro name="noms_propis" p1="Marc" p2="Marcos" />
+  <macro name="noms_propis" p1="Lluc" p2="Lucas" />
+<!-- Sofia, Letícia -->
+
 </rules>
+</metalrx>
 
 <!-- 
 Resources: 
