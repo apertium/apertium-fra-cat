@@ -11,6 +11,10 @@
     <def-cat n="np">
       <cat-item tags="np.*"/>
     </def-cat>
+    <def-cat n="np_unk">
+      <cat-item tags="np.*"/>
+      <cat-item tags=""/>
+    </def-cat>
     <def-cat n="npant">
       <cat-item tags="np.ant"/>
       <cat-item tags="np.ant.*"/>
@@ -67,6 +71,9 @@
     </def-cat>
     <def-cat n="deprep">
       <cat-item lemma="de" tags="pr"/>
+    </def-cat>
+    <def-cat n="cnjcoo">
+      <cat-item tags="cnjcoo"/>
     </def-cat>
     <def-cat n="que">
       <cat-item lemma="que" tags="cnjsub"/>
@@ -206,6 +213,128 @@
     <def-cat n="xifra">
       <cat-item tags="num"/>
     </def-cat>
+    <def-cat n="num_romans"> <!-- per a reis, segles, mil·lenis -->
+      <cat-item lemma="I" tags="num.*"/>
+      <cat-item lemma="II" tags="num.*"/>
+      <cat-item lemma="III" tags="num.*"/>
+      <cat-item lemma="IV" tags="num.*"/>
+      <cat-item lemma="V" tags="num.*"/>
+      <cat-item lemma="VI" tags="num.*"/>
+      <cat-item lemma="VII" tags="num.*"/>
+      <cat-item lemma="VIII" tags="num.*"/>
+      <cat-item lemma="IX" tags="num.*"/>
+      <cat-item lemma="X" tags="num.*"/>
+      <cat-item lemma="XI" tags="num.*"/>
+      <cat-item lemma="XII" tags="num.*"/>
+      <cat-item lemma="XIII" tags="num.*"/>
+      <cat-item lemma="XIV" tags="num.*"/>
+      <cat-item lemma="XV" tags="num.*"/>
+      <cat-item lemma="XVI" tags="num.*"/>
+      <cat-item lemma="XVII" tags="num.*"/>
+      <cat-item lemma="XVIII" tags="num.*"/>
+      <cat-item lemma="XIX" tags="num.*"/>
+      <cat-item lemma="XX" tags="num.*"/>
+      <cat-item lemma="XXI" tags="num.*"/>
+      <cat-item lemma="XXII" tags="num.*"/>
+      <cat-item lemma="XXIII" tags="num.*"/>
+      <cat-item lemma="XXIV" tags="num.*"/>
+      <cat-item lemma="XXV" tags="num.*"/>
+      <cat-item lemma="XXVI" tags="num.*"/>
+      <cat-item lemma="XXVII" tags="num.*"/>
+      <cat-item lemma="XXVIII" tags="num.*"/>
+      <cat-item lemma="XXIX" tags="num.*"/>
+      <cat-item lemma="XXX" tags="num.*"/>
+      <cat-item lemma="i" tags="num.*"/>
+      <cat-item lemma="ii" tags="num.*"/>
+      <cat-item lemma="iii" tags="num.*"/>
+      <cat-item lemma="iv" tags="num.*"/>
+      <cat-item lemma="v" tags="num.*"/>
+      <cat-item lemma="vi" tags="num.*"/>
+      <cat-item lemma="vii" tags="num.*"/>
+      <cat-item lemma="viii" tags="num.*"/>
+      <cat-item lemma="ix" tags="num.*"/>
+      <cat-item lemma="x" tags="num.*"/>
+      <cat-item lemma="xi" tags="num.*"/>
+      <cat-item lemma="xii" tags="num.*"/>
+      <cat-item lemma="xiii" tags="num.*"/>
+      <cat-item lemma="xiv" tags="num.*"/>
+      <cat-item lemma="xv" tags="num.*"/>
+      <cat-item lemma="xvi" tags="num.*"/>
+      <cat-item lemma="xvii" tags="num.*"/>
+      <cat-item lemma="xviii" tags="num.*"/>
+      <cat-item lemma="xix" tags="num.*"/>
+      <cat-item lemma="xx" tags="num.*"/>
+      <cat-item lemma="xxi" tags="num.*"/>
+      <cat-item lemma="xxii" tags="num.*"/>
+      <cat-item lemma="xxiii" tags="num.*"/>
+      <cat-item lemma="xxiv" tags="num.*"/>
+      <cat-item lemma="xxv" tags="num.*"/>
+      <cat-item lemma="xxvi" tags="num.*"/>
+      <cat-item lemma="xxvii" tags="num.*"/>
+      <cat-item lemma="xxviii" tags="num.*"/>
+      <cat-item lemma="xxix" tags="num.*"/>
+      <cat-item lemma="xxx" tags="num.*"/>
+      <cat-item lemma="I" tags="adj.*"/>
+      <cat-item lemma="II" tags="adj.*"/>
+      <cat-item lemma="III" tags="adj.*"/>
+      <cat-item lemma="IV" tags="adj.*"/>
+      <cat-item lemma="V" tags="adj.*"/>
+      <cat-item lemma="VI" tags="adj.*"/>
+      <cat-item lemma="VII" tags="adj.*"/>
+      <cat-item lemma="VIII" tags="adj.*"/>
+      <cat-item lemma="IX" tags="adj.*"/>
+      <cat-item lemma="X" tags="adj.*"/>
+      <cat-item lemma="XI" tags="adj.*"/>
+      <cat-item lemma="XII" tags="adj.*"/>
+      <cat-item lemma="XIII" tags="adj.*"/>
+      <cat-item lemma="XIV" tags="adj.*"/>
+      <cat-item lemma="XV" tags="adj.*"/>
+      <cat-item lemma="XVI" tags="adj.*"/>
+      <cat-item lemma="XVII" tags="adj.*"/>
+      <cat-item lemma="XVIII" tags="adj.*"/>
+      <cat-item lemma="XIX" tags="adj.*"/>
+      <cat-item lemma="XX" tags="adj.*"/>
+      <cat-item lemma="XXI" tags="adj.*"/>
+      <cat-item lemma="XXII" tags="adj.*"/>
+      <cat-item lemma="XXIII" tags="adj.*"/>
+      <cat-item lemma="XXIV" tags="adj.*"/>
+      <cat-item lemma="XXV" tags="adj.*"/>
+      <cat-item lemma="XXVI" tags="adj.*"/>
+      <cat-item lemma="XXVII" tags="adj.*"/>
+      <cat-item lemma="XXVIII" tags="adj.*"/>
+      <cat-item lemma="XXIX" tags="adj.*"/>
+      <cat-item lemma="XXX" tags="adj.*"/>
+      <cat-item lemma="i" tags="adj.*"/>
+      <cat-item lemma="ii" tags="adj.*"/>
+      <cat-item lemma="iii" tags="adj.*"/>
+      <cat-item lemma="iv" tags="adj.*"/>
+      <cat-item lemma="v" tags="adj.*"/>
+      <cat-item lemma="vi" tags="adj.*"/>
+      <cat-item lemma="vii" tags="adj.*"/>
+      <cat-item lemma="viii" tags="adj.*"/>
+      <cat-item lemma="ix" tags="adj.*"/>
+      <cat-item lemma="x" tags="adj.*"/>
+      <cat-item lemma="xi" tags="adj.*"/>
+      <cat-item lemma="xii" tags="adj.*"/>
+      <cat-item lemma="xiii" tags="adj.*"/>
+      <cat-item lemma="xiv" tags="adj.*"/>
+      <cat-item lemma="xv" tags="adj.*"/>
+      <cat-item lemma="xvi" tags="adj.*"/>
+      <cat-item lemma="xvii" tags="adj.*"/>
+      <cat-item lemma="xviii" tags="adj.*"/>
+      <cat-item lemma="xix" tags="adj.*"/>
+      <cat-item lemma="xx" tags="adj.*"/>
+      <cat-item lemma="xxi" tags="adj.*"/>
+      <cat-item lemma="xxii" tags="adj.*"/>
+      <cat-item lemma="xxiii" tags="adj.*"/>
+      <cat-item lemma="xxiv" tags="adj.*"/>
+      <cat-item lemma="xxv" tags="adj.*"/>
+      <cat-item lemma="xxvi" tags="adj.*"/>
+      <cat-item lemma="xxvii" tags="adj.*"/>
+      <cat-item lemma="xxviii" tags="adj.*"/>
+      <cat-item lemma="xxix" tags="adj.*"/>
+      <cat-item lemma="xxx" tags="adj.*"/>
+    </def-cat>
     <def-cat n="mes">
       <cat-item lemma="gener" tags="n.*"/>
       <cat-item lemma="febrer" tags="n.*"/>
@@ -222,6 +351,10 @@
     </def-cat>
     <def-cat n="any">
       <cat-item lemma="any" tags="n.*"/>
+    </def-cat>
+    <def-cat n="segle">
+      <cat-item lemma="segle" tags="n.*"/>
+      <cat-item lemma="mil·leni" tags="n.*"/>
     </def-cat>
     <def-cat n="n_temps">
       <cat-item lemma="dia" tags="n.*"/>
@@ -684,6 +817,7 @@
       <list-item v="malais"/>
       <list-item v="indonésien"/>
       <list-item v="taïwanais"/>
+      <list-item v="hawaïen"/>
       <list-item v="éthiopien"/>
       <list-item v="malgache"/>
       <list-item v="apache"/>
@@ -3535,8 +3669,56 @@
       </action>
     </rule>
 
-    <rule>
-<!-- REGLA: ADJECTIU -->
+    <rule comment="REGLA: NP num_romans: Pere I > Pierre Ier, Pere II > Pierre II">
+      <pattern>
+        <pattern-item n="np_unk"/>
+        <pattern-item n="num_romans"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="1"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="2" side="tl" part="lem"/>
+                <lit v="Ier"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lemh"/>
+                <clip pos="1" side="tl" part="tags"/>
+                <clip pos="1" side="tl" part="lemq"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <clip pos="2" side="tl" part="tags"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lemh"/>
+                <clip pos="1" side="tl" part="tags"/>
+                <clip pos="1" side="tl" part="lemq"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <lit-tag v="num"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: ADJECTIU">
       <pattern>
         <pattern-item n="adjec"/>
       </pattern>
@@ -3559,8 +3741,7 @@
       </action>
   </rule>
 
-    <rule>
-<!-- REGLA: PRONOM -->
+    <rule comment="REGLA: PRONOM">
 <!--Special case, macro f_concord1
 is not applicable because gender and number can not be taken from previous rules -->
       <pattern>
@@ -3606,8 +3787,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule>
-<!-- REGLA: NUMERAL-->
+  <rule comment="REGLA: NUMERAL">
       <pattern>
         <pattern-item n="num"/>
       </pattern>
@@ -3704,7 +3884,76 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
     </rule>
     
-    
+    <rule comment="REGLA: det nom npant_unk num_romans: el rei Pere II > le roi Pierre II">
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="npant_unk"/>
+        <pattern-item n="num_romans"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord4">
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+          <with-param pos="3"/>
+          <with-param pos="4"/>
+        </call-macro>
+        <call-macro n="f_lang_dial0">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+        </out>
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="4" side="tl" part="lem"/>
+                <lit v="Ier"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="lem"/>
+                <clip pos="4" side="tl" part="tags"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="lem"/>
+                <lit-tag v="num"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+  </rule>
+
     <rule comment="REGLA: NOM ADJECTIU">
       <pattern>
         <pattern-item n="nom"/>
@@ -3722,24 +3971,52 @@ is not applicable because gender and number can not be taken from previous rules
        <call-macro n="superlatiu">
           <with-param pos="2"/>
         </call-macro>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="lemh"/>
-            <clip pos="1" side="tl" part="tags"/>
-            <clip pos="1" side="tl" part="lemq"/>
-          </lu>
-          <b pos="1"/>
-          <lu>
-            <clip pos="2" side="tl" part="lemh"/>
-            <clip pos="2" side="tl" part="tags"/>
-            <clip pos="2" side="tl" part="lemq"/>
-          </lu>
-        </out>
+        <choose>
+          <when>
+            <test>
+              <and>
+                <or>
+                  <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="segle"/></equal>
+                  <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="mil·leni"/></equal>
+                </or>
+                <equal><clip pos="2" side="sl" part="gen"/><lit-tag v="mf"/></equal>
+                <equal><clip pos="2" side="sl" part="nbr"/><lit-tag v="sp"/></equal>
+              </and>
+            </test>
+            <out>
+              <lu>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="1" side="tl" part="lemh"/>
+                <clip pos="1" side="tl" part="tags"/>
+                <clip pos="1" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lemh"/>
+                <clip pos="1" side="tl" part="tags"/>
+                <clip pos="1" side="tl" part="lemq"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
       </action>
   </rule>
 
-    <rule>
-<!-- REGLA: ADJECTIU NOM -->
+    <rule comment="REGLA: ADJECTIU NOM">
       <pattern>
         <pattern-item n="adj"/>
         <pattern-item n="nom"/>
@@ -3796,7 +4073,10 @@ is not applicable because gender and number can not be taken from previous rules
           <when>
             <test>
               <and>
-                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="segle"/></equal>
+                <or>
+                  <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="segle"/></equal>
+                  <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="mil·leni"/></equal>
+                </or>
                 <equal><clip pos="3" side="sl" part="gen"/><lit-tag v="mf"/></equal>
                 <equal><clip pos="3" side="sl" part="nbr"/><lit-tag v="sp"/></equal>
               </and>
@@ -3842,8 +4122,116 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule>
-<!-- REGLA: DET NOM ADJECTIU ADJECTIU-->
+    <rule comment="REGLA: DET segle num cnjcoo num: els segles I i II > les Ier et IIe siècles">
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="segle"/>
+        <pattern-item n="num_romans"/>
+        <pattern-item n="cnjcoo"/>
+        <pattern-item n="num_romans"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <let><var n="numero"/><lit-tag v="sg"/></let>
+        <call-macro n="f_concord1">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_concord1">
+          <with-param pos="5"/>
+        </call-macro>
+        <call-macro n="f_concord2"> <!-- repeteixo per a la regla següent -->
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="tags"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: segle num cnjcoo num: segles I i II > Ier et IIe siècles">
+      <pattern>
+        <pattern-item n="segle"/>
+        <pattern-item n="num_romans"/>
+        <pattern-item n="cnjcoo"/>
+        <pattern-item n="num_romans"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <let><var n="numero"/><lit-tag v="sg"/></let>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_concord1">
+          <with-param pos="4"/>
+        </call-macro>
+        <call-macro n="f_concord1"> <!-- repeteixo per a la regla següent -->
+          <with-param pos="1"/>
+        </call-macro>
+        <modify-case>
+          <clip pos="1" side="tl" part="lemh"/>
+          <lit v="aa"/>
+        </modify-case>
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: DET NOM ADJECTIU ADJECTIU">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="nom"/>

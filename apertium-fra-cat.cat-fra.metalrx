@@ -595,6 +595,24 @@
     <match tags="n.*.sg"/>
   </rule>
 
+  <!-- serra >> scie, cordillère -->
+  <rule weight="0.8">
+    <match lemma="serra" tags="n.*"><select lemma="scie"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="serra" tags="n.*"><select lemma="cordillère"/></match>
+    <match lemma="de" tags="pr"/>
+    <or><match tags="np.*"/><match tags=""/></or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="serra" tags="n.*"><select lemma="cordillère"/></match>
+    <or>
+      <match lemma="litoral" tags="adj.*"/>
+      <match lemma="prelitoral" tags="adj.*"/>
+      <match lemma="transversal" tags="adj.*"/>
+    </or>
+  </rule>
+
   <!-- coll >> cou, col -->
   <rule weight="0.8">
     <match lemma="coll" tags="n.*"><select lemma="cou"/></match>
@@ -1180,7 +1198,8 @@
   <macro name="noms_propis" p1="Josep" p2="Joseph" />
   <macro name="noms_propis" p1="Juli" p2="Jules" />
   <macro name="noms_propis" p1="Lluc" p2="Luc" />
-<!-- Letícia, Hug, Ponç Hug, Ramon Berenguer -->
+  <macro name="noms_propis" p1="Elionor" p2="Aliénor" />
+  <macro name="noms_propis" p1="Ramon" p2="Raymond" />
 
 </rules>
 </metalrx>
