@@ -119,7 +119,7 @@ print "1. fitxer $nfitx, $linia\n" if $MOT && $linia =~ /$MOT/o;
 			$lemma = $1;
 			$par = $2;
 		} elsif ($linia =~ m|<e .*lm="([^"]*)".*<i>.*</i>.*<par n="([^"]*)" prm="(.)"/></e>|o) {
-					$lemma = $1;
+			$lemma = $1;
 			$par = $2;
 			$prm = $3;
 		} elsif ($linia =~ m|<e .*lm="([^"]*)".*<i>.*</i>.*<par n="(.*)"/><p>|o) {
