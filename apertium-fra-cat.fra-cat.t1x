@@ -3566,9 +3566,11 @@ is not applicable because gender and number cannot be taken from previous rules 
           <when>
             <test>
               <and>
-                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="siècle"/></equal>
+                <or>
+                  <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="siècle"/></equal>
+                  <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="millennaire"/></equal>
+                </or>
                 <equal><clip pos="2" side="sl" part="gen"/><lit-tag v="mf"/></equal>
-                <equal><clip pos="2" side="sl" part="nbr"/><lit-tag v="sp"/></equal>
               </and>
             </test>
             <out>

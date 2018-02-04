@@ -99,9 +99,19 @@
 
 <!-- **************** PR **************** -->
 
-  <!-- 
-    pour >> per, per a
-  -->
+  <!-- à >> a, en -->
+  <rule weight="0.8">
+    <match lemma="à" tags="pr"><select lemma="a"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="penser" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="à" tags="pr"><select lemma="en"/></match>
+  </rule>
+
+  <!-- pour >> per, per a -->
   <rule weight="0.8">
     <match lemma="pour" tags="pr"><select lemma="per a"/></match>
   </rule>
@@ -541,6 +551,7 @@
     <match lemma="maïs" tags="n.*"><select lemma="blat# de moro" tags="n.*"/></match>
   </rule>
 
+  <!-- fille >> xic, noi, fill -->
   <rule weight="0.8" v="val">
     <match lemma="fille" tags="n.*"><select lemma="xic" tags="n.*"/></match>
   </rule>
@@ -552,16 +563,45 @@
     <match lemma="fille" tags="n.*"><select lemma="fill" tags="n.*"/></match>
   </rule>
   <rule weight="1.2">
+    <match tags="det.pos.*"/>
+    <or><match tags="num.*"/><match tags="num"/></or>
+    <match lemma="fille" tags="n.*"><select lemma="fill" tags="n.*"/></match>
+  </rule>
+  <rule weight="1.2">
     <match lemma="avoir"/>
     <or><match tags="det.*"/><match tags="num.*"/><match tags="num"/></or>
     <match lemma="fille" tags="n.*"><select lemma="fill" tags="n.*"/></match>
   </rule>
 
+  <!-- garçon >> xic, noi, fill -->
   <rule weight="0.8" v="val">
     <match lemma="garçon" tags="n.*"><select lemma="xic" tags="n.*"/></match>
   </rule>
   <rule weight="1.0" v="cat">
     <match lemma="garçon" tags="n.*"><select lemma="noi" tags="n.*"/></match>
+  </rule>
+
+  <!-- enfant >> nen, fill -->
+  <rule weight="0.8">
+    <match lemma="enfant" tags="n.*"><select lemma="xic" tags="n.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.pos.*"/>
+    <match lemma="enfant" tags="n.mf.pl"><select lemma="fill" tags="n.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.pos.*"/>
+    <match lemma="enfant" tags="n.mf.pl"><select lemma="fill" tags="n.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.pos.*"/>
+    <or><match tags="num.*"/><match tags="num"/></or>
+    <match lemma="enfant" tags="n.mf.pl"><select lemma="fill" tags="n.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="avoir"/>
+    <or><match tags="det.*"/><match tags="num.*"/><match tags="num"/></or>
+    <match lemma="enfant" tags="n.mf.pl"><select lemma="fill" tags="n.*"/></match>
   </rule>
 
   <rule weight="0.8" v="val">
@@ -925,6 +965,9 @@
   <macro name="noms_propres" p1="Luc" p2="Lluc" />
   <macro name="noms_propres" p1="Aliénor" p2="Elionor" />
   <macro name="noms_propres" p1="Raymond" p2="Ramon" />
+  <macro name="noms_propres" p1="Stéphane" p2="Esteve" />
+  <macro name="noms_propres" p1="Stéphanie" p2="Estefania" />
+  <macro name="noms_propres" p1="Sigismond" p2="Segimon" />
 
 </rules>
 </metalrx>

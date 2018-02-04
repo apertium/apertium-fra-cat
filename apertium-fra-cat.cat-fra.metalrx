@@ -227,7 +227,7 @@
   </rule>
 
   <!-- 
-    en >> en, dans
+    en >> en, dans, à
   -->
   <rule weight="0.8">
     <match lemma="en" tags="pr"><select lemma="dans"/></match>
@@ -235,12 +235,32 @@
   <rule weight="1.0">
     <or>
       <match lemma="classificar"/>
-      <match lemma="consistir"/>
-      <match lemma="dividir"/>
-      <match lemma="organitzar"/>
-      <match lemma="pensar"/>
+      <match lemma="consistir" tags="vblex.*"/>
+      <match lemma="consistent" tags="adj.*"/>
+      <match lemma="dividir" tags="vblex.*"/>
+      <match lemma="dividit" tags="adj.*"/>
+      <match lemma="organitzar" tags="vblex.*"/>
+      <match lemma="organitzat" tags="adj.*"/>
     </or>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
     <match lemma="en" tags="pr"><select lemma="en"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="classificar"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*.sg"/>
+    <match lemma="en" tags="pr"><select lemma="dans"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pensar"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="en" tags="pr"><select lemma="à"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="en" tags="pr"><select lemma="en"/></match>
@@ -1200,6 +1220,9 @@
   <macro name="noms_propis" p1="Lluc" p2="Luc" />
   <macro name="noms_propis" p1="Elionor" p2="Aliénor" />
   <macro name="noms_propis" p1="Ramon" p2="Raymond" />
+  <macro name="noms_propis" p1="Esteve" p2="Stéphane" />
+  <macro name="noms_propis" p1="Estefania" p2="Stéphanie" />
+  <macro name="noms_propis" p1="Segimon" p2="Sigismond" />
 
 </rules>
 </metalrx>
