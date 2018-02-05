@@ -350,6 +350,19 @@
     <or><match tags="num"/><match tags="num.*"/></or>
   </rule>
 
+  <!-- monseigneur >> monsenyor, mossèn -->
+  <rule weight="0.8">
+    <match lemma="monseigneur" tags="n.*"><select lemma="monsenyor"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="monseigneur" tags="n.m.sg"><select lemma="mossèn"/></match>
+    <match tags="np.ant.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="monseigneur" tags="n.m.sg"><select lemma="mossèn"/></match>
+    <match tags=""/>
+  </rule>
+
   <!-- dauphin >> dofí, delfí -->
   <rule weight="0.8">
     <match lemma="dauphin" tags="n.m.*"><select lemma="dofí"/></match>

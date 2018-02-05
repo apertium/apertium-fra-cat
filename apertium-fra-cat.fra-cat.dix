@@ -3212,7 +3212,7 @@
     <e>       <p><l>consacrer<s n="vblex"/></l>       <r>consagrar<s n="vblex"/></r></p></e>
     <e>       <p><l>consacrer<g><b/>à</g><s n="vblex"/></l><r>dedicar<g><b/>a</g><s n="vblex"/></r></p></e>
     <e r="RL"><p><l>consacrer<s n="vblex"/></l>       <r>dedicar<s n="vblex"/></r></p></e>
-    <e>       <p><l>conscience<s n="n"/></l>          <r>consciència<s n="n"/></r></p></e>
+    <e>       <p><l>conscience<s n="n"/><s n="f"/></l><r>consciència<s n="n"/><s n="f"/></r></p></e>
     <e>       <p><l>conscient<s n="adj"/></l>         <r>conscient<s n="adj"/></r></p><par n="GD_mf"/></e>
     <e>       <p><l>consciemement<s n="adv"/></l>     <r>conscientment<s n="adv"/></r></p></e>
     <e>       <p><l>conscientiser<s n="vblex"/></l>   <r>conscienciar<s n="vblex"/></r></p></e>
@@ -5064,7 +5064,7 @@
     <e a="u21941"><p><l>Eric<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l>           <r>Eric<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
     <e a="gema"><p><l>ériger<s n="vblex"/></l>        <r>erigir<s n="vblex"/></r></p></e>
     <e>       <p><l>Erika<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></l><r>Erika<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></r></p></e>
-    <e>       <p><l>ermite<s n="n"/><s n="m"/></l>    <r>ermita<s n="n"/><s n="f"/></r></p></e>
+    <e>       <p><l>ermitage<s n="n"/><s n="m"/></l>  <r>ermita<s n="n"/><s n="f"/></r></p></e>
     <e>       <p><l>Ernest<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Ernest<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
     <e>       <p><l>Ernesto<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Ernesto<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
     <e a="ariel"><p><l>érosif<s n="adj"/></l>         <r>erosiu<s n="adj"/></r></p></e>
@@ -7144,6 +7144,8 @@
 <e r="RL"><p><l>intéressant<s n="adj"/></l>       <r>interessant<s n="adj"/><s n="sup"/></r></p></e>
 <e r="RL"><p><l>intéressant<s n="adj"/><s n="GD"/></l><r>interessant<s n="adj"/><s n="mf"/></r></p></e>
 <e>       <p><l>intéressé<s n="n"/></l>           <r>interessat<s n="n"/></r></p></e>
+<e>       <p><l>intéressé<s n="adj"/></l>         <r>interessat<s n="adj"/></r></p></e>
+<e r="LR"><p><l>concerné<s n="adj"/></l>          <r>interessat<s n="adj"/></r></p></e>
 <e>       <p><l>intéresser<s n="vblex"/></l>      <r>interessar<s n="vblex"/></r></p></e>
 <e>       <p><l>intérêt<s n="n"/></l>             <r>interès<s n="n"/></r></p></e>
 <e>       <p><l>interférer<s n="vblex"/></l>      <r>interferir<s n="vblex"/></r></p></e>
@@ -12187,7 +12189,8 @@
 <e>       <p><l>Sony<s n="np"/></l><r>Sony<s n="np"/></r></p></e>
 <e>       <p><l>Sophie<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></l><r>Sophie<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></r></p></e>
 <e>       <p><l>Sophie<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></l><r>Sofia<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></r></p></e>
-<e>       <p><l>sorcière<s n="n"/></l>            <r>bruixa<s n="n"/></r></p></e>
+<e>       <p><l>sorcier<s n="n"/><s n="m"/></l>  <r>bruixot<s n="n"/><s n="m"/></r></p></e>
+<e>       <p><l>sorcier<s n="n"/><s n="f"/></l>  <r>bruixa<s n="n"/><s n="f"/></r></p></e>
 <e>       <p><l>Soriano<s n="np"/><s n="cog"/></l><r>Soriano<s n="np"/><s n="cog"/></r></p></e>
 <e>       <p><l>Soro<s n="np"/><s n="cog"/></l><r>Soro<s n="np"/><s n="cog"/></r></p></e>
 <e r="LR"><p><l>sort<s n="n"/><s n="m"/></l>      <r>sort<s n="n"/><s n="f"/></r></p></e>
@@ -22091,7 +22094,11 @@
 <e><p><l>cyclique<s n="adj"/></l><r>cíclic<s n="adj"/></r></p><par n="mf_GD"/></e>
 <e><p><l>cylindrique<s n="adj"/></l><r>cilíndric<s n="adj"/></r></p><par n="mf_GD"/></e>
 <e><p><l>cyrillique<s n="adj"/></l><r>ciríl·lic<s n="adj"/></r></p><par n="mf_GD"/></e>
-<e><p><l>débutant<s n="adj"/></l><r>novell<s n="adj"/></r></p></e>
+<e r="RL"><p><l>débutant<s n="adj"/></l><r>novell<s n="adj"/></r></p></e>
+<e r="RL"><p><l>débutant<s n="adj"/></l><r>debutant<s n="adj"/></r></p><par n="GD_mf"/></e>
+<e r="RL" a="joan"><p><l>débutant<s n="n"/></l><r>debutant<s n="n"/></r></p><par n="GD_mf"/></e>
+<e><p><l>débutant<s n="adj"/></l><r>principiant<s n="adj"/></r></p><par n="GD_mf"/></e>
+<e><p><l>débutant<s n="n"/></l><r>principiant<s n="n"/></r></p><par n="GD_mf"/></e>
 <e><p><l>décimal<s n="adj"/></l><r>decimal<s n="adj"/></r></p><par n="GD_mf"/></e>
 <e><p><l>hexadécimal<s n="adj"/></l><r>hexadecimal<s n="adj"/></r></p><par n="GD_mf"/></e>
 <e><p><l>décoratif<s n="adj"/></l><r>decoratiu<s n="adj"/></r></p></e>
@@ -23702,7 +23709,7 @@
     <e>       <p><l>Gràcia<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Gràcia<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></r></p></e>
     <e>       <p><l>piémont<b/>pyrénéen<s n="n"/><s n="m"/><s n="sg"/></l><r>Prepirineu<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
     <e r="RL"><p><l>piémont<b/>pyrénéen<s n="n"/><s n="m"/><s n="sg"/></l><r>Prepirineu<s n="np"/><s n="top"/><s n="m"/><s n="pl"/></r></p></e>
-<e><p><l>tramontane<s n="n"/><s n="f"/></l><r>tramontana<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>tramontane<s n="n"/><s n="f"/></l><r>tramuntana<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>mistral<s n="n"/><s n="m"/></l><r>mestral<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>divisé<s n="adj"/></l><r>dividit<s n="adj"/></r></p></e>
 <e>       <p><l>Claire<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></l><r>Claire<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></r></p></e>
@@ -24703,6 +24710,328 @@
 
 <e r="LR"><p><l>par<b/>la<b/>suite<s n="adv"/></l><r>més<b/>endavant<s n="adv"/></r></p></e>
 <e r="RL"><p><l>après<s n="adv"/></l><r>més<b/>endavant<s n="adv"/></r></p></e>
+<e r="RL"><p><l>conscience<s n="n"/><s n="f"/></l><r>conscient<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>pourpre<s n="n"/><s n="f"/></l><r>porpra<s n="n"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>pourpre<s n="n"/><s n="f"/></l><r>púrpura<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>pourpre<s n="n"/><s n="m"/></l><r>porpra<s n="n"/><s n="m"/></r></p></e>
+<e r="RL"><p><l>pourpre<s n="n"/><s n="m"/></l><r>púrpura<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>semblable<s n="n"/><s n="mf"/></l><r>semblant<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>chameau<s n="n"/><s n="m"/></l><r>camell<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>consort<s n="n"/></l><r>consort<s n="n"/></r></p><par n="m_GD"/></e>
+<e a="joan"><p><l>majordome<s n="n"/></l><r>majordom<s n="n"/></r></p><par n="m_GD"/></e>
+<e a="joan"><p><l>manganèse<s n="n"/><s n="m"/><s n="sg"/></l><r>manganès<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
+<e a="joan"><p><l>marketing<s n="n"/><s n="m"/><s n="sg"/></l><r>màrqueting<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
+<e a="joan"><p><l>rouge<s n="n"/></l><r>roig<s n="n"/></r></p><par n="m_GD"/></e>
+<e a="joan"><p><l>motocross<s n="n"/><s n="m"/><s n="sp"/></l><r>motocròs<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
+<e a="joan"><p><l>stress<s n="n"/><s n="m"/><s n="sp"/></l><r>estrès<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
+<e a="joan"><p><l>ordre<b/>religieux<s n="n"/><s n="m"/></l><r>orde<g><b/>religiós</g><s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>service<b/>militaire<s n="n"/><s n="m"/><s n="sg"/></l><r>lleva<s n="n"/><s n="f"/><s n="sg"/></r></p></e>
+<e a="joan"><p><l>baie<b/>vitrée<s n="n"/><s n="f"/></l><r>finestral<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>pierre<b/>tombale<s n="n"/><s n="f"/></l><r>làpida<s n="n"/><s n="f"/></r></p></e>
+
+<e i="yes" a="joan"><p><l>comté<s n="n"/><s n="m"/></l><r>comarca<s n="n"/><s n="f"/></r></p></e>
+<e i="yes" a="joan"><p><l>montagne<s n="n"/><s n="f"/></l><r>serralada<s n="n"/><s n="f"/></r></p></e>
+<e i="yes" a="joan"><p><l>médecin<s n="n"/></l><r>doctor<s n="n"/></r></p><par n="mf_GD"/></e>
+<e i="yes" a="joan"><p><l>source<s n="n"/><s n="f"/></l><r>deu<s n="n"/><s n="m"/></r></p><par n="ND_sg"/></e>
+<e i="yes" a="joan"><p><l>mort<s n="n"/><s n="f"/></l><r>defunció<s n="n"/><s n="f"/></r></p></e>
+<e i="yes" a="joan"><p><l>bien<s n="n"/><s n="m"/></l><r>be<s n="n"/><s n="f"/></r></p></e>
+<e i="yes" a="joan"><p><l>être<s n="n"/><s n="m"/></l><r>ens<s n="n"/><s n="m"/></r></p><par n="ND_sp"/></e>
+<e a="joan"><p><l>statut<g><b/>de<b/>capital</g><s n="n"/><s n="m"/></l><r>capitalitat<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>lien<s n="n"/><s n="m"/></l><r>link<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>crustacé<s n="n"/><s n="m"/></l><r>crustaci<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>luminosité<s n="n"/><s n="f"/></l><r>brillantor<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>théologien<s n="n"/></l><r>teòleg<s n="n"/></r></p></e>
+<e a="joan"><p><l>tchèque<s n="n"/></l><r>txec<s n="n"/></r></p><par n="mf_GD"/></e>
+<e a="joan"><p><l>berceau<s n="n"/><s n="m"/></l><r>bressol<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>procès<s n="n"/><s n="m"/></l><r>plet<s n="n"/><s n="m"/></r></p><par n="sp_ND"/></e>
+<e r="RL" a="joan"><p><l>litige<s n="n"/><s n="m"/></l><r>plet<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>norvégien<s n="n"/></l><r>noruec<s n="n"/></r></p></e>
+<e a="joan"><p><l>iconographie<s n="n"/><s n="f"/></l><r>iconografia<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>affection<s n="n"/><s n="f"/></l><r>afecte<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>hindouisme<s n="n"/><s n="m"/></l><r>hinduisme<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>lave<s n="n"/><s n="f"/></l><r>lava<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>phosphore<s n="n"/><s n="m"/></l><r>fòsfor<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>étamine<s n="n"/><s n="f"/></l><r>estam<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>tuile<s n="n"/><s n="f"/></l><r>teula<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>historiographie<s n="n"/><s n="f"/></l><r>historiografia<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>bûcher<s n="n"/><s n="m"/></l><r>foguera<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>coopérative<s n="n"/><s n="f"/></l><r>cooperativa<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>remerciement<s n="n"/><s n="m"/></l><r>agraïment<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>recollection<s n="n"/><s n="f"/></l><r>recol·lecció<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>concours<s n="n"/><s n="m"/></l><r>certamen<s n="n"/><s n="m"/></r></p><par n="sp_ND"/></e>
+<e a="joan"><p><l>chenille<s n="n"/><s n="f"/></l><r>eruga<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>amphibie<s n="n"/><s n="m"/></l><r>amfibi<s n="n"/><s n="m"/></r></p></e>
+<e i="yes" a="joan"><p><l>conjoint<s n="n"/></l><r>consort<s n="n"/></r></p><par n="GD_mf"/></e>
+<e r="RL" a="joan"><p><l>bannière<s n="n"/><s n="f"/></l><r>estendard<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>défi<s n="n"/><s n="m"/></l><r>desafiament<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>motet<s n="n"/><s n="m"/></l><r>motet<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>parodie<s n="n"/><s n="f"/></l><r>paròdia<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>vitrail<s n="n"/><s n="m"/></l><r>vitrall<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>histoire<s n="n"/><s n="f"/></l><r>historieta<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>juriste<s n="n"/><s n="mf"/></l><r>jurista<s n="n"/><s n="mf"/></r></p></e>
+<e a="joan"><p><l>filament<s n="n"/><s n="m"/></l><r>filament<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>opérette<s n="n"/><s n="f"/></l><r>opereta<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>artisanat<s n="n"/><s n="m"/></l><r>artesania<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>donneur<s n="n"/></l><r>donant<s n="n"/></r></p><par n="GD_mf"/></e>
+<e a="joan"><p><l>prieuré<s n="n"/><s n="m"/></l><r>priorat<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>oasis<s n="n"/><s n="f"/></l><r>oasi<s n="n"/><s n="m"/></r></p><par n="sp_ND"/></e>
+<e a="joan"><p><l>etcétéra<s n="n"/><s n="m"/></l><r>etcètera<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>semi-conducteur<s n="n"/><s n="m"/></l><r>semiconductor<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>GM<s n="n"/><s n="acr"/><s n="m"/></l><r>GM<s n="n"/><s n="acr"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>règle<s n="n"/><s n="f"/></l><r>pauta<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>accompagnateur<s n="n"/></l><r>acompanyant<s n="n"/></r></p><par n="GD_mf"/></e>
+<e a="joan"><p><l>harpe<s n="n"/><s n="f"/></l><r>arpa<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>condensateur<s n="n"/><s n="m"/></l><r>condensador<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>mécène<s n="n"/><s n="mf"/></l><r>mecenes<s n="n"/><s n="mf"/></r></p><par n="ND_sp"/></e>
+<e a="joan"><p><l>lipide<s n="n"/><s n="m"/></l><r>lípid<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>abstraction<s n="n"/><s n="f"/></l><r>abstracció<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>nymphe<s n="n"/><s n="f"/></l><r>nimfa<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>graphie<s n="n"/><s n="f"/></l><r>grafia<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>désamortissement<s n="n"/><s n="m"/></l><r>desamortització<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>maniement<s n="n"/><s n="m"/></l><r>maneig<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>gestion<s n="n"/><s n="f"/></l><r>maneig<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>connecteur<s n="n"/><s n="m"/></l><r>connector<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>idole<s n="n"/><s n="f"/></l><r>ídol<s n="n"/><s n="m"/></r></p></e>
+<e i="yes" a="joan"><p><l>arrêt<s n="n"/><s n="m"/></l><r>auto<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>voiture<s n="n"/><s n="f"/></l><r>auto<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>ecclésiastique<s n="n"/></l><r>eclesiàstic<s n="n"/></r></p><par n="mf_GD"/></e>
+<e a="joan"><p><l>octave<s n="n"/><s n="f"/></l><r>octava<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>col<s n="n"/><s n="m"/></l><r>col<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>piston<s n="n"/><s n="m"/></l><r>pistó<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>réussite<s n="n"/><s n="f"/></l><r>assoliment<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>tenseur<s n="n"/><s n="m"/></l><r>tensor<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>coréen<s n="n"/></l><r>coreà<s n="n"/></r></p></e>
+<e a="joan"><p><l>catalyseur<s n="n"/><s n="m"/></l><r>catalitzador<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>classe<s n="n"/><s n="f"/></l><r>estament<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>conclave<s n="n"/><s n="m"/></l><r>conclave<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>profondeur<s n="n"/><s n="f"/></l><r>fondària<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>carrosserie<s n="n"/><s n="f"/></l><r>carrosseria<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>échantillon<s n="n"/><s n="m"/></l><r>espècimen<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>spécimen<s n="n"/><s n="m"/></l><r>espècimen<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>bonnet<s n="n"/><s n="m"/></l><r>casquet<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>voussoir<s n="n"/><s n="m"/></l><r>dovella<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>trou<s n="n"/><s n="m"/></l><r>sot<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>impureté<s n="n"/><s n="f"/></l><r>impuresa<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>retraite<s n="n"/><s n="f"/></l><r>retir<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>salle<g><b/>à<b/>manger</g><s n="n"/><s n="f"/></l><r>menjador<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>arthropode<s n="n"/><s n="m"/></l><r>artròpode<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>alleu<s n="n"/><s n="m"/></l><r>alou<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>classicisme<s n="n"/><s n="m"/></l><r>classicisme<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>enseignant<s n="n"/></l><r>docent<s n="n"/></r></p><par n="GD_mf"/></e>
+<e a="joan"><p><l>banquier<s n="n"/></l><r>banquer<s n="n"/></r></p></e>
+<e a="joan"><p><l>parchemin<s n="n"/><s n="m"/></l><r>pergamí<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>buisson<s n="n"/><s n="m"/></l><r>matoll<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>lampe<s n="n"/><s n="f"/></l><r>làmpada<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>bémol<s n="n"/><s n="m"/></l><r>bemoll<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>usure<s n="n"/><s n="f"/></l><r>desgast<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>dé<s n="n"/><s n="m"/></l><r>dau<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>gril<s n="n"/><s n="m"/></l><r>graella<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>légume<s n="n"/><s n="m"/></l><r>llegum<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>simplicité<s n="n"/><s n="f"/></l><r>simplicitat<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>lit<s n="n"/><s n="m"/></l><r>llera<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>rapprochement<s n="n"/><s n="f"/></l><r>acostament<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>extraterrestre<s n="n"/><s n="mf"/></l><r>extraterrestre<s n="n"/><s n="mf"/></r></p></e>
+<e a="joan"><p><l>ovaire<s n="n"/><s n="m"/></l><r>ovari<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>bureau<s n="n"/><s n="m"/></l><r>escriptori<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>tribunal<s n="n"/><s n="m"/></l><r>jutjat<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>barrage<s n="n"/><s n="m"/></l><r>resclosa<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>gala<s n="n"/><s n="m"/></l><r>gala<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>fête<s n="n"/><s n="f"/></l><r>gala<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>microscope<s n="n"/><s n="m"/></l><r>microscopi<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>nickel<s n="n"/><s n="m"/></l><r>níquel<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>équipier<s n="n"/></l><r>tripulant<s n="n"/></r></p><par n="GD_mf"/></e>
+<e a="joan"><p><l>isthme<s n="n"/><s n="m"/></l><r>istme<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>avance<s n="n"/><s n="f"/></l><r>avançada<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>subgenre<s n="n"/><s n="m"/></l><r>subgènere<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>synthétiseur<s n="n"/><s n="m"/></l><r>sintetitzador<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>détenu<s n="n"/></l><r>detingut<s n="n"/></r></p></e>
+<e a="joan"><p><l>hindou<s n="n"/></l><r>hindú<s n="n"/></r></p><par n="GD_mf"/></e>
+<e i="yes" a="joan"><p><l>corail<s n="n"/><s n="m"/></l><r>coral<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>vassalité<s n="n"/><s n="f"/></l><r>vassallatge<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>réactif<s n="n"/><s n="m"/></l><r>reactiu<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>soudure<s n="n"/><s n="f"/></l><r>soldadura<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>réfraction<s n="n"/><s n="f"/></l><r>refracció<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>courtisan<s n="n"/></l><r>cortesà<s n="n"/></r></p></e>
+<e r="LR" a="joan"><p><l>consistance<s n="n"/><s n="f"/></l><r>consistència<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>lézard<s n="n"/><s n="m"/></l><r>llangardaix<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>ardeur<s n="n"/><s n="f"/></l><r>afany<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>faucon<s n="n"/><s n="m"/></l><r>falcó<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>région<s n="n"/><s n="f"/></l><r>contrada<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>consulat<s n="n"/><s n="m"/></l><r>consolat<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>kazakh<s n="n"/></l><r>kazakh<s n="n"/></r></p><par n="GD_mf"/></e>
+<e a="joan"><p><l>museau<s n="n"/><s n="m"/></l><r>musell<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>physiologie<s n="n"/><s n="f"/></l><r>fisiologia<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>barrière<s n="n"/><s n="f"/></l><r>tancat<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>village<s n="n"/><s n="m"/></l><r>poblet<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>ballade<s n="n"/><s n="f"/></l><r>balada<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>postulat<s n="n"/><s n="m"/></l><r>postulat<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>fosse<s n="n"/><s n="f"/></l><r>fossat<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>arrestation<s n="n"/><s n="f"/></l><r>arrest<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>bulle<s n="n"/><s n="f"/></l><r>bombolla<s n="n"/><s n="f"/></r></p></e>
+<e i="yes" a="joan"><p><l>corail<s n="n"/><s n="m"/></l><r>coral<s n="n"/><s n="m"/></r></p></e>
+<e r="LR" a="joan"><p><l>choral<s n="n"/><s n="m"/></l><r>coral<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>gratte-ciel<s n="n"/><s n="m"/></l><r>gratacel<s n="n"/><s n="m"/></r></p><par n="sp_ND"/></e>
+<e a="joan"><p><l>conifère<s n="n"/><s n="m"/></l><r>conífera<s n="n"/><s n="f"/></r></p></e>
+<e a="hector"><p><l>mg<s n="n"/><s n="m"/></l><r>mg<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>hydroxyde<s n="n"/><s n="m"/></l><r>hidròxid<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>bastion<s n="n"/><s n="m"/></l><r>bastió<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>baryton<s n="n"/><s n="m"/></l><r>baríton<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>avènement<s n="n"/><s n="m"/></l><r>adveniment<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>trombone<s n="n"/><s n="m"/></l><r>trombó<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>chanteur<s n="n"/></l><r>vocalista<s n="n"/></r></p><par n="GD_mf"/></e>
+<e r="RL" a="joan"><p><l>combat<s n="n"/><s n="m"/></l><r>contesa<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>lymphocyte<s n="n"/><s n="m"/></l><r>limfòcit<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>sous-unité<s n="n"/><s n="f"/></l><r>subunitat<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>médaillon<s n="n"/><s n="m"/></l><r>medalló<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>logarithme<s n="n"/><s n="m"/></l><r>logaritme<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>voie<s n="n"/><s n="f"/></l><r>carril<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>gorge<s n="n"/><s n="f"/></l><r>congost<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>tranchée<s n="n"/><s n="f"/></l><r>rasa<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>attache<s n="n"/><s n="f"/></l><r>lligadura<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>lien<s n="n"/><s n="m"/></l><r>lligadura<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>regroupement<s n="n"/><s n="m"/></l><r>agrupament<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>ria<s n="n"/><s n="f"/></l><r>ria<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>niche<s n="n"/><s n="f"/></l><r>fornícula<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>cacao<s n="n"/><s n="m"/></l><r>cacau<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>factorisation<s n="n"/><s n="f"/></l><r>factorització<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>dolmen<s n="n"/><s n="m"/></l><r>dolmen<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>antibiotique<s n="n"/><s n="m"/></l><r>antibiòtic<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>minéralogie<s n="n"/><s n="f"/></l><r>mineralogia<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>virage<s n="n"/><s n="m"/></l><r>revolt<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>préparation<s n="n"/><s n="f"/></l><r>preparat<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>repopulation<s n="n"/><s n="f"/></l><r>repoblació<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>plaine<s n="n"/><s n="f"/></l><r>planura<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>grâce<s n="n"/><s n="f"/></l><r>mercè<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>merci<s n="n"/><s n="m"/></l><r>mercè<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>support<s n="n"/><s n="m"/></l><r>mènsula<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>escrime<s n="n"/><s n="f"/></l><r>esgrima<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>bibliothécaire<s n="n"/></l><r>bibliotecari<s n="n"/></r></p><par n="mf_GD"/></e>
+<e r="RL" a="joan"><p><l>gérant<s n="n"/></l><r>gestor<s n="n"/></r></p></e>
+<e a="joan"><p><l>conspirateur<s n="n"/></l><r>conspirador<s n="n"/></r></p></e>
+<e r="RL" a="joan"><p><l>candidat<s n="n"/></l><r>aspirant<s n="n"/></r></p><par n="GD_mf"/></e>
+<e r="LR" a="joan"><p><l>gemme<s n="n"/><s n="f"/></l><r>gemma<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>créole<s n="n"/></l><r>crioll<s n="n"/></r></p><par n="mf_GD"/></e>
+<e a="joan"><p><l>microprocesseur<s n="n"/><s n="m"/></l><r>microprocessador<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>particularité<s n="n"/><s n="f"/></l><r>peculiaritat<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>baptême<s n="n"/><s n="m"/></l><r>baptisme<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>moulage<s n="n"/><s n="m"/></l><r>motllura<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>chlore<s n="n"/><s n="m"/></l><r>clor<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>gérant<s n="n"/></l><r>gerent<s n="n"/></r></p><par n="GD_mf"/></e>
+<e r="RL" a="joan"><p><l>taille<s n="n"/><s n="f"/></l><r>cintura<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>nucléotide<s n="n"/><s n="m"/></l><r>nucleòtid<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>vacance<s n="n"/><s n="f"/><s n="sg"/></l><r>vacant<s n="n"/><s n="f"/><s n="sg"/></r></p></e>
+<e r="RL" a="joan"><p><l>vacance<s n="n"/><s n="f"/><s n="pl"/></l><r>vacant<s n="n"/><s n="f"/><s n="pl"/></r></p></e>
+<e r="RL" a="joan"><p><l>défaut<s n="n"/><s n="m"/></l><r>mancança<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>enlèvement<s n="n"/><s n="m"/></l><r>segrest<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>repas<s n="n"/><s n="m"/></l><r>àpat<s n="n"/><s n="m"/></r></p><par n="sp_ND"/></e>
+<e a="joan"><p><l>réunion<g><b/>entre<b/>amis</g><s n="n"/><s n="f"/></l><r>tertúlia<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>planche<s n="n"/><s n="f"/></l><r>post<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>revêtement<s n="n"/><s n="m"/></l><r>revestiment<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>prélat<s n="n"/><s n="m"/></l><r>prelat<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>rap<s n="n"/><s n="m"/></l><r>rap<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>baudroie<s n="n"/><s n="f"/></l><r>rap<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>serrure<s n="n"/><s n="f"/></l><r>pany<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>arabe<s n="n"/></l><r>moro<s n="n"/></r></p><par n="mf_GD"/></e>
+<e r="RL" a="joan"><p><l>échec<s n="n"/><s n="m"/></l><r>fallada<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>sainteté<s n="n"/><s n="f"/></l><r>santedat<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>armée<s n="n"/><s n="f"/></l><r>host<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>troupe<s n="n"/><s n="f"/></l><r>host<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>démolition<s n="n"/><s n="f"/></l><r>enderrocament<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>amplificateur<s n="n"/><s n="m"/></l><r>amplificador<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>vésicule<s n="n"/><s n="f"/></l><r>vesícula<s n="n"/><s n="f"/></r></p></e>
+<e a="hector"><p><l>secrétairerie<s n="n"/><s n="f"/></l><r>secretaria<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>muqueuse<s n="n"/><s n="f"/></l><r>mucosa<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="hector"><p><l>tempête<s n="n"/><s n="f"/></l><r>temporal<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="hector"><p><l>tourmente<s n="n"/><s n="f"/></l><r>temporal<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>halogénure<s n="n"/><s n="m"/></l><r>halur<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>arête<s n="n"/><s n="f"/></l><r>caire<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>tromperie<s n="n"/><s n="f"/></l><r>engany<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>acre<s n="n"/><s n="f"/></l><r>acre<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>avers<s n="n"/><s n="m"/></l><r>anvers<s n="n"/><s n="m"/></r></p><par n="sp_ND"/></e>
+<e a="joan"><p><l>torpille<s n="n"/><s n="f"/></l><r>torpede<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>orifice<s n="n"/><s n="m"/></l><r>orifici<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>fin<s n="n"/><s n="f"/></l><r>rematada<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>tir<g><b/>au<b/>but</g><s n="n"/><s n="m"/></l><r>rematada<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>phalange<s n="n"/><s n="f"/></l><r>falange<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>cruauté<s n="n"/><s n="f"/></l><r>crueltat<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>proconsul<s n="n"/><s n="m"/></l><r>procònsol<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>souche<s n="n"/><s n="f"/></l><r>soca<s n="n"/><s n="f"/></r></p></e>
+<e i="yes" a="joan"><p><l>torrent<s n="n"/><s n="m"/></l><r>rambla<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>météorite<s n="n"/><s n="f"/></l><r>meteorit<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>puissance<s n="n"/><s n="f"/></l><r>potestat<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>prérogative<s n="n"/><s n="f"/></l><r>potestat<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>écaille<s n="n"/><s n="f"/></l><r>escata<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>squame<s n="n"/><s n="f"/></l><r>escata<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>curé<s n="n"/><s n="m"/></l><r>mossèn<s n="n"/><s n="m"/></r></p></e>
+<e a="hector"><p><l>monseigneur<s n="n"/><s n="m"/></l><r>mossèn<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>monseigneur<s n="n"/><s n="m"/></l><r>monsenyor<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>spiritualité<s n="n"/><s n="f"/></l><r>espiritualitat<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>teinture<s n="n"/><s n="f"/></l><r>tint<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>créneau<s n="n"/><s n="m"/></l><r>merlet<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>dos<s n="n"/><s n="m"/></l><r>dors<s n="n"/><s n="m"/></r></p><par n="sp_ND"/></e>
+<e a="joan"><p><l>abdication<s n="n"/><s n="f"/></l><r>abdicació<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>topographie<s n="n"/><s n="f"/></l><r>topografia<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>enfant<s n="n"/></l><r>xiquet<s n="n"/></r></p><par n="mf_GD"/></e>
+<e a="joan"><p><l>tonnerre<s n="n"/><s n="m"/></l><r>tro<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>variole<s n="n"/><s n="f"/></l><r>verola<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>monographie<s n="n"/><s n="f"/></l><r>monografia<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>co-fondateur<s n="n"/></l><r>cofundador<s n="n"/></r></p></e>
+<e r="RL" a="joan"><p><l>tapisserie<s n="n"/><s n="f"/></l><r>tapís<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>panneau<s n="n"/><s n="m"/></l><r>plafó<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>cadet<s n="n"/></l><r>cadet<s n="n"/></r></p><par n="GD_mf"/></e>
+<e a="joan"><p><l>corolle<s n="n"/><s n="f"/></l><r>corol·la<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>cholestérol<s n="n"/><s n="m"/></l><r>colesterol<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>GPS<s n="n"/><s n="acr"/><s n="m"/><s n="sg"/></l><r>GPS<s n="n"/><s n="acr"/><s n="m"/><s n="sp"/></r></p></e>
+<e a="joan"><p><l>taxonomie<s n="n"/><s n="f"/></l><r>taxonomia<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>IRA<s n="n"/><s n="acr"/><s n="m"/></l><r>IRA<s n="n"/><s n="acr"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>translation<s n="n"/><s n="f"/></l><r>translació<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>molaire<s n="n"/><s n="f"/></l><r>mola<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>meule<s n="n"/><s n="f"/></l><r>mola<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>appel<s n="n"/><s n="m"/></l><r>apel·lació<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>fugitif<s n="n"/></l><r>fugitiu<s n="n"/></r></p></e>
+<e a="joan"><p><l>torsion<s n="n"/><s n="f"/></l><r>torsió<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>permutation<s n="n"/><s n="f"/></l><r>permutació<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>spore<s n="n"/><s n="f"/></l><r>espora<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>levure<s n="n"/><s n="f"/></l><r>llevat<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>lémur<s n="n"/><s n="m"/></l><r>lèmur<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>oppression<s n="n"/><s n="f"/></l><r>opressió<s n="n"/><s n="f"/></r></p></e>
+<e r="RL" a="joan"><p><l>dossier<s n="n"/><s n="m"/></l><r>expedient<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>écureuil<s n="n"/><s n="m"/></l><r>esquirol<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>ermite<s n="n"/></l><r>ermità<s n="n"/></r></p><par n="mf_GD"/></e>
+<e a="joan"><p><l>métallurgie<s n="n"/><s n="f"/></l><r>metal·lúrgia<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>BMW<s n="n"/><s n="acr"/><s n="m"/></l><r>BMW<s n="n"/><s n="acr"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>spin<s n="n"/><s n="m"/></l><r>espín<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>découvreur<s n="n"/></l><r>descobridor<s n="n"/></r></p></e>
+<e a="joan"><p><l>squatteur<s n="n"/></l><r>ocupa<s n="n"/></r></p><par n="GD_mf"/></e>
+<e a="joan"><p><l>rotor<s n="n"/><s n="m"/></l><r>rotor<s n="n"/><s n="m"/></r></p></e>
+
+<e a="hector"><p><l>nord<s n="adj"/><s n="mf"/></l><r>nord<s n="adj"/><s n="mf"/></r></p></e>
+<e a="hector"><p><l>sud<s n="adj"/><s n="mf"/></l><r>sud<s n="adj"/><s n="mf"/></r></p></e>
+<e a="hector"><p><l>est<s n="adj"/><s n="mf"/></l><r>est<s n="adj"/><s n="mf"/></r></p></e>
+<e a="hector"><p><l>ouest<s n="adj"/><s n="mf"/></l><r>oest<s n="adj"/><s n="mf"/></r></p></e>
+<e a="hector"><p><l>nord-est<s n="adj"/><s n="mf"/></l><r>nord-est<s n="adj"/><s n="mf"/></r></p></e>
+<e a="hector"><p><l>nord-ouest<s n="adj"/><s n="mf"/></l><r>nord-oest<s n="adj"/><s n="mf"/></r></p></e>
+<e a="hector"><p><l>sud-est<s n="adj"/><s n="mf"/></l><r>sud-est<s n="adj"/><s n="mf"/></r></p></e>
+<e a="hector"><p><l>sud-ouest<s n="adj"/><s n="mf"/></l><r>sud-oest<s n="adj"/><s n="mf"/></r></p></e>
+<e><p><l>ammoniac<s n="n"/><s n="m"/></l><r>amoníac<s n="n"/><s n="m"/></r></p></e>
+<e r="LR" c="hidroxi d'amoni"><p><l>ammoniaque<s n="n"/><s n="m"/></l><r>amoníac<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>PDG<s n="n"/><s n="acr"/><s n="m"/></l><r>president-director<b/>general<s n="n"/><s n="m"/></r></p><par n="sp_ND"/></e>
+<e><p><l>omnisports<s n="adj"/></l><r>poliesportiu<s n="adj"/></r></p><par n="mf_GD"/><par n="sp_ND"/></e>
+<e a="joan"><p><l>pot-de-vin<s n="n"/><s n="m"/></l><r>suborn<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>chargeur<s n="n"/><s n="m"/></l><r>carregador<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>chercheur<s n="n"/><s n="m"/></l><r>cercador<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>transmetteur<s n="n"/><s n="m"/></l><r>transmissor<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>chat<s n="n"/><s n="m"/></l><r>xat<s n="n"/><s n="m"/></r></p></e>
+<e r="RL" a="joan"><p><l>bélier<s n="n"/><s n="m"/></l><r>àries<s n="n"/><s n="mf"/></r></p><par n="ND_sp"/></e>
+<e a="joan"><p><l>chiot<s n="n"/><s n="m"/></l><r>cadell<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>confesseur<s n="n"/></l><r>confessor<s n="n"/></r></p><par n="m_GD"/></e>
+<e a="joan"><p><l>dénominateur<s n="n"/><s n="m"/></l><r>denominador<s n="n"/><s n="m"/></r></p></e>
+<e a="hector"><p><l>match<b/>nul<s n="n"/><s n="m"/></l><r>empat<s n="n"/><s n="m"/></r></p></e>
+<e a="hector"><p><l>ex<b/>aequo<s n="adj"/></l><r>empatat<s n="adj"/></r></p><par n="mf_GD"/><par n="sp_ND"/></e>
+<e a="hector"><p><l>mouvementé<s n="adj"/></l><r>mogut<s n="adj"/></r></p></e>
+<e a="joan"><p><l>hindi<s n="n"/><s n="m"/><s n="sg"/></l><r>hindi<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
+<e a="hector"><p><l>admirateur<s n="n"/></l><r>admirador<s n="n"/></r></p></e>
+<e r="LR" a="hector"><p><l>premièrement<s n="adv"/></l><r>en<b/>primer</b>lloc<s n="adv"/></r></p></e>
 
    </section>
 </dictionary>

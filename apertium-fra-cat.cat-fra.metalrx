@@ -92,6 +92,64 @@
 	</def-macro>
   </def-macros>
 
+  <def-seqs>
+    <def-seq n="paisos">
+      <match lemma="Catalunya"/>
+      <match lemma="Aragó"/>
+      <match lemma="Castella"/>
+      <match lemma="Andalusia"/>
+      <match lemma="Occitània"/>
+      <match lemma="Provença"/>
+      <match lemma="Espanya"/>
+      <match lemma="França"/>
+      <match lemma="Alemanya"/>
+      <match lemma="Suècia"/>
+      <match lemma="Noruega"/>
+      <match lemma="Finlàndia"/>
+      <match lemma="Islàndia"/>
+      <match lemma="Itàlia"/>
+      <match lemma="Bèlgica"/>
+      <match lemma="Holanda"/>
+      <match lemma="Suïssa"/>
+      <match lemma="Àustria"/>
+      <match lemma="Hongria"/>
+      <match lemma="Eslovàquia"/>
+      <match lemma="Polònia"/>
+      <match lemma="Lituània"/>
+      <match lemma="Letònia"/>
+      <match lemma="Estònia"/>
+      <match lemma="Bielorússia"/>
+      <match lemma="Grècia"/>
+      <match lemma="Anglaterra"/>
+      <match lemma="Gal·les"/>
+      <match lemma="Irlanda"/>
+      <match lemma="Rússia"/>
+      <match lemma="Ucraïna"/>
+      <match lemma="Bòsnia"/>
+      <match lemma="Croàcia"/>
+      <match lemma="Sèrbia"/>
+      <match lemma="Xina"/>
+      <match lemma="Índia"/>
+      <match lemma="Turquia"/>
+      <match lemma="Irak"/>
+      <match lemma="Iraq"/>
+      <match lemma="Iran"/>
+      <match lemma="Aràbia"/>
+      <match lemma="Síria"/>
+      <match lemma="Jordània"/>
+      <match lemma="Israel"/>
+      <match lemma="Palestina"/>
+      <match lemma="Austràlia"/>
+      <match lemma="Àfrica"/>
+      <match lemma="Amèrica"/>
+      <match lemma="Àsia"/>
+      <match lemma="Europa"/>
+      <match lemma="Oceania"/>
+      <match lemma="occident"/>
+      <match lemma="orient"/>
+    </def-seq>
+  </def-seqs>
+
 <rules>
 
 <!-- REL -->
@@ -162,7 +220,7 @@
   </rule>
 
   <!-- 
-    a >> à, en
+    a >> à, en, dans
   -->
   <rule weight="0.8">
     <match lemma="a" tags="pr"><select lemma="à"/></match>
@@ -170,59 +228,14 @@
   <rule weight="1.0">
     <match lemma="a" tags="pr"><select lemma="en"/></match>
     <or>
-      <match lemma="Catalunya"/>
-      <match lemma="Aragó"/>
-      <match lemma="Castella"/>
-      <match lemma="Andalusia"/>
-      <match lemma="Occitània"/>
-      <match lemma="Provença"/>
-      <match lemma="Espanya"/>
-      <match lemma="França"/>
-      <match lemma="Alemanya"/>
-      <match lemma="Suècia"/>
-      <match lemma="Noruega"/>
-      <match lemma="Finlàndia"/>
-      <match lemma="Islàndia"/>
-      <match lemma="Itàlia"/>
-      <match lemma="Bèlgica"/>
-      <match lemma="Holanda"/>
-      <match lemma="Suïssa"/>
-      <match lemma="Àustria"/>
-      <match lemma="Hongria"/>
-      <match lemma="Eslovàquia"/>
-      <match lemma="Polònia"/>
-      <match lemma="Lituània"/>
-      <match lemma="Letònia"/>
-      <match lemma="Estònia"/>
-      <match lemma="Bielorússia"/>
-      <match lemma="Grècia"/>
-      <match lemma="Anglaterra"/>
-      <match lemma="Gal·les"/>
-      <match lemma="Irlanda"/>
-      <match lemma="Rússia"/>
-      <match lemma="Ucraïna"/>
-      <match lemma="Bòsnia"/>
-      <match lemma="Croàcia"/>
-      <match lemma="Sèrbia"/>
-      <match lemma="Xina"/>
-      <match lemma="Índia"/>
-      <match lemma="Turquia"/>
-      <match lemma="Irak"/>
-      <match lemma="Iraq"/>
-      <match lemma="Iran"/>
-      <match lemma="Aràbia"/>
-      <match lemma="Síria"/>
-      <match lemma="Jordània"/>
-      <match lemma="Israel"/>
-      <match lemma="Palestina"/>
-      <match lemma="Austràlia"/>
-      <match lemma="Àfrica"/>
-      <match lemma="Amèrica"/>
-      <match lemma="Àsia"/>
-      <match lemma="Europa"/>
-      <match lemma="Oceania"/>
-      <match lemma="occident"/>
-      <match lemma="orient"/>
+      <seq n="paisos"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="a" tags="pr"><select lemma="dans"/></match>
+    <match tags="det.def.*"/>
+    <or>
+      <seq n="paisos"/>
     </or>
   </rule>
 
@@ -284,6 +297,28 @@
   </rule>
 
   <!-- 
+    dues vegades DE cinc >> deux fois sur cinq
+  -->
+  <rule weight="1.0">
+    <match tags="num.*"/>
+    <match lemma="vegada" tags="n.*"/>
+    <match lemma="de" tags="pr"><select lemma="sur" tags="pr"/></match>
+    <match tags="num.*"/>
+  </rule>
+  <rule weight="0.8">
+    <match lemma="de" tags="pr"><select lemma="de" tags="pr"/></match>
+  </rule>
+
+  <rule weight="0.8">
+    <match lemma="pagar" tags="vblex.*"><select lemma="payer"/></match>
+  </rule>
+  <rule weight="0.8">
+    <match lemma="canviar" tags="vblex.*"><select lemma="changer"/></match>
+  </rule>
+
+<!-- CNJADV -->
+
+  <!-- 
     perquè (cnjadv) >> parce que, pour que
   -->
   <rule weight="0.8">
@@ -303,26 +338,6 @@
       <match tags="*.prs.*"/>
       <match tags="*.pis.*"/>
     </or>
-  </rule>
-
-  <!-- 
-    dues vegades DE cinc >> deux fois sur cinq
-  -->
-  <rule weight="1.0">
-    <match tags="num.*"/>
-    <match lemma="vegada" tags="n.*"/>
-    <match lemma="de" tags="pr"><select lemma="sur" tags="pr"/></match>
-    <match tags="num.*"/>
-  </rule>
-  <rule weight="0.8">
-    <match lemma="de" tags="pr"><select lemma="de" tags="pr"/></match>
-  </rule>
-
-  <rule weight="0.8">
-    <match lemma="pagar" tags="vblex.*"><select lemma="payer"/></match>
-  </rule>
-  <rule weight="0.8">
-    <match lemma="canviar" tags="vblex.*"><select lemma="changer"/></match>
   </rule>
 
 <!-- ADV -->
@@ -613,6 +628,19 @@
     <match lemma="partit" tags="n.*"><select lemma="match"/></match>
     <match lemma="de" tags="pr"/>
     <match tags="n.*.sg"/>
+  </rule>
+
+  <!-- mossèn >> curé, monseigneur -->
+  <rule weight="0.8">
+    <match lemma="mossèn" tags="n.*"><select lemma="curé"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="mossèn" tags="n.m.sg"><select lemma="monseigneur"/></match>
+    <match tags="np.ant.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="mossèn" tags="n.m.sg"><select lemma="monseigneur"/></match>
+    <match tags=""/>
   </rule>
 
   <!-- serra >> scie, cordillère -->
