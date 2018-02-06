@@ -671,6 +671,10 @@
     </or>
     <match lemma="prix" tags="n.*"><select lemma="premi"/></match>
   </rule>
+  <rule weight="1.2">
+    <match lemma="prix" tags="n.*"><select lemma="premi"/></match>
+    <match tags="np.*"/>
+  </rule>
   <rule weight="1.0">
     <match lemma="prix" tags="n.*"><select lemma="preu"/></match>
     <match tags="adj.*"/>
