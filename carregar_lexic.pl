@@ -22,8 +22,8 @@ my $MOT = 'UICN';	# paraula a debugar
 my $MOT = 'musique';	# paraula a debugar
 my $MOT = 'musique de chambre';	# paraula a debugar
 #my $MOT = 'nombre primer';	# paraula a debugar
-my $MOT = 'patiment';	# paraula a debugar
-#my $MOT = '';
+#my $MOT = 'patiment';	# paraula a debugar
+my $MOT = '';
 
 my $MORF_TRACT = 'adj';
 my $MORF_TRACT = 'n';
@@ -386,6 +386,8 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_cat eq 'carism/a__n'
 			|| $par_cat eq 'cert/amen__n'
 			|| $par_cat eq 'd/olmen__n'
+			|| $par_cat eq 'env/às__n'
+			|| $par_cat eq 'gla__n'
 			|| $par_cat eq 'impr/ès__n'
 			|| $par_cat eq 'moss/èn__n'
 			|| $par_cat eq 'or/igen__n'
@@ -446,6 +448,7 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_fra eq 'jui/f__n'
 			|| $par_fra eq 'maire__n'
 			|| $par_fra eq 'support/er__n'
+			|| $par_fra eq 'tur/c__n'
 			|| $par_fra eq 'vende/ur__n') && $par_cat eq 'addict/e__n') {
 		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"abaissant_abstracte\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif (($par_fra eq 'affecté__n'
@@ -462,6 +465,7 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_fra eq 'jui/f__n'
 			|| $par_fra eq 'maire__n'
 			|| $par_fra eq 'support/er__n'
+			|| $par_fra eq 'tur/c__n'
 			|| $par_fra eq 'vende/ur__n')
 		&& ($par_cat eq 'senyor__n'
 			|| $par_cat eq 'adjudicat/ari__n'
@@ -497,6 +501,7 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_fra eq 'jui/f__n'
 			|| $par_fra eq 'maire__n'
 			|| $par_fra eq 'support/er__n'
+			|| $par_fra eq 'tur/c__n'
 			|| $par_fra eq 'vende/ur__n')
 		&& ($par_cat eq 'accionist/a__n'
 			|| $par_cat eq 'acompanyant__n'
@@ -561,6 +566,8 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_cat eq 'carism/a__n'
 			|| $par_cat eq 'cert/amen__n'
 			|| $par_cat eq 'd/olmen__n'
+			|| $par_cat eq 'env/às__n'
+			|| $par_cat eq 'gla__n'
 			|| $par_cat eq 'impr/ès__n'
 			|| $par_cat eq 'moss/èn__n'
 			|| $par_cat eq 'or/igen__n'
@@ -629,6 +636,8 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_cat eq 'carism/a__n'
 			|| $par_cat eq 'cert/amen__n'
 			|| $par_cat eq 'd/olmen__n'
+			|| $par_cat eq 'env/às__n'
+			|| $par_cat eq 'gla__n'
 			|| $par_cat eq 'impr/ès__n'
 			|| $par_cat eq 'moss/èn__n'
 			|| $par_cat eq 'or/igen__n'
@@ -675,6 +684,8 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_cat eq 'carism/a__n'
 			|| $par_cat eq 'cert/amen__n'
 			|| $par_cat eq 'd/olmen__n'
+			|| $par_cat eq 'env/às__n'
+			|| $par_cat eq 'gla__n'
 			|| $par_cat eq 'impr/ès__n'
 			|| $par_cat eq 'moss/èn__n'
 			|| $par_cat eq 'or/igen__n'

@@ -630,6 +630,15 @@
     <match tags="n.*.sg"/>
   </rule>
 
+  <!-- domini >> domaine, domination -->
+  <rule weight="0.8">
+    <match lemma="domini" tags="n.*"><select lemma="domaine"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="domini" tags="n.*"><select lemma="domination"/></match>
+    <match tags="adj.*"/>
+  </rule>
+
   <!-- mossèn >> curé, monseigneur -->
   <rule weight="0.8">
     <match lemma="mossèn" tags="n.*"><select lemma="curé"/></match>
