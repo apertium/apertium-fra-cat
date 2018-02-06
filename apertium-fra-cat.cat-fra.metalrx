@@ -204,9 +204,7 @@
 
 <!-- PR -->
 
-  <!-- 
-    per >> par, pour
-  -->
+  <!-- per >> par, pour -->
   <rule weight="0.8">
     <match lemma="per" tags="pr"><select lemma="par"/></match>
   </rule>
@@ -219,9 +217,16 @@
     <match lemma="per" tags="pr"><select lemma="pour"/></match>
   </rule>
 
-  <!-- 
-    a >> à, en, dans
-  -->
+  <!-- des de >> depuis, de -->
+  <rule weight="0.8">
+    <match lemma="des de" tags="pr"><select lemma="depuis"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="des de" tags="pr"><select lemma="de"/></match>
+    <or><match tags="np.loc"/><match tags="np.top.*"/><match tags="np.hyd.*"/></or>
+  </rule>
+
+  <!-- a >> à, en, dans -->
   <rule weight="0.8">
     <match lemma="a" tags="pr"><select lemma="à"/></match>
   </rule>
@@ -628,6 +633,44 @@
     <match lemma="partit" tags="n.*"><select lemma="match"/></match>
     <match lemma="de" tags="pr"/>
     <match tags="n.*.sg"/>
+  </rule>
+
+  <!-- pinya > pomme# de pin, ananas-->
+
+  <rule weight="0.6">
+     <match lemma="pinya" tags="n.*"><select lemma="pomme# de pin"/></match>
+  </rule>
+  <rule weight="1.0">
+     <match lemma="pinya" tags="n.*"><select lemma="ananas"/></match>
+     <or>
+       <match lemma="tropical" tags="adj.*"/>
+       <match lemma="americà" tags="adj.*"/>
+     </or>
+  </rule>
+
+  <!-- poble > village, peuple -->
+
+  <rule weight="0.6">
+     <match lemma="poble" tags="n.*"><select lemma="village"/></match>
+  </rule>
+  <rule weight="1.0">
+     <match lemma="poble" tags="n.*"><select lemma="peuple"/></match>
+     <match tags="adj.*"/>
+  </rule>
+
+  <!-- got > Goth, verre -->
+
+  <rule weight="0.6">
+     <match lemma="got" tags="n.*"><select lemma="Goth"/></match>
+  </rule>
+  <rule weight="1.0">
+     <match lemma="got" tags="n.*"><select lemma="verre"/></match>
+     <match lemma="de" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+     <match lemma="got" tags="n.*"><select lemma="verre"/></match>
+     <match lemma="de" tags="pr"/>
+     <or><match tags="np.loc"/><match tags="np.top.*"/><match tags="np.hyd.*"/></or>
   </rule>
 
   <!-- domini >> domaine, domination -->

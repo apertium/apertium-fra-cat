@@ -899,9 +899,8 @@
     <e>       <p><l>analyse<s n="n"/></l>             <r>anàlisi<s n="n"/></r></p></e>
     <e>       <p><l>analyser<s n="vblex"/></l>        <r>analitzar<s n="vblex"/></r></p></e>
     <e a="gema"><p><l>analyste<s n="n"/></l>          <r>analista<s n="n"/></r></p></e>
-    <e r="LR"><p><l>ananas<s n="n"/><s n="m"/><s n="sp"/></l><r>pinya<s n="n"/><s n="f"/><s n="ND"/></r></p></e>
-    <e r="RL"><p><l>ananas<s n="n"/><s n="m"/><s n="sp"/></l><r>pinya<s n="n"/><s n="f"/><s n="pl"/></r></p></e>
-    <e r="RL"><p><l>ananas<s n="n"/><s n="m"/><s n="sp"/></l><r>pinya<s n="n"/><s n="f"/><s n="sg"/></r></p></e>
+    <e>       <p><l>ananas<s n="n"/><s n="m"/></l>    <r>pinya<s n="n"/><s n="f"/></r></p><par n="sp_ND"/></e>
+    <e>       <p><l>pomme<g><b/>de<b/>pin</g><s n="n"/><s n="f"/></l><r>pinya<s n="n"/><s n="f"/></r></p><par n="sp_ND"/></e>
     <e>       <p><l>anarchiste<s n="adj"/><s n="mf"/></l><r>anarquista<s n="adj"/><s n="mf"/></r></p></e>
     <e r="LR"><p><l>ancestral<s n="adj"/><s n="f"/></l> <r>ancestral<s n="adj"/><s n="mf"/></r></p></e>
     <e r="LR"><p><l>ancestral<s n="adj"/><s n="m"/></l> <r>ancestral<s n="adj"/><s n="mf"/></r></p></e>
@@ -4000,6 +3999,7 @@
     <e r="RL"><p><l>depuis<s n="pr"/></l>             <r>d'ençà<s n="pr"/></r></p></e>
     <e r="RL"><p><l>depuis<s n="pr"/></l>             <r>d'ençà<b/>de<s n="pr"/></r></p></e>
     <e>       <p><l>depuis<s n="pr"/></l>             <r>des<b/>de<s n="pr"/></r></p></e>
+    <e r="RL"><p><l>de<s n="pr"/></l>                 <r>des<b/>de<s n="pr"/></r></p></e>
     <e>       <p><l>à<b/>partir<b/>de<s n="pr"/></l>  <r>a<b/>partir<b/>de<s n="pr"/></r></p></e>
     <e a="gema"><p><l>depuis<b/>lors<s n="adv"/></l>  <r>des<b/>de<b/>llavors<s n="adv"/></r></p></e>
     <e>       <p><l>depuis<b/>que<s n="cnjadv"/></l>  <r>des<b/>que<s n="cnjadv"/></r></p></e>
@@ -13315,7 +13315,10 @@
     <e>       <p><l>vernir<s n="vblex"/></l>          <r>envernissar<s n="vblex"/></r></p></e>
     <e>       <p><l>vernir<s n="vblex"/></l>          <r>vernissar<s n="vblex"/></r></p></e>
     <e>       <p><l>Verónica<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></l><r>Verónica<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></r></p></e>
-    <e>       <p><l>verre<s n="n"/></l>               <r>got<s n="n"/></r></p></e>
+    <e>       <p><l>verre<s n="n"/><s n="m"/></l>     <r>got<s n="n"/><s n="m"/></r></p></e>
+    <e>       <p><l>Goth<s n="n"/><s n="m"/></l>      <r>got<s n="n"/><s n="m"/></r></p></e>
+    <e>       <p><l>Goth<s n="n"/><s n="f"/></l>      <r>got<s n="n"/><s n="f"/></r></p></e>
+    <e>       <p><l>goth<s n="adj"/></l>              <r>got<s n="adj"/></r></p></e>
     <e r="RL"><p><l>verre<s n="n"/></l>               <r>vidre<s n="n"/></r></p></e>
     <e>       <p><l>vers<s n="pr"/></l>               <r>cap<b/>a<s n="pr"/></r></p></e>
     <e r="LR"><p><l>vers<s n="n"/><s n="m"/><s n="sp"/></l><r>vers<s n="n"/><s n="m"/><s n="ND"/></r></p></e>
@@ -15723,6 +15726,7 @@
 <e><p><l>pulsation<s n="n"/><s n="f"/></l><r>pulsació<s n="n"/><s n="f"/></r></p></e>
 <e r="RL"><p><l>punition<s n="n"/><s n="f"/></l><r>punició<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>punition<s n="n"/><s n="f"/></l><r>càstic<s n="n"/><s n="f"/></r></p></e>
+<e r="LR"><p><l>châtiment<s n="n"/><s n="m"/></l><r>càstic<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>purification<s n="n"/><s n="f"/></l><r>purificació<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>putréfaction<s n="n"/><s n="f"/></l><r>putrefacció<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>puzzle<s n="n"/><s n="m"/></l><r>puzle<s n="n"/><s n="m"/></r></p></e>
@@ -26046,6 +26050,24 @@
 <e a="joan"><p><l>convertisseur<s n="n"/><s n="m"/></l><r>convertidor<s n="n"/><s n="m"/></r></p></e>
 <e a="joan"><p><l>pointeur<s n="n"/><s n="m"/></l><r>punter<s n="n"/><s n="m"/></r></p></e>
 <e a="joan"><p><l>cyclocross<s n="n"/><s n="m"/><s n="sp"/></l><r>ciclocròs<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
+<e><p><l>pseudonyme<s n="n"/><s n="m"/></l><r>pseudònim<s n="n"/><s n="m"/></r></p></e>
+
+<e r="RL"><p><l>de<b/>l'État<s n="adj"/><s n="mf"/></l><r>estatal<s n="adj"/><s n="mf"/></r></p><par n="sp_ND"/></e>
+<e r="RL"><p><l>de<b/>la<b/>Renaissance<s n="adj"/><s n="mf"/></l><r>renaixentista<s n="adj"/><s n="mf"/></r></p><par n="sp_ND"/></e>
+<e><p><l>hébreu<s n="adj"/></l><r>hebreu<s n="adj"/></r></p><par n="mf_GD"/></e>
+<e><p><l>hébreu<s n="n"/></l><r>hebreu<s n="n"/></r></p><par n="mf_GD"/></e>
+<e><p><l>en<b/>vigueur<s n="adj"/><s n="mf"/></l><r>vigent<s n="adj"/><s n="mf"/></r></p><par n="sp_ND"/></e>
+
+<e><p><l>bourbonien<s n="adj"/></l><r>borbònic<s n="adj"/></r></p></e>
+<e a="hector"><p><l>subaquatique<s n="adj"/></l><r>subaquàtic<s n="adj"/></r></p><par n="mf_GD"/></e>
+<e i="yes"><p><l>limité<s n="adj"/></l><r>finit<s n="adj"/></r></p></e>
+<e i="yes"><p><l>déterminé<s n="adj"/></l><r>finit<s n="adj"/></r></p></e>
+<e r="LR"><p><l>mou<s n="adj"/></l><r>tou<s n="adj"/></r></p></e>
+<e><p><l>pseudonyme<s n="adj"/></l><r>pseudònim<s n="adj"/></r></p><par n="mf_GD"/></e>
+<e><p><l>mitrailleur<s n="adj"/></l><r>metrallador<s n="adj"/></r></p></e>
+<e><p><l>artiste<s n="adj"/></l><r>artista<s n="adj"/></r></p></e>
+
+
 
    </section>
 </dictionary>
