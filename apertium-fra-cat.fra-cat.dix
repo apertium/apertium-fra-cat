@@ -1705,6 +1705,7 @@
     <e>       <p><l>bandit<s n="n"/><s n="m"/></l><r>bandit<s n="n"/><s n="m"/></r></p></e>
     <e><p><l>bandit<s n="n"/><s n="m"/></l>              <r>bandoler<s n="n"/><s n="m"/></r></p></e>
     <e>       <p><l>banlieue<s n="n"/><s n="f"/></l>  <r>suburbi<s n="n"/><s n="m"/></r></p></e>
+    <e r="RL"><p><l>banlieue<s n="n"/><s n="f"/></l>  <r>extraradi<s n="n"/><s n="m"/></r></p></e>
     <e r="LR"><p><l>bannière<s n="n"/><s n="f"/></l>  <r>bandera<s n="n"/><s n="f"/></r></p></e>
     <e>       <p><l>banque<s n="n"/></l>              <r>banca<s n="n"/></r></p></e>
     <e>       <p><l>banqueroute<s n="n"/></l>         <r>fallida<s n="n"/></r></p></e>
@@ -3522,6 +3523,7 @@
     <e r="LR"><p><l>courtier<s n="n"/></l>            <r>corredor<s n="n"/></r></p></e>
     <e r="LR"><p><l>courtine<s n="n"/></l>            <r>cortina<s n="n"/></r></p></e>
     <e>       <p><l>cousin<s n="n"/></l>              <r>cosí<s n="n"/></r></p></e>
+    <e r="RL"><p><l>cousin<s n="n"/></l>              <r>cosí<b/>germà<s n="n"/></r></p></e>
     <e>       <p><l>coussin<s n="n"/></l>             <r>coixí<s n="n"/></r></p></e>
     <e a="gema"><p><l>coût<s n="n"/></l>              <r>cost<s n="n"/></r></p></e>
     <e>       <p><l>couteau<s n="n"/></l>             <r>ganivet<s n="n"/></r></p></e>
@@ -9056,12 +9058,14 @@
 <e r="LR"><p><l>nonobstant<s n="pr"/></l>         <r>malgrat<s n="pr"/></r></p></e>
 <e>       <p><l>Norberto<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Norberto<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
 <e>       <p><l>nord<s n="n"/></l><r>nord<s n="n"/></r></p></e>
+<e>       <p><l>sud-américain<s n="adj"/></l>     <r>sud-americà<s n="adj"/></r></p></e>
+<e>       <p><l>Sud-Américain<s n="n"/></l>       <r>sud-americà<s n="n"/></r></p></e>
 <e>       <p><l>nord-américain<s n="adj"/></l>    <r>nord-americà<s n="adj"/></r></p></e>
 <e>       <p><l>Nord-américain<s n="n"/></l>      <r>nord-americà<s n="n"/></r></p></e>
 <e r="RL"><p><l>nord-américain<s n="adj"/></l>    <r>estatunidenc<s n="adj"/></r></p></e>
 <e r="RL"><p><l>Nord-américain<s n="n"/></l>      <r>estatunidenc<s n="n"/></r></p></e>
 <e>       <p><l>nord-coréen<s n="adj"/></l>       <r>nord-coreà<s n="adj"/></r></p></e>
-<e>       <p><l>Nord-coréen<s n="n"/></l>         <r>nord-coreà<s n="n"/></r></p></e>
+<e>       <p><l>Nord-Coréen<s n="n"/></l>         <r>nord-coreà<s n="n"/></r></p></e>
 <e>       <p><l>nordique<s n="adj"/><s n="mf"/></l><r>nòrdic<s n="adj"/><s n="f"/></r></p></e>
 <e r="LR"><p><l>nordique<s n="n"/><s n="mf"/></l> <r>nòrdic<s n="n"/><s n="GD"/></r></p></e>
 <e r="RL"><p><l>nordique<s n="n"/><s n="mf"/></l> <r>nòrdic<s n="n"/><s n="m"/></r></p></e>
@@ -12422,8 +12426,8 @@
 <e>       <p><l>sucrerie<s n="n"/><s n="f"/></l>  <r>dolç<s n="n"/><s n="m"/></r></p></e>
 <e r="LR"><p><l>sucrerie<s n="n"/></l>            <r>llaminadura<s n="n"/></r></p></e>
 <e>       <p><l>sud<s n="n"/></l><r>sud<s n="n"/></r></p></e>
-<e>       <p><l>Sud-africain<s n="n"/></l>        <r>sud-africà<s n="n"/></r></p></e>
-<e>       <p><l>Sud-coréen<s n="n"/></l>        <r>Sud-coreà<s n="n"/></r></p></e>
+<e>       <p><l>Sud-Africain<s n="n"/></l>        <r>sud-africà<s n="n"/></r></p></e>
+<e>       <p><l>Sud-Coréen<s n="n"/></l>          <r>sud-coreà<s n="n"/></r></p></e>
 <e>       <p><l>sud-coréen<s n="adj"/></l>        <r>sud-coreà<s n="adj"/></r></p></e>
     <e>       <p><l>Suède<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Suècia<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></r></p></e>
 <e>       <p><l>suédois<s n="adj"/><s n="f"/></l> <r>suec<s n="adj"/><s n="f"/></r></p></e>
@@ -13846,6 +13850,7 @@
 <e><p><l>amertume<s n="n"/><s n="f"/></l><r>amargor<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>amine<s n="n"/><s n="f"/></l><r>amina<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>amiral<s n="n"/><s n="m"/></l><r>almirall<s n="n"/><s n="mf"/></r></p></e>
+<e a="joan"><p><l>vice-amiral<s n="n"/><s n="m"/></l><r>vicealmirall<s n="n"/><s n="mf"/></r></p></e>
 <e><p><l>amnistie<s n="n"/><s n="f"/></l><r>amnistia<s n="n"/><s n="f"/></r></p></e>
 <e><p><l>amphithéâtre<s n="n"/><s n="m"/></l><r>amfiteatre<s n="n"/><s n="m"/></r></p></e>
 <e><p><l>ampleur<s n="n"/><s n="f"/></l><r>amplitud<s n="n"/><s n="f"/></r></p></e>
@@ -27065,7 +27070,38 @@
 <e>       <p><l>Moïse<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Moisès<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
 <e>       <p><l>Chauvin<s n="np"/><s n="cog"/></l><r>Chauvin<s n="np"/><s n="cog"/></r></p></e>
 <e><p><l>estrémègne<s n="adj"/></l><r>extremeny<s n="adj"/></r></p><par n="mf_GD"/></e>
-<e><p><l>Estrémègne<s n="n"/></l><r>extremeny<s n="adj"/></r></p><par n="mf_GD"/></e>
+<e><p><l>Estrémègne<s n="n"/></l><r>extremeny<s n="n"/></r></p><par n="mf_GD"/></e>
+<e><p><l>moldave<s n="adj"/></l><r>moldau<s n="adj"/></r></p><par n="mf_GD"/></e>
+<e><p><l>moldave<s n="n"/></l><r>moldau<s n="n"/></r></p><par n="mf_GD"/></e>
+<e><p><l>bédouin<s n="adj"/></l><r>beduí<s n="adj"/></r></p></e>
+<e><p><l>Bédouin<s n="n"/></l><r>beduí<s n="n"/></r></p></e>
+
+<e r="RL" a="joan"><p><l>banlieu<s n="n"/><s n="f"/></l><r>afores<s n="n"/><s n="m"/></r></p><par n="ND_pl"/></e>
+<e a="joan"><p><l>malchance<s n="n"/><s n="f"/><s n="sg"/></l><r>mala<b/>sort<s n="n"/><s n="f"/><s n="sg"/></r></p></e>
+<e><p><l>mystique_pers<s n="n"/><s n="mf"/></l><r>místic<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>mystique_syst<s n="n"/><s n="f"/></l><r>místic<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>révérend<s n="n"/><s n="m"/></l><r>reverend<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>corinthien<s n="adj"/></l><r>corinti<s n="adj"/></r></p></e>
+<e><p><l>Corinthien<s n="n"/></l><r>corinti<s n="n"/></r></p></e>
+<e a="joan"><p><l>allophone<s n="n"/><s n="mf"/></l><r>al·lòfon<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>barde<s n="n"/><s n="mf"/></l><r>bard<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>pupille_pers<s n="n"/><s n="mf"/></l><r>pupil<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>pupille_anat<s n="n"/><s n="f"/></l><r>pupil·la<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>bande-annonce<s n="n"/><s n="f"/></l><r>tràiler<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>semi-remorque<s n="n"/><s n="m"/></l><r>tràiler<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>afrikaans<s n="n"/><s n="m"/></l><r>afrikaans<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>assembleur<s n="n"/><s n="m"/></l><r>assemblador<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>mesureur<s n="n"/><s n="m"/></l><r>mesurador<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>planeur<s n="n"/><s n="m"/></l><r>planador<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>gospel<s n="n"/><s n="m"/><s n="sg"/></l><r>gospel<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL" a="joan"><p><l>accord<s n="n"/><s n="m"/><s n="sg"/></l><r>vistiplau<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL" a="joan"><p><l>équilibre<s n="n"/><s n="m"/></l><r>terme<b/>mitjà<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>corrégidor<s n="n"/><s n="m"/></l><r>corregidor<s n="n"/><s n="m"/></r></p></e>
+<e a="joan"><p><l>devin<s n="n"/><s n="m"/></l><r>endeví<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>devineresse<s n="n"/><s n="f"/></l><r>endeví<s n="n"/><s n="f"/></r></p></e>
+<e a="joan"><p><l>kangourou<s n="n"/><s n="m"/></l><r>cangur<s n="n"/><s n="mf"/></r></p></e>
+<e a="joan"><p><l>pelotari<s n="n"/><s n="m"/></l><r>pilotari<s n="n"/><s n="mf"/></r></p></e>
+
 
    </section>
 </dictionary>
