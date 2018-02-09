@@ -241,9 +241,95 @@
 
 <!-- **************** V **************** -->
 
-  <!-- 
-    appeler >> cridar, dir, anomenar
-  -->
+  <!-- coucher >> ficar# al llit (tr, pron), jeure, ajeure (intr) -->
+  <rule weight="0.8">
+    <match lemma="coucher" tags="vblex.*"><select lemma="ficar# al llit"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="coucher" tags="vblex.*"><select lemma="jeure"/></match>
+    <or>
+      <match lemma="avec" tags="pr"/>
+      <match lemma="dans" tags="pr"/>
+      <match lemma="sur" tags="pr"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="coucher" tags="vblex.pp.*"><select lemma="ajeure"/></match>
+  </rule>
+  <rule weight="1.4">
+    <match lemma="se" tags="prn.pro.ref.*"/>
+    <match lemma="coucher" tags="vblex.pp.*"><select lemma="ficar# al llit"/></match>
+  </rule>
+  <rule weight="1.6">
+    <match lemma="se" tags="prn.pro.ref.*"/>
+    <match tags="vbser.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="coucher" tags="vblex.pp.*"><select lemma="ficar# al llit"/></match>
+  </rule>
+  <rule weight="1.8">
+    <match tags="vbser.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="coucher" tags="vblex.pp.*"><select lemma="ajeure"/></match>
+  </rule>
+  <rule weight="1.8">
+    <match lemma="se" tags="prn.pro.ref.*"/>
+    <match tags="vbser.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="coucher" tags="vblex.pp.*"><select lemma="ficar# al llit"/></match>
+  </rule>
+
+  <!-- sonner >> sonar, picar -->
+  <rule weight="0.8">
+    <match lemma="sonner" tags="vblex.*"><select lemma="sonar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sonner" tags="vblex.*"><select lemma="picar"/></match>
+    <match lemma="à" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="porte" tags="n.*"/>
+  </rule>
+
+  <!-- verser >> vessar, pagar, abocar -->
+  <rule weight="0.8">
+    <match lemma="verser" tags="vblex.*"><select lemma="pagar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="verser" tags="vblex.*"><select lemma="pagar"/></match>
+    <repeat from="0" upto="1">
+      <match lemma="de" tags="pr"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="contribution" tags="n.*"/>
+      <match lemma="rémunération" tags="n.*"/>
+      <match lemma="rançon" tags="n.*"/>
+      <match lemma="somme" tags="n.*"/>
+      <match lemma="montant" tags="n.*"/>
+      <match lemma="prestation" tags="n.*"/>
+      <match lemma="allocation" tags="n.*"/>
+      <match lemma="indenmnité" tags="n.*"/>
+      <match lemma="intérêt" tags="n.*"/>
+      <match lemma="contisation" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="verser" tags="vblex.*"><select lemma="pagar"/></match>
+    <or><match tags="num"/><match tags="num.*"/></or>
+    <or>
+      <match lemma="euro" tags="n.*"/>
+      <match lemma="franc" tags="n.*"/>
+      <match lemma="dollar" tags="n.*"/>
+      <match lemma="yen" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- appeler >> cridar, dir, anomenar -->
   <rule weight="0.8">
     <match lemma="appeler" tags="vblex.*"><select lemma="cridar"/></match>
   </rule>
@@ -801,16 +887,63 @@
 
 <!-- **************** VBLEX **************** -->
 
+  <!-- être >> ser, estar -->
   <rule weight="1.0">
-    <match lemma="être" tags="vblex.*"><select lemma="ser" tags="vbser.*"/></match>
+    <match lemma="être"><select lemma="ser" tags="vbser.*"/></match>
   </rule>
   <rule weight="1.0">
-    <match lemma="être" tags="vblex.*"><select lemma="estar" tags="vblex.*"/></match>
-  </rule>
-  <rule weight="1.0">
-    <match lemma="être" tags="vblex.*"><select lemma="ser" tags="vbser.*"/></match>
+    <match lemma="être"><select lemma="ser" tags="vbser.*"/></match>
     <match lemma="dans" tags="pr"><select lemma="a" tags="pr"/></match>
   </rule>
+  <rule weight="1.2">
+    <match lemma="être"><select lemma="estar" tags="vblex.*"/></match>
+    <match lemma="bien" tags="adv"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="être"><select lemma="estar" tags="vblex.*"/></match>
+    <repeat from="0" upto="1">
+    <or>
+      <match tags="preadv"/>
+      <match tags="adv"/>
+    </or>
+    </repeat>
+    <or>
+      <match lemma="content" tags="adj.*"/>
+      <match lemma="satisfait" tags="adj.*"/>
+      <match lemma="satisfaire" tags="vblex.pp.*"/>
+      <match lemma="malade" tags="adj.*"/>
+      <match lemma="fatigué" tags="adj.*"/>
+      <match lemma="fatiguer" tags="vblex.pp.*"/>
+
+      <!-- <match lemma="sûr" tags="adj.*"/> només qd hi ha je, tu, il, etc -->
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="être"><select lemma="estar" tags="vblex.*"/></match>
+    <or>
+      <match lemma="pas"/>
+      <match lemma="jamais"/>
+      <match lemma="nulle part"/>
+    </or>
+    <repeat from="0" upto="1">
+    <or>
+      <match tags="preadv"/>
+      <match tags="adv"/>
+    </or>
+    </repeat>
+    <or>
+      <match lemma="content" tags="adj.*"/>
+      <match lemma="satisfait" tags="adj.*"/>
+      <match lemma="satisfaire" tags="vblex.pp.*"/>
+      <match lemma="malade" tags="adj.*"/>
+      <match lemma="fatigué" tags="adj.*"/>
+      <match lemma="fatiguer" tags="vblex.pp.*"/>
+
+      <!-- <match lemma="sûr" tags="adj.*"/> només qd hi ha je, tu, il, etc -->
+    </or>
+  </rule>
+
+
   <rule weight="0.8" v="val">
     <match lemma="chauffer" tags="vblex.*"><select lemma="calfar" tags="vblex.*"/></match>
   </rule>

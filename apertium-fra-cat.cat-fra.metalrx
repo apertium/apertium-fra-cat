@@ -587,6 +587,16 @@
 
 <!-- ADJ -->
 
+  <!-- mèdic >> médical, médique -->
+  <rule weight="0.8">
+    <match lemma="mèdic" tags="adj.*"><select lemma="médical"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="guerra" tags="n.*"/>
+    <match lemma="mèdic" tags="adj.*"><select lemma="médique"/></match>
+  </rule>
+
+
   <!-- únic >> unique, seul -->
   <rule weight="0.8">
     <match lemma="únic" tags="adj.*"><select lemma="unique"/></match>
@@ -632,6 +642,16 @@
   <rule weight="1.0">
     <match lemma="partit" tags="n.*"><select lemma="match"/></match>
     <match lemma="de" tags="pr"/>
+    <match tags="n.*.sg"/>
+  </rule>
+
+  <!-- estadista >> homme# d'État, femme# d'État -->
+  <rule weight="0.8">
+    <match lemma="estadista" tags="n.*"><select lemma="homme# d'État"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.*f.*"/>
+    <match lemma="estadista" tags="n.*"><select lemma="femme# d'État"/></match>
     <match tags="n.*.sg"/>
   </rule>
 
