@@ -436,6 +436,15 @@
     <or><match tags="num"/><match tags="num.*"/></or>
   </rule>
 
+  <!-- verre >> got, vidre -->
+  <rule weight="0.8">
+    <match lemma="verre" tags="n.*"><select lemma="got"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="de" tags="pr"/>
+    <match lemma="verre" tags="n.*"><select lemma="vidre"/></match>
+  </rule>
+
   <!-- monseigneur >> monsenyor, mossèn -->
   <rule weight="0.8">
     <match lemma="monseigneur" tags="n.*"><select lemma="monsenyor"/></match>
