@@ -856,6 +856,15 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- portable >> portàtil, mòbil -->
+  <rule weight="0.8">
+    <match lemma="portable" tags="adj.*"><select lemma="portàtil"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="téléphone" tags="n.*"/>
+    <match lemma="portable" tags="adj.*"><select lemma="mòbil"/></match>
+  </rule>
+
   <!-- beau >> bonic, bell, bo -->
   <rule weight="1.0">
     <match lemma="beau" tags="adj.*"><select lemma="bonic" tags="adj.*"/></match>

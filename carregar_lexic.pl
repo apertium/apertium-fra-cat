@@ -13,17 +13,13 @@
 use strict;
 use utf8;
 
-my $MOT = 'crever les yeux';	# paraula a debugar
-my $MOT = 'desenterrar';	# paraula a debugar
-my $MOT = 'convertir';	# paraula a debugar
 my $MOT = 'rus';	# paraula a debugar
 my $MOT = 'fusil';	# paraula a debugar
 my $MOT = 'UICN';	# paraula a debugar
-my $MOT = 'musique';	# paraula a debugar
 my $MOT = 'musique de chambre';	# paraula a debugar
 #my $MOT = 'nombre primer';	# paraula a debugar
-my $MOT = 'dòric';	# paraula a debugar
-my $MOT = '';
+my $MOT = 'semifinal';	# paraula a debugar
+#my $MOT = '';
 
 my $MORF_TRACT = 'adj';
 my $MORF_TRACT = 'n';
@@ -1450,22 +1446,6 @@ next if $gram_cat !~ /^<$MORF_TRACT>/o;
 	$gram_cat =~ s/^ *<//og;
 	$gram_cat =~ s/> *$//og;
 	$gram_cat =~ s/><//og;
-
-	# xxxxxxxxxxxx DE MOMENT DEIXO AIXO COMENTAT, PERQUE NO HO ENTENC BE 
-#VERIFICAR
-#	if ($gram_cat eq 'nm' && $dix_bi{n}{$lemma_cat}) {	# sovint apareixen com a nm paraules que són n (i.e. m+f)
-#print "No es carrega: dix_bi{$gram_cat}{$lemma_cat} = $dix_bi{$gram_cat}{$lemma_cat}\n";
-#		next;
-#	}
-#VERIFICAR
-#	if ($gram_cat eq 'nmf' && $dix_bi{n}{$lemma_cat}) {	# sovint apareixen com a nmf paraules que estan posades com a n
-#print "No es carrega: dix_bi{$gram_cat}{$lemma_cat} = $dix_bi{$gram_cat}{$lemma_cat}\n";
-#		next;
-#	}
-#print "Sí es carrega: dix_bi{$gram_cat}{$lemma_cat} = $dix_bi{$gram_cat}{$lemma_cat}\n";
-
-#	$lemma_cat =~ s/#//o;
-
 
 	$dades[3] =~ s|,|;|og;
 	$dades[3] =~ s|:|;|og;

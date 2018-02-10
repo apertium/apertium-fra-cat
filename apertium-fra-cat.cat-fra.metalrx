@@ -14,7 +14,10 @@
 	  <rule weight="1.0">
 		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
 		 <match tags="det.*"/>
-		 <match tags="adj.*"/>
+		 <or>
+		   <match tags="adj.*"/>
+		   <match lemma="conqueridor" tags="n.*"/>
+		 </or>
 	  </rule>
 	  <rule weight="1.0">
 		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
@@ -587,6 +590,15 @@
 
 <!-- ADJ -->
 
+  <!-- mòbil >> mobile, portable -->
+  <rule weight="0.8">
+    <match lemma="mòbil" tags="adj.*"><select lemma="mobile"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="telèfon" tags="n.*"/>
+    <match lemma="mòbil" tags="adj.*"><select lemma="portable"/></match>
+  </rule>
+
   <!-- mèdic >> médical, médique -->
   <rule weight="0.8">
     <match lemma="mèdic" tags="adj.*"><select lemma="médical"/></match>
@@ -595,7 +607,6 @@
     <match lemma="guerra" tags="n.*"/>
     <match lemma="mèdic" tags="adj.*"><select lemma="médique"/></match>
   </rule>
-
 
   <!-- únic >> unique, seul -->
   <rule weight="0.8">
