@@ -157,9 +157,7 @@
 
 <!-- REL -->
 
-  <!-- 
-    que >> que, qui
-  -->
+  <!-- que >> que, qui -->
   <rule weight="0.8">
     <match lemma="que" tags="rel.an.*"><select lemma="que"/></match>
   </rule>
@@ -194,15 +192,26 @@
     <match tags="vblex.*.p3.*"/>
   </rule>
 
-  <!-- 
-    la qual cosa >> ce qui, lequel
-  -->
+  <!-- la qual cosa >> ce qui, lequel -->
   <rule weight="0.8">
     <match lemma="la qual cosa" tags="rel.an.*"><select lemma="ce qui"/></match>
   </rule>
   <rule weight="0.8">
     <match tags="pr"/>
     <match lemma="la qual cosa" tags="rel.an.*"><select lemma="lequel"/></match>
+  </rule>
+
+  <!-- què >> lequel, ce que -->
+  <rule weight="0.8">
+    <match lemma="què" tags="rel.an.*"><select lemma="lequel"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="pr"/>
+    <match lemma="què" tags="rel.an.*"><select lemma="ce que"/></match>
   </rule>
 
 <!-- PR -->
