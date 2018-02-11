@@ -204,17 +204,15 @@
     </or>
   </rule>
 
-  <!-- 
-    deux fois sur cinq >> dues vegades DE cinc
-  -->
+  <!-- deux fois sur cinq >> dues vegades DE cinc -->
+  <rule weight="0.8">
+    <match lemma="sur" tags="pr"><select lemma="sobre" tags="pr"/></match>
+  </rule>
   <rule weight="1.0">
     <or><match tags="num"/><match tags="num.*"/></or>
     <match lemma="fois" tags="n.*"/>
     <match lemma="sur" tags="pr"><select lemma="de" tags="pr"/></match>
     <or><match tags="num"/><match tags="num.*"/></or>
-  </rule>
-  <rule weight="0.8">
-    <match lemma="sur" tags="pr"><select lemma="sobre" tags="pr"/></match>
   </rule>
 
 
@@ -329,7 +327,7 @@
     </or>
   </rule>
 
-  <!-- appeler >> cridar, dir, anomenar -->
+  <!-- appeler >> cridar, dir, anomenar, trucar -->
   <rule weight="0.8">
     <match lemma="appeler" tags="vblex.*"><select lemma="cridar"/></match>
   </rule>
@@ -395,6 +393,10 @@
       <match tags="lpar"/>
     </or>
     <match lemma="appeler" tags="vblex.pp.*"><select lemma="anomenar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="appeler" tags="vblex.*"><select lemma="trucar"/></match>
+    <match lemma="sur" tags="pr"><select lemma="a"/></match>
   </rule>
 
   <!-- arriver >> arribar, passar -->

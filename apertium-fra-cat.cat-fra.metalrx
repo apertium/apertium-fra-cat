@@ -313,17 +313,15 @@
     <match lemma="en" tags="pr"><select lemma="dans"/></match>
   </rule>
 
-  <!-- 
-    dues vegades DE cinc >> deux fois sur cinq
-  -->
+  <!-- dues vegades DE cinc >> deux fois sur cinq -->
+  <rule weight="0.8">
+    <match lemma="de" tags="pr"><select lemma="de" tags="pr"/></match>
+  </rule>
   <rule weight="1.0">
     <match tags="num.*"/>
     <match lemma="vegada" tags="n.*"/>
     <match lemma="de" tags="pr"><select lemma="sur" tags="pr"/></match>
     <match tags="num.*"/>
-  </rule>
-  <rule weight="0.8">
-    <match lemma="de" tags="pr"><select lemma="de" tags="pr"/></match>
   </rule>
 
   <rule weight="0.8">
