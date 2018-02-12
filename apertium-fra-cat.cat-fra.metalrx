@@ -92,6 +92,20 @@
 		 <match lemma="de" tags="pr"/>
 		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
 	  </rule>
+	  <rule weight="1.0">
+		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
+		 <or>
+		   <match lemma="regnar" tags="vblex.*"/>
+		   <match lemma="governar" tags="vblex.*"/>
+		 </or>
+	  </rule>
+	  <rule weight="1.0">
+		 <or>
+		   <match lemma="regnar" tags="vblex.ger"/>
+		   <match lemma="governar" tags="vblex.ger"/>
+		 </or>
+		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
+	  </rule>
 	</def-macro>
   </def-macros>
 
@@ -383,6 +397,15 @@
     <match lemma="congelar" tags="vblex.*"><select lemma="geler"/></match>
     <match tags="det.*"/>
     <match lemma="negociació" tags="n.*"/>
+  </rule>
+
+  <!-- rendre >> tornar, retre -->
+  <rule weight="0.8">
+    <match lemma="rendre" tags="vblex.*"><select lemma="tornar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rendre" tags="vblex.*"><select lemma="retre"/></match>
+    <match lemma="hommage" tags="n.*"/>
   </rule>
 
   <!-- passar >> passer, arriver -->
@@ -1350,6 +1373,7 @@
   <macro name="noms_propis" p1="Esteve" p2="Stéphane" />
   <macro name="noms_propis" p1="Estefania" p2="Stéphanie" />
   <macro name="noms_propis" p1="Segimon" p2="Sigismond" />
+  <macro name="noms_propis" p1="Claudi" p2="Claude" />
 
 </rules>
 </metalrx>

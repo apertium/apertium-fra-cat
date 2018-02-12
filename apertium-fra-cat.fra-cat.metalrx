@@ -92,6 +92,13 @@
 		 <match lemma="de" tags="pr"/>
 		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
 	  </rule>
+	  <rule weight="1.0">
+		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
+		 <or>
+		   <match lemma="régner" tags="vblex.*"/>
+		   <match lemma="gouverner" tags="vblex.*"/>
+		 </or>
+	  </rule>
 	</def-macro>
   </def-macros>
 
@@ -1138,6 +1145,7 @@
   <macro name="noms_propres" p1="Stéphane" p2="Esteve" />
   <macro name="noms_propres" p1="Stéphanie" p2="Estefania" />
   <macro name="noms_propres" p1="Sigismond" p2="Segimon" />
+  <macro name="noms_propres" p1="Claude" p2="Claudi" />
 
 </rules>
 </metalrx>
