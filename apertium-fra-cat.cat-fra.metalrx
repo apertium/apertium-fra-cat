@@ -691,9 +691,8 @@
     <match lemma="estadista" tags="n.*"><select lemma="homme# d'État"/></match>
   </rule>
   <rule weight="1.0">
-    <match tags="det.*f.*"/>
+    <match tags="det.f.*"/>
     <match lemma="estadista" tags="n.*"><select lemma="femme# d'État"/></match>
-    <match tags="n.*.sg"/>
   </rule>
 
   <!-- tràiler >> semi-remorque, match -->
@@ -1075,7 +1074,7 @@
     <match lemma="vestit" tags="n.*"><select lemma="robe"/></match>
   </rule>
 
-  <!-- volt >> robe, volt -->
+  <!-- volt >> tour, volt -->
   <rule weight="0.8">
     <match lemma="volt" tags="n.*"><select lemma="tour"/></match>
   </rule>
@@ -1374,6 +1373,8 @@
   <macro name="noms_propis" p1="Estefania" p2="Stéphanie" />
   <macro name="noms_propis" p1="Segimon" p2="Sigismond" />
   <macro name="noms_propis" p1="Claudi" p2="Claude" />
+  <macro name="noms_propis" p1="Bonifaci" p2="Boniface" />
+  <macro name="noms_propis" p1="Climent" p2="Clément" />
 
 </rules>
 </metalrx>
