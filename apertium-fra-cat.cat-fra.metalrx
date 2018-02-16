@@ -165,6 +165,47 @@
       <match lemma="occident"/>
       <match lemma="orient"/>
     </def-seq>
+
+    <def-seq n="material">
+       <match lemma="cotó" tags="n.*"/>
+       <match lemma="llana" tags="n.*"/>
+       <match lemma="seda" tags="n.*"/>
+       <match lemma="cuir" tags="n.*"/>
+       <match lemma="espart" tags="n.*"/>
+       <match lemma="vímet" tags="n.*"/>
+       <match lemma="fil" tags="n.*"/>
+       <match lemma="paper" tags="n.*"/>
+       <match lemma="drap" tags="n.*"/>
+       <match lemma="roba" tags="n.*"/>
+       <match lemma="plàstic" tags="n.*"/>
+       <match lemma="polièster" tags="n.*"/>
+       <match lemma="niló" tags="n.*"/>
+       <match lemma="ceràmica" tags="n.*"/>
+       <match lemma="porcellana" tags="n.*"/>
+       <match lemma="bambú" tags="n.*"/>
+       <match lemma="fang" tags="n.*"/>
+       <match lemma="palla" tags="n.*"/>
+       <match lemma="maó" tags="n.*"/>
+       <match lemma="ciment" tags="n.*"/>
+
+       <match lemma="metall" tags="n.*"/>
+       <match lemma="ferro" tags="n.*"/>
+       <match lemma="acer" tags="n.*"/>
+       <match lemma="niquel" tags="n.*"/>
+       <match lemma="alumini" tags="n.*"/>
+       <match lemma="bauxita" tags="n.*"/>
+       <match lemma="titani" tags="n.*"/>
+<!--       <match lemma="or" tags="n.*"/> -->
+       <match lemma="plata" tags="n.*"/>
+       <match lemma="argent" tags="n.*"/>
+       <match lemma="bronze" tags="n.*"/>
+       <match lemma="diamant" tags="n.*"/>
+       <match lemma="rubí" tags="n.*"/>
+       <match lemma="maragda" tags="n.*"/>
+
+       <match lemma="fusta" tags="n.*"/>
+    </def-seq>
+
   </def-seqs>
 
 <rules>
@@ -250,6 +291,41 @@
   <rule weight="1.0">
     <match lemma="des de" tags="pr"><select lemma="de"/></match>
     <or><match tags="np.loc"/><match tags="np.top.*"/><match tags="np.hyd.*"/></or>
+  </rule>
+
+  <!-- de >> de, en -->
+  <rule weight="0.8">
+    <match lemma="de" tags="pr"><select lemma="de"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="de" tags="pr"><select lemma="en"/></match>
+    <or>
+      <seq n="material"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <or>
+      <match lemma="mina" tags="n.*"/>
+      <match lemma="reserva" tags="n.*"/>
+      <match lemma="tipus" tags="n.*"/>
+      <match lemma="noces" tags="n.*"/>
+    </or>
+    <match lemma="de" tags="pr"><select lemma="de"/></match>
+    <or>
+      <seq n="material"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="médaille" tags="n.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adj.f.*"/>
+    </repeat>
+    <match lemma="de" tags="pr"><select lemma="de"/></match>
+    <or>
+      <match lemma="or" tags="n.*"/>
+      <match lemma="argent" tags="n.*"/>
+      <match lemma="bronze" tags="n.*"/>
+    </or>
   </rule>
 
   <!-- a >> à, en, dans -->
@@ -629,6 +705,22 @@
     <match lemma="mòbil" tags="adj.*"><select lemma="portable"/></match>
   </rule>
 
+  <!-- franc >> franc, franc_peuple -->
+  <rule weight="0.8">
+    <match lemma="franc" tags="adj.*"><select lemma="franc"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="poble" tags="n.*"/>
+      <match lemma="rei" tags="n.*"/>
+      <match lemma="capdill" tags="n.*"/>
+      <match lemma="exèrcit" tags="n.*"/>
+      <match lemma="costum" tags="n.*"/>
+      <match lemma="religió" tags="n.*"/>
+    </or>
+    <match lemma="franc" tags="adj.*"><select lemma="franc_peuple"/></match>
+  </rule>
+
   <!-- mèdic >> médical, médique -->
   <rule weight="0.8">
     <match lemma="mèdic" tags="adj.*"><select lemma="médical"/></match>
@@ -685,6 +777,36 @@
     <match lemma="de" tags="pr"/>
     <match tags="n.*.sg"/>
   </rule>
+
+  <!-- franc >> franc, Franc_peuple -->
+  <rule weight="0.8">
+    <match lemma="franc" tags="n.*"><select lemma="Franc_peuple"/></match>
+  </rule>
+<!--
+  <rule weight="1.0">
+    <or><match tags="num"/><match tags="num.*"/></or>
+    <match lemma="franc" tags="n.*"><select lemma="franc"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="franc" tags="n.*"><select lemma="franc"/></match>
+    <or>
+      <match lemma="francès" tags="adj.*"/>
+      <match lemma="belga" tags="adj.*"/>
+      <match lemma="suís" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="mil" tags="num.*"/>
+      <match lemma="miler" tags="n.*"/>
+      <match lemma="milió" tags="n.*"/>
+      <match lemma="miliard" tags="n.*"/>
+      <match lemma="bilió" tags="n.*"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <match lemma="franc" tags="n.*"><select lemma="franc"/></match>
+  </rule>
+-->
 
   <!-- estadista >> homme# d'État, femme# d'État -->
   <rule weight="0.8">
@@ -1067,6 +1189,15 @@
   <rule weight="1.0">
     <match tags="num.*"/>
     <match lemma="cor" tags="n.*"><select lemma="chœur"/></match>
+  </rule>
+
+  <!-- edat mitjana >> moyen âge, âge moyen -->
+  <rule weight="0.8">
+    <match lemma="edat mitjana" tags="n.*"><select lemma="moyen âge"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="edat mitjana" tags="n.*"><select lemma="âge moyen"/></match>
+    <match lemma="de" tags="pr"/>
   </rule>
 
   <!-- vestit >> robe, costume -->

@@ -740,6 +740,8 @@
       <list-item v="limousin"/>
       <list-item v="gascon"/>
       <list-item v="provençal"/>
+      <list-item v="niçois"/>
+      <list-item v="savoyard"/>
       <list-item v="luxembourgeois"/>
       <list-item v="anglais"/>
       <list-item v="écossais"/>
@@ -11234,7 +11236,9 @@ is not applicable because gender and number can not be taken from previous rules
       <action>
         <out>
           <lu>
-            <lit v="en"/>
+            <get-case-from pos="1">
+              <lit v="en"/>
+            </get-case-from>
             <lit-tag v="pr"/>
           </lu>
           <b pos="1"/>

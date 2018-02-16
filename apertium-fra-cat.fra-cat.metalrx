@@ -102,6 +102,47 @@
 	</def-macro>
   </def-macros>
 
+  <def-seqs>
+    <def-seq n="matériel">
+       <match lemma="coton" tags="n.*"/>
+       <match lemma="laine" tags="n.*"/>
+       <match lemma="soie" tags="n.*"/>
+       <match lemma="cuir" tags="n.*"/>
+       <match lemma="sparte" tags="n.*"/>
+       <match lemma="fil" tags="n.*"/>
+       <match lemma="papier" tags="n.*"/>
+       <match lemma="drap" tags="n.*"/>
+       <match lemma="robe" tags="n.*"/>
+       <match lemma="plastique" tags="n.*"/>
+       <match lemma="polyester" tags="n.*"/>
+       <match lemma="nylon" tags="n.*"/>
+       <match lemma="céràmique" tags="n.*"/>
+       <match lemma="porcelaine" tags="n.*"/>
+       <match lemma="bambou" tags="n.*"/>
+       <match lemma="boue" tags="n.*"/>
+       <match lemma="paille" tags="n.*"/>
+       <match lemma="argile" tags="n.*"/>
+       <match lemma="brique" tags="n.*"/>
+       <match lemma="ciment" tags="n.*"/>
+
+       <match lemma="métal" tags="n.*"/>
+       <match lemma="fer" tags="n.*"/>
+       <match lemma="acier" tags="n.*"/>
+       <match lemma="nickel" tags="n.*"/>
+       <match lemma="aluminium" tags="n.*"/>
+       <match lemma="or" tags="n.*"/>
+       <match lemma="argent" tags="n.*"/>
+       <match lemma="bronze" tags="n.*"/>
+       <match lemma="diamant" tags="n.*"/>
+       <match lemma="rubis" tags="n.*"/>
+       <match lemma="émeraude" tags="n.*"/>
+
+       <match lemma="bois" tags="n.*"/>
+       <match lemma="plàtre" tags="n.*"/>
+       <match lemma="gypse" tags="n.*"/>
+    </def-seq>
+  </def-seqs>
+
 <rules>
 
 <!-- **************** PR **************** -->
@@ -147,7 +188,7 @@
   </rule>
 
   <!-- 
-    en >> en, a
+    en >> en, a, de
   -->
   <rule weight="0.8">
     <match lemma="en" tags="pr"><select lemma="en"/></match>
@@ -161,7 +202,11 @@
       <match lemma="Andalousie"/>
       <match lemma="Occitanie"/>
       <match lemma="Provence"/>
-      <match lemma="Catalogne"/>
+      <match lemma="Aquitaine"/>
+      <match lemma="Gascogne"/>
+      <match lemma="Normandie"/>
+      <match lemma="Bretagne"/>
+      <match lemma="Alsace"/>
       <match lemma="Espagne"/>
       <match lemma="France"/>
       <match lemma="Alemagne"/>
@@ -208,6 +253,12 @@
       <match lemma="Australie"/>
       <match lemma="occident"/>
       <match lemma="orient"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="en" tags="pr"><select lemma="de"/></match>
+    <or>
+      <seq n="matériel"/>
     </or>
   </rule>
 
@@ -443,6 +494,52 @@
     <match lemma="poule" tags="n.*"><select lemma="grup"/></match>
     <match lemma="de" tags="pr"/>
     <or><match tags="num"/><match tags="num.*"/></or>
+  </rule>
+
+  <!-- avocat >> advocat, alvocat -->
+  <rule weight="0.8">
+    <match lemma="avocat" tags="n.*"><select lemma="advocat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="manger" tags="vblex.*"/>
+      <match lemma="aimer" tags="vblex.*"/>
+      <match lemma="adorer" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match lemma="de" tags="pr"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="avocat" tags="n.*"><select lemma="alvocat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="manger" tags="vblex.*"/>
+      <match lemma="aimer" tags="vblex.*"/>
+      <match lemma="adorer" tags="vblex.*"/>
+    </or>
+    <match tags="adv"/>
+    <match tags="det.*"/>
+    <match lemma="avocat" tags="n.*"><select lemma="alvocat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="manger" tags="vblex.*"/>
+      <match lemma="aimer" tags="vblex.*"/>
+      <match lemma="adorer" tags="vblex.*"/>
+    </or>
+    <match tags="adv"/>
+    <match lemma="de" tags="pr"/>
+    <match lemma="avocat" tags="n.*"><select lemma="alvocat"/></match>
+  </rule>
+
+  <!-- bois >> bosc, fusta, llenya -->
+  <rule weight="0.8">
+    <match lemma="bois" tags="n.*"><select lemma="bois"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="en" tags="pr"/>
+    <match lemma="bois" tags="n.*"><select lemma="fusta"/></match>
   </rule>
 
   <!-- verre >> got, vidre -->
@@ -915,18 +1012,18 @@
 <!-- **************** VBLEX **************** -->
 
   <!-- être >> ser, estar -->
-  <rule weight="1.0">
+  <rule weight="0.8">
     <match lemma="être"><select lemma="ser" tags="vbser.*"/></match>
   </rule>
-  <rule weight="1.0">
+  <rule weight="0.8">
     <match lemma="être"><select lemma="ser" tags="vbser.*"/></match>
     <match lemma="dans" tags="pr"><select lemma="a" tags="pr"/></match>
   </rule>
-  <rule weight="1.2">
+  <rule weight="1.0">
     <match lemma="être"><select lemma="estar" tags="vblex.*"/></match>
     <match lemma="bien" tags="adv"/>
   </rule>
-  <rule weight="1.2">
+  <rule weight="1.0">
     <match lemma="être"><select lemma="estar" tags="vblex.*"/></match>
     <repeat from="0" upto="1">
     <or>
@@ -941,11 +1038,15 @@
       <match lemma="malade" tags="adj.*"/>
       <match lemma="fatigué" tags="adj.*"/>
       <match lemma="fatiguer" tags="vblex.pp.*"/>
+      <match lemma="enrhumé" tags="adj.*"/>
+      <match lemma="enrhumer" tags="vblex.pp.*"/>
+      <match lemma="préoccupé" tags="adj.*"/>
+      <match lemma="préoccuper" tags="vblex.pp.*"/>
 
       <!-- <match lemma="sûr" tags="adj.*"/> només qd hi ha je, tu, il, etc -->
     </or>
   </rule>
-  <rule weight="1.2">
+  <rule weight="1.0">
     <match lemma="être"><select lemma="estar" tags="vblex.*"/></match>
     <or>
       <match lemma="pas"/>
@@ -965,9 +1066,29 @@
       <match lemma="malade" tags="adj.*"/>
       <match lemma="fatigué" tags="adj.*"/>
       <match lemma="fatiguer" tags="vblex.pp.*"/>
+      <match lemma="enrhumé" tags="adj.*"/>
+      <match lemma="enrhumer" tags="vblex.pp.*"/>
+      <match lemma="préoccupé" tags="adj.*"/>
+      <match lemma="préoccuper" tags="vblex.pp.*"/>
 
       <!-- <match lemma="sûr" tags="adj.*"/> només qd hi ha je, tu, il, etc -->
     </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="être"><select lemma="estar" tags="vblex.*"/></match>
+    <repeat from="0" upto="1">
+      <or>
+        <match lemma="pas"/>
+        <match lemma="jamais"/>
+        <match lemma="nulle part"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="bien"/>
+      <match lemma="mal"/>
+      <match lemma="assez"/>
+    </or>
+    <match tagger="vblex.pp.*"/>
   </rule>
 
 
