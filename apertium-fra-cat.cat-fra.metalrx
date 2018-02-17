@@ -218,6 +218,9 @@
   </rule>
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
     <match tags="vblex.*.p3.*"/>
     <or>
       <match tags="det.*"/>
@@ -227,23 +230,33 @@
   </rule>
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <match lemma="li" tags="prn.*"/>
-    <match tags="vblex.*.p3.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="vblex.*."/>
+    <match lemma="que" tags="cnjsub"/>
   </rule>
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="vblex.*."/>
     <match tags="adv"/>
-    <match tags="vblex.*.p3.*"/>
+    <match lemma="que" tags="cnjsub"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
     <or>
-      <match tags="det.*"/>
-      <match tags="n.*"/>
-      <match tags="adj.*"/>
+      <match lemma="em" tags="prn.pro.*"/>
+      <match lemma="et" tags="prn.pro.*"/>
+      <match lemma="el" tags="prn.pro.*"/>
+      <match lemma="ens" tags="prn.pro.*"/>
+      <match lemma="us" tags="prn.pro.*"/>
     </or>
-  </rule>
-  <rule weight="1.0">
-    <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <match tags="adv"/>
-    <match lemma="li" tags="prn.*"/>
     <match tags="vblex.*.p3.*"/>
   </rule>
 
@@ -776,6 +789,58 @@
     <match lemma="partit" tags="n.*"><select lemma="match"/></match>
     <match lemma="de" tags="pr"/>
     <match tags="n.*.sg"/>
+  </rule>
+
+  <!-- enderrocament >> démolition, renversement -->
+  <rule weight="0.8">
+    <match lemma="enderrocament" tags="n.*"><select lemma="démolition"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="enderrocament" tags="n.*"><select lemma="renversement"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="dictador" tags="n.*"/>
+      <match lemma="dictadura" tags="n.*"/>
+      <match lemma="règim" tags="n.*"/>
+      <match lemma="monarquia" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- radi >> rayon, radius, radium -->
+  <rule weight="0.8">
+    <match lemma="radi" tags="n.*"><select lemma="rayon"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="fractura" tags="n.*"/>
+      <match lemma="trencament" tags="n.*"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <match lemma="radi" tags="n.*"><select lemma="radius"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="fracturar" tags="vblex.*"/>
+      <match lemma="trencar" tags="vblex.*"/>
+    </or>
+    <match tags="det.*"/>
+    <match lemma="radi" tags="n.*"><select lemma="radius"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="radi" tags="n.*"><select lemma="radius"/></match>
+    <match tags="cnjcoo"/>
+    <match lemma="cúbit" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cúbit" tags="n.*"/>
+    <match tags="cnjcoo"/>
+    <match lemma="radi" tags="n.*"><select lemma="radius"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="desintegració" tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="radi" tags="n.*"><select lemma="radium"/></match>
   </rule>
 
   <!-- franc >> franc, Franc_peuple -->
@@ -1506,6 +1571,7 @@
   <macro name="noms_propis" p1="Claudi" p2="Claude" />
   <macro name="noms_propis" p1="Bonifaci" p2="Boniface" />
   <macro name="noms_propis" p1="Climent" p2="Clément" />
+  <macro name="noms_propis" p1="Jordi" p2="Georges" />
 
 </rules>
 </metalrx>

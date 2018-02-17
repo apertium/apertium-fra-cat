@@ -100,6 +100,29 @@
 		 </or>
 	  </rule>
 	</def-macro>
+
+	<!-- p1 verb fra, p2 verb cat estandard, p3 prep fra, p3 verb cat alternatiufra -->
+ 	<!-- <macro name="verb_prep" p1="chasser" p2="caçar" p3="de" p4="expulsar" /> -->
+	<def-macro name="verb_prep">
+	  <rule weight="0.6">
+		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
+	  </rule>
+	  <rule weight="1.0">
+		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p4}}"/></match>
+		 <match lemma="{{p3}}" tags="pr"/>
+	  </rule>
+	  <rule weight="1.0">
+		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p4}}"/></match>
+		 <match tags="adv"/>
+		 <match lemma="{{p3}}" tags="pr"/>
+	  </rule>
+	  <rule weight="1.0">
+		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p4}}"/></match>
+		 <match tags="adv"/>
+		 <match tags="adv"/>
+		 <match lemma="{{p3}}" tags="pr"/>
+		  </rule>
+	</def-macro>
   </def-macros>
 
   <def-seqs>
@@ -146,6 +169,11 @@
 <rules>
 
 <!-- **************** PR **************** -->
+
+  <!-- dans >> en -->
+  <rule weight="0.6">
+    <match lemma="dans " tags="pr"><select lemma="en"/></match>
+  </rule>
 
   <!-- à >> a, en -->
   <rule weight="0.8">
@@ -484,6 +512,8 @@
     <match lemma="marejar" tags="vblex.*."><select lemma="enfonsar"/></match>
   </rule>
 
+  <macro name="verb_prep" p1="chasser" p2="caçar" p3="de" p4="expulsar" />
+
 <!-- **************** N **************** -->
 
   <!-- poule >> gallina, grup -->
@@ -494,6 +524,26 @@
     <match lemma="poule" tags="n.*"><select lemma="grup"/></match>
     <match lemma="de" tags="pr"/>
     <or><match tags="num"/><match tags="num.*"/></or>
+  </rule>
+
+  <!-- rayon >> raig, radi -->
+  <rule weight="0.8">
+    <match lemma="rayon" tags="n.*"><select lemma="raig"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.pos.*"/>
+    <match lemma="rayon" tags="n.*"><select lemma="radi"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rayon" tags="n.*"><select lemma="radi"/></match>
+    <match lemma="de" tags="pr"/>
+    <or><match tags="num"/><match tags="num.*"/></or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rayon" tags="n.*"><select lemma="radi"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="cercle" tags="n.*"/>
   </rule>
 
   <!-- avocat >> advocat, alvocat -->
@@ -1017,7 +1067,8 @@
   </rule>
   <rule weight="0.8">
     <match lemma="être"><select lemma="ser" tags="vbser.*"/></match>
-    <match lemma="dans" tags="pr"><select lemma="a" tags="pr"/></match>
+    <!-- <match lemma="dans" tags="pr"><select lemma="a" tags="pr"/></match> -->
+    <match lemma="dans" tags="pr"/>
   </rule>
   <rule weight="1.0">
     <match lemma="être"><select lemma="estar" tags="vblex.*"/></match>
@@ -1269,6 +1320,7 @@
   <macro name="noms_propres" p1="Claude" p2="Claudi" />
   <macro name="noms_propres" p1="Bonface" p2="Bonfaci" />
   <macro name="noms_propres" p1="Clément" p2="Climent" />
+  <macro name="noms_propres" p1="Georges" p2="Jordi" />
 
 </rules>
 </metalrx>
