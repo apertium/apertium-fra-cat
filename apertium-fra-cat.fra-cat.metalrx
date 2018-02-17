@@ -105,19 +105,19 @@
  	<!-- <macro name="verb_prep" p1="chasser" p2="caçar" p3="de" p4="expulsar" /> -->
 	<def-macro name="verb_prep">
 	  <rule weight="0.6">
-		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
+		 <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p2}}"/></match>
 	  </rule>
 	  <rule weight="1.0">
-		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p4}}"/></match>
+		 <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p4}}"/></match>
 		 <match lemma="{{p3}}" tags="pr"/>
 	  </rule>
 	  <rule weight="1.0">
-		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p4}}"/></match>
+		 <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p4}}"/></match>
 		 <match tags="adv"/>
 		 <match lemma="{{p3}}" tags="pr"/>
 	  </rule>
 	  <rule weight="1.0">
-		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p4}}"/></match>
+		 <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p4}}"/></match>
 		 <match tags="adv"/>
 		 <match tags="adv"/>
 		 <match lemma="{{p3}}" tags="pr"/>
@@ -535,6 +535,14 @@
     <match lemma="rayon" tags="n.*"><select lemma="radi"/></match>
   </rule>
   <rule weight="1.0">
+    <or>
+      <match lemma="dans" tags="pr"/>
+      <match lemma="sur" tags="pr"/>
+    </or>
+    <match tags="det.*"/>
+    <match lemma="rayon" tags="n.*"><select lemma="radi"/></match>
+  </rule>
+  <rule weight="1.0">
     <match lemma="rayon" tags="n.*"><select lemma="radi"/></match>
     <match lemma="de" tags="pr"/>
     <or><match tags="num"/><match tags="num.*"/></or>
@@ -544,6 +552,15 @@
     <match lemma="de" tags="pr"/>
     <match tags="det.*"/>
     <match lemma="cercle" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rayon" tags="n.*"><select lemma="radi"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="action" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rayon" tags="n.*"><select lemma="radi"/></match>
+    <match lemma="étendu" tags="pr"/>
   </rule>
 
   <!-- avocat >> advocat, alvocat -->
@@ -1272,6 +1289,19 @@
     <match lemma="d'ailleurs" tags="adv"><select lemma="d'altra banda"/></match>
   </rule>
 -->
+
+<!-- d'ailleurs >> d'altra banda / d'un altre lloc -->
+
+  <rule weight="0.8">
+    <match lemma="autrement" tags="adv"><select lemma="d'una altra manera"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="autrement" tags="adv"><select lemma="altrament"/></match>
+    <or>
+      <match tags="adj.*"/>
+      <match tags="vblex.pp.*"/>
+    </or>
+  </rule>
 
 <!-- **************** NP **************** -->
 

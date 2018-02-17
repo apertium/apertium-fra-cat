@@ -791,6 +791,23 @@
     <match tags="n.*.sg"/>
   </rule>
 
+  <!-- falta >> manque, faute -->
+  <rule weight="0.8">
+    <match lemma="falta" tags="n.*"><select lemma="manque"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cometre" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <match lemma="falta" tags="n.*"><select lemma="faute"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="falta" tags="n.*"><select lemma="faute"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="np.*"/>
+  </rule>
+
   <!-- enderrocament >> démolition, renversement -->
   <rule weight="0.8">
     <match lemma="enderrocament" tags="n.*"><select lemma="démolition"/></match>
