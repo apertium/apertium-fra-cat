@@ -19,28 +19,13 @@ bénéficier# de > beneficiar-se# de (també adv entre verb i de)
 
 TOTES les construccions verb + <g> no es reconeixen en negatiu: faire le ménage, ne faire pas le ménage, ne faire jamais le ménage
 
-pr + monsieur/madame > pr + det.def + senyor/senyor: de monsieur X > del senyor X
-
-selecció lèxica: pos + fille > filla, ses deux filles
-
 les (cinq) clubs les plus importants > els (cinc) clubs més importants
 
 1r juin > 1 de juny
 
-no tenen un llibre > n'ont pas de livre
-no tenen llibres > n'ont pas de livres
-
 en + ger > ger : en mangeant > menjant
 
 Hier soir > Ahir al vespre
-Il y a deux ans > Fa dos anys
-
-Fins fa poc > Jusqu'à il y a pas longtemps ?
-Fins fa alguns anys
-Fins no fa gaire
-
-plus dépressive que lui > més depressiva que ELL
-que moi, que toi
 
 echo "va implicar-se" | apertium -d . cat-fra
 s'a impliqué
@@ -135,7 +120,12 @@ estirar-se > coucher
 
 fa poques dècades > il y a quelques décénnies
 
-a l'inversa: pr + monsieur/madame > pr + det.def + senyor/senyor: de monsieur X > del senyor X
+Fins fa poc > Jusqu'à il y a pas longtemps ?
+Fins fa alguns anys
+Fins no fa gaire
+
+no tenen un llibre > n'ont pas de livre
+no tenen llibres > n'ont pas de livres
 
 mantenir ocult > maintenir occulte (sel lexica mantenir)
 

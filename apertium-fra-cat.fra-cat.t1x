@@ -14,10 +14,12 @@
     <def-cat n="npant">
       <cat-item tags="np.ant"/>
       <cat-item tags="np.ant.*"/>
+      <cat-item tags="np.cog.*"/>
     </def-cat>
     <def-cat n="npant_unk">
       <cat-item tags="np.ant"/>
       <cat-item tags="np.ant.*"/>
+      <cat-item tags="np.cog.*"/>
       <cat-item tags=""/>
     </def-cat>
     <def-cat n="nploc">
@@ -49,12 +51,17 @@
       <cat-item tags="vbhaver.pp.*"/>
       <cat-item lemma="être" tags="vblex.pp.*"/>
     </def-cat>
+    <def-cat n="adj">
+      <cat-item tags="adj.*"/>
+    </def-cat>
     <def-cat n="adjec">
       <cat-item tags="adj.*"/>
       <cat-item tags="vblex.pp.*"/>
     </def-cat>
-    <def-cat n="adj">
+    <def-cat n="adjec_adv">
       <cat-item tags="adj.*"/>
+      <cat-item tags="vblex.pp.*"/>
+      <cat-item tags="adv"/>
     </def-cat>
     <def-cat n="neadv">
       <cat-item lemma="ne" tags="adv"/>
@@ -96,6 +103,9 @@
     <def-cat n="train">
       <cat-item lemma="train" tags="n.*"/>
     </def-cat>
+    <def-cat n="rel">
+      <cat-item tags="rel.*"/>
+    </def-cat>
     <def-cat n="prnsubj">
       <cat-item lemma="je" tags="prn.tn.p1.mf.sg"/>
       <cat-item lemma="tu" tags="prn.tn.p2.mf.sg"/>
@@ -112,14 +122,14 @@
     <def-cat n="on">
       <cat-item lemma="on" tags="prn.pro.ref.p3.mf.sp"/>
     </def-cat>
+    <def-cat n="moi">
+      <cat-item lemma="moi" tags="prn.tn.p1.mf.sg"/>
+    </def-cat>
     <def-cat n="prn">
       <cat-item tags="prn.tn.*"/>
       <cat-item tags="prn.itg.*"/>
       <cat-item tags="prn.pro.*"/>
       <cat-item tags="prn.enc.*"/>
-    </def-cat>
-    <def-cat n="rel">
-      <cat-item tags="rel.*"/>
     </def-cat>
     <def-cat n="prnenc">
       <cat-item tags="prn.enc.*"/>
@@ -385,9 +395,24 @@
       <cat-item lemma="décembre" tags="n.*"/>
     </def-cat>
     
+    <def-cat n="nom_monsieur">
+      <cat-item lemma="monsieur" tags="n.*"/>
+      <cat-item lemma="madame" tags="n.*"/>
+      <cat-item lemma="mademoiselle" tags="n.*"/>
+    </def-cat>
+
     <def-cat n="combien">
       <cat-item lemma="combien" tags="prn.*"/>
       <cat-item lemma="combien" tags="rel.*"/>
+    </def-cat>
+
+    <def-cat n="longtemps">
+      <cat-item lemma="longtemps" tags="adv"/>
+    </def-cat>
+
+    <def-cat n="plus_moins">
+      <cat-item lemma="plus" tags="adv"/>
+      <cat-item lemma="moins" tags="adv"/>
     </def-cat>
 
   </section-def-cats>
@@ -3147,54 +3172,40 @@
       </action>
     </rule>
     
-     <rule comment="REGLA: prep + lui: pour lui > per a ell">
+
+     <rule comment="REGLA: plus/moins ADJ/ADV que moi: plus rapide que moi > més ràpid que jo">
       <pattern>
-        <pattern-item n="prep"/>
-	<pattern-item n="lui"/>
+        <pattern-item n="plus_moins"/>
+        <pattern-item n="adjec_adv"/>
+        <pattern-item n="que"/>
+	<pattern-item n="moi"/>
       </pattern>
       <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
           </lu>
-            <b pos="1"/>
+          <b pos="2"/>
           <lu>
-            <lit v="ell"/>
-            <lit-tag v="prn.tn.p3.m.sg"/>
+          <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+          <clip pos="3" side="tl" part="whole"/>
+          </lu>
+            <b pos="3"/>
+          <lu>
+            <lit v="jo"/>
+            <clip pos="4" side="tl" part="tags"/>
           </lu>
         </out>
       </action>
   </rule>
     
 
-     <rule comment="REGLA: prep + lui + inf: pour lui dire> per dir-li">
-      <pattern>
-        <pattern-item n="prep"/>
-	<pattern-item n="lui"/>
-	<pattern-item n="inf"/>
-      </pattern>
-      <action>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="whole"/>
-          </lu>
-          <b pos="1"/>
-          <mlu>
-	    <lu>   
-	      <clip pos="3" side="tl" part="lemh"/>
-	      <clip pos="3" side="tl" part="tags"/>
-            </lu>
-            <lu>
-              <clip pos="2" side="tl" part="lem"/>
-              <lit-tag v="prn.enc"/>
-              <clip pos="2" side="tl" part="tipoenc_pro"/>
-              <clip pos="3" side="tl" part="lemq"/>
-            </lu>
-          </mlu>
-        </out>
-      </action>
-  </rule>
-    
 
     <rule>
 <!-- REGLA: PRONOM -->
@@ -4758,6 +4769,41 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
+    <rule comment="REGLA: de madame X > de la senyora X">
+      <pattern>
+        <pattern-item n="prep"/>
+        <pattern-item n="nom_monsieur"/>
+        <pattern-item n="npant_unk"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="el"/>
+            </get-case-from>
+            <lit-tag v="det.def"/>
+            <clip pos="2" side="sl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
     
     <rule comment="REGLA: verb + de +  VERB PREP DET (venir de avoir des: acabar de tenir)">
       <pattern> 
@@ -10662,8 +10708,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
-        <call-macro n="f_concord1">
+        <call-macro n="f_concord2">
           <with-param pos="5"/>
+          <with-param pos="4"/>
         </call-macro>
         <out>
           <lu>
@@ -10691,8 +10738,39 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!-- REGLA: reset variables-->
+    <rule comment="REGLA: il y a X temps > fa X temps">
+      <pattern>
+        <pattern-item n="il"/>
+        <pattern-item n="y"/>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="longtemps"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+               <lit v="fer"/>
+            </get-case-from>
+            <lit-tag v="vblex"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="temps"/>
+            </get-case-from>
+            <lit-tag v="n.m.sp"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule comment="REGLA: reset variables">
       <pattern>
         <pattern-item n="sent"/>
       </pattern>

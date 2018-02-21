@@ -5719,7 +5719,7 @@
 <!--Fin C1 Serpis -->
 <e>       <p><l>finir<s n="vblex"/></l>           <r>acabar<s n="vblex"/></r></p></e>
 <e>       <p><l>Finlande<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Finlàndia<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></r></p></e>
-<e>       <p><l>firme<s n="n"/></l>               <r>firma<s n="n"/></r></p></e>
+<e>       <p><l>firme<s n="n"/><s n="f"/></l>     <r>firma<s n="n"/><s n="f"/></r></p></e>
 <e r="RL"><p><l>fiscal<s n="adj"/></l>            <r>impositiu<s n="adj"/></r></p></e>
 <e r="LR"><p><l>fiscal<s n="adj"/><s n="f"/></l>  <r>fiscal<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>fiscal<s n="adj"/><s n="m"/></l>  <r>fiscal<s n="adj"/><s n="mf"/></r></p></e>
@@ -9796,6 +9796,8 @@
 <e>       <p><l>Pellicer<s n="np"/><s n="cog"/></l><r>Pellicer<s n="np"/><s n="cog"/></r></p></e>
 <e a="gema"><p><l>pénal<s n="adj"/></l>           <r>penal<s n="adj"/></r></p><par n="GD_mf"/></e>
 <e>       <p><l>pendant<s n="pr"/></l>            <r>durant<s n="pr"/></r></p></e>
+<e a="hector"><p><l>pendant<b/>que<s n="cnjadv"/></l><r>mentre<s n="cnjadv"/></r></p></e>
+<e r="RL" a="hector"><p><l>pendant<b/>que<s n="cnjadv"/></l><r>mentre<b/>que<s n="cnjadv"/></r></p></e>
 <e>       <p><l>au<b/>lieu<b/>de<s n="pr"/></l>   <r>en<b/>comptes<b/>de<s n="pr"/></r></p></e>
 <e r="RL"><p><l>au<b/>lieu<b/>de<s n="pr"/></l>   <r>en<b/>lloc<b/>de<s n="pr"/></r></p></e>
 <e>       <p><l>le<b/>long<b/>de<s n="pr"/></l>   <r>al<b/>llarg<b/>de<s n="pr"/></r></p></e>
@@ -11982,7 +11984,6 @@
 <e r="LR"><p><l>signalement<s n="n"/><s n="m"/></l><r>descripció<s n="n"/><s n="f"/></r></p></e>
 <e>       <p><l>signaler<s n="vblex"/></l>        <r>assenyalar<s n="vblex"/></r></p></e>
 <e r="RL"><p><l>signaler<s n="vblex"/></l>        <r>senyalar<s n="vblex"/></r></p></e>
-<e>       <p><l>signature<s n="n"/></l>           <r>signatura<s n="n"/></r></p></e>
 <e>       <p><l>signe<s n="n"/></l>               <r>signe<s n="n"/></r></p></e>
 <e a="gema"><p><l>signer<s n="vblex"/></l>        <r>signar<s n="vblex"/></r></p></e>
 <e r="RL" a="u21941"><p><l>signer<s n="vblex"/></l><r>firmar<s n="vblex"/></r></p></e>
@@ -12569,8 +12570,8 @@
 <e>       <p><l>talent<s n="n"/></l>              <r>talent<s n="n"/></r></p></e>
 <e>       <p><l>talon<s n="n"/></l>               <r>taló<s n="n"/></r></p></e>
 <e>       <p><l>tambour<s n="n"/></l>             <r>tambor<s n="n"/></r></p></e>
-<e a="gema"><p><l>tandis<b/>que<s n="cnjadv"/></l><r>mentre<b/>que<s n="cnjadv"/></r></p></e>
-<e r="RL" a="gema"><p><l>tandis<b/>que<s n="cnjadv"/></l><r>mentre<s n="cnjadv"/></r></p></e>
+<e i="yes" a="gema"><p><l>tandis<b/>que<s n="cnjadv"/></l><r>mentre<b/>que<s n="cnjadv"/></r></p></e>
+<e r="LR" a="gema"><p><l>tandis<b/>que<s n="cnjadv"/></l><r>mentre<s n="cnjadv"/></r></p></e>
 <e>       <p><l>Tanger<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Tànger<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
 <e>       <p><l>Tania<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></l><r>Tania<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></r></p></e>
 <e r="LR"><p><l>tant<s n="adv"/></l>              <r>tant<s n="adv"/></r></p></e>
@@ -14521,8 +14522,9 @@
 <e>       <p><l>énormité<s n="n"/><s n="f"/></l>  <r>enormitat<s n="n"/><s n="f"/></r></p></e>
 <e>       <p><l>enquêteur<s n="n"/><s n="m"/></l> <r>investigador<s n="n"/><s n="m"/></r></p></e>
 <e>       <p><l>enrichissement<s n="n"/><s n="m"/></l><r>enriquiment<s n="n"/><s n="m"/></r></p></e>
-<e>       <p><l>enseigne<s n="n"/><s n="f"/></l>  <r>firma<s n="n"/><s n="f"/></r></p></e>
-<e>       <p><l>signature<s n="n"/><s n="f"/></l> <r>signatura<s n="n"/><s n="f"/></r></p></e>
+<e r="LR"><p><l>enseigne<s n="n"/><s n="f"/></l>  <r>firma<s n="n"/><s n="f"/></r></p></e>
+<e>       <p><l>signature<s n="n"/><s n="f"/></l> <r>firma<s n="n"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>signature<s n="n"/><s n="f"/></l> <r>signatura<s n="n"/><s n="f"/></r></p></e>
 <e>       <p><l>entendement<s n="n"/><s n="m"/></l><r>enteniment<s n="n"/><s n="m"/></r></p></e>
 <e>       <p><l>enterrement<s n="n"/><s n="m"/></l><r>enterrament<s n="n"/><s n="m"/></r></p></e>
 <e>       <p><l>entête<s n="n"/><s n="f"/></l>    <r>encapçalament<s n="n"/><s n="m"/></r></p></e>
@@ -22375,15 +22377,18 @@
 
 <e>       <p><l>moi-même<s n="prn"/><s n="tn"/><s n="p1"/></l><r>jo<b/>mateix<s n="prn"/><s n="tn"/><s n="p1"/></r></p><par n="mf_GD"/></e>
 <e>       <p><l>nous-mêmes<s n="prn"/><s n="tn"/><s n="p1"/></l><r>nosaltres<b/>mateixos<s n="prn"/><s n="tn"/><s n="p1"/></r></p><par n="mf_GD"/></e>
+<e r="LR"><p><l>nous-même<s n="prn"/><s n="tn"/><s n="p1"/></l><r>nosaltres<b/>mateixos<s n="prn"/><s n="tn"/><s n="p1"/></r></p><par n="mf_GD"/></e>
 <e>       <p><l>toi-même<s n="prn"/><s n="tn"/><s n="p2"/></l><r>tu<b/>mateix<s n="prn"/><s n="tn"/><s n="p2"/></r></p><par n="mf_GD"/></e>
 <e>       <p><l>vous-mêmes<s n="prn"/><s n="tn"/><s n="p2"/></l><r>vosaltres<b/>mateixos<s n="prn"/><s n="tn"/><s n="p2"/></r></p><par n="mf_GD"/></e>
+<e>       <p><l>vous-même<s n="prn"/><s n="tn"/><s n="p2"/></l><r>vós<b/>mateix<s n="prn"/><s n="tn"/><s n="p2"/></r></p><par n="mf_GD"/></e>
 <e>       <p><l>lui-même<s n="prn"/><s n="tn"/><s n="p3"/></l><r>ell<b/>mateix<s n="prn"/><s n="tn"/><s n="p3"/></r></p></e>
 <e>       <p><l>soi-même<s n="prn"/><s n="tn"/><s n="ref"/><s n="p3"/><s n="mf"/><s n="sp"/></l><r>si<b/>mateix<s n="prn"/><s n="tn"/><s n="ref"/><s n="p3"/><s n="m"/><s n="sg"/></r></p></e>
 <e r="RL"><p><l>soi-même<s n="prn"/><s n="tn"/><s n="ref"/><s n="p3"/><s n="mf"/><s n="sp"/></l><r>si<b/>mateix<s n="prn"/><s n="tn"/><s n="ref"/><s n="p3"/><s n="f"/><s n="sg"/></r></p></e>
 <e r="RL"><p><l>lui-même<s n="prn"/><s n="tn"/><s n="p3"/><s n="m"/><s n="pl"/></l><r>si<b/>mateix<s n="prn"/><s n="tn"/><s n="ref"/><s n="p3"/><s n="m"/><s n="pl"/></r></p></e>
 <e r="RL"><p><l>lui-même<s n="prn"/><s n="tn"/><s n="p3"/><s n="m"/><s n="pl"/></l><r>si<b/>mateix<s n="prn"/><s n="tn"/><s n="ref"/><s n="p3"/><s n="f"/><s n="pl"/></r></p></e>
-<e r="RL"><p><l>vous-mêmes<s n="prn"/><s n="tn"/><s n="p2"/><s n="mf"/><s n="pl"/></l><r>vostè<b/>mateix<s n="prn"/><s n="tn"/><s n="p3"/><s n="m"/><s n="sg"/></r></p></e>
-<e r="RL"><p><l>vous-mêmes<s n="prn"/><s n="tn"/><s n="p2"/><s n="mf"/><s n="pl"/></l><r>vostè<b/>mateix<s n="prn"/><s n="tn"/><s n="p3"/><s n="f"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>vous-même<s n="prn"/><s n="tn"/><s n="p2"/><s n="mf"/><s n="pl"/></l><r>vostè<b/>mateix<s n="prn"/><s n="tn"/><s n="p3"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>vous-même<s n="prn"/><s n="tn"/><s n="p2"/><s n="mf"/><s n="pl"/></l><r>vostè<b/>mateix<s n="prn"/><s n="tn"/><s n="p3"/><s n="f"/><s n="sg"/></r></p></e>
+<e r="RL"><p><l>vous-même<s n="prn"/><s n="tn"/><s n="p2"/><s n="mf"/><s n="pl"/></l><r>vostè<b/>mateix<s n="prn"/><s n="tn"/><s n="p3"/><s n="GD"/><s n="sg"/></r></p></e>
 <e r="RL"><p><l>vous-mêmes<s n="prn"/><s n="tn"/><s n="p2"/><s n="mf"/><s n="pl"/></l><r>vostè<b/>mateix<s n="prn"/><s n="tn"/><s n="p3"/><s n="m"/><s n="pl"/></r></p></e>
 <e r="RL"><p><l>vous-mêmes<s n="prn"/><s n="tn"/><s n="p2"/><s n="mf"/><s n="pl"/></l><r>vostè<b/>mateix<s n="prn"/><s n="tn"/><s n="p3"/><s n="f"/><s n="pl"/></r></p></e>
 
@@ -23069,6 +23074,9 @@
 <e a="joan"><p><l>chevet<s n="n"/><s n="m"/></l>  <r>capçalera<s n="n"/><s n="f"/></r></p></e>
 <e r="RL" a="joan"><p><l>taille<s n="n"/><s n="f"/></l><r>grandària<s n="n"/><s n="f"/></r></p></e>
 <e a="joan"><p><l>enceinte<s n="n"/><s n="f"/></l><r>recinte<s n="n"/><s n="m"/></r></p></e>
+<e a="hector"><p><l>enceinte<s n="adj"/><s n="mf"/></l><r>embarassat<s n="adj"/><s n="f"/></r></p></e>
+<e r="RL" a="hector"><p><l>enceinte<s n="adj"/><s n="mf"/></l><r>embarassat<s n="adj"/><s n="m"/></r></p></e>
+<e r="RL" a="hector"><p><l>enceinte<s n="adj"/></l><r>prenyat<s n="adj"/></r></p><par n="mf_GD"/></e>
 <e a="joan"><p><l>vassal<s n="n"/></l>            <r>vassall<s n="n"/></r></p></e>
 <e a="joan" i="yes"><p><l>montagne<s n="n"/><s n="f"/></l><r>serralada<s n="n"/><s n="f"/></r></p></e>
 <e a="hector"><p><l>cordillère<s n="n"/><s n="f"/></l><r>serralada<s n="n"/><s n="f"/></r></p></e>
@@ -27646,5 +27654,6 @@
 <e>       <p><l>Joffre<s n="np"/><s n="cog"/></l>  <r>Joffre<s n="np"/><s n="cog"/></r></p></e>
 <e>       <p><l>Foch<s n="np"/><s n="cog"/></l>  <r>Foch<s n="np"/><s n="cog"/></r></p></e>
 <e>       <p><l>Verdun<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Verdun<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
+<e>       <p><l>au<b/>beau<b/>milieu<s n="adv"/></l> <r>al<b/>bell<b/>mig<s n="adv"/></r></p></e>
   </section>
 </dictionary>

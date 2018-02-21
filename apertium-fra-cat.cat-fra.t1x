@@ -369,6 +369,10 @@
       <cat-item lemma="dissabte" tags="n.*"/>
       <cat-item lemma="diumenge" tags="n.*"/>
     </def-cat>
+    <def-cat n="n_senyor">
+      <cat-item lemma="senyor" tags="n.*"/>
+      <cat-item lemma="senyoret" tags="n.f.*"/>
+    </def-cat>
     <def-cat n="multiHiha">
       <cat-item lemma="hi ha" tags="vblex.pri.p3.sg"/>
     </def-cat>
@@ -5099,8 +5103,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule>
-<!--REGLA: NUMERAL de MES de NUM  20 de novembre de 1998: 20 novembre 1998-->
+    <rule comment="REGLA: NUMERAL de MES de NUM, 20 de novembre de 1998: 20 novembre 1998">
       <pattern>
         <pattern-item n="num"/>
         <pattern-item n="deprep"/>
@@ -5150,8 +5153,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule>
-<!--REGLA: NUMERAL de MES , 20 de novembre: 20 novembre-->
+    <rule comment="REGLA: NUMERAL de MES, 20 de novembre: 20 novembre">
       <pattern>
         <pattern-item n="num"/>
         <pattern-item n="deprep"/>
@@ -5195,6 +5197,35 @@ is not applicable because gender and number can not be taken from previous rules
     </rule>
 <!--fi regles de concordança-->
 
+    <rule comment="REGLA: de la senyora X > de madame X">
+      <pattern>
+        <pattern-item n="prep"/>
+        <pattern-item n="detdef"/>
+        <pattern-item n="n_senyor"/>
+        <pattern-item n="npant_unk"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+    
     <rule comment="REGLA: DETDEF DE: el de l'esquerra: celui de la gauche">
       <pattern>
         <pattern-item n="detdef"/>
@@ -5221,9 +5252,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule>
-<!-- REGLA: PRETÈRIT INDEFINIT -->
-<!-- Per traduir "vaig fer" per "ai fait" -->
+    <rule comment="vaig fer >> ai fait"> 
       <pattern>
         <pattern-item n="anar"/>
         <pattern-item n="inf"/>
