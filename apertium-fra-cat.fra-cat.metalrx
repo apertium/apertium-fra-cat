@@ -526,6 +526,24 @@
     <or><match tags="num"/><match tags="num.*"/></or>
   </rule>
 
+  <!-- dame >> senyora, dona -->
+  <rule weight="0.8">
+    <match lemma="dame" tags="n.*"><select lemma="senyor"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="finale" tags="n.f.*"/>
+    <match lemma="dame" tags="n.*"><select lemma="dona"/></match>
+  </rule>
+
+  <!-- monsieur >> senyor, home -->
+  <rule weight="0.8">
+    <match lemma="monsieur" tags="n.*"><select lemma="senyor"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="finale" tags="n.f.*"/>
+    <match lemma="monsieur" tags="n.*"><select lemma="home"/></match>
+  </rule>
+
   <!-- rayon >> raig, radi -->
   <rule weight="0.8">
     <match lemma="rayon" tags="n.*"><select lemma="raig"/></match>

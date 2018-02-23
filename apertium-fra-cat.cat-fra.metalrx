@@ -791,6 +791,27 @@
     <match tags="n.*.sg"/>
   </rule>
 
+  <!-- senyora >> madame, dame, femme -->
+  <rule weight="0.8">
+    <match lemma="senyor" tags="n.f.*"><select lemma="madame"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="det.ind.*"/>
+      <match tags="det.dem.*"/>
+    </or>
+    <match lemma="senyor" tags="n.f.*"><select lemma="dame"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.det.*"/>
+    <match lemma="senyor" tags="n.f.*"><select lemma="dame"/></match>
+    <match tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.pos.*"/>
+    <match lemma="senyor" tags="n.f.*"><select lemma="femme"/></match>
+  </rule>
+
   <!-- falta >> manque, faute -->
   <rule weight="0.8">
     <match lemma="falta" tags="n.*"><select lemma="manque"/></match>

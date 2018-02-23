@@ -3690,7 +3690,10 @@
 <e>       <p><l>daller<s n="vblex"/></l>          <r>enrajolar<s n="vblex"/></r></p></e>
 <e>       <p><l>d'Almería<s n="adj"/><s n="mf"/><s n="sp"/></l><r>d'Almeria<s n="adj"/><s n="mf"/><s n="sp"/></r></p></e>
 <e>       <p><l>madame<s n="n"/><s n="f"/></l>    <r>senyor<s n="n"/><s n="f"/></r></p></e>
-<e>       <p><l>dame<s n="n"/><s n="f"/></l>      <r>dama<s n="n"/><s n="f"/></r></p></e>
+<e>       <p><l>dame<s n="n"/><s n="f"/></l>      <r>senyor<s n="n"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>femme<s n="n"/><s n="f"/></l>     <r>senyor<s n="n"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>dame<s n="n"/><s n="f"/></l>      <r>dama<s n="n"/><s n="f"/></r></p></e>
+<e r="LR"><p><l>dame<s n="n"/><s n="f"/></l>      <r>dona<s n="n"/><s n="f"/></r></p></e>
 <e r="LR"><p><l>damer<s n="vblex"/></l>           <r>coronar<s n="vblex"/></r></p></e>
 <e>       <p><l>Damián<s n="np"/><s n="cog"/></l> <r>Damián<s n="np"/><s n="cog"/></r></p></e>
 <e>       <p><l>Damián<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Damián<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
@@ -8690,6 +8693,7 @@
 <e r="RL"><p><l>monotone<s n="adj"/><s n="mf"/></l><r>monòton<s n="adj"/><s n="m"/></r></p></e>
 <e a="ariel"><p><l>monoxyde<s n="n"/></l>         <r>monòxid<s n="n"/></r></p></e>
 <e>       <p><l>monsieur<s n="n"/><s n="m"/></l>  <r>senyor<s n="n"/><s n="m"/></r></p></e>
+<e r="LR"><p><l>monsieur<s n="n"/><s n="f"/></l>  <r>home<s n="n"/><s n="m"/></r></p></e>
 <e>       <p><l>monstrueux<s n="adj"/><s n="f"/></l><r>monstruós<s n="adj"/><s n="f"/></r></p></e>
 <e r="LR"><p><l>monstrueux<s n="adj"/><s n="m"/><s n="sp"/></l><r>monstruós<s n="adj"/><s n="m"/><s n="ND"/></r></p></e>
 <e r="RL"><p><l>monstrueux<s n="adj"/><s n="f"/></l><r>monstruós<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
@@ -27655,5 +27659,13 @@
 <e>       <p><l>Foch<s n="np"/><s n="cog"/></l>  <r>Foch<s n="np"/><s n="cog"/></r></p></e>
 <e>       <p><l>Verdun<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Verdun<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
 <e>       <p><l>au<b/>beau<b/>milieu<s n="adv"/></l> <r>al<b/>bell<b/>mig<s n="adv"/></r></p></e>
+<e>       <p><l>taille-crayon<s n="n"/><s n="m"/></l><r>maquineta<g><b/>de<b/>fer<b/>punta</g><s n="n"/><s n="f"/></r></p></e>
+<e>       <p><l>dernier-né<s n="n"/></l><r>caganiu<s n="n"/></r></p><par n="GD_mf"/></e>
+<e>       <p><l>avant-poste<s n="n"/><s n="m"/></l><r>post<b/>avançat<s n="n"/><s n="m"/></r></p></e>
+<e>       <p><l>chef-d'œuvre<s n="n"/><s n="m"/></l><r>obra<b/>mestra<s n="n"/><s n="f"/></r></p></e>
+<e>       <p><l>Notre-Dame<s n="n"/><s n="f"/></l><r>Nostra<b/>Senyora<s n="n"/><s n="f"/></r></p></e>
+<e>       <p><l>Notre<b/>Seigneur<s n="n"/><s n="m"/></l><r>Nostre<b/>Senyor<s n="n"/><s n="m"/></r></p></e>
+<e>       <p><l>Notre<b/>Père<s n="n"/><s n="m"/><s n="sg"/></l><r>parenostre<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
+<e>       <p><l>couscous<s n="n"/><s n="m"/></l><r>cuscús<s n="n"/><s n="m"/></r></p><par n="sp_ND"/></e>
   </section>
 </dictionary>

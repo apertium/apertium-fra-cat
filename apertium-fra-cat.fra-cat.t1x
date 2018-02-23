@@ -26,6 +26,10 @@
       <cat-item tags="np.loc"/>
       <cat-item tags="np.top.*"/>
     </def-cat>
+    <def-cat n="det">
+      <cat-item tags="det.*"/>
+      <cat-item tags="predet.*"/>
+    </def-cat>
     <def-cat n="detdef">
       <cat-item tags="det.def.*"/>
     </def-cat>
@@ -35,12 +39,11 @@
     <def-cat n="detdefpl">
       <cat-item tags="det.def.mf.pl"/>
     </def-cat>
-    <def-cat n="det">
-      <cat-item tags="det.*"/>
-      <cat-item tags="predet.*"/>
-    </def-cat>
     <def-cat n="le">
       <cat-item lemma="le" tags="det.*"/>
+    </def-cat>
+    <def-cat n="ce">
+      <cat-item lemma="ce" tags="det.*"/>
     </def-cat>
     <def-cat n="predet">
       <cat-item tags="predet.*"/>
@@ -413,6 +416,11 @@
     <def-cat n="plus_moins">
       <cat-item lemma="plus" tags="adv"/>
       <cat-item lemma="moins" tags="adv"/>
+    </def-cat>
+
+    <def-cat n="ci_la">
+      <cat-item lemma="ci" tags="adv"/>
+      <cat-item lemma="là" tags="adv"/>
     </def-cat>
 
   </section-def-cats>
@@ -3205,7 +3213,54 @@
       </action>
   </rule>
     
-
+     <rule comment="REGLA: ce livre-ci >> aquest llibre, ce livre-là >> aquell llibre">
+      <pattern>
+        <pattern-item n="ce"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="ci_la"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="3" side="sl" part="lem"/><lit v="ci"/></equal>
+              </test>
+            <out>
+              <lu>
+                <lit v="aquest"/>
+                <lit-tag v="det.dem"/>
+                <clip pos="1" side="tl" part="gen"/>
+                <clip pos="1" side="tl" part="nbr"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <lit v="aquell"/>
+                <lit-tag v="det.dem"/>
+                <clip pos="1" side="tl" part="gen"/>
+                <clip pos="1" side="tl" part="nbr"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+    
 
     <rule>
 <!-- REGLA: PRONOM -->
