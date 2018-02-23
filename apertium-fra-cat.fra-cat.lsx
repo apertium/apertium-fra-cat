@@ -1,0 +1,32 @@
+<dictionary type="separable">
+  <alphabet></alphabet>
+  <sdefs>
+    <sdef n="vblex"/>
+    <sdef n="adv"/>
+    <sdef n="n"/>
+    <sdef n="f"/>
+  </sdefs>
+  <pardefs>
+    <pardef n="adv">
+      <e><i><w/><s n="adv"/><j/></i></e>
+      <e><i><w/><s n="adv"/><t/><j/></i></e>
+    </pardef>
+  </pardefs>
+  <section id="main" type="standard">
+    <!-- Je n'ai pas honte de ... --> 
+    <e lm="avoir honte" c="">
+      <p><l>avoir<s n="vblex"/></l><r>avoir<g><b/>honte</g><s n="vblex"/></r></p>
+      <i><t/><j/></i>
+      <p><l>honte<s n="n"/><s n="f"/><t/><j/></l><r></r></p>
+    </e>
+    <e lm="avoir honte" c="">
+      <p><l>avoir<s n="vblex"/></l><r>avoir<g><b/>honte</g><s n="vblex"/></r></p>
+      <i><t/><j/></i>
+      <par n="adv"/>
+      <p><l>honte<s n="n"/><s n="f"/><t/><j/></l><r></r></p>
+    </e>
+
+
+</section>
+</dictionary>
+
