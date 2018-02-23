@@ -17,6 +17,7 @@ TARGETS_COMMON =		\
 	$(PREFIX1).autobil.bin	\
 	$(PREFIX1).autolex.bin	\
 	$(PREFIX1).autogen.bin	\
+	$(PREFIX1).autosep.bin	\
 	$(PREFIX1).autopgen.bin	\
 	$(PREFIX1).t1x.bin	\
 	$(PREFIX2).automorf.bin	\
@@ -69,6 +70,13 @@ $(PREFIX2).automorf.bin: $(AP_SRC2)/$(LANG2).automorf.bin $(PREFIX2).autobil.bin
 
 $(PREFIX1).autogen.bin: $(AP_SRC2)/$(LANG2).autogen.bin
 	cp $< $@
+
+###############################################################################
+## Multiwords 
+###############################################################################
+
+$(PREFIX1).autosep.bin: $(BASENAME).$(PREFIX1).lsx
+	lsx-comp $< $@
 
 ###############################################################################
 ## Tagger models
