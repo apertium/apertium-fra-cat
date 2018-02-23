@@ -14,6 +14,9 @@
         <file name="fra-cat.prob"/>
       </program>
       <program name="apertium-pretransfer"/>
+      <program name="lsx-proc">
+        <file name="fra-cat.autosep.bin"/>
+      </program>
       <program name="lt-proc -b">
         <file name="fra-cat.autobil.bin"/>
       </program>
