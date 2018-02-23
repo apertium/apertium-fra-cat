@@ -48,6 +48,9 @@
         <file name="fra-cat.prob"/>
       </program>
       <program name="apertium-pretransfer"/>
+      <program name="lsx-proc">
+        <file name="fra-cat.autosep.bin"/>
+      </program>
       <program name="lt-proc -b">
         <file name="fra-cat.autobil.bin"/>
       </program>
@@ -113,6 +116,25 @@
     </pipeline>
   </mode>
 
+  <mode name="fra-cat-separable" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="fra-cat.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fra-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fra-cat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lsx-proc">
+        <file name="fra-cat.autosep.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
   <mode name="fra-cat-biltrans" install="no">
     <pipeline>
       <program name="lt-proc -w">
@@ -125,6 +147,9 @@
         <file name="fra-cat.prob"/>
       </program>
       <program name="apertium-pretransfer"/>
+      <program name="lsx-proc">
+        <file name="fra-cat.autosep.bin"/>
+      </program>
       <program name="lt-proc -b">
         <file name="fra-cat.autobil.bin"/>
       </program>
@@ -143,6 +168,9 @@
         <file name="fra-cat.prob"/>
       </program>
       <program name="apertium-pretransfer"/>
+      <program name="lsx-proc">
+        <file name="fra-cat.autosep.bin"/>
+      </program>
       <program name="lt-proc -b">
         <file name="fra-cat.autobil.bin"/>
       </program>
@@ -164,6 +192,9 @@
         <file name="fra-cat.prob"/>
       </program>
       <program name="apertium-pretransfer"/>
+      <program name="lsx-proc">
+        <file name="fra-cat.autosep.bin"/>
+      </program>
       <program name="lt-proc -b">
         <file name="fra-cat.autobil.bin"/>
       </program>
