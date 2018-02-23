@@ -75,7 +75,7 @@ $(PREFIX1).autogen.bin: $(AP_SRC2)/$(LANG2).autogen.bin
 ## Multiwords 
 ###############################################################################
 
-$(PREFIX1).autosep.bin: $(BASENAME).$(PREFIX1).lsx
+$(PREFIX1).autosep.bin: $(BASENAME).$(PREFIX1).l1x
 	lsx-comp $< $@
 
 ###############################################################################
