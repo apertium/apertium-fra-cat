@@ -206,6 +206,33 @@
        <match lemma="fusta" tags="n.*"/>
     </def-seq>
 
+    <def-seq n="verbs_moviment">
+      <match lemma="anar" tags="vblex.*"/>
+      <match lemma="traslladar" tags="vblex.*"/>
+      <match lemma="viatjar" tags="vblex.*"/>
+      <match lemma="emigrar" tags="vblex.*"/>
+      <match lemma="inmigrar" tags="vblex.*"/>
+      <match lemma="moure" tags="vblex.*"/>
+      <match lemma="venir" tags="vblex.*"/>
+      <match lemma="vindre" tags="vblex.*"/>
+      <match lemma="eixir" tags="vblex.*"/>
+      <match lemma="sortir" tags="vblex.*"/>
+      <match lemma="entrar" tags="vblex.*"/>
+      <match lemma="pujar" tags="vblex.*"/>
+      <match lemma="baixar" tags="vblex.*"/>
+      <match lemma="caminar" tags="vblex.*"/>
+      <match lemma="dirigir" tags="vblex.*"/>
+      <match lemma="apropar" tags="vblex.*"/>
+      <match lemma="córrer" tags="vblex.*"/>
+      <match lemma="portar" tags="vblex.*"/>
+      <match lemma="passar" tags="vblex.*"/>
+      <match lemma="tornar" tags="vblex.*"/>
+      <match lemma="regressar" tags="vblex.*"/>
+      <match lemma="arribar" tags="vblex.*"/>
+      <match lemma="aparèixer" tags="vblex.*"/>
+      <match lemma="marxar" tags="vblex.*"/>
+    </def-seq>
+
   </def-seqs>
 
 <rules>
@@ -356,6 +383,32 @@
     <match tags="det.def.*"/>
     <or>
       <seq n="paisos"/>
+      <match lemma="península" tags="n.*"/>
+      <match lemma="oceà" tags="n.*"/>
+      <match lemma="mar" tags="n.*"/>
+      <match lemma="muntanya" tags="n.*"/>
+      <match lemma="bosc" tags="n.*"/>
+      <match lemma="platja" tags="n.*"/>
+      <match lemma="Mediterrani" tags="np.*"/>
+      <match lemma="Mediterrània" tags="np.*"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <or>
+      <seq n="verbs_moviment"/>
+      <match lemma="proximitat" tags="n.*"/>
+    </or>
+    <match lemma="a" tags="pr"><select lemma="à"/></match>
+    <match tags="det.def.*"/>
+    <or>
+      <match lemma="península" tags="n.*"/>
+      <match lemma="oceà" tags="n.*"/>
+      <match lemma="mar" tags="n.*"/>
+      <match lemma="muntanya" tags="n.*"/>
+      <match lemma="bosc" tags="n.*"/>
+      <match lemma="platja" tags="n.*"/>
+      <match lemma="Mediterrani" tags="np.*"/>
+      <match lemma="Mediterrània" tags="np.*"/>
     </or>
   </rule>
 
@@ -1563,6 +1616,20 @@
      <or><match tags="np.cog.*"/><match lemma="Rovira"/></or>
      <match lemma="i" tags="pr"/>
      <match lemma="Virgili" tags="np.*"><select lemma="Virgili"/></match>
+  </rule>
+
+<!-- Jesús > Jesús, Jésus -->
+
+  <rule weight="0.6">
+     <match lemma="Jesús" tags="np.*"><select lemma="Jésus"/></match>
+  </rule>
+  <rule weight="1.0">
+     <match lemma="Jesús" tags="np.*"><select lemma="Jesús"/></match>
+     <or><match tags="np.ant.*"/><match tags="np.cog.*"/></or>
+  </rule>
+  <rule weight="1.0">
+     <match lemma="Jesús" tags="np.*"><select lemma="Jesús"/></match>
+     <match tags=""/>
   </rule>
 
   <macro name="noms_propis" p1="Carles" p2="Charles" />

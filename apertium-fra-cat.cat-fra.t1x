@@ -415,6 +415,12 @@
     <def-cat n="sent">
       <cat-item tags="sent"/>
     </def-cat>
+    <def-cat n="lpar">
+      <cat-item tags="lpar"/>
+    </def-cat>
+    <def-cat n="rpar">
+      <cat-item tags="rpar"/>
+    </def-cat>
     <def-cat n="sentquecm">
       <cat-item tags="sent"/>
       <cat-item tags="cnjsub"/>
@@ -842,11 +848,154 @@
       <list-item v="sumérien"/>
     </def-list>
 
+    <def-list n="pais">
+      <list-item v="Europe"/>
+      <list-item v="Asie"/>
+      <list-item v="Afrique"/>
+      <list-item v="Amérique"/>
+      <list-item v="Océanie"/>
+      <list-item v="Australie"/>
+      <list-item v="Nouvelle-Zélande"/>
+      <list-item v="Portugal"/>
+      <list-item v="Espagne"/>
+      <list-item v="Catalogne"/>
+      <list-item v="Castille"/>
+      <list-item v="Aragon"/>
+      <list-item v="Asturies"/>
+      <list-item v="Galice"/>
+      <list-item v="Pays Basque"/>
+      <list-item v="Andalousie"/>
+      <list-item v="Andorre"/>
+      <list-item v="France"/>
+      <list-item v="Champagne"/>
+      <list-item v="Bretagne"/>
+      <list-item v="Normandie"/>
+      <list-item v="Gascogne"/>
+      <list-item v="Béarn"/>
+      <list-item v="Auvergne"/>
+      <list-item v="Provence"/>
+      <list-item v="Savoie"/>
+      <list-item v="Grande-Bretagne"/>
+      <list-item v="Angleterre"/>
+      <list-item v="Pays de Galles"/>
+      <list-item v="Écosse"/>
+      <list-item v="Irlande"/>
+      <list-item v="Belgique"/>
+      <list-item v="Wallonie"/>
+      <list-item v="Flandre"/>
+      <list-item v="Hollande"/>
+      <list-item v="Allemagne"/>
+      <list-item v="Danemark"/>
+      <list-item v="Islande"/>
+      <list-item v="Norvège"/>
+      <list-item v="Suède"/>
+      <list-item v="Finlande"/>
+      <list-item v="Russie"/>
+      <list-item v="Tchétchénie"/>
+      <list-item v="Tchouvachie"/>
+      <list-item v="Tatarstan"/>
+      <list-item v="Bashkortostan"/>
+      <list-item v="Yakoutie"/>
+      <list-item v="Estonie"/>
+      <list-item v="Lettonie"/>
+      <list-item v="Lithuanie"/>
+      <list-item v="Pologne"/>
+      <list-item v="Tchécoslovaquie"/>
+      <list-item v="Tchéquie"/>
+      <list-item v="Slovakie"/>
+      <list-item v="Hongrie"/>
+      <list-item v="Autriche"/>
+      <list-item v="Suisse"/>
+      <list-item v="Italie"/>
+      <list-item v="Sardeigne"/>
+      <list-item v="Sicile"/>
+      <list-item v="Slovénie"/>
+      <list-item v="Croatie"/>
+      <list-item v="Serbie"/>
+      <list-item v="Bosnie"/>
+      <list-item v="Monténegro"/>
+      <list-item v="Macédoine"/>
+      <list-item v="Roumanie"/>
+      <list-item v="Bulgarie"/>
+      <list-item v="Grèce"/>
+      <list-item v="Ukraine"/>
+      <list-item v="Biélorussie"/>
+      <list-item v="Moldavie"/>
+      <list-item v="Turquie"/>
+      <list-item v="Syrie"/>
+      <list-item v="Kurdistan"/>
+      <list-item v="Arménie"/>
+      <list-item v="Géorgie"/>
+      <list-item v="Azerbaïdjan"/>
+      <list-item v="Kazakhstan"/>
+      <list-item v="Turkménistan"/>
+      <list-item v="Ouzbékistan"/>
+      <list-item v="Kirghizistan"/>
+      <list-item v="Tadjikistan"/>
+      <list-item v="Iran"/>
+      <list-item v="Iraq"/>
+      <list-item v="Irak"/>
+      <list-item v="Arabie"/>
+      <list-item v="Arabie saoudite"/>
+      <list-item v="Jordanie"/>
+      <list-item v="Syrie"/>
+      <list-item v="Liban"/>
+      <list-item v="Oman"/>
+      <list-item v="Yémen"/>
+      <list-item v="Koweït"/>
+      <list-item v="Qatar"/>
+      <list-item v="Émirats arabes unis"/>
+      <list-item v="Afghanistan"/>
+      <list-item v="Pakistan"/>
+      <list-item v="Inde"/>
+      <list-item v="Chine"/>
+      <list-item v="Corée"/>
+      <list-item v="Corée du Nord"/>
+      <list-item v="Corée du Sud"/>
+      <list-item v="Japon"/>
+      <list-item v="Viêtnam"/>
+      <list-item v="Cambodge"/>
+      <list-item v="Birmanie"/>
+      <list-item v="Laos"/>
+      <list-item v="Taïlande"/>
+      <list-item v="Indonésie"/>
+      <list-item v="Malaisie"/>
+      <list-item v="Bangladesh"/>
+      <list-item v="Sri-Lanka"/>
+      <list-item v="Marroc"/>
+      <list-item v="Algérie"/>
+      <list-item v="Tunisie"/>
+      <list-item v="Lybie"/>
+      <list-item v="Égypte"/>
+      <list-item v="Burkina Faso"/>
+      <list-item v="Mali"/>
+      <list-item v="Niger"/>
+      <list-item v="Nigerie"/>
+      <list-item v="Tchad"/>
+      <list-item v="Sénégal"/>
+      <list-item v="Gambie"/>
+      <list-item v="Canada"/>
+      <list-item v="Québec"/>
+      <list-item v="Mexique"/>
+      <list-item v="Panama"/>
+      <list-item v="Colombie"/>
+      <list-item v="Vénézuéla"/>
+      <list-item v="Brésil"/>
+      <list-item v="Équateur"/>
+      <list-item v="Pérou"/>
+      <list-item v="Chile"/>
+      <list-item v="Argentine"/>
+      <list-item v="Bolivie"/>
+      <list-item v="Paraguay"/>
+      <list-item v="Uruguay"/>
+    </def-list>
+  
     <def-list n="pp_estat">
       <list-item v="marier"/>
       <list-item v="divorcer"/>
       <list-item v="mourir"/>
     </def-list>
+
     <def-list n="pr_de">
       <list-item v="de"/>
       <list-item v="à côté de"/>
@@ -3637,7 +3786,7 @@
       </action>
   </rule>
 
-    <rule comment="REGLA: NP">
+    <rule comment="REGLA: NP: Joan > Joan, Espanya > l'Espagne">
       <pattern>
         <pattern-item n="np"/>
       </pattern>
@@ -3645,13 +3794,39 @@
         <call-macro n="f_concord1">
           <with-param pos="1"/>
         </call-macro>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="lemh"/>
-            <clip pos="1" side="tl" part="tags"/>
-            <clip pos="1" side="tl" part="lemq"/>
-          </lu>
-        </out>
+        <choose>
+          <when>
+            <test>
+              <in>
+                <clip pos="1" side="tl" part="lem"/>
+                <list n="pais"/>
+              </in>
+            </test>
+            <out>
+              <lu>
+                <lit v="le"/>
+                <lit-tag v="det.def"/>
+                <var n="genero"/>
+                <var n="numero"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="1" side="tl" part="lemh"/>
+                <clip pos="1" side="tl" part="tags"/>
+                <clip pos="1" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lemh"/>
+                <clip pos="1" side="tl" part="tags"/>
+                <clip pos="1" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
       </action>
   </rule>
 
@@ -3676,6 +3851,203 @@
             <clip pos="2" side="tl" part="lemh"/>
             <clip pos="2" side="tl" part="tags"/>
             <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: a NP (evita la generació de l'article)">
+      <pattern>
+        <pattern-item n="a"/>
+        <pattern-item n="nptop"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: de NP (evita la generació de l'article)">
+      <pattern>
+        <pattern-item n="deprep"/>
+        <pattern-item n="nptop"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: lpar NP rpar (evita la generació de l'article)">
+      <pattern>
+        <pattern-item n="lpar"/>
+        <pattern-item n="nptop"/>
+        <pattern-item n="rpar"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: sent NP">
+      <pattern>
+        <pattern-item n="sent"/>
+        <pattern-item n="np"/>
+      </pattern>
+      <action>
+        <let>
+         <var n="numero"/>
+          <lit-tag v="sg"/>
+        </let>
+        <let>
+          <var n="genero"/>
+          <lit-tag v="m"/>
+        </let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <choose>
+          <when>
+            <test>
+              <in>
+                <clip pos="2" side="tl" part="lem"/>
+                <list n="pais"/>
+              </in>
+            </test>
+            <out>
+              <lu>
+                <lit v="Le"/>
+                <lit-tag v="det.def"/>
+                <var n="genero"/>
+                <var n="numero"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: adj NP: antic Egipte > ancienne Égypte">
+      <pattern>
+        <pattern-item n="adj"/>
+        <pattern-item n="nptop"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: det adj NP: l'antic Egipte > l'ancienne Égypte">
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nptop"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord3">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
@@ -6403,7 +6775,7 @@ is not applicable because gender and number can not be taken from previous rules
 <!--REGLA: prep + ell -->
       <pattern>
         <pattern-item n="prep"/>
-<pattern-item n="ell"/>
+        <pattern-item n="ell"/>
       </pattern>
       <action>
         <out>
@@ -6423,7 +6795,7 @@ is not applicable because gender and number can not be taken from previous rules
 <!--REGLA: prep + ells -->
       <pattern>
         <pattern-item n="prep"/>
-<pattern-item n="ells"/>
+        <pattern-item n="ells"/>
       </pattern>
       <action>
         <out>

@@ -22,7 +22,7 @@
       <cat-item tags="np.cog.*"/>
       <cat-item tags=""/>
     </def-cat>
-    <def-cat n="nploc">
+    <def-cat n="nptop">
       <cat-item tags="np.loc"/>
       <cat-item tags="np.top.*"/>
     </def-cat>
@@ -434,7 +434,7 @@
     <def-attr n="a_nomp">
       <attr-item tags="np.ant"/>
     </def-attr>
-    <def-attr n="a_nploc">
+    <def-attr n="a_nptop">
       <attr-item tags="np.loc"/>
       <attr-item tags="np.top"/>
     </def-attr>
@@ -656,21 +656,29 @@
       <list-item v="Amérique"/>
       <list-item v="Océanie"/>
       <list-item v="Australie"/>
-      <list-item v="Nouvelle Zélande"/>
+      <list-item v="Nouvelle-Zélande"/>
       <list-item v="Portugal"/>
       <list-item v="Espagne"/>
       <list-item v="Catalogne"/>
-      <list-item v="Valence"/>
       <list-item v="Castille"/>
       <list-item v="Andalousie"/>
+      <list-item v="Aragon"/>
+      <list-item v="Asturies"/>
+      <list-item v="Galice"/>
+      <list-item v="Pays Basque"/>
       <list-item v="Andorre"/>
       <list-item v="France"/>
       <list-item v="Champagne"/>
       <list-item v="Bretagne"/>
       <list-item v="Normandie"/>
+      <list-item v="Gascogne"/>
+      <list-item v="Béarn"/>
       <list-item v="Auvergne"/>
       <list-item v="Provence"/>
+      <list-item v="Savoie"/>
+      <list-item v="Grande-Bretagne"/>
       <list-item v="Angleterre"/>
+      <list-item v="Pays de Galles"/>
       <list-item v="Écosse"/>
       <list-item v="Irlande"/>
       <list-item v="Belgique"/>
@@ -729,11 +737,33 @@
       <list-item v="Iraq"/>
       <list-item v="Irak"/>
       <list-item v="Arabie"/>
+      <list-item v="Arabie saoudite"/>
       <list-item v="Jordanie"/>
       <list-item v="Syrie"/>
       <list-item v="Liban"/>
+      <list-item v="Arabie saoudite"/>
+      <list-item v="Oman"/>
+      <list-item v="Yémen"/>
+      <list-item v="Koweït"/>
+      <list-item v="Qatar"/>
+      <list-item v="Émirats arabes unis"/>
+      <list-item v="Afghanistan"/>
       <list-item v="Pakistan"/>
       <list-item v="Inde"/>
+      <list-item v="Chine"/>
+      <list-item v="Corée"/>
+      <list-item v="Corée du Nord"/>
+      <list-item v="Corée du Sud"/>
+      <list-item v="Japon"/>
+      <list-item v="Viêtnam"/>
+      <list-item v="Cambodge"/>
+      <list-item v="Birmanie"/>
+      <list-item v="Laos"/>
+      <list-item v="Taïlande"/>
+      <list-item v="Indonésie"/>
+      <list-item v="Malaisie"/>
+      <list-item v="Bangladesh"/>
+      <list-item v="Sri-Lanka"/>
       <list-item v="Marroc"/>
       <list-item v="Algérie"/>
       <list-item v="Tunisie"/>
@@ -761,7 +791,7 @@
       <list-item v="Paraguay"/>
       <list-item v="Uruguay"/>
     </def-list>
-  
+
     <def-list n="lang_dial">
       <list-item v="portugais"/>
       <list-item v="espagnol"/>
@@ -10127,10 +10157,10 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule comment="REGLA: en + nploc = a + nploc: en France -> a França">
+    <rule comment="REGLA: en + nptop = a + nptop: en France -> a França">
       <pattern>
         <pattern-item n="en"/>
-        <pattern-item n="nploc"/>
+        <pattern-item n="nptop"/>
       </pattern>
       <action>
         <out>
@@ -10150,8 +10180,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!--REGLA: le + nploc (pays) = nploc: la France -> França -->
+    <rule comment="REGLA: le + nptop (pays) = nptop: la France -> França">
       <pattern>
         <pattern-item n="le"/>
         <pattern-item n="np"/>
@@ -10161,7 +10190,7 @@ is not applicable because gender and number cannot be taken from previous rules 
           <when>
             <test>
               <equal> <!-- en el cas de np.loc cal no cridar la macro -->
-                <clip pos="2" side="tl" part="a_nploc"/>
+                <clip pos="2" side="tl" part="a_nptop"/>
                 <lit-tag v="np.loc"/>
               </equal>
             </test>
@@ -10206,8 +10235,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!--REGLA: pas de: -->
+    <rule comment="REGLA: eliminar 'pas de'">
       <pattern>
         <pattern-item n="pas_strict"/>
         <pattern-item n="deprep"/>

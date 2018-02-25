@@ -173,13 +173,6 @@
       <e r="RL"><p><l><s n="mf"/><s n="sp"/></l><r><s n="mf"/><s n="pl"/></r></p></e>
     </pardef>
 
-    <pardef n="m_f|sp_ND">
-      <e r="LR"><p><l><s n="m"/><s n="sp"/></l><r><s n="m"/><s n="ND"/></r></p></e>
-      <e r="RL"><p><l><s n="m"/><s n="sp"/></l><r><s n="m"/><s n="sg"/></r></p></e>
-      <e r="RL"><p><l><s n="m"/><s n="sp"/></l><r><s n="m"/><s n="pl"/></r></p></e>
-      <e>       <p><l><s n="f"/></l><r><s n="f"/></r></p></e>
-    </pardef>
-
     <pardef n="anglais_anglès">
       <e>       <p><l><s n="f"/></l><r><s n="f"/></r></p></e>
       <e r="LR"><p><l><s n="m"/><s n="sp"/></l><r><s n="m"/><s n="ND"/></r></p></e>
@@ -862,6 +855,7 @@
 <e>       <p><l>Latino-Américain<s n="n"/></l>    <r>llatinoamericà<s n="n"/></r></p></e>
 <e>       <p><l>Afro-américain<s n="adj"/></l>    <r>afroamericà<s n="adj"/></r></p></e>
 <e>       <p><l>Amérique<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Amèrica<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></r></p></e>
+<e>       <p><l>Amériques<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></l><r>Amèriques<s n="np"/><s n="top"/><s n="f"/><s n="pl"/></r></p></e>
 <e>       <p><l>mobilier<s n="n"/></l>            <r>mobiliari<s n="n"/></r></p></e>
 <e>       <p><l>mobilier<s n="adj"/></l>          <r>mobiliari<s n="adj"/></r></p></e>
 <e r="LR"><p><l>ameublement<s n="n"/></l>         <r>mobiliari<s n="n"/></r></p></e>
@@ -1623,6 +1617,7 @@
 <e r="RL"><p><l>avoir<s n="vbhaver"/></l>         <r>haver<s n="vbhaver"/></r></p></e>
 <e>       <p><l>avoir<s n="vblex"/></l>           <r>tenir<s n="vblex"/></r></p></e>
 <e r="RL"><p><l>avoir<s n="vblex"/></l>           <r>tindre<s n="vblex"/></r></p></e>
+<e r="LR"><p><l>avoir<g><b/>honte</g><s n="vblex"/></l><r>avergonyir<s n="vblex"/></r></p></e> <!-- pron -->
 <e r="LR"><p><l>avoir<g><b/>envie<b/>de</g><s n="vblex"/></l><r>voler<s n="vblex"/></r></p></e>
 <e>       <p><l>avoir<g><b/>l'habitude<b/>de</g><s n="vblex"/></l><r>soler<s n="vblex"/></r></p></e>
 <e>       <p><l>avoir<g><b/>pour<b/>objectif</g><s n="vblex"/></l><r>tenir<g><b/>l'objectiu</g><s n="vblex"/></r></p></e>
@@ -9800,7 +9795,7 @@
 <e>       <p><l>Pellicer<s n="np"/><s n="cog"/></l><r>Pellicer<s n="np"/><s n="cog"/></r></p></e>
 <e a="gema"><p><l>pénal<s n="adj"/></l>           <r>penal<s n="adj"/></r></p><par n="GD_mf"/></e>
 <e>       <p><l>pendant<s n="pr"/></l>            <r>durant<s n="pr"/></r></p></e>
-<e a="hector"><p><l>pendant<b/>que<s n="cnjadv"/></l><r>mentre<s n="cnjadv"/></r></p></e>
+<e i="yes" a="hector"><p><l>pendant<b/>que<s n="cnjadv"/></l><r>mentre<s n="cnjadv"/></r></p></e>
 <e r="RL" a="hector"><p><l>pendant<b/>que<s n="cnjadv"/></l><r>mentre<b/>que<s n="cnjadv"/></r></p></e>
 <e>       <p><l>au<b/>lieu<b/>de<s n="pr"/></l>   <r>en<b/>comptes<b/>de<s n="pr"/></r></p></e>
 <e r="RL"><p><l>au<b/>lieu<b/>de<s n="pr"/></l>   <r>en<b/>lloc<b/>de<s n="pr"/></r></p></e>
@@ -12574,8 +12569,8 @@
 <e>       <p><l>talent<s n="n"/></l>              <r>talent<s n="n"/></r></p></e>
 <e>       <p><l>talon<s n="n"/></l>               <r>taló<s n="n"/></r></p></e>
 <e>       <p><l>tambour<s n="n"/></l>             <r>tambor<s n="n"/></r></p></e>
-<e i="yes" a="gema"><p><l>tandis<b/>que<s n="cnjadv"/></l><r>mentre<b/>que<s n="cnjadv"/></r></p></e>
-<e r="LR" a="gema"><p><l>tandis<b/>que<s n="cnjadv"/></l><r>mentre<s n="cnjadv"/></r></p></e>
+<e r="RL" a="gema"><p><l>tandis<b/>que<s n="cnjadv"/></l><r>mentre<b/>que<s n="cnjadv"/></r></p></e>
+<e a="gema"><p><l>tandis<b/>que<s n="cnjadv"/></l><r>mentre<s n="cnjadv"/></r></p></e>
 <e>       <p><l>Tanger<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Tànger<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
 <e>       <p><l>Tania<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></l><r>Tania<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></r></p></e>
 <e r="LR"><p><l>tant<s n="adv"/></l>              <r>tant<s n="adv"/></r></p></e>
@@ -16554,7 +16549,8 @@
 <e a="gema"><p><l>Jenny<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></l><r>Jenny<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></r></p></e>
 <e a="gema"><p><l>Jérémie<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Jérémie<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
 <e a="gema"><p><l>Jessica<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></l><r>Jessica<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></r></p></e>
-<e a="gema"><p><l>Jésus<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Jésus<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
+<e a="gema"><p><l>Jésus<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Jesús<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
+<e r="RL" a="gema"><p><l>Jésus<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Jésus<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
 <e a="gema"><p><l>Jonas<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Jonas<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
 <e a="gema"><p><l>Jonathan<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Jonathan<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
 <e a="gema"><p><l>Julie<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></l><r>Julie<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></r></p></e>
@@ -17034,14 +17030,14 @@
 <e>       <p><l>alsacien<s n="n"/></l>            <r>alsacià<s n="n"/></r></p></e>
 <e>       <p><l>canadien<s n="adj"/></l>          <r>canadenc<s n="adj"/></r></p></e>
 <e>       <p><l>Canadien<s n="n"/></l>            <r>canadenc<s n="n"/></r></p></e>
-<e>       <p><l>hongrois<s n="adj"/></l>          <r>hongarès<s n="adj"/></r></p><par n="m_f|sp_ND"/></e>
-<e>       <p><l>hongrois<s n="n"/></l>            <r>hongarès<s n="n"/></r></p><par n="m_f|sp_ND"/></e>
-<e>       <p><l>irlandais<s n="adj"/></l>         <r>irlandès<s n="adj"/></r></p><par n="m_f|sp_ND"/></e>
-<e>       <p><l>irlandais<s n="n"/></l>           <r>irlandès<s n="n"/></r></p><par n="m_f|sp_ND"/></e>
-<e>       <p><l>islandais<s n="adj"/></l>         <r>islandès<s n="adj"/></r></p><par n="m_f|sp_ND"/></e>
-<e>       <p><l>islandais<s n="n"/></l>           <r>islandès<s n="n"/></r></p><par n="m_f|sp_ND"/></e>
-<e>       <p><l>chinois<s n="adj"/></l>           <r>xinès<s n="adj"/></r></p><par n="m_f|sp_ND"/></e>
-<e>       <p><l>chinois<s n="n"/></l>             <r>xinès<s n="n"/></r></p><par n="m_f|sp_ND"/></e>
+<e>       <p><l>hongrois<s n="adj"/></l>          <r>hongarès<s n="adj"/></r></p><par n="anglais_anglès"/></e>
+<e>       <p><l>hongrois<s n="n"/></l>            <r>hongarès<s n="n"/></r></p><par n="anglais_anglès"/></e>
+<e>       <p><l>irlandais<s n="adj"/></l>         <r>irlandès<s n="adj"/></r></p><par n="anglais_anglès"/></e>
+<e>       <p><l>irlandais<s n="n"/></l>           <r>irlandès<s n="n"/></r></p><par n="anglais_anglès"/></e>
+<e>       <p><l>islandais<s n="adj"/></l>         <r>islandès<s n="adj"/></r></p><par n="anglais_anglès"/></e>
+<e>       <p><l>islandais<s n="n"/></l>           <r>islandès<s n="n"/></r></p><par n="anglais_anglès"/></e>
+<e>       <p><l>chinois<s n="adj"/></l>           <r>xinès<s n="adj"/></r></p><par n="anglais_anglès"/></e>
+<e>       <p><l>chinois<s n="n"/></l>             <r>xinès<s n="n"/></r></p><par n="anglais_anglès"/></e>
 <e>       <p><l>Honduras<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Hondures<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></r></p></e>
 <e>       <p><l>Costa<b/>Rica<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Costa<b/>Rica<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></r></p></e>
 <e>       <p><l>Côte<b/>d'Azur<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></l><r>Costa<b/>Blava<s n="np"/><s n="top"/><s n="f"/><s n="sg"/></r></p></e>
@@ -22968,6 +22964,7 @@
 <e>       <p><l>comité<g><b/>de<b/>direction</g><s n="n"/><s n="m"/></l><r>comitè<b/>executiu<s n="n"/><s n="m"/></r></p></e>
 <e r="LR"><p><l>carnassier<s n="n"/><s n="f"/></l><r>sarró<s n="n"/><s n="m"/></r></p></e>
 <e>       <p><l>Parlement<b/>valencien<s n="n"/><s n="m"/><s n="sg"/></l><r>Corts<b/>Valencianes<s n="n"/><s n="f"/><s n="pl"/></r></p></e>
+<e r="LR"><p><l>Parlement<s n="n"/><s n="m"/><s n="sg"/></l><r>Corts<b/>Generals<s n="n"/><s n="f"/><s n="pl"/></r></p></e>
 <e>       <p><l>dinde<s n="n"/><s n="f"/></l>     <r>gall<b/>dindi<s n="n"/><s n="m"/></r></p></e>
 <e>       <p><l>dinde<s n="n"/><s n="f"/></l>     <r>indiot<s n="n"/><s n="m"/></r></p></e>
 <e>       <p><l>grand-route<s n="n"/><s n="f"/></l><r>camí<b/>ral<s n="n"/><s n="m"/></r></p></e>
@@ -27667,5 +27664,8 @@
 <e>       <p><l>Notre<b/>Seigneur<s n="n"/><s n="m"/></l><r>Nostre<b/>Senyor<s n="n"/><s n="m"/></r></p></e>
 <e>       <p><l>Notre<b/>Père<s n="n"/><s n="m"/><s n="sg"/></l><r>parenostre<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
 <e>       <p><l>couscous<s n="n"/><s n="m"/></l><r>cuscús<s n="n"/><s n="m"/></r></p><par n="sp_ND"/></e>
+<e>       <p><l>genevois<s n="adj"/></l>           <r>ginebrí<s n="adj"/></r></p><par n="anglais_anglès"/></e>
+<e>       <p><l>Genevois<s n="n"/></l>             <r>ginebrí<s n="n"/></r></p><par n="anglais_anglès"/></e>
+<e>       <p><l>en<b/>particulier<s n="adv"/></l>  <r>en<b/>particular<s n="adv"/></r></p></e>
   </section>
 </dictionary>
