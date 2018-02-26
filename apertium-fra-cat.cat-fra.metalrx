@@ -110,6 +110,23 @@
   </def-macros>
 
   <def-seqs>
+    <def-seq n="ordinals">
+      <match lemma="primer" tags="adj.*"/>
+      <match lemma="segon" tags="adj.*"/>
+      <match lemma="tercer" tags="adj.*"/>
+      <match lemma="quart" tags="adj.*"/>
+      <match lemma="cinquè" tags="adj.*"/>
+      <match lemma="quint" tags="adj.*"/>
+      <match lemma="sisè" tags="adj.*"/>
+      <match lemma="setè" tags="adj.*"/>
+      <match lemma="vuitè" tags="adj.*"/>
+      <match lemma="novè" tags="adj.*"/>
+      <match lemma="desè" tags="adj.*"/>
+      <match lemma="penúltim" tags="adj.*"/>
+      <match lemma="últim" tags="adj.*"/>
+    </def-seq>
+
+
     <def-seq n="paisos">
       <match lemma="Catalunya"/>
       <match lemma="Aragó"/>
@@ -1170,6 +1187,12 @@
   <rule weight="1.0">
     <match lemma="hi" tags="prn.*"/>
     <match lemma="haver"/>
+    <match lemma="lloc" tags="n.*"><select lemma="place"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="ordinals"/>
+    </or>
     <match lemma="lloc" tags="n.*"><select lemma="place"/></match>
   </rule>
   <rule weight="1.0">
