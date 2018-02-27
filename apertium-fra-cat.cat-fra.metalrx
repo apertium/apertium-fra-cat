@@ -1066,6 +1066,9 @@
   <rule weight="1.0">
     <match lemma="serra" tags="n.*"><select lemma="cordillère"/></match>
     <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
     <or><match tags="np.*"/><match tags=""/></or>
   </rule>
   <rule weight="1.0">
@@ -1074,6 +1077,15 @@
       <match lemma="litoral" tags="adj.*"/>
       <match lemma="prelitoral" tags="adj.*"/>
       <match lemma="transversal" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="serra" tags="n.*"><select lemma="cordillère"/></match>
+     <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="ponent" tags="n.*"/>
+      <match lemma="llevant" tags="n.*"/>
+      <match lemma="tramuntana" tags="n.*"/>
     </or>
   </rule>
 

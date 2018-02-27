@@ -526,6 +526,48 @@
     <or><match tags="num"/><match tags="num.*"/></or>
   </rule>
 
+  <!-- siège >> seu, setge, escó -->
+  <rule weight="0.8">
+    <match lemma="siège" tags="n.*"><select lemma="seu"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="siège" tags="n.*"><select lemma="setge"/></match>
+    <match lemma="de" tags="pr"/>
+    <or><match tags="np.loc"/><match tags="np.top.*"/></or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="siège" tags="n.*"><select lemma="setge"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="ville" tags="n.*"/>
+      <match lemma="château" tags="n.*"/>
+      <match lemma="forteresse" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="siège" tags="n.*"><select lemma="escó"/></match>
+    <or>
+      <match lemma="à" tags="pr"/>
+      <match lemma="de" tags="pr"/>
+    </or>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="parlement" tags="n.*"/>
+      <match lemma="sénat" tags="n.*"/>
+      <match lemma="chambre" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="siège" tags="n.*"><select lemma="escó"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="député" tags="n.*"/>
+      <match lemma="sénateur" tags="n.*"/>
+      <match lemma="parlementaire" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- dame >> senyora, dona -->
   <rule weight="0.8">
     <match lemma="dame" tags="n.*"><select lemma="senyor"/></match>

@@ -296,6 +296,11 @@
       <cat-item tags="vbmod.*.p2.*"/>
       <cat-item tags="vbmod.*.p3.*"/>
     </def-cat>
+    <def-cat n="serconj">
+      <cat-item tags="vbser.*.p1.*"/>
+      <cat-item tags="vbser.*.p2.*"/>
+      <cat-item tags="vbser.*.p3.*"/>
+    </def-cat>
     <def-cat n="haber3p">
 <!--	  <cat-item tags="vbhaver.pri.p3.sg"/> -->
       <cat-item tags="vbhaver.prs.p1.sg"/>
@@ -7554,10 +7559,13 @@ is not applicable because gender and number cannot be taken from previous rules 
     
    <rule comment="REGLA:VBSER PP > haver + participi">
       <pattern>
-        <pattern-item n="vbser"/>
+        <pattern-item n="serconj"/>
         <pattern-item n="pp"/>
       </pattern>
       <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
       <choose>
        <when>
          <test>
