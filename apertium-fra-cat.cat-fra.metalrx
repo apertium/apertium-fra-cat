@@ -861,6 +861,18 @@
     <match tags="n.*.sg"/>
   </rule>
 
+  <!-- exposició >> exposé, exposition -->
+  <rule weight="0.8">
+    <match lemma="exposició" tags="n.*"><select lemma="exposé"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="exposició" tags="n.*"><select lemma="exposition"/></match>
+    <or>
+      <match lemma="international" tags="adj.*"/>
+      <match lemma="universel" tags="adj.*"/>
+    </or>
+  </rule>
+
   <!-- senyora >> madame, dame, femme -->
   <rule weight="0.8">
     <match lemma="senyor" tags="n.f.*"><select lemma="madame"/></match>
