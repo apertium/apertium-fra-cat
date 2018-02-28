@@ -861,6 +861,38 @@
     <match tags="n.*.sg"/>
   </rule>
 
+  <!-- paella >> poêle, paella -->
+  <rule weight="0.8">
+    <match lemma="paella" tags="n.*"><select lemma="poêle"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="paella" tags="n.*"><select lemma="paella"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match lemma="valencià" tags="adj.*"/>
+      <match lemma="bo" tags="adj.*"/>
+      <match lemma="gustós" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="paella" tags="n.*"><select lemma="paella"/></match>
+    <or>
+      <match lemma="de" tags="pr"/>
+      <match lemma="amb" tags="pr"/>
+    </or>
+  </rule>
+
+  <!-- conductor >> chauffeur, conducteur -->
+  <rule weight="0.8">
+    <match lemma="conductor" tags="n.*"><select lemma="chauffeur"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="conductor" tags="n.*"><select lemma="conducteur"/></match>
+    <match lemma="elèctric" tags="adj.*"/>
+  </rule>
+
   <!-- exposició >> exposé, exposition -->
   <rule weight="0.8">
     <match lemma="exposició" tags="n.*"><select lemma="exposé"/></match>

@@ -2630,9 +2630,9 @@
 <e a="ariel"><p><l>chaud<s n="adj"/></l>          <r>calent<s n="adj"/></r></p></e>
 <e>       <p><l>chauffer<s n="vblex"/></l>        <r>calfar<s n="vblex"/></r></p></e>
 <e>       <p><l>chauffer<s n="vblex"/></l>        <r>escalfar<s n="vblex"/></r></p></e>
-<e r="LR"><p><l>chauffeur<s n="n"/><s n="f"/></l> <r>xofer<s n="n"/><s n="mf"/></r></p></e>
-<e r="LR"><p><l>chauffeur<s n="n"/><s n="m"/></l> <r>xofer<s n="n"/><s n="mf"/></r></p></e>
-<e r="RL"><p><l>chauffeur<s n="n"/><s n="GD"/></l><r>xofer<s n="n"/><s n="mf"/></r></p></e>
+<e r="RL"><p><l>chauffeur<s n="n"/></l>           <r>xofer<s n="n"/></r></p></e>
+<e r="RL"><p><l>chauffeur<s n="n"/></l>           <r>xòfer<s n="n"/></r></p></e>
+<e>       <p><l>chauffeur<s n="n"/></l>           <r>conductor<s n="n"/></r></p></e>
 <e>       <p><l>chaussé<s n="n"/></l>             <r>calçat<s n="n"/></r></p></e>
 <e>       <p><l>chausser<s n="vblex"/></l>        <r>calçar<s n="vblex"/></r></p></e>
 <e>       <p><l>chaussette<s n="n"/><s n="f"/></l><r>mitjó<s n="n"/><s n="m"/></r></p></e>
@@ -9742,8 +9742,8 @@
 <e>       <p><l>patrouiller<s n="vblex"/></l>     <r>patrullar<s n="vblex"/></r></p></e>
 <e>       <p><l>patte<s n="n"/></l>               <r>pota<s n="n"/></r></p></e>
 <e>       <p><l>Patxi<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Patxi<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
-<e>       <p><l>Pau<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Pau<s n="np"/><s n="ant"/></r></p></e>
-<e>       <p><l>Paul<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Pau<s n="np"/><s n="ant"/></r></p></e>
+<e>       <p><l>Pau<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Pau<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
+<e>       <p><l>Paul<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Pau<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
 <e>       <p><l>Paul<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Paul<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
 <e>       <p><l>Paula<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></l><r>Paula<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></r></p></e>
 <e a="gema"><p><l>pauvre<s n="adj"/><s n="mf"/><s n="pl"/></l><r>pobre<s n="adj"/><s n="mf"/><s n="pl"/></r></p></e>
@@ -10125,9 +10125,11 @@
 <e r="LR"><p><l>pluvial<s n="adj"/><s n="m"/></l> <r>pluvial<s n="adj"/><s n="mf"/></r></p></e>
 <e r="RL"><p><l>pluvial<s n="adj"/><s n="GD"/></l><r>pluvial<s n="adj"/><s n="mf"/></r></p></e>
 <e>       <p><l>pluvialement<s n="adv"/></l>      <r>pluvialment<s n="adv"/></r></p></e>
-<e a="u21941"><p><l>PME<s n="n"/><s n="acr"/><s n="f"/></l><r>pime<s n="n"/><s n="f"/></r></p></e>
+<e a="u21941"><p><l>PME<s n="n"/><s n="acr"/><s n="f"/></l><r>pime<s n="n"/><s n="f"/></r></p><par n="sp_ND"/></e>
 <e>       <p><l>poche<s n="n"/></l>               <r>butxaca<s n="n"/></r></p></e>
-<e>       <p><l>poêle<s n="n"/></l>               <r>paella<s n="n"/></r></p></e>
+<e a="joan"><p><l>poêle<s n="n"/><s n="m"/></l>   <r>estufa<s n="n"/><s n="f"/></r></p></e>
+<e>       <p><l>poêle<s n="n"/><s n="f"/></l>     <r>paella<s n="n"/><s n="f"/></r></p></e>
+<e>       <p><l>paella<s n="n"/><s n="f"/></l>    <r>paella<s n="n"/><s n="f"/></r></p></e>
 <e>       <p><l>poème<s n="n"/></l>               <r>poema<s n="n"/></r></p></e>
 <e>       <p><l>poésie<s n="n"/></l>              <r>poesia<s n="n"/></r></p></e>
 <e r="LR"><p><l>poète<s n="n"/><s n="f"/></l>     <r>poeta<s n="n"/><s n="mf"/></r></p></e>
@@ -11526,7 +11528,7 @@
 <e r="RL"><p><l>rocheux<s n="adj"/><s n="m"/><s n="sp"/></l><r>rocós<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
 <e r="RL"><p><l>rocheux<s n="adj"/><s n="m"/><s n="sp"/></l><r>rocós<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
 <e>       <p><l>Rocío<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></l><r>Rocío<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></r></p></e>
-<e>       <p><l>rock<s n="n"/><s n="m"/></l>      <r>rock<s n="n"/><s n="m"/></r></p></e>
+<e>       <p><l>rock<s n="n"/><s n="m"/><s n="sp"/></l><r>rock<s n="n"/><s n="m"/><s n="sp"/></r></p></e>
 <e>       <p><l>rôder<s n="vblex"/></l>           <r>rondar<s n="vblex"/></r></p></e>
 <e>       <p><l>Rodrigo<s n="np"/><s n="cog"/></l><r>Rodrigo<s n="np"/><s n="cog"/></r></p></e>
 <e>       <p><l>Rodríguez<s n="np"/><s n="cog"/></l><r>Rodríguez<s n="np"/><s n="cog"/></r></p></e>
@@ -22686,8 +22688,8 @@
 <e a="hector"><p><l>graphite<s n="n"/><s n="m"/></l><r>grafit<s n="n"/><s n="m"/></r></p></e>
 <e r="RL" a="hector"><p><l>sans<b/>protection<s n="adj"/></l><r>desprotegit<s n="adj"/></r></p><par n="sp_ND"/><par n="mf_GD"/><par n="sp_ND"/></e>
 <e a="ester"><p><l>trésor<b/>public<s n="n"/><s n="m"/></l><r>erari<s n="n"/><s n="m"/></r></p></e>
-<e>       <p><l>DVD<s n="n"/><s n="acr"/></l>     <r>DVD<s n="n"/><s n="acr"/></r></p></e>
-<e>       <p><l>IBM<s n="n"/><s n="acr"/></l>     <r>IBM<s n="n"/><s n="acr"/></r></p></e>
+<e>       <p><l>DVD<s n="n"/><s n="acr"/><s n="m"/><s n="sg"/></l>     <r>DVD<s n="n"/><s n="acr"/><s n="m"/><s n="sp"/></r></p></e>
+<e>       <p><l>IBM<s n="n"/><s n="acr"/><s n="f"/><s n="sg"/></l>     <r>IBM<s n="n"/><s n="acr"/><s n="f"/><s n="sg"/></r></p></e>
 <e>       <p><l>PSC<s n="n"/><s n="acr"/></l>     <r>PSC<s n="n"/><s n="acr"/></r></p></e>
 <e>       <p><l>DJ<s n="n"/><s n="acr"/></l>      <r>DJ<s n="n"/><s n="acr"/></r></p></e>
 <e>       <p><l>WWF<s n="n"/><s n="acr"/><s n="m"/><s n="sg"/></l><r>WWF<s n="n"/><s n="acr"/><s n="mf"/><s n="sp"/></r></p></e>
@@ -27580,7 +27582,6 @@
 <e r="RL" a="joan"><p><l>sous-lieutenant<s n="n"/></l><r>sotstinent<s n="n"/></r></p><par n="GD_mf"/></e>
 <e a="joan"><p><l>fédéraliste<s n="n"/><s n="mf"/></l><r>federalista<s n="n"/><s n="mf"/></r></p></e>
 <e a="joan"><p><l>ligne<g><b/>de<b/>métro</g><s n="n"/><s n="f"/></l><r>línia<g><b/>de<b/>metro</g><s n="n"/><s n="f"/></r></p></e>
-<e r="RL" a="joan"><p><l>poêle<s n="n"/><s n="f"/></l><r>estufa<s n="n"/><s n="f"/></r></p></e>
 <e a="joan"><p><l>estime<g><b/>de<b/>soi</g><s n="n"/><s n="f"/></l><r>autoestima<s n="n"/><s n="f"/></r></p></e>
 <e a="joan"><p><l>aura<s n="n"/><s n="f"/></l>    <r>aura<s n="n"/><s n="f"/></r></p></e>
 <e r="RL" a="joan"><p><l>ivoire<s n="n"/><s n="m"/></l><r>vori<s n="n"/><s n="m"/></r></p></e>
@@ -28077,7 +28078,7 @@
 <e><p><l>Super<b/>Nintendo<b/>Entertainment<b/>System<s n="np"/><s n="al"/><s n="f"/><s n="sg"/></l><r>Super<b/>Nintendo<b/>Entertainment<b/>System<s n="np"/><s n="al"/><s n="f"/><s n="sg"/></r></p></e>
 <e><p><l>Supercoupe<s n="np"/><s n="al"/><s n="f"/><s n="sg"/></l><r>Supercopa<s n="np"/><s n="al"/><s n="f"/><s n="sg"/></r></p></e>
 <e><p><l>Tele-5<s n="np"/><s n="al"/><s n="f"/><s n="sg"/></l><r>Tele-5<s n="np"/><s n="al"/><s n="f"/><s n="sg"/></r></p></e>
-<e><p><l>Telefonica<s n="np"/><s n="al"/><s n="f"/><s n="sg"/></l><r>Telefónica<s n="np"/><s n="al"/><s n="f"/><s n="sg"/></r></p></e>
+<e><p><l>Telefónica<s n="np"/><s n="al"/><s n="f"/><s n="sg"/></l><r>Telefónica<s n="np"/><s n="al"/><s n="f"/><s n="sg"/></r></p></e>
 <e><p><l>Telstra<s n="np"/><s n="al"/><s n="f"/><s n="sg"/></l><r>Telstra<s n="np"/><s n="al"/><s n="f"/><s n="sg"/></r></p></e>
 <e><p><l>Tesla<s n="np"/><s n="al"/><s n="f"/><s n="sg"/></l><r>Tesla<s n="np"/><s n="al"/><s n="f"/><s n="sg"/></r></p></e>
 <e><p><l>TfL<s n="np"/><s n="al"/><s n="f"/><s n="sg"/></l><r>TfL<s n="np"/><s n="al"/><s n="f"/><s n="sg"/></r></p></e>
@@ -28116,7 +28117,7 @@
 <e><p><l>la<b/>Salle<s n="np"/><s n="al"/><s n="f"/><s n="sg"/></l><r>la<b/>Salle<s n="np"/><s n="al"/><s n="f"/><s n="sg"/></r></p></e>
 <e><p><l>tv3<s n="np"/><s n="al"/><s n="f"/><s n="sg"/></l><r>tv3<s n="np"/><s n="al"/><s n="f"/><s n="sg"/></r></p></e>
 <e><p><l>Jeux<b/>olympiques<s n="np"/><s n="al"/><s n="m"/><s n="pl"/></l><r>Jocs<b/>Olímpics<s n="np"/><s n="al"/><s n="m"/><s n="pl"/></r></p></e>
-<e><p><l>Jocs<b/>paralympiques<s n="np"/><s n="al"/><s n="m"/><s n="pl"/></l><r>Jocs<b/>Paralímpics<s n="np"/><s n="al"/><s n="m"/><s n="pl"/></r></p></e>
+<e><p><l>Jeux<b/>paralympiques<s n="np"/><s n="al"/><s n="m"/><s n="pl"/></l><r>Jocs<b/>Paralímpics<s n="np"/><s n="al"/><s n="m"/><s n="pl"/></r></p></e>
 <e><p><l>Ondas<s n="np"/><s n="al"/><s n="m"/><s n="pl"/></l><r>Ondas<s n="np"/><s n="al"/><s n="m"/><s n="pl"/></r></p></e>
 <e><p><l>Azerbaïdjan<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Azerbaidjan<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
 <e>       <p><l>BBC<s n="n"/><s n="acr"/><s n="f"/></l><r>BBC<s n="n"/><s n="acr"/><s n="f"/></r></p></e>
