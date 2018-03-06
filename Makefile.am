@@ -177,6 +177,7 @@ EXTRA_DIST=					\
 		$(BASENAME).$(PREFIX1).dix	\
 		$(BASENAME).$(PREFIX1).t1x	\
 		$(BASENAME).$(PREFIX2).t1x	\
+		$(BASENAME).$(PREFIX1).l1x	\
 		modes.xml
 
 #		$(BASENAME).$(PREFIX1).t2x	\
