@@ -2563,6 +2563,8 @@
 <e>       <p><l>chaise<s n="n"/></l>              <r>cadira<s n="n"/></r></p></e>
 <e>       <p><l>châle<s n="n"/></l>               <r>xal<s n="n"/></r></p></e>
 <e a="ariel"><p><l>chaleur<s n="n"/></l>          <r>calor<s n="n"/></r></p></e>
+<e r="RL"><p><l>chaleur<s n="n"/></l>             <r>escalfor<s n="n"/></r></p></e>
+<e r="RL"><p><l>chaleur<s n="n"/><s n="f"/></l>   <r>escalf<s n="n"/><s n="m"/></r></p></e>
 <e>       <p><l>chamarrer<s n="vblex"/></l>       <r>recarregar<s n="vblex"/></r></p></e>
 <e>       <p><l>Chamartín<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Chamartín<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
 <e a="gema"><p><l>chambre<s n="n"/></l>           <r>cambra<s n="n"/></r></p></e>
@@ -4784,6 +4786,7 @@
 <e>       <p><l>employer<s n="vblex"/></l>        <r>emprar<s n="vblex"/></r></p></e>
 <e r="LR"><p><l>employeur<s n="n"/></l>           <r>empresari<s n="n"/></r></p></e>
 <e>       <p><l>emporter<s n="vblex"/></l>        <r>emportar<s n="vblex"/></r></p></e>
+<e r="RL"><p><l>emporter<s n="vblex"/></l>        <r>endur<s n="vblex"/></r></p></e>
 <e r="LR"><p><l>empreindre<s n="vblex"/></l>      <r>imprimir<s n="vblex"/></r></p></e>
 <e>       <p><l>empreinte<s n="n"/><s n="f"/></l> <r>petjada<s n="n"/><s n="f"/></r></p></e>
 <e>       <p><l>empreinte<s n="n"/><s n="f"/></l> <r>encuny<s n="n"/><s n="m"/></r></p></e>
@@ -8851,6 +8854,7 @@
 <e r="LR"><p><l>naguère<s n="adv"/></l>           <r>recentment<s n="adv"/></r></p></e>
 <e>       <p><l>naïf<s n="adj"/></l>              <r>ingenu<s n="adj"/></r></p></e>
 <e>       <p><l>nain<s n="n"/></l>                <r>nan<s n="n"/></r></p></e>
+<e>       <p><l>nain<s n="adj"/></l>              <r>nan<s n="adj"/></r></p></e>
 <e>       <p><l>naissance<s n="n"/><s n="f"/></l> <r>naixement<s n="n"/><s n="m"/></r></p></e>
 <e r="RL"><p><l>naissance<s n="n"/><s n="f"/></l> <r>naixença<s n="n"/><s n="f"/></r></p></e>
 <e r="LR"><p><l>naissant<s n="adj"/><s n="f"/></l><r>naixent<s n="adj"/><s n="mf"/></r></p></e>
@@ -10239,7 +10243,7 @@
 <e r="RL"><p><l>porte-parole<s n="n"/><s n="mf"/><s n="sp"/></l><r>portaveu<s n="n"/><s n="mf"/><s n="pl"/></r></p></e>
 <e>       <p><l>porter<s n="vblex"/></l>          <r>portar<s n="vblex"/></r></p></e>
 <e r="RL"><p><l>porter<s n="vblex"/></l>          <r>dur<s n="vblex"/></r></p></e>
-<e>       <p><l>porter<g><b/>sur</g><s n="vblex"/></l><r>anar<g><b/>de</g><s n="vblex"/></r></p></e>
+<e i="yes"><p><l>porter<g><b/>sur</g><s n="vblex"/></l><r>anar<g><b/>de</g><s n="vblex"/></r></p></e>
 <e>       <p><l>porteur<s n="n"/></l>             <r>portador<s n="n"/></r></p></e>
 <e>       <p><l>portier<s n="n"/></l>             <r>porter<s n="n"/></r></p></e>
 <e r="LR"><p><l>gardien<g><b/>de<b/>but</g><s n="n"/></l><r>porter<s n="n"/></r></p></e>
@@ -10267,7 +10271,8 @@
 <e>       <p><l>possession<s n="n"/></l>          <r>possessió<s n="n"/></r></p></e>
 <e a="gema"><p><l>possibilité<s n="n"/></l>       <r>possibilitat<s n="n"/></r></p></e>
 <e>       <p><l>possible<s n="adj"/></l>          <r>possible<s n="adj"/></r></p></e>
-<e>       <p><l>possiblement<s n="adv"/></l>      <r>possiblement<s n="adv"/></r></p></e>
+<e r="LR"><p><l>possiblement<s n="adv"/></l>      <r>possiblement<s n="adv"/></r></p></e>
+<e r="RL"><p><l>peut-être<s n="adv"/></l>         <r>possiblement<s n="adv"/></r></p></e>
 <e r="LR"><p><l>postal<s n="adj"/><s n="m"/></l>  <r>postal<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>postal<s n="adj"/><s n="f"/></l>  <r>postal<s n="adj"/><s n="mf"/></r></p></e>
 <e r="RL"><p><l>postal<s n="adj"/><s n="GD"/></l> <r>postal<s n="adj"/><s n="mf"/></r></p></e>
@@ -13243,7 +13248,8 @@
 <e>       <p><l>vente<s n="n"/></l>               <r>venda<s n="n"/></r></p></e>
 <e>       <p><l>ventre<s n="n"/></l>              <r>ventre<s n="n"/></r></p></e>
 <e>       <p><l>venue<s n="n"/></l>               <r>vinguda<s n="n"/></r></p></e>
-<e>       <p><l>Venus<s n="np"/><s n="ant"/></l>  <r>Venus<s n="np"/><s n="ant"/></r></p></e>
+<e r="LR"><p><l>Venus<s n="np"/><s n="ant"/></l>  <r>Venus<s n="np"/><s n="ant"/></r></p></e>
+<e>       <p><l>Vénus<s n="np"/><s n="ant"/></l>  <r>Venus<s n="np"/><s n="ant"/></r></p></e>
 <e r="LR"><p><l>verbal<s n="adj"/><s n="f"/></l>  <r>verbal<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>verbal<s n="adj"/><s n="m"/></l>  <r>verbal<s n="adj"/><s n="mf"/></r></p></e>
 <e r="RL"><p><l>verbal<s n="adj"/><s n="GD"/></l> <r>verbal<s n="adj"/><s n="mf"/></r></p></e>
