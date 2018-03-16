@@ -302,6 +302,17 @@
   </rule>
 
 
+<!-- PRN -->
+
+  <!-- cela >> allò, això -->
+  <rule weight="0.8">
+    <match lemma="cela" tags="prn.*"><select lemma="allò"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="pr"/>
+    <match lemma="cela" tags="prn.*"><select lemma="això"/></match>
+  </rule>
+
 <!-- **************** REL **************** -->
 
   <!-- qui >> que -->

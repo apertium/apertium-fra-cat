@@ -254,6 +254,17 @@
 
 <rules>
 
+<!-- PRN -->
+
+  <!-- això >> ça, cela -->
+  <rule weight="0.8">
+    <match lemma="això" tags="prn.*"><select lemma="ça"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="pr"/>
+    <match lemma="això" tags="prn.*"><select lemma="cela"/></match>
+  </rule>
+
 <!-- REL -->
 
   <!-- que >> que, qui -->
@@ -339,6 +350,13 @@
   <rule weight="1.2">
     <match lemma="felicitar" tags="vblex.*"/>
     <match lemma="per" tags="pr"><select lemma="pour"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="per" tags="pr"><select lemma="pour"/></match>
+    <or>
+      <match lemma="això" tags="prn.*"/>
+      <match lemma="allò" tags="prn.*"/>
+    </or>
   </rule>
 
   <!-- des de >> depuis, de -->
