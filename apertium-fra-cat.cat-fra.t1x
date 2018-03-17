@@ -6166,73 +6166,6 @@ is not applicable because gender and number can not be taken from previous rules
   </rule>
 
 
-<!--
-    <rule comment="REGLA: no+ haver/voler nom: no tinc aigua > je n'ai pas de l'eau, no tinc amics > je n'ai pas d'amis">
-      <pattern>
-        <pattern-item n="noadv"/>
-        <pattern-item n="tenir_voler_conj"/>
-        <pattern-item n="nom"/>
-      </pattern>
-      <action>
-        <call-macro n="f_pis2prs">
-          <with-param pos="2"/>
-        </call-macro>
-        <call-macro n="f_concord1">
-          <with-param pos="3"/>
-        </call-macro>
-        <out>
-          <lu>
-           <clip pos="1" side="tl" part="whole"/>
-          </lu>
-          <b pos="1"/>
-          <lu>
-            <clip pos="2" side="tl" part="lemh"/>
-            <clip pos="2" side="tl" part="tags"/>
-            <clip pos="2" side="tl" part="lemq"/>
-          </lu>
-          <b/>
-          <lu>
-            <lit v="pas"/>
-            <lit-tag v="adv"/>
-          </lu>
-          <b/>
-          <lu>
-            <lit v="de"/>
-            <lit-tag v="pr"/>
-          </lu>
-        </out>
-        <choose>
-          <when>
-            <test>
-              <equal>
-                <clip pos="3" side="tl" part="nbr"/>
-                <lit-tag v="sg"/>
-              </equal>
-            </test>
-            <out>
-              <b/>
-              <lu>
-                <lit v="le"/>
-                <lit-tag v="det.def"/>
-                <var n="genero"/>
-                <clip pos="3" side="tl" part="nbr"/>
-              </lu>
-            </out>
-          </when>
-        </choose>
-        <out>
-          <b pos="1"/>
-          <lu>
-            <clip pos="3" side="tl" part="lemh"/>
-            <clip pos="3" side="tl" part="tags"/>
-            <clip pos="3" side="tl" part="lemq"/>
-          </lu>
-        </out>
-      </action>
-  </rule>
--->
-
-
     <rule comment="REGLA: no+ prnpro + verb en forma personal: no en vull > je n'en veux pas">
       <pattern>
         <pattern-item n="noadv"/>
@@ -6323,11 +6256,11 @@ is not applicable because gender and number can not be taken from previous rules
   </rule>
 
 
-    <rule comment="REGLA: no + verb en forma personal + nom: no tinc aigua > je n'ai pas de l'eau, no tinc amics > je n'ai pas d'amis">
+    <rule comment="REGLA: no + verb en forma personal + nom: no tinc amics > n'ai pas d'amis">
       <pattern>
         <pattern-item n="noadv"/>
         <pattern-item n="verb_conj"/>
-      <pattern-item n="nom"/>
+        <pattern-item n="nom"/>
       </pattern>
       <action>
       <call-macro n="f_concord1">
@@ -6336,7 +6269,7 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_lang_dial1">
           <with-param pos="3"/>
         </call-macro>
-      <call-macro n="f_setgen">
+        <call-macro n="f_setgen">
           <with-param pos="3"/>
         </call-macro>
         <call-macro n="f_pis2prs">
@@ -6390,15 +6323,27 @@ is not applicable because gender and number can not be taken from previous rules
             <lit v="de"/>
             <lit-tag v="pr"/>
           </lu>
-<!--
-          <b/>
-          <lu>
-            <lit v="le"/>
-            <lit-tag v="det.def"/>
-          <clip pos="3" side="sl" part="gen"/>
-            <var n="numero"/>
-          </lu>
--->
+        </out>
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="2" side="sl" part="a_verb"/>
+                <lit-tag v="vbser"/>
+              </equal>
+            </test>
+            <out>
+              <b/>
+              <lu>
+                <lit v="le"/>
+                <lit-tag v="det.def"/>
+                <clip pos="3" side="sl" part="gen"/>
+                <var n="numero"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
+        <out>
           <b/>
           <lu>
             <clip pos="3" side="tl" part="lemh"/>
@@ -9638,8 +9583,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule>
-<!--REGLA: sentquecm No + VERB + NOM-->
+    <rule comment="REGLA: sentquecm no + verb en forma personal + nom: no tinc amics > je n'ai pas d'amis">
       <pattern>
         <pattern-item n="sentquecm"/>
         <pattern-item n="noadv"/>
@@ -9713,11 +9657,7 @@ is not applicable because gender and number can not be taken from previous rules
                   <b pos="2"/>
                   <lu>
                     <clip pos="3" side="tl" part="lemh"/>
-                    <clip pos="3" side="tl" part="a_verb"/>
-                    <clip pos="3" side="tl" part="temps"/>
-                    <clip pos="3" side="tl" part="persona"/>
-                    <clip pos="3" side="tl" part="gen"/>
-                    <clip pos="3" side="tl" part="nbr"/>
+                    <clip pos="3" side="tl" part="tags"/>
                     <clip pos="3" side="tl" part="lemq"/>
                   </lu>
                   <b/>
@@ -9752,11 +9692,7 @@ is not applicable because gender and number can not be taken from previous rules
                   <b pos="2"/>
                   <lu>
                     <clip pos="3" side="tl" part="lemh"/>
-                    <clip pos="3" side="tl" part="a_verb"/>
-                    <clip pos="3" side="tl" part="temps"/>
-                    <clip pos="3" side="tl" part="persona"/>
-                    <clip pos="3" side="tl" part="gen"/>
-                    <clip pos="3" side="tl" part="nbr"/>
+                    <clip pos="3" side="tl" part="tags"/>
                     <clip pos="3" side="tl" part="lemq"/>
                   </lu>
                   <b/>
@@ -9769,13 +9705,27 @@ is not applicable because gender and number can not be taken from previous rules
                     <lit v="de"/>
                     <lit-tag v="pr"/>
                   </lu>
-                  <b/>
-                  <lu>
-                    <lit v="le"/>
-                    <lit-tag v="det.def"/>
-                    <clip pos="4" side="sl" part="gen"/>
-                    <var n="numero"/>
-                  </lu>
+		  </out>
+		  <choose>
+		    <when>
+		      <test>
+			<equal>
+			  <clip pos="3" side="sl" part="a_verb"/>
+			  <lit-tag v="vbser"/>
+			</equal>
+		      </test>
+		      <out>
+			<b/>
+			<lu>
+			  <lit v="le"/>
+			  <lit-tag v="det.def"/>
+			  <clip pos="4" side="sl" part="gen"/>
+			  <var n="numero"/>
+			</lu>
+		      </out>
+		    </when>
+		  </choose>
+		  <out>
                   <b/>
                   <lu>
                     <clip pos="4" side="tl" part="lemh"/>
@@ -9809,11 +9759,7 @@ is not applicable because gender and number can not be taken from previous rules
               <b pos="2"/>
               <lu>
                 <clip pos="3" side="tl" part="lemh"/>
-                <clip pos="3" side="tl" part="a_verb"/>
-                <clip pos="3" side="tl" part="temps"/>
-                <clip pos="3" side="tl" part="persona"/>
-                <clip pos="3" side="tl" part="gen"/>
-                <clip pos="3" side="tl" part="nbr"/>
+                <clip pos="3" side="tl" part="tags"/>
                 <clip pos="3" side="tl" part="lemq"/>
               </lu>
               <b/>
@@ -9826,13 +9772,27 @@ is not applicable because gender and number can not be taken from previous rules
                 <lit v="de"/>
                 <lit-tag v="pr"/>
               </lu>
-              <b/>
-              <lu>
-                <lit v="le"/>
-                <lit-tag v="det.def"/>
-                <clip pos="4" side="sl" part="gen"/>
-                <var n="numero"/>
-              </lu>
+              </out>
+              <choose>
+                <when>
+                  <test>
+                    <equal>
+                      <clip pos="3" side="sl" part="a_verb"/>
+                      <lit-tag v="vbser"/>
+                    </equal>
+                  </test>
+                  <out>
+                    <b/>
+                    <lu>
+                      <lit v="le"/>
+                      <lit-tag v="det.def"/>
+                      <clip pos="4" side="sl" part="gen"/>
+                      <var n="numero"/>
+                    </lu>
+                  </out>
+                </when>
+              </choose>
+              <out>
               <b/>
               <lu>
                 <clip pos="4" side="tl" part="lemh"/>
