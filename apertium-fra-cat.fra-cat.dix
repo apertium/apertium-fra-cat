@@ -752,7 +752,10 @@
 <e>       <p><l>allégation<s n="n"/></l>          <r>al·legació<s n="n"/></r></p></e>
 <e>       <p><l>allège<s n="n"/><s n="f"/></l>    <r>ampit<s n="n"/><s n="m"/></r></p></e>
 <e>       <p><l>alléger<s n="vblex"/></l>         <r>alleugerir<s n="vblex"/></r></p></e>
-<e>       <p><l>allégresse<s n="n"/></l>          <r>joia<s n="n"/></r></p></e>
+<e r="LR"><p><l>allégresse<s n="n"/><s n="f"/></l><r>joia<s n="n"/><s n="f"/></r></p></e>
+<e r="RL"><p><l>joie<s n="n"/><s n="f"/></l><r>joia<s n="n"/><s n="f"/></r></p></e>
+<e>       <p><l>bijou<s n="n"/><s n="m"/></l><r>joia<s n="n"/><s n="f"/></r></p></e>
+<e r="LR"><p><l>joyau<s n="n"/><s n="m"/></l><r>joia<s n="n"/><s n="f"/></r></p></e>
 <e>       <p><l>allègre<s n="adj"/></l>           <r>joiós<s n="adj"/></r></p><par n="mf_GD"/></e>
 <e>       <p><l>allègrement<s n="adv"/></l>       <r>alegrement<s n="adv"/></r></p></e>
 <e r="RL"><p><l>allègrement<s n="adv"/></l>       <r>joiosament<s n="adv"/></r></p></e>
@@ -5002,10 +5005,11 @@
 <e>       <p><l>envelopper<s n="vblex"/></l>      <r>embolicar<s n="vblex"/></r></p></e>
 <e r="RL"><p><l>envelopper<s n="vblex"/></l>      <r>embolcallar<s n="vblex"/></r></p></e>
 <e>       <p><l>envergure<s n="n"/></l>           <r>envergadura<s n="n"/></r></p></e>
-<e r="LR"><p><l>envers<s n="n"/><s n="m"/><s n="sp"/></l><r>revés<s n="n"/><s n="m"/><s n="ND"/></r></p></e>
 <e r="LR"><p><l>envers<s n="pr"/></l>             <r>cap<b/>a<s n="pr"/></r></p></e>
-<e r="RL"><p><l>envers<s n="n"/><s n="m"/><s n="sp"/></l><r>revés<s n="n"/><s n="m"/><s n="pl"/></r></p></e>
-<e r="RL"><p><l>envers<s n="n"/><s n="m"/><s n="sp"/></l><r>revés<s n="n"/><s n="m"/><s n="sg"/></r></p></e>
+<e>       <p><l>envers<s n="n"/><s n="m"/></l>    <r>revés<s n="n"/><s n="m"/></r></p><par n="sp_ND"/></e>
+<e r="RL"><p><l>envers<s n="n"/><s n="m"/></l>    <r>inrevés<s n="n"/><s n="m"/></r></p><par n="sp_ND"/></e>
+<e>       <p><l>à<b/>l'envers<s n="adv"/></l>     <r>a<b/>l'inrevés<s n="adv"/></r></p></e>
+<e r="RL"><p><l>à<b/>l'envers<s n="adv"/></l>     <r>al<b/>revés<s n="adv"/></r></p></e>
 <e>       <p><l>enviable<s n="adj"/></l>          <r>envejable<s n="adj"/></r></p></e>
 <e>       <p><l>enviable<s n="adj"/><s n="mf"/></l><r>envejable<s n="adj"/><s n="mf"/></r></p></e>
 <e>       <p><l>envier<s n="vblex"/></l>          <r>envejar<s n="vblex"/></r></p></e>
@@ -5180,6 +5184,7 @@
 <e r="LR"><p><l>étalager<s n="vblex"/></l>        <r>exposar<s n="vblex"/></r></p></e>
 <e r="LR"><p><l>étaler<s n="vblex"/></l>          <r>estendre<s n="vblex"/></r></p></e>
 <e>       <p><l>étant<b/>donné<b/>que<s n="cnjadv"/></l><r>atès<b/>que<s n="cnjadv"/></r></p></e>
+<e r="RL"><p><l>étant<b/>donné<b/>que<s n="cnjadv"/></l><r>donat<b/>que<s n="cnjadv"/></r></p></e>
 <e a="gema"><p><l>étape<s n="n"/></l>             <r>etapa<s n="n"/></r></p></e>
 <e r="LR" a="gema"><p><l>etat<s n="n"/></l>       <r>estat<s n="n"/></r></p></e>
 <e>       <p><l>état<s n="n"/></l>                <r>estat<s n="n"/></r></p></e>
@@ -10077,9 +10082,8 @@
 <e>       <p><l>plan<s n="n"/></l>                <r>plànol<s n="n"/></r></p></e>
 <e r="RL"><p><l>plan<s n="n"/></l>                <r>pla<s n="n"/></r></p></e>
 <e>       <p><l>planer<s n="vblex"/></l>          <r>planejar<s n="vblex"/></r></p></e>
-<e r="LR" a="ariel"><p><l>planétaire<s n="adj"/><s n="mf"/></l><r>planetari<s n="adj"/><s n="GD"/></r></p></e>
-<e r="RL"><p><l>planétaire<s n="adj"/><s n="mf"/></l><r>planetari<s n="adj"/><s n="f"/></r></p></e>
-<e r="RL"><p><l>planétaire<s n="adj"/><s n="mf"/></l><r>planetari<s n="adj"/><s n="m"/></r></p></e>
+<e a="ariel"><p><l>planétaire<s n="adj"/></l>     <r>planetari<s n="adj"/></r></p><par n="mf_GD"/></e>
+<e a="hector"><p><l>interplanétaire<s n="adj"/></l><r>interplanetari<s n="adj"/></r></p><par n="mf_GD"/></e>
 <e>       <p><l>planète<s n="n"/><s n="f"/></l>   <r>planeta<s n="n"/><s n="m"/></r></p></e>
 <e>       <p><l>planification<s n="n"/></l>       <r>planificació<s n="n"/></r></p></e>
 <e>       <p><l>planifier<s n="vblex"/></l>       <r>planificar<s n="vblex"/></r></p></e>
