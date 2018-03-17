@@ -1,0 +1,38 @@
+* text=auto !eol
+/AUTHORS -text
+/COPYING -text
+/ChangeLog -text
+/Makefile.am -text
+/NEWS -text
+/README -text
+/TODO -text
+/apertium-fra-cat.cat-fra.l2x -text
+/apertium-fra-cat.cat-fra.metalrx -text
+/apertium-fra-cat.cat-fra.t1x -text
+/apertium-fra-cat.cat-fra.t2x -text
+/apertium-fra-cat.cat-fra.t3x -text
+/apertium-fra-cat.fra-cat.dix -text
+/apertium-fra-cat.fra-cat.l1x -text
+/apertium-fra-cat.fra-cat.metalrx -text
+/apertium-fra-cat.fra-cat.t1x -text
+/autogen.sh -text
+/carregar_lexic.pl -text
+/configure.ac -text
+dev/apertium-fra-cat.fra-cat.t1x -text
+dev/apertium-fra-cat.fra-cat.t2x -text
+dev/apertium-fra-cat.fra-cat.t3x -text
+dev/testvoc/inconsistency-summary.sh -text
+dev/testvoc/inconsistency.sh -text
+dev/testvoc/testvoc-summary.cat-fra.txt -text
+dev/testvoc/testvoc-summary.fra-cat.txt -text
+dev/testvoc/testvoc.sh -text
+/metalrx-to-lrx.xslt -text
+/metalrx.py -text
+/modes.xml -text
+texts/cuento.cat.txt -text
+texts/cuento.fra.txt -text
+*.dix linguist-language=XML linguist-detectable=true
+*.lrx linguist-language=XML linguist-detectable=true
+*.lsx linguist-language=XML linguist-detectable=true
+*.tsx linguist-language=XML linguist-detectable=true
+*.t[[:digit:]]x linguist-language=XML linguist-detectable=true
