@@ -6700,6 +6700,7 @@
 <e r="LR" a="gema"><p><l>IIIème<s n="adj"/><s n="mf"/></l><r>III<s n="adj"/><s n="mf"/></r></p><par n="ND_sp"/></e>
 <e a="hector"><p><l>IIIe<s n="adj"/><s n="mf"/></l><r>III<s n="adj"/><s n="mf"/></r></p><par n="ND_sp"/></e>
 <e>       <p><l>il<s n="prn"/></l>                <r>ell<s n="prn"/></r></p></e>
+<e r="LR"><p><l>lui<b/>il<s n="prn"/></l>         <r>ell<s n="prn"/></r></p></e>
 <e>       <p><l>il<b/>fait<b/>bon<s n="ij"/></l>  <r>fa<b/>calor<s n="ij"/></r></p></e>
 <e r="LR"><p><l>il<b/>n'y<b/>a<b/>pas<b/>de<b/>quoi<s n="adv"/></l><r>de<b/>res<s n="adv"/></r></p></e>
 <e i="yes"><p><l>il<b/>y<b/>a<s n="vblex"/></l>   <r>hi<b/>ha<s n="vblex"/></r></p></e>
@@ -7397,6 +7398,7 @@
 <e>       <p><l>Javier<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Javier<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
 <e a="gema"><p><l>jazz<s n="n"/></l>              <r>jazz<s n="n"/></r></p></e>
 <e>       <p><l>je<s n="prn"/></l>                <r>jo<s n="prn"/></r></p></e>
+<e r="LR"><p><l>moi<b/>je<s n="prn"/></l>         <r>jo<s n="prn"/></r></p></e>
 <e>       <p><l>René<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>René<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
 <e>       <p><l>Renée<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></l><r>Renée<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></r></p></e>
 <e>       <p><l>Kelvin<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Kelvin<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
@@ -9094,6 +9096,7 @@
 <e>       <p><l>nourriture<s n="n"/><s n="f"/></l><r>aliment<s n="n"/><s n="m"/></r></p></e>
 <e>       <p><l>nous<s n="prn"/></l>              <r>ens<s n="prn"/></r></p></e>
 <e>       <p><l>nous<s n="prn"/><s n="tn"/></l>   <r>nosaltres<s n="prn"/><s n="tn"/></r></p></e>
+<e r="LR"><p><l>nous<b/>on<s n="prn"/><s n="pro"/><s n="ref"/><s n="p3"/><s n="mf"/><s n="sp"/></l><r>nosaltres<s n="prn"/><s n="tn"/><s n="p1"/><s n="mf"/><s n="pl"/></r></p></e>
 <e>       <p><l>à<b/>nouveau<s n="adv"/></l>      <r>novament<s n="adv"/></r></p></e>
 <e>       <p><l>nouveau<s n="adj"/></l>           <r>nou<s n="adj"/></r></p></e>
 <e>       <p><l>nouveau-né<s n="adj"/></l>        <r>nounat<s n="adj"/></r></p></e>
@@ -12801,7 +12804,6 @@
 <e>       <p><l>titre<s n="n"/></l>               <r>títol<s n="n"/></r></p></e>
 <e>       <p><l>tituber<s n="vblex"/></l>         <r>titubejar<s n="vblex"/></r></p></e>
 <e>       <p><l>titulaire<s n="adj"/><s n="mf"/></l><r>titular<s n="adj"/><s n="mf"/></r></p></e>
-<!--mirar--><e r="LR"><p><l>toi<s n="prn"/></l>               <r>tu<s n="prn"/></r></p></e>
 <e r="LR"><p><l>toile<s n="n"/></l>               <r>tela<s n="n"/></r></p></e>
 <e>       <p><l>toilette<s n="n"/><s n="f"/></l>  <r>bany<s n="n"/><s n="m"/></r></p></e>
 <e r="LR"><p><l>toiletter<s n="vblex"/></l>       <r>netejar<s n="vblex"/></r></p></e>
@@ -13056,6 +13058,8 @@
 <e>       <p><l>Trueba<s n="np"/><s n="cog"/></l> <r>Trueba<s n="np"/><s n="cog"/></r></p></e>
 <e>       <p><l>Trujillo<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Trujillo<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
 <e>       <p><l>tu<s n="prn"/></l>                <r>tu<s n="prn"/></r></p></e>
+<e r="LR"><p><l>toi<s n="prn"/></l>               <r>tu<s n="prn"/></r></p></e>
+<e r="LR"><p><l>toi<b/>tu<s n="prn"/></l>         <r>tu<s n="prn"/></r></p></e>
 <e>       <p><l>tuer<s n="vblex"/></l>            <r>matar<s n="vblex"/></r></p></e>
 <e>       <p><l>tunique<s n="n"/></l>             <r>túnica<s n="n"/></r></p></e>
 <e>       <p><l>tunnel<s n="n"/></l>              <r>túnel<s n="n"/></r></p></e>
@@ -22090,6 +22094,7 @@
 <e>       <p><l>comique<s n="adj"/></l>           <r>còmic<s n="adj"/></r></p><par n="mf_GD"/></e>
 <e r="RL"><p><l>communal<s n="adj"/></l>          <r>comunal<s n="adj"/></r></p><par n="GD_mf"/></e>
 <e r="LR"><p><l>communal<s n="adj"/></l>          <r>municipal<s n="adj"/></r></p><par n="GD_mf"/></e>
+<e>       <p><l>intercommunal<s n="adj"/></l>     <r>intermunicipal<s n="adj"/></r></p><par n="GD_mf"/></e>
 <e>       <p><l>communautaire<s n="adj"/></l>     <r>comunitari<s n="adj"/></r></p><par n="mf_GD"/></e>
 <e>       <p><l>comtal<s n="adj"/></l>            <r>comtal<s n="adj"/></r></p><par n="GD_mf"/></e>
 <e>       <p><l>conique<s n="adj"/></l>           <r>cònic<s n="adj"/></r></p><par n="mf_GD"/></e>
@@ -36685,5 +36690,7 @@
 <e><p><l>voirie<s n="n"/><s n="f"/><s n="sg"/></l><r>xarxa<b/>viària<s n="n"/><s n="f"/><s n="sg"/></r></p></e>
 <e><p><l>patinoire<s n="n"/><s n="f"/></l><r>pista<g><b/>de<b/>patinatge</g><s n="n"/><s n="f"/></r></p></e>
 <e r="LR"><p><l>chantier<s n="n"/><s n="m"/></l><r>obra<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>rez-de-chaussée<s n="n"/><s n="m"/></l><r>planta<b/>baixa<s n="n"/><s n="f"/></r></p><par n="sp_ND"/></e>
+<e><p><l>relogement<s n="n"/><s n="m"/></l><r>reallotjament<s n="n"/><s n="m"/></r></p></e>
   </section>
 </dictionary>
