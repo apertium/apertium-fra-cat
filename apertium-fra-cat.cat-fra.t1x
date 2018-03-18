@@ -443,6 +443,13 @@
       <cat-item tags="cnjcoo"/>
       <cat-item lemma="comme que" tags="cnjadv"/>
     </def-cat>
+    <def-cat n="sentque_nocm">
+      <cat-item tags="sent"/>
+      <cat-item tags="cnjsub"/>
+      <cat-item tags="cnjadv"/>
+      <cat-item tags="cnjcoo"/>
+      <cat-item lemma="comme que" tags="cnjadv"/>
+    </def-cat>
     <def-cat n="occ_or_etc">
       <cat-item lemma="occidental" tags="n.*"/>
       <cat-item lemma="oriental" tags="n.*"/>
@@ -7923,7 +7930,7 @@ is not applicable because gender and number can not be taken from previous rules
 <!-- regles de generació de pronoms-->
     <rule comment="REGLA: SENT,que,coma,i VERB">
       <pattern>
-        <pattern-item n="sentquecm"/>
+        <pattern-item n="sentque_nocm"/>
         <pattern-item n="verb_conj"/>
       </pattern>
       <action>
