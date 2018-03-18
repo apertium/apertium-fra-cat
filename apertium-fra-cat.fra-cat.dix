@@ -1085,7 +1085,8 @@
 <e r="RL" a="ariel"><p><l>apparent<s n="adj"/><s n="GD"/></l><r>aparent<s n="adj"/><s n="mf"/></r></p></e>
 <e>       <p><l>apparenter<s n="vblex"/></l>      <r>emparentar<s n="vblex"/></r></p></e>
 <e>       <p><l>apparition<s n="n"/></l>          <r>aparició<s n="n"/></r></p></e>
-<e>       <p><l>appartement<s n="n"/></l>         <r>pis<s n="n"/></r></p></e>
+<e>       <p><l>étage<s n="n"/></l>               <r>pis<s n="n"/></r></p></e>
+<e r="LR"><p><l>appartement<s n="n"/></l>         <r>pis<s n="n"/></r></p></e>
 <e r="RL"><p><l>appartement<s n="n"/></l>         <r>apartament<s n="n"/></r></p></e>
 <e r="LR"><p><l>appartenant<s n="adj"/><s n="f"/></l><r>pertanyent<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>appartenant<s n="adj"/><s n="m"/></l><r>pertanyent<s n="adj"/><s n="mf"/></r></p></e>
@@ -1504,7 +1505,7 @@
 <e r="LR"><p><l>au<b/>jour<b/>d'aujourd'hui<s n="adv"/></l><r>avui<b/>dia<s n="adv"/></r></p></e>
 <e>       <p><l>aumône<s n="n"/></l>              <r>almoina<s n="n"/></r></p></e>
 <e>       <p><l>auparavant<s n="adv"/></l>        <r>per<b/>endavant<s n="adv"/></r></p></e>
-<e>       <p><l>auprès<s n="adv"/></l>            <r>a<b/>prop<s n="adv"/></r></p></e>
+<e r="LR"><p><l>auprès<s n="adv"/></l>            <r>a<b/>prop<s n="adv"/></r></p></e>
 <e>       <p><l>auquel<s n="rel"/></l>            <r>al<b/>qual<s n="rel"/><s n="aa"/></r></p></e>
 <e r="RL"><p><l>auquel<s n="rel"/><s n="GD"/><s n="ND"/></l><r>a<b/>què<s n="rel"/><s n="an"/><s n="mf"/><s n="sp"/></r></p></e>
 <e>       <p><l>Aura<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></l><r>Aura<s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></r></p></e>
@@ -1513,6 +1514,8 @@
 <e>       <p><l>aussi<s n="adv"/></l>             <r>també<s n="adv"/></r></p></e>
 <e>       <p><l>aussitôt<s n="adv"/></l>          <r>de<b/>seguida<s n="adv"/></r></p></e>
 <e r="LR"><p><l>sitôt<s n="adv"/></l>             <r>de<b/>seguida<s n="adv"/></r></p></e>
+<e r="LR"><p><l>dans<b/>la<b/>foulée<s n="adv"/></l><r>de<b/>seguida<s n="adv"/></r></p></e>
+<e r="LR"><p><l>dans<b/>la<b/>foulée<b/>de<s n="pr"/></l><r>just<b/>després<b/>de<s n="pr"/></r></p></e>
 <e>       <p><l>aussitôt<b/>que<s n="cnjadv"/></l><r>tan<b/>bon<b/>punt<s n="cnjadv"/></r></p></e>
 <e r="LR"><p><l>sitôt<b/>que<s n="cnjadv"/></l>   <r>tan<b/>bon<b/>punt<s n="cnjadv"/></r></p></e>
 <e r="RL"><p><l>aussitôt<b/>que<s n="cnjadv"/></l><r>així<b/>que<s n="cnjadv"/></r></p></e>
@@ -1560,6 +1563,8 @@
 <e>       <p><l>autour<s n="adv"/></l>            <r>al<b/>voltant<s n="adv"/></r></p></e>
 <e r="RL"><p><l>autour<s n="adv"/></l>            <r>al<b/>l'entorn<s n="adv"/></r></p></e>
 <e>       <p><l>autour<b/>de<s n="pr"/></l>       <r>al<b/>voltant<b/>de<s n="pr"/></r></p></e>
+<e r="RL"><p><l>autour<b/>de<s n="pr"/></l>       <r>als<b/>voltants<b/>de<s n="pr"/></r></p></e>
+<e r="RL"><p><l>autour<b/>de<s n="pr"/></l>       <r>als<b/>volts<b/>de<s n="pr"/></r></p></e>
 <e r="RL"><p><l>autour<b/>de<s n="pr"/></l>       <r>a<b/>l'entorn<b/>de<s n="pr"/></r></p></e>
 <e r="RL"><p><l>autour<b/>de<s n="pr"/></l>       <r>entorn<b/>de<s n="pr"/></r></p></e>
 <e>       <p><l>autour<s n="n"/></l>              <r>voltant<s n="n"/></r></p></e>
@@ -8313,13 +8318,9 @@
 <e>       <p><l>maudire<s n="vblex"/></l>         <r>maleir<s n="vblex"/></r></p></e>
 <e>       <p><l>maudit<s n="adj"/></l>            <r>maleït<s n="adj"/></r></p></e>
 <e>       <p><l>maugréer<s n="vblex"/></l>        <r>renegar<s n="vblex"/></r></p></e>
-<e>       <p><l>mauvais<s n="adj"/><s n="f"/></l> <r>dolent<s n="adj"/><s n="f"/></r></p></e>
-<e r="LR"><p><l>mauvais<s n="adj"/><s n="m"/><s n="sp"/></l><r>dolent<s n="adj"/><s n="m"/><s n="ND"/></r></p></e>
-<e r="RL"><p><l>mauvais<s n="adj"/><s n="f"/></l> <r>dolent<s n="adj"/><s n="sup"/><s n="f"/></r></p></e>
-<e r="RL"><p><l>mauvais<s n="adj"/><s n="m"/><s n="sp"/></l><r>dolent<s n="adj"/><s n="m"/><s n="pl"/></r></p></e>
-<e r="RL"><p><l>mauvais<s n="adj"/><s n="m"/><s n="sp"/></l><r>dolent<s n="adj"/><s n="m"/><s n="sg"/></r></p></e>
-<e r="RL"><p><l>mauvais<s n="adj"/><s n="m"/><s n="sp"/></l><r>dolent<s n="adj"/><s n="sup"/><s n="m"/><s n="pl"/></r></p></e>
-<e r="RL"><p><l>mauvais<s n="adj"/><s n="m"/><s n="sp"/></l><r>dolent<s n="adj"/><s n="sup"/><s n="m"/><s n="sg"/></r></p></e>
+<e>       <p><l>mauvais<s n="adj"/></l>           <r>dolent<s n="adj"/></r></p><par n="anglais_anglès"/></e>
+<e r="RL"><p><l>mauvais<s n="adj"/></l>           <r>dolent<s n="adj"/><s n="sup"/></r></p><par n="anglais_anglès"/></e>
+<e r="LR"><p><l>vilain<s n="adj"/></l>            <r>dolent<s n="adj"/></r></p></e>
 <e>       <p><l>mauve<s n="adj"/></l>             <r>malva<s n="adj"/></r></p></e>
 <e a="gema"><p><l>Max<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></l><r>Max<s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
 <e>       <p><l>maximal<s n="adj"/></l>           <r>màxim<s n="adj"/></r></p></e>
@@ -10419,7 +10420,8 @@
 <e r="LR"><p><l>prépondérant<s n="adj"/><s n="f"/></l><r>preponderant<s n="adj"/><s n="mf"/></r></p></e>
 <e r="LR"><p><l>prépondérant<s n="adj"/><s n="m"/></l><r>preponderant<s n="adj"/><s n="mf"/></r></p></e>
 <e r="RL" a="ariel"><p><l>prépondérant<s n="adj"/><s n="GD"/></l><r>preponderant<s n="adj"/><s n="mf"/></r></p></e>
-<e>       <p><l>près<s n="adv"/></l>              <r>prop<s n="adv"/></r></p></e>
+<e r="RL"><p><l>près<s n="adv"/></l>              <r>prop<s n="adv"/></r></p></e>
+<e>       <p><l>près<s n="adv"/></l>              <r>a<b/>prop<s n="adv"/></r></p></e>
 <e r="RL"><p><l>près<s n="adv"/></l>              <r>a<b/>la<b/>vora<s n="adv"/></r></p></e>
 <e>       <p><l>présager<s n="vblex"/></l>        <r>presagiar<s n="vblex"/></r></p></e>
 <e>       <p><l>prescriptif<s n="adj"/></l>       <r>preceptiu<s n="adj"/></r></p></e>
@@ -17296,6 +17298,8 @@
 <e r="RL"><p><l>près<b/>de<s n="pr"/></l>         <r>vora<b/>de<s n="pr"/></r></p></e>
 <e>       <p><l>près<b/>de<s n="pr"/></l>         <r>a<b/>prop<b/>de<s n="pr"/></r></p></e>
 <e r="RL"><p><l>près<b/>de<s n="pr"/></l>         <r>a<b/>la<b/>vora<b/>de<s n="pr"/></r></p></e>
+<e>       <p><l>à<b/>côté<s n="adv"/></l>         <r>al<b/>costat<s n="adv"/></r></p></e>
+<e>       <p><l>à<b/>côté<b/>de<s n="pr"/></l>    <r>al<b/>costat<b/>de<s n="pr"/></r></p></e>
 <e>       <p><l>touristique<s n="adj"/></l>       <r>turístic<s n="adj"/></r></p><par n="mf_GD"/></e>
 <e>       <p><l>centrique<s n="adj"/></l>         <r>cèntric<s n="adj"/></r></p><par n="mf_GD"/></e>
 <e>       <p><l>tactique<s n="adj"/></l>          <r>tàctic<s n="adj"/></r></p><par n="mf_GD"/></e>
@@ -22084,7 +22088,8 @@
 <e>       <p><l>clinique<s n="adj"/></l>          <r>clínic<s n="adj"/></r></p><par n="mf_GD"/></e>
 <e>       <p><l>comestible<s n="adj"/></l>        <r>comestible<s n="adj"/></r></p></e>
 <e>       <p><l>comique<s n="adj"/></l>           <r>còmic<s n="adj"/></r></p><par n="mf_GD"/></e>
-<e>       <p><l>communal<s n="adj"/></l>          <r>comunal<s n="adj"/></r></p><par n="GD_mf"/></e>
+<e r="RL"><p><l>communal<s n="adj"/></l>          <r>comunal<s n="adj"/></r></p><par n="GD_mf"/></e>
+<e r="LR"><p><l>communal<s n="adj"/></l>          <r>municipal<s n="adj"/></r></p><par n="GD_mf"/></e>
 <e>       <p><l>communautaire<s n="adj"/></l>     <r>comunitari<s n="adj"/></r></p><par n="mf_GD"/></e>
 <e>       <p><l>comtal<s n="adj"/></l>            <r>comtal<s n="adj"/></r></p><par n="GD_mf"/></e>
 <e>       <p><l>conique<s n="adj"/></l>           <r>cònic<s n="adj"/></r></p><par n="mf_GD"/></e>
@@ -25086,7 +25091,8 @@
 <e a="joan"><p><l>cursive<s n="n"/><s n="f"/></l> <r>cursiva<s n="n"/><s n="f"/></r></p></e>
 <e a="joan"><p><l>italique<s n="n"/><s n="m"/></l><r>cursiva<s n="n"/><s n="f"/></r></p></e>
 <e a="joan"><p><l>calcite<s n="n"/><s n="f"/></l> <r>calcita<s n="n"/><s n="f"/></r></p></e>
-<e a="joan"><p><l>géniteur<s n="n"/></l>          <r>progenitor<s n="n"/></r></p></e>
+<e r="LR" a="joan"><p><l>géniteur<s n="n"/></l>          <r>progenitor<s n="n"/></r></p></e>
+<e r="RL" a="hector"><p><l>parent<s n="n"/></l>          <r>progenitor<s n="n"/></r></p><par n="mf_GD"/></e>
 <e a="joan"><p><l>entropie<s n="n"/><s n="f"/></l><r>entropia<s n="n"/><s n="f"/></r></p></e>
 <e r="LR" a="joan"><p><l>dépouillement<s n="n"/><s n="m"/></l><r>despulla<s n="n"/><s n="f"/></r></p></e>
 <e a="joan"><p><l>biographe<s n="n"/></l>         <r>biògraf<s n="n"/></r></p><par n="mf_GD"/></e>
@@ -26977,6 +26983,7 @@
 <e r="RL" a="joan"><p><l>équilibre<s n="n"/><s n="m"/></l><r>terme<b/>mitjà<s n="n"/><s n="m"/></r></p></e>
 <e a="joan"><p><l>corrégidor<s n="n"/><s n="m"/></l><r>corregidor<s n="n"/><s n="m"/></r></p></e>
 <e a="joan"><p><l>devin<s n="n"/><s n="m"/></l>   <r>endeví<s n="n"/><s n="m"/></r></p></e>
+<e a="hector"><p><l>devineresse<s n="n"/><s n="f"/></l>   <r>endeví<s n="n"/><s n="f"/></r></p></e>
 <e>       <p><l>devineresse<s n="n"/><s n="f"/></l><r>endeví<s n="n"/><s n="f"/></r></p></e>
 <e a="joan"><p><l>kangourou<s n="n"/><s n="m"/></l><r>cangur<s n="n"/><s n="mf"/></r></p></e>
 <e a="joan"><p><l>pelotari<s n="n"/><s n="m"/></l><r>pilotari<s n="n"/><s n="mf"/></r></p></e>
@@ -36352,5 +36359,331 @@
 <e><p><l>Tibre<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Tíber<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
 <e><p><l>Tibet<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></l><r>Tibet<s n="np"/><s n="top"/><s n="m"/><s n="sg"/></r></p></e>
 
+<e><p><l>par<b/>habitant<s n="adv"/></l><r>per<b/>capita<s n="adv"/></r></p></e>
+<e><p><l>plus<b/>tard<s n="adv"/></l><r>més<b/>tard<s n="adv"/></r></p></e>
+<e><p><l>par<b/>exemple<s n="adv"/></l><r>per<b/>exemple<s n="adv"/></r></p></e>
+<e><p><l>etc.<s n="adv"/></l><r>etc.<s n="adv"/></r></p></e>
+<e><p><l>en<b/>général<s n="adv"/></l><r>en<b/>general<s n="adv"/></r></p></e>
+<e><p><l>pour<b/>la<b/>première<b/>fois<s n="adv"/></l><r>per<b/>primera<b/>vegada<s n="adv"/></r></p></e>
+<e r="RL"><p><l>même<s n="adv"/></l><r>mateix<s n="adv"/></r></p></e>
+<e><p><l>pour<s n="adv"/></l><r>a<b/>favor<s n="adv"/></r></p></e>
+<e r="LR"><p><l>en<b/>faveur<s n="adv"/></l><r>a<b/>favor<s n="adv"/></r></p></e>
+<e r="RL"><p><l>avant<s n="adv"/></l><r>anteriorment<s n="adv"/></r></p></e>
+<e><p><l>d'accord<s n="adv"/></l><r>d'acord<s n="adv"/></r></p></e>
+<e r="RL"><p><l>seulement<s n="adv"/></l><r>tan<b/>sols<s n="adv"/></r></p></e>
+<e><p><l>chaque<b/>fois<s n="adv"/></l><r>cada<b/>vegada<s n="adv"/></r></p></e>
+<e r="RL"><p><l>seulement<s n="adv"/></l><r>solament<s n="adv"/></r></p></e>
+<e><p><l>par<b/>contre<s n="adv"/></l><r>en<b/>canvi<s n="adv"/></r></p></e>
+<e><p><l>à<b/>l'intérieur<s n="adv"/></l><r>a<b/>l'interior<s n="adv"/></r></p></e>
+<e><p><l>à<b/>son<b/>tour<s n="adv"/></l><r>al<b/>seu<b/>torn<s n="adv"/></r></p></e>
+<e><p><l>pour<b/>la<b/>première<b/>fois<s n="adv"/></l><r>per<b/>primer<b/>cop<s n="adv"/></r></p></e>
+<e i="yes"><p><l>au-dessous<s n="adv"/></l><r>per<b/>sota<s n="adv"/></r></p></e>
+<e r="RL"><p><l>initialement<s n="adv"/></l><r>originalment<s n="adv"/></r></p></e>
+<e><p><l>majoritairement<s n="adv"/></l><r>majoritàriament<s n="adv"/></r></p></e>
+<e><p><l>concrètement<s n="adv"/></l><r>concretament<s n="adv"/></r></p></e>
+<e><p><l>de<b/>cette<b/>façon<s n="adv"/></l><r>d'aquesta<b/>manera<s n="adv"/></r></p></e>
+<e><p><l>tel<s n="adv"/></l><r>tal<s n="adv"/></r></p></e>
+<e><p><l>sous<b/>la<b/>coupe<s n="adv"/></l><r>sota<b/>la<b/>direcció<s n="adv"/></r></p></e>
+<e r="LR"><p><l>sous<b/>la<b/>direction<s n="adv"/></l><r>sota<b/>la<b/>direcció<s n="adv"/></r></p></e>
+<e><p><l>prêt<s n="adv"/></l><r>a<b/>punt<s n="adv"/></r></p></e>
+<e r="LR"><p><l>plus<b/>tard<s n="adv"/></l><r>més<b/>endavant<s n="adv"/></r></p></e>
+<e r="RL"><p><l>assez<s n="adv"/></l><r>bastant<s n="adv"/></r></p></e>
+<e i="yes"><p><l>ensemble<s n="adv"/></l><r>conjuntament<s n="adv"/></r></p></e>
+<e><p><l>cette<b/>année<s n="adv"/></l><r>aquest<b/>any<s n="adv"/></r></p></e>
+<e><p><l>en<b/>été<s n="adv"/></l><r>a<b/>l'estiu<s n="adv"/></r></p></e>
+<e i="yes"><p><l>lentement<s n="adv"/></l><r>a<b/>poc<b/>a<b/>poc<s n="adv"/></r></p></e>
+<e><p><l>à<b/>la<b/>fin<s n="adv"/></l><r>al<b/>final<s n="adv"/></r></p></e>
+<e><p><l>chaque<b/>fois<s n="adv"/></l><r>cada<b/>cop<s n="adv"/></r></p></e>
+<e r="RL"><p><l>en<b/>même<b/>temps<s n="adv"/></l><r>a<b/>la<b/>vegada<s n="adv"/></r></p></e>
+<e><p><l>hautement<s n="adv"/></l><r>altament<s n="adv"/></r></p></e>
+<e><p><l>populairement<s n="adv"/></l><r>popularment<s n="adv"/></r></p></e>
+<e><p><l>à<b/>bord<s n="adv"/></l><r>a<b/>bord<s n="adv"/></r></p></e>
+<e><p><l>soi-disant<s n="adv"/></l><r>suposadament<s n="adv"/></r></p></e>
+<e r="RL"><p><l>complètement<s n="adv"/></l><r>plenament<s n="adv"/></r></p></e>
+<e r="LR"><p><l>pleinement<s n="adv"/></l><r>plenament<s n="adv"/></r></p></e>
+<e><p><l>en<b/>hiver<s n="adv"/></l><r>a<b/>l'hivern<s n="adv"/></r></p></e>
+<e><p><l>de<b/>la<b/>même<b/>manière<s n="adv"/></l><r>de<b/>la<b/>mateixa<b/>manera<s n="adv"/></r></p></e>
+<e><p><l>au<b/>milieu<s n="adv"/></l><r>al<b/>mig<s n="adv"/></r></p></e>
+<e r="RL"><p><l>puis<s n="adv"/></l><r>tot<b/>seguit<s n="adv"/></r></p></e>
+<e><p><l>communément<s n="adv"/></l><r>comunament<s n="adv"/></r></p></e>
+<e r="RL"><p><l>juste<s n="adv"/></l><r>tot<b/>just<s n="adv"/></r></p></e>
+<e><p><l>à<b/>mort<s n="adv"/></l><r>a<b/>mort<s n="adv"/></r></p></e>
+<e><p><l>à<b/>cheval<s n="adv"/></l><r>a<b/>cavall<s n="adv"/></r></p></e>
+<e><p><l>correctement<s n="adv"/></l><r>correctament<s n="adv"/></r></p></e>
+<e r="LR"><p><l>jusque-là<s n="adv"/></l><r>fins<b/>llavors<s n="adv"/></r></p></e>
+<e><p><l>jusqu'ici<s n="adv"/></l><r>fins<b/>ara<s n="adv"/></r></p></e>
+<e><p><l>de<b/>même<s n="adv"/></l><r>així<b/>mateix<s n="adv"/></r></p></e>
+<e><p><l>indépendamment<s n="adv"/></l><r>independentment<s n="adv"/></r></p></e>
+<e><p><l>d'une<b/>part<s n="adv"/></l><r>d'una<b/>banda<s n="adv"/></r></p></e>
+<e r="RL"><p><l>complètement<s n="adv"/></l><r>íntegrament<s n="adv"/></r></p></e>
+<e r="RL"><p><l>pas<s n="adv"/></l><r>no<b/>pas<s n="adv"/></r></p></e>
+<e><p><l>de<b/>retour<s n="adv"/></l><r>de<b/>tornada<s n="adv"/></r></p></e>
+<e><p><l>ni<b/>seulement<s n="adv"/></l><r>ni<b/>tan<b/>sols<s n="adv"/></r></p></e>
+<e r="RL"><p><l>ici<s n="adv"/></l><r>ací<s n="adv"/></r></p></e>
+<e><p><l>à<b/>point<s n="adv"/></l><r>al<b/>punt<s n="adv"/></r></p></e>
+<e><p><l>à<b/>la<b/>main<s n="adv"/></l><r>a<b/>mà<s n="adv"/></r></p></e>
+<e a="joan"><p><l>à<b/>l'origine<s n="adv"/></l><r>originàriament<s n="adv"/></r></p></e>
+<e r="LR" a="joan"><p><l>originalement<s n="adv"/></l><r>originàriament<s n="adv"/></r></p></e>
+<e a="joan"><p><l>à<b/>pied<s n="adv"/></l><r>a<b/>peu<s n="adv"/></r></p></e>
+<e r="RL" a="joan"><p><l>en<b/>face<s n="adv"/></l><r>de<b/>cara<s n="adv"/></r></p></e>
+<e><p><l>usuellement<s n="adv"/></l><r>usualment<s n="adv"/></r></p></e>
+<e a="joan"><p><l>de<b/>facto<s n="adv"/></l><r>de<b/>facto<s n="adv"/></r></p></e>
+<e a="joan"><p><l>très<b/>bien<s n="adv"/></l><r>molt<b/>bé<s n="adv"/></r></p></e>
+<e a="joan"><p><l>dans<b/>le<b/>monde<b/>entier<s n="adv"/></l><r>a<b/>tot<b/>el<b/>món<s n="adv"/></r></p></e>
+<e a="joan"><p><l>en<b/>commun<s n="adv"/></l><r>en<b/>comú<s n="adv"/></r></p></e>
+<e a="joan"><p><l>du<b/>monde<b/>entier<s n="adv"/></l><r>de<b/>tot<b/>el<b/>món<s n="adv"/></r></p></e>
+<e a="joan"><p><l>aux<b/>alentours<s n="adv"/></l><r>als<b/>voltants<s n="adv"/></r></p></e>
+<e a="joan"><p><l>en<b/>plein<b/>air<s n="adv"/></l><r>a<b/>l'aire<b/>lliure<s n="adv"/></r></p></e>
+<e a="joan"><p><l>à<b/>la<b/>périphérie<s n="adv"/></l><r>als<b/>afores<s n="adv"/></r></p></e>
+<e a="joan"><p><l>en<b/>tête<b/>de<s n="adv"/></l><r>al<b/>capdavant<s n="adv"/></r></p></e>
+<e><p><l>en<b/>janvier<s n="adv"/></l><r>al<b/>gener<s n="adv"/></r></p></e>
+<e a="joan"><p><l>en<b/>février<s n="adv"/></l><r>al<b/>febrer<s n="adv"/></r></p></e>
+<e a="joan"><p><l>en<b/>mars<s n="adv"/></l><r>al<b/>març<s n="adv"/></r></p></e>
+<e a="joan"><p><l>en<b/>avril<s n="adv"/></l><r>a<b/>l'abril<s n="adv"/></r></p></e>
+<e a="joan"><p><l>en<b/>mai<s n="adv"/></l><r>al<b/>maig<s n="adv"/></r></p></e>
+<e a="joan"><p><l>en<b/>juin<s n="adv"/></l><r>al<b/>juny<s n="adv"/></r></p></e>
+<e a="joan"><p><l>en<b/>juillet<s n="adv"/></l><r>al<b/>juliol<s n="adv"/></r></p></e>
+<e a="joan"><p><l>en<b/>août<s n="adv"/></l><r>a<b/>l'agost<s n="adv"/></r></p></e>
+<e a="joan"><p><l>en<b/>septembre<s n="adv"/></l><r>al<b/>setembre<s n="adv"/></r></p></e>
+<e><p><l>en<b/>octobre<s n="adv"/></l><r>a<b/>l'octubre<s n="adv"/></r></p></e>
+<e a="joan"><p><l>en<b/>novembre<s n="adv"/></l><r>al<b/>novembre<s n="adv"/></r></p></e>
+<e a="joan"><p><l>en<b/>décembre<s n="adv"/></l><r>al<b/>desembre<s n="adv"/></r></p></e>
+<e><p><l>significativement<s n="adv"/></l><r>significativament<s n="adv"/></r></p></e>
+<e><p><l>à<b/>l'automne<s n="adv"/></l><r>a<b/>la<b/>tardor<s n="adv"/></r></p></e>
+<e><p><l>pour<b/>cent<s n="adv"/></l><r>per<b/>cent<s n="adv"/></r></p></e>
+<e><p><l>à<b/>échelle<s n="adv"/></l><r>a<b/>escala<s n="adv"/></r></p></e>
+<e r="RL"><p><l>pour<b/>l'instant<s n="adv"/></l><r>de<b/>moment<s n="adv"/></r></p></e>
+<e i="yes"><p><l>pour<b/>le<b/>moment<s n="adv"/></l><r>de<b/>moment<s n="adv"/></r></p></e>
+<e><p><l>internationalement<s n="adv"/></l><r>internacionalment<s n="adv"/></r></p></e>
+<e><p><l>plus<b/>haut<s n="adv"/></l><r>més<b/>amunt<s n="adv"/></r></p></e>
+<e i="yes"><p><l>au-dessus<s n="adv"/></l><r>més<b/>amunt<s n="adv"/></r></p></e>
+<e r="LR"><p><l>ci-dessus<s n="adv"/></l><r>més<b/>amunt<s n="adv"/></r></p></e>
+<e><p><l>plus<b/>bas<s n="adv"/></l><r>més<b/>avall<s n="adv"/></r></p></e>
+<e i="yes"><p><l>au-dessous<s n="adv"/></l><r>més<b/>avall<s n="adv"/></r></p></e>
+<e r="LR"><p><l>ci-dessous<s n="adv"/></l><r>més<b/>avall<s n="adv"/></r></p></e>
+<e><p><l>à<b/>grande<b/>échelle<s n="adv"/></l><r>a<b/>gran<b/>escala<s n="adv"/></r></p></e>
+<e><p><l>jusqu'aujourd'hui<s n="adv"/></l><r>fins<b/>avui<s n="adv"/></r></p></e>
+<e r="LR"><p><l>jusqu'à<b/>maintenant<s n="adv"/></l><r>fins<b/>avui<s n="adv"/></r></p></e>
+<e><p><l>en<b/>secret<s n="adv"/></l><r>en<b/>secret<s n="adv"/></r></p></e>
+<e><p><l>pour<b/>la<b/>deuxième<b/>fois<s n="adv"/></l><r>per<b/>segona<b/>vegada<s n="adv"/></r></p></e>
+<e><p><l>à<b/>long<b/>terme<s n="adv"/></l><r>a<b/>llarg<b/>termini<s n="adv"/></r></p></e>
+<e><p><l>massivement<s n="adv"/></l><r>en<b/>massa<s n="adv"/></r></p></e>
+<e><p><l>pour<b/>toujours<s n="adv"/></l><r>per<b/>sempre<s n="adv"/></r></p></e>
+<e><p><l>localement<s n="adv"/></l><r>localment<s n="adv"/></r></p></e>
+<e r="RL"><p><l>en<b/>haut<s n="adv"/></l><r>al<b/>capdamunt<s n="adv"/></r></p></e>
+<e a="joan"><p><l>en<b/>octobre<s n="adv"/></l><r>a<b/>l'octubre<s n="adv"/></r></p></e>
+<e><p><l>à<b/>part<s n="adv"/></l><r>a<b/>part<s n="adv"/></r></p></e>
+<e r="LR"><p><l>à<b/>l'écart<s n="adv"/></l><r>a<b/>part<s n="adv"/></r></p></e>
+<e r="RL"><p><l>derrière<s n="adv"/></l><r>al<b/>darrere<s n="adv"/></r></p></e>
+<e><p><l>périodiquement<s n="adv"/></l><r>periòdicament<s n="adv"/></r></p></e>
+<e><p><l>durement<s n="adv"/></l><r>durament<s n="adv"/></r></p></e>
+<e><p><l>explicitement<s n="adv"/></l><r>explícitament<s n="adv"/></r></p></e>
+<e><p><l>de<b/>façon<b/>permanente<s n="adv"/></l><r>permanentment<s n="adv"/></r></p></e>
+<e r="RL"><p><l>enfin<s n="adv"/></l><r>per<b/>fi<s n="adv"/></r></p></e>
+<e><p><l>nominalement<s n="adv"/></l><r>nominalment<s n="adv"/></r></p></e>
+<e><p><l>d'une<b/>part<s n="adv"/></l><r>per<b/>una<b/>banda<s n="adv"/></r></p></e>
+<e r="LR"><p><l>d'un<b/>côté<s n="adv"/></l><r>per<b/>una<b/>banda<s n="adv"/></r></p></e>
+<e><p><l>éventuellement<s n="adv"/></l><r>eventualment<s n="adv"/></r></p></e>
+<e><p><l>à<b/>plusieurs<b/>reprises<s n="adv"/></l><r>repetidament<s n="adv"/></r></p></e>
+<e><p><l>d'une<b/>certaine<b/>façon<s n="adv"/></l><r>d'alguna<b/>manera<s n="adv"/></r></p></e>
+<e a="hector"><p><l>mutuellement<s n="adv"/></l><r>mútuament<s n="adv"/></r></p></e>
+<e><p><l>faussement<s n="adv"/></l><r>erròniament<s n="adv"/></r></p></e>
+<e><p><l>professionnellement<s n="adv"/></l><r>professionalment<s n="adv"/></r></p></e>
+<e><p><l>militairement<s n="adv"/></l><r>militarment<s n="adv"/></r></p></e>
+<e><p><l>de<b/>manière<b/>adéquate<s n="adv"/></l><r>adequadament<s n="adv"/></r></p></e>
+<e><p><l>modernement<s n="adv"/></l><r>modernament<s n="adv"/></r></p></e>
+<e><p><l>intensément<s n="adv"/></l><r>intensament<s n="adv"/></r></p></e>
+<e r="RL"><p><l>vite<s n="adv"/></l><r>corrents<s n="adv"/></r></p></e>
+<e><p><l>tout<b/>de<b/>suite<s n="adv"/></l><r>seguidament<s n="adv"/></r></p></e>
+<e><p><l>techniquement<s n="adv"/></l><r>tècnicament<s n="adv"/></r></p></e>
+<e r="RL"><p><l>aussi<s n="adv"/></l><r>àdhuc<s n="adv"/></r></p></e>
+<e><p><l>p.<b/>ex.<s n="adv"/></l><r>p.<b/>ex.<s n="adv"/></r></p></e>
+<e><p><l>au<b/>maximum<s n="adv"/></l><r>com<b/>a<b/>màxim<s n="adv"/></r></p></e>
+<e><p><l>individuellement<s n="adv"/></l><r>individualment<s n="adv"/></r></p></e>
+<e><p><l>tout<b/>à<b/>coup<s n="adv"/></l><r>de<b/>cop<s n="adv"/></r></p></e>
+<e r="RL"><p><l>dedans<s n="adv"/></l><r>endins<s n="adv"/></r></p></e>
+<e><p><l>à<b/>mi-chemin<s n="adv"/></l><r>a<b/>mig<b/>camí<s n="adv"/></r></p></e>
+<e><p><l>vice<b/>versa<s n="adv"/></l><r>viceversa<s n="adv"/></r></p></e>
+<e><p><l>de<b/>temps<b/>en<b/>temps<s n="adv"/></l><r>de<b/>tant<b/>en<b/>tant<s n="adv"/></r></p></e>
+<e a="hector"><p><l>indirectement<s n="adv"/></l><r>indirectament<s n="adv"/></r></p></e>
+<e r="RL"><p><l>simplement<s n="adv"/></l><r>merament<s n="adv"/></r></p></e>
+<e><p><l>substantiellement<s n="adv"/></l><r>substancialment<s n="adv"/></r></p></e>
+<e a="hector"><p><l>alternativement<s n="adv"/></l><r>alternativament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>décisivement<s n="adv"/></l><r>decisivament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>densément<s n="adv"/></l><r>densament<s n="adv"/></r></p></e>
+<e r="LR" a="hector"><p><l>densement<s n="adv"/></l><r>densament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>géographiquement<s n="adv"/></l><r>geogràficament<s n="adv"/></r></p></e>
+<e r="RL" a="hector"><p><l>évidemment<s n="adv"/></l><r>òbviament<s n="adv"/></r></p></e>
+<e r="RL"><p><l>ensemble<s n="adv"/></l><r>ensems<s n="adv"/></r></p></e>
+<e a="hector"><p><l>extraordinairement<s n="adv"/></l><r>extraordinàriament<s n="adv"/></r></p></e>
+<e r="RL"><p><l>devant<s n="adv"/></l><r>enfront<s n="adv"/></r></p></e>
+<e a="hector"><p><l>violemment<s n="adv"/></l><r>violentament<s n="adv"/></r></p></e>
+<e r="RL" a="hector"><p><l>extrêmement<s n="adv"/></l><r>summament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>à<b/>long<b/>terme<s n="adv"/></l><r>a<b/>la<b/>llarga<s n="adv"/></r></p></e>
+<e><p><l>à<b/>travers<s n="adv"/></l><r>a<b/>través<s n="adv"/></r></p></e>
+<e a="hector"><p><l>négativement<s n="adv"/></l><r>negativament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>pire<s n="adv"/></l><r>pitjor<s n="adv"/></r></p></e>
+<e r="RL" a="hector"><p><l>entièrement<s n="adv"/></l><r>enterament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>à<b/>court<b/>terme<s n="adv"/></l><r>a<b/>curt<b/>termini<s n="adv"/></r></p></e>
+<e r="RL" a="hector"><p><l>largement<s n="adv"/></l><r>extensament<s n="adv"/></r></p></e>
+<e r="RL"><p><l>peut-être<s n="adv"/></l><r>tal<b/>vegada<s n="adv"/></r></p></e>
+<e><p><l>chronologiquement<s n="adv"/></l><r>cronològicament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>internement<s n="adv"/></l><r>internament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>a<b/>priori<s n="adv"/></l><r>a<b/>priori<s n="adv"/></r></p></e>
+<e r="LR" a="hector"><p><l>à<b/>priori<s n="adv"/></l><r>a<b/>priori<s n="adv"/></r></p></e>
+<e a="hector"><p><l>provisionnellement<s n="adv"/></l><r>provisionalment<s n="adv"/></r></p></e>
+<e a="hector"><p><l>soigneusement<s n="adv"/></l><r>acuradament<s n="adv"/></r></p></e>
+<e><p><l>in<b/>situ<s n="adv"/></l><r>in<b/>situ<s n="adv"/></r></p></e>
+<e r="RL"><p><l>au-delà<s n="adv"/></l><r>enllà<s n="adv"/></r></p></e>
+<e><p><l>culturellement<s n="adv"/></l><r>culturalment<s n="adv"/></r></p></e>
+<e><p><l>séparément<s n="adv"/></l><r>separadament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>indistinctement<s n="adv"/></l><r>indistintament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>indéfiniment<s n="adv"/></l><r>indefinidament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>délibérément<s n="adv"/></l><r>deliberadament<s n="adv"/></r></p></e>
+<e r="RL" a="hector"><p><l>rapidement<s n="adv"/></l><r>de<b/>pressa<s n="adv"/></r></p></e>
+<e><p><l>au<b/>milieu<s n="adv"/></l><r>entremig<s n="adv"/></r></p></e>
+<e><p><l>collectivement<s n="adv"/></l><r>col·lectivament<s n="adv"/></r></p></e>
+<e><p><l>massivement<s n="adv"/></l><r>massivament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>clandestinement<s n="adv"/></l><r>clandestinament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>fidèlement<s n="adv"/></l><r>fidelment<s n="adv"/></r></p></e>
+<e r="RL" a="hector"><p><l>malheureusement<s n="adv"/></l><r>malauradament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>de<b/>façon<b/>inattendue<s n="adv"/></l><r>inesperadament<s n="adv"/></r></p></e>
+<e r="LR" a="hector"><p><l>de<b/>façon<b/>inespérée<s n="adv"/></l><r>inesperadament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>infiniment<s n="adv"/></l><r>infinitament<s n="adv"/></r></p></e>
+<e r="RL" a="hector"><p><l>longuement<s n="adv"/></l><r>llargament<s n="adv"/></r></p></e>
+<e r="RL" a="hector"><p><l>devant<s n="adv"/></l><r>avant<s n="adv"/></r></p></e>
+<e a="hector"><p><l>musicalement<s n="adv"/></l><r>musicalment<s n="adv"/></r></p></e>
+<e r="RL"><p><l>doucement<s n="adv"/></l><r>suaument<s n="adv"/></r></p></e>
+<e><p><l>modérément<s n="adv"/></l><r>moderadament<s n="adv"/></r></p></e>
+<e><p><l>familièrement<s n="adv"/></l><r>col·loquialment<s n="adv"/></r></p></e>
+<e><p><l>sans<b/>interruption<s n="adv"/></l><r>ininterrompudament<s n="adv"/></r></p></e>
+<e><p><l>électriquement<s n="adv"/></l><r>elèctricament<s n="adv"/></r></p></e>
+<e><p><l>stratégiquement<s n="adv"/></l><r>estratègicament<s n="adv"/></r></p></e>
+<e><p><l>linéairement<s n="adv"/></l><r>linealment<s n="adv"/></r></p></e>
+<e><p><l>par<b/>hasard<s n="adv"/></l><r>casualment<s n="adv"/></r></p></e>
+<e a="hector"><p><l>scientifiquement<s n="adv"/></l><r>científicament<s n="adv"/></r></p></e>
+<e><p><l>in<b/>vitro<s n="adv"/></l><r>in<b/>vitro<s n="adv"/></r></p></e>
+<e r="RL"><p><l>légèrement<s n="adv"/></l><r>lleument<s n="adv"/></r></p></e>
+<e r="RL"><p><l>vraiment<s n="adv"/></l><r>de<b/>debò<s n="adv"/></r></p></e>
+<e r="RL" a="hector"><p><l>à<b/>peine<s n="adv"/></l><r>escassament<s n="adv"/></r></p></e>
+<e><p><l>minutieusement<s n="adv"/></l><r>detalladament<s n="adv"/></r></p></e>
+<e r="RL"><p><l>à<b/>nouveau<s n="adv"/></l><r>de<b/>bell<b/>nou<s n="adv"/></r></p></e>
+<e a="hector"><p><l>incorrectement<s n="adv"/></l><r>incorrectament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>favorablement<s n="adv"/></l><r>favorablement<s n="adv"/></r></p></e>
+<e><p><l>habilement<s n="adv"/></l><r>hàbilment<s n="adv"/></r></p></e>
+<e a="hector"><p><l>supposément<s n="adv"/></l><r>presumptament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>numériquement<s n="adv"/></l><r>numèricament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>démocratiquement<s n="adv"/></l><r>democràticament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>assidument<s n="adv"/></l><r>assíduament<s n="adv"/></r></p></e>
+<e><p><l>inversement<s n="adv"/></l><r>inversament<s n="adv"/></r></p></e>
+<e><p><l>dramatiquement<s n="adv"/></l><r>dramàticament<s n="adv"/></r></p></e>
+<e><p><l>allegro<s n="adv"/></l><r>allegro<s n="adv"/></r></p></e>
+<e><p><l>par<b/>habitant<s n="adv"/></l><r>per<b/>càpita<s n="adv"/></r></p></e>
+<e><p><l>cette<b/>année<s n="adv"/></l><r>enguany<s n="adv"/></r></p></e>
+<e><p><l>arbitrairement<s n="adv"/></l><r>arbitràriament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>faussement<s n="adv"/></l><r>falsament<s n="adv"/></r></p></e>
+<e r="LR" a="hector"><p><l>à<b/>tort<s n="adv"/></l><r>falsament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>extérieurement<s n="adv"/></l><r>externament<s n="adv"/></r></p></e>
+<e i="yes"><p><l>en<b/>auto<s n="adv"/></l><r>amb<b/>cotxe<s n="adv"/></r></p></e>
+<e><p><l>linguistiquement<s n="adv"/></l><r>lingüísticament<s n="adv"/></r></p></e>
+<e><p><l>en<b/>amont<s n="adv"/></l><r>riu<b/>amunt<s n="adv"/></r></p></e>
+<e r="RL"><p><l>confortablement<s n="adv"/></l><r>còmodament<s n="adv"/></r></p></e>
+<e><p><l>artistiquement<s n="adv"/></l><r>artísticament<s n="adv"/></r></p></e>
+<e><p><l>algébriquement<s n="adv"/></l><r>algebraicament<s n="adv"/></r></p></e>
+<e><p><l>en<b/>aval<s n="adv"/></l><r>riu<b/>avall<s n="adv"/></r></p></e>
+<e><p><l>énergiquement<s n="adv"/></l><r>enèrgicament<s n="adv"/></r></p></e>
+<e><p><l>discrètement<s n="adv"/></l><r>discretament<s n="adv"/></r></p></e>
+<e r="RL"><p><l>d'abord<s n="adv"/></l><r>d'antuvi<s n="adv"/></r></p></e>
+<e><p><l>abruptement<s n="adv"/></l><r>abruptament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>de<b/>manière<b/>aléatoire<s n="adv"/></l><r>aleatòriament<s n="adv"/></r></p></e>
+<e><p><l>unanimement<s n="adv"/></l><r>unànimement<s n="adv"/></r></p></e>
+<e><p><l>en<b/>sa<b/>faveur<s n="adv"/></l><r>a<b/>favor<b/>seu<s n="adv"/></r></p></e>
+<e><p><l>étymologiquement<s n="adv"/></l><r>etimològicament<s n="adv"/></r></p></e>
+<e><p><l>l'année<b/>dernière<s n="adv"/></l><r>l'any<b/>passat<s n="adv"/></r></p></e>
+<e><p><l>de<b/>iure<s n="adv"/></l><r>de<b/>iure<s n="adv"/></r></p></e>
+<e><p><l>au<b/>milieu<s n="adv"/></l><r>enmig<s n="adv"/></r></p></e>
+<e><p><l>minutieusement<s n="adv"/></l><r>minuciosament<s n="adv"/></r></p></e>
+<e><p><l>financièrement<s n="adv"/></l><r>financerament<s n="adv"/></r></p></e>
+<e><p><l>vulgairement<s n="adv"/></l><r>vulgarment<s n="adv"/></r></p></e>
+<e><p><l>transversalement<s n="adv"/></l><r>transversalment<s n="adv"/></r></p></e>
+<e><p><l>in<b/>vivo<s n="adv"/></l><r>in<b/>vivo<s n="adv"/></r></p></e>
+<e a="hector"><p><l>involontairement<s n="adv"/></l><r>involuntàriament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>tristement<s n="adv"/></l><r>tristament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>géologiquement<s n="adv"/></l><r>geològicament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>phonétiquement<s n="adv"/></l><r>fonèticament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>énormément<s n="adv"/></l><r>immensament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>fonctionnellement<s n="adv"/></l><r>funcionalment<s n="adv"/></r></p></e>
+<e r="RL" a="hector"><p><l>pas<b/>beaucoup<s n="adv"/></l><r>no<b/>gaire<s n="adv"/></r></p></e>
+<e a="hector"><p><l>au<b/>plus<b/>vite<s n="adv"/></l><r>al<b/>més<b/>aviat<b/>possible<s n="adv"/></r></p></e>
+<e r="RL" a="hector"><p><l>largement<s n="adv"/></l><r>amb<b/>escreix<s n="adv"/></r></p></e>
+<e a="hector"><p><l>tragiquement<s n="adv"/></l><r>tràgicament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>avec<b/>succès<s n="adv"/></l><r>reeixidament<s n="adv"/></r></p></e>
+<e><p><l>psychologiquement<s n="adv"/></l><r>psicològicament<s n="adv"/></r></p></e>
+<e><p><l>sincèrement<s n="adv"/></l><r>sincerament<s n="adv"/></r></p></e>
+<e r="RL"><p><l>bien<b/>sûr<s n="adv"/></l><r>de<b/>ben<b/>segur<s n="adv"/></r></p></e>
+<e a="hector"><p><l>dynamiquement<s n="adv"/></l><r>dinàmicament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>statistiquement<s n="adv"/></l><r>estadísticament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>passionément<s n="adv"/></l><r>apassionadament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>hiérarchiquement<s n="adv"/></l><r>jeràrquicament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>stylistiquement<s n="adv"/></l><r>estilísticament<s n="adv"/></r></p></e>
+<e><p><l>géométriquement<s n="adv"/></l><r>des<b/>de<b/>lluny<s n="adv"/></r></p></e>
+<e r="RL"><p><l>malheureusement<s n="adv"/></l><r>lamentablement<s n="adv"/></r></p></e>
+<e r="LR"><p><l>lamentablement<s n="adv"/></l><r>lamentablement<s n="adv"/></r></p></e>
+<e r="LR"><p><l>pitoyablement<s n="adv"/></l><r>lamentablement<s n="adv"/></r></p></e>
+<e><p><l>aimablement<s n="adv"/></l><r>amablement<s n="adv"/></r></p></e>
+<e><p><l>per<b/>se<s n="adv"/></l><r>per<b/>se<s n="adv"/></r></p></e>
+<e><p><l>afectueusement<s n="adv"/></l><r>afectuosament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>à<b/>peu<b/>près<s n="adv"/></l><r>si<b/>fa<b/>no<b/>fa<s n="adv"/></r></p></e>
+<e a="hector"><p><l>quantitativamente<s n="adv"/></l><r>quantitativament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>au<b/>galop<s n="adv"/></l><r>al<b/>galop<s n="adv"/></r></p></e>
+<e a="hector"><p><l>à<b/>moyen<b/>terme<s n="adv"/></l><r>a<b/>mitjà<b/>termini<s n="adv"/></r></p></e>
+<e a="hector"><p><l>en<b/>privé<s n="adv"/></l><r>privadament<s n="adv"/></r></p></e>
+<e r="RL" a="hector"><p><l>peut-être<s n="adv"/></l><r>tal<b/>vegada<s n="adv"/></r></p></e>
+<e r="RL" a="hector"><p><l>habituellement<s n="adv"/></l><r>ordinàriament<s n="adv"/></r></p></e>
+<e r="LR" a="hector"><p><l>ordinairement<s n="adv"/></l><r>ordinàriament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>en<b/>fin<b/>de<b/>compte<s n="adv"/></l><r>al<b/>cap<b/>i<b/>a<b/>la<b/>fi<s n="adv"/></r></p></e>
+<e r="LR" a="hector"><p><l>somme<b/>toute<s n="adv"/></l><r>al<b/>cap<b/>i<b/>a<b/>la<b/>fi<s n="adv"/></r></p></e>
+<e><p><l>critiquement<s n="adv"/></l><r>críticament<s n="adv"/></r></p></e>
+<e><p><l>à<b/>échelle<s n="adv"/></l><r>a<b/>escala<s n="adv"/></r></p></e>
+<e><p><l>religieusement<s n="adv"/></l><r>religiosament<s n="adv"/></r></p></e>
+<e><p><l>indiscutablement<s n="adv"/></l><r>indiscutiblement<s n="adv"/></r></p></e>
+<e a="hector"><p><l>chirurgiquement<s n="adv"/></l><r>quirúrgicament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>hermétiquement<s n="adv"/></l><r>hermèticament<s n="adv"/></r></p></e>
+<e a="hector"><p><l>diagonalement<s n="adv"/></l><r>diagonalment<s n="adv"/></r></p></e>
+<e a="hector"><p><l>classiquement<s n="adv"/></l><r>clàssicament<s n="adv"/></r></p></e>
+<e><p><l>sémantiquement<s n="adv"/></l><r>semànticament<s n="adv"/></r></p></e>
+<e><p><l>en<b/>faveur<s n="adv"/></l><r>a<b/>favor<s n="adv"/></r></p></e>
+<e><p><l>inversement<s n="adv"/></l><r>inversament<s n="adv"/></r></p></e>
+<e><p><l>furtivement<s n="adv"/></l><r>furtivament<s n="adv"/></r></p></e>
+<e><p><l>photographiquement<s n="adv"/></l><r>fotogràficament<s n="adv"/></r></p></e>
+<e><p><l>splendidement<s n="adv"/></l><r>esplèndidament<s n="adv"/></r></p></e>
+<e r="RL"><p><l>inégalement<s n="adv"/></l><r>desigualment<s n="adv"/></r></p></e>
+<e><p><l>chaleureusement<s n="adv"/></l><r>calorosament<s n="adv"/></r></p></e>
+<e><p><l>syntaxiquement<s n="adv"/></l><r>sintàcticament<s n="adv"/></r></p></e>
+<e><p><l>phonologiquement<s n="adv"/></l><r>fonològicament<s n="adv"/></r></p></e>
+<e><p><l>professionnellement<s n="adv"/></l><r>laboralment<s n="adv"/></r></p></e>
+<e><p><l>humainement<s n="adv"/></l><r>humanament<s n="adv"/></r></p></e>
+<e><p><l>de<b/>manière<b/>homogène<s n="adv"/></l><r>homogèniament<s n="adv"/></r></p></e>
+<e><p><l>gentiment<s n="adv"/></l><r>gentilment<s n="adv"/></r></p></e>
+<e><p><l>dialectiquement<s n="adv"/></l><r>dialècticament<s n="adv"/></r></p></e>
+<e><p><l>topographiquement<s n="adv"/></l><r>topogràficament<s n="adv"/></r></p></e>
+<e><p><l>analogiquement<s n="adv"/></l><r>analògicament<s n="adv"/></r></p></e>
+<e><p><l>à<b/>toute<b/>vitesse<s n="adv"/></l><r>a<b/>cuita-corrents<s n="adv"/></r></p></e>
+<e r="LR"><p><l>à<b/>toutes<b/>jambes<s n="adv"/></l><r>a<b/>cuita-corrents<s n="adv"/></r></p></e>
+<e r="LR"><p><l>en<b/>toute<b/>hâte<s n="adv"/></l><r>a<b/>cuita-corrents<s n="adv"/></r></p></e>
+<e r="LR"><p><l>dare-dare<s n="adv"/></l><r>a<b/>cuita-corrents<s n="adv"/></r></p></e>
+<e><p><l>microscopiquement<s n="adv"/></l><r>microscòpicament<s n="adv"/></r></p></e>
+<e><p><l>sans<b/>critique<s n="adv"/></l><r>acríticament<s n="adv"/></r></p></e>
+<e><p><l>géopolitiquement<s n="adv"/></l><r>geopolíticament<s n="adv"/></r></p></e>
+
+<e><p><l>convive<s n="n"/><s n="mf"/></l><r>comensal<s n="n"/><s n="mf"/></r></p></e>
+<e r="LR"><p><l>commensal<s n="n"/></l><r>comensal<s n="n"/></r></p><par n="GD_mf"/></e>
+<e><p><l>contrattaque<s n="n"/><s n="f"/></l><r>contratac<s n="n"/><s n="m"/></r></p></e>
+<e r="LR"><p><l>tout<b/>de<b/>même<s n="adv"/></l>         <r>tanmateix<s n="adv"/></r></p></e>
+<e r="LR"><p><l>stage<s n="n"/><s n="m"/></l><r>curset<s n="n"/><s n="m"/></r></p></e>
+<e><p><l>choucroute<s n="n"/><s n="f"/></l><r>xucrut<s n="n"/><s n="f"/></r></p></e>
+<e><p><l>voirie<s n="n"/><s n="f"/><s n="sg"/></l><r>xarxa<b/>viària<s n="n"/><s n="f"/><s n="sg"/></r></p></e>
+<e><p><l>patinoire<s n="n"/><s n="f"/></l><r>pista<g><b/>de<b/>patinatge</g><s n="n"/><s n="f"/></r></p></e>
+<e r="LR"><p><l>chantier<s n="n"/><s n="m"/></l><r>obra<s n="n"/><s n="f"/></r></p></e>
   </section>
 </dictionary>
