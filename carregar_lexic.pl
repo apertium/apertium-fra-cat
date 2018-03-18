@@ -19,22 +19,25 @@ my $MOT = 'UICN';	# paraula a debugar
 my $MOT = 'musique de chambre';	# paraula a debugar
 #my $MOT = 'nombre primer';	# paraula a debugar
 my $MOT = 'semifinal';	# paraula a debugar
-#my $MOT = '';
+my $MOT = '';
 
 my $MORF_TRACT = 'adj';
 my $MORF_TRACT = 'n';
+my $MORF_TRACT = 'adv';
+my $MORF_TRACT = 'vblex';
 #my $MORF_TRACT = '';
 
-my ($ffra, $fbi, $fdixfra, $fdixcat, $fdixbi, $fdixfran, $fdixfraadj);
+my ($ffra, $fbi, $flex, $fdixfra, $fdixcat, $fdixbi, $fdixfran, $fdixfraadj);
 
 open($fdixfra, "../apertium-fra/apertium-fra.fra.metadix") || die "can't open apertium-fra.fra.metadix: $!";
-open($fdixfran, "../apertium-fra/joanortola/fra-noun.txt") || die "can't open fra-noun.txt: $!";
-open($fdixfraadj, "../apertium-fra/joanortola/fra-adj.txt") || die "can't open fra-adj.txt: $!";
+open($fdixfran, "../apertium-fra/jaumeortola/fra-noun.txt") || die "can't open fra-noun.txt: $!";
+open($fdixfraadj, "../apertium-fra/jaumeortola/fra-adj.txt") || die "can't open fra-adj.txt: $!";
 open($fdixcat, "../apertium-cat/apertium-cat.cat.dix") || die "can't open apertium-cat.cat.dix: $!";
 open($fdixbi, "apertium-fra-cat.fra-cat.dix") || die "can't open apertium-fra-cat.fra-cat.dix: $!";
 
-open($ffra, ">f_fra.dix.txt") || die "can't open f_fra.dix: $!";
-open($fbi, ">f_bi.dix.txt") || die "can't open f_bi.dix: $!";
+open($ffra, ">f_fra.dix.txt") || die "can't create f_fra.dix.txt: $!";
+open($fbi, ">f_bi.dix.txt") || die "can't create f_bi.dix.txt: $!";
+open($flex, ">f_fra.lex.txt") || die "can't create f_fra.lex.dix: $!";	# llista de noves paraules fra per verificació ortogràfica
 
 binmode(STDIN, ":encoding(UTF-8)");
 binmode($fdixfra, ":encoding(UTF-8)");
@@ -44,6 +47,7 @@ binmode($fdixcat, ":encoding(UTF-8)");
 binmode($fdixbi, ":encoding(UTF-8)");
 binmode($ffra, ":encoding(UTF-8)");
 binmode($fbi, ":encoding(UTF-8)");
+binmode($flex, ":encoding(UTF-8)");
 binmode(STDOUT, ":encoding(UTF-8)");
 binmode(STDERR, ":encoding(UTF-8)");
 
@@ -1201,6 +1205,8 @@ sub escriure_bidix {
 	my $a = " a=\"$autor\"" if $autor;
 	if ($morf_cat eq 'vblex' && $morf_fra eq 'vblex') {
 		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"%s\"/></l><r>%s<s n=\"%s\"/></r></p></e>\n", $stem_fra, $morf_fra, $stem_cat, $morf_cat;
+	} elsif ($morf_cat eq 'adv' && $morf_fra eq 'adv') {
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"%s\"/></l><r>%s<s n=\"%s\"/></r></p></e>\n", $stem_fra, $morf_fra, $stem_cat, $morf_cat;
 	} elsif ($morf_cat eq 'n' && $morf_fra eq 'n') {
 		escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $lr_rl, $autor);
 	} elsif ($morf_cat eq 'adj' && $morf_fra eq 'adj') {
@@ -1229,6 +1235,7 @@ sub lema_fra_existeix_o_es_pot_crear {
 				$stem_fra =~ s/^ré//o;
 				if ($dix_fra{$morf_fra}{$stem_fra}) {
 					escriure_mono_vblex($lemma_fra, $stem_fra, $morf_fra, $autor);
+					printf $flex "$lemma_fra\n";
 					return 1;
 				}
 			} elsif ($lemma_fra =~ /^re/) {
@@ -1236,6 +1243,7 @@ sub lema_fra_existeix_o_es_pot_crear {
 				$stem_fra =~ s/^re//o;
 				if ($dix_fra{$morf_fra}{$stem_fra}) {
 					escriure_mono_vblex($lemma_fra, $stem_fra, $morf_fra, $autor);
+					printf $flex "$lemma_fra\n";
 					return 1;
 				}
 			}
@@ -1243,28 +1251,33 @@ sub lema_fra_existeix_o_es_pot_crear {
 				my $stem_fra = $lemma_fra;
 				$stem_fra =~ s/er$//o;
 				printf $ffra "    <e lm=\"%s\"$a>        <i>%s</i><par n=\"%s\"/></e>\n", $lemma_fra, $stem_fra, 'allong/er__vblex';
+				printf $flex "$lemma_fra\n";
 				return 1;
 			} elsif ($lemma_fra =~ /yer$/o) {
 				my $stem_fra = $lemma_fra;
 				$stem_fra =~ s/yer$//o;
 				printf $ffra "    <e lm=\"%s\"$a>        <i>%s</i><par n=\"%s\"/></e>\n", $lemma_fra, $stem_fra, 'bala/yer__vblex';
+				printf $flex "$lemma_fra\n";
 				return 1;
 			} elsif ($lemma_fra =~ /cer$/o) {
 				my $stem_fra = $lemma_fra;
 				$stem_fra =~ s/cer$//o;
 				printf $ffra "    <e lm=\"%s\"$a>        <i>%s</i><par n=\"%s\"/></e>\n", $lemma_fra, $stem_fra, 'annon/cer__vblex';
+				printf $flex "$lemma_fra\n";
 				return 1;
 			} elsif ($lemma_fra =~ /e(.)er$/o) {
 				my $cons = $1;
 				my $stem_fra = $lemma_fra;
 				$stem_fra =~ s/e.er$//o;
 				printf $ffra "    <e lm=\"%s\"$a>        <i>%s</i><par n=\"%s\" prm=\"%s\"/></e>\n", $lemma_fra, $stem_fra, 'ach/e[T]er__vblex', $cons;
+				printf $flex "$lemma_fra\n";
 				return 1;
 			} elsif ($lemma_fra =~ /é(.)er$/o) {
 				my $cons = $1;
 				my $stem_fra = $lemma_fra;
 				$stem_fra =~ s/é.er$//o;
 				printf $ffra "    <e lm=\"%s\"$a>        <i>%s</i><par n=\"%s\" prm=\"%s\"/></e>\n", $lemma_fra, $stem_fra, 'accél/é[R]er__vblex', $cons;
+				printf $flex "$lemma_fra\n";
 				return 1;
 			} elsif ($lemma_fra =~ /iser$/o
 				|| $lemma_fra =~ /yser$/o
@@ -1278,10 +1291,17 @@ sub lema_fra_existeix_o_es_pot_crear {
 				my $stem_fra = $lemma_fra;
 				$stem_fra =~ s/er$//o;
 				printf $ffra "    <e lm=\"%s\"$a>        <i>%s</i><par n=\"%s\"/></e>\n", $lemma_fra, $stem_fra, 'abaiss/er__vblex';
+				printf $flex "$lemma_fra\n";
 				return 1;
 			} else {
 				return 0;
 			}
+		} elsif ($morf_fra eq 'adv') {
+				my $stem_fra = $lemma_fra;
+				$stem_fra =~ s| |<b/>|og;
+				printf $ffra "    <e lm=\"%s\"$a>        <i>%s</i><par n=\"%s\"/></e>\n", $lemma_fra, $stem_fra, 'hier__adv';
+				printf $flex "$lemma_fra\n";
+				return 1;
 		} elsif ($morf_fra eq 'adj') {
 			my $tmp = $dix_fraadj_def{$morf_fra}{$lemma_fra};
 			if ($tmp) {
