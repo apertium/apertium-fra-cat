@@ -697,6 +697,11 @@
     <match lemma="negociació" tags="n.*"/>
   </rule>
 
+  <!-- encaixar >> emboîter, accorder -->
+  <rule weight="0.8">
+    <match lemma="encaixar" tags="vblex.*"><select lemma="accorder"/></match>
+  </rule>
+
   <!-- rendre >> tornar, retre -->
   <rule weight="0.8">
     <match lemma="rendre" tags="vblex.*"><select lemma="tornar"/></match>
@@ -925,6 +930,27 @@
   <rule weight="1.0">
     <match lemma="telèfon" tags="n.*"/>
     <match lemma="mòbil" tags="adj.*"><select lemma="portable"/></match>
+  </rule>
+
+  <!-- net >> propre, net -->
+  <rule weight="0.8">
+    <match lemma="net" tags="adj.*"><select lemma="propre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      	<match lemma="creixement" tags="n.*"/>
+      	<match lemma="augment" tags="n.*"/>
+      	<match lemma="import" tags="n.*"/>
+      	<match lemma="saldo" tags="n.*"/>
+      	<match lemma="pes" tags="n.*"/>
+      	<match lemma="benefici" tags="n.*"/>
+      	<match lemma="contribuent" tags="n.*"/>
+      	<match lemma="càrrega" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="net" tags="adj.*"><select lemma="net"/></match>
   </rule>
 
   <!-- original >> original, originel -->

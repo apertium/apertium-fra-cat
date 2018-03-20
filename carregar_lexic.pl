@@ -19,6 +19,8 @@ my $MOT = 'UICN';	# paraula a debugar
 my $MOT = 'musique de chambre';	# paraula a debugar
 #my $MOT = 'nombre primer';	# paraula a debugar
 my $MOT = 'semifinal';	# paraula a debugar
+my $MOT = 'désintégrer';	# paraula a debugar
+my $MOT = 'intégrer';	# paraula a debugar
 my $MOT = '';
 
 my $MORF_TRACT = 'adj';
@@ -111,6 +113,7 @@ sub llegir_dix {
 next if $linia !~ /$MORF_TRACT/o;
 
 #     <e lm="crever les yeux"><p><l>cr</l><r>cr</r></p><par n="ach/e[T]er__vblex" prm="v"/><p><l><b/>les<b/>yeux</l><r><g><b/>les<b/>yeux</g></r></p></e>
+#     <e lm="intégrer"><i>int</i><par n="accél/é[R]er__vblex" prm="gr"/></e>
 #     <e lm="emprunt" a="joan"><i>emprunt</i><par n="livre__n"/></e>
 
 print "1. fitxer $nfitx, $linia\n" if $MOT && $linia =~ /$MOT/o;
@@ -118,7 +121,7 @@ print "1. fitxer $nfitx, $linia\n" if $MOT && $linia =~ /$MOT/o;
 		if ($linia =~ m|<e .*lm="([^"]*)".*<i>.*</i>.*<par n="([^"]*)"/></e>|o) {
 			$lemma = $1;
 			$par = $2;
-		} elsif ($linia =~ m|<e .*lm="([^"]*)".*<i>.*</i>.*<par n="([^"]*)" prm="(.)"/></e>|o) {
+		} elsif ($linia =~ m|<e .*lm="([^"]*)".*<i>.*</i>.*<par n="([^"]*)" prm="([^"]*)"/></e>|o) {
 			$lemma = $1;
 			$par = $2;
 			$prm = $3;
@@ -280,7 +283,6 @@ sub crear_g {
 	if ($dix_fra_prm{$gram_fra}{$cap}) {
 		printf $ffra "    <e lm=\"%s\"><p><l>%s</l><r>%s</r></p><par n=\"%s\" prm=\"%s\"/><p><l>%s</l><r><g>%s</g></r></p></e>\n",
 			$lemma_fra, $arrel, $arrel, $dix_fra{$gram_fra}{$cap}, $dix_fra_prm{$gram_fra}{$cap}, $cua, $cua;
-exit 0;
 	} else {
 		if ($lemma_fra =~ / à$/o) {
 #    <e lm="consister à" r="LR"><i>consist</i><par n="abaiss/er__vblex"/><p><l><b/>à</l><r><g><b/>à</g></r></p></e>
@@ -1218,6 +1220,8 @@ sub escriure_bidix {
 
 sub lema_fra_existeix_o_es_pot_crear {
 	my ($lemma_fra, $morf_fra, $autor) = @_;
+print "0. lema_fra_existeix_o_es_pot_crear: dix_fra{$morf_fra}{$lemma_fra} = $dix_fra{$morf_fra}{$lemma_fra}\n"
+	if $MOT && ($lemma_fra =~ /$MOT/o);
 #print STDERR "lema_fra_existeix_o_es_pot_crear: dix_fra{$morf_fra}{$lemma_fra} = $dix_fra{$morf_fra}{$lemma_fra}\n";
 	return 1 if $dix_fra{$morf_fra}{$lemma_fra};
 
@@ -1225,14 +1229,42 @@ sub lema_fra_existeix_o_es_pot_crear {
 	# potser es pot crear si és un verb amb <g> i tenim la capçalera
 	return 0 if $lemma_fra =~ /^se /o;
 	return 0 if $lemma_fra =~ /^s'/o;
+print "3. lema_fra_existeix_o_es_pot_crear: dix_fra{$morf_fra}{$lemma_fra} = $dix_fra{$morf_fra}{$lemma_fra}\n"
+	if $MOT && ($lemma_fra =~ /$MOT/o);
 	if ($lemma_fra =~ /#/o) {
 		return ! crear_g($lemma_fra, $morf_fra);
 	} else {
+print "4. lema_fra_existeix_o_es_pot_crear: dix_fra{$morf_fra}{$lemma_fra} = $dix_fra{$morf_fra}{$lemma_fra}\n"
+	if $MOT && ($lemma_fra =~ /$MOT/o);
 		if ($morf_fra eq 'vblex') {
+print "5. lema_fra_existeix_o_es_pot_crear: dix_fra{$morf_fra}{$lemma_fra} = $dix_fra{$morf_fra}{$lemma_fra}\n"
+	if $MOT && ($lemma_fra =~ /$MOT/o);
 			my $a = " a=\"$autor\"" if $autor;
 			if ($lemma_fra =~ /^ré/) {
 				my $stem_fra = $lemma_fra;
 				$stem_fra =~ s/^ré//o;
+				if ($dix_fra{$morf_fra}{$stem_fra}) {
+					escriure_mono_vblex($lemma_fra, $stem_fra, $morf_fra, $autor);
+					printf $flex "$lemma_fra\n";
+					return 1;
+				}
+			} elsif ($lemma_fra =~ /^dés/) {
+				my $stem_fra = $lemma_fra;
+				$stem_fra =~ s/^dés//o;
+print "6a. lema_fra_existeix_o_es_pot_crear: dix_fra{$morf_fra}{$lemma_fra} = $dix_fra{$morf_fra}{$lemma_fra}\n"
+	if $MOT && ($lemma_fra =~ /$MOT/o);
+print "6b. lema_fra_existeix_o_es_pot_crear: dix_fra{$morf_fra}{$stem_fra} = $dix_fra{$morf_fra}{$stem_fra}\n"
+	if $MOT && ($lemma_fra =~ /$MOT/o);
+				if ($dix_fra{$morf_fra}{$stem_fra}) {
+print "7. lema_fra_existeix_o_es_pot_crear: dix_fra{$morf_fra}{$lemma_fra} = $dix_fra{$morf_fra}{$lemma_fra}\n"
+	if $MOT && ($lemma_fra =~ /$MOT/o);
+					escriure_mono_vblex($lemma_fra, $stem_fra, $morf_fra, $autor);
+					printf $flex "$lemma_fra\n";
+					return 1;
+				}
+			} elsif ($lemma_fra =~ /^dé/) {
+				my $stem_fra = $lemma_fra;
+				$stem_fra =~ s/^dé//o;
 				if ($dix_fra{$morf_fra}{$stem_fra}) {
 					escriure_mono_vblex($lemma_fra, $stem_fra, $morf_fra, $autor);
 					printf $flex "$lemma_fra\n";
@@ -1286,11 +1318,25 @@ sub lema_fra_existeix_o_es_pot_crear {
 				|| $lemma_fra =~ /guer$/o
 				|| $lemma_fra =~ /enter$/o
 				|| $lemma_fra =~ /brer$/o
+				|| $lemma_fra =~ /cter$/o
+				|| $lemma_fra =~ /pter$/o
+				|| $lemma_fra =~ /nser$/o
+				|| $lemma_fra =~ /gner$/o
+				|| $lemma_fra =~ /rder$/o
+				|| $lemma_fra =~ /rmer$/o
+				|| $lemma_fra =~ /rner$/o
+				|| $lemma_fra =~ /ster$/o
 				|| $lemma_fra =~ /[aiou][bdflmnprstv]er$/o
 				|| $lemma_fra =~ /[aiou][bcdflmnprstv][bdfhlmnprstv]er$/o) {
 				my $stem_fra = $lemma_fra;
 				$stem_fra =~ s/er$//o;
 				printf $ffra "    <e lm=\"%s\"$a>        <i>%s</i><par n=\"%s\"/></e>\n", $lemma_fra, $stem_fra, 'abaiss/er__vblex';
+				printf $flex "$lemma_fra\n";
+				return 1;
+			} elsif ($lemma_fra =~ /ir$/o) {
+				my $stem_fra = $lemma_fra;
+				$stem_fra =~ s/er$//o;
+				printf $ffra "    <e lm=\"%s\"$a>        <i>%s</i><par n=\"%s\"/></e>\n", $lemma_fra, $stem_fra, 'about/[]ir__vblex';
 				printf $flex "$lemma_fra\n";
 				return 1;
 			} else {
@@ -1333,10 +1379,11 @@ sub tractar_parella {
 	my ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $autor, $primer, $n_linia) = @_;
 
 #print "tractar_parella ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $autor, $primer)\n";
-print "tractar_parella ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $autor, $primer)\n" if $lemma_cat eq $MOT || $lemma_fra eq $MOT;
+print "1. tractar_parella ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $autor, $primer)\n" if $lemma_cat eq $MOT || $lemma_fra eq $MOT;
 #print "5. fra dix_fra{$MORF_TRACT}{$MOT} = $dix_fra{$MORF_TRACT}{$MOT}\n";
 	if (exists $dix_fra_cat{$morf_fra}{$lemma_fra}) {
 		# ja existeix una traducció per al lema fra
+print "1.0.\n" if $MOT && ($lemma_cat =~ /$MOT/o || $lemma_fra =~ /$MOT/o);
 		if (is_in($dix_fra_cat{$morf_fra}{$lemma_fra}, $lemma_cat)) {
 			# ja existeix aquesta traducció per al lema fra
 			# no fem res
@@ -1361,7 +1408,7 @@ print "1. escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fr
 				# recordatori: ja existeix una traducció per al lema fra (ergo: està en el monodix fra)
 				# traducció en la direcció cat > fra
 				my $direccio = ($primer) ? 'r="RL"' : 'i="yes"';
-print STDERR "2. escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $direccio, $autor)\n" if $MOT && ($lemma_cat =~ /$MOT/o || $lemma_fra =~ /$MOT/o);
+print "2. escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $direccio, $autor)\n" if $MOT && ($lemma_cat =~ /$MOT/o || $lemma_fra =~ /$MOT/o);
 #print STDERR "2. escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, 'r=\"RL\"', $autor)\n" if $lemma_fra eq 'rifle';
 				escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $direccio, $autor);
 				return;
@@ -1370,6 +1417,7 @@ print STDERR "2. escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $
 
 	} else {
 		# no existeix una traducció per al lema fra
+print "3.0.\n" if $MOT && ($lemma_cat =~ /$MOT/o || $lemma_fra =~ /$MOT/o);
 		if (exists $dix_cat_fra{$morf_cat}{$lemma_cat}) {
 			# ja existeix una traducció per al lema cat
 			if (is_in($dix_cat_fra{$morf_cat}{$lemma_cat}, $lemma_fra)) {
@@ -1378,7 +1426,7 @@ print STDERR "2. escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $
 				return;
 			} elsif (lema_fra_existeix_o_es_pot_crear ($lemma_fra, $morf_fra, $autor)) {
 				# $primer no afecta aquí perquè suma LR a LR: queda igual
-print STDERR "3. escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, 'r=\"LR\"', $autor)\n" if $MOT && ($lemma_cat =~ /$MOT/o || $lemma_fra =~ /$MOT/o);
+print "3. escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, 'r=\"LR\"', $autor)\n" if $MOT && ($lemma_cat =~ /$MOT/o || $lemma_fra =~ /$MOT/o);
 #print STDERR "3. escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, 'r=\"LR\"', $autor)\n" if $lemma_fra eq 'rifle';
 				escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, 'r="LR"', $autor);
 				return;
@@ -1387,7 +1435,9 @@ print STDERR "3. escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $
 				return;
 			}
 		} else {
-			if (lema_fra_existeix_o_es_pot_crear ($lemma_fra, $morf_fra)) {
+print "4.0.\n" if $MOT && ($lemma_cat =~ /$MOT/o || $lemma_fra =~ /$MOT/o);
+			if (lema_fra_existeix_o_es_pot_crear ($lemma_fra, $morf_fra, $autor)) {
+print "4. escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, '', $autor)\n" if $lemma_fra eq 'rifle';
 #print STDERR "4. escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, '', $autor)\n" if $lemma_fra eq 'rifle';
 				my $direccio = ($primer) ? '' : 'r="LR"';
 				escriure_bidix ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $direccio, $autor);
@@ -1417,15 +1467,20 @@ llegir_bidix($fdixbi, \%dix_fra_cat, \%dix_cat_fra);
 <STDIN>;	# saltem la primera línia
 my ($stem_cat, $stem_fra, $gen_cat, $gen_fra, $num_cat, $num_fra, $lemma_cat, $lemma_fra, $lemma_cat_ini, $lemma_fra_ini);
 while (my $linia = <STDIN>) {
+#print "0. l. $.: $linia\n";
 next if $linia !~ /$MORF_TRACT/o;
+#print "1. l. $.: $linia\n";
 	next if $linia =~ /xxx/io;
+#print "2. l. $.: $linia\n";
 	next if $linia =~ /---/o;
+#print "3. l. $.: $linia\n";
 	chop $linia;
 
 	if ($linia =~ /\(/o) {
 		print STDERR "Error en l. $.: $linia\n";
 		next;
 	}
+#print "4. l. $.: $linia\n";
 
 	$linia =~ s/[^a-zàèéíòóúçA-ZÀÈÉíÒÓÚÇ\t]+$//o;
 	$linia =~ s|\r| |og;
@@ -1475,10 +1530,10 @@ next if $gram_cat !~ /^<$MORF_TRACT>/o;
 	$autor =~ s|^ ||o;
 	$autor =~ s| $||o;
 	$autor =~ s|^jl$|joan|o;
-print "$linia\n" if $MOT && $lemma_cat eq $MOT;;
-print "autor = $autor\n" if $MOT && $lemma_cat eq $MOT;;
+print "$linia\n" if $MOT && ($lemma_cat eq $MOT || $lemma_fra eq $MOT);
+print "autor = $autor\n" if $MOT && ($lemma_cat eq $MOT || $lemma_fra eq $MOT);
 
-print "11. $linia - stem_cat=$stem_cat, lemma_cat=$lemma_cat, gram_cat = $gram_cat, dades[3]=$dades[3]\n" if $MOT && $lemma_cat =~ /$MOT/o;
+print "11. $linia - stem_cat=$stem_cat, lemma_cat=$lemma_cat, gram_cat = $gram_cat, dades[3]=$dades[3]\n" if $MOT && ($lemma_cat =~ /$MOT/o || $lemma_fra eq $MOT);
 	my @stem_fra = split /;/o, $dades[3];
 	my $primer = 1;
 	my $n = 0; 	# index en @stem_fra
@@ -1495,6 +1550,7 @@ print "11. $linia - stem_cat=$stem_cat, lemma_cat=$lemma_cat, gram_cat = $gram_c
 			$stem_fra = $` . '<g>' . $' . '</g>';
 #			$lemma_fra =~ s/#//o;
 		}
+print "$linia\n" if $MOT && ($lemma_cat eq $MOT || $lemma_fra eq $MOT);
 		$stem_fra =~ s| |<b/>|og;
 
 		my $gram_cat = $dades[2];
@@ -1524,7 +1580,7 @@ print "11. $linia - stem_cat=$stem_cat, lemma_cat=$lemma_cat, gram_cat = $gram_c
 		} else {
 			$gram_fra = $gram_cat;
 		}
-print "12. $linia - stem_fra=$stem_fra, lemma_fra=$lemma_fra, gram_cat = $gram_cat, gram_fra = $gram_fra\n" if $MOT && $lemma_cat =~ /$MOT/o;
+print "12. $linia - stem_fra=$stem_fra, lemma_fra=$lemma_fra, gram_cat = $gram_cat, gram_fra = $gram_fra\n" if $MOT && ($lemma_cat =~ /$MOT/o || $lemma_fra eq $MOT);
 #print "12. $linia - stem_fra=$stem_fra, lemma_fra=$lemma_fra, gram_cat = $gram_cat, gram_fra = $gram_fra\n";
 
 		tractar_parella ($lemma_cat, $stem_cat, $gram_cat, $lemma_fra, $stem_fra, $gram_fra, $autor, $primer, $.);

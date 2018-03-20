@@ -1109,6 +1109,19 @@
     <match lemma="portable" tags="adj.*"><select lemma="mòbil"/></match>
   </rule>
 
+  <!-- propre >> net, propi -->
+  <rule weight="0.8">
+    <match lemma="propre" tags="adj.*"><select lemma="net"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="propre" tags="adj.*"><select lemma="propi"/></match>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="nom" tags="n.*"/>
+    <match lemma="propre" tags="adj.*"><select lemma="propi"/></match>
+  </rule>
+
   <!-- beau >> bonic, bell, bo -->
   <rule weight="1.0">
     <match lemma="beau" tags="adj.*"><select lemma="bonic" tags="adj.*"/></match>
