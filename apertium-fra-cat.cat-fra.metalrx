@@ -250,9 +250,119 @@
       <match lemma="marxar" tags="vblex.*"/>
     </def-seq>
 
+    <def-seq n="pr_de">
+      <match lemma="de" tags="pr"/>"/>
+      <match lemma="a banda de" tags="pr"/>
+      <match lemma="abans de" tags="pr"/>
+      <match lemma="a causa de" tags="pr"/>
+      <match lemma="a començaments de" tags="pr"/>
+      <match lemma="a davant de" tags="pr"/>
+      <match lemma="a dins de" tags="pr"/>
+      <match lemma="a dintre de" tags="pr"/>
+      <match lemma="a finals de" tags="pr"/>
+      <match lemma="a la vora de" tags="pr"/>
+      <match lemma="al capdavant de" tags="pr"/>
+      <match lemma="al cap de" tags="pr"/>
+      <match lemma="al cim de" tags="pr"/>
+      <match lemma="al començament de" tags="pr"/>
+      <match lemma="al costat de" tags="pr"/>
+      <match lemma="al damunt de" tags="pr"/>
+      <match lemma="al davant de" tags="pr"/>
+      <match lemma="a l'entorn de" tags="pr"/>
+      <match lemma="al final de" tags="pr"/>
+      <match lemma="al llarg de" tags="pr"/>
+      <match lemma="al principi de" tags="pr"/>
+      <match lemma="als voltants de" tags="pr"/>
+      <match lemma="als volts de" tags="pr"/>
+      <match lemma="al voltant de" tags="pr"/>
+      <match lemma="amb la finalitat de" tags="pr"/>
+      <match lemma="a més a més de" tags="pr"/>
+      <match lemma="a més de" tags="pr"/>
+      <match lemma="a part de" tags="pr"/>
+      <match lemma="a partir de" tags="pr"/>
+      <match lemma="a primers de" tags="pr"/>
+      <match lemma="a principis de" tags="pr"/>
+      <match lemma="a prop de" tags="pr"/>
+      <match lemma="arran de" tags="pr"/>
+      <match lemma="a sobre de" tags="pr"/>
+      <match lemma="a sota de" tags="pr"/>
+      <match lemma="a través de" tags="pr"/>
+      <match lemma="damunt de" tags="pr"/>
+      <match lemma="darrere de" tags="pr"/>
+      <match lemma="davant de" tags="pr"/>
+      <match lemma="d'ençà de" tags="pr"/>
+      <match lemma="des de" tags="pr"/>
+      <match lemma="després de" tags="pr"/>
+      <match lemma="dins de" tags="pr"/>
+      <match lemma="dintre de" tags="pr"/>
+      <match lemma="en benefici de" tags="pr"/>
+      <match lemma="en cas de" tags="pr"/>
+      <match lemma="en comptes de" tags="pr"/>
+      <match lemma="en contra de" tags="pr"/>
+      <match lemma="en detriment de" tags="pr"/>
+      <match lemma="en el cas de" tags="pr"/>
+      <match lemma="en el marc de" tags="pr"/>
+      <match lemma="en el moment de" tags="pr"/>
+      <match lemma="en el transcurs de" tags="pr"/>
+      <match lemma="enfront de" tags="pr"/>
+      <match lemma="en lloc de" tags="pr"/>
+      <match lemma="entorn de" tags="pr"/>
+      <match lemma="en vista de" tags="pr"/>
+      <match lemma="fora de" tags="pr"/>
+      <match lemma="just després de" tags="pr"/>
+      <match lemma="llevat de" tags="pr"/>
+      <match lemma="més enllà de" tags="pr"/>
+      <match lemma="molt abans de" tags="pr"/>
+      <match lemma="per culpa de" tags="pr"/>
+      <match lemma="per tal de" tags="pr"/>
+      <match lemma="poc abans de" tags="pr"/>
+      <match lemma="poc després de" tags="pr"/>
+      <match lemma="prop de" tags="pr"/>
+      <match lemma="rere de" tags="pr"/>
+      <match lemma="sobre de" tags="pr"/>
+      <match lemma="sota de" tags="pr"/>
+      <match lemma="tret de" tags="pr"/>
+      <match lemma="una mica abans de" tags="pr"/>
+      <match lemma="una mica de" tags="pr"/>
+      <match lemma="una mica després de" tags="pr"/>
+      <match lemma="una mica massa de" tags="pr"/>
+      <match lemma="una mica massa poc de" tags="pr"/>
+      <match lemma="una mica menys de" tags="pr"/>
+      <match lemma="una mica més de" tags="pr"/>
+      <match lemma="una micona de" tags="pr"/>
+      <match lemma="una micona menys de" tags="pr"/>
+      <match lemma="una micona més de" tags="pr"/>
+      <match lemma="una miqueta de" tags="pr"/>
+      <match lemma="una miqueta massa de" tags="pr"/>
+      <match lemma="una miqueta massa poc de" tags="pr"/>
+      <match lemma="una miqueta menys de" tags="pr"/>
+      <match lemma="una miqueta més de" tags="pr"/>
+      <match lemma="vora de" tags="pr"/>
+    </def-seq>
+
   </def-seqs>
 
 <rules>
+
+<!-- DET -->
+
+  <!-- uns >> des, quelques -->
+  <rule weight="0.8">
+    <match lemma="un" tags="det.*"><select lemma="un"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="pr_de"/>
+    </or>
+    <or>
+      <match lemma="un" tags="det.ind.m.pl"><select lemma="quelque"/></match>
+      <match lemma="un" tags="det.ind.f.pl"><select lemma="quelque"/></match>
+    </or>
+  </rule>
+  <rule weight="1.2"> <!-- per solucionar un bug -->
+    <match lemma="a" tags="pr"/>
+    <match lemma="un" tags="det.*"><select lemma="un"/></match>
+  </rule>
 
 <!-- PRN -->
 
@@ -288,7 +398,7 @@
     <repeat from="0" upto="1">
       <match tags="adv"/>
     </repeat>
-    <match tags="vblex.*."/>
+    <match tags="vblex.*"/>
     <match lemma="que" tags="cnjsub"/>
   </rule>
   <rule weight="1.0">
@@ -296,7 +406,7 @@
     <repeat from="0" upto="1">
       <match tags="adv"/>
     </repeat>
-    <match tags="vblex.*."/>
+    <match tags="vblex.*"/>
     <match tags="adv"/>
     <match lemma="que" tags="cnjsub"/>
   </rule>
@@ -313,6 +423,17 @@
       <match lemma="us" tags="prn.pro.*"/>
     </or>
     <match tags="vblex.*.p3.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="vbser.*"/>
+      <match lemma="estar" tags="vbser.*"/>
+      <match lemma="semblar" tags="vbser.*"/>
+    </or>
   </rule>
 
   <!-- la qual cosa >> ce qui, lequel -->
@@ -804,6 +925,15 @@
   <rule weight="1.0">
     <match lemma="telèfon" tags="n.*"/>
     <match lemma="mòbil" tags="adj.*"><select lemma="portable"/></match>
+  </rule>
+
+  <!-- original >> original, originel -->
+  <rule weight="0.8">
+    <match lemma="original" tags="adj.*"><select lemma="original"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="adv"/>
+    <match lemma="original" tags="adj.*"><select lemma="originel"/></match>
   </rule>
 
   <!-- franc >> franc, franc_peuple -->

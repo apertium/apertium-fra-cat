@@ -30,6 +30,10 @@ en + ger > ger : en mangeant > menjant
 
 Hier soir > Ahir al vespre
 
+ne mange que > menja només
+
+postuler à un examen... (sel lex)
+
 echo "va implicar-se" | apertium -d . cat-fra
 s'a impliqué
 echo ", va implicar-se" | apertium -d . cat-fra
@@ -125,6 +129,10 @@ seure > s'assoir
 continuo dient > (je) continue à dire
 van perdent > sont en train de perdre ???
 es va convertint > est en train de se XX
+
+s'ha de > il faut
+
+uns 10 > près de 10 (transferència)
 
 fa poques dècades > il y a quelques décénnies
 
