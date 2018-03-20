@@ -336,6 +336,21 @@
 
 <!-- **************** V **************** -->
 
+  <!-- décrocher >> sonar, picar -->
+  <rule weight="0.8">
+    <match lemma="décrocher" tags="vblex.*"><select lemma="despenjar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="décrocher" tags="vblex.*"><select lemma="aconseguir"/></match>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="prix" tags="n.*"/>
+      <match lemma="concours" tags="n.*"/>
+      <match lemma="médaille" tags="n.*"/>
+      <match lemma="títre" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- coucher >> ficar# al llit (tr, pron), jeure, ajeure (intr) -->
   <rule weight="0.8">
     <match lemma="coucher" tags="vblex.*"><select lemma="ficar# al llit"/></match>
