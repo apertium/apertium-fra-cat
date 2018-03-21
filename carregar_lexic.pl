@@ -24,9 +24,9 @@ my $MOT = 'intégrer';	# paraula a debugar
 my $MOT = '';
 
 my $MORF_TRACT = 'adj';
-my $MORF_TRACT = 'n';
-my $MORF_TRACT = 'adv';
-my $MORF_TRACT = 'vblex';
+#my $MORF_TRACT = 'n';
+#my $MORF_TRACT = 'adv';
+#my $MORF_TRACT = 'vblex';
 #my $MORF_TRACT = '';
 
 my ($ffra, $fbi, $flex, $fdixfra, $fdixcat, $fdixbi, $fdixfran, $fdixfraadj);
