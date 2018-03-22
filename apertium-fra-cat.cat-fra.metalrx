@@ -1035,6 +1035,15 @@
     <match tags="n.*.sg"/>
   </rule>
 
+  <!-- plat >> assiette, plat-->
+  <rule weight="0.8">
+    <match lemma="plat" tags="n.*"><select lemma="plat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="plat" tags="n.*"><select lemma="assiette"/></match>
+    <match lemma="pla" tags="adj.*"/>
+  </rule>
+
   <!-- joia >> bijou, joie -->
   <rule weight="0.8">
     <match lemma="joia" tags="n.*"><select lemma="bijou"/></match>
