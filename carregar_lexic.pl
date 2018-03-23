@@ -384,6 +384,7 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_cat eq 'assa/ig__n'
 			|| $par_cat eq 'av/ís__n'
 			|| $par_cat eq 'bacall/à__n'
+			|| $par_cat eq 'ban/ús__n'
 			|| $par_cat eq 'boc/í__n'
 			|| $par_cat eq 'cab/às__n'
 			|| $par_cat eq 'calab/ós__n'
@@ -577,6 +578,7 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_cat eq 'assa/ig__n'
 			|| $par_cat eq 'av/ís__n'
 			|| $par_cat eq 'bacall/à__n'
+			|| $par_cat eq 'ban/ús__n'
 			|| $par_cat eq 'boc/í__n'
 			|| $par_cat eq 'cab/às__n'
 			|| $par_cat eq 'calab/ós__n'
@@ -592,10 +594,14 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_cat eq 'moss/èn__n'
 			|| $par_cat eq 'nitr/ogen__n'
 			|| $par_cat eq 'or/igen__n'
+			|| $par_cat eq 'pa__n'
 			|| $par_cat eq 'passad/ís__n'
 			|| $par_cat eq 'rebu/ig__n'
 			|| $par_cat eq 'r/és__n'
-			|| $par_cat eq 'pa__n')) {
+
+			|| $par_cat eq 'bouch/er__n'
+			|| $par_cat eq 'senyor__n'
+			)) {
 		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif (($par_fra eq 'livre__n'
 		|| $par_fra eq 'brand/y__n'
@@ -653,6 +659,7 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_cat eq 'assa/ig__n'
 			|| $par_cat eq 'av/ís__n'
 			|| $par_cat eq 'bacall/à__n'
+			|| $par_cat eq 'ban/ús__n'
 			|| $par_cat eq 'boc/í__n'
 			|| $par_cat eq 'cab/às__n'
 			|| $par_cat eq 'calab/ós__n'
@@ -706,6 +713,7 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_cat eq 'assa/ig__n'
 			|| $par_cat eq 'av/ís__n'
 			|| $par_cat eq 'bacall/à__n'
+			|| $par_cat eq 'ban/ús__n'
 			|| $par_cat eq 'boc/í__n'
 			|| $par_cat eq 'cab/às__n'
 			|| $par_cat eq 'calab/ós__n'
