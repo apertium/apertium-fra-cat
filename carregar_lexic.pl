@@ -420,15 +420,12 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 #	} elsif ($par_fra eq 'admis_n' && $par_cat eq 'accionist/a__n') {
 #		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"mf\"/></l><r>%s<s n=\"n\"/><s n=\"mf\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif (($par_fra eq 'admis__n' || $par_fra eq 'épou/x__n')
-			&& ($par_cat eq 'angl/ès__n'
-			|| $par_cat eq 'religi/ós__n')) {
-		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"anglais_anglès\"/></e>\n", $stem_fra, $stem_cat;
-	} elsif (($par_fra eq 'admis__n' || $par_fra eq 'épou/x__n')
 		&& ($par_cat eq 'senyor__n'
 			|| $par_cat eq 'adjudicat/ari__n'
 			|| $par_cat eq 'administrati/u__n'
 			|| $par_cat eq 'advoca/t__n'
 			|| $par_cat eq 'alacant/í__n'
+			|| $par_cat eq 'angl/ès__n'
 			|| $par_cat eq 'americ/à__n'
 			|| $par_cat eq 'amfitri/ó__n'
 			|| $par_cat eq 'ami/c__n'
@@ -440,13 +437,19 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_cat eq 'gitan/o__n'
 			|| $par_cat eq 'mag__n'
 			|| $par_cat eq 'pres__n'
+			|| $par_cat eq 'religi/ós__n'
 			|| $par_cat eq 'ser/f__n'
 			|| $par_cat eq 'sum/eri__n'
 			|| $par_cat eq 've/í__n'
 			|| $par_cat eq 'xil/è__n'
 			|| $par_cat eq 'angl/ès__n')) {
-
 		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"anglais_anglès\"/></e>\n", $stem_fra, $stem_cat;
+	} elsif (($par_fra eq 'admis__n' || $par_fra eq 'épou/x__n')
+		&& ($par_cat eq 'accionist/a__n'
+			|| $par_cat eq 'acompanyant__n'
+			|| $par_cat eq 'monar/ca__n'
+)) {
+		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"anglais_esquimal\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif (($par_fra eq 'affecté__n'
 			|| $par_fra eq 'administrat/eur__n'
 			|| $par_fra eq 'ancien__n'
@@ -564,7 +567,8 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 		|| $par_fra eq 'match__n'
 		|| $par_fra eq 'trava/il__n'
 		|| $par_fra eq 'vitra/il__n'
-		|| $par_fra eq 'administrat/eur__n' # molts casos d'ús d'administrat/eur__n per a aparells
+		|| $par_fra eq 'administrat/eur__n'	# molts casos d'ús d'administrat/eur__n per a aparells
+		|| $par_fra eq 'causeu/r__n' 		# molts casos d'ús d'administrat/eur__n per a aparells
 		|| $par_fra eq 'anima/l__n')
 			&& ($par_cat eq 'abric__n'
 			|| $par_cat eq 'aband/ó__n'
@@ -1077,7 +1081,7 @@ print "escriure_bidix_adj ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_f
 		|| $par_cat eq 'important__adj'
 		|| $par_cat eq 'l/leu__adj') {
 			$lr_rl = ' r="RL"';
-			printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/><s n=\"sup\"/></r><par n=\"mf_GD\"/></p></e>\n", $stem_fra, $stem_cat;
+			printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/><s n=\"sup\"/></r></p><par n=\"mf_GD\"/></e>\n", $stem_fra, $stem_cat;
 		}
 	} elsif (($par_fra eq 'académique__adj'
 		|| $par_fra eq 'hébreu__adj'
@@ -1114,7 +1118,7 @@ print "escriure_bidix_adj ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_f
 		|| $par_cat eq 'important__adj'
 		|| $par_cat eq 'l/leu__adj') {
 			$lr_rl = ' r="RL"';
-			printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/><s n=\"sup\"/></r><par n=\"angalais_anglès\"/></p></e>\n", $stem_fra, $stem_cat;
+			printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/><s n=\"sup\"/></r></p><par n=\"angalais_anglès\"/></e>\n", $stem_fra, $stem_cat;
 		}
 	} elsif (($par_fra eq 'affectueu/x__adj' || $par_fra eq 'dou/x__adj' || $par_fra eq 'anglais__adj')
 		&& ($par_cat eq 'afortuna/t__adj'
