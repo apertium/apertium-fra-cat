@@ -1,5 +1,9 @@
 #!/usr/bin/perl
 
+# usage
+# carregar_lexic.pl n|adj|adv|vblex|top 0|1
+# el segon argument indic si es generen paraules en català a partir dels fitxer d'en Jaume Ortolà
+# (per defecte 0=no)
 
 # En aquest programa es llegeix el fitxer amb 4 columnes separades per tabuladors amb paraules amb categories tancades
 # 0. ocurrències
@@ -21,7 +25,8 @@ my $MOT = 'musique de chambre';	# paraula a debugar
 my $MOT = 'semifinal';	# paraula a debugar
 my $MOT = 'désintégrer';	# paraula a debugar
 my $MOT = 'intégrer';	# paraula a debugar
-my $MOT = '';
+my $MOT = 'lladrament';	# paraula a debugar
+#my $MOT = '';
 
 my $MORF_TRACT = 'adj';
 my $MORF_TRACT = 'n';
@@ -30,15 +35,25 @@ my $MORF_TRACT = 'n';
 #my $MORF_TRACT = 'top';
 #my $MORF_TRACT = '';
 
-my ($ffra, $fbi, $flex, $fdixfra, $fdixcat, $fdixbi, $fdixfran, $fdixfraadj);
+
+my $MORF_TRACT = $ARGV[0];
+$MORF_TRACT = 'n' unless $MORF_TRACT;
+
+my $GEN_CAT = $ARGV[1];		# generar paraules en català a partir dels fitxer d'en Jaume Ortolà
+
+
+my ($ffra, $fcat, $fbi, $flex, $fdixfra, $fdixcat, $fdixbi, $fdixfran, $fdixfraadj, $fdixcatn, $fdixcatadj);
 
 open($fdixfra, "../apertium-fra/apertium-fra.fra.metadix") || die "can't open apertium-fra.fra.metadix: $!";
 open($fdixfran, "../apertium-fra/jaumeortola/fra-noun.txt") || die "can't open fra-noun.txt: $!";
 open($fdixfraadj, "../apertium-fra/jaumeortola/fra-adj.txt") || die "can't open fra-adj.txt: $!";
 open($fdixcat, "../apertium-cat/apertium-cat.cat.dix") || die "can't open apertium-cat.cat.dix: $!";
+open($fdixcatn, "../apertium-cat/jaumeortola/cat-noun.txt") || die "can't open cat-noun.txt: $!";
+open($fdixcatadj, "../apertium-cat/jaumeortola/cat-adj.txt") || die "can't open cat-adj.txt: $!";
 open($fdixbi, "apertium-fra-cat.fra-cat.dix") || die "can't open apertium-fra-cat.fra-cat.dix: $!";
 
 open($ffra, ">f_fra.dix.txt") || die "can't create f_fra.dix.txt: $!";
+open($fcat, ">f_cat.dix.txt") || die "can't create f_cat.dix.txt: $!";
 open($fbi, ">f_bi.dix.txt") || die "can't create f_bi.dix.txt: $!";
 open($flex, ">f_fra.lex.txt") || die "can't create f_fra.lex.dix: $!";	# llista de noves paraules fra per verificació ortogràfica
 
@@ -47,8 +62,11 @@ binmode($fdixfra, ":encoding(UTF-8)");
 binmode($fdixfran, ":encoding(UTF-8)");
 binmode($fdixfraadj, ":encoding(UTF-8)");
 binmode($fdixcat, ":encoding(UTF-8)");
+binmode($fdixcatn, ":encoding(UTF-8)");
+binmode($fdixcatadj, ":encoding(UTF-8)");
 binmode($fdixbi, ":encoding(UTF-8)");
 binmode($ffra, ":encoding(UTF-8)");
+binmode($fcat, ":encoding(UTF-8)");
 binmode($fbi, ":encoding(UTF-8)");
 binmode($flex, ":encoding(UTF-8)");
 binmode(STDOUT, ":encoding(UTF-8)");
@@ -57,6 +75,10 @@ binmode(STDERR, ":encoding(UTF-8)");
 my %dix_fra = ();
 my %dix_fra_prm = ();
 my %dix_cat = ();
+my %dix_catn = ();
+my %dix_catn_def = ();
+my %dix_catadj = ();
+my %dix_catadj_def = ();
 my %dix_fran = ();
 my %dix_fran_def = ();
 my %dix_fraadj = ();
@@ -397,12 +419,14 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_cat eq 'env/às__n'
 			|| $par_cat eq 'impr/ès__n'
 			|| $par_cat eq 'infras/ò__n'
+			|| $par_cat eq 'l/umen__n'
 			|| $par_cat eq 'moss/èn__n'
 			|| $par_cat eq 'nitr/ogen__n'
 			|| $par_cat eq 'or/igen__n'
 			|| $par_cat eq 'passad/ís__n'
 			|| $par_cat eq 'rebu/ig__n'
 			|| $par_cat eq 'r/és__n'
+			|| $par_cat eq 'vaiv/é__n'
 			|| $par_cat eq 'pa__n')) {
 		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'abeille__n' && $par_cat eq 'mois__n') {
@@ -447,6 +471,7 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 	} elsif (($par_fra eq 'admis__n' || $par_fra eq 'épou/x__n')
 		&& ($par_cat eq 'accionist/a__n'
 			|| $par_cat eq 'acompanyant__n'
+			|| $par_cat eq 'col·leg/a__n'
 			|| $par_cat eq 'monar/ca__n'
 )) {
 		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"anglais_esquimal\"/></e>\n", $stem_fra, $stem_cat;
@@ -523,12 +548,14 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_fra eq 'vende/ur__n')
 		&& ($par_cat eq 'accionist/a__n'
 			|| $par_cat eq 'acompanyant__n'
+			|| $par_cat eq 'col·leg/a__n'
 			|| $par_cat eq 'monar/ca__n'
 )) {
 		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/></l><r>%s<s n=\"n\"/></r></p><par n=\"GD_mf\"/></e>\n", $stem_fra, $stem_cat;
 	} elsif ($par_fra eq 'artiste__n' &&
 			($par_cat eq 'accionist/a__n'
 			|| $par_cat eq 'acompanyant__n'
+			|| $par_cat eq 'col·leg/a__n'
 			|| $par_cat eq 'monar/ca__n'
 )) {
 		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"mf\"/></l><r>%s<s n=\"n\"/><s n=\"mf\"/></r></p></e>\n", $stem_fra, $stem_cat;
@@ -595,12 +622,14 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_cat eq 'env/às__n'
 			|| $par_cat eq 'impr/ès__n'
 			|| $par_cat eq 'infras/ò__n'
+			|| $par_cat eq 'l/umen__n'
 			|| $par_cat eq 'moss/èn__n'
 			|| $par_cat eq 'nitr/ogen__n'
 			|| $par_cat eq 'or/igen__n'
 			|| $par_cat eq 'pa__n'
 			|| $par_cat eq 'passad/ís__n'
 			|| $par_cat eq 'rebu/ig__n'
+			|| $par_cat eq 'vaiv/é__n'
 			|| $par_cat eq 'r/és__n'
 
 			|| $par_cat eq 'bouch/er__n'
@@ -676,11 +705,13 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_cat eq 'env/às__n'
 			|| $par_cat eq 'impr/ès__n'
 			|| $par_cat eq 'infras/ò__n'
+			|| $par_cat eq 'l/umen__n'
 			|| $par_cat eq 'moss/èn__n'
 			|| $par_cat eq 'nitr/ogen__n'
 			|| $par_cat eq 'or/igen__n'
 			|| $par_cat eq 'passad/ís__n'
 			|| $par_cat eq 'rebu/ig__n'
+			|| $par_cat eq 'vaiv/é__n'
 			|| $par_cat eq 'r/és__n'
 			|| $par_cat eq 'pa__n')) {
 		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"m\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p><par n=\"sp_ND\"/></e>\n", $stem_fra, $stem_cat;
@@ -731,11 +762,13 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 			|| $par_cat eq 'gla__n'
 			|| $par_cat eq 'impr/ès__n'
 			|| $par_cat eq 'infras/ò__n'
+			|| $par_cat eq 'l/umen__n'
 			|| $par_cat eq 'moss/èn__n'
 			|| $par_cat eq 'nitr/ogen__n'
 			|| $par_cat eq 'or/igen__n'
 			|| $par_cat eq 'passad/ís__n'
 			|| $par_cat eq 'rebu/ig__n'
+			|| $par_cat eq 'vaiv/é__n'
 			|| $par_cat eq 'r/és__n'
 			|| $par_cat eq 'pa__n')) {
 		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"f\"/></l><r>%s<s n=\"n\"/><s n=\"m\"/></r></p><par n=\"sp_ND\"/></e>\n", $stem_fra, $stem_cat;
@@ -763,7 +796,7 @@ print "escriure_bidix_n ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra
 		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"mf\"/></l><r>%s<s n=\"n\"/><s n=\"acr\"/><s n=\"mf\"/></r></p></e>\n", $stem_fra, $stem_cat;
 	} else {
 		print STDERR "No hi ha regla per a escriure_bidix_n: par_fra = $par_fra ($lemma_fra) par_cat = $par_cat ($lemma_cat)\n";
-print STDERR "dix_fra{$morf_fra}{$lemma_fra} = $dix_fra{$morf_fra}{$lemma_fra}\n";
+#print STDERR "dix_fra{$morf_fra}{$lemma_fra} = $dix_fra{$morf_fra}{$lemma_fra}\n";
 	}
 }
 
@@ -1219,7 +1252,7 @@ print "escriure_bidix_adj ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_f
 		printf $fbi "<e$lr_rl$a><p><l>%s<s n=\"adj\"/></l><r>%s<s n=\"adj\"/></r></p><par n=\"anglais_adepte\"/></e>\n", $stem_fra, $stem_cat;
 	} else {
 		print STDERR "No hi ha regla per a escriure_bidix_adj: par_fra = $par_fra ($lemma_fra) par_cat = $par_cat ($lemma_cat)\n";
-print STDERR "dix_fra{$morf_fra}{$lemma_fra} = $dix_fra{$morf_fra}{$lemma_fra}\n";
+#print STDERR "dix_fra{$morf_fra}{$lemma_fra} = $dix_fra{$morf_fra}{$lemma_fra}\n";
 	}
 }
 
@@ -1403,6 +1436,32 @@ sub tractar_parella {
 #print "tractar_parella ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $autor, $primer)\n";
 print "1. tractar_parella ($lemma_cat, $stem_cat, $morf_cat, $lemma_fra, $stem_fra, $morf_fra, $autor, $primer)\n" if $lemma_cat eq $MOT || $lemma_fra eq $MOT;
 #print "5. fra dix_fra{$MORF_TRACT}{$MOT} = $dix_fra{$MORF_TRACT}{$MOT}\n";
+
+	# si està activada la generació de paraulaes catalanes, busco i carrego la paraula si no hi és en el monodix
+	if ($GEN_CAT && !$dix_cat{$morf_cat}{$lemma_cat}) {
+		if ($morf_cat eq 'adj') {
+			my $tmp = $dix_catadj_def{$morf_cat}{$lemma_cat};
+			if ($tmp) {
+				$tmp =~ s/><i/ a="jaumeortola"><i/o;
+				print $fcat $tmp, "\n";
+				$dix_cat{$morf_cat}{$lemma_cat} = $dix_catadj{$morf_cat}{$lemma_cat};
+#				return 1;
+			} else {
+				return 0;
+			}
+		} elsif ($morf_cat eq 'n') {
+			my $tmp = $dix_catn_def{$morf_cat}{$lemma_cat};
+			if ($tmp) {
+				$tmp =~ s/><i/ a="jaumeortola"><i/o;
+				print $fcat $tmp, "\n";
+				$dix_cat{$morf_cat}{$lemma_cat} = $dix_catn{$morf_cat}{$lemma_cat};
+#				return 1;
+			} else {
+				return 0;
+			}
+		}
+	}
+
 	if (exists $dix_fra_cat{$morf_fra}{$lemma_fra}) {
 		# ja existeix una traducció per al lema fra
 print "1.0.\n" if $MOT && ($lemma_cat =~ /$MOT/o || $lemma_fra =~ /$MOT/o);
@@ -1481,6 +1540,12 @@ llegir_dix_ortola('fra', $fdixfran, \%dix_fran, \%dix_fran_def) if $MORF_TRACT e
 print "3. nfitx = fra dix_fran{$MORF_TRACT}{$MOT} = $dix_fran{$MORF_TRACT}{$MOT}\n";
 llegir_dix_ortola('fra', $fdixfraadj, \%dix_fraadj, \%dix_fraadj_def) if $MORF_TRACT eq 'adj';
 print "4. nfitx = fra dix_fraadj{$MORF_TRACT}{$MOT} = $dix_fraadj{$MORF_TRACT}{$MOT}\n";
+if ($GEN_CAT) {
+	llegir_dix_ortola('cat', $fdixcatn, \%dix_catn, \%dix_catn_def) if $MORF_TRACT eq 'n';
+	print "3. nfitx = cat dix_catn{$MORF_TRACT}{$MOT} = $dix_catn{$MORF_TRACT}{$MOT}\n";
+	llegir_dix_ortola('cat', $fdixcatadj, \%dix_catadj, \%dix_catadj_def) if $MORF_TRACT eq 'adj';
+	print "4. nfitx = cat dix_catadj{$MORF_TRACT}{$MOT} = $dix_catadj{$MORF_TRACT}{$MOT}\n";
+}
 llegir_bidix($fdixbi, \%dix_fra_cat, \%dix_cat_fra);
 #print "5. dix_cat_fra{$MORF_TRACT}{$MOT}[0] = $dix_cat_fra{$MORF_TRACT}{$MOT}[0]\n"; COMPTE! No descomentar pqè crea l'entrada i crear pbs amb els exists posteriors
 #print "5. dix_fra_cat{$MORF_TRACT}{$MOT}[0] = $dix_fra_cat{$MORF_TRACT}{$MOT}[0]\n"; # COMPTE! No descomentar pqè crea l'entrada i crear pbs amb els exists posteriors
