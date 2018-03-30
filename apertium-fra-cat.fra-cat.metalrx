@@ -1124,6 +1124,24 @@
     <match lemma="portable" tags="adj.*"><select lemma="mòbil"/></match>
   </rule>
 
+  <!-- imparfait >> imperfecte, imperfet -->
+  <rule weight="0.8">
+    <match lemma="imparfait" tags="adj.*"><select lemma="imperecte"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="imparfait" tags="adj.*"><select lemma="imperfet"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="le" tags="det.*"/>
+    <or>
+      <match lemma="indicatif" tags="n.*"/>
+      <match lemma="subjonctif" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="0.8">
+    <match lemma="passé" tags="n.*"/>
+    <match lemma="imparfait" tags="adj.*"><select lemma="imperecte"/></match>
+  </rule>
+
   <!-- propre >> net, propi -->
   <rule weight="0.8">
     <match lemma="propre" tags="adj.*"><select lemma="net"/></match>
