@@ -12,7 +12,9 @@
       <e><i><w/><s n="adv"/><t/><j/></i></e>
     </pardef>
   </pardefs>
+
   <section id="main" type="standard">
+
     <!-- Je n'ai pas honte de ... --> 
     <e lm="avoir honte" c="">
       <p><l>avoir<s n="vblex"/></l><r>avoir<g><b/>honte</g><s n="vblex"/></r></p>
@@ -26,6 +28,18 @@
       <p><l>honte<s n="n"/><s n="f"/><t/><j/></l><r></r></p>
     </e>
 
+    <!-- Je ne fas pas partie de ... --> 
+    <e lm="avoir partie" c="">
+      <p><l>avoir<s n="vblex"/></l><r>avoir<g><b/>partie</g><s n="vblex"/></r></p>
+      <i><t/><j/></i>
+      <p><l>partie<s n="n"/><s n="f"/><t/><j/></l><r></r></p>
+    </e>
+    <e lm="fare partie" c="">
+      <p><l>fare<s n="vblex"/></l><r>fare<g><b/>partie</g><s n="vblex"/></r></p>
+      <i><t/><j/></i>
+      <par n="adv"/>
+      <p><l>partie<s n="n"/><s n="f"/><t/><j/></l><r></r></p>
+    </e>
 
 </section>
 </dictionary>

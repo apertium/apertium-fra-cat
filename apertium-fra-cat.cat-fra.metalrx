@@ -1100,6 +1100,27 @@
     </or>
   </rule>
 
+  <!-- senyor >> monsieur, seigneur -->
+  <rule weight="0.8">
+    <match lemma="senyor" tags="n.m.*"><select lemma="monsieur"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="senyor" tags="n.m.*"><select lemma="seigneur"/></match>
+    <match lemma="feudal" tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.*"/>
+    <match lemma="senyor" tags="n.m.*"><select lemma="seigneur"/></match>
+    <match lemma="de" tags="pr"/>
+    <or><match tags="np.top.*"/><match tags="np.cog.*"/></or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="senyor" tags="n.m.*"><select lemma="seigneur"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="castell" tags="n.*"/>
+  </rule>
+
   <!-- senyora >> madame, dame, femme -->
   <rule weight="0.8">
     <match lemma="senyor" tags="n.f.*"><select lemma="madame"/></match>
