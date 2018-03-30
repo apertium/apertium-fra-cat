@@ -1229,6 +1229,10 @@
       <match lemma="préoccuper" tags="vblex.pp.*"/>
       <match lemma="intéressé" tags="adj.*"/>
       <match lemma="intéresser" tags="vblex.pp.*"/>
+      <match lemma="marié" tags="adj.*"/>
+      <match lemma="marier" tags="vblex.pp.*"/>
+      <match lemma="mort" tags="adj.*"/>
+      <match lemma="mourir" tags="vblex.pp.*"/>
 
       <!-- <match lemma="sûr" tags="adj.*"/> només qd hi ha je, tu, il, etc -->
     </or>
