@@ -4987,19 +4987,19 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!-- REGLA: aller +  INF (aller manger : anar a menjar)-->
+    <rule comment="REGLA: aller +  INF (aller manger : anar a menjar)">
 <!-- difícil de dir si és "anar a" o futur, però segur que cal canviar l'estructura -->
       <pattern> 
         <pattern-item n="aller"/>
         <pattern-item n="inf"/>
      </pattern>	
       <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="1"/>
+        </call-macro>
         <out>
-	  <lu>   
-	    <clip pos="1" side="tl" part="lemh"/>
-	    <clip pos="1" side="tl" part="tags"/>
-	    <clip pos="1" side="tl" part="lemq"/>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
           </lu>
           <b/>
           <lu>
@@ -5016,20 +5016,20 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!-- REGLA: aller + PRO+ INF (aller en manger : anar a menjar-ne)-->
+    <rule comment="REGLA: aller + PRO+ INF (aller en manger : anar a menjar-ne)">
 <!-- difícil de dir si és "anar a" o futur, però segur que cal canviar l'estructura -->
       <pattern> 
         <pattern-item n="aller"/>
         <pattern-item n="prnproref"/>
         <pattern-item n="inf"/>
-     </pattern>	
+      </pattern>	
       <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="1"/>
+        </call-macro>
         <out>
 	  <lu>   
-	    <clip pos="1" side="tl" part="lemh"/>
-	    <clip pos="1" side="tl" part="tags"/>
-	    <clip pos="1" side="tl" part="lemq"/>
+            <clip pos="1" side="tl" part="whole"/>
           </lu>
 	  <b pos="1"/>
           <lu>
@@ -5049,6 +5049,91 @@ is not applicable because gender and number cannot be taken from previous rules 
               <clip pos="3" side="tl" part="lemq"/>
             </lu>
           </mlu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule comment="REGLA: aller + ADV * INF (aller bien manger : anar a menjar bé)">
+<!-- difícil de dir si és "anar a" o futur, però segur que cal canviar l'estructura -->
+      <pattern> 
+        <pattern-item n="aller"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="inf"/>
+     </pattern>	
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="a"/>
+            <lit-tag v="pr"/>
+          </lu>
+	  <b pos="1"/>
+	  <lu>   
+	    <clip pos="3" side="tl" part="lemh"/>
+	    <clip pos="3" side="tl" part="tags"/>
+	    <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+	  <b pos="2"/>
+	  <lu>   
+	    <clip pos="2" side="tl" part="lemh"/>
+	    <clip pos="2" side="tl" part="tags"/>
+	    <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule comment="REGLA: aller + prnsubj * INF (vont-ils manger : van a menjar)">
+<!-- difícil de dir si és "anar a" o futur, però segur que cal canviar l'estructura -->
+      <pattern> 
+        <pattern-item n="aller"/>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="inf"/>
+     </pattern>	
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="a"/>
+            <lit-tag v="pr"/>
+          </lu>
+        </out>
+        <choose>
+          <when>
+            <test>
+              <equal><b pos="1"/><lit v="-"/></equal>
+            </test>
+            <out>
+              <b/>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <b pos="1"/>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+	  <lu>   
+	    <clip pos="3" side="tl" part="lemh"/>
+	    <clip pos="3" side="tl" part="tags"/>
+	    <clip pos="3" side="tl" part="lemq"/>
+          </lu>
         </out>
       </action>
     </rule>
@@ -5075,21 +5160,24 @@ is not applicable because gender and number cannot be taken from previous rules 
 	        </equal>
 	      </and>
 	    </test>
-        <out>
-          <lu>
-	   <get-case-from pos="1">
-            <clip pos="2" side="tl" part="lemh"/>
-	   </get-case-from> 
-            <clip pos="2" side="tl" part="a_verb"/>
-            <lit-tag v="fti"/>
-            <clip pos="1" side="tl" part="persona"/>
-            <clip pos="1" side="tl" part="gen"/>
-            <clip pos="1" side="tl" part="nbr"/>
-            <clip pos="2" side="tl" part="lemq"/>
-          </lu>
-        </out>
-	</when>
+            <out>
+              <lu>
+	        <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="lemh"/>
+	        </get-case-from> 
+                <clip pos="2" side="tl" part="a_verb"/>
+                <lit-tag v="fti"/>
+                <clip pos="1" side="tl" part="persona"/>
+                <clip pos="1" side="tl" part="gen"/>
+                <clip pos="1" side="tl" part="nbr"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+            </out>
+	  </when>
 	<otherwise>
+        <call-macro n="f_ifi1">
+          <with-param pos="1"/>
+        </call-macro>
 	<out>
 	  <lu>   
 	    <clip pos="1" side="tl" part="whole"/>
