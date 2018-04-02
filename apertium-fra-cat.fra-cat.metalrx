@@ -552,6 +552,19 @@
     <or><match tags="num"/><match tags="num.*"/></or>
   </rule>
 
+  <!-- terrier >> cau, terrier -->
+  <rule weight="0.8">
+    <match lemma="terrier" tags="n.*"><select lemma="cau"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="terrier" tags="n.*"><select lemma="terrier"/></match>
+    <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="chien" tags="n.*"/>
+    <match lemma="terrier" tags="n.*"><select lemma="terrier"/></match>
+  </rule>
+
   <!-- siège >> seu, setge, escó -->
   <rule weight="0.8">
     <match lemma="siège" tags="n.*"><select lemma="seu"/></match>
