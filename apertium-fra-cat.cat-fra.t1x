@@ -144,6 +144,11 @@
       <cat-item tags="vbmod.*.p2.*"/>
       <cat-item tags="vbmod.*.p3.*"/>
     </def-cat>
+    <def-cat n="vbser_conj">
+      <cat-item tags="vbser.*.p1.*"/>
+      <cat-item tags="vbser.*.p2.*"/>
+      <cat-item tags="vbser.*.p3.*"/>
+    </def-cat>
     <def-cat n="estar_conj">
       <cat-item lemma="estar" tags="vblex.*.p1.*"/>
       <cat-item lemma="estar" tags="vblex.*.p2.*"/>
@@ -8418,12 +8423,11 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule>
-<!--REGLA: SENT,que,coma,i ser pp: seria expulsada > elle serait expulséeю -->
+    <rule comment="REGLA: SENT,que,coma,i ser pp: seria expulsada > elle serait expulsée">
 <!-- TBD després de coma, millor no afegir prn -->
       <pattern>
         <pattern-item n="sentquecm"/>
-        <pattern-item n="vbser"/>
+        <pattern-item n="vbser_conj"/>
         <pattern-item n="pp"/>
       </pattern>
       <action>
@@ -8465,11 +8469,7 @@ is not applicable because gender and number can not be taken from previous rules
             <out>
               <lu>
                 <clip pos="2" side="tl" part="lemh"/>
-                <clip pos="2" side="tl" part="a_verb"/>
-                <clip pos="2" side="tl" part="temps"/>
-                <clip pos="2" side="tl" part="persona"/>
-                <clip pos="2" side="tl" part="gen"/>
-                <clip pos="2" side="tl" part="nbr"/>
+                <clip pos="2" side="tl" part="tags"/>
                 <clip pos="2" side="tl" part="lemq"/>
               </lu>
               <b pos="2"/>
@@ -8502,11 +8502,7 @@ is not applicable because gender and number can not be taken from previous rules
             <out>
               <lu>
                 <clip pos="2" side="tl" part="lemh"/>
-                <clip pos="2" side="tl" part="a_verb"/>
-                <clip pos="2" side="tl" part="temps"/>
-                <clip pos="2" side="tl" part="persona"/>
-                <clip pos="2" side="tl" part="gen"/>
-                <clip pos="2" side="tl" part="nbr"/>
+                <clip pos="2" side="tl" part="tags"/>
                 <clip pos="2" side="tl" part="lemq"/>
               </lu>
               <b pos="2"/>
