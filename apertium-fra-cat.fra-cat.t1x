@@ -705,6 +705,7 @@
       <list-item v="Tchouvachie"/>
       <list-item v="Tatarstan"/>
       <list-item v="Bashkortostan"/>
+      <list-item v="Oudmourtie"/>
       <list-item v="Yakoutie"/>
       <list-item v="Estonie"/>
       <list-item v="Lettonie"/>
@@ -859,6 +860,7 @@
       <list-item v="bachkir"/>
       <list-item v="oudmourte"/>
       <list-item v="yakoute"/>
+      <list-item v="iakoute"/>
       <list-item v="estonien"/>
       <list-item v="letton"/>
       <list-item v="lithuanien"/>
@@ -933,6 +935,8 @@
       <list-item v="malgache"/>
       <list-item v="zoulou"/>
       <list-item v="apache"/>
+      <list-item v="algonquien"/>
+      <list-item v="algonquin"/>
       <list-item v="chinook"/>
       <list-item v="esquimau"/>
       <list-item v="gaulois"/>
@@ -3364,8 +3368,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!-- REGLA: NUMERAL-->
+    <rule comment="REGLA: NUMERAL">
       <pattern>
         <pattern-item n="num"/>
       </pattern>
@@ -3381,8 +3384,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!-- REGLA: RELATIF-->
+    <rule comment="REGLA: RELATIF">
       <pattern>
         <pattern-item n="rel"/>
       </pattern>
@@ -3398,8 +3400,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!-- REGLA: DETERMINANT NOM -->
+    <rule comment="REGLA: DETERMINANT NOM">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="nom"/>
@@ -3427,8 +3428,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
     
 
-    <rule>
-<!-- REGLA: NOM ADJECTIU-->
+    <rule comment="REGLA: NOM ADJECTIU">
       <pattern>
         <pattern-item n="nom"/>
         <pattern-item n="adjec"/>
@@ -3457,8 +3457,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!-- REGLA: ADJECTIU NOM -->
+    <rule comment="REGLA: ADJECTIU NOM">
       <pattern>
         <pattern-item n="adj"/>
         <pattern-item n="nom"/>
@@ -4054,8 +4053,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!--REGLA: NUMERAL NOM -->
+    <rule comment="REGLA: NUMERAL NOM">
       <pattern>
         <pattern-item n="num"/>
         <pattern-item n="nom"/>
@@ -4110,8 +4108,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!-- REGLA: NUMERAL ADJECTIU -->
+    <rule comment="REGLA: NUMERAL ADJECTIU">
       <pattern>
         <pattern-item n="num"/>
         <pattern-item n="adjec"/>
@@ -4137,8 +4134,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!-- REGLA: NUMERAL NOM ADJECTIU -->
+    <rule comment="REGLA: NUMERAL NOM ADJECTIU">
       <pattern>
         <pattern-item n="num"/>
         <pattern-item n="nom"/>
@@ -4175,8 +4171,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!-- REGLA: NUMERAL ADJECTIU NOM -->
+    <rule comment="REGLA: NUMERAL ADJECTIU NOM">
       <pattern>
         <pattern-item n="num"/>
         <pattern-item n="adjec"/>
@@ -4213,8 +4208,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!--REGLA: DET NUMERAL NOM -->
+    <rule comment="REGLA: DET NUMERAL NOM">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="num"/>
