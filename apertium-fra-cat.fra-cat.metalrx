@@ -1206,6 +1206,19 @@
     <match tags="n.*"/>
   </rule>
 
+  <!-- assez de >> bastant, prou -->
+  <rule weight="0.8">
+    <match lemma="assez de" tags="adj.*"><select lemma="bastant"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="pas" tags="adv"/>
+      <match lemma="plus" tags="adv"/>
+      <match lemma="jamais" tags="adv"/>
+    </or>
+    <match lemma="assez de" tags="adj.*"><select lemma="prou"/></match>
+  </rule>
+
 <!-- **************** VBLEX **************** -->
 
   <!-- être >> ser, estar -->
@@ -1407,6 +1420,29 @@
   </rule>
 
 <!-- **************** ADV **************** -->
+
+<!-- plus >> més / ja -->
+
+  <rule weight="0.8">
+    <match lemma="plus" tags="adv"><select lemma="més"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ne" tags="adv"/>
+    <repeat from="0" upto="1">
+      <match tags="prn.*"/>
+    </repeat>
+    <or>
+      <match tags="vblex.*"/>
+      <match tags="vbmod.*"/>
+      <match tags="vbser.*"/>
+      <match tags="vbhaver.*"/>
+    </or>
+    <match lemma="plus" tags="adv"><select lemma="ja"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="plus" tags="adv"><select lemma="més"/></match>
+    <match lemma="que"/>
+  </rule>
 
 <!-- d'ailleurs >> d'altra banda / d'un altre lloc -->
 
