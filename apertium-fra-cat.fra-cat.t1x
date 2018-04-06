@@ -231,6 +231,16 @@
       <cat-item tags="vbhaver.pp.m.sg"/>
       <cat-item tags="vbmod.pp.m.sg"/>
     </def-cat>
+    <def-cat n="pp_mf_sp">
+      <cat-item tags="vblex.pp.mf.*"/>
+      <cat-item tags="vblex.pp.*.sp"/>
+      <cat-item tags="vbser.pp.mf.*"/>
+      <cat-item tags="vbser.pp.*.sp"/>
+      <cat-item tags="vbhaver.pp.mf.*"/>
+      <cat-item tags="vbhaver.pp.*.sp"/>
+      <cat-item tags="vbmod.pp.mf.*"/>
+      <cat-item tags="vbmod.pp.*.sp"/>
+    </def-cat>
     <def-cat n="ger">
       <cat-item tags="vblex.ger"/>
       <cat-item tags="vbser.ger"/>
@@ -889,6 +899,7 @@
       <list-item v="moldave"/>
       <list-item v="bulgare"/>
       <list-item v="grec"/>
+      <list-item v="béotien"/>
       <list-item v="ukrainien"/>
       <list-item v="biélorusse"/>
       <list-item v="moldave"/>
@@ -8132,6 +8143,47 @@ is not applicable because gender and number cannot be taken from previous rules 
             <get-case-from pos="1">
               <clip pos="2" side="tl" part="whole"/>
             </get-case-from>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    
+    <rule comment="REGLA: VBHAVER SERPP (a été: ha estat (evitem: ha estada))">
+      <pattern>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="pp_mf_sp"/>
+
+      </pattern>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
+        <choose>
+          <when>
+            <test>
+              <equal><clip pos="2" side="tl" part="gen"/><lit-tag v="GD"/></equal>
+            </test>
+            <let><clip pos="2" side="tl" part="gen"/><lit-tag v="m"/></let>
+          </when>
+        </choose>
+        <choose>
+          <when>
+            <test>
+              <equal><clip pos="2" side="tl" part="nbr"/><lit-tag v="ND"/></equal>
+            </test>
+            <let><clip pos="2" side="tl" part="nbr"/><lit-tag v="sg"/></let>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
