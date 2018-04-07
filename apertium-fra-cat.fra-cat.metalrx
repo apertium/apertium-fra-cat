@@ -552,6 +552,15 @@
     <or><match tags="num"/><match tags="num.*"/></or>
   </rule>
 
+  <!-- envie >> enveja, gana -->
+  <rule weight="0.8">
+    <match lemma="envie" tags="n.f.sg"><select lemma="enveja"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="envie" tags="n.f.sg"><select lemma="gana"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
+
   <!-- terrier >> cau, terrier -->
   <rule weight="0.8">
     <match lemma="terrier" tags="n.*"><select lemma="cau"/></match>
@@ -1259,6 +1268,8 @@
       <match lemma="marier" tags="vblex.pp.*"/>
       <match lemma="mort" tags="adj.*"/>
       <match lemma="mourir" tags="vblex.pp.*"/>
+      <match lemma="convaincu" tags="adj.*"/>
+      <match lemma="convaincre" tags="vblex.pp.*"/>
 
       <!-- <match lemma="sûr" tags="adj.*"/> només qd hi ha je, tu, il, etc -->
     </or>
