@@ -430,6 +430,33 @@
     <repeat from="0" upto="1">
       <match tags="adv"/>
     </repeat>
+    <or><match tags="vblex.*"/><match tags="vbmod.*"/></or>
+    <match tags="vblex.inf"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="prn.pro.*"/>
+    <or><match tags="vblex.*"/><match tags="vbmod.*"/></or>
+    <match tags="vblex.inf"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="prn.pro.*"/>
+    <match tags="prn.pro.*"/>
+    <or><match tags="vblex.*"/><match tags="vbmod.*"/></or>
+    <match tags="vblex.inf"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
     <or>
       <match tags="vbser.*"/>
       <match lemma="estar" tags="vbser.*"/>
