@@ -552,6 +552,25 @@
     <or><match tags="num"/><match tags="num.*"/></or>
   </rule>
 
+  <!-- sursis >> pròrroga, suspensió# de condemna -->
+  <rule weight="0.8">
+    <match lemma="sursis" tags="n.*"><select lemma="pròrroga"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or><match tags="num"/><match tags="num.*"/></or>
+    <or>
+      <match lemma="mois" tags="n.*"/>
+      <match lemma="an" tags="n.*"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <match lemma="sursis" tags="n.*"><select lemma="suspensió# de condemna"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sursis" tags="n.*"><select lemma="suspensió# de condemna"/></match>
+    <match lemma="avec" tags="pr"/>
+    <match lemma="mise" tags="n.*"/>
+  </rule>
+
   <!-- rôle >> paper, rol -->
   <rule weight="0.8">
     <match lemma="rôle" tags="n.*"><select lemma="paper"/></match>

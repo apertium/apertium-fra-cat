@@ -725,6 +725,74 @@
     <match lemma="negociació" tags="n.*"/>
   </rule>
 
+  <!-- esclatar >> exploser, éclater -->
+  <rule weight="0.8">
+    <match lemma="esclatar" tags="vblex.*"><select lemma="exploser"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="esclatar" tags="vblex.*"><select lemma="éclater"/></match>
+    <match tags="det.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <or>
+      <match lemma="guerra" tags="n.*"/>
+      <match lemma="revolució" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="guerra" tags="n.*"/>
+      <match lemma="revolució" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="esclatar" tags="vblex.*"><select lemma="éclater"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="guerra" tags="n.*"/>
+      <match lemma="revolució" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match lemma="anar" tags="vblex.*"/>
+      <match lemma="haver" tags="vblex.*"/>
+      <match lemma="haver" tags="vbhaver.*"/>
+    </or>
+    <match lemma="esclatar" tags="vblex.*"><select lemma="éclater"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="guerra" tags="n.*"/>
+      <match lemma="revolució" tags="n.*"/>
+    </or>
+    <match tags="adj.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="esclatar" tags="vblex.*"><select lemma="éclater"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="guerra" tags="n.*"/>
+      <match lemma="revolució" tags="n.*"/>
+    </or>
+    <match tags="adj.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match lemma="anar" tags="vblex.*"/>
+      <match lemma="haver" tags="vblex.*"/>
+      <match lemma="haver" tags="vbhaver.*"/>
+    </or>
+    <match lemma="esclatar" tags="vblex.*"><select lemma="éclater"/></match>
+  </rule>
+
   <!-- encaixar >> emboîter, accorder -->
   <rule weight="0.8">
     <match lemma="encaixar" tags="vblex.*"><select lemma="accorder"/></match>
