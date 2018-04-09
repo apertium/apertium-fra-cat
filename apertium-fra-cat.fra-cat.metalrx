@@ -552,6 +552,19 @@
     <or><match tags="num"/><match tags="num.*"/></or>
   </rule>
 
+  <!-- rôle >> paper, rol -->
+  <rule weight="0.8">
+    <match lemma="rôle" tags="n.*"><select lemma="paper"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="jeu" tags="n.*"/>
+      <match lemma="jeu# video" tags="n.*"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <match lemma="rôle" tags="n.*"><select lemma="rol"/></match>
+  </rule>
+
   <!-- envie >> enveja, gana -->
   <rule weight="0.8">
     <match lemma="envie" tags="n.f.sg"><select lemma="enveja"/></match>
@@ -749,6 +762,7 @@
     <or>
       <match lemma="France" tags="np.*"/>
       <match lemma="Viennois" tags="np.*"/>
+      <match lemma="Auvergne" tags="np.*"/>
     </or>
   </rule>
 
@@ -1270,6 +1284,12 @@
       <match lemma="mourir" tags="vblex.pp.*"/>
       <match lemma="convaincu" tags="adj.*"/>
       <match lemma="convaincre" tags="vblex.pp.*"/>
+      <match lemma="ouvert" tags="adj.*"/>
+      <match lemma="ouvrir" tags="vblex.pp.*"/>
+      <match lemma="fermé" tags="adj.*"/>
+      <match lemma="fermer" tags="vblex.pp.*"/>
+      <match lemma="éveillé" tags="adj.*"/>
+      <match lemma="éveiller" tags="vblex.pp.*"/>
 
       <!-- <match lemma="sûr" tags="adj.*"/> només qd hi ha je, tu, il, etc -->
     </or>
