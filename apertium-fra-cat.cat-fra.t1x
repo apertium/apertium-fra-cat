@@ -1410,20 +1410,20 @@
             <clip pos="1" side="tl" part="persona"/>
             <lit-tag v="p2"/>
           </let>
-        </when>
-      </choose>
-      <choose>
-        <when>
-          <test>
-            <equal>
-              <clip pos="1" side="sl" part="nbr"/>
-              <lit-tag v="sg"/>
-            </equal>
-          </test>
-          <let>
-            <clip pos="1" side="tl" part="nbr"/>
-            <lit-tag v="pl"/>
-          </let>
+          <choose>
+            <when>
+              <test>
+                <equal>
+                  <clip pos="1" side="sl" part="nbr"/>
+                  <lit-tag v="sg"/>
+                </equal>
+              </test>
+              <let>
+                <clip pos="1" side="tl" part="nbr"/>
+                <lit-tag v="pl"/>
+              </let>
+            </when>
+          </choose>
         </when>
       </choose>
     </def-macro>
