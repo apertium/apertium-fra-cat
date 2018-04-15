@@ -55,6 +55,7 @@
 	  <rule weight="1.0">
 		 <or>
 		   <match lemma="pape" tags="n.*"/>
+		   <match lemma="patriarche" tags="n.*"/>
 		   <match lemma="évêque" tags="n.*"/>
 		   <match lemma="archevêque" tags="n.*"/>
 		   <match lemma="saint" tags="n.*"/>
@@ -1573,6 +1574,9 @@
   <macro name="noms_propres" p1="Bonface" p2="Bonfaci" />
   <macro name="noms_propres" p1="Clément" p2="Climent" />
   <macro name="noms_propres" p1="Georges" p2="Jordi" />
+  <macro name="noms_propres" p1="Germain" p2="Germànic" />
+  <macro name="noms_propres" p1="Antoine" p2="Antoine" />
+  <macro name="noms_propres" p1="René" p2="Renat" />
 
 </rules>
 </metalrx>
