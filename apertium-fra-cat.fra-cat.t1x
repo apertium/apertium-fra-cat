@@ -8318,6 +8318,7 @@ is not applicable because gender and number cannot be taken from previous rules 
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="agir"/></equal>
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="parler"/></equal>
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="finir"/></equal>
+                <not><equal><clip pos="3" side="sl" part="lemq"/><lit v=""/></equal></not>
               </or>
             </test>
             <out>
@@ -8371,6 +8372,7 @@ is not applicable because gender and number cannot be taken from previous rules 
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="agir"/></equal>
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="parler"/></equal>
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="finir"/></equal>
+                <not><equal><clip pos="3" side="sl" part="lemq"/><lit v=""/></equal></not>
               </or>
             </test>
             <out>
@@ -8425,6 +8427,7 @@ is not applicable because gender and number cannot be taken from previous rules 
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="agir"/></equal>
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="parler"/></equal>
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="finir"/></equal>
+                <not><equal><clip pos="3" side="sl" part="lemq"/><lit v=""/></equal></not>
               </or>
             </test>
             <out>
@@ -8485,6 +8488,7 @@ is not applicable because gender and number cannot be taken from previous rules 
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="agir"/></equal>
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="parler"/></equal>
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="finir"/></equal>
+                <not><equal><clip pos="3" side="sl" part="lemq"/><lit v=""/></equal></not>
               </or>
             </test>
             <out>
@@ -8534,6 +8538,7 @@ is not applicable because gender and number cannot be taken from previous rules 
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="agir"/></equal>
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="parler"/></equal>
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="finir"/></equal>
+                <not><equal><clip pos="3" side="sl" part="lemq"/><lit v=""/></equal></not>
               </or>
             </test>
             <out>
@@ -8588,6 +8593,7 @@ is not applicable because gender and number cannot be taken from previous rules 
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="agir"/></equal>
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="parler"/></equal>
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="finir"/></equal>
+                <not><equal><clip pos="3" side="sl" part="lemq"/><lit v=""/></equal></not>
               </or>
             </test>
             <out>
@@ -8643,6 +8649,7 @@ is not applicable because gender and number cannot be taken from previous rules 
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="agir"/></equal>
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="parler"/></equal>
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="finir"/></equal>
+                <not><equal><clip pos="3" side="sl" part="lemq"/><lit v=""/></equal></not>
               </or>
             </test>
             <out>
@@ -8704,6 +8711,7 @@ is not applicable because gender and number cannot be taken from previous rules 
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="agir"/></equal>
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="parler"/></equal>
                 <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="finir"/></equal>
+                <not><equal><clip pos="3" side="sl" part="lemq"/><lit v=""/></equal></not>
               </or>
             </test>
             <out>
@@ -8749,6 +8757,7 @@ is not applicable because gender and number cannot be taken from previous rules 
                 <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="agir"/></equal>
                 <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="parler"/></equal>
                 <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="finir"/></equal>
+                <not><equal><clip pos="2" side="sl" part="lemq"/><lit v=""/></equal></not>
               </or>
             </test>
             <out>
@@ -8799,6 +8808,7 @@ is not applicable because gender and number cannot be taken from previous rules 
                 <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="agir"/></equal>
                 <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="parler"/></equal>
                 <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="finir"/></equal>
+                <not><equal><clip pos="2" side="sl" part="lemq"/><lit v=""/></equal></not>
               </or>
             </test>
             <out>
@@ -8850,6 +8860,7 @@ is not applicable because gender and number cannot be taken from previous rules 
                 <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="agir"/></equal>
                 <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="parler"/></equal>
                 <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="finir"/></equal>
+                <not><equal><clip pos="2" side="sl" part="lemq"/><lit v=""/></equal></not>
               </or>
             </test>
             <out>
@@ -8907,6 +8918,7 @@ is not applicable because gender and number cannot be taken from previous rules 
                 <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="agir"/></equal>
                 <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="parler"/></equal>
                 <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="finir"/></equal>
+                <not><equal><clip pos="2" side="sl" part="lemq"/><lit v=""/></equal></not>
               </or>
             </test>
             <out>
@@ -8953,6 +8965,7 @@ is not applicable because gender and number cannot be taken from previous rules 
                 <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="agir"/></equal>
                 <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="parler"/></equal>
                 <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="finir"/></equal>
+                <not><equal><clip pos="2" side="sl" part="lemq"/><lit v=""/></equal></not>
               </or>
             </test>
             <out>
@@ -9004,6 +9017,7 @@ is not applicable because gender and number cannot be taken from previous rules 
                 <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="agir"/></equal>
                 <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="parler"/></equal>
                 <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="finir"/></equal>
+                <not><equal><clip pos="2" side="sl" part="lemq"/><lit v=""/></equal></not>
               </or>
             </test>
             <out>
@@ -9056,6 +9070,7 @@ is not applicable because gender and number cannot be taken from previous rules 
                 <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="agir"/></equal>
                 <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="parler"/></equal>
                 <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="finir"/></equal>
+                <not><equal><clip pos="2" side="sl" part="lemq"/><lit v=""/></equal></not>
               </or>
             </test>
             <out>
@@ -9114,6 +9129,7 @@ is not applicable because gender and number cannot be taken from previous rules 
                 <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="agir"/></equal>
                 <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="parler"/></equal>
                 <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="finir"/></equal>
+                <not><equal><clip pos="2" side="sl" part="lemq"/><lit v=""/></equal></not>
               </or>
             </test>
             <out>

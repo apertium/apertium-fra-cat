@@ -4,12 +4,17 @@
   <sdefs>
     <sdef n="vblex"/>
     <sdef n="adv"/>
+    <sdef n="det"/>
+    <sdef n="pr"/>
+    <sdef n="def"/>
+    <sdef n="pos"/>
+    <sdef n="n"/>
     <sdef n="adj"/>
     <sdef n="m"/>
-    <sdef n="sg"/>
-    <sdef n="pr"/>
-    <sdef n="n"/>
     <sdef n="f"/>
+    <sdef n="sg"/>
+    <sdef n="sp"/>
+    <sdef n="inf"/>
   </sdefs>
   <pardefs>
     <pardef n="adv">
@@ -33,6 +38,63 @@
       <i><t/><j/></i>
       <p><l></l><r>pas<s n="adv"/><j/></r></p>
       <p><l></l><r>partie<s n="n"/><s n="f"/><s n="sg"/><j/></r></p>
+      <p><l>pas<s n="adv"/><j/></l><r></r></p>
+    </e>
+
+    <e lm="faire tomber" c="">
+      <p><l>faire<g><b/>tomber</g><s n="vblex"/></l><r>faire<s n="vblex"/></r></p>
+      <i><t/><j/></i>
+      <p><l></l><r>pas<s n="adv"/><j/></r></p>
+      <p><l></l><r>tomber<s n="vblex"/><s n="inf"/><j/></r></p>
+      <p><l>pas<s n="adv"/><j/></l><r></r></p>
+    </e>
+
+    <e lm="faire frire" c="">
+      <p><l>faire<g><b/>frire</g><s n="vblex"/></l><r>faire<s n="vblex"/></r></p>
+      <i><t/><j/></i>
+      <p><l></l><r>pas<s n="adv"/><j/></r></p>
+      <p><l></l><r>frire<s n="vblex"/><s n="inf"/><j/></r></p>
+      <p><l>pas<s n="adv"/><j/></l><r></r></p>
+    </e>
+
+    <e lm="faire pression sur" c="">
+      <p><l>faire<g><b/>pression<b/>sur</g><s n="vblex"/></l><r>faire<s n="vblex"/></r></p>
+      <i><t/><j/></i>
+      <p><l></l><r>pas<s n="adv"/><j/></r></p>
+      <p><l></l><r>pression<s n="n"/><s n="f"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>sur<s n="pr"/><j/></r></p>
+      <p><l>pas<s n="adv"/><j/></l><r></r></p>
+    </e>
+
+    <e lm="faire appel à" c="">
+      <p><l>faire<g><b/>appel<b/>à</g><s n="vblex"/></l><r>faire<s n="vblex"/></r></p>
+      <i><t/><j/></i>
+      <p><l></l><r>pas<s n="adv"/><j/></r></p>
+      <p><l></l><r>appel<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>à<s n="pr"/><j/></r></p>
+      <p><l>pas<s n="adv"/><j/></l><r></r></p>
+    </e>
+
+    <e lm="rendre public" c="">
+      <p><l>rendre<g><b/>public</g><s n="vblex"/></l><r>rendre<s n="vblex"/></r></p>
+      <i><t/><j/></i>
+      <p><l></l><r>pas<s n="adv"/><j/></r></p>
+      <p><l></l><r>public<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
+      <p><l>pas<s n="adv"/><j/></l><r></r></p>
+    </e>
+
+    <e lm="rendre public" c="">
+      <p><l>rendre<s n="vblex"/><t/><g><b/>public</g><j/></l><r>rendre<s n="vblex"/><t/><j/></r></p>
+      <p><l></l><r>pas<s n="adv"/><j/></r></p>
+      <p><l></l><r>public<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
+      <p><l>pas<s n="adv"/><j/></l><r></r></p>
+    </e>
+
+    <e lm="rendre furieux" c="">
+      <p><l>rendre<g><b/>furieux</g><s n="vblex"/></l><r>rendre<s n="vblex"/></r></p>
+      <i><t/><j/></i>
+      <p><l></l><r>pas<s n="adv"/><j/></r></p>
+      <p><l></l><r>furieux<s n="adj"/><s n="m"/><s n="sp"/><j/></r></p>
       <p><l>pas<s n="adv"/><j/></l><r></r></p>
     </e>
 

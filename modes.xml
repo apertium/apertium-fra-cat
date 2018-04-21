@@ -232,6 +232,9 @@
         <file name="apertium-fra-cat.cat-fra.t1x"/>
         <file name="cat-fra.t1x.bin"/>
       </program>
+      <program name="lsx-proc">
+        <file name="cat-fra.autosep.bin"/>
+      </program>
       <program name="lt-proc $1">
         <file name="cat-fra.autogen.bin"/>
       </program>

@@ -26,6 +26,7 @@ TARGETS_COMMON =		\
 	$(PREFIX2).autobil.bin	\
 	$(PREFIX2).autolex.bin	\
 	$(PREFIX2).autogen.bin	\
+	$(PREFIX2).autosep.bin	\
 	$(PREFIX2).autopgen.bin	\
 	$(PREFIX2).t1x.bin
 
@@ -77,6 +78,8 @@ $(PREFIX1).autogen.bin: $(AP_SRC2)/$(LANG2).autogen.bin
 
 $(PREFIX1).autosep.bin: $(BASENAME).$(PREFIX1).l1x
 	lsx-comp lr $< $@
+$(PREFIX2).autosep.bin: $(BASENAME).$(PREFIX2).l2x
+	lsx-comp rl $< $@
 
 ###############################################################################
 ## Tagger models
@@ -178,6 +181,7 @@ EXTRA_DIST=					\
 		$(BASENAME).$(PREFIX1).t1x	\
 		$(BASENAME).$(PREFIX2).t1x	\
 		$(BASENAME).$(PREFIX1).l1x	\
+		$(BASENAME).$(PREFIX2).l2x	\
 		modes.xml
 
 #		$(BASENAME).$(PREFIX1).t2x	\
