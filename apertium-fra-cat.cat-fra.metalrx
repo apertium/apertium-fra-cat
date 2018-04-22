@@ -494,14 +494,21 @@
     <match lemma="per" tags="pr"><select lemma="par"/></match>
   </rule>
   <rule weight="1.0">
+    <match tags="vblex.pp.*"/>
+    <match lemma="per" tags="pr"><select lemma="par"/></match>
+  </rule>
+  <rule weight="1.0">
     <match lemma="per" tags="pr"><select lemma="pour"/></match>
     <match tags="*.inf"/>
   </rule>
-  <rule weight="1.2">
+  <rule weight="1.0">
     <match lemma="felicitar" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
     <match lemma="per" tags="pr"><select lemma="pour"/></match>
   </rule>
-  <rule weight="1.2">
+  <rule weight="1.0">
     <match lemma="per" tags="pr"><select lemma="pour"/></match>
     <or>
       <match lemma="això" tags="prn.*"/>
