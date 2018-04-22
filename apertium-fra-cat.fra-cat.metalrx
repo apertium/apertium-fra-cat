@@ -197,7 +197,7 @@
     <repeat from="0" upto="1">
       <match tags="adv"/>
     </repeat>
-    <match tags="*.inf"/>
+    <or><match tags="vblex.inf"/><match tags="vbser.inf"/><match tags="vbhaver.inf"/><match tags="vbmod.inf"/></or>
   </rule>
   <rule weight="1.0">
     <match lemma="pour" tags="pr"><select lemma="per"/></match>
@@ -205,7 +205,7 @@
       <match tags="adv"/>
     </repeat>
     <or><match tags="prn.pro.*"/><match tags="prn.itg.*"/></or>
-    <match tags="*.inf"/>
+    <or><match tags="vblex.inf"/><match tags="vbser.inf"/><match tags="vbhaver.inf"/><match tags="vbmod.inf"/></or>
   </rule>
   <rule weight="1.0">
     <match lemma="pour" tags="pr"><select lemma="per"/></match>
@@ -214,7 +214,7 @@
     </repeat>
     <or><match tags="prn.pro.*"/><match tags="prn.itg.*"/></or>
     <match tags="prn.pro.*"/>
-    <match tags="*.inf"/>
+    <or><match tags="vblex.inf"/><match tags="vbser.inf"/><match tags="vbhaver.inf"/><match tags="vbmod.inf"/></or>
   </rule>
   <rule weight="1.0">
     <match lemma="avoir" tags="*.ger"/>

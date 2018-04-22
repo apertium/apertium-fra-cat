@@ -432,7 +432,7 @@
       <match tags="adv"/>
     </repeat>
     <or><match tags="vblex.*"/><match tags="vbmod.*"/></or>
-    <match tags="vblex.inf"/>
+    <or><match tags="vblex.inf"/><match tags="vbser.inf"/><match tags="vbhaver.inf"/><match tags="vbmod.inf"/></or>
   </rule>
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
@@ -441,7 +441,7 @@
     </repeat>
     <match tags="prn.pro.*"/>
     <or><match tags="vblex.*"/><match tags="vbmod.*"/></or>
-    <match tags="vblex.inf"/>
+    <or><match tags="vblex.inf"/><match tags="vbser.inf"/><match tags="vbhaver.inf"/><match tags="vbmod.inf"/></or>
   </rule>
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
@@ -451,7 +451,7 @@
     <match tags="prn.pro.*"/>
     <match tags="prn.pro.*"/>
     <or><match tags="vblex.*"/><match tags="vbmod.*"/></or>
-    <match tags="vblex.inf"/>
+    <or><match tags="vblex.inf"/><match tags="vbser.inf"/><match tags="vbhaver.inf"/><match tags="vbmod.inf"/></or>
   </rule>
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
@@ -494,12 +494,16 @@
     <match lemma="per" tags="pr"><select lemma="par"/></match>
   </rule>
   <rule weight="1.0">
+    <match tags="vbser.*"/>
     <match tags="vblex.pp.*"/>
     <match lemma="per" tags="pr"><select lemma="par"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="per" tags="pr"><select lemma="pour"/></match>
-    <match tags="*.inf"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or><match tags="vblex.inf"/><match tags="vbser.inf"/><match tags="vbhaver.inf"/><match tags="vbmod.inf"/></or>
   </rule>
   <rule weight="1.0">
     <match lemma="felicitar" tags="vblex.*"/>
@@ -642,7 +646,7 @@
   </rule>
   <rule weight="1.0">
     <match lemma="en" tags="pr"><select lemma="en"/></match>
-    <match tags="*.inf"/>
+    <or><match tags="vblex.inf"/><match tags="vbser.inf"/><match tags="vbhaver.inf"/><match tags="vbmod.inf"/></or>
   </rule>
   <rule weight="1.0">
     <match lemma="en" tags="pr"><select lemma="en"/></match>
@@ -849,12 +853,12 @@
   </rule>
   <rule weight="1.0">
     <match lemma="intentar" tags="vblex.*"><select lemma="essayer# de"/></match>
-    <match tags="*.inf"/>
+    <or><match tags="vblex.inf"/><match tags="vbser.inf"/><match tags="vbhaver.inf"/><match tags="vbmod.inf"/></or>
   </rule>
   <rule weight="1.0">
     <match lemma="intentar" tags="vblex.*"><select lemma="essayer# de"/></match>
     <match tags="adv"/>
-    <match tags="*.inf"/>
+    <or><match tags="vblex.inf"/><match tags="vbser.inf"/><match tags="vbhaver.inf"/><match tags="vbmod.inf"/></or>
   </rule>
 
   <!-- marejar >> faire# tourner la tête, sentir# mal -->
