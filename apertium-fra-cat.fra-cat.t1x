@@ -51,12 +51,6 @@
     <def-cat n="predet">
       <cat-item tags="predet.*"/>
     </def-cat>
-    <def-cat n="auxpp">
-      <cat-item tags="vbser.pp.*"/>
-      <cat-item tags="vbmod.pp.*"/>
-      <cat-item tags="vbhaver.pp.*"/>
-      <cat-item lemma="être" tags="vblex.pp.*"/>
-    </def-cat>
     <def-cat n="adj">
       <cat-item tags="adj.*"/>
     </def-cat>
@@ -185,13 +179,6 @@
       <cat-item lemma="nombreux" tags="adj.m.sp"/>
       <cat-item lemma="nombreux" tags="adj.f.pl"/>
     </def-cat>
-    <def-cat n="vbser">
-      <cat-item tags="vbser.*"/>
-    </def-cat>
-    <def-cat n="vbhaver">
-      <cat-item tags="vbhaver.*"/>
-      <cat-item lemma="avoir" tags="vblex.*"/>
-    </def-cat>
     <def-cat n="verb_partitiu">
       <cat-item tags="vbhaver.*"/>
       <cat-item lemma="avoir" tags="vblex.*"/>
@@ -206,12 +193,26 @@
       <cat-item lemma="sentir" tags="vblex.*"/>
       <cat-item lemma="vouloir" tags="vblex.*"/>
       <cat-item lemma="vouloir" tags="vbmod.*"/>
+      <cat-item lemma="gagner" tags="vblex.*"/>
+      <cat-item lemma="gagner" tags="vbmod.*"/>
     </def-cat>
     <def-cat n="verb">
       <cat-item tags="vblex.*"/>
       <cat-item tags="vbser.*"/>
       <cat-item tags="vbhaver.*"/>
       <cat-item tags="vbmod.*"/>
+    </def-cat>
+    <def-cat n="vbser">
+      <cat-item tags="vbser.*"/>
+    </def-cat>
+    <def-cat n="verbnoser">
+      <cat-item tags="vblex.*"/>
+      <cat-item tags="vbhaver.*"/>
+      <cat-item tags="vbmod.*"/>
+    </def-cat>
+    <def-cat n="vbhaver">
+      <cat-item tags="vbhaver.*"/>
+      <cat-item lemma="avoir" tags="vblex.*"/>
     </def-cat>
     <def-cat n="inf">
       <cat-item tags="vblex.inf"/>
@@ -224,6 +225,15 @@
       <cat-item tags="vbser.pp.*"/>
       <cat-item tags="vbhaver.pp.*"/>
       <cat-item tags="vbmod.pp.*"/>
+    </def-cat>
+    <def-cat n="vbserpp">
+      <cat-item tags="vbser.pp.*"/>
+    </def-cat>
+    <def-cat n="auxpp">
+      <cat-item tags="vbser.pp.*"/>
+      <cat-item tags="vbmod.pp.*"/>
+      <cat-item tags="vbhaver.pp.*"/>
+      <cat-item lemma="être" tags="vblex.pp.*"/>
     </def-cat>
     <def-cat n="pp_m_sg">
       <cat-item tags="vblex.pp.m.sg"/>
@@ -508,6 +518,7 @@
     </def-attr>
     <def-attr n="a_verb">
       <attr-item tags="vblex"/>
+      <attr-item tags="vblex.pron"/>
       <attr-item tags="vbser"/>
       <attr-item tags="vbhaver"/>
       <attr-item tags="vaux"/>
@@ -630,6 +641,7 @@
     <def-var n="auxg"/>
     <def-var n="auxn"/>
     <def-var n="aux"/>
+    <def-var n="pronom"/>
   </section-def-vars>
   
   <section-def-lists>
@@ -3112,6 +3124,40 @@
       <call-macro n="f_concord_pedac"><with-param pos="4"/></call-macro>
     </def-macro>
 
+    <def-macro n="pron" npar="1">
+      <let>
+	<var n="pronom"/>
+	<lit v=""/>
+      </let>
+      <choose>
+	<when> 
+	  <test>
+	    <equal><clip pos="1" side="tl" part="a_verb"/><lit-tag v="vblex.pron"/></equal>
+	  </test>
+          <choose>
+	    <when> 
+	      <test>
+	        <equal><clip pos="1" side="tl" part="persona"/><lit-tag v="p3"/></equal>
+	      </test>
+	      <let><var n="pronom"/><lit v="prpers"/></let>
+	      <append n="pronom">
+	        <lit-tag v="prn.pro.ref.mf-sp"/>
+	        <lit v="$ ^"/>
+	      </append>	
+	    </when>
+	    <otherwise>
+	      <let><var n="pronom"/><lit v="prpers"/></let>
+	      <append n="pronom">
+	        <lit-tag v="prn.pro.mf"/>
+	        <clip pos="1" side="tl" part="nbr"/>
+	        <lit v="$ ^"/>
+	      </append>	
+	    </otherwise>
+          </choose> 
+	</when>
+      </choose> 
+    </def-macro>
+
   </section-def-macros>
   
   <section-rules>
@@ -3198,6 +3244,22 @@
         <call-macro n="f_concord1">
           <with-param pos="1"/>
         </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule comment="REGLA: VERB (per a multiparaules sense enclítics)">
+      <pattern>
+        <pattern-item n="verbnoser"/>
+      </pattern>
+      <action>
         <call-macro n="f_ifi1">
           <with-param pos="1"/>
         </call-macro>
@@ -6121,6 +6183,149 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
+    <rule comment="REGLA: VBHAVER VBSERPP (ont été > han estat)">
+      <pattern>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="pp_m_sg"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="1"/>
+        </call-macro>
+        <choose>
+          <when>
+            <test>
+              <equal><clip pos="2" side="tl" part="gen"/><lit-tag v="GD"/></equal>
+            </test>
+            <let><clip pos="2" side="tl" part="gen"/><lit-tag v="m"/></let>
+          </when>
+        </choose>
+        <choose>
+          <when>
+            <test>
+              <equal><clip pos="2" side="tl" part="nbr"/><lit-tag v="ND"/></equal>
+            </test>
+            <let><clip pos="2" side="tl" part="nbr"/><lit-tag v="sg"/></let>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+ 
+    <rule comment="REGLA: PRN VBHAVER VBSERPP (ls ont été > han estat)">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="vbserpp"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <choose>
+          <when>
+            <test>
+              <equal><clip pos="3" side="tl" part="gen"/><lit-tag v="GD"/></equal>
+            </test>
+            <let><clip pos="3" side="tl" part="gen"/><lit-tag v="m"/></let>
+          </when>
+        </choose>
+        <choose>
+          <when>
+            <test>
+              <equal><clip pos="3" side="tl" part="nbr"/><lit-tag v="ND"/></equal>
+            </test>
+            <let><clip pos="3" side="tl" part="nbr"/><lit-tag v="sg"/></let>
+          </when>
+        </choose>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+ 
+    <rule comment="REGLA: VBHAVER ADV VBSERPP (ont toujours été > han estat sempre, ont pas éte > han estat)">
+      <pattern>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="pp"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="1"/>
+        </call-macro>
+        <choose>
+          <when>
+            <test>
+              <equal><clip pos="3" side="tl" part="gen"/><lit-tag v="GD"/></equal>
+            </test>
+            <let><clip pos="3" side="tl" part="gen"/><lit-tag v="m"/></let>
+          </when>
+        </choose>
+        <choose>
+          <when>
+            <test>
+              <equal><clip pos="3" side="tl" part="nbr"/><lit-tag v="ND"/></equal>
+            </test>
+            <let><clip pos="3" side="tl" part="nbr"/><lit-tag v="sg"/></let>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+        <choose>
+          <when>
+            <test>
+              <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="pas"/></equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+          </when>
+          <otherwise>
+            <out>
+              <b pos="2"/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+ 
     <rule>
 <!-- REGLA:PRN ADV VERB pas PREP DET -->
       <pattern>
@@ -9678,26 +9883,9 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule comment="REGLA: VERB (per a multiparaules sense enclítics)">
+    <rule comment="REGLA: VERB-PRONOM(suis-je: sóc)">
       <pattern>
-        <pattern-item n="verb"/>
-      </pattern>
-      <action>
-        <call-macro n="f_ifi1">
-          <with-param pos="1"/>
-        </call-macro>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="whole"/>
-          </lu>
-        </out>
-      </action>
-    </rule>
-    
-    <rule>
-<!--REGLA: VERB-PRONOM(suis-je: sóc)-->
-      <pattern>
-        <pattern-item n="verb"/>
+        <pattern-item n="verbconj"/>
         <pattern-item n="prnsubj"/>
       </pattern>
       <action>
@@ -9715,10 +9903,9 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!--REGLA: VERBSER-PRONOM(suis-je: sóc)-->
+    <rule comment="REGLA: VERBSER-PRONOM PP (suis-je arrivé: he arribat)">
       <pattern>
-        <pattern-item n="vbser"/>
+        <pattern-item n="serconj"/>
         <pattern-item n="prnsubj"/>
         <pattern-item n="pp"/>
       </pattern>
@@ -9754,8 +9941,37 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
     
-    <rule>
-<!--REGLA: VERB-t-PRONOM(a-t-elle: ha)-->
+    <rule comment="REGLA: VERB-PRONOM(suis-je: sóc)">
+      <pattern>
+        <pattern-item n="sent"/>
+        <pattern-item n="verbconj"/>
+        <pattern-item n="prnsubj"/>
+      </pattern>
+      <action>
+        <!-- reset variables -->
+        <let><var n="genero"/><lit-tag v="m"/></let>
+        <let><var n="numero"/><lit-tag v="sg"/></let>
+        <call-macro n="f_concord0">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+<!--
+    <rule comment="REGLA: VERB-t-PRONOM(a-t-elle: ha)">
       <pattern>
         <pattern-item n="verb"/>
         <pattern-item n="nom"/>
@@ -9775,6 +9991,7 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
       </action>
     </rule>
+-->
     
     <rule>
 <!--REGLA: VERB + ENCLÍTIC -->
