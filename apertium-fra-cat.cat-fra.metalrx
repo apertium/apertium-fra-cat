@@ -737,6 +737,16 @@
     <match lemma="negociació" tags="n.*"/>
   </rule>
 
+  <!-- fer >> faire, poser -->
+  <rule weight="0.8">
+    <match lemma="fer" tags="vblex.*"><select lemma="faire"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fer" tags="vblex.*"><select lemma="poser"/></match>
+    <match tags="det.*"/>
+    <match lemma="pregunta" tags="n.*"/>
+  </rule>
+
   <!-- esclatar >> exploser, éclater -->
   <rule weight="0.8">
     <match lemma="esclatar" tags="vblex.*"><select lemma="exploser"/></match>

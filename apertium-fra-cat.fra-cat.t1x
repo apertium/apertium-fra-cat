@@ -319,6 +319,12 @@
       <cat-item tags="vbmod.*.p2.*"/>
       <cat-item tags="vbmod.*.p3.*"/>
     </def-cat>
+    <def-cat n="verbconjp3">
+      <cat-item tags="vblex.*.p3.*"/>
+      <cat-item tags="vbhaver.*.p3.*"/>
+      <cat-item tags="vbser.*.p3.*"/>
+      <cat-item tags="vbmod.*.p3.*"/>
+    </def-cat>
     <def-cat n="serconj">
       <cat-item tags="vbser.*.p1.*"/>
       <cat-item tags="vbser.*.p2.*"/>
@@ -10221,7 +10227,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: VERB-PRONOM(suis-je: sóc)">
+    <rule comment="REGLA: VERB-PRONOM (suis-je: sóc)">
       <pattern>
         <pattern-item n="verbconj"/>
         <pattern-item n="prnsubj"/>
@@ -10233,6 +10239,39 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_ifi1">
           <with-param pos="1"/>
         </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: VERB-on (peut-on: es pot)">
+      <pattern>
+        <pattern-item n="verbconjp3"/>
+        <pattern-item n="on"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lem"/>
+            </get-case-from>
+              <clip pos="2" side="tl" part="tags"/>
+          </lu>
+          <b/>
+        </out>
+        <modify-case>
+          <clip pos="1" side="tl" part="whole"/>
+          <lit v="aa"/>
+        </modify-case>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>

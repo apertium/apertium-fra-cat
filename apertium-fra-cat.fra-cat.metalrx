@@ -374,6 +374,44 @@
     </or>
   </rule>
 
+  <!-- poser >> posar plantejar, fer -->
+  <rule weight="0.8">
+    <match lemma="poser" tags="vblex.*"><select lemma="posar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="poser" tags="vblex.*"><select lemma="plantejar"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="problème" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="poser" tags="vblex.*"><select lemma="plantejar"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match tags="adj.*"/>
+    <match lemma="problème" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="poser" tags="vblex.*"><select lemma="plantejar"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="adj.*"/>
+    <match lemma="problème" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="poser" tags="vblex.*"><select lemma="fer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="question" tags="n.*"><select lemma="pregunta"/></match>
+  </rule>
+
   <!-- coucher >> ficar# al llit (tr, pron), jeure, ajeure (intr) -->
   <rule weight="0.8">
     <match lemma="coucher" tags="vblex.*"><select lemma="ficar# al llit"/></match>
@@ -573,6 +611,19 @@
     <match lemma="poule" tags="n.*"><select lemma="grup"/></match>
     <match lemma="de" tags="pr"/>
     <or><match tags="num"/><match tags="num.*"/></or>
+  </rule>
+
+  <!-- question >> qüestió, pregunta -->
+  <rule weight="0.8">
+    <match lemma="question" tags="n.*"><select lemma="qüestió"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="poser" tags="vblex.*"><select lemma="fer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="question" tags="n.*"><select lemma="pregunta"/></match>
   </rule>
 
   <!-- sursis >> pròrroga, suspensió# de condemna -->
