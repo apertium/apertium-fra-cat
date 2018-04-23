@@ -6329,6 +6329,49 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
+    <rule comment="REGLA: ON VERB DES (on croit des choses, es creuen coses)">
+      <pattern>
+        <pattern-item n="on"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+        <let><clip pos="2" side="tl" part="nbr"/><lit-tag v="pl"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
+      </action>
+    </rule>
+
     <rule comment="REGLA: PRN VERB DE LE (il veut de l'eau: vol aigua)">
       <pattern>
         <pattern-item n="prnsubj"/>
@@ -6337,6 +6380,7 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefsg"/>
       </pattern>
       <action>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -6346,9 +6390,38 @@ is not applicable because gender and number cannot be taken from previous rules 
             <clip pos="2" side="tl" part="lemq"/>
           </lu>
         </out>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
       </action>
     </rule>
 
+    <rule comment="REGLA: ON VERB DE LE (on veut de l'eau: es vol aigua)">
+      <pattern>
+        <pattern-item n="on"/>
+        <pattern-item n="verb_partitiu"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefsg"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+      </action>
+    </rule>
+
+<!--
     <rule comment="REGLA:PRN VERBSER PP DE DET">
       <pattern>
         <pattern-item n="prnsubj"/>
@@ -6390,6 +6463,7 @@ is not applicable because gender and number cannot be taken from previous rules 
         </choose>
       </action>
     </rule>
+-->
 
     <rule comment="REGLA:PRN NEADV VERB que DE DET">
       <pattern>
@@ -6401,6 +6475,7 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -6428,6 +6503,54 @@ is not applicable because gender and number cannot be taken from previous rules 
             <clip pos="4" side="tl" part="whole"/>
           </lu>
         </out>
+        <call-macro n="f_bcond"><with-param pos="4"/><with-param pos="5"/></call-macro>
+        <call-macro n="f_bcond"><with-param pos="5"/><with-param pos="6"/></call-macro>
+      </action>
+    </rule>
+
+    <rule comment="REGLA:ON NEADV VERB que DE DET">
+      <pattern>
+        <pattern-item n="on"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="que"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="a_adv"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <lit v="més"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="4"/><with-param pos="5"/></call-macro>
+        <call-macro n="f_bcond"><with-param pos="5"/><with-param pos="6"/></call-macro>
       </action>
     </rule>
 
@@ -8493,6 +8616,7 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="pp"/>
       </pattern>
       <action>
+      <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
       <choose>
        <when>
          <test>
@@ -8577,6 +8701,102 @@ is not applicable because gender and number cannot be taken from previous rules 
       </choose>
       </action>
     </rule>
+
+
+    <rule comment="REGLA: ON VBSER PP > es haver + participi">
+      <pattern>
+        <pattern-item n="on"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="pp"/>
+      </pattern>
+      <action>
+      <out>
+        <lu>
+          <clip pos="1" side="tl" part="lemh"/>
+          <clip pos="1" side="tl" part="tags"/>
+          <clip pos="1" side="tl" part="lemq"/>
+        </lu>
+        <b pos="1"/>
+      </out>
+      <choose>
+       <when>
+         <test>
+           <or>
+	     <equal><clip pos="2" side="sl" part="temps"/><lit-tag v="pp"/></equal>
+             <in caseless="yes"><clip pos="3" side="sl" part="lemh"/><list n="vbestat"/></in>
+           </or>
+	 </test>
+            <out>
+              <lu>
+                <lit v="haver"/>
+                <lit-tag v="vaux"/>
+                <clip pos="2" side="tl" part="temps"/>
+                <clip pos="2" side="tl" part="persona"/>
+		<clip pos="2" side="tl" part="gen"/>
+                <clip pos="2" side="tl" part="nbr"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="a_verb"/>
+                <clip pos="3" side="tl" part="temps"/>
+                <lit-tag v="m"/>
+                <lit-tag v="sg"/>
+	        <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+            </out>
+       </when>
+       <when>
+         <test>
+           <or>
+	     <equal><clip pos="2" side="sl" part="temps"/><lit-tag v="pp"/></equal>
+             <in caseless="yes"><clip pos="3" side="sl" part="lemh"/><list n="pp_estat"/></in>
+           </or>
+	 </test>
+            <out>
+              <lu>
+                <lit v="estar"/>
+                <lit-tag v="vblex"/>
+                <clip pos="2" side="tl" part="temps"/>
+                <clip pos="2" side="tl" part="persona"/>
+		<clip pos="2" side="tl" part="gen"/>
+                <clip pos="2" side="tl" part="nbr"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="a_verb"/>
+                <clip pos="3" side="tl" part="temps"/>
+                <clip pos="3" side="tl" part="gen"/>
+                <clip pos="3" side="tl" part="nbr"/>
+	        <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+            </out>
+       </when>
+       <otherwise>
+            <out>
+              <lu>
+                <lit v="ser"/>
+                <lit-tag v="vbser"/>
+                <clip pos="2" side="tl" part="temps"/>
+                <clip pos="2" side="tl" part="persona"/>
+                <clip pos="2" side="tl" part="nbr"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="a_verb"/>
+                <clip pos="3" side="tl" part="temps"/>
+                <clip pos="3" side="tl" part="gen"/>
+                <clip pos="3" side="tl" part="nbr"/>
+	        <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+            </out>
+        </otherwise>
+      </choose>
+      </action>
+    </rule>
+
 
     <rule comment="REGLA: PRN VERB (il arrive: arriba)">
       <pattern>
