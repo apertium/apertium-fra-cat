@@ -359,6 +359,15 @@
 
 <!-- **************** V **************** -->
 
+  <!-- bénéficier >> beneficiar, beneficiar-se -->
+  <rule weight="0.8">
+    <match lemma="bénéficier" tags="vblex.*"><select lemma="beneficiar" tags="vblex.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="bénéficier" tags="vblex.*"><select lemma="beneficiar" tags="vblex.pron.*"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
+
   <!-- décrocher >> sonar, picar -->
   <rule weight="0.8">
     <match lemma="décrocher" tags="vblex.*"><select lemma="despenjar"/></match>
@@ -1359,6 +1368,7 @@
     </or>
     </repeat>
     <or>
+      <match lemma="amoureux" tags="adj.*"/>
       <match lemma="content" tags="adj.*"/>
       <match lemma="satisfait" tags="adj.*"/>
       <match lemma="satisfaire" tags="vblex.pp.*"/>

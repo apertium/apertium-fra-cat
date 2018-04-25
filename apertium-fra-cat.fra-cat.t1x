@@ -540,9 +540,16 @@
     <def-attr n="a_rel">
       <attr-item tags="rel"/>
     </def-attr>
-    <def-attr n="a_verb">
+    <def-attr n="a_verb_pron">
       <attr-item tags="vblex"/>
       <attr-item tags="vblex.pron"/>
+      <attr-item tags="vbser"/>
+      <attr-item tags="vbhaver"/>
+      <attr-item tags="vaux"/>
+      <attr-item tags="vbmod"/>
+    </def-attr>
+    <def-attr n="a_verb">
+      <attr-item tags="vblex"/>
       <attr-item tags="vbser"/>
       <attr-item tags="vbhaver"/>
       <attr-item tags="vaux"/>
@@ -1077,7 +1084,11 @@
       <otherwise>
         <let><clip pos="1" side="tl" part="whole"/>
              <concat><clip pos="1" side="tl" part="lemh"/>
-                <clip pos="1" side="tl" part="tags"/>
+                <clip pos="1" side="tl" part="a_verb"/>
+                <clip pos="1" side="tl" part="temps"/>
+                <clip pos="1" side="tl" part="persona"/>
+                <clip pos="1" side="tl" part="gen"/>
+                <clip pos="1" side="tl" part="nbr"/>
                 <clip pos="1" side="tl" part="lemq"/></concat></let>
       </otherwise>
     </choose>
@@ -3149,7 +3160,7 @@
       <call-macro n="f_concord_pedac"><with-param pos="4"/></call-macro>
     </def-macro>
 
-    <def-macro n="f_set_pron" npar="1"> <!-- posa a la varable 'pronom' el pronom reflexiu que calgui si el verb és reflexiu -->
+    <def-macro n="f_set_pron" npar="2"> <!-- posa a la varable 'pronom' el pronom reflexiu que calgui si el verb és reflexiu. El segon paramàtre és la repetició del primer, si és una forma conjugada (personal) del verb, altrament és l'auxiliar-->
       <let>
 	<var n="pronom"/>
 	<lit v=""/>
@@ -3157,12 +3168,12 @@
       <choose>
 	<when>
 	  <test>
-	    <equal><clip pos="1" side="tl" part="a_verb"/><lit-tag v="vblex.pron"/></equal>
+	    <equal><clip pos="1" side="tl" part="a_verb_pron"/><lit-tag v="vblex.pron"/></equal>
 	  </test>
           <choose>
 	    <when>
 	      <test>
-	        <equal><clip pos="1" side="tl" part="persona"/><lit-tag v="p3"/></equal>
+	        <equal><clip pos="2" side="tl" part="persona"/><lit-tag v="p3"/></equal>
 	      </test>
 	      <let>
                 <var n="pronom"/>
@@ -3184,7 +3195,7 @@
               </let>
 	      <append n="pronom">
 	        <lit-tag v="prn.pro"/>
-                <clip pos="1" side="tl" part="persona"/>
+                <clip pos="2" side="tl" part="persona"/>
 	        <lit-tag v="mf"/>
 	        <clip pos="1" side="tl" part="nbr"/>
 	        <lit v="$^"/>
@@ -3206,7 +3217,7 @@
               </modify-case>
             </when>
           </choose>
-	  <let><clip pos="1" side="tl" part="a_verb"/><lit-tag v="vblex"/></let>
+	  <let><clip pos="1" side="tl" part="a_verb_pron"/><lit-tag v="vblex"/></let>
 	</when>
       </choose>
     </def-macro>
@@ -3219,14 +3230,13 @@
       <choose>
 	<when>
 	  <test>
-	    <equal><clip pos="1" side="tl" part="a_verb"/><lit-tag v="vblex.pron"/></equal>
+	    <equal><clip pos="1" side="tl" part="a_verb_pron"/><lit-tag v="vblex.pron"/></equal>
 	  </test>
 	  <let><var n="pronom"/><lit v="es"/></let>
 	  <append n="pronom">
 	    <lit-tag v="prn.enc.ref.p3.mf.sp"/>
-	    <lit v="$^"/>
 	  </append>	
-	  <let><clip pos="1" side="tl" part="a_verb"/><lit-tag v="vblex"/></let>
+	  <let><clip pos="1" side="tl" part="a_verb_pron"/><lit-tag v="vblex"/></let>
 	</when>
       </choose>
     </def-macro>
@@ -3349,10 +3359,11 @@
         <pattern-item n="verbnoserconj"/>
       </pattern>
       <action>
-        <call-macro n="f_ifi1">
+        <call-macro n="f_set_pron">
+          <with-param pos="1"/>
           <with-param pos="1"/>
         </call-macro>
-        <call-macro n="f_set_pron">
+        <call-macro n="f_ifi1">
           <with-param pos="1"/>
         </call-macro>
         <call-macro n="print_pron">
@@ -3390,10 +3401,12 @@
             <out>
               <mlu>
                 <lu>
-                  <clip pos="1" side="tl" part="whole"/>
+                  <clip pos="1" side="tl" part="lemh"/>
+                  <clip pos="1" side="tl" part="tags"/>
                 </lu>
                 <lu>
 	          <var n="pronom"/>
+                  <clip pos="1" side="tl" part="lemq"/>
                 </lu>
               </mlu>
             </out>
@@ -3427,11 +3440,24 @@
       <action>
         <choose>
           <when>
-            <test><and><equal><clip pos="1" side="tl" part="a_adjec"/><lit-tag v="vblex.pp"/></equal>
-                       <equal><clip pos="1" side="sl" part="gen"/><lit-tag v="mf"/></equal>
-                       <equal><clip pos="1" side="sl" part="nbr"/><lit-tag v="sp"/></equal></and></test>
+            <test>
+              <equal><clip pos="1" side="tl" part="a_verb_pron"/><lit-tag v="vblex.pron"/></equal>
+            </test>
+            <let><clip pos="1" side="tl" part="a_verb_pron"/><lit-tag v="vblex"/></let>
+          </when>
+        </choose>
+        <choose>
+          <when>
+            <test>
+              <and>
+                <equal><clip pos="1" side="tl" part="a_adjec"/><lit-tag v="vblex.pp"/></equal>
+                <equal><clip pos="1" side="sl" part="gen"/><lit-tag v="mf"/></equal>
+                <equal><clip pos="1" side="sl" part="nbr"/><lit-tag v="sp"/></equal>
+              </and>
+            </test>
             <let><clip pos="1" side="tl" part="gen"/><lit-tag v="GD"/></let>
-            <let><clip pos="1" side="tl" part="nbr"/><lit-tag v="ND"/></let></when>
+            <let><clip pos="1" side="tl" part="nbr"/><lit-tag v="ND"/></let>
+          </when>
         </choose>
         <call-macro n="f_concord1">
           <with-param pos="1"/>
@@ -5323,12 +5349,13 @@ is not applicable because gender and number cannot be taken from previous rules 
 	<otherwise>	
 	<out>
 	  <lu>
-	    <clip pos="1" side="tl" part="lem"/>
+	    <clip pos="1" side="tl" part="lemh"/>
             <clip pos="1" side="tl" part="a_verb"/>
             <clip pos="1" side="tl" part="temps"/>
             <clip pos="1" side="tl" part="persona"/>
             <clip pos="1" side="tl" part="gen"/>
             <clip pos="1" side="tl" part="nbr"/>
+	    <clip pos="1" side="tl" part="lemq"/>
           </lu>
 	  <b pos="1"/>
 	  <lu>
@@ -6563,36 +6590,66 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord0">
           <with-param pos="1"/>
         </call-macro>
+        <call-macro n="f_set_pron">
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="1"/>
         </call-macro>
         <choose>
           <when>
-            <test>
-              <equal><clip pos="2" side="tl" part="gen"/><lit-tag v="GD"/></equal>
-            </test>
+            <test><equal><clip pos="2" side="tl" part="gen"/><lit-tag v="GD"/></equal></test>
             <let><clip pos="2" side="tl" part="gen"/><lit-tag v="m"/></let>
           </when>
         </choose>
         <choose>
           <when>
-            <test>
-              <equal><clip pos="2" side="tl" part="nbr"/><lit-tag v="ND"/></equal>
-            </test>
+            <test><equal><clip pos="2" side="tl" part="nbr"/><lit-tag v="ND"/></equal></test>
             <let><clip pos="2" side="tl" part="nbr"/><lit-tag v="sg"/></let>
           </when>
         </choose>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="whole"/>
-          </lu>
-          <b pos="1"/>
-          <lu>
-            <clip pos="2" side="tl" part="lemh"/>
-            <clip pos="2" side="tl" part="tags"/>
-            <clip pos="2" side="tl" part="lemq"/>
-          </lu>
-        </out>
+        <choose>
+	  <when>
+	    <test>
+	      <equal><var n="pronom"/><lit v=""/></equal>
+	    </test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+            </out>
+	  </when>
+	  <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+	          <var n="pronom"/>
+                </get-case-from>
+              </lu>
+              <b/>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="1" side="tl" part="lemh"/>
+                </get-case-from>
+                <clip pos="1" side="tl" part="tags"/>
+                <clip pos="1" side="tl" part="lemq"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+            </out>
+	  </otherwise>
+        </choose>
       </action>
     </rule>
 
@@ -6650,6 +6707,10 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord0">
           <with-param pos="1"/>
         </call-macro>
+        <call-macro n="f_set_pron">
+          <with-param pos="3"/>
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="1"/>
         </call-macro>
@@ -6669,13 +6730,39 @@ is not applicable because gender and number cannot be taken from previous rules 
             <let><clip pos="3" side="tl" part="nbr"/><lit-tag v="sg"/></let>
           </when>
         </choose>
+        <choose>
+	  <when>
+	    <test>
+	      <equal><var n="pronom"/><lit v=""/></equal>
+	    </test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+            </out>
+	  </when>
+	  <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+	          <var n="pronom"/>
+                </get-case-from>
+              </lu>
+              <b/>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="1" side="tl" part="whole"/>
+                </get-case-from>
+              </lu>
+            </out>
+	  </otherwise>
+        </choose>
         <out>
-          <lu>
-            <clip pos="1" side="tl" part="whole"/>
-          </lu>
           <b pos="1"/>
           <lu>
-            <clip pos="3" side="tl" part="whole"/>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
           </lu>
         </out>
         <choose>
@@ -6697,8 +6784,8 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule>
-<!-- REGLA:PRN ADV VERB pas PREP DET -->
+
+    <rule comment="REGLA:PRN ADV VERB pas PREP DET">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="adv"/>
@@ -8807,10 +8894,11 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord0">
           <with-param pos="2"/>
         </call-macro>
-        <call-macro n="f_ifi1">
+        <call-macro n="f_set_pron">
+          <with-param pos="2"/>
           <with-param pos="2"/>
         </call-macro>
-        <call-macro n="f_set_pron">
+        <call-macro n="f_ifi1">
           <with-param pos="2"/>
         </call-macro>
         <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
@@ -8857,9 +8945,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <choose>
 	  <when>
 	    <test>
-	      <equal><clip pos="2" side="tl" part="a_verb"/><lit-tag v="vblex.pron"/></equal>
+	      <equal><clip pos="2" side="tl" part="a_verb_pron"/><lit-tag v="vblex.pron"/></equal>
 	    </test>
-	    <let><clip pos="2" side="tl" part="a_verb"/><lit-tag v="vblex"/></let>
+	    <let><clip pos="2" side="tl" part="a_verb_pron"/><lit-tag v="vblex"/></let>
             <out>
               <lu>
                 <get-case-from pos="1">
@@ -8971,22 +9059,53 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord0">
           <with-param pos="2"/>
         </call-macro>
+        <call-macro n="f_set_pron">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="2"/>
         </call-macro>
-        <out>
-          <lu>
-            <get-case-from pos="1">
-              <clip pos="2" side="tl" part="whole"/>
-            </get-case-from>
-          </lu>
-          <b pos="2"/>
-          <lu>
-            <clip pos="3" side="tl" part="lemh"/>
-            <clip pos="3" side="tl" part="tags"/>
-            <clip pos="3" side="tl" part="lemq"/>
-          </lu>
-        </out>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <choose>
+	  <when>
+	    <test>
+	      <equal><var n="pronom"/><lit v=""/></equal>
+	    </test>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="whole"/>
+                </get-case-from>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+            </out>
+	  </when>
+	  <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+	          <var n="pronom"/>
+                </get-case-from>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+            </out>
+	  </otherwise>
+        </choose>
       </action>
     </rule>
 
@@ -9002,28 +9121,65 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord0">
           <with-param pos="2"/>
         </call-macro>
+        <call-macro n="f_set_pron">
+          <with-param pos="4"/>
+          <with-param pos="2"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="2"/>
         </call-macro>
-        <out>
-          <lu>
-            <get-case-from pos="1">
-              <clip pos="2" side="tl" part="whole"/>
-            </get-case-from>
-          </lu>
-          <b pos="2"/>
-          <lu>
-            <clip pos="4" side="tl" part="lemh"/>
-            <clip pos="4" side="tl" part="tags"/>
-            <clip pos="4" side="tl" part="lemq"/>
-          </lu>
-          <b pos="3"/>
-          <lu>
-            <clip pos="3" side="tl" part="lemh"/>
-            <clip pos="3" side="tl" part="tags"/>
-            <clip pos="3" side="tl" part="lemq"/>
-          </lu>
-        </out>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <choose>
+	  <when>
+	    <test>
+	      <equal><var n="pronom"/><lit v=""/></equal>
+	    </test>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="whole"/>
+                </get-case-from>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="4" side="tl" part="lemh"/>
+                <clip pos="4" side="tl" part="tags"/>
+                <clip pos="4" side="tl" part="lemq"/>
+              </lu>
+              <b pos="3"/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+            </out>
+	  </when>
+	  <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+	          <var n="pronom"/>
+                </get-case-from>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="4" side="tl" part="lemh"/>
+                <clip pos="4" side="tl" part="tags"/>
+                <clip pos="4" side="tl" part="lemq"/>
+              </lu>
+              <b pos="3"/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+            </out>
+	  </otherwise>
+        </choose>
       </action>
     </rule>
 
@@ -9224,6 +9380,7 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -9270,6 +9427,165 @@ is not applicable because gender and number cannot be taken from previous rules 
         </choose>
       </action>
     </rule>
+
+
+    <rule comment="REGLA: NE VBHAVER ADV VBSERPP (n'ont pas été > no han estat, n'a pas épousé > no s-ha casat amb)">
+      <pattern>
+        <pattern-item n="neadv"/>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="pp_m_sg"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_set_pron">
+          <with-param pos="4"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <choose>
+          <when>
+            <test>
+              <equal><clip pos="4" side="tl" part="gen"/><lit-tag v="GD"/></equal>
+            </test>
+            <let><clip pos="4" side="tl" part="gen"/><lit-tag v="m"/></let>
+          </when>
+        </choose>
+        <choose>
+          <when>
+            <test>
+              <equal><clip pos="4" side="tl" part="nbr"/><lit-tag v="ND"/></equal>
+            </test>
+            <let><clip pos="4" side="tl" part="nbr"/><lit-tag v="sg"/></let>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <choose>
+	  <when>
+	    <test>
+	      <equal><var n="pronom"/><lit v=""/></equal>
+	    </test>
+            <out>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b pos="2"/>
+            </out>
+	  </when>
+	  <otherwise>
+            <out>
+              <lu>
+	        <var n="pronom"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b pos="2"/>
+            </out>
+	  </otherwise>
+        </choose>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <out>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: NE VBHAVER ADV VBSERPP (ils n'ont pas été > no han estat, il n'a pas épousé > no s-ha casat amb)">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="pp_m_sg"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_set_pron">
+          <with-param pos="5"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <choose>
+          <when>
+            <test>
+              <equal><clip pos="5" side="tl" part="gen"/><lit-tag v="GD"/></equal>
+            </test>
+            <let><clip pos="5" side="tl" part="gen"/><lit-tag v="m"/></let>
+          </when>
+        </choose>
+        <choose>
+          <when>
+            <test>
+              <equal><clip pos="5" side="tl" part="nbr"/><lit-tag v="ND"/></equal>
+            </test>
+            <let><clip pos="5" side="tl" part="nbr"/><lit-tag v="sg"/></let>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="2"/>
+        </out>
+        <choose>
+	  <when>
+	    <test>
+	      <equal><var n="pronom"/><lit v=""/></equal>
+	    </test>
+            <out>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+              <b pos="3"/>
+            </out>
+	  </when>
+	  <otherwise>
+            <out>
+              <lu>
+	        <var n="pronom"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+              <b pos="3"/>
+            </out>
+	  </otherwise>
+        </choose>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <out>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="tags"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
 
 
 <!-- les quatre regles que segueixen sembla que només s'utilitzen amb el verb être -->
@@ -10039,6 +10355,7 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -10048,7 +10365,7 @@ is not applicable because gender and number cannot be taken from previous rules 
             <clip pos="2" side="tl" part="tipo_prn"/>
             <clip pos="2" side="tl" part="tipoenc_pro"/>
           </lu>
-          <b pos="1"/>
+          <b pos="2"/>
           <lu>
             <clip pos="3" side="tl" part="whole"/>
           </lu>
@@ -10066,6 +10383,7 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -10073,7 +10391,7 @@ is not applicable because gender and number cannot be taken from previous rules 
             </get-case-from>
             <clip pos="2" side="tl" part="a_adv"/>
           </lu>
-          <b pos="1"/>
+          <b pos="2"/>
           <lu>
             <clip pos="3" side="tl" part="whole"/>
           </lu>
@@ -10093,6 +10411,7 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -10100,11 +10419,12 @@ is not applicable because gender and number cannot be taken from previous rules 
             </get-case-from>
             <clip pos="2" side="tl" part="a_adv"/>
           </lu>
-          <b pos="1"/>
+          <b pos="2"/>
           <lu>
             <clip pos="3" side="tl" part="whole"/>
           </lu>
         </out>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
       </action>
     </rule>
 
@@ -10158,6 +10478,7 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_ifi1">
           <with-param pos="4"/>
         </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -10165,14 +10486,14 @@ is not applicable because gender and number cannot be taken from previous rules 
             </get-case-from>
             <lit-tag v="adv"/>
           </lu>
-          <b pos="1"/>
+          <b pos="2"/>
           <lu>
             <clip pos="3" side="tl" part="lem"/>
             <lit-tag v="prn"/>
             <clip pos="3" side="tl" part="tipo_prn"/>
             <clip pos="3" side="tl" part="tipoenc_pro"/>
           </lu>
-          <b pos="2"/>
+          <b pos="3"/>
           <lu>
             <clip pos="4" side="tl" part="whole"/>
           </lu>
@@ -10190,7 +10511,6 @@ is not applicable because gender and number cannot be taken from previous rules 
       </pattern>
       <action>
         <call-macro n="f_concord1"><with-param pos="3"/></call-macro>
-        <call-macro n="f_ifi1"><with-param pos="4"/></call-macro>
         <choose>
           <when>
             <test>
@@ -10204,6 +10524,8 @@ is not applicable because gender and number cannot be taken from previous rules 
             <let><clip pos="4" side="tl" part="a_verb"/><lit-tag v="vbhaver"/></let>
           </when>
         </choose>
+        <call-macro n="f_ifi1"><with-param pos="4"/></call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -10211,15 +10533,16 @@ is not applicable because gender and number cannot be taken from previous rules 
             </get-case-from>
             <lit-tag v="adv"/>
           </lu>
-          <b pos="1"/>
+          <b pos="2"/>
           <lu>
             <clip pos="3" side="tl" part="whole"/>
           </lu>
-          <b pos="2"/>
+          <b pos="3"/>
           <lu>
             <clip pos="4" side="tl" part="whole"/>
           </lu>
         </out>
+        <call-macro n="f_bcond"><with-param pos="4"/><with-param pos="5"/></call-macro>
       </action>
     </rule>
 
@@ -10233,7 +10556,6 @@ is not applicable because gender and number cannot be taken from previous rules 
       </pattern>
       <action>
         <call-macro n="f_concord1"><with-param pos="3"/></call-macro>
-        <call-macro n="f_ifi1"><with-param pos="4"/></call-macro>
         <choose>
           <when>
             <test>
@@ -10247,6 +10569,8 @@ is not applicable because gender and number cannot be taken from previous rules 
             <let><clip pos="4" side="tl" part="a_verb"/><lit-tag v="vbhaver"/></let>
           </when>
         </choose>
+        <call-macro n="f_ifi1"><with-param pos="4"/></call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -10267,7 +10591,7 @@ is not applicable because gender and number cannot be taken from previous rules 
             <lit v="més"/>
             <lit-tag v="adv"/>
           </lu>
-          <b/>
+          <b pos="4"/>
           <lu>
             <clip pos="5" side="tl" part="whole"/>
           </lu>
@@ -10286,7 +10610,6 @@ is not applicable because gender and number cannot be taken from previous rules 
       </pattern>
       <action>
         <call-macro n="f_concord1"><with-param pos="3"/></call-macro>
-        <call-macro n="f_ifi1"><with-param pos="4"/></call-macro>
         <choose>
           <when>
             <test>
@@ -10300,6 +10623,8 @@ is not applicable because gender and number cannot be taken from previous rules 
             <let><clip pos="4" side="tl" part="a_verb"/><lit-tag v="vbhaver"/></let>
           </when>
         </choose>
+        <call-macro n="f_ifi1"><with-param pos="4"/></call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -10307,15 +10632,17 @@ is not applicable because gender and number cannot be taken from previous rules 
             </get-case-from>
             <lit-tag v="adv"/>
           </lu>
-          <b pos="1"/>
+          <b pos="2"/>
           <lu>
             <clip pos="3" side="tl" part="whole"/>
           </lu>
-          <b pos="2"/>
+          <b pos="3"/>
           <lu>
             <clip pos="4" side="tl" part="whole"/>
           </lu>
         </out>
+        <call-macro n="f_bcond"><with-param pos="4"/><with-param pos="5"/></call-macro>
+        <call-macro n="f_bcond"><with-param pos="5"/><with-param pos="6"/></call-macro>
       </action>
     </rule>
 
@@ -11866,26 +12193,52 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule>
-<!--REGLA: ne mange pas > no menja -->
+    <rule comment="REGLA: ne mange pas > no menja">
       <pattern>
         <pattern-item n="neadv"/>
         <pattern-item n="verbconj"/>
         <pattern-item n="pas"/>
       </pattern>
       <action>
+        <call-macro n="f_set_pron">
+          <with-param pos="2"/>
+          <with-param pos="2"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="2"/>
         </call-macro>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="whole"/>
-          </lu>
-          <b pos="1"/>
-          <lu>
-            <clip pos="2" side="tl" part="whole"/>
-          </lu>
-        </out>
+        <choose>
+	  <when>
+	    <test>
+	      <equal><var n="pronom"/><lit v=""/></equal>
+	    </test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+            </out>
+	  </when>
+	  <otherwise>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+	        <var n="pronom"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+            </out>
+	  </otherwise>
+        </choose>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
       </action>
     </rule>
 
