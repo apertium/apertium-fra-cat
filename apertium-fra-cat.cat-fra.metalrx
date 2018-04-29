@@ -1058,6 +1058,15 @@
 
 <!-- ADJ -->
 
+  <!-- sagrat >> sacré, saint -->
+  <rule weight="0.8">
+    <match lemma="sagrat" tags="adj.*"><select lemma="sacré"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sagrat" tags="adj.*"><select lemma="saint"/></match>
+    <match lemma="família" tags="n.*"/>
+  </rule>
+
   <!-- mòbil >> mobile, portable -->
   <rule weight="0.8">
     <match lemma="mòbil" tags="adj.*"><select lemma="mobile"/></match>
