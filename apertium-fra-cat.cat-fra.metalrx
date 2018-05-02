@@ -125,6 +125,7 @@
       <match lemma="desè" tags="adj.*"/>
       <match lemma="penúltim" tags="adj.*"/>
       <match lemma="últim" tags="adj.*"/>
+      <match tags="adj.ord.*"/>
     </def-seq>
 
 
@@ -2138,6 +2139,7 @@
   <macro name="noms_propis" p1="Antoni" p2="Antoine" />
   <macro name="noms_propis" p1="Renat" p2="René" />
   <macro name="noms_propis" p1="Eduard" p2="Édouard" />
+  <macro name="noms_propis" p1="Anna" p2="Anne" />
 
 </rules>
 </metalrx>

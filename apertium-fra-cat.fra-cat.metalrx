@@ -1148,6 +1148,7 @@
     <or>
       <match lemma="premier" tags="adj.*"/>
       <match lemma="second" tags="adj.*"/>
+      <match lemma="deuxième" tags="adj.*"/>
       <match lemma="troisième" tags="adj.*"/>
       <match lemma="quatrième" tags="adj.*"/>
       <match lemma="cinquième" tags="adj.*"/>
@@ -1670,6 +1671,7 @@
   <macro name="noms_propres" p1="Antoine" p2="Antoine" />
   <macro name="noms_propres" p1="René" p2="Renat" />
   <macro name="noms_propres" p1="Édouard" p2="Eduard" />
+  <macro name="noms_propres" p1="Anne" p2="Anna" />
 
 </rules>
 </metalrx>
