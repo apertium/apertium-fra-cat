@@ -79,7 +79,7 @@ $(PREFIX1).autogen.bin: $(AP_SRC2)/$(LANG2).autogen.bin
 $(PREFIX1).autosep.bin: $(BASENAME).$(PREFIX1).l1x
 	lsx-comp lr $< $@
 $(PREFIX2).autosep.bin: $(BASENAME).$(PREFIX2).l2x
-	lsx-comp rl $< $@
+	lsx-comp lr $< $@
 
 ###############################################################################
 ## Tagger models
