@@ -463,6 +463,10 @@
       <match tags="vbser.*"/>
       <match lemma="estar" tags="vbser.*"/>
       <match lemma="semblar" tags="vbser.*"/>
+      <match lemma="venir" tags="vbser.*"/>
+      <match lemma="anar" tags="vbser.*"/>
+      <match lemma="arribar" tags="vbser.*"/>
+      <match lemma="dormir" tags="vbser.*"/>
     </or>
   </rule>
 
