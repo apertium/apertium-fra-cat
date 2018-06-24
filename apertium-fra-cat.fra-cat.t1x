@@ -12295,6 +12295,8 @@ is not applicable because gender and number cannot be taken from previous rules 
           <with-param pos="5"/>
           <with-param pos="4"/>
         </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -12321,7 +12323,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: il y a X temps > fa X temps">
+    <rule comment="REGLA: il y a longtemps > fa temps">
       <pattern>
         <pattern-item n="il"/>
         <pattern-item n="y"/>
@@ -12332,6 +12334,8 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
