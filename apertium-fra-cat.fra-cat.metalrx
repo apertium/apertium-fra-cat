@@ -349,11 +349,9 @@
   </rule>
   <rule weight="1.0">
     <match tags="vblex.*"/>
-    <match lemma="ce qui" tags="rel.*"><select lemma="el que" tags="rel.*"/></match>
-  </rule>
-  <rule weight="1.0">
-    <match tags="vblex.*"/>
-    <match tags="adv"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
     <match lemma="ce qui" tags="rel.*"><select lemma="el que" tags="rel.*"/></match>
   </rule>
 
@@ -365,7 +363,23 @@
   </rule>
   <rule weight="1.0">
     <match lemma="bénéficier" tags="vblex.*"><select lemma="beneficiar" tags="vblex.pron.*"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
     <match lemma="de" tags="pr"/>
+  </rule>
+
+  <!-- tourner >> girar, rodar -->
+  <rule weight="0.8">
+    <match lemma="tourner" tags="vblex.*"><select lemma="girar" tags="vblex.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tourner" tags="vblex.*"><select lemma="rodar" tags="vblex.*"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="film" tags="n.*"/>
   </rule>
 
   <!-- décrocher >> sonar, picar -->
@@ -541,20 +555,33 @@
       <match lemma="aller" tags="vblex.*.p3.sg"/>
       <match lemma="aller" tags="vblex.*.p3.pl"/>
     </or>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
+    </repeat>
     <match tags="prn.pro.ref.p3.*.sp"/>
     <match lemma="appeler" tags="vblex.inf"><select lemma="dir"/></match>
   </rule>
   <rule weight="1.0">
+    <match tags="vbser.*"/>
+    <match lemma="appeler" tags="vblex.pp.*"><select lemma="dir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.p3.*"/>
+    <match lemma="appeler" tags="vblex.*.p3.*"><select lemma="anomenar"/></match>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
+    </repeat>
     <or>
-      <match lemma="aller" tags="vblex.*.p3.sg"/>
-      <match lemma="aller" tags="vblex.*.p3.pl"/>
+      <match tags="np.ant"/>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
     </or>
-    <or>
-      <match tags="adv"/>
-      <match tags="preadv"/>
-    </or>
-    <match tags="prn.pro.ref.p3.*.sp"/>
-    <match lemma="appeler" tags="vblex.inf"><select lemma="dir"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="quelqu'un" tags="prn.*"/>
@@ -1135,13 +1162,19 @@
   </rule>
 
 <!-- prix >> premi / preu -->
-
+  <rule weight="0.8">
+    <match lemma="prix" tags="n.*"><select lemma="premi" tags="n"/></match>
+  </rule>
   <rule weight="1.0">
     <match tags="adj.*"/>
     <match lemma="prix" tags="n.*"><select lemma="preu"/></match>
   </rule>
   <rule weight="1.2">
-    <match lemma="grand" tags="adj.*"/>
+    <or>
+      <match tags="det.ind.*"/>
+      <match lemma="nombreux" tags="adj.*"/>
+      <match lemma="grand" tags="adj.*"/>
+    </or>
     <match lemma="prix" tags="n.*"><select lemma="premi"/></match>
   </rule>
   <rule weight="1.2">
@@ -1168,13 +1201,29 @@
     <match lemma="prix" tags="n.*"><select lemma="premi"/></match>
     <match tags="np.*"/>
   </rule>
-  <rule weight="1.0">
-    <match lemma="prix" tags="n.*"><select lemma="preu"/></match>
-    <match tags="adj.*"/>
+  <rule weight="1.2">
+    <or>
+      <match lemma="donner"/>
+      <match lemma="décerner"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="prix" tags="n.*"><select lemma="premi" tags="n"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="prix" tags="n.*"><select lemma="premi" tags="n"/></match>
+    <or>
+      <match lemma="donner" tags="vblex.pp.*"/>
+      <match lemma="décerner" tags="vblex.pp.*"/>
+    </or>
   </rule>
   <rule weight="1.0">
     <match lemma="prix" tags="n.*"><select lemma="preu"/></match>
-    <match tags="adv"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
     <match tags="adj.*"/>
   </rule>
   <rule weight="1.0">
@@ -1182,27 +1231,27 @@
     <match lemma="prix" tags="n.*"><select lemma="preu"/></match>
     <match lemma="de" tags="pr"/>
   </rule>
+  <rule weight="2.0">
+    <match lemma="le" tags="det.*"/>
+    <match lemma="prix" tags="n.*"><select lemma="premi"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="consolation" tags="n.*"/>
+  </rule>
   <rule weight="1.0">
     <match lemma="à" tags="pr"/>
-    <match lemma="quel"/>
+    <or>
+      <match lemma="quel"/>
+      <match lemma="aucun"/>
+      <match lemma="tout"/>
+    </or>
     <match lemma="prix" tags="n.*"><select lemma="preu"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="prix" tags="n.*"><select lemma="preu"/></match>
     <match tags="vbser.*"/>
-    <match tags="adj.*"/>
-  </rule>
-  <rule weight="1.0">
-    <match lemma="prix" tags="n.*"><select lemma="preu"/></match>
-    <match tags="vbser.*"/>
-    <match tags="adv"/>
-    <match tags="adj.*"/>
-  </rule>
-  <rule weight="1.0">
-    <match lemma="prix" tags="n.*"><select lemma="preu"/></match>
-    <match tags="adv"/>
-    <match tags="vbser.*"/>
-    <match tags="adv"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
     <match tags="adj.*"/>
   </rule>
   <rule weight="1.0">
@@ -1210,7 +1259,9 @@
     <match tags="adv"/>
     <match tags="vbser.*"/>
     <match tags="adv"/>
-    <match tags="adv"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
     <match tags="adj.*"/>
   </rule>
   <rule weight="1.0">
@@ -1221,12 +1272,54 @@
     <or>
       <match lemma="hausser"/>
       <match lemma="baisser"/>
+      <match lemma="chuter"/>
     </or>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
     <match tags="det.*"/>
     <match lemma="prix" tags="n.*"><select lemma="preu" tags="n"/></match>
   </rule>
-  <rule weight="0.8">
-    <match lemma="prix" tags="n.*"><select lemma="premi" tags="n"/></match>
+  <rule weight="1.0">
+    <match lemma="prix" tags="n.*"><select lemma="preu" tags="n"/></match>
+    <match lemma="avoir"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match lemma="hausser"/>
+      <match lemma="monter"/>
+      <match lemma="baisser"/>
+      <match lemma="chuter"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="prix" tags="n.*"><select lemma="preu" tags="n"/></match>
+    <match tags="adv"/>
+    <match lemma="avoir"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match lemma="hausser"/>
+      <match lemma="monter"/>
+      <match lemma="baisser"/>
+      <match lemma="chuter"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="hausse"/>
+      <match lemma="montée"/>
+      <match lemma="baisse"/>
+      <match lemma="chute"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adj"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="prix" tags="n.*"><select lemma="preu" tags="n"/></match>
   </rule>
 
 <!-- garde >> guarda / guàrdia -->
