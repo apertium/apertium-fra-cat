@@ -649,6 +649,28 @@
     <or><match tags="num"/><match tags="num.*"/></or>
   </rule>
 
+  <!-- lettre >> carta, lletra -->
+  <rule weight="0.8">
+    <match lemma="lettre" tags="n.*"><select lemma="carta"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or><match tags="num"/><match tags="num.*"/></or>
+    <match lemma="lettre" tags="n.*"><select lemma="lletra"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="lettre" tags="n.*"><select lemma="lletra"/></match>
+    <or>
+      <match lemma="grec" tags="adj.*"/>
+      <match lemma="cyrillique" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="lettre" tags="n.*"><select lemma="lletra"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="alphabet" tags="n.*"/>
+  </rule>
+
   <!-- question >> qüestió, pregunta -->
   <rule weight="0.8">
     <match lemma="question" tags="n.*"><select lemma="qüestió"/></match>
@@ -1585,7 +1607,15 @@
     <match lemma="voler" tags="vblex.*"><select lemma="volar"/></match>
   </rule>
   <rule weight="1.0">
+    <match lemma="voler" tags="vblex.pp.*"><select lemma="robar"/></match>
+  </rule>
+  <rule weight="1.0">
     <match lemma="voler" tags="vblex.*"><select lemma="robar"/></match>
+    <match tags="det.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="voler" tags="vblex.*"><select lemma="robar"/></match>
+    <match lemma="de" tags="pr"/>
     <match tags="det.*"/>
   </rule>
 
