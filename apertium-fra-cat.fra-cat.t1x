@@ -8701,14 +8701,17 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
 
 
-    <rule comment="REGLA: PRN VBSER PP > haver + participi">
+   <rule comment="REGLA: PRNSUBJ VBSER PP > haver + participi">
       <pattern>
         <pattern-item n="prnsubj"/>
-        <pattern-item n="vbser"/>
+        <pattern-item n="serconj"/>
         <pattern-item n="pp"/>
       </pattern>
       <action>
-      <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <call-macro n="f_concord1">
+          <with-param pos="3"/>
+        </call-macro>
       <choose>
        <when>
          <test>
@@ -8717,6 +8720,27 @@ is not applicable because gender and number cannot be taken from previous rules 
              <in caseless="yes"><clip pos="3" side="sl" part="lemh"/><list n="vbestat"/></in>
            </or>
 	 </test>
+        <choose>
+          <when>
+            <test><equal><clip pos="2" side="sl" part="temps"/><lit-tag v="ifi"/></equal></test>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <lit v="anar"/>
+                </get-case-from>
+                <lit-tag v="vaux"/>
+                <clip pos="2" side="tl" part="persona"/>
+                <clip pos="2" side="tl" part="nbr"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="a_verb"/>
+                <lit-tag v="inf"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
             <out>
               <lu>
                 <get-case-from pos="1">
@@ -8738,6 +8762,8 @@ is not applicable because gender and number cannot be taken from previous rules 
 	        <clip pos="3" side="tl" part="lemq"/>
               </lu>
             </out>
+          </otherwise>
+        </choose>
        </when>
        <when>
          <test>
@@ -8746,6 +8772,32 @@ is not applicable because gender and number cannot be taken from previous rules 
              <in caseless="yes"><clip pos="3" side="sl" part="lemh"/><list n="pp_estat"/></in>
            </or>
 	 </test>
+        <choose>
+          <when>
+            <test><equal><clip pos="2" side="sl" part="temps"/><lit-tag v="ifi"/></equal></test>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <lit v="anar"/>
+                </get-case-from>
+                <lit-tag v="vaux"/>
+                <clip pos="2" side="tl" part="persona"/>
+                <clip pos="2" side="tl" part="nbr"/>
+              </lu>
+              <b/>
+              <lu>
+                <lit v="estar"/>
+                <lit-tag v="vblex.inf"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
             <out>
               <lu>
                 <get-case-from pos="1">
@@ -8760,15 +8812,40 @@ is not applicable because gender and number cannot be taken from previous rules 
               <b pos="2"/>
               <lu>
                 <clip pos="3" side="tl" part="lemh"/>
-                <clip pos="3" side="tl" part="a_verb"/>
-                <clip pos="3" side="tl" part="temps"/>
-                <clip pos="3" side="tl" part="gen"/>
-                <clip pos="3" side="tl" part="nbr"/>
-	        <clip pos="3" side="tl" part="lemq"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
               </lu>
             </out>
+          </otherwise>
+        </choose>
        </when>
        <otherwise>
+        <choose>
+          <when>
+            <test><equal><clip pos="2" side="sl" part="temps"/><lit-tag v="ifi"/></equal></test>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <lit v="anar"/>
+                </get-case-from>
+                <lit-tag v="vaux"/>
+                <clip pos="2" side="tl" part="persona"/>
+                <clip pos="2" side="tl" part="nbr"/>
+              </lu>
+              <b/>
+              <lu>
+                <lit v="ser"/>
+                <lit-tag v="vbser.inf"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
             <out>
               <lu>
                 <get-case-from pos="1">
@@ -8782,13 +8859,12 @@ is not applicable because gender and number cannot be taken from previous rules 
               <b pos="2"/>
               <lu>
                 <clip pos="3" side="tl" part="lemh"/>
-                <clip pos="3" side="tl" part="a_verb"/>
-                <clip pos="3" side="tl" part="temps"/>
-                <clip pos="3" side="tl" part="gen"/>
-                <clip pos="3" side="tl" part="nbr"/>
-	        <clip pos="3" side="tl" part="lemq"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
               </lu>
             </out>
+          </otherwise>
+        </choose>
         </otherwise>
       </choose>
       </action>
@@ -8818,6 +8894,27 @@ is not applicable because gender and number cannot be taken from previous rules 
              <in caseless="yes"><clip pos="3" side="sl" part="lemh"/><list n="vbestat"/></in>
            </or>
 	 </test>
+        <choose>
+          <when>
+            <test><equal><clip pos="2" side="sl" part="temps"/><lit-tag v="ifi"/></equal></test>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <lit v="anar"/>
+                </get-case-from>
+                <lit-tag v="vaux"/>
+                <clip pos="2" side="tl" part="persona"/>
+                <clip pos="2" side="tl" part="nbr"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="a_verb"/>
+                <lit-tag v="inf"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
             <out>
               <lu>
                 <lit v="haver"/>
@@ -8837,6 +8934,8 @@ is not applicable because gender and number cannot be taken from previous rules 
 	        <clip pos="3" side="tl" part="lemq"/>
               </lu>
             </out>
+          </otherwise>
+        </choose>
        </when>
        <when>
          <test>
@@ -8866,6 +8965,30 @@ is not applicable because gender and number cannot be taken from previous rules 
             </out>
        </when>
        <otherwise>
+        <choose>
+          <when>
+            <test><equal><clip pos="2" side="sl" part="temps"/><lit-tag v="ifi"/></equal></test>
+            <out>
+              <lu>
+                <lit v="anar"/>
+                <lit-tag v="vaux"/>
+                <clip pos="2" side="tl" part="persona"/>
+                <clip pos="2" side="tl" part="nbr"/>
+              </lu>
+              <b/>
+              <lu>
+                <lit v="ser"/>
+                <lit-tag v="vbser.inf"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
             <out>
               <lu>
                 <lit v="ser"/>
@@ -8884,6 +9007,8 @@ is not applicable because gender and number cannot be taken from previous rules 
 	        <clip pos="3" side="tl" part="lemq"/>
               </lu>
             </out>
+          </otherwise>
+         </choose>
         </otherwise>
       </choose>
       </action>
