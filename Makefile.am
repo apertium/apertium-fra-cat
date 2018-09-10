@@ -20,6 +20,7 @@ TARGETS_COMMON =		\
 	$(PREFIX1).autosep.bin	\
 	$(PREFIX1).autopgen.bin	\
 	$(PREFIX1).t1x.bin	\
+	$(PREFIX1).t4x.bin	\
 	$(PREFIX2).automorf.bin	\
 	$(PREFIX2).prob		\
 	$(PREFIX2).rlx.bin	\
@@ -28,7 +29,8 @@ TARGETS_COMMON =		\
 	$(PREFIX2).autogen.bin	\
 	$(PREFIX2).autosep.bin	\
 	$(PREFIX2).autopgen.bin	\
-	$(PREFIX2).t1x.bin
+	$(PREFIX2).t1x.bin	\
+	$(PREFIX2).t4x.bin
 
 #	$(PREFIX1).t2x.bin	\
 #	$(PREFIX1).t3x.bin	\
@@ -147,6 +149,11 @@ $(PREFIX1).t1x.bin: $(BASENAME).$(PREFIX1).t1x
 #	apertium-validate-postchunk $<
 #	apertium-preprocess-transfer $< $@
 
+$(PREFIX1).t4x.bin: $(BASENAME).$(PREFIX1).t4x
+	apertium-validate-transfer $<
+	apertium-preprocess-transfer $< $@
+
+
 
 $(PREFIX2).t1x.bin: $(BASENAME).$(PREFIX2).t1x
 	apertium-validate-transfer $<
@@ -159,6 +166,11 @@ $(PREFIX2).t1x.bin: $(BASENAME).$(PREFIX2).t1x
 #$(PREFIX2).t3x.bin: $(BASENAME).$(PREFIX2).t3x
 #	apertium-validate-postchunk $<
 #	apertium-preprocess-transfer $< $@
+
+$(PREFIX2).t4x.bin: $(BASENAME).$(PREFIX2).t4x
+	apertium-validate-transfer $<
+	apertium-preprocess-transfer $< $@
+
 
 ###############################################################################
 ## Postgeneration dictionaries
@@ -179,7 +191,9 @@ EXTRA_DIST=					\
 		.deps/$(BASENAME).$(PREFIX2).lrx	\
 		$(BASENAME).$(PREFIX1).dix	\
 		$(BASENAME).$(PREFIX1).t1x	\
+		$(BASENAME).$(PREFIX1).t4x	\
 		$(BASENAME).$(PREFIX2).t1x	\
+		$(BASENAME).$(PREFIX2).t4x	\
 		$(BASENAME).$(PREFIX1).l1x	\
 		$(BASENAME).$(PREFIX2).l2x	\
 		modes.xml
@@ -199,7 +213,9 @@ apertium_fra_catdir=$(prefix)/share/apertium/$(BASENAME)/
 apertium_fra_cat_DATA=	\
 	$(TARGETS_COMMON)				\
 	$(BASENAME).$(PREFIX1).t1x			\
-	$(BASENAME).$(PREFIX2).t1x			
+	$(BASENAME).$(PREFIX2).t1x			\
+	$(BASENAME).$(PREFIX1).t4x			\
+	$(BASENAME).$(PREFIX2).t4x			
 
 #	$(BASENAME).$(PREFIX2).t2x			\
 #	$(BASENAME).$(PREFIX2).t3x

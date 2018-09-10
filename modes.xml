@@ -27,6 +27,10 @@
         <file name="apertium-fra-cat.fra-cat.t1x"/>
         <file name="fra-cat.t1x.bin"/>
       </program>
+      <program name="apertium-transfer -n">
+        <file name="apertium-fra-cat.fra-cat.t4x"/>
+        <file name="fra-cat.t4x.bin"/>
+      </program>
       <program name="lt-proc $1">
         <file name="fra-cat.autogen.bin"/>
       </program>
@@ -60,6 +64,10 @@
       <program name="apertium-transfer -b">
         <file name="apertium-fra-cat.fra-cat.t1x"/>
         <file name="fra-cat.t1x.bin"/>
+      </program>
+      <program name="apertium-transfer -n">
+        <file name="apertium-fra-cat.fra-cat.t4x"/>
+        <file name="fra-cat.t4x.bin"/>
       </program>
       <program name="lt-proc -d">
         <file name="fra-cat.autogen.bin"/>
@@ -232,6 +240,10 @@
         <file name="apertium-fra-cat.cat-fra.t1x"/>
         <file name="cat-fra.t1x.bin"/>
       </program>
+      <program name="apertium-transfer -n">
+        <file name="apertium-fra-cat.cat-fra.t4x"/>
+        <file name="cat-fra.t4x.bin"/>
+      </program>
       <program name="lsx-proc">
         <file name="cat-fra.autosep.bin"/>
       </program>
@@ -265,6 +277,10 @@
       <program name="apertium-transfer -b">
         <file name="apertium-fra-cat.cat-fra.t1x"/>
         <file name="cat-fra.t1x.bin"/>
+      </program>
+      <program name="apertium-transfer -n">
+        <file name="apertium-fra-cat.cat-fra.t4x"/>
+        <file name="cat-fra.t4x.bin"/>
       </program>
       <program name="lt-proc -d">
         <file name="cat-fra.autogen.bin"/>
