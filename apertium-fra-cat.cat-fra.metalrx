@@ -1302,6 +1302,14 @@
     <match tags="n.*.sg"/>
   </rule>
 
+  <!-- caragol >> escargot, vis -->
+  <rule weight="0.8">
+    <match lemma="caragol" tags="n.*"><select lemma="escargot"/></match>
+  </rule>
+  <rule weight="0.8">
+    <match lemma="cargol" tags="n.*"><select lemma="escargot"/></match>
+  </rule>
+
   <!-- físic >> physicien, physique -->
   <rule weight="0.8">
     <match lemma="partit" tags="n.*"><select lemma="physicien"/></match>
