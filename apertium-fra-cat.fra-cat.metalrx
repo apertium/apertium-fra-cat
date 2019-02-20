@@ -303,7 +303,7 @@
 
   <!-- dans >> en -->
   <rule weight="0.6">
-    <match lemma="dans " tags="pr"><select lemma="en"/></match>
+    <match lemma="dans" tags="pr"><select lemma="en"/></match>
   </rule>
 
   <!-- à >> a, en -->
