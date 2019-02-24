@@ -800,6 +800,18 @@
     <match tags="det.*"/>
     <match lemma="alphabet" tags="n.*"/>
   </rule>
+  <rule weight="1.0">
+    <match lemma="ès" tags="pr"/>
+    <match lemma="lettre" tags="n.*"><select lemma="lletra"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="homme" tags="adj.*"/>
+      <match lemma="femme" tags="adj.*"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <match lemma="lettre" tags="n.*"><select lemma="lletra"/></match>
+  </rule>
 
   <!-- question >> qüestió, pregunta -->
   <rule weight="0.8">
