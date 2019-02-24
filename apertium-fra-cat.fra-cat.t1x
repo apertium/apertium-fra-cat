@@ -6331,6 +6331,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -6412,6 +6415,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefsg"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
         <out>
           <lu>
@@ -6463,6 +6469,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <choose>
           <when>
             <test>
@@ -6507,6 +6516,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
         <out>
           <lu>
@@ -6658,7 +6670,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: PRN VBHAVER VBSERPP (ls ont été > han estat)">
+    <rule comment="REGLA: PRN VBHAVER VBSERPP (ils ont été > han estat)">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="vbhaver"/>
@@ -6666,7 +6678,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </pattern>
       <action>
         <call-macro n="f_concord0">
-          <with-param pos="2"/>
+          <with-param pos="1"/>
         </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="2"/>
@@ -6800,6 +6812,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -6833,6 +6848,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -6868,6 +6886,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -6898,6 +6919,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -6930,6 +6954,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -6964,6 +6991,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <choose>
 	  <when>
 	    <test>
@@ -7026,6 +7056,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
        <choose>
 	  <when>
 	    <test>
@@ -7122,6 +7155,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <choose>
 	  <when>
 	    <test>
@@ -7201,6 +7237,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <choose>
 	  <when>
 	    <test>
@@ -7287,6 +7326,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <choose>
 	  <when>
 	    <test>
@@ -7372,6 +7414,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <choose>
 	  <when>
 	    <test>
@@ -7447,6 +7492,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <choose>
 	  <when>
 	    <test>
@@ -7519,7 +7567,10 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="deprep"/>
         <pattern-item n="detdefpl"/>
       </pattern>
- <action>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <choose>
 	  <when>
 	    <test>
@@ -7604,6 +7655,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
       <call-macro n="test_pr_i_verb">
         <with-param pos="2"/>
         <with-param pos="3"/>
@@ -7684,6 +7738,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
       <call-macro n="test_pr_i_verb">
         <with-param pos="3"/>
         <with-param pos="4"/>
@@ -7795,6 +7852,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
       <call-macro n="test_pr_i_verb">
         <with-param pos="3"/>
         <with-param pos="5"/>
@@ -7890,6 +7950,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
       <call-macro n="test_pr_i_verb">
         <with-param pos="3"/>
         <with-param pos="5"/>
@@ -7992,6 +8055,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
          <call-macro n="test_pr_i_verb">
         <with-param pos="3"/>
         <with-param pos="6"/>
@@ -8097,6 +8163,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
         <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="test_pr_i_verb">
         <with-param pos="2"/>
         <with-param pos="3"/>
@@ -8182,7 +8251,10 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="deprep"/>
         <pattern-item n="detdefpl"/>
       </pattern>
-  <action>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
       <call-macro n="test_pr_i_verb">
         <with-param pos="3"/>
         <with-param pos="4"/>
@@ -8275,11 +8347,14 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="deprep"/>
         <pattern-item n="detdefpl"/>
       </pattern>
-        <action>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="test_pr_i_verb">
-        <with-param pos="2"/>
-        <with-param pos="3"/>
-      </call-macro>	
+          <with-param pos="2"/>
+          <with-param pos="3"/>
+        </call-macro>	
         <choose>
 	  <when>
 	    <test>
@@ -8671,6 +8746,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="pp"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
 	<out>
           <lu>
             <get-case-from pos="1">
@@ -8708,6 +8786,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="pp"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
         <call-macro n="f_concord1">
           <with-param pos="3"/>
@@ -9022,7 +9103,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </pattern>
       <action>
         <call-macro n="f_concord0">
-          <with-param pos="2"/>
+          <with-param pos="1"/>
         </call-macro>
         <call-macro n="f_set_pron">
           <with-param pos="2"/>
@@ -9187,7 +9268,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </pattern>
       <action>
         <call-macro n="f_concord0">
-          <with-param pos="2"/>
+          <with-param pos="1"/>
         </call-macro>
         <call-macro n="f_set_pron">
           <with-param pos="3"/>
@@ -9249,7 +9330,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </pattern>
       <action>
         <call-macro n="f_concord0">
-          <with-param pos="2"/>
+          <with-param pos="1"/>
         </call-macro>
         <call-macro n="f_set_pron">
           <with-param pos="4"/>
@@ -9322,6 +9403,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="pas"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
@@ -9349,6 +9433,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="deprep"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
@@ -9397,6 +9484,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="deprep"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
@@ -9452,6 +9542,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="deprep"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
@@ -9507,6 +9600,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="deprep"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
@@ -9646,6 +9742,9 @@ is not applicable because gender and number cannot be taken from previous rules 
       </pattern>
       <action>
         <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_concord0">
           <with-param pos="3"/>
         </call-macro>
         <call-macro n="f_set_pron">
@@ -9729,6 +9828,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdef"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
@@ -9778,6 +9880,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdef"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
@@ -9834,6 +9939,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdef"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
@@ -9890,6 +9998,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdef"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
@@ -10367,7 +10478,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </pattern>
       <action>
         <call-macro n="f_concord1">
-          <with-param pos="3"/>
+          <with-param pos="1"/>
         </call-macro>
         <out>
           <mlu>
@@ -10401,6 +10512,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="appeler"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <choose>
           <when>
             <test>
@@ -10439,6 +10553,9 @@ is not applicable because gender and number cannot be taken from previous rules 
 	<pattern-item n="pas"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <choose>
           <when>
             <test>
@@ -10479,6 +10596,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="verb"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_concord1">
           <with-param pos="2"/>
         </call-macro>
@@ -10510,6 +10630,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="verb"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
@@ -10538,6 +10661,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="pas"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
@@ -10567,6 +10693,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="que"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
@@ -10602,6 +10731,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="verb"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_concord1">
           <with-param pos="3"/>
         </call-macro>
@@ -10640,6 +10772,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="pas"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_concord1"><with-param pos="3"/></call-macro>
         <choose>
           <when>
@@ -10685,6 +10820,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="que"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_concord1"><with-param pos="3"/></call-macro>
         <choose>
           <when>
@@ -10739,7 +10877,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="deprep"/>
       </pattern>
       <action>
-        <call-macro n="f_concord1"><with-param pos="3"/></call-macro>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <choose>
           <when>
             <test>
@@ -10791,6 +10931,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord1">
           <with-param pos="3"/>
         </call-macro>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="4"/>
         </call-macro>
@@ -10835,6 +10978,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord1">
           <with-param pos="4"/>
         </call-macro>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="5"/>
         </call-macro>
@@ -10864,7 +11010,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     <rule>
 <!--REGLA: PRN ADV PRN PRN VERB PAS (il ne le lui dit pas: no li ho diu)-->
       <pattern>
-        <pattern-item n="prnsubj"/>
+		<pattern-item n="prnsubj"/>
         <pattern-item n="adv"/>
         <pattern-item n="prn"/>
         <pattern-item n="prn"/>
@@ -10877,6 +11023,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         </call-macro>
         <call-macro n="f_concord1">
           <with-param pos="4"/>
+        </call-macro>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
         </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="5"/>
@@ -10964,6 +11113,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="pp"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="2"/>
+        </call-macro>
   <!--      <choose>
           <when>
             <test>
@@ -11032,6 +11184,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="prnsubj"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="3"/>
+        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="lemh"/>
@@ -11156,6 +11311,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="inf"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="2"/>
         </call-macro>
@@ -11191,6 +11349,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="inf"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="2"/>
         </call-macro>
@@ -11271,6 +11432,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="inf"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
@@ -11315,6 +11479,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="inf"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
