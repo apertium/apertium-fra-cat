@@ -779,6 +779,52 @@
     <or><match tags="num"/><match tags="num.*"/></or>
   </rule>
 
+  <!-- essence >> essència, gasolina, benzina -->
+  <rule weight="0.8">
+    <match lemma="essence" tags="n.*"><select lemma="essència"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="prix" tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.def.*"/>
+    <match lemma="essence" tags="n.*"><select lemma="gasolina"/></match>
+  </rule>
+
+  <!-- bas >> baix, part inferior, mitges -->
+  <rule weight="0.8">
+    <match lemma="bas" tags="n.*"><select lemma="baix"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.m.sg"/>
+    <match lemma="bas" tags="n.*"><select lemma="part inferior"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="porter" tags="vblex.*"/>
+      <match lemma="mettre" tags="vblex.*"/>
+      <match lemma="habiller" tags="vblex.*"/>
+      <match lemma="enlever" tags="vblex.*"/>
+      <match lemma="ôter" tags="vblex.*"/>
+    </or>
+    <match tags="det.*"/>
+    <match lemma="bas" tags="n.*"><select lemma="mitges"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="bas" tags="n.*"><select lemma="mitges"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="soie" tags="n.*"/>
+      <match lemma="nylon" tags="n.*"/>
+      <match lemma="lycra" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="haut"/>
+    <match lemma="et"/>
+    <match tags="det.*"/>
+    <match lemma="bas" tags="n.*"><select lemma="baix"/></match>
+  </rule>
+
   <!-- lettre >> carta, lletra -->
   <rule weight="0.8">
     <match lemma="lettre" tags="n.*"><select lemma="carta"/></match>
