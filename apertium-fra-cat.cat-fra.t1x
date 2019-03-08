@@ -434,6 +434,9 @@
     <def-cat n="sent">
       <cat-item tags="sent"/>
     </def-cat>
+    <def-cat n="cm">
+      <cat-item tags="cm"/>
+    </def-cat>
     <def-cat n="lpar">
       <cat-item tags="lpar"/>
     </def-cat>
@@ -989,6 +992,8 @@
       <list-item v="Croatie"/>
       <list-item v="Serbie"/>
       <list-item v="Bosnie"/>
+      <list-item v="Bosnie-Herzégovine"/>
+      <list-item v="Herzégovine"/>
       <list-item v="Monténegro"/>
       <list-item v="Macédoine"/>
       <list-item v="Roumanie"/>
@@ -1024,6 +1029,9 @@
       <list-item v="Afghanistan"/>
       <list-item v="Pakistan"/>
       <list-item v="Inde"/>
+      <list-item v="Népal"/>
+      <list-item v="Boutan"/>
+      <list-item v="Tibet"/>
       <list-item v="Chine"/>
       <list-item v="Corée"/>
       <list-item v="Corée du Nord"/>
@@ -12523,8 +12531,7 @@ is not applicable because gender and number can not be taken from previous rules
 
 <!-- fi canvi de verb auxiliar en oracions reflexives o impersonals -->
 
-    <rule>
-<!-- REGLA: reset variables-->
+    <rule comment="regla: reset variables">
       <pattern>
         <pattern-item n="sent"/>
       </pattern>
@@ -12540,6 +12547,40 @@ is not applicable because gender and number can not be taken from previous rules
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: . No, > . Non, ">
+      <pattern>
+        <pattern-item n="sent"/>
+        <pattern-item n="noadv"/>
+        <pattern-item n="cm"/>
+      </pattern>
+      <action>
+        <let>
+         <var n="numero"/>
+          <lit-tag v="sg"/>
+        </let>
+        <let>
+          <var n="genero"/>
+          <lit-tag v="m"/>
+        </let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="non"/>
+            </get-case-from>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
           </lu>
         </out>
       </action>
