@@ -834,6 +834,11 @@
     <or><match tags="cm"/><match tags="sent"/></or>
   </rule>
   <rule weight="1.0">
+    <match lemma="que" tags="cnjsub"/>
+    <match lemma="no" tags="adv"><select lemma="non"/></match>
+    <or><match tags="cm"/><match tags="sent"/></or>
+  </rule>
+  <rule weight="1.0">
     <match lemma="no" tags="adv"><select lemma="non"/></match>
     <match tags="adj.*"/>
   </rule>
