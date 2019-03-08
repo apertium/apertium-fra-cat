@@ -12586,5 +12586,45 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
     </rule>
 
+    <rule comment="regla: No, > Non, ">
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="cm"/>
+      </pattern>
+      <action>
+      <choose>
+        <when>
+          <test>
+            <equal>
+              <case-of pos="1" side="sl" part="lem"/>
+              <lit v="Aa"/>
+            </equal>
+          </test>
+          <out>
+            <lu>
+              <get-case-from pos="2">
+                <lit v="non"/>
+              </get-case-from>
+              <lit-tag v="adv"/>
+            </lu>
+          </out>
+        </when>
+        <otherwise>
+          <out>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </out>
+        </otherwise>
+      </choose>
+        <out>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
   </section-rules>
 </transfer>
