@@ -438,6 +438,9 @@
       <match lemma="Palestine"/>
       <match lemma="Afrique"/>
       <match lemma="Amérique"/>
+      <match lemma="Amérique Central"/>
+      <match lemma="Amérique du Nord"/>
+      <match lemma="Amérique du Sud"/>
       <match lemma="Asie"/>
       <match lemma="Europe"/>
       <match lemma="Océnanie"/>
@@ -742,6 +745,30 @@
       <match tags="lpar"/>
     </or>
     <match lemma="appeler" tags="vblex.pp.*"><select lemma="anomenar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="appeler" tags="vblex.*"><select lemma="anomenar"/></match>
+    <or>
+      <match lemma="parfois" tags="adv"/>
+      <match lemma="également" tags="adv"/>
+      <match lemma="communément" tags="adv"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match tags="n.*"/>
+    <or>
+      <match lemma="appeler" tags="vblex.*.p3.sg"><select lemma="dir"/></match>
+      <match lemma="appeler" tags="vblex.*.p3.pl"><select lemma="dir"/></match>
+    </or>
+    <match tags="np.*"/>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="parfois" tags="adv"/>
+      <match lemma="également" tags="adv"/>
+      <match lemma="communément" tags="adv"/>
+    </or>
+    <match lemma="appeler" tags="vblex.*"><select lemma="anomenar"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="appeler" tags="vblex.*"><select lemma="trucar"/></match>
