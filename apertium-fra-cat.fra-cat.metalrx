@@ -320,6 +320,13 @@
     </repeat>
     <match lemma="à" tags="pr"><select lemma="en"/></match>
   </rule>
+  <rule weight="1.0">
+    <match lemma="maillot" tags="n.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adj"/>
+    </repeat>
+    <match lemma="à" tags="pr"><select lemma="de"/></match>
+  </rule>
 
   <!-- pour >> per, per a -->
   <rule weight="0.8">
@@ -780,6 +787,158 @@
     <match lemma="poule" tags="n.*"><select lemma="grup"/></match>
     <match lemma="de" tags="pr"/>
     <or><match tags="num"/><match tags="num.*"/></or>
+  </rule>
+
+  <!-- saison >> estació, temporada -->
+  <rule weight="0.8">
+    <match lemma="saison" tags="n.*"><select lemma="estació"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="vblex.*"/>
+      <match tags="vbser.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <match lemma="saison" tags="n.*"><select lemma="temporada"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="après" tags="pr"/>
+      <match lemma="avant" tags="pr"/>
+    </or>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <match lemma="saison" tags="n.*"><select lemma="temporada"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="saison" tags="n.*"><select lemma="temporada"/></match>
+    <match tags="num"/>
+  </rule>
+
+  <!-- ordre >> ordre m, ordre f, orde -->
+  <rule weight="0.8">
+    <match lemma="ordre" tags="n.*"><select lemma="ordre" tags="n.f.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="en" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <match lemma="ordre" tags="n.*"><select lemma="ordre" tags="n.m.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="reigner"/>
+      <match lemma="mettre"/>
+      <match lemma="remettre"/>
+    </or>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match lemma="un peu de" tags="pr"/>
+      <match lemma="en" tags="pr"/>
+    </or>
+    <match lemma="ordre" tags="n.*"><select lemma="ordre" tags="n.m.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="mettre"/>
+      <match lemma="remettre"/>
+    </or>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match lemma="de" tags="pr"/>
+      <match lemma="dans" tags="pr"/>
+    </or>
+    <match tags="det.*"/>
+    <match lemma="ordre" tags="n.*"><select lemma="ordre" tags="n.m.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ordre" tags="n.*"><select lemma="ordre" tags="n.m.*"/></match>
+    <match tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="facteur"/>
+      <match lemma="queue"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ordre" tags="n.*"><select lemma="orde"/></match>
+    <or>
+      <match lemma="cistercien"/>
+      <match lemma="franciscain"/>
+      <match lemma="dominicain"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ordre" tags="n.*"><select lemma="orde"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="saint" tags="n.*"/>
+      <match lemma="saint" tags="adj.*"/>
+      <match tags="np.top.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ordre" tags="n.*"><select lemma="orde"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.def.*"/>
+    <or>
+      <match lemma="jarretière" tags="n.*"/>
+      <match lemma="temple" tags="n.*"/>
+      <match lemma="empire" tags="n.*"/>
+      <match lemma="légion" tags="n.*"/>
+      <match lemma="capucin" tags="n.*"/>
+      <match lemma="franciscain" tags="n.*"/>
+      <match lemma="dominicain" tags="n.*"/>
+      <match lemma="frère" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- maillot >> samarreta, mallot -->
+  <rule weight="0.8">
+    <match lemma="maillot" tags="n.*"><select lemma="samarreta"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="maillot" tags="n.*"><select lemma="mallot"/></match>
+    <or>
+      <match lemma="jaune" tags="adj.*"/>
+      <match lemma="rose" tags="adj.*"/>
+    </or>
+  </rule>
+
+  <!-- coupe >> copa, retallada, tall -->
+  <rule weight="0.8">
+    <match lemma="coupe" tags="n.*"><select lemma="copa"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="coupe" tags="n.*"><select lemma="tall"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="cheveu" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="coupe" tags="n.*"><select lemma="tall"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="pierre" tags="n.*"/>
+      <match lemma="blé" tags="n.*"/>
+      <match lemma="bois" tags="n.*"/>
+     </or>
   </rule>
 
   <!-- essence >> essència, gasolina, benzina -->

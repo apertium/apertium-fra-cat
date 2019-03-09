@@ -1192,6 +1192,20 @@
     <match lemma="família" tags="n.*"/>
   </rule>
 
+  <!-- habitual >> habituel, habitué -->
+  <rule weight="0.8">
+    <match lemma="habitual" tags="adj.*"><select lemma="habituel"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="un" tags="det.*"/>
+      <match tags="num.*"/>
+      <match tags="num"/>
+    </or>
+    <match lemma="habitual" tags="adj.*"><select lemma="habitué"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
+
   <!-- nou >> nouveau, neuf -->
   <rule weight="0.8">
     <match lemma="nou" tags="adj.*"><select lemma="nouveau"/></match>
@@ -1307,6 +1321,21 @@
     <match lemma="partit" tags="n.*"><select lemma="match"/></match>
     <match lemma="de" tags="pr"/>
     <match tags="n.*.sg"/>
+  </rule>
+
+  <!-- retallada >> coupe, coupure -->
+  <rule weight="0.8">
+    <match lemma="retallada" tags="n.*"><select lemma="coupe"/></match>
+  </rule>
+
+  <!-- tall >> coupe, coupure, tranche -->
+  <rule weight="0.8">
+    <match lemma="tall" tags="n.*"><select lemma="coupe"/></match>
+  </rule>
+
+  <!-- samarreta >> tee-shirt, débardeur, maillot -->
+  <rule weight="0.8">
+    <match lemma="samarreta" tags="n.*"><select lemma="tee-shirt"/></match>
   </rule>
 
   <!-- caragol >> escargot, vis -->
