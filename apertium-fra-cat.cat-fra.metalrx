@@ -860,6 +860,209 @@
     <match lemma="negociació" tags="n.*"/>
   </rule>
 
+  <!-- esperar >> attendre, espérer -->
+  <rule weight="0.8">
+    <match lemma="esperar" tags="vblex.*"><select lemma="attendre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="esperar" tags="vblex.*"><select lemma="espérer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="vblex.inf"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="esperar" tags="vblex.*"><select lemma="espérer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+    <match tags="vblex.fti.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="esperar" tags="vblex.*"><select lemma="espérer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+    <match tags="np.*"/>
+    <match tags="vblex.fti.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="esperar" tags="vblex.*"><select lemma="espérer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+    <match tags="np.*"/>
+    <match tags="np.*"/>
+    <match tags="vblex.fti.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="esperar" tags="vblex.*"><select lemma="espérer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+    <match tags="prn.*"/>
+    <match tags="vblex.fti.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="esperar" tags="vblex.*"><select lemma="espérer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+    <match tags="prn.*"/>
+    <match tags="prn.*"/>
+    <match tags="vblex.fti.*"/>
+  </rule>
+
+  <rule weight="1.0">
+    <match lemma="esperar" tags="vblex.*"><select lemma="espérer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+    <match tags="n.*"/>
+    <match tags="vblex.fti.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="esperar" tags="vblex.*"><select lemma="espérer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+    <or>
+      <match tags="det.*"/>
+      <match tags="adj.*"/>
+    </or>
+    <match tags="n.*"/>
+    <match tags="vblex.fti.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="esperar" tags="vblex.*"><select lemma="espérer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+    <match tags="det.*"/>
+    <match tags="n.*"/>
+    <match tags="adj.*"/>
+    <match tags="vblex.fti.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="esperar" tags="vblex.*"><select lemma="espérer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+    <match tags="det.*"/>
+    <match tags="adj.*"/>
+    <match tags="n.*"/>
+    <match tags="vblex.fti.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="esperar" tags="vblex.*"><select lemma="espérer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+    <match tags="det.*"/>
+    <match tags="n.*"/>
+    <match tags="adv"/>
+    <match tags="adj.*"/>
+    <match tags="vblex.fti.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="esperar" tags="vblex.*"><select lemma="espérer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+    <match tags="det.*"/>
+    <match tags="adv"/>
+    <match tags="adj.*"/>
+    <match tags="n.*"/>
+    <match tags="vblex.fti.*"/>
+  </rule>
+
+  <!-- ara amb +adv (espero que un amic et dirà) -->
+  <rule weight="1.0">
+    <match lemma="esperar" tags="vblex.*"><select lemma="espérer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+    <match tags="n.*"/>
+    <match tags="adv"/>
+    <match tags="vblex.fti.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="esperar" tags="vblex.*"><select lemma="espérer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+    <or>
+      <match tags="det.*"/>
+      <match tags="adj.*"/>
+    </or>
+    <match tags="n.*"/>
+    <match tags="adv"/>
+    <match tags="vblex.fti.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="esperar" tags="vblex.*"><select lemma="espérer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+    <match tags="det.*"/>
+    <match tags="n.*"/>
+    <match tags="adj.*"/>
+    <match tags="adv"/>
+    <match tags="vblex.fti.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="esperar" tags="vblex.*"><select lemma="espérer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+    <match tags="det.*"/>
+    <match tags="adj.*"/>
+    <match tags="n.*"/>
+    <match tags="adv"/>
+    <match tags="vblex.fti.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="esperar" tags="vblex.*"><select lemma="espérer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+    <match tags="det.*"/>
+    <match tags="n.*"/>
+    <match tags="adv"/>
+    <match tags="adj.*"/>
+    <match tags="adv"/>
+    <match tags="vblex.fti.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="esperar" tags="vblex.*"><select lemma="espérer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+    <match tags="det.*"/>
+    <match tags="adv"/>
+    <match tags="adj.*"/>
+    <match tags="n.*"/>
+    <match tags="adv"/>
+    <match tags="vblex.fti.*"/>
+  </rule>
+
   <!-- fer >> faire, poser -->
   <rule weight="0.8">
     <match lemma="fer" tags="vblex.*"><select lemma="faire"/></match>
