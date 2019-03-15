@@ -426,7 +426,15 @@
     </def-cat>
     <def-cat n="dir">
       <cat-item lemma="dir" tags="vblex.pri.*"/>
+      <cat-item lemma="dir" tags="vblex.pii.*"/>
       <cat-item lemma="dir" tags="vblex.fti.*"/>
+      <cat-item lemma="dir" tags="vblex.ifi.*"/>
+      <cat-item lemma="dir" tags="vblex.cni.*"/>
+    </def-cat>
+    <def-cat n="passiva_reflexa_p3sg">
+      <cat-item lemma="dir" tags="vblex.*.p3.sg"/>
+      <cat-item lemma="discutir" tags="vblex.*.p3.sg"/>
+      <cat-item lemma="parlar" tags="vblex.*.p3.sg"/>
     </def-cat>
     <def-cat n="haver">
       <cat-item lemma="haver" tags="vbhaver.*"/>
@@ -6799,100 +6807,35 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule>
-<!--REGLA: dir-se -> s'apeller -->
+    <rule comment="regla: es diu que -> on dit que (suposo que és una passiva reflexa)">
       <pattern>
-        <pattern-item n="prnproref"/>
-        <pattern-item n="dir"/>
+        <pattern-item n="es"/>
+        <pattern-item n="passiva_reflexa_p3sg"/>
+        <pattern-item n="que"/>
       </pattern>
       <action>
-        <call-macro n="f_setpronom">
-          <with-param pos="2"/>
-        </call-macro>
-        <modify-case>
-          <clip pos="2" side="sl" part="lem"/>
-          <case-of pos="1" side="sl" part="lemh"/>
-        </modify-case>
-        <choose>
-          <when>
-            <test>
-              <equal>
-                <clip pos="1" side="sl" part="persona"/>
-                <clip pos="2" side="sl" part="persona"/>
-              </equal>
-            </test>
-            <let>
-              <clip pos="2" side="tl" part="lem"/>
-              <lit v="appeler"/>
-            </let>
-          </when>
-        </choose>
-        <choose>
-          <when>
-            <test>
-              <equal>
-                <clip pos="2" side="sl" part="persona"/>
-                <lit-tag v="p3"/>
-              </equal>
-            </test>
-            <out>
-              <lu>
-                <clip pos="2" side="sl" part="lem"/>
-                <lit-tag v="prn.tn"/>
-                <clip pos="2" side="sl" part="persona"/>
-                <lit-tag v="m"/>
-                <clip pos="2" side="sl" part="nbr"/>
-              </lu>
-              <b/>
-              <lu>
-                <get-case-from pos="2">
-                  <clip pos="1" side="tl" part="lemh"/>
-                </get-case-from>
-                <clip pos="1" side="tl" part="tags"/>
-                <clip pos="1" side="tl" part="lemq"/>
-              </lu>
-              <b pos="1"/>
-              <lu>
-                <clip pos="2" side="tl" part="lemh"/>
-                <clip pos="2" side="tl" part="a_verb"/>
-                <clip pos="2" side="tl" part="temps"/>
-                <clip pos="2" side="tl" part="persona"/>
-                <clip pos="2" side="tl" part="gen"/>
-                <clip pos="2" side="tl" part="nbr"/>
-                <clip pos="2" side="tl" part="lemq"/>
-              </lu>
-            </out>
-          </when>
-          <otherwise>
-            <out>
-              <lu>
-                <clip pos="2" side="sl" part="lem"/>
-                <lit-tag v="prn.tn"/>
-                <clip pos="2" side="sl" part="persona"/>
-                <lit-tag v="mf"/>
-                <clip pos="2" side="sl" part="nbr"/>
-              </lu>
-              <b/>
-              <lu>
-                <get-case-from pos="2">
-                  <clip pos="1" side="tl" part="lemh"/>
-                </get-case-from>
-                <clip pos="1" side="tl" part="tags"/>
-                <clip pos="1" side="tl" part="lemq"/>
-              </lu>
-              <b pos="1"/>
-              <lu>
-                <clip pos="2" side="tl" part="lemh"/>
-                <clip pos="2" side="tl" part="a_verb"/>
-                <clip pos="2" side="tl" part="temps"/>
-                <clip pos="2" side="tl" part="persona"/>
-                <clip pos="2" side="tl" part="gen"/>
-                <clip pos="2" side="tl" part="nbr"/>
-                <clip pos="2" side="tl" part="lemq"/>
-              </lu>
-            </out>
-          </otherwise>
-        </choose>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+               <lit v="on"/>
+            </get-case-from>
+            <lit-tag v="prn.pro.ref.p3.mf.sp"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
       </action>
     </rule>
 
