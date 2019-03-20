@@ -1,14 +1,15 @@
 AC_PREREQ(2.52)
 
-AC_INIT([apertium-fra-cat], [1.5.0], [gema@prompsit.com])
-AM_INIT_AUTOMAKE([apertium-fra-cat], [1.5.0], no-define)
+AC_INIT([apertium-fra-cat], [1.6.0], [gema@prompsit.com])
+AM_INIT_AUTOMAKE([apertium-fra-cat], [1.6.0], no-define)
 AC_PROG_LN_S
 AC_PROG_AWK
 
-m4_define([required_apertium_version], [3.3.0])
-PKG_CHECK_MODULES(APERTIUM, apertium >= required_apertium_version, [], [PKG_CHECK_MODULES(APERTIUM, apertium-3.2 >= required_apertium_version)])
+m4_define([required_apertium_version], [3.5.2])
+m4_define([required_lttoolbox_version], [3.5.0])
 
-
+PKG_CHECK_MODULES(APERTIUM, apertium >= required_apertium_version)
+PKG_CHECK_MODULES(LTTOOLBOX, lttoolbox >= required_lttoolbox_version)
 
 AC_PATH_PROG([CGCOMP], [cg-comp], [false], [$PATH$PATH_SEPARATOR$with_cg_comp/bin])
 AS_IF([test x$CGCOMP = xfalse], [AC_MSG_ERROR([You don't have cg-comp installed])])
@@ -33,10 +34,9 @@ AS_IF([test x$ZCAT = xfalse], [AC_MSG_ERROR([You don't have zcat nor gzcat insta
 
 m4_ifdef([AP_CHECK_LING],[],[AC_MSG_ERROR([AP_CHECK_LING not defined, is apertium.m4 in ACLOCAL_PATH? See: http://wiki.apertium.org/wiki/Installation_troubleshooting])])
 
-AP_CHECK_LING([1], [apertium-fra])
-AP_CHECK_LING([2], [apertium-cat])
+AP_CHECK_LING([1], [apertium-fra], [1.6.0])
+AP_CHECK_LING([2], [apertium-cat], [2.7.0])
 
 AP_MKINCLUDE
 
 AC_OUTPUT([Makefile])
-
