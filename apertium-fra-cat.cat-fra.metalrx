@@ -860,6 +860,81 @@
     <match lemma="negociació" tags="n.*"/>
   </rule>
 
+  <!-- aconseguir >> réussir, obtenir -->
+  <rule weight="0.8">
+    <match lemma="aconseguir" tags="vblex.*"><select lemma="réussir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="aconseguir" tags="vblex.*"><select lemma="obtenir"/></match>
+    <match tags="det.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="aconseguir" tags="vblex.*"><select lemma="obtenir"/></match>
+    <match tags="prn.*"/>
+  </rule>
+
+  <!-- perseguir >> persécuter, poursuivre -->
+  <rule weight="0.8">
+    <match lemma="perseguir" tags="vblex.*"><select lemma="persécuter"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="perseguir" tags="vblex.*"><select lemma="poursuivre"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <or>
+      <match lemma="fi" tags="n.*"/>
+      <match lemma="finalitat" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="perseguir" tags="vblex.*"><select lemma="poursuivre"/></match>
+    <match tags="det.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <or>
+      <match lemma="fi" tags="n.*"/>
+      <match lemma="finalitat" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="fi" tags="n.*"/>
+      <match lemma="finalitat" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="que" tags="rel.*"/>
+    <match lemma="perseguir" tags="vblex.*"><select lemma="poursuivre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="fi" tags="n.*"/>
+      <match lemma="finalitat" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="que" tags="rel.*"/>
+    <match tags="prn.*"/>
+    <match lemma="perseguir" tags="vblex.*"><select lemma="poursuivre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="fi" tags="n.*"/>
+      <match lemma="finalitat" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="que" tags="rel.*"/>
+    <match tags="det.*"/>
+    <match tags="n.*"/>
+    <match lemma="perseguir" tags="vblex.*"><select lemma="poursuivre"/></match>
+  </rule>
+
   <!-- esperar >> attendre, espérer -->
   <rule weight="0.8">
     <match lemma="esperar" tags="vblex.*"><select lemma="attendre"/></match>
