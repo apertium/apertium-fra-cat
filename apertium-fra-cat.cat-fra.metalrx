@@ -1274,6 +1274,22 @@
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
     <match lemma="succeir" tags="vblex.*"><select lemma="arriver"/></match>
   </rule>
+  <rule weight="1.0">
+    <match lemma="succeir" tags="vblex.*"><select lemma="arriver"/></match>
+    <match tags="det.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="succeir" tags="vblex.*"><select lemma="succéder"/></match>
+    <match tags="det.pos.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="el" tags="prn.*"/>
+    <match lemma="succeir" tags="vblex.*"><select lemma="succéder"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="es" tags="prn.*"/>
+    <match lemma="succeir" tags="vblex.*"><select lemma="succéder"/></match>
+  </rule>
 
   <!-- intentar >> essayer, essayer# de -->
   <rule weight="0.8">
@@ -1347,11 +1363,13 @@
   <rule weight="1.0">
     <match lemma="tractar" tags="vblex.*"><select lemma="tâcher"/></match>
     <match lemma="de" tags="pr"/>
+    <or><match tags="vblex.inf"/><match tags="vbser.inf"/><match tags="vbhaver.inf"/><match tags="vbmod.inf"/></or>
   </rule>
   <rule weight="1.0">
     <match lemma="tractar" tags="vblex.*"><select lemma="tâcher"/></match>
     <match tags="adv"/>
     <match lemma="de" tags="pr"/>
+    <or><match tags="vblex.inf"/><match tags="vbser.inf"/><match tags="vbhaver.inf"/><match tags="vbmod.inf"/></or>
   </rule>
   <rule weight="1.2">
     <match lemma="tractar" tags="vblex.*"><select lemma="traiter"/></match>
