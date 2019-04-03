@@ -512,6 +512,39 @@
     <match lemma="de" tags="pr"/>
   </rule>
 
+  <!-- battre >> derrotar, batre, bategar -->
+  <rule weight="0.8">
+    <match lemma="battre" tags="vblex.*"><select lemma="derrotar" tags="vblex.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="battre" tags="vblex.*"><select lemma="batre" tags="vblex.*"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match lemma="le" tags="det.*"/>
+    <match lemma="œuf" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="battre" tags="vblex.*"><select lemma="batre" tags="vblex.*"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <match lemma="œuf" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cœur" tags="n.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="battre" tags="vblex.*"><select lemma="batega" tags="vblex.*"/></match>
+  </rule>
+
   <!-- tourner >> girar, rodar -->
   <rule weight="0.8">
     <match lemma="tourner" tags="vblex.*"><select lemma="girar" tags="vblex.*"/></match>

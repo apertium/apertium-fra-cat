@@ -860,6 +860,27 @@
     <match lemma="negociació" tags="n.*"/>
   </rule>
 
+  <!-- derrotar >> battre, défaire -->
+  <rule weight="0.8">
+    <match lemma="derrotar" tags="vblex.*"><select lemma="battre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="derrotar" tags="vblex.*"><select lemma="défaire"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv.*"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="exèrcit" tags="n.*"/>
+      <match lemma="soldat" tags="n.*"/>
+      <match lemma="tropa" tags="n.*"/>
+      <match lemma="divisió" tags="n.*"/>
+      <match lemma="orda" tags="n.*"/>
+      <match lemma="host" tags="n.*"/>
+      <match lemma="caballeria" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- aconseguir >> réussir, obtenir -->
   <rule weight="0.8">
     <match lemma="aconseguir" tags="vblex.*"><select lemma="réussir"/></match>
@@ -1163,6 +1184,14 @@
   <rule weight="1.0">
     <or><match tags="vblex.*"/><match tags="vbmod.*"/></or>
     <match lemma="posar" tags="vblex.inf"><select lemma="mettre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="posar" tags="vblex.inf"><select lemma="mettre"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="accent" tags="n.*"/>
   </rule>
 
   <!-- esclatar >> exploser, éclater -->
@@ -1620,6 +1649,15 @@
     <match lemma="partit" tags="n.*"><select lemma="match"/></match>
     <match lemma="de" tags="pr"/>
     <match tags="n.*.sg"/>
+  </rule>
+
+  <!-- esplendor >> splendeur, éclat -->
+  <rule weight="0.8">
+    <match lemma="esplendor" tags="n.*"><select lemma="splendeur"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="gran" tags="adj.*"/>
+    <match lemma="esplendor" tags="n.*"><select lemma="éclat"/></match>
   </rule>
 
   <!-- retallada >> coupe, coupure -->
