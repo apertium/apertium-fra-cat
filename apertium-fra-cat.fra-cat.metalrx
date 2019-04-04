@@ -163,6 +163,8 @@
 		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
 	  </rule>
 	  <rule weight="1.0">
+		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
+		 <match tags="cm"/>
 		 <or>
 		   <match lemma="pape" tags="n.*"/>
 		   <match lemma="patriarche" tags="n.*"/>
@@ -190,8 +192,38 @@
 		   <match lemma="marquis" tags="n.*"/>
 		   <match lemma="baron" tags="n.*"/>
 		 </or>
-		 <match tags="np.ant.*"/>
+	  </rule>
+	  <rule weight="1.0">
 		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
+		 <match tags="np.ant.*"/>
+		 <match tags="cm"/>
+		 <or>
+		   <match lemma="pape" tags="n.*"/>
+		   <match lemma="patriarche" tags="n.*"/>
+		   <match lemma="évêque" tags="n.*"/>
+		   <match lemma="archevêque" tags="n.*"/>
+		   <match lemma="saint" tags="n.*"/>
+		   <match lemma="saint" tags="adj.*"/>
+		   <match lemma="apôtre" tags="n.*"/>
+		   <match lemma="empereur" tags="n.*"/>
+		   <match lemma="roi" tags="n.*"/>
+		   <match lemma="tsar" tags="n.*"/>
+		   <match lemma="vice-roi" tags="n.*"/>
+		   <match lemma="régent" tags="n.*"/>
+		   <match lemma="prince" tags="n.*"/>
+		   <match lemma="infant" tags="n.*"/>
+		   <match lemma="dauphin" tags="n.*"/>
+		   <match lemma="comte" tags="n.*"/>
+		   <match lemma="comtesse" tags="n.*"/>
+		   <match lemma="vicomte" tags="n.*"/>
+		   <match lemma="vicomtesse" tags="n.*"/>
+		   <match lemma="duc" tags="n.*"/>
+		   <match lemma="duchesse" tags="n.*"/>
+		   <match lemma="archiduc" tags="n.*"/>
+		   <match lemma="archiduchesse" tags="n.*"/>
+		   <match lemma="marquis" tags="n.*"/>
+		   <match lemma="baron" tags="n.*"/>
+		 </or>
 	  </rule>
 	  <rule weight="1.0">
 		 <or>
@@ -257,6 +289,52 @@
 		 <match lemma="{{p3}}" tags="pr"/>
 		  </rule>
 	</def-macro>
+
+    <!-- Aquesta macro tria el verb p2 si p1 no és pronominal i p3 si p1 és pronominal -->
+    <!-- p1 = verb cat, p2 = verb fra no pron, p3 = verb fra pron -->
+    <def-macro name="verb_nopron_pron">
+      <rule weight="0.8">
+        <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p2}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match tags="prn.pro.p1.*.sg"/>
+        <match lemma="{{p1}}" tags="vblex.*.p1.sg"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match lemma="{{p1}}" tags="vblex.*.p1.sg"><select lemma="{{p3}}"/></match>
+        <match tags="prn.enc.p1.*.sg"/>
+      </rule>
+      <rule weight="1.0">
+        <match tags="prn.pro.p2.*.sg"/>
+        <match lemma="{{p1}}" tags="vblex.*.p2.sg"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match lemma="{{p1}}" tags="vblex.*.p2.sg"><select lemma="{{p3}}"/></match>
+        <match tags="prn.enc.p2.*.sg"/>
+      </rule>
+      <rule weight="1.0">
+        <match tags="prn.pro.ref.p3.*.sp"/>
+        <or>
+          <match lemma="{{p1}}" tags="vblex.*.p3.sg"><select lemma="{{p3}}"/></match>
+          <match lemma="{{p1}}" tags="vblex.*.p3.pl"><select lemma="{{p3}}"/></match>
+        </or>
+      </rule>
+      <rule weight="1.0">
+        <or>
+          <match lemma="{{p1}}" tags="vblex.*.p3.sg"><select lemma="{{p3}}"/></match>
+          <match lemma="{{p1}}" tags="vblex.*.p3.pl"><select lemma="{{p3}}"/></match>
+        </or>
+        <match tags="prn.enc.ref.p3.*.sp"/>
+      </rule>
+      <rule weight="1.0">
+        <match tags="prn.pro.p1.*.pl"/>
+        <match lemma="{{p1}}" tags="vblex.*.p1.pl"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match lemma="{{p1}}" tags="vblex.*.p1.pl"><select lemma="{{p3}}"/></match>
+        <match tags="prn.enc.p1.*.pl"/>
+      </rule>
+    </def-macro>
   </def-macros>
 
   <def-seqs>
@@ -297,6 +375,46 @@
        <match lemma="bois" tags="n.*"/>
        <match lemma="plâtre" tags="n.*"/>
        <match lemma="gypse" tags="n.*"/>
+    </def-seq>
+
+    <def-seq n="personne">
+      <match lemma="pape" tags="n.*"/>
+      <match lemma="patriarche" tags="n.*"/>
+      <match lemma="évêque" tags="n.*"/>
+      <match lemma="archevêque" tags="n.*"/>
+      <match lemma="saint" tags="n.*"/>
+      <match lemma="saint" tags="adj.*"/>
+      <match lemma="apôtre" tags="n.*"/>
+      <match lemma="empereur" tags="n.*"/>
+      <match lemma="roi" tags="n.*"/>
+      <match lemma="tsar" tags="n.*"/>
+      <match lemma="vice-roi" tags="n.*"/>
+      <match lemma="régent" tags="n.*"/>
+      <match lemma="prince" tags="n.*"/>
+      <match lemma="infant" tags="n.*"/>
+      <match lemma="dauphin" tags="n.*"/>
+      <match lemma="comte" tags="n.*"/>
+      <match lemma="comtesse" tags="n.*"/>
+      <match lemma="vicomte" tags="n.*"/>
+      <match lemma="vicomtesse" tags="n.*"/>
+      <match lemma="duc" tags="n.*"/>
+      <match lemma="duchesse" tags="n.*"/>
+      <match lemma="archiduc" tags="n.*"/>
+      <match lemma="archiduchesse" tags="n.*"/>
+      <match lemma="marquis" tags="n.*"/>
+      <match lemma="baron" tags="n.*"/>
+      <match lemma="maréchal" tags="n.*"/>
+      <match lemma="général" tags="n.*"/>
+      <match lemma="colonel" tags="n.*"/>
+      <match lemma="capitaine" tags="n.*"/>
+      <match lemma="sergent" tags="n.*"/>
+      <match lemma="pasteur" tags="n.*"/>
+      <match lemma="prêtre" tags="n.*"/>
+      <match lemma="ami" tags="n.*"/>
+      <match lemma="voisin" tags="n.*"/>
+      <match lemma="copain" tags="n.*"/>
+      <match lemma="copine" tags="n.*"/>
+      <match lemma="collègue" tags="n.*"/>
     </def-seq>
   </def-seqs>
 
@@ -512,11 +630,25 @@
     <match lemma="de" tags="pr"/>
   </rule>
 
-  <!-- battre >> derrotar, batre, bategar -->
+  <!-- emprunter >> manllevar, agafar -->
   <rule weight="0.8">
-    <match lemma="battre" tags="vblex.*"><select lemma="derrotar" tags="vblex.*"/></match>
+    <match lemma="emprunter" tags="vblex.*"><select lemma="manllevar" tags="vblex.*"/></match>
   </rule>
   <rule weight="1.0">
+    <match lemma="emprunter" tags="vblex.*"><select lemma="agafar" tags="vblex.*"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+    <match lemma="chemin" tags="n.*"/>
+    <match lemma="route" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- battre >> derrotar, batre, bategar, barallar -->
+  <macro name="verb_nopron_pron" p1="battre" p2="derrotar" p3="barallar" />
+  <rule weight="1.2">
     <match lemma="battre" tags="vblex.*"><select lemma="batre" tags="vblex.*"/></match>
     <repeat from="0" upto="1">
       <match tags="adv"/>
@@ -525,7 +657,7 @@
     <match lemma="le" tags="det.*"/>
     <match lemma="œuf" tags="n.*"/>
   </rule>
-  <rule weight="1.0">
+  <rule weight="1.2">
     <match lemma="battre" tags="vblex.*"><select lemma="batre" tags="vblex.*"/></match>
     <repeat from="0" upto="1">
       <match tags="adv"/>
@@ -537,12 +669,12 @@
     </or>
     <match lemma="œuf" tags="n.*"/>
   </rule>
-  <rule weight="1.0">
+  <rule weight="1.2">
     <match lemma="cœur" tags="n.*"/>
     <repeat from="0" upto="1">
       <match tags="adv"/>
     </repeat>
-    <match lemma="battre" tags="vblex.*"><select lemma="batega" tags="vblex.*"/></match>
+    <match lemma="battre" tags="vblex.*"><select lemma="bategar" tags="vblex.*"/></match>
   </rule>
 
   <!-- tourner >> girar, rodar -->
@@ -847,6 +979,27 @@
     <match lemma="poule" tags="n.*"><select lemma="grup"/></match>
     <match lemma="de" tags="pr"/>
     <or><match tags="num"/><match tags="num.*"/></or>
+  </rule>
+
+  <!-- glace >> gelat, mirall -->
+  <rule weight="0.8">
+    <match lemma="glace" tags="n.*"><select lemma="gelat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="galerie" tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="glace" tags="n.*"><select lemma="mirall"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="devant" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="glace" tags="n.*"><select lemma="mirall"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="regarder" tags="vblex.*"/>
+    <match tags="det.*"/>
+    <match lemma="glace" tags="n.*"><select lemma="mirall"/></match>
   </rule>
 
   <!-- saison >> estació, temporada -->
@@ -1536,6 +1689,27 @@
     <or><match tags="det.*"/><match tags="num.*"/><match tags="num"/></or>
     <match lemma="fille" tags="n.*"><select lemma="fill" tags="n.*"/></match>
   </rule>
+  <rule weight="1.2">
+    <match lemma="fille" tags="n.*"><select lemma="fill" tags="n.*"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <or>
+      <seq n="personne"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="fille" tags="n.*"><select lemma="fill" tags="n.*"/></match>
+    <match tags="adj.*"/>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <or>
+      <seq n="personne"/>
+    </or>
+  </rule>
 
   <!-- garçon >> xic, noi, fill -->
   <rule weight="0.8" v="val">
@@ -1566,6 +1740,27 @@
     <match lemma="avoir"/>
     <or><match tags="det.*"/><match tags="num.*"/><match tags="num"/></or>
     <match lemma="enfant" tags="n.mf.pl"><select lemma="fill" tags="n.*"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="enfant" tags="n.mf.pl"><select lemma="fill" tags="n.*"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <or>
+      <seq n="personne"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="enfant" tags="n.mf.pl"><select lemma="fill" tags="n.*"/></match>
+    <match tags="adj.*"/>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <or>
+      <seq n="personne"/>
+    </or>
   </rule>
 
   <rule weight="0.8" v="val">

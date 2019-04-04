@@ -161,6 +161,61 @@
 		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
 	  </rule>
 	  <rule weight="1.0">
+		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
+		 <match tags="cm"/>
+		 <or>
+		   <match lemma="papa" tags="n.*"/>
+		   <match lemma="patriarca" tags="n.*"/>
+		   <match lemma="bisbe" tags="n.*"/>
+		   <match lemma="arquebisbe" tags="n.*"/>
+		   <match lemma="sant" tags="n.*"/>
+		   <match lemma="sant" tags="adj.*"/>
+		   <match lemma="apòstol" tags="n.*"/>
+		   <match lemma="emperador" tags="n.*"/>
+		   <match lemma="rei" tags="n.*"/>
+		   <match lemma="tsar" tags="n.*"/>
+		   <match lemma="virrei" tags="n.*"/>
+		   <match lemma="regent" tags="n.*"/>
+		   <match lemma="príncep" tags="n.*"/>
+		   <match lemma="infant" tags="n.*"/>
+		   <match lemma="delfí" tags="n.*"/>
+		   <match lemma="comte" tags="n.*"/>
+		   <match lemma="vescomte" tags="n.*"/>
+		   <match lemma="duc" tags="n.*"/>
+		   <match lemma="arxiduc" tags="n.*"/>
+		   <match lemma="marquès" tags="n.*"/>
+		   <match lemma="baró" tags="n.*"/>
+		 </or>
+	  </rule>
+	  <rule weight="1.0">
+		 <match tags="np.ant.*"/>
+		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
+		 <match tags="cm"/>
+		 <or>
+		   <match lemma="papa" tags="n.*"/>
+		   <match lemma="patriarca" tags="n.*"/>
+		   <match lemma="bisbe" tags="n.*"/>
+		   <match lemma="arquebisbe" tags="n.*"/>
+		   <match lemma="sant" tags="n.*"/>
+		   <match lemma="sant" tags="adj.*"/>
+		   <match lemma="apòstol" tags="n.*"/>
+		   <match lemma="emperador" tags="n.*"/>
+		   <match lemma="rei" tags="n.*"/>
+		   <match lemma="tsar" tags="n.*"/>
+		   <match lemma="virrei" tags="n.*"/>
+		   <match lemma="regent" tags="n.*"/>
+		   <match lemma="príncep" tags="n.*"/>
+		   <match lemma="infant" tags="n.*"/>
+		   <match lemma="delfí" tags="n.*"/>
+		   <match lemma="comte" tags="n.*"/>
+		   <match lemma="vescomte" tags="n.*"/>
+		   <match lemma="duc" tags="n.*"/>
+		   <match lemma="arxiduc" tags="n.*"/>
+		   <match lemma="marquès" tags="n.*"/>
+		   <match lemma="baró" tags="n.*"/>
+		 </or>
+	  </rule>
+	  <rule weight="1.0">
 		 <or>
 		   <match lemma="papat" tags="n.*"/>
 		   <match lemma="pontificat" tags="n.*"/>
@@ -218,6 +273,61 @@
 		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
 	  </rule>
 	</def-macro>
+
+    <!-- Aquesta macro tria el verb p2 si p1 no és pronominal i p3 si p1 és pronominal -->
+    <!-- p1 = verb cat, p2 = verb fra no pron, p3 = verb fra pron -->
+    <def-macro name="verb_nopron_pron">
+      <rule weight="0.8">
+        <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p2}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match tags="prn.pro.p1.*.sg"/>
+        <match lemma="{{p1}}" tags="vblex.*.p1.sg"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match lemma="{{p1}}" tags="vblex.*.p1.sg"><select lemma="{{p3}}"/></match>
+        <match tags="prn.enc.p1.*.sg"/>
+      </rule>
+      <rule weight="1.0">
+        <match tags="prn.pro.p2.*.sg"/>
+        <match lemma="{{p1}}" tags="vblex.*.p2.sg"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match lemma="{{p1}}" tags="vblex.*.p2.sg"><select lemma="{{p3}}"/></match>
+        <match tags="prn.enc.p2.*.sg"/>
+      </rule>
+      <rule weight="1.0">
+        <match tags="prn.pro.ref.p3.*.sp"/>
+        <or>
+          <match lemma="{{p1}}" tags="vblex.*.p3.sg"><select lemma="{{p3}}"/></match>
+          <match lemma="{{p1}}" tags="vblex.*.p3.pl"><select lemma="{{p3}}"/></match>
+        </or>
+      </rule>
+      <rule weight="1.0">
+        <or>
+          <match lemma="{{p1}}" tags="vblex.*.p3.sg"><select lemma="{{p3}}"/></match>
+          <match lemma="{{p1}}" tags="vblex.*.p3.pl"><select lemma="{{p3}}"/></match>
+        </or>
+        <match tags="prn.enc.ref.p3.*.sp"/>
+      </rule>
+      <rule weight="1.0">
+        <match tags="prn.pro.p1.*.pl"/>
+        <match lemma="{{p1}}" tags="vblex.*.p1.pl"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match lemma="{{p1}}" tags="vblex.*.p1.pl"><select lemma="{{p3}}"/></match>
+        <match tags="prn.enc.p1.*.pl"/>
+      </rule>
+      <rule weight="1.0">
+        <match tags="prn.pro.p2.*.pl"/>
+        <match lemma="{{p1}}" tags="vblex.*.p2.pl"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match lemma="{{p1}}" tags="vblex.*.p2.pl"><select lemma="{{p3}}"/></match>
+        <match tags="prn.enc.p2.*.pl"/>
+      </rule>
+    </def-macro>
+
   </def-macros>
 
   <def-seqs>
@@ -1649,6 +1759,20 @@
     <match lemma="partit" tags="n.*"><select lemma="match"/></match>
     <match lemma="de" tags="pr"/>
     <match tags="n.*.sg"/>
+  </rule>
+
+  <!-- pastor >> berger, pasteur -->
+  <rule weight="1.0">
+    <match lemma="pastor" tags="n.*"><select lemma="berger"/></match>
+  </rule>
+  <rule weight="0.8">
+    <match lemma="pastor" tags="n.*"><select lemma="pasteur"/></match>
+    <or>
+      <match lemma="protestant" tags="n.*"/>
+      <match lemma="evangelista" tags="n.*"/>
+      <match lemma="luterà" tags="n.*"/>
+      <match lemma="anglicà" tags="n.*"/>
+    </or>
   </rule>
 
   <!-- esplendor >> splendeur, éclat -->
