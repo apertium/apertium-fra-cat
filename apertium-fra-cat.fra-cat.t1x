@@ -3609,8 +3609,7 @@
   </rule>
 
 
-    <rule>
-<!-- REGLA: PRONOM -->
+    <rule comment="REGLA: PRONOM">
 <!--Special case, macro f_concord1
 is not applicable because gender and number cannot be taken from previous rules -->
       <pattern>
@@ -3782,7 +3781,9 @@ is not applicable because gender and number cannot be taken from previous rules 
               <b/>
               <lu>
                 <clip pos="2" side="tl" part="lemh"/>
-                <clip pos="2" side="tl" part="tags"/>
+            	<clip pos="2" side="tl" part="a_nom"/>
+            	<clip pos="2" side="tl" part="gen"/>
+            	<lit-tag v="sg"/>
                 <clip pos="2" side="tl" part="lemq"/>
               </lu>
             </out>
@@ -3806,8 +3807,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule>
-<!-- REGLA: DET NOM ADJECTIU-->
+    <rule comment="REGLA: DET NOM ADJECTIU">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="nom"/>
@@ -3844,8 +3844,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule>
-<!-- REGLA: DET NOM ADJECTIU ADJECTIU-->
+    <rule comment="REGLA: DET NOM ADJECTIU ADJECTIU">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="nom"/>
@@ -3892,8 +3891,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule>
-<!-- REGLA: NOM ADJECTIU ADJECTIU-->
+    <rule comment="REGLA: NOM ADJECTIU ADJECTIU">
       <pattern>
         <pattern-item n="nom"/>
         <pattern-item n="adjec"/>
@@ -3934,8 +3932,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule>
-<!-- REGLA: DET ADJECTIU NOM-->
+    <rule comment="REGLA: DET ADJECTIU NOM">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="adjec"/>
@@ -3975,7 +3972,9 @@ is not applicable because gender and number cannot be taken from previous rules 
               <b/>
               <lu>
                 <clip pos="3" side="tl" part="lemh"/>
-                <clip pos="3" side="tl" part="tags"/>
+            	<clip pos="2" side="tl" part="a_nom"/>
+            	<clip pos="2" side="tl" part="gen"/>
+            	<lit-tag v="sg"/>
                 <clip pos="3" side="tl" part="lemq"/>
               </lu>
             </out>
@@ -4031,8 +4030,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule>
-<!-- REGLA: PREDET DET NOM-->
+    <rule comment="REGLA: PREDET DET NOM">
       <pattern>
         <pattern-item n="predet"/>
         <pattern-item n="det"/>
@@ -4065,8 +4063,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule>
-<!-- REGLA: PREDET DET NOM ADJECTIU-->
+    <rule comment="REGLA: PREDET DET NOM ADJECTIU">
       <pattern>
         <pattern-item n="predet"/>
         <pattern-item n="det"/>
@@ -4109,8 +4106,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule>
-<!-- REGLA: DETERMINANT ADJECTIU-->
+    <rule comment="REGLA: DET ADJECTIU">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="adjec"/>
@@ -4139,8 +4135,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule>
-<!-- REGLA: ADJECTIU NOM ADJECTIU-->
+    <rule comment="REGLA: ADJECTIU NOM ADJECTIU">
       <pattern>
         <pattern-item n="adj"/>
         <pattern-item n="nom"/>
@@ -4177,8 +4172,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule>
-<!-- REGLA: DET ADJECTIU NOM ADJECTIU -->
+    <rule comment="REGLA: DET ADJECTIU NOM ADJECTIU">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="adjec"/>
@@ -4225,8 +4219,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule>
-<!-- REGLA: NOM ADVERBI ADJECTIU-->
+    <rule comment="REGLA: NOM ADVERBI ADJECTIU">
       <pattern>
         <pattern-item n="nom"/>
         <pattern-item n="adv"/>
@@ -4262,8 +4255,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule>
-<!-- REGLA: DET NOM ADVERBI ADJECTIU -->
+    <rule comment="REGLA: DET NOM ADVERBI ADJECTIU">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="nom"/>
@@ -4305,8 +4297,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule>
-<!-- REGLA: DET ADVERBI NOM-->
+    <rule comment="REGLA: DET ADVERBI NOM">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="adv"/>
@@ -4371,7 +4362,9 @@ is not applicable because gender and number cannot be taken from previous rules 
               <b/>
               <lu>
                 <clip pos="2" side="tl" part="lemh"/>
-                <clip pos="2" side="tl" part="tags"/>
+            	<clip pos="2" side="tl" part="a_nom"/>
+            	<clip pos="2" side="tl" part="gen"/>
+            	<lit-tag v="sg"/>
                 <clip pos="2" side="tl" part="lemq"/>
               </lu>
             </out>
@@ -4532,7 +4525,9 @@ is not applicable because gender and number cannot be taken from previous rules 
               <b/>
               <lu>
                 <clip pos="3" side="tl" part="lemh"/>
-                <clip pos="3" side="tl" part="tags"/>
+            	<clip pos="3" side="tl" part="a_nom"/>
+            	<clip pos="3" side="tl" part="gen"/>
+            	<lit-tag v="sg"/>
                 <clip pos="3" side="tl" part="lemq"/>
               </lu>
             </out>
@@ -4593,7 +4588,9 @@ is not applicable because gender and number cannot be taken from previous rules 
               <b/>
               <lu>
                 <clip pos="2" side="tl" part="lemh"/>
-                <clip pos="2" side="tl" part="tags"/>
+            	<clip pos="2" side="tl" part="a_nom"/>
+            	<clip pos="2" side="tl" part="gen"/>
+            	<lit-tag v="sg"/>
                 <clip pos="2" side="tl" part="lemq"/>
               </lu>
               <b pos="2"/>
@@ -4669,7 +4666,9 @@ is not applicable because gender and number cannot be taken from previous rules 
               <b/>
               <lu>
                 <clip pos="3" side="tl" part="lemh"/>
-                <clip pos="3" side="tl" part="tags"/>
+            	<clip pos="3" side="tl" part="a_nom"/>
+            	<clip pos="3" side="tl" part="gen"/>
+            	<lit-tag v="sg"/>
                 <clip pos="3" side="tl" part="lemq"/>
               </lu>
               <b pos="3"/>
@@ -4708,8 +4707,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule>
-<!-- REGLA: DET NOM DET ADVERBI ADJECTIU: la fille la plus jolie : la noia més maca -->
+    <rule comment="REGLA: DET NOM DET ADVERBI ADJECTIU: la fille la plus jolie : la noia més maca">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="nom"/>
@@ -6884,8 +6882,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule>
-<!-- REGLA:PRN ADV VERB pas adv PREP DET -->
+    <rule comment="REGLA: PRN ADV VERB pas adv PREP DET">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="adv"/>
@@ -6924,8 +6921,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule>
-<!-- REGLA:PRN VERB adv PREP DET -->
+    <rule comment="REGLA: PRN VERB ADV PREP DET">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="verb"/>
@@ -6957,8 +6953,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule>
-<!-- REGLA:PRN adv VERB PREP DET -->
+    <rule comment="REGLA: PRN ADV VERB PREP DET">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="adv"/>
@@ -6991,8 +6986,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule>
-<!-- REGLA:PRN VERB adv adv PREP DET -->
+    <rule comment="REGLA: PRN VERB ADV ADV PREP DET">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="verb"/>
