@@ -2171,6 +2171,27 @@
     </or>
     <match tagger="vblex.pp.*"/>
   </rule>
+  <rule weight="1.0">
+    <match lemma="être"><select lemma="estar" tags="vblex.*"/></match>
+    <repeat from="0" upto="1">
+      <or>
+        <match lemma="pas"/>
+        <match lemma="jamais"/>
+        <match lemma="nulle part"/>
+      </or>
+    </repeat>
+    <match lemma="en" tags="pr"/>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="être"><select lemma="estar" tags="vblex.*"/></match>
+    <match tags="adv"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="en" tags="pr"/>
+    <match tags="n.*"/>
+  </rule>
 
 
   <rule weight="0.8" v="val">
