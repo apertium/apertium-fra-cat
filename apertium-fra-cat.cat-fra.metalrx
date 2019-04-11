@@ -1874,6 +1874,44 @@
     <match tags="n.*.sg"/>
   </rule>
 
+  <!-- mitjà >> moyen, moitié -->
+  <rule weight="0.8">
+    <match lemma="mitjà" tags="n.*"><select lemma="moyen"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="mitjà" tags="n.m.pl"><select lemma="moitié"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <or>
+      <match lemma="setmana" tags="n.*"/>
+      <match lemma="mes" tags="n.*"/>
+      <match lemma="any" tags="n.*"/>
+      <match lemma="dècada" tags="n.*"/>
+      <match lemma="segle" tags="n.*"/>
+      <match lemma="mil·leni" tags="n.*"/>
+      <match tags="num"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="a" tags="pr"/>
+      <match lemma="cap a" tags="pr"/>
+      <match lemma="fins a" tags="pr"/>
+      <match lemma="des de" tags="pr"/>
+    </or>
+    <match lemma="mitjà" tags="n.m.pl"><select lemma="moitié"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="mitjà" tags="n.*"><select lemma="moyen"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="comunicació" tags="n.*"/>
+      <match lemma="transport" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- pastor >> berger, pasteur -->
   <rule weight="1.0">
     <match lemma="pastor" tags="n.*"><select lemma="berger"/></match>
