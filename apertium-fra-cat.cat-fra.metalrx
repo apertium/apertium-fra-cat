@@ -1028,6 +1028,60 @@
       <match lemma="enfollir" tags="vblex.*"><select lemma="devenir# folles"/></match>
     </or>
   </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="ell" tags="prn.tn.p3.f.sg"/>
+      <match tags="n.f.sg"/>
+      <match tags="adj.f.sg"/>
+    </or>
+    <match tags="adv"/>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="vbhaver.*"/>
+        <match lemma="anar" tags="vblex.pri.*"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="embogir" tags="vblex.*"><select lemma="devenir# folle"/></match>
+      <match lemma="enfollir" tags="vblex.*"><select lemma="devenir# folle"/></match>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="ell" tags="prn.tn.p3.m.pl"/>
+      <match tags="n.m.pl"/>
+      <match tags="adj.m.pl"/>
+    </or>
+    <match tags="adv"/>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="vbhaver.*"/>
+        <match lemma="anar" tags="vblex.pri.*"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="embogir" tags="vblex.*"><select lemma="devenir# foux"/></match>
+      <match lemma="enfollir" tags="vblex.*"><select lemma="devenir# foux"/></match>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="ell" tags="prn.tn.p3.f.pl"/>
+      <match tags="n.f.pl"/>
+      <match tags="adj.f.pl"/>
+    </or>
+    <match tags="adv"/>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="vbhaver.*"/>
+        <match lemma="anar" tags="vblex.pri.*"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="embogir" tags="vblex.*"><select lemma="devenir# folles"/></match>
+      <match lemma="enfollir" tags="vblex.*"><select lemma="devenir# folles"/></match>
+    </or>
+  </rule>
 
   <!-- derrotar >> battre, défaire -->
   <rule weight="0.8">
