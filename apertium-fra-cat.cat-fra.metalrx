@@ -845,6 +845,8 @@
   <rule weight="1.0">
     <or>
       <match lemma="classificar"/>
+      <match lemma="causar" tags="vblex.*"/>
+      <match lemma="causat" tags="adj.*"/>
       <match lemma="consistir" tags="vblex.*"/>
       <match lemma="consistent" tags="adj.*"/>
       <match lemma="dividir" tags="vblex.*"/>

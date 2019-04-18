@@ -630,6 +630,11 @@
     <match lemma="de" tags="pr"/>
   </rule>
 
+  <!-- causer >> causar, xerrar, xarrar, parlar -->
+  <rule weight="0.8">
+    <match lemma="causer" tags="vblex.*"><select lemma="causar" tags="vblex.*"/></match>
+  </rule>
+
   <!-- emprunter >> manllevar, agafar -->
   <rule weight="0.8">
     <match lemma="emprunter" tags="vblex.*"><select lemma="manllevar" tags="vblex.*"/></match>
