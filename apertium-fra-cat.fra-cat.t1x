@@ -3214,7 +3214,7 @@
       <call-macro n="f_concord_pedac"><with-param pos="4"/></call-macro>
     </def-macro>
 
-    <def-macro n="f_set_pron" npar="2"> <!-- posa a la varable 'pronom' el pronom reflexiu que calgui si el verb és reflexiu. El segon paramàtre és la repetició del primer, si és una forma conjugada (personal) del verb, altrament és l'auxiliar-->
+    <def-macro n="f_set_pron" npar="2"> <!-- posa a la variable 'pronom' el pronom reflexiu que calgui si el verb és reflexiu. El segon paramàtre és la repetició del primer, si és una forma conjugada (personal) del verb, altrament és l'auxiliar-->
       <let>
 	<var n="pronom"/>
 	<lit v=""/>
@@ -3276,7 +3276,7 @@
       </choose>
     </def-macro>
 
-    <def-macro n="f_set_pron_enc" npar="1"> <!-- posa a la varable 'pronom' el pronom reflexiu enclític 'es´ si el verb és reflexiu -->
+    <def-macro n="f_set_pron_enc" npar="1"> <!-- posa a la variable 'pronom' el pronom reflexiu enclític 'es´ si el verb és reflexiu -->
       <let>
 	<var n="pronom"/>
 	<lit v=""/>
@@ -3295,7 +3295,7 @@
       </choose>
     </def-macro>
 
-    <def-macro n="print_pron" npar="0"> <!-- escriu la varable 'pronom' -->
+    <def-macro n="print_pron" npar="0"> <!-- escriu la variable 'pronom' -->
         <choose>
 	  <when>
 	    <test>
@@ -12029,6 +12029,7 @@ is not applicable because gender and number cannot be taken from previous rules 
                 <list n="pays"/>
               </in>
             </test>
+            <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
             <out>
               <lu>
                 <clip pos="2" side="tl" part="whole"/>
