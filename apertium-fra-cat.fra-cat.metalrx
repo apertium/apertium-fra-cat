@@ -317,12 +317,16 @@
         <or>
           <match lemma="{{p1}}" tags="vblex.*.p3.sg"><select lemma="{{p3}}"/></match>
           <match lemma="{{p1}}" tags="vblex.*.p3.pl"><select lemma="{{p3}}"/></match>
+          <match lemma="{{p1}}" tags="vblex.inf"><select lemma="{{p3}}"/></match>
+          <match lemma="{{p1}}" tags="vblex.ger"><select lemma="{{p3}}"/></match>
         </or>
       </rule>
       <rule weight="1.0">
         <or>
           <match lemma="{{p1}}" tags="vblex.*.p3.sg"><select lemma="{{p3}}"/></match>
           <match lemma="{{p1}}" tags="vblex.*.p3.pl"><select lemma="{{p3}}"/></match>
+          <match lemma="{{p1}}" tags="vblex.inf"><select lemma="{{p3}}"/></match>
+          <match lemma="{{p1}}" tags="vblex.ger"><select lemma="{{p3}}"/></match>
         </or>
         <match tags="prn.enc.ref.p3.*.sp"/>
       </rule>
