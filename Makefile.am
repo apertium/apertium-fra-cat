@@ -2,7 +2,6 @@
 ## Makefile for French--Catalan
 ###############################################################################
 
-#VERSION=v1.5.0
 LANG1=fra
 LANG2=cat
 PREFIX1=$(LANG1)-$(LANG2)
@@ -75,7 +74,7 @@ $(PREFIX1).autogen.bin: $(AP_SRC2)/$(LANG2).autogen.bin
 	cp $< $@
 
 ###############################################################################
-## Multiwords 
+## Multiwords
 ###############################################################################
 
 $(PREFIX1).autosep.bin: $(BASENAME).$(PREFIX1).l1x
@@ -120,12 +119,10 @@ $(PREFIX2).autobil.bin: $(BASENAME).$(PREFIX1).dix
 ###############################################################################
 
 .deps/%.metalrx: %.metalrx .deps/.d
-	python3 metalrx.py $< $@
+	apertium-metalrx $< $@
 
-.deps/%.lrx: metalrx-to-lrx.xslt .deps/%.metalrx
-	xsltproc $^ > $@.tmp
-	@xmllint --format $@.tmp > $@
-	@rm $@.tmp
+.deps/%.lrx: .deps/%.metalrx
+	apertium-metalrx-to-lrx $< $@
 
 $(PREFIX1).autolex.bin: .deps/$(BASENAME).$(PREFIX1).lrx
 	lrx-comp $< $@
@@ -201,7 +198,7 @@ EXTRA_DIST=					\
 #		$(BASENAME).$(PREFIX1).t2x	\
 #		$(BASENAME).$(PREFIX1).t3x	\
 #		$(BASENAME).$(PREFIX2).t2x	\
-#		$(BASENAME).$(PREFIX2).t3x	
+#		$(BASENAME).$(PREFIX2).t3x
 
 ###############################################################################
 ## Installation
@@ -215,12 +212,12 @@ apertium_fra_cat_DATA=	\
 	$(BASENAME).$(PREFIX1).t1x			\
 	$(BASENAME).$(PREFIX2).t1x			\
 	$(BASENAME).$(PREFIX1).t4x			\
-	$(BASENAME).$(PREFIX2).t4x			
+	$(BASENAME).$(PREFIX2).t4x
 
 #	$(BASENAME).$(PREFIX2).t2x			\
 #	$(BASENAME).$(PREFIX2).t3x
 #	$(BASENAME).$(PREFIX1).t2x			\
-#	$(BASENAME).$(PREFIX1).t3x			
+#	$(BASENAME).$(PREFIX1).t3x
 
 # All modes are created by the same goal, listing several will just give problems with make -j2
 noinst_DATA=modes/$(PREFIX1).mode
@@ -247,4 +244,3 @@ test: all
 	@echo "La tante" > .test-ref
 	@diff .test-ref .test-mt
 	@rm .test-ref .test-mt
-
