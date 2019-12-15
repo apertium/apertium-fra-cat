@@ -479,6 +479,25 @@
     <or><match tags="vblex.inf"/><match tags="vbser.inf"/><match tags="vbhaver.inf"/><match tags="vbmod.inf"/></or>
   </rule>
   <rule weight="1.0">
+    <match lemma="pour" tags="pr"><select lemma="per"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="le" tags="det.def.mf.pl"/>
+    <or>
+      <match lemma="raison" tags="n.*"/>
+      <match lemma="motif" tags="n.*"/>
+      <match lemma="cause" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pour" tags="pr"><select lemma="per"/></match>
+    <match lemma="le" tags="det.def.*"/>
+    <or>
+      <match lemma="raison" tags="n.*"/>
+      <match lemma="motif" tags="n.*"/>
+      <match lemma="cause" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
     <match lemma="avoir" tags="*.ger"/>
     <repeat from="0" upto="1">
       <match tags="adv"/>
