@@ -8,6 +8,11 @@ cat f_bi.dix.txt | grep '"np"' | grep -v '"cog"' | grep -v '"top"' | grep -v '"s
 FRA > CAT
 
 *tomber# amoureux  > enamorar-se (també adv entre verb i amoureux)
+$ echo "il tombe amoureux" | apertium -d . fra-cat
+s'enamora
+$ echo "il est tombé amoureux" | apertium -d . fra-cat
+ha enamorat
+
 *bouger > moure's
 +couler > (intr) enfonsar-se; fluir | tr. enfonsar
 *bénéficier# de > beneficiar-se# de (també adv entre verb i de)
@@ -47,8 +52,8 @@ echo ", va implicar-se" | apertium -d . cat-fra
 
 par d'autres cultures > per altres cultures
 
-nous l'espérons > l'esperem
-nous nous l'espérons > ens l'esperem
+nous l'espérons > l'esperem (millor: ho esperem)
+nous nous l'espérons > ens l'esperem (millor: ens ho esperem)
 
 Je me lève à dix heures du matin. -> Em llevo a les deu del matí
 
@@ -60,11 +65,9 @@ Je me lève à dix heures du matin. -> Em llevo a les deu del matí
 ---
 > 000061. Final del concurs : aquest són dos *doublettes de la *Boroillotte de *Valentigney que s'han afrontat per a la final.
 
-< 000145. Els nens eren molt feliços de conèixer-ne breument el seu història i sobretot que ho-va dir *scalp era un costum ben francès provenint *trappeurs del Gran Nor
-d.
+< 000145. Els nens eren molt feliços de conèixer-ne breument el seu història i sobretot que ho-va dir *scalp era un costum ben francès provenint *trappeurs del Gran Nord.
 ---
-> 000145. Els nens eren molt feliços de conèixer-ne breument el seu història i sobretot que ho-va dir *scalp era un costum ben francès provenint *trappeurs del Grand No
-rd.
+> 000145. Els nens eren molt feliços de conèixer-ne breument el seu història i sobretot que ho-va dir *scalp era un costum ben francès provenint *trappeurs del Grand Nord.
 
 < 000400. L'És Republicà : *Clovis *Mathieu, tel.
 ---
@@ -84,11 +87,9 @@ rd.
 ---
 > 000502. Un romanç del qual l'acció se situa sota l'Ocupació, l'any 1944. L'ocasió d'abordar el Nou Roman a la literatura moderna.
 
-< 001042. *Intelligemment, això nou recorregut assenyala el conjunt de les realitzacions ( de les cases d'arquitectes als immobles col·lectius ) que han estat construïd
-es en boscos i s'inscriuen al paisatge.
+< 001042. *Intelligemment, això nou recorregut assenyala el conjunt de les realitzacions ( de les cases d'arquitectes als immobles col·lectius ) que han estat construïdes en boscos i s'inscriuen al paisatge.
 ---
-> 001042. *Intelligemment, aquest nou recorregut assenyala el conjunt de les realitzacions ( de les cases d'arquitectes als immobles col·lectius ) que han estat constru
-ïdes en boscos i s'inscriuen al paisatge.
+> 001042. *Intelligemment, aquest nou recorregut assenyala el conjunt de les realitzacions ( de les cases d'arquitectes als immobles col·lectius ) que han estat construïdes en boscos i s'inscriuen al paisatge.
 
 < 001106. Una vegada a l'avió, el públic havia guiat per l'hostessa de l'aire Virginie que feia descobrir els països *survolés amb de vegades certes *escales.
 ---
@@ -98,13 +99,9 @@ es en boscos i s'inscriuen al paisatge.
 ---
 > 001112. Per a aquest fer, han apel·lat a *Mafik *Arbaoui, *conteur, de la Botiga del conte a *Besançon.
 
-< 001368. Cap cap d'Estat o de govern, pas mateix el Primer ministre Tony Blair retingut a la cimera de les nacions més industrialitzades a *Cologne, no presenciava la 
-benedicció *nuptiale en el transcurs de la qual Sophie *Rhys-Jones, una publicitària de 34 anys, *roturière i filla d'un venedor de *pneus oferint una *ressemblance sor
-prenent amb la difunta *Diana, ha jurat de *chérir *Edward, d'un any el seu *aîné.
+< 001368. Cap cap d'Estat o de govern, pas mateix el Primer ministre Tony Blair retingut a la cimera de les nacions més industrialitzades a *Cologne, no presenciava la benedicció *nuptiale en el transcurs de la qual Sophie *Rhys-Jones, una publicitària de 34 anys, *roturière i filla d'un venedor de *pneus oferint una *ressemblance sorprenent amb la difunta *Diana, ha jurat de *chérir *Edward, d'un any el seu *aîné.
 ---
-> 001368. Cap cap d'Estat o de govern, pas mateix el Primer ministre Tony Blair retingut a la cimera de les nacions més industrialitzades a *Cologne, no presenciava la 
-benedicció *nuptiale en el transcurs de la qual Sophie Rhys-Jones, una publicitària de 34 anys, *roturière i filla d'un venedor de *pneus oferint una *ressemblance sorp
-renent amb la difunta *Diana, ha jurat de *chérir Edward, d'un any el seu *aîné.
+> 001368. Cap cap d'Estat o de govern, pas mateix el Primer ministre Tony Blair retingut a la cimera de les nacions més industrialitzades a *Cologne, no presenciava la benedicció *nuptiale en el transcurs de la qual Sophie Rhys-Jones, una publicitària de 34 anys, *roturière i filla d'un venedor de *pneus oferint una *ressemblance sorprenent amb la difunta *Diana, ha jurat de *chérir Edward, d'un any el seu *aîné.
 
 < 000808. HI HAURÀ UN « *REVIRO » DE LA *FETE *FORAINE
 ---
@@ -184,7 +181,6 @@ cap de > aucun/e
 ---
 > 01171. Les trois astronautes du *Apollo 11 ont été *honorats avec un défilé à la ville de New York peu d'après son retour
 
-> 02487. À cause de ça, quelques études de la *NASA posent ramasser moyennant des champs magnétiques le *antimatèria que se génère de façon naturelle dans les *cinturon
-s de Vont Allen de la Terre, ou même dans les *cinturons des grandes planètes *gasosos comment Jupiter (planète) Jupiter
+> 02487. À cause de ça, quelques études de la *NASA posent ramasser moyennant des champs magnétiques le *antimatèria que se génère de façon naturelle dans les *cinturons de Vont Allen de la Terre, ou même dans les *cinturons des grandes planètes *gasosos comment Jupiter (planète) Jupiter
 
 al cap de > après
