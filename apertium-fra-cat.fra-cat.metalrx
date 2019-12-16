@@ -2002,6 +2002,11 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- maladroit >> maldestre, etc. -->
+  <rule weight="0.8">
+    <match lemma="maladroit" tags="adj.*"><select lemma="maldestre"/></match>
+  </rule>
+
   <!-- saint >> sant, sagrat -->
   <rule weight="0.8">
     <match lemma="saint" tags="adj.*"><select lemma="sant"/></match>
