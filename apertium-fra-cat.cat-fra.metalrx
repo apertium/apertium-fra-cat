@@ -450,6 +450,23 @@
        <match lemma="fusta" tags="n.*"/>
     </def-seq>
 
+    <def-seq n="instruments_musicals">
+       <match lemma="piano" tags="n.*"/>
+       <match lemma="violí" tags="n.*"/>
+       <match lemma="viola" tags="n.*"/>
+       <match lemma="violoncel" tags="n.*"/>
+       <match lemma="contrabaix" tags="n.*"/>
+       <match lemma="flauta" tags="n.*"/>
+       <match lemma="oboè" tags="n.*"/>
+       <match lemma="clarinet" tags="n.*"/>
+       <match lemma="trompeta" tags="n.*"/>
+       <match lemma="saxo" tags="n.*"/>
+       <match lemma="saxofon" tags="n.*"/>
+       <match lemma="òrgan" tags="n.*"/>
+
+       <match lemma="música" tags="n.*"/>
+    </def-seq>
+
     <def-seq n="verbs_moviment">
       <match lemma="anar" tags="vblex.*"/>
       <match lemma="traslladar" tags="vblex.*"/>
@@ -968,8 +985,26 @@
   </rule>
   <rule weight="1.0">
     <match lemma="congelar" tags="vblex.*"><select lemma="geler"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv.*"/>
+    </repeat>
     <match tags="det.*"/>
     <match lemma="negociació" tags="n.*"/>
+  </rule>
+
+  <!-- tocar >> toucher, jouer# de -->
+  <rule weight="0.8">
+    <match lemma="tocar" tags="vblex.*"><select lemma="toucher"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tocar" tags="vblex.*"><select lemma="jouer# de"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv.*"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <seq n="instruments_musicals"/>
+    </or>
   </rule>
 
   <!-- embogir, enfollir >> devenir fou, folle, foux, folles -->
