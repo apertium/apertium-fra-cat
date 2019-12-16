@@ -82,7 +82,7 @@
       <program name="lt-proc -w">
         <file name="fra-cat.automorf.bin"/>
       </program>
-      <program name="cg-conv -a"/>
+      <program name="cg-conv -a -l"/>
       <program name="vislcg3 --trace --grammar">
         <file name="fra-cat.rlx.bin"/>
       </program>
@@ -261,7 +261,7 @@
       <program name="lt-proc -w">
         <file name="cat-fra.automorf.bin"/>
       </program>
-      <program name="cg-conv -a"/>
+      <program name="cg-conv -a -l"/>
       <program name="vislcg3 --trace --grammar">
         <file name="cat-fra.rlx.bin"/>
       </program>
