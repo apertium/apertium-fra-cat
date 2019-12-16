@@ -125,6 +125,9 @@
     <def-cat n="moi">
       <cat-item lemma="moi" tags="prn.tn.p1.mf.sg"/>
     </def-cat>
+    <def-cat n="unpron">
+      <cat-item lemma="un" tags="prn.*"/>
+    </def-cat>
     <def-cat n="prn">
       <cat-item tags="prn.tn.*"/>
       <cat-item tags="prn.itg.*"/>
@@ -3684,6 +3687,37 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
       </action>
     </rule>
+
+    <rule comment="REGLA: l'un de > un de">
+      <pattern>
+        <pattern-item n="le"/>
+        <pattern-item n="unpron"/>
+        <pattern-item n="deprep"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
 
     <rule comment="REGLA: DETERMINANT NOM">
       <pattern>
