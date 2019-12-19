@@ -811,7 +811,7 @@
     </or>
   </rule>
 
-  <!-- a >> à, en, dans -->
+  <!-- a >> à, en, dans, de -->
   <rule weight="0.8">
     <match lemma="a" tags="pr"><select lemma="à"/></match>
   </rule>
@@ -853,6 +853,16 @@
       <match lemma="Mediterrani" tags="np.*"/>
       <match lemma="Mediterrània" tags="np.*"/>
     </or>
+  </rule>
+  <rule weight="1.0">
+
+    <match lemma="estar" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="obligar" tags="vblex.pp.*"/>
+    <match lemma="a" tags="pr"><select lemma="de"/></match>
+    <match tags="*.inf"/>
   </rule>
 
   <!-- en >> en, dans, à -->

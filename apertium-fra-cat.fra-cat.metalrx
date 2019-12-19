@@ -431,6 +431,18 @@
     <match lemma="dans" tags="pr"><select lemma="en"/></match>
   </rule>
 
+  <!-- de >> de, a -->
+  <rule weight="0.8">
+    <match lemma="de" tags="pr"><select lemma="de"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="obliger" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="de" tags="pr"><select lemma="a"/></match>
+  </rule>
+
   <!-- à >> a, en -->
   <rule weight="0.8">
     <match lemma="à" tags="pr"><select lemma="a"/></match>
