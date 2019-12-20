@@ -653,6 +653,21 @@
 
 <!-- **************** V **************** -->
 
+  <!-- comprendre >> comprendre, beneficiar-se -->
+  <rule weight="0.8">
+    <match lemma="comprendre" tags="vblex.*"><select lemma="comprendre" tags="vblex.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="faire" tags="pr"/>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="prn.enc.*"/>
+        <match tags="adv"/>
+      </or>
+    </repeat>
+    <match lemma="comprendre" tags="vblex.*"><select lemma="entendre" tags="vblex.*"/></match>
+  </rule>
+
   <!-- bénéficier >> beneficiar, beneficiar-se -->
   <rule weight="0.8">
     <match lemma="bénéficier" tags="vblex.*"><select lemma="beneficiar" tags="vblex.*"/></match>
@@ -663,6 +678,11 @@
       <match tags="adv"/>
     </repeat>
     <match lemma="de" tags="pr"/>
+  </rule>
+
+  <!-- lever >> aixecar, llevar, alçar -->
+  <rule weight="0.8">
+    <match lemma="lever" tags="vblex.*"><select lemma="aixecar" tags="vblex.*"/></match>
   </rule>
 
   <!-- causer >> causar, xerrar, xarrar, parlar -->
@@ -1654,7 +1674,12 @@
     <or>
       <match lemma="justice" tags="n.*"/>
       <match lemma="cassation" tags="n.*"/>
+      <match lemma="appel" tags="n.*"/>
     </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cour" tags="n.*"><select lemma="tribunal"/></match>
+    <match lemma="suprême" tags="adj"/>
   </rule>
   <rule weight="1.0">
     <match lemma="cour" tags="n.*"><select lemma="pati"/></match>

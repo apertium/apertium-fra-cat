@@ -1911,6 +1911,15 @@
 
 <!-- N -->
 
+  <!-- tribunal >> tribunal, cour -->
+  <rule weight="0.8">
+    <match lemma="tribunal" tags="n.*"><select lemma="tribunal"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tribunal" tags="n.*"><select lemma="cour"/></match>
+    <match lemma="suprem" tags="adj"/>
+  </rule>
+
   <!-- partit >> parti, match -->
   <rule weight="0.8">
     <match lemma="partit" tags="n.*"><select lemma="parti"/></match>
