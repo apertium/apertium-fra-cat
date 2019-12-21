@@ -1031,6 +1031,11 @@
 
 <!-- **************** N **************** -->
 
+  <!-- épingle >> agulla# de cap, agulla -->
+  <rule weight="0.8">
+    <match lemma="épingle" tags="n.*"><select lemma="agulla# de cap"/></match>
+  </rule>
+
   <!-- poule >> gallina, grup -->
   <rule weight="0.8">
     <match lemma="poule" tags="n.*"><select lemma="gallina"/></match>

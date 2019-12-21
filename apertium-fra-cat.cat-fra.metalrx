@@ -834,6 +834,23 @@
       <match lemma="platja" tags="n.*"/>
       <match lemma="Mediterrani" tags="np.*"/>
       <match lemma="Mediterrània" tags="np.*"/>
+      <match lemma="Adriàtic" tags="np.*"/>
+      <match lemma="Egeu" tags="np.*"/>
+      <match lemma="Tirrè" tags="np.*"/>
+      <match lemma="Cantàbric" tags="np.*"/>
+      <match lemma="mar Mediterrani" tags="np.*"/>
+      <match lemma="mar Blanc" tags="np.*"/>
+      <match lemma="mar Negre" tags="np.*"/>
+      <match lemma="mar Roig" tags="np.*"/>
+      <match lemma="mar Bàltic" tags="np.*"/>
+      <match lemma="mar Mort" tags="np.*"/>
+      <match lemma="mar Egeu" tags="np.*"/>
+      <match lemma="mar Egea" tags="np.*"/>
+      <match lemma="mar Adriàtic" tags="np.*"/>
+      <match lemma="mar Adriàtica" tags="np.*"/>
+      <match lemma="mar Tirrè" tags="np.*"/>
+      <match lemma="mar Tirrena" tags="np.*"/>
+      <match lemma="mar Cantàbric" tags="np.*"/>
     </or>
   </rule>
   <rule weight="1.2">
@@ -1910,6 +1927,11 @@
   </rule>
 
 <!-- N -->
+
+  <!-- agulla >> aiguille, épingle -->
+  <rule weight="0.8">
+    <match lemma="agulla" tags="n.*"><select lemma="aiguille"/></match>
+  </rule>
 
   <!-- tribunal >> tribunal, cour -->
   <rule weight="0.8">
