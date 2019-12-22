@@ -134,6 +134,9 @@
       <cat-item tags="prn.pro.*"/>
       <cat-item tags="prn.enc.*"/>
     </def-cat>
+    <def-cat n="prnitg">
+      <cat-item tags="prn.itg.*"/>
+    </def-cat>
     <def-cat n="prnenc">
       <cat-item tags="prn.enc.*"/>
     </def-cat>
@@ -289,6 +292,9 @@
       <cat-item lemma="que" tags="cnjsub"/>
       <cat-item lemma="que" tags="rel.mf.sp"/>
       <cat-item lemma="que" tags="prn.itg.mf.sg"/>
+    </def-cat>
+    <def-cat n="est-ce_que">
+      <cat-item lemma="est-ce que" tags="prn.itg.mf.sg"/>
     </def-cat>
     <def-cat n="pascomp"> <!-- passé composé -->
       <cat-item tags="vbhaver.pri.*"/>
@@ -3613,6 +3619,13 @@
       </action>
   </rule>
 
+    <rule comment="REGLA: est-ce que > 0">
+      <pattern>
+        <pattern-item n="est-ce_que"/>
+      </pattern>
+      <action>
+      </action>
+    </rule>
 
     <rule comment="REGLA: PRONOM">
 <!--Special case, macro f_concord1
@@ -12797,6 +12810,49 @@ is not applicable because gender and number cannot be taken from previous rules 
             <lit-tag v="n.m.sp"/>
           </lu>
         </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: itg est-ce que > itg">
+      <pattern>
+        <pattern-item n="prnitg"/>
+        <pattern-item n="est-ce_que"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="1" side="tl" part="gen"/>
+                <lit-tag v="GD"/>
+              </equal>
+            </test>
+            <let>
+              <clip pos="1" side="tl" part="gen"/>
+              <lit-tag v="m"/>
+            </let>
+          </when>
+        </choose>
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="1" side="tl" part="nbr"/>
+                <lit-tag v="ND"/>
+              </equal>
+            </test>
+            <let>
+              <clip pos="1" side="tl" part="nbr"/>
+              <lit-tag v="sg"/>
+            </let>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
       </action>
     </rule>
 
