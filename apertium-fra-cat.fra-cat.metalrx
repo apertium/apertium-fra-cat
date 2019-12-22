@@ -2049,6 +2049,18 @@
     <match lemma="maladroit" tags="adj.*"><select lemma="maldestre"/></match>
   </rule>
 
+  <!-- parlant >> parlant, sonor -->
+  <rule weight="0.8">
+    <match lemma="parlant" tags="adj.*"><select lemma="parlant"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="cinéma" tags="n.*"/>
+      <match lemma="film" tags="n.*"/>
+    </or>
+    <match lemma="parlant" tags="adj.*"><select lemma="sonor"/></match>
+  </rule>
+
   <!-- saint >> sant, sagrat -->
   <rule weight="0.8">
     <match lemma="saint" tags="adj.*"><select lemma="sant"/></match>

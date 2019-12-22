@@ -1798,6 +1798,20 @@
 
 <!-- ADJ -->
 
+  <!-- sonor >> sonore, parlant -->
+  <rule weight="0.8">
+    <match lemma="sonor" tags="adj.*"><select lemma="sonore"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="cinema" tags="n.*"/>
+      <match lemma="cine" tags="n.*"/>
+      <match lemma="pel·lícula" tags="n.*"/>
+      <match lemma="film" tags="n.*"/>
+    </or>
+    <match lemma="sonor" tags="adj.*"><select lemma="parlant"/></match>
+  </rule>
+
   <!-- sagrat >> sacré, saint -->
   <rule weight="0.8">
     <match lemma="sagrat" tags="adj.*"><select lemma="sacré"/></match>
