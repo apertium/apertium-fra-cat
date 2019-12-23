@@ -1,21 +1,95 @@
-French and Catalan
-===================================================================
-
-You need apertium and lttoolbox, versions 3.0, to use
-this language-pair package with Apertium.  To compile the linguistic
-data simply do:
-
-$ ./configure
-
-to generate a Makefile file and then
-
-$ make
-
-inside of this directory.
-
-===================================================================
-
-More information about this module, and others can be found on 
-the Apertium: Wiki, http://wiki.apertium.org
+# French and Catalan: `apertium-fra-cat`
 
 
+This is an Apertium language pair for translating between French and Catalan. What you can use this language package for:
+
+Translating between French and Catalan
+Morphological analysis of French and Catalan
+Part-of-speech tagging of French and Catalan
+For information on the latter two points, see subheading "For more information" below.
+
+## Requirements
+
+
+You will need the following software installed:
+
+* lttoolbox (>= 3.3.0)
+* apertium (>= 3.3.0)
+* vislcg3 (>= 0.9.9.10297)
+* apertium-fra
+* apertium-cat
+
+If this does not make any sense, we recommend you look at: www.apertium.org.
+
+## Compiling
+
+
+Given the requirements being installed, you should be able to just run:
+
+    $ ./configure
+    $ make
+    # make install
+
+You can use `./autogen.sh` instead of `./configure` you're compiling from
+source. If you installed any prerequisite language packages using a `--prefix`
+to `./configure`, make sure to give the same `--prefix` to `./configure` here.
+
+
+## Testing
+
+If you are in the source directory after running make, the following
+commands should work:
+
+    $  echo "Écrire" | apertium -d . fra-cat
+    Escriptura
+
+    $  echo "Escriptura" | apertium -d . cat-fra
+    Écrire
+
+After installing somewhere in `$PATH`, you should be able to do e.g.
+
+    $  echo "Nécessaire" | apertium fra-cat
+    Necessari
+
+
+## Files and data
+
+* `apertium-fra-cat.fra-cat.dix`  - Bilingual dictionary
+* `apertium-fra-cat.fra-cat.t1x`  - Chunking rules for translating into Catalan
+* `apertium-fra-cat.cat-fra.t1x`  - Chunking rules for translating into French
+* `apertium-fra-cat.fra-cat.t2x`  - Interchunk rules for translating into Catalan
+* `apertium-fra-cat.cat-fra.t2x`  - Interchunk rules for translating into French
+* `apertium-fra-cat.fra-cat.t3x`  - Postchunk rules for translating into Catalan
+* `apertium-fra-cat.cat-fra.t3x`  - Postchunk rules for translating into French
+* `apertium-fra-cat.fra-cat.lrx`  - Lexical selection rules for translating into Catalan
+* `apertium-fra-cat.cat-fra.lrx`  - Lexical selection rules for translating into French
+* `modes.xml`                     - Translation modes
+
+## For more information
+
+
+* http://wiki.apertium.org/wiki/Installation
+* http://wiki.apertium.org/wiki/apertium-fra-cat
+* http://wiki.apertium.org/wiki/Using_an_lttoolbox_dictionary
+
+## Help and support
+
+
+If you need help using this language pair or data, you can contact:
+
+* Mailing list: apertium-stuff@lists.sourceforge.net
+* IRC: `#apertium` on `irc.freenode.net`
+
+See also the file AUTHORS included in this distribution.
+
+## Errors
+
+
+Sometimes when translating, you will notice that a particular word gets translated
+with a hash sign in front of it.
+This is because of the current lack of transfer rules, which will be fixed in
+an upcoming update.
+You did not do anything wrong; it was all me.
+
+Additionally, if a word is (not) translated with an asterisk in front of it,
+it means that that word is currently not supported and will be added soon.
