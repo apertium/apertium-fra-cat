@@ -2613,7 +2613,6 @@
   <rule weight="0.8">
     <match lemma="any" tags="n.*"><select lemma="année"/></match>
   </rule>
-<!--
   <rule weight="1.0">
     <or><match tags="num"/><match tags="num.*"/></or>
     <match lemma="any" tags="n.*"><select lemma="an"/></match>
@@ -2637,7 +2636,6 @@
     <match tags="det.dem.*"/>
     <match lemma="any" tags="n.*"><select lemma="année"/></match>
   </rule>
--->
 
   <!-- cort >> cour, parlement -->
   <rule weight="0.8">
