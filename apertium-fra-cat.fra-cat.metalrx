@@ -706,6 +706,20 @@
     </or>
   </rule>
 
+  <!-- débarrasser >> desembarassar, desfer -->
+  <macro name="verb_nopron_pron" p1="débarrasser" p2="desembarassar" p3="desfer" />
+  <rule weight="1.2">
+    <match lemma="débarrasser" tags="vblex.*"><select lemma="desparar" tags="vblex.*"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="le" tags="det.*"/>
+    <match lemma="table" tags="n.*"/>
+  </rule>
+
+  <!-- tromper >> enganyar, equivocar -->
+  <macro name="verb_nopron_pron" p1="tromper" p2="enganyar" p3="equivocar" />
+
   <!-- battre >> derrotar, batre, bategar, barallar -->
   <macro name="verb_nopron_pron" p1="battre" p2="derrotar" p3="barallar" />
   <rule weight="1.2">
@@ -1036,6 +1050,26 @@
     <match lemma="épingle" tags="n.*"><select lemma="agulla# de cap"/></match>
   </rule>
 
+  <!-- retraite >> jubilació, retirada -->
+  <rule weight="0.8">
+    <match lemma="retraite" tags="n.*"><select lemma="jubilació"/></match>
+  </rule>
+
+  <!-- arrêt >> parada, sentència -->
+  <rule weight="0.8">
+    <match lemma="arrêt" tags="n.*"><select lemma="parada"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="arrêt" tags="n.*"><select lemma="sentència"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="juge" tags="n.*"/>
+      <match lemma="cour" tags="n.*"/>
+      <match lemma="tribunal" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- poule >> gallina, grup -->
   <rule weight="0.8">
     <match lemma="poule" tags="n.*"><select lemma="gallina"/></match>
@@ -1170,6 +1204,12 @@
       <match lemma="saint" tags="adj.*"/>
       <match tags="np.top.*"/>
     </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="à" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="ordre" tags="n.m.pl"><select lemma="ordre" tags="n.f.*"/></match>
+    <match lemma="de" tags="pr"/>
   </rule>
   <rule weight="1.0">
     <match lemma="ordre" tags="n.*"><select lemma="orde"/></match>
@@ -2106,7 +2146,12 @@
     <match tags="n.*"/>
   </rule>
   <rule weight="1.0">
-    <match lemma="nom" tags="n.*"/>
+    <or>
+      <match lemma="nom" tags="n.*"/>
+      <match lemma="opinion" tags="n.*"/>
+      <match lemma="idée" tags="n.*"/>
+      <match lemma="statut" tags="n.*"/>
+    </or>
     <match lemma="propre" tags="adj.*"><select lemma="propi"/></match>
   </rule>
 

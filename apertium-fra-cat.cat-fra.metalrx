@@ -1019,6 +1019,20 @@
     <match lemma="negociació" tags="n.*"/>
   </rule>
 
+  <!-- jubilar >> mettre# à la retraite, prendre# sa retraite -->
+  <macro name="verb_nopron_pron" p1="jubilar" p2="mettre# à la retraite" p3="prendre# sa retraite" />
+
+  <!-- desfer >> défaire, fondre, débarrasser -->
+  <macro name="verb_nopron_pron" p1="desfer" p2="défaire" p3="fondre" />
+  <rule weight="1.2">
+    <match lemma="desfer" tags="vblex.*"><select lemma="débarrasser"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv.*"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+  </rule>
+
+
   <!-- tocar >> toucher, jouer# de -->
   <rule weight="0.8">
     <match lemma="tocar" tags="vblex.*"><select lemma="toucher"/></match>
@@ -2593,6 +2607,11 @@
   </rule>
   <rule weight="1.0">
     <match lemma="pare" tags="n.m.pl"><select lemma="parent"/></match>
+  </rule>
+
+  <!-- bastidor pl >> coulisse, châssis -->
+  <rule weight="0.8">
+    <match lemma="bastidor" tags="n.m.pl"><select lemma="coulisse"/></match>
   </rule>
 
   <!-- poll >> peuplier, poussin, pou -->
