@@ -1045,6 +1045,24 @@
 
 <!-- **************** N **************** -->
 
+  <!-- banque >> banc, banca -->
+  <rule weight="0.8">
+    <match lemma="banque" tags="n.*"><select lemma="banc"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.*"/>
+    <match lemma="banque" tags="n.*"><select lemma="banca"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="banque" tags="n.*"><select lemma="banc"/></match>
+    <match lemma="central" tags="adj.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="banque" tags="n.*"><select lemma="banc"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="np.top.*"/>
+  </rule>
+
   <!-- épingle >> agulla# de cap, agulla -->
   <rule weight="0.8">
     <match lemma="épingle" tags="n.*"><select lemma="agulla# de cap"/></match>

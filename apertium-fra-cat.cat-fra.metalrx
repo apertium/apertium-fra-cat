@@ -1019,6 +1019,9 @@
     <match lemma="negociació" tags="n.*"/>
   </rule>
 
+  <!-- convertir >> convertir, devenir -->
+  <macro name="verb_nopron_pron" p1="convertir" p2="convertir" p3="devenir" />
+
   <!-- jubilar >> mettre# à la retraite, prendre# sa retraite -->
   <macro name="verb_nopron_pron" p1="jubilar" p2="mettre# à la retraite" p3="prendre# sa retraite" />
 
@@ -1955,6 +1958,29 @@
   </rule>
 
 <!-- N -->
+
+  <!-- fuga >> fuite, fugue -->
+  <rule weight="0.8">
+    <match lemma="fuga" tags="n.*"><select lemma="fuite"/></match>
+  </rule>
+
+  <!-- banc >> banc, banque -->
+  <rule weight="0.8">
+    <match lemma="banc" tags="n.*"><select lemma="banc"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="banc" tags="n.*"><select lemma="banque"/></match>
+    <match lemma="central" tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="banc" tags="n.*"><select lemma="banque"/></match>
+    <match tags="np.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="banc" tags="n.*"><select lemma="banque"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="np.top.*"/>
+  </rule>
 
   <!-- agulla >> aiguille, épingle -->
   <rule weight="0.8">
