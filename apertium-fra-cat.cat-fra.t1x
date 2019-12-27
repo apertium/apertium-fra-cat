@@ -6039,6 +6039,147 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
+    <rule comment="REGLA: no anar inf enc: no van comprar-me > ne m'ont pas acheté">
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="anar"/>
+        <pattern-item n="inf"/>
+        <pattern-item n="prnenc"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test>
+              <equal caseless="yes">
+                <clip pos="4" side="tl" part="lem"/>
+                <lit v="on"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <clip pos="4" side="tl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.pro"/>
+                <clip pos="4" side="tl" part="tipoenc_pro"/>
+              </lu>
+              <b/>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="1" side="tl" part="lemh"/>
+                </get-case-from>
+                <clip pos="1" side="tl" part="tags"/>
+                <clip pos="1" side="tl" part="lemq"/>
+              </lu>
+              <b pos="1"/>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <get-case-from pos="1">
+                  <clip pos="4" side="tl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.pro"/>
+                <clip pos="4" side="tl" part="tipoenc_pro"/>
+              </lu>
+              <b/>
+            </out>
+        </otherwise>
+      </choose>
+      <choose>
+          <when>
+            <test>
+              <or>
+                <and>
+                  <not><equal caseless="yes"><clip pos="4" side="tl" part="lem"/><lit v="on"/></equal></not>
+                  <not><equal><clip pos="2" side="sl" part="persona"/><lit-tag v="p3"/></equal></not>
+                  <equal><clip pos="4" side="sl" part="persona"/><clip pos="2" side="sl" part="persona"/></equal>
+                  <or>
+                    <equal><clip pos="4" side="sl" part="nbr"/><clip pos="2" side="sl" part="nbr"/></equal>
+                    <equal><clip pos="4" side="sl" part="nbr"/><lit-tag v="sp"/></equal>
+                  </or>
+                </and>
+                <and>
+                  <not><equal caseless="yes"><clip pos="4" side="tl" part="lem"/><lit v="on"/></equal></not>
+                  <equal><clip pos="2" side="sl" part="persona"/><lit-tag v="p3"/></equal>
+                  <equal caseless="yes"><clip pos="4" side="sl" part="lem"/><lit v="es"/></equal>
+                </and>
+                <in caseless="yes"><clip pos="3" side="tl" part="lemh"/><list n="vbambser"/></in>
+              </or>
+            </test>
+            <choose>
+              <when>
+                <test>
+                    <or>
+                      <equal><var n="genero"/><lit-tag v="m"/></equal>
+                      <equal><var n="genero"/><lit-tag v="f"/></equal>
+                    </or>
+                </test>
+                <let><var n="genero_tmp"/><var n="genero"/></let>
+              </when>
+              <otherwise>
+                <let><var n="genero_tmp"/><lit-tag v="m"/></let>
+              </otherwise>
+            </choose>
+       <out>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="être"/>
+            </get-case-from>
+            <lit-tag v="vbser"/>
+            <lit-tag v="pri"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <lit-tag v="pp.m"/>
+            <clip pos="2" side="tl" part="nbr"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+       </when>
+       <otherwise>
+        <out>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="avoir"/>
+            </get-case-from>
+            <lit-tag v="vbhaver"/>
+            <lit-tag v="pri"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <lit-tag v="pp.m.sg"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </otherwise>
+    </choose>        
+      </action>
+  </rule>
+
     <rule comment="REGLA: GERUNDI">
       <pattern>
         <pattern-item n="ger"/>
@@ -7650,6 +7791,7 @@ is not applicable because gender and number can not be taken from previous rules
             <test>
               <or>
                 <and>
+                  <not><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="on"/></equal></not>
                   <not><equal><clip pos="2" side="sl" part="persona"/><lit-tag v="p3"/></equal></not>
                   <equal><clip pos="1" side="sl" part="persona"/><clip pos="2" side="sl" part="persona"/></equal>
                   <or>
@@ -7658,6 +7800,7 @@ is not applicable because gender and number can not be taken from previous rules
                   </or>
                 </and>
                 <and>
+                  <not><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="on"/></equal></not>
                   <equal><clip pos="2" side="sl" part="persona"/><lit-tag v="p3"/></equal>
                   <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal>
                 </and>
@@ -7724,6 +7867,7 @@ is not applicable because gender and number can not be taken from previous rules
             <test>
               <or>
                 <and>
+                  <not><equal caseless="yes"><clip pos="2" side="tl" part="lem"/><lit v="on"/></equal></not>
                   <not><equal><clip pos="3" side="sl" part="persona"/><lit-tag v="p3"/></equal></not>
                   <equal><clip pos="2" side="sl" part="persona"/><clip pos="3" side="sl" part="persona"/></equal>
                   <or>
@@ -7732,6 +7876,7 @@ is not applicable because gender and number can not be taken from previous rules
                   </or>
                 </and>
                 <and>
+                  <not><equal caseless="yes"><clip pos="2" side="tl" part="lem"/><lit v="on"/></equal></not>
                   <equal><clip pos="3" side="sl" part="persona"/><lit-tag v="p3"/></equal>
                   <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="es"/></equal>
                 </and>
@@ -7796,6 +7941,7 @@ is not applicable because gender and number can not be taken from previous rules
             <test>
               <or>
                 <and>
+                  <not><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="on"/></equal></not>
                   <not><equal><clip pos="2" side="sl" part="persona"/><lit-tag v="p3"/></equal></not>
                   <equal><clip pos="1" side="sl" part="persona"/><clip pos="2" side="sl" part="persona"/></equal>
                   <or>
@@ -7804,6 +7950,7 @@ is not applicable because gender and number can not be taken from previous rules
                   </or>
                 </and>
                 <and>
+                  <not><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="on"/></equal></not>
                   <equal><clip pos="2" side="sl" part="persona"/><lit-tag v="p3"/></equal>
                   <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal>
                 </and>
@@ -7906,6 +8053,7 @@ is not applicable because gender and number can not be taken from previous rules
             <test>
               <or>
                 <and>
+                  <not><equal caseless="yes"><clip pos="2" side="tl" part="lem"/><lit v="on"/></equal></not>
                   <not><equal><clip pos="3" side="sl" part="persona"/><lit-tag v="p3"/></equal></not>
                   <equal><clip pos="2" side="sl" part="persona"/><clip pos="3" side="sl" part="persona"/></equal>
                   <or>
@@ -7914,6 +8062,7 @@ is not applicable because gender and number can not be taken from previous rules
                   </or>
                 </and>
                 <and>
+                  <not><equal caseless="yes"><clip pos="2" side="tl" part="lem"/><lit v="on"/></equal></not>
                   <equal><clip pos="3" side="sl" part="persona"/><lit-tag v="p3"/></equal>
                   <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="es"/></equal>
                 </and>
@@ -8431,72 +8580,294 @@ is not applicable because gender and number can not be taken from previous rules
             <clip pos="1" side="tl" part="whole"/>
           </lu>
           <b pos="1"/>
-          <lu>
-            <clip pos="2" side="sl" part="lem"/>
-            <lit-tag v="prn.tn"/>
-            <clip pos="2" side="sl" part="persona"/>
-            <lit-tag v="m"/>
-            <clip pos="2" side="sl" part="nbr"/>
-          </lu>
-          <b/>
-          <lu>
-            <clip pos="4" side="tl" part="lem"/>
-            <lit-tag v="prn.pro"/>
-            <clip pos="4" side="tl" part="tipoenc_pro"/>
-          </lu>
-          <b/>
         </out>
-      <choose>
+        <choose>
           <when>
             <test>
-              <in caseless="yes">
-                <clip pos="3" side="sl" part="lem"/>
-                <list n="vbambser"/>
-              </in>
+              <equal caseless="yes">
+                <clip pos="4" side="tl" part="lem"/>
+                <lit v="on"/>
+              </equal>
             </test>
-       <out>
-          <lu>
-            <get-case-from pos="3">
-              <lit v="être"/>
-            </get-case-from>
-            <lit-tag v="vbser"/>
-            <lit-tag v="pri"/>
-            <clip pos="2" side="tl" part="persona"/>
-            <clip pos="2" side="tl" part="nbr"/>
-          </lu>
-          <b pos="2"/>
-          <lu>
-            <clip pos="3" side="tl" part="lemh"/>
-            <clip pos="3" side="tl" part="a_verb"/>
-            <lit-tag v="pp.m"/>
-            <clip pos="2" side="tl" part="nbr"/>
-            <clip pos="3" side="tl" part="lemq"/>
-          </lu>
-        </out>
-       </when>
-       <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="4" side="tl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.pro"/>
+                <clip pos="4" side="tl" part="tipoenc_pro"/>
+              </lu>
+              <b/>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="2" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="2" side="sl" part="persona"/>
+                <lit-tag v="m"/>
+                <clip pos="2" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="4" side="tl" part="lem"/>
+                <lit-tag v="prn.pro"/>
+                <clip pos="4" side="tl" part="tipoenc_pro"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+        <choose>
+          <when>
+            <test>
+              <or>
+                <and>
+                  <not><equal caseless="yes"><clip pos="4" side="tl" part="lem"/><lit v="on"/></equal></not>
+                  <not><equal><clip pos="2" side="sl" part="persona"/><lit-tag v="p3"/></equal></not>
+                  <equal><clip pos="4" side="sl" part="persona"/><clip pos="2" side="sl" part="persona"/></equal>
+                  <or>
+                    <equal><clip pos="4" side="sl" part="nbr"/><clip pos="2" side="sl" part="nbr"/></equal>
+                    <equal><clip pos="4" side="sl" part="nbr"/><lit-tag v="sp"/></equal>
+                  </or>
+                </and>
+                <and>
+                  <not><equal caseless="yes"><clip pos="4" side="tl" part="lem"/><lit v="on"/></equal></not>
+                  <equal><clip pos="2" side="sl" part="persona"/><lit-tag v="p3"/></equal>
+                  <equal caseless="yes"><clip pos="4" side="sl" part="lem"/><lit v="es"/></equal>
+                </and>
+                <in caseless="yes"><clip pos="3" side="tl" part="lemh"/><list n="vbambser"/></in>
+              </or>
+            </test>
+            <choose>
+              <when>
+                <test>
+                    <or>
+                      <equal><var n="genero"/><lit-tag v="m"/></equal>
+                      <equal><var n="genero"/><lit-tag v="f"/></equal>
+                    </or>
+                </test>
+                <let><var n="genero_tmp"/><var n="genero"/></let>
+              </when>
+              <otherwise>
+                <let><var n="genero_tmp"/><lit-tag v="m"/></let>
+              </otherwise>
+            </choose>
+            <out>
+              <lu>
+                <get-case-from pos="3">
+                  <lit v="être"/>
+                </get-case-from>
+                <lit-tag v="vbser"/>
+                <lit-tag v="pri"/>
+                <clip pos="2" side="tl" part="persona"/>
+                <clip pos="2" side="tl" part="nbr"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="a_verb"/>
+                <lit-tag v="pp.m"/>
+                <clip pos="2" side="tl" part="nbr"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="3">
+                  <lit v="avoir"/>
+                </get-case-from>
+                <lit-tag v="vbhaver"/>
+                <lit-tag v="pri"/>
+                <clip pos="2" side="tl" part="persona"/>
+                <clip pos="2" side="tl" part="nbr"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="a_verb"/>
+                <lit-tag v="pp.m.sg"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>        
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SENT,que,coma,i NO anar inf enc: No van comprar-me > Ils ne m'ont pas acheté">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="noadv"/>
+        <pattern-item n="anar"/>
+        <pattern-item n="inf"/>
+        <pattern-item n="prnenc"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_pis2prs">
+          <with-param pos="3"/>
+        </call-macro>
         <out>
           <lu>
-            <get-case-from pos="3">
-              <lit v="avoir"/>
-            </get-case-from>
-            <lit-tag v="vbhaver"/>
-            <lit-tag v="pri"/>
-            <clip pos="2" side="tl" part="persona"/>
-            <clip pos="2" side="tl" part="nbr"/>
+            <clip pos="1" side="tl" part="whole"/>
           </lu>
-          <b pos="2"/>
-          <lu>
-            <clip pos="3" side="tl" part="lemh"/>
-            <clip pos="3" side="tl" part="a_verb"/>
-            <lit-tag v="pp.m.sg"/>
-            <clip pos="3" side="tl" part="lemq"/>
-          </lu>
+          <b pos="1"/>
         </out>
-      </otherwise>
-    </choose>        
+        <choose>
+          <when>
+            <test>
+              <equal caseless="yes">
+                <clip pos="5" side="tl" part="lem"/>
+                <lit v="on"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="5" side="tl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.pro"/>
+                <clip pos="5" side="tl" part="tipoenc_pro"/>
+              </lu>
+              <b/>
+              <lu>
+                <get-case-from pos="3">
+                  <clip pos="2" side="tl" part="lemh"/>
+                </get-case-from>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+              <b pos="2"/>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="3" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="m"/>
+                <clip pos="3" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+              <lu>
+                <get-case-from pos="3">
+                  <clip pos="2" side="tl" part="lemh"/>
+                </get-case-from>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="5" side="tl" part="lem"/>
+                <lit-tag v="prn.pro"/>
+                <clip pos="5" side="tl" part="tipoenc_pro"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+        <choose>
+          <when>
+            <test>
+              <or>
+                <and>
+                  <not><equal caseless="yes"><clip pos="5" side="tl" part="lem"/><lit v="on"/></equal></not>
+                  <not><equal><clip pos="3" side="sl" part="persona"/><lit-tag v="p3"/></equal></not>
+                  <equal><clip pos="5" side="sl" part="persona"/><clip pos="3" side="sl" part="persona"/></equal>
+                  <or>
+                    <equal><clip pos="5" side="sl" part="nbr"/><clip pos="3" side="sl" part="nbr"/></equal>
+                    <equal><clip pos="5" side="sl" part="nbr"/><lit-tag v="sp"/></equal>
+                  </or>
+                </and>
+                <and>
+                  <not><equal caseless="yes"><clip pos="5" side="tl" part="lem"/><lit v="on"/></equal></not>
+                  <equal><clip pos="3" side="sl" part="persona"/><lit-tag v="p3"/></equal>
+                  <equal caseless="yes"><clip pos="5" side="sl" part="lem"/><lit v="es"/></equal>
+                </and>
+                <in caseless="yes"><clip pos="4" side="tl" part="lemh"/><list n="vbambser"/></in>
+              </or>
+            </test>
+            <choose>
+              <when>
+                <test>
+                    <or>
+                      <equal><var n="genero"/><lit-tag v="m"/></equal>
+                      <equal><var n="genero"/><lit-tag v="f"/></equal>
+                    </or>
+                </test>
+                <let><var n="genero_tmp"/><var n="genero"/></let>
+              </when>
+              <otherwise>
+                <let><var n="genero_tmp"/><lit-tag v="m"/></let>
+              </otherwise>
+            </choose>
+            <out>
+              <lu>
+                <get-case-from pos="3">
+                  <lit v="être"/>
+                </get-case-from>
+                <lit-tag v="vbser"/>
+                <lit-tag v="pri"/>
+                <clip pos="3" side="tl" part="persona"/>
+                <clip pos="3" side="tl" part="nbr"/>
+              </lu>
+              <b/>
+              <lu>
+                <lit v="pas"/>
+                <lit-tag v="adv"/>
+              </lu>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="lemh"/>
+                <clip pos="4" side="tl" part="a_verb"/>
+                <lit-tag v="pp.m"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <clip pos="4" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="3">
+                  <lit v="avoir"/>
+                </get-case-from>
+                <lit-tag v="vbhaver"/>
+                <lit-tag v="pri"/>
+                <clip pos="3" side="tl" part="persona"/>
+                <clip pos="3" side="tl" part="nbr"/>
+              </lu>
+              <b/>
+              <lu>
+                <lit v="pas"/>
+                <lit-tag v="adv"/>
+              </lu>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="lemh"/>
+                <clip pos="4" side="tl" part="a_verb"/>
+                <lit-tag v="pp.m.sg"/>
+                <clip pos="4" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>        
       </action>
-  </rule>
+    </rule>
 
     <rule comment="REGLA: Que_rel VERB">
       <pattern>
@@ -9131,6 +9502,15 @@ is not applicable because gender and number can not be taken from previous rules
         <choose>
           <when>
             <test>
+              <equal caseless="yes">
+                <clip pos="2" side="tl" part="lem"/>
+                <lit v="on"/>
+              </equal>
+            </test>
+          <!-- no generem un pronom per al subjecte -->
+          </when>
+          <when>
+            <test>
               <equal>
                 <clip pos="3" side="sl" part="persona"/>
                 <lit-tag v="p3"/>
@@ -9148,6 +9528,10 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
             </out>
+            <modify-case>
+              <clip pos="2" side="tl" part="lemh"/>
+              <lit v="aa"/>
+            </modify-case>
           </when>
           <otherwise>
             <out>
@@ -9162,12 +9546,12 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
             </out>
+            <modify-case>
+              <clip pos="2" side="tl" part="lemh"/>
+              <lit v="aa"/>
+            </modify-case>
           </otherwise>
         </choose>
-        <modify-case>
-          <clip pos="2" side="tl" part="lemh"/>
-          <lit v="aa"/>
-        </modify-case>
         <out>
           <lu>
             <clip pos="2" side="tl" part="lemh"/>
@@ -9207,6 +9591,15 @@ is not applicable because gender and number can not be taken from previous rules
         <choose>
           <when>
             <test>
+              <equal caseless="yes">
+                <clip pos="2" side="tl" part="lem"/>
+                <lit v="on"/>
+              </equal>
+            </test>
+          <!-- no generem un pronom per al subjecte -->
+          </when>
+          <when>
+            <test>
               <equal>
                 <clip pos="3" side="sl" part="persona"/>
                 <lit-tag v="p3"/>
@@ -9224,6 +9617,10 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
             </out>
+            <modify-case>
+              <clip pos="2" side="tl" part="lemh"/>
+              <lit v="aa"/>
+            </modify-case>
           </when>
           <otherwise>
             <out>
@@ -9238,12 +9635,12 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
             </out>
+            <modify-case>
+              <clip pos="2" side="tl" part="lemh"/>
+              <lit v="aa"/>
+            </modify-case>
           </otherwise>
         </choose>
-        <modify-case>
-          <clip pos="2" side="tl" part="lemh"/>
-          <lit v="aa"/>
-        </modify-case>
 <!--
         <choose>
           <when>
@@ -9264,6 +9661,7 @@ is not applicable because gender and number can not be taken from previous rules
             <test>
               <or>
                 <and>
+                  <not><equal caseless="yes"><clip pos="2" side="tl" part="lem"/><lit v="on"/></equal></not>
                   <not><equal><clip pos="3" side="sl" part="persona"/><lit-tag v="p3"/></equal></not>
                   <equal><clip pos="2" side="sl" part="persona"/><clip pos="3" side="sl" part="persona"/></equal>
                   <or>
@@ -9272,6 +9670,7 @@ is not applicable because gender and number can not be taken from previous rules
                   </or>
                 </and>
                 <and>
+                  <not><equal caseless="yes"><clip pos="2" side="tl" part="lem"/><lit v="on"/></equal></not>
                   <equal><clip pos="3" side="sl" part="persona"/><lit-tag v="p3"/></equal>
                   <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="es"/></equal>
                 </and>
@@ -9343,6 +9742,24 @@ is not applicable because gender and number can not be taken from previous rules
         <choose>
           <when>
             <test>
+              <equal caseless="yes">
+                <clip pos="3" side="tl" part="lem"/>
+                <lit v="on"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="3" side="tl" part="lem"/>
+                </get-case-from>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+              <b/>
+            </out>
+          </when>
+          <when>
+            <test>
               <equal>
                 <clip pos="4" side="sl" part="persona"/>
                 <lit-tag v="p3"/>
@@ -9377,7 +9794,7 @@ is not applicable because gender and number can not be taken from previous rules
           </otherwise>
         </choose>
         <modify-case>
-          <clip pos="3" side="tl" part="lemh"/>
+          <clip pos="2" side="tl" part="lemh"/>
           <lit v="aa"/>
         </modify-case>
 <!--
@@ -9400,6 +9817,7 @@ is not applicable because gender and number can not be taken from previous rules
             <test>
               <or>
                 <and>
+                  <not><equal caseless="yes"><clip pos="3" side="tl" part="lem"/><lit v="on"/></equal></not>
                   <not><equal><clip pos="4" side="sl" part="persona"/><lit-tag v="p3"/></equal></not>
                   <equal><clip pos="3" side="sl" part="persona"/><clip pos="4" side="sl" part="persona"/></equal>
                   <or>
@@ -9408,6 +9826,7 @@ is not applicable because gender and number can not be taken from previous rules
                   </or>
                 </and>
                 <and>
+                  <not><equal caseless="yes"><clip pos="3" side="tl" part="lem"/><lit v="on"/></equal></not>
                   <equal><clip pos="4" side="sl" part="persona"/><lit-tag v="p3"/></equal>
                   <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="es"/></equal>
                 </and>
@@ -9424,12 +9843,33 @@ is not applicable because gender and number can not be taken from previous rules
             <clip pos="2" side="tl" part="whole"/>
           </lu>
           <b pos="2"/>
-          <lu>
-            <clip pos="3" side="tl" part="lemh"/>
-            <clip pos="3" side="tl" part="tags"/>
-            <clip pos="3" side="tl" part="lemq"/>
-          </lu>
-          <b pos="3"/>
+        </out>
+        <choose>
+          <when>
+            <test>
+              <equal caseless="yes">
+                <clip pos="3" side="tl" part="lem"/>
+                <lit v="on"/>
+              </equal>
+            </test>
+            <!-- ja hem posat 'on' -->
+            <call-macro n="f_bcond">
+              <with-param pos="3"/>
+              <with-param pos="4"/>
+            </call-macro>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+              <b pos="3"/>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
           <lu>
             <clip pos="4" side="tl" part="lemh"/>
             <clip pos="4" side="tl" part="tags"/>
@@ -9477,6 +9917,24 @@ is not applicable because gender and number can not be taken from previous rules
         <choose>
           <when>
             <test>
+              <equal caseless="yes">
+                <clip pos="3" side="tl" part="lem"/>
+                <lit v="on"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="3" side="tl" part="lem"/>
+                </get-case-from>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+              <b/>
+            </out>
+          </when>
+          <when>
+            <test>
               <equal>
                 <clip pos="4" side="sl" part="persona"/>
                 <lit-tag v="p3"/>
@@ -9521,12 +9979,33 @@ is not applicable because gender and number can not be taken from previous rules
             <clip pos="2" side="tl" part="lemq"/>
           </lu>
           <b pos="2"/>
-          <lu>
-            <clip pos="3" side="tl" part="lemh"/>
-            <clip pos="3" side="tl" part="tags"/>
-            <clip pos="3" side="tl" part="lemq"/>
-          </lu>
-          <b pos="3"/>
+        </out>
+        <choose>
+          <when>
+            <test>
+              <equal caseless="yes">
+                <clip pos="3" side="tl" part="lem"/>
+                <lit v="on"/>
+              </equal>
+            </test>
+            <!-- ja hem posat 'on' -->
+            <call-macro n="f_bcond">
+              <with-param pos="3"/>
+              <with-param pos="4"/>
+            </call-macro>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+              <b pos="3"/>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
           <lu>
             <clip pos="4" side="tl" part="lemh"/>
             <clip pos="4" side="tl" part="tags"/>
@@ -9567,6 +10046,15 @@ is not applicable because gender and number can not be taken from previous rules
         <choose>
           <when>
             <test>
+              <equal caseless="yes">
+                <clip pos="2" side="tl" part="lem"/>
+                <lit v="on"/>
+              </equal>
+            </test>
+          <!-- no generem un pronom per al subjecte -->
+          </when>
+          <when>
+            <test>
               <equal>
                 <clip pos="3" side="sl" part="persona"/>
                 <lit-tag v="p3"/>
@@ -9584,6 +10072,10 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
             </out>
+            <modify-case>
+              <clip pos="2" side="tl" part="lemh"/>
+              <lit v="aa"/>
+            </modify-case>
           </when>
           <otherwise>
             <out>
@@ -9598,12 +10090,12 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
             </out>
+            <modify-case>
+              <clip pos="2" side="tl" part="lemh"/>
+              <lit v="aa"/>
+            </modify-case>
           </otherwise>
         </choose>
-        <modify-case>
-          <clip pos="2" side="tl" part="lemh"/>
-          <lit v="aa"/>
-        </modify-case>
         <out>
           <lu>
             <clip pos="2" side="tl" part="lemh"/>
@@ -9617,6 +10109,7 @@ is not applicable because gender and number can not be taken from previous rules
             <test>
               <or>
                 <and>
+                  <not><equal caseless="yes"><clip pos="2" side="tl" part="lem"/><lit v="on"/></equal></not>
                   <not><equal><clip pos="2" side="sl" part="persona"/><lit-tag v="p3"/></equal></not>
                   <equal><clip pos="2" side="sl" part="persona"/><clip pos="3" side="sl" part="persona"/></equal>
                   <or>
@@ -9625,6 +10118,7 @@ is not applicable because gender and number can not be taken from previous rules
                   </or>
                 </and>
                 <and>
+                  <not><equal caseless="yes"><clip pos="2" side="tl" part="lem"/><lit v="on"/></equal></not>
                   <equal><clip pos="2" side="sl" part="persona"/><lit-tag v="p3"/></equal>
                   <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="es"/></equal>
                 </and>
@@ -10331,6 +10825,15 @@ is not applicable because gender and number can not be taken from previous rules
         <choose>
           <when>
             <test>
+              <equal caseless="yes">
+                <clip pos="2" side="tl" part="lem"/>
+                <lit v="on"/>
+              </equal>
+            </test>
+          <!-- no generem un pronom per al subjecte -->
+          </when>
+          <when>
+            <test>
               <equal>
                 <clip pos="3" side="sl" part="persona"/>
                 <lit-tag v="p3"/>
@@ -10346,6 +10849,10 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
             </out>
+            <modify-case>
+              <clip pos="2" side="tl" part="lemh"/>
+              <lit v="aa"/>
+            </modify-case>
           </when>
           <otherwise>
             <out>
@@ -10358,18 +10865,19 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
             </out>
+            <modify-case>
+              <clip pos="2" side="tl" part="lemh"/>
+              <lit v="aa"/>
+            </modify-case>
           </otherwise>
         </choose>
-        <modify-case>
-          <clip pos="2" side="tl" part="lemh"/>
-          <lit v="aa"/>
-        </modify-case>
 
         <choose>
           <when>
             <test>
               <or>
                 <and>
+                  <not><equal caseless="yes"><clip pos="2" side="tl" part="lem"/><lit v="on"/></equal></not>
                   <not><equal><clip pos="3" side="sl" part="persona"/><lit-tag v="p3"/></equal></not>
                   <equal><clip pos="2" side="sl" part="persona"/><clip pos="3" side="sl" part="persona"/></equal>
                   <or>
@@ -10378,6 +10886,7 @@ is not applicable because gender and number can not be taken from previous rules
                   </or>
                 </and>
                 <and>
+                  <not><equal caseless="yes"><clip pos="2" side="tl" part="lem"/><lit v="on"/></equal></not>
                   <equal><clip pos="3" side="sl" part="persona"/><lit-tag v="p3"/></equal>
                   <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="es"/></equal>
                 </and>
@@ -10479,6 +10988,24 @@ is not applicable because gender and number can not be taken from previous rules
         <choose>
           <when>
             <test>
+              <equal caseless="yes">
+                <clip pos="3" side="tl" part="lem"/>
+                <lit v="on"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="3" side="tl" part="lem"/>
+                </get-case-from>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+              <b/>
+            </out>
+          </when>
+          <when>
+            <test>
               <equal>
                 <clip pos="4" side="sl" part="persona"/>
                 <lit-tag v="p3"/>
@@ -10486,7 +11013,9 @@ is not applicable because gender and number can not be taken from previous rules
             </test>
             <out>
               <lu>
-                <clip pos="4" side="sl" part="lem"/>
+                <get-case-from pos="2">
+                  <clip pos="4" side="sl" part="lem"/>
+                </get-case-from>
                 <lit-tag v="prn.tn"/>
                 <clip pos="4" side="sl" part="persona"/>
                 <lit-tag v="m"/>
@@ -10498,7 +11027,9 @@ is not applicable because gender and number can not be taken from previous rules
           <otherwise>
             <out>
               <lu>
-                <clip pos="4" side="sl" part="lem"/>
+                <get-case-from pos="2">
+                  <clip pos="4" side="sl" part="lem"/>
+                </get-case-from>
                 <lit-tag v="prn.tn"/>
                 <clip pos="4" side="sl" part="persona"/>
                 <lit-tag v="mf"/>
@@ -10524,8 +11055,34 @@ is not applicable because gender and number can not be taken from previous rules
         <choose>
           <when>
             <test>
+              <equal caseless="yes">
+                <clip pos="3" side="tl" part="lem"/>
+                <lit v="on"/>
+              </equal>
+            </test>
+            <!-- ja hem posat 'on' -->
+            <call-macro n="f_bcond">
+              <with-param pos="3"/>
+              <with-param pos="4"/>
+            </call-macro>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+              <b pos="3"/>
+            </out>
+          </otherwise>
+        </choose>
+        <choose>
+          <when>
+            <test>
               <or>
                 <and>
+                  <not><equal caseless="yes"><clip pos="3" side="tl" part="lem"/><lit v="on"/></equal></not>
                   <not><equal><clip pos="4" side="sl" part="persona"/><lit-tag v="p3"/></equal></not>
                   <equal><clip pos="3" side="sl" part="persona"/><clip pos="4" side="sl" part="persona"/></equal>
                   <or>
@@ -10534,6 +11091,7 @@ is not applicable because gender and number can not be taken from previous rules
                   </or>
                 </and>
                 <and>
+                  <not><equal caseless="yes"><clip pos="3" side="tl" part="lem"/><lit v="on"/></equal></not>
                   <equal><clip pos="4" side="sl" part="persona"/><lit-tag v="p3"/></equal>
                   <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="es"/></equal>
                 </and>
@@ -10555,12 +11113,6 @@ is not applicable because gender and number can not be taken from previous rules
               </otherwise>
             </choose>
             <out>
-              <lu>
-                <clip pos="3" side="tl" part="lemh"/>
-                <clip pos="3" side="tl" part="tags"/>
-                <clip pos="3" side="tl" part="lemq"/>
-              </lu>
-              <b pos="3"/>
               <lu>
                 <get-case-from pos="4">
                   <lit v="être"/>
@@ -10589,12 +11141,6 @@ is not applicable because gender and number can not be taken from previous rules
           </when>
           <otherwise>
             <out>
-              <lu>
-                <clip pos="3" side="tl" part="lemh"/>
-                <clip pos="3" side="tl" part="tags"/>
-                <clip pos="3" side="tl" part="lemq"/>
-              </lu>
-              <b pos="3"/>
               <lu>
                 <get-case-from pos="4">
                   <lit v="avoir"/>

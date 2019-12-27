@@ -611,6 +611,82 @@
 
 <!-- PRN -->
 
+  <!-- es >> se, on -->
+  <rule weight="0.8">
+    <match lemma="es" tags="prn.*"><select lemma="se"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <match tags="vblex.*.p3.sg"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <match tags="vbhaver.*.p3.sg"/>
+    <match tags="vblex.pp.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <match lemma="anar" tags="vblex.pri.p3.sg"/>
+    <match tags="vblex.inf"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="anar" tags="vblex.pri.p3.sg"/>
+    <match tags="vblex.inf"/>
+    <match lemma="es" tags="prn.enc.*"><select lemma="on"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+  </rule>
+
+  <rule weight="1.2">
+    <match lemma="es" tags="prn.pro.*"><select lemma="se"/></match>
+    <match lemma="adonar" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="es" tags="prn.pro.*"><select lemma="se"/></match>
+    <match tags="vbhaver.*"/>
+    <match lemma="adonar" tags="vblex.pp.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="es" tags="prn.pro.*"><select lemma="se"/></match>
+    <match lemma="anar" tags="vblex.pri.*"/>
+    <match lemma="adonar" tags="vblex.inf"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="anar" tags="vblex.pri.p3.sg"/>
+    <match lemma="adonar" tags="vblex.inf"/>
+    <match lemma="es" tags="prn.enc.*"><select lemma="on"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+  </rule>
+
   <!-- això >> ça, cela -->
   <rule weight="0.8">
     <match lemma="això" tags="prn.*"><select lemma="ça"/></match>
@@ -1005,6 +1081,64 @@
   </rule>
 
 <!-- V -->
+
+  <!-- estimar >> aimer, estimer -->
+  <rule weight="0.8">
+    <match lemma="estimar" tags="vblex.*"><select lemma="aimer"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="estimar" tags="vblex.*"><select lemma="estimer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv.*"/>
+    </repeat>
+    <match lemma="que" tags="cnjsub"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="estimar" tags="vblex.*"><select lemma="estimer"/></match>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
+    </repeat>
+    <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="estimar" tags="vblex.*"><select lemma="estimer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv.*"/>
+    </repeat>
+    <match lemma="en" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="estimar" tags="vblex.*"><select lemma="estimer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv.*"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match tags="n.*"/>
+    <match lemma="en" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="estimar" tags="vblex.*"><select lemma="estimer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv.*"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match tags="n.*"/>
+    <match tags="adj.*"/>
+    <match lemma="en" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="estimar" tags="vblex.*"><select lemma="estimer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv.*"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match tags="adj.*"/>
+    <match tags="n.*"/>
+    <match lemma="en" tags="pr"/>
+  </rule>
 
   <!-- congelar >> congeler, geler -->
   <rule weight="0.8">
