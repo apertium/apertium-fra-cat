@@ -48,6 +48,10 @@
     <def-cat n="ce">
       <cat-item lemma="ce" tags="det.*"/>
     </def-cat>
+    <def-cat n="quelques_plusieurs">
+      <cat-item lemma="quelque" tags="det.*"/>
+      <cat-item lemma="plusieurs" tags="det.*"/>
+    </def-cat>
     <def-cat n="predet">
       <cat-item tags="predet.*"/>
     </def-cat>
@@ -5550,6 +5554,7 @@ is not applicable because gender and number cannot be taken from previous rules 
   </rule>
 
   <rule comment="REGLA: beaucoup de + pron > molts de + pron: beaucoup d'eux > molts d'ells, beaucoup d'elles > moltes d'elles">
+    <!-- aquesta construcció no sembla gaire francesa, però afegida per si de cas -->
       <pattern>
         <pattern-item n="beaucoup_de"/>
         <pattern-item n="prntn"/>
@@ -5607,6 +5612,64 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
   </rule>
 
+
+  <rule comment="REGLA: quelques/plusieurs de + pron > DET de + pron: quelques d'eux > alguns d'ells, quelques d'elles > algunes d'elles">
+      <pattern>
+        <pattern-item n="quelques_plusieurs"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="prntn"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="3"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+  <rule comment="REGLA: quelques/plusieurs de + entre + pron > DET de + entre + pron: quelques d'entre eux > alguns d'ells, quelques d'entre elles > algunes d'elles">
+      <pattern>
+        <pattern-item n="quelques_plusieurs"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="entreprep"/>
+        <pattern-item n="prntn"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="4"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <out>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
 
     <rule comment="REGLA: verb + de +  VERB PREP DET (venir de avoir des: acabar de tenir)">
       <pattern>
