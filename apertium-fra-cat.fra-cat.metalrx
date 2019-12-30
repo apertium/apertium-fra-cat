@@ -424,6 +424,21 @@
 
 <rules>
 
+<!-- **************** DET **************** -->
+
+  <!-- beaucoup de >> molt, molt de -->
+  <rule weight="0.6">
+    <match lemma="beaucoup de" tags="pr"><select lemma="molt"/></match>
+  </rule>
+  <rule weight="1.0"> <!-- beaucoup d'eux -->
+    <match lemma="beaucoup de" tags="pr"><select lemma="molt de"/></match>
+    <match tags="prn.*"/>
+  </rule>
+  <rule weight="1.0"> <!-- beaucoup d'entre eux -->
+    <match lemma="beaucoup de" tags="pr"><select lemma="molt de"/></match>
+    <match tags="pr"/>
+  </rule>
+
 <!-- **************** PR **************** -->
 
   <!-- dans >> en -->
@@ -2267,6 +2282,8 @@
       <match lemma="mourir" tags="vblex.pp.*"/>
       <match lemma="convaincu" tags="adj.*"/>
       <match lemma="convaincre" tags="vblex.pp.*"/>
+      <match lemma="persuadé" tags="adj.*"/>
+      <match lemma="persuader" tags="vblex.pp.*"/>
       <match lemma="ouvert" tags="adj.*"/>
       <match lemma="ouvrir" tags="vblex.pp.*"/>
       <match lemma="fermé" tags="adj.*"/>

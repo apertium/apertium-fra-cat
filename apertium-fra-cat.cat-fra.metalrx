@@ -330,6 +330,72 @@
       </rule>
     </def-macro>
 
+    <!-- Aquesta macro tria el verb p2 si p1 no és pronominal i p3 si p1 és pronominal i va seguit de la preposició p4 -->
+    <!-- p1 = verb cat, p2 = verb fra no pron, p3 = verb fra pron, p4 = prep cat -->
+    <def-macro name="verb_nopron_pron_prep">
+      <rule weight="0.8">
+        <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p2}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match tags="prn.pro.p1.*.sg"/>
+        <match lemma="{{p1}}" tags="vblex.*.p1.sg"><select lemma="{{p3}}"/></match>
+        <match lemma="{{p4}}" tags="pr"/>
+      </rule>
+      <rule weight="1.0">
+        <match lemma="{{p1}}" tags="vblex.*.p1.sg"><select lemma="{{p3}}"/></match>
+        <match tags="prn.enc.p1.*.sg"/>
+        <match lemma="{{p4}}" tags="pr"/>
+      </rule>
+      <rule weight="1.0">
+        <match tags="prn.pro.p2.*.sg"/>
+        <match lemma="{{p1}}" tags="vblex.*.p2.sg"><select lemma="{{p3}}"/></match>
+        <match lemma="{{p4}}" tags="pr"/>
+      </rule>
+      <rule weight="1.0">
+        <match lemma="{{p1}}" tags="vblex.*.p2.sg"><select lemma="{{p3}}"/></match>
+        <match tags="prn.enc.p2.*.sg"/>
+        <match lemma="{{p4}}" tags="pr"/>
+      </rule>
+      <rule weight="1.0">
+        <match tags="prn.pro.ref.p3.*.sp"/>
+        <or>
+          <match lemma="{{p1}}" tags="vblex.*.p3.sg"><select lemma="{{p3}}"/></match>
+          <match lemma="{{p1}}" tags="vblex.*.p3.pl"><select lemma="{{p3}}"/></match>
+        </or>
+        <match lemma="{{p4}}" tags="pr"/>
+      </rule>
+      <rule weight="1.0">
+        <or>
+          <match lemma="{{p1}}" tags="vblex.*.p3.sg"><select lemma="{{p3}}"/></match>
+          <match lemma="{{p1}}" tags="vblex.*.p3.pl"><select lemma="{{p3}}"/></match>
+          <match lemma="{{p1}}" tags="vblex.inf"><select lemma="{{p3}}"/></match>
+          <match lemma="{{p1}}" tags="vblex.ger"><select lemma="{{p3}}"/></match>
+        </or>
+        <match tags="prn.enc.ref.p3.*.sp"/>
+        <match lemma="{{p4}}" tags="pr"/>
+      </rule>
+      <rule weight="1.0">
+        <match tags="prn.pro.p1.*.pl"/>
+        <match lemma="{{p1}}" tags="vblex.*.p1.pl"><select lemma="{{p3}}"/></match>
+        <match lemma="{{p4}}" tags="pr"/>
+      </rule>
+      <rule weight="1.0">
+        <match lemma="{{p1}}" tags="vblex.*.p1.pl"><select lemma="{{p3}}"/></match>
+        <match tags="prn.enc.p1.*.pl"/>
+        <match lemma="{{p4}}" tags="pr"/>
+      </rule>
+      <rule weight="1.0">
+        <match tags="prn.pro.p2.*.pl"/>
+        <match lemma="{{p1}}" tags="vblex.*.p2.pl"><select lemma="{{p3}}"/></match>
+        <match lemma="{{p4}}" tags="pr"/>
+      </rule>
+      <rule weight="1.0">
+        <match lemma="{{p1}}" tags="vblex.*.p2.pl"><select lemma="{{p3}}"/></match>
+        <match tags="prn.enc.p2.*.pl"/>
+        <match lemma="{{p4}}" tags="pr"/>
+      </rule>
+    </def-macro>
+
   </def-macros>
 
   <def-seqs>
@@ -948,7 +1014,6 @@
     </or>
   </rule>
   <rule weight="1.0">
-
     <match lemma="estar" tags="vblex.*"/>
     <repeat from="0" upto="1">
       <match tags="adv"/>
@@ -1082,6 +1147,19 @@
 
 <!-- V -->
 
+  <!-- cordar >> boutonner, lacer -->
+  <rule weight="0.8">
+    <match lemma="cordar" tags="vblex.*"><select lemma="boutonner"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cordar" tags="vblex.*"><select lemma="lacer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv.*"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="sabata" tags="n.*"/>
+  </rule>
+
   <!-- estimar >> aimer, estimer -->
   <rule weight="0.8">
     <match lemma="estimar" tags="vblex.*"><select lemma="aimer"/></match>
@@ -1152,6 +1230,9 @@
     <match tags="det.*"/>
     <match lemma="negociació" tags="n.*"/>
   </rule>
+
+  <!-- estar >> être, rester -->
+  <macro name="verb_nopron_pron_prep" p1="estar" p2="être" p3="rester" p4="a"/>
 
   <!-- convertir >> convertir, devenir -->
   <macro name="verb_nopron_pron" p1="convertir" p2="convertir" p3="devenir" />
@@ -2138,6 +2219,16 @@
     <match lemma="partit" tags="n.*"><select lemma="match"/></match>
     <match lemma="de" tags="pr"/>
     <match tags="n.*.sg"/>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="guanyador" tags="n.*"/>
+      <match lemma="perdedor" tags="n.*"/>
+      <match lemma="jugador" tags="n.*"/>
+      <match lemma="àrbitre" tags="n.*"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <match lemma="partit" tags="n.*"><select lemma="match"/></match>
   </rule>
 
   <!-- mitjà >> moyen, moitié -->
