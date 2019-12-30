@@ -79,6 +79,9 @@
     <def-cat n="deprep">
       <cat-item lemma="de" tags="pr"/>
     </def-cat>
+    <def-cat n="entreprep">
+      <cat-item lemma="entre" tags="pr"/>
+    </def-cat>
     <def-cat n="apres">
       <cat-item lemma="après" tags="pr"/>
       <cat-item lemma="après" tags="adv"/>
@@ -105,6 +108,9 @@
     </def-cat>
     <def-cat n="rel">
       <cat-item tags="rel.*"/>
+    </def-cat>
+    <def-cat n="prntn">
+      <cat-item tags="prn.tn.*"/>
     </def-cat>
     <def-cat n="prnsubj">
       <cat-item lemma="je" tags="prn.tn.p1.mf.sg"/>
@@ -180,6 +186,9 @@
     </def-cat>
     <def-cat n="y">
       <cat-item lemma="y" tags="prn.pro.adv"/>
+    </def-cat>
+    <def-cat n="beaucoup_de">
+      <cat-item lemma="beaucoup de" tags="prn.tn.mf.sp"/>
     </def-cat>
     <def-cat n="nombreux">
       <cat-item lemma="nombreux" tags="adj.m.sp"/>
@@ -5533,6 +5542,64 @@ is not applicable because gender and number cannot be taken from previous rules 
             <clip pos="2" side="tl" part="whole"/>
           </lu>
           <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+  <rule comment="REGLA: beaucoup de + pron > molts de + pron: beaucoup d'eux > molts d'ells, beaucoup d'elles > moltes d'elles">
+      <pattern>
+        <pattern-item n="beaucoup_de"/>
+        <pattern-item n="prntn"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="de"/>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+  <rule comment="REGLA: beaucoup de + entre + pron > molts de + entre + pron: beaucoup d'entre eux > molts d'ells, beaucoup d'entre elles > moltes d'elles">
+      <pattern>
+        <pattern-item n="beaucoup_de"/>
+        <pattern-item n="entreprep"/>
+        <pattern-item n="prntn"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="3"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="de"/>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <out>
           <lu>
             <clip pos="3" side="tl" part="whole"/>
           </lu>

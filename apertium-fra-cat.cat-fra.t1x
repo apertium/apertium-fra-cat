@@ -37,6 +37,9 @@
     <def-cat n="cada">
       <cat-item lemma="cada" tags="det.*"/>
     </def-cat>
+    <def-cat n="moltdet">
+      <cat-item lemma="molt" tags="det.*"/>
+    </def-cat>
     <def-cat n="detdef">
       <cat-item tags="det.def.*"/>
     </def-cat>
@@ -5893,6 +5896,30 @@ is not applicable because gender and number can not be taken from previous rules
             <lit-tag v="prn.tn"/>
             <clip pos="1" side="sl" part="gen"/>
             <clip pos="1" side="tl" part="nbr"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: MOLTdet DE: molt de soroll: beacoup de bruit">
+      <pattern>
+        <pattern-item n="moltdet"/>
+        <pattern-item n="deprep"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="beaucoup"/>
+            </get-case-from>
+            <lit-tag v="prn.tn.mf.pl"/>
           </lu>
           <b pos="1"/>
           <lu>
