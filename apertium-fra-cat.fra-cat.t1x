@@ -12368,6 +12368,42 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
+
+    <rule comment="REGLA: det TOP ADJ: l'Oural méridional > els Urals meridionals, l'Espagne centrale > l'Espanya central">
+      <pattern>
+        <pattern-item n="detdef"/>
+        <pattern-item n="nptop"/>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord3">
+          <with-param pos="2"/>
+          <with-param pos="3"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+
     <rule comment="REGLA: eliminar 'pas de'">
       <pattern>
         <pattern-item n="pas_strict"/>
