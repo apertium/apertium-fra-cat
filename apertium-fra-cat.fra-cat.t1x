@@ -406,6 +406,26 @@
       <cat-item lemma="taire" tags="vblex.pp.*"/>
       <cat-item lemma="assoir" tags="vblex.pp.*"/>
     </def-cat>
+    <def-cat n="vbambser_pp">
+      <cat-item lemma="aller" tags="vblex.pp.*"/>
+      <cat-item lemma="apparaître" tags="vblex.pp.*"/>
+      <cat-item lemma="arriver" tags="vblex.pp.*"/>
+      <cat-item lemma="venir" tags="vblex.pp.*"/>
+      <cat-item lemma="partir" tags="vblex.pp.*"/>
+      <cat-item lemma="naître" tags="vblex.pp.*"/>
+      <cat-item lemma="mourir" tags="vblex.pp.*"/>
+      <cat-item lemma="descendre" tags="vblex.pp.*"/>
+      <cat-item lemma="monter" tags="vblex.pp.*"/>
+      <cat-item lemma="entrer" tags="vblex.pp.*"/>
+      <cat-item lemma="sortir" tags="vblex.pp.*"/>
+      <cat-item lemma="tomber" tags="vblex.pp.*"/>
+      <cat-item lemma="retourner" tags="vblex.pp.*"/>
+      <cat-item lemma="passer" tags="vblex.pp.*"/>
+      <cat-item lemma="rester" tags="vblex.pp.*"/>
+      <cat-item lemma="devenir" tags="vblex.pp.*"/>
+      <cat-item lemma="revenir" tags="vblex.pp.*"/>
+    </def-cat>
+
     <def-cat n="defense">
       <cat-item lemma="défense" tags="n.f.sg"/>
     </def-cat>
@@ -714,7 +734,7 @@
       <list-item v="décembre"/>
     </def-list>
 
-    <def-list n="vbestat">
+    <def-list n="vbambser">
       <list-item v="aller"/>
       <list-item v="apparaître"/>
       <list-item v="arriver"/>
@@ -6841,7 +6861,7 @@ is not applicable because gender and number cannot be taken from previous rules 
             <test>
               <in caseless="yes">
                 <clip pos="3" side="sl" part="lemh"/>
-                <list n="vbestat"/>
+                <list n="vbambser"/>
               </in>
             </test>
             <out>
@@ -8945,7 +8965,7 @@ is not applicable because gender and number cannot be taken from previous rules 
          <test>
            <or>
 	     <equal><clip pos="1" side="sl" part="temps"/><lit-tag v="pp"/></equal>
-             <in caseless="yes"><clip pos="2" side="sl" part="lemh"/><list n="vbestat"/></in>
+             <in caseless="yes"><clip pos="2" side="sl" part="lemh"/><list n="vbambser"/></in>
            </or>
 	 </test>
         <choose>
@@ -9158,7 +9178,7 @@ is not applicable because gender and number cannot be taken from previous rules 
          <test>
            <or>
 	     <equal><clip pos="2" side="sl" part="temps"/><lit-tag v="pp"/></equal>
-             <in caseless="yes"><clip pos="3" side="sl" part="lemh"/><list n="vbestat"/></in>
+             <in caseless="yes"><clip pos="3" side="sl" part="lemh"/><list n="vbambser"/></in>
            </or>
 	 </test>
         <choose>
@@ -9332,7 +9352,7 @@ is not applicable because gender and number cannot be taken from previous rules 
          <test>
            <or>
 	     <equal><clip pos="2" side="sl" part="temps"/><lit-tag v="pp"/></equal>
-             <in caseless="yes"><clip pos="3" side="sl" part="lemh"/><list n="vbestat"/></in>
+             <in caseless="yes"><clip pos="3" side="sl" part="lemh"/><list n="vbambser"/></in>
            </or>
 	 </test>
         <choose>
@@ -10015,7 +10035,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
 
 
-    <rule comment="REGLA: NE VBHAVER ADV VBSERPP (n'ont pas été > no han estat, n'a pas épousé > no s-ha casat amb)">
+    <rule comment="REGLA: NE VBHAVER PAS VBSERPP (n'ont pas été > no han estat, n'a pas épousé > no s'ha casat amb)">
       <pattern>
         <pattern-item n="neadv"/>
         <pattern-item n="vbhaver"/>
@@ -10092,7 +10112,69 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
 
 
-    <rule comment="REGLA: NE VBHAVER ADV VBSERPP (ils n'ont pas été > no han estat, il n'a pas épousé > no s-ha casat amb)">
+    <rule comment="REGLA: NE VBSER PAS VBSERPP (ne sont pas tombés > no han caigut)">
+      <pattern>
+        <pattern-item n="neadv"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="vbambser_pp"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_set_pron">
+          <with-param pos="4"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <let><clip pos="2" side="tl" part="lem"/><lit v="haver"/></let>
+        <let><clip pos="2" side="tl" part="a_verb"/><lit-tag v="vbhaver"/></let>
+        <let><clip pos="4" side="tl" part="gen"/><lit-tag v="m"/></let>
+        <let><clip pos="4" side="tl" part="nbr"/><lit-tag v="sg"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <choose>
+	  <when>
+	    <test>
+	      <equal><var n="pronom"/><lit v=""/></equal>
+	    </test>
+            <out>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b pos="2"/>
+            </out>
+	  </when>
+	  <otherwise>
+            <out>
+              <lu>
+	        <var n="pronom"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b pos="2"/>
+            </out>
+	  </otherwise>
+        </choose>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <out>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: NE VBHAVER PAS PP (ils n'ont pas été > no han estat, il n'a pas épousé > no s-ha casat amb)">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="neadv"/>
@@ -10176,8 +10258,76 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
 
 
+    <rule comment="REGLA: NE VBSER PAS VBSERPP (ils ne sont pas tombés > no han caigut)">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="vbambser_pp"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_concord0">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_set_pron">
+          <with-param pos="5"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <let><clip pos="3" side="tl" part="lem"/><lit v="haver"/></let>
+        <let><clip pos="3" side="tl" part="a_verb"/><lit-tag v="vbhaver"/></let>
+        <let><clip pos="5" side="tl" part="gen"/><lit-tag v="m"/></let>
+        <let><clip pos="5" side="tl" part="nbr"/><lit-tag v="sg"/></let>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="2"/>
+        </out>
+        <choose>
+	  <when>
+	    <test>
+	      <equal><var n="pronom"/><lit v=""/></equal>
+	    </test>
+            <out>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+              <b pos="3"/>
+            </out>
+	  </when>
+	  <otherwise>
+            <out>
+              <lu>
+	        <var n="pronom"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+              <b pos="3"/>
+            </out>
+	  </otherwise>
+        </choose>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <out>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="tags"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
 
-<!-- les quatre regles que segueixen sembla que només s'utilitzen amb el verb être -->
+
+
     <rule comment="REGLA: PRN NE VERB PAS DE LE (il ne veut pas de l'eau: no vol aigua, il ne veut pas des bombons, no vol bombons)">
       <pattern>
         <pattern-item n="prnsubj"/>
@@ -11481,7 +11631,7 @@ is not applicable because gender and number cannot be taken from previous rules 
             <test>
               <in caseless="yes">
                 <clip pos="3" side="sl" part="lemh"/>
-                <list n="vbestat"/>
+                <list n="vbambser"/>
               </in>
             </test>-->
             <out>
