@@ -327,6 +327,16 @@
       <cat-item tags="vbser.fti.*"/>
       <cat-item tags="vbser.cni.*"/>
     </def-cat>
+    <def-cat n="pascomp_ser"> <!-- passé composé -->
+      <cat-item tags="vbser.pri.*"/>
+      <cat-item tags="vbser.prs.*"/>
+      <cat-item tags="vbser.pii.*"/>
+      <cat-item tags="vbser.pis.*"/>
+      <cat-item tags="vbser.ifi.*"/>
+      <cat-item tags="vbser.fts.*"/>
+      <cat-item tags="vbser.fti.*"/>
+      <cat-item tags="vbser.cni.*"/>
+    </def-cat>
     <def-cat n="verbconj">
       <cat-item tags="vblex.*.p1.*"/>
       <cat-item tags="vblex.*.p2.*"/>
@@ -401,10 +411,12 @@
     <def-cat n="verbospron">
       <cat-item lemma="assoir" tags="vblex.*"/>
       <cat-item lemma="taire" tags="vblex.*"/>
+      <cat-item lemma="heurter" tags="vblex.*"/>
     </def-cat>
     <def-cat n="verbospron_pp">
       <cat-item lemma="taire" tags="vblex.pp.*"/>
       <cat-item lemma="assoir" tags="vblex.pp.*"/>
+      <cat-item lemma="heurter" tags="vblex.pp.*"/>
     </def-cat>
     <def-cat n="vbambser_pp">
       <cat-item lemma="aller" tags="vblex.pp.*"/>
@@ -754,6 +766,12 @@
       <list-item v="revenir"/>
     </def-list>
 
+    <def-list n="vb_pronfra_noproncat">
+      <list-item v="assoir"/>
+      <list-item v="taire"/>
+      <list-item v="heurter"/>
+    </def-list>
+
     <def-list n="pays">
       <list-item v="Europe"/>
       <list-item v="Asie"/>
@@ -794,6 +812,7 @@
       <list-item v="Auvergne"/>
       <list-item v="Provence"/>
       <list-item v="Savoie"/>
+      <list-item v="Drôme"/>
       <list-item v="Grande-Bretagne"/>
       <list-item v="Angleterre"/>
       <list-item v="Pays de Galles"/>
@@ -805,6 +824,22 @@
       <list-item v="Hollande"/>
       <list-item v="Allemagne"/>
       <list-item v="Bavière"/>
+      <list-item v="Brandenbourg"/>
+      <list-item v="Poméranie"/>
+      <list-item v="Saxe"/>
+      <list-item v="Saxe-Anhalt"/>
+      <list-item v="Basse-Saxe"/>
+      <list-item v="Franconie"/>
+      <list-item v="Basse-Franconie"/>
+      <list-item v="Haute-Franconie"/>
+      <list-item v="Moyenne-Franconie"/>
+      <list-item v="Souabe"/>
+      <list-item v="Thuringe"/>
+      <list-item v="Schleswig-Holstein"/>
+      <list-item v="Sorabie"/>
+      <list-item v="Lusace"/>
+      <list-item v="Haute-Lusace"/>
+      <list-item v="Basse-Lusace"/>
       <list-item v="Danemark"/>
       <list-item v="Islande"/>
       <list-item v="Norvège"/>
@@ -1053,6 +1088,8 @@
       <list-item v="flamand"/>
       <list-item v="hollandais"/>
       <list-item v="allemand"/>
+      <list-item v="bavarois"/>
+      <list-item v="souabe"/>
       <list-item v="danois"/>
       <list-item v="islandais"/>
       <list-item v="norvégien"/>
@@ -1078,13 +1115,12 @@
       <list-item v="hongrois"/>
       <list-item v="italien"/>
       <list-item v="sarde"/>
-      <list-item v="piemontais"/>
+      <list-item v="piémontais"/>
       <list-item v="lombard"/>
       <list-item v="émilien"/>
       <list-item v="ligure"/>
       <list-item v="génois"/>
       <list-item v="sicilien"/>
-      <list-item v="piémontais"/>
       <list-item v="napolitain"/>
       <list-item v="calabrais"/>
       <list-item v="toscan"/>
@@ -9129,22 +9165,54 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord0">
           <with-param pos="1"/>
         </call-macro>
-	<out>
-          <lu>
-            <get-case-from pos="1">
-              <clip pos="2" side="tl" part="lemh"/>
-            </get-case-from>
-            <clip pos="2" side="tl" part="tags"/>
-            <clip pos="2" side="tl" part="lemq"/>
-          </lu>
-          <b pos="2"/>
-          <lu>
-            <lit v="haver"/>
-            <lit-tag v="vaux"/>
-            <clip pos="3" side="tl" part="temps"/>
-            <clip pos="3" side="tl" part="persona"/>
-            <clip pos="3" side="tl" part="nbr"/>
-          </lu>
+
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+
+        <choose>
+          <when>
+            <test>
+              <and>
+                <in caseless="yes">
+                  <clip pos="4" side="sl" part="lem"/>
+                  <list n="vb_pronfra_noproncat"/>
+                </in>
+                <equal><clip pos="2" side="sl" part="persona"/><clip pos="3" side="sl" part="persona"/></equal>
+              </and>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <lit v="haver"/>
+                </get-case-from>
+                <lit-tag v="vaux"/>
+                <clip pos="3" side="tl" part="temps"/>
+                <clip pos="3" side="tl" part="persona"/>
+                <clip pos="3" side="tl" part="nbr"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+	    <out>
+              <lu>
+                <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="lemh"/>
+                </get-case-from>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <lit v="haver"/>
+                <lit-tag v="vaux"/>
+                <clip pos="3" side="tl" part="temps"/>
+                <clip pos="3" side="tl" part="persona"/>
+                <clip pos="3" side="tl" part="nbr"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
           <b pos="3"/>
           <lu>
             <clip pos="4" side="tl" part="lemh"/>
@@ -9476,7 +9544,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
 
 
-    <rule comment="REGLA: PRN VERB (il arrive: arriba)">
+    <rule comment="REGLA: PRN VERB (il arrive: arriba, il épouse: es casa amb)">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="verb"/>
@@ -9775,7 +9843,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
 
 
-    <rule comment="REGLA: PRN NE VERB PAS (il n'arrive pas: no arriba)">
+    <rule comment="REGLA: PRN NE VERB PAS (il n'arrive pas: no arriba, il n'épouse pas: no es casa amb)">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="neadv"/>
@@ -9786,20 +9854,46 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord0">
           <with-param pos="1"/>
         </call-macro>
+        <call-macro n="f_set_pron">
+          <with-param pos="3"/>
+          <with-param pos="3"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
-              <clip pos="2" side="tl" part="whole"/>
+              <clip pos="2" side="tl" part="lem"/>
             </get-case-from>
+            <clip pos="2" side="tl" part="tags"/>
           </lu>
           <b pos="2"/>
-          <lu>
-            <clip pos="3" side="tl" part="whole"/>
-          </lu>
         </out>
+        <choose>
+	  <when>
+	    <test>
+	      <equal><var n="pronom"/><lit v=""/></equal>
+	    </test>
+            <out>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+            </out>
+	  </when>
+	  <otherwise>
+            <out>
+              <lu>
+	        <var n="pronom"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+            </out>
+	  </otherwise>
+        </choose>
       </action>
     </rule>
 
@@ -11099,7 +11193,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
 
 
-    <rule comment="REGLA: PRN PRN VERB (il lui dit: li diu)">
+    <rule comment="REGLA: PRN PRN VERB (il lui dit: li diu, je me tais: callo)">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="prn"/>
@@ -11115,21 +11209,48 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
+
         <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
-        <out>
-          <lu>
-            <get-case-from pos="1">
-              <clip pos="2" side="tl" part="lem"/>
-            </get-case-from>
-            <lit-tag v="prn"/>
-            <clip pos="2" side="tl" part="tipo_prn"/>
-            <clip pos="2" side="tl" part="tipoenc_pro"/>
-          </lu>
-          <b pos="2"/>
-          <lu>
-            <clip pos="3" side="tl" part="whole"/>
-          </lu>
-        </out>
+
+        <choose>
+          <when>
+            <test>
+              <and>
+                <in caseless="yes">
+                  <clip pos="3" side="sl" part="lem"/>
+                  <list n="vb_pronfra_noproncat"/>
+                </in>
+                <equal><clip pos="2" side="sl" part="persona"/><clip pos="3" side="sl" part="persona"/></equal>
+              </and>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <clip pos="3" side="tl" part="lemh"/>
+                </get-case-from>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn"/>
+                <clip pos="2" side="tl" part="tipo_prn"/>
+                <clip pos="2" side="tl" part="tipoenc_pro"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
       </action>
     </rule>
 
@@ -12309,8 +12430,10 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule>
-<!-- Verbs pronominals en francès i no pronominals en català. Los pronombres enclíticos (pospuestos) se eliminan a través del diccionario catalán -->
+
+<!-- REGLES VERBS QUE SÓN PRONOMINALS EN UNA LLENGUA PERÒ NO EN L'ALTRA -->
+
+    <rule comment="Verbs pronominals en francès i no pronominals en català">
       <pattern>
         <pattern-item n="prnproref"/>
         <pattern-item n="verbospron"/>
@@ -12320,29 +12443,12 @@ is not applicable because gender and number cannot be taken from previous rules 
 <!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
           <when>
             <test>
-              <or>
-                <equal>
-                  <clip pos="1" side="sl" part="persona"/>
-                  <clip pos="2" side="sl" part="persona"/>
-                </equal>
-                <and>
-                  <equal>
-<!--Trampeta: perquè de vegades el tagger s'equivoca amb el gènere de "caía" (p1 o p3) -->
-                    <clip pos="1" side="sl" part="persona"/>
-                    <lit-tag v="p3"/>
-                  </equal>
-                  <equal>
-                    <clip pos="2" side="sl" part="persona"/>
-                    <lit-tag v="p1"/>
-                  </equal>
-                </and>
-              </or>
+              <equal>
+                <clip pos="1" side="sl" part="persona"/>
+                <clip pos="2" side="sl" part="persona"/>
+              </equal>
             </test>
-            <call-macro n="f_bcond">
-<!--Envía el blanco sólo si tiene formato -->
-              <with-param pos="1"/>
-              <with-param pos="2"/>
-            </call-macro>
+            <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
           </when>
           <otherwise>
 <!--Si no concuerdan el pronombre y el verbo, envíalo todo -->
@@ -12354,38 +12460,30 @@ is not applicable because gender and number cannot be taken from previous rules 
             </out>
           </otherwise>
         </choose>
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
       </action>
     </rule>
 
-    <rule>
-<!-- Verbs pronominals en francés i no pronominals en català. Temps compostos-->
+    <rule comment="Verbs pronominals en francés i no pronominals en català. Temps compostos">
       <pattern>
         <pattern-item n="prnproref"/>
-        <pattern-item n="pascomp"/>
+        <pattern-item n="pascomp_ser"/>
         <pattern-item n="verbospron_pp"/>
+
       </pattern>
       <action>
         <choose>
           <when>
 <!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
             <test>
-              <or>
-                <equal>
-                  <clip pos="1" side="sl" part="persona"/>
-                  <clip pos="2" side="sl" part="persona"/>
-                </equal>
-                <and>
-                  <equal>
-<!--Trampeta: perquè de vegades el tagger s'equivoca amb el gènere de "había" (p1 o p3) -->
-                    <clip pos="1" side="sl" part="persona"/>
-                    <lit-tag v="p3"/>
-                  </equal>
-                  <equal>
-                    <clip pos="2" side="sl" part="persona"/>
-                    <lit-tag v="p1"/>
-                  </equal>
-                </and>
-              </or>
+              <equal>
+                <clip pos="1" side="sl" part="persona"/>
+                <clip pos="2" side="sl" part="persona"/>
+              </equal>
             </test>
             <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
             <out>
@@ -12402,8 +12500,7 @@ is not applicable because gender and number cannot be taken from previous rules 
                 <clip pos="3" side="tl" part="lemh"/>
                 <clip pos="3" side="tl" part="a_verb"/>
                 <clip pos="3" side="tl" part="temps"/>
-                <clip pos="3" side="tl" part="gen"/>
-                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="m.sg"/>
                 <clip pos="3" side="tl" part="lemq"/>
               </lu>
             </out>
@@ -12438,6 +12535,8 @@ is not applicable because gender and number cannot be taken from previous rules 
         </choose>
       </action>
     </rule>
+
+<!-- FI REGLES VERBS QUE SÓN PRONOMINALS EN UNA LLENGUA PERÒ NO EN L'ALTRA -->
 
     <rule comment="REGLA: en + nptop = a + nptop: en France -> a França">
       <pattern>
