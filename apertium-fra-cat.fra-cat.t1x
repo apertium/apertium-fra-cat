@@ -67,6 +67,9 @@
       <cat-item tags="vblex.pp.*"/>
       <cat-item tags="adv"/>
     </def-cat>
+    <def-cat n="_1er">
+      <cat-item lemma="1er" tags="adj.m.sg"/>
+    </def-cat>
     <def-cat n="neadv">
       <cat-item lemma="ne" tags="adv"/>
     </def-cat>
@@ -813,6 +816,10 @@
       <list-item v="Provence"/>
       <list-item v="Savoie"/>
       <list-item v="Drôme"/>
+      <list-item v="Vaucluse"/>
+      <list-item v="Ardèche"/>
+<!--      <list-item v="Vivarais"/> -->
+      <list-item v="Var"/>
       <list-item v="Grande-Bretagne"/>
       <list-item v="Angleterre"/>
       <list-item v="Pays de Galles"/>
@@ -3946,14 +3953,8 @@ is not applicable because gender and number cannot be taken from previous rules 
           <when>
             <test>
               <and>
-	        <equal>
-	       	   <clip pos="1" side="sl" part="lem"/>
-		   <lit v="1er"/>
-	        </equal>
-                <in caseless="yes">
-                  <clip pos="2" side="sl" part="lem"/>
-                  <list n="mois"/>
-                </in>
+	        <equal><clip pos="1" side="sl" part="lem"/><lit v="1er"/></equal>
+                <in caseless="yes"><clip pos="2" side="sl" part="lem"/><list n="mois"/></in>
               </and>
             </test>
             <out>
@@ -4160,8 +4161,8 @@ is not applicable because gender and number cannot be taken from previous rules 
               <b/>
               <lu>
                 <clip pos="3" side="tl" part="lemh"/>
-            	<clip pos="2" side="tl" part="a_nom"/>
-            	<clip pos="2" side="tl" part="gen"/>
+            	<clip pos="3" side="tl" part="a_nom"/>
+            	<clip pos="3" side="tl" part="gen"/>
             	<lit-tag v="sg"/>
                 <clip pos="3" side="tl" part="lemq"/>
               </lu>
@@ -4807,6 +4808,90 @@ is not applicable because gender and number cannot be taken from previous rules 
             </out>
           </otherwise>
         </choose>
+      </action>
+    </rule>
+
+   <rule comment="REGLA: JOUR 1er MOIS (mercredi 1er novembre: dilluns 1 de novembre)">
+      <pattern>
+        <pattern-item n="jour_n"/>
+        <pattern-item n="_1er"/>
+        <pattern-item n="nom_mois"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+        </call-macro>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <lit v="1"/>
+                <lit-tag v="num"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <lit v="de"/>
+                <lit-tag v="pr"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+            	<clip pos="3" side="tl" part="a_nom"/>
+            	<clip pos="3" side="tl" part="gen"/>
+            	<lit-tag v="sg"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+            </out>
+      </action>
+    </rule>
+
+   <rule comment="REGLA: JOUR 1er MOIS NUM (mercredi 1er novembre 2004: dilluns 1 de novembre de 2004)">
+      <pattern>
+        <pattern-item n="jour_n"/>
+        <pattern-item n="_1er"/>
+        <pattern-item n="nom_mois"/>
+        <pattern-item n="num"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+        </call-macro>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <lit v="1"/>
+                <lit-tag v="num"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <lit v="de"/>
+                <lit-tag v="pr"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+            	<clip pos="3" side="tl" part="a_nom"/>
+            	<clip pos="3" side="tl" part="gen"/>
+            	<lit-tag v="sg"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+              <b pos="3"/>
+              <lu>
+                <lit v="de"/>
+                <lit-tag v="pr"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="4" side="tl" part="whole"/>
+              </lu>
+            </out>
       </action>
     </rule>
 
