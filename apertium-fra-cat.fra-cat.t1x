@@ -7183,6 +7183,95 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
+    <rule comment="REGLA: NE VBHAVER VBSERPP QUE (n'ont été que > només han estat)">
+      <pattern>
+        <pattern-item n="neadv"/>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="pp_m_sg"/>
+        <pattern-item n="que"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_set_pron">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <choose>
+          <when>
+            <test><equal><clip pos="3" side="tl" part="gen"/><lit-tag v="GD"/></equal></test>
+            <let><clip pos="3" side="tl" part="gen"/><lit-tag v="m"/></let>
+          </when>
+        </choose>
+        <choose>
+          <when>
+            <test><equal><clip pos="3" side="tl" part="nbr"/><lit-tag v="ND"/></equal></test>
+            <let><clip pos="3" side="tl" part="nbr"/><lit-tag v="sg"/></let>
+          </when>
+        </choose>
+        <choose>
+	  <when>
+	    <test>
+	      <equal><var n="pronom"/><lit v=""/></equal>
+	    </test>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <lit v="només"/>
+                </get-case-from>
+                <lit-tag v="adv"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+            </out>
+	  </when>
+	  <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+	          <var n="pronom"/>
+                </get-case-from>
+              </lu>
+              <b/>
+              <lu>
+                <get-case-from pos="2">
+                  <lit v="només"/>
+                </get-case-from>
+                <lit-tag v="adv"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="2" side="tl" part="lemh"/>
+                </get-case-from>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+            </out>
+	  </otherwise>
+        </choose>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+      </action>
+    </rule>
+
     <rule comment="REGLA: PRN VBHAVER VBSERPP (ils ont été > han estat)">
       <pattern>
         <pattern-item n="prnsubj"/>
@@ -7224,6 +7313,62 @@ is not applicable because gender and number cannot be taken from previous rules 
             <clip pos="3" side="tl" part="lemq"/>
           </lu>
         </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: PRN NE VBHAVER VBSERPP QUE (ils n'ont été que > només han estat)">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="vbserpp"/>
+        <pattern-item n="que"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
+        <choose>
+          <when>
+            <test>
+              <equal><clip pos="4" side="tl" part="gen"/><lit-tag v="GD"/></equal>
+            </test>
+            <let><clip pos="4" side="tl" part="gen"/><lit-tag v="m"/></let>
+          </when>
+        </choose>
+        <choose>
+          <when>
+            <test>
+              <equal><clip pos="4" side="tl" part="nbr"/><lit-tag v="ND"/></equal>
+            </test>
+            <let><clip pos="4" side="tl" part="nbr"/><lit-tag v="sg"/></let>
+          </when>
+        </choose>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="només"/>
+            </get-case-from>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="3">
+              <clip pos="3" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="4"/><with-param pos="5"/></call-macro>
       </action>
     </rule>
 
@@ -9764,7 +9909,6 @@ is not applicable because gender and number cannot be taken from previous rules 
       <pattern>
         <pattern-item n="vbhaver"/>
         <pattern-item n="pp_mf_sp"/>
-
       </pattern>
       <action>
         <call-macro n="f_concord0">
@@ -9797,6 +9941,56 @@ is not applicable because gender and number cannot be taken from previous rules 
             <clip pos="2" side="tl" part="lemq"/>
           </lu>
         </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: NE VBHAVER SERPP QUE (n'a été que: només ha estat (evitem: ha estada))">
+      <pattern>
+        <pattern-item n="neadv"/>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="pp_mf_sp"/>
+        <pattern-item n="que"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="2"/>
+        </call-macro>
+        <choose>
+          <when>
+            <test>
+              <equal><clip pos="3" side="tl" part="gen"/><lit-tag v="GD"/></equal>
+            </test>
+            <let><clip pos="3" side="tl" part="gen"/><lit-tag v="m"/></let>
+          </when>
+        </choose>
+        <choose>
+          <when>
+            <test>
+              <equal><clip pos="3" side="tl" part="nbr"/><lit-tag v="ND"/></equal>
+            </test>
+            <let><clip pos="3" side="tl" part="nbr"/><lit-tag v="sg"/></let>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="només"/>
+            </get-case-from>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
       </action>
     </rule>
 
@@ -10361,7 +10555,72 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
 
 
-    <rule comment="REGLA: NE VBHAVER PAS PP (ils n'ont pas été > no han estat, il n'a pas épousé > no s-ha casat amb)">
+    <rule comment="REGLA: NE VBSER VBSERPP QUE (ne sont tombés que > només han caigut)">
+      <pattern>
+        <pattern-item n="neadv"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="vbambser_pp"/>
+        <pattern-item n="que"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_set_pron">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <let><clip pos="2" side="tl" part="lem"/><lit v="haver"/></let>
+        <let><clip pos="2" side="tl" part="a_verb"/><lit-tag v="vbhaver"/></let>
+        <let><clip pos="3" side="tl" part="gen"/><lit-tag v="m"/></let>
+        <let><clip pos="3" side="tl" part="nbr"/><lit-tag v="sg"/></let>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="només"/>
+            </get-case-from>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <choose>
+	  <when>
+	    <test>
+	      <equal><var n="pronom"/><lit v=""/></equal>
+	    </test>
+            <out>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b pos="2"/>
+            </out>
+	  </when>
+	  <otherwise>
+            <out>
+              <lu>
+	        <var n="pronom"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b pos="2"/>
+            </out>
+	  </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: PRN NE VBHAVER PAS PP (ils n'ont pas été > no han estat, il n'a pas épousé > no s-ha casat amb)">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="neadv"/>
@@ -10445,7 +10704,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
 
 
-    <rule comment="REGLA: NE VBSER PAS VBSERPP (ils ne sont pas tombés > no han caigut)">
+    <rule comment="REGLA: PRN NE VBSER PAS VBSERPP (ils ne sont pas tombés > no han caigut)">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="neadv"/>
@@ -10513,6 +10772,75 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
+
+    <rule comment="REGLA: PRN NE VBSER VBSERPP QUE (ils ne sont tombés que > només han caigut)">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="vbambser_pp"/>
+        <pattern-item n="que"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_concord0">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_set_pron">
+          <with-param pos="4"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <let><clip pos="3" side="tl" part="lem"/><lit v="haver"/></let>
+        <let><clip pos="3" side="tl" part="a_verb"/><lit-tag v="vbhaver"/></let>
+        <let><clip pos="4" side="tl" part="gen"/><lit-tag v="m"/></let>
+        <let><clip pos="4" side="tl" part="nbr"/><lit-tag v="sg"/></let>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="només"/>
+            </get-case-from>
+                <lit-tag v="adv"/>
+          </lu>
+          <b pos="2"/>
+        </out>
+        <choose>
+	  <when>
+	    <test>
+	      <equal><var n="pronom"/><lit v=""/></equal>
+	    </test>
+            <out>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+              <b pos="3"/>
+            </out>
+	  </when>
+	  <otherwise>
+            <out>
+              <lu>
+	        <var n="pronom"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+              <b pos="3"/>
+            </out>
+	  </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="4"/><with-param pos="5"/></call-macro>
+      </action>
+    </rule>
 
 
     <rule comment="REGLA: PRN NE VERB PAS DE LE (il ne veut pas de l'eau: no vol aigua, il ne veut pas des bombons, no vol bombons)">
@@ -13226,6 +13554,61 @@ is not applicable because gender and number cannot be taken from previous rules 
             <clip pos="1" side="tl" part="whole"/>
           </lu>
         </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: ne mange que > només menja">
+      <pattern>
+        <pattern-item n="neadv"/>
+        <pattern-item n="verbconj"/>
+        <pattern-item n="que"/>
+      </pattern>
+      <action>
+        <call-macro n="f_set_pron">
+          <with-param pos="2"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <choose>
+	  <when>
+	    <test>
+	      <equal><var n="pronom"/><lit v=""/></equal>
+	    </test>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <lit v="només"/>
+                </get-case-from>
+                <lit-tag v="adv"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+            </out>
+	  </when>
+	  <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <lit v="només"/>
+                </get-case-from>
+                <lit-tag v="adv"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+	        <var n="pronom"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+            </out>
+	  </otherwise>
+        </choose>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
       </action>
     </rule>
 
