@@ -1217,6 +1217,15 @@
     <match tags="n.*"/>
     <match lemma="en" tags="pr"/>
   </rule>
+  <rule weight="1.0">
+    <match lemma="població" tags="n.*"/>
+    <match lemma="estimar" tags="vblex.*"><select lemma="estimer"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="estimar" tags="vblex.*"><select lemma="estimer"/></match>
+    <match tags="det.*"/>
+    <match lemma="població" tags="n.*"/>
+  </rule>
 
   <!-- congelar >> congeler, geler -->
   <rule weight="0.8">
@@ -2030,6 +2039,18 @@
 
 <!-- ADJ -->
 
+  <!-- migratori >> migratoire, migrateur -->
+  <rule weight="0.8">
+    <match lemma="migratori" tags="adj.*"><select lemma="migratoire"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="ocell" tags="n.*"/>
+      <match lemma="au" tags="n.*"/>
+    </or>
+    <match lemma="migratori" tags="adj.*"><select lemma="migrateur"/></match>
+  </rule>
+
   <!-- sonor >> sonore, parlant -->
   <rule weight="0.8">
     <match lemma="sonor" tags="adj.*"><select lemma="sonore"/></match>
@@ -2174,9 +2195,36 @@
 
 <!-- N -->
 
+  <!-- investigació >> recherche, enquête -->
+  <rule weight="0.8">
+    <match lemma="investigació" tags="n.*"><select lemma="recherche"/></match>
+  </rule>
+
   <!-- fuga >> fuite, fugue -->
   <rule weight="0.8">
     <match lemma="fuga" tags="n.*"><select lemma="fuite"/></match>
+  </rule>
+
+  <!-- càrrec >> poste, chef# d'accusation -->
+  <rule weight="0.8">
+    <match lemma="càrrec" tags="n.*"><select lemma="poste"/></match>
+  </rule>
+
+  <!-- quarter >> caserne, quartier -->
+  <rule weight="0.8">
+    <match lemma="quarter" tags="n.*"><select lemma="caserne"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="quarter" tags="n.*"><select lemma="quartier"/></match>
+    <match lemma="general" tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="quarter" tags="n.*"><select lemma="quartier"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="estiu" tags="n.*"/>
+      <match lemma="hivern" tags="n.*"/>
+    </or>
   </rule>
 
   <!-- banc >> banc, banque -->

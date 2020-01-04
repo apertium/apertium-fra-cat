@@ -507,6 +507,13 @@
   </rule>
   <rule weight="1.0">
     <match lemma="pour" tags="pr"><select lemma="per"/></match>
+    <or>
+      <match lemma="corruption" tags="n.*"/>
+      <match lemma="corruption" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pour" tags="pr"><select lemma="per"/></match>
     <match lemma="de" tags="pr"/>
     <match lemma="le" tags="det.def.mf.pl"/>
     <or>
@@ -532,7 +539,10 @@
     <match lemma="pour" tags="pr"><select lemma="per"/></match>
   </rule>
   <rule weight="1.0">
-    <match lemma="féliciter" tags="vblex.*"/>
+    <or>
+      <match lemma="féliciter" tags="vblex.*"/>
+      <match lemma="arrêter" tags="vblex.*"/>
+    </or>
     <repeat from="0" upto="1">
       <match tags="adv"/>
     </repeat>
@@ -1059,6 +1069,78 @@
   <macro name="verb_prep" p1="chasser" p2="caçar" p3="de" p4="expulsar" />
 
 <!-- **************** N **************** -->
+
+  <!-- grenadier >> granader, magraner -->
+  <rule weight="0.8">
+    <match lemma="grenadier" tags="n.*"><select lemma="granader"/></match>
+  </rule>
+
+  <!-- enquête >> enquesta, investigació -->
+  <rule weight="0.8">
+    <match lemma="enquête" tags="n.*"><select lemma="enquesta"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ouvrir" tags="vblex.*"/>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="enquête" tags="n.*"><select lemma="investigació"/></match>
+  </rule>
+
+  <!-- parquet >> barri, parquet -->
+  <rule weight="0.8">
+    <match lemma="parquet" tags="n.*"><select lemma="fiscalia"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="en" tags="pr"/>
+    <match lemma="parquet" tags="n.*"><select lemma="parquet"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sous" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="parquet" tags="n.*"><select lemma="parquet"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="parquet" tags="n.*"><select lemma="parquet"/></match>
+    <match lemma="à" tags="pr"/>
+    <match tags="det.det.f.sg"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="parquet" tags="n.*"><select lemma="parquet"/></match>
+    <match lemma="en" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="parquet" tags="n.*"><select lemma="parquet"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="chêne" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="parquet" tags="n.*"><select lemma="parquet"/></match>
+    <or>
+      <match lemma="flottant" tags="adj.*"/>
+      <match lemma="Versailles"/>
+      <match lemma="Chantilly"/>
+      <match lemma="Aremberg"/>
+    </or>
+  </rule>
+
+  <!-- quartier >> barri, quarter -->
+  <rule weight="0.8">
+    <match lemma="quartier" tags="n.*"><select lemma="barri"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="quartier" tags="n.*"><select lemma="quarter"/></match>
+    <match lemma="général" tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="quartier" tags="n.*"><select lemma="quarter"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="été" tags="n.*"/>
+      <match lemma="hiver" tags="n.*"/>
+    </or>
+  </rule>
 
   <!-- banque >> banc, banca -->
   <rule weight="0.8">
@@ -2122,6 +2204,25 @@
     <match lemma="maladroit" tags="adj.*"><select lemma="maldestre"/></match>
   </rule>
 
+  <!-- certain >> cert, segur -->
+  <rule weight="0.8">
+    <match lemma="certain" tags="adj.*"><select lemma="cert"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="être"><select lemma="estar" tags="vblex.*"/></match>
+    <repeat from="0" upto="1">
+    <or>
+      <match tags="preadv"/>
+      <match tags="adv"/>
+    </or>
+    </repeat>
+    <match lemma="certain" tags="adj.*"><select lemma="segur"/></match>
+    <or>
+      <match lemma="de" tags="pr"/>
+      <match lemma="que"/>
+    </or>
+  </rule>
+
   <!-- parlant >> parlant, sonor -->
   <rule weight="0.8">
     <match lemma="parlant" tags="adj.*"><select lemma="parlant"/></match>
@@ -2290,6 +2391,10 @@
       <match lemma="fermer" tags="vblex.pp.*"/>
       <match lemma="éveillé" tags="adj.*"/>
       <match lemma="éveiller" tags="vblex.pp.*"/>
+      <match lemma="consterné" tags="adj.*"/>
+      <match lemma="consterner" tags="vblex.pp.*"/>
+      <match lemma="réglementé" tags="adj.*"/>
+      <match lemma="réglementer" tags="vblex.pp.*"/>
 
       <!-- <match lemma="sûr" tags="adj.*"/> només qd hi ha je, tu, il, etc -->
     </or>

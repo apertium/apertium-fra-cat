@@ -925,7 +925,7 @@
       <list-item v="Corée"/>
       <list-item v="Corée du Nord"/>
       <list-item v="Corée du Sud"/>
-      <list-item v="Japon"/>
+      <!-- <list-item v="Japon"/> -->
       <list-item v="Viêtnam"/>
       <list-item v="Tonkin"/>
       <list-item v="Annam"/>
@@ -1074,6 +1074,8 @@
       <list-item v="normand"/>
       <list-item v="picard"/>
       <list-item v="alsacien"/>
+      <list-item v="bourgonde"/>
+      <list-item v="bourguignon"/>
       <list-item v="occitan"/>
       <list-item v="aranais"/>
       <list-item v="corse"/>
@@ -1097,6 +1099,7 @@
       <list-item v="allemand"/>
       <list-item v="bavarois"/>
       <list-item v="souabe"/>
+      <list-item v="burgonde"/>
       <list-item v="danois"/>
       <list-item v="islandais"/>
       <list-item v="norvégien"/>
@@ -1112,11 +1115,15 @@
       <list-item v="oudmourte"/>
       <list-item v="yakoute"/>
       <list-item v="iakoute"/>
+      <list-item v="khakasse"/>
+      <list-item v="touvain"/>
+      <list-item v="altaïen"/>
       <list-item v="estonien"/>
       <list-item v="letton"/>
       <list-item v="lithuanien"/>
       <list-item v="balte"/>
       <list-item v="polonais"/>
+      <list-item v="cachoube"/>
       <list-item v="tchèque"/>
       <list-item v="slovaque"/>
       <list-item v="hongrois"/>
@@ -1211,6 +1218,7 @@
       <list-item v="latin"/>
       <list-item v="troyen"/>
       <list-item v="phrygien"/>
+      <list-item v="sogdien"/>
       <list-item v="perse"/>
       <list-item v="persan"/>
       <list-item v="baloutche"/>
