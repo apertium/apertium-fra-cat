@@ -121,9 +121,16 @@
     <def-cat n="es">
       <cat-item lemma="es" tags="prn.pro.ref.p3.mf.sp"/>
     </def-cat>
-    <def-cat n="prnproadv">
+    <def-cat n="prnpronoref">
       <cat-item lemma="en" tags="prn.pro.adv"/>
       <cat-item lemma="hi" tags="prn.pro.adv"/>
+      <cat-item lemma="ho" tags="prn.pro.p3.nt"/>
+      <cat-item lemma="li" tags="prn.pro.p3.mf.sg"/>
+      <cat-item lemma="li" tags="prn.pro.p3.mf.pl"/>
+      <cat-item lemma="el" tags="prn.pro.p3.m.sg"/>
+      <cat-item lemma="el" tags="prn.pro.p3.f.sg"/>
+      <cat-item lemma="el" tags="prn.pro.p3.m.pl"/>
+      <cat-item lemma="el" tags="prn.pro.p3.f.pl"/>
     </def-cat>
     <def-cat n="tu">
       <cat-item lemma="tu" tags="prn.tn.*"/>
@@ -8101,6 +8108,134 @@ is not applicable because gender and number can not be taken from previous rules
 </rule>
 
 
+<rule comment="regla: prnpronoref haver pp: hi han passat camions > y sont passés des camions">
+   <pattern>
+     <pattern-item n="prnpronoref"/>
+     <pattern-item n="haver"/>
+     <pattern-item n="pp"/>
+     <pattern-item n="nom"/>
+   </pattern>
+   <action>
+     <call-macro n="f_vaux_pp2">
+       <with-param pos="2"/>
+       <with-param pos="3"/>
+     </call-macro>
+     <call-macro n="f_concord1">
+       <with-param pos="4"/>
+     </call-macro>
+        <call-macro n="f_lang_dial1">
+          <with-param pos="4"/>
+        </call-macro>
+     <call-macro n="f_setgen">
+       <with-param pos="4"/>
+     </call-macro>
+     <out>
+       <lu>
+         <clip pos="1" side="tl" part="whole"/>
+       </lu>
+       <b pos="1"/>
+       <lu>
+         <clip pos="2" side="tl" part="lem"/>
+         <clip pos="2" side="tl" part="tags"/>
+       </lu>
+       <b pos="2"/>
+       <lu>
+         <clip pos="3" side="tl" part="lemh"/>
+         <clip pos="3" side="tl" part="tags"/>
+         <clip pos="3" side="tl" part="lemq"/>
+       </lu>
+       <b/>
+       <lu>
+         <lit v="de"/>
+         <lit-tag v="pr"/>
+       </lu>
+       <b/>
+       <lu>
+         <lit v="le"/>
+         <lit-tag v="det.def"/>
+         <clip pos="3" side="sl" part="gen"/>
+         <var n="numero"/>
+       </lu>
+       <b pos="3"/>
+       <lu>
+         <clip pos="4" side="tl" part="lemh"/>
+         <clip pos="4" side="tl" part="tags"/>
+         <clip pos="4" side="tl" part="lemq"/>
+       </lu>
+     </out>
+   </action>
+</rule>
+
+
+<rule comment="regla: no prnpronoref haver pp: no hi han passat camions > n'y sont pas passés des camions">
+   <pattern>
+     <pattern-item n="noadv"/>
+     <pattern-item n="prnpronoref"/>
+     <pattern-item n="haver"/>
+     <pattern-item n="pp"/>
+     <pattern-item n="nom"/>
+   </pattern>
+   <action>
+     <call-macro n="f_vaux_pp2">
+       <with-param pos="3"/>
+       <with-param pos="4"/>
+     </call-macro>
+     <call-macro n="f_concord1">
+       <with-param pos="5"/>
+     </call-macro>
+     <call-macro n="f_lang_dial1">
+       <with-param pos="5"/>
+     </call-macro>
+     <call-macro n="f_setgen">
+       <with-param pos="5"/>
+     </call-macro>
+     <out>
+       <lu>
+         <clip pos="1" side="tl" part="whole"/>
+       </lu>
+       <b pos="1"/>
+       <lu>
+         <clip pos="2" side="tl" part="whole"/>
+       </lu>
+       <b pos="2"/>
+       <lu>
+         <clip pos="3" side="tl" part="lem"/>
+         <clip pos="3" side="tl" part="tags"/>
+       </lu>
+       <b/>
+       <lu>
+         <lit v="pas"/>
+         <lit-tag v="adv"/>
+       </lu>
+       <b pos="3"/>
+       <lu>
+         <clip pos="4" side="tl" part="lemh"/>
+         <clip pos="4" side="tl" part="tags"/>
+         <clip pos="4" side="tl" part="lemq"/>
+       </lu>
+       <b/>
+       <lu>
+         <lit v="de"/>
+         <lit-tag v="pr"/>
+       </lu>
+       <b/>
+       <lu>
+         <lit v="le"/>
+         <lit-tag v="det.def"/>
+         <clip pos="4" side="sl" part="gen"/>
+         <var n="numero"/>
+       </lu>
+       <b pos="4"/>
+       <lu>
+         <clip pos="5" side="tl" part="lemh"/>
+         <clip pos="5" side="tl" part="tags"/>
+         <clip pos="5" side="tl" part="lemq"/>
+       </lu>
+     </out>
+   </action>
+</rule>
+
+
 <rule comment="regla: SENT haver pp: SENT he caigut > SENT je suis tombé">
    <pattern>
      <pattern-item n="sentquecm"/>
@@ -8564,6 +8699,59 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
     </rule>
 
+    <rule comment="PRNPROADV HAVER PP > PRNPROADV HAVER/SER PP: n'ha incorporat > n'a incorporé, hi ha anat > y est allé">
+      <pattern>
+        <pattern-item n="prnpronoref"/>
+        <pattern-item n="haver"/>
+        <pattern-item n="pp"/>
+      </pattern>
+      <action>
+        <call-macro n="f_setpronom">
+          <with-param pos="2"/>
+        </call-macro>
+        <choose>
+          <when>
+            <test>
+              <in caseless="yes"><clip pos="3" side="sl" part="lemh"/><list n="vbambser"/></in>
+            </test>
+            <let><clip pos="2" side="tl" part="lem"/><lit v="être"/></let>
+            <let><clip pos="2" side="tl" part="a_verb"/><lit-tag v="vbser"/></let>
+            <let><clip pos="3" side="tl" part="nbr"/><clip pos="2" side="sl" part="nbr"/></let>
+            <choose>
+              <when>
+                <test>
+                    <or>
+                      <equal><var n="genero"/><lit-tag v="m"/></equal>
+                      <equal><var n="genero"/><lit-tag v="f"/></equal>
+                    </or>
+                </test>
+                <let><clip pos="3" side="tl" part="gen"/><var n="genero"/></let>
+              </when>
+            </choose>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
     <rule comment="NO PRNREF HAVER PP > NO PRNREF SER PP: no s'ha incorporat > ne s'est pas incorporé, no m'ha dit > ne m'a pas dit">
       <pattern>
         <pattern-item n="noadv"/>
@@ -8601,6 +8789,71 @@ is not applicable because gender and number can not be taken from previous rules
                 </and>
                 <in caseless="yes"><clip pos="4" side="sl" part="lemh"/><list n="vbambser"/></in>
               </or>
+            </test>
+            <let><clip pos="3" side="tl" part="lem"/><lit v="être"/></let>
+            <let><clip pos="3" side="tl" part="a_verb"/><lit-tag v="vbser"/></let>
+            <let><clip pos="4" side="tl" part="nbr"/><clip pos="3" side="sl" part="nbr"/></let>
+            <choose>
+              <when>
+                <test>
+                    <or>
+                      <equal><var n="genero"/><lit-tag v="m"/></equal>
+                      <equal><var n="genero"/><lit-tag v="f"/></equal>
+                    </or>
+                </test>
+                <let><clip pos="4" side="tl" part="gen"/><var n="genero"/></let>
+              </when>
+            </choose>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="NO PRNPROADV HAVER PP > NO PRNPROADV HAVER/SER PP: no n'ha incorporat > n'en a pas incorporé, no hi ha anat > n'y est pas allé">
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="prnpronoref"/>
+        <pattern-item n="haver"/>
+        <pattern-item n="pp"/>
+      </pattern>
+      <action>
+        <call-macro n="f_setpronom">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <choose>
+          <when>
+            <test>
+              <in caseless="yes"><clip pos="4" side="sl" part="lemh"/><list n="vbambser"/></in>
             </test>
             <let><clip pos="3" side="tl" part="lem"/><lit v="être"/></let>
             <let><clip pos="3" side="tl" part="a_verb"/><lit-tag v="vbser"/></let>
@@ -8870,57 +9123,59 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
     </rule>
 
-
-     <rule>
-<!--REGLA: acabar de + inf -> venir de + inf -->
+    <rule comment="PRNPROADV ANAR INF > PRNPROADV HAVER/SER PP: hi va arribar > y est arrivé, hi va dir > hi a dit">
       <pattern>
-        <pattern-item n="verb_conj"/>
-      <pattern-item n="deprep"/>
+        <pattern-item n="prnpronoref"/>
+        <pattern-item n="anar"/>
         <pattern-item n="inf"/>
       </pattern>
       <action>
         <call-macro n="f_setpronom">
-          <with-param pos="1"/>
-        </call-macro>
-        <call-macro n="f_pis2prs">
-          <with-param pos="1"/>
+          <with-param pos="2"/>
         </call-macro>
         <choose>
           <when>
             <test>
-              <equal>
-                <clip pos="1" side="sl" part="persona"/>
-                <lit-tag v="p3"/>
-              </equal>
+              <in caseless="yes"><clip pos="3" side="sl" part="lemh"/><list n="vbambser"/></in>
             </test>
+            <choose>
+              <when>
+                <test>
+                    <or>
+                      <equal><var n="genero"/><lit-tag v="m"/></equal>
+                      <equal><var n="genero"/><lit-tag v="f"/></equal>
+                    </or>
+                </test>
+                <let><var n="genero_tmp"/><var n="genero"/></let>
+              </when>
+              <otherwise>
+                <let><var n="genero_tmp"/><lit-tag v="m"/></let>
+              </otherwise>
+            </choose>
             <out>
               <lu>
-                <clip pos="1" side="sl" part="lem"/>
-                <lit-tag v="prn.tn"/>
-                <clip pos="1" side="sl" part="persona"/>
-                <lit-tag v="m"/>
-                <clip pos="1" side="sl" part="nbr"/>
-              </lu>
-              <b/>
-              <lu>
-                <get-case-from pos="2">
-          <lit v="venir"/>
-      </get-case-from>
-                <clip pos="1" side="tl" part="a_verb"/>
-                <clip pos="1" side="tl" part="temps"/>
-                <clip pos="1" side="tl" part="persona"/>
-                <clip pos="1" side="tl" part="gen"/>
-                <clip pos="1" side="tl" part="nbr"/>
+                <clip pos="1" side="tl" part="lemh"/>
+                <clip pos="1" side="tl" part="tags"/>
+                <clip pos="1" side="tl" part="lemq"/>
               </lu>
               <b pos="1"/>
               <lu>
-        <clip pos="2" side="tl" part="whole"/>
-      </lu>
-      <b pos="2"/>
+                <get-case-from pos="2">
+                  <lit v="être"/>
+                </get-case-from>
+                <lit-tag v="vbser"/>
+                <lit-tag v="pri"/>
+                <clip pos="2" side="tl" part="persona"/>
+                <clip pos="2" side="tl" part="nbr"/>
+              </lu>
+              <b pos="2"/>
               <lu>
                 <clip pos="3" side="tl" part="lemh"/>
                 <clip pos="3" side="tl" part="a_verb"/>
-                <clip pos="3" side="tl" part="temps"/>
+                <lit-tag v="pp"/>
+                <lit-tag v="m"/>
+                <!-- <var n="genero_tmp"/> -->
+                <clip pos="2" side="tl" part="nbr"/>
                 <clip pos="3" side="tl" part="lemq"/>
               </lu>
             </out>
@@ -8928,32 +9183,25 @@ is not applicable because gender and number can not be taken from previous rules
           <otherwise>
             <out>
               <lu>
-                <clip pos="1" side="sl" part="lem"/>
-                <lit-tag v="prn.tn"/>
-                <clip pos="1" side="sl" part="persona"/>
-                <lit-tag v="mf"/>
-                <clip pos="1" side="sl" part="nbr"/>
-              </lu>
-              <b/>
-             <lu>
-                <get-case-from pos="2">
-          <lit v="venir"/>
-                </get-case-from>
-                <clip pos="1" side="tl" part="a_verb"/>
-                <clip pos="1" side="tl" part="temps"/>
-                <clip pos="1" side="tl" part="persona"/>
-                <clip pos="1" side="tl" part="gen"/>
-                <clip pos="1" side="tl" part="nbr"/>
+                <clip pos="1" side="tl" part="lemh"/>
+                <clip pos="1" side="tl" part="tags"/>
+                <clip pos="1" side="tl" part="lemq"/>
               </lu>
               <b pos="1"/>
               <lu>
-        <clip pos="2" side="tl" part="whole"/>
-      </lu>
-      <b pos="2"/>
+                <get-case-from pos="2">
+                  <lit v="avoir"/>
+                </get-case-from>
+                <lit-tag v="vbhaver"/>
+                <lit-tag v="pri"/>
+                <clip pos="2" side="tl" part="persona"/>
+                <clip pos="2" side="tl" part="nbr"/>
+              </lu>
+              <b pos="2"/>
               <lu>
                 <clip pos="3" side="tl" part="lemh"/>
                 <clip pos="3" side="tl" part="a_verb"/>
-                <clip pos="3" side="tl" part="temps"/>
+                <lit-tag v="pp.m.sg"/>
                 <clip pos="3" side="tl" part="lemq"/>
               </lu>
             </out>
@@ -8962,103 +9210,105 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
     </rule>
 
-     <rule>
-<!--REGLA: acabar de + inf + enc -> venir de + enc + inf -->
+    <rule comment="NO PRNPROADV ANAR INF > NE PRNPROADV ADV/SER PAS PP: no hi va anar > n'y est pas arrivé, no hi va dir > n'y a pas dit">
       <pattern>
-        <pattern-item n="verb_conj"/>
-      <pattern-item n="deprep"/>
+        <pattern-item n="noadv"/>
+        <pattern-item n="prnpronoref"/>
+        <pattern-item n="anar"/>
         <pattern-item n="inf"/>
-      <pattern-item n="prnenc"/>
       </pattern>
       <action>
         <call-macro n="f_setpronom">
-          <with-param pos="1"/>
+          <with-param pos="3"/>
         </call-macro>
-        <call-macro n="f_pis2prs">
-          <with-param pos="1"/>
-        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+        </out>
         <choose>
           <when>
             <test>
-              <equal>
-                <clip pos="1" side="sl" part="persona"/>
-                <lit-tag v="p3"/>
-              </equal>
+              <in caseless="yes"><clip pos="4" side="sl" part="lemh"/><list n="vbambser"/></in>
             </test>
+            <choose>
+              <when>
+                <test>
+                    <or>
+                      <equal><var n="genero"/><lit-tag v="m"/></equal>
+                      <equal><var n="genero"/><lit-tag v="f"/></equal>
+                    </or>
+                </test>
+                <let><var n="genero_tmp"/><var n="genero"/></let>
+              </when>
+              <otherwise>
+                <let><var n="genero_tmp"/><lit-tag v="m"/></let>
+              </otherwise>
+            </choose>
             <out>
               <lu>
-                <clip pos="1" side="sl" part="lem"/>
-                <lit-tag v="prn.tn"/>
-                <clip pos="1" side="sl" part="persona"/>
-                <lit-tag v="m"/>
-                <clip pos="1" side="sl" part="nbr"/>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <get-case-from pos="3">
+                  <lit v="être"/>
+                </get-case-from>
+                <lit-tag v="vbser"/>
+                <lit-tag v="pri"/>
+                <clip pos="3" side="tl" part="persona"/>
+                <clip pos="3" side="tl" part="nbr"/>
               </lu>
               <b/>
               <lu>
-                <get-case-from pos="2">
-          <lit v="venir"/>
-                </get-case-from>
-                <clip pos="1" side="tl" part="a_verb"/>
-                <clip pos="1" side="tl" part="temps"/>
-                <clip pos="1" side="tl" part="persona"/>
-                <clip pos="1" side="tl" part="gen"/>
-                <clip pos="1" side="tl" part="nbr"/>
+                <lit v="pas"/>
+                <lit-tag v="adv"/>
               </lu>
-              <b pos="1"/>
+              <b pos="3"/>
               <lu>
-        <clip pos="2" side="tl" part="whole"/>
-      </lu>
-      <b pos="2"/>
-      <lu>
-               <clip pos="4" side="tl" part="lem"/>
-                <lit-tag v="prn.pro"/>
-                <clip pos="4" side="tl" part="tipoenc_pro"/>
-      </lu>
-      <b pos="3"/>
-              <lu>
-                <clip pos="3" side="tl" part="lemh"/>
-                <clip pos="3" side="tl" part="a_verb"/>
-                <clip pos="3" side="tl" part="temps"/>
-                <clip pos="3" side="tl" part="lemq"/>
+                <clip pos="4" side="tl" part="lemh"/>
+                <clip pos="4" side="tl" part="a_verb"/>
+                <lit-tag v="pp"/>
+                <lit-tag v="m"/>
+                <!-- <var n="genero_tmp"/> -->
+                <clip pos="3" side="tl" part="nbr"/>
+                <clip pos="4" side="tl" part="lemq"/>
               </lu>
             </out>
           </when>
           <otherwise>
             <out>
               <lu>
-                <clip pos="1" side="sl" part="lem"/>
-                <lit-tag v="prn.tn"/>
-                <clip pos="1" side="sl" part="persona"/>
-                <lit-tag v="mf"/>
-                <clip pos="1" side="sl" part="nbr"/>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <get-case-from pos="3">
+                  <lit v="avoir"/>
+                </get-case-from>
+                <lit-tag v="vbhaver"/>
+                <lit-tag v="pri"/>
+                <clip pos="3" side="tl" part="persona"/>
+                <clip pos="3" side="tl" part="nbr"/>
               </lu>
               <b/>
-             <lu>
-                <get-case-from pos="2">
-          <lit v="venir"/>
-                </get-case-from>
-                <clip pos="1" side="tl" part="a_verb"/>
-                <clip pos="1" side="tl" part="temps"/>
-                <clip pos="1" side="tl" part="persona"/>
-                <clip pos="1" side="tl" part="gen"/>
-                <clip pos="1" side="tl" part="nbr"/>
+              <lu>
+                <lit v="pas"/>
+                <lit-tag v="adv"/>
               </lu>
-              <b pos="1"/>
+              <b pos="3"/>
               <lu>
-        <clip pos="2" side="tl" part="whole"/>
-      </lu>
-      <b pos="2"/>
-      <lu>
-        <clip pos="4" side="tl" part="lem"/>
-                <lit-tag v="prn.pro"/>
-                <clip pos="4" side="tl" part="tipoenc_pro"/>
-      </lu>
-      <b pos="3"/>
-              <lu>
-                <clip pos="3" side="tl" part="lemh"/>
-                <clip pos="3" side="tl" part="a_verb"/>
-                <clip pos="3" side="tl" part="temps"/>
-                <clip pos="3" side="tl" part="lemq"/>
+                <clip pos="4" side="tl" part="lemh"/>
+                <clip pos="4" side="tl" part="a_verb"/>
+                <lit-tag v="pp.m.sg"/>
+                <clip pos="4" side="tl" part="lemq"/>
               </lu>
             </out>
           </otherwise>
@@ -10739,9 +10989,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule>
-<!--REGLA: SENT,que,coma,i PRN VERB : Li vas dir >> Tu lui as dit, Hi vas anar >> Tu y es allé -->
-<!-- FALTA l'equivalent negatiu d'aquesta regla -->
+    <rule comment="REGLA: SENT,que,coma,i PRN VERB : Li vas dir >> Tu lui as dit, Hi vas anar >> Tu y es allé">
       <pattern>
         <pattern-item n="sentquecm"/>
         <pattern-item n="prnpro"/>
@@ -10755,7 +11003,6 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_setpronom">
           <with-param pos="3"/>
         </call-macro>
-
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -10877,6 +11124,163 @@ is not applicable because gender and number can not be taken from previous rules
                 <clip pos="4" side="tl" part="a_verb"/>
                 <lit-tag v="pp.m.sg"/>
                 <clip pos="4" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: SENT,que,coma,i NO PRN VERB : NO li vas dir >> Tu ne lui as pas dit, No hi vas anar >> Tu n'y es pas allé">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="noadv"/>
+        <pattern-item n="prnpro"/>
+        <pattern-item n="anar"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="4"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <choose>
+          <when>
+            <test>
+              <equal caseless="yes">
+                <clip pos="3" side="tl" part="lem"/>
+                <lit v="on"/>
+              </equal>
+            </test>
+          <!-- no generem un pronom per al subjecte -->
+          </when>
+          <when>
+            <test>
+              <equal>
+                <clip pos="4" side="sl" part="persona"/>
+                <lit-tag v="p3"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="3">
+                  <clip pos="4" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="4" side="sl" part="persona"/>
+                <lit-tag v="m"/>
+                <clip pos="4" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+            <modify-case>
+              <clip pos="3" side="tl" part="lemh"/>
+              <lit v="aa"/>
+            </modify-case>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="3">
+                  <clip pos="4" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="4" side="sl" part="persona"/>
+                <lit-tag v="mf"/>
+                <clip pos="4" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+            <modify-case>
+              <clip pos="3" side="tl" part="lemh"/>
+              <lit v="aa"/>
+            </modify-case>
+          </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+        </out>
+        <choose>
+          <when>
+            <test>
+              <or>
+                <and>
+                  <not><equal caseless="yes"><clip pos="3" side="tl" part="lem"/><lit v="on"/></equal></not>
+                  <not><equal><clip pos="3" side="sl" part="persona"/><lit-tag v="p3"/></equal></not>
+                  <equal><clip pos="3" side="sl" part="persona"/><clip pos="4" side="sl" part="persona"/></equal>
+                  <or>
+                    <equal><clip pos="3" side="sl" part="nbr"/><clip pos="4" side="sl" part="nbr"/></equal>
+                    <equal><clip pos="3" side="sl" part="nbr"/><lit-tag v="sp"/></equal>
+                  </or>
+                </and>
+                <and>
+                  <not><equal caseless="yes"><clip pos="3" side="tl" part="lem"/><lit v="on"/></equal></not>
+                  <equal><clip pos="3" side="sl" part="persona"/><lit-tag v="p3"/></equal>
+                  <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="es"/></equal>
+                </and>
+                <in caseless="yes"><clip pos="5" side="sl" part="lemh"/><list n="vbambser"/></in>
+              </or>
+            </test>
+            <out>
+              <lu>
+                <lit v="être"/>
+                <lit-tag v="vbser"/>
+                <lit-tag v="pri"/>
+                <clip pos="4" side="tl" part="persona"/>
+                <clip pos="4" side="tl" part="nbr"/>
+              </lu>
+              <b/>
+              <lu>
+                <lit v="pas"/>
+                <lit-tag v="adv"/>
+              </lu>
+              <b pos="4"/>
+              <lu>
+                <clip pos="5" side="tl" part="lemh"/>
+                <clip pos="5" side="tl" part="a_verb"/>
+                <lit-tag v="pp.m"/>
+                <clip pos="4" side="tl" part="nbr"/>
+                <clip pos="5" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <lit v="avoir"/>
+                <lit-tag v="vbhaver"/>
+                <lit-tag v="pri"/>
+                <clip pos="4" side="tl" part="persona"/>
+                <clip pos="4" side="tl" part="nbr"/>
+              </lu>
+              <b/>
+              <lu>
+                <lit v="pas"/>
+                <lit-tag v="adv"/>
+              </lu>
+              <b pos="4"/>
+              <lu>
+                <clip pos="5" side="tl" part="lemh"/>
+                <clip pos="5" side="tl" part="a_verb"/>
+                <lit-tag v="pp.m.sg"/>
+                <clip pos="5" side="tl" part="lemq"/>
               </lu>
             </out>
           </otherwise>
