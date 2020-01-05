@@ -34,6 +34,12 @@
       <cat-item tags="det.*"/>
       <cat-item tags="predet.*"/>
     </def-cat>
+    <def-cat n="detind">
+      <cat-item tags="det.ind.*"/>
+    </def-cat>
+    <def-cat n="uns">
+      <cat-item lemma="un" tags="det.ind.*.pl"/>
+    </def-cat>
     <def-cat n="cada">
       <cat-item lemma="cada" tags="det.*"/>
     </def-cat>
@@ -238,6 +244,9 @@
       <cat-item lemma="haver" tags="vbhaver.ifi.p3.*"/>
       <cat-item lemma="haver" tags="vbhaver.fti.p3.*"/>
       <cat-item lemma="haver" tags="vbhaver.imp.p3.*"/>
+    </def-cat>
+    <def-cat n="fa">
+      <cat-item lemma="fer" tags="vblex.pri.p3.sg"/>
     </def-cat>
     <def-cat n="num">
       <cat-item tags="num.*"/>
@@ -3827,7 +3836,7 @@
        <when>
          <test>
            <and>
-             <equal>
+             <equal caseless="yes">
                <clip pos="1" side="sl" part="lem"/>
                <lit v="li"/>
              </equal>
@@ -3866,6 +3875,18 @@
            </lu>
          </out>
        </otherwise>
+     </choose>
+</def-macro>
+
+<def-macro n="f_uns_num" npar="2">
+     <choose>
+       <when>
+         <test>
+           <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="un"/></equal>
+         </test>
+         <let><clip pos="1" side="tl" part="lem"/><get-case-from pos="1"><lit v="près de"/></get-case-from></let>
+         <let><clip pos="1" side="tl" part="tags"/><lit-tag v="pr"/></let>
+       </when>
      </choose>
 </def-macro>
   </section-def-macros>
@@ -5802,8 +5823,33 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule>
-<!-- REGLA: DET NUMERAL NOM -->
+    <rule comment="REGLA: DET NUMERAL">
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="num"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_uns_num">
+          <with-param pos="1"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: DET NUMERAL NOM">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="num"/>
@@ -5814,6 +5860,10 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="3"/>
           <with-param pos="2"/>
           <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_uns_num">
+          <with-param pos="1"/>
+          <with-param pos="2"/>
         </call-macro>
         <call-macro n="f_lang_dial0">
           <with-param pos="3"/>
@@ -14837,6 +14887,186 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
+<!-- expressions de temps amb fa -->
+
+    <rule comment="REGLA: fa NUM temps > il y a NUM temps">
+      <pattern>
+        <pattern-item n="fa"/>
+        <pattern-item n="num"/>
+        <pattern-item n="n_temps"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="il y a"/>
+            </get-case-from>
+            <lit-tag v="vblex.pri.p3.sg"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: fa uns NUM temps > il y a près de NUM temps">
+      <pattern>
+        <pattern-item n="fa"/>
+        <pattern-item n="uns"/>
+        <pattern-item n="num"/>
+        <pattern-item n="n_temps"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="il y a"/>
+            </get-case-from>
+            <lit-tag v="vblex.pri.p3.sg"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="près de"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: fa DETIND temps > il y a DETIND temps">
+      <pattern>
+        <pattern-item n="fa"/>
+        <pattern-item n="detind"/>
+        <pattern-item n="n_temps"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <choose>
+          <when>
+            <test>
+              <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="cada"/></equal>
+            </test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lemh"/>
+                <clip pos="1" side="tl" part="tags"/>
+                <clip pos="1" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <lit v="il y a"/>
+                </get-case-from>
+                <lit-tag v="vblex.pri.p3.sg"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: fa NUM o NUM temps > il y a NUM ou NUM temps">
+      <pattern>
+        <pattern-item n="fa"/>
+        <pattern-item n="num"/>
+        <pattern-item n="cnjcoo"/>
+        <pattern-item n="num"/>
+        <pattern-item n="n_temps"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="il y a"/>
+            </get-case-from>
+            <lit-tag v="vblex.pri.p3.sg"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="tags"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+<!-- fi expressions de temps amb fa -->
+
 <!-- canvi de verb auxiliar en oracions reflexives o impersonals -->
 
 <!--
@@ -14879,8 +15109,6 @@ is not applicable because gender and number can not be taken from previous rules
    </action>
 </rule>
 -->
-
-
 
 <!-- fi canvi de verb auxiliar en oracions reflexives o impersonals -->
 
