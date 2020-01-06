@@ -208,6 +208,9 @@
       <cat-item tags="vbhaver.ger"/>
       <cat-item tags="vbmod.ger"/>
     </def-cat>
+    <def-cat n="haverger">
+      <cat-item tags="vbhaver.ger"/>
+    </def-cat>
     <def-cat n="imp">
       <cat-item tags="vblex.imp.*"/>
       <cat-item tags="vbser.imp.*"/>
@@ -1796,6 +1799,7 @@
         </when>
       </choose>
       <call-macro n="f_concord_pedac"><with-param pos="1"/></call-macro>
+      <let><var n="inici"/><lit-tag v="no"/></let>
     </def-macro>
 
     <def-macro n="f_concord2" npar="2">
@@ -2250,6 +2254,7 @@
       </choose>
       <call-macro n="f_concord_pedac"><with-param pos="1"/></call-macro>
       <call-macro n="f_concord_pedac"><with-param pos="2"/></call-macro>
+      <let><var n="inici"/><lit-tag v="no"/></let>
     </def-macro>
 
     <def-macro n="f_concord3" npar="3">
@@ -2915,6 +2920,7 @@
       <call-macro n="f_concord_pedac"><with-param pos="1"/></call-macro>
       <call-macro n="f_concord_pedac"><with-param pos="2"/></call-macro>
       <call-macro n="f_concord_pedac"><with-param pos="3"/></call-macro>
+      <let><var n="inici"/><lit-tag v="no"/></let>
     </def-macro>
 
     <def-macro n="f_concord4" npar="4">
@@ -3648,6 +3654,7 @@
       <call-macro n="f_concord_pedac"><with-param pos="2"/></call-macro>
       <call-macro n="f_concord_pedac"><with-param pos="3"/></call-macro>
       <call-macro n="f_concord_pedac"><with-param pos="4"/></call-macro>
+      <let><var n="inici"/><lit-tag v="no"/></let>
     </def-macro>
 
     <def-macro n="f_lexicAdj" npar="1">
@@ -3752,7 +3759,21 @@
        </test>
        <let><clip pos="1" side="tl" part="lem"/><lit v="être"/></let>
        <let><clip pos="1" side="tl" part="a_verb"/><lit-tag v="vbser"/></let>
-       <let><clip pos="2" side="tl" part="nbr"/><clip pos="1" side="tl" part="nbr"/></let>
+       <!-- el nombre del participi, l'agafem de l'auxiliar, si aquest en té (no és infinitiu o gerundi) -->
+       <choose>
+         <when>
+           <test>
+           <or>
+             <equal><clip pos="1" side="tl" part="nbr"/><lit-tag v="sg"/></equal>
+             <equal><clip pos="1" side="tl" part="nbr"/><lit-tag v="pl"/></equal>
+           </or>
+           </test>
+           <let><clip pos="2" side="tl" part="nbr"/><clip pos="1" side="tl" part="nbr"/></let>
+         </when>
+         <otherwise>
+           <let><clip pos="2" side="tl" part="nbr"/><lit-tag v="sg"/></let>
+         </otherwise>
+       </choose>
        <!-- el gènere, l'agafem de la variable "genero", però només en 3a persona i si genero no es mf -->
        <choose>
          <when>
@@ -3913,6 +3934,7 @@
             <clip pos="1" side="tl" part="whole"/>
           </lu>
         </out>
+        <let><var n="inici"/><lit-tag v="no"/></let>
       </action>
   </rule>
 
@@ -3929,6 +3951,7 @@
             <clip pos="1" side="tl" part="whole"/>
           </lu>
         </out>
+        <let><var n="inici"/><lit-tag v="no"/></let>
       </action>
   </rule>
 
@@ -4554,6 +4577,7 @@ is not applicable because gender and number can not be taken from previous rules
             <clip pos="1" side="tl" part="nbr"/>
           </lu>
         </out>
+        <let><var n="inici"/><lit-tag v="no"/></let>
       </action>
   </rule>
 
@@ -7802,6 +7826,41 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
     </rule>
 
+<rule comment="regla: haverger pp: havent caigut > après être tombé">
+   <pattern>
+     <pattern-item n="haverger"/>
+     <pattern-item n="pp"/>
+   </pattern>
+   <action>
+     <call-macro n="f_vaux_pp2">
+       <with-param pos="1"/>
+       <with-param pos="2"/>
+     </call-macro>
+     <let><clip pos="1" side="tl" part="temps"/><lit-tag v="inf"/></let>
+     <out>
+       <lu>
+         <get-case-from pos="1">
+           <lit v="après"/>
+         </get-case-from>
+         <lit-tag v="pr"/>
+       </lu>
+       <b/>
+       <lu>
+         <get-case-from pos="2">
+           <clip pos="1" side="tl" part="lem"/>
+         </get-case-from>
+         <clip pos="1" side="tl" part="tags"/>
+       </lu>
+       <b pos="1"/>
+       <lu>
+         <clip pos="2" side="tl" part="lemh"/>
+         <clip pos="2" side="tl" part="tags"/>
+         <clip pos="2" side="tl" part="lemq"/>
+       </lu>
+     </out>
+   </action>
+</rule>
+
 <rule comment="regla: haver pp: he caigut > suis tombé">
    <pattern>
      <pattern-item n="haver"/>
@@ -8291,6 +8350,46 @@ is not applicable because gender and number can not be taken from previous rules
    </action>
 </rule>
 
+
+<rule comment="regla: SENT haverger pp: SENT havent caigut > SENT après être tombé">
+   <pattern>
+     <pattern-item n="sentquecm"/>
+     <pattern-item n="haverger"/>
+     <pattern-item n="pp"/>
+   </pattern>
+   <action>
+     <call-macro n="f_vaux_pp2">
+       <with-param pos="2"/>
+       <with-param pos="3"/>
+     </call-macro>
+     <let><clip pos="2" side="tl" part="temps"/><lit-tag v="inf"/></let>
+     <out>
+       <lu>
+         <clip pos="1" side="tl" part="whole"/>
+       </lu>
+       <b pos="1"/>
+       <lu>
+         <get-case-from pos="2">
+           <lit v="après"/>
+         </get-case-from>
+         <lit-tag v="pr"/>
+       </lu>
+       <b/>
+       <lu>
+         <get-case-from pos="3">
+           <clip pos="2" side="tl" part="lem"/>
+         </get-case-from>
+         <clip pos="2" side="tl" part="tags"/>
+       </lu>
+       <b pos="2"/>
+       <lu>
+         <clip pos="3" side="tl" part="lemh"/>
+         <clip pos="3" side="tl" part="tags"/>
+         <clip pos="3" side="tl" part="lemq"/>
+       </lu>
+     </out>
+   </action>
+</rule>
 
 <rule comment="regla: SENT haver pp: SENT he caigut > SENT je suis tombé">
    <pattern>
