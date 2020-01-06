@@ -242,12 +242,25 @@
       <cat-item tags="vbhaver.pp.*"/>
       <cat-item tags="vbmod.pp.*"/>
     </def-cat>
+    <def-cat n="anarppmsg">
+      <cat-item lemma="anar" tags="vblex.pp.m.sg"/>
+    </def-cat>
     <def-cat n="ppf">
       <cat-item tags="vblex.pp.f.sg"/>
       <cat-item tags="vbhaver.pp.f.sg"/>
       <cat-item tags="vbmod.pp.f.sg"/>
     </def-cat>
-    <def-cat n="haver-tmp-srd-cnj-p3">      <!-- verb amb els temps verbals conjugats (amb persona) del sard -->
+    <def-cat n="haver-cnj">
+      <cat-item lemma="haver" tags="vbhaver.pri.*"/>
+      <cat-item lemma="haver" tags="vbhaver.prs.*"/>
+      <cat-item lemma="haver" tags="vbhaver.pii.*"/>
+      <cat-item lemma="haver" tags="vbhaver.pis.*"/>
+      <cat-item lemma="haver" tags="vbhaver.cni.*"/>
+      <cat-item lemma="haver" tags="vbhaver.ifi.*"/>
+      <cat-item lemma="haver" tags="vbhaver.fti.*"/>
+      <cat-item lemma="haver" tags="vbhaver.imp.*"/>
+    </def-cat>
+    <def-cat n="haver-cnj-p3">
       <cat-item lemma="haver" tags="vbhaver.pri.p3.*"/>
       <cat-item lemma="haver" tags="vbhaver.prs.p3.*"/>
       <cat-item lemma="haver" tags="vbhaver.pii.p3.*"/>
@@ -256,6 +269,26 @@
       <cat-item lemma="haver" tags="vbhaver.ifi.p3.*"/>
       <cat-item lemma="haver" tags="vbhaver.fti.p3.*"/>
       <cat-item lemma="haver" tags="vbhaver.imp.p3.*"/>
+    </def-cat>
+    <def-cat n="anar-cnj">
+      <cat-item lemma="anar" tags="vblex.pri.*"/>
+      <cat-item lemma="anar" tags="vblex.prs.*"/>
+      <cat-item lemma="anar" tags="vblex.pii.*"/>
+      <cat-item lemma="anar" tags="vblex.pis.*"/>
+      <cat-item lemma="anar" tags="vblex.cni.*"/>
+      <cat-item lemma="anar" tags="vblex.ifi.*"/>
+      <cat-item lemma="anar" tags="vblex.fti.*"/>
+      <cat-item lemma="anar" tags="vblex.imp.*"/>
+    </def-cat>
+    <def-cat n="anar-cnj-p3">
+      <cat-item lemma="anar" tags="vblex.pri.p3.*"/>
+      <cat-item lemma="anar" tags="vblex.prs.p3.*"/>
+      <cat-item lemma="anar" tags="vblex.pii.p3.*"/>
+      <cat-item lemma="anar" tags="vblex.pis.p3.*"/>
+      <cat-item lemma="anar" tags="vblex.cni.p3.*"/>
+      <cat-item lemma="anar" tags="vblex.ifi.p3.*"/>
+      <cat-item lemma="anar" tags="vblex.fti.p3.*"/>
+      <cat-item lemma="anar" tags="vblex.imp.p3.*"/>
     </def-cat>
     <def-cat n="fa">
       <cat-item lemma="fer" tags="vblex.pri.p3.sg"/>
@@ -431,6 +464,9 @@
       <cat-item lemma="hi ha" tags="vblex.pri.p3.sg"/>
     </def-cat>
     <def-cat n="anar">
+      <cat-item lemma="anar" tags="vblex.*"/>
+    </def-cat>
+    <def-cat n="anarpri">
       <cat-item lemma="anar" tags="vblex.pri.*"/>
     </def-cat>
     <def-cat n="molt">
@@ -5426,7 +5462,7 @@ is not applicable because gender and number can not be taken from previous rules
 
     <rule comment="REGLA: anar inf + enc + enc: va donar-te-la, te les a données">
       <pattern>
-        <pattern-item n="anar"/>
+        <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
         <pattern-item n="prnenc"/>
         <pattern-item n="prnenc"/>
@@ -5513,7 +5549,7 @@ is not applicable because gender and number can not be taken from previous rules
     <rule comment="REGLA: SENT,que,coma,i anar inf + enc + enc: , va donar-te-la, il te les a données">
       <pattern>
         <pattern-item n="sentquecm"/>
-        <pattern-item n="anar"/>
+        <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
         <pattern-item n="prnenc"/>
         <pattern-item n="prnenc"/>
@@ -6104,7 +6140,7 @@ is not applicable because gender and number can not be taken from previous rules
 
     <rule comment="vaig fer >> ai fait"> 
       <pattern>
-        <pattern-item n="anar"/>
+        <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
       </pattern>
       <action>
@@ -6220,7 +6256,7 @@ is not applicable because gender and number can not be taken from previous rules
     <rule comment="no vaig fer >> n'ai pas fait"> 
       <pattern>
         <pattern-item n="noadv"/>
-        <pattern-item n="anar"/>
+        <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
       </pattern>
       <action>
@@ -6360,7 +6396,7 @@ is not applicable because gender and number can not be taken from previous rules
 
     <rule comment="REGLA: anar inf enc: van comprar-me > m'ont acheté">
       <pattern>
-        <pattern-item n="anar"/>
+        <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
         <pattern-item n="prnenc"/>
       </pattern>
@@ -6430,7 +6466,7 @@ is not applicable because gender and number can not be taken from previous rules
     <rule comment="REGLA: no anar inf enc: no van comprar-me > ne m'ont pas acheté">
       <pattern>
         <pattern-item n="noadv"/>
-        <pattern-item n="anar"/>
+        <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
         <pattern-item n="prnenc"/>
       </pattern>
@@ -9069,7 +9105,7 @@ is not applicable because gender and number can not be taken from previous rules
     <rule comment="PRNREF ANAR INF > PRNREF SER PP: es va incorporar > s'est incorporé, em va dir > m'a dit">
       <pattern>
         <pattern-item n="prnproref"/>
-        <pattern-item n="anar"/>
+        <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
       </pattern>
       <action>
@@ -9173,7 +9209,7 @@ is not applicable because gender and number can not be taken from previous rules
       <pattern>
         <pattern-item n="noadv"/>
         <pattern-item n="prnproref"/>
-        <pattern-item n="anar"/>
+        <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
       </pattern>
       <action>
@@ -9294,7 +9330,7 @@ is not applicable because gender and number can not be taken from previous rules
     <rule comment="PRNPROADV ANAR INF > PRNPROADV HAVER/SER PP: hi va arribar > y est arrivé, hi va dir > hi a dit">
       <pattern>
         <pattern-item n="prnpronoref"/>
-        <pattern-item n="anar"/>
+        <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
       </pattern>
       <action>
@@ -9382,7 +9418,7 @@ is not applicable because gender and number can not be taken from previous rules
       <pattern>
         <pattern-item n="noadv"/>
         <pattern-item n="prnpronoref"/>
-        <pattern-item n="anar"/>
+        <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
       </pattern>
       <action>
@@ -9616,7 +9652,7 @@ is not applicable because gender and number can not be taken from previous rules
     <rule comment="REGLA: SENT,que,coma,i anar inf">
       <pattern>
         <pattern-item n="sentquecm"/>
-        <pattern-item n="anar"/>
+        <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
       </pattern>
       <action>
@@ -9698,7 +9734,7 @@ is not applicable because gender and number can not be taken from previous rules
     <rule comment="REGLA: SENT,que,coma,i anar inf enc: Van comprar-me > Ils m'ont acheté">
       <pattern>
         <pattern-item n="sentquecm"/>
-        <pattern-item n="anar"/>
+        <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
         <pattern-item n="prnenc"/>
       </pattern>
@@ -9841,7 +9877,7 @@ is not applicable because gender and number can not be taken from previous rules
       <pattern>
         <pattern-item n="sentquecm"/>
         <pattern-item n="noadv"/>
-        <pattern-item n="anar"/>
+        <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
         <pattern-item n="prnenc"/>
       </pattern>
@@ -10162,7 +10198,7 @@ is not applicable because gender and number can not be taken from previous rules
     <rule comment="REGLA: Que_rel anar inf">
       <pattern>
         <pattern-item n="que_rel"/>
-        <pattern-item n="anar"/>
+        <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
       </pattern>
       <action>
@@ -10259,7 +10295,7 @@ is not applicable because gender and number can not be taken from previous rules
       <pattern>
         <pattern-item n="que_rel"/>
         <pattern-item n="noadv"/>
-        <pattern-item n="anar"/>
+        <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
       </pattern>
       <action>
@@ -11161,7 +11197,7 @@ is not applicable because gender and number can not be taken from previous rules
       <pattern>
         <pattern-item n="sentquecm"/>
         <pattern-item n="prnpro"/>
-        <pattern-item n="anar"/>
+        <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
       </pattern>
       <action>
@@ -11304,7 +11340,7 @@ is not applicable because gender and number can not be taken from previous rules
         <pattern-item n="sentquecm"/>
         <pattern-item n="noadv"/>
         <pattern-item n="prnpro"/>
-        <pattern-item n="anar"/>
+        <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
       </pattern>
       <action>
@@ -12098,7 +12134,7 @@ is not applicable because gender and number can not be taken from previous rules
       <pattern>
         <pattern-item n="sentquecm"/>
         <pattern-item n="prnproref"/>
-        <pattern-item n="anar"/>
+        <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
       </pattern>
       <action>
@@ -12262,7 +12298,7 @@ is not applicable because gender and number can not be taken from previous rules
         <pattern-item n="sentquecm"/>
         <pattern-item n="noadv"/>
         <pattern-item n="prnproref"/>
-        <pattern-item n="anar"/>
+        <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
       </pattern>
       <action>
@@ -12769,7 +12805,7 @@ is not applicable because gender and number can not be taken from previous rules
     <rule comment="PRETÈRIT INDEFINIT.  Per traduir 'vaig fer' per 'ai fait'">
       <pattern>
         <pattern-item n="prntn"/>
-        <pattern-item n="anar"/>
+        <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
       </pattern>
       <action>
@@ -12837,7 +12873,7 @@ is not applicable because gender and number can not be taken from previous rules
       <pattern>
         <pattern-item n="prntn"/>
         <pattern-item n="noadv"/>
-        <pattern-item n="anar"/>
+        <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
       </pattern>
       <action>
@@ -15185,6 +15221,1210 @@ is not applicable because gender and number can not be taken from previous rules
 
 <!-- fi expressions de temps amb fa -->
 
+<!-- "anar + ger" -->
+
+    <rule comment="anar GER >> continuer à INF"> 
+      <pattern>
+        <pattern-item n="anar"/>
+        <pattern-item n="ger"/>
+      </pattern>
+      <action>
+     <choose>
+       <when>
+         <test>
+           <equal><var n="inici"/><lit-tag v="si"/></equal>
+         </test>
+         <call-macro n="f_setpronom">
+           <with-param pos="1"/>
+         </call-macro>
+         <choose>
+           <when>
+             <test>
+               <equal><clip pos="1" side="sl" part="persona"/><lit-tag v="p3"/></equal>
+             </test>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="1" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="1" side="sl" part="persona"/>
+                 <lit-tag v="m"/>
+                 <clip pos="1" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </when>
+           <otherwise>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="1" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="1" side="sl" part="persona"/>
+                 <lit-tag v="mf"/>
+                 <clip pos="1" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </otherwise>
+         </choose>
+         <modify-case>
+           <clip pos="1" side="sl" part="lemh"/>
+           <lit v="aa"/>
+         </modify-case>
+       </when>
+     </choose>
+
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="continuer"/>
+            </get-case-from>
+            <clip pos="1" side="tl" part="a_verb"/>
+            <clip pos="1" side="tl" part="temps"/>
+            <clip pos="1" side="tl" part="persona"/>
+            <clip pos="1" side="tl" part="gen"/>
+            <clip pos="1" side="tl" part="nbr"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="à"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <let><clip pos="2" side="tl" part="temps"/><lit-tag v="inf"/></let>
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+  </action>
+</rule>
+
+    <rule comment="haver anat GER >> avoir continué à INF"> 
+      <pattern>
+        <pattern-item n="haver"/>
+        <pattern-item n="anarppmsg"/>
+        <pattern-item n="ger"/>
+      </pattern>
+      <action>
+     <choose>
+       <when>
+         <test>
+           <equal><var n="inici"/><lit-tag v="si"/></equal>
+         </test>
+         <call-macro n="f_setpronom">
+           <with-param pos="1"/>
+         </call-macro>
+         <choose>
+           <when>
+             <test>
+               <equal><clip pos="1" side="sl" part="persona"/><lit-tag v="p3"/></equal>
+             </test>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="1" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="1" side="sl" part="persona"/>
+                 <lit-tag v="m"/>
+                 <clip pos="1" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </when>
+           <otherwise>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="1" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="1" side="sl" part="persona"/>
+                 <lit-tag v="mf"/>
+                 <clip pos="1" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </otherwise>
+         </choose>
+         <modify-case>
+           <clip pos="1" side="sl" part="lemh"/>
+           <lit v="aa"/>
+         </modify-case>
+       </when>
+     </choose>
+
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="continuer"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="à"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="2"/>
+        </out>
+        <let><clip pos="3" side="tl" part="temps"/><lit-tag v="inf"/></let>
+        <out>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+  </action>
+</rule>
+
+    <rule comment="no anar GER >> ne continuer pas à INF"> 
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="anar-cnj"/>
+        <pattern-item n="ger"/>
+      </pattern>
+      <action>
+     <choose>
+       <when>
+         <test>
+           <equal><var n="inici"/><lit-tag v="si"/></equal>
+         </test>
+         <call-macro n="f_setpronom">
+           <with-param pos="2"/>
+         </call-macro>
+         <choose>
+           <when>
+             <test>
+               <equal><clip pos="2" side="sl" part="persona"/><lit-tag v="p3"/></equal>
+             </test>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="2" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="2" side="sl" part="persona"/>
+                 <lit-tag v="m"/>
+                 <clip pos="2" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </when>
+           <otherwise>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="2" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="2" side="sl" part="persona"/>
+                 <lit-tag v="mf"/>
+                 <clip pos="2" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </otherwise>
+         </choose>
+         <modify-case>
+           <clip pos="1" side="sl" part="lemh"/>
+           <lit v="aa"/>
+         </modify-case>
+       </when>
+     </choose>
+
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="continuer"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="pas"/>
+            </get-case-from>
+            <lit-tag v="adv"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="à"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="2"/>
+        </out>
+        <let><clip pos="3" side="tl" part="temps"/><lit-tag v="inf"/></let>
+        <out>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+  </action>
+</rule>
+
+    <rule comment="no haver anat GER >> n'avoir pas continué à INF"> 
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="haver-cnj"/>
+        <pattern-item n="anarppmsg"/>
+        <pattern-item n="ger"/>
+      </pattern>
+      <action>
+     <choose>
+       <when>
+         <test>
+           <equal><var n="inici"/><lit-tag v="si"/></equal>
+         </test>
+         <call-macro n="f_setpronom">
+           <with-param pos="2"/>
+         </call-macro>
+         <choose>
+           <when>
+             <test>
+               <equal><clip pos="2" side="sl" part="persona"/><lit-tag v="p3"/></equal>
+             </test>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="2" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="2" side="sl" part="persona"/>
+                 <lit-tag v="m"/>
+                 <clip pos="2" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </when>
+           <otherwise>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="2" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="2" side="sl" part="persona"/>
+                 <lit-tag v="mf"/>
+                 <clip pos="2" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </otherwise>
+         </choose>
+         <modify-case>
+           <clip pos="1" side="sl" part="lemh"/>
+           <lit v="aa"/>
+         </modify-case>
+       </when>
+     </choose>
+
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="pas"/>
+            </get-case-from>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="continuer"/>
+            </get-case-from>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="à"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="3"/>
+        </out>
+        <let><clip pos="4" side="tl" part="temps"/><lit-tag v="inf"/></let>
+        <out>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+  </action>
+</rule>
+
+    <rule comment="anar GER PRNENC >> continuer à PRNPRO INF"> 
+      <pattern>
+        <pattern-item n="anar"/>
+        <pattern-item n="ger"/>
+        <pattern-item n="prnenc"/>
+      </pattern>
+      <action>
+     <choose>
+       <when>
+         <test>
+           <equal><var n="inici"/><lit-tag v="si"/></equal>
+         </test>
+         <call-macro n="f_setpronom">
+           <with-param pos="1"/>
+         </call-macro>
+         <choose>
+           <when>
+             <test>
+               <equal><clip pos="1" side="sl" part="persona"/><lit-tag v="p3"/></equal>
+             </test>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="1" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="1" side="sl" part="persona"/>
+                 <lit-tag v="m"/>
+                 <clip pos="1" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </when>
+           <otherwise>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="1" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="1" side="sl" part="persona"/>
+                 <lit-tag v="mf"/>
+                 <clip pos="1" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </otherwise>
+         </choose>
+         <modify-case>
+           <clip pos="1" side="sl" part="lemh"/>
+           <lit v="aa"/>
+         </modify-case>
+       </when>
+     </choose>
+
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="continuer"/>
+            </get-case-from>
+            <clip pos="1" side="tl" part="a_verb"/>
+            <clip pos="1" side="tl" part="temps"/>
+            <clip pos="1" side="tl" part="persona"/>
+            <clip pos="1" side="tl" part="gen"/>
+            <clip pos="1" side="tl" part="nbr"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="à"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <let><clip pos="2" side="tl" part="temps"/><lit-tag v="inf"/></let>
+        <out>
+          <lu>
+            <clip pos="3" side="tl" part="lem"/>
+            <lit-tag v="prn.pro"/>
+            <clip pos="3" side="tl" part="tipoenc_pro"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+  </action>
+</rule>
+
+    <rule comment="haver anat GER PRNENC >> avoir continué à PRNPRO INF"> 
+      <pattern>
+        <pattern-item n="haver"/>
+        <pattern-item n="anarppmsg"/>
+        <pattern-item n="ger"/>
+        <pattern-item n="prnenc"/>
+      </pattern>
+      <action>
+     <choose>
+       <when>
+         <test>
+           <equal><var n="inici"/><lit-tag v="si"/></equal>
+         </test>
+         <call-macro n="f_setpronom">
+           <with-param pos="1"/>
+         </call-macro>
+         <choose>
+           <when>
+             <test>
+               <equal><clip pos="1" side="sl" part="persona"/><lit-tag v="p3"/></equal>
+             </test>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="1" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="1" side="sl" part="persona"/>
+                 <lit-tag v="m"/>
+                 <clip pos="1" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </when>
+           <otherwise>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="1" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="1" side="sl" part="persona"/>
+                 <lit-tag v="mf"/>
+                 <clip pos="1" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </otherwise>
+         </choose>
+         <modify-case>
+           <clip pos="1" side="sl" part="lemh"/>
+           <lit v="aa"/>
+         </modify-case>
+       </when>
+     </choose>
+
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="continuer"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="à"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="2"/>
+        </out>
+        <let><clip pos="3" side="tl" part="temps"/><lit-tag v="inf"/></let>
+        <out>
+          <lu>
+            <clip pos="4" side="tl" part="lem"/>
+            <lit-tag v="prn.pro"/>
+            <clip pos="4" side="tl" part="tipoenc_pro"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+  </action>
+</rule>
+
+    <rule comment="no anar GER PRNENC >> ne continuer pas à PRNPRO INF"> 
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="anar-cnj"/>
+        <pattern-item n="ger"/>
+        <pattern-item n="prnenc"/>
+      </pattern>
+      <action>
+     <choose>
+       <when>
+         <test>
+           <equal><var n="inici"/><lit-tag v="si"/></equal>
+         </test>
+         <call-macro n="f_setpronom">
+           <with-param pos="2"/>
+         </call-macro>
+         <choose>
+           <when>
+             <test>
+               <equal><clip pos="2" side="sl" part="persona"/><lit-tag v="p3"/></equal>
+             </test>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="2" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="2" side="sl" part="persona"/>
+                 <lit-tag v="m"/>
+                 <clip pos="2" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </when>
+           <otherwise>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="2" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="2" side="sl" part="persona"/>
+                 <lit-tag v="mf"/>
+                 <clip pos="2" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </otherwise>
+         </choose>
+         <modify-case>
+           <clip pos="1" side="sl" part="lemh"/>
+           <lit v="aa"/>
+         </modify-case>
+       </when>
+     </choose>
+
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="continuer"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="pas"/>
+            </get-case-from>
+            <lit-tag v="adv"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="à"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="2"/>
+        </out>
+        <let><clip pos="3" side="tl" part="temps"/><lit-tag v="inf"/></let>
+        <out>
+          <lu>
+            <clip pos="4" side="tl" part="lem"/>
+            <lit-tag v="prn.pro"/>
+            <clip pos="4" side="tl" part="tipoenc_pro"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+  </action>
+</rule>
+
+    <rule comment="no haver anat GER PRNENC >> n'avoir pas continué à PRNPRO INF"> 
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="haver-cnj"/>
+        <pattern-item n="anarppmsg"/>
+        <pattern-item n="ger"/>
+        <pattern-item n="prnenc"/>
+      </pattern>
+      <action>
+     <choose>
+       <when>
+         <test>
+           <equal><var n="inici"/><lit-tag v="si"/></equal>
+         </test>
+         <call-macro n="f_setpronom">
+           <with-param pos="2"/>
+         </call-macro>
+         <choose>
+           <when>
+             <test>
+               <equal><clip pos="2" side="sl" part="persona"/><lit-tag v="p3"/></equal>
+             </test>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="2" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="2" side="sl" part="persona"/>
+                 <lit-tag v="m"/>
+                 <clip pos="2" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </when>
+           <otherwise>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="2" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="2" side="sl" part="persona"/>
+                 <lit-tag v="mf"/>
+                 <clip pos="2" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </otherwise>
+         </choose>
+         <modify-case>
+           <clip pos="1" side="sl" part="lemh"/>
+           <lit v="aa"/>
+         </modify-case>
+       </when>
+     </choose>
+
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="pas"/>
+            </get-case-from>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="continuer"/>
+            </get-case-from>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="à"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="3"/>
+        </out>
+        <let><clip pos="4" side="tl" part="temps"/><lit-tag v="inf"/></let>
+        <out>
+          <lu>
+            <clip pos="5" side="tl" part="lem"/>
+            <lit-tag v="prn.pro"/>
+            <clip pos="5" side="tl" part="tipoenc_pro"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+  </action>
+</rule>
+
+    <rule comment="PRNPROREF anar GER >> continuer à PRNPROREF INF"> 
+      <pattern>
+        <pattern-item n="es"/>
+        <pattern-item n="anar-cnj-p3"/>
+        <pattern-item n="ger"/>
+      </pattern>
+      <action>
+     <choose>
+       <when>
+         <test>
+           <equal><var n="inici"/><lit-tag v="si"/></equal>
+         </test>
+         <call-macro n="f_setpronom">
+           <with-param pos="2"/>
+         </call-macro>
+         <choose>
+           <when>
+             <test>
+               <equal><clip pos="2" side="sl" part="persona"/><lit-tag v="p3"/></equal>
+             </test>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="2" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="2" side="sl" part="persona"/>
+                 <lit-tag v="m"/>
+                 <clip pos="2" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </when>
+           <otherwise>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="2" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="2" side="sl" part="persona"/>
+                 <lit-tag v="mf"/>
+                 <clip pos="2" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </otherwise>
+         </choose>
+         <modify-case>
+           <clip pos="1" side="sl" part="lemh"/>
+           <lit v="aa"/>
+         </modify-case>
+       </when>
+     </choose>
+
+        <out>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="continuer"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="à"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+        </out>
+        <let><clip pos="3" side="tl" part="temps"/><lit-tag v="inf"/></let>
+        <out>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+  </action>
+</rule>
+
+    <rule comment="PRNPROREF haver anat GER >> avoir continué à PRNPROREF INF"> 
+      <pattern>
+        <pattern-item n="es"/>
+        <pattern-item n="haver-cnj-p3"/>
+        <pattern-item n="anarppmsg"/>
+        <pattern-item n="ger"/>
+      </pattern>
+      <action>
+     <choose>
+       <when>
+         <test>
+           <equal><var n="inici"/><lit-tag v="si"/></equal>
+         </test>
+         <call-macro n="f_setpronom">
+           <with-param pos="2"/>
+         </call-macro>
+         <choose>
+           <when>
+             <test>
+               <equal><clip pos="2" side="sl" part="persona"/><lit-tag v="p3"/></equal>
+             </test>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="2" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="2" side="sl" part="persona"/>
+                 <lit-tag v="m"/>
+                 <clip pos="2" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </when>
+           <otherwise>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="2" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="2" side="sl" part="persona"/>
+                 <lit-tag v="mf"/>
+                 <clip pos="2" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </otherwise>
+         </choose>
+         <modify-case>
+           <clip pos="1" side="sl" part="lemh"/>
+           <lit v="aa"/>
+         </modify-case>
+       </when>
+     </choose>
+
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="continuer"/>
+            </get-case-from>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="à"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+        </out>
+        <let><clip pos="4" side="tl" part="temps"/><lit-tag v="inf"/></let>
+        <out>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+  </action>
+</rule>
+
+    <rule comment="no PRNPROREF anar GER >> ne continuer pas à PRNPROREF INF"> 
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="es"/>
+        <pattern-item n="anar-cnj-p3"/>
+        <pattern-item n="ger"/>
+      </pattern>
+      <action>
+     <choose>
+       <when>
+         <test>
+           <equal><var n="inici"/><lit-tag v="si"/></equal>
+         </test>
+         <call-macro n="f_setpronom">
+           <with-param pos="3"/>
+         </call-macro>
+         <choose>
+           <when>
+             <test>
+               <equal><clip pos="3" side="sl" part="persona"/><lit-tag v="p3"/></equal>
+             </test>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="3" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="3" side="sl" part="persona"/>
+                 <lit-tag v="m"/>
+                 <clip pos="3" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </when>
+           <otherwise>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="3" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="3" side="sl" part="persona"/>
+                 <lit-tag v="mf"/>
+                 <clip pos="3" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </otherwise>
+         </choose>
+         <modify-case>
+           <clip pos="1" side="sl" part="lemh"/>
+           <lit v="aa"/>
+         </modify-case>
+       </when>
+     </choose>
+
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="continuer"/>
+            </get-case-from>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="pas"/>
+            </get-case-from>
+            <lit-tag v="adv"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="à"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+        </out>
+        <let><clip pos="4" side="tl" part="temps"/><lit-tag v="inf"/></let>
+        <out>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+  </action>
+</rule>
+
+    <rule comment="no PRNPROREF haver anat GER >> no avoir pas continué à PRNPROREF INF"> 
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="es"/>
+        <pattern-item n="haver-cnj-p3"/>
+        <pattern-item n="anarppmsg"/>
+        <pattern-item n="ger"/>
+      </pattern>
+      <action>
+     <choose>
+       <when>
+         <test>
+           <equal><var n="inici"/><lit-tag v="si"/></equal>
+         </test>
+         <call-macro n="f_setpronom">
+           <with-param pos="3"/>
+         </call-macro>
+         <choose>
+           <when>
+             <test>
+               <equal><clip pos="3" side="sl" part="persona"/><lit-tag v="p3"/></equal>
+             </test>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="3" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="3" side="sl" part="persona"/>
+                 <lit-tag v="m"/>
+                 <clip pos="3" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </when>
+           <otherwise>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="3" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="3" side="sl" part="persona"/>
+                 <lit-tag v="mf"/>
+                 <clip pos="3" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </otherwise>
+         </choose>
+         <modify-case>
+           <clip pos="1" side="sl" part="lemh"/>
+           <lit v="aa"/>
+         </modify-case>
+       </when>
+     </choose>
+
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="4">
+              <lit v="pas"/>
+            </get-case-from>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="4">
+              <lit v="continuer"/>
+            </get-case-from>
+            <clip pos="4" side="tl" part="a_verb"/>
+            <clip pos="4" side="tl" part="temps"/>
+            <clip pos="4" side="tl" part="persona"/>
+            <clip pos="4" side="tl" part="gen"/>
+            <clip pos="4" side="tl" part="nbr"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="4">
+              <lit v="à"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="4"/>
+        </out>
+        <let><clip pos="5" side="tl" part="temps"/><lit-tag v="inf"/></let>
+        <out>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="tags"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+        </out>
+  </action>
+</rule>
+
+<!-- "fi anar + ger" -->
+
 <!-- "tot i + inf" -->
 
     <rule comment="REGLA: tot i INF > malgré INF">
@@ -15555,7 +16795,7 @@ is not applicable because gender and number can not be taken from previous rules
 <rule comment="regla: es haver pp">
    <pattern>
      <pattern-item n="es"/>
-     <pattern-item n="haver-tmp-srd-cnj-p3"/>
+     <pattern-item n="haver-cnj-p3"/>
      <pattern-item n="pp"/>
    </pattern>
    <action>
