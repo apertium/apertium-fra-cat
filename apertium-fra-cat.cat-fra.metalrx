@@ -952,6 +952,18 @@
       <match lemma="bronze" tags="n.*"/>
     </or>
   </rule>
+  <rule weight="1.0">
+    <match lemma="de" tags="pr"><select lemma="en"/></match>
+    <match lemma="vacances" tags="n.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match tags="n.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="de" tags="pr"><select lemma="de"/></match>
+    <match lemma="vacances" tags="n.*"/>
+  </rule>
 
   <!-- a >> à, en, dans, de -->
   <rule weight="0.8">
@@ -1122,6 +1134,20 @@
     </or>
   </rule>
 
+<!-- PREADV -->
+
+  <!-- gaire >> très, beaucoup -->
+  <rule weight="0.8">
+    <match lemma="gaire" tags="preadv"><select lemma="très"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="gaire" tags="preadv"><select lemma="beaucoup"/></match>
+    <or>
+      <match lemma="més"/>
+      <match lemma="menys"/>
+    </or>
+  </rule>
+
 <!-- ADV -->
 
   <!-- 
@@ -1146,6 +1172,16 @@
   </rule>
 
 <!-- V -->
+
+  <!-- acabar >> finir, venir -->
+  <rule weight="0.8">
+    <match lemma="acabar" tags="vblex.*"><select lemma="finir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="acabar" tags="vblex.*"><select lemma="venir"/></match>
+    <match lemma="de" tags="pr"/>
+    <or><match tags="vblex.inf"/><match tags="vbser.inf"/><match tags="vbhaver.inf"/><match tags="vbmod.inf"/></or>
+  </rule>
 
   <!-- cordar >> boutonner, lacer -->
   <rule weight="0.8">
@@ -1239,6 +1275,9 @@
     <match tags="det.*"/>
     <match lemma="negociació" tags="n.*"/>
   </rule>
+
+  <!-- atabalar >> accabler, affoler -->
+  <macro name="verb_nopron_pron" p1="atabalar" p2="accabler" p3="affoler"/>
 
   <!-- estar >> être, rester -->
   <macro name="verb_nopron_pron_prep" p1="estar" p2="être" p3="rester" p4="a"/>
@@ -2194,6 +2233,15 @@
   </rule>
 
 <!-- N -->
+
+  <!-- època >> époque, temps -->
+  <rule weight="0.8">
+    <match lemma="època" tags="n.*"><select lemma="époque"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.pos.*"/>
+    <match lemma="època" tags="n.*"><select lemma="temps"/></match>
+  </rule>
 
   <!-- investigació >> recherche, enquête -->
   <rule weight="0.8">

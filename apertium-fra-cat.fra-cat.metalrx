@@ -507,9 +507,20 @@
   </rule>
   <rule weight="1.0">
     <match lemma="pour" tags="pr"><select lemma="per"/></match>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
     <or>
       <match lemma="corruption" tags="n.*"/>
-      <match lemma="corruption" tags="n.*"/>
+      <match lemma="trafic" tags="n.*"/>
+      <match lemma="assassinat" tags="n.*"/>
+      <match lemma="meurtre" tags="n.*"/>
+      <match lemma="homicide" tags="n.*"/>
+      <match lemma="enlèvement" tags="n.*"/>
+      <match lemma="viol" tags="n.*"/>
+      <match lemma="sédition" tags="n.*"/>
+      <match lemma="rébellion" tags="n.*"/>
+      <match lemma="désobéissance" tags="n.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -633,6 +644,10 @@
       <seq n="matériel"/>
     </or>
   </rule>
+  <rule weight="1.0">
+    <match lemma="en" tags="pr"><select lemma="de"/></match>
+    <match lemma="vacances" tags="n.*"/>
+  </rule>
 
   <!-- deux fois sur cinq >> dues vegades DE cinc -->
   <rule weight="0.8">
@@ -677,6 +692,16 @@
   </rule>
 
 <!-- **************** V **************** -->
+
+  <!-- venir >> venir, acabar -->
+  <rule weight="0.8">
+    <match lemma="venir" tags="vblex.*"><select lemma="venir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="venir" tags="vblex.*"><select lemma="acabar"/></match>
+    <match lemma="de" tags="pr"/>
+    <or><match tags="vblex.inf"/><match tags="vbser.inf"/><match tags="vbhaver.inf"/><match tags="vbmod.inf"/></or>
+  </rule>
 
   <!-- comprendre >> comprendre, beneficiar-se -->
   <rule weight="0.8">
@@ -1069,6 +1094,11 @@
   <macro name="verb_prep" p1="chasser" p2="caçar" p3="de" p4="expulsar" />
 
 <!-- **************** N **************** -->
+
+  <!-- cadet >> cadet, cabaler, fadristern -->
+  <rule weight="0.8">
+    <match lemma="cadet" tags="n.*"><select lemma="cadet"/></match>
+  </rule>
 
   <!-- grenadier >> granader, magraner -->
   <rule weight="0.8">
@@ -2395,8 +2425,6 @@
       <match lemma="consterner" tags="vblex.pp.*"/>
       <match lemma="réglementé" tags="adj.*"/>
       <match lemma="réglementer" tags="vblex.pp.*"/>
-
-      <!-- <match lemma="sûr" tags="adj.*"/> només qd hi ha je, tu, il, etc -->
     </or>
   </rule>
   <rule weight="1.0">
@@ -2423,8 +2451,33 @@
       <match lemma="enrhumer" tags="vblex.pp.*"/>
       <match lemma="préoccupé" tags="adj.*"/>
       <match lemma="préoccuper" tags="vblex.pp.*"/>
-
-      <!-- <match lemma="sûr" tags="adj.*"/> només qd hi ha je, tu, il, etc -->
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="être"><select lemma="estar" tags="vblex.*"/></match>
+    <repeat from="0" upto="1">
+    <or>
+      <match tags="preadv"/>
+      <match tags="adv"/>
+    </or>
+    </repeat>
+    <or>
+      <match lemma="sûr" tags="adj.*"/>
+      <match lemma="certain" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="ce"/>
+    <match lemma="être"><select lemma="ser" tags="vbser.*"/></match>
+    <repeat from="0" upto="1">
+    <or>
+      <match tags="preadv"/>
+      <match tags="adv"/>
+    </or>
+    </repeat>
+    <or>
+      <match lemma="sûr" tags="adj.*"/>
+      <match lemma="certain" tags="adj.*"/>
     </or>
   </rule>
   <rule weight="1.0">
