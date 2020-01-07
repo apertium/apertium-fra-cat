@@ -302,8 +302,8 @@
       <cat-item lemma="en" tags="pr"/>
       <cat-item lemma="en" tags="prn.*"/>
     </def-cat>
-    <def-cat n="a">
-      <cat-item lemma="a" tags="pr"/>
+    <def-cat n="apr">
+      <cat-item lemma="à" tags="pr"/>
     </def-cat>
     <def-cat n="que">
       <cat-item lemma="que" tags="cnjsub"/>
@@ -475,6 +475,10 @@
       <cat-item lemma="matin" tags="n.*"/>
       <cat-item lemma="après-midi" tags="n.*"/>
       <cat-item lemma="soir" tags="n.*"/>
+    </def-cat>
+
+    <def-cat n="heures">
+      <cat-item lemma="heure" tags="n.f.pl"/>
     </def-cat>
 
     <def-cat n="unite_temps">
@@ -1121,6 +1125,7 @@
       <list-item v="khakasse"/>
       <list-item v="touvinien"/>
       <list-item v="altaïen"/>
+      <list-item v="nogaï"/>
       <list-item v="estonien"/>
       <list-item v="letton"/>
       <list-item v="lithuanien"/>
@@ -13928,6 +13933,36 @@ is not applicable because gender and number cannot be taken from previous rules 
               <lit v="temps"/>
             </get-case-from>
             <lit-tag v="n.m.sp"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: à NUM heures > a les NUM">
+      <pattern>
+        <pattern-item n="apr"/>
+        <pattern-item n="num"/>
+        <pattern-item n="heures"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="3">
+               <lit v="el"/>
+            </get-case-from>
+            <lit-tag v="det.def.f.pl"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
           </lu>
         </out>
       </action>

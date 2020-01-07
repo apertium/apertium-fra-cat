@@ -49,6 +49,9 @@
     <def-cat n="detdef">
       <cat-item tags="det.def.*"/>
     </def-cat>
+    <def-cat n="lesdetdef">
+      <cat-item lemma="el" tags="det.def.f.pl"/>
+    </def-cat>
     <def-cat n="predet">
       <cat-item tags="predet.*"/>
     </def-cat>
@@ -925,6 +928,7 @@
       <list-item v="khakasse"/>
       <list-item v="touvinien"/>
       <list-item v="altaïen"/>
+      <list-item v="nogaï"/>
       <list-item v="estonien"/>
       <list-item v="letton"/>
       <list-item v="lithuanien"/>
@@ -3970,7 +3974,7 @@
   <section-rules>
 <!--regles de concordança-->
     <rule>
-<!-- REGLA: DETERMINANT -->
+<!-- REGLA: DET -->
       <pattern>
         <pattern-item n="det"/>
       </pattern>
@@ -4551,7 +4555,7 @@
       </action>
   </rule>
 
-    <rule comment="REGLA: ADJECTIU">
+    <rule comment="REGLA: ADJ">
       <pattern>
         <pattern-item n="adjec"/>
       </pattern>
@@ -4630,7 +4634,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-  <rule comment="REGLA: NUMERAL">
+  <rule comment="REGLA: NUM">
       <pattern>
         <pattern-item n="num"/>
       </pattern>
@@ -4646,8 +4650,107 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule>
-<!-- REGLA: RELAT -->
+  <rule comment="REGLA: a les NUM (a les deu > a dix heures)">
+      <pattern>
+        <pattern-item n="a"/>
+        <pattern-item n="lesdetdef"/>
+        <pattern-item n="num"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="heure"/>
+            </get-case-from>
+            <lit-tag v="n.f.pl"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+  <rule comment="REGLA: a les NUM NOM (a les deu nenes > aux dix filles -- per evitar que la regla de les hores salti quan no cal)">
+      <pattern>
+        <pattern-item n="a"/>
+        <pattern-item n="lesdetdef"/>
+        <pattern-item n="num"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord3">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+  <rule comment="REGLA: a les NUM NUM (a les deu mil > aux dix mille -- per evitar que la regla de les hores salti quan no cal)">
+      <pattern>
+        <pattern-item n="a"/>
+        <pattern-item n="lesdetdef"/>
+        <pattern-item n="num"/>
+        <pattern-item n="num"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord3">
+          <with-param pos="2"/>
+          <with-param pos="3"/>
+          <with-param pos="4"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+  <rule comment="REGLA: RELAT">
       <pattern>
         <pattern-item n="relat"/>
       </pattern>
@@ -4663,7 +4766,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="REGLA: DETERMINANT NOM">
+    <rule comment="REGLA: DET NOM">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="nom"/>
@@ -4797,7 +4900,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="REGLA: NOM ADJECTIU">
+    <rule comment="REGLA: NOM ADJ">
       <pattern>
         <pattern-item n="nom"/>
         <pattern-item n="adjec"/>
@@ -4859,7 +4962,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="REGLA: ADJECTIU NOM">
+    <rule comment="REGLA: ADJ NOM">
       <pattern>
         <pattern-item n="adj"/>
         <pattern-item n="nom"/>
@@ -4893,7 +4996,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="REGLA: DET NOM ADJECTIU">
+    <rule comment="REGLA: DET NOM ADJ">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="nom"/>
@@ -5074,7 +5177,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="REGLA: DET NOM ADJECTIU ADJECTIU">
+    <rule comment="REGLA: DET NOM ADJ ADJ">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="nom"/>
@@ -5125,7 +5228,7 @@ is not applicable because gender and number can not be taken from previous rules
   </rule>
 
     <rule>
-<!-- REGLA: NOM ADJECTIU ADJECTIU-->
+<!-- REGLA: NOM ADJ ADJ-->
       <pattern>
         <pattern-item n="nom"/>
         <pattern-item n="adjec"/>
@@ -5170,7 +5273,7 @@ is not applicable because gender and number can not be taken from previous rules
   </rule>
 
     <rule>
-<!-- REGLA: DET ADJECTIU NOM-->
+<!-- REGLA: DET ADJ NOM-->
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="adjec"/>
@@ -5248,7 +5351,7 @@ is not applicable because gender and number can not be taken from previous rules
   </rule>
 
     <rule>
-<!-- REGLA: PREDET DET NOM ADJECTIU-->
+<!-- REGLA: PREDET DET NOM ADJ-->
       <pattern>
         <pattern-item n="predet"/>
         <pattern-item n="det"/>
@@ -5294,7 +5397,7 @@ is not applicable because gender and number can not be taken from previous rules
   </rule>
 
     <rule>
-<!-- REGLA: DETERMINANT ADJECTIU-->
+<!-- REGLA: DET ADJ-->
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="adjec"/>
@@ -5322,7 +5425,7 @@ is not applicable because gender and number can not be taken from previous rules
   </rule>
 
     <rule>
-<!-- REGLA: ADJECTIU NOM ADJECTIU-->
+<!-- REGLA: ADJ NOM ADJ-->
       <pattern>
         <pattern-item n="adj"/>
         <pattern-item n="nom"/>
@@ -5368,7 +5471,7 @@ is not applicable because gender and number can not be taken from previous rules
   </rule>
 
     <rule>
-<!-- REGLA: DET ADJECTIU NOM ADJECTIU -->
+<!-- REGLA: DET ADJ NOM ADJ -->
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="adjec"/>
@@ -5422,7 +5525,7 @@ is not applicable because gender and number can not be taken from previous rules
   </rule>
 
     <rule>
-<!-- REGLA: NOM ADVERBI ADJECTIU-->
+<!-- REGLA: NOM ADV ADJ-->
       <pattern>
         <pattern-item n="nom"/>
         <pattern-item n="adv"/>
@@ -5653,7 +5756,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="DET NOM ADVERBI ADJECTIU: l'home molt alt > l'homme très haut, l'home més alt > l'homme le plus haut">
+    <rule comment="DET NOM ADV ADJ: l'home molt alt > l'homme très haut, l'home més alt > l'homme le plus haut">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="nom"/>
@@ -5738,7 +5841,7 @@ is not applicable because gender and number can not be taken from previous rules
   </rule>
 
     <rule>
-<!-- REGLA: DET ADVERBI NOM-->
+<!-- REGLA: DET ADV NOM-->
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="adv"/>
@@ -5772,7 +5875,7 @@ is not applicable because gender and number can not be taken from previous rules
   </rule>
 
     <rule>
-<!-- REGLA: NUMERAL NOM -->
+<!-- REGLA: NUM NOM -->
       <pattern>
         <pattern-item n="num"/>
         <pattern-item n="nom"/>
@@ -5800,7 +5903,7 @@ is not applicable because gender and number can not be taken from previous rules
   </rule>
 
     <rule>
-<!-- REGLA: NUMERAL ADJECTIU -->
+<!-- REGLA: NUM ADJ -->
       <pattern>
         <pattern-item n="num"/>
         <pattern-item n="adjec"/>
@@ -5826,7 +5929,7 @@ is not applicable because gender and number can not be taken from previous rules
   </rule>
 
     <rule>
-<!-- REGLA: NUMERAL NOM ADJECTIU -->
+<!-- REGLA: NUM NOM ADJ -->
       <pattern>
         <pattern-item n="num"/>
         <pattern-item n="nom"/>
@@ -5863,7 +5966,7 @@ is not applicable because gender and number can not be taken from previous rules
   </rule>
 
     <rule>
-<!-- REGLA: NUMERAL ADJECTIU NOM -->
+<!-- REGLA: NUM ADJ NOM -->
       <pattern>
         <pattern-item n="num"/>
         <pattern-item n="adjec"/>
@@ -5902,7 +6005,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="REGLA: DET NUMERAL">
+    <rule comment="REGLA: DET NUM">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="num"/>
@@ -5928,7 +6031,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="REGLA: DET NUMERAL NOM">
+    <rule comment="REGLA: DET NUM NOM">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="num"/>
@@ -5965,7 +6068,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="REGLA: NUMERAL de MES de NUM, 20 de novembre de 1998: 20 novembre 1998">
+    <rule comment="REGLA: NUM de MES de NUM, 20 de novembre de 1998: 20 novembre 1998">
       <pattern>
         <pattern-item n="num"/>
         <pattern-item n="deprep"/>
@@ -6015,7 +6118,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="REGLA: NUMERAL de MES, 20 de novembre: 20 novembre">
+    <rule comment="REGLA: NUM de MES, 20 de novembre: 20 novembre">
       <pattern>
         <pattern-item n="num"/>
         <pattern-item n="deprep"/>
