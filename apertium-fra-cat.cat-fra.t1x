@@ -6394,7 +6394,7 @@ is not applicable because gender and number can not be taken from previous rules
   </action>
 </rule>
 
-    <rule comment="REGLA: anar inf enc: van comprar-me > m'ont acheté">
+    <rule comment="REGLA: anar inf enc: van comprar-me > m'ont acheté, van comprar-se, se sont achetés">
       <pattern>
         <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
@@ -6411,15 +6411,27 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b/>
         </out>
-      <choose>
+
+        <choose>
           <when>
             <test>
-              <in caseless="yes">
-                <clip pos="2" side="sl" part="lem"/>
-                <list n="vbambser"/>
-              </in>
+              <or>
+                <and>
+                  <not><equal><clip pos="3" side="sl" part="persona"/><lit-tag v="p3"/></equal></not>
+                  <equal><clip pos="3" side="sl" part="persona"/><clip pos="1" side="sl" part="persona"/></equal>
+                  <or>
+                    <equal><clip pos="3" side="sl" part="nbr"/><clip pos="1" side="sl" part="nbr"/></equal>
+                    <equal><clip pos="3" side="sl" part="nbr"/><lit-tag v="sp"/></equal>
+                  </or>
+                </and>
+                <and>
+                  <equal><clip pos="3" side="sl" part="persona"/><lit-tag v="p3"/></equal>
+                  <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="es"/></equal>
+                </and>
+                <in caseless="yes"><clip pos="2" side="sl" part="lemh"/><list n="vbambser"/></in>
+              </or>
             </test>
-       <out>
+        <out>
           <lu>
             <get-case-from pos="2">
               <lit v="être"/>
