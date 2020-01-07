@@ -1095,6 +1095,22 @@
 
 <!-- **************** N **************** -->
 
+  <!-- entretien >> manteniment, conversa -->
+  <rule weight="0.8">
+    <match lemma="entretien" tags="n.*"><select lemma="manteniment"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="entretien" tags="n.*"><select lemma="conversa"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="avec" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="entretien" tags="n.*"><select lemma="conversa"/></match>
+    <match lemma="téléphonique" tags="adj.*"/>
+  </rule>
+
   <!-- cadet >> cadet, cabaler, fadristern -->
   <rule weight="0.8">
     <match lemma="cadet" tags="n.*"><select lemma="cadet"/></match>
@@ -2229,6 +2245,49 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- faible >> fluix, dèbil, baix -->
+  <rule weight="0.8">
+    <match lemma="faible" tags="adj.*"><select lemma="fluix"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="faible" tags="adj.*"><select lemma="baix"/></match>
+    <match lemma="vitesse" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="vitesse" tags="n.*"/>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
+    </repeat>
+    <match lemma="faible" tags="adj.*"><select lemma="baix"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="vitesse" tags="n.*"/>
+    <match tags="vbser.*"/>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
+    </repeat>
+    <match lemma="faible" tags="adj.*"><select lemma="baix"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="vitesse" tags="n.*"/>
+    <match tags="adv"/>
+    <match tags="vbser.*"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+        <match tags="cnjsub"/>
+      </or>
+    </repeat>
+    <match lemma="faible" tags="adj.*"><select lemma="baix"/></match>
+  </rule>
+
   <!-- maladroit >> maldestre, etc. -->
   <rule weight="0.8">
     <match lemma="maladroit" tags="adj.*"><select lemma="maldestre"/></match>
@@ -2425,6 +2484,8 @@
       <match lemma="consterner" tags="vblex.pp.*"/>
       <match lemma="réglementé" tags="adj.*"/>
       <match lemma="réglementer" tags="vblex.pp.*"/>
+      <match lemma="contrôlé" tags="adj.*"/>
+      <match lemma="contrôler" tags="vblex.pp.*"/>
     </or>
   </rule>
   <rule weight="1.0">

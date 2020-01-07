@@ -716,6 +716,91 @@
     </repeat>
     <match lemma="que" tags="cnjsub"/>
   </rule>
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <or>
+      <match lemma="necessitar" tags="vblex.*"/>
+      <match lemma="utilitzar" tags="vblex.*"/>
+      <match lemma="usar" tags="vblex.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <match tags="vbhaver.*.p3.sg"/>
+    <or>
+      <match lemma="necessitar" tags="vblex.pp.*"/>
+      <match lemma="utilitzar" tags="vblex.pp.*"/>
+      <match lemma="usar" tags="vblex.pp.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <match lemma="anar" tags="vblex.pri.p3.sg"/>
+    <or>
+      <match lemma="necessitar" tags="vblex.inf"/>
+      <match lemma="utilitzar" tags="vblex.inf"/>
+      <match lemma="usar" tags="vblex.inf"/>
+    </or>
+  </rule>
+
+  <rule weight="1.2">
+    <match tags="n.*.sg"/>
+    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <or>
+      <match lemma="necessitar" tags="vblex.*.sg"/>
+      <match lemma="utilitzar" tags="vblex.*.sg"/>
+      <match lemma="usar" tags="vblex.*.sg"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match tags="n.*.sg"/>
+    <match lemma="es" tags="prn.*"><select lemma="se"/></match>
+    <match tags="vbhaver.*.p3.sg"/>
+    <or>
+      <match lemma="necessitar" tags="vblex.pp.*"/>
+      <match lemma="utilitzar" tags="vblex.pp.*"/>
+      <match lemma="usar" tags="vblex.pp.*"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match tags="n.*.sg"/>
+    <match lemma="es" tags="prn.*"><select lemma="se"/></match>
+    <match lemma="anar" tags="vblex.pri.p3.sg"/>
+    <or>
+      <match lemma="necessitar" tags="vblex.inf"/>
+      <match lemma="utilitzar" tags="vblex.inf"/>
+      <match lemma="usar" tags="vblex.inf"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match tags="n.*.pl"/>
+    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <or>
+      <match lemma="necessitar" tags="vblex.*.pl"/>
+      <match lemma="utilitzar" tags="vblex.*.pl"/>
+      <match lemma="usar" tags="vblex.*.pl"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match tags="n.*.pl"/>
+    <match lemma="es" tags="prn.*"><select lemma="se"/></match>
+    <match tags="vbhaver.*.p3.pl"/>
+    <or>
+      <match lemma="necessitar" tags="vblex.pp.*"/>
+      <match lemma="utilitzar" tags="vblex.pp.*"/>
+      <match lemma="usar" tags="vblex.pp.*"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match tags="n.*.pl"/>
+    <match lemma="es" tags="prn.*"><select lemma="se"/></match>
+    <match lemma="anar" tags="vblex.pri.p3.pl"/>
+    <or>
+      <match lemma="necessitar" tags="vblex.inf"/>
+      <match lemma="utilitzar" tags="vblex.inf"/>
+      <match lemma="usar" tags="vblex.inf"/>
+    </or>
+  </rule>
 
   <rule weight="1.2">
     <match lemma="es" tags="prn.pro.*"><select lemma="se"/></match>
@@ -1173,6 +1258,25 @@
 
 <!-- V -->
 
+  <!-- necessitar >> avoir# besoin, avoir# besoin de -->
+  <rule weight="0.8">
+    <match lemma="necessitar" tags="vblex.*"><select lemma="avoir# besoin"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="necessitar" tags="vblex.*"><select lemma="avoir# besoin de"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+      <match tags="n.*"/>
+      <match tags="adj.*"/>
+      <match lemma="un" tags="prn.tn.*"/>
+    </or>
+  </rule>
+
   <!-- acabar >> finir, venir -->
   <rule weight="0.8">
     <match lemma="acabar" tags="vblex.*"><select lemma="finir"/></match>
@@ -1275,6 +1379,9 @@
     <match tags="det.*"/>
     <match lemma="negociació" tags="n.*"/>
   </rule>
+
+  <!-- abocar >> verser, pencher -->
+  <macro name="verb_nopron_pron" p1="abocar" p2="verser" p3="pencher"/>
 
   <!-- atabalar >> accabler, affoler -->
   <macro name="verb_nopron_pron" p1="atabalar" p2="accabler" p3="affoler"/>
@@ -2077,6 +2184,57 @@
   </rule>
 
 <!-- ADJ -->
+
+  <!-- endocrí >> endocrinien, endocrin -->
+  <rule weight="0.8">
+    <match lemma="endocrí" tags="adj.*"><select lemma="endocrinien"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="glàndula" tags="n.*"/>
+    <match lemma="endocrí" tags="adj.*"><select lemma="endocrin"/></match>
+  </rule>
+
+  <!-- baix >> bas, faible -->
+  <rule weight="0.8">
+    <match lemma="baix" tags="adj.*"><select lemma="baix"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="baix" tags="adj.*"><select lemma="faible"/></match>
+    <match lemma="velocitat" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="velocitat" tags="n.*"/>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
+    </repeat>
+    <match lemma="baix" tags="adj.*"><select lemma="faible"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="velocitat" tags="n.*"/>
+    <match tags="vbser.*"/>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
+    </repeat>
+    <match lemma="baix" tags="adj.*"><select lemma="faible"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="velocitat" tags="n.*"/>
+    <match tags="adv"/>
+    <match tags="vbser.*"/>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
+    </repeat>
+    <match lemma="baix" tags="adj.*"><select lemma="faible"/></match>
+  </rule>
 
   <!-- migratori >> migratoire, migrateur -->
   <rule weight="0.8">
