@@ -6,115 +6,17 @@ cat f_bi.dix.txt | grep '"np"' | grep -v '"cog"' | grep -v '"top"' | grep -v '"s
 
 FRA > CAT
 
-*tomber# amoureux  > enamorar-se (també adv entre verb i amoureux)
-$ echo "il tombe amoureux" | apertium -d . fra-cat
-s'enamora
-$ echo "il est tombé amoureux" | apertium -d . fra-cat
-ha enamorat
-
-*bouger > moure's
 +couler > (intr) enfonsar-se; fluir | tr. enfonsar
 *bénéficier# de > beneficiar-se# de (també adv entre verb i de)
-+grimper > enfilar-se
 +couler > enfonsar-se
-railler > burlar-se de
-*moisir > florir-se
-*maigrir > aprimar-se, aflaquir-se
-*pourrir > podrir-se
 +partir > anar-se'n
-+oser > atrevir-se
 aimer + inf > agradar-li + inf
-noyauter > infiltrar-se
-
-
-avoir besoin > és necessari
 
 on doit > s'ha de / cal
 
 TOTES les construccions verb + <g> no es reconeixen en negatiu: faire le ménage, ne faire pas le ménage, ne faire jamais le ménage
 
-les (cinq) clubs les plus importants > els (cinc) clubs més importants
-
-1r juin > 1 de juny
-
-en + ger > ger : en mangeant > menjant
-
-Hier soir > Ahir al vespre
-
-ne mange que > menja només
-
 postuler à un examen... (sel lex)
-
-echo "va implicar-se" | apertium -d . cat-fra
-s'a impliqué
-echo ", va implicar-se" | apertium -d . cat-fra
-, il va s'impliquer
-
-par d'autres cultures > per altres cultures
-
-nous l'espérons > l'esperem (millor: ho esperem)
-nous nous l'espérons > ens l'esperem (millor: ens ho esperem)
-
-Je me lève à dix heures du matin. -> Em llevo a les deu del matí
-
-< 000032. En el moment de l'última meitat-etapa, això era Jean-Patrick *Nazon el corredor de la *FDJ protegit.
----
-> 000032. En el moment de l'última meitat-etapa, *c'era Jean-Patrick *Nazon el corredor de la *FDJ protegit.
-
-< 000061. Final del concurs : això són dos *doublettes de la *Boroillotte de *Valentigney que s'han afrontat per a la final.
----
-> 000061. Final del concurs : aquest són dos *doublettes de la *Boroillotte de *Valentigney que s'han afrontat per a la final.
-
-< 000145. Els nens eren molt feliços de conèixer-ne breument el seu història i sobretot que ho-va dir *scalp era un costum ben francès provenint *trappeurs del Gran Nord.
----
-> 000145. Els nens eren molt feliços de conèixer-ne breument el seu història i sobretot que ho-va dir *scalp era un costum ben francès provenint *trappeurs del Grand Nord.
-
-< 000400. L'És Republicà : *Clovis *Mathieu, tel.
----
-> 000400. L'És Republicà : *Clovis Mathieu, tel.
-
-< 000405. Això són éssers humans increïbles.
----
-> 000405. Aquest són éssers humans increïbles.
-
-< 000477. Pierre *Moscovici s'afanya a portar queixada contra ell per a difamació, i de sobte M. *Souvet recomença, portant de les acusacions que surten des no sap on..
-. Què tractant així, vol *contrecarrer l'efecte de la seva posta en examen ? Aquest no són pas mètodes... »
----
-> 000477. Pedra *Moscovici s'afanya a portar queixada contra ell per a difamació, i de sobte M. *Souvet recomença, portant de les acusacions que surten des no sap on...
- Què tractant així, vol *contrecarrer l'efecte de la seva posta en examen ? Aquest no són pas mètodes... »
-
-< 000502. Un romanç del qual l'acció se situa sota l'Ocupació, l'any 1944. L'ocasió d'abordar el Nou Romanç a la literatura moderna.
----
-> 000502. Un romanç del qual l'acció se situa sota l'Ocupació, l'any 1944. L'ocasió d'abordar el Nou Roman a la literatura moderna.
-
-< 001042. *Intelligemment, això nou recorregut assenyala el conjunt de les realitzacions ( de les cases d'arquitectes als immobles col·lectius ) que han estat construïdes en boscos i s'inscriuen al paisatge.
----
-> 001042. *Intelligemment, aquest nou recorregut assenyala el conjunt de les realitzacions ( de les cases d'arquitectes als immobles col·lectius ) que han estat construïdes en boscos i s'inscriuen al paisatge.
-
-< 001106. Una vegada a l'avió, el públic havia guiat per l'hostessa de l'aire Virginie que feia descobrir els països *survolés amb de vegades certes *escales.
----
-> 001106. Una vegada a l'avió, el públic havia guiat per l'hostessa de l'aire Virgínia que feia descobrir els països *survolés amb de vegades certes *escales.
-
-< 001112. Per a això fer, han apel·lat a *Mafik *Arbaoui, *conteur, de la Botiga del conte a *Besançon.
----
-> 001112. Per a aquest fer, han apel·lat a *Mafik *Arbaoui, *conteur, de la Botiga del conte a *Besançon.
-
-< 001368. Cap cap d'Estat o de govern, pas mateix el Primer ministre Tony Blair retingut a la cimera de les nacions més industrialitzades a *Cologne, no presenciava la benedicció *nuptiale en el transcurs de la qual Sophie *Rhys-Jones, una publicitària de 34 anys, *roturière i filla d'un venedor de *pneus oferint una *ressemblance sorprenent amb la difunta *Diana, ha jurat de *chérir *Edward, d'un any el seu *aîné.
----
-> 001368. Cap cap d'Estat o de govern, pas mateix el Primer ministre Tony Blair retingut a la cimera de les nacions més industrialitzades a *Cologne, no presenciava la benedicció *nuptiale en el transcurs de la qual Sophie Rhys-Jones, una publicitària de 34 anys, *roturière i filla d'un venedor de *pneus oferint una *ressemblance sorprenent amb la difunta *Diana, ha jurat de *chérir Edward, d'un any el seu *aîné.
-
-< 000808. HI HAURÀ UN « *REVIRO » DE LA *FETE *FORAINE
----
-> 000808. ELL Hi AURA UN « *REVIRO » DE LA *FETE *FORAINE
-
-< 001417. Morta ofegada per a un bastó a préssec
----
-> 001417. Morte ofegada per a un bastó a préssec
-
-> 003486. Jean-Louis Llegit, vivint a Sena-Sant-Denis, ha perdut un *virage sortint de *Andernay i el seu vehicle ha anat immobilitzar-se sobre el baix-costat.
-
-> 007623. A *Sanaa, al *Yémen, on *Dick *Cheney, el vicepresident *US ha efectuat una curta visita dijous, una magrana ha estat llançada ahir en fi segons-migdia contra l'ambaixada dels Estats Units.
-
 
 
 CAT > FRA
@@ -126,11 +28,17 @@ agrumollar-se > grumeler
 descuidar-se, oblidar-se > oublier
 moure's, bellugar-se > bouger
 avergonyir-se > avoir# honte (avoir beaucoup d'honte, un peu d'honte, parfois honte, etc.)
+enfilar-se > grimper
 enfonsar-se > couler
 estirar-se > coucher
+atrevir-se > oser
+podrir-se > pourrir
+aprimar-se > maigrir
 estar-se a > rester
-seure > s'assoir
 gitar-se > aller au lit
+florir-se > moisir
+
+seure > s'assoir
 
 continuo dient > (je) continue à dire
 van perdent > sont en train de perdre ???
