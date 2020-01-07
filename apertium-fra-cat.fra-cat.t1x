@@ -204,6 +204,7 @@
     <def-cat n="verb_partitiu">
       <cat-item tags="vbhaver.*"/>
       <cat-item lemma="avoir" tags="vblex.*"/>
+      <cat-item lemma="avoir# besoin" tags="vblex.*"/>
       <cat-item lemma="acheter" tags="vblex.*"/>
       <cat-item lemma="boire" tags="vblex.*"/>
       <cat-item lemma="chercher" tags="vblex.*"/>
@@ -411,15 +412,15 @@
       <cat-item lemma="appeler" tags="vblex.pii.*"/>
       <cat-item lemma="appeler" tags="vblex.fti.*"/>
     </def-cat>
-    <def-cat n="verbospron">
+    <def-cat n="verbospron"> <!-- verbs pronominals en fra però amb l'equivalent cat no pronominal -->
       <cat-item lemma="assoir" tags="vblex.*"/>
-      <cat-item lemma="taire" tags="vblex.*"/>
       <cat-item lemma="heurter" tags="vblex.*"/>
+      <cat-item lemma="taire" tags="vblex.*"/>
     </def-cat>
     <def-cat n="verbospron_pp">
-      <cat-item lemma="taire" tags="vblex.pp.*"/>
       <cat-item lemma="assoir" tags="vblex.pp.*"/>
       <cat-item lemma="heurter" tags="vblex.pp.*"/>
+      <cat-item lemma="taire" tags="vblex.pp.*"/>
     </def-cat>
     <def-cat n="vbambser_pp">
       <cat-item lemma="aller" tags="vblex.pp.*"/>
@@ -1205,6 +1206,10 @@
       <list-item v="taïwanais"/>
       <list-item v="hawaïen"/>
       <list-item v="tahitien"/>
+      <list-item v="samoan"/>
+      <list-item v="tongien"/>
+      <list-item v="nauruan"/>
+      <list-item v="maori"/>
       <list-item v="éthiopien"/>
       <list-item v="somalien"/>
       <list-item v="malgache"/>
@@ -5570,6 +5575,71 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
+    <rule comment="REGLA:PREP DE DET NOM (avec des mois: amb mesos)">
+      <pattern>
+        <pattern-item n="prep"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="4"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <out>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA:PREP DE ADJIND NOM (avec d'autres mois: amb altres mesos)">
+      <pattern>
+        <pattern-item n="prep"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="adjindpl"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="4"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
     <rule comment="REGLA: jour (n) part_jour: lundi matin > el dilluns al matí">
       <pattern>
         <pattern-item n="jour_n"/>
@@ -9477,10 +9547,39 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord0">
           <with-param pos="1"/>
         </call-macro>
+        <call-macro n="f_set_pron">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+        </call-macro>
         <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
         <call-macro n="f_concord1">
           <with-param pos="3"/>
         </call-macro>
+
+        <choose>
+	  <when>
+	    <test>
+	      <and>
+	        <not><equal><var n="pronom"/><lit v=""/></equal></not>
+                <in caseless="yes"><clip pos="3" side="sl" part="lemh"/><list n="vbambser"/></in>
+	      </and>
+	    </test>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+	          <var n="pronom"/>
+                </get-case-from>
+              </lu>
+              <b/>
+            </out>
+            <modify-case>
+              <clip pos="1" side="sl" part="lemh"/>
+              <lit v="aa"/>
+            </modify-case>
+	  </when>
+        </choose>
+
+
       <choose>
        <when>
          <test>
