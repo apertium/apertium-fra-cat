@@ -413,12 +413,12 @@
       <cat-item lemma="appeler" tags="vblex.fti.*"/>
     </def-cat>
     <def-cat n="verbospron"> <!-- verbs pronominals en fra però amb l'equivalent cat no pronominal -->
-      <cat-item lemma="assoir" tags="vblex.*"/>
+      <cat-item lemma="asseoir" tags="vblex.*"/>
       <cat-item lemma="heurter" tags="vblex.*"/>
       <cat-item lemma="taire" tags="vblex.*"/>
     </def-cat>
     <def-cat n="verbospron_pp">
-      <cat-item lemma="assoir" tags="vblex.pp.*"/>
+      <cat-item lemma="asseoir" tags="vblex.pp.*"/>
       <cat-item lemma="heurter" tags="vblex.pp.*"/>
       <cat-item lemma="taire" tags="vblex.pp.*"/>
     </def-cat>
@@ -951,7 +951,7 @@
       <list-item v="Mauritanie"/>
       <list-item v="Algérie"/>
       <list-item v="Tunisie"/>
-      <list-item v="Lybie"/>
+      <list-item v="Libye"/>
       <list-item v="Égypte"/>
       <list-item v="Burkina"/>
       <list-item v="Burkina Faso"/>
@@ -1191,9 +1191,14 @@
       <list-item v="berbère"/>
       <list-item v="kabyle"/>
       <list-item v="touareg"/>
+      <list-item v="copte"/>
       <list-item v="nubien"/>
       <list-item v="bengali"/>
       <list-item v="bengalais"/>
+      <list-item v="tamoul"/>
+      <list-item v="tamil"/>
+      <list-item v="télougou"/>
+      <list-item v="singalais"/>
       <list-item v="népalais"/>
       <list-item v="tibétain"/>
       <list-item v="chinois"/>
@@ -13038,6 +13043,12 @@ is not applicable because gender and number cannot be taken from previous rules 
               </equal>
             </test>
             <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+            <let>
+                <clip pos="2" side="tl" part="lemh"/>
+                <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="lemh"/>
+                </get-case-from>
+            </let>
           </when>
           <otherwise>
 <!--Si no concuerdan el pronombre y el verbo, envíalo todo -->
@@ -13077,7 +13088,9 @@ is not applicable because gender and number cannot be taken from previous rules 
             <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
             <out>
               <lu>
-                <clip pos="2" side="tl" part="lem"/>
+                <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="lem"/>
+                </get-case-from>
                 <lit-tag v="vaux"/>
 <!--Para que traduzca "haber" como auxiliar (lo mismo que hace la regla HABER 3ª persona -->
                 <clip pos="2" side="tl" part="temps"/>
