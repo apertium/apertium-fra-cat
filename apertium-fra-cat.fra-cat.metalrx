@@ -908,6 +908,10 @@
       <match lemma="sur" tags="pr"/>
     </or>
   </rule>
+  <rule weight="1.0">
+    <match lemma="aller" tags="vblex.*"/>
+    <match lemma="coucher" tags="vblex.*"><select lemma="jeure"/></match>
+  </rule>
   <rule weight="1.2">
     <match lemma="coucher" tags="vblex.pp.*"><select lemma="ajeure"/></match>
   </rule>

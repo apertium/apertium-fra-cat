@@ -1129,6 +1129,7 @@
       <match lemma="muntanya" tags="n.*"/>
       <match lemma="bosc" tags="n.*"/>
       <match lemma="platja" tags="n.*"/>
+      <match lemma="ciutat" tags="n.*"/>
       <match lemma="Mediterrani" tags="np.*"/>
       <match lemma="Mediterrània" tags="np.*"/>
       <match lemma="Adriàtic" tags="np.*"/>
@@ -1154,6 +1155,8 @@
     <or>
       <seq n="verbs_moviment"/>
       <match lemma="proximitat" tags="n.*"/>
+      <match lemma="viatge" tags="n.*"/>
+      <match lemma="peregrinació" tags="n.*"/>
     </or>
     <match lemma="a" tags="pr"><select lemma="à"/></match>
     <match tags="det.def.*"/>
@@ -1164,6 +1167,7 @@
       <match lemma="muntanya" tags="n.*"/>
       <match lemma="bosc" tags="n.*"/>
       <match lemma="platja" tags="n.*"/>
+      <match lemma="ciutat" tags="n.*"/>
       <match lemma="Mediterrani" tags="np.*"/>
       <match lemma="Mediterrània" tags="np.*"/>
     </or>
@@ -1447,11 +1451,14 @@
   <!-- estar >> être, rester -->
   <macro name="verb_nopron_pron_prep" p1="estar" p2="être" p3="rester" p4="a"/>
 
+  <!-- aprimar >> amaigrir, maigrir -->
+  <macro name="verb_nopron_pron" p1="aprimar" p2="amaigrir" p3="maigrir" />
+
   <!-- descuidar >> négliger, oublier -->
   <macro name="verb_nopron_pron" p1="descuidar" p2="négliger" p3="oublier" />
 
-  <!-- moure >> mouvoir, bouger -->
-  <macro name="verb_nopron_pron" p1="moure" p2="mouvoir" p3="bouger" />
+  <!-- moure >> remuer, bouger -->
+  <macro name="verb_nopron_pron" p1="moure" p2="remuer" p3="bouger" />
 
   <!-- bellugar >> remuer, bouger -->
   <macro name="verb_nopron_pron" p1="bellugar" p2="remuer" p3="bouger" />
@@ -1459,8 +1466,41 @@
   <!-- enamorar >> rendre# amoureux, tomber# amoureux -->
   <macro name="verb_nopron_pron" p1="enamorar" p2="rendre# amoureux" p3="tomber# amoureux" />
 
+  <!-- enfilar >> enfiler, grimper -->
+  <macro name="verb_nopron_pron" p1="enfilar" p2="enfiler" p3="grimper" />
+
+  <!-- enfonsar >> faire# couler, couler -->
+  <macro name="verb_nopron_pron" p1="enfonsar" p2="faire# couler" p3="couler" />
+
+  <!-- estirar >> tirer, coucher -->
+  <macro name="verb_nopron_pron" p1="tirer" p2="tirer" p3="coucher" />
+  <rule weight="0.9">
+    <match lemma="estirar" tags="vblex.*"><select lemma="étirer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv.*"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="braç" tags="n.*"/>
+      <match lemma="cama" tags="n.*"/>
+      <match lemma="coll" tags="n.*"/>
+      <match lemma="cos" tags="n.*"/>
+      <match lemma="mà" tags="n.*"/>
+      <match lemma="peu" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- avergonyir >> faire# honte, avoir# honte -->
+  <macro name="verb_nopron_pron" p1="avergonyir" p2="faire# honte" p3="avoir# honte" />
+
   <!-- convertir >> convertir, devenir -->
   <macro name="verb_nopron_pron" p1="convertir" p2="convertir" p3="devenir" />
+
+  <!-- convertir# en >> convertir# en, devenir -->
+  <macro name="verb_nopron_pron" p1="convertir# en" p2="transformer# en" p3="devenir" />
+
+  <!-- florir >> fleurir, moisir -->
+  <macro name="verb_nopron_pron" p1="florir" p2="fleurir" p3="moisir" />
 
   <!-- jubilar >> mettre# à la retraite, prendre# sa retraite -->
   <macro name="verb_nopron_pron" p1="jubilar" p2="mettre# à la retraite" p3="prendre# sa retraite" />
