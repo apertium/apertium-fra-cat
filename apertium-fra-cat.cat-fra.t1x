@@ -300,40 +300,80 @@
       <cat-item lemma="anar" tags="vblex.imp.p3.*"/>
     </def-cat>
     <def-cat n="verbospron"> <!-- verbs pronominals en cat però amb l'equivalent fra no pronominal -->
+      <cat-item lemma="agrumollar" tags="vblex.*"/>
+      <cat-item lemma="aprimar" tags="vblex.*"/>
+      <cat-item lemma="atrevir" tags="vblex.*"/>
+      <cat-item lemma="avergonyir" tags="vblex.*"/>
       <cat-item lemma="bellugar" tags="vblex.*"/>
       <cat-item lemma="convertir" tags="vblex.*"/>
       <cat-item lemma="convertir# en" tags="vblex.*"/>
       <cat-item lemma="descuidar" tags="vblex.*"/>
       <cat-item lemma="enamorar" tags="vblex.*"/>
+      <cat-item lemma="enfilar" tags="vblex.*"/>
+      <cat-item lemma="enfonsar" tags="vblex.*"/>
+      <cat-item lemma="estirar" tags="vblex.*"/>
+      <cat-item lemma="florir" tags="vblex.*"/>
+      <cat-item lemma="gitar" tags="vblex.*"/>
       <cat-item lemma="moure" tags="vblex.*"/>
       <cat-item lemma="oblidar# de" tags="vblex.*"/>
+      <cat-item lemma="podrir" tags="vblex.*"/>
     </def-cat>
     <def-cat n="verbospron_inf">
+      <cat-item lemma="agrumollar" tags="vblex.inf"/>
+      <cat-item lemma="aprimar" tags="vblex.inf"/>
+      <cat-item lemma="atrevir" tags="vblex.inf"/>
+      <cat-item lemma="avergonyir" tags="vblex.inf"/>
       <cat-item lemma="bellugar" tags="vblex.inf"/>
       <cat-item lemma="convertir" tags="vblex.inf"/>
       <cat-item lemma="convertir# en" tags="vblex.inf"/>
       <cat-item lemma="descuidar" tags="vblex.inf"/>
       <cat-item lemma="enamorar" tags="vblex.inf"/>
+      <cat-item lemma="enfilar" tags="vblex.inf"/>
+      <cat-item lemma="enfonsar" tags="vblex.inf"/>
+      <cat-item lemma="estirar" tags="vblex.inf"/>
+      <cat-item lemma="florir" tags="vblex.inf"/>
+      <cat-item lemma="gitar" tags="vblex.inf"/>
       <cat-item lemma="moure" tags="vblex.inf"/>
       <cat-item lemma="oblidar# de" tags="vblex.inf"/>
+      <cat-item lemma="podrir" tags="vblex.inf"/>
     </def-cat>
     <def-cat n="verbospron_ger">
+      <cat-item lemma="agrumollar" tags="vblex.ger"/>
+      <cat-item lemma="aprimar" tags="vblex.ger"/>
+      <cat-item lemma="atrevir" tags="vblex.ger"/>
+      <cat-item lemma="avergonyir" tags="vblex.ger"/>
       <cat-item lemma="bellugar" tags="vblex.ger"/>
       <cat-item lemma="convertir" tags="vblex.ger"/>
       <cat-item lemma="convertir# en" tags="vblex.ger"/>
       <cat-item lemma="descuidar" tags="vblex.ger"/>
       <cat-item lemma="enamorar" tags="vblex.ger"/>
+      <cat-item lemma="enfilar" tags="vblex.ger"/>
+      <cat-item lemma="enfonsar" tags="vblex.ger"/>
+      <cat-item lemma="estirar" tags="vblex.ger"/>
+      <cat-item lemma="florir" tags="vblex.ger"/>
+      <cat-item lemma="gitar" tags="vblex.ger"/>
       <cat-item lemma="moure" tags="vblex.ger"/>
       <cat-item lemma="oblidar# de" tags="vblex.ger"/>
+      <cat-item lemma="podrir" tags="vblex.ger"/>
     </def-cat>
     <def-cat n="verbospron_pp">
+      <cat-item lemma="agrumollar" tags="vblex.pp.*"/>
+      <cat-item lemma="aprimar" tags="vblex.pp.*"/>
+      <cat-item lemma="atrevir" tags="vblex.pp.*"/>
+      <cat-item lemma="avergonyir" tags="vblex.pp.*"/>
       <cat-item lemma="bellugar" tags="vblex.pp.*"/>
       <cat-item lemma="convertir" tags="vblex.pp.*"/>
       <cat-item lemma="convertir# en" tags="vblex.pp.*"/>
       <cat-item lemma="descuidar" tags="vblex.pp.*"/>
       <cat-item lemma="enamorar" tags="vblex.pp.*"/>
+      <cat-item lemma="enfilar" tags="vblex.pp.*"/>
+      <cat-item lemma="enfonsar" tags="vblex.pp.*"/>
+      <cat-item lemma="estirar" tags="vblex.pp.*"/>
+      <cat-item lemma="florir" tags="vblex.pp.*"/>
+      <cat-item lemma="gitar" tags="vblex.pp.*"/>
       <cat-item lemma="moure" tags="vblex.pp.*"/>
       <cat-item lemma="oblidar# de" tags="vblex.pp.*"/>
+      <cat-item lemma="podrir" tags="vblex.pp.*"/>
     </def-cat>
     <def-cat n="fa">
       <cat-item lemma="fer" tags="vblex.pri.p3.sg"/>
@@ -860,6 +900,7 @@
       <list-item v="enfollir"/>
       <list-item v="aparèixer"/>
       <list-item v="enamorar"/> <!-- tomber amoureux -->
+      <list-item v="convertir"/> <!-- devenir -->
     </def-list>
 
     <!--
@@ -4679,6 +4720,24 @@ is not applicable because gender and number can not be taken from previous rules
             <clip pos="1" side="tl" part="a_prn"/>
             <clip pos="1" side="tl" part="gen"/>
             <clip pos="1" side="tl" part="nbr"/>
+          </lu>
+        </out>
+        <let><var n="inici"/><lit-tag v="no"/></let>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: PRONPRO">
+      <pattern>
+        <pattern-item n="prnpro"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="tags"/>
           </lu>
         </out>
         <let><var n="inici"/><lit-tag v="no"/></let>
