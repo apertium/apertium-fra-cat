@@ -133,6 +133,9 @@
     <def-cat n="es">
       <cat-item lemma="es" tags="prn.pro.ref.p3.mf.sp"/>
     </def-cat>
+    <def-cat n="es_enc">
+      <cat-item lemma="es" tags="prn.enc.ref.p3.mf.sp"/>
+    </def-cat>
     <def-cat n="prnpronoref">
       <cat-item lemma="en" tags="prn.pro.adv"/>
       <cat-item lemma="hi" tags="prn.pro.adv"/>
@@ -298,6 +301,7 @@
     </def-cat>
     <def-cat n="verbospron"> <!-- verbs pronominals en cat però amb l'equivalent fra no pronominal -->
       <cat-item lemma="bellugar" tags="vblex.*"/>
+      <cat-item lemma="convertir" tags="vblex.*"/>
       <cat-item lemma="convertir# en" tags="vblex.*"/>
       <cat-item lemma="descuidar" tags="vblex.*"/>
       <cat-item lemma="enamorar" tags="vblex.*"/>
@@ -306,14 +310,25 @@
     </def-cat>
     <def-cat n="verbospron_inf">
       <cat-item lemma="bellugar" tags="vblex.inf"/>
+      <cat-item lemma="convertir" tags="vblex.inf"/>
       <cat-item lemma="convertir# en" tags="vblex.inf"/>
       <cat-item lemma="descuidar" tags="vblex.inf"/>
       <cat-item lemma="enamorar" tags="vblex.inf"/>
       <cat-item lemma="moure" tags="vblex.inf"/>
       <cat-item lemma="oblidar# de" tags="vblex.inf"/>
     </def-cat>
+    <def-cat n="verbospron_ger">
+      <cat-item lemma="bellugar" tags="vblex.ger"/>
+      <cat-item lemma="convertir" tags="vblex.ger"/>
+      <cat-item lemma="convertir# en" tags="vblex.ger"/>
+      <cat-item lemma="descuidar" tags="vblex.ger"/>
+      <cat-item lemma="enamorar" tags="vblex.ger"/>
+      <cat-item lemma="moure" tags="vblex.ger"/>
+      <cat-item lemma="oblidar# de" tags="vblex.ger"/>
+    </def-cat>
     <def-cat n="verbospron_pp">
       <cat-item lemma="bellugar" tags="vblex.pp.*"/>
+      <cat-item lemma="convertir" tags="vblex.pp.*"/>
       <cat-item lemma="convertir# en" tags="vblex.pp.*"/>
       <cat-item lemma="descuidar" tags="vblex.pp.*"/>
       <cat-item lemma="enamorar" tags="vblex.pp.*"/>
@@ -8380,6 +8395,123 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
     </rule>
 
+<!-- xxxxx Ara infinitius i gerundis -->
+
+    <rule comment="INFPRON PRNENCREF > INFNOPRON: moure's > bouger">
+      <pattern>
+        <pattern-item n="verbospron_inf"/>
+        <pattern-item n="es_enc"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="a_verb"/>
+            <clip pos="1" side="tl" part="temps"/>
+            <clip pos="1" side="tl" part="persona"/>
+            <clip pos="1" side="tl" part="nbr"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+      </action>
+  </rule>
+
+    <rule comment="GERPRON PRNENCREF > GERNOPRON: mouvent-se > en bougeant">
+      <pattern>
+        <pattern-item n="verbospron_ger"/>
+        <pattern-item n="es_enc"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="en"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="2">
+              <clip pos="1" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="1" side="tl" part="a_verb"/>
+            <clip pos="1" side="tl" part="temps"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+      </action>
+  </rule>
+
+    <rule comment="NO INFPRON PRNENCREF > NE PAS INFNOPRON: no moure's > ne pas bouger">
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="verbospron_inf"/>
+        <pattern-item n="es_enc"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="nbr"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+      </action>
+  </rule>
+
+    <rule comment="NO GERPRON PRNENCREF > EN NE GERNOPRON PAS: no mouvent-se > en ne bougeant pas">
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="verbospron_ger"/>
+        <pattern-item n="es_enc"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="en"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="2">
+              <clip pos="1" side="tl" part="lem"/>
+            </get-case-from>
+            <clip pos="1" side="tl" part="tags"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+      </action>
+  </rule>
+
 <!-- FI REGLES VERBS QUE SÓN PRONOMINALS EN CATALÀ LLENGUA PERÒ NO EN FRANCÈS -->
 
 
@@ -8861,7 +8993,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="REGLA: GERUNDI">
+    <rule comment="REGLA: GER">
       <pattern>
         <pattern-item n="ger"/>
       </pattern>
@@ -8885,6 +9017,45 @@ is not applicable because gender and number can not be taken from previous rules
             <clip pos="1" side="tl" part="a_verb"/>
             <clip pos="1" side="tl" part="temps"/>
             <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: NO GER">
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="ger"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="en"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b/>
+          </out>
+          <modify-case>
+            <clip pos="1" side="tl" part="lemh"/>
+            <lit v="aa"/>
+          </modify-case>
+          <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
           </lu>
         </out>
       </action>
@@ -15853,7 +16024,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="GER + ENCLÍTIC">
+    <rule comment="GER + ENC">
       <pattern>
         <pattern-item n="ger"/>
         <pattern-item n="prnenc"/>
@@ -15861,7 +16032,9 @@ is not applicable because gender and number can not be taken from previous rules
       <action>
         <out>
           <lu>
-            <lit v="en"/>
+            <get-case-from pos="1">
+              <lit v="en"/>
+            </get-case-from>
             <lit-tag v="pr"/>
           </lu>
           <b/>
@@ -15872,7 +16045,9 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
           <b/>
           <lu>
-            <clip pos="1" side="tl" part="lemh"/>
+            <get-case-from pos="2">
+              <clip pos="1" side="tl" part="lemh"/>
+            </get-case-from>
             <clip pos="1" side="tl" part="a_verb"/>
             <clip pos="1" side="tl" part="temps"/>
             <clip pos="1" side="tl" part="lemq"/>
@@ -15881,7 +16056,50 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="INF + ENCLÍTIC">
+    <rule comment="NO + GER + ENC">
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="ger"/>
+        <pattern-item n="prnenc"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="en"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="2">
+              <clip pos="1" side="tl" part="lem"/>
+            </get-case-from>
+            <clip pos="1" side="tl" part="tags"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="3" side="tl" part="lem"/>
+            <lit-tag v="prn.pro"/>
+            <clip pos="3" side="tl" part="tipoenc_pro"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+    <rule comment="INF + ENC">
       <pattern>
         <pattern-item n="inf"/>
         <pattern-item n="prnenc"/>
@@ -15906,7 +16124,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="NO + INF + ENCLÍTIC">
+    <rule comment="NO + INF + ENC">
       <pattern>
         <pattern-item n="noadv"/>
         <pattern-item n="inf"/>
@@ -15941,7 +16159,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="INF + enc + enc">
+    <rule comment="INF + ENC + ENC">
       <pattern>
         <pattern-item n="inf"/>
         <pattern-item n="prnenc"/>
@@ -15963,7 +16181,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="NO + INF + enc + enc: no donar-li'n > ne pas lui en donner">
+    <rule comment="NO + INF + ENC + ENC: no donar-li'n > ne pas lui en donner">
       <pattern>
         <pattern-item n="noadv"/>
         <pattern-item n="inf"/>
@@ -15997,7 +16215,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="GER + enc + enc">
+    <rule comment="GER + ENC + ENC">
       <pattern>
         <pattern-item n="ger"/>
         <pattern-item n="prnenc"/>
@@ -16006,7 +16224,9 @@ is not applicable because gender and number can not be taken from previous rules
       <action>
         <out>
           <lu>
-            <lit v="en"/>
+            <get-case-from pos="1">
+              <lit v="en"/>
+            </get-case-from>
             <lit-tag v="pr"/>
           </lu>
           <b/>
@@ -16018,9 +16238,56 @@ is not applicable because gender and number can not be taken from previous rules
         <out>
           <b/>
           <lu>
-            <clip pos="1" side="tl" part="lemh"/>
+            <get-case-from pos="2">
+              <clip pos="1" side="tl" part="lemh"/>
+            </get-case-from>
             <clip pos="1" side="tl" part="tags"/>
             <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+    <rule comment="NO + GER + ENC + ENC">
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="ger"/>
+        <pattern-item n="prnenc"/>
+        <pattern-item n="prnenc"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="en"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="2">
+              <clip pos="1" side="tl" part="lem"/>
+            </get-case-from>
+            <clip pos="1" side="tl" part="tags"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <call-macro n="print_enc_enc_2_pro_pro">
+          <with-param pos="3"/>
+          <with-param pos="4"/>
+        </call-macro>
+        <out>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
           </lu>
         </out>
       </action>
@@ -16922,7 +17189,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="EN + INF - EN + GERUNDI Comprovar traducció">
+    <rule comment="EN + INF - EN + GER Comprovar traducció">
       <pattern>
         <pattern-item n="en"/>
         <pattern-item n="infnm"/>
@@ -16946,7 +17213,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="EN + INF'S - EN + GERUNDI Comprovar traducció">
+    <rule comment="EN + INF'S - EN + GER Comprovar traducció">
       <pattern>
         <pattern-item n="en"/>
         <pattern-item n="infnm"/>
