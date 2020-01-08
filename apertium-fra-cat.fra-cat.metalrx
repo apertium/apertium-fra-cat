@@ -338,6 +338,35 @@
         <match lemma="{{p1}}" tags="vblex.*.p1.pl"><select lemma="{{p3}}"/></match>
         <match tags="prn.enc.p1.*.pl"/>
       </rule>
+
+      <rule weight="1.0">
+        <match tags="prn.pro.p1.*.sg"/>
+        <match lemma="être" tags="vbser.*.p1.sg"/>
+        <match lemma="{{p1}}" tags="vblex.pp.*"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match tags="prn.pro.p2.*.sg"/>
+        <match lemma="être" tags="vbser.*.p2.sg"/>
+        <match lemma="{{p1}}" tags="vblex.pp.*"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match tags="prn.pro.p1.*.pl"/>
+        <match lemma="être" tags="vbser.*.p1.pl"/>
+        <match lemma="{{p1}}" tags="vblex.pp.*"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match tags="prn.pro.p2.*.pl"/>
+        <match lemma="être" tags="vbser.*.p2.pl"/>
+        <match lemma="{{p1}}" tags="vblex.pp.*"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match tags="prn.pro.ref.p3.*.sp"/>
+        <or>
+          <match lemma="être" tags="vbser.*.p3.sg"><select lemma="{{p3}}"/></match>
+          <match lemma="être" tags="vbser.*.p3.pl"><select lemma="{{p3}}"/></match>
+        </or>
+        <match lemma="{{p1}}" tags="vblex.pp.*"><select lemma="{{p3}}"/></match>
+      </rule>
     </def-macro>
   </def-macros>
 
