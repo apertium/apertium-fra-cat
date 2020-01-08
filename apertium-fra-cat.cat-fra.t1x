@@ -159,6 +159,9 @@
     <def-cat n="vbser">
       <cat-item tags="vbser.*"/>
     </def-cat>
+    <def-cat n="vbmod">
+      <cat-item tags="vbmod.*"/>
+    </def-cat>
     <def-cat n="verb_conj">
       <cat-item tags="vblex.*.p1.*"/>
       <cat-item tags="vblex.*.p2.*"/>
@@ -292,6 +295,30 @@
       <cat-item lemma="anar" tags="vblex.ifi.p3.*"/>
       <cat-item lemma="anar" tags="vblex.fti.p3.*"/>
       <cat-item lemma="anar" tags="vblex.imp.p3.*"/>
+    </def-cat>
+    <def-cat n="verbospron"> <!-- verbs pronominals en cat però amb l'equivalent fra no pronominal -->
+      <cat-item lemma="bellugar" tags="vblex.*"/>
+      <cat-item lemma="convertir# en" tags="vblex.*"/>
+      <cat-item lemma="descuidar" tags="vblex.*"/>
+      <cat-item lemma="enamorar" tags="vblex.*"/>
+      <cat-item lemma="moure" tags="vblex.*"/>
+      <cat-item lemma="oblidar# de" tags="vblex.*"/>
+    </def-cat>
+    <def-cat n="verbospron_inf">
+      <cat-item lemma="bellugar" tags="vblex.inf"/>
+      <cat-item lemma="convertir# en" tags="vblex.inf"/>
+      <cat-item lemma="descuidar" tags="vblex.inf"/>
+      <cat-item lemma="enamorar" tags="vblex.inf"/>
+      <cat-item lemma="moure" tags="vblex.inf"/>
+      <cat-item lemma="oblidar# de" tags="vblex.inf"/>
+    </def-cat>
+    <def-cat n="verbospron_pp">
+      <cat-item lemma="bellugar" tags="vblex.pp.*"/>
+      <cat-item lemma="convertir# en" tags="vblex.pp.*"/>
+      <cat-item lemma="descuidar" tags="vblex.pp.*"/>
+      <cat-item lemma="enamorar" tags="vblex.pp.*"/>
+      <cat-item lemma="moure" tags="vblex.pp.*"/>
+      <cat-item lemma="oblidar# de" tags="vblex.pp.*"/>
     </def-cat>
     <def-cat n="fa">
       <cat-item lemma="fer" tags="vblex.pri.p3.sg"/>
@@ -993,9 +1020,14 @@
       <list-item v="berbère"/>
       <list-item v="kabyle"/>
       <list-item v="touareg"/>
+      <list-item v="copte"/>
       <list-item v="nubien"/>
       <list-item v="bengali"/>
       <list-item v="bengalais"/>
+      <list-item v="tamoul"/>
+      <list-item v="tamil"/>
+      <list-item v="télougou"/>
+      <list-item v="singalais"/>
       <list-item v="népalais"/>
       <list-item v="tibétain"/>
       <list-item v="chinois"/>
@@ -1223,7 +1255,7 @@
       <list-item v="Mauritanie"/>
       <list-item v="Algérie"/>
       <list-item v="Tunisie"/>
-      <list-item v="Lybie"/>
+      <list-item v="Libye"/>
       <list-item v="Égypte"/>
       <list-item v="Burkina"/>
       <list-item v="Burkina Faso"/>
@@ -6245,6 +6277,2112 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
+<!-- REGLES VERBS QUE SÓN PRONOMINALS EN CATALÀ LLENGUA PERÒ NO EN FRANCÈS -->
+
+    <rule comment="PRNPROREF VERBPRON > VERBNOPRON: es mou > bouge">
+      <pattern>
+        <pattern-item n="prnproref"/>
+        <pattern-item n="verbospron"/>
+      </pattern>
+      <action>
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="1" side="sl" part="persona"/>
+                <clip pos="2" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+            <let>
+                <clip pos="2" side="tl" part="lemh"/>
+                <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="lemh"/>
+                </get-case-from>
+            </let>
+          </when>
+          <otherwise>
+<!--Si no concuerdan el pronombre y el verbo, envíalo todo -->
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="PRNPROREF HAVER PPPRON > HAVER/SER PPNOPRON: s'ha mogut > a bougé">
+      <pattern>
+        <pattern-item n="prnproref"/>
+        <pattern-item n="haver"/>
+        <pattern-item n="verbospron_pp"/>
+      </pattern>
+      <action>
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="1" side="sl" part="persona"/>
+                <clip pos="2" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+            <let>
+                <clip pos="2" side="tl" part="lemh"/>
+                <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="lemh"/>
+                </get-case-from>
+            </let>
+          </when>
+          <otherwise>
+            <call-macro n="f_setpronom">
+              <with-param pos="2"/>
+            </call-macro>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lemh"/>
+                <clip pos="1" side="tl" part="tags"/>
+                <clip pos="1" side="tl" part="lemq"/>
+              </lu>
+              <b pos="1"/>
+            </out>
+          </otherwise>
+        </choose>
+        <choose>
+          <when>
+            <test>
+              <in caseless="yes"><clip pos="3" side="sl" part="lemh"/><list n="vbambser"/></in>
+            </test>
+            <let><clip pos="2" side="tl" part="lem"/><get-case-from pos="2"><lit v="être"/></get-case-from></let>
+            <let><clip pos="2" side="tl" part="a_verb"/><lit-tag v="vbser"/></let>
+            <let><clip pos="3" side="tl" part="nbr"/><clip pos="2" side="sl" part="nbr"/></let>
+            <choose>
+              <when>
+                <test>
+                    <or>
+                      <equal><var n="genero"/><lit-tag v="m"/></equal>
+                      <equal><var n="genero"/><lit-tag v="f"/></equal>
+                    </or>
+                </test>
+                <let><clip pos="3" side="tl" part="gen"/><var n="genero"/></let>
+              </when>
+            </choose>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="PRNPROREF ANAR INFPRON > HAVER/SER INFNOPRON: es va moure > a bougé">
+      <pattern>
+        <pattern-item n="prnproref"/>
+        <pattern-item n="anarpri"/>
+        <pattern-item n="verbospron_inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_vaux_pp2">
+          <with-param pos="2"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="1" side="sl" part="persona"/>
+                <clip pos="2" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+            <let>
+                <clip pos="2" side="tl" part="lemh"/>
+                <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="lemh"/>
+                </get-case-from>
+            </let>
+          </when>
+          <otherwise>
+            <call-macro n="f_setpronom">
+              <with-param pos="2"/>
+            </call-macro>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lemh"/>
+                <clip pos="1" side="tl" part="tags"/>
+                <clip pos="1" side="tl" part="lemq"/>
+              </lu>
+              <b pos="1"/>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+           <lu>
+             <clip pos="3" side="tl" part="lemh"/>
+             <clip pos="3" side="tl" part="a_verb"/>
+             <lit-tag v="pp"/>
+             <var n="genero_tmp"/>
+             <var n="numero_tmp"/>
+             <clip pos="3" side="tl" part="lemq"/>
+           </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="ANAR INFPRON PRNENC > HAVER/SER INFNOPRON: va moure's > a bougé, va moure-hi, y a remué">
+      <pattern>
+        <pattern-item n="anarpri"/>
+        <pattern-item n="verbospron_inf"/>
+        <pattern-item n="prnenc"/>
+      </pattern>
+      <action>
+        <call-macro n="f_vaux_pp2">
+          <with-param pos="1"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="3" side="sl" part="persona"/>
+                <clip pos="1" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+          </when>
+          <otherwise>
+            <call-macro n="f_setpronom">
+              <with-param pos="1"/>
+            </call-macro>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <clip pos="3" side="tl" part="lemh"/>
+                </get-case-from>
+                <lit-tag v="prn.pro"/>
+                <clip pos="3" side="tl" part="tipoenc_pro"/>
+              </lu>
+              <b/>
+            </out>
+            <let>
+                <clip pos="2" side="tl" part="lemh"/>
+                <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="lemh"/>
+                </get-case-from>
+            </let>
+          </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+           <lu>
+             <clip pos="2" side="tl" part="lemh"/>
+             <clip pos="2" side="tl" part="a_verb"/>
+             <lit-tag v="pp"/>
+             <var n="genero_tmp"/>
+             <var n="numero_tmp"/>
+             <clip pos="2" side="tl" part="lemq"/>
+           </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="PRNPROREF VBMOD INFPRON > VBMOD INFNOPRON: es pot moure > peut bouger">
+      <pattern>
+        <pattern-item n="prnproref"/>
+        <pattern-item n="vbmod"/>
+        <pattern-item n="verbospron_inf"/>
+      </pattern>
+      <action>
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="1" side="sl" part="persona"/>
+                <clip pos="2" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+            <let>
+                <clip pos="2" side="tl" part="lemh"/>
+                <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="lemh"/>
+                </get-case-from>
+            </let>
+          </when>
+          <otherwise>
+            <call-macro n="f_setpronom">
+              <with-param pos="2"/>
+            </call-macro>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lemh"/>
+                <clip pos="1" side="tl" part="tags"/>
+                <clip pos="1" side="tl" part="lemq"/>
+              </lu>
+              <b pos="1"/>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+           <lu>
+             <clip pos="3" side="tl" part="lemh"/>
+             <clip pos="3" side="tl" part="tags"/>
+             <clip pos="3" side="tl" part="lemq"/>
+           </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="VBMOD INFPRON PRNENC > VBMOD INFNOPRON: pot moure's > peut bouger, pot moure-hi, y peut remuer">
+      <pattern>
+        <pattern-item n="vbmod"/>
+        <pattern-item n="verbospron_inf"/>
+        <pattern-item n="prnenc"/>
+      </pattern>
+      <action>
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="3" side="sl" part="persona"/>
+                <clip pos="1" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+          </when>
+          <otherwise>
+            <call-macro n="f_setpronom">
+              <with-param pos="2"/>
+            </call-macro>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <clip pos="3" side="tl" part="lemh"/>
+                </get-case-from>
+                <lit-tag v="prn.pro"/>
+                <clip pos="3" side="tl" part="tipoenc_pro"/>
+              </lu>
+              <b/>
+            </out>
+            <let>
+                <clip pos="2" side="tl" part="lemh"/>
+                <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="lemh"/>
+                </get-case-from>
+            </let>
+          </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+           <lu>
+             <clip pos="2" side="tl" part="lemh"/>
+             <clip pos="2" side="tl" part="tags"/>
+             <clip pos="2" side="tl" part="lemq"/>
+           </lu>
+        </out>
+      </action>
+    </rule>
+
+<!-- xxxxx Ara amb negació -->
+    <rule comment="NO PRNPROREF VERBPRON > NE VERBNOPRON PAS: no es mou > ne bouge pas">
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="prnproref"/>
+        <pattern-item n="verbospron"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="2" side="sl" part="persona"/>
+                <clip pos="3" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+          </when>
+          <otherwise>
+<!--Si no concuerdan el pronombre y el verbo, envíalo todo -->
+            <out>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b pos="2"/>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="NO PRNPROREF HAVER PPPRON > NE HAVER/SER PAS PPNOPRON: ne s'ha mogut > n'a pas bougé">
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="prnproref"/>
+        <pattern-item n="haver"/>
+        <pattern-item n="verbospron_pp"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="2" side="sl" part="persona"/>
+                <clip pos="3" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+          </when>
+          <otherwise>
+            <call-macro n="f_setpronom">
+              <with-param pos="3"/>
+            </call-macro>
+            <out>
+              <lu>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+              <b pos="2"/>
+            </out>
+          </otherwise>
+        </choose>
+        <choose>
+          <when>
+            <test>
+              <in caseless="yes"><clip pos="4" side="sl" part="lemh"/><list n="vbambser"/></in>
+            </test>
+            <let><clip pos="3" side="tl" part="lem"/><get-case-from pos="3"><lit v="être"/></get-case-from></let>
+            <let><clip pos="3" side="tl" part="a_verb"/><lit-tag v="vbser"/></let>
+            <let><clip pos="4" side="tl" part="nbr"/><clip pos="2" side="sl" part="nbr"/></let>
+            <choose>
+              <when>
+                <test>
+                    <or>
+                      <equal><var n="genero"/><lit-tag v="m"/></equal>
+                      <equal><var n="genero"/><lit-tag v="f"/></equal>
+                    </or>
+                </test>
+                <let><clip pos="4" side="tl" part="gen"/><var n="genero"/></let>
+              </when>
+            </choose>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="NO PRNPROREF ANAR INFPRON > NE HAVER/SER PAS INFNOPRON: no es va moure > n'a pas bougé">
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="prnproref"/>
+        <pattern-item n="anarpri"/>
+        <pattern-item n="verbospron_inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_vaux_pp2">
+          <with-param pos="3"/>
+          <with-param pos="4"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="2" side="sl" part="persona"/>
+                <clip pos="3" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+          </when>
+          <otherwise>
+            <call-macro n="f_setpronom">
+              <with-param pos="3"/>
+            </call-macro>
+            <out>
+              <lu>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+              <b pos="2"/>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="3"/>
+           <lu>
+             <clip pos="4" side="tl" part="lemh"/>
+             <clip pos="4" side="tl" part="a_verb"/>
+             <lit-tag v="pp"/>
+             <var n="genero_tmp"/>
+             <var n="numero_tmp"/>
+             <clip pos="4" side="tl" part="lemq"/>
+           </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="NO ANAR INFPRON PRNENC > NE HAVER/SER PAS INFNOPRON: no va moure's > n'a pas bougé, va moure-hi, n'y a pas remué">
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="anarpri"/>
+        <pattern-item n="verbospron_inf"/>
+        <pattern-item n="prnenc"/>
+      </pattern>
+      <action>
+        <call-macro n="f_vaux_pp2">
+          <with-param pos="2"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="4" side="sl" part="persona"/>
+                <clip pos="2" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+          </when>
+          <otherwise>
+            <call-macro n="f_setpronom">
+              <with-param pos="2"/>
+            </call-macro>
+            <out>
+              <lu>
+                <clip pos="4" side="tl" part="lemh"/>
+                <lit-tag v="prn.pro"/>
+                <clip pos="4" side="tl" part="tipoenc_pro"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="2"/>
+           <lu>
+             <clip pos="3" side="tl" part="lemh"/>
+             <clip pos="3" side="tl" part="a_verb"/>
+             <lit-tag v="pp"/>
+             <var n="genero_tmp"/>
+             <var n="numero_tmp"/>
+             <clip pos="3" side="tl" part="lemq"/>
+           </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="NO PRNPROREF VBMOD INFPRON > NE VBMOD INFNOPRON: no es pot moure > ne peut pas bouger">
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="prnproref"/>
+        <pattern-item n="vbmod"/>
+        <pattern-item n="verbospron_inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="2" side="sl" part="persona"/>
+                <clip pos="3" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+          </when>
+          <otherwise>
+            <call-macro n="f_setpronom">
+              <with-param pos="3"/>
+            </call-macro>
+            <out>
+              <lu>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+              <b pos="2"/>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="3"/>
+           <lu>
+             <clip pos="4" side="tl" part="lemh"/>
+             <clip pos="4" side="tl" part="tags"/>
+             <clip pos="4" side="tl" part="lemq"/>
+           </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="NO VBMOD INFPRON PRNENC > NE VBMOD PAS INFNOPRON: no pot moure's > ne peut pas bouger, no pot moure-hi, n'y peut pas remuer">
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="vbmod"/>
+        <pattern-item n="verbospron_inf"/>
+        <pattern-item n="prnenc"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="4" side="sl" part="persona"/>
+                <clip pos="2" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+          </when>
+          <otherwise>
+            <call-macro n="f_setpronom">
+              <with-param pos="3"/>
+            </call-macro>
+            <out>
+              <lu>
+                <clip pos="4" side="tl" part="lemh"/>
+                <lit-tag v="prn.pro"/>
+                <clip pos="4" side="tl" part="tipoenc_pro"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="2"/>
+           <lu>
+             <clip pos="3" side="tl" part="lemh"/>
+             <clip pos="3" side="tl" part="tags"/>
+             <clip pos="3" side="tl" part="lemq"/>
+           </lu>
+        </out>
+      </action>
+    </rule>
+
+<!-- xxxxx Ara amb generació de pronoms subjecte -->
+    <rule comment="SENT PRNPROREF VERBPRON > SENT PRNSUBJ VERBNOPRON: es mou > il bouge">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="prnproref"/>
+        <pattern-item n="verbospron"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="p3"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="3" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="m"/>
+                <clip pos="3" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="3" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="mf"/>
+                <clip pos="3" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+        <modify-case>
+          <clip pos="2" side="tl" part="lemh"/>
+          <lit v="aa"/>
+        </modify-case>
+
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="2" side="sl" part="persona"/>
+                <clip pos="3" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+          </when>
+          <otherwise>
+<!--Si no concuerdan el pronombre y el verbo, envíalo todo -->
+            <out>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b pos="2"/>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="SENT PRNPROREF HAVER PPPRON > SENT PRNSUBJ HAVER/SER PPNOPRON: s'ha mogut > il a bougé">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="prnproref"/>
+        <pattern-item n="haver"/>
+        <pattern-item n="verbospron_pp"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="p3"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="3" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="m"/>
+                <clip pos="3" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="3" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="mf"/>
+                <clip pos="3" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+        <modify-case>
+          <clip pos="2" side="tl" part="lemh"/>
+          <lit v="aa"/>
+        </modify-case>
+
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="2" side="sl" part="persona"/>
+                <clip pos="3" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+          </when>
+          <otherwise>
+            <call-macro n="f_setpronom">
+              <with-param pos="3"/>
+            </call-macro>
+            <out>
+              <lu>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+              <b pos="2"/>
+            </out>
+          </otherwise>
+        </choose>
+        <choose>
+          <when>
+            <test>
+              <in caseless="yes"><clip pos="4" side="sl" part="lemh"/><list n="vbambser"/></in>
+            </test>
+            <let><clip pos="3" side="tl" part="lem"/><get-case-from pos="3"><lit v="être"/></get-case-from></let>
+            <let><clip pos="3" side="tl" part="a_verb"/><lit-tag v="vbser"/></let>
+            <let><clip pos="4" side="tl" part="nbr"/><clip pos="3" side="sl" part="nbr"/></let>
+            <choose>
+              <when>
+                <test>
+                    <or>
+                      <equal><var n="genero"/><lit-tag v="m"/></equal>
+                      <equal><var n="genero"/><lit-tag v="f"/></equal>
+                    </or>
+                </test>
+                <let><clip pos="4" side="tl" part="gen"/><var n="genero"/></let>
+              </when>
+            </choose>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="SENT PRNPROREF ANAR INFPRON > SENT PRNSUBJ HAVER/SER INFNOPRON: es va moure > il a bougé">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="prnproref"/>
+        <pattern-item n="anarpri"/>
+        <pattern-item n="verbospron_inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_vaux_pp2">
+          <with-param pos="3"/>
+          <with-param pos="4"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="p3"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="3" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="m"/>
+                <clip pos="3" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="3" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="mf"/>
+                <clip pos="3" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+        <modify-case>
+          <clip pos="2" side="tl" part="lemh"/>
+          <lit v="aa"/>
+        </modify-case>
+
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="2" side="sl" part="persona"/>
+                <clip pos="3" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+          </when>
+          <otherwise>
+            <call-macro n="f_setpronom">
+              <with-param pos="3"/>
+            </call-macro>
+            <out>
+              <lu>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+              <b pos="2"/>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+           <lu>
+             <clip pos="4" side="tl" part="lemh"/>
+             <clip pos="4" side="tl" part="a_verb"/>
+             <lit-tag v="pp"/>
+             <var n="genero_tmp"/>
+             <var n="numero_tmp"/>
+             <clip pos="4" side="tl" part="lemq"/>
+           </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="SENT ANAR INFPRON PRNENC > SENT PRNSUBJ HAVER/SER INFNOPRON: va moure's > il a bougé, va moure-hi, il y a remué">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="anarpri"/>
+        <pattern-item n="verbospron_inf"/>
+        <pattern-item n="prnenc"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_vaux_pp2">
+          <with-param pos="2"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="2" side="sl" part="persona"/>
+                <lit-tag v="p3"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="2" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="2" side="sl" part="persona"/>
+                <lit-tag v="m"/>
+                <clip pos="2" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="2" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="2" side="sl" part="persona"/>
+                <lit-tag v="mf"/>
+                <clip pos="2" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+        <modify-case>
+          <clip pos="2" side="tl" part="lemh"/>
+          <lit v="aa"/>
+        </modify-case>
+
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="4" side="sl" part="persona"/>
+                <clip pos="2" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+          </when>
+          <otherwise>
+            <call-macro n="f_setpronom">
+              <with-param pos="2"/>
+            </call-macro>
+            <out>
+              <lu>
+                <clip pos="4" side="tl" part="lemh"/>
+                <lit-tag v="prn.pro"/>
+                <clip pos="4" side="tl" part="tipoenc_pro"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+           <lu>
+             <clip pos="3" side="tl" part="lemh"/>
+             <clip pos="3" side="tl" part="a_verb"/>
+             <lit-tag v="pp"/>
+             <var n="genero_tmp"/>
+             <var n="numero_tmp"/>
+             <clip pos="3" side="tl" part="lemq"/>
+           </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="SENT PRNPROREF VBMOD INFPRON > SENT PRNSUBJ VBMOD INFNOPRON: es pot moure > il peut bouger">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="prnproref"/>
+        <pattern-item n="vbmod"/>
+        <pattern-item n="verbospron_inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="p3"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="3" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="m"/>
+                <clip pos="3" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="3" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="mf"/>
+                <clip pos="3" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+        <modify-case>
+          <clip pos="2" side="tl" part="lemh"/>
+          <lit v="aa"/>
+        </modify-case>
+
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="2" side="sl" part="persona"/>
+                <clip pos="3" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+          </when>
+          <otherwise>
+            <call-macro n="f_setpronom">
+              <with-param pos="3"/>
+            </call-macro>
+            <out>
+              <lu>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+              <b pos="2"/>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+           <lu>
+             <clip pos="4" side="tl" part="lemh"/>
+             <clip pos="4" side="tl" part="tags"/>
+             <clip pos="4" side="tl" part="lemq"/>
+           </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="SENT VBMOD INFPRON PRNENC > SENT PRNSUBJ VBMOD INFNOPRON: pot moure's > il peut bouger, pot moure-hi, il y peut remuer">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="vbmod"/>
+        <pattern-item n="verbospron_inf"/>
+        <pattern-item n="prnenc"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="2" side="sl" part="persona"/>
+                <lit-tag v="p3"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="2" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="2" side="sl" part="persona"/>
+                <lit-tag v="m"/>
+                <clip pos="2" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="2" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="2" side="sl" part="persona"/>
+                <lit-tag v="mf"/>
+                <clip pos="2" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+        <modify-case>
+          <clip pos="2" side="tl" part="lemh"/>
+          <lit v="aa"/>
+        </modify-case>
+
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="4" side="sl" part="persona"/>
+                <clip pos="2" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+          </when>
+          <otherwise>
+            <call-macro n="f_setpronom">
+              <with-param pos="3"/>
+            </call-macro>
+            <out>
+              <lu>
+                <clip pos="4" side="tl" part="lemh"/>
+                <lit-tag v="prn.pro"/>
+                <clip pos="4" side="tl" part="tipoenc_pro"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+           <lu>
+             <clip pos="3" side="tl" part="lemh"/>
+             <clip pos="3" side="tl" part="tags"/>
+             <clip pos="3" side="tl" part="lemq"/>
+           </lu>
+        </out>
+      </action>
+    </rule>
+
+<!-- xxxxx Ara amb negació i generació de pronoms subjecte -->
+    <rule comment="SENT NO PRNPROREF VERBPRON > SENT PRNSUBJ NE VERBNOPRON PAS: no es mou > il ne bouge pas">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="noadv"/>
+        <pattern-item n="prnproref"/>
+        <pattern-item n="verbospron"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="4"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="4" side="sl" part="persona"/>
+                <lit-tag v="p3"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="4" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="4" side="sl" part="persona"/>
+                <lit-tag v="m"/>
+                <clip pos="4" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="4" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="4" side="sl" part="persona"/>
+                <lit-tag v="mf"/>
+                <clip pos="4" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+        <modify-case>
+          <clip pos="2" side="tl" part="lemh"/>
+          <lit v="aa"/>
+        </modify-case>
+
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+        </out>
+
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="3" side="sl" part="persona"/>
+                <clip pos="4" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+          </when>
+          <otherwise>
+<!--Si no concuerdan el pronombre y el verbo, envíalo todo -->
+            <out>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+              <b pos="3"/>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="SENT NO PRNPROREF HAVER PPPRON > SENT PRNSUBJ NE HAVER/SER PAS PPNOPRON: no s'ha mogut > il n'a pas bougé">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="noadv"/>
+        <pattern-item n="prnproref"/>
+        <pattern-item n="haver"/>
+        <pattern-item n="verbospron_pp"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="4"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="4" side="sl" part="persona"/>
+                <lit-tag v="p3"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="4" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="4" side="sl" part="persona"/>
+                <lit-tag v="m"/>
+                <clip pos="4" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="4" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="4" side="sl" part="persona"/>
+                <lit-tag v="mf"/>
+                <clip pos="4" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+        <modify-case>
+          <clip pos="2" side="tl" part="lemh"/>
+          <lit v="aa"/>
+        </modify-case>
+
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+        </out>
+
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="3" side="sl" part="persona"/>
+                <clip pos="4" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+          </when>
+          <otherwise>
+            <call-macro n="f_setpronom">
+              <with-param pos="4"/>
+            </call-macro>
+            <out>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+              <b pos="3"/>
+            </out>
+          </otherwise>
+        </choose>
+        <choose>
+          <when>
+            <test>
+              <in caseless="yes"><clip pos="5" side="sl" part="lemh"/><list n="vbambser"/></in>
+            </test>
+            <let><clip pos="4" side="tl" part="lem"/><get-case-from pos="4"><lit v="être"/></get-case-from></let>
+            <let><clip pos="4" side="tl" part="a_verb"/><lit-tag v="vbser"/></let>
+            <let><clip pos="5" side="tl" part="nbr"/><clip pos="4" side="sl" part="nbr"/></let>
+            <choose>
+              <when>
+                <test>
+                    <or>
+                      <equal><var n="genero"/><lit-tag v="m"/></equal>
+                      <equal><var n="genero"/><lit-tag v="f"/></equal>
+                    </or>
+                </test>
+                <let><clip pos="5" side="tl" part="gen"/><var n="genero"/></let>
+              </when>
+            </choose>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="tags"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="SENT PRNPROREF NO ANAR INFPRON > SENT PRNSUBJ NE HAVER/SER PAS INFNOPRON: no es va moure > il n'a pas bougé">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="noadv"/>
+        <pattern-item n="prnproref"/>
+        <pattern-item n="anarpri"/>
+        <pattern-item n="verbospron_inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="4"/>
+        </call-macro>
+        <call-macro n="f_vaux_pp2">
+          <with-param pos="4"/>
+          <with-param pos="5"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="4" side="sl" part="persona"/>
+                <lit-tag v="p3"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="4" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="4" side="sl" part="persona"/>
+                <lit-tag v="m"/>
+                <clip pos="4" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="4" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="4" side="sl" part="persona"/>
+                <lit-tag v="mf"/>
+                <clip pos="4" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+        <modify-case>
+          <clip pos="2" side="tl" part="lemh"/>
+          <lit v="aa"/>
+        </modify-case>
+
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+        </out>
+
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="3" side="sl" part="persona"/>
+                <clip pos="4" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+          </when>
+          <otherwise>
+            <call-macro n="f_setpronom">
+              <with-param pos="4"/>
+            </call-macro>
+            <out>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+              <b pos="3"/>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="4"/>
+           <lu>
+             <clip pos="5" side="tl" part="lemh"/>
+             <clip pos="5" side="tl" part="a_verb"/>
+             <lit-tag v="pp"/>
+             <var n="genero_tmp"/>
+             <var n="numero_tmp"/>
+             <clip pos="5" side="tl" part="lemq"/>
+           </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="SENT NO ANAR INFPRON PRNENC > SENT PRNSUBJ NE HAVER/SER PAS INFNOPRON: no va moure's > il n'a pas bougé, no va moure-hi, il n'y a pas remué">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="noadv"/>
+        <pattern-item n="anarpri"/>
+        <pattern-item n="verbospron_inf"/>
+        <pattern-item n="prnenc"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_vaux_pp2">
+          <with-param pos="3"/>
+          <with-param pos="4"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="p3"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="3" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="m"/>
+                <clip pos="3" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="3" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="mf"/>
+                <clip pos="3" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+        <modify-case>
+          <clip pos="2" side="tl" part="lemh"/>
+          <lit v="aa"/>
+        </modify-case>
+
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+        </out>
+
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="5" side="sl" part="persona"/>
+                <clip pos="3" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+          </when>
+          <otherwise>
+            <call-macro n="f_setpronom">
+              <with-param pos="3"/>
+            </call-macro>
+            <out>
+              <lu>
+                <clip pos="5" side="tl" part="lemh"/>
+                <lit-tag v="prn.pro"/>
+                <clip pos="5" side="tl" part="tipoenc_pro"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="3"/>
+           <lu>
+             <clip pos="4" side="tl" part="lemh"/>
+             <clip pos="4" side="tl" part="a_verb"/>
+             <lit-tag v="pp"/>
+             <var n="genero_tmp"/>
+             <var n="numero_tmp"/>
+             <clip pos="4" side="tl" part="lemq"/>
+           </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="SENT NO PRNPROREF VBMOD INFPRON > SENT PRNSUBJ NE VBMOD PAS INFNOPRON: no es pot moure > il ne peut pas bouger">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="noadv"/>
+        <pattern-item n="prnproref"/>
+        <pattern-item n="vbmod"/>
+        <pattern-item n="verbospron_inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="4"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="4" side="sl" part="persona"/>
+                <lit-tag v="p3"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="4" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="4" side="sl" part="persona"/>
+                <lit-tag v="m"/>
+                <clip pos="4" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="4" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="4" side="sl" part="persona"/>
+                <lit-tag v="mf"/>
+                <clip pos="4" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+        <modify-case>
+          <clip pos="2" side="tl" part="lemh"/>
+          <lit v="aa"/>
+        </modify-case>
+
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+        </out>
+
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="3" side="sl" part="persona"/>
+                <clip pos="4" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+          </when>
+          <otherwise>
+            <call-macro n="f_setpronom">
+              <with-param pos="4"/>
+            </call-macro>
+            <out>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+              <b pos="3"/>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="4"/>
+           <lu>
+             <clip pos="5" side="tl" part="lemh"/>
+             <clip pos="5" side="tl" part="tags"/>
+             <clip pos="5" side="tl" part="lemq"/>
+           </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="SENT NO VBMOD INFPRON PRNENC > SENT PRNSUBJ NE VBMOD PAS INFNOPRON: no pot moure's > il ne peut pas bouger, ne pot moure-hi, il n'y peut pas remuer">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="noadv"/>
+        <pattern-item n="vbmod"/>
+        <pattern-item n="verbospron_inf"/>
+        <pattern-item n="prnenc"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="p3"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="3" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="m"/>
+                <clip pos="3" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="3" side="sl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="prn.tn"/>
+                <clip pos="3" side="sl" part="persona"/>
+                <lit-tag v="mf"/>
+                <clip pos="3" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+        <modify-case>
+          <clip pos="2" side="tl" part="lemh"/>
+          <lit v="aa"/>
+        </modify-case>
+
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+        </out>
+
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="5" side="sl" part="persona"/>
+                <clip pos="3" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+          </when>
+          <otherwise>
+            <call-macro n="f_setpronom">
+              <with-param pos="4"/>
+            </call-macro>
+            <out>
+              <lu>
+                <clip pos="5" side="tl" part="lemh"/>
+                <lit-tag v="prn.pro"/>
+                <clip pos="5" side="tl" part="tipoenc_pro"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="3"/>
+           <lu>
+             <clip pos="4" side="tl" part="lemh"/>
+             <clip pos="4" side="tl" part="tags"/>
+             <clip pos="4" side="tl" part="lemq"/>
+           </lu>
+        </out>
+      </action>
+    </rule>
+
+<!-- FI REGLES VERBS QUE SÓN PRONOMINALS EN CATALÀ LLENGUA PERÒ NO EN FRANCÈS -->
+
+
     <rule comment="vaig fer >> ai fait"> 
       <pattern>
         <pattern-item n="anarpri"/>
@@ -8952,7 +11090,6 @@ is not applicable because gender and number can not be taken from previous rules
    </action>
 </rule>
 
-
     <rule comment="PRNREF HAVER PP > PRNREF SER PP: s'ha incorporat > s'est incorporé, m'ha dit > m'a dit">
       <pattern>
         <pattern-item n="prnproref"/>
@@ -11494,7 +13631,7 @@ is not applicable because gender and number can not be taken from previous rules
             </test>
             <out>
               <lu>
-                <get-case-from pos="3">
+                <get-case-from pos="2">
                   <clip pos="4" side="sl" part="lem"/>
                 </get-case-from>
                 <lit-tag v="prn.tn"/>
@@ -11505,14 +13642,14 @@ is not applicable because gender and number can not be taken from previous rules
               <b/>
             </out>
             <modify-case>
-              <clip pos="3" side="tl" part="lemh"/>
+              <clip pos="2" side="tl" part="lemh"/>
               <lit v="aa"/>
             </modify-case>
           </when>
           <otherwise>
             <out>
               <lu>
-                <get-case-from pos="3">
+                <get-case-from pos="2">
                   <clip pos="4" side="sl" part="lem"/>
                 </get-case-from>
                 <lit-tag v="prn.tn"/>
@@ -11523,7 +13660,7 @@ is not applicable because gender and number can not be taken from previous rules
               <b/>
             </out>
             <modify-case>
-              <clip pos="3" side="tl" part="lemh"/>
+              <clip pos="2" side="tl" part="lemh"/>
               <lit v="aa"/>
             </modify-case>
           </otherwise>
@@ -12411,7 +14548,6 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
     </rule>
 
-<!-- xxxx -->
     <rule comment="sentquecm NO PRNREF ANAR INF > NE PRNREF SER PAS PP: no es va incorporar > il ne s'est pas incorporé, no em va dir > il ne m'a pas dit">
       <pattern>
         <pattern-item n="sentquecm"/>
