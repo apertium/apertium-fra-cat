@@ -758,7 +758,10 @@
   </rule>
   <rule weight="1.0">
     <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
-    <match lemma="anar" tags="vblex.pri.p3.sg"/>
+    <or>
+      <match lemma="anar" tags="vblex.pri.p3.sg"/>
+      <match lemma="anar" tags="vblex.pri.p3.pl"/>
+    </or>
     <match tags="vblex.inf"/>
     <repeat from="0" upto="1">
       <match tags="adv"/>
@@ -766,7 +769,10 @@
     <match lemma="que" tags="cnjsub"/>
   </rule>
   <rule weight="1.0">
-    <match lemma="anar" tags="vblex.pri.p3.sg"/>
+    <or>
+      <match lemma="anar" tags="vblex.pri.p3.sg"/>
+      <match lemma="anar" tags="vblex.pri.p3.pl"/>
+    </or>
     <match tags="vblex.inf"/>
     <match lemma="es" tags="prn.enc.*"><select lemma="on"/></match>
     <repeat from="0" upto="1">
@@ -778,9 +784,117 @@
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
     <or>
       <match lemma="necessitar" tags="vblex.*"/>
+      <match lemma="xxxutilitzar" tags="vblex.*"/>
+      <match lemma="xxxusar" tags="vblex.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <or>
+      <match tags="vbhaver.*.p3.sg"/>
+      <match tags="vbhaver.*.p3.pl"/>
+    </or>
+    <or>
+      <match lemma="necessitar" tags="vblex.pp.*"/>
+      <match lemma="xxxutilitzar" tags="vblex.pp.*"/>
+      <match lemma="xxxusar" tags="vblex.pp.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <or>
+      <match lemma="anar" tags="vblex.pri.p3.sg"/>
+      <match lemma="anar" tags="vblex.pri.p3.pl"/>
+    </or>
+    <or>
+      <match lemma="necessitar" tags="vblex.inf"/>
+      <match lemma="xxxutilitzar" tags="vblex.inf"/>
+      <match lemma="xxxusar" tags="vblex.inf"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <or>
+      <match lemma="necessitar" tags="vblex.*"/>
       <match lemma="utilitzar" tags="vblex.*"/>
       <match lemma="usar" tags="vblex.*"/>
     </or>
+    <or>
+      <match lemma="per" tags="pr"/>
+      <match lemma="per a" tags="pr"/>
+      <match lemma="com" tags="cnjadv"/>
+      <match lemma="com a" tags="pr"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <or>
+      <match tags="vbhaver.*.p3.sg"/>
+      <match tags="vbhaver.*.p3.pl"/>
+    </or>
+    <or>
+      <match lemma="necessitar" tags="vblex.pp.*"/>
+      <match lemma="utilitzar" tags="vblex.*"/>
+      <match lemma="usar" tags="vblex.*"/>
+    </or>
+    <or>
+      <match lemma="per" tags="pr"/>
+      <match lemma="per a" tags="pr"/>
+      <match lemma="com" tags="cnjadv"/>
+      <match lemma="com a" tags="pr"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <or>
+      <match lemma="anar" tags="vblex.pri.p3.sg"/>
+      <match lemma="anar" tags="vblex.pri.p3.pl"/>
+    </or>
+    <or>
+      <match lemma="necessitar" tags="vblex.inf"/>
+      <match lemma="utilitzar" tags="vblex.*"/>
+      <match lemma="usar" tags="vblex.*"/>
+    </or>
+    <or>
+      <match lemma="per" tags="pr"/>
+      <match lemma="per a" tags="pr"/>
+      <match lemma="com" tags="cnjadv"/>
+      <match lemma="com a" tags="pr"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <or>
+      <match lemma="necessitar" tags="vblex.*.p3.sg"/>
+      <match lemma="utilitzar" tags="vblex.*.p3.sg"/>
+      <match lemma="usar" tags="vblex.*.p3.sg"/>
+    </or>
+    <repeat from="0" upto="3">
+      <or>
+        <match tags="det.*.sg"/>
+        <match tags="preadv"/>
+        <match tags="adv"/>
+        <match tags="adj.*.sg"/>
+      </or>
+    </repeat>
+    <match tags="n.*.sg"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <or>
+      <match lemma="necessitar" tags="vblex.*.p3.pl"/>
+      <match lemma="utilitzar" tags="vblex.*.p3.pl"/>
+      <match lemma="usar" tags="vblex.*.p3.pl"/>
+    </or>
+    <repeat from="0" upto="3">
+      <or>
+        <match tags="det.*.pl"/>
+        <match tags="preadv"/>
+        <match tags="adv"/>
+        <match tags="adj.*.pl"/>
+      </or>
+    </repeat>
+    <match tags="n.*.sg"/>
   </rule>
   <rule weight="1.0">
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
@@ -790,10 +904,108 @@
       <match lemma="utilitzar" tags="vblex.pp.*"/>
       <match lemma="usar" tags="vblex.pp.*"/>
     </or>
+    <repeat from="0" upto="3">
+      <or>
+        <match tags="det.*.sg"/>
+        <match tags="preadv"/>
+        <match tags="adv"/>
+        <match tags="adj.*.sg"/>
+      </or>
+    </repeat>
+    <match tags="n.*.sg"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <match tags="vbhaver.*.p3.pl"/>
+    <or>
+      <match lemma="necessitar" tags="vblex.pp.*"/>
+      <match lemma="utilitzar" tags="vblex.pp.*"/>
+      <match lemma="usar" tags="vblex.pp.*"/>
+    </or>
+    <repeat from="0" upto="3">
+      <or>
+        <match tags="det.*.pl"/>
+        <match tags="preadv"/>
+        <match tags="adv"/>
+        <match tags="adj.*.pl"/>
+      </or>
+    </repeat>
+    <match tags="n.*.pl"/>
   </rule>
   <rule weight="1.0">
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
     <match lemma="anar" tags="vblex.pri.p3.sg"/>
+    <or>
+      <match lemma="necessitar" tags="vblex.inf"/>
+      <match lemma="utilitzar" tags="vblex.inf"/>
+      <match lemma="usar" tags="vblex.inf"/>
+    </or>
+    <repeat from="0" upto="3">
+      <or>
+        <match tags="det.*.sg"/>
+        <match tags="preadv"/>
+        <match tags="adv"/>
+        <match tags="adj.*.sg"/>
+      </or>
+    </repeat>
+    <match tags="n.*.sg"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <match lemma="anar" tags="vblex.pri.p3.pl"/>
+    <or>
+      <match lemma="necessitar" tags="vblex.inf"/>
+      <match lemma="utilitzar" tags="vblex.inf"/>
+      <match lemma="usar" tags="vblex.inf"/>
+    </or>
+    <repeat from="0" upto="3">
+      <or>
+        <match tags="det.*.pl"/>
+        <match tags="preadv"/>
+        <match tags="adv"/>
+        <match tags="adj.*.pl"/>
+      </or>
+    </repeat>
+    <match tags="n.*.pl"/>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="rel.*"/>
+      <match tags="cnjsub"/>
+    </or>
+    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <or>
+      <match lemma="necessitar" tags="vblex.*"/>
+      <match lemma="utilitzar" tags="vblex.*"/>
+      <match lemma="usar" tags="vblex.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="rel.*"/>
+      <match tags="cnjsub"/>
+    </or>
+    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <or>
+      <match tags="vbhaver.*.p3.sg"/>
+      <match tags="vbhaver.*.p3.pl"/>
+    </or>
+    <or>
+      <match lemma="necessitar" tags="vblex.pp.*"/>
+      <match lemma="utilitzar" tags="vblex.pp.*"/>
+      <match lemma="usar" tags="vblex.pp.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="rel.*"/>
+      <match tags="cnjsub"/>
+    </or>
+    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <or>
+      <match lemma="anar" tags="vblex.pri.p3.sg"/>
+      <match lemma="anar" tags="vblex.pri.p3.pl"/>
+    </or>
     <or>
       <match lemma="necessitar" tags="vblex.inf"/>
       <match lemma="utilitzar" tags="vblex.inf"/>
@@ -803,7 +1015,14 @@
 
   <rule weight="1.2">
     <match tags="n.*.sg"/>
-    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <repeat from="0" upto="4">
+      <or>
+        <match tags="preadv"/>
+        <match tags="adv"/>
+        <match tags="adj.*.sg"/>
+      </or>
+    </repeat>
+    <match lemma="es" tags="prn.*"><select lemma="se"/></match>
     <or>
       <match lemma="necessitar" tags="vblex.*.sg"/>
       <match lemma="utilitzar" tags="vblex.*.sg"/>
@@ -812,6 +1031,13 @@
   </rule>
   <rule weight="1.2">
     <match tags="n.*.sg"/>
+    <repeat from="0" upto="4">
+      <or>
+        <match tags="preadv"/>
+        <match tags="adv"/>
+        <match tags="adj.*.sg"/>
+      </or>
+    </repeat>
     <match lemma="es" tags="prn.*"><select lemma="se"/></match>
     <match tags="vbhaver.*.p3.sg"/>
     <or>
@@ -822,6 +1048,13 @@
   </rule>
   <rule weight="1.2">
     <match tags="n.*.sg"/>
+    <repeat from="0" upto="4">
+      <or>
+        <match tags="preadv"/>
+        <match tags="adv"/>
+        <match tags="adj.*.sg"/>
+      </or>
+    </repeat>
     <match lemma="es" tags="prn.*"><select lemma="se"/></match>
     <match lemma="anar" tags="vblex.pri.p3.sg"/>
     <or>
@@ -832,7 +1065,14 @@
   </rule>
   <rule weight="1.2">
     <match tags="n.*.pl"/>
-    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <repeat from="0" upto="4">
+      <or>
+        <match tags="preadv"/>
+        <match tags="adv"/>
+        <match tags="adj.*.pl"/>
+      </or>
+    </repeat>
+    <match lemma="es" tags="prn.*"><select lemma="se"/></match>
     <or>
       <match lemma="necessitar" tags="vblex.*.pl"/>
       <match lemma="utilitzar" tags="vblex.*.pl"/>
@@ -841,6 +1081,13 @@
   </rule>
   <rule weight="1.2">
     <match tags="n.*.pl"/>
+    <repeat from="0" upto="4">
+      <or>
+        <match tags="preadv"/>
+        <match tags="adv"/>
+        <match tags="adj.*.pl"/>
+      </or>
+    </repeat>
     <match lemma="es" tags="prn.*"><select lemma="se"/></match>
     <match tags="vbhaver.*.p3.pl"/>
     <or>
@@ -851,6 +1098,13 @@
   </rule>
   <rule weight="1.2">
     <match tags="n.*.pl"/>
+    <repeat from="0" upto="4">
+      <or>
+        <match tags="preadv"/>
+        <match tags="adv"/>
+        <match tags="adj.*.pl"/>
+      </or>
+    </repeat>
     <match lemma="es" tags="prn.*"><select lemma="se"/></match>
     <match lemma="anar" tags="vblex.pri.p3.pl"/>
     <or>
@@ -996,6 +1250,63 @@
       <match lemma="dormir" tags="vblex.*"/>
     </or>
   </rule>
+
+  <rule weight="1.2">
+    <match lemma="que" tags="rel.an.*"><select lemma="dont"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="es" tags="prn.pro.ref.*"/>
+    <match lemma="necessitar" tags="vblex.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="que" tags="rel.an.*"><select lemma="dont"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="es" tags="prn.pro.ref.*"/>
+    <match tags="vbhaver.*"/>
+    <match lemma="necessitar" tags="vblex.pp.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="que" tags="rel.an.*"><select lemma="dont"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="es" tags="prn.pro.ref.*"/>
+    <match lemma="anar" tags="vblex.pri.*"/>
+    <match lemma="necessitar" tags="vblex.inf"/>
+  </rule>
+  <rule weight="1.4">
+    <match lemma="que" tags="rel.an.*"><select lemma="que"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="es" tags="prn.pro.ref.*"/>
+    <match lemma="necessitar" tags="vblex.*"/>
+    <match tags="vblex.inf"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="que" tags="rel.an.*"><select lemma="que"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="es" tags="prn.pro.ref.*"/>
+    <match tags="vbhaver.*"/>
+    <match lemma="necessitar" tags="vblex.pp.*"/>
+    <match tags="vblex.inf"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="que" tags="rel.an.*"><select lemma="que"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="es" tags="prn.pro.ref.*"/>
+    <match lemma="anar" tags="vblex.pri.*"/>
+    <match lemma="necessitar" tags="vblex.inf"/>
+    <match tags="vblex.inf"/>
+  </rule>
+
 
   <!-- la qual cosa >> ce qui, lequel -->
   <rule weight="0.8">
@@ -1188,6 +1499,7 @@
   </rule>
   <rule weight="1.0">
     <or>
+      <match lemma="creure"/>
       <match lemma="classificar"/>
       <match lemma="causar" tags="vblex.*"/>
       <match lemma="causat" tags="adj.*"/>
@@ -1320,6 +1632,36 @@
 
 <!-- V -->
 
+  <!-- assajar >> essayer, répéter -->
+  <rule weight="0.8">
+    <match lemma="assajar" tags="vblex.*"><select lemma="essayer"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="assajar" tags="vblex.*"><select lemma="répéter"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="obra" tags="n.*"/>
+      <match lemma="peça" tags="n.*"/>
+      <match lemma="paper" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- tenir >> avoir, jouer -->
+  <rule weight="0.8">
+    <match lemma="tenir" tags="vblex.*"><select lemma="avoir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tenir" tags="vblex.*"><select lemma="jouer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="un" tags="det.*"/>
+    <match lemma="peça" tags="n.*"/>
+  </rule>
+
   <!-- necessitar >> avoir# besoin, avoir# besoin de -->
   <rule weight="0.8">
     <match lemma="necessitar" tags="vblex.*"><select lemma="avoir# besoin"/></match>
@@ -1336,6 +1678,7 @@
       <match tags="n.*"/>
       <match tags="adj.*"/>
       <match lemma="un" tags="prn.tn.*"/>
+      <match tags="vblex.inf"/><match tags="vbser.inf"/><match tags="vbhaver.inf"/><match tags="vbmod.inf"/>
     </or>
   </rule>
 
@@ -1951,6 +2294,18 @@
     <match lemma="fer" tags="vblex.*"><select lemma="poser"/></match>
     <match tags="det.*"/>
     <match lemma="pregunta" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fer" tags="vblex.*"><select lemma="jouer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="obra" tags="n.*"/>
+      <match lemma="peça" tags="n.*"/>
+      <match lemma="paper" tags="n.*"/>
+    </or>
   </rule>
 
   <!-- posar >> poser, mettre -->

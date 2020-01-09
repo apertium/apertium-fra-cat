@@ -317,6 +317,7 @@
       <cat-item lemma="moure" tags="vblex.*"/>
       <cat-item lemma="oblidar# de" tags="vblex.*"/>
       <cat-item lemma="podrir" tags="vblex.*"/>
+      <cat-item lemma="reviscolar" tags="vblex.*"/>
     </def-cat>
     <def-cat n="verbospron_inf">
       <cat-item lemma="agrumollar" tags="vblex.inf"/>
@@ -336,6 +337,7 @@
       <cat-item lemma="moure" tags="vblex.inf"/>
       <cat-item lemma="oblidar# de" tags="vblex.inf"/>
       <cat-item lemma="podrir" tags="vblex.inf"/>
+      <cat-item lemma="reviscolar" tags="vblex.inf"/>
     </def-cat>
     <def-cat n="verbospron_ger">
       <cat-item lemma="agrumollar" tags="vblex.ger"/>
@@ -355,6 +357,7 @@
       <cat-item lemma="moure" tags="vblex.ger"/>
       <cat-item lemma="oblidar# de" tags="vblex.ger"/>
       <cat-item lemma="podrir" tags="vblex.ger"/>
+      <cat-item lemma="reviscolar" tags="vblex.ger"/>
     </def-cat>
     <def-cat n="verbospron_pp">
       <cat-item lemma="agrumollar" tags="vblex.pp.*"/>
@@ -374,6 +377,7 @@
       <cat-item lemma="moure" tags="vblex.pp.*"/>
       <cat-item lemma="oblidar# de" tags="vblex.pp.*"/>
       <cat-item lemma="podrir" tags="vblex.pp.*"/>
+      <cat-item lemma="reviscolar" tags="vblex.pp.*"/>
     </def-cat>
     <def-cat n="fa">
       <cat-item lemma="fer" tags="vblex.pri.p3.sg"/>
@@ -981,6 +985,7 @@
       <list-item v="anglais"/>
       <list-item v="écossais"/>
       <list-item v="gallois"/>
+      <list-item v="mannois"/>
       <list-item v="cornique"/>
       <list-item v="irlandais"/>
       <list-item v="wallon"/>
@@ -1612,6 +1617,20 @@
         <case-of pos="1" side="tl" part="lem"/>
       </modify-case>
       <let><var n="inici"/><lit-tag v="no"/></let>
+    </def-macro>
+
+    <def-macro n="f_seton" npar="2"> <!-- es comencen > on comence (canviem el nombre del verb si hi ha canvi es > on) -->
+      <choose>
+        <when>
+          <test>
+            <and>
+              <equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="on"/></equal>
+              <equal><clip pos="2" side="tl" part="nbr"/><lit-tag v="pl"/></equal>
+            </and>
+          </test>
+          <let><clip pos="2" side="tl" part="nbr"/><lit-tag v="sg"/></let>
+        </when>
+      </choose>
     </def-macro>
 
     <def-macro n="f_setgen" npar="1">
@@ -11327,6 +11346,10 @@ is not applicable because gender and number can not be taken from previous rules
         <pattern-item n="pp"/>
       </pattern>
       <action>
+        <call-macro n="f_seton">
+          <with-param pos="1"/>
+          <with-param pos="2"/>
+        </call-macro>
         <call-macro n="f_setpronom">
           <with-param pos="2"/>
         </call-macro>
@@ -11596,6 +11619,10 @@ is not applicable because gender and number can not be taken from previous rules
       </pattern>
       <action>
         <call-macro n="f_setpronom">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_seton">
+          <with-param pos="1"/>
           <with-param pos="2"/>
         </call-macro>
         <choose>
@@ -13134,9 +13161,45 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
     </rule>
 
+<!-- dóna massa problemes perquè deixen de generar-se articles partitius
+    <rule comment="REGLA: PRNPRO VERB: li escriuen >> lui écrivent">
+      <pattern>
+        <pattern-item n="prnpro"/>
+        <pattern-item n="verb_conj"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_seton">
+          <with-param pos="1"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_pis2prs">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+-->
+
 <!-- ara amb pronom -->
-    <rule>
-<!--REGLA: SENT,que,coma,i PRN VERB: Li escriuen >> Ils lui écrivent -->
+    <rule comment="REGLA: SENT,que,coma,i PRNPRO VERB: Li escriuen >> Ils lui écrivent">
       <pattern>
         <pattern-item n="sentquecm"/>
         <pattern-item n="prnpro"/>
@@ -13145,6 +13208,10 @@ is not applicable because gender and number can not be taken from previous rules
       <action>
         <call-macro n="f_concord1">
           <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_seton">
+          <with-param pos="2"/>
+          <with-param pos="3"/>
         </call-macro>
         <call-macro n="f_setpronom">
           <with-param pos="3"/>
@@ -13237,6 +13304,10 @@ is not applicable because gender and number can not be taken from previous rules
       <action>
         <call-macro n="f_concord1">
           <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_seton">
+          <with-param pos="2"/>
+          <with-param pos="3"/>
         </call-macro>
         <call-macro n="f_setpronom">
           <with-param pos="3"/>
@@ -13689,6 +13760,10 @@ is not applicable because gender and number can not be taken from previous rules
       <action>
         <call-macro n="f_concord1">
           <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_seton">
+          <with-param pos="2"/>
+          <with-param pos="3"/>
         </call-macro>
         <call-macro n="f_setpronom">
           <with-param pos="3"/>
