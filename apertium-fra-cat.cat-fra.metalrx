@@ -2650,6 +2650,28 @@
 
 <!-- ADJ -->
 
+  <!-- laic >> laïque, laïc -->
+  <rule weight="0.8">
+    <match lemma="laic" tags="adj.*"><select lemma="laïque"/></match>
+  </rule>
+
+  <!-- llec >> laïque, laïc -->
+  <rule weight="0.8">
+    <match lemma="llec" tags="adj.*"><select lemma="laïque"/></match>
+  </rule>
+
+  <!-- penal >> pénal, criminel -->
+  <rule weight="0.8">
+    <match lemma="penal" tags="n.*"><select lemma="pénal"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="investigació" tags="n.*"/>
+      <match lemma="instrucció" tags="n.*"/>
+    </or>
+    <match lemma="penal" tags="n.*"><select lemma="criminel"/></match>
+  </rule>
+
   <!-- endocrí >> endocrinien, endocrin -->
   <rule weight="0.8">
     <match lemma="endocrí" tags="adj.*"><select lemma="endocrinien"/></match>
@@ -2856,6 +2878,71 @@
   </rule>
 
 <!-- N -->
+
+  <!-- laic >> laïque, laïc -->
+  <rule weight="0.8">
+    <match lemma="laic" tags="n.*"><select lemma="laïque"/></match>
+  </rule>
+
+  <!-- llec >> laïque, laïc -->
+  <rule weight="0.8">
+    <match lemma="llec" tags="n.*"><select lemma="laïque"/></match>
+  </rule>
+
+  <!-- laïc >> laic, llec -->
+  <rule weight="0.8">
+    <match lemma="laïc" tags="n.*"><select lemma="laic"/></match>
+  </rule>
+
+  <!-- ronda >> ronde, boulevard, tour -->
+  <rule weight="0.8">
+    <match lemma="ronda" tags="n.*"><select lemma="ronde"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ronda" tags="n.*"><select lemma="boulevard"/></match>
+    <match tags="np.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ronda" tags="n.*"><select lemma="boulevard"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.def.*"/>
+    <match tags="n.*"/>
+    <match tags="np.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match tags="adj.ord.*"/>
+    <match lemma="ronda" tags="n.*"><select lemma="tour"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ronda" tags="n.*"><select lemma="tour"/></match>
+    <match lemma="preliminar" tags="adj.*"/>
+  </rule>
+
+  <!-- golf >> golfe, golf -->
+  <rule weight="0.8">
+    <match lemma="golf" tags="n.*"><select lemma="golfe"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="jugar" tags="vblex.*"/>
+    <repeat from="0" upto="3">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="a" tags="pr"/>
+    <match lemma="golf" tags="n.*"><select lemma="golf"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="partit" tags="n.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match lemma="golf" tags="n.*"><select lemma="golf"/></match>
+  </rule>
+
+  <!-- trànsit >> transit, trafic, circulation -->
+  <rule weight="0.8">
+    <match lemma="trànsit" tags="n.*"><select lemma="transit"/></match>
+  </rule>
 
   <!-- època >> époque, temps -->
   <rule weight="0.8">

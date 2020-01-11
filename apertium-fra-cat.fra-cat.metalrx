@@ -470,9 +470,19 @@
 
 <!-- **************** PR **************** -->
 
-  <!-- dans >> en -->
+  <!-- dans >> en, a -->
   <rule weight="0.6">
     <match lemma="dans" tags="pr"><select lemma="en"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="monter" tags="vblex.*"/>
+      <match lemma="descendre" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="dans" tags="pr"><select lemma="a"/></match>
   </rule>
 
   <!-- de >> de, a -->
@@ -720,7 +730,70 @@
     <match lemma="ce qui" tags="rel.*"><select lemma="el que" tags="rel.*"/></match>
   </rule>
 
+  <!-- dont >> el qual -->
+  <rule weight="0.8">
+    <match lemma="dont" tags="rel.*"><select lemma="del qual" tags="rel.*"/></match>
+  </rule>
+<!--
+  <rule weight="1.0">
+    <match lemma="dont" tags="rel.*"><select lemma="de què" tags="rel.*"/></match>
+    <or>
+      <match tags="prn.tn.*"/>
+      <match lemma="on" tags="prn.pro.*"/>
+    </or>
+    <match vblex="vblex.*"/>
+  </rule>
+-->
+  <rule weight="1.2">
+    <match lemma="dont" tags="rel.*"><select lemma="que" tags="rel.*"/></match>
+    <or>
+      <match tags="prn.tn.*"/>
+      <match lemma="on" tags="prn.pro.*"/>
+    </or>
+    <match lemma="avoir# besoin" vblex="vblex.*"/>
+  </rule>
+
 <!-- **************** V **************** -->
+
+  <!-- jouer >> jugar, fer -->
+  <rule weight="0.8">
+    <match lemma="jouer" tags="vblex.*"><select lemma="jugar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="jouer" tags="vblex.*"><select lemma="fer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="pièce" tags="n.*"/>
+      <match lemma="rôle" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="jouer" tags="vblex.*"><select lemma="tenir"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="un" tags="det.*"/>
+    <match lemma="rôle" tags="n.*"/>
+  </rule>
+
+  <!-- répéter >> repetir, assajar -->
+  <rule weight="0.8">
+    <match lemma="répéter" tags="vblex.*"><select lemma="repetir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="répéter" tags="vblex.*"><select lemma="assajar"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="pièce" tags="n.*"/>
+      <match lemma="rôle" tags="n.*"/>
+    </or>
+  </rule>
 
   <!-- venir >> venir, acabar -->
   <rule weight="0.8">
@@ -1128,6 +1201,107 @@
 
 <!-- **************** N **************** -->
 
+  <!-- consommation >> consumició, consumació -->
+  <rule weight="0.8">
+    <match lemma="consommation" tags="n.*"><select lemma="consumició"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="consommation" tags="n.*"><select lemma="consumació"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="matrimoni" tags="n.*"/>
+      <match lemma="sacrifici" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- laïque >> laic, llec -->
+  <rule weight="0.8">
+    <match lemma="laïque" tags="n.*"><select lemma="laic"/></match>
+  </rule>
+
+  <!-- laïc >> laic, llec -->
+  <rule weight="0.8">
+    <match lemma="laïc" tags="n.*"><select lemma="laic"/></match>
+  </rule>
+
+  <!-- trafic >> tràfic, trànsit -->
+  <rule weight="0.8">
+    <match lemma="trafic" tags="n.*"><select lemma="tràfic"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="trafic" tags="n.*"><select lemma="trànsit"/></match>
+    <or>
+      <match lemma="automobile" tags="*"/>
+      <match lemma="civil" tags="adj.*"/>
+      <match lemma="ferroviaire" tags="adj.*"/>
+      <match lemma="lourd" tags="adj.*"/>
+      <match lemma="routier" tags="adj.*"/>
+      <match lemma="transfrontalier" tags="adj.*"/>
+      <match lemma="urbain" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="trafic" tags="n.*"><select lemma="trànsit"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="automobile" tags="n.*"/>
+      <match lemma="avion" tags="n.*"/>
+      <match lemma="bateau" tags="n.*"/>
+      <match lemma="camion" tags="n.*"/>
+      <match lemma="donnée" tags="n.*"/>
+      <match lemma="ligne" tags="n.*"/>
+      <match lemma="marchandise" tags="n.*"/>
+      <match lemma="passager" tags="n.*"/>
+      <match lemma="véhicule" tags="n.*"/>
+      <match lemma="voiture" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="trafic" tags="n.*"><select lemma="trànsit"/></match>
+    <or>
+      <match lemma="de" tags="pr"/>
+      <match lemma="sur" tags="pr"/>
+      <match lemma="dans" tags="pr"/>
+    </or>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="rue" tags="n.*"/>
+      <match lemma="route" tags="n.*"/>
+      <match lemma="avenue" tags="n.*"/>
+      <match lemma="boulevard" tags="n.*"/>
+      <match lemma="autoroute" tags="n.*"/>
+      <match lemma="aéroport" tags="n.*"/>
+      <match lemma="port" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="écouter" tags="vblex.*"/>
+      <match lemma="entendre" tags="vblex.*"/>
+    </or>
+    <match tags="det.*"/>
+    <match lemma="trafic" tags="n.*"><select lemma="trànsit"/></match>
+  </rule>
+
+  <!-- crash >> accident aeri, crac -->
+  <rule weight="0.8">
+    <match lemma="crash" tags="n.*"><select lemma="accident aeri"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="crash" tags="n.*"><select lemma="crac"/></match>
+    <or>
+      <match lemma="bancaire" tags="adj.*"/>
+      <match lemma="boursier" tags="adj.*"/>
+      <match lemma="financier" tags="adj.*"/>
+      <match lemma="informatique" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="crash" tags="n.*"><select lemma="crac"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="np.*"/>
+  </rule>
+
   <!-- entretien >> manteniment, conversa -->
   <rule weight="0.8">
     <match lemma="entretien" tags="n.*"><select lemma="manteniment"/></match>
@@ -1165,6 +1339,19 @@
     </repeat>
     <match tags="det.*"/>
     <match lemma="enquête" tags="n.*"><select lemma="investigació"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="enquête" tags="n.*"><select lemma="investigació"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+      <match tags="preadv"/>
+      <match tags="adj.*"/>
+    </repeat>
+    <or>
+      <match lemma="criminelle" tags="adj.*"/>
+      <match lemma="ouvert" tags="adj.*"/>
+      <match lemma="ouvert" tags="vblex.pp.*"/>
+    </or>
   </rule>
 
   <!-- parquet >> barri, parquet -->
@@ -2277,6 +2464,28 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- laïque >> laic, llec -->
+  <rule weight="0.8">
+    <match lemma="laïque" tags="adj.*"><select lemma="laic"/></match>
+  </rule>
+
+  <!-- laïc >> laic, llec -->
+  <rule weight="0.8">
+    <match lemma="laïc" tags="adj.*"><select lemma="laic"/></match>
+  </rule>
+
+  <!-- criminel >> criminal, penal -->
+  <rule weight="0.8">
+    <match lemma="criminel" tags="adj.*"><select lemma="criminal"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="enquête" tags="n.*"/>
+      <match lemma="droit" tags="n.*"/>
+    </or>
+    <match lemma="criminel" tags="adj.*"><select lemma="penal"/></match>
+  </rule>
 
   <!-- faible >> fluix, dèbil, baix -->
   <rule weight="0.8">
