@@ -1096,6 +1096,7 @@
       <list-item v="anglais"/>
       <list-item v="écossais"/>
       <list-item v="gallois"/>
+      <list-item v="mannois"/>
       <list-item v="cornique"/>
       <list-item v="irlandais"/>
       <list-item v="wallon"/>
@@ -6374,15 +6375,12 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="1"/>
+        </call-macro>
         <out>
           <lu>
-            <clip pos="1" side="tl" part="lemh"/>
-            <clip pos="1" side="tl" part="a_verb"/>
-            <clip pos="1" side="tl" part="temps"/>
-            <clip pos="1" side="tl" part="persona"/>
-            <clip pos="1" side="tl" part="gen"/>
-            <clip pos="1" side="tl" part="nbr"/>
-            <clip pos="1" side="tl" part="lemq"/>
+            <clip pos="1" side="tl" part="whole"/>
           </lu>
         </out>
       </action>
