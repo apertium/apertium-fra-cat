@@ -108,6 +108,8 @@
       <cat-item lemma="guère" tags="adv"/>
       <cat-item lemma="plus" tags="adv"/>
       <cat-item lemma="nulle part" tags="adv"/>
+      <cat-item lemma="pas beaucoup" tags="adv"/>
+      <cat-item lemma="pas beaucoup de" tags="adv"/>
       <cat-item lemma="rien" tags="prn.*"/>
     </def-cat>
     <def-cat n="train">
@@ -970,7 +972,7 @@
       <list-item v="Guinée-Bissau"/>
       <list-item v="Guinée équatoriale"/>
       <list-item v="Bénin"/>
-      <list-item v="Cameroun"/>
+<!--      <list-item v="Cameroun"/> -->
       <list-item v="Gabon"/>
       <list-item v="Éthiopie"/>
       <list-item v="Érythrée"/>
@@ -1184,6 +1186,7 @@
       <list-item v="tadjik"/>
       <list-item v="mongol"/>
       <list-item v="mandchou"/>
+      <list-item v="toungouse"/>
       <list-item v="ouïghour"/>
       <list-item v="cachemiri"/>
       <list-item v="cachemirien"/>
@@ -1230,7 +1233,14 @@
       <list-item v="éthiopien"/>
       <list-item v="somalien"/>
       <list-item v="malgache"/>
+      <list-item v="haoussa"/>
+      <list-item v="yoruba"/>
+      <list-item v="igbo"/>
+      <list-item v="bantou"/>
+      <list-item v="swahili"/>
       <list-item v="zoulou"/>
+      <list-item v="hottentot"/>
+      <list-item v="bochiman"/>
       <list-item v="apache"/>
       <list-item v="algonquien"/>
       <list-item v="algonquin"/>
@@ -10373,9 +10383,14 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord0">
           <with-param pos="1"/>
         </call-macro>
+        <call-macro n="f_set_pron">
+          <with-param pos="3"/>
+          <with-param pos="3"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -10383,6 +10398,23 @@ is not applicable because gender and number cannot be taken from previous rules 
             </get-case-from>
           </lu>
           <b pos="2"/>
+        </out>
+        <choose>
+	  <when>
+	    <test>
+	      <not><equal><var n="pronom"/><lit v=""/></equal></not>
+	    </test>
+            <out>
+              <lu>
+                <get-case-from pos="3">
+	          <var n="pronom"/>
+                </get-case-from>
+              </lu>
+              <b/>
+            </out>
+	  </when>
+        </choose>
+        <out>
           <lu>
             <clip pos="3" side="tl" part="lemh"/>
             <clip pos="3" side="tl" part="tags"/>
@@ -10424,9 +10456,14 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord0">
           <with-param pos="1"/>
         </call-macro>
+        <call-macro n="f_set_pron">
+          <with-param pos="3"/>
+          <with-param pos="3"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -10434,6 +10471,23 @@ is not applicable because gender and number cannot be taken from previous rules 
             </get-case-from>
           </lu>
           <b pos="2"/>
+        </out>
+        <choose>
+	  <when>
+	    <test>
+	      <not><equal><var n="pronom"/><lit v=""/></equal></not>
+	    </test>
+            <out>
+              <lu>
+                <get-case-from pos="3">
+	          <var n="pronom"/>
+                </get-case-from>
+              </lu>
+              <b/>
+            </out>
+	  </when>
+        </choose>
+        <out>
           <lu>
             <clip pos="3" side="tl" part="lemh"/>
             <clip pos="3" side="tl" part="tags"/>
@@ -10482,9 +10536,14 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord0">
           <with-param pos="1"/>
         </call-macro>
+        <call-macro n="f_set_pron">
+          <with-param pos="5"/>
+          <with-param pos="3"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
         <out>
           <lu>
             <get-case-from pos="1">
@@ -10492,11 +10551,31 @@ is not applicable because gender and number cannot be taken from previous rules 
             </get-case-from>
           </lu>
           <b pos="2"/>
+        </out>
+        <choose>
+	  <when>
+	    <test>
+	      <not><equal><var n="pronom"/><lit v=""/></equal></not>
+	    </test>
+            <out>
+              <lu>
+                <get-case-from pos="3">
+	          <var n="pronom"/>
+                </get-case-from>
+              </lu>
+              <b/>
+            </out>
+	  </when>
+        </choose>
+        <out>
           <lu>
             <clip pos="3" side="tl" part="lemh"/>
             <clip pos="3" side="tl" part="tags"/>
             <clip pos="3" side="tl" part="lemq"/>
           </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <out>
           <b pos="4"/>
           <lu>
             <clip pos="5" side="tl" part="lemh"/>
@@ -10540,6 +10619,10 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord0">
           <with-param pos="1"/>
         </call-macro>
+        <call-macro n="f_set_pron">
+          <with-param pos="5"/>
+          <with-param pos="3"/>
+        </call-macro>
         <call-macro n="f_ifi1">
           <with-param pos="3"/>
         </call-macro>
@@ -10551,6 +10634,23 @@ is not applicable because gender and number cannot be taken from previous rules 
             </get-case-from>
           </lu>
           <b pos="2"/>
+        </out>
+        <choose>
+	  <when>
+	    <test>
+	      <not><equal><var n="pronom"/><lit v=""/></equal></not>
+	    </test>
+            <out>
+              <lu>
+                <get-case-from pos="3">
+	          <var n="pronom"/>
+                </get-case-from>
+              </lu>
+              <b/>
+            </out>
+	  </when>
+        </choose>
+        <out>
           <lu>
             <clip pos="3" side="tl" part="lemh"/>
             <clip pos="3" side="tl" part="tags"/>
