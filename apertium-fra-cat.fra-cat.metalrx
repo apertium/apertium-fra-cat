@@ -1201,6 +1201,14 @@
 
 <!-- **************** N **************** -->
 
+  <!-- rouge >> vermell, roig -->
+  <rule weight="0.8">
+    <match lemma="rouge" tags="n.*"><select lemma="vermell"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rouge" tags="n.m.pl"><select lemma="roig"/></match>
+  </rule>
+
   <!-- consommation >> consumició, consumació -->
   <rule weight="0.8">
     <match lemma="consommation" tags="n.*"><select lemma="consumició"/></match>
@@ -2464,6 +2472,20 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- rouge >> vermell, roig -->
+  <rule weight="0.8">
+    <match lemma="rouge" tags="adj.*"><select lemma="vermell"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="armée" tags="n.*"/>
+      <match lemma="brigade" tags="n.*"/>
+      <match lemma="croix" tags="n.*"/>
+      <match lemma="khmer" tags="n.*"/>
+    </or>
+    <match lemma="rouge" tags="adj.*"><select lemma="roig"/></match>
+  </rule>
 
   <!-- laïque >> laic, llec -->
   <rule weight="0.8">

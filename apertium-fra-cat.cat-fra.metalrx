@@ -1452,6 +1452,7 @@
       <match lemma="mar Negre" tags="np.*"/>
       <match lemma="mar Roig" tags="np.*"/>
       <match lemma="mar Bàltic" tags="np.*"/>
+      <match lemma="mar Caspi" tags="np.*"/>
       <match lemma="mar Mort" tags="np.*"/>
       <match lemma="mar Egeu" tags="np.*"/>
       <match lemma="mar Egea" tags="np.*"/>
@@ -1460,6 +1461,11 @@
       <match lemma="mar Tirrè" tags="np.*"/>
       <match lemma="mar Tirrena" tags="np.*"/>
       <match lemma="mar Cantàbric" tags="np.*"/>
+      <match lemma="mar Cantàbrica" tags="np.*"/>
+      <match lemma="oceà Atlàntic" tags="np.*"/>
+      <match lemma="oceà Pacífic" tags="np.*"/>
+      <match lemma="oceà Índic" tags="np.*"/>
+      <match lemma="oceà Glacial Àrtic" tags="np.*"/>
     </or>
   </rule>
   <rule weight="1.2">
@@ -1609,9 +1615,19 @@
 
 <!-- ADV -->
 
-  <!-- 
-    no >> ne, non
-  -->
+  <!-- gaire >> très, beaucoup -->
+  <rule weight="0.8">
+    <match lemma="gaire" tags="adv"><select lemma="beaucoup"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="gaire" tags="adv"><select lemma="beaucoup de"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match tags="n.*"/>
+  </rule>
+
+  <!-- no >> ne, non -->
   <rule weight="0.8">
     <match lemma="no" tags="adv"><select lemma="ne"/></match>
   </rule>
@@ -1841,6 +1857,9 @@
 
   <!-- convertir# en >> convertir# en, devenir -->
   <macro name="verb_nopron_pron" p1="convertir# en" p2="transformer# en" p3="devenir" />
+
+  <!-- estendre >> tendre, étendre -->
+  <macro name="verb_nopron_pron" p1="estendre" p2="tendre" p3="étendre" />
 
   <!-- florir >> fleurir, moisir -->
   <macro name="verb_nopron_pron" p1="florir" p2="fleurir" p3="moisir" />
@@ -2650,6 +2669,32 @@
 
 <!-- ADJ -->
 
+  <!-- brut >> sale, brut -->
+  <rule weight="0.8">
+    <match lemma="brut" tags="adj.*"><select lemma="sale"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="xampany" tags="n.*"/>
+      <match lemma="cava" tags="n.*"/>
+    </or>
+    <match lemma="brut" tags="adj.*"><select lemma="brut"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="beure" tags="vblex.*"/>
+      <match lemma="degustar" tags="vblex.*"/>
+      <match lemma="tastar" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="det.*"/>
+      </or>
+    </repeat>
+    <match lemma="brut" tags="adj.*"><select lemma="brut"/></match>
+  </rule>
+
   <!-- laic >> laïque, laïc -->
   <rule weight="0.8">
     <match lemma="laic" tags="adj.*"><select lemma="laïque"/></match>
@@ -2878,6 +2923,30 @@
   </rule>
 
 <!-- N -->
+
+  <!-- estació >> gare, saison -->
+  <rule weight="0.8">
+    <match lemma="estació" tags="n.*"><select lemma="gare"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="estació" tags="n.*"><select lemma="saison"/></match>
+    <or>
+      <match lemma="càlid" tags="adj.*"/>
+      <match lemma="fred" tags="adj.*"/>
+      <match lemma="humit" tags="adj.*"/>
+      <match lemma="sec" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="estació" tags="n.*"><select lemma="saison"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="any" tags="n.*"/>
+      <match lemma="pluja" tags="n.*"/>
+      <match lemma="neu" tags="n.*"/>
+    </or>
+  </rule>
 
   <!-- laic >> laïque, laïc -->
   <rule weight="0.8">
