@@ -111,6 +111,8 @@
       <cat-item lemma="pas beaucoup" tags="adv"/>
       <cat-item lemma="pas beaucoup de" tags="adv"/>
       <cat-item lemma="rien" tags="prn.*"/>
+      <cat-item lemma="toujours pas" tags="adv"/>
+      <cat-item lemma="même pas" tags="adv"/>
     </def-cat>
     <def-cat n="train">
       <cat-item lemma="train" tags="n.*"/>
@@ -3688,7 +3690,7 @@
       </action>
     </rule>
 
-    <rule comment="REGLA: ADJECTIU">
+    <rule comment="REGLA: ADJ">
       <pattern>
         <pattern-item n="adjec"/>
       </pattern>
@@ -3952,7 +3954,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
 
 
-    <rule comment="REGLA: NOM ADJECTIU">
+    <rule comment="REGLA: NOM ADJ">
       <pattern>
         <pattern-item n="nom"/>
         <pattern-item n="adjec"/>
@@ -3981,7 +3983,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: ADJECTIU NOM">
+    <rule comment="REGLA: ADJ NOM">
       <pattern>
         <pattern-item n="adj"/>
         <pattern-item n="nom"/>
@@ -4041,7 +4043,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: DET NOM ADJECTIU">
+    <rule comment="REGLA: DET NOM ADJ">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="nom"/>
@@ -4078,7 +4080,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: DET NOM ADJECTIU ADJECTIU">
+    <rule comment="REGLA: DET NOM ADJ ADJ">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="nom"/>
@@ -4125,7 +4127,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: NOM ADJECTIU ADJECTIU">
+    <rule comment="REGLA: NOM ADJ ADJ">
       <pattern>
         <pattern-item n="nom"/>
         <pattern-item n="adjec"/>
@@ -4166,7 +4168,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: DET ADJECTIU NOM">
+    <rule comment="REGLA: DET ADJ NOM">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="adjec"/>
@@ -4297,7 +4299,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: PREDET DET NOM ADJECTIU">
+    <rule comment="REGLA: PREDET DET NOM ADJ">
       <pattern>
         <pattern-item n="predet"/>
         <pattern-item n="det"/>
@@ -4340,7 +4342,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: DET ADJECTIU">
+    <rule comment="REGLA: DET ADJ">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="adjec"/>
@@ -4369,7 +4371,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: ADJECTIU NOM ADJECTIU">
+    <rule comment="REGLA: ADJ NOM ADJ">
       <pattern>
         <pattern-item n="adj"/>
         <pattern-item n="nom"/>
@@ -4406,7 +4408,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: DET ADJECTIU NOM ADJECTIU">
+    <rule comment="REGLA: DET ADJ NOM ADJ">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="adjec"/>
@@ -4453,7 +4455,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: NOM ADVERBI ADJECTIU">
+    <rule comment="REGLA: NOM ADV ADJ">
       <pattern>
         <pattern-item n="nom"/>
         <pattern-item n="adv"/>
@@ -4489,7 +4491,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: DET NOM ADVERBI ADJECTIU">
+    <rule comment="REGLA: DET NOM ADV ADJ">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="nom"/>
@@ -4531,7 +4533,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: DET ADVERBI NOM">
+    <rule comment="REGLA: DET ADV NOM">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="adv"/>
@@ -4563,7 +4565,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: DET ADVERBI ADJ">
+    <rule comment="REGLA: DET ADV ADJ">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="adv"/>
@@ -4592,7 +4594,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: DET ADVERBI ADJ NOM">
+    <rule comment="REGLA: DET ADV ADJ NOM">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="adv"/>
@@ -4689,7 +4691,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: NUMERAL ADJECTIU">
+    <rule comment="REGLA: NUMERAL ADJ">
       <pattern>
         <pattern-item n="num"/>
         <pattern-item n="adjec"/>
@@ -4715,7 +4717,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: NUMERAL NOM ADJECTIU">
+    <rule comment="REGLA: NUMERAL NOM ADJ">
       <pattern>
         <pattern-item n="num"/>
         <pattern-item n="nom"/>
@@ -4752,7 +4754,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: NUMERAL ADJECTIU NOM">
+    <rule comment="REGLA: NUMERAL ADJ NOM">
       <pattern>
         <pattern-item n="num"/>
         <pattern-item n="adjec"/>
@@ -5094,7 +5096,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: DET NOM DET ADVERBI ADJECTIU: la fille la plus jolie : la noia més maca">
+    <rule comment="REGLA: DET NOM DET ADV ADJ: la fille la plus jolie : la noia més maca">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="nom"/>
@@ -5140,7 +5142,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: DET NUM NOM DET ADVERBI ADJECTIU: la cinq filles les plus jolies : les cinc noies més maques">
+    <rule comment="REGLA: DET NUM NOM DET ADV ADJ: la cinq filles les plus jolies : les cinc noies més maques">
       <pattern>
         <pattern-item n="det"/>
         <pattern-item n="num"/>

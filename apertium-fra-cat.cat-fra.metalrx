@@ -2311,6 +2311,18 @@
   </rule>
   <rule weight="1.0">
     <match lemma="fer" tags="vblex.*"><select lemma="poser"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="pregunta" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fer" tags="vblex.*"><select lemma="poser"/></match>
+    <match tags="prn.enc.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
     <match tags="det.*"/>
     <match lemma="pregunta" tags="n.*"/>
   </rule>
@@ -2924,6 +2936,77 @@
 
 <!-- N -->
 
+  <!-- termini >> terme, délai -->
+  <rule weight="0.8">
+    <match lemma="termini" tags="n.*"><select lemma="terme"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="esgotar" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="termini" tags="n.*"><select lemma="délai"/></match>
+  </rule>
+
+  <!-- sol·licitant >> postulant, solliciteur, demandeur -->
+  <rule weight="0.8">
+    <match lemma="sol·licitant" tags="n.*"><select lemma="postulant"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sol·licitant" tags="n.*"><select lemma="demandeur"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="asil" tags="n.*"/>
+  </rule>
+
+  <!-- tramús >> lupin, graine# de lupin -->
+  <rule weight="0.8">
+    <match lemma="tramús" tags="n.*"><select lemma="lupin"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tramús" tags="n.m.pl"><select lemma="graine# de lupin"/></match>
+  </rule>
+
+  <!-- coca >> coca, gâteau -->
+  <rule weight="0.8">
+    <match lemma="coca" tags="n.*"><select lemma="coca"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="coca" tags="n.f.pl"><select lemma="gâteau"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="un" tags="det.*"/>
+      <match tags="num.*"/>
+      <match tags="num"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="coca" tags="n.*"><select lemma="gâteau"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="fer" tags="vblex.*"/>
+      <match lemma="preparar" tags="vblex.*"/>
+      <match lemma="menjar" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="3">
+      <match tags="adv"/>
+      <match tags="det.*"/>
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="coca" tags="n.*"><select lemma="gâteau"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="coca" tags="n.*"><select lemma="gâteau"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="llardó" tags="n.*"/>
+      <match lemma="fruita" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- estació >> gare, saison -->
   <rule weight="0.8">
     <match lemma="estació" tags="n.*"><select lemma="gare"/></match>
@@ -3284,8 +3367,8 @@
   <rule weight="1.0">
     <match lemma="exposició" tags="n.*"><select lemma="exposition"/></match>
     <or>
-      <match lemma="international" tags="adj.*"/>
-      <match lemma="universel" tags="adj.*"/>
+      <match lemma="internacional" tags="adj.*"/>
+      <match lemma="universal" tags="adj.*"/>
     </or>
   </rule>
 
