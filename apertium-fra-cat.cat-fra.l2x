@@ -15,14 +15,25 @@
     <sdef n="sg"/>
     <sdef n="sp"/>
     <sdef n="inf"/>
+    <sdef n="pp"/>
   </sdefs>
   <pardefs>
     <pardef n="adv">
       <e><i><w/><s n="adv"/><j/></i></e>
       <e><i><w/><s n="adv"/><t/><j/></i></e>
     </pardef>
+    <pardef n="adj_pp">
+      <e><i><w/><s n="adj"/><t/><j/></i></e>
+      <e><i><w/><s n="vblex"/><s n="pp"/><t/><j/></i></e>
+    </pardef>
   </pardefs>
   <section id="main" type="standard">
+
+    <e lm="ADJ tout à fait" c="ADJ tout à fait > tout à fait ADJ (ADJ del tot > del tot ADJ)">
+      <p><l></l><r>tout<b/>à<b/>fait<s n="adv"/><j/></r></p>
+      <par n="adj_pp"/>
+      <p><l>tout<b/>à<b/>fait<s n="adv"/><j/></l><r></r></p>
+    </e>
 
     <e lm="poser à nouveau">
       <p><l>poser<s n="vblex"/><t/><g><b/>à<b/>nouveau</g><j/></l><r>poser<s n="vblex"/><t/><j/></r></p>

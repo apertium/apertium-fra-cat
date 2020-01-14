@@ -3,27 +3,73 @@
   <alphabet></alphabet>
   <sdefs>
     <sdef n="vblex"/>
+    <sdef n="vbhaver"/>
+    <sdef n="vbser"/>
+    <sdef n="vbmod"/>
     <sdef n="adv"/>
     <sdef n="det"/>
     <sdef n="pr"/>
+    <sdef n="prn"/>
     <sdef n="def"/>
     <sdef n="pos"/>
     <sdef n="n"/>
     <sdef n="adj"/>
     <sdef n="m"/>
     <sdef n="f"/>
+    <sdef n="sg"/>
+    <sdef n="pl"/>
     <sdef n="inf"/>
+    <sdef n="pp"/>
+    <sdef n="pro"/>
+    <sdef n="enc"/>
   </sdefs>
   <pardefs>
     <pardef n="adv">
       <e><i><w/><s n="adv"/><j/></i></e>
       <e><i><w/><s n="adv"/><t/><j/></i></e>
+      <e><i><w/><s n="adv"/><j/><w/><s n="adv"/><j/></i></e>
+      <e><i><w/><s n="adv"/><j/><w/><s n="adv"/><t/><j/></i></e>
+      <e><i><w/><s n="adv"/><t/><j/><w/><s n="adv"/><j/></i></e>
+      <e><i><w/><s n="adv"/><t/><j/><w/><s n="adv"/><t/><j/></i></e>
+    </pardef>
+    <pardef n="verb">
+      <e><i><w/><s n="vblex"/><t/><j/></i></e>
+      <e><i><w/><s n="vbhaver"/><t/><j/></i></e>
+      <e><i><w/><s n="vbser"/><t/><j/></i></e>
+      <e><i><w/><s n="vbmod"/><t/><j/></i></e>
+    </pardef>
+    <pardef n="prnpro_verb">
+      <e><i><w/><s n="prn"/><s n="pro"/><t/><j/><w/><s n="vblex"/><t/><j/></i></e>
+      <e><i><w/><s n="prn"/><s n="pro"/><t/><j/><w/><s n="vbhaver"/><t/><j/></i></e>
+      <e><i><w/><s n="prn"/><s n="pro"/><t/><j/><w/><s n="vbser"/><t/><j/></i></e>
+      <e><i><w/><s n="prn"/><s n="pro"/><t/><j/><w/><s n="vbmod"/><t/><j/></i></e>
+    </pardef>
+    <pardef n="adj_pp">
+      <e><i><w/><s n="adj"/><t/><j/></i></e>
+      <e><i><w/><s n="vblex"/><s n="pp"/><t/><j/></i></e>
     </pardef>
   </pardefs>
 
   <section id="main" type="standard">
 
-    <!-- Je n'ai pas honte de ... --> 
+    <e lm="ne VERB plus" c="ne ... plus > plus_neg ne ... pas (> ja no ...): ne parle plus > ja no parlo">
+      <p><l>ne<s n="adv"/><j/></l><r>plus_neg<s n="adv"/><j/>ne<s n="adv"/><j/></r></p>
+      <par n="verb"/>
+      <p><l>plus<s n="adv"/><j/></l><r>pas<s n="adv"/><j/></r></p>
+    </e>
+    <e lm="ne PRNPRO VERB plus" c="ne PRNPRO ... plus > plus_neg ne PRNPRO ... pas (> ja no PRNPRO ...): n'en parle plus > ja no en parlo">
+      <p><l>ne<s n="adv"/><j/></l><r>plus_neg<s n="adv"/><j/>ne<s n="adv"/><j/></r></p>
+      <par n="prnpro_verb"/>
+      <p><l>plus<s n="adv"/><j/></l><r>pas<s n="adv"/><j/></r></p>
+    </e>
+
+    <e lm="tout à fait ADJ" c="tout à fait ADJ > ADJ tout à fait (> ADJ del tot)">
+      <p><l>tout<b/>à<b/>fait<s n="adv"/><j/></l><r></r></p>
+      <par n="adj_pp"/>
+      <p><l></l><r>tout<b/>à<b/>fait<s n="adv"/><j/></r></p>
+    </e>
+
+    <!-- Je n'ai pas honte --> 
     <e lm="avoir honte" c="">
       <p><l>avoir<s n="vblex"/></l><r>avoir<g><b/>honte</g><s n="vblex"/></r></p>
       <i><t/><j/></i>
@@ -58,18 +104,6 @@
       <i><t/><j/></i>
       <par n="adv"/>
       <p><l>tendance<s n="n"/><s n="f"/><t/><j/></l><r></r></p>
-    </e>
-
-    <e lm="avoir lieu" c="">
-      <p><l>avoir<s n="vblex"/></l><r>avoir<g><b/>lieu</g><s n="vblex"/></r></p>
-      <i><t/><j/></i>
-      <p><l>lieu<s n="n"/><s n="m"/><t/><j/></l><r></r></p>
-    </e>
-    <e lm="avoir lieu" c="">
-      <p><l>avoir<s n="vblex"/></l><r>avoir<g><b/>lieu</g><s n="vblex"/></r></p>
-      <i><t/><j/></i>
-      <par n="adv"/>
-      <p><l>lieu<s n="n"/><s n="m"/><t/><j/></l><r></r></p>
     </e>
 
     <e lm="avoir envie de" c="">
@@ -142,6 +176,66 @@
       <i><t/><j/></i>
       <par n="adv"/>
       <p><l>son<s n="det"/><s n="pos"/><s n="m"/><t/><j/>doctorat<s n="n"/><s n="m"/><t/><j/></l><r></r></p>
+    </e>
+
+    <e lm="avoir besoin" c="">
+      <p><l>avoir<s n="vblex"/></l><r>avoir<g><b/>besoin</g><s n="vblex"/></r></p>
+      <i><t/><j/></i>
+      <p><l>besoin<s n="n"/><s n="m"/><t/><j/></l><r></r></p>
+    </e>
+    <e lm="avoir besoin" c="">
+      <p><l>avoir<s n="vblex"/></l><r>avoir<g><b/>besoin</g><s n="vblex"/></r></p>
+      <i><t/><j/></i>
+      <par n="adv"/>
+      <p><l>besoin<s n="n"/><s n="m"/><t/><j/></l><r></r></p>
+    </e>
+
+    <e lm="avoir besoin de" c="">
+      <p><l>avoir<s n="vblex"/></l><r>avoir<g><b/>besoin<b/>de</g><s n="vblex"/></r></p>
+      <i><t/><j/></i>
+      <p><l>besoin<s n="n"/><s n="m"/><t/><j/>de<s n="pr"/><j/></l><r></r></p>
+    </e>
+    <e lm="avoir besoin de" c="">
+      <p><l>avoir<s n="vblex"/></l><r>avoir<g><b/>besoin<b/>de</g><s n="vblex"/></r></p>
+      <i><t/><j/></i>
+      <par n="adv"/>
+      <p><l>besoin<s n="n"/><s n="m"/><t/><j/>de<s n="pr"/><j/></l><r></r></p>
+    </e>
+
+    <e lm="avoir à avoir" c="">
+      <p><l>avoir<s n="vblex"/></l><r>avoir<g><b/>à<b/>avoir</g><s n="vblex"/></r></p>
+      <i><t/><j/></i>
+      <p><l>à<s n="pr"/><t/><j/>avoir<s n="vblex"/><s n="inf"/><t/><j/></l><r></r></p>
+    </e>
+    <e lm="avoir à avoir" c="">
+      <p><l>avoir<s n="vblex"/></l><r>avoir<g><b/>à<b/>avoir</g><s n="vblex"/></r></p>
+      <i><t/><j/></i>
+      <par n="adv"/>
+      <p><l>à<s n="pr"/><t/><j/>avoir<s n="vblex"/><s n="inf"/><t/><j/></l><r></r></p>
+    </e>
+
+    <e lm="avoir du mal à" c="">
+      <p><l>avoir<s n="vblex"/></l><r>avoir<g><b/>du<b/>mal<b/>à</g><s n="vblex"/></r></p>
+      <i><t/><j/></i>
+      <p><l>de<s n="pr"/><t/><j/>le<s n="det"/><s n="def"/><s n="m"/><s n="sg"/><t/><j/>mal<s n="n"/><s n="m"/><t/><j/>à<s n="pr"/><j/></l><r></r></p>
+    </e>
+    <e lm="avoir du mal à" c="">
+      <p><l>avoir<s n="vblex"/></l><r>avoir<g><b/>du<b/>mal<b/>à</g><s n="vblex"/></r></p>
+      <i><t/><j/></i>
+      <par n="adv"/>
+      <p><l>de<s n="pr"/><t/><j/>le<s n="det"/><s n="def"/><s n="m"/><s n="sg"/><t/><j/>mal<s n="n"/><s n="m"/><t/><j/>à<s n="pr"/><j/></l><r></r></p>
+    </e>
+
+    <e lm="avoir beaucoup de mal à" c="">
+      <p><l>avoir<s n="vblex"/></l><r>avoir<g><b/>beaucoup<b/>de<b/>mal<b/>à</g><s n="vblex"/></r></p>
+      <i><t/><j/></i>
+      <p><l>beaucoup<s n="adv"/><t/><j/>de<s n="pr"/><t/><j/>mal<s n="n"/><s n="m"/><t/><j/>à<s n="pr"/><j/></l><r></r></p>
+    </e>
+    <e lm="avoir beaucoup de mal à" c="">
+      <p><l>avoir<s n="vblex"/></l><r>avoir<g><b/>beaucoup<b/>de<b/>mal<b/>à</g><s n="vblex"/></r></p>
+      <i><t/><j/></i>
+      <par n="adv"/>
+      <p><l>beaucoup<s n="adv"/><t/><j/>de<s n="pr"/><t/><j/>mal<s n="n"/><s n="m"/><t/><j/>à<s n="pr"/><j/></l><r></r></p>
     </e>
 
     <!-- Je ne fais pas partie de ... --> 
