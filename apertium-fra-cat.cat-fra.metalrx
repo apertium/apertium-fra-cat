@@ -474,7 +474,6 @@
       <match tags="adj.ord.*"/>
     </def-seq>
 
-
     <def-seq n="paisos">
       <match lemma="Catalunya"/>
       <match lemma="Aragó"/>
@@ -589,6 +588,38 @@
        <match lemma="òrgan" tags="n.*"/>
 
        <match lemma="música" tags="n.*"/>
+    </def-seq>
+
+    <def-seq n="temps">
+      <match lemma="segon" tags="n.*"/>
+      <match lemma="minut" tags="n.*"/>
+      <match lemma="hora" tags="n.*"/>
+      <match lemma="dia" tags="n.*"/>
+      <match lemma="setmana" tags="n.*"/>
+      <match lemma="mes" tags="n.*"/>
+      <match lemma="any" tags="n.*"/>
+      <match lemma="lustre" tags="n.*"/>
+      <match lemma="segle" tags="n.*"/>
+      <match lemma="mil·leni" tags="n.*"/>
+      <match lemma="dilluns" tags="n.*"/>
+      <match lemma="dimarts" tags="n.*"/>
+      <match lemma="dimecres" tags="n.*"/>
+      <match lemma="dijous" tags="n.*"/>
+      <match lemma="divendres" tags="n.*"/>
+      <match lemma="dissabte" tags="n.*"/>
+      <match lemma="diumenge" tags="n.*"/>
+      <match lemma="gener" tags="n.*"/>
+      <match lemma="febrer" tags="n.*"/>
+      <match lemma="març" tags="n.*"/>
+      <match lemma="abril" tags="n.*"/>
+      <match lemma="maig" tags="n.*"/>
+      <match lemma="juny" tags="n.*"/>
+      <match lemma="juliol" tags="n.*"/>
+      <match lemma="agost" tags="n.*"/>
+      <match lemma="setembre" tags="n.*"/>
+      <match lemma="octubre" tags="n.*"/>
+      <match lemma="novrembre" tags="n.*"/>
+      <match lemma="desembre" tags="n.*"/>
     </def-seq>
 
     <def-seq n="verbs_moviment">
@@ -1332,7 +1363,19 @@
 
 <!-- PR -->
 
-  <!-- per >> par, pour -->
+  <!-- amb >> avec, à -->
+  <rule weight="0.8">
+    <match lemma="amb" tags="pr"><select lemma="avec"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="casar" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="amb" tags="pr"><select lemma="à"/></match>
+  </rule>
+
+  <!-- per >> par, pour, de -->
   <rule weight="0.8">
     <match lemma="per" tags="pr"><select lemma="par"/></match>
   </rule>
@@ -2681,6 +2724,50 @@
 
 <!-- ADJ -->
 
+  <!-- mongòlic >> mongolien, mongolique -->
+  <rule weight="0.8">
+    <match lemma="mongòlic" tags="adj.*"><select lemma="mongolien"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="llengua" tags="n.*"/>
+    <match lemma="mongòlic" tags="adj.*"><select lemma="mongolique"/></match>
+  </rule>
+
+  <!-- bohemi >> bohémien, bohème -->
+  <rule weight="0.8">
+    <match lemma="bohemi" tags="adj.*"><select lemma="bohémien"/></match>
+  </rule>
+
+  <!-- proper >> proche, prochain -->
+  <rule weight="0.8">
+    <match lemma="proper" tags="adj.*"><select lemma="proche"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="proper" tags="adj.*"><select lemma="prochain"/></match>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="temps"/>
+    </or>
+    <match lemma="proper" tags="adj.*"><select lemma="prochain"/></match>
+  </rule>
+
+  <!-- pròxim >> proche, prochain -->
+  <rule weight="0.8">
+    <match lemma="pròxim" tags="adj.*"><select lemma="proche"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pròxim" tags="adj.*"><select lemma="prochain"/></match>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="temps"/>
+    </or>
+    <match lemma="pròxim" tags="adj.*"><select lemma="prochain"/></match>
+  </rule>
+
   <!-- brut >> sale, brut -->
   <rule weight="0.8">
     <match lemma="brut" tags="adj.*"><select lemma="sale"/></match>
@@ -2935,6 +3022,62 @@
   </rule>
 
 <!-- N -->
+
+  <!-- bohemi >> bohémien, bohème -->
+  <rule weight="0.8">
+    <match lemma="bohemi" tags="n.*"><select lemma="bohémien"/></match>
+  </rule>
+
+  <!-- primat >> primate, primat -->
+  <rule weight="0.8">
+    <match lemma="primat" tags="n.*"><select lemma="primate"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.m.sg"/>
+    <match lemma="primat" tags="n.m.sg"><select lemma="primat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="primat" tags="n.m.sg"><select lemma="primat"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="np.top.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cardenal" tags="n.*"/>
+    <match lemma="primat" tags="n.*"><select lemma="primat"/></match>
+  </rule>
+
+  <!-- fiscalia >> parquet, bureau# du procureur -->
+  <rule weight="0.8">
+    <match lemma="fiscalia" tags="n.*"><select lemma="parquet"/></match>
+  </rule>
+
+  <!-- futur >> futur, avenir -->
+  <rule weight="0.8">
+    <match lemma="futur" tags="n.*"><select lemma="futur"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.pos.*"/>
+    <match lemma="futur" tags="n.*"><select lemma="avenir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="pròxim" tags="adj.*"/>
+      <match lemma="proper" tags="adj.*"/>
+      <match lemma="llunyà" tags="adj.*"/>
+    </or>
+    <match lemma="futur" tags="n.*"><select lemma="avenir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="futur" tags="n.*"><select lemma="avenir"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match lemma="pròxim" tags="adj.*"/>
+      <match lemma="proper" tags="adj.*"/>
+      <match lemma="llunyà" tags="adj.*"/>
+    </or>
+  </rule>
 
   <!-- termini >> terme, délai -->
   <rule weight="0.8">
@@ -3390,7 +3533,10 @@
     <match lemma="senyor" tags="n.m.*"><select lemma="seigneur"/></match>
     <match lemma="de" tags="pr"/>
     <match tags="det.*"/>
-    <match lemma="castell" tags="n.*"/>
+    <or>
+      <match lemma="castell" tags="n.*"/>
+      <match lemma="anell" tags="n.m.pl"/>
+    </or>
   </rule>
 
   <!-- senyora >> madame, dame, femme -->
