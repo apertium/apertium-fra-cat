@@ -968,10 +968,34 @@
   </rule>
   <rule weight="1.0">
     <match lemma="tourner" tags="vblex.*"><select lemma="rodar" tags="vblex.*"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match lemma="de" tags="pr"/>
+      <match tags="det.*"/>
+    </or>
+    <match lemma="film" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tourner" tags="vblex.*"><select lemma="rodar"/></match>
     <repeat from="0" upto="1">
       <match tags="adv"/>
     </repeat>
-    <match tags="det.*"/>
+    <match lemma="de" tags="pr"/>
+    <match lemma="le" tags="det.*.pl"/>
+    <match lemma="film" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tourner" tags="vblex.*"><select lemma="rodar" tags="vblex.*"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match lemma="de" tags="pr"/>
+      <match tags="det.*"/>
+    </or>
+    <match tags="adj.*"/>
     <match lemma="film" tags="n.*"/>
   </rule>
   <rule weight="1.0">
@@ -981,6 +1005,7 @@
     </repeat>
     <match lemma="de" tags="pr"/>
     <match lemma="le" tags="det.*.pl"/>
+    <match tags="adj.*"/>
     <match lemma="film" tags="n.*"/>
   </rule>
 
@@ -1316,6 +1341,24 @@
 
 <!-- **************** N **************** -->
 
+  <!-- portable >> mòbil, portàtil -->
+  <rule weight="0.8">
+    <match lemma="portable" tags="adj.*"><select lemma="mòbil"/></match>
+  </rule>
+
+  <!-- génie >> geni, enginyeria -->
+  <rule weight="0.8">
+    <match lemma="génie" tags="n.*"><select lemma="geni"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="génie" tags="n.*"><select lemma="enginyeria"/></match>
+    <or>
+      <match lemma="civil" tags="adj.*"/>
+      <match lemma="militaire" tags="adj.*"/>
+      <match lemma="maritime" tags="adj.*"/>
+    </or>
+  </rule>
+
   <!-- maquis >> màquia, maquis -->
   <rule weight="0.8">
     <match lemma="maquis" tags="n.*"><select lemma="màquia"/></match>
@@ -1372,6 +1415,10 @@
   <!-- forêt >> bosc, selva -->
   <rule weight="0.8">
     <match lemma="forêt" tags="n.*"><select lemma="bosc"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="forêt" tags="n.*"><select lemma="selva"/></match>
+    <match lemma="tropical" tags="adj.*"/>
   </rule>
 
   <!-- chance >> sort, possibilitat -->
@@ -1600,6 +1647,10 @@
       <match lemma="ouvert" tags="adj.*"/>
       <match lemma="ouvert" tags="vblex.pp.*"/>
     </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="enquête" tags="n.*"><select lemma="investigació"/></match>
+    <match lemma="sur" tags="pr"/>
   </rule>
 
   <!-- parquet >> fiscalia, parquet -->
@@ -3211,68 +3262,111 @@
   </rule>
 
 <!-- élever >> elevar, alçar, educar, criar -->
-
   <rule weight="0.8">
     <match lemma="élever" tags="vblex.*"><select lemma="elevar"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="élever" tags="vblex.*"><select lemma="alçar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="prn.*"/>
+    </repeat>
     <match tags="det.*"/>
-    <match lemma="voix" tags="n.*"/>
+    <or>
+      <match lemma="voix" tags="n.*"/>
+      <match lemma="ton" tags="n.*"/>
+    </or>
   </rule>
   <rule weight="1.0">
     <match lemma="élever" tags="vblex.*"><select lemma="criar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="prn.*"/>
+    </repeat>
     <or>
       <match tags="det.*"/>
       <match tags="num"/>
       <match tags="num.*"/>
+      <match lemma="de" tags="pr"/>
     </or>
     <or>
       <match lemma="poulet" tags="n.*"/>
+      <match lemma="poussin" tags="n.*"/>
+      <match lemma="coq" tags="n.*"/>
+      <match lemma="poule" tags="n.*"/>
+      <match lemma="dinde" tags="n.*"/>
       <match lemma="canard" tags="n.*"/>
       <match lemma="volaille" tags="n.*"/>
       <match lemma="brebis" tags="n.*"/>
       <match lemma="chèvre" tags="n.*"/>
+      <match lemma="mouton" tags="n.*"/>
       <match lemma="vache" tags="n.*"/>
+      <match lemma="bœuf" tags="n.*"/>
+      <match lemma="veau" tags="n.*"/>
+      <match lemma="taureau" tags="n.*"/>
       <match lemma="cheval" tags="n.*"/>
+      <match lemma="jument" tags="n.*"/>
+      <match lemma="poulain" tags="n.*"/>
       <match lemma="àne" tags="n.*"/>
+      <match lemma="bétail" tags="n.*"/>
     </or>
   </rule>
   <rule weight="1.0">
     <match lemma="élever" tags="vblex.*"><select lemma="criar"/></match>
     <match lemma="de" tags="pr"/>
     <match tags="det.*"/>
+    <repeat from="0" upto="2">
+      <match tags="prn.*"/>
+    </repeat>
     <or>
       <match lemma="poulet" tags="n.*"/>
+      <match lemma="poussin" tags="n.*"/>
+      <match lemma="coq" tags="n.*"/>
+      <match lemma="poule" tags="n.*"/>
       <match lemma="canard" tags="n.*"/>
+      <match lemma="dinde" tags="n.*"/>
       <match lemma="volaille" tags="n.*"/>
       <match lemma="brebis" tags="n.*"/>
       <match lemma="chèvre" tags="n.*"/>
+      <match lemma="mouton" tags="n.*"/>
       <match lemma="vache" tags="n.*"/>
+      <match lemma="bœuf" tags="n.*"/>
+      <match lemma="veau" tags="n.*"/>
+      <match lemma="taureau" tags="n.*"/>
       <match lemma="cheval" tags="n.*"/>
+      <match lemma="jument" tags="n.*"/>
+      <match lemma="poulain" tags="n.*"/>
       <match lemma="àne" tags="n.*"/>
+      <match lemma="bétail" tags="n.*"/>
     </or>
   </rule>
   <rule weight="1.0">
     <match lemma="élever" tags="vblex.*"><select lemma="educar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="prn.*"/>
+    </repeat>
     <or>
       <match tags="det.*"/>
       <match tags="num"/>
       <match tags="num.*"/>
+      <match lemma="de" tags="pr"/>
     </or>
     <or>
       <match lemma="enfant" tags="n.*"/>
       <match lemma="fils" tags="n.*"/>
+      <match lemma="fille" tags="n.*"/>
       <match lemma="petit-fils" tags="n.*"/>
     </or>
   </rule>
   <rule weight="1.0">
     <match lemma="élever" tags="vblex.*"><select lemma="educar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="prn.*"/>
+    </repeat>
     <match lemma="de" tags="pr"/>
     <match tags="det.*"/>
     <or>
       <match lemma="enfant" tags="n.*"/>
       <match lemma="fils" tags="n.*"/>
+      <match lemma="fille" tags="n.*"/>
       <match lemma="petit-fils" tags="n.*"/>
     </or>
   </rule>

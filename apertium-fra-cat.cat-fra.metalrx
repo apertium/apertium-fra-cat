@@ -1907,6 +1907,9 @@
   <!-- florir >> fleurir, moisir -->
   <macro name="verb_nopron_pron" p1="florir" p2="fleurir" p3="moisir" />
 
+  <!-- pondre >> pondre, coucher -->
+  <macro name="verb_nopron_pron" p1="pondre" p2="pondre" p3="coucher" />
+
   <!-- jubilar >> mettre# à la retraite, prendre# sa retraite -->
   <macro name="verb_nopron_pron" p1="jubilar" p2="mettre# à la retraite" p3="prendre# sa retraite" />
 
@@ -2503,6 +2506,38 @@
     <match lemma="passar" tags="vblex.*"><select lemma="arriver"/></match>
   </rule>
 
+  <!-- rodar >> rouler, tourner -->
+  <rule weight="0.8">
+    <match lemma="rodar" tags="vblex.*"><select lemma="rouler"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rodar" tags="vblex.*"><select lemma="tourner"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="pel·lícula" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rodar" tags="vblex.*"><select lemma="tourner"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="pel·lícula" tags="n.*"/>
+      <match lemma="cap" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rodar" tags="vblex.*"><select lemma="tourner"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match tags="adj.*"/>
+    <match lemma="pel·lícula" tags="n.*"/>
+  </rule>
+
   <!-- succeir >> succéder, arriver -->
   <rule weight="0.8">
     <match lemma="succeir" tags="vblex.*"><select lemma="succéder"/></match>
@@ -2723,6 +2758,22 @@
   </rule>
 
 <!-- ADJ -->
+
+  <!-- glacial >> glacial, glaciaire -->
+  <rule weight="0.8">
+    <match lemma="glacial" tags="adj.*"><select lemma="glacial"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="edat" tags="n.*"/>
+      <match lemma="era" tags="n.*"/>
+      <match lemma="període" tags="n.*"/>
+      <match lemma="llac" tags="n.*"/>
+      <match lemma="vall" tags="n.*"/>
+      <match lemma="màxim" tags="n.*"/>
+    </or>
+    <match lemma="glacial" tags="adj.*"><select lemma="glaciaire"/></match>
+  </rule>
 
   <!-- mongòlic >> mongolien, mongolique -->
   <rule weight="0.8">
@@ -3023,6 +3074,82 @@
 
 <!-- N -->
 
+  <!-- geni >> génie, caractère -->
+  <rule weight="0.8">
+    <match lemma="geni" tags="n.*"><select lemma="génie"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tenir" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="geni" tags="n.m.sg"><select lemma="caractère"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tenir" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="adj.*"/>
+    </or>
+    <match lemma="geni" tags="n.m.sg"><select lemma="caractère"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tenir" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match tags="adj.*"/>
+    <match lemma="geni" tags="n.m.sg"><select lemma="caractère"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tenir" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="molt"/>
+    <match lemma="de" tags="pr"/>
+    <match lemma="geni" tags="n.m.sg"><select lemma="caractère"/></match>
+  </rule>
+
+  <!-- enginyeria >> ingénierie, génie -->
+  <rule weight="0.8">
+    <match lemma="enginyeria" tags="n.*"><select lemma="ingénierie"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="enginyeria" tags="n.*"><select lemma="génie"/></match>
+    <or>
+      <match lemma="civil" tags="adj.*"/>
+      <match lemma="militar" tags="adj.*"/>
+      <match lemma="genètic" tags="adj.*"/>
+      <match lemma="marítim" tags="adj.*"/>
+    </or>
+  </rule>
+
+  <!-- bosc >> bois, forêt -->
+  <rule weight="0.8">
+    <match lemma="bosc" tags="n.*"><select lemma="bois"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="bosc" tags="n.*"><select lemma="forêt"/></match>
+    <match lemma="tropical" tags="adj.*"/>
+  </rule>
+
+  <!-- traça >> trace, habileté -->
+  <rule weight="0.8">
+    <match lemma="traça" tags="n.*"><select lemma="trace"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="molt" tags="adj.*"/>
+      <match lemma="poc" tags="adj.*"/>
+    </or>
+    <match lemma="traça" tags="n.f.sg"><select lemma="habilité"/></match>
+  </rule>
+
   <!-- bohemi >> bohémien, bohème -->
   <rule weight="0.8">
     <match lemma="bohemi" tags="n.*"><select lemma="bohémien"/></match>
@@ -3246,6 +3373,11 @@
   <rule weight="1.0">
     <match tags="det.pos.*"/>
     <match lemma="època" tags="n.*"><select lemma="temps"/></match>
+  </rule>
+
+  <!-- sabatilla >> basket/tennis/chausson, pantoufle -->
+  <rule weight="0.8">
+    <match lemma="sabatilla" tags="n.*"><select lemma="basket"/></match>
   </rule>
 
   <!-- investigació >> recherche, enquête -->
@@ -4187,10 +4319,33 @@
       <match lemma="animal" tags="n.*"/>
       <match lemma="peix" tags="n.*"/>
       <match lemma="gos" tags="n.*"/>
+      <match lemma="ca" tags="n.*"/>
       <match lemma="gat" tags="n.*"/>
       <match lemma="bou" tags="n.*"/>
       <match lemma="vaca" tags="n.*"/>
+      <match lemma="vedella" tags="n.*"/>
+      <match lemma="be" tags="n.*"/>
+      <match lemma="corder" tags="n.*"/>
+      <match lemma="xai" tags="n.*"/>
+      <match lemma="anyell" tags="n.*"/>
+      <match lemma="cabra" tags="n.*"/>
+      <match lemma="gall" tags="n.*"/>
+      <match lemma="gallina" tags="n.*"/>
+      <match lemma="pollastre" tags="n.*"/>
+      <match lemma="conill" tags="n.*"/>
+      <match lemma="ratolí" tags="n.*"/>
+      <match lemma="rata" tags="n.*"/>
+      <match lemma="guineu" tags="n.*"/>
+      <match lemma="llop" tags="n.*"/>
+      <match lemma="lleó" tags="n.*"/>
+      <match lemma="elefant" tags="n.*"/>
+      <match lemma="girafa" tags="n.*"/>
+      <match lemma="tigre" tags="n.*"/>
     </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cap" tags="n.*"><select lemma="tête"/></match>
+    <match lemma="nuclear" tags="adj.*"/>
   </rule>
 
   <!--
