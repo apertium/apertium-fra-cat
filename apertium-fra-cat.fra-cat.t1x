@@ -215,13 +215,14 @@
       <cat-item lemma="désirer" tags="vblex.*"/>
       <cat-item lemma="faire" tags="vblex.*"/>
       <cat-item lemma="falloir" tags="vblex.*"/>
+      <cat-item lemma="gagner" tags="vblex.*"/>
+      <cat-item lemma="gagner" tags="vbmod.*"/>
       <cat-item lemma="imaginer" tags="vblex.*"/>
       <cat-item lemma="manger" tags="vblex.*"/>
       <cat-item lemma="sentir" tags="vblex.*"/>
+      <cat-item lemma="voler" tags="vblex.*"/>
       <cat-item lemma="vouloir" tags="vblex.*"/>
       <cat-item lemma="vouloir" tags="vbmod.*"/>
-      <cat-item lemma="gagner" tags="vblex.*"/>
-      <cat-item lemma="gagner" tags="vbmod.*"/>
     </def-cat>
     <def-cat n="verb">
       <cat-item tags="vblex.*"/>
@@ -793,6 +794,9 @@
       <list-item v="Amérique du Nord"/>
       <list-item v="Amérique du Sud"/>
       <list-item v="Océanie"/>
+      <list-item v="Eurasie"/>
+      <list-item v="Pangée"/>
+      <list-item v="Gondwana"/>
       <list-item v="Australie"/>
       <list-item v="Queensland"/>
       <list-item v="Nouvelle-Zélande"/>

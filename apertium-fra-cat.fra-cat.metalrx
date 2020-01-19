@@ -449,6 +449,28 @@
       <match lemma="copine" tags="n.*"/>
       <match lemma="collègue" tags="n.*"/>
     </def-seq>
+
+    <def-seq n="bétail">
+      <match lemma="poulet" tags="n.*"/>
+      <match lemma="poussin" tags="n.*"/>
+      <match lemma="coq" tags="n.*"/>
+      <match lemma="poule" tags="n.*"/>
+      <match lemma="dinde" tags="n.*"/>
+      <match lemma="canard" tags="n.*"/>
+      <match lemma="volaille" tags="n.*"/>
+      <match lemma="brebis" tags="n.*"/>
+      <match lemma="chèvre" tags="n.*"/>
+      <match lemma="mouton" tags="n.*"/>
+      <match lemma="vache" tags="n.*"/>
+      <match lemma="bœuf" tags="n.*"/>
+      <match lemma="veau" tags="n.*"/>
+      <match lemma="taureau" tags="n.*"/>
+      <match lemma="cheval" tags="n.*"/>
+      <match lemma="jument" tags="n.*"/>
+      <match lemma="poulain" tags="n.*"/>
+      <match lemma="àne" tags="n.*"/>
+      <match lemma="bétail" tags="n.*"/>
+    </def-seq>
   </def-seqs>
 
 <rules>
@@ -762,6 +784,23 @@
   </rule>
 
 <!-- **************** V **************** -->
+
+  <!-- jurer >> jurar, renegar -->
+  <rule weight="0.8">
+    <match lemma="jurer" tags="vblex.*"><select lemma="jurar"/></match>
+  </rule>
+
+  <!-- sacrer >> consagrar, renegar -->
+  <rule weight="0.8">
+    <match lemma="sacrer" tags="vblex.*"><select lemma="consagrar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sacrer" tags="vblex.*"><select lemma="renegar"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="sent"/>
+  </rule>
 
   <!-- jouer >> jugar, fer -->
   <rule weight="0.8">
@@ -1257,7 +1296,15 @@
       <match tags="np.ant"/>
       <match tags="np.ant.*"/>
       <match tags="np.cog.*"/>
+      <match tags="n.*"/>
     </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="appeler" tags="vblex.*.p3.*"><select lemma="anomenar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="n.*"/>
   </rule>
   <rule weight="1.0">
     <match lemma="quelqu'un" tags="prn.*"/>
@@ -1341,9 +1388,43 @@
 
 <!-- **************** N **************** -->
 
+  <!-- encadrement >> marc, direcció -->
+  <rule weight="0.8">
+    <match lemma="encadrement" tags="n.*"><select lemma="marc"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="encadrement" tags="n.*"><select lemma="direcció"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="société" tags="n.*"/>
+      <match lemma="entreprise" tags="n.*"/>
+      <match lemma="équipe" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="personnel" tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <match lemma="encadrement" tags="n.*"><select lemma="direcció"/></match>
+  </rule>
+
   <!-- portable >> mòbil, portàtil -->
   <rule weight="0.8">
-    <match lemma="portable" tags="adj.*"><select lemma="mòbil"/></match>
+    <match lemma="portable" tags="n.*"><select lemma="mòbil"/></match>
+  </rule>
+
+  <!-- touche >> tecla, sacada# de banda -->
+  <rule weight="0.8">
+    <match lemma="touche" tags="n.*"><select lemma="tecla"/></match>
+  </rule>
+
+  <!-- jumelle >> prismàtics, bessó -->
+  <rule weight="0.8">
+    <match lemma="jumelle" tags="n.f.pl"><select lemma="prismàtics"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or><match tags="num.*"/><match tags="num"/></or>
+    <match lemma="jumelle" tags="n.f.pl"><select lemma="bessó"/></match>
   </rule>
 
   <!-- génie >> geni, enginyeria -->
@@ -1944,9 +2025,78 @@
     <match lemma="essence" tags="n.*"><select lemma="essència"/></match>
   </rule>
   <rule weight="1.0">
+    <or>
+      <match lemma="prendre" tags="vblex.*"/>
+      <match lemma="brûler" tags="vblex.*"/>
+      <match lemma="bruler" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match lemma="essence" tags="n.*"><select lemma="gasolina"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="prendre" tags="vblex.*"/>
+      <match lemma="brûler" tags="vblex.*"/>
+      <match lemma="bruler" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.def.*"/>
+    <match lemma="essence" tags="n.*"><select lemma="gasolina"/></match>
+  </rule>
+  <rule weight="1.0">
     <match lemma="prix" tags="n.*"/>
     <match lemma="de" tags="pr"/>
     <match tags="det.def.*"/>
+    <match lemma="essence" tags="n.*"><select lemma="gasolina"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="litre" tags="n.*"/>
+      <match lemma="réservoir" tags="n.*"/>
+      <match lemma="consommation" tags="n.*"/>
+      <match lemma="bidon" tags="n.*"/>
+      <match lemma="odeur" tags="n.*"/>
+      <match lemma="panne" tags="n.*"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <match lemma="essence" tags="n.*"><select lemma="gasolina"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="essence" tags="n.*"><select lemma="gasolina"/></match>
+    <match tags="pr"/>
+    <match lemma="plomb" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="essence" tags="n.*"><select lemma="gasolina"/></match>
+    <match lemma="plombé" tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="beaucoup de"/>
+      <match lemma="peu de"/>
+    </or>
+    <match lemma="essence" tags="n.*"><select lemma="gasolina"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="essence" tags="n.*"><select lemma="gasolina"/></match>
+    <match tags="cnjcoo"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <match lemma="diesel" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="diesel" tags="n.*"/>
+    <match tags="cnjcoo"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
     <match lemma="essence" tags="n.*"><select lemma="gasolina"/></match>
   </rule>
 
@@ -2787,6 +2937,11 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- élevé >> elevat, educat -->
+  <rule weight="0.8">
+    <match lemma="élevé" tags="adj.*"><select lemma="elevat"/></match>
+  </rule>
+
   <!-- denté >> dentat, dentelat -->
   <rule weight="0.8">
     <match lemma="denté" tags="adj.*"><select lemma="dentat"/></match>
@@ -3288,25 +3443,7 @@
       <match lemma="de" tags="pr"/>
     </or>
     <or>
-      <match lemma="poulet" tags="n.*"/>
-      <match lemma="poussin" tags="n.*"/>
-      <match lemma="coq" tags="n.*"/>
-      <match lemma="poule" tags="n.*"/>
-      <match lemma="dinde" tags="n.*"/>
-      <match lemma="canard" tags="n.*"/>
-      <match lemma="volaille" tags="n.*"/>
-      <match lemma="brebis" tags="n.*"/>
-      <match lemma="chèvre" tags="n.*"/>
-      <match lemma="mouton" tags="n.*"/>
-      <match lemma="vache" tags="n.*"/>
-      <match lemma="bœuf" tags="n.*"/>
-      <match lemma="veau" tags="n.*"/>
-      <match lemma="taureau" tags="n.*"/>
-      <match lemma="cheval" tags="n.*"/>
-      <match lemma="jument" tags="n.*"/>
-      <match lemma="poulain" tags="n.*"/>
-      <match lemma="àne" tags="n.*"/>
-      <match lemma="bétail" tags="n.*"/>
+      <seq n="bétail"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -3317,25 +3454,7 @@
       <match tags="prn.*"/>
     </repeat>
     <or>
-      <match lemma="poulet" tags="n.*"/>
-      <match lemma="poussin" tags="n.*"/>
-      <match lemma="coq" tags="n.*"/>
-      <match lemma="poule" tags="n.*"/>
-      <match lemma="canard" tags="n.*"/>
-      <match lemma="dinde" tags="n.*"/>
-      <match lemma="volaille" tags="n.*"/>
-      <match lemma="brebis" tags="n.*"/>
-      <match lemma="chèvre" tags="n.*"/>
-      <match lemma="mouton" tags="n.*"/>
-      <match lemma="vache" tags="n.*"/>
-      <match lemma="bœuf" tags="n.*"/>
-      <match lemma="veau" tags="n.*"/>
-      <match lemma="taureau" tags="n.*"/>
-      <match lemma="cheval" tags="n.*"/>
-      <match lemma="jument" tags="n.*"/>
-      <match lemma="poulain" tags="n.*"/>
-      <match lemma="àne" tags="n.*"/>
-      <match lemma="bétail" tags="n.*"/>
+      <seq n="bétail"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -3354,6 +3473,10 @@
       <match lemma="fils" tags="n.*"/>
       <match lemma="fille" tags="n.*"/>
       <match lemma="petit-fils" tags="n.*"/>
+      <match lemma="frère" tags="n.*"/>
+      <match lemma="sœur" tags="n.*"/>
+      <match lemma="neuveu" tags="n.*"/>
+      <match lemma="nièce" tags="n.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -3368,6 +3491,67 @@
       <match lemma="fils" tags="n.*"/>
       <match lemma="fille" tags="n.*"/>
       <match lemma="petit-fils" tags="n.*"/>
+      <match lemma="frère" tags="n.*"/>
+      <match lemma="sœur" tags="n.*"/>
+      <match lemma="neuveu" tags="n.*"/>
+      <match lemma="nièce" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="enfant" tags="n.*"/>
+      <match lemma="fils" tags="n.*"/>
+      <match lemma="fille" tags="n.*"/>
+      <match lemma="petit-fils" tags="n.*"/>
+      <match lemma="frère" tags="n.*"/>
+      <match lemma="sœur" tags="n.*"/>
+      <match lemma="neuveu" tags="n.*"/>
+      <match lemma="nièce" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <match tags="adj.*"/>
+    </repeat>
+    <match tags="vbser.*"/>
+    <or>
+      <match lemma="élever" tags="vblex.pp.*"><select lemma="educar"/></match>
+      <match lemma="élevé" tags="adj.*"><select lemma="educar"/></match>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="élever" tags="vblex.*"><select lemma="educar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="prn.*"/>
+    </repeat>
+    <match lemma="par" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="père" tags="n.*"/>
+      <match lemma="mère" tags="n.*"/>
+      <match lemma="parent" tags="n.*"/>
+      <match lemma="grand-père" tags="n.*"/>
+      <match lemma="aïel" tags="n.*"/>
+      <match lemma="arrière-grand-père" tags="n.*"/>
+      <match lemma="oncle" tags="n.*"/>
+      <match lemma="tante" tags="n.*"/>
+    </or>
+  </rule>
+
+  <rule weight="1.0">
+    <match lemma="élever" tags="vblex.*"><select lemma="educar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="prn.*"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="enfant" tags="n.*"/>
+      <match lemma="fils" tags="n.*"/>
+      <match lemma="fille" tags="n.*"/>
+      <match lemma="petit-fils" tags="n.*"/>
+      <match lemma="frère" tags="n.*"/>
+      <match lemma="sœur" tags="n.*"/>
+      <match lemma="neuveu" tags="n.*"/>
+      <match lemma="nièce" tags="n.*"/>
     </or>
   </rule>
 

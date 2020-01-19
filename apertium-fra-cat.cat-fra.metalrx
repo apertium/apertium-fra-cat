@@ -1691,6 +1691,18 @@
 
 <!-- V -->
 
+  <!-- renegar >> renier, sacrer, jurer -->
+  <rule weight="0.8">
+    <match lemma="renegar" tags="vblex.*"><select lemma="renier"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="renegar" tags="vblex.*"><select lemma="sacrer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="sent"/>
+  </rule>
+
   <!-- assajar >> essayer, répéter -->
   <rule weight="0.8">
     <match lemma="assajar" tags="vblex.*"><select lemma="essayer"/></match>
