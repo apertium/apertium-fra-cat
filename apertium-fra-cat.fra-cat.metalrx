@@ -1466,6 +1466,26 @@
 
 <!-- **************** N **************** -->
 
+  <!-- frappe >> toc, picatge -->
+  <rule weight="0.8">
+    <match lemma="frappe" tags="n.*"><select lemma="toc"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="faute" tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <match lemma="frappe" tags="n.*"><select lemma="picatge"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="force" tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <match lemma="frappe" tags="n.*"><select lemma="xoc"/></match>
+  </rule>
+
+  <!-- placard >> armari, armari# de paret, cartell -->
+  <rule weight="0.8">
+    <match lemma="placard" tags="n.*"><select lemma="armari"/></match>
+  </rule>
+
   <!-- campagne >> campanya, camp -->
   <rule weight="0.8">
     <match lemma="campagne" tags="n.*"><select lemma="campanya"/></match>

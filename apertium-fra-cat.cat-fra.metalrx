@@ -1859,6 +1859,12 @@
   <!-- abocar >> verser, pencher -->
   <macro name="verb_nopron_pron" p1="abocar" p2="verser" p3="pencher"/>
 
+  <!-- acollonir >> foutre# la trouille à, faire# la trouille -->
+  <macro name="verb_nopron_pron" p1="acollonir" p2="foutre# la trouille à" p3="faire# la trouille"/>
+
+  <!-- acovardir >> intimider, troubler -->
+  <macro name="verb_nopron_pron" p1="acovardir" p2="intimider" p3="troubler"/>
+
   <!-- atabalar >> accabler, affoler -->
   <macro name="verb_nopron_pron" p1="atabalar" p2="accabler" p3="affoler"/>
 
@@ -3085,6 +3091,43 @@
   </rule>
 
 <!-- N -->
+
+  <!-- calandre >> calàndria, calandra -->
+  <rule weight="0.8">
+    <match lemma="calandre" tags="n.*"><select lemma="calàndria"/></match>
+  </rule>
+
+  <!-- camp >> champ, camp -->
+  <rule weight="0.8">
+    <match lemma="camp" tags="n.*"><select lemma="champ"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="camp" tags="n.*"><select lemma="camp"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="concentració" tags="n.*"/>
+      <match lemma="detenció" tags="n.*"/>
+      <match lemma="entrenament" tags="n.*"/>
+      <match lemma="extermini" tags="n.*"/>
+      <match lemma="presoner" tags="n.*"/>
+      <match lemma="treball" tags="n.*"/>
+      <match lemma="Auschwitz" tags="np.*"/>
+    </or>
+  </rule>
+
+  <!-- papa >> pape, papa -->
+  <rule weight="0.8">
+    <match lemma="papa" tags="n.*"><select lemma="pape"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.pos.*"/>
+    <match lemma="papa" tags="n.*"><select lemma="papa"/></match>
+  </rule>
+
+  <!-- cartell >> affiche, panneau, placard -->
+  <rule weight="0.8">
+    <match lemma="cartell" tags="n.*"><select lemma="affiche"/></match>
+  </rule>
 
   <!-- geni >> génie, caractère -->
   <rule weight="0.8">

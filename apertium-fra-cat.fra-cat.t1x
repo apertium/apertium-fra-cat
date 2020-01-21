@@ -154,6 +154,9 @@
     <def-cat n="prnitg">
       <cat-item tags="prn.itg.*"/>
     </def-cat>
+    <def-cat n="prnpro">
+      <cat-item tags="prn.pro.*"/>
+    </def-cat>
     <def-cat n="prnenc">
       <cat-item tags="prn.enc.*"/>
     </def-cat>
@@ -824,7 +827,11 @@
       <list-item v="Normandie"/>
       <list-item v="Gascogne"/>
       <list-item v="Béarn"/>
+      <list-item v="Aquitaine"/>
+      <list-item v="Nouvelle-Aquitaine"/>
+<!--      <list-item v="Gironde"/> -->
       <list-item v="Auvergne"/>
+<!--      <list-item v="Limousin"/> -->
       <list-item v="Provence"/>
       <list-item v="Vaucluse"/>
       <list-item v="Savoie"/>
@@ -833,8 +840,16 @@
       <list-item v="Ardèche"/>
 <!--      <list-item v="Vivarais"/> -->
       <list-item v="Var"/>
+      <list-item v="Bourgogne"/>
+      <list-item v="Lorraine"/>
+      <list-item v="Alsace"/>
       <list-item v="Grande-Bretagne"/>
       <list-item v="Angleterre"/>
+      <list-item v="Yorkshire"/>
+      <list-item v="Lancashire"/>
+      <list-item v="Essex"/>
+      <list-item v="Cornouaille"/>
+      <list-item v="Cornouailles"/>
       <list-item v="Pays de Galles"/>
       <list-item v="Écosse"/>
       <list-item v="Irlande"/>
@@ -842,6 +857,7 @@
       <list-item v="Wallonie"/>
       <list-item v="Flandre"/>
       <list-item v="Hollande"/>
+      <list-item v="Frise"/>
       <list-item v="Allemagne"/>
       <list-item v="Bavière"/>
       <list-item v="Brandenbourg"/>
@@ -856,10 +872,14 @@
       <list-item v="Souabe"/>
       <list-item v="Thuringe"/>
       <list-item v="Schleswig-Holstein"/>
+      <list-item v="Schleswig"/>
+      <list-item v="Holstein"/>
       <list-item v="Sorabie"/>
       <list-item v="Lusace"/>
       <list-item v="Haute-Lusace"/>
       <list-item v="Basse-Lusace"/>
+      <list-item v="Prusse"/>
+      <list-item v="Prusse-Orientale"/>
       <list-item v="Danemark"/>
       <list-item v="Islande"/>
       <list-item v="Norvège"/>
@@ -873,7 +893,13 @@
       <list-item v="Tatarstan"/>
       <list-item v="Bashkortostan"/>
       <list-item v="Oudmourtie"/>
+      <list-item v="Mordovie"/>
+      <list-item v="Kalmoukie"/>
+      <list-item v="Touva"/>
+      <list-item v="Bouriatie"/>
+      <list-item v="Iakoutie"/>
       <list-item v="Yakoutie"/>
+      <list-item v="Kamtchatka"/>
       <list-item v="Estonie"/>
       <list-item v="Lettonie"/>
       <list-item v="Lithuanie"/>
@@ -903,8 +929,12 @@
       <list-item v="Bulgarie"/>
       <list-item v="Grèce"/>
       <list-item v="Ukraine"/>
+      <list-item v="Crimée"/>
+      <list-item v="Galicie"/>
+      <list-item v="Podolie"/>
       <list-item v="Biélorussie"/>
       <list-item v="Moldavie"/>
+      <list-item v="Transdnistrie"/>
       <list-item v="Turquie"/>
       <list-item v="Syrie"/>
       <list-item v="Kurdistan"/>
@@ -936,6 +966,7 @@
       <!-- <list-item v="Boutan"/> -->
       <!-- <list-item v="Tibet"/> -->
       <list-item v="Chine"/>
+      <list-item v="Mandchourie"/>
       <list-item v="Corée"/>
       <list-item v="Corée du Nord"/>
       <list-item v="Corée du Sud"/>
@@ -1192,6 +1223,7 @@
       <list-item v="kirghiz"/>
       <list-item v="tadjik"/>
       <list-item v="mongol"/>
+      <list-item v="bouriate"/>
       <list-item v="mandchou"/>
       <list-item v="toungouse"/>
       <list-item v="ouïghour"/>
@@ -3433,17 +3465,17 @@
 	  <test>
 	    <equal><clip pos="1" side="tl" part="a_verb_pron"/><lit-tag v="vblex.pron"/></equal>
 	  </test>
-          <choose>
+      <choose>
 	    <when>
 	      <test>
 	        <equal><clip pos="2" side="tl" part="persona"/><lit-tag v="p3"/></equal>
 	      </test>
 	      <let>
-                <var n="pronom"/>
-                <get-case-from pos="1">
-                  <lit v="es"/>
-                </get-case-from>
-              </let>
+           <var n="pronom"/>
+           <get-case-from pos="1">
+             <lit v="es"/>
+           </get-case-from>
+         </let>
 	      <append n="pronom">
 	        <lit-tag v="prn.pro.ref.p3.mf.sp"/>
 	        <lit v="$^"/>
@@ -3451,11 +3483,11 @@
 	    </when>
 	    <otherwise>
 	      <let>
-                <var n="pronom"/>
-                <get-case-from pos="1">
-                  <lit v="prpers"/>
-                </get-case-from>
-              </let>
+            <var n="pronom"/>
+            <get-case-from pos="1">
+               <lit v="prpers"/>
+             </get-case-from>
+          </let>
 	      <append n="pronom">
 	        <lit-tag v="prn.pro"/>
                 <clip pos="2" side="tl" part="persona"/>
@@ -3481,6 +3513,73 @@
             </when>
           </choose>
 	  <let><clip pos="1" side="tl" part="a_verb_pron"/><lit-tag v="vblex"/></let>
+	</when>
+	<when>
+	  <test>
+	    <and>
+	      <equal caseless="yes"><clip pos="1" side="sl" part="lemh"/><lit v="aimer"/></equal>
+	      <or>
+	        <equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="agradar"/></equal>
+	        <equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="agradar_pl"/></equal>
+	      </or>
+	      <or>
+	        <equal><clip pos="1" side="tl" part="persona"/><lit-tag v="p1"/></equal>
+	        <equal><clip pos="1" side="tl" part="persona"/><lit-tag v="p2"/></equal>
+	        <equal><clip pos="1" side="tl" part="persona"/><lit-tag v="p3"/></equal>
+	      </or>
+	    </and>
+	  </test>
+      <choose>
+        <when>
+	      <test>
+	        <equal><clip pos="2" side="tl" part="persona"/><lit-tag v="p3"/></equal>
+	      </test>
+	      <let>
+           <var n="pronom"/>
+           <get-case-from pos="1">
+             <lit v="li"/>
+           </get-case-from>
+         </let>
+	      <append n="pronom">
+	        <lit-tag v="prn.pro.p3.mf"/>
+	        <clip pos="1" side="tl" part="nbr"/>
+	        <lit v="$^"/>
+	      </append>	
+	    </when>
+	    <otherwise>
+	      <let>
+            <var n="pronom"/>
+            <get-case-from pos="1">
+               <lit v="prpers"/>
+             </get-case-from>
+          </let>
+	      <append n="pronom">
+	        <lit-tag v="prn.pro"/>
+                <clip pos="2" side="tl" part="persona"/>
+	        <lit-tag v="mf"/>
+	        <clip pos="1" side="tl" part="nbr"/>
+	        <lit v="$^"/>
+	      </append>	
+	    </otherwise>
+      </choose>
+	  <let><clip pos="2" side="tl" part="persona"/><lit-tag v="p3"/></let>
+	  <choose>
+        <when>
+	      <test>
+	        <equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="agradar_pl"/></equal>
+	      </test>
+	      <let><clip pos="2" side="tl" part="nbr"/><lit-tag v="pl"/></let>
+	      <let>
+	        <clip pos="1" side="tl" part="lemh"/>
+            <get-case-from pos="1">
+               <lit v="agradar"/>
+             </get-case-from>
+          </let>
+        </when>
+        <otherwise>
+	      <let><clip pos="2" side="tl" part="nbr"/><lit-tag v="sg"/></let>
+        </otherwise>
+	  </choose>
 	</when>
       </choose>
     </def-macro>
@@ -13985,6 +14084,66 @@ is not applicable because gender and number cannot be taken from previous rules 
             <clip pos="3" side="tl" part="whole"/>
           </lu>
         </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: ne lui parle pas > no li parla">
+      <pattern>
+        <pattern-item n="neadv"/>
+        <pattern-item n="prnpro"/>
+        <pattern-item n="verbconj"/>
+        <pattern-item n="pas"/>
+      </pattern>
+      <action>
+        <call-macro n="f_set_pron">
+          <with-param pos="3"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
+        <choose>
+	  <when>
+	    <test>
+	      <equal><var n="pronom"/><lit v=""/></equal>
+	    </test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+            </out>
+	  </when>
+	  <otherwise>
+            <out>
+              <lu>
+	            <var n="pronom"/>
+              </lu>
+              <b/>
+              <lu>
+                <get-case-from pos="2">
+                  <clip pos="1" side="tl" part="whole"/>
+                </get-case-from>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+            </out>
+	  </otherwise>
+        </choose>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
       </action>
     </rule>
 
