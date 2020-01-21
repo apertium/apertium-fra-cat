@@ -790,6 +790,84 @@
     <match lemma="jurer" tags="vblex.*"><select lemma="jurar"/></match>
   </rule>
 
+  <!-- aimer >> estimar, agradar -->
+  <rule weight="0.8">
+    <match lemma="aimer" tags="vblex.*"><select lemma="estimar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="aimer" tags="vblex.*"><select lemma="agradar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or><match tags="vblex.inf"/><match tags="vbser.inf"/><match tags="vbhaver.inf"/><match tags="vbmod.inf"/></or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="aimer" tags="vblex.*"><select lemma="agradar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*.sg"/>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="aimer" tags="vblex.*"><select lemma="agradar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*.sg"/>
+    <match tags="adj.*"/>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="aimer" tags="vblex.*"><select lemma="agradar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*.sg"/>
+    <or>
+      <match tags="adv"/>
+      <match tags="preadv"/>
+    </or>
+    <match tags="adj.*"/>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="aimer" tags="vblex.*"><select lemma="agradar_pl"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*.pl"/>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="aimer" tags="vblex.*"><select lemma="agradar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*.pl"/>
+    <match tags="adj.*"/>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="aimer" tags="vblex.*"><select lemma="agradar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*.pl"/>
+    <or>
+      <match tags="adv"/>
+      <match tags="preadv"/>
+    </or>
+    <match tags="adj.*"/>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="aimer" tags="vblex.inf"><select lemma="estimar"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="aimer" tags="vblex.ger"><select lemma="estimar"/></match>
+  </rule>
+
   <!-- sacrer >> consagrar, renegar -->
   <rule weight="0.8">
     <match lemma="sacrer" tags="vblex.*"><select lemma="consagrar"/></match>
@@ -1387,6 +1465,23 @@
   <macro name="verb_prep" p1="chasser" p2="caçar" p3="de" p4="expulsar" />
 
 <!-- **************** N **************** -->
+
+  <!-- campagne >> campanya, camp -->
+  <rule weight="0.8">
+    <match lemma="campagne" tags="n.*"><select lemma="campanya"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.*"/>
+    <match lemma="campagne" tags="n.f.sg"><select lemma="camp"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match tags="det.def.*"/>
+    <match lemma="campagne" tags="n.f.sg"><select lemma="campanya"/></match>
+    <or>
+      <match tags="pr"/>
+      <match tags="rel.*"/>
+    </or>
+  </rule>
 
   <!-- encadrement >> marc, direcció -->
   <rule weight="0.8">
