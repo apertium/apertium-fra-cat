@@ -1843,6 +1843,26 @@
     <match lemma="població" tags="n.*"/>
   </rule>
 
+  <!-- mantenir >> entretenir, maintenir -->
+  <rule weight="0.8">
+    <match lemma="mantenir" tags="vblex.*"><select lemma="maintenir"/></match>
+  </rule>
+<!--
+  <rule weight="0.8">
+    <match lemma="mantenir" tags="vblex.*"><select lemma="entretenir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="mantenir" tags="vblex.*"><select lemma="maintenir"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="preadv"/>
+        <match tags="adv"/>
+      </or>
+    </repeat>
+    <match tags="adj.*"/>
+  </rule>
+-->
+
   <!-- congelar >> congeler, geler -->
   <rule weight="0.8">
     <match lemma="congelar" tags="vblex.*"><select lemma="congeler"/></match>
@@ -1867,6 +1887,42 @@
 
   <!-- atabalar >> accabler, affoler -->
   <macro name="verb_nopron_pron" p1="atabalar" p2="accabler" p3="affoler"/>
+
+  <!-- entretenir >> maintenir, amuser -->
+  <macro name="verb_nopron_pron" p1="entretenir" p2="maintenir" p3="amuser"/>
+
+  <!-- escaure >> convenir, aller, échoir, seoir; trouver -->
+  <macro name="verb_nopron_pron" p1="escaure" p2="convenir" p3="trouver"/>
+  <rule weight="1.4">
+    <match lemma="escaure" tags="vblex.*"><select lemma="échoir"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv.*"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="honor" tags="n.*"/>
+  </rule>
+  <rule weight="1.4">
+    <match lemma="escaure" tags="vblex.*"><select lemma="échoir"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv.*"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match tags="adj.*"/>
+    <match lemma="honor" tags="n.*"/>
+  </rule>
+  <rule weight="1.4">
+    <match lemma="escaure" tags="vblex.*"><select lemma="aller"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="preadv"/>
+        <match tags="adv"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="bé" tags="adv"/>
+      <match lemma="malament" tags="adv"/>
+    </or>
+  </rule>
 
   <!-- estar >> être, rester -->
   <macro name="verb_nopron_pron_prep" p1="estar" p2="être" p3="rester" p4="a"/>
@@ -2777,6 +2833,24 @@
 
 <!-- ADJ -->
 
+  <!-- casolà >> casanier, familial -->
+  <rule weight="0.8">
+    <match lemma="casolà" tags="adj.*"><select lemma="casanier"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="cuina" tags="n.*"/>
+      <match lemma="costum" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
+    </repeat>
+    <match lemma="casolà" tags="adj.*"><select lemma="familial"/></match>
+  </rule>
+
   <!-- glacial >> glacial, glaciaire -->
   <rule weight="0.8">
     <match lemma="glacial" tags="adj.*"><select lemma="glacial"/></match>
@@ -3092,9 +3166,12 @@
 
 <!-- N -->
 
-  <!-- calandre >> calàndria, calandra -->
+  <!-- entrant >> enfoncement, entrée -->
   <rule weight="0.8">
-    <match lemma="calandre" tags="n.*"><select lemma="calàndria"/></match>
+    <match lemma="entrant" tags="n.*"><select lemma="enfoncement"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="entrant" tags="n.m.pl"><select lemma="entrée"/></match>
   </rule>
 
   <!-- camp >> champ, camp -->
@@ -4612,6 +4689,7 @@
   <macro name="noms_propis" p1="Eugènia" p2="Eugénie" />
   <macro name="noms_propis" p1="Balduí" p2="Baudouin" />
   <macro name="noms_propis" p1="Leopold" p2="Léopold" />
+  <macro name="noms_propis" p1="Amadeu" p2="Amédée" />
 
 </rules>
 </metalrx>

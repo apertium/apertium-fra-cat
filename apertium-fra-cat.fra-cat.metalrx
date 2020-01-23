@@ -1466,6 +1466,28 @@
 
 <!-- **************** N **************** -->
 
+  <!-- licencié >> acomiadat, llicenciat -->
+  <rule weight="0.8">
+    <match lemma="licencié" tags="n.*"><select lemma="acomiadat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="licencié" tags="n.*"><select lemma="llicenciat"/></match>
+    <or>
+      <match lemma="ès" tags="pr"/>
+      <match lemma="en" tags="pr"/>
+    </or>
+  </rule>
+
+  <!-- calandre >> calàndria, calandra -->
+  <rule weight="0.8">
+    <match lemma="calandre" tags="n.*"><select lemma="calàndria"/></match>
+  </rule>
+
+  <!-- rapporteur >> relator, transportador -->
+  <rule weight="0.8">
+    <match lemma="rapporteur" tags="n.*"><select lemma="relator"/></match>
+  </rule>
+
   <!-- frappe >> toc, picatge -->
   <rule weight="0.8">
     <match lemma="frappe" tags="n.*"><select lemma="toc"/></match>
@@ -3782,6 +3804,7 @@
   <macro name="noms_propres" p1="Eugénie" p2="Eugènia" />
   <macro name="noms_propres" p1="Baudouin" p2="Balduí" />
   <macro name="noms_propres" p1="Léopold" p2="Leopold" />
+  <macro name="noms_propres" p1="Amédée" p2="Amadeu" />
 
 </rules>
 </metalrx>
