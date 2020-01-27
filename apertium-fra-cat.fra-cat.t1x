@@ -423,11 +423,13 @@
     <def-cat n="verbospron"> <!-- verbs pronominals en fra però amb l'equivalent cat no pronominal -->
       <cat-item lemma="asseoir" tags="vblex.*"/>
       <cat-item lemma="heurter" tags="vblex.*"/>
+      <cat-item lemma="passer" tags="vblex.*"/>
       <cat-item lemma="taire" tags="vblex.*"/>
     </def-cat>
     <def-cat n="verbospron_pp">
       <cat-item lemma="asseoir" tags="vblex.pp.*"/>
       <cat-item lemma="heurter" tags="vblex.pp.*"/>
+      <cat-item lemma="passer" tags="vblex.pp.*"/>
       <cat-item lemma="taire" tags="vblex.pp.*"/>
     </def-cat>
     <def-cat n="vbambser_pp">
@@ -783,8 +785,9 @@
 
     <def-list n="vb_pronfra_noproncat">
       <list-item v="assoir"/>
-      <list-item v="taire"/>
       <list-item v="heurter"/>
+      <list-item v="passer"/>
+      <list-item v="taire"/>
     </def-list>
 
     <def-list n="pays">
@@ -848,6 +851,7 @@
       <list-item v="Yorkshire"/>
       <list-item v="Lancashire"/>
       <list-item v="Essex"/>
+      <list-item v="Devon"/>
       <list-item v="Cornouaille"/>
       <list-item v="Cornouailles"/>
       <list-item v="Pays de Galles"/>
@@ -1290,6 +1294,9 @@
       <list-item v="ibère"/>
       <list-item v="étrusque"/>
       <list-item v="latin"/>
+      <list-item v="sabin"/>
+      <list-item v="ombrien"/>
+      <list-item v="osque"/>
       <list-item v="thrace"/>
       <list-item v="illyrien"/>
       <list-item v="troyen"/>

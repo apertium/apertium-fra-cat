@@ -785,6 +785,19 @@
 
 <!-- **************** V **************** -->
 
+  <!-- brosser >> respallar, rentar -->
+  <rule weight="0.8">
+    <match lemma="brosser" tags="vblex.*"><select lemma="respallar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="brosser" tags="vblex.*"><select lemma="rentar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="dent" tags="n.*"/>
+  </rule>
+
   <!-- jurer >> jurar, renegar -->
   <rule weight="0.8">
     <match lemma="jurer" tags="vblex.*"><select lemma="jurar"/></match>
@@ -1044,6 +1057,9 @@
     <match lemma="le" tags="det.*"/>
     <match lemma="table" tags="n.*"/>
   </rule>
+
+  <!-- raser >> arrasar, afaitar -->
+  <macro name="verb_nopron_pron" p1="raser" p2="arrasar" p3="afaitar" />
 
   <!-- tromper >> enganyar, equivocar -->
   <macro name="verb_nopron_pron" p1="tromper" p2="enganyar" p3="equivocar" />
@@ -1466,6 +1482,67 @@
 
 <!-- **************** N **************** -->
 
+  <!-- protecteur >> protector, patró -->
+  <rule weight="0.8">
+    <match lemma="protecteur" tags="n.*"><select lemma="protector"/></match>
+  </rule>
+
+  <!-- partenaire >> soci, parella -->
+  <rule weight="0.8">
+    <match lemma="partenaire" tags="n.*"><select lemma="soci"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.pos.*"/>
+    <match lemma="partenaire" tags="n.*"><select lemma="parella"/></match>
+  </rule>
+
+  <!-- émission >> emissió, programa -->
+  <rule weight="0.8">
+    <match lemma="émission" tags="n.*"><select lemma="emissió"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="émission" tags="n.*"><select lemma="programa"/></match>
+    <repeat from="0" upto="1">
+      <match lemma="de" tags="pr"/>
+    </repeat>
+    <or>
+      <match lemma="télé" tags="n.*"/>
+      <match lemma="télévision" tags="n.*"/>
+      <match lemma="nouvelles" tags="n.*"/>
+      <match lemma="sports" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="regarder" tags="vblex.*"/>
+      <match lemma="aimer" tags="vblex.*"/>
+      <match lemma="adorer" tags="vblex.*"/>
+      <match lemma="détester" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match lemma="de" tags="pr"/>
+    </or>
+    <match lemma="émission" tags="n.*"><select lemma="programa"/></match>
+  </rule>
+
+  <!-- traite >> munyiment, tràfic# d'esclaus, comerç# d'esclaus -->
+  <rule weight="0.8">
+    <match lemma="traite" tags="n.*"><select lemma="munyiment"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.f.sg"/>
+    <match lemma="traite" tags="n.f.sg"><select lemma="tràfic# d'esclaus"/></match>
+  </rule>
+
+  <!-- bouée >> boia, flotador, salvavides -->
+  <rule weight="0.8">
+    <match lemma="bouée" tags="n.*"><select lemma="boia"/></match>
+  </rule>
+
   <!-- licencié >> acomiadat, llicenciat -->
   <rule weight="0.8">
     <match lemma="licencié" tags="n.*"><select lemma="acomiadat"/></match>
@@ -1514,6 +1591,11 @@
   </rule>
   <rule weight="1.0">
     <match tags="det.def.*"/>
+    <match lemma="campagne" tags="n.f.sg"><select lemma="camp"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="maison" tags="n.*"/>
+    <match lemma="de" tags="pr"/>
     <match lemma="campagne" tags="n.f.sg"><select lemma="camp"/></match>
   </rule>
   <rule weight="1.2">
@@ -1846,7 +1928,10 @@
     <match lemma="enquête" tags="n.*"><select lemma="enquesta"/></match>
   </rule>
   <rule weight="1.0">
-    <match lemma="ouvrir" tags="vblex.*"/>
+    <or>
+      <match lemma="ouvrir" tags="vblex.*"/>
+      <match lemma="soutenir" tags="vblex.*"/>
+    </or>
     <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
@@ -1864,6 +1949,8 @@
       <match lemma="criminelle" tags="adj.*"/>
       <match lemma="ouvert" tags="adj.*"/>
       <match lemma="ouvert" tags="vblex.pp.*"/>
+      <match lemma="soutenu" tags="adj.*"/>
+      <match lemma="soutenir" tags="vblex.pp.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -3074,6 +3161,15 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- antipersonnel >> antipersonal, antipersones -->
+  <rule weight="0.8">
+    <match lemma="antipersonnel" tags="adj.*"><select lemma="antipersonal"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="mine" tags="n.*"/>
+    <match lemma="antipersonnel" tags="adj.*"><select lemma="antipersones"/></match>
+  </rule>
+
   <!-- élevé >> elevat, educat -->
   <rule weight="0.8">
     <match lemma="élevé" tags="adj.*"><select lemma="elevat"/></match>
@@ -3694,8 +3790,26 @@
 
 <!-- **************** ADV **************** -->
 
-<!-- plus >> més / ja -->
+  <!-- pas >> pas, no -->
+  <rule weight="0.8">
+    <match lemma="pas" tags="adv"><select lemma="pas"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="però" tags="cnjcoo"/>
+    <match lemma="pas" tags="adv"><select lemma="no"/></match>
+    <match tags="vblex.pp.*"/>
+  </rule>
 
+  <!-- encore >> encara, també -->
+  <rule weight="0.8">
+    <match lemma="encore" tags="adv"><select lemma="encara"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ou" tags="cnjcoo"/>
+    <match lemma="encore" tags="adv"><select lemma="també"/></match>
+  </rule>
+
+  <!-- plus >> més / ja -->
   <rule weight="0.8">
     <match lemma="plus" tags="adv"><select lemma="més"/></match>
   </rule>
@@ -3749,6 +3863,15 @@
   </rule>
 
 <!-- **************** NP **************** -->
+
+  <!-- Hercule >> Hèrcules, Hercule -->
+  <rule weight="0.8">
+    <match lemma="Hercule" tags="np.*"><select lemma="Hèrcules"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="Hercule" tags="np.*"><select lemma="Hercule"/></match>
+    <match tags="np.cog.*"/>
+  </rule>
 
   <macro name="noms_propres" p1="Charles" p2="Carles" />
   <macro name="noms_propres" p1="Philippe" p2="Felip" />
@@ -3805,6 +3928,7 @@
   <macro name="noms_propres" p1="Baudouin" p2="Balduí" />
   <macro name="noms_propres" p1="Léopold" p2="Leopold" />
   <macro name="noms_propres" p1="Amédée" p2="Amadeu" />
+  <macro name="noms_propres" p1="André" p2="Andreu" />
 
 </rules>
 </metalrx>

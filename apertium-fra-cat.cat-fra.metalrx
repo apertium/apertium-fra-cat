@@ -1658,6 +1658,15 @@
 
 <!-- ADV -->
 
+  <!-- també >> aussi, encore -->
+  <rule weight="0.8">
+    <match lemma="també" tags="adv"><select lemma="aussi"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="o" tags="cnjcoo"/>
+    <match lemma="també" tags="adv"><select lemma="encore"/></match>
+  </rule>
+
   <!-- gaire >> très, beaucoup -->
   <rule weight="0.8">
     <match lemma="gaire" tags="adv"><select lemma="beaucoup"/></match>
@@ -1688,8 +1697,31 @@
     <match lemma="no" tags="adv"><select lemma="non"/></match>
     <match tags="adj.*"/>
   </rule>
+  <rule weight="1.0">
+    <match lemma="mais" tags="cnjcoo"/>
+    <match lemma="no" tags="adv"><select lemma="pas"/></match>
+    <match tags="vblex.pp.*"/>
+  </rule>
 
 <!-- V -->
+
+  <!-- trempar >> tremper, bander -->
+  <rule weight="0.8">
+    <match lemma="trempar" tags="vblex.*"><select lemma="tremper"/></match>
+  </rule>
+
+  <!-- rentar >> laver, brosser -->
+  <rule weight="0.8">
+    <match lemma="rentar" tags="vblex.*"><select lemma="laver"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rentar" tags="vblex.*"><select lemma="brosser"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="dent" tags="n.*"/>
+  </rule>
 
   <!-- renegar >> renier, sacrer, jurer -->
   <rule weight="0.8">
@@ -3099,7 +3131,10 @@
     <match lemma="original" tags="adj.*"><select lemma="original"/></match>
   </rule>
   <rule weight="1.0">
-    <match tags="adv"/>
+    <or>
+      <match tags="preadv"/>
+      <match tags="adv"/>
+    </or>
     <match lemma="original" tags="adj.*"><select lemma="originel"/></match>
   </rule>
 
@@ -3166,6 +3201,73 @@
 
 <!-- N -->
 
+  <!-- patró >> patron, étalon, protecteur -->
+  <rule weight="0.8">
+    <match lemma="patró" tags="n.*"><select lemma="patron"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="segons" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="patró" tags="n.*"><select lemma="étalon"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="patró" tags="n.*"><select lemma="protecteur"/></match>
+    <match lemma="de" tags="det.*"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="art" tags="n.*"/>
+      <match lemma="pintura" tags="n.*"/>
+      <match lemma="esculptura" tags="n.*"/>
+      <match lemma="música" tags="n.*"/>
+      <match lemma="teatre" tags="n.*"/>
+      <match lemma="literatura" tags="n.*"/>
+      <match lemma="poesia" tags="n.*"/>
+      <match lemma="llengua" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- estona >> instant, temps -->
+  <rule weight="0.8">
+    <match lemma="estona" tags="n.*"><select lemma="instant"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="molt" tags="adj.*"/>
+      <match lemma="poc" tags="adj.*"/>
+    </or>
+    <match lemma="estona" tags="n.*"><select lemma="temps"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tot" tags="predet.*"/>
+    <match lemma="el" tags="det.*"/>
+    <match lemma="estona" tags="n.*"><select lemma="temps"/></match>
+  </rule>
+
+  <!-- programa >> programme, émission -->
+  <rule weight="0.8">
+    <match lemma="programa" tags="n.*"><select lemma="programme"/></match>
+  </rule>
+
+  <!-- empat >> match nul, ballottage -->
+  <rule weight="0.8">
+    <match lemma="empat" tags="n.*"><select lemma="match nul"/></match>
+  </rule>
+
+  <!-- salvavides >> bouée# de sauvetage, bouée, ceinture# de sauvetage -->
+  <rule weight="0.8">
+    <match lemma="salvavides" tags="n.*"><select lemma="bouée# de sauvetage"/></match>
+  </rule>
+
+  <!-- flotador >> bouée, flotteur -->
+  <rule weight="0.8">
+    <match lemma="flotador" tags="n.*"><select lemma="bouée"/></match>
+  </rule>
+
+  <!-- bot >> bond, canot -->
+  <rule weight="0.8">
+    <match lemma="bot" tags="n.*"><select lemma="bond"/></match>
+  </rule>
+
   <!-- entrant >> enfoncement, entrée -->
   <rule weight="0.8">
     <match lemma="entrant" tags="n.*"><select lemma="enfoncement"/></match>
@@ -3174,7 +3276,7 @@
     <match lemma="entrant" tags="n.m.pl"><select lemma="entrée"/></match>
   </rule>
 
-  <!-- camp >> champ, camp -->
+  <!-- camp >> champ, camp, campagne -->
   <rule weight="0.8">
     <match lemma="camp" tags="n.*"><select lemma="champ"/></match>
   </rule>
@@ -3191,6 +3293,95 @@
       <match lemma="Auschwitz" tags="np.*"/>
     </or>
   </rule>
+  <rule weight="1.0">
+    <match lemma="casa" tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <match lemma="camp" tags="n.f.sg"><select lemma="campagne"/></match>
+  </rule>
+
+  <!-- escalfament >> échauffement, réchauffement -->
+  <rule weight="0.8">
+    <match lemma="escalfament" tags="n.*"><select lemma="échauffement"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="escalfament" tags="n.*"><select lemma="réchauffement"/></match>
+    <or>
+      <match lemma="climàtic" tags="adj.*"/>
+      <match lemma="global" tags="adj.*"/>
+      <match lemma="plantari" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="escalfament" tags="n.*"><select lemma="réchauffement"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="el" tags="det.*"/>
+    <or>
+      <match lemma="mar" tags="n.*"/>
+      <match lemma="oceà" tags="n.*"/>
+      <match lemma="planeta" tags="n.*"/>
+      <match lemma="món" tags="n.*"/>
+      <match lemma="terra" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- parella >> couple, partenaire -->
+  <rule weight="0.8">
+    <match lemma="parella" tags="n.*"><select lemma="couple"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.pos.*"/>
+    <match lemma="parella" tags="n.*"><select lemma="partenaire"/></match>
+  </rule>
+
+  <!-- company >> collègue, copin, copine, compagnon, compagne, camarade -->
+  <rule weight="0.8">
+    <match lemma="company" tags="n.*"><select lemma="collègue"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.pos.*"/>
+    <match lemma="company" tags="n.m.*"><select lemma="copin"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.pos.*"/>
+    <match lemma="company" tags="n.f.*"><select lemma="copine"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="company" tags="n.m.*"><select lemma="compagnon"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="viatge" tags="n.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="company" tags="n.f.*"><select lemma="compagne"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="viatge" tags="n.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="company" tags="n.m.*"><select lemma="compagnon"/></match>
+    <or>
+      <match lemma="oficial" tags="adj.*"/>
+      <match lemma="sentimental" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="company" tags="n.f.*"><select lemma="compagne"/></match>
+    <or>
+      <match lemma="oficial" tags="adj.*"/>
+      <match lemma="sentimental" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="company" tags="n.*"><select lemma="camarade"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="classe" tags="n.*"/>
+      <match lemma="escola" tags="n.*"/>
+      <match lemma="col·legi" tags="n.*"/>
+      <match lemma="universitat" tags="n.*"/>
+      <match lemma="facultat" tags="n.*"/>
+      <match lemma="estudi" tags="n.*"/>
+      <match lemma="arma" tags="n.*"/>
+    </or>
+  </rule>
 
   <!-- papa >> pape, papa -->
   <rule weight="0.8">
@@ -3199,6 +3390,15 @@
   <rule weight="1.0">
     <match tags="det.pos.*"/>
     <match lemma="papa" tags="n.*"><select lemma="papa"/></match>
+  </rule>
+
+  <!-- cigala >> cigale, bite -->
+  <rule weight="0.8">
+    <match lemma="cigala" tags="n.*"><select lemma="cigale"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.pos.*"/>
+    <match lemma="cigala" tags="n.*"><select lemma="bite"/></match>
   </rule>
 
   <!-- cartell >> affiche, panneau, placard -->
@@ -3988,6 +4188,15 @@
     <match tags="adj.*"/>
   </rule>
 
+  <!-- trempera >> érection, enthousiasme -->
+  <rule weight="0.8">
+    <match lemma="trempera" tags="n.*"><select lemma="érection"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="molt" tags="adj.*"/>
+    <match lemma="trempera" tags="n.*"><select lemma="enthousiasme"/></match>
+  </rule>
+
   <!-- mossèn >> curé, monseigneur -->
   <rule weight="0.8">
     <match lemma="mossèn" tags="n.*"><select lemma="curé"/></match>
@@ -4690,6 +4899,7 @@
   <macro name="noms_propis" p1="Balduí" p2="Baudouin" />
   <macro name="noms_propis" p1="Leopold" p2="Léopold" />
   <macro name="noms_propis" p1="Amadeu" p2="Amédée" />
+  <macro name="noms_propis" p1="Amadeu" p2="André" />
 
 </rules>
 </metalrx>
