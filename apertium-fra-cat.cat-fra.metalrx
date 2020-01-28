@@ -4359,6 +4359,10 @@
     <match lemma="lloc" tags="n.*"><select lemma="place"/></match>
   </rule>
   <rule weight="1.0">
+    <match lemma="fer" tags="vblex.*"/>
+    <match lemma="lloc" tags="n.*"><select lemma="place"/></match>
+  </rule>
+  <rule weight="1.0">
     <or>
       <match lemma="tenir" tags="vblex.*"/>
       <match lemma="donar" tags="vblex.*"/>

@@ -1482,6 +1482,61 @@
 
 <!-- **************** N **************** -->
 
+  <!-- place >> lloc, plaça -->
+  <rule weight="0.8">
+    <match lemma="place" tags="n.*"><select lemma="lloc"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="place" tags="n.*"><select lemma="plaça"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.def.*"/>
+    <or>
+      <match tags="n.*"/>
+      <match tags="num.*"/>
+      <match tags="num"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="place" tags="n.*"><select lemma="plaça"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="np.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="place" tags="n.*"><select lemma="plaça"/></match>
+    <match tags="np.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="grand" tags="adj.*"/>
+    <match lemma="place" tags="n.*"><select lemma="plaça"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="place" tags="n.*"><select lemma="plaça"/></match>
+    <or>
+      <match lemma="central" tags="adj.*"/>
+      <match lemma="royal" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <or>
+      <match lemma="premier" tags="adj.*"/>
+      <match lemma="second" tags="adj.*"/>
+      <match lemma="deuxième" tags="adj.*"/>
+      <match lemma="troisième" tags="adj.*"/>
+      <match lemma="quatrième" tags="adj.*"/>
+      <match lemma="cinquième" tags="adj.*"/>
+      <match lemma="sixième" tags="adj.*"/>
+      <match lemma="septième" tags="adj.*"/>
+      <match lemma="huitième" tags="adj.*"/>
+      <match lemma="neuvième" tags="adj.*"/>
+      <match lemma="dixième" tags="adj.*"/>
+      <match lemma="dernier" tags="adj.*"/>
+      <match lemma="1er" tags="adj.*"/>
+      <match lemma="2nd" tags="adj.*"/>
+      <match lemma="3ème" tags="adj.*"/>
+    </or>
+    <match lemma="place" tags="n.*"><select lemma="lloc"/></match>
+  </rule>
+
   <!-- protecteur >> protector, patró -->
   <rule weight="0.8">
     <match lemma="protecteur" tags="n.*"><select lemma="protector"/></match>
@@ -3505,7 +3560,19 @@
       <match lemma="contrôler" tags="vblex.pp.*"/>
       <match lemma="dopé" tags="adj.*"/>
       <match lemma="doper" tags="vblex.pp.*"/>
+      <match lemma="d'accord" tags="adv"/>
     </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="être"><select lemma="estar" tags="vblex.*"/></match>
+    <repeat from="0" upto="1">
+    <or>
+      <match tags="preadv"/>
+      <match tags="adv"/>
+    </or>
+    </repeat>
+    <match lemma="en" tags="pr"/>
+    <match tags="n.*"/>
   </rule>
   <rule weight="1.0">
     <match lemma="être"><select lemma="estar" tags="vblex.*"/></match>
