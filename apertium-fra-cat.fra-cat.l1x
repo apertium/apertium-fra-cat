@@ -25,6 +25,7 @@
   </sdefs>
   <pardefs>
     <pardef n="adv">
+      <e><i>ne<s n="adv"/><j/></i></e>
       <e><i><w/><s n="adv"/><j/></i></e>
       <e><i><w/><s n="adv"/><t/><j/></i></e>
       <e><i><w/><s n="adv"/><j/><w/><s n="adv"/><j/></i></e>
@@ -52,6 +53,8 @@
 
   <section id="main" type="standard">
 
+<!--
+En descomentar aquestes regles (que fan bé el que se suposa que fan), deixen d'activar-se totes les altres regles per a verbs quan hi ha "ne" !!!
     <e lm="ne VERB plus" c="ne ... plus > plus_neg ne ... pas (> ja no ...): ne parle plus > ja no parlo">
       <p><l>ne<s n="adv"/><j/></l><r>plus_neg<s n="adv"/><j/>ne<s n="adv"/><j/></r></p>
       <par n="verb"/>
@@ -62,6 +65,7 @@
       <par n="prnpro_verb"/>
       <p><l>plus<s n="adv"/><j/></l><r>pas<s n="adv"/><j/></r></p>
     </e>
+-->
 
     <e lm="tout à fait ADJ" c="tout à fait ADJ > ADJ tout à fait (> ADJ del tot)">
       <p><l>tout<b/>à<b/>fait<s n="adv"/><j/></l><r></r></p>
@@ -69,7 +73,6 @@
       <p><l></l><r>tout<b/>à<b/>fait<s n="adv"/><j/></r></p>
     </e>
 
-    <!-- Je n'ai pas honte --> 
     <e lm="avoir honte" c="">
       <p><l>avoir<s n="vblex"/></l><r>avoir<g><b/>honte</g><s n="vblex"/></r></p>
       <i><t/><j/></i>
@@ -238,7 +241,18 @@
       <p><l>beaucoup<s n="adv"/><t/><j/>de<s n="pr"/><t/><j/>mal<s n="n"/><s n="m"/><t/><j/>à<s n="pr"/><j/></l><r></r></p>
     </e>
 
-    <!-- Je ne fais pas partie de ... --> 
+    <e lm="être d'accord" c="">
+      <p><l>être<s n="vbser"/></l><r>être<g><b/>d'accord</g><s n="vblex"/></r></p>
+      <i><t/><j/></i>
+      <p><l>d'accord<s n="adv"/><j/></l><r></r></p>
+    </e>
+    <e lm="être d'accord" c="">
+      <p><l>être<s n="vbser"/></l><r>être<g><b/>d'accord</g><s n="vblex"/></r></p>
+      <i><t/><j/></i>
+      <par n="adv"/>
+      <p><l>d'accord<s n="adv"/><j/></l><r></r></p>
+    </e>
+
     <e lm="faire partie" c="">
       <p><l>faire<s n="vblex"/></l><r>faire<g><b/>partie</g><s n="vblex"/></r></p>
       <i><t/><j/></i>
