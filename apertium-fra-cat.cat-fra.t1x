@@ -1816,17 +1816,17 @@
         <when>
           <test>
             <equal>
-              <clip pos="1" side="tl" part="a_sup"/>
+              <clip pos="1" side="sl" part="a_sup"/>
               <lit-tag v="sup"/>
             </equal>
-  </test>
-  <out>
-    <lu>
+          </test>
+          <out>
+            <lu>
               <lit v="très"/>
-      <lit-tag v="preadv"/>
+              <lit-tag v="preadv"/>
             </lu>
-    <b/>
-  </out>
+            <b/>
+          </out>
         </when>
       </choose>
     </def-macro>
@@ -5104,9 +5104,6 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="2"/>
           <with-param pos="1"/>
         </call-macro>
-       <call-macro n="superlatiu">
-          <with-param pos="2"/>
-        </call-macro>
         <choose>
           <when>
             <test>
@@ -5119,6 +5116,9 @@ is not applicable because gender and number can not be taken from previous rules
                 <equal><clip pos="2" side="sl" part="nbr"/><lit-tag v="sp"/></equal>
               </and>
             </test>
+            <call-macro n="superlatiu">
+              <with-param pos="2"/>
+            </call-macro>
             <out>
               <lu>
                 <clip pos="2" side="tl" part="lemh"/>
@@ -5141,6 +5141,11 @@ is not applicable because gender and number can not be taken from previous rules
                 <clip pos="1" side="tl" part="lemq"/>
               </lu>
               <b pos="1"/>
+            </out>
+            <call-macro n="superlatiu">
+              <with-param pos="2"/>
+            </call-macro>
+            <out>
               <lu>
                 <clip pos="2" side="tl" part="lemh"/>
                 <clip pos="2" side="tl" part="tags"/>
@@ -5202,9 +5207,6 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="1"/>
           <with-param pos="2"/>
         </call-macro>
-          <call-macro n="superlatiu">
-          <with-param pos="3"/>
-        </call-macro>
         <choose>
           <when>
             <test>
@@ -5222,6 +5224,11 @@ is not applicable because gender and number can not be taken from previous rules
                 <clip pos="1" side="tl" part="whole"/>
               </lu>
               <b pos="1"/>
+            </out>
+            <call-macro n="superlatiu">
+              <with-param pos="3"/>
+            </call-macro>
+            <out>
               <lu>
                 <clip pos="3" side="tl" part="lemh"/>
                 <clip pos="3" side="tl" part="tags"/>
@@ -5247,6 +5254,11 @@ is not applicable because gender and number can not be taken from previous rules
                 <clip pos="2" side="tl" part="lemq"/>
               </lu>
               <b pos="2"/>
+            </out>
+            <call-macro n="superlatiu">
+              <with-param pos="3"/>
+            </call-macro>
+            <out>
               <lu>
                 <clip pos="3" side="tl" part="lemh"/>
                 <clip pos="3" side="tl" part="tags"/>
@@ -5385,12 +5397,6 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="1"/>
           <with-param pos="2"/>
         </call-macro>
-        <call-macro n="superlatiu">
-          <with-param pos="3"/>
-        </call-macro>
-        <call-macro n="superlatiu">
-          <with-param pos="4"/>
-        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -5402,12 +5408,22 @@ is not applicable because gender and number can not be taken from previous rules
             <clip pos="2" side="tl" part="lemq"/>
           </lu>
           <b pos="2"/>
+        </out>
+        <call-macro n="superlatiu">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
           <lu>
             <clip pos="3" side="tl" part="lemh"/>
             <clip pos="3" side="tl" part="tags"/>
             <clip pos="3" side="tl" part="lemq"/>
           </lu>
           <b pos="3"/>
+        </out>
+        <call-macro n="superlatiu">
+          <with-param pos="4"/>
+        </call-macro>
+        <out>
           <lu>
             <clip pos="4" side="tl" part="lemh"/>
             <clip pos="4" side="tl" part="tags"/>
@@ -5434,12 +5450,6 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="2"/>
           <with-param pos="1"/>
         </call-macro>
-<call-macro n="superlatiu">
-          <with-param pos="2"/>
-        </call-macro>
-        <call-macro n="superlatiu">
-          <with-param pos="3"/>
-        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="lemh"/>
@@ -5447,12 +5457,22 @@ is not applicable because gender and number can not be taken from previous rules
             <clip pos="1" side="tl" part="lemq"/>
           </lu>
           <b pos="1"/>
+        </out>
+        <call-macro n="superlatiu">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
           <lu>
             <clip pos="2" side="tl" part="lemh"/>
             <clip pos="2" side="tl" part="tags"/>
             <clip pos="2" side="tl" part="lemq"/>
           </lu>
           <b pos="2"/>
+        </out>
+        <call-macro n="superlatiu">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
           <lu>
             <clip pos="3" side="tl" part="lemh"/>
             <clip pos="3" side="tl" part="tags"/>
@@ -5482,14 +5502,16 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_lexicAdj">
           <with-param pos="2"/>
         </call-macro>
-        <call-macro n="superlatiu">
-          <with-param pos="2"/>
-        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
           </lu>
           <b pos="1"/>
+        </out>
+        <call-macro n="superlatiu">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
           <lu>
             <clip pos="2" side="tl" part="lemh"/>
             <clip pos="2" side="tl" part="tags"/>
@@ -5559,9 +5581,6 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="2"/>
           <with-param pos="3"/>
         </call-macro>
-        <call-macro n="superlatiu">
-          <with-param pos="4"/>
-        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -5577,6 +5596,11 @@ is not applicable because gender and number can not be taken from previous rules
             <clip pos="3" side="tl" part="lemq"/>
           </lu>
           <b pos="3"/>
+        </out>
+        <call-macro n="superlatiu">
+          <with-param pos="4"/>
+        </call-macro>
+        <out>
           <lu>
             <clip pos="4" side="tl" part="lemh"/>
             <clip pos="4" side="tl" part="tags"/>
@@ -5597,14 +5621,16 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="2"/>
           <with-param pos="1"/>
         </call-macro>
-        <call-macro n="superlatiu">
-          <with-param pos="2"/>
-        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
           </lu>
           <b pos="1"/>
+        </out>
+        <call-macro n="superlatiu">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
           <lu>
             <clip pos="2" side="tl" part="lemh"/>
             <clip pos="2" side="tl" part="tags"/>
@@ -5637,9 +5663,6 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="superlatiu">
           <with-param pos="1"/>
         </call-macro>
-        <call-macro n="superlatiu">
-          <with-param pos="3"/>
-        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -5651,6 +5674,11 @@ is not applicable because gender and number can not be taken from previous rules
             <clip pos="2" side="tl" part="lemq"/>
           </lu>
           <b pos="2"/>
+        </out>
+        <call-macro n="superlatiu">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
           <lu>
             <clip pos="3" side="tl" part="lemh"/>
             <clip pos="3" side="tl" part="tags"/>
@@ -5682,17 +5710,16 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_lexicAdj">
           <with-param pos="2"/>
         </call-macro>
-        <call-macro n="superlatiu">
-          <with-param pos="2"/>
-        </call-macro>
-        <call-macro n="superlatiu">
-          <with-param pos="4"/>
-        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
           </lu>
           <b pos="1"/>
+        </out>
+        <call-macro n="superlatiu">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
           <lu>
             <clip pos="2" side="tl" part="lemh"/>
             <clip pos="2" side="tl" part="tags"/>
@@ -5705,6 +5732,11 @@ is not applicable because gender and number can not be taken from previous rules
             <clip pos="3" side="tl" part="lemq"/>
           </lu>
           <b pos="3"/>
+        </out>
+        <call-macro n="superlatiu">
+          <with-param pos="4"/>
+        </call-macro>
+        <out>
           <lu>
             <clip pos="4" side="tl" part="lemh"/>
             <clip pos="4" side="tl" part="tags"/>
@@ -5730,9 +5762,6 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="3"/>
           <with-param pos="1"/>
         </call-macro>
-        <call-macro n="superlatiu">
-          <with-param pos="3"/>
-        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="lemh"/>
@@ -5744,6 +5773,11 @@ is not applicable because gender and number can not be taken from previous rules
             <clip pos="2" side="tl" part="whole"/>
           </lu>
           <b pos="2"/>
+        </out>
+        <call-macro n="superlatiu">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
           <lu>
             <clip pos="3" side="tl" part="lemh"/>
             <clip pos="3" side="tl" part="tags"/>
@@ -5963,9 +5997,6 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="1"/>
           <with-param pos="2"/>
         </call-macro>
-        <call-macro n="superlatiu">
-          <with-param pos="4"/>
-        </call-macro>
         <choose>
           <when>
             <test>
@@ -6000,6 +6031,11 @@ is not applicable because gender and number can not be taken from previous rules
                 <clip pos="3" side="tl" part="whole"/>
               </lu>
               <b pos="3"/>
+            </out>
+            <call-macro n="superlatiu">
+              <with-param pos="4"/>
+            </call-macro>
+            <out>
               <lu>
                 <clip pos="4" side="tl" part="whole"/>
               </lu>
@@ -6021,6 +6057,11 @@ is not applicable because gender and number can not be taken from previous rules
                 <clip pos="3" side="tl" part="whole"/>
               </lu>
               <b pos="3"/>
+            </out>
+            <call-macro n="superlatiu">
+              <with-param pos="4"/>
+            </call-macro>
+            <out>
               <lu>
                 <clip pos="4" side="tl" part="whole"/>
               </lu>
@@ -6103,14 +6144,16 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="2"/>
           <with-param pos="1"/>
         </call-macro>
-        <call-macro n="superlatiu">
-          <with-param pos="2"/>
-        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
           </lu>
           <b pos="1"/>
+        </out>
+        <call-macro n="superlatiu">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
           <lu>
             <clip pos="2" side="tl" part="whole"/>
           </lu>
@@ -6134,9 +6177,6 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_lang_dial0">
           <with-param pos="2"/>
         </call-macro>
-        <call-macro n="superlatiu">
-          <with-param pos="3"/>
-        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -6148,6 +6188,11 @@ is not applicable because gender and number can not be taken from previous rules
             <clip pos="2" side="tl" part="lemq"/>
           </lu>
           <b pos="2"/>
+        </out>
+        <call-macro n="superlatiu">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
           <lu>
             <clip pos="3" side="tl" part="whole"/>
           </lu>
@@ -6174,14 +6219,16 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_lang_dial0">
           <with-param pos="3"/>
         </call-macro>
-        <call-macro n="superlatiu">
-          <with-param pos="2"/>
-        </call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
           </lu>
           <b pos="1"/>
+        </out>
+        <call-macro n="superlatiu">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
           <lu>
             <clip pos="2" side="tl" part="whole"/>
           </lu>
@@ -17767,9 +17814,6 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_concord1">
           <with-param pos="2"/>
         </call-macro>
-        <call-macro n="superlatiu">
-          <with-param pos="2"/>
-        </call-macro>
         <choose>
           <when>
             <test>
@@ -17784,6 +17828,11 @@ is not applicable because gender and number can not be taken from previous rules
                 <lit-tag v="adv"/>
               </lu>
               <b pos="1"/>
+            </out>
+            <call-macro n="superlatiu">
+              <with-param pos="2"/>
+            </call-macro>
+            <out>
               <lu>
                 <clip pos="2" side="tl" part="whole"/>
               </lu>
@@ -17800,6 +17849,11 @@ is not applicable because gender and number can not be taken from previous rules
                 <clip pos="1" side="tl" part="whole"/>
               </lu>
               <b pos="1"/>
+            </out>
+            <call-macro n="superlatiu">
+              <with-param pos="2"/>
+            </call-macro>
+            <out>
               <lu>
                 <clip pos="2" side="tl" part="whole"/>
               </lu>
