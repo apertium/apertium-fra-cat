@@ -1480,6 +1480,14 @@
           <let><clip pos="1" side="tl" part="gen"/><lit-tag v="mf"/></let>
         </when>
       </choose>
+      <choose>
+        <when>
+          <test>
+            <equal><clip pos="1" side="tl" part="a_verb_pron"/><lit-tag v="vblex.pron"/></equal>
+          </test>
+          <let><clip pos="1" side="tl" part="a_verb_pron"/><lit-tag v="vblex"/></let>
+        </when>
+      </choose>
     </def-macro>
 
 
