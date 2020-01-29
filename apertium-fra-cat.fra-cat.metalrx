@@ -638,6 +638,11 @@
     <match lemma="près de" tags="pr"><select lemma="prop de"/></match>
   </rule>
 
+  <!-- à proximité de >> a prop de, prop de -->
+  <rule weight="0.8">
+    <match lemma="à proximité de" tags="pr"><select lemma="a prop de"/></match>
+  </rule>
+
   <!-- en >> en, a, de -->
   <rule weight="0.8">
     <match lemma="en" tags="pr"><select lemma="en"/></match>
@@ -1481,6 +1486,47 @@
   <macro name="verb_prep" p1="chasser" p2="caçar" p3="de" p4="expulsar" />
 
 <!-- **************** N **************** -->
+
+  <!-- feu >> foc, semàfor, llum -->
+  <rule weight="0.8">
+    <match lemma="feu" tags="n.*"><select lemma="foc"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="à" tags="pr"/>
+    <match tags="det.def.*"/>
+    <match lemma="feu" tags="n.*"><select lemma="semàfor"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="premier" tags="adj.*"/>
+      <match lemma="second" tags="adj.*"/>
+      <match lemma="deuxième" tags="adj.*"/>
+      <match lemma="troisième" tags="adj.*"/>
+      <match lemma="quatrième" tags="adj.*"/>
+      <match lemma="cinquième" tags="adj.*"/>
+      <match lemma="sixième" tags="adj.*"/>
+      <match lemma="septième" tags="adj.*"/>
+      <match lemma="huitième" tags="adj.*"/>
+      <match lemma="neuvième" tags="adj.*"/>
+      <match lemma="dixième" tags="adj.*"/>
+      <match lemma="dernier" tags="adj.*"/>
+      <match lemma="1er" tags="adj.*"/>
+      <match lemma="2nd" tags="adj.*"/>
+      <match lemma="3ème" tags="adj.*"/>
+    </or>
+    <match lemma="feu" tags="n.*"><select lemma="semàfor"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="feu" tags="n.*"><select lemma="semàfor"/></match>
+    <or>
+      <match lemma="jaune" tags="adj.*"/>
+      <match lemma="rouge" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="feu" tags="n.*"><select lemma="llum"/></match>
+    <match lemma="verd" tags="adj.*"/>
+  </rule>
 
   <!-- place >> lloc, plaça -->
   <rule weight="0.8">

@@ -3201,6 +3201,16 @@
 
 <!-- N -->
 
+  <!-- semàfor >> sémaphore, feu -->
+  <rule weight="0.8">
+    <match lemma="semàfor" tags="n.*"><select lemma="feu"/></match>
+  </rule>
+
+  <!-- llum >> lumière, feu -->
+  <rule weight="0.8">
+    <match lemma="llum" tags="n.m.*"><select lemma="lampe"/></match>
+  </rule>
+
   <!-- patró >> patron, étalon, protecteur -->
   <rule weight="0.8">
     <match lemma="patró" tags="n.*"><select lemma="patron"/></match>
