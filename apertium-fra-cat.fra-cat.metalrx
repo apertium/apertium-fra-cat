@@ -621,11 +621,19 @@
   <rule weight="1.0">
     <or>
       <match lemma="féliciter" tags="vblex.*"/>
+      <match lemma="excuser" tags="vblex.*"/>
       <match lemma="arrêter" tags="vblex.*"/>
     </or>
     <repeat from="0" upto="1">
       <match tags="adv"/>
     </repeat>
+    <match lemma="pour" tags="pr"><select lemma="per"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="excuse" tags="n.*"/>
+      <match lemma="félicitation" tags="vblex.*"/>
+    </or>
     <match lemma="pour" tags="pr"><select lemma="per"/></match>
   </rule>
 
@@ -789,6 +797,16 @@
   </rule>
 
 <!-- **************** V **************** -->
+
+  <!-- travestir >> disfressar, transvestir -->
+  <rule weight="0.8">
+    <match lemma="travestir" tags="vblex.*"><select lemma="disfressar"/></match>
+  </rule>
+
+  <!-- découler >> resultar, gotejar, degotar -->
+  <rule weight="0.8">
+    <match lemma="découler" tags="vblex.*"><select lemma="resultar"/></match>
+  </rule>
 
   <!-- brosser >> respallar, rentar -->
   <rule weight="0.8">
@@ -1487,6 +1505,26 @@
 
 <!-- **************** N **************** -->
 
+  <!-- dealer >> traficant# de drogues, narcotranficant, camell -->
+  <rule weight="0.8">
+    <match lemma="dealer" tags="n.*"><select lemma="traficant# de drogues"/></match>
+  </rule>
+
+  <!-- convoyeur >> transportista, cinta transportadora -->
+  <rule weight="0.8">
+    <match lemma="convoyeur" tags="n.*"><select lemma="transportista"/></match>
+  </rule>
+
+  <!-- trappe >> trapa, parany -->
+  <rule weight="0.8">
+    <match lemma="trappe" tags="n.*"><select lemma="trapa"/></match>
+  </rule>
+
+  <!-- chef-lieu >> capital, cap -->
+  <rule weight="0.8">
+    <match lemma="chef-lieu" tags="n.*"><select lemma="capital"/></match>
+  </rule>
+
   <!-- feu >> foc, semàfor, llum -->
   <rule weight="0.8">
     <match lemma="feu" tags="n.*"><select lemma="foc"/></match>
@@ -1586,6 +1624,23 @@
   <!-- protecteur >> protector, patró -->
   <rule weight="0.8">
     <match lemma="protecteur" tags="n.*"><select lemma="protector"/></match>
+  </rule>
+
+  <!-- cachet >> segell, honorari -->
+  <rule weight="0.8">
+    <match lemma="cachet" tags="n.*"><select lemma="segell"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.pos.*"/>
+    <match lemma="cachet" tags="n.*"><select lemma="honorari"/></match>
+  </rule>
+  <rule weight="1.2">
+    <or>
+      <match lemma="donner" tags="vblex.*"/>
+      <match lemma="poser" tags="vblex.*"/>
+    </or>
+    <match tags="det.pos.*"/>
+    <match lemma="cachet" tags="n.*"><select lemma="segell"/></match>
   </rule>
 
   <!-- partenaire >> soci, parella -->

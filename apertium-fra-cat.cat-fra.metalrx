@@ -3201,6 +3201,11 @@
 
 <!-- N -->
 
+  <!-- camell >> chameau, dealer -->
+  <rule weight="0.8">
+    <match lemma="camell" tags="n.*"><select lemma="chameau"/></match>
+  </rule>
+
   <!-- semàfor >> sémaphore, feu -->
   <rule weight="0.8">
     <match lemma="semàfor" tags="n.*"><select lemma="feu"/></match>
@@ -4652,7 +4657,7 @@
     </or>
   </rule>
 
-  <!-- cap >> chef, tête, cap -->
+  <!-- cap >> chef, tête, cap, chef-lieu -->
   <rule weight="0.8">
     <match lemma="cap" tags="n.*"><select lemma="chef"/></match>
   </rule>
@@ -4666,11 +4671,22 @@
     <or><match tags="np.top.*"/><match tags="np.loc"/></or>
   </rule>
   <rule weight="1.0">
-    <match lemma="cap" tags="n.*"><select lemma="tête"/></match>
+    <match lemma="cap" tags="n.*"><select lemma="chef-lieu"/></match>
     <match lemma="de" tags="pr"/>
     <or>
       <match lemma="comarca" tags="n.*"/>
-
+      <match lemma="cantó" tags="n.*"/>
+      <match lemma="regió" tags="n.*"/>
+      <match lemma="departament" tags="n.*"/>
+      <match lemma="província" tags="n.*"/>
+      <match lemma="prefectura" tags="n.*"/>
+      <match lemma="sots-prefectura" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cap" tags="n.*"><select lemma="tête"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
       <match lemma="animal" tags="n.*"/>
       <match lemma="peix" tags="n.*"/>
       <match lemma="gos" tags="n.*"/>
@@ -4703,13 +4719,29 @@
     <match lemma="nuclear" tags="adj.*"/>
   </rule>
 
+  <!-- capital >> capitale, chef-lieu -->
+  <rule weight="0.8">
+    <match lemma="capital" tags="n.f.*"><select lemma="capitale"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="capital" tags="n.f.*"><select lemma="chef-lieu"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="comarca" tags="n.*"/>
+      <match lemma="cantó" tags="n.*"/>
+      <match lemma="regió" tags="n.*"/>
+      <match lemma="departament" tags="n.*"/>
+      <match lemma="província" tags="n.*"/>
+      <match lemma="prefectura" tags="n.*"/>
+      <match lemma="sots-prefectura" tags="n.*"/>
+    </or>
+  </rule>
   <!--
   # molts cops, alguns cops
   # cops forts, cop molt dur, cops al pit
   -->
 
   <!-- cop > coup, fois -->
-
   <rule weight="0.6">
      <match lemma="cop" tags="n.*"><select lemma="fois"/></match>
   </rule>
