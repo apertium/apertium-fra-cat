@@ -1705,6 +1705,16 @@
 
 <!-- V -->
 
+  <!-- autoregular >> autorégler, autoréguler -->
+  <rule weight="0.8">
+    <match lemma="autoregular" tags="vblex.*"><select lemma="autorégler"/></match>
+  </rule>
+
+  <!-- empalmar >> raccorder, épisser -->
+  <rule weight="0.8">
+    <match lemma="empalmar" tags="vblex.*"><select lemma="raccorder"/></match>
+  </rule>
+
   <!-- trempar >> tremper, bander -->
   <rule weight="0.8">
     <match lemma="trempar" tags="vblex.*"><select lemma="tremper"/></match>
@@ -3200,6 +3210,11 @@
   </rule>
 
 <!-- N -->
+
+  <!-- anell >> anneau, bague -->
+  <rule weight="0.8">
+    <match lemma="anell" tags="n.*"><select lemma="anneau"/></match>
+  </rule>
 
   <!-- camell >> chameau, dealer -->
   <rule weight="0.8">

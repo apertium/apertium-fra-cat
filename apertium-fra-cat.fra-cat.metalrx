@@ -1505,6 +1505,20 @@
 
 <!-- **************** N **************** -->
 
+  <!-- bague >> anell, anella -->
+  <rule weight="0.8">
+    <match lemma="bague" tags="n.*"><select lemma="anell"/></match>
+  </rule>
+
+  <!-- débile >> idiota, dèbil -->
+  <rule weight="0.8">
+    <match lemma="débile" tags="n.*"><select lemma="idiota"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="débile" tags="n.*"><select lemma="dèbil"/></match>
+    <match lemma="mental" tags="adj.*"/>
+  </rule>
+
   <!-- dealer >> traficant# de drogues, narcotranficant, camell -->
   <rule weight="0.8">
     <match lemma="dealer" tags="n.*"><select lemma="traficant# de drogues"/></match>
@@ -2186,6 +2200,19 @@
     <match tags="np.top.*"/>
   </rule>
 
+  <!-- mise >> aposta, posada -->
+  <rule weight="0.8">
+    <match lemma="mise" tags="n.*"><select lemma="aposta"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="mise" tags="n.*"><select lemma="aposta"/></match>
+    <match lemma="à" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="mise" tags="n.*"><select lemma="aposta"/></match>
+    <match lemma="en" tags="pr"/>
+  </rule>
+
   <!-- épingle >> agulla# de cap, agulla -->
   <rule weight="0.8">
     <match lemma="épingle" tags="n.*"><select lemma="agulla# de cap"/></match>
@@ -2194,6 +2221,16 @@
   <!-- retraite >> jubilació, retirada -->
   <rule weight="0.8">
     <match lemma="retraite" tags="n.*"><select lemma="jubilació"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="retraite" tags="n.*"><select lemma="retirada"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="armée" tags="n.*"/>
+      <match lemma="général" tags="n.*"/>
+      <match lemma="maréchal" tags="n.*"/>
+    </or>
   </rule>
 
   <!-- arrêt >> parada, sentència -->
