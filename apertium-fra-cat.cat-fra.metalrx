@@ -812,40 +812,53 @@
     <match lemma="que" tags="cnjsub"/>
   </rule>
   <rule weight="1.0">
+    <repeat from="0" upto="1">
+      <match lemma="que" tags="rel.an.*"><select lemma="que"/></match>
+    </repeat>
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
     <or>
+      <match lemma="comptar" tags="vblex.*"/>
+      <match lemma="comptar# amb" tags="vblex.*"/>
       <match lemma="necessitar" tags="vblex.*"/>
-      <match lemma="xxxutilitzar" tags="vblex.*"/>
-      <match lemma="xxxusar" tags="vblex.*"/>
     </or>
   </rule>
   <rule weight="1.0">
+    <repeat from="0" upto="1">
+      <match lemma="que" tags="rel.an.*"><select lemma="que"/></match>
+    </repeat>
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
     <or>
       <match tags="vbhaver.*.p3.sg"/>
       <match tags="vbhaver.*.p3.pl"/>
     </or>
     <or>
-      <match lemma="necessitar" tags="vblex.pp.*"/>
-      <match lemma="xxxutilitzar" tags="vblex.pp.*"/>
-      <match lemma="xxxusar" tags="vblex.pp.*"/>
+      <match lemma="comptar" tags="vblex.*"/>
+      <match lemma="comptar# amb" tags="vblex.*"/>
+      <match lemma="necessitar" tags="vblex.*"/>
     </or>
   </rule>
   <rule weight="1.0">
+    <repeat from="0" upto="1">
+      <match lemma="que" tags="rel.an.*"><select lemma="que"/></match>
+    </repeat>
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
     <or>
       <match lemma="anar" tags="vblex.pri.p3.sg"/>
       <match lemma="anar" tags="vblex.pri.p3.pl"/>
     </or>
     <or>
-      <match lemma="necessitar" tags="vblex.inf"/>
-      <match lemma="xxxutilitzar" tags="vblex.inf"/>
-      <match lemma="xxxusar" tags="vblex.inf"/>
+      <match lemma="comptar" tags="vblex.*"/>
+      <match lemma="comptar# amb" tags="vblex.*"/>
+      <match lemma="necessitar" tags="vblex.*"/>
     </or>
   </rule>
   <rule weight="1.0">
+    <repeat from="0" upto="1">
+      <match lemma="que" tags="rel.an.*"><select lemma="que"/></match>
+    </repeat>
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
     <or>
+      <match lemma="comptar" tags="vblex.*"/>
       <match lemma="necessitar" tags="vblex.*"/>
       <match lemma="utilitzar" tags="vblex.*"/>
       <match lemma="usar" tags="vblex.*"/>
@@ -858,12 +871,16 @@
     </or>
   </rule>
   <rule weight="1.0">
+    <repeat from="0" upto="1">
+      <match lemma="que" tags="rel.an.*"><select lemma="que"/></match>
+    </repeat>
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
     <or>
       <match tags="vbhaver.*.p3.sg"/>
       <match tags="vbhaver.*.p3.pl"/>
     </or>
     <or>
+      <match lemma="comptar" tags="vblex.pp.*"/>
       <match lemma="necessitar" tags="vblex.pp.*"/>
       <match lemma="utilitzar" tags="vblex.*"/>
       <match lemma="usar" tags="vblex.*"/>
@@ -876,12 +893,16 @@
     </or>
   </rule>
   <rule weight="1.0">
+    <repeat from="0" upto="1">
+      <match lemma="que" tags="rel.an.*"><select lemma="que"/></match>
+    </repeat>
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
     <or>
       <match lemma="anar" tags="vblex.pri.p3.sg"/>
       <match lemma="anar" tags="vblex.pri.p3.pl"/>
     </or>
     <or>
+      <match lemma="comptar" tags="vblex.inf"/>
       <match lemma="necessitar" tags="vblex.inf"/>
       <match lemma="utilitzar" tags="vblex.*"/>
       <match lemma="usar" tags="vblex.*"/>
@@ -896,6 +917,7 @@
   <rule weight="1.0">
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
     <or>
+      <match lemma="comptar" tags="vblex.*.p3.sg"/>
       <match lemma="necessitar" tags="vblex.*.p3.sg"/>
       <match lemma="utilitzar" tags="vblex.*.p3.sg"/>
       <match lemma="usar" tags="vblex.*.p3.sg"/>
@@ -913,6 +935,7 @@
   <rule weight="1.0">
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
     <or>
+      <match lemma="comptar" tags="vblex.*.p3.pl"/>
       <match lemma="necessitar" tags="vblex.*.p3.pl"/>
       <match lemma="utilitzar" tags="vblex.*.p3.pl"/>
       <match lemma="usar" tags="vblex.*.p3.pl"/>
@@ -931,6 +954,7 @@
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
     <match tags="vbhaver.*.p3.sg"/>
     <or>
+      <match lemma="comptar" tags="vblex.pp.*"/>
       <match lemma="necessitar" tags="vblex.pp.*"/>
       <match lemma="utilitzar" tags="vblex.pp.*"/>
       <match lemma="usar" tags="vblex.pp.*"/>
@@ -949,6 +973,7 @@
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
     <match tags="vbhaver.*.p3.pl"/>
     <or>
+      <match lemma="comptar" tags="vblex.pp.*"/>
       <match lemma="necessitar" tags="vblex.pp.*"/>
       <match lemma="utilitzar" tags="vblex.pp.*"/>
       <match lemma="usar" tags="vblex.pp.*"/>
@@ -967,6 +992,7 @@
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
     <match lemma="anar" tags="vblex.pri.p3.sg"/>
     <or>
+      <match lemma="comptar" tags="vblex.inf"/>
       <match lemma="necessitar" tags="vblex.inf"/>
       <match lemma="utilitzar" tags="vblex.inf"/>
       <match lemma="usar" tags="vblex.inf"/>
@@ -985,6 +1011,7 @@
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
     <match lemma="anar" tags="vblex.pri.p3.pl"/>
     <or>
+      <match lemma="comptar" tags="vblex.inf"/>
       <match lemma="necessitar" tags="vblex.inf"/>
       <match lemma="utilitzar" tags="vblex.inf"/>
       <match lemma="usar" tags="vblex.inf"/>
@@ -1006,6 +1033,7 @@
     </or>
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
     <or>
+      <match lemma="comptar" tags="vblex.*"/>
       <match lemma="necessitar" tags="vblex.*"/>
       <match lemma="utilitzar" tags="vblex.*"/>
       <match lemma="usar" tags="vblex.*"/>
@@ -1022,6 +1050,7 @@
       <match tags="vbhaver.*.p3.pl"/>
     </or>
     <or>
+      <match lemma="comptar" tags="vblex.pp.*"/>
       <match lemma="necessitar" tags="vblex.pp.*"/>
       <match lemma="utilitzar" tags="vblex.pp.*"/>
       <match lemma="usar" tags="vblex.pp.*"/>
@@ -1038,6 +1067,7 @@
       <match lemma="anar" tags="vblex.pri.p3.pl"/>
     </or>
     <or>
+      <match lemma="comptar" tags="vblex.inf"/>
       <match lemma="necessitar" tags="vblex.inf"/>
       <match lemma="utilitzar" tags="vblex.inf"/>
       <match lemma="usar" tags="vblex.inf"/>
@@ -1055,6 +1085,7 @@
     </repeat>
     <match lemma="es" tags="prn.*"><select lemma="se"/></match>
     <or>
+      <match lemma="comptar" tags="vblex.*.sg"/>
       <match lemma="necessitar" tags="vblex.*.sg"/>
       <match lemma="utilitzar" tags="vblex.*.sg"/>
       <match lemma="usar" tags="vblex.*.sg"/>
@@ -1072,6 +1103,7 @@
     <match lemma="es" tags="prn.*"><select lemma="se"/></match>
     <match tags="vbhaver.*.p3.sg"/>
     <or>
+      <match lemma="comptar" tags="vblex.pp.*"/>
       <match lemma="necessitar" tags="vblex.pp.*"/>
       <match lemma="utilitzar" tags="vblex.pp.*"/>
       <match lemma="usar" tags="vblex.pp.*"/>
@@ -1089,6 +1121,7 @@
     <match lemma="es" tags="prn.*"><select lemma="se"/></match>
     <match lemma="anar" tags="vblex.pri.p3.sg"/>
     <or>
+      <match lemma="comptar" tags="vblex.inf"/>
       <match lemma="necessitar" tags="vblex.inf"/>
       <match lemma="utilitzar" tags="vblex.inf"/>
       <match lemma="usar" tags="vblex.inf"/>
@@ -1105,6 +1138,7 @@
     </repeat>
     <match lemma="es" tags="prn.*"><select lemma="se"/></match>
     <or>
+      <match lemma="comptar" tags="vblex.*.pl"/>
       <match lemma="necessitar" tags="vblex.*.pl"/>
       <match lemma="utilitzar" tags="vblex.*.pl"/>
       <match lemma="usar" tags="vblex.*.pl"/>
@@ -1122,6 +1156,7 @@
     <match lemma="es" tags="prn.*"><select lemma="se"/></match>
     <match tags="vbhaver.*.p3.pl"/>
     <or>
+      <match lemma="comptar" tags="vblex.pp.*"/>
       <match lemma="necessitar" tags="vblex.pp.*"/>
       <match lemma="utilitzar" tags="vblex.pp.*"/>
       <match lemma="usar" tags="vblex.pp.*"/>
@@ -1139,6 +1174,7 @@
     <match lemma="es" tags="prn.*"><select lemma="se"/></match>
     <match lemma="anar" tags="vblex.pri.p3.pl"/>
     <or>
+      <match lemma="comptar" tags="vblex.inf"/>
       <match lemma="necessitar" tags="vblex.inf"/>
       <match lemma="utilitzar" tags="vblex.inf"/>
       <match lemma="usar" tags="vblex.inf"/>
@@ -1644,6 +1680,20 @@
 
 <!-- PREADV -->
 
+  <!-- molt >> très, beaucoup -->
+  <rule weight="0.8">
+    <match lemma="molt" tags="preadv"><select lemma="très"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="molt" tags="preadv"><select lemma="beaucoup"/></match>
+    <or>
+      <match lemma="més"/>
+      <match lemma="menys"/>
+      <match lemma="menor"/>
+      <match lemma="major"/>
+    </or>
+  </rule>
+
   <!-- gaire >> très, beaucoup -->
   <rule weight="0.8">
     <match lemma="gaire" tags="preadv"><select lemma="très"/></match>
@@ -1653,6 +1703,8 @@
     <or>
       <match lemma="més"/>
       <match lemma="menys"/>
+      <match lemma="menor"/>
+      <match lemma="major"/>
     </or>
   </rule>
 
@@ -1923,6 +1975,12 @@
 
   <!-- acollonir >> foutre# la trouille à, faire# la trouille -->
   <macro name="verb_nopron_pron" p1="acollonir" p2="foutre# la trouille à" p3="faire# la trouille"/>
+
+  <!-- acostumar >> avoir# l'habitude, habituer -->
+  <macro name="verb_nopron_pron" p1="acostumar" p2="avoir# l'habitude" p3="habituer"/>
+
+  <!-- acostumar# a >> avoir# l'habitude de, habituer# à -->
+  <macro name="verb_nopron_pron" p1="acostumar# a" p2="avoir# l'habitude de" p3="habituer# à"/>
 
   <!-- acovardir >> intimider, troubler -->
   <macro name="verb_nopron_pron" p1="acovardir" p2="intimider" p3="troubler"/>
@@ -2875,6 +2933,44 @@
 
 <!-- ADJ -->
 
+  <!-- major >> plus grand, majeur -->
+  <rule weight="0.8">
+    <match lemma="major" tags="adj.*"><select lemma="plus grand"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="ós" tags="n.f.*"/>
+      <match lemma="festa" tags="n.*"/>
+    </or>
+    <match lemma="major" tags="adj.*"><select lemma="majeur"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="major" tags="adj.*"><select lemma="majeur"/></match>
+    <match tags="cnjcoo"/>
+    <match lemma="menor" tags="adj.*"/>
+  </rule>
+
+  <!-- menor >> plus petit, moindre, mineur -->
+  <rule weight="0.8">
+    <match lemma="menor" tags="adj.*"><select lemma="plus petit"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="menor" tags="adj.*"><select lemma="moindre"/></match>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="ós" tags="n.f.*"/>
+      <match lemma="planeta" tags="n.*"/>
+    </or>
+    <match lemma="menor" tags="adj.*"><select lemma="mineur"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="major"/>
+    <match tags="cnjcoo"/>
+    <match lemma="menor" tags="adj.*"><select lemma="mineur"/></match>
+  </rule>
+
   <!-- casolà >> casanier, familial -->
   <rule weight="0.8">
     <match lemma="casolà" tags="adj.*"><select lemma="casanier"/></match>
@@ -3210,6 +3306,11 @@
   </rule>
 
 <!-- N -->
+
+  <!-- baró >> baron, homme -->
+  <rule weight="0.8">
+    <match lemma="baró" tags="n.*"><select lemma="baron"/></match>
+  </rule>
 
   <!-- anell >> anneau, bague -->
   <rule weight="0.8">
