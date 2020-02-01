@@ -3,6 +3,7 @@
   <alphabet></alphabet>
   <sdefs>
     <sdef n="vblex"/>
+    <sdef n="vbser"/>
     <sdef n="adv"/>
     <sdef n="det"/>
     <sdef n="pr"/>
@@ -12,7 +13,9 @@
     <sdef n="adj"/>
     <sdef n="m"/>
     <sdef n="f"/>
+    <sdef n="mf"/>
     <sdef n="sg"/>
+    <sdef n="pl"/>
     <sdef n="sp"/>
     <sdef n="inf"/>
     <sdef n="pp"/>
@@ -35,11 +38,88 @@
       <p><l>tout<b/>à<b/>fait<s n="adv"/><j/></l><r></r></p>
     </e>
 
-    <e lm="poser à nouveau">
-      <p><l>poser<s n="vblex"/><t/><g><b/>à<b/>nouveau</g><j/></l><r>poser<s n="vblex"/><t/><j/></r></p>
+    <!-- PAS -->
+
+    <!-- vblex adj -->
+
+    <e lm="rendre furieux">
+      <p><l>rendre<s n="vblex"/><t/><g><b/>furieux</g><j/></l><r>rendre<s n="vblex"/><t/><j/></r></p>
       <i>pas<s n="adv"/><j/></i>
-      <p><l></l><r>à<s n="pr"/><j/></r></p>
-      <p><l></l><r>nouveau<s n="adj"/><s n="m"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>furieux<s n="adj"/><s n="m"/><s n="sp"/><j/></r></p>
+    </e>
+
+    <e lm="rendre public">
+      <p><l>rendre<s n="vblex"/><t/><g><b/>public</g><j/></l><r>rendre<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>public<s n="adj"/><s n="m"/><s n="sg"/><j/></r></p>
+    </e>
+
+    <!-- vblex n -->
+
+    <e lm="faire allusion">
+      <p><l>faire<s n="vblex"/><t/><g><b/>allusion</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>allusion<s n="n"/><s n="f"/><s n="sg"/><j/></r></p>
+    </e>
+
+    <e lm="faire appel">
+      <p><l>faire<s n="vblex"/><t/><g><b/>appel</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>appel<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
+    </e>
+
+    <e lm="faire attention">
+      <p><l>faire<s n="vblex"/><t/><g><b/>attention</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>attention<s n="n"/><s n="f"/><s n="sg"/><j/></r></p>
+    </e>
+
+    <e lm="faire cours">
+      <p><l>faire<s n="vblex"/><t/><g><b/>cours</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>cours<s n="n"/><s n="m"/><s n="sp"/><j/></r></p>
+    </e>
+
+    <e lm="faire dodo">
+      <p><l>faire<s n="vblex"/><t/><g><b/>dodo</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>dodo<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
+    </e>
+
+    <e lm="faire face">
+      <p><l>faire<s n="vblex"/><t/><g><b/>face</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>face<s n="n"/><s n="f"/><s n="sg"/><j/></r></p>
+    </e>
+
+    <e lm="faire fallite">
+      <p><l>faire<s n="vblex"/><t/><g><b/>fallite</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>fallite<s n="n"/><s n="f"/><s n="sg"/><j/></r></p>
+    </e>
+
+    <e lm="rendre hommage">
+      <p><l>rendre<s n="vblex"/><t/><g><b/>hommage</g><j/></l><r>rendre<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>hommage<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
+    </e>
+
+    <e lm="faire honte">
+      <p><l>faire<s n="vblex"/><t/><g><b/>honte</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>honte<s n="n"/><s n="f"/><s n="sg"/><j/></r></p>
+    </e>
+
+    <e lm="faire irruption">
+      <p><l>faire<s n="vblex"/><t/><g><b/>irruption</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>irruption<s n="n"/><s n="f"/><s n="sg"/><j/></r></p>
+    </e>
+
+    <e lm="faire mal">
+      <p><l>faire<s n="vblex"/><t/><g><b/>mal</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>mal<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
     </e>
 
     <e lm="faire partie">
@@ -48,23 +128,37 @@
       <p><l></l><r>partie<s n="n"/><s n="f"/><s n="sg"/><j/></r></p>
     </e>
 
-    <e lm="faire tomber">
-      <p><l>faire<s n="vblex"/><t/><g><b/>tomber</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
+    <e lm="faire scandale">
+      <p><l>faire<s n="vblex"/><t/><g><b/>scandale</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
       <i>pas<s n="adv"/><j/></i>
-      <p><l></l><r>tomber<s n="vblex"/><s n="inf"/><j/></r></p>
+      <p><l></l><r>scandale<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
     </e>
 
-    <e lm="faire frire">
-      <p><l>faire<s n="vblex"/><t/><g><b/>frire</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
-      <i>pas<s n="adv"/><j/></i>
-      <p><l></l><r>frire<s n="vblex"/><s n="inf"/><j/></r></p>
+    <!-- vblex adj pr -->
+
+    <e lm="être éloigné de">
+      <p><l>être<s n="vblex"/><t/><g><b/>éloigné<b/>de</g><j/></l><r>être<s n="vbser"/><t/><j/></r></p>
+      <i>pas<s n="adj"/><j/></i>
+      <p><l></l><r>éloigné<s n="adj"/><s n="m"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>de<s n="pr"/><j/></r></p>
     </e>
 
-    <e lm="faire pression sur">
-      <p><l>faire<s n="vblex"/><t/><g><b/>pression<b/>sur</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
+    <!-- vblex adv pr -->
+
+    <e lm="convenir verbalement de">
+      <p><l>convenir<s n="vblex"/><t/><g><b/>verbalement<b/>de</g><j/></l><r>convenir<s n="vblex"/><t/><j/></r></p>
       <i>pas<s n="adv"/><j/></i>
-      <p><l></l><r>pression<s n="n"/><s n="f"/><s n="sg"/><j/></r></p>
-      <p><l></l><r>sur<s n="pr"/><j/></r></p>
+      <p><l></l><r>verbalement<s n="adv"/><j/></r></p>
+      <p><l></l><r>de<s n="pr"/><j/></r></p>
+    </e>
+
+    <!-- vblex n pr -->
+
+    <e lm="faire allusion à">
+      <p><l>faire<s n="vblex"/><t/><g><b/>allusion<b/>à</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>allusion<s n="n"/><s n="f"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>à<s n="pr"/><j/></r></p>
     </e>
 
     <e lm="faire appel à">
@@ -74,16 +168,374 @@
       <p><l></l><r>à<s n="pr"/><j/></r></p>
     </e>
 
-    <e lm="rendre public">
-      <p><l>rendre<s n="vblex"/><t/><g><b/>public</g><j/></l><r>rendre<s n="vblex"/><t/><j/></r></p>
+    <e lm="faire plaisir à">
+      <p><l>faire<s n="vblex"/><t/><g><b/>plaisir<b/>à</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
       <i>pas<s n="adv"/><j/></i>
-      <p><l></l><r>public<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>plaisir<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>à<s n="pr"/><j/></r></p>
     </e>
 
-    <e lm="rendre furieux">
-      <p><l>rendre<s n="vblex"/><t/><g><b/>furieux</g><j/></l><r>rendre<s n="vblex"/><t/><j/></r></p>
+    <e lm="faire pression sur">
+      <p><l>faire<s n="vblex"/><t/><g><b/>pression<b/>sur</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
       <i>pas<s n="adv"/><j/></i>
-      <p><l></l><r>furieux<s n="adj"/><s n="m"/><s n="sp"/><j/></r></p>
+      <p><l></l><r>pression<s n="n"/><s n="f"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>sur<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="faire semblant de">
+      <p><l>faire<s n="vblex"/><t/><g><b/>semblant<b/>de</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>semblant<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>de<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="tenir tête à">
+      <p><l>tenir<s n="vblex"/><t/><g><b/>tête<b/>à</g><j/></l><r>tenir<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>tête<s n="n"/><s n="f"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>à<s n="pr"/><j/></r></p>
+    </e>
+
+    <!-- vblex inf -->
+
+    <e lm="faire avancer">
+      <p><l>faire<s n="vblex"/><t/><g><b/>avancer</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>avancer<s n="vblex"/><s n="inf"/><j/></r></p>
+    </e>
+
+    <e lm="faire couler">
+      <p><l>faire<s n="vblex"/><t/><g><b/>couler</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>couler<s n="vblex"/><s n="inf"/><j/></r></p>
+    </e>
+
+    <e lm="faire détoner">
+      <p><l>faire<s n="vblex"/><t/><g><b/>détoner</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>détoner<s n="vblex"/><s n="inf"/><j/></r></p>
+    </e>
+
+    <e lm="faire frire">
+      <p><l>faire<s n="vblex"/><t/><g><b/>frire</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>frire<s n="vblex"/><s n="inf"/><j/></r></p>
+    </e>
+
+    <e lm="faire taire">
+      <p><l>faire<s n="vblex"/><t/><g><b/>taire</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>taire<s n="vblex"/><s n="inf"/><j/></r></p>
+    </e>
+
+    <e lm="faire tomber">
+      <p><l>faire<s n="vblex"/><t/><g><b/>tomber</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>tomber<s n="vblex"/><s n="inf"/><j/></r></p>
+    </e>
+
+    <!-- vblex pr -->
+
+    <e lm="agir de">
+      <p><l>agir<s n="vblex"/><t/><g><b/>de</g><j/></l><r>agir<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>de<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="appuyer sur">
+      <p><l>appuyer<s n="vblex"/><t/><g><b/>sur</g><j/></l><r>appuyer<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>sur<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="arrêter de">
+      <p><l>arrêter<s n="vblex"/><t/><g><b/>de</g><j/></l><r>arrêter<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>de<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="assister à">
+      <p><l>assister<s n="vblex"/><t/><g><b/>à</g><j/></l><r>assister<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>à<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="baser sur">
+      <p><l>baser<s n="vblex"/><t/><g><b/>sur</g><j/></l><r>baser<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>sur<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="cesser de">
+      <p><l>cesser<s n="vblex"/><t/><g><b/>de</g><j/></l><r>cesser<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>de<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="compter sur">
+      <p><l>compter<s n="vblex"/><t/><g><b/>sur</g><j/></l><r>compter<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>sur<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="concentrer sur">
+      <p><l>concentrer<s n="vblex"/><t/><g><b/>sur</g><j/></l><r>concentrer<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>sur<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="consacrer à">
+      <p><l>consacrer<s n="vblex"/><t/><g><b/>à</g><j/></l><r>consacrer<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>à<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="convertir en">
+      <p><l>convertir<s n="vblex"/><t/><g><b/>en</g><j/></l><r>convertir<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>en<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="écoper de">
+      <p><l>écoper<s n="vblex"/><t/><g><b/>de</g><j/></l><r>écoper<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>de<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="enquêter sur">
+      <p><l>enquêter<s n="vblex"/><t/><g><b/>sur</g><j/></l><r>enquêter<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>sur<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="essayer de">
+      <p><l>essayer<s n="vblex"/><t/><g><b/>de</g><j/></l><r>essayer<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>de<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="jouer de">
+      <p><l>jouer<s n="vblex"/><t/><g><b/>de</g><j/></l><r>jouer<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>de<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="manquer à">
+      <p><l>manquer<s n="vblex"/><t/><g><b/>à</g><j/></l><r>manquer<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>à<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="participer à">
+      <p><l>participer<s n="vblex"/><t/><g><b/>à</g><j/></l><r>participer<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>à<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="suffire de">
+      <p><l>suffire<s n="vblex"/><t/><g><b/>de</g><j/></l><r>suffire<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>de<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="tirer sur">
+      <p><l>tirer<s n="vblex"/><t/><g><b/>sur</g><j/></l><r>tirer<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>sur<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="tomber sur">
+      <p><l>tomber<s n="vblex"/><t/><g><b/>sur</g><j/></l><r>tomber<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>sur<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="transformer en">
+      <p><l>transformer<s n="vblex"/><t/><g><b/>en</g><j/></l><r>transformer<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>en<s n="pr"/><j/></r></p>
+    </e>
+
+    <!-- vblex pr adj -->
+
+    <e lm="mener à bien">
+      <p><l>mener<s n="vblex"/><t/><g><b/>à<b/>bien</g><j/></l><r>mener<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>à<s n="pr"/><j/></r></p>
+      <p><l></l><r>bien<s n="adj"/><s n="m"/><s n="sg"/><j/></r></p>
+    </e>
+
+    <e lm="poser à nouveau">
+      <p><l>poser<s n="vblex"/><t/><g><b/>à<b/>nouveau</g><j/></l><r>poser<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>à<s n="pr"/><j/></r></p>
+      <p><l></l><r>nouveau<s n="adj"/><s n="m"/><s n="sg"/><j/></r></p>
+    </e>
+
+    <!-- vblex pr n -->
+
+    <e lm="couvrir de boue">
+      <p><l>couvrir<s n="vblex"/><t/><g><b/>de<b/>boue</g><j/></l><r>couvrir<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>de<s n="pr"/><j/></r></p>
+      <p><l></l><r>boue<s n="n"/><s n="f"/><s n="sg"/><j/></r></p>
+    </e>
+
+    <e lm="être d'accord">
+      <p><l>être<s n="vblex"/><t/><g><b/>d'accord</g><j/></l><r>être<s n="vbser"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>de<s n="pr"/><j/></r></p>
+      <p><l></l><r>accord<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
+    </e>
+
+    <e lm="être en désaccord">
+      <p><l>être<s n="vblex"/><t/><g><b/>en<b/>désaccord</g><j/></l><r>être<s n="vbser"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>en<s n="pr"/><j/></r></p>
+      <p><l></l><r>désaccord<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
+    </e>
+
+    <!-- vblex pr inf n -->
+
+    <e lm="commencer à faire jour">
+      <p><l>commencer<s n="vblex"/><t/><g><b/>à<b/>faire<b/>jour</g><j/></l><r>commencer<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>à<s n="pr"/><j/></r></p>
+      <p><l></l><r>faire<s n="vblex"/><s n="inf"/><j/></r></p>
+      <p><l></l><r>jour<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
+    </e>
+
+    <e lm="commencer à faire nuit">
+      <p><l>commencer<s n="vblex"/><t/><g><b/>à<b/>faire<b/>nuit</g><j/></l><r>commencer<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>à<s n="pr"/><j/></r></p>
+      <p><l></l><r>faire<s n="vblex"/><s n="inf"/><j/></r></p>
+      <p><l></l><r>nuit<s n="n"/><s n="f"/><s n="sg"/><j/></r></p>
+    </e>
+
+    <!-- vblex pr det n -->
+
+    <e lm="mettre sur les rails">
+      <p><l>mettre<s n="vblex"/><t/><g><b/>sur<b/>les<b/>rails</g><j/></l><r>mettre<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>sur<s n="pr"/><j/></r></p>
+      <p><l></l><r>le<s n="det"/><s n="def"/><s n="mf"/><s n="pl"/><j/></r></p>
+      <p><l></l><r>rail<s n="n"/><s n="m"/><s n="pl"/><j/></r></p>
+    </e>
+
+    <e lm="faire de la publicité">
+      <p><l>faire<s n="vblex"/><t/><g><b/>de<b/>la<b/>publicité</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>de<s n="pr"/><j/></r></p>
+      <p><l></l><r>le<s n="det"/><s n="def"/><s n="f"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>publicité<s n="n"/><s n="f"/><s n="sg"/><j/></r></p>
+    </e>
+
+    <e lm="remettre sur les rails">
+      <p><l>remettre<s n="vblex"/><t/><g><b/>sur<b/>les<b/>rails</g><j/></l><r>remettre<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>sur<s n="pr"/><j/></r></p>
+      <p><l></l><r>le<s n="det"/><s n="def"/><s n="mf"/><s n="pl"/><j/></r></p>
+      <p><l></l><r>rail<s n="n"/><s n="m"/><s n="pl"/><j/></r></p>
+    </e>
+
+    <!-- vblex pr det n pr -->
+
+    <e lm="faire de la publicité pour">
+      <p><l>faire<s n="vblex"/><t/><g><b/>de<b/>la<b/>publicité<b/>pour</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>de<s n="pr"/><j/></r></p>
+      <p><l></l><r>le<s n="det"/><s n="def"/><s n="f"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>publicité<s n="n"/><s n="f"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>pour<s n="pr"/><j/></r></p>
+    </e>
+
+    <!-- vblex det n -->
+
+    <e lm="attirer l'attention">
+      <p><l>attirer<s n="vblex"/><t/><g><b/>l'attention</g><j/></l><r>attirer<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>le<s n="det"/><s n="def"/><s n="f"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>attention<s n="n"/><s n="f"/><s n="sg"/><j/></r></p>
+    </e>
+
+    <e lm="faire le ménage">
+      <p><l>faire<s n="vblex"/><t/><g><b/>le<b/>ménage</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>le<s n="det"/><s n="def"/><s n="m"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>ménage<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
+    </e>
+
+    <e lm="mettre le feu">
+      <p><l>mettre<s n="vblex"/><t/><g><b/>le<b/>feu</g><j/></l><r>mettre<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>le<s n="det"/><s n="def"/><s n="m"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>feu<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
+    </e>
+
+    <e lm="valoir la peine">
+      <p><l>valoir<s n="vblex"/><t/><g><b/>la<b/>peine</g><j/></l><r>valoir<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>le<s n="det"/><s n="def"/><s n="f"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>peine<s n="n"/><s n="f"/><s n="sg"/><j/></r></p>
+    </e>
+
+    <!-- vblex det n pr -->
+
+    <e lm="avoir l'habitude de">
+      <p><l>avoir<s n="vblex"/><t/><g><b/>l'habitude<b/>de</g><j/></l><r>avoir<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>le<s n="det"/><s n="def"/><s n="f"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>habitude<s n="n"/><s n="f"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>de<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="baisser le prix de">
+      <p><l>baisser<s n="vblex"/><t/><g><b/>le<b/>prix<b/>de</g><j/></l><r>baisser<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>le<s n="det"/><s n="def"/><s n="m"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>prix<s n="n"/><s n="m"/><s n="sp"/><j/></r></p>
+      <p><l></l><r>de<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="donner la priorité à">
+      <p><l>donner<s n="vblex"/><t/><g><b/>la<b/>priorité<b/>à</g><j/></l><r>donner<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>le<s n="det"/><s n="def"/><s n="f"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>priorité<s n="n"/><s n="f"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>à<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="foutre la trouille à">
+      <p><l>foutre<s n="vblex"/><t/><g><b/>la<b/>trouille<b/>à</g><j/></l><r>foutre<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>le<s n="det"/><s n="def"/><s n="f"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>trouille<s n="n"/><s n="f"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>à<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="mettre son veto à">
+      <p><l>mettre<s n="vblex"/><t/><g><b/>son<b/>veto<b/>à</g><j/></l><r>mettre<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>son<s n="det"/><s n="pos"/><s n="m"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>veto<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>à<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="mettre son véto à">
+      <p><l>mettre<s n="vblex"/><t/><g><b/>son<b/>véto<b/>à</g><j/></l><r>mettre<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>son<s n="det"/><s n="pos"/><s n="m"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>véto<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>à<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="prendre la relève de">
+      <p><l>prendre<s n="vblex"/><t/><g><b/>la<b/>relève<b/>de</g><j/></l><r>prendre<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>le<s n="det"/><s n="def"/><s n="f"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>relève<s n="n"/><s n="f"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>de<s n="pr"/><j/></r></p>
     </e>
 
 </section>
