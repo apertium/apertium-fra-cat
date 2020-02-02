@@ -54,6 +54,16 @@
       <p><l></l><r>public<s n="adj"/><s n="m"/><s n="sg"/><j/></r></p>
     </e>
 
+    <!-- vblex adj n pr -->
+
+    <e lm="avoir beaucoup de mal à">
+      <p><l>avoir<s n="vblex"/><t/><g><b/>beaucoup<b/>de<b/>mal<b/>à</g><j/></l><r>avoir<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>beaucoup<b/>de<s n="adj"/><s n="mf"/><s n="sp"/><j/></r></p>
+      <p><l></l><r>mal<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>à<s n="pr"/><j/></r></p>
+    </e>
+
     <!-- vblex n -->
 
     <e lm="faire allusion">
@@ -166,6 +176,13 @@
       <i>pas<s n="adv"/><j/></i>
       <p><l></l><r>appel<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
       <p><l></l><r>à<s n="pr"/><j/></r></p>
+    </e>
+
+    <e lm="faire appel de">
+      <p><l>faire<s n="vblex"/><t/><g><b/>appel<b/>de</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>appel<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>de<s n="pr"/><j/></r></p>
     </e>
 
     <e lm="faire plaisir à">
@@ -374,6 +391,13 @@
 
     <!-- vblex pr n -->
 
+    <e lm="avoir pour objectif">
+      <p><l>avoir<s n="vblex"/><t/><g><b/>pour<b/>objectif</g><j/></l><r>avoir<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>pour<s n="pr"/><j/></r></p>
+      <p><l></l><r>objectif<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
+    </e>
+
     <e lm="couvrir de boue">
       <p><l>couvrir<s n="vblex"/><t/><g><b/>de<b/>boue</g><j/></l><r>couvrir<s n="vblex"/><t/><j/></r></p>
       <i>pas<s n="adv"/><j/></i>
@@ -395,6 +419,13 @@
       <p><l></l><r>désaccord<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
     </e>
 
+    <e lm="prendre en compte">
+      <p><l>prendre<s n="vblex"/><t/><g><b/>en<b/>compte</g><j/></l><r>prendre<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>en<s n="pr"/><j/></r></p>
+      <p><l></l><r>compte<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
+    </e>
+
     <!-- vblex pr inf n -->
 
     <e lm="commencer à faire jour">
@@ -414,6 +445,22 @@
     </e>
 
     <!-- vblex pr det n -->
+
+    <e lm="avoir de l'avance">
+      <p><l>avoir<s n="vblex"/><t/><g><b/>de<b/>l'avance</g><j/></l><r>avoir<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>de<s n="pr"/><j/></r></p>
+      <p><l></l><r>le<s n="det"/><s n="def"/><s n="f"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>avance<s n="n"/><s n="f"/><s n="sg"/><j/></r></p>
+    </e>
+
+    <e lm="avoir de l'effet">
+      <p><l>avoir<s n="vblex"/><t/><g><b/>de<b/>l'effet</g><j/></l><r>avoir<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>de<s n="pr"/><j/></r></p>
+      <p><l></l><r>le<s n="det"/><s n="def"/><s n="m"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>effet<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
+    </e>
 
     <e lm="mettre sur les rails">
       <p><l>mettre<s n="vblex"/><t/><g><b/>sur<b/>les<b/>rails</g><j/></l><r>mettre<s n="vblex"/><t/><j/></r></p>
@@ -440,6 +487,15 @@
     </e>
 
     <!-- vblex pr det n pr -->
+
+    <e lm="avoir du mal à">
+      <p><l>avoir<s n="vblex"/><t/><g><b/>du<b/>mal<b/>à</g><j/></l><r>avoir<s n="vblex"/><t/><j/></r></p>
+      <i>pas<s n="adv"/><j/></i>
+      <p><l></l><r>de<s n="pr"/><j/></r></p>
+      <p><l></l><r>le<s n="det"/><s n="def"/><s n="m"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>mal<s n="n"/><s n="m"/><s n="sg"/><j/></r></p>
+      <p><l></l><r>à<s n="pr"/><j/></r></p>
+    </e>
 
     <e lm="faire de la publicité pour">
       <p><l>faire<s n="vblex"/><t/><g><b/>de<b/>la<b/>publicité<b/>pour</g><j/></l><r>faire<s n="vblex"/><t/><j/></r></p>
