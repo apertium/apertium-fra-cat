@@ -731,7 +731,7 @@
     <match lemma="vacances" tags="n.*"/>
   </rule>
 
-  <!-- deux fois sur cinq >> dues vegades DE cinc -->
+  <!-- sur >> sobre, de, en -->
   <rule weight="0.8">
     <match lemma="sur" tags="pr"><select lemma="sobre" tags="pr"/></match>
   </rule>
@@ -740,6 +740,16 @@
     <match lemma="fois" tags="n.*"/>
     <match lemma="sur" tags="pr"><select lemma="de" tags="pr"/></match>
     <or><match tags="num"/><match tags="num.*"/></or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="spétialiser" tags="vblex.*"/>
+      <match lemma="spécialisé" tags="adj.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="sur" tags="pr"><select lemma="en"/></match>
   </rule>
 
 
@@ -2480,6 +2490,7 @@
       <match lemma="bidon" tags="n.*"/>
       <match lemma="odeur" tags="n.*"/>
       <match lemma="panne" tags="n.*"/>
+      <match lemma="remise" tags="n.*"/>
     </or>
     <match lemma="de" tags="pr"/>
     <match lemma="essence" tags="n.*"><select lemma="gasolina"/></match>

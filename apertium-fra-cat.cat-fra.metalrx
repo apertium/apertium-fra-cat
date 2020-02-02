@@ -1578,7 +1578,7 @@
     <match tags="*.inf"/>
   </rule>
 
-  <!-- en >> en, dans, à -->
+  <!-- en >> en, dans, à, sur -->
   <rule weight="0.8">
     <match lemma="en" tags="pr"><select lemma="dans"/></match>
   </rule>
@@ -2933,6 +2933,24 @@
 
 <!-- ADJ -->
 
+  <!-- periòdic >> périodique, periodique -->
+  <rule weight="0.8">
+    <match lemma="periòdic" tags="adj.*"><select lemma="périodique"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="àcid" tags="n.*"/>
+    <match lemma="periòdic" tags="adj.*"><select lemma="periodique"/></match>
+  </rule>
+
+  <!-- lític >> lithique, lytique -->
+  <rule weight="0.8">
+    <match lemma="lític" tags="adj.*"><select lemma="lithique"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cicle" tags="n.*"/>
+    <match lemma="lític" tags="adj.*"><select lemma="lytique"/></match>
+  </rule>
+
   <!-- major >> plus grand, majeur -->
   <rule weight="0.8">
     <match lemma="major" tags="adj.*"><select lemma="plus grand"/></match>
@@ -3306,6 +3324,107 @@
   </rule>
 
 <!-- N -->
+
+  <!-- call >> quartier juif, durillon -->
+  <rule weight="0.8">
+    <match lemma="call" tags="n.*"><select lemma="quartier juif"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="call" tags="n.*"><select lemma="durillon"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="peu" tags="n.*"/>
+      <match lemma="mà" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="peu" tags="n.*"/>
+      <match lemma="mà" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="call" tags="n.*"><select lemma="durillon"/></match>
+  </rule>
+
+  <!-- pica >> pique f, pique m, évier, bénitier, pic -->
+  <rule weight="0.8">
+    <match lemma="pica" tags="n.*"><select lemma="pique" tags="n.f.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="num"/>
+      <match tags="num.*"/>
+      <match lemma="as" tags="n.*"/>
+      <match lemma="rei" tags="n.*"/>
+      <match lemma="dama" tags="n.*"/>
+      <match lemma="valet" tags="n.*"/>
+    </or>
+    <match lemma="pica" tags="n.f.pl"><select lemma="pique" tags="n.f.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pica" tags="n.*"><select lemma="pic"/></match>
+    <match lemma="de" tags="det.*"/>
+    <repeat from="0" upto="1">
+      <match tags="det.def.*"/>
+    </repeat>
+    <or>
+      <match tags="np.*"/>
+      <match tags="*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pica" tags="n.*"><select lemma="évier"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="lavabo" tags="n.*"/>
+      <match lemma="cuina" tags="n.*"/>
+      <match lemma="bany" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pica" tags="n.*"><select lemma="bénitier"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="església" tags="n.*"/>
+      <match lemma="esglésiola" tags="n.*"/>
+      <match lemma="catedral" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- numismàtic >> numismate, numismatique -->
+  <rule weight="0.8">
+    <match lemma="numismàtic" tags="n.*"><select lemma="numismate"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.f.sg"/>
+    <match lemma="numismàtic" tags="n.f.sg"><select lemma="numismatique"/></match>
+  </rule>
+
+  <!-- geofísic >> géophysicien, géophysique -->
+  <rule weight="0.8">
+    <match lemma="geofísic" tags="n.*"><select lemma="géophysicien"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.f.sg"/>
+    <match lemma="geofísic" tags="n.f.sg"><select lemma="géophysique"/></match>
+  </rule>
+
+  <!-- geomàtic >> géomaticien, géomatique -->
+  <rule weight="0.8">
+    <match lemma="geomàtic" tags="n.*"><select lemma="géomaticien"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.f.sg"/>
+    <match lemma="geomàtic" tags="n.f.sg"><select lemma="géomatique"/></match>
+  </rule>
 
   <!-- baró >> baron, homme -->
   <rule weight="0.8">
