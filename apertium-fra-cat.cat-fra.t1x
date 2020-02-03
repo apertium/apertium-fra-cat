@@ -187,6 +187,11 @@
       <cat-item tags="vbser.*.p2.*"/>
       <cat-item tags="vbser.*.p3.*"/>
     </def-cat>
+    <def-cat n="vbhaver_conj">
+      <cat-item tags="vbhaver.*.p1.*"/>
+      <cat-item tags="vbhaver.*.p2.*"/>
+      <cat-item tags="vbhaver.*.p3.*"/>
+    </def-cat>
     <def-cat n="estar_conj">
       <cat-item lemma="estar" tags="vblex.*.p1.*"/>
       <cat-item lemma="estar" tags="vblex.*.p2.*"/>
@@ -1081,6 +1086,8 @@
       <list-item v="kirghiz"/>
       <list-item v="tadjik"/>
       <list-item v="mongol"/>
+      <list-item v="moghol"/>
+      <list-item v="mogol"/>
       <list-item v="bouriate"/>
       <list-item v="mandchou"/>
       <list-item v="toungouse"/>
@@ -1100,6 +1107,7 @@
       <list-item v="bengali"/>
       <list-item v="bengalais"/>
       <list-item v="marathe"/>
+      <list-item v="gujarati"/>
       <list-item v="tamoul"/>
       <list-item v="tamil"/>
       <list-item v="télougou"/>
@@ -1118,6 +1126,7 @@
       <list-item v="cambodgien"/>
       <list-item v="khmer"/>
       <list-item v="malais"/>
+      <list-item v="tagal"/>
       <list-item v="indonésien"/>
       <list-item v="javanais"/>
       <list-item v="taïwanais"/>
@@ -1154,6 +1163,7 @@
       <list-item v="thrace"/>
       <list-item v="illyrien"/>
       <list-item v="troyen"/>
+      <list-item v="lydien"/>
       <list-item v="phrygien"/>
       <list-item v="sogdien"/>
       <list-item v="bactrien"/>
@@ -11219,7 +11229,7 @@ is not applicable because gender and number can not be taken from previous rules
 <rule comment="regla: SENT haver pp: SENT he caigut > SENT je suis tombé">
    <pattern>
      <pattern-item n="sentquecm"/>
-     <pattern-item n="haver"/>
+     <pattern-item n="vbhaver_conj"/>
      <pattern-item n="pp"/>
    </pattern>
    <action>

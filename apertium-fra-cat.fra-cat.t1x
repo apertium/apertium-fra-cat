@@ -1241,6 +1241,8 @@
       <list-item v="kirghiz"/>
       <list-item v="tadjik"/>
       <list-item v="mongol"/>
+      <list-item v="moghol"/>
+      <list-item v="mogol"/>
       <list-item v="bouriate"/>
       <list-item v="mandchou"/>
       <list-item v="toungouse"/>
@@ -1260,6 +1262,7 @@
       <list-item v="bengali"/>
       <list-item v="bengalais"/>
       <list-item v="marathe"/>
+      <list-item v="gujarati"/>
       <list-item v="tamoul"/>
       <list-item v="tamil"/>
       <list-item v="télougou"/>
@@ -1278,6 +1281,7 @@
       <list-item v="cambodgien"/>
       <list-item v="khmer"/>
       <list-item v="malais"/>
+      <list-item v="tagal"/>
       <list-item v="indonésien"/>
       <list-item v="javanais"/>
       <list-item v="taïwanais"/>
@@ -1314,6 +1318,7 @@
       <list-item v="thrace"/>
       <list-item v="illyrien"/>
       <list-item v="troyen"/>
+      <list-item v="lydien"/>
       <list-item v="phrygien"/>
       <list-item v="sogdien"/>
       <list-item v="bactrien"/>
@@ -6794,14 +6799,12 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
 	</when>
 	<otherwise>
+        <call-macro n="f_ifi1">
+          <with-param pos="1"/>
+        </call-macro>
         <out>
           <lu>
-            <clip pos="1" side="tl" part="lem"/>
-            <clip pos="1" side="tl" part="a_verb"/>
-            <clip pos="1" side="tl" part="temps"/>
-            <clip pos="1" side="tl" part="persona"/>
-            <clip pos="1" side="tl" part="gen"/>
-            <clip pos="1" side="tl" part="nbr"/>
+            <clip pos="1" side="tl" part="whole"/>
           </lu>
           <b pos="1"/>
 	  <lu>
@@ -6851,6 +6854,7 @@ is not applicable because gender and number cannot be taken from previous rules 
 	        </equal>
 	      </and>
 	    </test>
+          <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
         <out>
           <lu>
             <clip pos="2" side="tl" part="lemh"/>
@@ -6868,14 +6872,12 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
 	</when>
 	<otherwise>
+        <call-macro n="f_ifi1">
+          <with-param pos="1"/>
+        </call-macro>
         <out>
           <lu>
-            <clip pos="1" side="tl" part="lem"/>
-            <clip pos="1" side="tl" part="a_verb"/>
-            <clip pos="1" side="tl" part="temps"/>
-            <clip pos="1" side="tl" part="persona"/>
-            <clip pos="1" side="tl" part="gen"/>
-            <clip pos="1" side="tl" part="nbr"/>
+            <clip pos="1" side="tl" part="whole"/>
           </lu>
 	  <b pos="1"/>
           <lu>
@@ -6906,15 +6908,15 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="1"/>
+        </call-macro>
         <out>
           <lu>
-            <clip pos="1" side="tl" part="lemh"/>
-            <clip pos="1" side="tl" part="a_verb"/>
-            <clip pos="1" side="tl" part="temps"/>
-            <clip pos="1" side="tl" part="persona"/>
-            <clip pos="1" side="tl" part="gen"/>
-            <clip pos="1" side="tl" part="nbr"/>
-            <clip pos="1" side="tl" part="lemq"/>
+            <clip pos="1" side="tl" part="whole"/>
           </lu>
           <b pos="1"/>
           <lu>
