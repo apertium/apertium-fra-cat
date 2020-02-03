@@ -1515,6 +1515,26 @@
 
 <!-- **************** N **************** -->
 
+  <!-- balcon >> balcó, balconada -->
+  <rule weight="0.8">
+    <match lemma="balcon" tags="n.*"><select lemma="balcó"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="balcon" tags="n.*"><select lemma="balconada"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="ajuntament" tags="n.*"/>
+      <match lemma="ministeri" tags="n.*"/>
+      <match lemma="palau" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- partition >> partició, partitura -->
+  <rule weight="0.8">
+    <match lemma="partition" tags="n.*"><select lemma="partició"/></match>
+  </rule>
+
   <!-- bague >> anell, anella -->
   <rule weight="0.8">
     <match lemma="bague" tags="n.*"><select lemma="anell"/></match>
@@ -1880,7 +1900,7 @@
       <match tags="det.*"/>
       <match lemma="de" tags="pr"/>
     </or>
-    <match lemma="but" tags="n.*"><select lemma="objectiu"/></match>
+    <match lemma="but" tags="n.*"><select lemma="gol"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="marquer" tags="vblex.*"/>
@@ -1889,7 +1909,14 @@
     </repeat>
     <match tags="det.*"/>
     <match tags="adj.*"/>
-    <match lemma="but" tags="n.*"><select lemma="objectiu"/></match>
+    <match lemma="but" tags="n.*"><select lemma="gol"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="num.*"/>
+      <match tags="num"/>
+    </or>
+    <match lemma="but" tags="n.*"><select lemma="gol"/></match>
   </rule>
 
   <!-- forêt >> bosc, selva -->
@@ -3638,6 +3665,16 @@
   </rule>
 
 <!-- **************** VBLEX **************** -->
+
+  <!-- réchauffer >> escalfar, reescalfar -->
+  <rule weight="0.8">
+    <match lemma="réchauffer" tags="vblex.*"><select lemma="escalfar"/></match>
+  </rule>
+
+  <!-- échauder >> escaldar, escarmentar -->
+  <rule weight="0.8">
+    <match lemma="échauder" tags="vblex.*"><select lemma="escaldar"/></match>
+  </rule>
 
   <!-- atteindre >> aconseguir, arribar a -->
   <rule weight="0.8">

@@ -1757,6 +1757,53 @@
 
 <!-- V -->
 
+  <!-- escarmentar >> corriger, échauder -->
+  <rule weight="0.8">
+    <match lemma="escarmentar" tags="vblex.*"><select lemma="corriger"/></match>
+  </rule>
+
+  <!-- fer >> faire, marquer -->
+  <rule weight="0.8">
+    <match lemma="fer" tags="vblex.*"><select lemma="faire"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fer" tags="vblex.*"><select lemma="marquer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <match lemma="gol" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="gol" tags="n.*"/>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="fer" tags="vblex.pp.*"><select lemma="marquer"/></match>
+      <match lemma="fer" tags="vblex.inf"><select lemma="marquer"/></match>
+    </or>
+  </rule>
+
+  <!-- cardar >> foutre, baiser, lainer -->
+  <rule weight="0.8">
+    <match lemma="cardar" tags="vblex.*"><select lemma="foutre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cardar" tags="vblex.*"><select lemma="lainer"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="llana" tags="n.*"/>
+      <match lemma="carda" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- autoregular >> autorégler, autoréguler -->
   <rule weight="0.8">
     <match lemma="autoregular" tags="vblex.*"><select lemma="autorégler"/></match>
