@@ -1757,6 +1757,55 @@
 
 <!-- V -->
 
+  <!-- tapar >> couvrir, boucher -->
+  <rule weight="0.8">
+    <match lemma="tapar" tags="vblex.*"><select lemma="couvrir"/></match>
+  </rule>
+
+  <!-- destacar >> détacher, ressortir, souligner -->
+  <rule weight="0.8">
+    <match lemma="destacar" tags="vblex.*"><select lemma="détacher"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="destacar" tags="vblex.*"><select lemma="ressortir"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match lemma="per" tags="pr"/>
+      <match lemma="entre" tags="pr"/>
+      <match lemma="de" tags="pr"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="caldre" tags="vbmod.*"/>
+      <match lemma="haver# de" tags="vbmod.*"/>
+      <match lemma="convenir" tags="vbmod.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="destacar" tags="vblex.*"><select lemma="souligner"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="destacar" tags="vblex.*"><select lemma="souligner"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="cnjsub"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="destacar" tags="vblex.*"><select lemma="souligner"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="n.*.pl"/>
+    </or>
+  </rule>
+
   <!-- escarmentar >> corriger, échauder -->
   <rule weight="0.8">
     <match lemma="escarmentar" tags="vblex.*"><select lemma="corriger"/></match>
@@ -3371,6 +3420,19 @@
   </rule>
 
 <!-- N -->
+
+  <!-- parla >> dialecte, langue -->
+  <rule weight="0.8">
+    <match lemma="parla" tags="n.*"><select lemma="dialecte"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="de" tags="pr"/>
+    <match lemma="parla" tags="n.*"><select lemma="langue"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.*"/>
+    <match lemma="parla" tags="n.f.sg"><select lemma="langue"/></match>
+  </rule>
 
   <!-- call >> quartier juif, durillon -->
   <rule weight="0.8">

@@ -1062,6 +1062,9 @@
     </or>
   </rule>
 
+  <!-- affronter >> afrontar, enfrontar -->
+  <macro name="verb_nopron_pron" p1="affronter" p2="afrontar" p3="enfrontar" />
+
   <!-- rejoindre >> arribar# a, trobar -->
   <macro name="verb_nopron_pron" p1="rejoindre" p2="unir# a" p3="trobar" />
   <rule weight="1.2">
@@ -1524,9 +1527,9 @@
     <match lemma="de" tags="pr"/>
     <match tags="det.*"/>
     <or>
-      <match lemma="ajuntament" tags="n.*"/>
-      <match lemma="ministeri" tags="n.*"/>
-      <match lemma="palau" tags="n.*"/>
+      <match lemma="mairie" tags="n.*"/>
+      <match lemma="ministère" tags="n.*"/>
+      <match lemma="palais" tags="n.*"/>
     </or>
   </rule>
 
