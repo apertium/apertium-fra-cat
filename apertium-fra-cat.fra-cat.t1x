@@ -306,12 +306,20 @@
     <def-cat n="xifra">
       <cat-item tags="num"/>
     </def-cat>
+    <def-cat n="num_detind">
+      <cat-item tags="num"/>
+      <cat-item tags="num.*"/>
+      <cat-item tags="det.ind.*"/>
+    </def-cat>
     <def-cat n="en">
       <cat-item lemma="en" tags="pr"/>
       <cat-item lemma="en" tags="prn.*"/>
     </def-cat>
     <def-cat n="apr">
       <cat-item lemma="à" tags="pr"/>
+    </def-cat>
+    <def-cat n="depuis">
+      <cat-item lemma="depuis" tags="pr"/>
     </def-cat>
     <def-cat n="que">
       <cat-item lemma="que" tags="cnjsub"/>
@@ -5799,6 +5807,42 @@ is not applicable because gender and number cannot be taken from previous rules 
             <clip pos="3" side="tl" part="lemh"/>
             <clip pos="3" side="tl" part="tags"/>
             <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: depuis des années > des de fa anys">
+      <pattern>
+        <pattern-item n="depuis"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdef"/>
+        <pattern-item n="unite_temps"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="4"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="3">
+               <lit v="fer"/>
+            </get-case-from>
+            <lit-tag v="vblex.pri.p3.sg"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <out>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
@@ -14155,7 +14199,7 @@ is not applicable because gender and number cannot be taken from previous rules 
 	  <otherwise>
             <out>
               <lu>
-	            <var n="pronom"/>
+                <var n="pronom"/>
               </lu>
               <b/>
               <lu>
@@ -14183,7 +14227,7 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="il"/>
         <pattern-item n="y"/>
         <pattern-item n="vbhaver"/>
-        <pattern-item n="num"/>
+        <pattern-item n="num_detind"/>
         <pattern-item n="unite_temps"/>
       </pattern>
       <action>
@@ -14222,6 +14266,44 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
+    <rule comment="REGLA: depuis X temps > des de fa X temps">
+      <pattern>
+        <pattern-item n="depuis"/>
+        <pattern-item n="num_detind"/>
+        <pattern-item n="unite_temps"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="3">
+               <lit v="fer"/>
+            </get-case-from>
+            <lit-tag v="vblex.pri.p3.sg"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
     <rule comment="REGLA: il y a longtemps > fa temps">
       <pattern>
         <pattern-item n="il"/>
@@ -14248,6 +14330,37 @@ is not applicable because gender and number cannot be taken from previous rules 
           <b pos="3"/>
           <lu>
             <get-case-from pos="3">
+              <lit v="temps"/>
+            </get-case-from>
+            <lit-tag v="n.m.sp"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: depuis longtemps > des de fa temps">
+      <pattern>
+        <pattern-item n="depuis"/>
+        <pattern-item n="longtemps"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+               <lit v="fer"/>
+            </get-case-from>
+            <lit-tag v="vblex"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="2">
               <lit v="temps"/>
             </get-case-from>
             <lit-tag v="n.m.sp"/>
