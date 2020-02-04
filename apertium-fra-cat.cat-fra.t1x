@@ -327,6 +327,7 @@
       <cat-item lemma="penedir" tags="vblex.*"/>
       <cat-item lemma="podrir" tags="vblex.*"/>
       <cat-item lemma="reviscolar" tags="vblex.*"/>
+      <cat-item lemma="soler" tags="vblex.*"/>
     </def-cat>
     <def-cat n="verbospron_inf">
       <cat-item lemma="agrumollar" tags="vblex.inf"/>
@@ -393,6 +394,13 @@
     </def-cat>
     <def-cat n="fa">
       <cat-item lemma="fer" tags="vblex.pri.p3.sg"/>
+    </def-cat>
+    <def-cat n="inf_que">
+      <cat-item tags="vblex.inf"/>
+      <cat-item tags="vbser.inf"/>
+      <cat-item tags="vbhaver.inf"/>
+      <cat-item tags="vbmod.inf"/>
+      <cat-item lemma="que" tags="cnjsub"/>
     </def-cat>
     <def-cat n="num">
       <cat-item tags="num.*"/>
@@ -607,9 +615,55 @@
       <cat-item lemma="dir" tags="vblex.*.p3.sg"/>
       <cat-item lemma="discutir" tags="vblex.*.p3.sg"/>
       <cat-item lemma="parlar" tags="vblex.*.p3.sg"/>
+      <cat-item lemma="voler" tags="vbmod.*.p3.sg"/>
+    </def-cat>
+    <def-cat n="passiva_reflexa_pp">
+      <cat-item lemma="dir" tags="vblex.pp.m.sg"/>
+      <cat-item lemma="discutir" tags="vblex.pp.m.sg"/>
+      <cat-item lemma="parlar" tags="vblex.pp.m.sg"/>
+      <cat-item lemma="voler" tags="vbmod.pp.m.sg"/>
     </def-cat>
     <def-cat n="haver">
       <cat-item lemma="haver" tags="vbhaver.*"/>
+    </def-cat>
+    <def-cat n="haver_prip3sg">
+      <cat-item lemma="haver" tags="vbhaver.pri.p3.sg"/>
+    </def-cat>
+    <def-cat n="haverde">
+      <cat-item lemma="haver# de" tags="vbmod.*"/>
+    </def-cat>
+    <def-cat n="haverde_inf">
+      <cat-item lemma="haver# de" tags="vbmod.inf"/>
+    </def-cat>
+    <def-cat n="haverde_pp">
+      <cat-item lemma="haver# de" tags="vbmod.pp.*"/>
+    </def-cat>
+    <def-cat n="caldre">
+      <cat-item lemma="caldre" tags="vbmod.*"/>
+    </def-cat>
+    <def-cat n="caldre_inf">
+      <cat-item lemma="caldre" tags="vbmod.inf"/>
+    </def-cat>
+    <def-cat n="caldre_pp">
+      <cat-item lemma="caldre" tags="vbmod.pp.*"/>
+    </def-cat>
+    <def-cat n="voler_mod">
+      <cat-item lemma="voler" tags="vbmod.*"/>
+    </def-cat>
+    <def-cat n="voler_mod_inf">
+      <cat-item lemma="voler" tags="vbmod.inf"/>
+    </def-cat>
+    <def-cat n="voler_mod_pp">
+      <cat-item lemma="voler" tags="vbmod.pp.*"/>
+    </def-cat>
+    <def-cat n="soler">
+      <cat-item lemma="soler" tags="vblex.*"/>
+    </def-cat>
+    <def-cat n="soler_inf">
+      <cat-item lemma="soler" tags="vblex.inf"/>
+    </def-cat>
+    <def-cat n="soler_pp">
+      <cat-item lemma="soler" tags="vblex.pp.*"/>
     </def-cat>
     <def-cat n="sent">
       <cat-item tags="sent"/>
@@ -4110,16 +4164,16 @@
      <choose>
        <when>
          <test>
-           <and>
-             <equal caseless="yes">
-               <clip pos="1" side="sl" part="lem"/>
-               <lit v="li"/>
-             </equal>
-             <equal>
-               <clip pos="2" side="sl" part="lem"/>
-               <lit v="el"/>
-             </equal>
-           </and>
+           <or>
+             <and>
+               <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="li"/></equal>
+               <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="el"/></equal>
+             </and>
+             <and>
+               <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="li"/></equal>
+               <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="ho"/></equal>
+             </and>
+           </or>
          </test>
          <out>
            <lu>
@@ -9350,8 +9404,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule>
-<!--REGLA: inf -->
+    <rule comment="REGLA: inf">
       <pattern>
         <pattern-item n="inf"/>
       </pattern>
@@ -10629,6 +10682,1211 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
+<!-- verbs modals -->
+
+    <rule comment="regla: cal + inf -> il faut + inf">
+      <pattern>
+        <pattern-item n="caldre"/>
+        <pattern-item n="inf_que"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="il"/>
+            </get-case-from>
+            <lit-tag v="prn.tn.p3.m.sg"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="2">
+              <clip pos="1" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: cal + inf + prnenc -> il faut + prnpro + inf">
+      <pattern>
+        <pattern-item n="caldre"/>
+        <pattern-item n="inf"/>
+        <pattern-item n="prnenc"/>
+      </pattern>
+      <action>
+        <call-macro n="f_setpronom">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="il"/>
+            </get-case-from>
+            <lit-tag v="prn.tn.p3.m.sg"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="2">
+              <clip pos="1" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <clip pos="3" side="tl" part="lem"/>
+            </get-case-from>
+            <lit-tag v="prn.pro"/>
+            <clip pos="3" side="tl" part="tipoenc_pro"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: cal + inf + prnenc + prnenc -> il faut + prnpro + prnpro + inf">
+      <pattern>
+        <pattern-item n="caldre"/>
+        <pattern-item n="inf"/>
+        <pattern-item n="prnenc"/>
+        <pattern-item n="prnenc"/>
+      </pattern>
+      <action>
+        <call-macro n="f_setpronom">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="4"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="il"/>
+            </get-case-from>
+            <lit-tag v="prn.tn.p3.m.sg"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="2">
+              <clip pos="1" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <call-macro n="print_enc_enc_2_pro_pro">
+          <with-param pos="3"/>
+          <with-param pos="4"/>
+        </call-macro>
+        <out>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: anar + caldre_inf + inf -> il a fallu + inf">
+      <pattern>
+        <pattern-item n="anarpri"/>
+        <pattern-item n="caldre_inf"/>
+        <pattern-item n="inf_que"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="il"/>
+            </get-case-from>
+            <lit-tag v="prn.tn.p3.m.sg"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="avoir"/>
+            </get-case-from>
+            <lit-tag v="vbhaver"/>
+            <lit-tag v="pri.p3.sg"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <lit-tag v="vbmod.pp.m.sg"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: anar + caldre_inf + inf + prnenc -> il a fallu + prnpro + inf">
+      <pattern>
+        <pattern-item n="anarpri"/>
+        <pattern-item n="caldre_inf"/>
+        <pattern-item n="inf"/>
+        <pattern-item n="prnenc"/>
+      </pattern>
+      <action>
+        <call-macro n="f_setpronom">
+          <with-param pos="4"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="il"/>
+            </get-case-from>
+            <lit-tag v="prn.tn.p3.m.sg"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="avoir"/>
+            </get-case-from>
+            <lit-tag v="vbhaver"/>
+            <lit-tag v="pri.p3.sg"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <lit-tag v="vbmod.pp.m.sg"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="4" side="tl" part="lem"/>
+            <lit-tag v="prn.pro"/>
+            <clip pos="4" side="tl" part="tipoenc_pro"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: anar + caldre_inf + inf + prnenc + prnenc -> il a fallu + prnpro + prnpro + inf">
+      <pattern>
+        <pattern-item n="anarpri"/>
+        <pattern-item n="caldre_inf"/>
+        <pattern-item n="inf"/>
+        <pattern-item n="prnenc"/>
+        <pattern-item n="prnenc"/>
+      </pattern>
+      <action>
+        <call-macro n="f_setpronom">
+          <with-param pos="4"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="5"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="il"/>
+            </get-case-from>
+            <lit-tag v="prn.tn.p3.m.sg"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="avoir"/>
+            </get-case-from>
+            <lit-tag v="vbhaver"/>
+            <lit-tag v="pri.p3.sg"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <lit-tag v="vbmod.pp.m.sg"/>
+          </lu>
+          <b pos="2"/>
+        </out>
+        <call-macro n="print_enc_enc_2_pro_pro">
+          <with-param pos="4"/>
+          <with-param pos="5"/>
+        </call-macro>
+        <out>
+          <b/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: SENT s'ha de + inf -> SENT on doit + inf">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="es"/>
+        <pattern-item n="haverde"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="on"/>
+            </get-case-from>
+            <lit-tag v="prn.pro.ref.p3.mf.sp"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="devoir"/>
+            </get-case-from>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: s'ha de + inf -> doit se + inf">
+      <pattern>
+        <pattern-item n="es"/>
+        <pattern-item n="haverde"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="devoir"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <clip pos="1" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: SENT no s'ha de + inf -> SENT on ne doit pas + inf">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="noadv"/>
+        <pattern-item n="es"/>
+        <pattern-item n="haverde"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="on"/>
+            </get-case-from>
+            <lit-tag v="prn.pro.ref.p3.mf.sp"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="3">
+              <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <get-case-from pos="4">
+              <lit v="devoir"/>
+            </get-case-from>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="tags"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: no s'ha de + inf -> ne doit pas se + inf">
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="es"/>
+        <pattern-item n="haverde"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="devoir"/>
+            </get-case-from>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: SENT s'ha hagut de + inf -> SENT on a dû + inf">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="es"/>
+        <pattern-item n="haver_prip3sg"/>
+        <pattern-item n="haverde_pp"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="on"/>
+            </get-case-from>
+            <lit-tag v="prn.pro.ref.p3.mf.sp"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="3">
+              <clip pos="3" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="devoir"/>
+            </get-case-from>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="tags"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: s'ha hagut de + inf -> a dû se + inf">
+      <pattern>
+        <pattern-item n="es"/>
+        <pattern-item n="haver_prip3sg"/>
+        <pattern-item n="haverde_pp"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="devoir"/>
+            </get-case-from>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="2">
+              <clip pos="1" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: SENT es va haver de + inf -> SENT on a dû + inf">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="es"/>
+        <pattern-item n="anarpri"/>
+        <pattern-item n="haverde_inf"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="on"/>
+            </get-case-from>
+            <lit-tag v="prn.pro.ref.p3.mf.sp"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="avoir"/>
+            </get-case-from>
+            <lit-tag v="vbhaver"/>
+            <lit-tag v="pri.p3.sg"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="devoir"/>
+            </get-case-from>
+            <lit-tag v="vbmod.pp.m.sg"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="tags"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: es va haver de + inf -> a dû se + inf">
+      <pattern>
+        <pattern-item n="es"/>
+        <pattern-item n="anarpri"/>
+        <pattern-item n="haverde_inf"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="avoir"/>
+            </get-case-from>
+            <lit-tag v="vbhaver"/>
+            <lit-tag v="pri"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="devoir"/>
+            </get-case-from>
+            <lit-tag v="vbmod.pp.m.sg"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="2">
+              <clip pos="1" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: SENT no es va haver de + inf -> SENT on n'a pas dû + inf">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="noadv"/>
+        <pattern-item n="es"/>
+        <pattern-item n="anarpri"/>
+        <pattern-item n="haverde_inf"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="on"/>
+            </get-case-from>
+            <lit-tag v="prn.pro.ref.p3.mf.sp"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="3">
+              <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <get-case-from pos="4">
+              <lit v="avoir"/>
+            </get-case-from>
+            <lit-tag v="vbhaver"/>
+            <lit-tag v="pri.p3.sg"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <get-case-from pos="5">
+              <lit v="devoir"/>
+            </get-case-from>
+            <lit-tag v="vbmod.pp.m.sg"/>
+          </lu>
+          <b pos="5"/>
+          <lu>
+            <clip pos="6" side="tl" part="lemh"/>
+            <clip pos="6" side="tl" part="tags"/>
+            <clip pos="6" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: no es va haver de + inf -> n'a pas dû se + inf">
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="es"/>
+        <pattern-item n="anarpri"/>
+        <pattern-item n="haverde_inf"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="avoir"/>
+            </get-case-from>
+            <lit-tag v="vbhaver"/>
+            <lit-tag v="pri"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="devoir"/>
+            </get-case-from>
+            <lit-tag v="vbmod.pp.m.sg"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <get-case-from pos="3">
+              <clip pos="2" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="tags"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: SENT va haver-se de + inf -> SENT on a dû + inf">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="anarpri"/>
+        <pattern-item n="haverde_inf"/>
+        <pattern-item n="es_enc"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="on"/>
+            </get-case-from>
+            <lit-tag v="prn.pro.ref.p3.mf.sp"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="avoir"/>
+            </get-case-from>
+            <lit-tag v="vbhaver"/>
+            <lit-tag v="pri.p3.sg"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="devoir"/>
+            </get-case-from>
+            <lit-tag v="vbmod.pp.m.sg"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="tags"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: va haver-se de + inf -> a dû se + inf">
+      <pattern>
+        <pattern-item n="anarpri"/>
+        <pattern-item n="haverde_inf"/>
+        <pattern-item n="es_enc"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="avoir"/>
+            </get-case-from>
+            <lit-tag v="vbhaver"/>
+            <lit-tag v="pri"/>
+            <clip pos="1" side="tl" part="persona"/>
+            <clip pos="1" side="tl" part="nbr"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="devoir"/>
+            </get-case-from>
+            <lit-tag v="vbmod.pp.m.sg"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="se"/>
+            </get-case-from>
+            <lit-tag v="prn.pro.ref.p3.mf.sp"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: SENT es voler + inf -> SENT on vouloir + inf">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="es"/>
+        <pattern-item n="voler_mod"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="on"/>
+            </get-case-from>
+            <lit-tag v="prn.pro.ref.p3.mf.sp"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="3">
+              <clip pos="3" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: es + voler + inf -> vouloir se + inf">
+      <pattern>
+        <pattern-item n="es"/>
+        <pattern-item n="voler_mod"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <clip pos="1" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: SENT s'ha volgut + inf -> SENT on a voulu + inf">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="es"/>
+        <pattern-item n="haver_prip3sg"/>
+        <pattern-item n="voler_mod_pp"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="on"/>
+            </get-case-from>
+            <lit-tag v="prn.pro.ref.p3.mf.sp"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="tags"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: es + ha volgut + inf -> a voulu se + inf">
+      <pattern>
+        <pattern-item n="es"/>
+        <pattern-item n="haver_prip3sg"/>
+        <pattern-item n="voler_mod_pp"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="3">
+              <clip pos="1" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: SENT es va voler + inf -> SENT on a voulu + inf">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="es"/>
+        <pattern-item n="anarpri"/>
+        <pattern-item n="voler_mod_inf"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="on"/>
+            </get-case-from>
+            <lit-tag v="prn.pro.ref.p3.mf.sp"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="avoir"/>
+            </get-case-from>
+            <lit-tag v="vbhaver"/>
+            <lit-tag v="pri.p3.sg"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <lit-tag v="vbmod.pp.m.sg"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="tags"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: es va voler + inf -> a voulu se + inf">
+      <pattern>
+        <pattern-item n="es"/>
+        <pattern-item n="anarpri"/>
+        <pattern-item n="voler_mod_inf"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="avoir"/>
+            </get-case-from>
+            <lit-tag v="vbhaver"/>
+            <lit-tag v="pri"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <lit-tag v="vbmod.pp.m.sg"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="3">
+              <clip pos="1" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: es soler + inf -> on + vblex_cnj + d'habitude">
+      <pattern>
+        <pattern-item n="es"/>
+        <pattern-item n="soler"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="on"/>
+            </get-case-from>
+            <lit-tag v="prn.pro.ref.p3.mf.sp"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <lit-tag v="p3.sg"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <lit v="d'habitude"/>
+            <lit-tag v="adv"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: SENT es soler + inf -> SENT on + vblex_cnj + d'habitude">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="es"/>
+        <pattern-item n="soler"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="on"/>
+            </get-case-from>
+            <lit-tag v="prn.pro.ref.p3.mf.sp"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <lit-tag v="p3.sg"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <lit v="d'habitude"/>
+            <lit-tag v="adv"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: no es soler + inf -> on + ne + vblex_cnj + pas + d'habitude">
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="es"/>
+        <pattern-item n="soler"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="on"/>
+            </get-case-from>
+            <lit-tag v="prn.pro.ref.p3.mf.sp"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <clip pos="1" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="a_verb"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <lit-tag v="p3.sg"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <lit v="d'habitude"/>
+            <lit-tag v="adv"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: SENT no es soler + inf -> SENT on + ne + vblex_cnj + pas + d'habitude">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="noadv"/>
+        <pattern-item n="es"/>
+        <pattern-item n="soler"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="on"/>
+            </get-case-from>
+            <lit-tag v="prn.pro.ref.p3.mf.sp"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="3">
+              <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="a_verb"/>
+            <clip pos="4" side="tl" part="temps"/>
+            <lit-tag v="p3.sg"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <lit v="d'habitude"/>
+            <lit-tag v="adv"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+<!-- fi verbs modals -->
+
+<!-- passiva reflexa -->
+
     <rule comment="regla: es diu que -> on dit que (suposo que és una passiva reflexa)">
       <pattern>
         <pattern-item n="es"/>
@@ -10639,7 +11897,7 @@ is not applicable because gender and number can not be taken from previous rules
         <out>
           <lu>
             <get-case-from pos="1">
-               <lit v="on"/>
+              <lit v="on"/>
             </get-case-from>
             <lit-tag v="prn.pro.ref.p3.mf.sp"/>
           </lu>
@@ -10660,6 +11918,83 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
     </rule>
+
+    <rule comment="regla: s'ha dit que -> on a dit que (suposo que és una passiva reflexa)">
+      <pattern>
+        <pattern-item n="es"/>
+        <pattern-item n="haver_prip3sg"/>
+        <pattern-item n="passiva_reflexa_pp"/>
+        <pattern-item n="que"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="on"/>
+            </get-case-from>
+            <lit-tag v="prn.pro.ref.p3.mf.sp"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: SENT s'ha dit que -> SENT on a dit que (suposo que és una passiva reflexa)">
+      <pattern>
+        <pattern-item n="sentquecm"/>
+        <pattern-item n="es"/>
+        <pattern-item n="haver_prip3sg"/>
+        <pattern-item n="passiva_reflexa_pp"/>
+        <pattern-item n="que"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="on"/>
+            </get-case-from>
+            <lit-tag v="prn.pro.ref.p3.mf.sp"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+<!-- fi passiva reflexa -->
 
 <rule comment="regla: haverger pp: havent caigut > après être tombé">
    <pattern>
