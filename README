@@ -40,30 +40,30 @@ to `./configure`, make sure to give the same `--prefix` to `./configure` here.
 If you are in the source directory after running make, the following
 commands should work:
 
-    $  echo "La plume de ma tante" | apertium -d . fra-cat
-    La ploma de la meva tia
+    $  echo "Apertium est un logiciel de traduction automatique" | apertium -d . fra-cat
+    Apertium és un programari de traducció automàtica
 
-    $  echo "La tia" | apertium -d . cat-fra
-    La tante
+    $  echo "Apertium és un programari de traducció automàtica" | apertium -d . cat-fra
+    Apertium est un logiciel de traduction automatique
 
 After installing somewhere in `$PATH`, you should be able to do e.g.
 
-    $  echo "Nécessaire" | apertium fra-cat
-    Necessari
+    $  echo "Apertium est un logiciel de traduction automatique" | apertium fra-cat
+    Apertium és un programari de traducció automàtica
 
 
 ## Files and data
 
-* `apertium-fra-cat.fra-cat.dix`  - Bilingual dictionary
-* `apertium-fra-cat.fra-cat.t1x`  - Chunking rules for translating into Catalan
-* `apertium-fra-cat.cat-fra.t1x`  - Chunking rules for translating into French
-* `apertium-fra-cat.fra-cat.t2x`  - Interchunk rules for translating into Catalan
-* `apertium-fra-cat.cat-fra.t2x`  - Interchunk rules for translating into French
-* `apertium-fra-cat.fra-cat.t3x`  - Postchunk rules for translating into Catalan
-* `apertium-fra-cat.cat-fra.t3x`  - Postchunk rules for translating into French
-* `apertium-fra-cat.fra-cat.lrx`  - Lexical selection rules for translating into Catalan
-* `apertium-fra-cat.cat-fra.lrx`  - Lexical selection rules for translating into French
-* `modes.xml`                     - Translation modes
+* `apertium-fra-cat.fra-cat.dix`      - Bilingual dictionary
+* `apertium-fra-cat.fra-cat.t1x`      - Chunking rules for translating into Catalan
+* `apertium-fra-cat.cat-fra.t1x`      - Chunking rules for translating into French
+* `apertium-fra-cat.fra-cat.t4x`      - Final chuncking rules for translating into Catalan
+* `apertium-fra-cat.cat-fra.t4x`      - Final chuncking rules for translating into French
+* `apertium-fra-cat.fra-cat.metalrx`  - Lexical selection rules for translating into Catalan
+* `apertium-fra-cat.cat-fra.metalrx`  - Lexical selection rules for translating into French
+* `apertium-fra-cat.fra-cat.l1x`      - Rules for reordering separable/discontiguous multiwords for translating into Catalan
+* `apertium-fra-cat.cat-fra.l2x`      - Rules for reordering separable/discontiguous multiwords for translating into French
+* `modes.xml`                         - Translation modes
 
 ## For more information
 
