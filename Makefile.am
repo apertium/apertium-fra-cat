@@ -237,10 +237,10 @@ clean-local:
 ###############################################################################
 
 test: all
-	echo "La plume de ma tante" | apertium -d . fra-cat | tee .test-mt
-	@echo "La ploma de la meva tia" > .test-ref
+	echo "Apertium est un logiciel de traduction automatique" | apertium -d . fra-cat | tee .test-mt
+	@echo "Apertium és un programari de traducció automàtica" > .test-ref
 	@diff .test-ref .test-mt
-	echo "La tia" | apertium -d . cat-fra | tee .test-mt
-	@echo "La tante" > .test-ref
+	echo "Apertium és un programari de traducció automàtica" | apertium -d . cat-fra | tee .test-mt
+	@echo "Apertium est un logiciel de traduction automatique" > .test-ref
 	@diff .test-ref .test-mt
 	@rm .test-ref .test-mt
