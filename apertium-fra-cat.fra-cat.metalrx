@@ -506,6 +506,11 @@
     </repeat>
     <match lemma="dans" tags="pr"><select lemma="a"/></match>
   </rule>
+  <rule weight="1.0">
+    <match lemma="dans" tags="pr"><select lemma="a"/></match>
+    <match lemma="le" tags="det.def.*"/>
+    <match tags="np.top.m.sg"/>
+  </rule>
 
   <!-- de >> de, a -->
   <rule weight="0.8">
@@ -808,6 +813,28 @@
 
 <!-- **************** V **************** -->
 
+  <!-- renverser >> vessar, derrocar -->
+  <rule weight="0.8">
+    <match lemma="renverser" tags="vblex.*"><select lemma="vessar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="renverser" tags="vblex.*"><select lemma="derrocar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="gouvernement" tags="n.*"/>
+      <match lemma="président" tags="n.*"/>
+      <match lemma="roi" tags="n.*"/>
+      <match lemma="général" tags="n.*"/>
+      <match lemma="mariscal" tags="n.*"/>
+      <match lemma="république" tags="n.*"/>
+      <match lemma="monarchie" tags="n.*"/>
+      <match lemma="institution" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- travestir >> disfressar, transvestir -->
   <rule weight="0.8">
     <match lemma="travestir" tags="vblex.*"><select lemma="disfressar"/></match>
@@ -1064,6 +1091,22 @@
 
   <!-- affronter >> afrontar, enfrontar -->
   <macro name="verb_nopron_pron" p1="affronter" p2="afrontar" p3="enfrontar" />
+
+  <!-- rendre >> retre, arribar, fer# cap a -->
+  <macro name="verb_nopron_pron" p1="rendre" p2="retre" p3="arribar" />
+  <rule weight="1.2">
+    <match lemma="se" tags="prn.*"/>
+    <match lemma="rendre" tags="vblex.ger"><select lemma="fer# cap a"/></match>
+  </rule>
+
+  <!-- rendre# a >> arribar# a, fer# cap a -->
+  <rule weight="0.8">
+    <match lemma="rendre #a" tags="vblex.*"><select lemma="arribar# a"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="se" tags="prn.*"/>
+    <match lemma="rendre #a" tags="vblex.ger"><select lemma="fer# cap a"/></match>
+  </rule>
 
   <!-- rejoindre >> arribar# a, trobar -->
   <macro name="verb_nopron_pron" p1="rejoindre" p2="unir# a" p3="trobar" />
@@ -1517,6 +1560,19 @@
   <macro name="verb_prep" p1="chasser" p2="caçar" p3="de" p4="expulsar" />
 
 <!-- **************** N **************** -->
+
+  <!-- détente >> distensió, esbarjo -->
+  <rule weight="0.8">
+    <match lemma="détente" tags="n.*"><select lemma="distensió"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="activité" tags="n.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match lemma="détente" tags="n.*"><select lemma="esbarjo"/></match>
+  </rule>
 
   <!-- balcon >> balcó, balconada -->
   <rule weight="0.8">

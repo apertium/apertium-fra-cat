@@ -3421,6 +3421,15 @@
 
 <!-- N -->
 
+  <!-- falla >> faille, défaut -->
+  <rule weight="0.8">
+    <match lemma="falla" tags="n.*"><select lemma="faille"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="falla" tags="n.*"><select lemma="défaut"/></match>
+    <match lemma="en" tags="pr"/>
+  </rule>
+
   <!-- parla >> dialecte, langue -->
   <rule weight="0.8">
     <match lemma="parla" tags="n.*"><select lemma="dialecte"/></match>
@@ -4027,6 +4036,11 @@
     <match lemma="ronda" tags="n.*"><select lemma="tour"/></match>
   </rule>
   <rule weight="1.0">
+    <match lemma="en" tags="pr"/>
+    <or><match tags="num"/><match tags="num.*"/></or>
+    <match lemma="ronda" tags="n.*"><select lemma="tour"/></match>
+  </rule>
+  <rule weight="1.0">
     <match lemma="ronda" tags="n.*"><select lemma="tour"/></match>
     <match lemma="preliminar" tags="adj.*"/>
   </rule>
@@ -4569,12 +4583,16 @@
     <match tags=""/>
   </rule>
 
-  <!-- serra >> scie, cordillère -->
+  <!-- serra >> scie, massif -->
   <rule weight="0.8">
+<!--
     <match lemma="serra" tags="n.*"><select lemma="scie"/></match>
+-->
+    <match lemma="serra" tags="n.*"><select lemma="massif"/></match>
   </rule>
+<!--
   <rule weight="1.0">
-    <match lemma="serra" tags="n.*"><select lemma="cordillère"/></match>
+    <match lemma="serra" tags="n.*"><select lemma="massif"/></match>
     <match lemma="de" tags="pr"/>
     <repeat from="0" upto="1">
       <match tags="det.*"/>
@@ -4582,7 +4600,7 @@
     <or><match tags="np.*"/><match tags=""/></or>
   </rule>
   <rule weight="1.0">
-    <match lemma="serra" tags="n.*"><select lemma="cordillère"/></match>
+    <match lemma="serra" tags="n.*"><select lemma="massif"/></match>
     <or>
       <match lemma="litoral" tags="adj.*"/>
       <match lemma="prelitoral" tags="adj.*"/>
@@ -4590,12 +4608,26 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match lemma="serra" tags="n.*"><select lemma="cordillère"/></match>
+    <match lemma="serra" tags="n.*"><select lemma="massif"/></match>
      <match lemma="de" tags="pr"/>
     <or>
       <match lemma="ponent" tags="n.*"/>
       <match lemma="llevant" tags="n.*"/>
       <match lemma="tramuntana" tags="n.*"/>
+    </or>
+  </rule>
+-->
+
+  <!-- baralla >> bagarre, jeu# de cartes -->
+  <rule weight="0.8">
+    <match lemma="baralla" tags="n.*"><select lemma="bagarre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="baralla" tags="n.*"><select lemma="jeu# de cartes"/></match>
+    <or>
+      <match lemma="francès" tags="adj.*"/>
+      <match lemma="espanyol" tags="adj.*"/>
+      <match lemma="hongarès" tags="adj.*"/>
     </or>
   </rule>
 
