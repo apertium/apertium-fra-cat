@@ -251,6 +251,16 @@
       <cat-item tags="vbhaver.inf"/>
       <cat-item tags="vbmod.inf"/>
     </def-cat>
+    <def-cat n="inf_ger">
+      <cat-item tags="vblex.inf"/>
+      <cat-item tags="vbser.inf"/>
+      <cat-item tags="vbhaver.inf"/>
+      <cat-item tags="vbmod.inf"/>
+      <cat-item tags="vblex.ger"/>
+      <cat-item tags="vbser.ger"/>
+      <cat-item tags="vbhaver.ger"/>
+      <cat-item tags="vbmod.ger"/>
+    </def-cat>
     <def-cat n="pp">
       <cat-item tags="vblex.pp.*"/>
       <cat-item tags="vbser.pp.*"/>
@@ -432,13 +442,33 @@
       <cat-item lemma="asseoir" tags="vblex.*"/>
       <cat-item lemma="heurter" tags="vblex.*"/>
       <cat-item lemma="passer" tags="vblex.*"/>
+      <cat-item lemma="rendre" tags="vblex.*"/>
+      <cat-item lemma="rendre# à" tags="vblex.*"/>
       <cat-item lemma="taire" tags="vblex.*"/>
     </def-cat>
     <def-cat n="verbospron_pp">
       <cat-item lemma="asseoir" tags="vblex.pp.*"/>
       <cat-item lemma="heurter" tags="vblex.pp.*"/>
       <cat-item lemma="passer" tags="vblex.pp.*"/>
+      <cat-item lemma="rendre" tags="vblex.pp.*"/>
+      <cat-item lemma="rendre# à" tags="vblex.pp.*"/>
       <cat-item lemma="taire" tags="vblex.pp.*"/>
+    </def-cat>
+    <def-cat n="verbospron_inf">
+      <cat-item lemma="asseoir" tags="vblex.inf"/>
+      <cat-item lemma="heurter" tags="vblex.inf"/>
+      <cat-item lemma="passer" tags="vblex.inf"/>
+      <cat-item lemma="rendre" tags="vblex.inf"/>
+      <cat-item lemma="rendre# à" tags="vblex.inf"/>
+      <cat-item lemma="taire" tags="vblex.inf"/>
+    </def-cat>
+    <def-cat n="verbospron_ger">
+      <cat-item lemma="asseoir" tags="vblex.ger"/>
+      <cat-item lemma="heurter" tags="vblex.ger"/>
+      <cat-item lemma="passer" tags="vblex.ger"/>
+      <cat-item lemma="rendre" tags="vblex.ger"/>
+      <cat-item lemma="rendre# à" tags="vblex.ger"/>
+      <cat-item lemma="taire" tags="vblex.ger"/>
     </def-cat>
     <def-cat n="vbambser_pp">
       <cat-item lemma="aller" tags="vblex.pp.*"/>
@@ -949,6 +979,7 @@
       <list-item v="Herzégovine"/>
       <list-item v="Monténegro"/>
       <list-item v="Macédoine"/>
+      <list-item v="Albanie"/>
       <list-item v="Roumanie"/>
       <list-item v="Bulgarie"/>
       <list-item v="Grèce"/>
@@ -1064,6 +1095,7 @@
       <list-item v="Alabama"/>
       <list-item v="Alaska"/>
       <list-item v="Arkansas"/>
+      <list-item v="Arizona"/>
       <list-item v="Californie"/>
       <list-item v="Caroline du Nord"/>
       <list-item v="Caroline du Sud"/>
@@ -1087,6 +1119,7 @@
       <list-item v="New Hampshire"/>
       <list-item v="New Jersey"/>
       <list-item v="Nebraska"/>
+      <list-item v="Nevada"/>
       <list-item v="Montana"/>
       <list-item v="Oklahoma"/>
       <list-item v="Ohio"/>
@@ -1094,9 +1127,11 @@
       <list-item v="Pennsylvanie"/>
       <list-item v="Tennessee"/>
       <list-item v="Texas"/>
+      <list-item v="Utah"/>
       <list-item v="Vermont"/>
       <list-item v="Virginie"/>
       <list-item v="Virginie-Occidentale"/>
+      <list-item v="Wisconsin"/>
       <list-item v="Mexique"/>
       <list-item v="République dominicaine"/>
       <list-item v="Belize"/>
@@ -6163,6 +6198,236 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
       </action>
   </rule>
+
+<!-- REGLES VERBS QUE SÓN PRONOMINALS EN UNA LLENGUA PERÒ NO EN L'ALTRA -->
+
+    <rule comment="Verbs pronominals en francès i no pronominals en català: infinitiu">
+      <pattern>
+        <pattern-item n="prnproref3"/>
+        <pattern-item n="verbospron_inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="Verbs pronominals en francès i no pronominals en català: gerundi">
+      <pattern>
+        <pattern-item n="prnproref3"/>
+        <pattern-item n="verbospron_ger"/>
+      </pattern>
+      <action>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="Verbs pronominals en francès i no pronominals en català: gerundi">
+      <pattern>
+        <pattern-item n="en"/>
+        <pattern-item n="prnproref3"/>
+        <pattern-item n="verbospron_ger"/>
+      </pattern>
+      <action>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="3" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="Verbs pronominals en francès i no pronominals en català: formes personals">
+      <pattern>
+        <pattern-item n="prnproref"/>
+        <pattern-item n="verbospron"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="1" side="sl" part="persona"/>
+                <clip pos="2" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+            <let>
+                <clip pos="2" side="tl" part="whole"/>
+                <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="whole"/>
+                </get-case-from>
+            </let>
+          </when>
+          <otherwise>
+<!--Si no concuerdan el pronombre y el verbo, envíalo todo -->
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="Verbs pronominals en francès i no pronominals en català: formes personals negatives">
+      <pattern>
+        <pattern-item n="adv"/>
+        <pattern-item n="prnproref"/>
+        <pattern-item n="verbospron"/>
+        <pattern-item n="pas"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <choose>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+          <when>
+            <test>
+              <equal>
+                <clip pos="2" side="sl" part="persona"/>
+                <clip pos="3" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+            <let>
+                <clip pos="3" side="tl" part="whole"/>
+                <get-case-from pos="2">
+                  <clip pos="3" side="tl" part="whole"/>
+                </get-case-from>
+            </let>
+          </when>
+          <otherwise>
+<!--Si no concuerdan el pronombre y el verbo, envíalo todo -->
+            <out>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b pos="2"/>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+      </action>
+    </rule>
+
+    <rule comment="Verbs pronominals en francés i no pronominals en català. Temps compostos">
+      <pattern>
+        <pattern-item n="prnproref"/>
+        <pattern-item n="pascomp_ser"/>
+        <pattern-item n="verbospron_pp"/>
+
+      </pattern>
+      <action>
+        <choose>
+          <when>
+<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
+            <test>
+              <equal>
+                <clip pos="1" side="sl" part="persona"/>
+                <clip pos="2" side="sl" part="persona"/>
+              </equal>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="lem"/>
+                </get-case-from>
+                <lit-tag v="vaux"/>
+<!--Para que traduzca "haber" como auxiliar (lo mismo que hace la regla HABER 3ª persona -->
+                <clip pos="2" side="tl" part="temps"/>
+                <clip pos="2" side="tl" part="persona"/>
+                <clip pos="2" side="tl" part="nbr"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="a_verb"/>
+                <clip pos="3" side="tl" part="temps"/>
+                <lit-tag v="m.sg"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+<!--Si no concuerdan el pronombre y el verbo, envíalo todo -->
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+            </out>
+            <out>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <lit-tag v="vaux"/>
+                <clip pos="2" side="tl" part="temps"/>
+                <clip pos="2" side="tl" part="persona"/>
+                <clip pos="2" side="tl" part="nbr"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="a_verb"/>
+                <clip pos="3" side="tl" part="temps"/>
+                <clip pos="3" side="tl" part="gen"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+
+<!-- FI REGLES VERBS QUE SÓN PRONOMINALS EN UNA LLENGUA PERÒ NO EN L'ALTRA -->
 
     <rule comment="REGLA: verb + de +  VERB PREP DET (venir de avoir des: acabar de tenir)">
       <pattern>
@@ -13309,121 +13574,6 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-
-<!-- REGLES VERBS QUE SÓN PRONOMINALS EN UNA LLENGUA PERÒ NO EN L'ALTRA -->
-
-    <rule comment="Verbs pronominals en francès i no pronominals en català">
-      <pattern>
-        <pattern-item n="prnproref"/>
-        <pattern-item n="verbospron"/>
-      </pattern>
-      <action>
-        <choose>
-<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
-          <when>
-            <test>
-              <equal>
-                <clip pos="1" side="sl" part="persona"/>
-                <clip pos="2" side="sl" part="persona"/>
-              </equal>
-            </test>
-            <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
-            <let>
-                <clip pos="2" side="tl" part="lemh"/>
-                <get-case-from pos="1">
-                  <clip pos="2" side="tl" part="lemh"/>
-                </get-case-from>
-            </let>
-          </when>
-          <otherwise>
-<!--Si no concuerdan el pronombre y el verbo, envíalo todo -->
-            <out>
-              <lu>
-                <clip pos="1" side="tl" part="whole"/>
-              </lu>
-              <b pos="1"/>
-            </out>
-          </otherwise>
-        </choose>
-        <out>
-          <lu>
-            <clip pos="2" side="tl" part="whole"/>
-          </lu>
-        </out>
-      </action>
-    </rule>
-
-    <rule comment="Verbs pronominals en francés i no pronominals en català. Temps compostos">
-      <pattern>
-        <pattern-item n="prnproref"/>
-        <pattern-item n="pascomp_ser"/>
-        <pattern-item n="verbospron_pp"/>
-
-      </pattern>
-      <action>
-        <choose>
-          <when>
-<!--Si la persona del pronombre y el verbo concuerdan, no envíes el pronombre -->
-            <test>
-              <equal>
-                <clip pos="1" side="sl" part="persona"/>
-                <clip pos="2" side="sl" part="persona"/>
-              </equal>
-            </test>
-            <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
-            <out>
-              <lu>
-                <get-case-from pos="1">
-                  <clip pos="2" side="tl" part="lem"/>
-                </get-case-from>
-                <lit-tag v="vaux"/>
-<!--Para que traduzca "haber" como auxiliar (lo mismo que hace la regla HABER 3ª persona -->
-                <clip pos="2" side="tl" part="temps"/>
-                <clip pos="2" side="tl" part="persona"/>
-                <clip pos="2" side="tl" part="nbr"/>
-              </lu>
-              <b pos="2"/>
-              <lu>
-                <clip pos="3" side="tl" part="lemh"/>
-                <clip pos="3" side="tl" part="a_verb"/>
-                <clip pos="3" side="tl" part="temps"/>
-                <lit-tag v="m.sg"/>
-                <clip pos="3" side="tl" part="lemq"/>
-              </lu>
-            </out>
-          </when>
-          <otherwise>
-<!--Si no concuerdan el pronombre y el verbo, envíalo todo -->
-            <out>
-              <lu>
-                <clip pos="1" side="tl" part="whole"/>
-              </lu>
-              <b pos="1"/>
-            </out>
-            <out>
-              <lu>
-                <clip pos="2" side="tl" part="lem"/>
-                <lit-tag v="vaux"/>
-                <clip pos="2" side="tl" part="temps"/>
-                <clip pos="2" side="tl" part="persona"/>
-                <clip pos="2" side="tl" part="nbr"/>
-              </lu>
-              <b pos="2"/>
-              <lu>
-                <clip pos="3" side="tl" part="lemh"/>
-                <clip pos="3" side="tl" part="a_verb"/>
-                <clip pos="3" side="tl" part="temps"/>
-                <clip pos="3" side="tl" part="gen"/>
-                <clip pos="3" side="tl" part="nbr"/>
-                <clip pos="3" side="tl" part="lemq"/>
-              </lu>
-            </out>
-          </otherwise>
-        </choose>
-      </action>
-    </rule>
-
-<!-- FI REGLES VERBS QUE SÓN PRONOMINALS EN UNA LLENGUA PERÒ NO EN L'ALTRA -->
 
     <rule comment="REGLA: en + nptop = a + nptop: en France -> a França">
       <pattern>
