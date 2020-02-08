@@ -813,6 +813,11 @@
 
 <!-- **************** V **************** -->
 
+  <!-- bander >> embenar, trempar -->
+  <rule weight="0.8">
+    <match lemma="bander" tags="vblex.*"><select lemma="embenar"/></match>
+  </rule>
+
   <!-- renverser >> vessar, derrocar -->
   <rule weight="0.8">
     <match lemma="renverser" tags="vblex.*"><select lemma="vessar"/></match>
@@ -1560,6 +1565,121 @@
   <macro name="verb_prep" p1="chasser" p2="caçar" p3="de" p4="expulsar" />
 
 <!-- **************** N **************** -->
+
+  <!-- nouvelle >> notícia, relat -->
+  <rule weight="0.8">
+    <match lemma="nouvelle" tags="n.*"><select lemma="notícia"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="roman" tags="n.*"/>
+      <match lemma="conte" tags="n.*"/>
+      <match lemma="écrivain" tags="n.*"/>
+      <match lemma="écrire" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="nouvelle" tags="n.*"><select lemma="relat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="nouvelle" tags="n.*"><select lemma="relat"/></match>
+    <repeat from="0" upto="3">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="roman" tags="n.*"/>
+      <match lemma="conte" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- boucle >> sivella, bucle -->
+  <rule weight="0.8">
+    <match lemma="boucle" tags="n.*"><select lemma="sivella"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="en" tags="pr"/>
+    <match lemma="boucle" tags="n.*"><select lemma="bucle"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="dans" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="boucle" tags="n.*"><select lemma="bucle"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="boucle" tags="n.*"><select lemma="bucle"/></match>
+    <match lemma="local" tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="former" tags="vblex.*"/>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match lemma="de" tags="pr"/>
+    </or>
+    <match lemma="boucle" tags="n.*"><select lemma="bucle"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="former" tags="vblex.*"/>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match lemma="de" tags="pr"/>
+    </or>
+    <match tags="det.*"/>
+    <match lemma="boucle" tags="n.*"><select lemma="bucle"/></match>
+  </rule>
+
+  <!-- transporteur >> transportista, transportador -->
+  <rule weight="0.8">
+    <match lemma="transporteur" tags="n.*"><select lemma="transportista"/></match>
+  </rule>
+
+  <!-- noyau >> nucli, pinyol -->
+  <rule weight="0.8">
+    <match lemma="noyau" tags="n.*"><select lemma="nucli"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="noyau" tags="n.*"><select lemma="pinyol"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="amande" tags="n.*"/>
+      <match lemma="cerise" tags="n.*"/>
+      <match lemma="olive" tags="n.*"/>
+      <match lemma="pêche" tags="n.*"/>
+      <match lemma="prune" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="noyau" tags="n.*"><select lemma="pinyol"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <or>
+      <match lemma="amande" tags="n.*"/>
+      <match lemma="cerise" tags="n.*"/>
+      <match lemma="olive" tags="n.*"/>
+      <match lemma="pêche" tags="n.*"/>
+      <match lemma="prune" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- paquet >> paquet, farcell, fardell -->
+  <rule weight="0.8">
+    <match lemma="paquet" tags="n.*"><select lemma="paquet"/></match>
+  </rule>
+
+  <!-- plateau >> altiplà, safata -->
+  <rule weight="0.8">
+    <match lemma="plateau" tags="n.*"><select lemma="altiplà"/></match>
+  </rule>
 
   <!-- détente >> distensió, esbarjo -->
   <rule weight="0.8">
@@ -3772,40 +3892,42 @@
     <or>
       <match lemma="amoureux" tags="adj.*"/>
       <match lemma="content" tags="adj.*"/>
-      <match lemma="satisfait" tags="adj.*"/>
-      <match lemma="satisfaire" tags="vblex.pp.*"/>
-      <match lemma="malade" tags="adj.*"/>
-      <match lemma="fatigué" tags="adj.*"/>
-      <match lemma="fatiguer" tags="vblex.pp.*"/>
+      <match lemma="consterné" tags="adj.*"/>
+      <match lemma="consterner" tags="vblex.pp.*"/>
+      <match lemma="contrôlé" tags="adj.*"/>
+      <match lemma="contrôler" tags="vblex.pp.*"/>
+      <match lemma="convaincu" tags="adj.*"/>
+      <match lemma="convaincre" tags="vblex.pp.*"/>
+      <match lemma="d'accord" tags="adv"/>
+      <match lemma="dopé" tags="adj.*"/>
+      <match lemma="doper" tags="vblex.pp.*"/>
+      <match lemma="engagé" tags="adj.*"/>
+      <match lemma="engager" tags="vblex.pp.*"/>
       <match lemma="enrhumé" tags="adj.*"/>
       <match lemma="enrhumer" tags="vblex.pp.*"/>
-      <match lemma="préoccupé" tags="adj.*"/>
-      <match lemma="préoccuper" tags="vblex.pp.*"/>
+      <match lemma="éveillé" tags="adj.*"/>
+      <match lemma="éveiller" tags="vblex.pp.*"/>
+      <match lemma="fatigué" tags="adj.*"/>
+      <match lemma="fatiguer" tags="vblex.pp.*"/>
+      <match lemma="fermé" tags="adj.*"/>
+      <match lemma="fermer" tags="vblex.pp.*"/>
       <match lemma="intéressé" tags="adj.*"/>
       <match lemma="intéresser" tags="vblex.pp.*"/>
+      <match lemma="malade" tags="adj.*"/>
       <match lemma="marié" tags="adj.*"/>
       <match lemma="marier" tags="vblex.pp.*"/>
       <match lemma="mort" tags="adj.*"/>
       <match lemma="mourir" tags="vblex.pp.*"/>
-      <match lemma="convaincu" tags="adj.*"/>
-      <match lemma="convaincre" tags="vblex.pp.*"/>
-      <match lemma="persuadé" tags="adj.*"/>
-      <match lemma="persuader" tags="vblex.pp.*"/>
       <match lemma="ouvert" tags="adj.*"/>
       <match lemma="ouvrir" tags="vblex.pp.*"/>
-      <match lemma="fermé" tags="adj.*"/>
-      <match lemma="fermer" tags="vblex.pp.*"/>
-      <match lemma="éveillé" tags="adj.*"/>
-      <match lemma="éveiller" tags="vblex.pp.*"/>
-      <match lemma="consterné" tags="adj.*"/>
-      <match lemma="consterner" tags="vblex.pp.*"/>
+      <match lemma="préoccupé" tags="adj.*"/>
+      <match lemma="préoccuper" tags="vblex.pp.*"/>
+      <match lemma="persuadé" tags="adj.*"/>
+      <match lemma="persuader" tags="vblex.pp.*"/>
       <match lemma="réglementé" tags="adj.*"/>
       <match lemma="réglementer" tags="vblex.pp.*"/>
-      <match lemma="contrôlé" tags="adj.*"/>
-      <match lemma="contrôler" tags="vblex.pp.*"/>
-      <match lemma="dopé" tags="adj.*"/>
-      <match lemma="doper" tags="vblex.pp.*"/>
-      <match lemma="d'accord" tags="adv"/>
+      <match lemma="satisfait" tags="adj.*"/>
+      <match lemma="satisfaire" tags="vblex.pp.*"/>
     </or>
   </rule>
   <rule weight="1.0">

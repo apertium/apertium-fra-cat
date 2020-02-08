@@ -766,6 +766,11 @@
 
 <!-- PRN -->
 
+  <!-- si mateix >> soi-même, lui-même -->
+  <rule weight="0.8">
+    <match lemma="si mateix" tags="prn.*"><select lemma="soi-même"/></match>
+  </rule>
+
   <!-- es >> se, on -->
   <rule weight="0.8">
     <match lemma="es" tags="prn.*"><select lemma="se"/></match>
@@ -1710,6 +1715,11 @@
 
 <!-- ADV -->
 
+  <!-- contínuament >> sans cesse, continuellement -->
+  <rule weight="0.8">
+    <match lemma="contínuament" tags="adv"><select lemma="sans cesse"/></match>
+  </rule>
+
   <!-- també >> aussi, encore -->
   <rule weight="0.8">
     <match lemma="també" tags="adv"><select lemma="aussi"/></match>
@@ -1756,6 +1766,36 @@
   </rule>
 
 <!-- V -->
+
+  <!-- ajuntar >> joindre, accoler -->
+  <rule weight="0.8">
+    <match lemma="ajuntar" tags="vblex.*"><select lemma="joindre"/></match>
+  </rule>
+
+  <!-- alimentar >> alimenter, nourrir -->
+  <rule weight="0.8">
+    <match lemma="alimentar" tags="vblex.*"><select lemma="alimenter"/></match>
+  </rule>
+
+  <!-- atalaiar >> guetter, épier -->
+  <rule weight="0.8">
+    <match lemma="atalaiar" tags="vblex.*"><select lemma="guetter"/></match>
+  </rule>
+
+  <!-- destacar >> souligner, détacher -->
+  <rule weight="0.8">
+    <match lemma="destacar" tags="vblex.*"><select lemma="souligner"/></match>
+  </rule>
+
+  <!-- recolzar >> appuyer, soutenir -->
+  <rule weight="0.8">
+    <match lemma="recolzar" tags="vblex.*"><select lemma="appuyer"/></match>
+  </rule>
+
+  <!-- resultar >> résulter, avérer -->
+  <rule weight="0.8">
+    <match lemma="resultar" tags="vblex.*"><select lemma="résulter"/></match>
+  </rule>
 
   <!-- tapar >> couvrir, boucher -->
   <rule weight="0.8">
@@ -3029,6 +3069,11 @@
 
 <!-- ADJ -->
 
+  <!-- substancial >> substantiel, considérable -->
+  <rule weight="0.8">
+    <match lemma="substancial" tags="adj.*"><select lemma="substantiel"/></match>
+  </rule>
+
   <!-- periòdic >> périodique, periodique -->
   <rule weight="0.8">
     <match lemma="periòdic" tags="adj.*"><select lemma="périodique"/></match>
@@ -3421,6 +3466,51 @@
 
 <!-- N -->
 
+  <!-- abatiment >> abattement, accablement -->
+  <rule weight="0.8">
+    <match lemma="abatiment" tags="n.*"><select lemma="abattement"/></match>
+  </rule>
+
+  <!-- ambient >> ambiance, environnement, entourage -->
+  <rule weight="0.8">
+    <match lemma="ambient" tags="n.*"><select lemma="ambiance"/></match>
+  </rule>
+
+  <!-- aposta >> pari, mise -->
+  <rule weight="0.8">
+    <match lemma="aposta" tags="n.*"><select lemma="pari"/></match>
+  </rule>
+
+  <!-- ascens >> ascension, promotion -->
+  <rule weight="0.8">
+    <match lemma="ascens" tags="n.*"><select lemma="ascension"/></match>
+  </rule>
+
+  <!-- escolar >> écolier, scolaire -->
+  <rule weight="0.8">
+    <match lemma="escolar" tags="n.*"><select lemma="écolier"/></match>
+  </rule>
+
+  <!-- escut >> bouclier, armoiries -->
+  <rule weight="0.8">
+    <match lemma="escut" tags="n.*"><select lemma="bouclier"/></match>
+  </rule>
+
+  <!-- hospitalitat >> hospitalité, convivialité -->
+  <rule weight="0.8">
+    <match lemma="hospitalitat" tags="n.*"><select lemma="hospitalité"/></match>
+  </rule>
+
+  <!-- paquet >> colis, paquet -->
+  <rule weight="0.8">
+    <match lemma="paquet" tags="n.*"><select lemma="colis"/></match>
+  </rule>
+
+  <!-- plat >> plat, assiette -->
+  <rule weight="0.8">
+    <match lemma="plat" tags="n.*"><select lemma="plat"/></match>
+  </rule>
+
   <!-- falla >> faille, défaut -->
   <rule weight="0.8">
     <match lemma="falla" tags="n.*"><select lemma="faille"/></match>
@@ -3629,6 +3719,21 @@
   <!-- flotador >> bouée, flotteur -->
   <rule weight="0.8">
     <match lemma="flotador" tags="n.*"><select lemma="bouée"/></match>
+  </rule>
+
+  <!-- poblat >> lieu, village -->
+  <rule weight="0.8">
+    <match lemma="poblat" tags="n.*"><select lemma="lieu"/></match>
+  </rule>
+
+  <!-- capçalera >> chevet, tête -->
+  <rule weight="0.8">
+    <match lemma="capçalera" tags="n.*"><select lemma="chevet"/></match>
+  </rule>
+
+  <!-- web >> web, site -->
+  <rule weight="0.8">
+    <match lemma="web" tags="n.*"><select lemma="web"/></match>
   </rule>
 
   <!-- bot >> bond, canot -->
@@ -4221,6 +4326,21 @@
     </or>
   </rule>
 
+  <!-- rinxol >> boucle, ronflement -->
+  <rule weight="0.8">
+    <match lemma="rinxol" tags="n.*"><select lemma="boucle"/></match>
+  </rule>
+
+  <!-- transportista >> transporteur, convoyeur -->
+  <rule weight="0.8">
+    <match lemma="transportista" tags="n.*"><select lemma="transporteur"/></match>
+  </rule>
+
+  <!-- descàrrega >> déchargement, téléchargement -->
+  <rule weight="0.8">
+    <match lemma="descàrrega" tags="n.*"><select lemma="déchargement"/></match>
+  </rule>
+
   <!-- esplendor >> splendeur, éclat -->
   <rule weight="0.8">
     <match lemma="esplendor" tags="n.*"><select lemma="splendeur"/></match>
@@ -4228,6 +4348,11 @@
   <rule weight="1.0">
     <match lemma="gran" tags="adj.*"/>
     <match lemma="esplendor" tags="n.*"><select lemma="éclat"/></match>
+  </rule>
+
+  <!-- reclusió >> réclusion, enfermement -->
+  <rule weight="0.8">
+    <match lemma="reclusió" tags="n.*"><select lemma="réclusion"/></match>
   </rule>
 
   <!-- retallada >> coupe, coupure -->
@@ -4505,6 +4630,11 @@
     <match lemma="estadista" tags="n.*"><select lemma="femme# d'État"/></match>
   </rule>
 
+  <!-- giny >> engin, widget -->
+  <rule weight="0.8">
+    <match lemma="giny" tags="n.*"><select lemma="engin"/></match>
+  </rule>
+
   <!-- tràiler >> semi-remorque, match -->
   <rule weight="0.8">
     <match lemma="tràiler" tags="n.*"><select lemma="semi-remorque"/></match>
@@ -4682,6 +4812,11 @@
       <match lemma="període" tags="n.*"/>
       <match lemma="temps" tags="n.*"/>
     </or>
+  </rule>
+
+  <!-- confluència >> confluence, jonction -->
+  <rule weight="0.8">
+    <match lemma="confluència" tags="n.*"><select lemma="confluence"/></match>
   </rule>
 
   <!-- infant >> enfant, infant, infante -->
