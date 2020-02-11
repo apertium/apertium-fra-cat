@@ -473,6 +473,7 @@
     <def-cat n="vbambser_pp">
       <cat-item lemma="aller" tags="vblex.pp.*"/>
       <cat-item lemma="apparaître" tags="vblex.pp.*"/>
+      <cat-item lemma="paraître" tags="vblex.pp.*"/>
       <cat-item lemma="arriver" tags="vblex.pp.*"/>
       <cat-item lemma="venir" tags="vblex.pp.*"/>
       <cat-item lemma="partir" tags="vblex.pp.*"/>
@@ -804,6 +805,7 @@
     <def-list n="vbambser">
       <list-item v="aller"/>
       <list-item v="apparaître"/>
+      <list-item v="paraître"/>
       <list-item v="arriver"/>
       <list-item v="venir"/>
       <list-item v="partir"/>
