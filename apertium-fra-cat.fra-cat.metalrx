@@ -124,6 +124,8 @@
 		   <match lemma="vicomtesse" tags="n.*"/>
 		   <match lemma="duc" tags="n.*"/>
 		   <match lemma="duchesse" tags="n.*"/>
+		   <match lemma="grand-duc" tags="n.*"/>
+		   <match lemma="grande-duchesse" tags="n.*"/>
 		   <match lemma="archiduc" tags="n.*"/>
 		   <match lemma="archiduchesse" tags="n.*"/>
 		   <match lemma="marquis" tags="n.*"/>
@@ -155,6 +157,8 @@
 		   <match lemma="vicomtesse" tags="n.*"/>
 		   <match lemma="duc" tags="n.*"/>
 		   <match lemma="duchesse" tags="n.*"/>
+		   <match lemma="grand-duc" tags="n.*"/>
+		   <match lemma="grande-duchesse" tags="n.*"/>
 		   <match lemma="archiduc" tags="n.*"/>
 		   <match lemma="archiduchesse" tags="n.*"/>
 		   <match lemma="marquis" tags="n.*"/>
@@ -187,6 +191,8 @@
 		   <match lemma="vicomtesse" tags="n.*"/>
 		   <match lemma="duc" tags="n.*"/>
 		   <match lemma="duchesse" tags="n.*"/>
+		   <match lemma="grand-duc" tags="n.*"/>
+		   <match lemma="grande-duchesse" tags="n.*"/>
 		   <match lemma="archiduc" tags="n.*"/>
 		   <match lemma="archiduchesse" tags="n.*"/>
 		   <match lemma="marquis" tags="n.*"/>
@@ -219,6 +225,8 @@
 		   <match lemma="vicomtesse" tags="n.*"/>
 		   <match lemma="duc" tags="n.*"/>
 		   <match lemma="duchesse" tags="n.*"/>
+		   <match lemma="grand-duc" tags="n.*"/>
+		   <match lemma="grande-duchesse" tags="n.*"/>
 		   <match lemma="archiduc" tags="n.*"/>
 		   <match lemma="archiduchesse" tags="n.*"/>
 		   <match lemma="marquis" tags="n.*"/>
@@ -433,6 +441,8 @@
       <match lemma="duc" tags="n.*"/>
       <match lemma="duchesse" tags="n.*"/>
       <match lemma="archiduc" tags="n.*"/>
+      <match lemma="grand-duc" tags="n.*"/>
+      <match lemma="grande-duchesse" tags="n.*"/>
       <match lemma="archiduchesse" tags="n.*"/>
       <match lemma="marquis" tags="n.*"/>
       <match lemma="baron" tags="n.*"/>
@@ -812,6 +822,52 @@
   </rule>
 
 <!-- **************** V **************** -->
+
+  <!-- partager >> compartir, dividir -->
+  <rule weight="0.8">
+    <match lemma="partager" tags="vblex.*"><select lemma="compartir"/></match>
+  </rule>
+
+  <!-- relayer >> transmetre, rellevar -->
+  <rule weight="0.8">
+    <match lemma="relayer" tags="vblex.*"><select lemma="transmetre"/></match>
+  </rule>
+
+  <!-- surplomber >> dominar, sobreplomar -->
+  <rule weight="0.8">
+    <match lemma="surplomber" tags="vblex.*"><select lemma="dominar"/></match>
+  </rule>
+
+  <!-- tweeter, twitter >> tuitar, tuitejar, tweetar -->
+  <rule weight="0.8">
+    <or>
+      <match lemma="tweeter" tags="vblex.*"><select lemma="tuitar"/></match>
+      <match lemma="twitter" tags="vblex.*"><select lemma="tuitar"/></match>
+    </or>
+  </rule>
+
+  <!-- retweeter, retwitter >> retuitar, retuitejar, retweetar -->
+  <rule weight="0.8">
+    <or>
+      <match lemma="retweeter" tags="vblex.*"><select lemma="retuitar"/></match>
+      <match lemma="retwitter" tags="vblex.*"><select lemma="retuitar"/></match>
+    </or>
+  </rule>
+
+  <!-- timbrer >> timbrar, franquejar -->
+  <rule weight="0.8">
+    <match lemma="timbrer" tags="vblex.*"><select lemma="timbrar"/></match>
+  </rule>
+
+  <!-- câliner >> acaronar, amanyagar -->
+  <rule weight="0.8">
+    <match lemma="câliner" tags="vblex.*"><select lemma="acaronar"/></match>
+  </rule>
+
+  <!-- rafler >> pispar, rampinyar -->
+  <rule weight="0.8">
+    <match lemma="rafler" tags="vblex.*"><select lemma="pispar"/></match>
+  </rule>
 
   <!-- bander >> embenar, trempar -->
   <rule weight="0.8">
@@ -1565,6 +1621,72 @@
   <macro name="verb_prep" p1="chasser" p2="caçar" p3="de" p4="expulsar" />
 
 <!-- **************** N **************** -->
+
+  <!-- patron >> patró, cap -->
+  <rule weight="0.8">
+    <match lemma="patron" tags="n.*"><select lemma="patró"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="patron" tags="n.*"><select lemma="cap"/></match>
+    <match lemma="de" tags="pr"/>
+    <or><match tags="np.al.*"/><match tags="np.al"/></or>
+  </rule>
+
+  <!-- sommet >> cimera, cim -->
+  <rule weight="0.8">
+    <match lemma="sommet" tags="n.*"><select lemma="cimera"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="accéder" tags="vblex.*"/>
+      <match lemma="arriver" tags="vblex.*"/>
+      <match lemma="monter" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match lemma="à" tags="pr"/>
+      <match lemma="jusqu'à" tags="pr"/>
+      <match lemma="près de" tags="pr"/>
+    </or>
+    <match tags="det.*"/>
+    <match lemma="sommet" tags="n.*"><select lemma="cim"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="descendre" tags="vblex.*"/>
+      <match lemma="descendre" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="sommet" tags="n.*"><select lemma="cim"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sommet" tags="n.*"><select lemma="cim"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="colline" tags="n.*"/>
+      <match lemma="montagne" tags="n.*"/>
+      <match lemma="mont" tags="n.*"/>
+      <match lemma="volcan" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sommet" tags="n.*"><select lemma="cim"/></match>
+    <or>
+      <match lemma="enneigé" tags="adj.*"/>
+      <match lemma="enneiger" tags="vblex.pp.*"/>
+      <match lemma="culminant" tags="adj.*"/>
+    </or>
+  </rule>
 
   <!-- nouvelle >> notícia, relat -->
   <rule weight="0.8">
@@ -3580,6 +3702,21 @@
     <match lemma="antipersonnel" tags="adj.*"><select lemma="antipersones"/></match>
   </rule>
 
+  <!-- timbré >> timbrat, guillat, sonat, tocat# del bolet, tocat# de l'ala -->
+  <rule weight="0.8">
+    <match lemma="timbré" tags="adj.*"><select lemma="timbrat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="être" tags="vbser.*"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
+    </repeat>
+    <match lemma="timbré" tags="adj.*"><select lemma="guillat"/></match>
+  </rule>
+
   <!-- élevé >> elevat, educat -->
   <rule weight="0.8">
     <match lemma="élevé" tags="adj.*"><select lemma="elevat"/></match>
@@ -3845,6 +3982,19 @@
 
 <!-- **************** VBLEX **************** -->
 
+  <!-- épingler >> senyalar, enxampar, agafar# amb pinces -->
+  <rule weight="0.8">
+    <match lemma="épingler" tags="vblex.*"><select lemma="senyalar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="se" tags="prn.pro.*"/>
+    <match lemma="faire" tags="vblex.*"/>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="épingler" tags="vblex.*"><select lemma="enxampar"/></match>
+  </rule>
+
   <!-- réchauffer >> escalfar, reescalfar -->
   <rule weight="0.8">
     <match lemma="réchauffer" tags="vblex.*"><select lemma="escalfar"/></match>
@@ -3883,7 +4033,7 @@
   </rule>
   <rule weight="1.0">
     <match lemma="être"><select lemma="estar" tags="vblex.*"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
     <or>
       <match tags="preadv"/>
       <match tags="adv"/>
@@ -3928,11 +4078,13 @@
       <match lemma="réglementer" tags="vblex.pp.*"/>
       <match lemma="satisfait" tags="adj.*"/>
       <match lemma="satisfaire" tags="vblex.pp.*"/>
+      <match lemma="timbré" tags="adj.*"/>
+      <match lemma="timbrer" tags="vblex.pp.*"/>
     </or>
   </rule>
   <rule weight="1.0">
     <match lemma="être"><select lemma="estar" tags="vblex.*"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
     <or>
       <match tags="preadv"/>
       <match tags="adv"/>
@@ -3969,7 +4121,7 @@
   </rule>
   <rule weight="1.0">
     <match lemma="être"><select lemma="estar" tags="vblex.*"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
     <or>
       <match tags="preadv"/>
       <match tags="adv"/>
@@ -3983,7 +4135,7 @@
   <rule weight="1.2">
     <match lemma="ce"/>
     <match lemma="être"><select lemma="ser" tags="vbser.*"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
     <or>
       <match tags="preadv"/>
       <match tags="adv"/>

@@ -127,6 +127,7 @@
 		   <match lemma="comte" tags="n.*"/>
 		   <match lemma="vescomte" tags="n.*"/>
 		   <match lemma="duc" tags="n.*"/>
+		   <match lemma="gran duc" tags="n.*"/>
 		   <match lemma="arxiduc" tags="n.*"/>
 		   <match lemma="marquès" tags="n.*"/>
 		   <match lemma="baró" tags="n.*"/>
@@ -153,6 +154,7 @@
 		   <match lemma="comte" tags="n.*"/>
 		   <match lemma="vescomte" tags="n.*"/>
 		   <match lemma="duc" tags="n.*"/>
+		   <match lemma="gran duc" tags="n.*"/>
 		   <match lemma="arxiduc" tags="n.*"/>
 		   <match lemma="marquès" tags="n.*"/>
 		   <match lemma="baró" tags="n.*"/>
@@ -182,6 +184,7 @@
 		   <match lemma="comte" tags="n.*"/>
 		   <match lemma="vescomte" tags="n.*"/>
 		   <match lemma="duc" tags="n.*"/>
+		   <match lemma="gran duc" tags="n.*"/>
 		   <match lemma="arxiduc" tags="n.*"/>
 		   <match lemma="marquès" tags="n.*"/>
 		   <match lemma="baró" tags="n.*"/>
@@ -210,6 +213,7 @@
 		   <match lemma="comte" tags="n.*"/>
 		   <match lemma="vescomte" tags="n.*"/>
 		   <match lemma="duc" tags="n.*"/>
+		   <match lemma="gran duc" tags="n.*"/>
 		   <match lemma="arxiduc" tags="n.*"/>
 		   <match lemma="marquès" tags="n.*"/>
 		   <match lemma="baró" tags="n.*"/>
@@ -1767,6 +1771,46 @@
 
 <!-- V -->
 
+  <!-- piular >> piailler, piauler, pépier -->
+  <rule weight="0.8">
+    <match lemma="piular" tags="vblex.*"><select lemma="piailler"/></match>
+  </rule>
+
+  <!-- tuitar, tuitejar, tweetar >> tweeter, twitter -->
+  <rule weight="0.8">
+    <or>
+      <match lemma="tuitar" tags="vblex.*"><select lemma="tweeter"/></match>
+      <match lemma="tuitejar" tags="vblex.*"><select lemma="tweeter"/></match>
+      <match lemma="tweetar" tags="vblex.*"><select lemma="tweeter"/></match>
+    </or>
+  </rule>
+
+  <!-- retuitar, retuitejar, retweetar >> retweeter, retwitter -->
+  <rule weight="0.8">
+    <or>
+      <match lemma="retuitar" tags="vblex.*"><select lemma="retweeter"/></match>
+      <match lemma="retuitejar" tags="vblex.*"><select lemma="retweeter"/></match>
+      <match lemma="retweetar" tags="vblex.*"><select lemma="retweeter"/></match>
+    </or>
+  </rule>
+
+  <!-- franquejar >> franchir, timbrer -->
+  <rule weight="0.8">
+    <match lemma="franquejar" tags="vblex.*"><select lemma="franchir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="franquejar" tags="vblex.*"><select lemma="timbrer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="carta" tags="n.*"/>
+      <match lemma="postal" tags="n.*"/>
+      <match lemma="paquet" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- ajuntar >> joindre, accoler -->
   <rule weight="0.8">
     <match lemma="ajuntar" tags="vblex.*"><select lemma="joindre"/></match>
@@ -1775,6 +1819,11 @@
   <!-- alimentar >> alimenter, nourrir -->
   <rule weight="0.8">
     <match lemma="alimentar" tags="vblex.*"><select lemma="alimenter"/></match>
+  </rule>
+
+  <!-- amanyagar >> choyer, dorloter, cajoler, câliner, amadouer -->
+  <rule weight="0.8">
+    <match lemma="amanyagar" tags="vblex.*"><select lemma="choyer"/></match>
   </rule>
 
   <!-- atalaiar >> guetter, épier -->
@@ -2126,6 +2175,9 @@
 
   <!-- entretenir >> maintenir, amuser -->
   <macro name="verb_nopron_pron" p1="entretenir" p2="maintenir" p3="amuser"/>
+
+  <!-- gloriejar >> glorifier, targuer -->
+  <macro name="verb_nopron_pron" p1="gloriejar" p2="glorifier" p3="targuer"/>
 
   <!-- escaure >> convenir, aller, échoir, seoir; trouver -->
   <macro name="verb_nopron_pron" p1="escaure" p2="convenir" p3="trouver"/>
@@ -3072,6 +3124,21 @@
   <!-- substancial >> substantiel, considérable -->
   <rule weight="0.8">
     <match lemma="substancial" tags="adj.*"><select lemma="substantiel"/></match>
+  </rule>
+
+  <!-- sonat >> retentissant, timbré -->
+  <rule weight="0.8">
+    <match lemma="sonat" tags="adj.*"><select lemma="retentissant"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="estar" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
+    </repeat>
+    <match lemma="sonat" tags="adj.*"><select lemma="timbré"/></match>
   </rule>
 
   <!-- periòdic >> périodique, periodique -->
@@ -5168,7 +5235,7 @@
     </or>
   </rule>
 
-  <!-- cap >> chef, tête, cap, chef-lieu -->
+  <!-- cap >> chef, patron, tête, cap, chef-lieu -->
   <rule weight="0.8">
     <match lemma="cap" tags="n.*"><select lemma="chef"/></match>
   </rule>
@@ -5180,6 +5247,11 @@
     <match lemma="cap" tags="n.*"><select lemma="cap"/></match>
     <match lemma="de" tags="pr"/>
     <or><match tags="np.top.*"/><match tags="np.loc"/></or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cap" tags="n.*"><select lemma="patron"/></match>
+    <match lemma="de" tags="pr"/>
+    <or><match tags="np.al.*"/><match tags="np.al"/></or>
   </rule>
   <rule weight="1.0">
     <match lemma="cap" tags="n.*"><select lemma="chef-lieu"/></match>
