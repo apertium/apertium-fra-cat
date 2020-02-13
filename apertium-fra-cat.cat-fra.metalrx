@@ -1225,6 +1225,16 @@
     </repeat>
     <match lemma="que" tags="cnjsub"/>
   </rule>
+<!--
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <match tags="vblex.*.p3.sg"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="com"/>
+  </rule>
+-->
 
   <!-- això >> ça, cela -->
   <rule weight="0.8">
@@ -3121,9 +3131,29 @@
 
 <!-- ADJ -->
 
+  <!-- guanyador >> gagnat, vainqueur -->
+  <rule weight="0.8">
+    <match lemma="guanyador" tags="adj.*"><select lemma="gagnant"/></match>
+  </rule>
+
   <!-- substancial >> substantiel, considérable -->
   <rule weight="0.8">
     <match lemma="substancial" tags="adj.*"><select lemma="substantiel"/></match>
+  </rule>
+
+  <!-- plegable >> pliable, pliant -->
+  <rule weight="0.8">
+    <match lemma="plegable" tags="adj.*"><select lemma="pliable"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="cadira" tags="n.*"/>
+      <match lemma="llit" tags="n.*"/>
+      <match lemma="sofà" tags="n.*"/>
+      <match lemma="tamboret" tags="n.*"/>
+      <match lemma="taula" tags="n.*"/>
+    </or>
+    <match lemma="plegable" tags="adj.*"><select lemma="pliant"/></match>
   </rule>
 
   <!-- sonat >> retentissant, timbré -->
@@ -3533,9 +3563,71 @@
 
 <!-- N -->
 
+  <!-- guanyador >> vainqueur, gagnant -->
+  <rule weight="0.8">
+    <match lemma="guanyador" tags="n.*"><select lemma="vainqueur"/></match>
+  </rule>
+
+  <!-- etiqueta >> étiquette, label -->
+  <rule weight="0.8">
+    <match lemma="etiqueta" tags="n.*"><select lemma="implantation"/></match>
+  </rule>
+
+  <!-- assentament >> implantation, colonie -->
+  <rule weight="0.8">
+    <match lemma="assentament" tags="n.*"><select lemma="implantation"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="assentament" tags="n.*"><select lemma="colonie"/></match>
+    <match lemma="israelià" tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="assentament" tags="n.*"><select lemma="colonie"/></match>
+    <match lemma="a" tags="pr"/>
+    <match lemma="Cisjordània" tags="np.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="assentament" tags="n.*"><select lemma="colonie"/></match>
+    <match lemma="a" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="Golan" tags="np.*"/>
+      <match lemma="Alts del Golan" tags="np.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="assentament" tags="n.*"><select lemma="colonie"/></match>
+    <match lemma="en" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="territoris" tags="n.*"/>
+  </rule>
+
+  <!-- colònia >> colonie, eau# de Cologne -->
+  <rule weight="0.8">
+    <match lemma="colònia" tags="n.*"><select lemma="colonie"/></match>
+  </rule>
+
+  <!-- segell >> cachet, timbre-poste, timbre, label, sceau -->
+  <rule weight="0.8">
+    <match lemma="segell" tags="n.*"><select lemma="cachet"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="segell" tags="n.*"><select lemma="label"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="qualitat" tags="n.*"/>
+  </rule>
+
   <!-- abatiment >> abattement, accablement -->
   <rule weight="0.8">
     <match lemma="abatiment" tags="n.*"><select lemma="abattement"/></match>
+  </rule>
+
+  <!-- iaio/a >> pépé/mémé -->
+  <rule weight="0.8">
+    <match lemma="iaio" tags="n.m.*"><select lemma="pépé"/></match>
+  </rule>
+  <rule weight="0.8">
+    <match lemma="iaio" tags="n.f.*"><select lemma="mémé"/></match>
   </rule>
 
   <!-- ambient >> ambiance, environnement, entourage -->

@@ -1027,6 +1027,8 @@
       <!-- <list-item v="Tibet"/> -->
       <list-item v="Chine"/>
       <list-item v="Mandchourie"/>
+      <list-item v="Hubei"/>
+      <list-item v="Xinjiang"/>
       <list-item v="Corée"/>
       <list-item v="Corée du Nord"/>
       <list-item v="Corée du Sud"/>
@@ -1058,6 +1060,7 @@
       <list-item v="Mali"/>
       <list-item v="Niger"/>
       <list-item v="Nigéria"/>
+      <list-item v="Biafra"/>
       <list-item v="Tchad"/>
       <list-item v="Sénégal"/>
       <list-item v="Gambie"/>
@@ -1342,6 +1345,7 @@
       <list-item v="éthiopien"/>
       <list-item v="somalien"/>
       <list-item v="malgache"/>
+      <list-item v="songhaï"/>
       <list-item v="haoussa"/>
       <list-item v="yoruba"/>
       <list-item v="igbo"/>
@@ -6855,6 +6859,26 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
       </action>
     </rule>
+
+<!--
+    <rule comment="REGLA:VERB PREP DET (mange de la: menjo)">
+      <pattern>
+        <pattern-item n="verb_partitiu"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefsg"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+-->
 
     <rule comment="REGLA: verb de + VERB que PREP DET (venir d'avoir que des: acabar de tenir més que)">
       <pattern>

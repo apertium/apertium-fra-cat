@@ -823,6 +823,11 @@
 
 <!-- **************** V **************** -->
 
+  <!-- revoir >> tornar# a veure, reveure -->
+  <rule weight="0.8">
+    <match lemma="revoir" tags="vblex.*"><select lemma="tornar# a veure"/></match>
+  </rule>
+
   <!-- partager >> compartir, dividir -->
   <rule weight="0.8">
     <match lemma="partager" tags="vblex.*"><select lemma="compartir"/></match>
@@ -1621,6 +1626,66 @@
   <macro name="verb_prep" p1="chasser" p2="caçar" p3="de" p4="expulsar" />
 
 <!-- **************** N **************** -->
+
+  <!-- vainqueur >> guanyador, vencedor -->
+  <rule weight="0.8">
+    <match lemma="vainqueur" tags="n.*"><select lemma="guanyador"/></match>
+  </rule>
+
+  <!-- andouille >> talòs, botifarra -->
+  <rule weight="0.8">
+    <match lemma="andouille" tags="n.*"><select lemma="talòs"/></match>
+  </rule>
+
+  <!-- label >> etiqueta, segell, segell discogràfic -->
+  <rule weight="0.8">
+    <match lemma="label" tags="n.*"><select lemma="etiqueta"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="label" tags="n.*"><select lemma="segell"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="qualité" tags="n.*"/>
+  </rule>
+
+  <!-- implantation >> implantació, assentament -->
+  <rule weight="0.8">
+    <match lemma="implantation" tags="n.*"><select lemma="implantació"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="implantation" tags="n.*"><select lemma="assentament"/></match>
+    <match lemma="israélien" tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="implantation" tags="n.*"><select lemma="assentament"/></match>
+    <match lemma="en" tags="pr"/>
+    <match lemma="Cisjordanie" tags="np.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="implantation" tags="n.*"><select lemma="assentament"/></match>
+    <match lemma="dans" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="territoire" tags="n.*"/>
+  </rule>
+
+  <!-- colonie >> colònia, assentament -->
+  <rule weight="0.8">
+    <match lemma="colonie" tags="n.*"><select lemma="colònia"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="colonie" tags="n.*"><select lemma="assentament"/></match>
+    <match lemma="israélien" tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="colonie" tags="n.*"><select lemma="assentament"/></match>
+    <match lemma="en" tags="pr"/>
+    <match lemma="Cisjordanie" tags="np.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="colonie" tags="n.*"><select lemma="assentament"/></match>
+    <match lemma="dans" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="territoire" tags="n.*"/>
+  </rule>
 
   <!-- patron >> patró, cap -->
   <rule weight="0.8">
@@ -3693,6 +3758,35 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- rouleau >> rotllo, corró -->
+  <rule weight="0.8">
+    <match lemma="rouleau" tags="adj.*"><select lemma="rotllo"/></match>
+  </rule>
+
+  <!-- affaire >> afer, negoci -->
+  <rule weight="0.8">
+    <match lemma="affaire" tags="adj.*"><select lemma="afer"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="homme" tags="n.*"/>
+      <match lemma="femme" tags="n.*"/>
+      <match lemma="partenaire" tags="n.*"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <match lemma="affaire" tags="adj.*"><select lemma="negoci"/></match>
+  </rule>
+
+  <!-- vainqueur >> guanyador, vencedor -->
+  <rule weight="0.8">
+    <match lemma="vainqueur" tags="adj.*"><select lemma="guanyador"/></match>
+  </rule>
+
+  <!-- stupéfiant >> astorador, estupefaent, esbalaïdor -->
+  <rule weight="0.8">
+    <match lemma="stupéfiant" tags="adj.*"><select lemma="astorador"/></match>
+  </rule>
+
   <!-- antipersonnel >> antipersonal, antipersones -->
   <rule weight="0.8">
     <match lemma="antipersonnel" tags="adj.*"><select lemma="antipersonal"/></match>
@@ -3702,9 +3796,9 @@
     <match lemma="antipersonnel" tags="adj.*"><select lemma="antipersones"/></match>
   </rule>
 
-  <!-- timbré >> timbrat, guillat, sonat, tocat# del bolet, tocat# de l'ala -->
+  <!-- timbré >> timbrar, guillat, sonat, tocat# del bolet, tocat# de l'ala -->
   <rule weight="0.8">
-    <match lemma="timbré" tags="adj.*"><select lemma="timbrat"/></match>
+    <match lemma="timbré" tags="adj.*"><select lemma="timbrar"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="être" tags="vbser.*"/>
