@@ -3563,6 +3563,11 @@
 
 <!-- N -->
 
+  <!-- gemma >>  gemme, bourgeon -->
+  <rule weight="0.8">
+    <match lemma="gemma" tags="n.*"><select lemma=" gemme"/></match>
+  </rule>
+
   <!-- guanyador >> vainqueur, gagnant -->
   <rule weight="0.8">
     <match lemma="guanyador" tags="n.*"><select lemma="vainqueur"/></match>

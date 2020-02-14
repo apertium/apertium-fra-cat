@@ -823,6 +823,11 @@
 
 <!-- **************** V **************** -->
 
+  <!-- bourgeonner >> florir, borronar, botonar, llucar -->
+  <rule weight="0.8">
+    <match lemma="bourgeonner" tags="vblex.*"><select lemma="florir"/></match>
+  </rule>
+
   <!-- revoir >> tornar# a veure, reveure -->
   <rule weight="0.8">
     <match lemma="revoir" tags="vblex.*"><select lemma="tornar# a veure"/></match>
@@ -1626,6 +1631,21 @@
   <macro name="verb_prep" p1="chasser" p2="caçar" p3="de" p4="expulsar" />
 
 <!-- **************** N **************** -->
+
+  <!-- bourgeon >> gemma, borró, botó -->
+  <rule weight="0.8">
+    <match lemma="bourgeon" tags="n.*"><select lemma="gemma"/></match>
+  </rule>
+
+  <!-- bourgeonnement >> floriment, borronada, llucada -->
+  <rule weight="0.8">
+    <match lemma="bourgeonnement" tags="n.*"><select lemma="floriment"/></match>
+  </rule>
+
+  <!-- bourgeonnement >> floriment, borronada, llucada -->
+  <rule weight="0.8">
+    <match lemma="bourgeonnement" tags="n.*"><select lemma="floriment"/></match>
+  </rule>
 
   <!-- ordinateur >> ordinador, computador, computadora -->
   <rule weight="0.8">
