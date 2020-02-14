@@ -1743,7 +1743,7 @@
     <match lemma="també" tags="adv"><select lemma="encore"/></match>
   </rule>
 
-  <!-- gaire >> très, beaucoup -->
+  <!-- gaire >> beaucoup, beaucoup de -->
   <rule weight="0.8">
     <match lemma="gaire" tags="adv"><select lemma="beaucoup"/></match>
   </rule>
@@ -1755,7 +1755,7 @@
     <match tags="n.*"/>
   </rule>
 
-  <!-- no >> ne, non -->
+  <!-- no >> ne, non, pas -->
   <rule weight="0.8">
     <match lemma="no" tags="adv"><select lemma="ne"/></match>
   </rule>
@@ -1774,7 +1774,7 @@
     <match tags="adj.*"/>
   </rule>
   <rule weight="1.0">
-    <match lemma="mais" tags="cnjcoo"/>
+    <match lemma="però" tags="cnjcoo"/>
     <match lemma="no" tags="adv"><select lemma="pas"/></match>
     <match tags="vblex.pp.*"/>
   </rule>

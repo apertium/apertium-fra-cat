@@ -1627,6 +1627,11 @@
 
 <!-- **************** N **************** -->
 
+  <!-- ordinateur >> ordinador, computador, computadora -->
+  <rule weight="0.8">
+    <match lemma="ordinateur" tags="n.*"><select lemma="ordinador"/></match>
+  </rule>
+
   <!-- vainqueur >> guanyador, vencedor -->
   <rule weight="0.8">
     <match lemma="vainqueur" tags="n.*"><select lemma="guanyador"/></match>
