@@ -1,9 +1,3 @@
-Ant no trobat l. 4430:     <e>       <p><l>El<b/>Greco<s n="np"/><s n="ant"/></l><r>El<b/>Greco<s n="np"/><s n="ant"/></r></p></e>
-Ant no trobat l. 9379: <e>       <p><l>Pau<s n="np"/><s n="ant"/></l><r>Pau<s n="np"/><s n="ant"/></r></p></e>
-Ant no trobat l. 12714:     <e>       <p><l>Valverde<s n="np"/><s n="ant"/></l><r>Valverde<s n="np"/><s n="ant"/></r></p></e>
-
-cat f_bi.dix.txt | grep '"np"' | grep -v '"cog"' | grep -v '"top"' | grep -v '"sg"' | grep -v '"al"'
-
 FRA > CAT
 
 +couler > (intr) enfonsar-se; fluir | tr. enfonsar
@@ -14,10 +8,13 @@ aimer (bien) + inf > agradar-li + inf (es pot fer amb selecció lèxica + macro 
 
 on doit > s'ha de / cal
 
-TOTES les construccions verb + <g> no es reconeixen en negatiu: faire le ménage, ne faire pas le ménage, ne faire jamais le ménage
+à la rejoindre - a unir-se-li (prn.pro + inf per a verbs pronominals en cat)
 
 postuler à un examen... (sel lex)
 
+Nombres: reconèixer l'espai separador de milers com part del nombre. Això farà que es tradueixi bé:
+il y a 11 000 ans
+(però no és trivial perquè no fa cas dels salts de línia en posar expressions regulars)
 
 CAT > FRA
 
@@ -34,8 +31,6 @@ han anat desapareixent > ont disparu petit à petit
 
 tornar a inf > verb à nouveau
 
-s'ha de > il faut
-
 Fins fa poc > Jusqu'à il y a pas longtemps ?
 Fins no fa gaire
 
@@ -48,24 +43,14 @@ el de la Xina > celui de la Chine (el de)
 echo "no es va fer gran" | apertium -d . cat-fra
 ne se va pas faire grand
 
-00910. En des époques anciennes, s'y avait cultivé riz
-
-echo ", van proposar" | apertium -d . cat-fra
-, ils vont proposer
-
-se sol caracteritzar > se caractérise d'habitude
+00910. Dans des époques anciennes, s'y avait cultivé des riz, pratique que s'est revenue à introduire
 
 * (cat) ''nombrosos turons'' → #nombreux collines
 
-00095. Au 394 *aC déjà s'étaient disputés 293 Jeux Olympiques, tous ils à la Vallée Olimpia Vall d'Olimpia.
+00095. Au 394 av. J.-C. déjà s'étaient disputés 293 Jeux olympiques, tous ils à la Vallée Olimpia Vall d'Olimpia.
 
 cap de > aucun/e
-> 00087. Aussi il y a autres *dojos que ne forment pas partie d'aucun de ces organisations.
+00087. Aussi y a autres *dojos que ne font pas partie d'aucun de ces organisations.
 
-< 01171. Les trois astronautes du *Apollo 11 ont été *honorats avec un défilé à la ville de New York peu après son retour
----
-> 01171. Les trois astronautes du *Apollo 11 ont été *honorats avec un défilé à la ville de New York peu d'après son retour
-
-> 02487. À cause de ça, quelques études de la *NASA posent ramasser moyennant des champs magnétiques le *antimatèria que se génère de façon naturelle dans les *cinturons de Vont Allen de la Terre, ou même dans les *cinturons des grandes planètes *gasosos comment Jupiter (planète) Jupiter
-
-al cap de > après
+el seu > leur
+01171. Les trois astronautes de l'Apollo 11 ont été honorés avec un défilé dans la ville de New York peu après son retour
