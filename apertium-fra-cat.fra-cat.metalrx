@@ -1632,6 +1632,63 @@
 
 <!-- **************** N **************** -->
 
+  <!-- vol >> robatori, vol -->
+  <rule weight="0.8">
+    <match lemma="vol" tags="n.*"><select lemma="robatori"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="prendre" tags="vblex.*"/>
+      <match lemma="rater" tags="vblex.*"/>
+      <match lemma="réserver" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match lemma="partir" tags="vblex.*"/>
+      <match lemma="arriver" tags="vblex.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="plan" tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="oiseau" tags="n.*"/>
+      <match lemma="retour" tags="n.*"/>
+      <match tags="np.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
+    <repeat from="0" upto="1">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="pour" tags="pr"/>
+    <match tags="np.top.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
+    <match tags="np.top.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
+    <match tags="num"/>
+  </rule>
+
   <!-- bourgeon >> gemma, borró, botó -->
   <rule weight="0.8">
     <match lemma="bourgeon" tags="n.*"><select lemma="gemma"/></match>

@@ -5541,8 +5541,16 @@
 
 <!-- **************** NP **************** -->
 
-<!-- Virgili > Virgili, Virgile -->
+  <!-- pas de Calais > pas-de-Calais, pas de Calais -->
+  <rule weight="0.6">
+     <match lemma="pas de Calais" tags="np.*"><select lemma="pas-de-Calais"/></match>
+  </rule>
+  <rule weight="1.0">
+     <match tags="det.def.*"/>
+     <match lemma="pas de Calais" tags="np.*"><select lemma="pas de Calais"/></match>
+  </rule>
 
+  <!-- Virgili > Virgili, Virgile -->
   <rule weight="0.6">
      <match lemma="Virgili" tags="np.*"><select lemma="Virgile"/></match>
   </rule>
@@ -5556,8 +5564,7 @@
      <match lemma="Virgili" tags="np.*"><select lemma="Virgili"/></match>
   </rule>
 
-<!-- Jesús > Jesús, Jésus -->
-
+  <!-- Jesús > Jesús, Jésus -->
   <rule weight="0.6">
      <match lemma="Jesús" tags="np.*"><select lemma="Jésus"/></match>
   </rule>
@@ -5625,7 +5632,7 @@
   <macro name="noms_propis" p1="Balduí" p2="Baudouin" />
   <macro name="noms_propis" p1="Leopold" p2="Léopold" />
   <macro name="noms_propis" p1="Amadeu" p2="Amédée" />
-  <macro name="noms_propis" p1="Amadeu" p2="André" />
+  <macro name="noms_propis" p1="Andreu" p2="André" />
 
 </rules>
 </metalrx>
