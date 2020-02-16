@@ -1841,9 +1841,19 @@
     <match lemma="atalaiar" tags="vblex.*"><select lemma="guetter"/></match>
   </rule>
 
-  <!-- destacar >> souligner, détacher -->
-  <rule weight="0.8">
+  <!-- destacar >> souligner, distinguer, ressortir -->
+  <macro name="verb_nopron_pron" p1="destacar" p2="souligner" p3="distinguer"/>
+  <rule weight="1.2">
+    <match lemma="destacar" tags="vblex.*"><select lemma="ressortir"/></match>
+    <or>
+      <match lemma="com" tags="cnjadv"/>
+      <match lemma="com a" tags="pr"/>
+    </or>
+  </rule>
+  <rule weight="1.4">
     <match lemma="destacar" tags="vblex.*"><select lemma="souligner"/></match>
+    <match lemma="com" tags="cnjadv"/>
+    <match tags="adj.*"/>
   </rule>
 
   <!-- recolzar >> appuyer, soutenir -->
@@ -4402,6 +4412,11 @@
     <match lemma="banc" tags="n.*"><select lemma="banque"/></match>
     <match lemma="de" tags="pr"/>
     <match tags="np.top.*"/>
+  </rule>
+
+  <!-- consistori >> mairie, consistoire -->
+  <rule weight="0.8">
+    <match lemma="consistori" tags="n.*"><select lemma="mairie"/></match>
   </rule>
 
   <!-- agulla >> aiguille, épingle -->

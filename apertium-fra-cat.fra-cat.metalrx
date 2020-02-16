@@ -1632,6 +1632,34 @@
 
 <!-- **************** N **************** -->
 
+  <!-- peul >> fula, ful, fulbe -->
+  <rule weight="0.8">
+    <match lemma="peul" tags="n.*"><select lemma="fula"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.*"/>
+    <match lemma="peul" tags="n.m.sg"><select lemma="ful"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="en" tags="pr"/>
+    <match lemma="peul" tags="n.m.sg"><select lemma="ful"/></match>
+  </rule>
+
+  <!-- bègue >> quec, tartamut -->
+  <rule weight="0.8">
+    <match lemma="bègue" tags="n.*"><select lemma="quec"/></match>
+  </rule>
+
+  <!-- bégaiement >> quequesa, tartamudesa, tartamudeig -->
+  <rule weight="0.8">
+    <match lemma="bégaiement" tags="n.*"><select lemma="quequesa"/></match>
+  </rule>
+
+  <!-- pochette >> funda, butxaqueta -->
+  <rule weight="0.8">
+    <match lemma="pochette" tags="n.*"><select lemma="funda"/></match>
+  </rule>
+
   <!-- vol >> robatori, vol -->
   <rule weight="0.8">
     <match lemma="vol" tags="n.*"><select lemma="robatori"/></match>
@@ -3378,7 +3406,7 @@
     <match lemma="argent" tags="n.*"><select lemma="plata"/></match>
   </rule>
 
-  <!-- chambre >> habitació, cambra -->
+  <!-- chambre >> habitació, cambra, tribunal -->
   <rule weight="0.8">
     <match lemma="chambre" tags="n.*"><select lemma="habitació"/></match>
   </rule>
@@ -3392,6 +3420,10 @@
   <rule weight="1.0">
     <match lemma="de" tags="pr"/>
     <match lemma="chambre" tags="n.*"><select lemma="cambra"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="chambre" tags="n.*"><select lemma="tribunal"/></match>
+    <match lemma="correctionnel" tags="adj.*"/>
   </rule>
 
   <!-- moelle >> medu·la, moll -->
