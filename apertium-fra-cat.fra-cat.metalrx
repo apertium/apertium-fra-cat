@@ -481,6 +481,24 @@
       <match lemma="àne" tags="n.*"/>
       <match lemma="bétail" tags="n.*"/>
     </def-seq>
+
+    <def-seq n="adj_ord">
+      <match lemma="premier" tags="adj.*"/>
+      <match lemma="second" tags="adj.*"/>
+      <match lemma="deuxième" tags="adj.*"/>
+      <match lemma="troisième" tags="adj.*"/>
+      <match lemma="quatrième" tags="adj.*"/>
+      <match lemma="cinquième" tags="adj.*"/>
+      <match lemma="sixième" tags="adj.*"/>
+      <match lemma="septième" tags="adj.*"/>
+      <match lemma="huitième" tags="adj.*"/>
+      <match lemma="neuvième" tags="adj.*"/>
+      <match lemma="dixième" tags="adj.*"/>
+      <match lemma="dernier" tags="adj.*"/>
+      <match lemma="1er" tags="adj.*"/>
+      <match lemma="2nd" tags="adj.*"/>
+      <match lemma="3ème" tags="adj.*"/>
+    </def-seq>
   </def-seqs>
 
 <rules>
@@ -822,6 +840,11 @@
   </rule>
 
 <!-- **************** V **************** -->
+
+  <!-- empaqueter >> empaquetar, envasar -->
+  <rule weight="0.8">
+    <match lemma="empaqueter" tags="vblex.*"><select lemma="empaquetar"/></match>
+  </rule>
 
   <!-- bourgeonner >> florir, borronar, botonar, llucar -->
   <rule weight="0.8">
@@ -1632,6 +1655,49 @@
 
 <!-- **************** N **************** -->
 
+  <!-- rouleau >> rotllo, corró -->
+  <rule weight="0.8">
+    <match lemma="rouleau" tags="n.*"><select lemma="rotllo"/></match>
+  </rule>
+
+  <!-- pellicule >> pel·lícula, caspa -->
+  <rule weight="0.8">
+    <match lemma="pellicule" tags="n.*"><select lemma="pel·lícula"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pellicule" tags="n.f.pl"><select lemma="caspa"/></match>
+  </rule>
+
+  <!-- affaire >> afer, negoci -->
+  <rule weight="0.8">
+    <match lemma="affaire" tags="n.*"><select lemma="afer"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="homme" tags="n.*"/>
+      <match lemma="femme" tags="n.*"/>
+      <match lemma="partenaire" tags="n.*"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <match lemma="affaire" tags="n.*"><select lemma="negoci"/></match>
+  </rule>
+
+  <!-- manche >> màniga, mànega -->
+  <rule weight="0.8">
+    <match lemma="manche" tags="n.*"><select lemma="màniga"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="adj_ord"/>
+    </or>
+    <match lemma="manche" tags="n.*"><select lemma="mànega"/></match>
+  </rule>
+
+  <!-- filet >> xarxa, rosca -->
+  <rule weight="0.8">
+    <match lemma="filet" tags="n.*"><select lemma="xarxa"/></match>
+  </rule>
+
   <!-- peul >> fula, ful, fulbe -->
   <rule weight="0.8">
     <match lemma="peul" tags="n.*"><select lemma="fula"/></match>
@@ -2056,21 +2122,7 @@
   </rule>
   <rule weight="1.0">
     <or>
-      <match lemma="premier" tags="adj.*"/>
-      <match lemma="second" tags="adj.*"/>
-      <match lemma="deuxième" tags="adj.*"/>
-      <match lemma="troisième" tags="adj.*"/>
-      <match lemma="quatrième" tags="adj.*"/>
-      <match lemma="cinquième" tags="adj.*"/>
-      <match lemma="sixième" tags="adj.*"/>
-      <match lemma="septième" tags="adj.*"/>
-      <match lemma="huitième" tags="adj.*"/>
-      <match lemma="neuvième" tags="adj.*"/>
-      <match lemma="dixième" tags="adj.*"/>
-      <match lemma="dernier" tags="adj.*"/>
-      <match lemma="1er" tags="adj.*"/>
-      <match lemma="2nd" tags="adj.*"/>
-      <match lemma="3ème" tags="adj.*"/>
+      <seq n="adj_ord"/>
     </or>
     <match lemma="feu" tags="n.*"><select lemma="semàfor"/></match>
   </rule>
@@ -2122,21 +2174,7 @@
   </rule>
   <rule weight="1.2">
     <or>
-      <match lemma="premier" tags="adj.*"/>
-      <match lemma="second" tags="adj.*"/>
-      <match lemma="deuxième" tags="adj.*"/>
-      <match lemma="troisième" tags="adj.*"/>
-      <match lemma="quatrième" tags="adj.*"/>
-      <match lemma="cinquième" tags="adj.*"/>
-      <match lemma="sixième" tags="adj.*"/>
-      <match lemma="septième" tags="adj.*"/>
-      <match lemma="huitième" tags="adj.*"/>
-      <match lemma="neuvième" tags="adj.*"/>
-      <match lemma="dixième" tags="adj.*"/>
-      <match lemma="dernier" tags="adj.*"/>
-      <match lemma="1er" tags="adj.*"/>
-      <match lemma="2nd" tags="adj.*"/>
-      <match lemma="3ème" tags="adj.*"/>
+      <seq n="adj_ord"/>
     </or>
     <match lemma="place" tags="n.*"><select lemma="lloc"/></match>
   </rule>
@@ -3681,21 +3719,7 @@
   </rule>
   <rule weight="1.2">
     <or>
-      <match lemma="premier" tags="adj.*"/>
-      <match lemma="second" tags="adj.*"/>
-      <match lemma="deuxième" tags="adj.*"/>
-      <match lemma="troisième" tags="adj.*"/>
-      <match lemma="quatrième" tags="adj.*"/>
-      <match lemma="cinquième" tags="adj.*"/>
-      <match lemma="sixième" tags="adj.*"/>
-      <match lemma="septième" tags="adj.*"/>
-      <match lemma="huitième" tags="adj.*"/>
-      <match lemma="neuvième" tags="adj.*"/>
-      <match lemma="dixième" tags="adj.*"/>
-      <match lemma="dernier" tags="adj.*"/>
-      <match lemma="1er" tags="adj.*"/>
-      <match lemma="2nd" tags="adj.*"/>
-      <match lemma="3ème" tags="adj.*"/>
+      <seq n="adj_ord"/>
     </or>
     <match lemma="prix" tags="n.*"><select lemma="premi"/></match>
   </rule>
@@ -3871,25 +3895,6 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
-
-  <!-- rouleau >> rotllo, corró -->
-  <rule weight="0.8">
-    <match lemma="rouleau" tags="adj.*"><select lemma="rotllo"/></match>
-  </rule>
-
-  <!-- affaire >> afer, negoci -->
-  <rule weight="0.8">
-    <match lemma="affaire" tags="adj.*"><select lemma="afer"/></match>
-  </rule>
-  <rule weight="1.0">
-    <or>
-      <match lemma="homme" tags="n.*"/>
-      <match lemma="femme" tags="n.*"/>
-      <match lemma="partenaire" tags="n.*"/>
-    </or>
-    <match lemma="de" tags="pr"/>
-    <match lemma="affaire" tags="adj.*"><select lemma="negoci"/></match>
-  </rule>
 
   <!-- vainqueur >> guanyador, vencedor -->
   <rule weight="0.8">

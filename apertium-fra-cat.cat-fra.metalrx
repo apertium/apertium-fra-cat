@@ -3573,9 +3573,19 @@
 
 <!-- N -->
 
-  <!-- gemma >>  gemme, bourgeon -->
+  <!-- mànega >> manche, tuyeau -->
   <rule weight="0.8">
-    <match lemma="gemma" tags="n.*"><select lemma=" gemme"/></match>
+    <match lemma="mànega" tags="n.*"><select lemma="manche"/></match>
+  </rule>
+
+  <!-- xarxa >> réseau, filet -->
+  <rule weight="0.8">
+    <match lemma="xarxa" tags="n.*"><select lemma="réseau"/></match>
+  </rule>
+
+  <!-- gemma >> gemme, bourgeon -->
+  <rule weight="0.8">
+    <match lemma="gemma" tags="n.*"><select lemma="gemme"/></match>
   </rule>
 
   <!-- guanyador >> vainqueur, gagnant -->
