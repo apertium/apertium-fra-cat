@@ -560,6 +560,18 @@
       <cat-item lemma="octobre" tags="n.*"/>
       <cat-item lemma="novembre" tags="n.*"/>
       <cat-item lemma="décembre" tags="n.*"/>
+      <cat-item lemma="vendémiaire" tags="n.*"/>
+      <cat-item lemma="brumaire" tags="n.*"/>
+      <cat-item lemma="frimaire" tags="n.*"/>
+      <cat-item lemma="nivôse" tags="n.*"/>
+      <cat-item lemma="pluviôse" tags="n.*"/>
+      <cat-item lemma="ventôse" tags="n.*"/>
+      <cat-item lemma="germinal" tags="n.*"/>
+      <cat-item lemma="floréal" tags="n.*"/>
+      <cat-item lemma="prairial" tags="n.*"/>
+      <cat-item lemma="messidor" tags="n.*"/>
+      <cat-item lemma="thermidor" tags="n.*"/>
+      <cat-item lemma="fructidor" tags="n.*"/>
     </def-cat>
 
     <def-cat n="nom_monsieur">
@@ -800,6 +812,20 @@
       <list-item v="octobre"/>
       <list-item v="novembre"/>
       <list-item v="décembre"/>
+      <list-item v="vendémiaire"/>
+      <list-item v="brumaire"/>
+      <list-item v="frimaire"/>
+<!-- problemes en ser sp en català
+      <list-item v="nivôse"/>
+      <list-item v="pluviôse"/>
+      <list-item v="ventôse"/>
+-->
+      <list-item v="germinal"/>
+      <list-item v="floréal"/>
+      <list-item v="prairial"/>
+      <list-item v="messidor"/>
+      <list-item v="thermidor"/>
+      <list-item v="fructidor"/>
     </def-list>
 
     <def-list n="vbambser">
