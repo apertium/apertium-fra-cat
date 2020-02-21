@@ -1781,6 +1781,16 @@
 
 <!-- V -->
 
+  <!-- xutar >> shooter, botter -->
+  <rule weight="0.8">
+    <match lemma="xutar" tags="vblex.*"><select lemma="shooter"/></match>
+  </rule>
+
+  <!-- desparar >> débarrasser, desservir -->
+  <rule weight="0.8">
+    <match lemma="desparar" tags="vblex.*"><select lemma="débarrasser"/></match>
+  </rule>
+
   <!-- piular >> piailler, piauler, pépier -->
   <rule weight="0.8">
     <match lemma="piular" tags="vblex.*"><select lemma="piailler"/></match>
@@ -3572,6 +3582,43 @@
   </rule>
 
 <!-- N -->
+
+  <!-- avantatge >> avantage, avance -->
+  <rule weight="0.8">
+    <match lemma="avantatge" tags="n.*"><select lemma="avantage"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="punt" tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <match lemma="avantatge" tags="n.*"><select lemma="avance"/></match>
+  </rule>
+
+  <!-- barra >> barre, culot, toupet -->
+  <rule weight="0.8">
+    <match lemma="barra" tags="n.*"><select lemma="barre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="molt" tags="adj.*"/>
+      <match lemma="quin" tags="adj.*"/>
+    </or>
+    <match lemma="barra" tags="n.*"><select lemma="culot"/></match>
+  </rule>
+
+  <!-- cistella >> corbeille, panier -->
+  <rule weight="0.8">
+    <match lemma="cistella" tags="n.*"><select lemma="corbeille"/></match>
+  </rule>
+
+  <!-- deure >> devoir, doit -->
+  <rule weight="0.8">
+    <match lemma="deure" tags="n.*"><select lemma="devoir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="deure" tags="n.*"><select lemma="doit"/></match>
+    <match tags="cnjcoo"/>
+    <match lemma="haver" tags="n.*"/>
+  </rule>
 
   <!-- mànega >> manche, tuyeau -->
   <rule weight="0.8">

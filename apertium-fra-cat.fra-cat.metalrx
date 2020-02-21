@@ -841,6 +841,19 @@
 
 <!-- **************** V **************** -->
 
+  <!-- avancer >> avançar, anar# avançat -->
+  <rule weight="0.8">
+    <match lemma="avancer" tags="vblex.*"><select lemma="avançar"/></match>
+  </rule>
+
+  <!-- débarrasser >> desembarassar, desparar -->
+  <macro name="verb_nopron_pron" p1="débarrasser" p2="desembarassar" p3="desfer" />
+  <rule weight="1.2">
+    <match lemma="débarrasser" tags="vblex.*"><select lemma="desparar"/></match>
+    <match tags="det.*"/>
+    <match lemma="table" tags="n.*"/>
+  </rule>
+
   <!-- empaqueter >> empaquetar, envasar -->
   <rule weight="0.8">
     <match lemma="empaqueter" tags="vblex.*"><select lemma="empaquetar"/></match>
@@ -1654,6 +1667,41 @@
   <macro name="verb_prep" p1="chasser" p2="caçar" p3="de" p4="expulsar" />
 
 <!-- **************** N **************** -->
+
+  <!-- avance >> avanç, avantatge, avançada, bestreta -->
+  <rule weight="0.8">
+    <match lemma="avance" tags="n.*"><select lemma="avanç"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="point" tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <match lemma="avance" tags="n.*"><select lemma="avantatge"/></match>
+  </rule>
+
+  <!-- shooteur >> golejador, anotador -->
+  <rule weight="0.8">
+    <match lemma="shooteur" tags="n.*"><select lemma="golejador"/></match>
+  </rule>
+
+  <!-- shooter >> golejador, anotador -->
+  <rule weight="0.8">
+    <match lemma="shooter" tags="n.*"><select lemma="golejador"/></match>
+  </rule>
+
+  <!-- panier >> cistell, cistella -->
+  <rule weight="0.8">
+    <match lemma="panier" tags="n.*"><select lemma="cistell"/></match>
+  </rule>
+
+  <!-- toupet >> barra, penques, tupè -->
+  <rule weight="0.8">
+    <match lemma="toupet" tags="n.*"><select lemma="barra"/></match>
+  </rule>
+
+  <!-- culot >> barra, penques, culot -->
+  <rule weight="0.8">
+    <match lemma="culot" tags="n.*"><select lemma="barra"/></match>
+  </rule>
 
   <!-- rouleau >> rotllo, corró -->
   <rule weight="0.8">
@@ -3895,6 +3943,11 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- manifeste >> manifest, palès -->
+  <rule weight="0.8">
+    <match lemma="manifeste" tags="adj.*"><select lemma="manifest"/></match>
+  </rule>
 
   <!-- vainqueur >> guanyador, vencedor -->
   <rule weight="0.8">
