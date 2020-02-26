@@ -1781,6 +1781,11 @@
 
 <!-- V -->
 
+  <!-- pintar# grafits >> taguer, tagger, graffer -->
+  <rule weight="0.8">
+    <match lemma="pintar# grafits" tags="vblex.*"><select lemma="taguer"/></match>
+  </rule>
+
   <!-- xutar >> shooter, botter -->
   <rule weight="0.8">
     <match lemma="xutar" tags="vblex.*"><select lemma="shooter"/></match>
@@ -3583,6 +3588,11 @@
 
 <!-- N -->
 
+  <!-- depuració >> dépuration, épuration -->
+  <rule weight="0.8">
+    <match lemma="depuració" tags="n.*"><select lemma="épuration"/></match>
+  </rule>
+
   <!-- avantatge >> avantage, avance -->
   <rule weight="0.8">
     <match lemma="avantatge" tags="n.*"><select lemma="avantage"/></match>
@@ -3991,6 +4001,7 @@
       <match lemma="concentració" tags="n.*"/>
       <match lemma="detenció" tags="n.*"/>
       <match lemma="entrenament" tags="n.*"/>
+      <match lemma="internament" tags="n.*"/>
       <match lemma="extermini" tags="n.*"/>
       <match lemma="presoner" tags="n.*"/>
       <match lemma="treball" tags="n.*"/>
@@ -5208,9 +5219,19 @@
     <match lemma="bastidor" tags="n.m.pl"><select lemma="coulisse"/></match>
   </rule>
 
+  <!-- mofeta >> mofette, mouffette -->
+  <rule weight="0.8">
+    <match lemma="mofeta" tags="n.*"><select lemma="mofette"/></match>
+  </rule>
+
   <!-- poll >> peuplier, poussin, pou -->
   <rule weight="0.8">
     <match lemma="poll" tags="n.*"><select lemma="peuplier"/></match>
+  </rule>
+
+  <!-- grafiter >> graffiteur, graffeur, tagueur, bombeur -->
+  <rule weight="0.8">
+    <match lemma="grafiter" tags="n.*"><select lemma="graffiteur"/></match>
   </rule>
 
   <!-- grafit >> graffiti, graphite -->

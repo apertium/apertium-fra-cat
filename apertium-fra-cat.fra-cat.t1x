@@ -450,6 +450,7 @@
       <cat-item lemma="passer" tags="vblex.*"/>
       <cat-item lemma="rendre" tags="vblex.*"/>
       <cat-item lemma="rendre# à" tags="vblex.*"/>
+      <cat-item lemma="reposer" tags="vblex.*"/>
       <cat-item lemma="taire" tags="vblex.*"/>
     </def-cat>
     <def-cat n="verbospron_pp">
@@ -458,6 +459,7 @@
       <cat-item lemma="passer" tags="vblex.pp.*"/>
       <cat-item lemma="rendre" tags="vblex.pp.*"/>
       <cat-item lemma="rendre# à" tags="vblex.pp.*"/>
+      <cat-item lemma="reposer" tags="vblex.pp.*"/>
       <cat-item lemma="taire" tags="vblex.pp.*"/>
     </def-cat>
     <def-cat n="verbospron_inf">
@@ -466,6 +468,7 @@
       <cat-item lemma="passer" tags="vblex.inf"/>
       <cat-item lemma="rendre" tags="vblex.inf"/>
       <cat-item lemma="rendre# à" tags="vblex.inf"/>
+      <cat-item lemma="reposer" tags="vblex.inf"/>
       <cat-item lemma="taire" tags="vblex.inf"/>
     </def-cat>
     <def-cat n="verbospron_ger">
@@ -474,6 +477,7 @@
       <cat-item lemma="passer" tags="vblex.ger"/>
       <cat-item lemma="rendre" tags="vblex.ger"/>
       <cat-item lemma="rendre# à" tags="vblex.ger"/>
+      <cat-item lemma="reposer" tags="vblex.ger"/>
       <cat-item lemma="taire" tags="vblex.ger"/>
     </def-cat>
     <def-cat n="vbambser_pp">
@@ -860,6 +864,7 @@
       <list-item v="avérer"/>
       <list-item v="heurter"/>
       <list-item v="passer"/>
+      <list-item v="reposer"/>
       <list-item v="taire"/>
     </def-list>
 
@@ -1350,7 +1355,7 @@
       <list-item v="tamoul"/>
       <list-item v="tamil"/>
       <list-item v="télougou"/>
-      <list-item v="singalais"/>
+      <list-item v="cingalais"/>
       <list-item v="népalais"/>
       <list-item v="tibétain"/>
       <list-item v="chinois"/>

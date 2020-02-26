@@ -841,6 +841,16 @@
 
 <!-- **************** V **************** -->
 
+  <!-- taguer >> etiquetar, pintar# grafits -->
+  <rule weight="0.8">
+    <match lemma="taguer" tags="vblex.*"><select lemma="etiquetar"/></match>
+  </rule>
+
+  <!-- tagger >> etiquetar, pintar# grafits -->
+  <rule weight="0.8">
+    <match lemma="tagger" tags="vblex.*"><select lemma="etiquetar"/></match>
+  </rule>
+
   <!-- avancer >> avançar, anar# avançat -->
   <rule weight="0.8">
     <match lemma="avancer" tags="vblex.*"><select lemma="avançar"/></match>
@@ -910,9 +920,14 @@
     <match lemma="câliner" tags="vblex.*"><select lemma="acaronar"/></match>
   </rule>
 
-  <!-- rafler >> pispar, rampinyar -->
+  <!-- marauder >> rapinyar, rampinyar -->
   <rule weight="0.8">
-    <match lemma="rafler" tags="vblex.*"><select lemma="pispar"/></match>
+    <match lemma="marauder" tags="vblex.*"><select lemma="rapinyar"/></match>
+  </rule>
+
+  <!-- rafler >> rapinyar, rampinyar -->
+  <rule weight="0.8">
+    <match lemma="rafler" tags="vblex.*"><select lemma="rapinyar"/></match>
   </rule>
 
   <!-- bander >> embenar, trempar -->
@@ -1667,6 +1682,16 @@
   <macro name="verb_prep" p1="chasser" p2="caçar" p3="de" p4="expulsar" />
 
 <!-- **************** N **************** -->
+
+  <!-- lavage >> rentada, rentat -->
+  <rule weight="0.8">
+    <match lemma="lavage" tags="n.*"><select lemma="rentada"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="lavage" tags="n.*"><select lemma="rentat"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="estomac" tags="n.*"/>
+  </rule>
 
   <!-- avance >> avanç, avantatge, avançada, bestreta -->
   <rule weight="0.8">
