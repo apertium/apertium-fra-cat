@@ -1683,6 +1683,16 @@
 
 <!-- **************** N **************** -->
 
+  <!-- blessure >> ferida, lesió -->
+  <rule weight="0.8">
+    <match lemma="blessure" tags="n.*"><select lemma="ferida"/></match>
+  </rule>
+
+  <!-- baril >> barril, tonell -->
+  <rule weight="0.8">
+    <match lemma="baril" tags="n.*"><select lemma="barril"/></match>
+  </rule>
+
   <!-- lavage >> rentada, rentat -->
   <rule weight="0.8">
     <match lemma="lavage" tags="n.*"><select lemma="rentada"/></match>

@@ -651,6 +651,8 @@
       <match lemma="arribar" tags="vblex.*"/>
       <match lemma="aparèixer" tags="vblex.*"/>
       <match lemma="marxar" tags="vblex.*"/>
+      <match lemma="apropar" tags="vblex.*"/>
+      <match lemma="aproximar" tags="vblex.*"/>
     </def-seq>
 
     <def-seq n="pr_de">
@@ -1538,6 +1540,7 @@
       <match lemma="muntanya" tags="n.*"/>
       <match lemma="bosc" tags="n.*"/>
       <match lemma="platja" tags="n.*"/>
+      <match lemma="costa" tags="n.*"/>
       <match lemma="ciutat" tags="n.*"/>
       <match lemma="Mediterrani" tags="np.*"/>
       <match lemma="Mediterrània" tags="np.*"/>
@@ -1568,6 +1571,16 @@
   </rule>
   <rule weight="1.2">
     <or>
+      <match lemma="paral·lel" tags="adj.*"/>
+      <match lemma="paral·lel" tags="n.*"/> <!-- per si hi ha un error d'anàlisi -->
+      <match lemma="paral·lela" tags="n.*"/> <!-- per si hi ha un error d'anàlisi -->
+      <match lemma="perpendicular" tags="adj.*"/>
+      <match lemma="perpendicular" tags="n.*"/> <!-- per si hi ha un error d'anàlisi -->
+    </or>
+    <match lemma="a" tags="pr"><select lemma="à"/></match>
+  </rule>
+  <rule weight="1.2">
+    <or>
       <seq n="verbs_moviment"/>
       <match lemma="proximitat" tags="n.*"/>
       <match lemma="viatge" tags="n.*"/>
@@ -1582,6 +1595,7 @@
       <match lemma="muntanya" tags="n.*"/>
       <match lemma="bosc" tags="n.*"/>
       <match lemma="platja" tags="n.*"/>
+      <match lemma="costa" tags="n.*"/>
       <match lemma="ciutat" tags="n.*"/>
       <match lemma="Mediterrani" tags="np.*"/>
       <match lemma="Mediterrània" tags="np.*"/>
@@ -1784,6 +1798,28 @@
   <!-- pintar# grafits >> taguer, tagger, graffer -->
   <rule weight="0.8">
     <match lemma="pintar# grafits" tags="vblex.*"><select lemma="taguer"/></match>
+  </rule>
+
+  <!-- patir >> souffrir, subir -->
+  <rule weight="0.8">
+    <match lemma="patir" tags="vblex.*"><select lemma="souffrir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="patir" tags="vblex.*"><select lemma="subir"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="patir" tags="vblex.*"><select lemma="subir"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match tags="adj.*"/>
+    <match tags="n.*"/>
   </rule>
 
   <!-- xutar >> shooter, botter -->
@@ -3613,6 +3649,23 @@
       <match lemma="quin" tags="adj.*"/>
     </or>
     <match lemma="barra" tags="n.*"><select lemma="culot"/></match>
+  </rule>
+
+  <!-- lesió >> lésion, blessure -->
+  <rule weight="0.8">
+    <match lemma="lesió" tags="n.*"><select lemma="lésion"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="patir" tags="vblex.*"/>
+      <match lemma="tenir" tags="vblex.*"/>
+    </or>
+    <match lemma="lesió" tags="n.*"><select lemma="blessure"/></match>
+  </rule>
+
+  <!-- barril >> baril, tonneau -->
+  <rule weight="0.8">
+    <match lemma="barril" tags="n.*"><select lemma="baril"/></match>
   </rule>
 
   <!-- cistella >> corbeille, panier -->
