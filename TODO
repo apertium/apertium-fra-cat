@@ -1,10 +1,13 @@
 FRA > CAT
 
-+couler > (intr) enfonsar-se; fluir | tr. enfonsar
-*bénéficier# de > beneficiar-se# de (també adv entre verb i de)
-+couler > enfonsar-se
-+partir > anar-se'n
+couler > (intr) enfonsar-se; fluir | tr. enfonsar
+bénéficier# de > beneficiar-se# de (també adv entre verb i de)
+couler > enfonsar-se
+déménager > traslladar-se
+partir > anar-se'n
 aimer (bien) + inf > agradar-li + inf (es pot fer amb selecció lèxica + macro que canvia el pronom)
+
+celui de > el de (t1x)
 
 on doit > s'ha de / cal
 
@@ -12,18 +15,23 @@ on doit > s'ha de / cal
 
 postuler à un examen... (sel lex)
 
+en août 2020 > l'agost de 2020
+però
+[il y a eu une production] en août de 200000 barils
+
 Nombres: reconèixer l'espai separador de milers com part del nombre. Això farà que es tradueixi bé:
 il y a 11 000 ans
 (però no és trivial perquè no fa cas dels salts de línia en posar expressions regulars)
 
 CAT > FRA
 
-avergonyir-se > avoir# honte (avoir beaucoup d'honte, un peu d'honte, parfois honte, etc.)
+avergonyir-se > avoir# honte (avoir beaucoup de honte, un peu de honte, parfois honte, etc.)
 estar-se a > rester
 
 descansar > se reposer
 seure > s'assoir
 recordar (una cosa) > se rappeler
+patir# una lesió > se blesser
 
 continuo dient > (je) continue à dire
 van perdent > sont en train de perdre ???
@@ -31,6 +39,10 @@ es va convertint > est en train de se XX
 han anat desapareixent > ont disparu petit à petit
 
 tornar a inf > verb à nouveau
+
+el de > celui de (t1x)
+
+s'ha anat -ger > ???
 
 Fins fa poc > Jusqu'à il y a pas longtemps ?
 Fins no fa gaire
@@ -43,6 +55,12 @@ el de la Xina > celui de la Chine (el de)
 
 echo "no es va fer gran" | apertium -d . cat-fra
 ne se va pas faire grand
+
+l'agost de 2020 > en août 2020
+però
+[hi va haver una producció] l'agost de 200000 barrils
+
+Hi ha alguns adjectius que en català poden anar avanposats, però mai en francès: màxim, mínim, etc.
 
 00910. Dans des époques anciennes, s'y avait cultivé des riz, pratique que s'est revenue à introduire
 
