@@ -552,7 +552,7 @@
     <match lemma="de" tags="pr"><select lemma="a"/></match>
   </rule>
 
-  <!-- à >> a, en, amb -->
+  <!-- à >> a, en, amb, de -->
   <rule weight="0.8">
     <match lemma="à" tags="pr"><select lemma="a"/></match>
   </rule>
@@ -569,6 +569,14 @@
       <match tags="adj"/>
     </repeat>
     <match lemma="à" tags="pr"><select lemma="de"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="à" tags="pr"><select lemma="de"/></match>
+    <match lemma="sang" tags="n.*"/>
+    <or>
+      <match lemma="froid" tags="adj.*"/>
+      <match lemma="chaud" tags="adj.*"/>
+    </or>
   </rule>
   <rule weight="1.0">
     <match lemma="marier" tags="vblex.*"/>
@@ -841,6 +849,24 @@
 
 <!-- **************** V **************** -->
 
+  <!-- déverser >> abocar, vessar -->
+  <rule weight="0.8">
+    <match lemma="déverser" tags="vblex.*"><select lemma="abocar"/></match>
+  </rule>
+
+  <!-- tuer pp >> matar pp, mort adj -->
+  <rule weight="0.8">
+    <match lemma="tuer" tags="vblex.pp.*"><select lemma="matar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="vbser.*"/>
+    <match lemma="tuer" tags="vblex.pp.*"><select lemma="mort"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tuer" tags="vblex.pp.*"><select lemma="mort"/></match>
+    <match lemma="par" tags="pr"/>
+  </rule>
+
   <!-- taguer >> etiquetar, pintar# grafits -->
   <rule weight="0.8">
     <match lemma="taguer" tags="vblex.*"><select lemma="etiquetar"/></match>
@@ -851,10 +877,18 @@
     <match lemma="tagger" tags="vblex.*"><select lemma="etiquetar"/></match>
   </rule>
 
+  <!-- fendre >> esberlar, estellar, esquerdar -->
+  <rule weight="0.8">
+    <match lemma="fendre" tags="vblex.*"><select lemma="esberlar"/></match>
+  </rule>
+
   <!-- avancer >> avançar, anar# avançat -->
   <rule weight="0.8">
     <match lemma="avancer" tags="vblex.*"><select lemma="avançar"/></match>
   </rule>
+
+  <!-- ébouler >> esfondrar, esllavissar -->
+  <macro name="verb_nopron_pron" p1="ébouler" p2="esfondrar" p3="esllavissar" />
 
   <!-- débarrasser >> desembarassar, desparar -->
   <macro name="verb_nopron_pron" p1="débarrasser" p2="desembarassar" p3="desfer" />
@@ -1261,6 +1295,9 @@
 
   <!-- raser >> arrasar, afaitar -->
   <macro name="verb_nopron_pron" p1="raser" p2="arrasar" p3="afaitar" />
+
+  <!-- faufiler >> embastar, esquitllar-se, esmunyir-se -->
+  <macro name="verb_nopron_pron" p1="faufiler" p2="embastar" p3="esquitllar" />
 
   <!-- tromper >> enganyar, equivocar -->
   <macro name="verb_nopron_pron" p1="tromper" p2="enganyar" p3="equivocar" />
@@ -1682,6 +1719,16 @@
   <macro name="verb_prep" p1="chasser" p2="caçar" p3="de" p4="expulsar" />
 
 <!-- **************** N **************** -->
+
+  <!-- voyou >> brètol, bergant -->
+  <rule weight="0.8">
+    <match lemma="voyou" tags="n.*"><select lemma="brètol"/></match>
+  </rule>
+
+  <!-- lotissement >> parcel·lació, urbanització -->
+  <rule weight="0.8">
+    <match lemma="lotissement" tags="n.*"><select lemma="parcel·lació"/></match>
+  </rule>
 
   <!-- blessure >> ferida, lesió -->
   <rule weight="0.8">
@@ -2362,7 +2409,7 @@
     <match lemma="rapporteur" tags="n.*"><select lemma="relator"/></match>
   </rule>
 
-  <!-- frappe >> toc, picatge -->
+  <!-- frappe >> toc, picatge, xoc, atac -->
   <rule weight="0.8">
     <match lemma="frappe" tags="n.*"><select lemma="toc"/></match>
   </rule>
@@ -2376,6 +2423,30 @@
     <match lemma="de" tags="pr"/>
     <match lemma="frappe" tags="n.*"><select lemma="xoc"/></match>
   </rule>
+  <rule weight="1.0">
+    <match lemma="frappe" tags="n.*"><select lemma="atac"/></match>
+    <or>
+      <match lemma="aérien" tags="adj.*"/>
+      <match lemma="terrestre" tags="adj.*"/>
+      <match lemma="nucléaire" tags="adj.*"/>
+      <match lemma="chirurgical" tags="adj.*"/>
+      <match lemma="préventif" tags="adj.*"/>
+      <match lemma="immédiat" tags="adj.*"/>
+      <match lemma="aveugle" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="frappe" tags="n.*"><select lemma="atac"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="drone" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="adj_ord"/>
+    </or>
+    <match lemma="frappe" tags="n.*"><select lemma="atac"/></match>
+  </rule>
+
 
   <!-- placard >> armari, armari# de paret, cartell -->
   <rule weight="0.8">
@@ -3978,6 +4049,11 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- épais >> gruixut, espès -->
+  <rule weight="0.8">
+    <match lemma="épais" tags="adj.*"><select lemma="gruixut"/></match>
+  </rule>
 
   <!-- manifeste >> manifest, palès -->
   <rule weight="0.8">

@@ -1472,7 +1472,7 @@
     <or><match tags="np.loc"/><match tags="np.top.*"/><match tags="np.hyd.*"/></or>
   </rule>
 
-  <!-- de >> de, en -->
+  <!-- de >> de, en, à -->
   <rule weight="0.8">
     <match lemma="de" tags="pr"><select lemma="de"/></match>
   </rule>
@@ -1517,6 +1517,14 @@
     </repeat>
     <match lemma="de" tags="pr"><select lemma="de"/></match>
     <match lemma="vacances" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="de" tags="pr"><select lemma="à"/></match>
+    <match lemma="sang" tags="n.*"/>
+    <or>
+      <match lemma="fred" tags="adj.*"/>
+      <match lemma="calent" tags="adj.*"/>
+    </or>
   </rule>
 
   <!-- a >> à, en, dans, de -->
@@ -1795,6 +1803,11 @@
 
 <!-- V -->
 
+  <!-- barrinar >> percer, forer, saborder -->
+  <rule weight="0.8">
+    <match lemma="barrinar" tags="vblex.*"><select lemma="percer"/></match>
+  </rule>
+
   <!-- pintar# grafits >> taguer, tagger, graffer -->
   <rule weight="0.8">
     <match lemma="pintar# grafits" tags="vblex.*"><select lemma="taguer"/></match>
@@ -1887,10 +1900,18 @@
     <match lemma="amanyagar" tags="vblex.*"><select lemma="choyer"/></match>
   </rule>
 
+  <!-- esberlar >> fendre, écuisser -->
+  <rule weight="0.8">
+    <match lemma="esberlar" tags="vblex.*"><select lemma="fendre"/></match>
+  </rule>
+
   <!-- atalaiar >> guetter, épier -->
   <rule weight="0.8">
     <match lemma="atalaiar" tags="vblex.*"><select lemma="guetter"/></match>
   </rule>
+
+  <!-- esquerdar >> fêler, fendre -->
+  <macro name="verb_nopron_pron" p1="esquerdar" p2="fêler" p3="fendre" />
 
   <!-- destacar >> souligner, distinguer, ressortir -->
   <macro name="verb_nopron_pron" p1="destacar" p2="souligner" p3="distinguer"/>
@@ -1969,33 +1990,6 @@
   <!-- escarmentar >> corriger, échauder -->
   <rule weight="0.8">
     <match lemma="escarmentar" tags="vblex.*"><select lemma="corriger"/></match>
-  </rule>
-
-  <!-- fer >> faire, marquer -->
-  <rule weight="0.8">
-    <match lemma="fer" tags="vblex.*"><select lemma="faire"/></match>
-  </rule>
-  <rule weight="1.0">
-    <match lemma="fer" tags="vblex.*"><select lemma="marquer"/></match>
-    <repeat from="0" upto="1">
-      <match tags="adv"/>
-    </repeat>
-    <or>
-      <match tags="det.*"/>
-      <match tags="num"/>
-      <match tags="num.*"/>
-    </or>
-    <match lemma="gol" tags="n.*"/>
-  </rule>
-  <rule weight="1.0">
-    <match lemma="gol" tags="n.*"/>
-    <repeat from="0" upto="4">
-      <match tags="*"/>
-    </repeat>
-    <or>
-      <match lemma="fer" tags="vblex.pp.*"><select lemma="marquer"/></match>
-      <match lemma="fer" tags="vblex.inf"><select lemma="marquer"/></match>
-    </or>
   </rule>
 
   <!-- cardar >> foutre, baiser, lainer -->
@@ -2784,7 +2778,7 @@
     <match tags="vblex.fti.*"/>
   </rule>
 
-  <!-- fer >> faire, poser -->
+  <!-- fer >> faire, poser, marquer -->
   <rule weight="0.8">
     <match lemma="fer" tags="vblex.*"><select lemma="faire"/></match>
   </rule>
@@ -2817,6 +2811,29 @@
       <match lemma="paper" tags="n.*"/>
     </or>
   </rule>
+  <rule weight="1.0">
+    <match lemma="fer" tags="vblex.*"><select lemma="marquer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <match lemma="gol" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="gol" tags="n.*"/>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="fer" tags="vblex.pp.*"><select lemma="marquer"/></match>
+      <match lemma="fer" tags="vblex.inf"><select lemma="marquer"/></match>
+    </or>
+  </rule>
+
 
   <!-- posar >> poser, mettre -->
   <rule weight="0.8">
@@ -3176,7 +3193,6 @@
     <match lemma="que" tags="cnjsub"/>
   </rule>
 
-
   <!-- il·lusionar >> donner# des espoirs, illusionner -->
   <rule weight="0.8">
     <match lemma="il·lusionar" tags="vblex.*"><select lemma="donner# des espoirs"/></match>
@@ -3191,6 +3207,15 @@
   </rule>
 
 <!-- ADJ -->
+
+  <!-- mort >> mort, tué -->
+  <rule weight="0.8">
+    <match lemma="mort" tags="adj.*"><select lemma="mort"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="mort" tags="adj.*"><select lemma="tué"/></match>
+    <match lemma="per" tags="pr"/>
+  </rule>
 
   <!-- guanyador >> gagnat, vainqueur -->
   <rule weight="0.8">
@@ -3624,9 +3649,75 @@
 
 <!-- N -->
 
+  <!-- mancomunitat >> association, fédération -->
+  <rule weight="0.8">
+    <match lemma="mancomunitat" tags="n.*"><select lemma="association"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="mancomunitat" tags="n.*"><select lemma="fédération"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="Catalunya" tags="np.top.*"/>
+  </rule>
+
+  <!-- balda >> verrou, targette, espagnolette -->
+  <rule weight="0.8">
+    <match lemma="balda" tags="n.*"><select lemma="verrou"/></match>
+  </rule>
+
   <!-- depuració >> dépuration, épuration -->
   <rule weight="0.8">
     <match lemma="depuració" tags="n.*"><select lemma="épuration"/></match>
+  </rule>
+
+  <!-- magisteri > enseignement, enseignement primaire -->
+  <rule weight="0.8">
+    <match lemma="magisteri" tags="n.*"><select lemma="enseignement"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="estudiar" tags="vblex.*"/>
+      <match lemma="fer" tags="vblex.*"><select lemma="étudier"/></match>
+    </or>
+    <match lemma="magisteri" tags="n.*"><select lemma="enseignement primaire"/></match>
+  </rule>
+
+  <!-- carrera > course, carrière, étude -->
+  <rule weight="0.8">
+    <match lemma="carrera" tags="n.*"><select lemma="course"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="carrera" tags="n.*"><select lemma="étude"/></match>
+    <match lemma="universitari" tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fer" tags="vblex.*"/>
+    <match lemma="carrera" tags="n.*"><select lemma="carrière"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="estudiar" tags="vblex.*"><select lemma="faire"/></match>
+      <match lemma="fer" tags="vblex.*"/>
+    </or>
+    <match tags="det.*"/>
+    <match lemma="carrera" tags="n.*"><select lemma="étude"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="carrera" tags="n.*"><select lemma="étude"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="lletra" tags="n.*"/>
+      <match lemma="ciència" tags="n.*"/>
+      <match lemma="filosofia" tags="n.*"/>
+      <match lemma="filologia" tags="n.*"/>
+      <match lemma="història" tags="n.*"/>
+      <match lemma="matemàtica" tags="n.*"/>
+      <match lemma="física" tags="n.*"/>
+      <match lemma="química" tags="n.*"/>
+      <match lemma="dret" tags="n.*"/>
+      <match lemma="medicina" tags="n.*"/>
+      <match lemma="economia" tags="n.*"/>
+      <match lemma="magisteri" tags="n.*"><select lemma="enseignement primaire"/></match>
+    </or>
   </rule>
 
   <!-- avantatge >> avantage, avance -->
