@@ -446,6 +446,8 @@
     </def-cat>
     <def-cat n="verbospron"> <!-- verbs pronominals en fra però amb l'equivalent cat no pronominal -->
       <cat-item lemma="asseoir" tags="vblex.*"/>
+      <cat-item lemma="dérober" tags="vblex.*"/>
+      <cat-item lemma="dérober# à" tags="vblex.*"/>
       <cat-item lemma="heurter" tags="vblex.*"/>
       <cat-item lemma="passer" tags="vblex.*"/>
       <cat-item lemma="rendre" tags="vblex.*"/>
@@ -455,6 +457,8 @@
     </def-cat>
     <def-cat n="verbospron_pp">
       <cat-item lemma="asseoir" tags="vblex.pp.*"/>
+      <cat-item lemma="dérober" tags="vblex.pp.*"/>
+      <cat-item lemma="dérober# à" tags="vblex.pp.*"/>
       <cat-item lemma="heurter" tags="vblex.pp.*"/>
       <cat-item lemma="passer" tags="vblex.pp.*"/>
       <cat-item lemma="rendre" tags="vblex.pp.*"/>
@@ -464,6 +468,8 @@
     </def-cat>
     <def-cat n="verbospron_inf">
       <cat-item lemma="asseoir" tags="vblex.inf"/>
+      <cat-item lemma="dérober" tags="vblex.inf"/>
+      <cat-item lemma="dérober# à" tags="vblex.inf"/>
       <cat-item lemma="heurter" tags="vblex.inf"/>
       <cat-item lemma="passer" tags="vblex.inf"/>
       <cat-item lemma="rendre" tags="vblex.inf"/>
@@ -473,6 +479,8 @@
     </def-cat>
     <def-cat n="verbospron_ger">
       <cat-item lemma="asseoir" tags="vblex.ger"/>
+      <cat-item lemma="dérober" tags="vblex.ger"/>
+      <cat-item lemma="dérober# à" tags="vblex.ger"/>
       <cat-item lemma="heurter" tags="vblex.ger"/>
       <cat-item lemma="passer" tags="vblex.ger"/>
       <cat-item lemma="rendre" tags="vblex.ger"/>
@@ -929,7 +937,10 @@
       <list-item v="Angleterre"/>
       <list-item v="Yorkshire"/>
       <list-item v="Lancashire"/>
+      <list-item v="Lincolnshire"/>
       <list-item v="Essex"/>
+      <list-item v="Middlesex"/>
+      <list-item v="Suffolk"/>
       <list-item v="Devon"/>
       <list-item v="Cornouaille"/>
       <list-item v="Cornouailles"/>
@@ -1404,6 +1415,7 @@
       <list-item v="chéroki"/>
       <list-item v="tchéroki"/>
       <list-item v="mohawk"/>
+      <list-item v="huron"/>
       <list-item v="iroquois"/>
       <list-item v="comanche"/>
       <list-item v="creek"/>

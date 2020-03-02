@@ -1803,6 +1803,11 @@
 
 <!-- V -->
 
+  <!-- aclaparar >> accabler, désarçonner, écraser -->
+  <rule weight="0.8">
+    <match lemma="aclaparar" tags="vblex.*"><select lemma="accabler"/></match>
+  </rule>
+
   <!-- barrinar >> percer, forer, saborder -->
   <rule weight="0.8">
     <match lemma="barrinar" tags="vblex.*"><select lemma="percer"/></match>
@@ -3648,6 +3653,19 @@
   </rule>
 
 <!-- N -->
+
+  <!-- audiència >> audience, fédération -->
+  <rule weight="0.8">
+    <match lemma="audiència" tags="n.*"><select lemma="audience"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="Audiència" tags="n.*"><select lemma="cour# d'assises"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="audiència" tags="n.*"><select lemma="cour# d'assises"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="np.top.*"/>
+  </rule>
 
   <!-- mancomunitat >> association, fédération -->
   <rule weight="0.8">
