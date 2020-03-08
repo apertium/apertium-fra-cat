@@ -1723,6 +1723,41 @@
 
 <!-- **************** N **************** -->
 
+  <!-- fouille >> escorcoll, excavació -->
+  <rule weight="0.8">
+    <match lemma="fouille" tags="n.*"><select lemma="escorcoll"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fouille" tags="n.*"><select lemma="excavació"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="ville" tags="n.*"/>
+      <match lemma="cité" tags="n.*"/>
+      <match lemma="temple" tags="n.*"/>
+      <match lemma="forum" tags="n.*"/>
+      <match lemma="agora" tags="n.*"/>
+      <match lemma="château" tags="n.*"/>
+      <match lemma="église" tags="n.*"/>
+      <match lemma="cathédrale" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- meurtrière >> espitllera, tronera -->
+  <rule weight="0.8">
+    <match lemma="meurtrière" tags="n.*"><select lemma="espitllera"/></match>
+  </rule>
+
+  <!-- requête >> requeriment, requesta, instància -->
+  <rule weight="0.8">
+    <match lemma="requête" tags="n.*"><select lemma="requeriment"/></match>
+  </rule>
+
+  <!-- douve >> fossat, doga -->
+  <rule weight="0.8">
+    <match lemma="douve" tags="n.*"><select lemma="fossat"/></match>
+  </rule>
+
   <!-- embouquement >> embocament, embocador -->
   <rule weight="0.8">
     <match lemma="embouquement" tags="n.*"><select lemma="embocament"/></match>
