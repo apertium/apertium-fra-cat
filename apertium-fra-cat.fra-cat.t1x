@@ -45,7 +45,7 @@
     <def-cat n="le">
       <cat-item lemma="le" tags="det.*"/>
     </def-cat>
-    <def-cat n="ce">
+    <def-cat n="ce_det">
       <cat-item lemma="ce" tags="det.*"/>
     </def-cat>
     <def-cat n="quelques_plusieurs">
@@ -145,6 +145,9 @@
     <def-cat n="unpron">
       <cat-item lemma="un" tags="prn.*"/>
     </def-cat>
+    <def-cat n="ce_prn">
+      <cat-item lemma="ce" tags="prn.tn.nt"/>
+    </def-cat>
     <def-cat n="prn">
       <cat-item tags="prn.tn.*"/>
       <cat-item tags="prn.itg.*"/>
@@ -238,6 +241,9 @@
     </def-cat>
     <def-cat n="vbser">
       <cat-item tags="vbser.*"/>
+    </def-cat>
+    <def-cat n="vbserp3">
+      <cat-item tags="vbser.*.p3.*"/>
     </def-cat>
     <def-cat n="verbnoser">
       <cat-item tags="vblex.*"/>
@@ -3866,6 +3872,29 @@
       </action>
     </rule>
 
+    <rule comment="REGLA: CE + VBSER > VBSER">
+      <pattern>
+        <pattern-item n="ce_prn"/>
+        <pattern-item n="vbserp3"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
     <rule comment="REGLA: VERBnoserconj (per a multiparaules + verbs pronominals)">
       <pattern>
         <pattern-item n="verbnoserconj"/>
@@ -4021,7 +4050,7 @@
 
      <rule comment="REGLA: ce livre-ci >> aquest llibre, ce livre-là >> aquell llibre">
       <pattern>
-        <pattern-item n="ce"/>
+        <pattern-item n="ce_det"/>
         <pattern-item n="nom"/>
         <pattern-item n="ci_la"/>
       </pattern>
@@ -6501,6 +6530,140 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
 
 <!-- FI REGLES VERBS QUE SÓN PRONOMINALS EN UNA LLENGUA PERÒ NO EN L'ALTRA -->
+
+    <rule comment="REGLA: CE VBSER DES > VBSER">
+      <pattern>
+        <pattern-item n="ce_prn"/>
+        <pattern-item n="vbserp3"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: CE NE VBSER PAS DES > NO VBSER">
+      <pattern>
+        <pattern-item n="ce_prn"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="vbserp3"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <call-macro n="f_bcond"><with-param pos="4"/><with-param pos="5"/></call-macro>
+        <call-macro n="f_bcond"><with-param pos="5"/><with-param pos="6"/></call-macro>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: CE VBSER ADV DES > VBSER ADV">
+      <pattern>
+        <pattern-item n="ce_prn"/>
+        <pattern-item n="vbserp3"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <call-macro n="f_bcond"><with-param pos="4"/><with-param pos="5"/></call-macro>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: CE NE VBSER PAS ADV DES > NO VBSER ADV">
+      <pattern>
+        <pattern-item n="ce_prn"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="vbserp3"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <out>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="whole"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="5"/><with-param pos="6"/></call-macro>
+        <call-macro n="f_bcond"><with-param pos="6"/><with-param pos="7"/></call-macro>
+      </action>
+    </rule>
 
     <rule comment="REGLA: verb + de +  VERB PREP DET (venir de avoir des: acabar de tenir)">
       <pattern>
@@ -11308,6 +11471,36 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
+
+    <rule comment="REGLA: CE NE VBSER PAS > NO VBSER">
+      <pattern>
+        <pattern-item n="ce_prn"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="vbserp3"/>
+        <pattern-item n="pas"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+      </action>
+    </rule>
 
     <rule comment="REGLA: NE VBSER PAS VBSERPP (ne sont pas tombés > no han caigut)">
       <pattern>
