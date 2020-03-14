@@ -1432,6 +1432,31 @@
     <match lemma="amb" tags="pr"><select lemma="à"/></match>
   </rule>
 
+  <!-- rere >> derrière, après -->
+  <rule weight="0.8">
+    <match lemma="rere" tags="pr"><select lemma="derrière"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="dia" tags="n.*"/>
+    <match lemma="rere" tags="pr"><select lemma="après"/></match>
+    <match lemma="dia" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="setmana" tags="n.*"/>
+    <match lemma="rere" tags="pr"><select lemma="après"/></match>
+    <match lemma="setmana" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="mes" tags="n.*"/>
+    <match lemma="rere" tags="pr"><select lemma="après"/></match>
+    <match lemma="mes" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="any" tags="n.*"><select lemma="année"/></match>
+    <match lemma="rere" tags="pr"><select lemma="après"/></match>
+    <match lemma="any" tags="n.*"><select lemma="année"/></match>
+  </rule>
+
   <!-- per >> par, pour, de -->
   <rule weight="0.8">
     <match lemma="per" tags="pr"><select lemma="par"/></match>
