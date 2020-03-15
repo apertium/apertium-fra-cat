@@ -295,11 +295,28 @@
 		 <match tags="adv"/>
 		 <match tags="adv"/>
 		 <match lemma="{{p3}}" tags="pr"/>
-		  </rule>
+	  </rule>
 	</def-macro>
 
+    <!-- Aquesta macro tria el verb p2 si p1 és intransitiu i p3 si p1 és transitiu -->
+    <!-- p1 = verb fra, p2 = verb cat intransitiu, p3 = verb cat transitiu -->
+    <!-- la manera de veure que el verb és transitiu és molt barroera -->
+    <def-macro name="verb_intrans_trans">
+      <rule weight="0.8">
+        <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p2}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p3}}"/></match>
+        <match tags="det.*"/>
+      </rule>
+      <rule weight="1.0">
+        <match lemma="le" tags="prn.pro.*"/>
+        <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p3}}"/></match>
+      </rule>
+    </def-macro>
+
     <!-- Aquesta macro tria el verb p2 si p1 no és pronominal i p3 si p1 és pronominal -->
-    <!-- p1 = verb cat, p2 = verb fra no pron, p3 = verb fra pron -->
+    <!-- p1 = verb fra, p2 = verb cat no pron, p3 = verb cat pron -->
     <def-macro name="verb_nopron_pron">
       <rule weight="0.8">
         <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p2}}"/></match>
@@ -874,6 +891,16 @@
 
 <!-- **************** V **************** -->
 
+  <!-- chatouiller >> fer# pessigolles, fer# cosquerelles -->
+  <rule weight="0.8">
+    <match lemma="chatouiller" tags="vblex.*"><select lemma="fer# pessigolles"/></match>
+  </rule>
+
+  <!-- titiller >> fer# pessigolles, fer# cosquerelles -->
+  <rule weight="0.8">
+    <match lemma="titiller" tags="vblex.*"><select lemma="fer# pessigolles"/></match>
+  </rule>
+
   <!-- déverser >> abocar, vessar -->
   <rule weight="0.8">
     <match lemma="déverser" tags="vblex.*"><select lemma="abocar"/></match>
@@ -914,6 +941,12 @@
 
   <!-- dérober >> robar, evitar -->
   <macro name="verb_nopron_pron" p1="dérober" p2="robar" p3="evitar"/>
+
+  <!-- bouder >> fer# mala cara/fer #morros, fer# mala cara a/fer #morros a -->
+  <macro name="verb_intrans_trans" p1="bouder" p2="fer# mala cara" p3="fer# mala cara a"/>
+
+  <!-- dessaisir >> desposseir, desprendre -->
+  <macro name="verb_nopron_pron" p1="dessaisir" p2="desposseir" p3="desprendre"/>
 
   <!-- ébouler >> esfondrar, esllavissar -->
   <macro name="verb_nopron_pron" p1="ébouler" p2="esfondrar" p3="esllavissar" />
@@ -1753,6 +1786,25 @@
   <macro name="verb_prep" p1="chasser" p2="caçar" p3="de" p4="expulsar" />
 
 <!-- **************** N **************** -->
+
+  <!-- chatouille >> pessigolles, cosquerelles -->
+  <rule weight="0.8">
+    <match lemma="chatouille" tags="n.*"><select lemma="pessigolles"/></match>
+  </rule>
+
+  <!-- renvoi >> acomiadament, ajornament, remissió, rot -->
+  <rule weight="0.8">
+    <match lemma="renvoi" tags="n.*"><select lemma="acomiadament"/></match>
+  </rule>
+
+  <!-- piment >> pebrot, pebre -->
+  <rule weight="0.8">
+    <match lemma="piment" tags="n.*"><select lemma="pebrot"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="piment" tags="n.*"><select lemma="pebrot"/></match>
+    <match lemma="rouge" tags="adj.*"/>
+  </rule>
 
   <!-- fouille >> escorcoll, excavació -->
   <rule weight="0.8">
