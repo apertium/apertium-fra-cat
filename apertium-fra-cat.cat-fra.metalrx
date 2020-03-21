@@ -622,7 +622,7 @@
       <match lemma="agost" tags="n.*"/>
       <match lemma="setembre" tags="n.*"/>
       <match lemma="octubre" tags="n.*"/>
-      <match lemma="novrembre" tags="n.*"/>
+      <match lemma="novembre" tags="n.*"/>
       <match lemma="desembre" tags="n.*"/>
     </def-seq>
 
@@ -2182,6 +2182,9 @@
   <rule weight="0.8">
     <match lemma="atalaiar" tags="vblex.*"><select lemma="guetter"/></match>
   </rule>
+
+  <!-- entaforar >> enfouir, fourrer -->
+  <macro name="verb_nopron_pron" p1="entaforar" p2="enfouir" p3="fourrer" />
 
   <!-- esquerdar >> fêler, fendre -->
   <macro name="verb_nopron_pron" p1="esquerdar" p2="fêler" p3="fendre" />
@@ -3921,6 +3924,14 @@
   </rule>
 
 <!-- N -->
+
+  <!-- anís >> anis, nonpareille -->
+  <rule weight="0.8">
+    <match lemma="anís" tags="n.*"><select lemma="anis"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="anís" tags="n.m.pl"><select lemma="nonpareille"/></match>
+  </rule>
 
   <!-- concert >> concert, concerto -->
   <rule weight="0.8">

@@ -499,6 +499,96 @@
       <match lemma="bétail" tags="n.*"/>
     </def-seq>
 
+    <def-seq n="adj_pays">
+      <match lemma="portugais" tags="adj.*"/>
+      <match lemma="espagnol" tags="adj.*"/>
+      <match lemma="catalan" tags="adj.*"/>
+      <match lemma="français" tags="adj.*"/>
+      <match lemma="italien" tags="adj.*"/>
+      <match lemma="romain" tags="adj.*"/>
+      <match lemma="génois" tags="adj.*"/>
+      <match lemma="vénitien" tags="adj.*"/>
+      <match lemma="suisse" tags="adj.*"/>
+      <match lemma="irlandais" tags="adj.*"/>
+      <match lemma="britannique" tags="adj.*"/>
+      <match lemma="anglais" tags="adj.*"/>
+      <match lemma="écossais" tags="adj.*"/>
+      <match lemma="gallois" tags="adj.*"/>
+      <match lemma="belge" tags="adj.*"/>
+      <match lemma="hollandais" tags="adj.*"/>
+      <match lemma="flamand" tags="adj.*"/>
+      <match lemma="luxembougeois" tags="adj.*"/>
+      <match lemma="allemand" tags="adj.*"/>
+      <match lemma="prussien" tags="adj.*"/>
+      <match lemma="danois" tags="adj.*"/>
+      <match lemma="islandais" tags="adj.*"/>
+      <match lemma="norvégien" tags="adj.*"/>
+      <match lemma="suédois" tags="adj.*"/>
+      <match lemma="finlandais" tags="adj.*"/>
+      <match lemma="estonien" tags="adj.*"/>
+      <match lemma="léton" tags="adj.*"/>
+      <match lemma="lithuanien" tags="adj.*"/>
+      <match lemma="polonais" tags="adj.*"/>
+      <match lemma="autrichien" tags="adj.*"/>
+      <match lemma="tchèque" tags="adj.*"/>
+      <match lemma="slovaque" tags="adj.*"/>
+      <match lemma="tchécoslovaque" tags="adj.*"/>
+      <match lemma="hongrois" tags="adj.*"/>
+      <match lemma="roumain" tags="adj.*"/>
+      <match lemma="moldave" tags="adj.*"/>
+      <match lemma="bulgare" tags="adj.*"/>
+      <match lemma="slovène" tags="adj.*"/>
+      <match lemma="croate" tags="adj.*"/>
+      <match lemma="serbe" tags="adj.*"/>
+      <match lemma="bosniaque" tags="adj.*"/>
+      <match lemma="kosovar" tags="adj.*"/>
+      <match lemma="albanais" tags="adj.*"/>
+      <match lemma="macédonien" tags="adj.*"/>
+      <match lemma="grec" tags="adj.*"/>
+      <match lemma="bizantin" tags="adj.*"/>
+      <match lemma="turc" tags="adj.*"/>
+      <match lemma="otoman" tags="adj.*"/>
+      <match lemma="russe" tags="adj.*"/>
+      <match lemma="chinois" tags="adj.*"/>
+      <match lemma="japonais" tags="adj.*"/>
+      <match lemma="coréen" tags="adj.*"/>
+      <match lemma="vietnamien" tags="adj.*"/>
+      <match lemma="américain" tags="adj.*"/>
+      <match lemma="indien" tags="adj.*"/>
+    </def-seq>
+
+    <def-seq n="temps">
+      <match lemma="seconde" tags="n.*"/>
+      <match lemma="minute" tags="n.*"/>
+      <match lemma="heure" tags="n.*"/>
+      <match lemma="jour" tags="n.*"/>
+      <match lemma="semaine" tags="n.*"/>
+      <match lemma="mois" tags="n.*"/>
+      <match lemma="an" tags="n.*"/>
+      <match lemma="lustre" tags="n.*"/>
+      <match lemma="siècle" tags="n.*"/>
+      <match lemma="millénaire" tags="n.*"/>
+      <match lemma="lundi" tags="n.*"/>
+      <match lemma="mardi" tags="n.*"/>
+      <match lemma="mercredi" tags="n.*"/>
+      <match lemma="jeudi" tags="n.*"/>
+      <match lemma="vendredi" tags="n.*"/>
+      <match lemma="samedi" tags="n.*"/>
+      <match lemma="dimanche" tags="n.*"/>
+      <match lemma="janvier" tags="n.*"/>
+      <match lemma="février" tags="n.*"/>
+      <match lemma="mars" tags="n.*"/>
+      <match lemma="avril" tags="n.*"/>
+      <match lemma="mai" tags="n.*"/>
+      <match lemma="juin" tags="n.*"/>
+      <match lemma="juillet" tags="n.*"/>
+      <match lemma="août" tags="n.*"/>
+      <match lemma="septembre" tags="n.*"/>
+      <match lemma="octobre" tags="n.*"/>
+      <match lemma="novembre" tags="n.*"/>
+      <match lemma="décembre" tags="n.*"/>
+    </def-seq>
+
     <def-seq n="adj_ord">
       <match lemma="premier" tags="adj.*"/>
       <match lemma="second" tags="adj.*"/>
@@ -891,6 +981,65 @@
 
 <!-- **************** V **************** -->
 
+  <!-- repousser >> rebutjar, ajornar -->
+  <rule weight="0.8">
+    <match lemma="repousser" tags="vblex.*"><select lemma="rebutjar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="repousser" tags="vblex.*"><select lemma="ajornar"/></match>
+    <or>
+      <match lemma="à" tags="pr"/>
+      <match lemma="pour" tags="pr"/>
+    </or>
+    <match lemma="plus"/>
+    <match lemma="tard"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="repousser" tags="vblex.*"><select lemma="ajornar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="activité" tags="n.*"/>
+      <match lemma="opération" tags="n.*"/>
+      <match lemma="procès" tags="n.*"/>
+      <match lemma="visite" tags="n.*"/>
+      <match lemma="voyage" tags="n.*"/>
+      <match lemma="décision" tags="n.*"/>
+      <match lemma="question" tags="n.*"/>
+      <match lemma="réunion" tags="n.*"/>
+      <match lemma="discussion" tags="n.*"/>
+      <match lemma="tâche" tags="n.*"/>
+      <match lemma="début" tags="n.*"/>
+      <match lemma="déploiement" tags="n.*"/>
+      <match lemma="vote" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="repousser" tags="vblex.*"><select lemma="ajornar"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <seq n="temps"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <seq n="temps"/>
+    </or>
+    <match lemma="repousser" tags="vblex.*"><select lemma="ajornar"/></match>
+  </rule>
+
+  <!-- pilonner >> piconar, etc. -->
+  <rule weight="0.8">
+    <match lemma="pilonner" tags="vblex.*"><select lemma="piconar"/></match>
+  </rule>
+
   <!-- chatouiller >> fer# pessigolles, fer# cosquerelles -->
   <rule weight="0.8">
     <match lemma="chatouiller" tags="vblex.*"><select lemma="fer# pessigolles"/></match>
@@ -939,6 +1088,9 @@
     <match lemma="avancer" tags="vblex.*"><select lemma="avançar"/></match>
   </rule>
 
+  <!-- engouffrer >> engolir, entaforar -->
+  <macro name="verb_nopron_pron" p1="engouffrer" p2="engolir" p3="entaforar"/>
+
   <!-- dérober >> robar, evitar -->
   <macro name="verb_nopron_pron" p1="dérober" p2="robar" p3="evitar"/>
 
@@ -956,6 +1108,12 @@
   <macro name="verb_nopron_pron" p1="être# entretenue" p2="mantenir" p3="parlar"/>
   <macro name="verb_nopron_pron" p1="être# entretenus" p2="mantenir" p3="parlar"/>
   <macro name="verb_nopron_pron" p1="être# entretenues" p2="mantenir" p3="parlar"/>
+
+  <!-- fourrer >> folrar, ficar -->
+  <macro name="verb_nopron_pron" p1="fourrer" p2="folrar" p3="ficar" />
+
+  <!-- grouiller >> formiguejar, afanyar -->
+  <macro name="verb_nopron_pron" p1="grouiller" p2="formiguejar" p3="afanyar"/>
 
   <!-- débarrasser >> desembarassar, desparar -->
   <macro name="verb_nopron_pron" p1="débarrasser" p2="desembarassar" p3="desfer" />
@@ -1786,6 +1944,21 @@
   <macro name="verb_prep" p1="chasser" p2="caçar" p3="de" p4="expulsar" />
 
 <!-- **************** N **************** -->
+
+  <!-- acharnement >> acarnissament, aferrissament -->
+  <rule weight="0.8">
+    <match lemma="acharnement" tags="n.*"><select lemma="acarnissament"/></match>
+  </rule>
+
+  <!-- grouillement >> formigueig, bellugadissa, bellugor -->
+  <rule weight="0.8">
+    <match lemma="grouillement" tags="n.*"><select lemma="formigueig"/></match>
+  </rule>
+
+  <!-- engouffrement >> engoliment, dissipació -->
+  <rule weight="0.8">
+    <match lemma="engouffrement" tags="n.*"><select lemma="engoliment"/></match>
+  </rule>
 
   <!-- chatouille >> pessigolles, cosquerelles -->
   <rule weight="0.8">
@@ -3054,6 +3227,14 @@
     <match lemma="retraite" tags="n.*"><select lemma="jubilació"/></match>
   </rule>
   <rule weight="1.0">
+    <or>
+      <match lemma="ordre" tags="n.*"/>
+      <match lemma="signal" tags="n.*"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <match lemma="retraite" tags="n.*"><select lemma="retirada"/></match>
+  </rule>
+  <rule weight="1.0">
     <match lemma="retraite" tags="n.*"><select lemma="retirada"/></match>
     <match lemma="de" tags="pr"/>
     <match tags="det.*"/>
@@ -3061,7 +3242,30 @@
       <match lemma="armée" tags="n.*"/>
       <match lemma="général" tags="n.*"/>
       <match lemma="maréchal" tags="n.*"/>
+      <match tags="np.top.*"/>
     </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="retraite" tags="n.*"><select lemma="retirada"/></match>
+    <or>
+      <match lemma="tactique" tags="adj.*"/>
+      <match lemma="possible" tags="adj.*"/>
+      <match lemma="massive" tags="adj.*"/>
+      <match lemma="total" tags="adj.*"/>
+      <seq n="adj_pays"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="sonner" tags="vblex.*"/>
+      <match lemma="provoquer" tags="vblex.*"/>
+      <match lemma="causer" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="retraite" tags="n.*"><select lemma="retirada"/></match>
   </rule>
 
   <!-- arrêt >> parada, sentència -->
@@ -4175,6 +4379,26 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- acharné >> acarnissat, aferrissat -->
+  <rule weight="0.8">
+    <match lemma="acharné" tags="adj.*"><select lemma="acarnissat"/></match>
+  </rule>
+
+  <!-- soutenu >> constant, elevat -->
+  <rule weight="0.8">
+    <match lemma="soutenu" tags="adj.*"><select lemma="constant"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="langue" tags="n.*"/>
+      <match lemma="langage" tags="n.*"/>
+      <match lemma="rythme" tags="n.*"/>
+      <match lemma="volume" tags="n.*"/>
+      <match lemma="niveau" tags="n.*"/>
+    </or>
+    <match lemma="soutenu" tags="adj.*"><select lemma="elevat"/></match>
+  </rule>
 
   <!-- farouche >> ferotge, esquerp -->
   <rule weight="0.8">
