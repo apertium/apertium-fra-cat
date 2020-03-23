@@ -1097,6 +1097,19 @@
   <!-- bouder >> fer# mala cara/fer #morros, fer# mala cara a/fer #morros a -->
   <macro name="verb_intrans_trans" p1="bouder" p2="fer# mala cara" p3="fer# mala cara a"/>
 
+  <!-- déferler >> desbordar-se, trencar-se, desplegar -->
+  <macro name="verb_intrans_trans" p1="déferler" p2="desbordar" p3="desplegar"/>
+  <rule weight="1.2">
+    <match lemma="vague" tags="n.*"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adj.*"/>
+        <match tags="adv"/>
+      </or>
+    </repeat>
+    <match lemma="déferler" tags="vblex.*"><select lemma="trencar"/></match>
+  </rule>
+
   <!-- dessaisir >> desposseir, desprendre -->
   <macro name="verb_nopron_pron" p1="dessaisir" p2="desposseir" p3="desprendre"/>
 
@@ -1523,6 +1536,9 @@
 
   <!-- faufiler >> embastar, esquitllar-se, esmunyir-se -->
   <macro name="verb_nopron_pron" p1="faufiler" p2="embastar" p3="esquitllar" />
+
+  <!-- concurrencer >> competir# amb, fer# la competència -->
+  <macro name="verb_nopron_pron" p1="concurrencer" p2="competir# amb" p3="fer# la competència" />
 
   <!-- tromper >> enganyar, equivocar -->
   <macro name="verb_nopron_pron" p1="tromper" p2="enganyar" p3="equivocar" />
@@ -1965,9 +1981,32 @@
     <match lemma="chatouille" tags="n.*"><select lemma="pessigolles"/></match>
   </rule>
 
+  <!-- bise >> petó/bes, bisa -->
+  <rule weight="0.8">
+    <match lemma="bise" tags="n.*"><select lemma="petó"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.*"/>
+    <match lemma="bise" tags="n.*"><select lemma="bisa"/></match>
+  </rule>
+
   <!-- renvoi >> acomiadament, ajornament, remissió, rot -->
   <rule weight="0.8">
     <match lemma="renvoi" tags="n.*"><select lemma="acomiadament"/></match>
+  </rule>
+
+  <!-- cuisinier >> cuiner, cuina -->
+  <rule weight="0.8">
+    <match lemma="cuisinier" tags="n.*"><select lemma="cuiner"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cuisinier" tags="n.f.*"><select lemma="cuina"/></match>
+    <match lemma="à" tags="pr"><select lemma="de"/></match>
+    <match lemma="gaz" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cuisinier" tags="n.f.*"><select lemma="cuina"/></match>
+    <match lemma="électrique" tags="adj.*"/>
   </rule>
 
   <!-- piment >> pebrot, pebre -->
@@ -2106,8 +2145,30 @@
       <match lemma="homme" tags="n.*"/>
       <match lemma="femme" tags="n.*"/>
       <match lemma="partenaire" tags="n.*"/>
+      <match lemma="quartier" tags="n.*"/>
+      <match lemma="relation" tags="n.*"/>
     </or>
     <match lemma="de" tags="pr"/>
+    <match lemma="affaire" tags="n.*"><select lemma="negoci"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="bon" tags="adj.*"/>
+      <match lemma="mauvais" tags="adj.*"/>
+    </or>
+    <match lemma="affaire" tags="n.*"><select lemma="negoci"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="monter" tags="vblex.*"/>
+      <match lemma="proposer" tags="vblex.*"/>
+      <match lemma="lancer" tags="vblex.*"/>
+      <match lemma="abandonner" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
     <match lemma="affaire" tags="n.*"><select lemma="negoci"/></match>
   </rule>
 
@@ -2210,6 +2271,10 @@
   <rule weight="1.0">
     <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
     <match tags="num"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
+    <match lemma="inaugural" tags="adj.*"/>
   </rule>
 
   <!-- bourgeon >> gemma, borró, botó -->
@@ -2565,6 +2630,16 @@
   <rule weight="1.0">
     <match lemma="feu" tags="n.*"><select lemma="llum"/></match>
     <match lemma="verd" tags="adj.*"/>
+  </rule>
+
+  <!-- poste >> plaça, càrrec, post -->
+  <rule weight="0.8">
+    <match lemma="poste" tags="n.*"><select lemma="plaça"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="poste" tags="n.*"><select lemma="càrrec"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="responsabilité" tags="n.*"/>
   </rule>
 
   <!-- place >> lloc, plaça -->
