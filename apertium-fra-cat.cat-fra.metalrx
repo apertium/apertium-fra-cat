@@ -594,6 +594,38 @@
        <match lemma="música" tags="n.*"/>
     </def-seq>
 
+    <def-seq n="animals">
+      <match lemma="animal" tags="n.*"/>
+      <match lemma="peix" tags="n.*"/>
+      <match lemma="gos" tags="n.*"/>
+      <match lemma="ca" tags="n.*"/>
+      <match lemma="gat" tags="n.*"/>
+      <match lemma="bou" tags="n.*"/>
+      <match lemma="vaca" tags="n.*"/>
+      <match lemma="vedella" tags="n.*"/>
+      <match lemma="be" tags="n.*"/>
+      <match lemma="corder" tags="n.*"/>
+      <match lemma="xai" tags="n.*"/>
+      <match lemma="anyell" tags="n.*"/>
+      <match lemma="cabra" tags="n.*"/>
+      <match lemma="gall" tags="n.*"/>
+      <match lemma="gallina" tags="n.*"/>
+      <match lemma="pollastre" tags="n.*"/>
+      <match lemma="conill" tags="n.*"/>
+      <match lemma="llebre" tags="n.*"/>
+      <match lemma="cérvol" tags="n.*"/>
+      <match lemma="ratolí" tags="n.*"/>
+      <match lemma="rata" tags="n.*"/>
+      <match lemma="guineu" tags="n.*"/>
+      <match lemma="guilla" tags="n.*"/>
+      <match lemma="rabosa" tags="n.*"/>
+      <match lemma="llop" tags="n.*"/>
+      <match lemma="lleó" tags="n.*"/>
+      <match lemma="elefant" tags="n.*"/>
+      <match lemma="girafa" tags="n.*"/>
+      <match lemma="tigre" tags="n.*"/>
+    </def-seq>
+
     <def-seq n="temps">
       <match lemma="segon" tags="n.*"/>
       <match lemma="minut" tags="n.*"/>
@@ -2066,6 +2098,16 @@
 
 <!-- V -->
 
+  <!-- escarxofar >> caler, etc. -->
+  <rule weight="0.8">
+    <match lemma="escarxofar" tags="vblex.*"><select lemma="caler"/></match>
+  </rule>
+
+  <!-- arriar >> amener, etc. -->
+  <rule weight="0.8">
+    <match lemma="arriar" tags="vblex.*"><select lemma="amener"/></match>
+  </rule>
+
   <!-- espifiar >> louper, gâcher -->
   <rule weight="0.8">
     <match lemma="espifiar" tags="vblex.*"><select lemma="louper"/></match>
@@ -2183,6 +2225,9 @@
     <match lemma="atalaiar" tags="vblex.*"><select lemma="guetter"/></match>
   </rule>
 
+  <!-- rebolcar >> renverser, rouler -->
+  <macro name="verb_nopron_pron" p1="rebolcar" p2="renverser" p3="rouler" />
+
   <!-- entaforar >> enfouir, fourrer -->
   <macro name="verb_nopron_pron" p1="entaforar" p2="enfouir" p3="fourrer" />
 
@@ -2260,6 +2305,34 @@
     <or>
       <match tags="det.*"/>
       <match tags="n.*.pl"/>
+    </or>
+  </rule>
+
+  <!-- empaitar >> poursuivre, courir -->
+  <rule weight="0.8">
+    <match lemma="empaitar" tags="vblex.*"><select lemma="poursuivre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="empaitar" tags="vblex.*"><select lemma="courir"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <seq n="animals"/>
+      <match lemma="noi" tags="n.*"/>
+      <match lemma="xic" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="empaitar" tags="vblex.*"><select lemma="courir"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <seq n="animals"/>
+      <match lemma="noi" tags="n.*"/>
+      <match lemma="xic" tags="n.*"/>
     </or>
   </rule>
 
@@ -2615,6 +2688,9 @@
 
   <!-- jubilar >> mettre# à la retraite, prendre# sa retraite -->
   <macro name="verb_nopron_pron" p1="jubilar" p2="mettre# à la retraite" p3="prendre# sa retraite" />
+
+  <!-- acotxar >> border, accroupir -->
+  <macro name="verb_nopron_pron" p1="acotxar" p2="border" p3="accroupir" />
 
   <!-- desfer >> défaire, fondre, débarrasser -->
   <macro name="verb_nopron_pron" p1="desfer" p2="défaire" p3="fondre" />
@@ -3076,6 +3152,21 @@
     <match lemma="pregunta" tags="n.*"/>
   </rule>
   <rule weight="1.0">
+    <match lemma="fer" tags="vblex.*"><select lemma="poser"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="pregunta" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fer" tags="vblex.*"><select lemma="poser"/></match>
+    <match tags="prn.enc.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="pregunta" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
     <match lemma="fer" tags="vblex.*"><select lemma="jouer"/></match>
     <repeat from="0" upto="1">
       <match tags="adv"/>
@@ -3100,6 +3191,13 @@
     <match lemma="gol" tags="n.*"/>
   </rule>
   <rule weight="1.0">
+    <match lemma="fer" tags="vblex.*"><select lemma="marquer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="gol" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
     <match lemma="gol" tags="n.*"/>
     <repeat from="0" upto="4">
       <match tags="*"/>
@@ -3109,7 +3207,6 @@
       <match lemma="fer" tags="vblex.inf"><select lemma="marquer"/></match>
     </or>
   </rule>
-
 
   <!-- posar >> poser, mettre -->
   <rule weight="0.8">
@@ -5931,31 +6028,7 @@
     <match lemma="cap" tags="n.*"><select lemma="tête"/></match>
     <match lemma="de" tags="pr"/>
     <or>
-      <match lemma="animal" tags="n.*"/>
-      <match lemma="peix" tags="n.*"/>
-      <match lemma="gos" tags="n.*"/>
-      <match lemma="ca" tags="n.*"/>
-      <match lemma="gat" tags="n.*"/>
-      <match lemma="bou" tags="n.*"/>
-      <match lemma="vaca" tags="n.*"/>
-      <match lemma="vedella" tags="n.*"/>
-      <match lemma="be" tags="n.*"/>
-      <match lemma="corder" tags="n.*"/>
-      <match lemma="xai" tags="n.*"/>
-      <match lemma="anyell" tags="n.*"/>
-      <match lemma="cabra" tags="n.*"/>
-      <match lemma="gall" tags="n.*"/>
-      <match lemma="gallina" tags="n.*"/>
-      <match lemma="pollastre" tags="n.*"/>
-      <match lemma="conill" tags="n.*"/>
-      <match lemma="ratolí" tags="n.*"/>
-      <match lemma="rata" tags="n.*"/>
-      <match lemma="guineu" tags="n.*"/>
-      <match lemma="llop" tags="n.*"/>
-      <match lemma="lleó" tags="n.*"/>
-      <match lemma="elefant" tags="n.*"/>
-      <match lemma="girafa" tags="n.*"/>
-      <match lemma="tigre" tags="n.*"/>
+      <seq n="animals"/>
     </or>
   </rule>
   <rule weight="1.0">

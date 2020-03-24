@@ -499,6 +499,24 @@
       <match lemma="bétail" tags="n.*"/>
     </def-seq>
 
+    <def-seq n="animaux_non_bétail">
+      <match lemma="animal" tags="n.*"/>
+      <match lemma="poisson" tags="n.*"/>
+      <match lemma="chien" tags="n.*"/>
+      <match lemma="chat" tags="n.*"/>
+      <match lemma="lapin" tags="n.*"/>
+      <match lemma="lièvre" tags="n.*"/>
+      <match lemma="cerf" tags="n.*"/>
+      <match lemma="souris" tags="n.*"/>
+      <match lemma="rat" tags="n.*"/>
+      <match lemma="renard" tags="n.*"/>
+      <match lemma="llop" tags="n.*"/>
+      <match lemma="lion" tags="n.*"/>
+      <match lemma="elephant" tags="n.*"/>
+      <match lemma="girafe" tags="n.*"/>
+      <match lemma="tigre" tags="n.*"/>
+    </def-seq>
+
     <def-seq n="adj_pays">
       <match lemma="portugais" tags="adj.*"/>
       <match lemma="espagnol" tags="adj.*"/>
@@ -980,6 +998,36 @@
   </rule>
 
 <!-- **************** V **************** -->
+
+  <!-- courir >> córrer, empaitar -->
+  <rule weight="0.8">
+    <match lemma="courir" tags="vblex.*"><select lemma="córrer"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="courir" tags="vblex.*"><select lemma="empaitar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match lemma="fille" tags="n.*"/>
+      <match lemma="garçon" tags="n.*"/>
+      <seq n="animaux_non_bétail"/>
+      <seq n="bétail"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="courir" tags="vblex.*"><select lemma="empaitar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="fille" tags="n.*"/>
+      <match lemma="garçon" tags="n.*"/>
+      <seq n="animaux_non_bétail"/>
+      <seq n="bétail"/>
+    </or>
+  </rule>
 
   <!-- repousser >> rebutjar, ajornar -->
   <rule weight="0.8">
@@ -1533,6 +1581,12 @@
 
   <!-- raser >> arrasar, afaitar -->
   <macro name="verb_nopron_pron" p1="raser" p2="arrasar" p3="afaitar" />
+
+  <!-- carrer >> quadrar, arrepapar -->
+  <macro name="verb_nopron_pron" p1="carrer" p2="quadrar" p3="arrepapar" />
+
+  <!-- affaler >> arriar, escarxofar -->
+  <macro name="verb_nopron_pron" p1="affaler" p2="arriar" p3="escarxofar" />
 
   <!-- faufiler >> embastar, esquitllar-se, esmunyir-se -->
   <macro name="verb_nopron_pron" p1="faufiler" p2="embastar" p3="esquitllar" />
