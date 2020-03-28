@@ -729,8 +729,11 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match lemma="marier" tags="vblex.*"/>
-    <repeat from="0" upto="1">
+    <or>
+      <match lemma="marier" tags="vblex.*"/>
+      <match lemma="heurter" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match lemma="à" tags="pr"><select lemma="amb"/></match>
@@ -1144,6 +1147,9 @@
 
   <!-- bouder >> fer# mala cara/fer #morros, fer# mala cara a/fer #morros a -->
   <macro name="verb_intrans_trans" p1="bouder" p2="fer# mala cara" p3="fer# mala cara a"/>
+
+  <!-- dégringoler >> caure# de tomballons, baixar# corrents -->
+  <macro name="verb_intrans_trans" p1="dégringoler" p2="caure# de tomballons" p3="baixar# corrents"/>
 
   <!-- déferler >> desbordar-se, trencar-se, desplegar -->
   <macro name="verb_intrans_trans" p1="déferler" p2="desbordar" p3="desplegar"/>
@@ -1601,7 +1607,24 @@
   <macro name="verb_nopron_pron" p1="battre" p2="derrotar" p3="barallar" />
   <rule weight="1.2">
     <match lemma="battre" tags="vblex.*"><select lemma="batre" tags="vblex.*"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="beurre" tags="n.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="battre" tags="vblex.*"><select lemma="batre" tags="vblex.*"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match lemma="le" tags="det.*"/>
+    <match lemma="beurre" tags="n.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="battre" tags="vblex.*"><select lemma="batre" tags="vblex.*"/></match>
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match lemma="de" tags="pr"/>
@@ -1610,7 +1633,7 @@
   </rule>
   <rule weight="1.2">
     <match lemma="battre" tags="vblex.*"><select lemma="batre" tags="vblex.*"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <or>
@@ -1622,8 +1645,8 @@
   </rule>
   <rule weight="1.2">
     <match lemma="cœur" tags="n.*"/>
-    <repeat from="0" upto="1">
-      <match tags="adv"/>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
     </repeat>
     <match lemma="battre" tags="vblex.*"><select lemma="bategar" tags="vblex.*"/></match>
   </rule>
@@ -2014,6 +2037,11 @@
   <macro name="verb_prep" p1="chasser" p2="caçar" p3="de" p4="expulsar" />
 
 <!-- **************** N **************** -->
+
+  <!-- crèche >> pessebre, guarderia -->
+  <rule weight="0.8">
+    <match lemma="crèche" tags="n.*"><select lemma="pessebre"/></match>
+  </rule>
 
   <!-- acharnement >> acarnissament, aferrissament -->
   <rule weight="0.8">

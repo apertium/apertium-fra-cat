@@ -1822,6 +1822,24 @@
     </or>
   </rule>
 
+  <!-- amb >> avec, à -->
+  <rule weight="0.8">
+    <match lemma="amb" tags="pr"><select lemma="avec"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="casar" tags="vblex.*"/>
+      <match lemma="topar" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="prn.enc.*"/>
+        <match tags="adv"/>
+      </or>
+    </repeat>
+    <match lemma="amb" tags="pr"><select lemma="à"/></match>
+  </rule>
+
   <!-- a >> à, en, dans, de -->
   <rule weight="0.8">
     <match lemma="a" tags="pr"><select lemma="à"/></match>
@@ -4021,6 +4039,56 @@
   </rule>
 
 <!-- N -->
+
+  <!-- efectiu >> cash, effectif -->
+  <rule weight="0.8">
+    <match lemma="efectiu" tags="n.*"><select lemma="cash"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="efectiu" tags="n.m.pl"><select lemma="effectif"/></match>
+  </rule>
+
+  <!-- moral >> morale, moral -->
+  <rule weight="0.8">
+    <match lemma="moral" tags="n.*"><select lemma="morale"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="moral" tags="n.*"><select lemma="moral"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="moral" tags="n.*"><select lemma="moral"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="estar" tags="vblex.*"/>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="pujar" tags="vblex.*"/>
+      <match lemma="apujar" tags="vblex.*"/>
+      <match lemma="augmentar" tags="vblex.*"/>
+      <match lemma="elevar" tags="vblex.*"/>
+      <match lemma="enfortir" tags="vblex.*"/>
+      <match lemma="baixar" tags="vblex.*"/>
+      <match lemma="abaixar" tags="vblex.*"/>
+      <match lemma="reduir" tags="vblex.*"/>
+      <match lemma="afeblir" tags="vblex.*"/>
+      <match lemma="minar" tags="vblex.*"/>
+    </or>
+    <match tags="det.def.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="moral" tags="n.*"><select lemma="moral"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="moral" tags="n.*"><select lemma="moral"/></match>
+    <or>
+      <match lemma="alt" tags="adj.*"/>
+      <match lemma="baix" tags="adj.*"/>
+    </or>
+  </rule>
 
   <!-- cuina >> cuisine, cuisinier -->
   <rule weight="0.8">
