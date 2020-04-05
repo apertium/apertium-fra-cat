@@ -517,6 +517,16 @@
       <match lemma="tigre" tags="n.*"/>
     </def-seq>
 
+    <def-seq n="fruit_amb_pinyol">
+      <match lemma="pêche" tags="n.*"/>
+      <match lemma="nectarine" tags="n.*"/>
+      <match lemma="abricot" tags="n.*"/>
+      <match lemma="prune" tags="n.*"/>
+      <match lemma="cerise" tags="n.*"/>
+      <match lemma="olive" tags="n.*"/>
+      <match lemma="amande" tags="n.*"/>
+    </def-seq>
+
     <def-seq n="adj_pays">
       <match lemma="portugais" tags="adj.*"/>
       <match lemma="espagnol" tags="adj.*"/>
@@ -739,7 +749,7 @@
     <match lemma="à" tags="pr"><select lemma="amb"/></match>
   </rule>
 
-  <!-- pour >> per, per a -->
+  <!-- pour >> per, per a, a favor de, cap a -->
   <rule weight="0.8">
     <match lemma="pour" tags="pr"><select lemma="per a"/></match>
   </rule>
@@ -1002,6 +1012,11 @@
 
 <!-- **************** V **************** -->
 
+  <!-- embrouiller >> embolicar, fer# un garbuix -->
+  <rule weight="0.8">
+    <match lemma="embrouiller" tags="vblex.*"><select lemma="embolicar"/></match>
+  </rule>
+
   <!-- courir >> córrer, empaitar -->
   <rule weight="0.8">
     <match lemma="courir" tags="vblex.*"><select lemma="córrer"/></match>
@@ -1047,6 +1062,19 @@
   </rule>
   <rule weight="1.0">
     <match lemma="repousser" tags="vblex.*"><select lemma="ajornar"/></match>
+    <or>
+      <match lemma="à" tags="pr"/>
+      <match lemma="pour" tags="pr"/>
+      <match lemma="de" tags="pr"/>
+    </or>
+    <match tags="det.def.*"/>
+    <or>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="repousser" tags="vblex.*"><select lemma="ajornar"/></match>
     <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
@@ -1069,7 +1097,7 @@
   </rule>
   <rule weight="1.0">
     <match lemma="repousser" tags="vblex.*"><select lemma="ajornar"/></match>
-    <repeat from="0" upto="4">
+    <repeat from="0" upto="6">
       <match tags="*"/>
     </repeat>
     <or>
@@ -1077,7 +1105,7 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <repeat from="0" upto="4">
+    <repeat from="0" upto="6">
       <match tags="*"/>
     </repeat>
     <or>
@@ -1556,6 +1584,11 @@
     <match lemma="rendre #a" tags="vblex.ger"><select lemma="fer# cap a"/></match>
   </rule>
 
+  <!-- rendre# agile >> agilitar, agilitzar -->
+  <rule weight="0.8">
+    <match lemma="rendre# agile" tags="vblex.*"><select lemma="agilitar"/></match>
+  </rule>
+
   <!-- rejoindre >> arribar# a, trobar -->
   <macro name="verb_nopron_pron" p1="rejoindre" p2="unir# a" p3="trobar" />
   <rule weight="1.2">
@@ -1599,6 +1632,9 @@
 
   <!-- concurrencer >> competir# amb, fer# la competència -->
   <macro name="verb_nopron_pron" p1="concurrencer" p2="competir# amb" p3="fer# la competència" />
+
+  <!-- poursuivre >> perseguir, prolongar -->
+  <macro name="verb_nopron_pron" p1="poursuivre" p2="perseguir" p3="prolongar" />
 
   <!-- tromper >> enganyar, equivocar -->
   <macro name="verb_nopron_pron" p1="tromper" p2="enganyar" p3="equivocar" />
@@ -2035,8 +2071,71 @@
   </rule>
 
   <macro name="verb_prep" p1="chasser" p2="caçar" p3="de" p4="expulsar" />
+  <rule weight="1.0">
+    <match lemma="chasser" tags="vblex.*."><select lemma="expulsar"/></match>
+    <or>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+    </or>
+  </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- facteur >> factor, carter -->
+  <rule weight="0.8">
+    <match lemma="facteur" tags="n.*"><select lemma="factor"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="facteur" tags="n.*"><select lemma="carter"/></match>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="lettre" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="lettre" tags="n.*"/>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="facteur" tags="n.*"><select lemma="carter"/></match>
+  </rule>
+
+  <!-- pépin >> llavor, problema -->
+  <rule weight="0.8">
+    <match lemma="pépin" tags="n.*"><select lemma="llavor"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="arriver" tags="vblex.*"/>
+      <match lemma="avoir" tags="vblex.*"/>
+    </or>
+    <match lemma="un" tags="det.*"/>
+    <match lemma="pépin" tags="n.*"><select lemma="problema"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pépin" tags="n.*"><select lemma="problema"/></match>
+    <match lemma="technique" tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pépin" tags="n.*"><select lemma="problema"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="ordinateur" tags="n.*"/>
+      <match lemma="ordi" tags="n.*"/>
+      <match lemma="réseau" tags="n.*"/>
+      <match lemma="internet" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- servage >> servatge, servitud, asserviment -->
+  <rule weight="0.8">
+    <match lemma="servage" tags="n.*"><select lemma="servatge"/></match>
+  </rule>
+
+  <!-- décompte >> recompte, descompte -->
+  <rule weight="0.8">
+    <match lemma="décompte" tags="n.*"><select lemma="recompte"/></match>
+  </rule>
 
   <!-- crèche >> pessebre, guarderia -->
   <rule weight="0.8">
@@ -2582,31 +2681,29 @@
     <match lemma="noyau" tags="n.*"><select lemma="nucli"/></match>
   </rule>
   <rule weight="1.0">
-    <match lemma="noyau" tags="n.*"><select lemma="pinyol"/></match>
+    <or>
+      <match lemma="noyau" tags="n.*"><select lemma="pinyol"/></match>
+      <match lemma="pépin" tags="n.*"><select lemma="pinyol"/></match>
+    </or>
     <repeat from="0" upto="1">
       <match tags="adj.*"/>
     </repeat>
     <match lemma="de" tags="pr"/>
     <or>
-      <match lemma="amande" tags="n.*"/>
-      <match lemma="cerise" tags="n.*"/>
-      <match lemma="olive" tags="n.*"/>
-      <match lemma="pêche" tags="n.*"/>
-      <match lemma="prune" tags="n.*"/>
+      <seq n="fruit_amb_pinyol"/>
     </or>
   </rule>
   <rule weight="1.0">
-    <match lemma="noyau" tags="n.*"><select lemma="pinyol"/></match>
+    <or>
+      <match lemma="noyau" tags="n.*"><select lemma="pinyol"/></match>
+      <match lemma="pépin" tags="n.*"><select lemma="pinyol"/></match>
+    </or>
     <match lemma="de" tags="pr"/>
     <repeat from="0" upto="1">
       <match tags="det.*"/>
     </repeat>
     <or>
-      <match lemma="amande" tags="n.*"/>
-      <match lemma="cerise" tags="n.*"/>
-      <match lemma="olive" tags="n.*"/>
-      <match lemma="pêche" tags="n.*"/>
-      <match lemma="prune" tags="n.*"/>
+      <seq n="fruit_amb_pinyol"/>
     </or>
   </rule>
 
@@ -4123,6 +4220,11 @@
     <match lemma="os" tags="n.*"/>
   </rule>
 
+  <!-- enjeu >> repte, envit -->
+  <rule weight="0.8">
+    <match lemma="enjeu" tags="n.*"><select lemma="repte"/></match>
+  </rule>
+
   <!-- milieu >> mig, entorn -->
   <rule weight="0.8">
     <match lemma="milieu" tags="n.*"><select lemma="mig"/></match>
@@ -4537,6 +4639,15 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- rangé >> ordenat, campal -->
+  <rule weight="0.8">
+    <match lemma="rangé" tags="adj.*"><select lemma="ordenat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="bataille" tags="n.*"/>
+    <match lemma="rangé" tags="adj.*"><select lemma="campal"/></match>
+  </rule>
+
   <!-- acharné >> acarnissat, aferrissat -->
   <rule weight="0.8">
     <match lemma="acharné" tags="adj.*"><select lemma="acarnissat"/></match>
@@ -4875,6 +4986,47 @@
   </rule>
 
 <!-- **************** VBLEX **************** -->
+
+  <!-- filer >> passar, anar, filar -->
+  <rule weight="0.8">
+    <match lemma="filer" tags="vblex.*"><select lemma="passar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="filer" tags="vblex.*"><select lemma="anar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match lemma="vers" tags="pr"/>
+      <match lemma="en" tags="pr"/>
+      <match lemma="à" tags="pr"><select lemma="cap a"/></match>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="filer" tags="vblex.*"><select lemma="sortir"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+  </rule>
+
+  <!-- cerner >> envoltar, delimitar -->
+  <rule weight="0.8">
+    <match lemma="cerner" tags="vblex.*"><select lemma="envoltar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cerner" tags="vblex.*"><select lemma="delimitar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+      <match lemma="de" tags="pr"/>
+    </or>
+    <match lemma="problème" tags="n.*"/>
+  </rule>
 
   <!-- épingler >> senyalar, enxampar, agafar# amb pinces -->
   <rule weight="0.8">
@@ -5278,6 +5430,29 @@
     <match lemma="però" tags="cnjcoo"/>
     <match lemma="pas" tags="adv"><select lemma="no"/></match>
     <match tags="vblex.pp.*"/>
+  </rule>
+
+  <!-- haut >> amunt, alt, altament -->
+  <rule weight="0.8">
+    <match lemma="haut" tags="adv"><select lemma="amunt"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="parlar" tags="vblex.*"/>
+      <match lemma="cridar" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match lemma="adv"/>
+        <match lemma="preadv"/>
+      </or>
+    </repeat>
+    <match lemma="haut" tags="adv"><select lemma="alt"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="n.*"/>
+    <match lemma="haut" tags="adv"><select lemma="altament"/></match>
+    <match lemma="vblex.pp.*"/>
   </rule>
 
   <!-- encore >> encara, també -->

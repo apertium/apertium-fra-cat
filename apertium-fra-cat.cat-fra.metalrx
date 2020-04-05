@@ -278,6 +278,23 @@
 	  </rule>
 	</def-macro>
 
+    <!-- Aquesta macro tria el verb p2 si p1 és intransitiu i p3 si p1 és transitiu -->
+    <!-- p1 = verb fra, p2 = verb cat intransitiu, p3 = verb cat transitiu -->
+    <!-- la manera de veure que el verb és transitiu és molt barroera -->
+    <def-macro name="verb_intrans_trans">
+      <rule weight="0.8">
+        <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p2}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p3}}"/></match>
+        <match tags="det.*"/>
+      </rule>
+      <rule weight="1.0">
+        <match lemma="el" tags="prn.pro.*"/>
+        <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p3}}"/></match>
+      </rule>
+    </def-macro>
+
     <!-- Aquesta macro tria el verb p2 si p1 no és pronominal i p3 si p1 és pronominal -->
     <!-- p1 = verb cat, p2 = verb fra no pron, p3 = verb fra pron -->
     <def-macro name="verb_nopron_pron">
@@ -809,6 +826,15 @@
     <match lemma="si mateix" tags="prn.*"><select lemma="soi-même"/></match>
   </rule>
 
+  <!-- què >> qu'est-ce que, que, quoi -->
+  <rule weight="0.8">
+    <match lemma="què" tags="prn.itg.*"><select lemma="qu'est-ce que"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="què" tags="prn.itg.*"><select lemma="quoi"/></match>
+    <match tags="sent"/>
+  </rule>
+
   <!-- es >> se, on -->
   <rule weight="0.8">
     <match lemma="es" tags="prn.*"><select lemma="se"/></match>
@@ -1288,7 +1314,7 @@
 
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match tags="vblex.*.p3.*"/>
@@ -1313,7 +1339,7 @@
   </rule>
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match lemma="anar" tags="vblex.pri.p3.*"/>
@@ -1328,7 +1354,7 @@
   <rule weight="1.0">
     <match tags="n.*.pl"/>
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match tags="vblex.*.p3.pl"/>
@@ -1355,7 +1381,7 @@
   <rule weight="1.0">
     <match tags="n.*.pl"/>
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match lemma="anar" tags="vblex.pri.p3.pl"/>
@@ -1369,7 +1395,7 @@
 
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match tags="vblex.*"/>
@@ -1377,7 +1403,7 @@
   </rule>
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match tags="vblex.*"/>
@@ -1386,7 +1412,7 @@
   </rule>
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match tags="vbhaver.*"/>
@@ -1395,7 +1421,7 @@
   </rule>
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match tags="vbhaver.*"/>
@@ -1405,7 +1431,7 @@
   </rule>
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match lemma="anar" tags="vblex.pri.*"/>
@@ -1414,7 +1440,7 @@
   </rule>
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match lemma="anar" tags="vblex.pri.*"/>
@@ -1425,7 +1451,7 @@
 
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <or>
@@ -1440,7 +1466,7 @@
   </rule>
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <or>
@@ -1456,7 +1482,7 @@
   </rule>
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <or>
@@ -1473,7 +1499,7 @@
 
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <or><match tags="vblex.*"/><match tags="vbmod.*"/></or>
@@ -1481,7 +1507,7 @@
   </rule>
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match tags="vbhaver.*."/>
@@ -1490,7 +1516,7 @@
   </rule>
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match lemma="anar" tags="vblex.pri.*"/>
@@ -1500,7 +1526,7 @@
 
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match tags="prn.pro.*"/>
@@ -1509,7 +1535,7 @@
   </rule>
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match tags="prn.pro.*"/>
@@ -1519,7 +1545,7 @@
   </rule>
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match tags="prn.pro.*"/>
@@ -1530,7 +1556,7 @@
 
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match tags="prn.pro.*"/>
@@ -1540,7 +1566,7 @@
   </rule>
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match tags="prn.pro.*"/>
@@ -1551,7 +1577,7 @@
   </rule>
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match tags="prn.pro.*"/>
@@ -1563,7 +1589,7 @@
 
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <or>
@@ -1578,7 +1604,7 @@
   </rule>
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match tags="vbhaver.*."/>
@@ -1594,7 +1620,7 @@
   </rule>
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match lemma="anar" tags="vblex.pri.*"/>
@@ -1611,7 +1637,7 @@
 
   <rule weight="1.2">
     <match lemma="que" tags="rel.an.*"><select lemma="dont"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match lemma="es" tags="prn.pro.ref.*"/>
@@ -1619,7 +1645,7 @@
   </rule>
   <rule weight="1.2">
     <match lemma="que" tags="rel.an.*"><select lemma="dont"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match lemma="es" tags="prn.pro.ref.*"/>
@@ -1628,7 +1654,7 @@
   </rule>
   <rule weight="1.2">
     <match lemma="que" tags="rel.an.*"><select lemma="dont"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match lemma="es" tags="prn.pro.ref.*"/>
@@ -1637,7 +1663,7 @@
   </rule>
   <rule weight="1.4">
     <match lemma="que" tags="rel.an.*"><select lemma="que"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match lemma="es" tags="prn.pro.ref.*"/>
@@ -1646,7 +1672,7 @@
   </rule>
   <rule weight="1.2">
     <match lemma="que" tags="rel.an.*"><select lemma="que"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match lemma="es" tags="prn.pro.ref.*"/>
@@ -1656,7 +1682,7 @@
   </rule>
   <rule weight="1.2">
     <match lemma="que" tags="rel.an.*"><select lemma="que"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match lemma="es" tags="prn.pro.ref.*"/>
@@ -1665,6 +1691,34 @@
     <match tags="vblex.inf"/>
   </rule>
 
+  <!-- el que >> celui que, celui qui -->
+  <rule weight="0.8">
+    <match lemma="el que" tags="rel.an.*"><select lemma="celui que"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="el que" tags="rel.an.*.sg"><select lemma="celui qui"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="vblex.*.p3.sg"/>
+      <match tags="vbser.*.p3.sg"/>
+      <match tags="vbhaver.*.p3.sg"/>
+      <match tags="vbmod.*.p3.sg"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="el que" tags="rel.an.*.pl"><select lemma="celui qui"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="vblex.*.p3.pl"/>
+      <match tags="vbser.*.p3.pl"/>
+      <match tags="vbhaver.*.p3.pl"/>
+      <match tags="vbmod.*.p3.pl"/>
+    </or>
+  </rule>
 
   <!-- la qual cosa >> ce qui, lequel -->
   <rule weight="0.8">
@@ -2064,6 +2118,11 @@
 
 <!-- ADV -->
 
+  <!-- alt >> haut -->
+  <rule weight="0.8">
+    <match lemma="alt" tags="adv"><select lemma="haut"/></match>
+  </rule>
+
   <!-- contínuament >> sans cesse, continuellement -->
   <rule weight="0.8">
     <match lemma="contínuament" tags="adv"><select lemma="sans cesse"/></match>
@@ -2112,6 +2171,11 @@
     <match lemma="però" tags="cnjcoo"/>
     <match lemma="no" tags="adv"><select lemma="pas"/></match>
     <match tags="vblex.pp.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="però" tags="cnjcoo"/>
+    <match lemma="no" tags="adv"><select lemma="pas"/></match>
+    <match tags="pr"/>
   </rule>
 
 <!-- V -->
@@ -2242,6 +2306,22 @@
   <rule weight="0.8">
     <match lemma="atalaiar" tags="vblex.*"><select lemma="guetter"/></match>
   </rule>
+
+  <!-- voltar >> tourner, parcourir -->
+  <macro name="verb_intrans_trans" p1="voltar" p2="tourner" p3="parcourir" />
+  <rule weight="1.2">
+    <match lemma="voltar" tags="vblex.pp.*"><select lemma="entourer"/></match>
+    <or>
+      <match lemma="de" tags="pr"/>
+      <match lemma="per" tags="pr"/>
+    </or>
+  </rule>
+
+  <!-- embolicar >> envelopper, emmêler -->
+  <macro name="verb_nopron_pron" p1="embolicar" p2="envelopper" p3="emmêler" />
+
+  <!-- enredar >> emmêler, tromper -->
+  <macro name="verb_nopron_pron" p1="enredar" p2="emmêler" p3="tromper" />
 
   <!-- rebolcar >> renverser, rouler -->
   <macro name="verb_nopron_pron" p1="rebolcar" p2="renverser" p3="rouler" />
@@ -2474,17 +2554,31 @@
     <or><match tags="vblex.inf"/><match tags="vbser.inf"/><match tags="vbhaver.inf"/><match tags="vbmod.inf"/></or>
   </rule>
 
-  <!-- cordar >> boutonner, lacer -->
+  <!-- cordar >> boutonner, lacer, attacher -->
   <rule weight="0.8">
     <match lemma="cordar" tags="vblex.*"><select lemma="boutonner"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="cordar" tags="vblex.*"><select lemma="lacer"/></match>
     <repeat from="0" upto="1">
-      <match tags="adv.*"/>
+      <or>
+        <match tags="prn.enc.*"/>
+        <match tags="adv.*"/>
+      </or>
     </repeat>
     <match tags="det.*"/>
     <match lemma="sabata" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cordar" tags="vblex.*"><select lemma="attacher"/></match>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="prn.enc.*"/>
+        <match tags="adv.*"/>
+      </or>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="cinturó" tags="n.*"/>
   </rule>
 
   <!-- estimar >> aimer, estimer -->
@@ -4039,6 +4133,19 @@
   </rule>
 
 <!-- N -->
+
+  <!-- reforç >> renforcement, renfort -->
+  <rule weight="0.8">
+    <match lemma="reforç" tags="n.*"><select lemma="renforcement"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="reforç" tags="n.m.pl"><select lemma="renfort"/></match>
+  </rule>
+
+  <!-- estel >> étoile, cerf-volant -->
+  <rule weight="0.8">
+    <match lemma="estel" tags="n.*"><select lemma="étoile"/></match>
+  </rule>
 
   <!-- efectiu >> cash, effectif -->
   <rule weight="0.8">
