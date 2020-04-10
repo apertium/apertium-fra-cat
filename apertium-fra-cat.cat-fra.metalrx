@@ -4480,14 +4480,34 @@
     <match lemma="escut" tags="n.*"><select lemma="bouclier"/></match>
   </rule>
 
+  <!-- rastreig >> exploration, balayage -->
+  <rule weight="0.8">
+    <match lemma="rastreig" tags="n.*"><select lemma="exploration"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="microscopi" tags="n.*"/>
+      <match lemma="microscòpia" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="de" tags="pr"><select lemma="à"/></match>
+    <match lemma="rastreig" tags="n.*"><select lemma="balayage"/></match>
+  </rule>
+
   <!-- hospitalitat >> hospitalité, convivialité -->
   <rule weight="0.8">
     <match lemma="hospitalitat" tags="n.*"><select lemma="hospitalité"/></match>
   </rule>
 
-  <!-- paquet >> colis, paquet -->
+  <!-- paquet >> paquet, colis -->
   <rule weight="0.8">
+    <match lemma="paquet" tags="n.*"><select lemma="paquet"/></match>
+  </rule>
+  <rule weight="1.0">
     <match lemma="paquet" tags="n.*"><select lemma="colis"/></match>
+    <match lemma="postal" tags="adj.*"/>
   </rule>
 
   <!-- plat >> plat, assiette -->
