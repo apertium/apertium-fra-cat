@@ -655,6 +655,15 @@
 
 <!-- **************** PR **************** -->
 
+  <!-- avec >> amb, de -->
+  <rule weight="0.6">
+    <match lemma="avec" tags="pr"><select lemma="amb"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="lier# d'amitié" tags="vblex.*"/>
+    <match lemma="avec" tags="pr"><select lemma="de"/></match>
+  </rule>
+
   <!-- dans >> en, a -->
   <rule weight="0.6">
     <match lemma="dans" tags="pr"><select lemma="en"/></match>
@@ -1017,9 +1026,46 @@
     <match lemma="verbaliser" tags="vblex.*"><select lemma="multar"/></match>
   </rule>
 
+  <!-- déjanter >> desbarrar, desvariejar -->
+  <rule weight="0.8">
+    <match lemma="déjanter" tags="vblex.*"><select lemma="desbarrar"/></match>
+  </rule>
+
   <!-- embrouiller >> embolicar, fer# un garbuix -->
   <rule weight="0.8">
     <match lemma="embrouiller" tags="vblex.*"><select lemma="embolicar"/></match>
+  </rule>
+
+  <!-- jouir# d'une immunité >> estar# aforat, estar#aforats, estar#aforada, estar#aforades  -->
+  <rule weight="0.8">
+    <match lemma="jouir# d'une immunité" tags="vblex.*"><select lemma="estar# aforat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="jouir# d'une immunité" tags="vblex.*.pl"><select lemma="estar# aforats"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="*.f.*"/>
+    <match lemma="jouir# d'une immunité" tags="vblex.*.sg"><select lemma="estar# aforada"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match tags="*.f.*"/>
+    <match lemma="jouir# d'une immunité" tags="vblex.*.pl"><select lemma="estar# aforades"/></match>
+  </rule>
+
+  <!-- lier# d'amitié >> fer# amic, fer#amics, fer# amiga, fer# amigues -->
+  <rule weight="0.8">
+    <match lemma="lier# d'amitié" tags="vblex.*"><select lemma="fer# amic"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="lier# d'amitié" tags="vblex.*.pl"><select lemma="fer# amics"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="*.f.*"/>
+    <match lemma="lier# d'amitié" tags="vblex.*.sg"><select lemma="fer# amiga"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match tags="*.f.*"/>
+    <match lemma="lier# d'amitié" tags="vblex.*.pl"><select lemma="fer# amigues"/></match>
   </rule>
 
   <!-- baver >> bavejar, bavar, quedar#parat, malparlar -->
@@ -1212,6 +1258,9 @@
 
   <!-- bouder >> fer# mala cara/fer #morros, fer# mala cara a/fer #morros a -->
   <macro name="verb_intrans_trans" p1="bouder" p2="fer# mala cara" p3="fer# mala cara a"/>
+
+  <!-- chicaner >> discutir, turmentar -->
+  <macro name="verb_intrans_trans" p1="chicaner" p2="discutir" p3="turmentar"/>
 
   <!-- dégringoler >> caure# de tomballons, baixar# corrents -->
   <macro name="verb_intrans_trans" p1="dégringoler" p2="caure# de tomballons" p3="baixar# corrents"/>
@@ -2117,6 +2166,55 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- souillon >> porc, porca -->
+  <rule weight="0.8">
+    <match lemma="souillon" tags="n.*"><select lemma="porc"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="det.*.f.*"/>
+      <match tags="adj.f.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="souillon" tags="n.*"><select lemma="porca"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="souillon" tags="n.*"><select lemma="porca"/></match>
+    <repeat from="0" upto="3">
+      <match tags="adj.mf.*"/>
+    </repeat>
+    <match tags="adj.f.*"/>
+  </rule>
+
+  <!-- barrage >> embassament, bombardeig -->
+  <rule weight="0.8">
+    <match lemma="barrage" tags="n.*"><select lemma="embassament"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="barrage" tags="n.*"><select lemma="bombardeig"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="artillerie" tags="n.*"/>
+      <match lemma="image" tags="n.*"/>
+      <match lemma="nouvelle" tags="n.*"/>
+      <match lemma="lettre" tags="n.*"/>
+      <match lemma="courriel" tags="n.*"/>
+      <match lemma="mèl" tags="n.*"/>
+      <match lemma="mail" tags="n.*"/>
+      <match lemma="e-mail" tags="n.*"/>
+      <match lemma="déclaration" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="barrage" tags="n.*"><select lemma="bombardeig"/></match>
+    <or>
+      <match lemma="constant" tags="adj.*"/>
+      <match lemma="continu" tags="adj.*"/>
+    </or>
+  </rule>
 
   <!-- atermoiement >> termini, dilació -->
   <rule weight="0.8">

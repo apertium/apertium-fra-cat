@@ -1821,7 +1821,7 @@
     <or><match tags="np.loc"/><match tags="np.top.*"/><match tags="np.hyd.*"/></or>
   </rule>
 
-  <!-- de >> de, en, à -->
+  <!-- de >> de, en, à, avec -->
   <rule weight="0.8">
     <match lemma="de" tags="pr"><select lemma="de"/></match>
   </rule>
@@ -1874,6 +1874,18 @@
       <match lemma="fred" tags="adj.*"/>
       <match lemma="calent" tags="adj.*"/>
     </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="fer# amic" tags="vblex.*"/>
+      <match lemma="fer# amiga" tags="vblex.*"/>
+      <match lemma="fer# amics" tags="vblex.*"/>
+      <match lemma="fer# amigues" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="prn.enc.*"/>
+    </repeat>
+    <match lemma="de" tags="pr"><select lemma="avec"/></match>
   </rule>
 
   <!-- amb >> avec, à -->
@@ -2307,6 +2319,9 @@
     <match lemma="atalaiar" tags="vblex.*"><select lemma="guetter"/></match>
   </rule>
 
+  <!-- desbarrar >> déraisonner, démantibuler, débarrer, déjanter -->
+  <macro name="verb_intrans_trans" p1="desbarrar" p2="déraisonner" p3="débarrer" />
+
   <!-- voltar >> tourner, parcourir -->
   <macro name="verb_intrans_trans" p1="voltar" p2="tourner" p3="parcourir" />
   <rule weight="1.2">
@@ -2317,11 +2332,23 @@
     </or>
   </rule>
 
+  <!-- assabentar >> informer, apprendre -->
+  <macro name="verb_nopron_pron" p1="assabentar" p2="informer" p3="apprendre" />
+
+  <!-- conscienciar >> faire# prendre conscience, prendre# conscience -->
+  <macro name="verb_nopron_pron" p1="conscienciar" p2="faire# prendre conscience" p3="prendre# conscience" />
+
+  <!-- desvariejar >> dérailler, déjanter, diversifier -->
+  <macro name="verb_nopron_pron" p1="desvariejar" p2="dérailler" p3="diversifier" />
+
   <!-- embolicar >> envelopper, emmêler -->
   <macro name="verb_nopron_pron" p1="embolicar" p2="envelopper" p3="emmêler" />
 
   <!-- enredar >> emmêler, tromper -->
   <macro name="verb_nopron_pron" p1="enredar" p2="emmêler" p3="tromper" />
+
+  <!-- fer# amics >> faire# des amis, lier# d'amitié -->
+  <macro name="verb_nopron_pron" p1="fer# amics" p2="faire# des amis" p3="lier# d'amitié" />
 
   <!-- rebolcar >> renverser, rouler -->
   <macro name="verb_nopron_pron" p1="rebolcar" p2="renverser" p3="rouler" />
@@ -4133,6 +4160,27 @@
   </rule>
 
 <!-- N -->
+
+  <!-- engreix >> engraissement, gavage -->
+  <rule weight="0.8">
+    <match lemma="engreix" tags="n.*"><select lemma="engraissement"/></match>
+  </rule>
+
+  <!-- ducat >> duché, ducat -->
+  <rule weight="0.8">
+    <match lemma="ducat" tags="n.*"><select lemma="duché"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or><match tags="num"/><match tags="num.*"/></or>
+    <match lemma="ducat" tags="n.*"><select lemma="ducat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ducat" tags="n.*"><select lemma="ducat"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="moneda" tags="n.*"/>
+  </rule>
 
   <!-- reforç >> renforcement, renfort -->
   <rule weight="0.8">
