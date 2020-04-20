@@ -2322,6 +2322,9 @@
   <!-- desbarrar >> déraisonner, démantibuler, débarrer, déjanter -->
   <macro name="verb_intrans_trans" p1="desbarrar" p2="déraisonner" p3="débarrer" />
 
+  <!-- pastifejar >> bâcler, barbouiller -->
+  <macro name="verb_intrans_trans" p1="pastifejar" p2="bâcler" p3="barbouiller" />
+
   <!-- voltar >> tourner, parcourir -->
   <macro name="verb_intrans_trans" p1="voltar" p2="tourner" p3="parcourir" />
   <rule weight="1.2">
@@ -2706,6 +2709,22 @@
     </repeat>
     <match tags="det.*"/>
     <match lemma="negociació" tags="n.*"/>
+  </rule>
+
+  <!-- tenir# pressa >> être# empressé, être#empressés, être#empressée, être#empressées  -->
+  <rule weight="0.8">
+    <match lemma="tenir# pressa" tags="vblex.*"><select lemma="être# empressé"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tenir# pressa" tags="vblex.*.pl"><select lemma="être# empressés"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="*.f.*"/>
+    <match lemma="tenir# pressa" tags="vblex.*.sg"><select lemma="être# empressée"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match tags="*.f.*"/>
+    <match lemma="tenir# pressa" tags="vblex.*.pl"><select lemma="être# empressées"/></match>
   </rule>
 
   <!-- abocar >> verser, pencher -->
@@ -4166,6 +4185,28 @@
     <match lemma="engreix" tags="n.*"><select lemma="engraissement"/></match>
   </rule>
 
+  <!-- bandarra >> crapule, putain -->
+  <rule weight="0.8">
+    <match lemma="bandarra" tags="n.*"><select lemma="crapule"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="det.*.f.*"/>
+      <match tags="adj.f.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="bandarra" tags="n.*"><select lemma="putain"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="bandarra" tags="n.*"><select lemma="putain"/></match>
+    <repeat from="0" upto="3">
+      <match tags="adj.mf.*"/>
+    </repeat>
+    <match tags="adj.f.*"/>
+  </rule>
+
   <!-- ducat >> duché, ducat -->
   <rule weight="0.8">
     <match lemma="ducat" tags="n.*"><select lemma="duché"/></match>
@@ -4229,7 +4270,12 @@
       <match lemma="abaixar" tags="vblex.*"/>
       <match lemma="reduir" tags="vblex.*"/>
       <match lemma="afeblir" tags="vblex.*"/>
+      <match lemma="enfosar" tags="vblex.*"/>
+      <match lemma="ensorrar" tags="vblex.*"/>
+      <match lemma="destrossar" tags="vblex.*"/>
       <match lemma="minar" tags="vblex.*"/>
+      <match lemma="tocar" tags="vblex.*"/>
+      <match lemma="afectar" tags="vblex.*"/>
     </or>
     <match tags="det.def.*"/>
     <repeat from="0" upto="1">

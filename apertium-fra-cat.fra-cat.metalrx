@@ -1021,6 +1021,11 @@
 
 <!-- **************** V **************** -->
 
+  <!-- barbouiller >> empastifar, pastifejar -->
+  <rule weight="0.8">
+    <match lemma="barbouiller" tags="vblex.*"><select lemma="empastifar"/></match>
+  </rule>
+
   <!-- verbaliser >> multar, verbalitzar -->
   <rule weight="0.8">
     <match lemma="verbaliser" tags="vblex.*"><select lemma="multar"/></match>
@@ -1256,11 +1261,14 @@
   <!-- dérober >> robar, evitar -->
   <macro name="verb_nopron_pron" p1="dérober" p2="robar" p3="evitar"/>
 
-  <!-- bouder >> fer# mala cara/fer #morros, fer# mala cara a/fer #morros a -->
+  <!-- bouder >> fer# mala cara/fer# morros, fer# mala cara a/fer# morros a -->
   <macro name="verb_intrans_trans" p1="bouder" p2="fer# mala cara" p3="fer# mala cara a"/>
 
   <!-- chicaner >> discutir, turmentar -->
   <macro name="verb_intrans_trans" p1="chicaner" p2="discutir" p3="turmentar"/>
+
+  <!-- cocufier >> posar# banyes, posar# banyes a -->
+  <macro name="verb_intrans_trans" p1="cocufier" p2="posar# banyes" p3="posar# banyes a"/>
 
   <!-- dégringoler >> caure# de tomballons, baixar# corrents -->
   <macro name="verb_intrans_trans" p1="dégringoler" p2="caure# de tomballons" p3="baixar# corrents"/>
@@ -1277,6 +1285,12 @@
     </repeat>
     <match lemma="déferler" tags="vblex.*"><select lemma="trencar"/></match>
   </rule>
+
+  <!-- fantasier >> fantasiar/fantasiejar, imaginar -->
+  <macro name="verb_intrans_trans" p1="fantasier" p2="fantasiar" p3="imaginar"/>
+
+  <!-- presser >> acuitar, afanyar -->
+  <macro name="verb_intrans_trans" p1="presser" p2="acuitar" p3="afanyar"/>
 
   <!-- dessaisir >> desposseir, desprendre -->
   <macro name="verb_nopron_pron" p1="dessaisir" p2="desposseir" p3="desprendre"/>
@@ -4863,6 +4877,16 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- étourdi >> eixelebrat, distret -->
+  <rule weight="0.8">
+    <match lemma="étourdi" tags="adj.*"><select lemma="eixelebrat"/></match>
+  </rule>
+
+  <!-- écœurant >> fastigós, embafador -->
+  <rule weight="0.8">
+    <match lemma="écœurant" tags="adj.*"><select lemma="fastigós"/></match>
+  </rule>
 
   <!-- rapace >> rapinyaire, rapinyador, rapaç -->
   <rule weight="0.8">
