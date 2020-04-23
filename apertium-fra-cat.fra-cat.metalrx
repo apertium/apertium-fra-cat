@@ -393,6 +393,31 @@
         <match lemma="{{p1}}" tags="vblex.pp.*"><select lemma="{{p3}}"/></match>
       </rule>
     </def-macro>
+
+    <!-- Aquesta macro tria, per defecte, el nom p2 per traduir p1 (mf) i p3 si p1 està en un context d'un femení -->
+    <!-- p1 = nom fra (mf), p2 = nom cat (típicament m), p3 = nom cat (típicament f) -->
+    <def-macro name="nom_m_f">
+      <rule weight="0.8">
+        <match lemma="{{p1}}" tags="n.*"><select lemma="{{p2}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <or>
+          <match tags="det.*.f.*"/>
+          <match tags="adj.f.*"/>
+        </or>
+        <repeat from="0" upto="2">
+          <match tags="adj.*"/>
+        </repeat>
+        <match lemma="{{p1}}" tags="n.*"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match lemma="{{p1}}" tags="n.*"><select lemma="{{p3}}"/></match>
+        <repeat from="0" upto="3">
+          <match tags="adj.mf.*"/>
+        </repeat>
+        <match tags="adj.f.*"/>
+      </rule>
+    </def-macro>
   </def-macros>
 
   <def-seqs>
@@ -2181,27 +2206,66 @@
 
 <!-- **************** N **************** -->
 
-  <!-- souillon >> porc, porca -->
+  <!-- truffe >> trufa, tòfona, nàpia -->
   <rule weight="0.8">
-    <match lemma="souillon" tags="n.*"><select lemma="porc"/></match>
+    <match lemma="truffe" tags="n.*"><select lemma="trufa"/></match>
   </rule>
   <rule weight="1.0">
     <or>
-      <match tags="det.*.f.*"/>
-      <match tags="adj.f.*"/>
+      <match lemma="chercher" tags="vblex.*"/>
+      <match lemma="trouver" tags="vblex.*"/>
     </or>
     <repeat from="0" upto="2">
-      <match tags="adj.*"/>
+      <match tags="adv"/>
     </repeat>
-    <match lemma="souillon" tags="n.*"><select lemma="porca"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="truffe" tags="n.*"><select lemma="tòfona"/></match>
   </rule>
   <rule weight="1.0">
-    <match lemma="souillon" tags="n.*"><select lemma="porca"/></match>
-    <repeat from="0" upto="3">
-      <match tags="adj.mf.*"/>
+    <or>
+      <match lemma="chercher" tags="vblex.*"/>
+      <match lemma="trouver" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
     </repeat>
-    <match tags="adj.f.*"/>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <match lemma="truffe" tags="n.*"><select lemma="tòfona"/></match>
   </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="recherche" tags="n.*"/>
+      <match lemma="récolte" tags="n.*"/>
+      <match lemma="terre" tags="n.*"/>
+    </or>
+    <match tags="pr"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="num"/>
+        <match tags="num.*"/>
+      </or>
+    </repeat>
+    <match lemma="truffe" tags="n.*"><select lemma="tòfona"/></match>
+  </rule>
+
+  <!-- martin-pêcheur >> blauet, alció -->
+  <rule weight="0.8">
+    <match lemma="martin-pêcheur" tags="n.*"><select lemma="blauet"/></match>
+  </rule>
+
+  <!-- étagère >> estanteria, prestatge, prestatgeria, lleixa -->
+  <rule weight="0.8">
+    <match lemma="étagère" tags="n.*"><select lemma="estanteria"/></match>
+  </rule>
+
+  <!-- souillon >> porc, porca -->
+  <macro name="nom_m_f" p1="souillon" p2="porc" p3="porca"/>
 
   <!-- barrage >> embassament, bombardeig -->
   <rule weight="0.8">

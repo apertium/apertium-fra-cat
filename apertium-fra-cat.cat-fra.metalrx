@@ -475,6 +475,30 @@
       </rule>
     </def-macro>
 
+    <!-- Aquesta macro tria, per defecte, el nom p2 per traduir p1 (mf) i p3 si p1 està en un context d'un femení -->
+    <!-- p1 = nom cat (mf), p2 = nom fra (típicament m), p3 = nom fra (típicament f) -->
+    <def-macro name="nom_m_f">
+      <rule weight="0.8">
+        <match lemma="{{p1}}" tags="n.*"><select lemma="{{p2}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <or>
+          <match tags="det.*.f.*"/>
+          <match tags="adj.f.*"/>
+        </or>
+        <repeat from="0" upto="2">
+          <match tags="adj.*"/>
+        </repeat>
+        <match lemma="{{p1}}" tags="n.*"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match lemma="{{p1}}" tags="n.*"><select lemma="{{p3}}"/></match>
+        <repeat from="0" upto="3">
+          <match tags="adj.mf.*"/>
+        </repeat>
+        <match tags="adj.f.*"/>
+      </rule>
+    </def-macro>
   </def-macros>
 
   <def-seqs>
@@ -4185,27 +4209,11 @@
     <match lemma="engreix" tags="n.*"><select lemma="engraissement"/></match>
   </rule>
 
+  <!-- auxiliar# de vol >> steward, hotesse# de l'air -->
+  <macro name="nom_m_f" p1="auxiliar# de vol" p2="steward" p3="hôtesse# de l'air"/>
+
   <!-- bandarra >> crapule, putain -->
-  <rule weight="0.8">
-    <match lemma="bandarra" tags="n.*"><select lemma="crapule"/></match>
-  </rule>
-  <rule weight="1.0">
-    <or>
-      <match tags="det.*.f.*"/>
-      <match tags="adj.f.*"/>
-    </or>
-    <repeat from="0" upto="2">
-      <match tags="adj.*"/>
-    </repeat>
-    <match lemma="bandarra" tags="n.*"><select lemma="putain"/></match>
-  </rule>
-  <rule weight="1.0">
-    <match lemma="bandarra" tags="n.*"><select lemma="putain"/></match>
-    <repeat from="0" upto="3">
-      <match tags="adj.mf.*"/>
-    </repeat>
-    <match tags="adj.f.*"/>
-  </rule>
+  <macro name="nom_m_f" p1="bandarra" p2="crapule" p3="putain"/>
 
   <!-- ducat >> duché, ducat -->
   <rule weight="0.8">
