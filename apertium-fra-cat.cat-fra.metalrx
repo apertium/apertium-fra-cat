@@ -287,7 +287,10 @@
       </rule>
       <rule weight="1.0">
         <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p3}}"/></match>
-        <match tags="det.*"/>
+        <or>
+          <match tags="det.*"/>
+          <match tags="np.*"/>
+        </or>
       </rule>
       <rule weight="1.0">
         <match lemma="el" tags="prn.pro.*"/>
@@ -2216,6 +2219,11 @@
 
 <!-- V -->
 
+  <!-- engaltar >> lâcher, épauler -->
+  <rule weight="0.8">
+    <match lemma="engaltar" tags="vblex.*"><select lemma="lâcher"/></match>
+  </rule>
+
   <!-- escarxofar >> caler, etc. -->
   <rule weight="0.8">
     <match lemma="escarxofar" tags="vblex.*"><select lemma="caler"/></match>
@@ -3763,6 +3771,11 @@
 
 <!-- ADJ -->
 
+  <!-- blasfemador >> blasphématoire, blasphémateur -->
+  <rule weight="0.8">
+    <match lemma="blasfemador" tags="adj.*"><select lemma="blasphématoire"/></match>
+  </rule>
+
   <!-- mort >> mort, tué -->
   <rule weight="0.8">
     <match lemma="mort" tags="adj.*"><select lemma="mort"/></match>
@@ -4140,6 +4153,10 @@
     </or>
     <match lemma="original" tags="adj.*"><select lemma="originel"/></match>
   </rule>
+  <rule weight="1.0">
+    <match lemma="pecat" tags="n.*"/>
+    <match lemma="original" tags="adj.*"><select lemma="originel"/></match>
+  </rule>
 
   <!-- franc >> franc, franc_peuple -->
   <rule weight="0.8">
@@ -4203,6 +4220,48 @@
   </rule>
 
 <!-- N -->
+
+  <!-- born >> pôle, joute -->
+  <rule weight="0.8">
+    <match lemma="born" tags="n.*"><select lemma="pôle"/></match>
+  </rule>
+
+  <!-- repel·lent >> repoussant, repoussoir -->
+  <rule weight="0.8">
+    <match lemma="repel·lent" tags="n.*"><select lemma="repoussant"/></match>
+  </rule>
+
+  <!-- entrada >> entrée, billet -->
+  <rule weight="0.8">
+    <match lemma="entrada" tags="n.*"><select lemma="entrée"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="entrada" tags="n.*"><select lemma="billet"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="espectacle" tags="n.*"/>
+      <match lemma="teatre" tags="n.*"/>
+      <match lemma="cine" tags="n.*"/>
+      <match lemma="cinema" tags="n.*"/>
+      <match lemma="museu" tags="n.*"/>
+      <match lemma="circ" tags="n.*"/>
+      <match lemma="partit" tags="n.*"/>
+      <match lemma="cursa" tags="n.*"/>
+      <match lemma="carrera" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="comprar" tags="vblex.*"/>
+      <match lemma="vendre" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="entrada" tags="n.*"><select lemma="billet"/></match>
+  </rule>
 
   <!-- engreix >> engraissement, gavage -->
   <rule weight="0.8">

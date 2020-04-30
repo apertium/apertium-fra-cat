@@ -275,7 +275,7 @@
 	  </rule>
 	</def-macro>
 
-	<!-- p1 verb fra, p2 verb cat estandard, p3 prep fra, p3 verb cat alternatiufra -->
+	<!-- p1 verb fra, p2 verb cat estandard, p3 prep fra, p3 verb cat alternatiu -->
  	<!-- <macro name="verb_prep" p1="chasser" p2="caçar" p3="de" p4="expulsar" /> -->
 	<def-macro name="verb_prep">
 	  <rule weight="0.6">
@@ -307,7 +307,10 @@
       </rule>
       <rule weight="1.0">
         <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p3}}"/></match>
-        <match tags="det.*"/>
+        <or>
+          <match tags="det.*"/>
+          <match tags="np.*"/>
+        </or>
       </rule>
       <rule weight="1.0">
         <match lemma="le" tags="prn.pro.*"/>
@@ -1046,6 +1049,101 @@
 
 <!-- **************** V **************** -->
 
+  <!-- taffer >> pencar, fumar -->
+  <rule weight="0.8">
+    <match lemma="taffer" tags="vblex.*"><select lemma="pencar"/></match>
+  </rule>
+
+  <!-- amorcer >> començar, esbossar, esquerar, atreure, encebar -->
+  <rule weight="0.8">
+    <match lemma="amorcer" tags="vblex.*"><select lemma="començar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="amorcer" tags="vblex.*"><select lemma="esbossar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="sourire" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="amorcer" tags="vblex.*"><select lemma="esquerar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="hameçon" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="amorcer" tags="vblex.*"><select lemma="atreure"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="chasse" tags="n.*"/>
+      <match lemma="pêche" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="amorcer" tags="vblex.*"><select lemma="encebar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="projectile" tags="n.*"/>
+      <match lemma="pompe" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="amorcer" tags="vblex.*"><select lemma="encebar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="projectile" tags="n.*"/>
+      <match lemma="pompe" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="amorcer" tags="vblex.*"><select lemma="encebar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="projectile" tags="n.*"/>
+      <match lemma="pompe" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- entretuer >> matar# els uns als altres, matar# l'un a l'altre -->
+  <rule weight="0.8">
+    <match lemma="entretuer" tags="vblex.*"><select lemma="matar# els uns als altres"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+      <match tags="*.sg"/>
+      <match tags=""/>
+    </or>
+    <match lemma="et" tags="cnjcoo"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <or>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+      <match tags="*.sg"/>
+      <match tags=""/>
+    </or>
+    <match lemma="entretuer" tags="vblex.*"><select lemma="matar# l'un a l'altre"/></match>
+  </rule>
+
   <!-- barbouiller >> empastifar, pastifejar -->
   <rule weight="0.8">
     <match lemma="barbouiller" tags="vblex.*"><select lemma="empastifar"/></match>
@@ -1314,8 +1412,14 @@
   <!-- fantasier >> fantasiar/fantasiejar, imaginar -->
   <macro name="verb_intrans_trans" p1="fantasier" p2="fantasiar" p3="imaginar"/>
 
+  <!-- foirer >> arruïnar, fer# llufa -->
+  <macro name="verb_intrans_trans" p1="foirer" p2="arruïnar" p3="fer# llufa"/>
+
   <!-- presser >> acuitar, afanyar -->
   <macro name="verb_intrans_trans" p1="presser" p2="acuitar" p3="afanyar"/>
+
+  <!-- saisir >> agafar/agarrar, apoderar -->
+  <macro name="verb_nopron_pron" p1="saisir" p2="agafar" p3="apoderar"/>
 
   <!-- dessaisir >> desposseir, desprendre -->
   <macro name="verb_nopron_pron" p1="dessaisir" p2="desposseir" p3="desprendre"/>
@@ -2182,19 +2286,13 @@
     <match lemma="arriver" tags="vblex.*"><select lemma="passar"/></match>
   </rule>
 
-  <!-- couler >> (intr) fluir, (tr) enfonsar -->
-  <rule weight="0.8">
-    <match lemma="couler" tags="vblex.*"><select lemma="fluir"/></match>
-  </rule>
-  <rule weight="1.0">
-    <match lemma="couler" tags="vblex.*"><select lemma="enfonsar"/></match>
-    <match tags="det.*"/>
-  </rule>
-  <rule weight="1.0">
-    <match tags="prn.pro.*"/>
-    <match lemma="marejar" tags="vblex.*."><select lemma="enfonsar"/></match>
-  </rule>
+  <!-- couler >> fluir, enfonsar -->
+  <macro name="verb_intrans_trans" p1="couler" p2="fluir" p3="enfonsar"/>
 
+  <!-- épauler >> fer# costat, fer# costat a -->
+  <macro name="verb_intrans_trans" p1="épauler" p2="fer# costat" p3="fer# costat a"/>
+
+  <!-- chasser >> caçar, expulsar -->
   <macro name="verb_prep" p1="chasser" p2="caçar" p3="de" p4="expulsar" />
   <rule weight="1.0">
     <match lemma="chasser" tags="vblex.*."><select lemma="expulsar"/></match>
@@ -2205,6 +2303,141 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- balle >> pilota, bala -->
+  <rule weight="0.8">
+    <match lemma="balle" tags="n.*"><select lemma="pilota"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="balle" tags="n.*"><select lemma="bala"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="pistolet" tags="n.*"/>
+      <match lemma="revolver" tags="n.*"/>
+      <match lemma="canon" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="balle" tags="n.*"><select lemma="bala"/></match>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="tirer" tags="vblex.*"/>
+      <match lemma="tuer" tags="vblex.*"/>
+      <match lemma="mourir" tags="vblex.*"/>
+      <match lemma="blesser" tags="vblex.*"/>
+      <match lemma="transpercer" tags="vblex.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="tirer" tags="vblex.*"/>
+      <match lemma="tuer" tags="vblex.*"/>
+      <match lemma="mourir" tags="vblex.*"/>
+      <match lemma="blesser" tags="vblex.*"/>
+      <match lemma="transpercer" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="balle" tags="n.*"><select lemma="bala"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="balle" tags="n.*"><select lemma="bala"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <match lemma="millimètre" tags="n.*"/>
+  </rule>
+
+  <!-- matraque >> porra, clava -->
+  <rule weight="0.8">
+    <match lemma="matraque" tags="n.*"><select lemma="porra"/></match>
+  </rule>
+
+  <!-- actualité >> actualitat, notícia -->
+  <rule weight="0.8">
+    <match lemma="actualité" tags="n.*"><select lemma="actualitat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="actualité" tags="n.f.pl"><select lemma="notícia"/></match>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="télévision" tags="n.*"/>
+      <match lemma="télé" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="télévision" tags="n.*"/>
+      <match lemma="télé" tags="n.*"/>
+      <match lemma="regarder" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="actualité" tags="n.f.pl"><select lemma="notícia"/></match>
+  </rule>
+
+  <!-- actu >> actualitat, notícia -->
+  <rule weight="0.8">
+    <match lemma="actu" tags="n.*"><select lemma="actualitat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="actu" tags="n.f.pl"><select lemma="notícia"/></match>
+  </rule>
+
+  <!-- fourre-tout >> calaix# de sastre, cambra# dels mals endreços -->
+  <rule weight="0.8">
+    <match lemma="fourre-tout" tags="n.*"><select lemma="calaix# de sastre"/></match>
+  </rule>
+
+  <!-- denier >> diner, denari -->
+  <rule weight="0.8">
+    <match lemma="denier" tags="n.*"><select lemma="diner"/></match>
+  </rule>
+
+  <!-- repoussoir >> repel·lent, etc. -->
+  <rule weight="0.8">
+    <match lemma="repoussoir" tags="n.*"><select lemma="repel·lent"/></match>
+  </rule>
+
+  <!-- billet >> billet, entrada -->
+  <rule weight="0.8">
+    <match lemma="entrée" tags="n.*"><select lemma="bitllet"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="entrée" tags="n.*"><select lemma="entrada"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="spectacle" tags="n.*"/>
+      <match lemma="théâtre" tags="n.*"/>
+      <match lemma="cinéma" tags="n.*"/>
+      <match lemma="musée" tags="n.*"/>
+      <match lemma="cirque" tags="n.*"/>
+      <match lemma="match" tags="n.*"/>
+      <match lemma="course" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="acheter" tags="vblex.*"/>
+      <match lemma="vendre" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="entrée" tags="n.*"><select lemma="entrada"/></match>
+  </rule>
 
   <!-- truffe >> trufa, tòfona, nàpia -->
   <rule weight="0.8">
@@ -4942,9 +5175,19 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- repoussant >> repugnant, repel·lent -->
+  <rule weight="0.8">
+    <match lemma="repoussant" tags="adj.*"><select lemma="repugnant"/></match>
+  </rule>
+
   <!-- étourdi >> eixelebrat, distret -->
   <rule weight="0.8">
     <match lemma="étourdi" tags="adj.*"><select lemma="eixelebrat"/></match>
+  </rule>
+
+  <!-- coriace >> tenaç, coriaci -->
+  <rule weight="0.8">
+    <match lemma="coriace" tags="adj.*"><select lemma="tenaç"/></match>
   </rule>
 
   <!-- écœurant >> fastigós, embafador -->
