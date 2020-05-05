@@ -4258,6 +4258,11 @@
 
 <!-- N -->
 
+  <!-- pols >> pouls, bras# de fer -->
+  <rule weight="0.8">
+    <match lemma="pols" tags="n.*"><select lemma="pouls"/></match>
+  </rule>
+
   <!-- born >> pôle, joute -->
   <rule weight="0.8">
     <match lemma="born" tags="n.*"><select lemma="pôle"/></match>

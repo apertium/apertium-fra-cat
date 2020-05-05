@@ -2493,6 +2493,18 @@
 
 <!-- **************** N **************** -->
 
+  <!-- berceuse >> balancí, cançó# de bressol -->
+  <rule weight="0.8">
+    <match lemma="berceuse" tags="n.*"><select lemma="balancí"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="chanter" tags="vblex.*"/>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="berceuse" tags="n.*"><select lemma="cançó# de bressol"/></match>
+  </rule>
+
   <!-- assouplissement >> flexibilització, flexibilitat -->
   <rule weight="0.8">
     <match lemma="assouplissement" tags="n.*"><select lemma="flexibilització"/></match>
