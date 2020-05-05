@@ -555,15 +555,38 @@
       <match lemma="amande" tags="n.*"/>
     </def-seq>
 
-    <def-seq n="adj_pays">
+    <def-seq n="pays_adj">
       <match lemma="portugais" tags="adj.*"/>
       <match lemma="espagnol" tags="adj.*"/>
       <match lemma="catalan" tags="adj.*"/>
+      <match lemma="valencien" tags="adj.*"/>
+      <match lemma="castillan" tags="adj.*"/>
       <match lemma="français" tags="adj.*"/>
+      <match lemma="breton" tags="adj.*"/>
+      <match lemma="normand" tags="adj.*"/>
+      <match lemma="occitan" tags="adj.*"/>
+      <match lemma="alsacien" tags="adj.*"/>
+      <match lemma="bourgonde" tags="adj.*"/>
+      <match lemma="bourguignon" tags="adj.*"/>
       <match lemma="italien" tags="adj.*"/>
       <match lemma="romain" tags="adj.*"/>
+      <match lemma="cartaginois" tags="adj.*"/>
       <match lemma="génois" tags="adj.*"/>
       <match lemma="vénitien" tags="adj.*"/>
+      <match lemma="sarde" tags="adj.*"/>
+      <match lemma="piémontais" tags="adj.*"/>
+      <match lemma="lombard" tags="adj.*"/>
+      <match lemma="émilien" tags="adj.*"/>
+      <match lemma="romagnol" tags="adj.*"/>
+      <match lemma="ligure" tags="adj.*"/>
+      <match lemma="sicilien" tags="adj.*"/>
+      <match lemma="napolitain" tags="adj.*"/>
+      <match lemma="calabrais" tags="adj.*"/>
+      <match lemma="toscan" tags="adj.*"/>
+      <match lemma="frioulan" tags="adj.*"/>
+      <match lemma="istriote" tags="adj.*"/>
+      <match lemma="maltais" tags="adj.*"/>
+      <match lemma="dalmate" tags="adj.*"/>
       <match lemma="suisse" tags="adj.*"/>
       <match lemma="irlandais" tags="adj.*"/>
       <match lemma="britannique" tags="adj.*"/>
@@ -603,14 +626,153 @@
       <match lemma="grec" tags="adj.*"/>
       <match lemma="bizantin" tags="adj.*"/>
       <match lemma="turc" tags="adj.*"/>
-      <match lemma="otoman" tags="adj.*"/>
+      <match lemma="kurde" tags="adj.*"/>
+      <match lemma="ottoman" tags="adj.*"/>
       <match lemma="russe" tags="adj.*"/>
+      <match lemma="biélorusse" tags="adj.*"/>
+      <match lemma="ukrainien" tags="adj.*"/>
+      <match lemma="arménien" tags="adj.*"/>
+      <match lemma="géorgien" tags="adj.*"/>
+      <match lemma="azerbaïdjanais" tags="adj.*"/>
+      <match lemma="balte" tags="adj.*"/>
+      <match lemma="slave" tags="adj.*"/>
+      <match lemma="tchétchène" tags="adj.*"/>
+      <match lemma="ingouche" tags="adj.*"/>
+      <match lemma="karatchaï" tags="adj.*"/>
+      <match lemma="balkar" tags="adj.*"/>
+      <match lemma="ossète" tags="adj.*"/>
+      <match lemma="tchouvache" tags="adj.*"/>
+      <match lemma="tatar" tags="adj.*"/>
+      <match lemma="tatare" tags="adj.*"/>
+      <match lemma="bachkir" tags="adj.*"/>
+      <match lemma="oudmourte" tags="adj.*"/>
+      <match lemma="mordve" tags="adj.*"/>
+      <match lemma="kalmouk" tags="adj.*"/>
+      <match lemma="yakoute" tags="adj.*"/>
+      <match lemma="iakoute" tags="adj.*"/>
+      <match lemma="khakasse" tags="adj.*"/>
+      <match lemma="touvinien" tags="adj.*"/>
+      <match lemma="altaïen" tags="adj.*"/>
+      <match lemma="nogaï" tags="adj.*"/>
+      <match lemma="estonien" tags="adj.*"/>
+      <match lemma="letton" tags="adj.*"/>
+      <match lemma="lithuanien" tags="adj.*"/>
       <match lemma="chinois" tags="adj.*"/>
       <match lemma="japonais" tags="adj.*"/>
       <match lemma="coréen" tags="adj.*"/>
       <match lemma="vietnamien" tags="adj.*"/>
       <match lemma="américain" tags="adj.*"/>
       <match lemma="indien" tags="adj.*"/>
+    </def-seq>
+
+    <def-seq n="pays_hab">
+      <match lemma="portugais" tags="n.*"/>
+      <match lemma="espagnol" tags="n.*"/>
+      <match lemma="catalan" tags="n.*"/>
+      <match lemma="valencien" tags="n.*"/>
+      <match lemma="castillan" tags="n.*"/>
+      <match lemma="français" tags="n.*"/>
+      <match lemma="breton" tags="n.*"/>
+      <match lemma="normand" tags="n.*"/>
+      <match lemma="occitan" tags="n.*"/>
+      <match lemma="alsacien" tags="n.*"/>
+      <match lemma="bourgonde" tags="n.*"/>
+      <match lemma="bourguignon" tags="n.*"/>
+      <match lemma="italien" tags="n.*"/>
+      <match lemma="romain" tags="n.*"/>
+      <match lemma="Cartaginois" tags="n.*"/>
+      <match lemma="génois" tags="n.*"/>
+      <match lemma="vénitien" tags="n.*"/>
+      <match lemma="sarde" tags="n.*"/>
+      <match lemma="piémontais" tags="n.*"/>
+      <match lemma="lombard" tags="n.*"/>
+      <match lemma="émilien" tags="n.*"/>
+      <match lemma="romagnol" tags="n.*"/>
+      <match lemma="ligure" tags="n.*"/>
+      <match lemma="sicilien" tags="n.*"/>
+      <match lemma="napolitain" tags="n.*"/>
+      <match lemma="calabrais" tags="n.*"/>
+      <match lemma="toscan" tags="n.*"/>
+      <match lemma="frioulan" tags="n.*"/>
+      <match lemma="istriote" tags="n.*"/>
+      <match lemma="maltais" tags="n.*"/>
+      <match lemma="dalmate" tags="n.*"/>
+      <match lemma="suisse" tags="n.*"/>
+      <match lemma="irlandais" tags="n.*"/>
+      <match lemma="Britannique" tags="n.*"/>
+      <match lemma="anglais" tags="n.*"/>
+      <match lemma="écossais" tags="n.*"/>
+      <match lemma="gallois" tags="n.*"/>
+      <match lemma="belge" tags="n.*"/>
+      <match lemma="hollandais" tags="n.*"/>
+      <match lemma="flamand" tags="n.*"/>
+      <match lemma="luxembougeois" tags="n.*"/>
+      <match lemma="allemand" tags="n.*"/>
+      <match lemma="prussien" tags="n.*"/>
+      <match lemma="danois" tags="n.*"/>
+      <match lemma="islandais" tags="n.*"/>
+      <match lemma="norvégien" tags="n.*"/>
+      <match lemma="suédois" tags="n.*"/>
+      <match lemma="finlandais" tags="n.*"/>
+      <match lemma="estonien" tags="n.*"/>
+      <match lemma="léton" tags="n.*"/>
+      <match lemma="lithuanien" tags="n.*"/>
+      <match lemma="polonais" tags="n.*"/>
+      <match lemma="autrichien" tags="n.*"/>
+      <match lemma="tchèque" tags="n.*"/>
+      <match lemma="slovaque" tags="n.*"/>
+      <match lemma="Tchécoslovaque" tags="n.*"/>
+      <match lemma="hongrois" tags="n.*"/>
+      <match lemma="roumain" tags="n.*"/>
+      <match lemma="moldave" tags="n.*"/>
+      <match lemma="bulgare" tags="n.*"/>
+      <match lemma="slovène" tags="n.*"/>
+      <match lemma="croate" tags="n.*"/>
+      <match lemma="serbe" tags="n.*"/>
+      <match lemma="bosniaque" tags="n.*"/>
+      <match lemma="kosovar" tags="n.*"/>
+      <match lemma="albanais" tags="n.*"/>
+      <match lemma="macédonien" tags="n.*"/>
+      <match lemma="grec" tags="n.*"/>
+      <match lemma="Bizantin" tags="n.*"/>
+      <match lemma="turc" tags="n.*"/>
+      <match lemma="kurde" tags="n.*"/>
+      <match lemma="ottoman" tags="n.*"/>
+      <match lemma="russe" tags="n.*"/>
+      <match lemma="biélorusse" tags="n.*"/>
+      <match lemma="ukrainien" tags="n.*"/>
+      <match lemma="arménien" tags="n.*"/>
+      <match lemma="géorgien" tags="n.*"/>
+      <match lemma="azerbaïdjanais" tags="n.*"/>
+      <match lemma="balte" tags="n.*"/>
+      <match lemma="slave" tags="n.*"/>
+      <match lemma="tchétchène" tags="n.*"/>
+      <match lemma="ingouche" tags="n.*"/>
+      <match lemma="karatchaï" tags="n.*"/>
+      <match lemma="balkar" tags="n.*"/>
+      <match lemma="ossète" tags="n.*"/>
+      <match lemma="tchouvache" tags="n.*"/>
+      <match lemma="tatar" tags="n.*"/>
+      <match lemma="tatare" tags="n.*"/>
+      <match lemma="bachkir" tags="n.*"/>
+      <match lemma="oudmourte" tags="n.*"/>
+      <match lemma="mordve" tags="n.*"/>
+      <match lemma="kalmouk" tags="n.*"/>
+      <match lemma="yakoute" tags="n.*"/>
+      <match lemma="iakoute" tags="n.*"/>
+      <match lemma="khakasse" tags="n.*"/>
+      <match lemma="touvinien" tags="n.*"/>
+      <match lemma="altaïen" tags="n.*"/>
+      <match lemma="nogaï" tags="n.*"/>
+      <match lemma="estonien" tags="n.*"/>
+      <match lemma="letton" tags="n.*"/>
+      <match lemma="lithuanien" tags="n.*"/>
+      <match lemma="chinois" tags="n.*"/>
+      <match lemma="japonais" tags="n.*"/>
+      <match lemma="coréen" tags="n.*"/>
+      <match lemma="vietnamien" tags="n.*"/>
+      <match lemma="Américain" tags="n.*"/>
+      <match lemma="indien" tags="n.*"/>
     </def-seq>
 
     <def-seq n="temps">
@@ -681,7 +843,7 @@
     <match tags="pr"/>
   </rule>
 
-<!-- **************** PR **************** -->
+<!-- **************** PREP **************** -->
 
   <!-- avec >> amb, de -->
   <rule weight="0.6">
@@ -690,6 +852,25 @@
   <rule weight="1.0">
     <match lemma="lier# d'amitié" tags="vblex.*"/>
     <match lemma="avec" tags="pr"><select lemma="de"/></match>
+  </rule>
+
+  <!-- par >> per, amb -->
+  <rule weight="0.6">
+    <match lemma="par" tags="pr"><select lemma="per"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="payer" tags="vblex.*"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="prn.enc.*"/>
+        <match tags="adv"/>
+      </or>
+    </repeat>
+    <match lemma="par" tags="pr"><select lemma="amb"/></match>
+    <or>
+      <match lemma="chèque" tags="vblex.*"/>
+      <match lemma="carte" tags="vblex.*"/>
+    </or>
   </rule>
 
   <!-- dans >> en, a -->
@@ -1377,6 +1558,9 @@
   <rule weight="0.8">
     <match lemma="avancer" tags="vblex.*"><select lemma="avançar"/></match>
   </rule>
+
+  <!-- démerder >> ajudar, espavilar -->
+  <macro name="verb_nopron_pron" p1="démerder" p2="ajudar" p3="espavilar"/>
 
   <!-- engouffrer >> engolir, entaforar -->
   <macro name="verb_nopron_pron" p1="engouffrer" p2="engolir" p3="entaforar"/>
@@ -2296,13 +2480,28 @@
   <macro name="verb_prep" p1="chasser" p2="caçar" p3="de" p4="expulsar" />
   <rule weight="1.0">
     <match lemma="chasser" tags="vblex.*."><select lemma="expulsar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
     <or>
       <match tags="np.ant.*"/>
       <match tags="np.cog.*"/>
+      <seq n="personne"/>
+      <seq n="pays_hab"/>
     </or>
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- assouplissement >> flexibilització, flexibilitat -->
+  <rule weight="0.8">
+    <match lemma="assouplissement" tags="n.*"><select lemma="flexibilització"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="exercice" tags="n.*"/>
+    <match tags="pr"/>
+    <match lemma="assouplissement" tags="n.*"><select lemma="flexibilitat"/></match>
+  </rule>
 
   <!-- balle >> pilota, bala -->
   <rule weight="0.8">
@@ -4042,7 +4241,7 @@
       <match lemma="possible" tags="adj.*"/>
       <match lemma="massive" tags="adj.*"/>
       <match lemma="total" tags="adj.*"/>
-      <seq n="adj_pays"/>
+      <seq n="pays_adj"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -5571,6 +5770,16 @@
     <match lemma="de" tags="pr"/>
   </rule>
 
+  <!-- faire# la monnaie >> tornar# canvi, tenir# canvi -->
+  <rule weight="0.8">
+    <match lemma="faire# la monnaie" tags="vblex.*"><select lemma="tornar# canvi"/></match>
+  </rule>
+
+  <!-- faire# la monnaie sur >> tornar# canvi de, tenir# canvi de -->
+  <rule weight="0.8">
+    <match lemma="faire# la monnaie sur" tags="vblex.*"><select lemma="tornar# canvi de"/></match>
+  </rule>
+
   <!-- cerner >> envoltar, delimitar -->
   <rule weight="0.8">
     <match lemma="cerner" tags="vblex.*"><select lemma="envoltar"/></match>
@@ -6051,6 +6260,13 @@
     <match lemma="però" tags="cnjcoo"/>
     <match lemma="pas" tags="adv"><select lemma="no"/></match>
     <match tags="vblex.pp.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pas" tags="adv"><select lemma="no"/></match>
+    <or>
+      <match lemma="plus" tags="adv"/>
+      <match lemma="moins" tags="adv"/>
+    </or>
   </rule>
 
   <!-- haut >> amunt, alt, altament -->

@@ -1627,6 +1627,7 @@
       <match lemma="anar" tags="vblex.*"/>
       <match lemma="arribar" tags="vblex.*"/>
       <match lemma="dormir" tags="vblex.*"/>
+      <match lemma="reflectir" tags="vblex.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -1643,6 +1644,7 @@
       <match lemma="anar" tags="vblex.pp.*"/>
       <match lemma="arribar" tags="vblex.pp.*"/>
       <match lemma="dormir" tags="vblex.pp.*"/>
+      <match lemma="reflectir" tags="vblex.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -1659,6 +1661,7 @@
       <match lemma="anar" tags="vblex.inf"/>
       <match lemma="arribar" tags="vblex.inf"/>
       <match lemma="dormir" tags="vblex.inf"/>
+      <match lemma="reflectir" tags="vblex.*"/>
     </or>
   </rule>
 
@@ -1771,16 +1774,36 @@
 
 <!-- PR -->
 
-  <!-- amb >> avec, à -->
+  <!-- amb >> avec, à, par -->
   <rule weight="0.8">
     <match lemma="amb" tags="pr"><select lemma="avec"/></match>
   </rule>
   <rule weight="1.0">
-    <match lemma="casar" tags="vblex.*"/>
-    <repeat from="0" upto="1">
-      <match tags="adv"/>
+    <or>
+      <match lemma="casar" tags="vblex.*"/>
+      <match lemma="topar" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="prn.enc.*"/>
+        <match tags="adv"/>
+      </or>
     </repeat>
     <match lemma="amb" tags="pr"><select lemma="à"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pagar" tags="vblex.*"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="prn.enc.*"/>
+        <match tags="adv"/>
+      </or>
+    </repeat>
+    <match lemma="amb" tags="pr"><select lemma="par"/></match>
+    <or>
+      <match lemma="xec" tags="vblex.*"/>
+      <match lemma="targeta" tags="vblex.*"/>
+    </or>
   </rule>
 
   <!-- rere >> derrière, après -->
@@ -1913,24 +1936,6 @@
       <match tags="prn.enc.*"/>
     </repeat>
     <match lemma="de" tags="pr"><select lemma="avec"/></match>
-  </rule>
-
-  <!-- amb >> avec, à -->
-  <rule weight="0.8">
-    <match lemma="amb" tags="pr"><select lemma="avec"/></match>
-  </rule>
-  <rule weight="1.0">
-    <or>
-      <match lemma="casar" tags="vblex.*"/>
-      <match lemma="topar" tags="vblex.*"/>
-    </or>
-    <repeat from="0" upto="2">
-      <or>
-        <match tags="prn.enc.*"/>
-        <match tags="adv"/>
-      </or>
-    </repeat>
-    <match lemma="amb" tags="pr"><select lemma="à"/></match>
   </rule>
 
   <!-- a >> à, en, dans, de -->
@@ -2101,11 +2106,23 @@
     <match lemma="canviar" tags="vblex.*"><select lemma="changer"/></match>
   </rule>
 
+<!-- IJ -->
+
+  <!-- oh >> oh, ô -->
+  <rule weight="0.8">
+    <match lemma="oh" tags="ij"><select lemma="oh"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="oh" tags="ij"><select lemma="ô"/></match>
+    <or>
+      <match tags="det.*"/>
+      <match tags="n.*"/>
+    </or>
+  </rule>
+
 <!-- CNJADV -->
 
-  <!-- 
-    perquè (cnjadv) >> parce que, pour que
-  -->
+  <!-- perquè (cnjadv) >> parce que, pour que -->
   <rule weight="0.8">
     <match lemma="perquè" tags="cnjadv"><select lemma="parce que"/></match>
   </rule>
@@ -2216,12 +2233,32 @@
     <match lemma="no" tags="adv"><select lemma="pas"/></match>
     <match tags="pr"/>
   </rule>
+  <rule weight="1.0">
+    <match lemma="no" tags="adv"><select lemma="pas"/></match>
+    <or>
+      <match lemma="més" tags="adv"/>
+      <match lemma="menys" tags="adv"/>
+    </or>
+  </rule>
 
 <!-- V -->
 
   <!-- engaltar >> lâcher, épauler -->
   <rule weight="0.8">
     <match lemma="engaltar" tags="vblex.*"><select lemma="lâcher"/></match>
+  </rule>
+
+  <!-- donar# quarter >> faire# quartier, faire# de quartier -->
+  <rule weight="0.8">
+    <match lemma="donar# quarter" tags="vblex.*"><select lemma="faire# quartier"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="no" tags="adv"/>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+      <match tags="prn.pro.*"/>
+    </repeat>
+    <match lemma="donar# quarter" tags="vblex.*"><select lemma="faire# de quartier"/></match>
   </rule>
 
   <!-- escarxofar >> caler, etc. -->
