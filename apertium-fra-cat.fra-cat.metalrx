@@ -1752,19 +1752,28 @@
     <match lemma="jurer" tags="vblex.*"><select lemma="jurar"/></match>
   </rule>
 
-  <!-- aimer >> estimar, agradar -->
+  <!-- aimer, kiffer >> estimar, agradar -->
   <rule weight="0.8">
-    <match lemma="aimer" tags="vblex.*"><select lemma="estimar"/></match>
+    <or>
+      <match lemma="aimer" tags="vblex.*"><select lemma="estimar"/></match>
+      <match lemma="kiffer" tags="vblex.*"><select lemma="estimar"/></match>
+    </or>
   </rule>
   <rule weight="1.0">
-    <match lemma="aimer" tags="vblex.*"><select lemma="agradar"/></match>
+    <or>
+      <match lemma="aimer" tags="vblex.*"><select lemma="agradar"/></match>
+      <match lemma="kiffer" tags="vblex.*"><select lemma="agradar"/></match>
+    </or>
     <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <or><match tags="vblex.inf"/><match tags="vbser.inf"/><match tags="vbhaver.inf"/><match tags="vbmod.inf"/></or>
   </rule>
   <rule weight="1.0">
-    <match lemma="aimer" tags="vblex.*"><select lemma="agradar"/></match>
+    <or>
+      <match lemma="aimer" tags="vblex.*"><select lemma="agradar"/></match>
+      <match lemma="kiffer" tags="vblex.*"><select lemma="agradar"/></match>
+    </or>
     <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
@@ -1772,7 +1781,10 @@
     <match tags="n.*"/>
   </rule>
   <rule weight="1.0">
-    <match lemma="aimer" tags="vblex.*"><select lemma="agradar"/></match>
+    <or>
+      <match lemma="aimer" tags="vblex.*"><select lemma="agradar"/></match>
+      <match lemma="kiffer" tags="vblex.*"><select lemma="agradar"/></match>
+    </or>
     <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
@@ -1781,7 +1793,10 @@
     <match tags="n.*"/>
   </rule>
   <rule weight="1.0">
-    <match lemma="aimer" tags="vblex.*"><select lemma="agradar"/></match>
+    <or>
+      <match lemma="aimer" tags="vblex.*"><select lemma="agradar"/></match>
+      <match lemma="kiffer" tags="vblex.*"><select lemma="agradar"/></match>
+    </or>
     <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
@@ -1794,7 +1809,10 @@
     <match tags="n.*"/>
   </rule>
   <rule weight="1.0">
-    <match lemma="aimer" tags="vblex.*"><select lemma="agradar_pl"/></match>
+    <or>
+      <match lemma="aimer" tags="vblex.*"><select lemma="agradar_pl"/></match>
+      <match lemma="kiffer" tags="vblex.*"><select lemma="agradar_pl"/></match>
+    </or>
     <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
@@ -1802,7 +1820,10 @@
     <match tags="n.*"/>
   </rule>
   <rule weight="1.0">
-    <match lemma="aimer" tags="vblex.*"><select lemma="agradar"/></match>
+    <or>
+      <match lemma="aimer" tags="vblex.*"><select lemma="agradar"/></match>
+      <match lemma="kiffer" tags="vblex.*"><select lemma="agradar"/></match>
+    </or>
     <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
@@ -1811,7 +1832,10 @@
     <match tags="n.*"/>
   </rule>
   <rule weight="1.0">
-    <match lemma="aimer" tags="vblex.*"><select lemma="agradar"/></match>
+    <or>
+      <match lemma="aimer" tags="vblex.*"><select lemma="agradar"/></match>
+      <match lemma="kiffer" tags="vblex.*"><select lemma="agradar"/></match>
+    </or>
     <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
@@ -1824,10 +1848,16 @@
     <match tags="n.*"/>
   </rule>
   <rule weight="1.2">
-    <match lemma="aimer" tags="vblex.inf"><select lemma="estimar"/></match>
+    <or>
+      <match lemma="aimer" tags="vblex.inf"><select lemma="estimar"/></match>
+      <match lemma="kiffer" tags="vblex.inf"><select lemma="estimar"/></match>
+    </or>
   </rule>
   <rule weight="1.2">
-    <match lemma="aimer" tags="vblex.ger"><select lemma="estimar"/></match>
+    <or>
+      <match lemma="aimer" tags="vblex.ger"><select lemma="estimar"/></match>
+      <match lemma="kiffer" tags="vblex.ger"><select lemma="estimar"/></match>
+    </or>
   </rule>
 
   <!-- sacrer >> consagrar, renegar -->
@@ -2492,6 +2522,69 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- bougre >> paio, tros -->
+  <rule weight="0.8">
+    <match lemma="bougre" tags="n.*"><select lemma="paio"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="bougre" tags="n.*"><select lemma="tros"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
+
+  <!-- subjet >> assumpte, tema, subjecte -->
+  <rule weight="0.8">
+    <match lemma="sujet" tags="n.*"><select lemma="assumpte"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sujet" tags="n.*"><select lemma="tema"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="discussion" tags="n.*"/>
+      <match lemma="controverse" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sujet" tags="n.*"><select lemma="subjecte"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <seq n="personne"/>
+      <match tags="np.top.*"/>
+
+      <match lemma="verbe" tags="n.*"/>
+      <match lemma="phrase" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sujet" tags="n.*"><select lemma="subjecte"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="grammaire" tags="n.*"/>
+      <match lemma="verbe" tags="n.*"/>
+      <match lemma="phrase" tags="n.*"/>
+      <match lemma="syntaxe" tags="n.*"/>
+      <match lemma="nominatif" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="grammaire" tags="n.*"/>
+      <match lemma="verbe" tags="n.*"/>
+      <match lemma="phrase" tags="n.*"/>
+      <match lemma="syntaxe" tags="n.*"/>
+      <match lemma="nominatif" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="sujet" tags="n.*"><select lemma="subjecte"/></match>
+  </rule>
 
   <!-- berceuse >> balancí, cançó# de bressol -->
   <rule weight="0.8">
@@ -3660,6 +3753,7 @@
     <or>
       <match lemma="regarder" tags="vblex.*"/>
       <match lemma="aimer" tags="vblex.*"/>
+      <match lemma="kiffer" tags="vblex.*"/>
       <match lemma="adorer" tags="vblex.*"/>
       <match lemma="détester" tags="vblex.*"/>
     </or>
@@ -4795,6 +4889,7 @@
     <or>
       <match lemma="manger" tags="vblex.*"/>
       <match lemma="aimer" tags="vblex.*"/>
+      <match lemma="kiffer" tags="vblex.*"/>
       <match lemma="adorer" tags="vblex.*"/>
     </or>
     <repeat from="0" upto="1">
@@ -4807,6 +4902,7 @@
     <or>
       <match lemma="manger" tags="vblex.*"/>
       <match lemma="aimer" tags="vblex.*"/>
+      <match lemma="kiffer" tags="vblex.*"/>
       <match lemma="adorer" tags="vblex.*"/>
     </or>
     <match tags="adv"/>
@@ -4817,6 +4913,7 @@
     <or>
       <match lemma="manger" tags="vblex.*"/>
       <match lemma="aimer" tags="vblex.*"/>
+      <match lemma="kiffer" tags="vblex.*"/>
       <match lemma="adorer" tags="vblex.*"/>
     </or>
     <match tags="adv"/>
