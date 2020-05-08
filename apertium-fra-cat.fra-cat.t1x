@@ -3695,7 +3695,10 @@
 	<when>
 	  <test>
 	    <and>
-	      <equal caseless="yes"><clip pos="1" side="sl" part="lemh"/><lit v="aimer"/></equal>
+	      <or>
+	        <equal caseless="yes"><clip pos="1" side="sl" part="lemh"/><lit v="aimer"/></equal>
+	        <equal caseless="yes"><clip pos="1" side="sl" part="lemh"/><lit v="kiffer"/></equal>
+	      </or>
 	      <or>
 	        <equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="agradar"/></equal>
 	        <equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="agradar_pl"/></equal>
