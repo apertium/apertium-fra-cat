@@ -2142,6 +2142,24 @@
     </or>
   </rule>
 
+  <!-- com més >> plus, plus de -->
+  <rule weight="0.8">
+    <match lemma="com més" tags="cnjadv"><select lemma="plus"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="com més" tags="cnjadv"><select lemma="plus de"/></match>
+    <match tags="n.*"/>
+  </rule>
+
+  <!-- com menys >> moins, moins de -->
+  <rule weight="0.8">
+    <match lemma="com menys" tags="cnjadv"><select lemma="moins"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="com menys" tags="cnjadv"><select lemma="moins de"/></match>
+    <match tags="n.*"/>
+  </rule>
+
 <!-- PREADV -->
 
   <!-- molt >> très, beaucoup -->
@@ -2242,6 +2260,33 @@
   </rule>
 
 <!-- V -->
+
+  <!-- onejar >> ondoyer, flotter -->
+  <rule weight="0.8">
+    <match lemma="onejar" tags="vblex.*"><select lemma="ondoyer"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="onejar" tags="vblex.*"><select lemma="flotter"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="bandera" tags="n.*"/>
+      <match lemma="senyera" tags="n.*"/>
+      <match lemma="estendard" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="bandera" tags="n.*"/>
+      <match lemma="senyera" tags="n.*"/>
+      <match lemma="estendard" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="onejar" tags="vblex.*"><select lemma="flotter"/></match>
+  </rule>
 
   <!-- engaltar >> lâcher, épauler -->
   <rule weight="0.8">
@@ -2407,6 +2452,9 @@
   <!-- assabentar >> informer, apprendre -->
   <macro name="verb_nopron_pron" p1="assabentar" p2="informer" p3="apprendre" />
 
+  <!-- capficar >> tanguer, préoccuper -->
+  <macro name="verb_nopron_pron" p1="capficar" p2="tanguer" p3="préoccuper" />
+
   <!-- conscienciar >> faire# prendre conscience, prendre# conscience -->
   <macro name="verb_nopron_pron" p1="conscienciar" p2="faire# prendre conscience" p3="prendre# conscience" />
 
@@ -2415,6 +2463,9 @@
 
   <!-- embolicar >> envelopper, emmêler -->
   <macro name="verb_nopron_pron" p1="embolicar" p2="envelopper" p3="emmêler" />
+
+  <!-- encimbellar >> hisser, grimper -->
+  <macro name="verb_nopron_pron" p1="encimbellar" p2="hisser" p3="grimper" />
 
   <!-- enredar >> emmêler, tromper -->
   <macro name="verb_nopron_pron" p1="enredar" p2="emmêler" p3="tromper" />
@@ -2449,6 +2500,15 @@
   <!-- recolzar >> appuyer, soutenir -->
   <rule weight="0.8">
     <match lemma="recolzar" tags="vblex.*"><select lemma="appuyer"/></match>
+  </rule>
+
+  <!-- funcionar >> fonctionner, marcher -->
+  <rule weight="0.8">
+    <match lemma="funcionar" tags="vblex.*"><select lemma="fonctionner"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="no" tags="adv"/>
+    <match lemma="funcionar" tags="vblex.*"><select lemma="marcher"/></match>
   </rule>
 
   <!-- resultar >> résulter, avérer -->

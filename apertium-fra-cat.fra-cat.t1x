@@ -452,6 +452,7 @@
     </def-cat>
     <def-cat n="verbospron"> <!-- verbs pronominals en fra però amb l'equivalent cat no pronominal -->
       <cat-item lemma="asseoir" tags="vblex.*"/>
+      <cat-item lemma="avérer" tags="vblex.*"/>
       <cat-item lemma="dérober" tags="vblex.*"/>
       <cat-item lemma="dérober# à" tags="vblex.*"/>
       <cat-item lemma="heurter" tags="vblex.*"/>
@@ -463,6 +464,7 @@
     </def-cat>
     <def-cat n="verbospron_pp">
       <cat-item lemma="asseoir" tags="vblex.pp.*"/>
+      <cat-item lemma="avérer" tags="vblex.pp.*"/>
       <cat-item lemma="dérober" tags="vblex.pp.*"/>
       <cat-item lemma="dérober# à" tags="vblex.pp.*"/>
       <cat-item lemma="heurter" tags="vblex.pp.*"/>
@@ -474,6 +476,7 @@
     </def-cat>
     <def-cat n="verbospron_inf">
       <cat-item lemma="asseoir" tags="vblex.inf"/>
+      <cat-item lemma="avérer" tags="vblex.inf"/>
       <cat-item lemma="dérober" tags="vblex.inf"/>
       <cat-item lemma="dérober# à" tags="vblex.inf"/>
       <cat-item lemma="heurter" tags="vblex.inf"/>
@@ -485,6 +488,7 @@
     </def-cat>
     <def-cat n="verbospron_ger">
       <cat-item lemma="asseoir" tags="vblex.ger"/>
+      <cat-item lemma="avérer" tags="vblex.ger"/>
       <cat-item lemma="dérober" tags="vblex.ger"/>
       <cat-item lemma="dérober# à" tags="vblex.ger"/>
       <cat-item lemma="heurter" tags="vblex.ger"/>
@@ -6505,7 +6509,7 @@ is not applicable because gender and number cannot be taken from previous rules 
             <out>
               <lu>
                 <get-case-from pos="1">
-                  <clip pos="2" side="tl" part="lem"/>
+                  <lit v="haver"/>
                 </get-case-from>
                 <lit-tag v="vaux"/>
 <!--Para que traduzca "haber" como auxiliar (lo mismo que hace la regla HABER 3ª persona -->

@@ -1186,6 +1186,38 @@
     <match lemma="cela" tags="prn.*"><select lemma="això"/></match>
   </rule>
 
+<!-- CNJADV -->
+
+  <!-- plus >> més, com més -->
+  <rule weight="0.8">
+    <match lemma="plus" tags="cnjadv"><select lemma="més"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="plus" tags="cnjadv"><select lemma="com més"/></match>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="plus"/>
+      <match lemma="moins"/>
+    </or>
+  </rule>
+
+  <!-- moins >> menys, com menys -->
+  <rule weight="0.8">
+    <match lemma="moins" tags="cnjadv"><select lemma="menys"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="moins" tags="cnjadv"><select lemma="com menys"/></match>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="plus"/>
+      <match lemma="moins"/>
+    </or>
+  </rule>
+
 <!-- **************** REL **************** -->
 
   <!-- qui >> que -->
@@ -1229,6 +1261,38 @@
   </rule>
 
 <!-- **************** V **************** -->
+
+  <!-- tirailler >> tirotejar, etc. -->
+  <rule weight="0.8">
+    <match lemma="tirailler" tags="vblex.*"><select lemma="tirotejar"/></match>
+  </rule>
+
+  <!-- flotter >> flotar, onejar -->
+  <rule weight="0.8">
+    <match lemma="flotter" tags="vblex.*"><select lemma="flotar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="flotter" tags="vblex.*"><select lemma="onejar"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="drapeau" tags="n.*"/>
+      <match lemma="étendard" tags="n.*"/>
+      <match lemma="bannière" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="drapeau" tags="n.*"/>
+      <match lemma="étendard" tags="n.*"/>
+      <match lemma="bannière" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="flotter" tags="vblex.*"><select lemma="onejar"/></match>
+  </rule>
 
   <!-- taffer >> pencar, fumar -->
   <rule weight="0.8">
@@ -1734,6 +1798,27 @@
     <match lemma="découler" tags="vblex.*"><select lemma="resultar"/></match>
   </rule>
 
+  <!-- empoisonner >> enverinar, empipar -->
+  <rule weight="0.8">
+    <match lemma="empoisonner" tags="vblex.*"><select lemma="enverinar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="prn.pro.p1.*"/>
+      <match tags="prn.pro.p2.*"/>
+    </or>
+    <match lemma="empoisonner" tags="vblex.*"><select lemma="empipar"/></match>
+  </rule>
+
+  <!-- marcher >> caminar, funcionar -->
+  <rule weight="0.8">
+    <match lemma="marcher" tags="vblex.*"><select lemma="caminar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ne" tags="adv"/>
+    <match lemma="marcher" tags="vblex.*"><select lemma="funcionar"/></match>
+  </rule>
+
   <!-- brosser >> respallar, rentar -->
   <rule weight="0.8">
     <match lemma="brosser" tags="vblex.*"><select lemma="respallar"/></match>
@@ -1764,7 +1849,7 @@
       <match lemma="aimer" tags="vblex.*"><select lemma="agradar"/></match>
       <match lemma="kiffer" tags="vblex.*"><select lemma="agradar"/></match>
     </or>
-    <repeat from="0" upto="2">
+    <repeat from="0" upto="3">
       <match tags="adv"/>
     </repeat>
     <or><match tags="vblex.inf"/><match tags="vbser.inf"/><match tags="vbhaver.inf"/><match tags="vbmod.inf"/></or>
@@ -1980,31 +2065,48 @@
     <match lemma="causer" tags="vblex.*"><select lemma="causar" tags="vblex.*"/></match>
   </rule>
 
+  <!-- ratisser >> rasclar, pentinar -->
+  <rule weight="0.8">
+    <match lemma="ratisser" tags="vblex.*"><select lemma="rasclar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ratisser" tags="vblex.*"><select lemma="pentinar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="terrain" tags="n.*"/>
+      <match lemma="chemin" tags="n.*"/>
+      <match lemma="route" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- emprunter >> manllevar, agafar -->
   <rule weight="0.8">
     <match lemma="emprunter" tags="vblex.*"><select lemma="manllevar" tags="vblex.*"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="emprunter" tags="vblex.*"><select lemma="agafar" tags="vblex.*"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match tags="det.*"/>
     <or>
-    <match lemma="chemin" tags="n.*"/>
-    <match lemma="route" tags="n.*"/>
+      <match lemma="chemin" tags="n.*"/>
+      <match lemma="route" tags="n.*"/>
     </or>
   </rule>
   <rule weight="1.0">
     <match lemma="emprunter" tags="vblex.*"><select lemma="agafar" tags="vblex.*"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match lemma="de" tags="pr"/>
     <match lemma="le" tags="det.*.pl"/>
     <or>
-    <match lemma="chemin" tags="n.*"/>
-    <match lemma="route" tags="n.*"/>
+      <match lemma="chemin" tags="n.*"/>
+      <match lemma="route" tags="n.*"/>
     </or>
   </rule>
 
@@ -2075,6 +2177,9 @@
 
   <!-- concurrencer >> competir# amb, fer# la competència -->
   <macro name="verb_nopron_pron" p1="concurrencer" p2="competir# amb" p3="fer# la competència" />
+
+  <!-- investir >> invertir, implicar -->
+  <macro name="verb_nopron_pron" p1="investir" p2="invertir" p3="implicar" />
 
   <!-- poursuivre >> perseguir, prolongar -->
   <macro name="verb_nopron_pron" p1="poursuivre" p2="perseguir" p3="prolongar" />
@@ -4921,12 +5026,29 @@
     <match lemma="avocat" tags="n.*"><select lemma="alvocat"/></match>
   </rule>
 
+  <!-- panneau >> cartell, tauler -->
+  <rule weight="0.8">
+    <match lemma="panneau" tags="n.*"><select lemma="cartell"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="panneau" tags="n.*"><select lemma="tauler"/></match>
+    <or>
+      <match lemma="de" tags="pr"/>
+      <match lemma="en" tags="pr"/>
+    </or>
+    <match lemma="bois" tags="n.*"/>
+  </rule>
+
   <!-- bois >> bosc, fusta, llenya -->
   <rule weight="0.8">
     <match lemma="bois" tags="n.*"><select lemma="bois"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="en" tags="pr"/>
+    <match lemma="bois" tags="n.*"><select lemma="fusta"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="de" tags="pr"/>
     <match lemma="bois" tags="n.*"><select lemma="fusta"/></match>
   </rule>
 
