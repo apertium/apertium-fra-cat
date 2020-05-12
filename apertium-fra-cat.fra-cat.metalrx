@@ -429,6 +429,7 @@
        <match lemma="laine" tags="n.*"/>
        <match lemma="soie" tags="n.*"/>
        <match lemma="cuir" tags="n.*"/>
+       <match lemma="velours" tags="n.*"/>
        <match lemma="sparte" tags="n.*"/>
        <match lemma="fil" tags="n.*"/>
        <match lemma="papier" tags="n.*"/>
@@ -1719,6 +1720,9 @@
   <rule weight="0.8">
     <match lemma="relayer" tags="vblex.*"><select lemma="transmetre"/></match>
   </rule>
+
+  <!-- retrancher >> treure, atrinxerar -->
+  <macro name="verb_nopron_pron" p1="retrancher" p2="treure" p3="atrinxerar"/>
 
   <!-- surplomber >> dominar, sobreplomar -->
   <rule weight="0.8">

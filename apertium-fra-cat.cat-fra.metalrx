@@ -586,6 +586,7 @@
        <match lemma="llana" tags="n.*"/>
        <match lemma="seda" tags="n.*"/>
        <match lemma="cuir" tags="n.*"/>
+       <match lemma="pana" tags="n.*"/>
        <match lemma="espart" tags="n.*"/>
        <match lemma="vímet" tags="n.*"/>
        <match lemma="fil" tags="n.*"/>
@@ -4318,6 +4319,15 @@
 
 <!-- N -->
 
+  <!-- pana >> panne, velours -->
+  <rule weight="0.8">
+    <match lemma="pana" tags="n.*"><select lemma="panne"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="de" tags="pr"/>
+    <match lemma="pana" tags="n.*"><select lemma="velours"/></match>
+  </rule>
+
   <!-- pols >> pouls, bras# de fer -->
   <rule weight="0.8">
     <match lemma="pols" tags="n.*"><select lemma="pouls"/></match>
@@ -5645,10 +5655,38 @@
 
   <!-- caragol >> escargot, vis -->
   <rule weight="0.8">
-    <match lemma="caragol" tags="n.*"><select lemma="escargot"/></match>
+    <or>
+      <match lemma="caragol" tags="n.*"><select lemma="escargot"/></match>
+      <match lemma="cargol" tags="n.*"><select lemma="escargot"/></match>
+    </or>
   </rule>
-  <rule weight="0.8">
-    <match lemma="cargol" tags="n.*"><select lemma="escargot"/></match>
+  <rule weight="1.0">
+    <or>
+      <match lemma="caragol" tags="n.*"><select lemma="vis"/></match>
+      <match lemma="cargol" tags="n.*"><select lemma="vis"/></match>
+    </or>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="tornavís" tags="n.*"/>
+      <match lemma="metàl·lic" tags="adj.*"/>
+      <match lemma="cargolar" tags="vblex.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="tornavís" tags="n.*"/>
+      <match lemma="metàl·lic" tags="adj.*"/>
+      <match lemma="cargolar" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="caragol" tags="n.*"><select lemma="vis"/></match>
+      <match lemma="cargol" tags="n.*"><select lemma="vis"/></match>
+    </or>
   </rule>
 
   <!-- físic >> physicien, physique -->
@@ -6518,24 +6556,32 @@
 
   <!-- cop > coup, fois -->
   <rule weight="0.6">
-     <match lemma="cop" tags="n.*"><select lemma="fois"/></match>
+    <match lemma="cop" tags="n.*"><select lemma="fois"/></match>
   </rule>
   <rule weight="1.0">
-     <match lemma="cop" tags="n.*"><select lemma="coup"/></match>
-     <match lemma="de" tags="pr"/>
+    <match lemma="cop" tags="n.*"><select lemma="coup"/></match>
+    <match lemma="de" tags="pr"/>
   </rule>
   <rule weight="1.0">
-     <match lemma="cop" tags="n.*"><select lemma="coup"/></match>
-     <match lemma="a" tags="pr"/>
+    <match lemma="cop" tags="n.*"><select lemma="coup"/></match>
+    <match lemma="a" tags="pr"/>
   </rule>
   <rule weight="1.0">
-     <match lemma="cop" tags="n.*"><select lemma="coup"/></match>
-     <match tags="adj.*"/>
+    <match lemma="cop" tags="n.*"><select lemma="coup"/></match>
+    <match tags="adj.*"/>
   </rule>
   <rule weight="1.0">
-     <match lemma="cop" tags="n.*"><select lemma="coup"/></match>
-     <match tags="adv"/>
-     <match tags="adj.*"/>
+    <match lemma="cop" tags="n.*"><select lemma="coup"/></match>
+    <match tags="adv"/>
+    <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="cop" tags="n.*"><select lemma="fois"/></match>
+    <match lemma="a" tags="pr"/>
+    <match lemma="el" tags="det.*"/>
+    <or>
+      <seq n="temps"/>
+    </or>
   </rule>
 
 <!-- paper > papier, rôle -->
