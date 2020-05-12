@@ -522,6 +522,12 @@
     <def-cat n="defense">
       <cat-item lemma="défense" tags="n.f.sg"/>
     </def-cat>
+    <def-cat n="debut">
+      <cat-item lemma="début" tags="n.m.sg"/>
+    </def-cat>
+    <def-cat n="fin">
+      <cat-item lemma="fin" tags="n.f.sg"/>
+    </def-cat>
     <def-cat n="cnjcoo">
       <cat-item tags="cnjcoo"/>
     </def-cat>
@@ -5409,6 +5415,140 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
+    <rule comment="REGLA: début janvier > al començament de gener">
+      <pattern>
+        <pattern-item n="debut"/>
+        <pattern-item n="nom_mois"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="al començament de"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    
+    <rule comment="REGLA: fin janvier > al final de gener">
+      <pattern>
+        <pattern-item n="fin"/>
+        <pattern-item n="nom_mois"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="al final de"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    
+    <rule comment="REGLA: prep début janvier > prep el començament de gener">
+      <pattern>
+        <pattern-item n="prep"/>
+        <pattern-item n="debut"/>
+        <pattern-item n="nom_mois"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <lit v="el"/>
+            <lit-tag v="det.def.m.sg"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="començament"/>
+            <lit-tag v="n.m.sg"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="de"/>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    
+    <rule comment="REGLA: prep fin janvier > prep el final de gener">
+      <pattern>
+        <pattern-item n="prep"/>
+        <pattern-item n="fin"/>
+        <pattern-item n="nom_mois"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <lit v="el"/>
+            <lit-tag v="det.def.m.sg"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="final"/>
+            <lit-tag v="n.m.sg"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="de"/>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    
     <rule comment="REGLA: DET NOM DET ADV ADJ: la fille la plus jolie : la noia més maca">
       <pattern>
         <pattern-item n="det"/>

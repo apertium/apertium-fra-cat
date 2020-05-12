@@ -85,6 +85,18 @@
     <def-cat n="deprep">
       <cat-item lemma="de" tags="pr"/>
     </def-cat>
+    <def-cat n="principi_prep">
+      <cat-item lemma="al començament de" tags="pr"/>
+      <cat-item lemma="a començaments de" tags="pr"/>
+      <cat-item lemma="a les primeries de" tags="pr"/>
+      <cat-item lemma="a primers de" tags="pr"/>
+      <cat-item lemma="a principis de" tags="pr"/>
+      <cat-item lemma="al principi de" tags="pr"/>
+    </def-cat>
+    <def-cat n="fi_prep">
+      <cat-item lemma="al final de" tags="pr"/>
+      <cat-item lemma="a finals de" tags="pr"/>
+    </def-cat>
     <def-cat n="cnjcoo">
       <cat-item tags="cnjcoo"/>
     </def-cat>
@@ -6635,6 +6647,60 @@ is not applicable because gender and number can not be taken from previous rules
     </rule>
 <!--fi regles de concordança-->
 
+    <rule comment="REGLA: a principis de gener > début janvier">
+      <pattern>
+        <pattern-item n="principi_prep"/>
+        <pattern-item n="mes"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="début"/>
+            </get-case-from>
+            <lit-tag v="n.m.sg"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    
+    <rule comment="REGLA: a finals de gener > fin janvier">
+      <pattern>
+        <pattern-item n="fi_prep"/>
+        <pattern-item n="mes"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="fin"/>
+            </get-case-from>
+            <lit-tag v="n.f.sg"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    
     <rule comment="REGLA: de la senyora X > de madame X">
       <pattern>
         <pattern-item n="prep"/>
@@ -6651,6 +6717,9 @@ is not applicable because gender and number can not be taken from previous rules
           <lu>
             <clip pos="1" side="tl" part="whole"/>
           </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
           <b pos="2"/>
           <lu>
             <clip pos="3" side="tl" part="whole"/>
