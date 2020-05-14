@@ -1383,6 +1383,82 @@
 
 <!-- **************** V **************** -->
 
+  <!-- caler >> calar, afluixar -->
+  <rule weight="0.8">
+    <match lemma="caler" tags="vblex.*"><select lemma="calar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="personne"/>
+      <seq n="parent"/>
+      <seq n="pays_hab"/>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+      <match tags="np.top.*"/>
+      <match tags="np.al.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="caler" tags="vblex.*"><select lemma="afluixar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="personne"/>
+      <seq n="parent"/>
+      <seq n="pays_hab"/>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+      <match tags="np.top.*"/>
+      <match tags="np.al.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <or><match tags="vblex.*"/><match tags="vbser.*"/><match tags="vbhaver.*"/><match tags="vbmod.*"/></or>
+    <match lemma="caler" tags="vblex.*"><select lemma="afluixar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="personne"/>
+      <seq n="parent"/>
+      <seq n="pays_hab"/>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+      <match tags="np.top.*"/>
+      <match tags="np.al.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <or><match tags="vblex.*"/><match tags="vbser.*"/><match tags="vbhaver.*"/><match tags="vbmod.*"/></or>
+    <or>
+      <match tags="adv"/>
+      <match tags="cnjadv"/>
+    </or>
+    <match lemma="caler" tags="vblex.*"><select lemma="afluixar"/></match>
+  </rule>
+
+
+  <!-- mettre# en place >> establir, endreçar -->
+  <rule weight="0.8">
+    <match lemma="mettre# en place" tags="vblex.*"><select lemma="establir"/></match>
+  </rule>
+
+  <!-- meurtrir >> ferir, etc. -->
+  <rule weight="0.8">
+    <match lemma="meurtrir" tags="vblex.*"><select lemma="ferir"/></match>
+  </rule>
+
   <!-- coiffer >> pentinar, portar -->
   <rule weight="0.8">
     <match lemma="coiffer" tags="vblex.*"><select lemma="pentinar"/></match>
@@ -1571,6 +1647,22 @@
   <!-- embrouiller >> embolicar, fer# un garbuix -->
   <rule weight="0.8">
     <match lemma="embrouiller" tags="vblex.*"><select lemma="embolicar"/></match>
+  </rule>
+
+  <!-- passer# à la trappe >> ser# abandonat, ser#abandonats, ser#abandonada, ser#abandonades  -->
+  <rule weight="0.8">
+    <match lemma="passer# à la trappe" tags="vblex.*"><select lemma="ser# abandonat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="passer# à la trappe" tags="vblex.*.pl"><select lemma="ser# abandonats"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="*.f.*"/>
+    <match lemma="passer# à la trappe" tags="vblex.*.sg"><select lemma="ser# abandonada"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match tags="*.f.*"/>
+    <match lemma="passer# à la trappe" tags="vblex.*.pl"><select lemma="ser# abandonades"/></match>
   </rule>
 
   <!-- jouir# d'une immunité >> estar# aforat, estar#aforats, estar#aforada, estar#aforades  -->
@@ -3047,6 +3139,32 @@
 
 <!-- **************** N **************** -->
 
+  <!-- hasard >> casualitat, atzar -->
+  <rule weight="0.8">
+    <match lemma="hasard" tags="n.*"><select lemma="casualitat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="jeu" tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <match lemma="hasard" tags="n.*"><select lemma="atzar"/></match>
+  </rule>
+
+
+  <!-- mise# en place >> establiment, endreça -->
+  <rule weight="0.8">
+    <match lemma="mise# en place" tags="n.*"><select lemma="establiment"/></match>
+  </rule>
+
+  <!-- feuille >> fulla, full -->
+  <rule weight="0.8">
+    <match lemma="feuille" tags="n.*"><select lemma="fulla"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="feuille" tags="n.*"><select lemma="full"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="route" tags="n.*"/>
+  </rule>
+
   <!-- route >> carretera, ruta -->
   <rule weight="0.8">
     <match lemma="route" tags="n.*"><select lemma="carretera"/></match>
@@ -3084,6 +3202,11 @@
       <match lemma="jupe" tags="n.*"/>
       <match lemma="sport" tags="n.*"/>
     </or>
+  </rule>
+
+  <!-- pointure >> número, puntura -->
+  <rule weight="0.8">
+    <match lemma="pointure" tags="n.*"><select lemma="número"/></match>
   </rule>
 
   <!-- ossature >> ossada, ossa, carcassa -->
@@ -6966,6 +7089,11 @@
   </rule>
 
 <!-- **************** ADV **************** -->
+
+  <!-- par hasard >> per casualitat, per atzar -->
+  <rule weight="0.8">
+    <match lemma="par hasard" tags="adv"><select lemma="per casualitat"/></match>
+  </rule>
 
   <!-- pas >> pas, no -->
   <rule weight="0.8">

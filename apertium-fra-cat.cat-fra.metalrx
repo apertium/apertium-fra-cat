@@ -4345,6 +4345,16 @@
 
 <!-- N -->
 
+  <!-- bufanda >> écharpe, cache-nez -->
+  <rule weight="0.8">
+    <match lemma="bufanda" tags="n.*"><select lemma="écharpe"/></match>
+  </rule>
+
+  <!-- farmaciola >> armoire# à pharmacie, boîte# de secours -->
+  <rule weight="0.8">
+    <match lemma="farmaciola" tags="n.*"><select lemma="armoire# à pharmacie"/></match>
+  </rule>
+
   <!-- rellotge >> horloge, montre -->
   <rule weight="0.8">
     <match lemma="rellotge" tags="n.*"><select lemma="horloge"/></match>
