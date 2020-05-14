@@ -1939,7 +1939,7 @@
     <match lemma="de" tags="pr"><select lemma="avec"/></match>
   </rule>
 
-  <!-- a >> à, en, dans, de -->
+  <!-- a >> à, en, dans, de, sur -->
   <rule weight="0.8">
     <match lemma="a" tags="pr"><select lemma="à"/></match>
   </rule>
@@ -2029,6 +2029,18 @@
     <match lemma="obligar" tags="vblex.pp.*"/>
     <match lemma="a" tags="pr"><select lemma="de"/></match>
     <match tags="*.inf"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="a" tags="pr"><select lemma="sur"/></match>
+    <or>
+      <match lemma="internet" tags="n.*"/>
+      <match lemma="Facebook" tags="np.*"/>
+      <match lemma="Instagram" tags="np.*"/>
+      <match lemma="Twitter" tags="np.*"/>
+      <match lemma="WhatsApp" tags="np.*"/>
+      <match lemma="Telegram" tags="np.*"/>
+      <match lemma="Viber" tags="np.*"/>
+    </or>
   </rule>
 
   <!-- en >> en, dans, à, sur -->
@@ -2262,6 +2274,11 @@
 
 <!-- V -->
 
+  <!-- agafar >> prendre, saisir -->
+  <rule weight="0.8">
+    <match lemma="agafar" tags="vblex.*"><select lemma="prendre"/></match>
+  </rule>
+
   <!-- onejar >> ondoyer, flotter -->
   <rule weight="0.8">
     <match lemma="onejar" tags="vblex.*"><select lemma="ondoyer"/></match>
@@ -2470,6 +2487,15 @@
 
   <!-- enredar >> emmêler, tromper -->
   <macro name="verb_nopron_pron" p1="enredar" p2="emmêler" p3="tromper" />
+
+  <!-- ensopegar >> trébucher, tomber -->
+  <macro name="verb_nopron_pron" p1="ensopegar" p2="trébucher" p3="tomber" />
+
+  <!-- entrebancar >> entraver, trébucher -->
+  <macro name="verb_nopron_pron" p1="entrebancar" p2="entraver" p3="trébucher" />
+
+  <!-- estintolar >> étayer, appuyer -->
+  <macro name="verb_nopron_pron" p1="estintolar" p2="étayer" p3="appuyer" />
 
   <!-- fer# amics >> faire# des amis, lier# d'amitié -->
   <macro name="verb_nopron_pron" p1="fer# amics" p2="faire# des amis" p3="lier# d'amitié" />
@@ -4318,6 +4344,25 @@
   </rule>
 
 <!-- N -->
+
+  <!-- rellotge >> horloge, montre -->
+  <rule weight="0.8">
+    <match lemma="rellotge" tags="n.*"><select lemma="horloge"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.pos.*"/>
+    <match lemma="rellotge" tags="n.*"><select lemma="montre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="portar" tags="vblex.*"/>
+      <match lemma="posar" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="rellotge" tags="n.*"><select lemma="montre"/></match>
+  </rule>
 
   <!-- pana >> panne, velours -->
   <rule weight="0.8">
