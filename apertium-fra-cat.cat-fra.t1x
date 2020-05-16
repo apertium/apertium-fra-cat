@@ -638,8 +638,9 @@
     <def-cat n="multiHiha">
       <cat-item lemma="hi ha" tags="vblex.pri.p3.sg"/>
     </def-cat>
-    <def-cat n="anar">
+    <def-cat n="anar_continuar">
       <cat-item lemma="anar" tags="vblex.*"/>
+      <cat-item lemma="continuar" tags="vblex.*"/>
     </def-cat>
     <def-cat n="anarpri">
       <cat-item lemma="anar" tags="vblex.pri.*"/>
@@ -19953,7 +19954,7 @@ is not applicable because gender and number can not be taken from previous rules
 
     <rule comment="anar GER >> continuer à INF"> 
       <pattern>
-        <pattern-item n="anar"/>
+        <pattern-item n="anar_continuar"/>
         <pattern-item n="ger"/>
       </pattern>
       <action>
@@ -20334,7 +20335,7 @@ is not applicable because gender and number can not be taken from previous rules
 
     <rule comment="anar GER PRNENC >> continuer à PRNPRO INF"> 
       <pattern>
-        <pattern-item n="anar"/>
+        <pattern-item n="anar_continuar"/>
         <pattern-item n="ger"/>
         <pattern-item n="prnenc"/>
       </pattern>
