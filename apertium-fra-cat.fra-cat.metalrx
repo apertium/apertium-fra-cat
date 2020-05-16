@@ -1383,6 +1383,26 @@
 
 <!-- **************** V **************** -->
 
+  <!-- gravir >> pujar, escalar -->
+  <rule weight="0.8">
+    <match lemma="gravir" tags="vblex.*"><select lemma="pujar"/></match>
+  </rule>
+
+  <!-- réputer >> reputar, conèixer -->
+  <rule weight="0.8">
+    <match lemma="réputer" tags="vblex.*"><select lemma="reputar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="réputer" tags="vblex.*"><select lemma="conèixer"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="pour" tags="pr"><select lemma="per"/></match>
+  </rule>
+
   <!-- caler >> calar, afluixar -->
   <rule weight="0.8">
     <match lemma="caler" tags="vblex.*"><select lemma="calar"/></match>
@@ -3139,6 +3159,58 @@
 
 <!-- **************** N **************** -->
 
+  <!-- chavirement >> capgirament, etc. -->
+  <rule weight="0.8">
+    <match lemma="chavirement" tags="n.*"><select lemma="capgirament"/></match>
+  </rule>
+
+  <!-- punaise >> xinxeta, xinxa -->
+  <rule weight="0.8">
+    <match lemma="punaise" tags="n.*"><select lemma="xinxeta"/></match>
+  </rule>
+
+  <!-- quille >> quilla, bitlla -->
+  <rule weight="0.8">
+    <match lemma="quille" tags="n.*"><select lemma="quilla"/></match>
+  </rule>
+
+  <!-- fournaise >> forn, foguerada -->
+  <rule weight="0.8">
+    <match lemma="fournaise" tags="n.*"><select lemma="forn"/></match>
+  </rule>
+
+  <!-- vote >> vot, votació -->
+  <rule weight="0.8">
+    <match lemma="vote" tags="n.*"><select lemma="votació"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="droit" tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <match lemma="vote" tags="n.*"><select lemma="vot"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="émettre" tags="vblex.*"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="vote" tags="n.*"><select lemma="vot"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="émettre" tags="vblex.*"/>
+    <repeat from="1" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match lemma="vote" tags="n.*"><select lemma="vot"/></match>
+  </rule>
+
   <!-- hasard >> casualitat, atzar -->
   <rule weight="0.8">
     <match lemma="hasard" tags="n.*"><select lemma="casualitat"/></match>
@@ -3149,6 +3221,10 @@
     <match lemma="hasard" tags="n.*"><select lemma="atzar"/></match>
   </rule>
 
+  <!-- manquement >> incompliment, mancament -->
+  <rule weight="0.8">
+    <match lemma="manquement" tags="n.*"><select lemma="incompliment"/></match>
+  </rule>
 
   <!-- mise# en place >> establiment, endreça -->
   <rule weight="0.8">
@@ -6199,6 +6275,21 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- réputé >> reputat, conegut -->
+  <rule weight="0.8">
+    <match lemma="réputé" tags="adj.*"><select lemma="reputat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="réputé" tags="adj.*"><select lemma="conegut"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="pour" tags="pr"><select lemma="per"/></match>
+  </rule>
 
   <!-- repoussant >> repugnant, repel·lent -->
   <rule weight="0.8">

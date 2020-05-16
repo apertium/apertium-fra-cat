@@ -1629,6 +1629,8 @@
       <match lemma="arribar" tags="vblex.*"/>
       <match lemma="dormir" tags="vblex.*"/>
       <match lemma="reflectir" tags="vblex.*"/>
+      <match lemma="viure" tags="vblex.*"/>
+      <match lemma="treballar" tags="vblex.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -1646,6 +1648,8 @@
       <match lemma="arribar" tags="vblex.pp.*"/>
       <match lemma="dormir" tags="vblex.pp.*"/>
       <match lemma="reflectir" tags="vblex.*"/>
+      <match lemma="viure" tags="vblex.*"/>
+      <match lemma="treballar" tags="vblex.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -1663,6 +1667,8 @@
       <match lemma="arribar" tags="vblex.inf"/>
       <match lemma="dormir" tags="vblex.inf"/>
       <match lemma="reflectir" tags="vblex.*"/>
+      <match lemma="viure" tags="vblex.*"/>
+      <match lemma="treballar" tags="vblex.*"/>
     </or>
   </rule>
 
@@ -1863,13 +1869,20 @@
     </or>
   </rule>
 
-  <!-- des de >> depuis, de -->
+  <!-- des de >> depuis, de, selon -->
   <rule weight="0.8">
     <match lemma="des de" tags="pr"><select lemma="depuis"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="des de" tags="pr"><select lemma="de"/></match>
     <or><match tags="np.loc"/><match tags="np.top.*"/><match tags="np.hyd.*"/></or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="des de" tags="pr"><select lemma="selon"/></match>
+    <match tags="det.*"/>
+    <match lemma="punt" tags="n.*"/>
+    <match lemma="de" tags="de"/>
+    <match lemma="vista" tags="n.*"/>
   </rule>
 
   <!-- de >> de, en, à, avec -->
@@ -2509,21 +2522,6 @@
   <!-- esquerdar >> fêler, fendre -->
   <macro name="verb_nopron_pron" p1="esquerdar" p2="fêler" p3="fendre" />
 
-  <!-- destacar >> souligner, distinguer, ressortir -->
-  <macro name="verb_nopron_pron" p1="destacar" p2="souligner" p3="distinguer"/>
-  <rule weight="1.2">
-    <match lemma="destacar" tags="vblex.*"><select lemma="ressortir"/></match>
-    <or>
-      <match lemma="com" tags="cnjadv"/>
-      <match lemma="com a" tags="pr"/>
-    </or>
-  </rule>
-  <rule weight="1.4">
-    <match lemma="destacar" tags="vblex.*"><select lemma="souligner"/></match>
-    <match lemma="com" tags="cnjadv"/>
-    <match tags="adj.*"/>
-  </rule>
-
   <!-- recolzar >> appuyer, soutenir -->
   <rule weight="0.8">
     <match lemma="recolzar" tags="vblex.*"><select lemma="appuyer"/></match>
@@ -2564,6 +2562,27 @@
     </or>
   </rule>
   <rule weight="1.0">
+    <match lemma="destacar" tags="vblex.*"><select lemma="apparaître"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match lemma="com"/>
+      <match lemma="com a"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="destacar" tags="vblex.*"><select lemma="souligner"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match lemma="com"/>
+      <match lemma="com a"/>
+    </or>
+    <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.2">
     <or>
       <match lemma="caldre" tags="vbmod.*"/>
       <match lemma="haver# de" tags="vbmod.*"/>
@@ -2590,6 +2609,10 @@
       <match tags="det.*"/>
       <match tags="n.*.pl"/>
     </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="es" tags="prn.*"/>
+    <match lemma="destacar" tags="vblex.*"><select lemma="distinguer"/></match>
   </rule>
 
   <!-- empaitar >> poursuivre, courir -->
@@ -4455,6 +4478,14 @@
       <match tags="*"/>
     </repeat>
     <match lemma="moneda" tags="n.*"/>
+  </rule>
+
+  <!-- incompliment >> non-respect, manquement -->
+  <rule weight="0.8">
+    <match lemma="incompliment" tags="n.*"><select lemma="non-respect"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="incompliment" tags="n.m.pl"><select lemma="manquement"/></match>
   </rule>
 
   <!-- reforç >> renforcement, renfort -->
