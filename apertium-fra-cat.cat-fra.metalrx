@@ -849,6 +849,46 @@
 
 <!-- PRN -->
 
+  <!-- aquell >> celui-là, celui -->
+  <rule weight="0.8">
+    <match lemma="aquell" tags="prn.*"><select lemma="celui-là"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="aquell" tags="prn.*"><select lemma="celui"/></match>
+    <or>
+      <match tags="rel.*"/>
+      <match tags="pr"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="aquell" tags="prn.*"><select lemma="celui"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="aquell" tags="prn.*"><select lemma="celui"/></match>
+    <match tags="det.*"/>
+    <match tags="n.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match lemma="el qual" tags="rel.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="aquell" tags="prn.*"><select lemma="celui"/></match>
+    <match tags="det.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="adj.*"/>
+    <match tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <match lemma="el qual" tags="rel.*"/>
+  </rule>
+
   <!-- si mateix >> soi-même, lui-même -->
   <rule weight="0.8">
     <match lemma="si mateix" tags="prn.*"><select lemma="soi-même"/></match>
@@ -1780,6 +1820,18 @@
   </rule>
 
 <!-- PR -->
+
+  <!-- abans de >> avant, avant de -->
+  <rule weight="0.8">
+    <match lemma="abans de" tags="pr"><select lemma="avant"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="abans de" tags="pr"><select lemma="avant de"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or><match tags="vblex.inf"/><match tags="vbser.inf"/><match tags="vbhaver.inf"/><match tags="vbmod.inf"/></or>
+  </rule>
 
   <!-- amb >> avec, à, par -->
   <rule weight="0.8">
@@ -4368,6 +4420,11 @@
 
 <!-- N -->
 
+  <!-- costella >> côte, côtelette -->
+  <rule weight="0.8">
+    <match lemma="costella" tags="n.*"><select lemma="côte"/></match>
+  </rule>
+
   <!-- bufanda >> écharpe, cache-nez -->
   <rule weight="0.8">
     <match lemma="bufanda" tags="n.*"><select lemma="écharpe"/></match>
@@ -6860,6 +6917,7 @@
   <macro name="noms_propis" p1="Leopold" p2="Léopold" />
   <macro name="noms_propis" p1="Amadeu" p2="Amédée" />
   <macro name="noms_propis" p1="Andreu" p2="André" />
+  <macro name="noms_propis" p1="Blanca" p2="Blanche" />
 
 </rules>
 </metalrx>

@@ -304,6 +304,44 @@
 	  </rule>
 	</def-macro>
 
+	<!-- p1 verb fra, p2 verb cat estandard, p3 i p4 prep fra, p5 verb cat alternatiu -->
+ 	<!-- <macro name="verb_prep" p1="foncer" p2="enfosquir" p3="sur" p4="dans" p5="abalançar" /> -->
+	<def-macro name="verb_prep2">
+	  <rule weight="0.6">
+		 <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p2}}"/></match>
+	  </rule>
+	  <rule weight="1.0">
+		 <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p5}}"/></match>
+		 <or>
+		 	<match lemma="{{p3}}" tags="pr"/>
+		 	<match lemma="{{p4}}" tags="pr"/>
+		 </or>
+	  </rule>
+	  <rule weight="1.0">
+		 <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p5}}"/></match>
+		 <or>
+		 	<match tags="adv"/>
+		 	<match tags="cnjadv"/>
+		 </or>
+		 <or>
+		 	<match lemma="{{p3}}" tags="pr"/>
+		 	<match lemma="{{p4}}" tags="pr"/>
+		 </or>
+	  </rule>
+	  <rule weight="1.0">
+		 <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p5}}"/></match>
+		 <or>
+		 	<match tags="adv"/>
+		 	<match tags="cnjadv"/>
+		 </or>
+		 <match tags="adv"/>
+		 <or>
+		 	<match lemma="{{p3}}" tags="pr"/>
+		 	<match lemma="{{p4}}" tags="pr"/>
+		 </or>
+	  </rule>
+	</def-macro>
+
     <!-- Aquesta macro tria el verb p2 si p1 és intransitiu i p3 si p1 és transitiu -->
     <!-- p1 = verb fra, p2 = verb cat intransitiu, p3 = verb cat transitiu -->
     <!-- la manera de veure que el verb és transitiu és molt barroera -->
@@ -925,7 +963,7 @@
     <match lemma="avec" tags="pr"><select lemma="de"/></match>
   </rule>
 
-  <!-- par >> per, amb -->
+  <!-- par >> per, amb, de -->
   <rule weight="0.6">
     <match lemma="par" tags="pr"><select lemma="per"/></match>
   </rule>
@@ -943,6 +981,10 @@
       <match lemma="chèque" tags="vblex.*"/>
       <match lemma="carte" tags="vblex.*"/>
     </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="faire# engueuler" tags="vblex.*"/>
+    <match lemma="par" tags="pr"><select lemma="de"/></match>
   </rule>
 
   <!-- dans >> en, a -->
@@ -1013,7 +1055,10 @@
     <match lemma="à" tags="pr"><select lemma="a"/></match>
   </rule>
   <rule weight="1.0">
-    <match lemma="penser" tags="vblex.*"/>
+    <or>
+      <match lemma="penser" tags="vblex.*"/>
+      <match lemma="croire" tags="vblex.*"/>
+    </or>
     <repeat from="0" upto="1">
       <or>
         <match tags="adv"/>
@@ -1157,6 +1202,20 @@
     </or>
     <match lemma="pour" tags="pr"><select lemma="per"/></match>
   </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="partir" tags="vblex.*"/>
+      <match lemma="marcher" tags="vblex.*"/>
+      <match lemma="aller" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="pour" tags="pr"><select lemma="cap a"/></match>
+  </rule>
 
   <!-- près de >> a prop de, prop de -->
   <rule weight="0.8">
@@ -1250,6 +1309,10 @@
   <rule weight="1.0">
     <match lemma="en" tags="pr"><select lemma="de"/></match>
     <match lemma="vacances" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="étude" tags="n.*"/>
+    <match lemma="en" tags="pr"><select lemma="de"/></match>
   </rule>
 
   <!-- sur >> sobre, de, en, a -->
@@ -2596,6 +2659,23 @@
 
   <!-- poursuivre >> perseguir, prolongar -->
   <macro name="verb_nopron_pron" p1="poursuivre" p2="perseguir" p3="prolongar" />
+  <rule weight="1.0">
+    <match lemma="poursuivre" tags="vblex.*"><select lemma="continuar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+    <match lemma="étude" tags="n.*"/>
+    <match lemma="marche" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- faire# chier >> sortir# de polleguera, morir# de fàstic -->
+  <macro name="verb_nopron_pron" p1="faire# chier" p2="sortir# de polleguera" p3="morir# de fàstic" />
 
   <!-- tromper >> enganyar, equivocar -->
   <macro name="verb_nopron_pron" p1="tromper" p2="enganyar" p3="equivocar" />
@@ -3157,7 +3237,38 @@
     </or>
   </rule>
 
+  <!-- foncer >> enfosquir, abalançar -->
+  <macro name="verb_prep2" p1="foncer" p2="enfosquir" p3="sur" p4="dans" p5="abalançar" />
+
+
 <!-- **************** N **************** -->
+
+  <!-- côte >> costa, costella -->
+  <rule weight="0.8">
+    <match lemma="côte" tags="n.*"><select lemma="costa"/></match>
+  </rule>
+
+  <!-- entorse >> tergiversació, girada, etc. -->
+  <rule weight="0.8">
+    <match lemma="entorse" tags="n.*"><select lemma="tergiversació"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="entorse" tags="n.*"><select lemma="girada"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="pied" tags="n.*"/>
+      <match lemma="cheville" tags="n.*"/>
+      <match lemma="épaule" tags="n.*"/>
+      <match lemma="bras" tags="n.*"/>
+      <match lemma="dos" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="mauvais" tags="adj.*"/>
+    <match lemma="entorse" tags="n.*"><select lemma="girada"/></match>
+  </rule>
 
   <!-- chavirement >> capgirament, etc. -->
   <rule weight="0.8">
@@ -3167,6 +3278,11 @@
   <!-- punaise >> xinxeta, xinxa -->
   <rule weight="0.8">
     <match lemma="punaise" tags="n.*"><select lemma="xinxeta"/></match>
+  </rule>
+
+  <!-- blaireau >> teixó, brotxa, beneit -->
+  <rule weight="0.8">
+    <match lemma="blaireau" tags="n.*"><select lemma="teixó"/></match>
   </rule>
 
   <!-- quille >> quilla, bitlla -->
@@ -7181,6 +7297,25 @@
 
 <!-- **************** ADV **************** -->
 
+  <!-- tout à l'heure >> d'aquí una mica/d'aquí una estona, fa una estona -->
+  <rule weight="0.8">
+    <match lemma="tout à l'heure" tags="adv"><select lemma="d'aquí una mica"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or><match tags="vblex.fti.*"/><match tags="vbser.fti.*"/><match tags="vbhaver.fti.*"/><match tags="vbmod.fti.*"/></or>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="tout à l'heure" tags="adv"><select lemma="d'aquí una mica"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tout à l'heure" tags="adv"><select lemma="d'aquí una mica"/></match>
+    <repeat from="0" upto="3">
+      <match tags="*"/>
+    </repeat>
+    <or><match tags="vblex.fti.*"/><match tags="vbser.fti.*"/><match tags="vbhaver.fti.*"/><match tags="vbmod.fti.*"/></or>
+  </rule>
+
   <!-- par hasard >> per casualitat, per atzar -->
   <rule weight="0.8">
     <match lemma="par hasard" tags="adv"><select lemma="per casualitat"/></match>
@@ -7355,6 +7490,7 @@
   <macro name="noms_propres" p1="Léopold" p2="Leopold" />
   <macro name="noms_propres" p1="Amédée" p2="Amadeu" />
   <macro name="noms_propres" p1="André" p2="Andreu" />
+  <macro name="noms_propres" p1="Blanche" p2="Blanca" />
 
 </rules>
 </metalrx>
