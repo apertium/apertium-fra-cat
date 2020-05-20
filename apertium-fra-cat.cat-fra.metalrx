@@ -4420,6 +4420,11 @@
 
 <!-- N -->
 
+  <!-- remuntada >> remontée, remontada -->
+  <rule weight="0.8">
+    <match lemma="remuntada" tags="n.*"><select lemma="remontée"/></match>
+  </rule>
+
   <!-- costella >> côte, côtelette -->
   <rule weight="0.8">
     <match lemma="costella" tags="n.*"><select lemma="côte"/></match>
@@ -6861,6 +6866,21 @@
      <match tags=""/>
   </rule>
 
+  <!-- Oliba > Oliva, Olibia -->
+  <rule weight="0.6">
+     <match lemma="Oliba" tags="np.*"><select lemma="Oliva"/></match>
+  </rule>
+  <rule weight="1.0">
+     <match lemma="Oliba" tags="np.*"><select lemma="Olibia"/></match>
+    <repeat from="0" upto="1">
+      <match tags="num.*"/>
+      <match tags="num"/>
+      <match tags="adj.*"/>
+    </repeat>
+     <match lemma="de" tags="pr"/>
+     <or><match tags="np.loc"/><match tags="np.top.*"/></or>
+  </rule>
+
   <macro name="noms_propis" p1="Carles" p2="Charles" />
   <macro name="noms_propis" p1="Felip" p2="Philippe" />
   <macro name="noms_propis" p1="Filip" p2="Philippe" />
@@ -6870,6 +6890,8 @@
   <macro name="noms_propis" p1="Ermengol" p2="Armengol" />
   <macro name="noms_propis" p1="Isabel" p2="Isabelle" />
   <macro name="noms_propis" p1="Maria" p2="Marie" />
+  <macro name="noms_propis" p1="Maria Antonieta" p2="Marie-Antoinette" />
+  <macro name="noms_propis" p1="Maria Cristina" p2="Marie-Cristine" />
   <macro name="noms_propis" p1="Joana" p2="Jeanne" />
   <macro name="noms_propis" p1="Joan" p2="Jean" />
   <macro name="noms_propis" p1="Joan Carles" p2="Juan Carlos" />

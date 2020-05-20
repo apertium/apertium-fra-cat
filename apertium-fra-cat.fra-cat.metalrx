@@ -1446,6 +1446,39 @@
 
 <!-- **************** V **************** -->
 
+  <!-- froisser >> ferir, arrugar -->
+  <rule weight="0.8">
+    <match lemma="froisser" tags="vblex.*"><select lemma="ferir"/></match>
+  </rule>
+
+  <!-- tâtonner >> assajar, palpar -->
+  <rule weight="0.8">
+    <match lemma="tâtonner" tags="vblex.*"><select lemma="assajar"/></match>
+  </rule>
+
+  <!-- gommer >> esborrar, engomar -->
+  <rule weight="0.8">
+    <match lemma="gommer" tags="vblex.*"><select lemma="esborrar"/></match>
+  </rule>
+
+  <!-- promouvoir >> promoure, ascendir -->
+  <rule weight="0.8">
+    <match lemma="promouvoir" tags="vblex.*"><select lemma="promoure"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="promouvoir" tags="vblex.*"><select lemma="ascendir"/></match>
+    <match lemma="en" tags="pr"><select lemma="a"/></match>
+  </rule>
+
+  <!-- reléguer >> relegar, descendir -->
+  <rule weight="0.8">
+    <match lemma="reléguer" tags="vblex.*"><select lemma="relegar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="reléguer" tags="vblex.*"><select lemma="descendir"/></match>
+    <match lemma="en" tags="pr"><select lemma="a"/></match>
+  </rule>
+
   <!-- gravir >> pujar, escalar -->
   <rule weight="0.8">
     <match lemma="gravir" tags="vblex.*"><select lemma="pujar"/></match>
@@ -1980,6 +2013,9 @@
     <match lemma="avancer" tags="vblex.*"><select lemma="avançar"/></match>
   </rule>
 
+  <!-- faire# chier >> fer# sortir de polleguera, morir# de fàstic -->
+  <macro name="verb_nopron_pron" p1="faire# chier" p2="fer# sortir de polleguera" p3="morir# de fàstic"/>
+
   <!-- poster >> enviar, apostar -->
   <macro name="verb_nopron_pron" p1="poster" p2="enviar" p3="apostar"/>
   <rule weight="1.0">
@@ -2048,6 +2084,9 @@
 
   <!-- foirer >> arruïnar, fer# llufa -->
   <macro name="verb_intrans_trans" p1="foirer" p2="arruïnar" p3="fer# llufa"/>
+
+  <!-- fricoter >> donar(-se)# la gran vida, preparar -->
+  <macro name="verb_intrans_trans" p1="fricoter" p2="donar# la gran vida" p3="preparar"/>
 
   <!-- presser >> acuitar, afanyar -->
   <macro name="verb_intrans_trans" p1="presser" p2="acuitar" p3="afanyar"/>
@@ -3263,11 +3302,17 @@
       <match lemma="épaule" tags="n.*"/>
       <match lemma="bras" tags="n.*"/>
       <match lemma="dos" tags="n.*"/>
+      <match lemma="médecine" tags="n.*"/>
     </or>
   </rule>
   <rule weight="1.0">
     <match lemma="mauvais" tags="adj.*"/>
     <match lemma="entorse" tags="n.*"><select lemma="girada"/></match>
+  </rule>
+
+  <!-- tâtonnement >> tempteig, palpeig -->
+  <rule weight="0.8">
+    <match lemma="tâtonnement" tags="n.*"><select lemma="tempteig"/></match>
   </rule>
 
   <!-- chavirement >> capgirament, etc. -->
@@ -4063,6 +4108,17 @@
     </repeat>
     <match tags="det.*"/>
     <match lemma="affaire" tags="n.*"><select lemma="negoci"/></match>
+  </rule>
+
+  <!-- volet >> finestró, part -->
+  <rule weight="0.8">
+    <match lemma="volet" tags="n.*"><select lemma="finestró"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="adj_ord"/>
+    </or>
+    <match lemma="volet" tags="n.*"><select lemma="part"/></match>
   </rule>
 
   <!-- manche >> màniga, mànega -->
@@ -6780,6 +6836,39 @@
 
 <!-- **************** VBLEX **************** -->
 
+  <!-- épargner >> estalviar, salvar -->
+  <rule weight="0.8">
+    <match lemma="épargner" tags="vblex.*"><select lemma="estalviar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="épargner" tags="vblex.*"><select lemma="salvar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <match lemma="vie" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="épargner" tags="vblex.*"><select lemma="salvar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="vie" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match tags="vbser.*"/>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="épargner" tags="vblex.pp.*"><select lemma="salvar"/></match>
+  </rule>
+
   <!-- filer >> passar, anar, filar -->
   <rule weight="0.8">
     <match lemma="filer" tags="vblex.*"><select lemma="passar"/></match>
@@ -7443,6 +7532,8 @@
   <macro name="noms_propres" p1="Isabelle" p2="Isabel" />
   <macro name="noms_propres" p1="Élisabeth" p2="Isabel" />
   <macro name="noms_propres" p1="Marie" p2="Maria" />
+  <macro name="noms_propres" p1="Marie-Antoinette" p2="Maria Antonieta" />
+  <macro name="noms_propres" p1="Marie-Christine" p2="Maria Cristina" />
   <macro name="noms_propres" p1="Jeanne" p2="Joana" />
   <macro name="noms_propres" p1="Jean" p2="Joan" />
   <macro name="noms_propres" p1="Juan Carlos" p2="Joan Carles" />
