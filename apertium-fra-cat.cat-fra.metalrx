@@ -3040,7 +3040,7 @@
   <macro name="verb_nopron_pron" p1="enfonsar" p2="faire# couler" p3="couler" />
 
   <!-- estirar >> tirer, coucher -->
-  <macro name="verb_nopron_pron" p1="tirer" p2="tirer" p3="coucher" />
+  <macro name="verb_nopron_pron" p1="estirar" p2="tirer" p3="coucher" />
   <rule weight="0.9">
     <match lemma="estirar" tags="vblex.*"><select lemma="étirer"/></match>
     <repeat from="0" upto="1">
