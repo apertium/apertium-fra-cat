@@ -3282,6 +3282,36 @@
 
 <!-- **************** N **************** -->
 
+  <!-- serveur >> servidor, cambrer -->
+  <rule weight="0.8">
+    <match lemma="serveur" tags="n.*"><select lemma="servidor"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="serveur" tags="n.f.*"><select lemma="cambrer"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="serveur" tags="n.*"><select lemma="cambrer"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="restaurant" tags="n.*"/>
+      <match lemma="resto" tags="n.*"/>
+      <match lemma="commander" tags="vblex.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="restaurant" tags="n.*"/>
+      <match lemma="resto" tags="n.*"/>
+      <match lemma="commander" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="serveur" tags="n.*"><select lemma="cambrer"/></match>
+  </rule>
+
   <!-- côte >> costa, costella -->
   <rule weight="0.8">
     <match lemma="côte" tags="n.*"><select lemma="costa"/></match>

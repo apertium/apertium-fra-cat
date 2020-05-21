@@ -4420,6 +4420,19 @@
 
 <!-- N -->
 
+  <!-- top manta >> vente# à la sauvette, vendeur# à la sauvette -->
+  <rule weight="0.8">
+    <match lemma="top manta" tags="n.*"><select lemma="vente# à la sauvette"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="det.ind.*"/>
+      <match tags="det.dem.*"/>
+      <match tags="det.*.pl"/>
+    </or>
+    <match lemma="top manta" tags="n.*"><select lemma="vendeur# à la sauvette"/></match>
+  </rule>
+
   <!-- remuntada >> remontée, remontada -->
   <rule weight="0.8">
     <match lemma="remuntada" tags="n.*"><select lemma="remontée"/></match>
@@ -6648,7 +6661,11 @@
   <rule weight="1.0">
     <match lemma="cap" tags="n.*"><select lemma="cap"/></match>
     <match lemma="de" tags="pr"/>
-    <or><match tags="np.top.*"/><match tags="np.loc"/></or>
+    <or>
+      <match tags="np.top.*"/>
+      <match tags="np.loc"/>
+      <match lemma="Hornos"/>
+    </or>
   </rule>
   <rule weight="1.0">
     <match lemma="cap" tags="n.*"><select lemma="patron"/></match>
