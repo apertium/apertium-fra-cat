@@ -1315,7 +1315,7 @@
     <match lemma="en" tags="pr"><select lemma="de"/></match>
   </rule>
 
-  <!-- sur >> sobre, de, en, a -->
+  <!-- sur >> sobre, de, en, a, contra -->
   <rule weight="0.8">
     <match lemma="sur" tags="pr"><select lemma="sobre" tags="pr"/></match>
   </rule>
@@ -1349,6 +1349,16 @@
       <match lemma="Telegram" tags="np.*"/>
       <match lemma="Viber" tags="np.*"/>
     </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tirer" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="sur" tags="pr"><select lemma="contra"/></match>
   </rule>
 
 
@@ -3276,11 +3286,19 @@
     </or>
   </rule>
 
+  <!-- tirer >> tirar, disparar -->
+  <macro name="verb_prep" p1="tirer" p2="tirar" p3="sur" p4="disparar" />
+
   <!-- foncer >> enfosquir, abalançar -->
   <macro name="verb_prep2" p1="foncer" p2="enfosquir" p3="sur" p4="dans" p5="abalançar" />
 
 
 <!-- **************** N **************** -->
+
+  <!-- dé >> dau, didal -->
+  <rule weight="0.8">
+    <match lemma="dé" tags="n.*"><select lemma="dau"/></match>
+  </rule>
 
   <!-- serveur >> servidor, cambrer -->
   <rule weight="0.8">
@@ -4001,6 +4019,7 @@
       <match lemma="forum" tags="n.*"/>
       <match lemma="agora" tags="n.*"/>
       <match lemma="château" tags="n.*"/>
+      <match lemma="château-fort" tags="n.*"/>
       <match lemma="église" tags="n.*"/>
       <match lemma="cathédrale" tags="n.*"/>
     </or>
@@ -5774,6 +5793,7 @@
     <or>
       <match lemma="ville" tags="n.*"/>
       <match lemma="château" tags="n.*"/>
+      <match lemma="château-fort" tags="n.*"/>
       <match lemma="forteresse" tags="n.*"/>
     </or>
   </rule>
@@ -6477,6 +6497,83 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- professionnel >> professional, laboral -->
+  <rule weight="0.8">
+    <match lemma="professionnel" tags="adj.*"><select lemma="professional"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="stabilité" tags="n.*"/>
+      <match lemma="experience" tags="n.*"/>
+      <match lemma="incapacité" tags="n.*"/>
+      <match lemma="lien" tags="n.*"/>
+      <match lemma="maladie" tags="n.*"/>
+      <match lemma="mutualisme" tags="n.*"/>
+      <match lemma="precariété" tags="n.*"/>
+      <match lemma="relation" tags="n.*"/>
+      <match lemma="vie" tags="n.*"/>
+    </or>
+    <match lemma="professionnel" tags="adj.*"><select lemma="laboral"/></match>
+  </rule>
+
+  <!-- cher >> car, estimat, benvolgut -->
+  <rule weight="0.8">
+    <match lemma="cher" tags="adj.*"><select lemma="car"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cher" tags="adj.*"><select lemma="estimat"/></match>
+    <or>
+<!--
+      <match lemma="père" tags="n.*"/>
+      <match lemma="mère" tags="n.*"/>
+      <match lemma="papa" tags="n.*"/>
+      <match lemma="mama" tags="n.*"/>
+      <match lemma="parent" tags="n.*"/>
+      <match lemma="grand-père" tags="n.*"/>
+      <match lemma="grand-mère" tags="n.*"/>
+      <match lemma="mamé" tags="n.*"/>
+      <match lemma="mamie" tags="n.*"/>
+      <match lemma="mammy" tags="n.*"/>
+      <match lemma="mémé" tags="n.*"/>
+      <match lemma="mémère" tags="n.*"/>
+      <match lemma="papé" tags="n.*"/>
+      <match lemma="papi" tags="n.*"/>
+      <match lemma="papy" tags="n.*"/>
+      <match lemma="pépé" tags="n.*"/>
+      <match lemma="pépère" tags="n.*"/>
+      <match lemma="yayo" tags="n.*"/>
+      <match lemma="oncle" tags="n.*"/>
+      <match lemma="tante" tags="n.*"/>
+      <match lemma="fils" tags="n.*"/>
+      <match lemma="fille" tags="n.*"/>
+      <match lemma="petit-fils" tags="n.*"/>
+      <match lemma="frère" tags="n.*"/>
+      <match lemma="sœur" tags="n.*"/>
+      <match lemma="neuveu" tags="n.*"/>
+      <match lemma="nièce" tags="n.*"/>
+      <match lemma="cousin" tags="n.*"/>
+      <match lemma="mari" tags="n.*"/>
+      <match lemma="femme" tags="n.*"/>
+      <match lemma="beau-père" tags="n.*"/>
+      <match lemma="beau-frère" tags="n.*"/>
+      <match lemma="beau-fils" tags="n.*"/>
+-->
+      <match tags="n..*"/>
+      <match tags="np.top.*"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="cher" tags="adj.*"><select lemma="benvolgut"/></match>
+    <or>
+      <match lemma="monsieur" tags="n.*"/>
+      <match lemma="madame" tags="n.*"/>
+      <match lemma="ami" tags="n.*"/>
+      <match lemma="collègue" tags="n.*"/>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+    </or>
+  </rule>
 
   <!-- réputé >> reputat, conegut -->
   <rule weight="0.8">

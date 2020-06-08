@@ -1821,6 +1821,21 @@
 
 <!-- PR -->
 
+  <!-- contra >> contre, sur -->
+  <rule weight="0.8">
+    <match lemma="contra" tags="pr"><select lemma="contre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="disparar" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="contra" tags="pr"><select lemma="sur"/></match>
+  </rule>
+
   <!-- abans de >> avant, avant de -->
   <rule weight="0.8">
     <match lemma="abans de" tags="pr"><select lemma="avant"/></match>
@@ -3970,6 +3985,45 @@
 
 <!-- ADJ -->
 
+  <!-- laboral >> de travail, du travail, au travail, professionnel -->
+  <rule weight="0.8">
+    <match lemma="laboral" tags="adj.*"><select lemma="de travail"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="estabilitat" tags="n.*"/>
+      <match lemma="experiència" tags="n.*"/>
+      <match lemma="incapacitat" tags="n.*"/>
+      <match lemma="malaltia" tags="n.*"/>
+      <match lemma="mutualisme" tags="n.*"/>
+      <match lemma="precarietat" tags="n.*"/>
+      <match lemma="relació" tags="n.*"/>
+      <match lemma="vida" tags="n.*"/>
+      <match lemma="vincle" tags="n.*"/>
+    </or>
+    <match lemma="laboral" tags="adj.*"><select lemma="professionnel"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="accident" tags="n.*"/>
+      <match lemma="dret" tags="n.*"/>
+      <match lemma="malaltia" tags="n.*"/>
+      <match lemma="mercat" tags="n.*"/>
+      <match lemma="normativa" tags="n.*"/>
+      <match lemma="productivitat" tags="n.*"/>
+    </or>
+    <match lemma="laboral" tags="adj.*"><select lemma="du travail"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="absentisme" tags="n.*"/>
+      <match lemma="discriminació" tags="n.*"/>
+      <match lemma="salut" tags="n.*"/>
+      <match lemma="seguretat" tags="n.*"/>
+    </or>
+    <match lemma="laboral" tags="adj.*"><select lemma="au travail"/></match>
+  </rule>
+
   <!-- blasfemador >> blasphématoire, blasphémateur -->
   <rule weight="0.8">
     <match lemma="blasfemador" tags="adj.*"><select lemma="blasphématoire"/></match>
@@ -4956,6 +5010,15 @@
   <rule weight="1.0">
     <match lemma="falla" tags="n.*"><select lemma="défaut"/></match>
     <match lemma="en" tags="pr"/>
+  </rule>
+
+  <!-- puta >> putain, fripouille -->
+  <rule weight="0.8">
+    <match lemma="puta" tags="n.*"><select lemma="putain"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.*.m.*"/>
+    <match lemma="puta" tags="n.*"><select lemma="fripouille"/></match>
   </rule>
 
   <!-- parla >> dialecte, langue -->
@@ -6656,7 +6719,11 @@
   </rule>
   <rule weight="1.0">
     <match lemma="cap" tags="n.*"><select lemma="cap"/></match>
-    <or><match tags="np.top.*"/><match tags="np.loc"/></or>
+    <or>
+      <match tags="np.top.*"/>
+      <match tags="np.loc"/>
+      <match lemma="Hornos"/>
+    </or>
   </rule>
   <rule weight="1.0">
     <match lemma="cap" tags="n.*"><select lemma="cap"/></match>
