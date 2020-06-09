@@ -2193,6 +2193,15 @@
     </or>
   </rule>
   <rule weight="1.0">
+    <match lemma="encadrement" tags="n.*"><select lemma="contenció"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="salaire" tags="n.*"/>
+      <match lemma="loyer" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
     <match lemma="personnel" tags="n.*"/>
     <match lemma="de" tags="pr"/>
     <match lemma="encadrement" tags="n.*"><select lemma="direcció"/></match>
