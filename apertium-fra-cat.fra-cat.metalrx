@@ -2238,6 +2238,38 @@
       <match lemma="maritime" tags="adj.*"/>
     </or>
   </rule>
+  
+  <!-- filière >> cadena, filera, sector -->
+  <rule weight="0.8">
+    <match lemma="filière" tags="n.*"><select lemma="cadena"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="filière" tags="n.*"><select lemma="sector"/></match>
+    <or>
+	    <match lemma="missilier" tags="adj.*"/> <!-- en el train de Kristina -->
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="filière" tags="n.*"><select lemma="sector"/></match>
+    <or>
+	    <match lemma="bois" tags="n.*"><select lemma="fusta"/></match> <!-- en el train de Kristina; millorable -->
+	    <match lemma="pêche" tags="n.*"><select lemma="pesca"/></match> <!-- Reverso context; millorable (preposició) -->
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="filière" tags="n.*"><select lemma="cadena"/></match>
+    <or>
+	    <match lemma="hiérarchique" tags="n.*"/> <!-- Reverso Context -->
+	    <match lemma="agroalimentaire" tags="n.*"/> <!-- Reverso Context -->
+    </or>
+  </rule>
+  <rule weight="1.0">
+	  <match lemma="filière" tags="n.*"><select lemma="cadena"/></match> <!-- Reverso Context -->
+          <match lemma="de" tags="pr"/>
+          <match lemma="approvisionnement" tags="n.*"/>
+  </rule>
+
+    
 
   <!-- maquis >> màquia, maquis -->
   <rule weight="0.8">
