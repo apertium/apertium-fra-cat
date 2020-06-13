@@ -2354,6 +2354,62 @@
 
 <!-- V -->
 
+  <!-- segrestar >> prendre# en otage, kidnapper, détourner -->
+  <rule weight="0.8">
+    <match lemma="segrestar" tags="vblex.*"><select lemma="prendre# en otage"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="segrestar" tags="vblex.*"><select lemma="kidnapper"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <or>
+      <match lemma="nen" tags="n.*"/>
+      <match lemma="infant" tags="n.*"/>
+      <match lemma="noi" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="segrestar" tags="vblex.*"><select lemma="kidnapper"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="np.ant.*"/>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="nen" tags="n.*"/>
+      <match lemma="infant" tags="n.*"/>
+      <match lemma="noi" tags="n.*"/>
+      <match tags="np.ant.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="segrestar" tags="vblex.pp.*"><select lemma="kidnapper"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="segrestar" tags="vblex.*"><select lemma="détourner"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <or>
+      <match lemma="avió" tags="n.*"/>
+      <match lemma="Boeing" tags="np.*"/>
+      <match lemma="Airbus" tags="np.*"/>
+    </or>
+  </rule>
+
   <!-- agafar >> prendre, saisir -->
   <rule weight="0.8">
     <match lemma="agafar" tags="vblex.*"><select lemma="prendre"/></match>
@@ -4474,6 +4530,25 @@
 
 <!-- N -->
 
+  <!-- segrest >> enlèvement, détournement -->
+  <rule weight="0.8">
+    <match lemma="segrest" tags="n.*"><select lemma="enlèvement"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="segrest" tags="n.*"><select lemma="détournement"/></match>
+    <match tags="pr"/>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <or>
+      <match lemma="avió" tags="n.*"/>
+      <match lemma="Boeing" tags="np.*"/>
+      <match lemma="Airbus" tags="np.*"/>
+    </or>
+  </rule>
+
   <!-- top manta >> vente# à la sauvette, vendeur# à la sauvette -->
   <rule weight="0.8">
     <match lemma="top manta" tags="n.*"><select lemma="vente# à la sauvette"/></match>
@@ -4490,6 +4565,26 @@
   <!-- remuntada >> remontée, remontada -->
   <rule weight="0.8">
     <match lemma="remuntada" tags="n.*"><select lemma="remontée"/></match>
+  </rule>
+
+  <!-- rovell >> rouille, jaune# d'œuf -->
+  <rule weight="0.8">
+    <match lemma="rovell" tags="n.*"><select lemma="rouille"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rovell" tags="n.m.pl"><select lemma="jaune# d'œuf"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or><match tags="num"/><match tags="num.*"/></or>
+    <match lemma="rovell" tags="n.*"><select lemma="jaune# d'œuf"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="clara" tags="n.*"/>
+    <match tags="cnjoo"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <match lemma="rovell" tags="n.*"><select lemma="jaune# d'œuf"/></match>
   </rule>
 
   <!-- costella >> côte, côtelette -->

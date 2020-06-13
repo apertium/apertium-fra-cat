@@ -1186,6 +1186,13 @@
       <match lemma="féliciter" tags="vblex.*"/>
       <match lemma="excuser" tags="vblex.*"/>
       <match lemma="arrêter" tags="vblex.*"/>
+      <match lemma="condamner" tags="vblex.*"/>
+      <match lemma="bannir" tags="vblex.*"/>
+      <match lemma="fusiller" tags="vblex.*"/>
+      <match lemma="guillotiner" tags="vblex.*"/>
+      <match lemma="tuer" tags="vblex.*"/>
+      <match lemma="périr" tags="vblex.*"/>
+      <match lemma="mort" tags="vblex.*"/>
     </or>
     <repeat from="0" upto="1">
       <or>
@@ -1198,7 +1205,14 @@
   <rule weight="1.0">
     <or>
       <match lemma="excuse" tags="n.*"/>
-      <match lemma="félicitation" tags="vblex.*"/>
+      <match lemma="félicitation" tags="n.*"/>
+      <match lemma="arrêt" tags="n.*"/>
+      <match lemma="condamnation" tags="n.*"/>
+      <match lemma="bannissement" tags="n.*"/>
+      <match lemma="guillotinement" tags="n.*"/>
+      <match lemma="assassinat" tags="n.*"/>
+      <match lemma="meurtre" tags="n.*"/>
+      <match lemma="mort" tags="n.*"/>
     </or>
     <match lemma="pour" tags="pr"><select lemma="per"/></match>
   </rule>
@@ -1207,6 +1221,7 @@
       <match lemma="partir" tags="vblex.*"/>
       <match lemma="marcher" tags="vblex.*"/>
       <match lemma="aller" tags="vblex.*"/>
+      <match lemma="voler" tags="vblex.*"/>
     </or>
     <repeat from="0" upto="1">
       <or>
@@ -1224,6 +1239,10 @@
   <rule weight="1.0">
     <match lemma="par" tags="pr"/>
     <match lemma="près de" tags="pr"><select lemma="prop de"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="près de" tags="pr"><select lemma="prop de"/></match>
+    <or><match tags="num"/><match tags="num.*"/></or>
   </rule>
 
   <!-- à proximité de >> a prop de, prop de -->
@@ -1455,6 +1474,27 @@
   </rule>
 
 <!-- **************** V **************** -->
+
+  <!-- détourner >> desviar, segrestar -->
+  <rule weight="0.8">
+    <match lemma="détourner" tags="vblex.*"><select lemma="desviar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="détourner" tags="vblex.*"><select lemma="segrestar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <or>
+      <match lemma="avion" tags="n.*"/>
+      <match lemma="Boeing" tags="np.*"/>
+      <match lemma="Airbus" tags="np.*"/>
+    </or>
+  </rule>
 
   <!-- froisser >> ferir, arrugar -->
   <rule weight="0.8">
@@ -3295,9 +3335,37 @@
 
 <!-- **************** N **************** -->
 
+  <!-- campement >> campament, acampada -->
+  <rule weight="0.8">
+    <match lemma="campement" tags="n.*"><select lemma="campament"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="de" tags="pr"/>
+    <match lemma="campement" tags="n.*"><select lemma="acampada"/></match>
+  </rule>
+
   <!-- dé >> dau, didal -->
   <rule weight="0.8">
     <match lemma="dé" tags="n.*"><select lemma="dau"/></match>
+  </rule>
+
+  <!-- détournement >> desviament, segrest -->
+  <rule weight="0.8">
+    <match lemma="détournement" tags="n.*"><select lemma="desviament"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="détournement" tags="n.*"><select lemma="segrest"/></match>
+    <match tags="pr"/>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <or>
+      <match lemma="avion" tags="n.*"/>
+      <match lemma="Boeing" tags="np.*"/>
+      <match lemma="Airbus" tags="np.*"/>
+    </or>
   </rule>
 
   <!-- serveur >> servidor, cambrer -->
