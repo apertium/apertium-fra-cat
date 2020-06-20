@@ -376,8 +376,8 @@
       <rule weight="1.0">
         <match tags="prn.pro.ref.p3.*.sp"/>
         <or>
-          <match lemma="haver" tags="vbhaver.*.p3.sg"><select lemma="{{p3}}"/></match>
-          <match lemma="haver" tags="vbhaver.*.p3.pl"><select lemma="{{p3}}"/></match>
+          <match lemma="haver" tags="vbhaver.*.p3.sg"/>
+          <match lemma="haver" tags="vbhaver.*.p3.pl"/>
         </or>
         <match lemma="{{p1}}" tags="vblex.pp.m.sg"><select lemma="{{p3}}"/></match>
       </rule>
@@ -405,8 +405,8 @@
       <rule weight="1.0">
         <match tags="prn.pro.ref.p3.*.sp"/>
         <or>
-          <match lemma="anar" tags="vblex.*.p3.sg"><select lemma="{{p3}}"/></match>
-          <match lemma="anar" tags="vblex.*.p3.pl"><select lemma="{{p3}}"/></match>
+          <match lemma="anar" tags="vblex.*.p3.sg"/>
+          <match lemma="anar" tags="vblex.*.p3.pl"/>
         </or>
         <match lemma="{{p1}}" tags="vblex.inf"><select lemma="{{p3}}"/></match>
       </rule>

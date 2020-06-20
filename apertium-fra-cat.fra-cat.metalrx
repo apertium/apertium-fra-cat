@@ -434,8 +434,8 @@
       <rule weight="1.0">
         <match tags="prn.pro.ref.p3.*.sp"/>
         <or>
-          <match lemma="être" tags="vbser.*.p3.sg"><select lemma="{{p3}}"/></match>
-          <match lemma="être" tags="vbser.*.p3.pl"><select lemma="{{p3}}"/></match>
+          <match lemma="être" tags="vbser.*.p3.sg"/>
+          <match lemma="être" tags="vbser.*.p3.pl"/>
         </or>
         <match lemma="{{p1}}" tags="vblex.pp.*"><select lemma="{{p3}}"/></match>
       </rule>
@@ -514,6 +514,7 @@
       <match lemma="femme" tags="n.*"/>
       <match lemma="jeune homme" tags="n.*"/>
       <match lemma="jeune femme" tags="n.*"/>
+      <match lemma="jeune fille" tags="n.*"/>
       <match lemma="enfant" tags="n.*"/>
       <match lemma="garçon" tags="n.*"/>
       <match lemma="fille" tags="n.*"/>
@@ -589,7 +590,10 @@
       <match lemma="enfant" tags="n.*"/>
       <match lemma="père" tags="n.*"/>
       <match lemma="mère" tags="n.*"/>
+      <match lemma="papa" tags="n.*"/>
+      <match lemma="maman" tags="n.*"/>
       <match lemma="grand-père" tags="n.*"/>
+      <match lemma="grands-parents" tags="n.*"/>
       <match lemma="aïeul" tags="n.*"/>
       <match lemma="mamie" tags="n.*"/>
       <match lemma="mamé" tags="n.*"/>
@@ -605,13 +609,22 @@
       <match lemma="fils" tags="n.*"/>
       <match lemma="fille" tags="n.*"/>
       <match lemma="petit-fils" tags="n.*"/>
+      <match lemma="petits-enfants" tags="n.*"/>
       <match lemma="frère" tags="n.*"/>
       <match lemma="sœur" tags="n.*"/>
       <match lemma="cousin" tags="n.*"/>
       <match lemma="oncle" tags="n.*"/>
       <match lemma="tante" tags="n.*"/>
-      <match lemma="neuveu" tags="n.*"/>
+      <match lemma="neveu" tags="n.*"/>
       <match lemma="nièce" tags="n.*"/>
+      <match lemma="cousin" tags="n.*"/>
+      <match lemma="beau-père" tags="n.*"/>
+      <match lemma="belle-mère" tags="n.*"/>
+      <match lemma="beaux-parents" tags="n.*"/>
+      <match lemma="beau-fils" tags="n.*"/>
+      <match lemma="belle-fille" tags="n.*"/>
+      <match lemma="beau-frère" tags="n.*"/>
+      <match lemma="belle-sœur" tags="n.*"/>
     </def-seq>
 
     <def-seq n="bétail">
