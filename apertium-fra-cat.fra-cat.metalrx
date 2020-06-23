@@ -1488,6 +1488,42 @@
 
 <!-- **************** V **************** -->
 
+  <!-- affecter >> afectar, assignar -->
+  <rule weight="0.8">
+    <match lemma="affecter" tags="vblex.*"><select lemma="afectar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="affecter" tags="vblex.*"><select lemma="assignar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match lemma="de" tags="pr"/>
+      <match lemma="det" tags="pr"/>
+    </or>
+    <or>
+      <match lemma="fonds" tags="n.*"/>
+      <match lemma="crédit" tags="n.*"/>
+      <match lemma="frais" tags="n.*"/>
+      <match lemma="valeur" tags="n.*"/>
+      <match lemma="ressource" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="affecter" tags="vblex.*"><select lemma="assignar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="fonds" tags="n.*"/>
+      <match lemma="crédit" tags="n.*"/>
+      <match lemma="frais" tags="n.*"/>
+      <match lemma="valeur" tags="n.*"/>
+      <match lemma="ressource" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- détourner >> desviar, segrestar -->
   <rule weight="0.8">
     <match lemma="détourner" tags="vblex.*"><select lemma="desviar"/></match>
