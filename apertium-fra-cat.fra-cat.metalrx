@@ -3384,6 +3384,23 @@
 
 <!-- **************** N **************** -->
 
+  <!-- couche >> capa, bolquer -->
+  <rule weight="0.8">
+    <match lemma="couche" tags="n.*"><select lemma="capa"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or> 
+      <match lemma="bébé" tags="n.*"/>
+      <match lemma="mettre" tags="vblex.*"/>
+      <match lemma="porter" tags="vblex.*"/>
+      <match lemma="changer" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="couche" tags="n.f.pl"><select lemma="bolquer"/></match>
+  </rule>
+
   <!-- campement >> campament, acampada -->
   <rule weight="0.8">
     <match lemma="campement" tags="n.*"><select lemma="campament"/></match>
