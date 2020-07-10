@@ -4303,6 +4303,10 @@
     </or>
     <match lemma="volet" tags="n.*"><select lemma="part"/></match>
   </rule>
+  <rule weight="1.0">
+    <match lemma="volet" tags="n.*"><select lemma="part"/></match>
+    <match lemma="financier" tags="adj.*"/>
+  </rule>
 
   <!-- manche >> màniga, mànega -->
   <rule weight="0.8">
