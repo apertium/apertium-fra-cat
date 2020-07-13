@@ -482,7 +482,7 @@
        <match lemma="plastique" tags="n.*"/>
        <match lemma="polyester" tags="n.*"/>
        <match lemma="nylon" tags="n.*"/>
-       <match lemma="céràmique" tags="n.*"/>
+       <match lemma="céramique" tags="n.*"/>
        <match lemma="porcelaine" tags="n.*"/>
        <match lemma="bambou" tags="n.*"/>
        <match lemma="boue" tags="n.*"/>
@@ -2639,6 +2639,27 @@
   <!-- causer >> causar, xerrar, xarrar, parlar -->
   <rule weight="0.8">
     <match lemma="causer" tags="vblex.*"><select lemma="causar" tags="vblex.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="causer" tags="vblex.*"><select lemma="parlar" tags="vblex.*"/></match>
+    <match lemma="avec" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="causer" tags="vblex.*"><select lemma="parlar" tags="vblex.*"/></match>
+    <match lemma="avec" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="causer" tags="vblex.*"><select lemma="parlar" tags="vblex.*"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="*.sg"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="causer" tags="vblex.*"><select lemma="parlar" tags="vblex.*"/></match>
+    <or>
+      <match lemma="amicalement" tags="adv"/>
+      <match lemma="tranquillement" tags="adv"/>
+      <match lemma="dehors" tags="adv"/>
+    </or>
   </rule>
 
   <!-- ratisser >> rasclar, pentinar -->
@@ -6293,6 +6314,79 @@
       <match lemma="informaticien" tags="n.*"/>
       <match lemma="professeur" tags="n.*"/>
       <match lemma="chauffeur" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="service" tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <match lemma="emploi" tags="n.*"><select lemma="ocupació"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="service" tags="n.*"/>
+    <match tags="adj.*"/>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <match lemma="emploi" tags="n.*"><select lemma="ocupació"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="emploi" tags="n.*"><select lemma="ocupació"/></match>
+    <match tags="cnjcoo"/>
+    <match lemma="ressource" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ressource" tags="n.*"/>
+    <match tags="cnjcoo"/>
+    <match lemma="emploi" tags="n.*"><select lemma="ocupació"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="création" tags="n.*"/>
+      <match lemma="génération" tags="n.*"/>
+      <match lemma="créateur"/>
+      <match lemma="générateur"/>
+      <match lemma="suppression" tags="n.*"/>
+      <match lemma="perte" tags="n.*"/>
+      <match lemma="disparition" tags="n.*"/>
+      <match lemma="destruction" tags="n.*"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num.*"/>
+      <match tags="num"/>
+    </or>
+    <match lemma="emploi" tags="n.*"><select lemma="ocupació"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="créér" tags="vblex.*"/>
+      <match lemma="générer" tags="vblex.*"/>
+      <match lemma="supprimer" tags="vblex.*"/>
+      <match lemma="perdre" tags="vblex.*"/>
+      <match lemma="dispaître" tags="vblex.*"/>
+      <match lemma="détruire" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="6">
+      <match/>
+    </repeat>
+    <match lemma="emploi" tags="n.*"><select lemma="ocupació"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="emploi" tags="n.*"><select lemma="ocupació"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match lemma="public" tags="adj.*"/>
+      <match lemma="rémunéré" tags="adj.*"/>
+      <match lemma="rémunérer" tags="vblex.pp.*"/>
+      <match lemma="payé" tags="adj.*"/>
+      <match lemma="payer" tags="vblex.pp.*"/>
     </or>
   </rule>
 
