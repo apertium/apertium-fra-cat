@@ -1210,6 +1210,127 @@
       <match lemma="usar" tags="vblex.inf"/>
     </or>
   </rule>
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <match lemma="el" tags="prn.pro.*"/>
+    <or>
+      <match lemma="anomenar" tags="vblex.*"/>
+      <match lemma="necessitar" tags="vblex.*"/>
+      <match lemma="utilitzar" tags="vblex.*"/>
+      <match lemma="usar" tags="vblex.*"/>
+      <match lemma="honorar" tags="vblex.*"/>
+      <match lemma="parlar" tags="vblex.*"/>
+      <match lemma="dir" tags="vblex.*"/>
+      <match lemma="assegurar" tags="vblex.*"/>
+      <match lemma="prometre" tags="vblex.*"/>
+      <match lemma="jurar" tags="vblex.*"/>
+      <match lemma="afirmar" tags="vblex.*"/>
+      <match lemma="negar" tags="vblex.*"/>
+      <match lemma="permetre" tags="vblex.*"/>
+      <match lemma="deixar" tags="vblex.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <match lemma="el" tags="prn.pro.*"/>
+    <or>
+      <match tags="vbhaver.*.p3.sg"/>
+      <match tags="vbhaver.*.p3.pl"/>
+    </or>
+    <or>
+      <match lemma="anomenar" tags="vblex.pp.*"/>
+      <match lemma="necessitar" tags="vblex.pp.*"/>
+      <match lemma="utilitzar" tags="vblex.pp.*"/>
+      <match lemma="usar" tags="vblex.pp.*"/>
+      <match lemma="honorar" tags="vblex.pp.*"/>
+      <match lemma="parlar" tags="vblex.pp.*"/>
+      <match lemma="dir" tags="vblex.pp.*"/>
+      <match lemma="assegurar" tags="vblex.pp.*"/>
+      <match lemma="prometre" tags="vblex.pp.*"/>
+      <match lemma="jurar" tags="vblex.pp.*"/>
+      <match lemma="afirmar" tags="vblex.pp.*"/>
+      <match lemma="negar" tags="vblex.pp.*"/>
+      <match lemma="permetre" tags="vblex.pp.*"/>
+      <match lemma="deixar" tags="vblex.pp.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <match lemma="el" tags="prn.pro.*"/>
+    <or>
+      <match lemma="anar" tags="vblex.pri.p3.sg"/>
+      <match lemma="anar" tags="vblex.pri.p3.pl"/>
+    </or>
+    <or>
+      <match lemma="anomenar" tags="vblex.inf"/>
+      <match lemma="necessitar" tags="vblex.inf"/>
+      <match lemma="utilitzar" tags="vblex.inf"/>
+      <match lemma="usar" tags="vblex.inf"/>
+      <match lemma="honorar" tags="vblex.inf"/>
+      <match lemma="parlar" tags="vblex.inf"/>
+      <match lemma="dir" tags="vblex.inf"/>
+      <match lemma="assegurar" tags="vblex.inf"/>
+      <match lemma="prometre" tags="vblex.inf"/>
+      <match lemma="jurar" tags="vblex.inf"/>
+      <match lemma="afirmar" tags="vblex.inf"/>
+      <match lemma="negar" tags="vblex.inf"/>
+      <match lemma="permetre" tags="vblex.inf"/>
+      <match lemma="deixar" tags="vblex.inf"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <match lemma="li" tags="prn.pro.*"/>
+    <or>
+      <match lemma="parlar" tags="vblex.*"/>
+      <match lemma="dir" tags="vblex.*"/>
+      <match lemma="assegurar" tags="vblex.*"/>
+      <match lemma="prometre" tags="vblex.*"/>
+      <match lemma="jurar" tags="vblex.*"/>
+      <match lemma="afirmar" tags="vblex.*"/>
+      <match lemma="negar" tags="vblex.*"/>
+      <match lemma="permetre" tags="vblex.*"/>
+      <match lemma="deixar" tags="vblex.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <match lemma="li" tags="prn.pro.*"/>
+    <or>
+      <match tags="vbhaver.*.p3.sg"/>
+      <match tags="vbhaver.*.p3.pl"/>
+    </or>
+    <or>
+      <match lemma="parlar" tags="vblex.pp.*"/>
+      <match lemma="dir" tags="vblex.pp.*"/>
+      <match lemma="assegurar" tags="vblex.pp.*"/>
+      <match lemma="prometre" tags="vblex.pp.*"/>
+      <match lemma="jurar" tags="vblex.pp.*"/>
+      <match lemma="afirmar" tags="vblex.pp.*"/>
+      <match lemma="negar" tags="vblex.pp.*"/>
+      <match lemma="permetre" tags="vblex.pp.*"/>
+      <match lemma="deixar" tags="vblex.pp.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.*"><select lemma="on"/></match>
+    <match lemma="li" tags="prn.pro.*"/>
+    <or>
+      <match lemma="anar" tags="vblex.pri.p3.sg"/>
+      <match lemma="anar" tags="vblex.pri.p3.pl"/>
+    </or>
+    <or>
+      <match lemma="parlar" tags="vblex.inf"/>
+      <match lemma="dir" tags="vblex.inf"/>
+      <match lemma="assegurar" tags="vblex.inf"/>
+      <match lemma="prometre" tags="vblex.inf"/>
+      <match lemma="jurar" tags="vblex.inf"/>
+      <match lemma="afirmar" tags="vblex.inf"/>
+      <match lemma="negar" tags="vblex.inf"/>
+      <match lemma="permetre" tags="vblex.inf"/>
+      <match lemma="deixar" tags="vblex.inf"/>
+    </or>
+  </rule>
 
   <rule weight="1.2">
     <match tags="n.*.sg"/>
