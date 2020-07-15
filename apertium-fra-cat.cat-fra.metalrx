@@ -889,6 +889,64 @@
     <match lemma="el qual" tags="rel.*"/>
   </rule>
 
+  <!-- el >> le, lui, leur (per a corregir anàlisis errònies) -->
+  <rule weight="0.8">
+    <match lemma="el" tags="prn.pro.*"><select lemma="le"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="el" tags="prn.pro.*.sg"><select lemma="lui"/></match>
+      <match lemma="el" tags="prn.pro.*.pl"><select lemma="leur"/></match>
+    </or>
+    <or>
+      <match lemma="dir" tags="vblex.*"/>
+      <match lemma="prometre" tags="vblex.*"/>
+      <match lemma="jurar" tags="vblex.*"/>
+      <match lemma="afirmar" tags="vblex.*"/>
+      <match lemma="negar" tags="vblex.*"/>
+      <match lemma="permetre" tags="vblex.*"/>
+      <match lemma="deixar" tags="vblex.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="el" tags="prn.pro.*.sg"><select lemma="lui"/></match>
+      <match lemma="el" tags="prn.pro.*.pl"><select lemma="leur"/></match>
+    </or>
+    <or>
+      <match tags="vbhaver.*.p3.sg"/>
+      <match tags="vbhaver.*.p3.pl"/>
+    </or>
+    <or>
+      <match lemma="dir" tags="vblex.pp.*"/>
+      <match lemma="prometre" tags="vblex.pp.*"/>
+      <match lemma="jurar" tags="vblex.pp.*"/>
+      <match lemma="afirmar" tags="vblex.pp.*"/>
+      <match lemma="negar" tags="vblex.pp.*"/>
+      <match lemma="permetre" tags="vblex.pp.*"/>
+      <match lemma="deixar" tags="vblex.pp.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="el" tags="prn.pro.*.sg"><select lemma="lui"/></match>
+      <match lemma="el" tags="prn.pro.*.pl"><select lemma="leur"/></match>
+    </or>
+    <or>
+      <match lemma="anar" tags="vblex.pri.p3.sg"/>
+      <match lemma="anar" tags="vblex.pri.p3.pl"/>
+    </or>
+    <or>
+      <match lemma="dir" tags="vblex.inf"/>
+      <match lemma="prometre" tags="vblex.inf"/>
+      <match lemma="jurar" tags="vblex.inf"/>
+      <match lemma="afirmar" tags="vblex.inf"/>
+      <match lemma="negar" tags="vblex.inf"/>
+      <match lemma="permetre" tags="vblex.inf"/>
+      <match lemma="deixar" tags="vblex.inf"/>
+    </or>
+  </rule>
+
   <!-- si mateix >> soi-même, lui-même -->
   <rule weight="0.8">
     <match lemma="si mateix" tags="prn.*"><select lemma="soi-même"/></match>
