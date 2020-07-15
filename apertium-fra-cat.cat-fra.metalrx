@@ -2524,6 +2524,11 @@
     <match tags="pr"/>
   </rule>
   <rule weight="1.0">
+    <match lemma="però" tags="cnjcoo"/>
+    <match lemma="no" tags="adv"><select lemma="pas"/></match>
+    <match tags="det.*"/>
+  </rule>
+  <rule weight="1.0">
     <match lemma="no" tags="adv"><select lemma="pas"/></match>
     <or>
       <match lemma="més" tags="adv"/>
