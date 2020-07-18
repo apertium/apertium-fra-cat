@@ -6890,9 +6890,9 @@
     <match lemma="cor" tags="n.*"><select lemma="chœur"/></match>
   </rule>
 
-  <!-- edat mitjana >> moyen âge, âge moyen -->
+  <!-- edat mitjana >> Moyen Âge, âge moyen -->
   <rule weight="0.8">
-    <match lemma="edat mitjana" tags="n.*"><select lemma="moyen âge"/></match>
+    <match lemma="edat mitjana" tags="n.*"><select lemma="Moyen Âge"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="edat mitjana" tags="n.*"><select lemma="âge moyen"/></match>
