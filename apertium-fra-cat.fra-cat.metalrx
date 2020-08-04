@@ -5623,6 +5623,11 @@
     </or>
   </rule>
   <rule weight="1.0">
+    <match lemma="ordre" tags="n.*"><select lemma="ordre" tags="n.m.*"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="grandeur" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
     <or>
       <match lemma="reigner"/>
       <match lemma="mettre"/>
