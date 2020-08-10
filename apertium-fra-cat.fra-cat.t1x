@@ -3817,10 +3817,14 @@
 	      <not><equal><var n="pronom"/><lit v=""/></equal></not>
 	    </test>
             <out>
+	      <var n="pronom"/>
+              <b/>
+<!--
               <lu>
 	        <var n="pronom"/>
               </lu>
               <b/>
+-->
             </out>
 	  </when>
         </choose>
