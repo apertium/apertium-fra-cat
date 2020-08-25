@@ -1551,6 +1551,10 @@
     <match tags="pr"/>
     <match lemma="això" tags="prn.*"><select lemma="cela"/></match>
   </rule>
+  <rule weight="1.0">
+    <match lemma="això" tags="prn.*"><select lemma="cela"/></match>
+    <or><match tags="vblex.*"/><match tags="vbhaver.*"/><match tags="vbmod.*"/></or>
+  </rule>
 
 <!-- REL -->
 
@@ -2548,9 +2552,11 @@
       <match tags="adv"/>
     </repeat>
     <or>
-      <match tags="det.*"/>
-      <match tags="num"/>
-      <match tags="num.*"/>
+      <or>
+        <match tags="num.*"/>
+        <match tags="num"/>
+        <match tags="adj.*"/>
+      </or>
     </or>
     <or>
       <match lemma="nen" tags="n.*"/>
@@ -6761,7 +6767,18 @@
   </rule>
   <rule weight="1.0">
     <match lemma="col·legi" tags="n.*"><select lemma="collège"/></match>
-    <match lemma="electoral" tags="adj.*"/>
+    <or>
+      <match lemma="electoral" tags="adj.*"/>
+      <match lemma="cardenalici" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="col·legi" tags="n.*"><select lemma="collège"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <match lemma="cardenals" tags="n.*"/>
   </rule>
 
   <!-- tauleta >> petite table, tablette -->
@@ -7236,9 +7253,11 @@
   <rule weight="1.0">
      <match lemma="Oliba" tags="np.*"><select lemma="Olibia"/></match>
     <repeat from="0" upto="1">
-      <match tags="num.*"/>
-      <match tags="num"/>
-      <match tags="adj.*"/>
+      <or>
+        <match tags="num.*"/>
+        <match tags="num"/>
+        <match tags="adj.*"/>
+      </or>
     </repeat>
      <match lemma="de" tags="pr"/>
      <or><match tags="np.loc"/><match tags="np.top.*"/></or>

@@ -2069,6 +2069,9 @@
   <rule weight="0.8">
     <match lemma="pilonner" tags="vblex.*"><select lemma="piconar"/></match>
   </rule>
+  <rule weight="1.0">
+    <match lemma="pilonner" tags="vblex.*"><select lemma="bombardejar"/></match>
+  </rule>
 
   <!-- chatouiller >> fer# pessigolles, fer# cosquerelles -->
   <rule weight="0.8">
@@ -3527,6 +3530,14 @@
   <!-- chavirement >> capgirament, etc. -->
   <rule weight="0.8">
     <match lemma="chavirement" tags="n.*"><select lemma="capgirament"/></match>
+  </rule>
+
+  <!-- pilonnement >> piconament, bombardeig -->
+  <rule weight="0.8">
+    <match lemma="pilonnement" tags="vblex.*"><select lemma="piconament"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pilonnement" tags="vblex.*"><select lemma="bombardeig"/></match>
   </rule>
 
   <!-- punaise >> xinxeta, xinxa -->
@@ -6436,6 +6447,13 @@
   </rule>
   <rule weight="1.0" v="cat">
     <match lemma="fille" tags="n.*"><select lemma="noi" tags="n.*"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="fille" tags="n.*"><select lemma="fill" tags="n.*"/></match>
+    <or>
+      <match lemma="aîné" tags="adj.*"/>
+      <match lemma="cadet" tags="adj.*"/>
+    </or>
   </rule>
   <rule weight="1.2">
     <match tags="det.pos.*"/>
