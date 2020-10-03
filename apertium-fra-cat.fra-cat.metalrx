@@ -1532,6 +1532,11 @@
 
 <!-- **************** V **************** -->
 
+  <!-- doubler >> duplicar, doublar -->
+  <rule weight="0.8">
+    <match lemma="doubler" tags="vblex.*"><select lemma="duplicar"/></match>
+  </rule>
+
   <!-- affecter >> afectar, assignar -->
   <rule weight="0.8">
     <match lemma="affecter" tags="vblex.*"><select lemma="afectar"/></match>

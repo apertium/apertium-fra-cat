@@ -2600,6 +2600,44 @@
     </or>
   </rule>
 
+  <!-- doblar >> plier, doubler -->
+  <rule weight="0.8">
+    <match lemma="doblar" tags="vblex.*"><select lemma="plier"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="doblar" tags="vblex.*"><select lemma="doubler"/></match>
+    <match lemma="a" tags="pr"/>
+    <or>
+      <match lemma="el" tags="det.def.m.sg"/>
+      <match lemma="el" tags="det.def.mf.sg"/>
+    </or>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="doblar" tags="vblex.*"><select lemma="doubler"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="pel·lícula" tags="n.*"/>
+      <match lemma="film" tags="n.*"/>
+      <match lemma="actor" tags="n.*"/>
+      <match lemma="aposta" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="pel·lícula" tags="n.*"/>
+      <match lemma="film" tags="n.*"/>
+      <match lemma="actor" tags="n.*"/>
+      <match lemma="aposta" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="doblar" tags="vblex.*"><select lemma="doubler"/></match>
+  </rule>
+
   <!-- agafar >> prendre, saisir -->
   <rule weight="0.8">
     <match lemma="agafar" tags="vblex.*"><select lemma="prendre"/></match>
