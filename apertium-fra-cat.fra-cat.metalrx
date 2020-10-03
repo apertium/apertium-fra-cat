@@ -1034,7 +1034,37 @@
   <rule weight="1.0">
     <match lemma="dans" tags="pr"><select lemma="a"/></match>
     <match lemma="le" tags="det.def.*"/>
-    <match tags="np.top.m.sg"/>
+    <or>
+      <match tags="np.top.f.sg"/>
+      <match lemma="Afghanistan" tags="np.top.m.sg"/>
+      <match lemma="Angola" tags="np.top.m.sg"/>
+      <match lemma="Équateur" tags="np.top.m.sg"/>
+      <match lemma="Iran" tags="np.top.m.sg"/>
+      <match lemma="Irak" tags="np.top.m.sg"/>
+      <match lemma="Iraq" tags="np.top.m.sg"/>
+      <match lemma="Israël" tags="np.top.m.sg"/>
+      <match lemma="Oman" tags="np.top.m.sg"/>
+      <match lemma="Ouzbékistan" tags="np.top.m.sg"/>
+      <match lemma="Uruguay" tags="np.top.m.sg"/>
+      <match lemma="Alabama" tags="np.top.m.sg"/>
+      <match lemma="Alaska" tags="np.top.m.sg"/>
+      <match lemma="Arizona" tags="np.top.m.sg"/>
+      <match lemma="Arkansas" tags="np.top.m.sg"/>
+      <match lemma="Illinois" tags="np.top.m.sg"/>
+      <match lemma="Idaho" tags="np.top.m.sg"/>
+      <match lemma="Indiana" tags="np.top.m.sg"/>
+      <match lemma="Iowa" tags="np.top.m.sg"/>
+      <match lemma="Ohio" tags="np.top.m.sg"/>
+      <match lemma="Oklahoma" tags="np.top.m.sg"/>
+      <match lemma="Oregon" tags="np.top.m.sg"/>
+      <match lemma="Utah" tags="np.top.m.sg"/>
+      <match lemma="Alberta" tags="np.top.m.sg"/>
+      <match lemma="Ontario" tags="np.top.m.sg"/>
+      <match lemma="est"/>
+      <match lemma="ouest"/>
+      <match lemma="orient"/>
+      <match lemma="occident"/>
+    </or>
   </rule>
 
   <!-- de >> de, a -->
