@@ -6503,7 +6503,10 @@
     <match lemma="fille" tags="n.*"><select lemma="fill" tags="n.*"/></match>
   </rule>
   <rule weight="1.2">
-    <match lemma="avoir"/>
+    <or>
+      <match lemma="avoir"/>
+      <match lemma="donner"/>
+    </or>
     <or><match tags="det.*"/><match tags="num.*"/><match tags="num"/></or>
     <match lemma="fille" tags="n.*"><select lemma="fill" tags="n.*"/></match>
   </rule>
@@ -6529,6 +6532,15 @@
       <seq n="personne"/>
       <seq n="parent"/>
     </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="fille" tags="n.*"><select lemma="fill" tags="n.*"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <match tags="n.*"/>
   </rule>
 
   <!-- garçon >> xic, noi, fill -->
