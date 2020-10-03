@@ -4372,7 +4372,7 @@
        <when>
          <test>
            <and>
-             <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="caldre"/></equal>
+             <equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="falloir"/></equal>
              <equal><clip pos="1" side="sl" part="persona"/><lit-tag v="p3"/></equal>
              <equal><clip pos="1" side="sl" part="nbr"/><lit-tag v="pl"/></equal>
            </and>
@@ -4387,7 +4387,7 @@
        <when>
          <test>
            <and>
-             <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="caldre"/></equal>
+             <equal caseless="yes"><clip pos="2" side="tl" part="lem"/><lit v="falloir"/></equal>
              <equal><clip pos="1" side="sl" part="persona"/><lit-tag v="p3"/></equal>
              <equal><clip pos="1" side="sl" part="nbr"/><lit-tag v="pl"/></equal>
            </and>
@@ -9647,6 +9647,9 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_pis2prs">
           <with-param pos="1"/>
         </call-macro>
+        <call-macro n="f_calen_ilfaut1">
+          <with-param pos="1"/>
+        </call-macro>
         <choose>
           <when>
             <test>
@@ -13176,7 +13179,29 @@ is not applicable because gender and number can not be taken from previous rules
         <call-macro n="f_setpronom">
           <with-param pos="2"/>
         </call-macro>
+        <call-macro n="f_calen_ilfaut2">
+          <with-param pos="2"/>
+          <with-param pos="3"/>
+        </call-macro>
         <choose>
+          <when>
+            <test>
+              <equal caseless="yes"><clip pos="3" side="tl" part="lem"/><lit v="falloir"/></equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <lit v="il"/>
+                </get-case-from>
+                <lit-tag v="prn.tn.p3.m.sg"/>
+              </lu>
+              <b/>
+            </out>
+            <modify-case>
+              <clip pos="1" side="tl" part="lemh"/>
+              <lit v="aa"/>
+            </modify-case>
+          </when>
           <when>
             <test>
               <or>
@@ -15029,6 +15054,9 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="3"/>
         </call-macro>
         <call-macro n="f_pis2prs">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_calen_ilfaut1">
           <with-param pos="3"/>
         </call-macro>
         <out>

@@ -7207,6 +7207,57 @@
      <match lemma="recurs" tags="n.*"><select lemma="recours"/></match>
   </rule>
 
+  <!-- caldre >> falloir, être# nécessaire -->
+  <rule weight="0.8">
+    <match lemma="caldre" tags="vbmod.*"><select lemma="être# nécessaire"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="caldre" tags="vbmod.*.pl"><select lemma="être# nécessaires"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="vbhaver.*.pl"/>
+    <match lemma="caldre" tags="vbmod.pp.*"><select lemma="être# nécessaires"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match tags="prn.pro.*"/>
+    <match lemma="caldre" tags="vbmod.*"><select lemma="falloir"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match tags="prn.pro.*"/>
+    <match tags="vbhaver.*"/>
+    <match lemma="caldre" tags="vbmod.*"><select lemma="falloir"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="caldre" tags="vbmod.*"><select lemma="falloir"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="vblex.inf"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="caldre" tags="vbmod.*.sg"><select lemma="falloir"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="det.*.sg"/>
+      <match tags="n.*.sg"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="caldre" tags="vbmod.*.pl"><select lemma="falloir"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="det.*.pl"/>
+      <match tags="n.*.pl"/>
+    </or>
+  </rule>
+
 
 <!-- **************** NP **************** -->
 
