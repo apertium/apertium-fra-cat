@@ -3674,30 +3674,26 @@
 	      <test>
 	        <equal><clip pos="2" side="tl" part="persona"/><lit-tag v="p3"/></equal>
 	      </test>
-	      <let>
-           <var n="pronom"/>
-           <get-case-from pos="1">
-             <lit v="es"/>
-           </get-case-from>
-         </let>
 	      <append n="pronom">
+	        <lit v="^"/>
+                <get-case-from pos="1">
+                  <lit v="es"/>
+                </get-case-from>
 	        <lit-tag v="prn.pro.ref.p3.mf.sp"/>
-	        <lit v="$^"/>
+	        <lit v="$"/>
 	      </append>	
 	    </when>
 	    <otherwise>
-	      <let>
-            <var n="pronom"/>
-            <get-case-from pos="1">
-               <lit v="prpers"/>
-             </get-case-from>
-          </let>
 	      <append n="pronom">
+	        <lit v="^"/>
+                <get-case-from pos="1">
+                  <lit v="prpers"/>
+                </get-case-from>
 	        <lit-tag v="prn.pro"/>
                 <clip pos="2" side="tl" part="persona"/>
 	        <lit-tag v="mf"/>
 	        <clip pos="1" side="tl" part="nbr"/>
-	        <lit v="$^"/>
+	        <lit v="$"/>
 	      </append>	
 	    </otherwise>
           </choose>
@@ -3741,31 +3737,27 @@
 	      <test>
 	        <equal><clip pos="2" side="tl" part="persona"/><lit-tag v="p3"/></equal>
 	      </test>
-	      <let>
-           <var n="pronom"/>
-           <get-case-from pos="1">
-             <lit v="li"/>
-           </get-case-from>
-         </let>
 	      <append n="pronom">
+	        <lit v="^"/>
+                <get-case-from pos="1">
+                  <lit v="li"/>
+                </get-case-from>
 	        <lit-tag v="prn.pro.p3.mf"/>
 	        <clip pos="1" side="tl" part="nbr"/>
-	        <lit v="$^"/>
+	        <lit v="$"/>
 	      </append>	
 	    </when>
 	    <otherwise>
-	      <let>
-            <var n="pronom"/>
-            <get-case-from pos="1">
-               <lit v="prpers"/>
-             </get-case-from>
-          </let>
 	      <append n="pronom">
+	        <lit v="^"/>
+                <get-case-from pos="1">
+                  <lit v="prpers"/>
+                </get-case-from>
 	        <lit-tag v="prn.pro"/>
                 <clip pos="2" side="tl" part="persona"/>
 	        <lit-tag v="mf"/>
 	        <clip pos="1" side="tl" part="nbr"/>
-	        <lit v="$^"/>
+	        <lit v="$"/>
 	      </append>	
 	    </otherwise>
       </choose>
@@ -3801,8 +3793,8 @@
 	  <test>
 	    <equal><clip pos="1" side="tl" part="a_verb_pron"/><lit-tag v="vblex.pron"/></equal>
 	  </test>
-	  <let><var n="pronom"/><lit v="es"/></let>
 	  <append n="pronom">
+	    <lit v="es"/>
 	    <lit-tag v="prn.enc.ref.p3.mf.sp"/>
 	  </append>	
 	  <let><clip pos="1" side="tl" part="a_verb_pron"/><lit-tag v="vblex"/></let>
