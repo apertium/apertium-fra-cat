@@ -3457,6 +3457,83 @@
 
 <!-- **************** N **************** -->
 
+  <!-- chat >> gat, xat -->
+  <rule weight="0.8">
+    <match lemma="chat" tags="n.*"><select lemma="gat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or> 
+      <match lemma="sur" tags="pr"/>
+      <match lemma="dans" tags="pr"/>
+    </or>
+    <match tags="det.*"/>
+    <match lemma="chat" tags="n.*"><select lemma="xat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="par" tags="pr"/>
+    <match lemma="chat" tags="n.*"><select lemma="xat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="chat" tags="n.*"><select lemma="xat"/></match>
+    <or>
+      <match lemma="vidéo"/>
+      <match lemma="vocal"/>
+      <match lemma="room"/>
+      <match lemma="privé"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="vidéo"/>
+    <match lemma="chat" tags="n.*"><select lemma="xat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="salle" tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <match lemma="chat" tags="n.*"><select lemma="xat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or> 
+      <match lemma="internet"/>
+      <match lemma="courriel"/>
+      <match lemma="mél"/>
+      <match lemma="email"/>
+      <match lemma="e-mail"/>
+      <match lemma="en ligne"/>
+      <match lemma="Skype"/>
+      <match lemma="Zoom"/>
+      <match lemma="Facebook"/>
+      <match lemma="WhatsApp"/>
+      <match lemma="Telegram"/>
+      <match lemma="IRC"/>
+      <match lemma="connecter"/>
+    </or>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="chat" tags="n.*"><select lemma="xat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="chat" tags="n.*"><select lemma="xat"/></match>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <or> 
+      <match lemma="internet"/>
+      <match lemma="courriel"/>
+      <match lemma="mél"/>
+      <match lemma="email"/>
+      <match lemma="e-mail"/>
+      <match lemma="en ligne"/>
+      <match lemma="Skype"/>
+      <match lemma="Zoom"/>
+      <match lemma="Facebook"/>
+      <match lemma="WhatsApp"/>
+      <match lemma="Telegram"/>
+      <match lemma="IRC"/>
+      <match lemma="connecter"/>
+    </or>
+  </rule>
+
   <!-- couche >> capa, bolquer -->
   <rule weight="0.8">
     <match lemma="couche" tags="n.*"><select lemma="capa"/></match>
