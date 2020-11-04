@@ -6147,7 +6147,7 @@
     <match lemma="monsieur" tags="n.*"><select lemma="home"/></match>
   </rule>
 
-  <!-- rayon >> raig, radi -->
+  <!-- rayon >> raig, radi, departament -->
   <rule weight="0.8">
     <match lemma="rayon" tags="n.*"><select lemma="raig"/></match>
   </rule>
@@ -6181,7 +6181,39 @@
   </rule>
   <rule weight="1.0">
     <match lemma="rayon" tags="n.*"><select lemma="radi"/></match>
-    <match lemma="étendu" tags="pr"/>
+    <match lemma="étendu"/>
+  </rule>
+  <rule weight="1.0"> <!-- rayon livres... -->
+    <match lemma="rayon" tags="n.*"><select lemma="departament"/></match>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0"> 
+    <match lemma="rayon" tags="n.*"><select lemma="departament"/></match>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="magasin" tags="n.*"/>
+      <match lemma="supermarché" tags="n.*"/>
+      <match lemma="hipermarché" tags="n.*"/>
+      <match lemma="librairie" tags="n.*"/>
+      <match lemma="FNAC" tags="np.*"/>
+      <match lemma="Auchan" tags="np.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0"> 
+    <or>
+      <match lemma="magasin" tags="n.*"/>
+      <match lemma="supermarché" tags="n.*"/>
+      <match lemma="hipermarché" tags="n.*"/>
+      <match lemma="librairie" tags="n.*"/>
+      <match lemma="FNAC" tags="np.*"/>
+      <match lemma="Auchan" tags="np.*"/>
+    </or>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="rayon" tags="n.*"><select lemma="departament"/></match>
   </rule>
 
   <!-- avocat >> advocat, alvocat -->

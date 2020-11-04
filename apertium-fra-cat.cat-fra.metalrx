@@ -4758,6 +4758,80 @@
 
 <!-- N -->
 
+  <!-- còmic >> comique, bande dessinée -->
+  <rule weight="0.8">
+    <match lemma="còmic" tags="n.*"><select lemma="comique"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="llegir" tags="vblex.*"/>
+      <match lemma="comprar" tags="vblex.*"/>
+      <match lemma="dibuixar" tags="vblex.*"/>
+      <match lemma="pintar" tags="vblex.*"/>
+      <match lemma="fer" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="còmic" tags="n.*"><select lemma="bande dessinée"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="manga" tags="n.*"/>
+      <match lemma="Marvel" tags="np.*"/>
+      <match lemma="Marvel Comics" tags="np.*"/>
+      <match lemma="Bruguera" tags="np.*"/>
+      <match lemma="Ibáñez" tags="np.*"/>
+      <match lemma="Hergé" tags="np.*"/>
+      <match lemma="Peyo" tags="np.*"/>
+      <match lemma="Uderzo" tags="np.*"/>
+      <match lemma="Goscinny" tags="np.*"/>
+      <match lemma="Mortadel" tags="np.*"/>
+      <match lemma="Tintin" tags="np.*"/>
+      <match lemma="Astèrix" tags="np.*"/>
+      <match lemma="Superman" tags="np.*"/>
+      <match lemma="Batman" tags="np.*"/>
+      <match lemma="Spiderman" tags="np.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="còmic" tags="n.*"><select lemma="bande dessinée"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="còmic" tags="n.*"><select lemma="bande dessinée"/></match>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="manga" tags="n.*"/>
+      <match lemma="Marvel" tags="np.*"/>
+      <match lemma="Marvel Comics" tags="np.*"/>
+      <match lemma="Bruguera" tags="np.*"/>
+      <match lemma="Ibáñez" tags="np.*"/>
+      <match lemma="Hergé" tags="np.*"/>
+      <match lemma="Peyo" tags="np.*"/>
+      <match lemma="Uderzo" tags="np.*"/>
+      <match lemma="Goscinny" tags="np.*"/>
+      <match lemma="Mortadel" tags="np.*"/>
+      <match lemma="Tintín" tags="np.*"/>
+      <match lemma="Astèrix" tags="np.*"/>
+      <match lemma="Superman" tags="np.*"/>
+      <match lemma="Batman" tags="np.*"/>
+      <match lemma="Spiderman" tags="np.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="còmic" tags="n.*"><select lemma="bande dessinée"/></match>
+    <match lemma="japonès" tags="adj.*"/>
+  </rule>
+
+
+  <!-- departament >> département, rayon -->
+  <rule weight="0.8">
+    <match lemma="departament" tags="n.*"><select lemma="département"/></match>
+  </rule>
+
   <!-- segrest >> enlèvement, détournement -->
   <rule weight="0.8">
     <match lemma="segrest" tags="n.*"><select lemma="enlèvement"/></match>
