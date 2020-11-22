@@ -1532,6 +1532,26 @@
 
 <!-- **************** V **************** -->
 
+  <!-- rester >> quedar, quedar-se, continuar# sent -->
+  <rule weight="0.8">
+    <match lemma="rester" tags="vblex.*"><select lemma="quedar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rester" tags="vblex.*"><select lemma="quedar" tags="vblex.pron.*"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="à" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rester" tags="vblex.*"><select lemma="continuar# sent"/></match>
+    <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rester" tags="vblex.*"><select lemma="continuar# sent"/></match>
+    <match tags="det.*"/>
+  </rule>
+
   <!-- doubler >> duplicar, doublar -->
   <rule weight="0.8">
     <match lemma="doubler" tags="vblex.*"><select lemma="duplicar"/></match>
@@ -1548,7 +1568,7 @@
     </repeat>
     <or>
       <match lemma="de" tags="pr"/>
-      <match lemma="det" tags="pr"/>
+      <match tags="det.*"/>
     </or>
     <or>
       <match lemma="fonds" tags="n.*"/>
