@@ -8,6 +8,9 @@
     <def-cat n="nom">
       <cat-item tags="n.*"/>
     </def-cat>
+    <def-cat n="n_sp">
+      <cat-item tags="n.*.sp"/>
+    </def-cat>
     <def-cat n="np">
       <cat-item tags="np.*"/>
     </def-cat>
@@ -3858,6 +3861,37 @@
             <clip pos="1" side="tl" part="lemh"/>
             <clip pos="1" side="tl" part="tags"/>
             <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: en + nom = en + nom: en français -> en francès (per a evitar la generació de plurals)">
+      <pattern>
+        <pattern-item n="enprep"/>
+        <pattern-item n="n_sp"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <choose>
+          <when>
+            <test>
+              <equal><clip pos="2" side="tl" part="nbr"/><lit-tag v="pl"/></equal>
+            </test>
+            <let><clip pos="2" side="tl" part="nbr"/><lit-tag v="sg"/></let>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
