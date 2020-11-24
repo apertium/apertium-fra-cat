@@ -4758,6 +4758,23 @@
 
 <!-- N -->
 
+  <!-- despatx >> bureau, dépêche -->
+  <rule weight="0.8">
+    <match lemma="despatx" tags="n.*"><select lemma="bureau"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="enviar" tags="vblex.*"/>
+      <match lemma="rebre" tags="vblex.*"/>
+      <match lemma="interceptar" tags="vblex.*"/>
+      <match lemma="desxifrar" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="despatx" tags="n.*"><select lemma="dépêche"/></match>
+  </rule>
+
   <!-- còmic >> comique, bande dessinée -->
   <rule weight="0.8">
     <match lemma="còmic" tags="n.*"><select lemma="comique"/></match>

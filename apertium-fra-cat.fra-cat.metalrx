@@ -3477,6 +3477,23 @@
 
 <!-- **************** N **************** -->
 
+  <!-- bureau >> despatx, escriptori, oficina -->
+  <rule weight="0.8">
+    <match lemma="bureau" tags="n.*"><select lemma="despatx"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="bureau" tags="n.*"><select lemma="oficina"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or> 
+      <match lemma="affaire" tags="n.*"/>
+      <match lemma="gouvernement" tags="n.*"/>
+      <match lemma="gouverneur" tags="n.*"/>
+      <match lemma="député" tags="n.*"/>
+      <match lemma="sénateur" tags="n.*"/>
+    </or> 
+  </rule>
+
   <!-- chat >> gat, xat -->
   <rule weight="0.8">
     <match lemma="chat" tags="n.*"><select lemma="gat"/></match>
