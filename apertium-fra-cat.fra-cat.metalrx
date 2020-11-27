@@ -3477,6 +3477,51 @@
 
 <!-- **************** N **************** -->
 
+  <!-- carte >> mapa, carta, targeta -->
+  <rule weight="0.8">
+    <match lemma="carte" tags="n.*"><select lemma="mapa"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="jeu" tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <match lemma="carte" tags="n.*"><select lemma="carta"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="restaurant" tags="n.*"/>
+      <match lemma="resto" tags="n.*"/>
+      <match lemma="vin" tags="n.*"/>
+      <match lemma="dessert" tags="n.*"/>
+      <match lemma="jouer" tags="vblex.*"/>
+      <match lemma="distribuer" tags="vblex.*"/>
+      <match lemma="gagner" tags="vblex.*"/>
+      <match lemma="perdre" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="carte" tags="n.*"><select lemma="carta"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="carte" tags="n.*"><select lemma="carta"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="restaurant" tags="n.*"/>
+      <match lemma="resto" tags="n.*"/>
+      <match lemma="vin" tags="n.*"/>
+      <match lemma="dessert" tags="n.*"/>
+      <match lemma="jouer" tags="vblex.*"/>
+      <match lemma="distribuer" tags="vblex.*"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="carte" tags="n.*"><select lemma="targeta"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="visite" tags="n.*"/>
+  </rule>
+
   <!-- bureau >> despatx, escriptori, oficina -->
   <rule weight="0.8">
     <match lemma="bureau" tags="n.*"><select lemma="despatx"/></match>
@@ -4574,7 +4619,11 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match lemma="plan" tags="n.*"/>
+    <or>
+      <match lemma="plan" tags="n.*"/>
+      <match lemma="simulateur" tags="n.*"/>
+      <match lemma="heure" tags="n.*"/>
+    </or>
     <match lemma="de" tags="pr"/>
     <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
   </rule>
@@ -5166,7 +5215,6 @@
     </or>
     <match lemma="frappe" tags="n.*"><select lemma="atac"/></match>
   </rule>
-
 
   <!-- placard >> armari, armari# de paret, cartell -->
   <rule weight="0.8">

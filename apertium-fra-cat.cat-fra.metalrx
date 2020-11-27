@@ -4758,6 +4758,85 @@
 
 <!-- N -->
 
+  <!-- carta >> carte, lettre, charte -->
+  <rule weight="0.8">
+    <match lemma="carta" tags="n.*"><select lemma="carte"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="enviar" tags="vblex.*"/>
+      <match lemma="trametre" tags="vblex.*"/>
+      <match lemma="dirigir" tags="vblex.*"/>
+      <match lemma="rebre" tags="vblex.*"/>
+      <match lemma="arribar" tags="vblex.*"/>
+      <match lemma="escriure" tags="vblex.*"/>
+      <match lemma="signar" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="carta" tags="n.*"><select lemma="lettre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="carta" tags="n.*"><select lemma="lettre"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="enviar" tags="vblex.*"/>
+      <match lemma="trametre" tags="vblex.*"/>
+      <match lemma="dirigir" tags="vblex.*"/>
+      <match lemma="rebre" tags="vblex.*"/>
+      <match lemma="arribar" tags="vblex.*"/>
+      <match lemma="escriure" tags="vblex.*"/>
+      <match lemma="signar" tags="vblex.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="carta" tags="n.*"><select lemma="lettre"/></match>
+    <match lemma="a" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="carta" tags="n.*"><select lemma="lettre"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+      <match tags="det.pos.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.pos.*"/>
+    <match lemma="carta" tags="n.*"><select lemma="lettre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="atorgar" tags="vblex.*"/>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="carta" tags="n.*"><select lemma="charte"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="carta" tags="n.*"><select lemma="charte"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="dret" tags="n.*"/>
+      <match lemma="llibertat" tags="n.*"/>
+      <match lemma="privilegi" tags="n.*"/>
+      <match lemma="franquesa" tags="n.*"/>
+      <match lemma="població" tags="n.*"/>
+      <match lemma="pobla" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="carta" tags="n.*"><select lemma="charte"/></match>
+    <match lemma="europeu" tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.*"/>
+    <match lemma="Carta" tags="n.*"><select lemma="charte"/></match>
+  </rule>
+
   <!-- despatx >> bureau, dépêche -->
   <rule weight="0.8">
     <match lemma="despatx" tags="n.*"><select lemma="bureau"/></match>
