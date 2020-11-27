@@ -4587,11 +4587,39 @@
         <choose>
           <when>
             <test>
-              <and>
-                <in><clip pos="2" side="tl" part="lem"/><list n="pais"/></in>
-                <equal><clip pos="2" side="tl" part="gen"/><lit-tag v="f"/></equal>
-                <equal><clip pos="2" side="tl" part="nbr"/><lit-tag v="sg"/></equal>
-              </and>
+              <or>
+                <and>
+                  <in><clip pos="2" side="tl" part="lem"/><list n="pais"/></in>
+                  <equal><clip pos="2" side="tl" part="gen"/><lit-tag v="f"/></equal>
+                  <equal><clip pos="2" side="tl" part="nbr"/><lit-tag v="sg"/></equal>
+                </and>
+                <!-- + pays m.sg qui commencen en voyelle -->
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Annam"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Alabama"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Alaska"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Arkansas"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Aragon"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Arizona"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Azerbaïdjan"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Équateur"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Essex"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Hampshire"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Honduras"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Hubei"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Idaho"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Illinois"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Iowa"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Iran"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Irak"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Iraq"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Oklahoma"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Ohio"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Ontario"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Oregon"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Ouzbékistan"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Uruguay"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Wisconsin"/></equal>
+              </or>
             </test>
             <let><clip pos="1" side="tl" part="lem"/><get-case-from pos="1"><lit v="en"/></get-case-from></let> <!-- en Égypte -->
           </when>
@@ -4605,6 +4633,32 @@
                   <equal><clip pos="2" side="tl" part="gen"/><lit-tag v="f"/></equal>
                   <equal><clip pos="2" side="tl" part="nbr"/><lit-tag v="sg"/></equal>
                 </and>
+                <!-- + pays m.sg qui commencen en voyelle -->
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Annam"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Alabama"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Alaska"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Arkansas"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Aragon"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Arizona"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Azerbaïdjan"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Équateur"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Essex"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Hampshire"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Honduras"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Hubei"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Idaho"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Illinois"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Iowa"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Iran"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Irak"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Iraq"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Oklahoma"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Ohio"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Ontario"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Oregon"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Ouzbékistan"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Uruguay"/></equal>
+                <equal><clip pos="2" side="tl" part="lem"/><lit v="Wisconsin"/></equal>
               </or>
             </test>
             <out>
