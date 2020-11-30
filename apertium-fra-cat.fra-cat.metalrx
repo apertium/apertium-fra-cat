@@ -2224,6 +2224,62 @@
   <!-- dérober >> robar, evitar -->
   <macro name="verb_nopron_pron" p1="dérober" p2="robar" p3="evitar"/>
 
+  <!-- éclater >> esclatar, rebentar -->
+  <macro name="verb_intrans_trans" p1="éclater" p2="esclatar" p3="rebentar" />
+  <rule weight="1.2">
+    <match lemma="éclater" tags="vblex.*"><select lemma="esclatar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <or>
+      <match lemma="révolte" tags="n.*"/>
+      <match lemma="révolution" tags="n.*"/>
+      <match lemma="rébellion" tags="n.*"/>
+      <match lemma="soulèvement" tags="n.*"/>
+      <match lemma="guerre" tags="n.*"/>
+      <match lemma="Première Guerre mondiale" tags="np.*"/>
+      <match lemma="Deuxième Guerre mondiale" tags="np.*"/>
+      <match lemma="Seconde Guerre mondiale" tags="np.*"/>
+      <match lemma="scandale" tags="n.*"/>
+      <match lemma="affaire" tags="n.*"/>
+    </or>
+  </rule>
+  <macro name="verb_intrans_trans" p1="éclater" p2="esclatar" p3="rebentar" />
+  <rule weight="1.2">
+    <match lemma="éclater" tags="vblex.*"><select lemma="esclatar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <match tags="adj.*"/>
+    <or>
+      <match lemma="révolte" tags="n.*"/>
+      <match lemma="révolution" tags="n.*"/>
+      <match lemma="rébellion" tags="n.*"/>
+      <match lemma="soulèvement" tags="n.*"/>
+      <match lemma="guerre" tags="n.*"/>
+      <match lemma="Première Guerre Mondiale" tags="np.*"/>
+      <match lemma="Deuxième Guerre Mondiale" tags="np.*"/>
+      <match lemma="scandale" tags="n.*"/>
+      <match lemma="affaire" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- bouder >> fer# mala cara/fer# morros, fer# mala cara a/fer# morros a -->
   <macro name="verb_intrans_trans" p1="bouder" p2="fer# mala cara" p3="fer# mala cara a"/>
 
