@@ -4689,6 +4689,8 @@
     <or>
       <match lemma="oiseau" tags="n.*"/>
       <match lemma="retour" tags="n.*"/>
+      <match lemma="nuit" tags="n.*"/>
+      <match lemma="jour" tags="n.*"/>
       <match tags="np.*"/>
     </or>
   </rule>
@@ -4711,6 +4713,72 @@
   <rule weight="1.0">
     <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
     <match lemma="inaugural" tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="oiseau" tags="n.*"/>
+      <match lemma="pigeon" tags="n.*"/>
+      <match lemma="passereau" tags="n.*"/>
+      <match lemma="aigle" tags="n.*"/>
+      <match lemma="corbeau" tags="n.*"/>
+      <match lemma="moineau" tags="n.*"/>
+      <match lemma="insecte" tags="n.*"/>
+      <match lemma="papillon" tags="n.*"/>
+      <match lemma="mouche" tags="n.*"/>
+      <match lemma="moustique" tags="n.*"/>
+      <match lemma="abeille" tags="n.*"/>
+      <match lemma="guêpe" tags="n.*"/>
+      <match lemma="bourdon" tags="n.*"/>
+      <match lemma="avion" tags="n.*"/>
+      <match lemma="avionnette" tags="n.*"/>
+      <match lemma="hélicoptère" tags="n.*"/>
+      <match lemma="ballon" tags="n.*"/>
+      <match lemma="ballon dirigeable" tags="n.*"/>
+      <match lemma="zeppelin" tags="n.*"/>
+      <match lemma="mongolfière" tags="n.*"/>
+      <match lemma="aéroport" tags="n.*"/>
+      <match lemma="héliport" tags="n.*"/>
+      <match lemma="compagnie aérienne" tags="n.*"/>
+      <match lemma="passager" tags="n.*"/>
+      <match lemma="aérien" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="oiseau" tags="n.*"/>
+      <match lemma="pigeon" tags="n.*"/>
+      <match lemma="passereau" tags="n.*"/>
+      <match lemma="aigle" tags="n.*"/>
+      <match lemma="corbeau" tags="n.*"/>
+      <match lemma="moineau" tags="n.*"/>
+      <match lemma="insecte" tags="n.*"/>
+      <match lemma="papillon" tags="n.*"/>
+      <match lemma="mouche" tags="n.*"/>
+      <match lemma="moustique" tags="n.*"/>
+      <match lemma="abeille" tags="n.*"/>
+      <match lemma="guêpe" tags="n.*"/>
+      <match lemma="bourdon" tags="n.*"/>
+      <match lemma="avion" tags="n.*"/>
+      <match lemma="avionnette" tags="n.*"/>
+      <match lemma="hélicoptère" tags="n.*"/>
+      <match lemma="ballon" tags="n.*"/>
+      <match lemma="ballon dirigeable" tags="n.*"/>
+      <match lemma="zeppelin" tags="n.*"/>
+      <match lemma="mongolfière" tags="n.*"/>
+      <match lemma="aéroport" tags="n.*"/>
+      <match lemma="héliport" tags="n.*"/>
+      <match lemma="compagnie aérienne" tags="n.*"/>
+      <match lemma="passager" tags="n.*"/>
+      <match lemma="aérien" tags="adj.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
   </rule>
 
   <!-- bourgeon >> gemma, borró, botó -->
