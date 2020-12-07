@@ -966,6 +966,23 @@
 
 <!-- **************** DET **************** -->
 
+  <!-- le >> el, remove -->
+  <rule weight="0.6">
+    <match lemma="le" tags="det.*"><select lemma="el"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="sur" tags="pr"/>
+      <match lemma="avec" tags="pr"/>
+      <match lemma="sans" tags="pr"/>
+      <match lemma="à" tags="pr"/>
+      <match lemma="entre" tags="pr"/>
+      <match lemma="contre" tags="pr"/>
+    </or>
+    <match lemma="de" tags="pr"><remove tags="pr"/></match>
+    <match lemma="le" tags="det.*"><remove tags="det.*"/></match>
+  </rule>
+
   <!-- beaucoup de >> molt, molt de -->
   <rule weight="0.6">
     <match lemma="beaucoup de" tags="pr"><select lemma="molt"/></match>
@@ -7140,6 +7157,15 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- nombreux >> nombrós, molt -->
+  <rule weight="0.8">
+    <match lemma="nombreux" tags="adj.*"><select lemma="nombrós"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="de" tags="pr"/>
+    <match lemma="nombreux" tags="adj.*"><select lemma="molt"/></match>
+  </rule>
+
   <!-- professionnel >> professional, laboral -->
   <rule weight="0.8">
     <match lemma="professionnel" tags="adj.*"><select lemma="professional"/></match>
@@ -7756,6 +7782,8 @@
       <match lemma="convaincu" tags="adj.*"/>
       <match lemma="convaincre" tags="vblex.pp.*"/>
       <match lemma="d'accord" tags="adv"/>
+      <match lemma="divisé" tags="adj.*"/>
+      <match lemma="diviser" tags="vblex.pp.*"/>
       <match lemma="dopé" tags="adj.*"/>
       <match lemma="doper" tags="vblex.pp.*"/>
       <match lemma="engagé" tags="adj.*"/>

@@ -92,6 +92,14 @@
     <def-cat n="entreprep">
       <cat-item lemma="entre" tags="pr"/>
     </def-cat>
+    <def-cat n="sur_avec">
+      <cat-item lemma="sur" tags="pr"/>
+      <cat-item lemma="avec" tags="pr"/>
+      <cat-item lemma="sans" tags="pr"/>
+      <cat-item lemma="entre" tags="pr"/>
+      <cat-item lemma="contre" tags="pr"/>
+      <cat-item lemma="à" tags="pr"/>
+    </def-cat>
     <def-cat n="apres">
       <cat-item lemma="après" tags="pr"/>
       <cat-item lemma="après" tags="adv"/>
@@ -3866,6 +3874,19 @@
       </action>
     </rule>
 
+    <rule comment="REGLA: PREP">
+      <pattern>
+        <pattern-item n="prep"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
     <rule comment="REGLA: en + nom = en + nom: en français -> en francès (per a evitar la generació de plurals)">
       <pattern>
         <pattern-item n="enprep"/>
@@ -6161,6 +6182,21 @@ is not applicable because gender and number cannot be taken from previous rules 
             <clip pos="4" side="tl" part="lemq"/>
           </lu>
         </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: PREP">
+      <pattern>
+        <pattern-item n="sur_avec"/>
+        <pattern-item n="deprep"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
       </action>
     </rule>
 
@@ -8678,6 +8714,24 @@ is not applicable because gender and number cannot be taken from previous rules 
             <clip pos="3" side="tl" part="whole"/>
           </lu>
         </out>
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
       </action>
     </rule>
 
@@ -8711,6 +8765,24 @@ is not applicable because gender and number cannot be taken from previous rules 
             <clip pos="3" side="tl" part="lemq"/>
           </lu>
         </out>
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
       </action>
     </rule>
 
@@ -8748,6 +8820,24 @@ is not applicable because gender and number cannot be taken from previous rules 
             <clip pos="4" side="tl" part="whole"/>
           </lu>
         </out>
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="4"/>
+              <lu>
+                <clip pos="5" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
       </action>
     </rule>
 
@@ -8810,6 +8900,24 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
       </otherwise>
      </choose>	
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
       </action>
     </rule>
 
@@ -8910,6 +9018,24 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
       </otherwise>
       </choose>	
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="4" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="4" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="4" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="6"/>
+              <lu>
+                <clip pos="6" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
       </action>
     </rule>
 
@@ -8991,6 +9117,24 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
       </otherwise>
       </choose>	
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="5" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="5" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="5" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="5"/>
+              <lu>
+                <clip pos="6" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
       </action>
     </rule>
 
@@ -9081,8 +9225,27 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
       </otherwise>
       </choose>	
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="5" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="5" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="5" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="6"/>
+              <lu>
+                <clip pos="7" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
       </action>
     </rule>
+
      <rule>
 <!-- REGLA:PRN ADV VERB pas verb adv PREP DET je ne vais pas toujours faire des voyages-->
       <pattern>
@@ -9170,6 +9333,24 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
       </otherwise>
       </choose>	
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="6" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="6" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="6" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="6"/>
+              <lu>
+                <clip pos="7" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
       </action>
     </rule>
 
@@ -9248,6 +9429,24 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
       </otherwise>
       </choose>	
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="finir"/></equal>
+              </or>
+            </test>
+            <out>
+              <b pos="4"/>
+              <lu>
+                <clip pos="5" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
       </action>
     </rule>
 
