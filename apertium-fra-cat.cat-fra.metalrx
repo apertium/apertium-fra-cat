@@ -4758,6 +4758,14 @@
 
 <!-- N -->
 
+  <!-- relleu >> relief, relais -->
+  <rule weight="0.8">
+    <match lemma="relleu" tags="n.*"><select lemma="relief"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="relleu" tags="n.m.pl"><select lemma="relais"/></match>
+  </rule>
+
   <!-- carta >> carte, lettre, charte -->
   <rule weight="0.8">
     <match lemma="carta" tags="n.*"><select lemma="carte"/></match>
