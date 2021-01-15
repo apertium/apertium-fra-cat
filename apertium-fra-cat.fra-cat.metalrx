@@ -3550,6 +3550,39 @@
 
 <!-- **************** N **************** -->
 
+  <!-- coup# d'envoi >> tret# de sortida, sacada inicial -->
+  <rule weight="0.8">
+    <match lemma="coup# d'envoi" tags="n.*"><select lemma="tret# de sortida"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="coup# d'envoi" tags="n.*"><select lemma="sacada inicial"/></match>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="joueur" tags="n.*"/>
+      <match lemma="balle" tags="n.*"/>
+      <match lemma="match" tags="n.*"/>
+      <match lemma="foot" tags="n.*"/>
+      <match lemma="football" tags="n.*"/>
+      <match lemma="rugby" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="joueur" tags="n.*"/>
+      <match lemma="balle" tags="n.*"/>
+      <match lemma="match" tags="n.*"/>
+      <match lemma="foot" tags="n.*"/>
+      <match lemma="football" tags="n.*"/>
+      <match lemma="rugby" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="coup# d'envoi" tags="n.*"><select lemma="sacada inicial"/></match>
+  </rule>
+
   <!-- bosse >> bony, gepa, gep -->
   <rule weight="0.8">
     <match lemma="bosse" tags="n.*"><select lemma="bony"/></match>
@@ -4071,12 +4104,25 @@
   </rule>
   <rule weight="1.0">
     <match lemma="balle" tags="n.*"><select lemma="bala"/></match>
-    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
     <or>
       <match lemma="pistolet" tags="n.*"/>
       <match lemma="revolver" tags="n.*"/>
       <match lemma="canon" tags="n.*"/>
     </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="pistolet" tags="n.*"/>
+      <match lemma="revolver" tags="n.*"/>
+      <match lemma="canon" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="balle" tags="n.*"><select lemma="bala"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="balle" tags="n.*"><select lemma="bala"/></match>
