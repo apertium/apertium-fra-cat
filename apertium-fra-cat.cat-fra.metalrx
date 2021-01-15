@@ -703,6 +703,95 @@
       <match lemma="desembre" tags="n.*"/>
     </def-seq>
 
+    <def-seq n="periode">
+      <match lemma="minut" tags="n.*"/>
+      <match lemma="hora" tags="n.*"/>
+      <match lemma="dia" tags="n.*"/>
+      <match lemma="setmana" tags="n.*"/>
+      <match lemma="mes" tags="n.*"/>
+      <match lemma="trimestre" tags="n.*"/>
+      <match lemma="quadrimestre" tags="n.*"/>
+      <match lemma="semestre" tags="n.*"/>
+      <match lemma="any" tags="n.*"/>
+      <match lemma="lustre" tags="n.*"/>
+      <match lemma="dècada" tags="n.*"/>
+      <match lemma="segle" tags="n.*"/>
+      <match lemma="mil·lenni" tags="n.*"/>
+      <match lemma="període" tags="n.*"/>
+      <match lemma="etapa" tags="n.*"/>
+      <match lemma="infantesa" tags="n.*"/>
+      <match lemma="adolescència" tags="n.*"/>
+      <match lemma="vellesa" tags="n.*"/>
+      <match lemma="edat" tags="n.*"/>
+      <match lemma="edat mitjana" tags="n.*"/>
+      <match lemma="era" tags="n.*"/>
+      <match lemma="època" tags="n.*"/>
+      <match lemma="renaixement" tags="n.*"/>
+      <match lemma="paleozoic" tags="n.*"/>
+      <match lemma="silurià" tags="n.*"/>
+      <match lemma="devonià" tags="n.*"/>
+      <match lemma="carbonífer" tags="n.*"/>
+      <match lemma="permià" tags="n.*"/>
+      <match lemma="mesozoic" tags="n.*"/>
+      <match lemma="cretaci" tags="n.*"/>
+      <match lemma="juràssic" tags="n.*"/>
+      <match lemma="triàsic" tags="n.*"/>
+      <match lemma="cenozoic" tags="n.*"/>
+      <match lemma="paleocè" tags="n.*"/>
+      <match lemma="eocè" tags="n.*"/>
+      <match lemma="oligocè" tags="n.*"/>
+      <match lemma="miocè" tags="n.*"/>
+      <match lemma="pliocè" tags="n.*"/>
+      <match lemma="plistocè" tags="n.*"/>
+      <match lemma="holocè" tags="n.*"/>
+    </def-seq>
+
+    <def-seq n="part_cos">
+      <match lemma="braç"/>
+      <match lemma="mà"/>
+      <match lemma="cama"/>
+      <match lemma="peu"/>
+      <match lemma="cap"/>
+      <match lemma="coll"/>
+      <match lemma="cos"/>
+      <match lemma="coll"/>
+      <match lemma="pit"/>
+      <match lemma="panxa"/>
+      <match lemma="cintura"/>
+      <match lemma="cul"/>
+      <match lemma="maluc"/>
+      <match lemma="front"/>
+      <match lemma="nas"/>
+      <match lemma="galta"/>
+      <match lemma="boca"/>
+      <match lemma="barbeta"/>
+      <match lemma="mentó"/>
+      <match lemma="ull"/>
+      <match lemma="orella"/>
+      <match lemma="cabell"/>
+      <match lemma="genoll"/>
+      <match lemma="turmell"/>
+
+      <match lemma="fetge"/>
+      <match lemma="estòmac"/>
+      <match lemma="cor"/>
+      <match lemma="pulmó"/>
+      <match lemma="budell"/>
+    </def-seq>
+
+    <def-seq n="vestit">
+      <match lemma="samarreta"/>
+      <match lemma="camisa"/>
+      <match lemma="pantaló"/>
+      <match lemma="faldilla"/>
+      <match lemma="calces"/>
+      <match lemma="calçotets"/>
+      <match lemma="màniga"/>
+      <match lemma="mitjó"/>
+      <match lemma="mitja"/>
+      <match lemma="sabata"/>
+    </def-seq>
+
     <def-seq n="verbs_moviment">
       <match lemma="anar" tags="vblex.*"/>
       <match lemma="traslladar" tags="vblex.*"/>
@@ -7231,6 +7320,9 @@
   </rule>
   <rule weight="1.0">
     <match lemma="cap" tags="n.*"><select lemma="cap"/></match>
+    <repeat from="0" upto="1">
+      <match lemma="de" tags="pr"/>
+    </repeat>
     <or>
       <match tags="np.top.*"/>
       <match tags="np.loc"/>
@@ -7239,11 +7331,15 @@
   </rule>
   <rule weight="1.0">
     <match lemma="cap" tags="n.*"><select lemma="cap"/></match>
-    <match lemma="de" tags="pr"/>
     <or>
-      <match tags="np.top.*"/>
-      <match tags="np.loc"/>
-      <match lemma="Hornos"/>
+      <match lemma="nord"/>
+      <match lemma="sud"/>
+      <match lemma="est"/>
+      <match lemma="oest"/>
+      <match lemma="septentrional"/>
+      <match lemma="meridional"/>
+      <match lemma="oriental"/>
+      <match lemma="occidental"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -7254,7 +7350,14 @@
   <rule weight="1.0">
     <match lemma="cap" tags="n.*"><select lemma="chef-lieu"/></match>
     <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
     <or>
+      <match lemma="municipi" tags="n.*"/>
       <match lemma="comarca" tags="n.*"/>
       <match lemma="cantó" tags="n.*"/>
       <match lemma="regió" tags="n.*"/>
@@ -7267,13 +7370,42 @@
   <rule weight="1.0">
     <match lemma="cap" tags="n.*"><select lemma="tête"/></match>
     <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
     <or>
       <seq n="animals"/>
+      <seq n="material"/>
     </or>
   </rule>
   <rule weight="1.0">
     <match lemma="cap" tags="n.*"><select lemma="tête"/></match>
     <match lemma="nuclear" tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cap" tags="n.*"><select lemma="tête"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <seq n="animals"/>
+      <seq n="part_cos"/>
+      <match lemma="anatomia" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="animals"/>
+      <seq n="part_cos"/>
+      <match lemma="anatomia" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="cap" tags="n.*"><select lemma="tête"/></match>
   </rule>
 
   <!-- capital >> capitale, chef-lieu -->
