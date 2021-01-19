@@ -6785,8 +6785,14 @@
   <rule weight="0.8">
     <match lemma="emploi" tags="n.*"><select lemma="ús"/></match>
   </rule>
+  <rule weight="0.9">
+    <match lemma="emploi" tags="n.m.pl"><select lemma="lloc# de treball"/></match>
+  </rule>
   <rule weight="1.0">
     <match lemma="pôle" tags="n.*"/>
+    <repeat from="0" upto="1">
+      <match lemma="de" tags="pr"/>
+    </repeat>
     <match lemma="emploi" tags="n.*"><select lemma="ocupació"/></match>
   </rule>
   <rule weight="1.0">
@@ -6866,6 +6872,14 @@
     </repeat>
     <or>
       <match lemma="public" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="emploi" tags="n.*"><select lemma="feina"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
       <match lemma="rémunéré" tags="adj.*"/>
       <match lemma="rémunérer" tags="vblex.pp.*"/>
       <match lemma="payé" tags="adj.*"/>
