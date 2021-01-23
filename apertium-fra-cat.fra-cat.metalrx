@@ -3550,6 +3550,43 @@
 
 <!-- **************** N **************** -->
 
+  <!-- ceinture >> cinturó, cintura -->
+  <rule weight="0.8">
+    <match lemma="ceinture" tags="n.*"><select lemma="cinturó"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="à" tags="pr"/>
+      <match lemma="au niveau de" tags="pr"/>
+      <match lemma="sous" tags="pr"/>
+      <match lemma="au-dessus de" tags="pr"/>
+    </or>
+    <match tags="det.*"/>
+    <match lemma="ceinture" tags="n.*"><select lemma="cintura"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="à" tags="pr"/>
+    <match lemma="le" tags="det.*"/>
+    <match lemma="niveau" tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="ceinture" tags="n.*"><select lemma="cintura"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ceinture" tags="n.*"><select lemma="cintura"/></match>
+    <match lemma="élastique" tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ceinture" tags="n.*"><select lemma="cintura"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="guêpe" tags="n.*"/>
+  </rule>
+
+  <!-- taille >> talla, cintura -->
+  <rule weight="0.8">
+    <match lemma="taille" tags="n.*"><select lemma="talla"/></match>
+  </rule>
+
   <!-- coup# d'envoi >> tret# de sortida, sacada inicial -->
   <rule weight="0.8">
     <match lemma="coup# d'envoi" tags="n.*"><select lemma="tret# de sortida"/></match>

@@ -635,6 +635,7 @@
        <match lemma="saxo" tags="n.*"/>
        <match lemma="saxofon" tags="n.*"/>
        <match lemma="òrgan" tags="n.*"/>
+       <match lemma="arpa" tags="n.*"/>
 
        <match lemma="música" tags="n.*"/>
     </def-seq>
@@ -2207,6 +2208,10 @@
       <match lemma="allò" tags="prn.*"/>
     </or>
   </rule>
+  <rule weight="1.0">
+    <match lemma="caracteritzar" tags="vblex.*"/>
+    <match lemma="per" tags="pr"><select lemma="par"/></match>
+  </rule>
 
   <!-- des de >> depuis, de, selon -->
   <rule weight="0.8">
@@ -3479,7 +3484,6 @@
     <match lemma="de" tags="pr"/>
   </rule>
 
-
   <!-- tocar >> toucher, jouer# de -->
   <rule weight="0.8">
     <match lemma="tocar" tags="vblex.*"><select lemma="toucher"/></match>
@@ -3493,6 +3497,15 @@
     <or>
       <seq n="instruments_musicals"/>
     </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tocar" tags="vblex.*"><select lemma="jouer# de"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv.*"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="instrument" tags="n.*"/>
+    <match lemma="musical" tags="adj.*"/>
   </rule>
 
   <!-- embogir, enfollir >> devenir fou, folle, foux, folles -->
@@ -4846,6 +4859,11 @@
   </rule>
 
 <!-- N -->
+
+  <!-- cintura >> ceinture, taille -->
+  <rule weight="0.8">
+    <match lemma="cintura" tags="n.*"><select lemma="ceinture"/></match>
+  </rule>
 
   <!-- relleu >> relief, relais -->
   <rule weight="0.8">
@@ -7460,8 +7478,7 @@
     </or>
   </rule>
 
-<!-- paper > papier, rôle -->
-
+  <!-- paper > papier, rôle -->
   <rule weight="0.6">
      <match lemma="paper" tags="n.*"><select lemma="papier"/></match>
   </rule>
