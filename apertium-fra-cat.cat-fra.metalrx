@@ -4926,6 +4926,11 @@
 
 <!-- N -->
 
+  <!-- clip >> clip, trombone -->
+  <rule weight="0.8">
+    <match lemma="clip" tags="n.*"><select lemma="clip"/></match>
+  </rule>
+
   <!-- cintura >> ceinture, taille -->
   <rule weight="0.8">
     <match lemma="cintura" tags="n.*"><select lemma="ceinture"/></match>

@@ -3625,6 +3625,26 @@
 
 <!-- **************** N **************** -->
 
+  <!-- masque >> màscara, mascareta -->
+  <rule weight="0.8">
+    <match lemma="masque" tags="n.*"><select lemma="màscara"/></match>
+  </rule>
+
+  <!-- coup# d'envoi >> sacada inicial, tret# de sortida -->
+  <rule weight="0.8">
+    <match lemma="coup# d'envoi" tags="n.*"><select lemma="sacada inicial"/></match>
+  </rule>
+
+  <!-- trombone >> trombó, clip -->
+  <rule weight="0.8">
+    <match lemma="trombone" tags="n.*"><select lemma="trombó"/></match>
+  </rule>
+
+  <!-- noise >> gresca, picabaralla -->
+  <rule weight="0.8">
+    <match lemma="noise" tags="n.*"><select lemma="gresca"/></match>
+  </rule>
+
   <!-- ceinture >> cinturó, cintura -->
   <rule weight="0.8">
     <match lemma="ceinture" tags="n.*"><select lemma="cinturó"/></match>
