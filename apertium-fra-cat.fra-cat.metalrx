@@ -2335,8 +2335,83 @@
   <!-- presser >> acuitar, afanyar -->
   <macro name="verb_intrans_trans" p1="presser" p2="acuitar" p3="afanyar"/>
 
-  <!-- saisir >> agafar/agarrar, apoderar -->
+  <!-- saisir >> agafar/agarrar, apoderar, entrar, segrestar, requisar -->
   <macro name="verb_nopron_pron" p1="saisir" p2="agafar" p3="apoderar"/>
+  <rule weight="1.2">
+    <match lemma="saisir" tags="vblex.*"><select lemma="entrar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <or>
+      <match lemma="code" tags="n.*"/>
+      <match lemma="identifiant" tags="n.*"/>
+      <match lemma="adresse" tags="n.*"/>
+      <match lemma="e-mail" tags="n.*"/>
+      <match lemma="courriel" tags="n.*"/>
+      <match lemma="mot# de passe" tags="n.*"/>
+      <match lemma="donnée" tags="n.*"/>
+      <match lemma="information" tags="n.*"/>
+      <match lemma="info" tags="n.*"/>
+      <match lemma="combinaison" tags="n.*"/>
+      <match lemma="numéro" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="saisir" tags="vblex.*"><select lemma="segrestar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <match lemma="journal" tags="n.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="journal" tags="n.*"/>
+    <match lemma="saisir" tags="vblex.pp.*"><select lemma="segrestar"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="saisir" tags="vblex.*"><select lemma="requisar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <or>
+      <match lemma="serveur" tags="n.*"/>
+      <match lemma="ordinateur" tags="n.*"/>
+      <match lemma="ordi" tags="n.*"/>
+      <match lemma="disque" tags="n.*"/>
+      <match lemma="téléphone" tags="n.*"/>
+      <match lemma="portable" tags="n.*"/>
+      <match lemma="tablette" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <or>
+      <match lemma="serveur" tags="n.*"/>
+      <match lemma="ordinateur" tags="n.*"/>
+      <match lemma="ordi" tags="n.*"/>
+      <match lemma="disque" tags="n.*"/>
+      <match lemma="téléphone" tags="n.*"/>
+      <match lemma="portable" tags="n.*"/>
+      <match lemma="tablette" tags="n.*"/>
+    </or>
+    <match lemma="saisir" tags="vblex.pp.*"><select lemma="requisar"/></match>
+  </rule>
 
   <!-- dessaisir >> desposseir, desprendre -->
   <macro name="verb_nopron_pron" p1="dessaisir" p2="desposseir" p3="desprendre"/>
@@ -6356,6 +6431,14 @@
     <match lemma="de" tags="pr"/>
     <match lemma="lettre" tags="n.*"><select lemma="lletra"/></match>
   </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="bel" tags="adj.*"/>
+      <match lemma="beau" tags="adj.*"/>
+      <match lemma="bon" tags="adj.*"/>
+    </or>
+    <match lemma="lettre" tags="n.f.pl"><select lemma="lletra"/></match>
+  </rule>
 
   <!-- question >> qüestió, pregunta -->
   <rule weight="0.8">
@@ -7283,6 +7366,30 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- beau >> bonic, bell -->
+  <!-- bel >> bonic, bell -->
+  <rule weight="0.8">
+    <or>
+      <match lemma="beau" tags="adj.*"><select lemma="bonic"/></match>
+      <match lemma="bel" tags="adj.*"><select lemma="bonic"/></match>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="beau" tags="adj.*"><select lemma="bell"/></match>
+      <match lemma="bel" tags="adj.*"><select lemma="bell"/></match>
+    </or>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match tags="np.ant.*"/>
+    <match tags="det.def.*"/>
+    <or>
+      <match lemma="beau" tags="adj.*"><select lemma="bell"/></match>
+      <match lemma="bel" tags="adj.*"><select lemma="bell"/></match>
+    </or>
+  </rule>
+
   <!-- nombreux >> nombrós, molt -->
   <rule weight="0.8">
     <match lemma="nombreux" tags="adj.*"><select lemma="nombrós"/></match>
@@ -7756,6 +7863,21 @@
   </rule>
 
 <!-- **************** VBLEX **************** -->
+
+  <!-- défrayer# la cronique >> ser# notícia, fer# parlar -->
+  <rule weight="0.8">
+    <match lemma="défrayer# la cronique" tags="vblex.*"><select lemma="ser# notícia"/></match>
+  </rule>
+
+  <!-- bricoler >> feinejar, fer# bricolatge, apedaçar, engiponar -->
+  <rule weight="0.8">
+    <match lemma="bricoler" tags="vblex.*"><select lemma="feinejar"/></match>
+  </rule>
+
+  <!-- dérailler >> descarrilar, desvariejar -->
+  <rule weight="0.8">
+    <match lemma="dérailler" tags="vblex.*"><select lemma="descarrilar"/></match>
+  </rule>
 
   <!-- épargner >> estalviar, salvar -->
   <rule weight="0.8">

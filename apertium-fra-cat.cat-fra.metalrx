@@ -2636,7 +2636,59 @@
 
 <!-- V -->
 
-  <!-- segrestar >> prendre# en otage, kidnapper, détourner -->
+  <!-- requisar >> confisquer, saisir, réquisitionner -->
+  <rule weight="0.8">
+    <match lemma="requisar" tags="vblex.*"><select lemma="confisquer"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="requisar" tags="vblex.*"><select lemma="saisir"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <or>
+      <match lemma="servidor" tags="n.*"/>
+      <match lemma="ordinador" tags="n.*"/>
+      <match lemma="portàtil" tags="n.*"/>
+      <match lemma="telèfon" tags="n.*"/>
+      <match lemma="mòbil" tags="n.*"/>
+      <match lemma="tauleta" tags="n.*"/>
+      <match lemma="disc" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- entrar >> entrer, saisir -->
+  <rule weight="0.8">
+    <match lemma="entrar" tags="vblex.*"><select lemma="entrer"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="entrar" tags="vblex.*"><select lemma="saisir"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <or>
+      <match lemma="codi" tags="n.*"/>
+      <match lemma="identificador" tags="n.*"/>
+      <match lemma="adreça" tags="n.*"/>
+      <match lemma="e-mail" tags="n.*"/>
+      <match lemma="correu electrònic" tags="n.*"/>
+      <match lemma="contrasenya" tags="n.*"/>
+      <match lemma="dada" tags="n.*"/>
+      <match lemma="informació" tags="n.*"/>
+      <match lemma="número" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- segrestar >> prendre# en otage, kidnapper, détourner, saisir -->
   <rule weight="0.8">
     <match lemma="segrestar" tags="vblex.*"><select lemma="prendre# en otage"/></match>
   </rule>
@@ -2646,11 +2698,9 @@
       <match tags="adv"/>
     </repeat>
     <or>
-      <or>
-        <match tags="num.*"/>
-        <match tags="num"/>
-        <match tags="adj.*"/>
-      </or>
+      <match tags="num.*"/>
+      <match tags="num"/>
+      <match tags="adj.*"/>
     </or>
     <or>
       <match lemma="nen" tags="n.*"/>
@@ -2691,6 +2741,22 @@
       <match lemma="avió" tags="n.*"/>
       <match lemma="Boeing" tags="np.*"/>
       <match lemma="Airbus" tags="np.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="segrestar" tags="vblex.*"><select lemma="kidnapper"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="num.*"/>
+      <match tags="num"/>
+      <match tags="adj.*"/>
+    </or>
+    <or>
+      <match lemma="diari" tags="n.*"/>
+      <match lemma="periòdic" tags="n.*"/>
+      <match lemma="publicació" tags="n.*"/>
     </or>
   </rule>
 
