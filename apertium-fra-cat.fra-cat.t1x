@@ -464,6 +464,7 @@
     <def-cat n="verbospron"> <!-- verbs pronominals en fra però amb l'equivalent cat no pronominal -->
       <cat-item lemma="asseoir" tags="vblex.*"/>
       <cat-item lemma="avérer" tags="vblex.*"/>
+      <cat-item lemma="carapater" tags="vblex.*"/>
       <cat-item lemma="dérober" tags="vblex.*"/>
       <cat-item lemma="dérober# à" tags="vblex.*"/>
       <cat-item lemma="faire# engueuler" tags="vblex.*"/>
@@ -477,6 +478,7 @@
     <def-cat n="verbospron_pp">
       <cat-item lemma="asseoir" tags="vblex.pp.*"/>
       <cat-item lemma="avérer" tags="vblex.pp.*"/>
+      <cat-item lemma="carapater" tags="vblex.pp.*"/>
       <cat-item lemma="dérober" tags="vblex.pp.*"/>
       <cat-item lemma="dérober# à" tags="vblex.pp.*"/>
       <cat-item lemma="faire# engueuler" tags="vblex.pp.*"/>
@@ -490,6 +492,7 @@
     <def-cat n="verbospron_inf">
       <cat-item lemma="asseoir" tags="vblex.inf"/>
       <cat-item lemma="avérer" tags="vblex.inf"/>
+      <cat-item lemma="carapater" tags="vblex.inf"/>
       <cat-item lemma="dérober" tags="vblex.inf"/>
       <cat-item lemma="dérober# à" tags="vblex.inf"/>
       <cat-item lemma="faire# engueuler" tags="vblex.inf"/>
@@ -503,6 +506,7 @@
     <def-cat n="verbospron_ger">
       <cat-item lemma="asseoir" tags="vblex.ger"/>
       <cat-item lemma="avérer" tags="vblex.ger"/>
+      <cat-item lemma="carapater" tags="vblex.ger"/>
       <cat-item lemma="dérober" tags="vblex.ger"/>
       <cat-item lemma="dérober# à" tags="vblex.ger"/>
       <cat-item lemma="faire# engueuler" tags="vblex.ger"/>
@@ -905,8 +909,11 @@
     <def-list n="vb_pronfra_noproncat">
       <list-item v="assoir"/>
       <list-item v="avérer"/>
+      <list-item v="carapater"/>
+      <list-item v="dérober"/>
       <list-item v="heurter"/>
       <list-item v="passer"/>
+      <list-item v="rendre"/>
       <list-item v="reposer"/>
       <list-item v="taire"/>
     </def-list>
