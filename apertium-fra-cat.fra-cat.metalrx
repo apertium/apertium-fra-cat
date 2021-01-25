@@ -2201,6 +2201,9 @@
     <match lemma="avancer" tags="vblex.*"><select lemma="avançar"/></match>
   </rule>
 
+  <!-- carapater >> córrer, fugir -->
+  <macro name="verb_nopron_pron" p1="carapater" p2="córrer" p3="fugir"/>
+
   <!-- faire# chier >> fer# sortir de polleguera, morir# de fàstic -->
   <macro name="verb_nopron_pron" p1="faire# chier" p2="fer# sortir de polleguera" p3="morir# de fàstic"/>
 
@@ -2335,7 +2338,7 @@
   <!-- presser >> acuitar, afanyar -->
   <macro name="verb_intrans_trans" p1="presser" p2="acuitar" p3="afanyar"/>
 
-  <!-- saisir >> agafar/agarrar, apoderar, entrar, segrestar, requisar -->
+  <!-- saisir >> agafar/agarrar, apoderar, entrar, segrestar, decomissar, requisar, apel·lar# a -->
   <macro name="verb_nopron_pron" p1="saisir" p2="agafar" p3="apoderar"/>
   <rule weight="1.2">
     <match lemma="saisir" tags="vblex.*"><select lemma="entrar"/></match>
@@ -2381,7 +2384,7 @@
     <match lemma="saisir" tags="vblex.pp.*"><select lemma="segrestar"/></match>
   </rule>
   <rule weight="1.2">
-    <match lemma="saisir" tags="vblex.*"><select lemma="requisar"/></match>
+    <match lemma="saisir" tags="vblex.*"><select lemma="decomissar"/></match>
     <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
@@ -2410,7 +2413,15 @@
       <match lemma="portable" tags="n.*"/>
       <match lemma="tablette" tags="n.*"/>
     </or>
-    <match lemma="saisir" tags="vblex.pp.*"><select lemma="requisar"/></match>
+    <match lemma="saisir" tags="vblex.pp.*"><select lemma="decomissar"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="saisir" tags="vblex.*"><select lemma="apel·lar# a"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="tribunal" tags="n.*"/>
   </rule>
 
   <!-- dessaisir >> desposseir, desprendre -->
@@ -3624,6 +3635,20 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- jeu# de cartes >> joc# de cartes, baralla# de cartes -->
+  <rule weight="0.8">
+    <match lemma="jeu# de cartes" tags="n.*"><select lemma="joc# de cartes"/></match>
+  </rule>
+
+  <!-- demandeur >> sol·licitant, demandant -->
+  <rule weight="0.8">
+    <match lemma="demandeur" tags="n.*"><select lemma="sol·licitant"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="demandeur" tags="n.*"><select lemma="demandant"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
 
   <!-- masque >> màscara, mascareta -->
   <rule weight="0.8">
@@ -7386,6 +7411,11 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- familier >> familiar -->
+  <rule weight="0.8">
+    <match lemma="familier" tags="adj.*"><select lemma="familiar"/></match>
+  </rule>
+
   <!-- beau >> bonic, bell -->
   <!-- bel >> bonic, bell -->
   <rule weight="0.8">
@@ -8246,6 +8276,15 @@
     <match lemma="ce" tags="prn.*"/>
     <match lemma="être"><select lemma="ser" tags="vbser.*"/></match>
   </rule>
+  <rule weight="1.0">
+    <match lemma="être"><select lemma="estar" tags="vblex.*"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="familier" tags="adj.*"><select lemma="familiaritzar"/></match>
+    <match lemma="avec" tags="pr"/>
+  </rule>
+
 
   <rule weight="0.8" v="val">
     <match lemma="chauffer" tags="vblex.*"><select lemma="calfar" tags="vblex.*"/></match>
@@ -8451,6 +8490,11 @@
 
 <!-- **************** ADV **************** -->
 
+  <!-- à cœur ouvert >> a cor obert, amb el cor a la mà -->
+  <rule weight="0.8">
+    <match lemma="à cœur ouvert" tags="adv"><select lemma="a cor obert"/></match>
+  </rule>
+
   <!-- tout à l'heure >> d'aquí una mica/d'aquí una estona, fa una estona -->
   <rule weight="0.8">
     <match lemma="tout à l'heure" tags="adv"><select lemma="d'aquí una mica"/></match>
@@ -8599,6 +8643,7 @@
   <macro name="noms_propres" p1="Marie" p2="Maria" />
   <macro name="noms_propres" p1="Marie-Antoinette" p2="Maria Antonieta" />
   <macro name="noms_propres" p1="Marie-Christine" p2="Maria Cristina" />
+  <macro name="noms_propres" p1="Christine" p2="Cristina" />
   <macro name="noms_propres" p1="Jeanne" p2="Joana" />
   <macro name="noms_propres" p1="Jean" p2="Joan" />
   <macro name="noms_propres" p1="Juan Carlos" p2="Joan Carles" />
@@ -8647,6 +8692,7 @@
   <macro name="noms_propres" p1="Amédée" p2="Amadeu" />
   <macro name="noms_propres" p1="André" p2="Andreu" />
   <macro name="noms_propres" p1="Blanche" p2="Blanca" />
+  <macro name="noms_propres" p1="Michel" p2="Miquel" />
 
 </rules>
 </metalrx>

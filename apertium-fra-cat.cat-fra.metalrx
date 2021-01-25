@@ -2636,6 +2636,11 @@
 
 <!-- V -->
 
+  <!-- rosegar >> ronger, grignoter -->
+  <rule weight="0.8">
+    <match lemma="rosegar" tags="vblex.*"><select lemma="ronger"/></match>
+  </rule>
+
   <!-- requisar >> confisquer, saisir, réquisitionner -->
   <rule weight="0.8">
     <match lemma="requisar" tags="vblex.*"><select lemma="confisquer"/></match>
@@ -3388,6 +3393,11 @@
   </rule>
 -->
 
+  <!-- familiaritzar >> familiariser -->
+  <rule weight="0.8">
+    <match lemma="familiaritzar" tags="vblex.*"><select lemma="familiariser"/></match>
+  </rule>
+
   <!-- congelar >> congeler, geler -->
   <rule weight="0.8">
     <match lemma="congelar" tags="vblex.*"><select lemma="congeler"/></match>
@@ -3476,6 +3486,20 @@
 
   <!-- estar >> être, rester -->
   <macro name="verb_nopron_pron_prep" p1="estar" p2="être" p3="rester" p4="a"/>
+  <rule weight="1.0">
+    <match lemma="estar" tags="vblex.*"><select lemma="être"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="preadv"/>
+        <match tags="adv"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="familiaritzat" tags="adj.*"><select lemma="familier"/></match>
+      <match lemma="familiaritzar" tags="vblex.pp.*"><select lemma="familier"/></match>
+    </or>
+    <match lemma="amb" tags="pr"/>
+  </rule>
 
   <!-- aprimar >> amaigrir, maigrir -->
   <macro name="verb_nopron_pron" p1="aprimar" p2="amaigrir" p3="maigrir" />
@@ -4262,55 +4286,7 @@
   </rule>
 
   <!-- marejar >> faire# tourner la tête, sentir# mal -->
-  <rule weight="0.8">
-    <match lemma="marejar" tags="vblex.*"><select lemma="faire# tourner la tête"/></match>
-  </rule>
-  <rule weight="1.0">
-    <match tags="prn.pro.ref.*"/>
-    <match lemma="marejar" tags="vblex.*"><select lemma="sentir# mal"/></match>
-  </rule>
-  <rule weight="1.0">
-    <match tags="prn.pro.p1.*"/>
-    <match lemma="marejar" tags="vblex.*.p1.*"><select lemma="sentir# mal"/></match>
-  </rule>
-  <rule weight="1.0">
-    <match tags="prn.pro.p2.*"/>
-    <match lemma="marejar" tags="vblex.*.p2.*"><select lemma="sentir# mal"/></match>
-  </rule>
-  <rule weight="1.0">
-    <match tags="prn.pro.ref.*"/>
-    <match lemma="haver" tags="vbhaver.*"/>
-    <match lemma="marejar" tags="vblex.pp.*"><select lemma="sentir# mal"/></match>
-  </rule>
-  <rule weight="1.0">
-    <match tags="prn.pro.p1.*"/>
-    <match lemma="haver" tags="vbhaver.*.p1.*"/>
-    <match lemma="marejar" tags="vblex.pp.*"><select lemma="sentir# mal"/></match>
-  </rule>
-  <rule weight="1.0">
-    <match tags="prn.pro.p2.*"/>
-    <match lemma="haver" tags="vbhaver.*.p2.*"/>
-    <match lemma="marejar" tags="vblex.pp.*"><select lemma="sentir# mal"/></match>
-  </rule>
-  <rule weight="1.0">
-    <match tags="prn.pro.ref.*"/>
-    <match lemma="anar" tags="vblex.pri.p3.*"/>
-    <match lemma="marejar" tags="vblex.inf"><select lemma="sentir# mal"/></match>
-  </rule>
-  <rule weight="1.0">
-    <match tags="prn.pro.p1.*"/>
-    <match lemma="anar" tags="vblex.pri.p1.*"/>
-    <match lemma="marejar" tags="vblex.inf"><select lemma="sentir# mal"/></match>
-  </rule>
-  <rule weight="1.0">
-    <match tags="prn.pro.p2.*"/>
-    <match lemma="anar" tags="vblex.pri.p2.*"/>
-    <match lemma="marejar" tags="vblex.inf"><select lemma="sentir# mal"/></match>
-  </rule>
-  <rule weight="1.0">
-    <match lemma="marejar" tags="vblex.*"><select lemma="sentir# mal"/></match>
-    <match tags="prn.pro.ref.*"/>
-  </rule>
+  <macro name="verb_nopron_pron" p1="faire# tourner la tête" p2="défaire" p3="sentir# mal" />
 
   <!-- tractar >> traiter, tâcher, agir -->
   <rule weight="0.8">
@@ -4925,6 +4901,15 @@
   </rule>
 
 <!-- N -->
+
+  <!-- demandant >> plaignant, demandeur -->
+  <rule weight="0.8">
+    <match lemma="demandant" tags="n.*"><select lemma="plaignant"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="demandant" tags="n.*"><select lemma="demandeur"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
 
   <!-- clip >> clip, trombone -->
   <rule weight="0.8">
@@ -7761,6 +7746,7 @@
   <macro name="noms_propis" p1="Maria" p2="Marie" />
   <macro name="noms_propis" p1="Maria Antonieta" p2="Marie-Antoinette" />
   <macro name="noms_propis" p1="Maria Cristina" p2="Marie-Cristine" />
+  <macro name="noms_propis" p1="Cristina" p2="Cristine" />
   <macro name="noms_propis" p1="Joana" p2="Jeanne" />
   <macro name="noms_propis" p1="Joan" p2="Jean" />
   <macro name="noms_propis" p1="Joan Carles" p2="Juan Carlos" />
@@ -7809,6 +7795,7 @@
   <macro name="noms_propis" p1="Amadeu" p2="Amédée" />
   <macro name="noms_propis" p1="Andreu" p2="André" />
   <macro name="noms_propis" p1="Blanca" p2="Blanche" />
+  <macro name="noms_propis" p1="Miquel" p2="Michel" />
 
 </rules>
 </metalrx>
