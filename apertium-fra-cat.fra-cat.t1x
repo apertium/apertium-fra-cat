@@ -92,6 +92,9 @@
     <def-cat n="entreprep">
       <cat-item lemma="entre" tags="pr"/>
     </def-cat>
+    <def-cat n="chez">
+      <cat-item lemma="chez" tags="pr"/>
+    </def-cat>
     <def-cat n="sur_avec">
       <cat-item lemma="sur" tags="pr"/>
       <cat-item lemma="avec" tags="pr"/>
@@ -152,6 +155,17 @@
     </def-cat>
     <def-cat n="moi">
       <cat-item lemma="moi" tags="prn.tn.p1.mf.sg"/>
+    </def-cat>
+    <def-cat n="moi_toi_etc">
+      <cat-item lemma="moi" tags="prn.tn.p1.mf.sg"/>
+      <cat-item lemma="toi" tags="prn.tn.p2.mf.sg"/>
+      <cat-item lemma="lui" tags="prn.tn.p3.m.sg"/>
+      <cat-item lemma="il" tags="prn.tn.p3.f.sg"/>
+      <cat-item lemma="soi" tags="prn.tn.ref.p3.mf.sp"/>
+      <cat-item lemma="nous" tags="prn.tn.p1.mf.pl"/>
+      <cat-item lemma="vous" tags="prn.tn.p1.mf.pl"/>
+      <cat-item lemma="eux" tags="prn.tn.p3.m.pl"/>
+      <cat-item lemma="il" tags="prn.tn.p3.f.pl"/>
     </def-cat>
     <def-cat n="unpron">
       <cat-item lemma="un" tags="prn.*"/>
@@ -3895,6 +3909,65 @@
       </action>
     </rule>
 
+    <rule comment="REGLA: chez + prn.tn = a ca + adj.pos: chez moi > a casa meva">
+      <pattern>
+        <pattern-item n="chez"/>
+	<pattern-item n="moi_toi_etc"/>
+      </pattern>
+      <action>
+        <choose>
+	  <when>
+	    <test><equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="moi"/></equal></test>
+            <let><clip pos="2" side="tl" part="lem"/><lit v="meu"/></let>
+	  </when>
+	  <when>
+	    <test><equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="toi"/></equal></test>
+            <let><clip pos="2" side="tl" part="lem"/><lit v="teu"/></let>
+	  </when>
+	  <when>
+	    <test><equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="lui"/></equal></test>
+            <let><clip pos="2" side="tl" part="lem"/><lit v="seu"/></let>
+	  </when>
+	  <when>
+	    <test><equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="il"/></equal></test>
+            <let><clip pos="2" side="tl" part="lem"/><lit v="seu"/></let>
+	  </when>
+	  <when>
+	    <test><equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="soi"/></equal></test>
+            <let><clip pos="2" side="tl" part="lem"/><lit v="seu"/></let>
+	  </when>
+	  <when>
+	    <test><equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="nous"/></equal></test>
+            <let><clip pos="2" side="tl" part="lem"/><lit v="nostre"/></let>
+	  </when>
+	  <when>
+	    <test><equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="vos"/></equal></test>
+            <let><clip pos="2" side="tl" part="lem"/><lit v="vostre"/></let>
+	  </when>
+	  <when>
+	    <test><equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="eux"/></equal></test>
+            <let><clip pos="2" side="tl" part="lem"/><lit v="seu"/></let>
+	  </when>
+        </choose>
+        <out>
+          <lu>
+            <lit v="a"/>
+            <lit-tag v="pr"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="casa"/>
+            <lit-tag v="n.f.sg"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <lit-tag v="adj.pos.f.sg"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
     <rule comment="REGLA: en + nom = en + nom: en français -> en francès (per a evitar la generació de plurals)">
       <pattern>
         <pattern-item n="enprep"/>
@@ -4131,12 +4204,30 @@
         <pattern-item n="plus_moins"/>
         <pattern-item n="adjec_adv"/>
         <pattern-item n="que"/>
-	<pattern-item n="moi"/>
+	<pattern-item n="moi_toi_etc"/>
       </pattern>
       <action>
         <call-macro n="f_concord1">
           <with-param pos="2"/>
         </call-macro>
+        <choose>
+	  <when>
+	    <test><equal caseless="yes"><clip pos="4" side="sl" part="lem"/><lit v="moi"/></equal></test>
+            <let><clip pos="4" side="tl" part="lem"/><lit v="jo"/></let>
+	  </when>
+	  <when>
+	    <test><equal caseless="yes"><clip pos="4" side="sl" part="lem"/><lit v="toi"/></equal></test>
+            <let><clip pos="4" side="tl" part="lem"/><lit v="tu"/></let>
+	  </when>
+	  <when>
+	    <test><equal caseless="yes"><clip pos="4" side="sl" part="lem"/><lit v="lui"/></equal></test>
+            <let><clip pos="4" side="tl" part="lem"/><lit v="ell"/></let>
+	  </when>
+	  <when>
+	    <test><equal caseless="yes"><clip pos="4" side="sl" part="lem"/><lit v="eux"/></equal></test>
+            <let><clip pos="4" side="tl" part="lem"/><lit v="ell"/></let>
+	  </when>
+        </choose>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -4149,9 +4240,11 @@
           <lu>
           <clip pos="3" side="tl" part="whole"/>
           </lu>
-            <b pos="3"/>
+          <b pos="3"/>
           <lu>
-            <lit v="jo"/>
+            <get-case-from pos="4">
+              <clip pos="4" side="tl" part="lem"/>
+            </get-case-from>
             <clip pos="4" side="tl" part="tags"/>
           </lu>
         </out>
