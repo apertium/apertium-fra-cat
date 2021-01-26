@@ -4902,6 +4902,49 @@
 
 <!-- N -->
 
+  <!-- ca >> maison, chez -->
+  <rule weight="0.8">
+    <match lemma="ca" tags="n.f.*"><select lemma="maison"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ca" tags="n.f.*"><select lemma="chez"/></match>
+    <or>
+     <match tags="det.def.m.sg"/>
+     <match tags="det.def.m.pl"/>
+    </or>
+    <or>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+      <match tags=""/>
+    </or>
+  </rule>
+
+  <!-- pispa >> filou, filoute -->
+  <rule weight="0.8">
+    <match lemma="pispa" tags="n.*"><select lemma="filou"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="*.f.*"/>
+    <match lemma="pispa" tags="n.*"><select lemma="filoute"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pispa" tags="n.*"><select lemma="filoute"/></match>
+    <match tags="*.f.*"/>
+  </rule>
+
+  <!-- afaneta >> filou, filoute -->
+  <rule weight="0.8">
+    <match lemma="afaneta" tags="n.*"><select lemma="filou"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="*.f.*"/>
+    <match lemma="afaneta" tags="n.*"><select lemma="filoute"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="afaneta" tags="n.*"><select lemma="filoute"/></match>
+    <match tags="*.f.*"/>
+  </rule>
+
   <!-- demandant >> plaignant, demandeur -->
   <rule weight="0.8">
     <match lemma="demandant" tags="n.*"><select lemma="plaignant"/></match>
@@ -6905,11 +6948,11 @@
   </rule>
   <rule weight="1.0">
     <match lemma="mossèn" tags="n.m.sg"><select lemma="monseigneur"/></match>
-    <match tags="np.ant.*"/>
-  </rule>
-  <rule weight="1.0">
-    <match lemma="mossèn" tags="n.m.sg"><select lemma="monseigneur"/></match>
-    <match tags=""/>
+    <or>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+      <match tags=""/>
+    </or>
   </rule>
 
   <!-- serra >> scie, massif -->
@@ -7796,6 +7839,7 @@
   <macro name="noms_propis" p1="Andreu" p2="André" />
   <macro name="noms_propis" p1="Blanca" p2="Blanche" />
   <macro name="noms_propis" p1="Miquel" p2="Michel" />
+  <macro name="noms_propis" p1="Margarida" p2="Marguerite" />
 
 </rules>
 </metalrx>

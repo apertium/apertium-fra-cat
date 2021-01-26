@@ -547,6 +547,7 @@
       <match lemma="étudiant" tags="n.*"/>
       <match lemma="pape" tags="n.*"/>
       <match lemma="patriarche" tags="n.*"/>
+      <match lemma="cardinal" tags="n.*"/>
       <match lemma="évêque" tags="n.*"/>
       <match lemma="archevêque" tags="n.*"/>
       <match lemma="saint" tags="n.*"/>
@@ -997,6 +998,66 @@
   </rule>
 
 <!-- **************** PREP **************** -->
+
+  <!-- chez >> en, a casa de, a ca -->
+  <rule weight="0.6">
+    <match lemma="chez" tags="pr"><select lemma="en"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="chez" tags="pr"><select lemma="a casa de"/></match>
+    <or>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+      <match tags="det.pos.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="chez" tags="pr"><select lemma="a casa de"/></match>
+    <match tags="det.def.mf.pl"/>
+    <match tags="np.cog.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="chez" tags="pr"><select lemma="a casa de"/></match>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="voisin" tags="n.*"/>
+      <match lemma="ami" tags="n.*"/>
+      <match lemma="enfant" tags="n.*"/>
+      <match lemma="père" tags="n.m.sg"/>
+      <match lemma="mère" tags="n.*"/>
+      <match lemma="fils" tags="n.*"/>
+      <match lemma="fille" tags="n.*"/>
+      <match lemma="petit-fils" tags="n.*"/>
+      <!-- <match lemma="frère" tags="n.*"/> -->
+      <!-- <match lemma="sœur" tags="n.*"/> -->
+      <match lemma="neuveu" tags="n.*"/>
+      <match lemma="nièce" tags="n.*"/>
+      <!-- <match lemma="femme" tags="n.*"/> -->
+      <match lemma="mari" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="chez" tags="pr"><select lemma="entre"/></match>
+    <match tags="det.def.mf.pl"/>
+    <or>
+      <match lemma="jeune"/>
+      <match lemma="vieux"/>
+      <match lemma="vieil"/>
+      <match lemma="riche"/>
+      <match lemma="pauvre"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="chez" tags="pr"><select lemma="a"/></match>
+    <or>
+      <match tags="np.al.*"/>
+      <match tags=""/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sortir" tags="vblex.*"/>
+    <match lemma="chez" tags="pr"><select lemma="a"/></match>
+  </rule>
 
   <!-- avec >> amb, de -->
   <rule weight="0.6">
@@ -3636,6 +3697,11 @@
 
 <!-- **************** N **************** -->
 
+  <!-- barrage# de police >> control policial, cordó policial -->
+  <rule weight="0.8">
+    <match lemma="barrage# de police" tags="n.*"><select lemma="control policial"/></match>
+  </rule>
+
   <!-- jeu# de cartes >> joc# de cartes, baralla# de cartes -->
   <rule weight="0.8">
     <match lemma="jeu# de cartes" tags="n.*"><select lemma="joc# de cartes"/></match>
@@ -3991,6 +4057,40 @@
   <!-- côte >> costa, costella -->
   <rule weight="0.8">
     <match lemma="côte" tags="n.*"><select lemma="costa"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="côte" tags="n.*"><select lemma="costella"/></match>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="cœur" tags="n.*"/>
+      <match lemma="poumon" tags="n.*"/>
+      <match lemma="poitrine" tags="n.*"/>
+      <match lemma="os" tags="n.*"/>
+      <match lemma="épine dorsale" tags="n.*"/>
+      <match lemma="échine" tags="n.*"/>
+      <match lemma="vertèbre" tags="n.*"/>
+      <match lemma="vertébral" tags="adj.*"/>
+      <match lemma="épaule" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="cœur" tags="n.*"/>
+      <match lemma="poumon" tags="n.*"/>
+      <match lemma="poitrine" tags="n.*"/>
+      <match lemma="os" tags="n.*"/>
+      <match lemma="épine dorsale" tags="n.*"/>
+      <match lemma="échine" tags="n.*"/>
+      <match lemma="vertèbre" tags="n.*"/>
+      <match lemma="vertébral" tags="adj.*"/>
+      <match lemma="épaule" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="côte" tags="n.*"><select lemma="costella"/></match>
   </rule>
 
   <!-- entorse >> tergiversació, girada, etc. -->
@@ -6761,14 +6861,6 @@
   <rule weight="0.8">
     <match lemma="monseigneur" tags="n.*"><select lemma="monsenyor"/></match>
   </rule>
-  <rule weight="1.0">
-    <match lemma="monseigneur" tags="n.m.sg"><select lemma="mossèn"/></match>
-    <match tags="np.ant.*"/>
-  </rule>
-  <rule weight="1.0">
-    <match lemma="monseigneur" tags="n.m.sg"><select lemma="mossèn"/></match>
-    <match tags=""/>
-  </rule>
 
   <!-- dauphin >> dofí, delfí -->
   <rule weight="0.8">
@@ -7135,6 +7227,21 @@
     <match lemma="de" tags="pr"/>
     <match tags="det.*"/>
     <match tags="n.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="fille" tags="n.*"><select lemma="fill" tags="n.*"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+      <match tags=""/>
+      <match lemma="monsieur" tags="n.*"/>
+      <match lemma="madame" tags="n.*"/>
+      <match lemma="monseigneur" tags="n.*"/>
+    </or>
   </rule>
 
   <!-- garçon >> xic, noi, fill -->
@@ -8693,6 +8800,7 @@
   <macro name="noms_propres" p1="André" p2="Andreu" />
   <macro name="noms_propres" p1="Blanche" p2="Blanca" />
   <macro name="noms_propres" p1="Michel" p2="Miquel" />
+  <macro name="noms_propres" p1="Marguerite" p2="Margarida" />
 
 </rules>
 </metalrx>
