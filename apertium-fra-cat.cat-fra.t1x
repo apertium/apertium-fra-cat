@@ -18,7 +18,6 @@
     <def-cat n="npant">
       <cat-item tags="np.ant"/>
       <cat-item tags="np.ant.*"/>
-      <cat-item tags="np.cog.*"/>
     </def-cat>
     <def-cat n="npant_unk">
       <cat-item tags="np.ant"/>
@@ -33,6 +32,9 @@
     <def-cat n="det">
       <cat-item tags="det.*"/>
       <cat-item tags="predet.*"/>
+    </def-cat>
+    <def-cat n="detdefsg">
+      <cat-item tags="det.def.*.sg"/>
     </def-cat>
     <def-cat n="detind">
       <cat-item tags="det.ind.*"/>
@@ -634,6 +636,10 @@
     <def-cat n="n_senyor">
       <cat-item lemma="senyor" tags="n.*"/>
       <cat-item lemma="senyoret" tags="n.f.*"/>
+    </def-cat>
+    <def-cat n="ca">
+      <cat-item lemma="ca" tags="n.*"/>
+      <cat-item lemma="a ca" tags="pr"/>
     </def-cat>
     <def-cat n="multiHiha">
       <cat-item lemma="hi ha" tags="vblex.pri.p3.sg"/>
@@ -4513,6 +4519,35 @@
         </choose>
       </action>
   </rule>
+
+    <rule comment="REGLA: ca detdefsg npant (cal Joan > chez Joan)">
+      <pattern>
+        <pattern-item n="ca"/>
+        <pattern-item n="detdefsg"/>
+        <pattern-item n="npant"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <b pos="2"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
 
     <rule comment="REGLA: det NP">
       <pattern>
