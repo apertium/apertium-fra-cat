@@ -10641,6 +10641,50 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
+   <rule comment="REGLA: PRNREF VBSER ADV PP > s'haver + participi + adv">
+      <pattern>
+        <pattern-item n="prnproref"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="pp"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+	<out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <lit v="haver"/>
+            <lit-tag v="vaux"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="a_verb"/>
+            <clip pos="4" side="tl" part="temps"/>
+            <lit-tag v="m"/>
+            <lit-tag v="sg"/>
+	    <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
    <rule comment="REGLA:VBSER PP > haver + participi">
       <pattern>
         <pattern-item n="serconj"/>
@@ -10819,9 +10863,7 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord0">
           <with-param pos="1"/>
         </call-macro>
-
         <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
-
         <choose>
           <when>
             <test>
@@ -10875,6 +10917,82 @@ is not applicable because gender and number cannot be taken from previous rules 
             <lit-tag v="m"/>
             <lit-tag v="sg"/>
 	    <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+
+   <rule comment="REGLA: PRN PRNREF VBSER ADV PP > s'haver + participi + adv">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="prnproref"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="pp"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <choose>
+          <when>
+            <test>
+              <and>
+                <in caseless="yes">
+                  <clip pos="5" side="sl" part="lem"/>
+                  <list n="vb_pronfra_noproncat"/>
+                </in>
+                <equal><clip pos="2" side="sl" part="persona"/><clip pos="3" side="sl" part="persona"/></equal>
+              </and>
+            </test>
+            <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <lit v="haver"/>
+                </get-case-from>
+                <lit-tag v="vaux"/>
+                <clip pos="3" side="tl" part="temps"/>
+                <clip pos="3" side="tl" part="persona"/>
+                <clip pos="3" side="tl" part="nbr"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+	    <out>
+              <lu>
+                <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="lemh"/>
+                </get-case-from>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <lit v="haver"/>
+                <lit-tag v="vaux"/>
+                <clip pos="3" side="tl" part="temps"/>
+                <clip pos="3" side="tl" part="persona"/>
+                <clip pos="3" side="tl" part="nbr"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <b pos="3"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="a_verb"/>
+            <clip pos="5" side="tl" part="temps"/>
+            <lit-tag v="m"/>
+            <lit-tag v="sg"/>
+	    <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
           </lu>
         </out>
       </action>
@@ -15147,6 +15265,97 @@ is not applicable because gender and number cannot be taken from previous rules 
           <b pos="2"/>
           <lu>
             <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+   <rule comment="REGLA: NE PRNREF VBSER PAS PP > no s'haver + participi (ne se sont pas réveillées > no s'han despertat)">
+      <pattern>
+        <pattern-item n="neadv"/>
+        <pattern-item n="prnproref"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="pp"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <lit v="haver"/>
+            <lit-tag v="vaux"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>
+          <b pos="3"/>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="4"/><with-param pos="5"/></call-macro>
+        <out>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="a_verb"/>
+            <clip pos="5" side="tl" part="temps"/>
+            <lit-tag v="m"/>
+            <lit-tag v="sg"/>
+	    <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+   <rule comment="REGLA: NE PRNREF VBSER PAS ADV PP > no s'haver + participi + adv (ne se sont pas toujours réveillées > no s'han despertat sempre)">
+      <pattern>
+        <pattern-item n="neadv"/>
+        <pattern-item n="prnproref"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="pp"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <lit v="haver"/>
+            <lit-tag v="vaux"/>
+            <clip pos="3" side="tl" part="temps"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>
+          <b pos="3"/>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="4"/><with-param pos="5"/></call-macro>
+        <out>
+          <lu>
+            <clip pos="6" side="tl" part="lemh"/>
+            <clip pos="6" side="tl" part="a_verb"/>
+            <clip pos="6" side="tl" part="temps"/>
+            <lit-tag v="m"/>
+            <lit-tag v="sg"/>
+	    <clip pos="6" side="tl" part="lemq"/>
+          </lu>
+          <b pos="5"/>
+          <lu>
+            <clip pos="5" side="tl" part="whole"/>
           </lu>
         </out>
       </action>
