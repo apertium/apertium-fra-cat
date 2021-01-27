@@ -999,6 +999,18 @@
 
 <!-- **************** PREP **************** -->
 
+  <!-- comme >> com, com a -->
+  <rule weight="0.6">
+    <match lemma="comme" tags="pr"><select lemma="com"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="comme" tags="pr"><select lemma="com a"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj"/>
+    </repeat>
+    <match tags="n.*"/>
+  </rule>
+
   <!-- chez >> en, a casa de, a ca -->
   <rule weight="0.6">
     <match lemma="chez" tags="pr"><select lemma="en"/></match>
