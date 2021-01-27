@@ -153,9 +153,6 @@
     <def-cat n="on">
       <cat-item lemma="on" tags="prn.pro.ref.p3.mf.sp"/>
     </def-cat>
-    <def-cat n="moi">
-      <cat-item lemma="moi" tags="prn.tn.p1.mf.sg"/>
-    </def-cat>
     <def-cat n="moi_toi_etc">
       <cat-item lemma="moi" tags="prn.tn.p1.mf.sg"/>
       <cat-item lemma="toi" tags="prn.tn.p2.mf.sg"/>
@@ -172,6 +169,9 @@
     </def-cat>
     <def-cat n="ce_prn">
       <cat-item lemma="ce" tags="prn.tn.nt"/>
+    </def-cat>
+    <def-cat n="celui">
+      <cat-item lemma="celui" tags="prn.tn.*"/>
     </def-cat>
     <def-cat n="prn">
       <cat-item tags="prn.tn.*"/>
@@ -6596,6 +6596,32 @@ is not applicable because gender and number cannot be taken from previous rules 
           <lu>
             <lit v="de"/>
             <lit-tag v="pr"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: CELUI DE: celui de la gauche > el de l'esquerra">
+      <pattern>
+        <pattern-item n="celui"/>
+        <pattern-item n="deprep"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="el"/>
+            </get-case-from>
+            <lit-tag v="det.def"/>
+            <clip pos="1" side="sl" part="gen"/>
+            <clip pos="1" side="tl" part="nbr"/>
           </lu>
           <b pos="1"/>
           <lu>
