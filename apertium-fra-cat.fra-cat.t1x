@@ -555,6 +555,13 @@
       <cat-item lemma="revenir" tags="vblex.pp.*"/>
     </def-cat>
 
+    <def-cat n="est_vbser">
+      <cat-item tags="vbser.pri.p3.sg"/>
+    </def-cat>
+    <def-cat n="parti_pp">
+      <cat-item lemma="partir" tags="vblex.pp.m.sg"/>
+    </def-cat>
+
     <def-cat n="defense">
       <cat-item lemma="défense" tags="n.f.sg"/>
     </def-cat>
@@ -7349,7 +7356,7 @@ is not applicable because gender and number cannot be taken from previous rules 
      </pattern>	
       <action>
         <call-macro n="f_ifi1">
-          <with-param pos="1"/>
+          <with-param pos="2"/>
         </call-macro>
         <out>
           <lu>
@@ -15620,6 +15627,32 @@ is not applicable because gender and number cannot be taken from previous rules 
           <b pos="2"/>
           <lu>
             <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: c'est parti > ha començat">
+      <pattern>
+        <pattern-item n="ce_prn"/>
+        <pattern-item n="est_vbser"/>
+        <pattern-item n="parti_pp"/>
+      </pattern>
+      <action>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+               <lit v="haver"/>
+            </get-case-from>
+            <lit-tag v="vbhaver.pri.p3.sg"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="1">
+               <lit v="començar"/>
+            </get-case-from>
+            <lit-tag v="vblex.pp.m.sg"/>
           </lu>
         </out>
       </action>
