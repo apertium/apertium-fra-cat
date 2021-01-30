@@ -3842,6 +3842,11 @@
 
 <!-- **************** N **************** -->
 
+  <!-- volée >> vol, volada, volea, etc. -->
+  <rule weight="0.8">
+    <match lemma="volée" tags="n.*"><select lemma="vol"/></match>
+  </rule>
+
   <!-- soignant >> personal sanitari, sanitari -->
   <rule weight="0.8">
     <match lemma="soignant" tags="n.*"><select lemma="personal sanitari"/></match>

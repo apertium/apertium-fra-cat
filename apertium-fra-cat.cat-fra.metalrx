@@ -646,12 +646,15 @@
        <match lemma="oboè" tags="n.*"/>
        <match lemma="clarinet" tags="n.*"/>
        <match lemma="trompeta" tags="n.*"/>
+       <match lemma="trombó" tags="n.*"/>
+       <match lemma="trombó# de vares" tags="n.*"/>
+       <match lemma="trombó# de colissa" tags="n.*"/>
+       <match lemma="trombó# de pistons" tags="n.*"/>
        <match lemma="saxo" tags="n.*"/>
        <match lemma="saxofon" tags="n.*"/>
        <match lemma="òrgan" tags="n.*"/>
        <match lemma="arpa" tags="n.*"/>
-
-       <match lemma="música" tags="n.*"/>
+       <match lemma="guitarra" tags="n.*"/>
     </def-seq>
 
     <def-seq n="animals">
@@ -2682,6 +2685,25 @@
 
 <!-- **************** V **************** -->
 
+  <!-- desafinar >> chanter# faux, jouer# faux -->
+  <rule weight="0.8">
+    <match lemma="desafinar" tags="vblex.*"><select lemma="chanter# faux"/></match>
+  </rule>
+  <rule weight="1.0">
+    <seq n="instruments_musicals"/>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="desafinar" tags="vblex.*"><select lemma="jouer# faux"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="desafinar" tags="vblex.*"><select lemma="jouer# faux"/></match>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <seq n="instruments_musicals"/>
+  </rule>
+
   <!-- afectar >> affecter, toucher -->
   <rule weight="0.8">
     <match lemma="afectar" tags="vblex.*"><select lemma="affecter"/></match>
@@ -3639,6 +3661,7 @@
     <match tags="det.*"/>
     <or>
       <seq n="instruments_musicals"/>
+      <match lemma="música" tags="n.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -4953,7 +4976,7 @@
     <match tags="n.*"/>
   </rule>
 
-<!-- N -->
+<!-- **************** N **************** -->
 
   <!-- resum >> résumé, compte rendu -->
   <rule weight="0.8">
