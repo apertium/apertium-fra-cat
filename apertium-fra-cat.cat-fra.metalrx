@@ -278,6 +278,20 @@
 	  </rule>
 	</def-macro>
 
+    <!-- Aquesta macro tria el verb p2 per traduir el prenom p1, però manté p1 si va seguit de cognom (o paraula desconeguda) -->
+    <def-macro name="ant_antcog">
+      <rule weight="0.6">
+         <match lemma="{{p1}}" tags="np.ant.*"><select lemma="{{p2}}"/></match>
+      </rule>
+      <rule weight="1.0">
+         <match lemma="{{p1}}" tags="np.ant.*"><select lemma="{{p1}}"/></match>
+         <or>
+           <match tags="np.*"/>
+           <match tags=""/>
+         </or>
+      </rule>
+    </def-macro>
+
     <!-- Aquesta macro tria el verb p2 si p1 és intransitiu i p3 si p1 és transitiu -->
     <!-- p1 = verb fra, p2 = verb cat intransitiu, p3 = verb cat transitiu -->
     <!-- la manera de veure que el verb és transitiu és molt barroera -->
@@ -1589,7 +1603,10 @@
 
   <rule weight="1.2">
     <match lemma="es" tags="prn.pro.*"><select lemma="se"/></match>
-    <match lemma="adonar" tags="vblex.*"/>
+    <or>
+      <match lemma="adonar" tags="vblex.*"/>
+      <match lemma="encarregar" tags="vblex.*"/>
+    </or>
     <repeat from="0" upto="1">
       <match tags="adv"/>
     </repeat>
@@ -1598,7 +1615,10 @@
   <rule weight="1.2">
     <match lemma="es" tags="prn.pro.*"><select lemma="se"/></match>
     <match tags="vbhaver.*"/>
-    <match lemma="adonar" tags="vblex.pp.*"/>
+    <or>
+      <match lemma="adonar" tags="vblex.*"/>
+      <match lemma="encarregar" tags="vblex.*"/>
+    </or>
     <repeat from="0" upto="1">
       <match tags="adv"/>
     </repeat>
@@ -1607,7 +1627,10 @@
   <rule weight="1.2">
     <match lemma="es" tags="prn.pro.*"><select lemma="se"/></match>
     <match lemma="anar" tags="vblex.pri.*"/>
-    <match lemma="adonar" tags="vblex.inf"/>
+    <or>
+      <match lemma="adonar" tags="vblex.*"/>
+      <match lemma="encarregar" tags="vblex.*"/>
+    </or>
     <repeat from="0" upto="1">
       <match tags="adv"/>
     </repeat>
@@ -1615,7 +1638,10 @@
   </rule>
   <rule weight="1.2">
     <match lemma="anar" tags="vblex.pri.p3.sg"/>
-    <match lemma="adonar" tags="vblex.inf"/>
+    <or>
+      <match lemma="adonar" tags="vblex.*"/>
+      <match lemma="encarregar" tags="vblex.*"/>
+    </or>
     <match lemma="es" tags="prn.enc.*"><select lemma="on"/></match>
     <repeat from="0" upto="1">
       <match tags="adv"/>
@@ -2192,7 +2218,7 @@
     <repeat from="0" upto="1">
       <match tags="adv"/>
     </repeat>
-    <or><match tags="vblex.inf"/><match tags="vbser.inf"/><match tags="vbhaver.inf"/><match tags="vbmod.inf"/></or>
+    <match tags="*.inf"/>
   </rule>
   <rule weight="1.0">
     <match lemma="felicitar" tags="vblex.*"/>
@@ -2210,7 +2236,27 @@
   </rule>
   <rule weight="1.0">
     <match lemma="caracteritzar" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
     <match lemma="per" tags="pr"><select lemma="par"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="quedar" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="per" tags="pr"><select lemma="à"/></match>
+    <match tags="*.inf"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="quedar" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="per" tags="pr"><select lemma="pour"/></match>
+    <match tags="*.inf"/>
+    <match tags="det.*"/>
   </rule>
 
   <!-- des de >> depuis, de, selon -->
@@ -2634,7 +2680,12 @@
     </or>
   </rule>
 
-<!-- V -->
+<!-- **************** V **************** -->
+
+  <!-- afectar >> affecter, toucher -->
+  <rule weight="0.8">
+    <match lemma="afectar" tags="vblex.*"><select lemma="affecter"/></match>
+  </rule>
 
   <!-- rosegar >> ronger, grignoter -->
   <rule weight="0.8">
@@ -3549,8 +3600,10 @@
   <!-- convertir# en >> convertir# en, devenir -->
   <macro name="verb_nopron_pron" p1="convertir# en" p2="transformer# en" p3="devenir" />
 
-  <!-- estendre >> tendre, étendre -->
-  <macro name="verb_nopron_pron" p1="estendre" p2="tendre" p3="étendre" />
+  <!-- estendre >> étendre, tendre -->
+  <rule weight="0.8">
+    <match lemma="estendre" tags="vblex.*"><select lemma="étendre"/></match>
+  </rule>
 
   <!-- florir >> fleurir, moisir -->
   <macro name="verb_nopron_pron" p1="florir" p2="fleurir" p3="moisir" />
@@ -4901,6 +4954,11 @@
   </rule>
 
 <!-- N -->
+
+  <!-- resum >> résumé, compte rendu -->
+  <rule weight="0.8">
+    <match lemma="resum" tags="n.*"><select lemma="résumé"/></match>
+  </rule>
 
   <!-- ca >> maison, chez -->
   <rule weight="0.8">
@@ -7734,31 +7792,14 @@
      <match lemma="pas de Calais" tags="np.*"><select lemma="pas de Calais"/></match>
   </rule>
 
-  <!-- Virgili > Virgili, Virgile -->
-  <rule weight="0.6">
-     <match lemma="Virgili" tags="np.*"><select lemma="Virgile"/></match>
-  </rule>
-  <rule weight="1.0">
-     <or><match tags="np.ant.*"/><match tags="np.cog.*"/></or>
-     <match lemma="Virgili" tags="np.*"><select lemma="Virgili"/></match>
-  </rule>
+  <macro name="ant_antcog" p1="Horaci" p2="Horace" />
+  <macro name="ant_antcog" p1="Jesús" p2="Jésus" />
+  <macro name="ant_antcog" p1="Virgili" p2="Virgile" />
+
   <rule weight="1.0">
      <or><match tags="np.cog.*"/><match lemma="Rovira"/></or>
      <match lemma="i" tags="pr"/>
      <match lemma="Virgili" tags="np.*"><select lemma="Virgili"/></match>
-  </rule>
-
-  <!-- Jesús > Jesús, Jésus -->
-  <rule weight="0.6">
-     <match lemma="Jesús" tags="np.*"><select lemma="Jésus"/></match>
-  </rule>
-  <rule weight="1.0">
-     <match lemma="Jesús" tags="np.*"><select lemma="Jesús"/></match>
-     <or><match tags="np.ant.*"/><match tags="np.cog.*"/></or>
-  </rule>
-  <rule weight="1.0">
-     <match lemma="Jesús" tags="np.*"><select lemma="Jesús"/></match>
-     <match tags=""/>
   </rule>
 
   <!-- Oliba > Oliva, Olibia -->

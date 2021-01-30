@@ -275,6 +275,20 @@
 	  </rule>
 	</def-macro>
 
+    <!-- Aquesta macro tria el verb p2 per traduir el prenom p1, però manté p1 si va seguit de cognom (o paraula desconeguda) -->
+    <def-macro name="ant_antcog">
+      <rule weight="0.6">
+         <match lemma="{{p1}}" tags="np.ant.*"><select lemma="{{p2}}"/></match>
+      </rule>
+      <rule weight="1.0">
+         <match lemma="{{p1}}" tags="np.ant.*"><select lemma="{{p1}}"/></match>
+         <or>
+           <match tags="np.*"/>
+           <match tags=""/>
+         </or>
+      </rule>
+    </def-macro>
+
 	<!-- p1 verb fra, p2 verb cat estandard, p3 prep fra, p3 verb cat alternatiu -->
  	<!-- <macro name="verb_prep" p1="chasser" p2="caçar" p3="de" p4="expulsar" /> -->
 	<def-macro name="verb_prep">
@@ -682,7 +696,7 @@
       <match lemma="tigre" tags="n.*"/>
     </def-seq>
 
-    <def-seq n="fruit_amb_pinyol">
+    <def-seq n="fruit_avec_noyau">
       <match lemma="pêche" tags="n.*"/>
       <match lemma="nectarine" tags="n.*"/>
       <match lemma="abricot" tags="n.*"/>
@@ -690,6 +704,30 @@
       <match lemma="cerise" tags="n.*"/>
       <match lemma="olive" tags="n.*"/>
       <match lemma="amande" tags="n.*"/>
+      <match lemma="datte" tags="n.*"/>
+    </def-seq>
+
+    <def-seq n="fruit">
+      <match lemma="pomme" tags="n.*"/>
+      <match lemma="poire" tags="n.*"/>
+      <match lemma="pêche" tags="n.*"/>
+      <match lemma="nectarine" tags="n.*"/>
+      <match lemma="abricot" tags="n.*"/>
+      <match lemma="prune" tags="n.*"/>
+      <match lemma="cerise" tags="n.*"/>
+      <match lemma="orange" tags="n.*"/>
+      <match lemma="mandarine" tags="n.*"/>
+      <match lemma="agrume" tags="n.*"/>
+      <match lemma="melon" tags="n.*"/>
+      <match lemma="pastèque" tags="n.*"/>
+      <match lemma="raisin" tags="n.*"/>
+      <match lemma="figue" tags="n.*"/>
+      <match lemma="datte" tags="n.*"/>
+      <match lemma="banane" tags="n.*"/>
+      <match lemma="ananas" tags="n.*"/>
+      <match lemma="mangue" tags="n.*"/>
+      <match lemma="papaye" tags="n.*"/>
+      <match lemma="kiwi" tags="n.*"/>
     </def-seq>
 
     <def-seq n="pays_adj">
@@ -1528,7 +1566,21 @@
   </rule>
 
 
-<!-- PRN -->
+<!-- **************** PRN **************** -->
+
+  <!-- on >> es, remove -->
+  <rule weight="0.8">
+    <match lemma="on" tags="prn.*"><select lemma="es"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="on" tags="prn.*"><remove tags="prn.*"/></match>
+    <match lemma="se" tags="prn.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="on" tags="prn.*"><remove tags="prn.*"/></match>
+    <match lemma="ne" tags="adv"/>
+    <match lemma="se" tags="prn.*"/>
+  </rule>
 
   <!-- cela >> allò, això -->
   <rule weight="0.8">
@@ -1539,7 +1591,7 @@
     <match lemma="cela" tags="prn.*"><select lemma="això"/></match>
   </rule>
 
-<!-- CNJADV -->
+<!-- **************** CNJADV **************** -->
 
   <!-- plus >> més, com més -->
   <rule weight="0.8">
@@ -1622,6 +1674,79 @@
 
 <!-- **************** V **************** -->
 
+  <!-- toucher >> tocar, afectar -->
+  <rule weight="0.8">
+    <match lemma="toucher" tags="vblex.*"><select lemma="tocar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="toucher" tags="vblex.*"><select lemma="tocar"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="par" tags="pr"/>
+  </rule>
+
+  <!-- arrêter >> aturar, arrestar -->
+  <rule weight="0.8">
+    <match lemma="arrêter" tags="vblex.*"><select lemma="aturar"/></match>
+  </rule>
+
+  <!-- mettre# à jour >> actualitzar, posar# al dia -->
+  <rule weight="0.8">
+    <match lemma="mettre# à jour" tags="vblex.*"><select lemma="actualitzar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="personne"/>
+      <seq n="parent"/>
+      <seq n="pays_hab"/>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+      <match tags="np.top.*"/>
+      <match tags="np.al.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="se" tags="prn.*"/>
+    <match lemma="mettre# à jour" tags="vblex.*"><select lemma="posar# al dia"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="personne"/>
+      <seq n="parent"/>
+      <seq n="pays_hab"/>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+      <match tags="np.top.*"/>
+      <match tags="np.al.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="se" tags="prn.*"/>
+    <match tags="vbser.*"/>
+    <match lemma="mettre# à jour" tags="vblex.pp.*"><select lemma="posar# al dia"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="personne"/>
+      <seq n="parent"/>
+      <seq n="pays_hab"/>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+      <match tags="np.top.*"/>
+      <match tags="np.al.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="se" tags="prn.*"/>
+    <match tags="vbser.*"/>
+    <match tags="adv"/>
+    <match lemma="mettre# à jour" tags="vblex.pp.*"><select lemma="posar# al dia"/></match>
+  </rule>
+
   <!-- rester >> quedar, quedar-se, continuar# sent -->
   <rule weight="0.8">
     <match lemma="rester" tags="vblex.*"><select lemma="quedar"/></match>
@@ -1632,6 +1757,14 @@
       <match tags="adv"/>
     </repeat>
     <match lemma="à" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rester" tags="vblex.*"><select lemma="quedar" tags="vblex.*"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="à" tags="pr"><select lemma="per"/></match>
+    <match tags="*.inf"/>
   </rule>
   <rule weight="1.0">
     <match lemma="rester" tags="vblex.*"><select lemma="continuar# sent"/></match>
@@ -3709,6 +3842,21 @@
 
 <!-- **************** N **************** -->
 
+  <!-- soignant >> personal sanitari, sanitari -->
+  <rule weight="0.8">
+    <match lemma="soignant" tags="n.*"><select lemma="personal sanitari"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="soignant" tags="n.*.sg"><select lemma="sanitari"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <match lemma="soignant" tags="n.*"><select lemma="sanitari"/></match>
+  </rule>
+
   <!-- barrage# de police >> control policial, cordó policial -->
   <rule weight="0.8">
     <match lemma="barrage# de police" tags="n.*"><select lemma="control policial"/></match>
@@ -5073,7 +5221,13 @@
   </rule>
   <rule weight="1.0">
     <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
-    <match lemma="inaugural" tags="adj.*"/>
+    <or>
+      <match lemma="inaugural" tags="adj.*"/>
+      <match lemma="transatlantique" tags="adj.*"/>
+      <match lemma="transocéanique" tags="adj.*"/>
+      <match lemma="transpacifique" tags="adj.*"/>
+      <match lemma="transcontinental" tags="adj.*"/>
+    </or>
   </rule>
   <rule weight="1.0">
     <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
@@ -5374,7 +5528,7 @@
     </repeat>
     <match lemma="de" tags="pr"/>
     <or>
-      <seq n="fruit_amb_pinyol"/>
+      <seq n="fruit_avec_noyau"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -5387,7 +5541,7 @@
       <match tags="det.*"/>
     </repeat>
     <or>
-      <seq n="fruit_amb_pinyol"/>
+      <seq n="fruit_avec_noyau"/>
     </or>
   </rule>
 
@@ -6582,8 +6736,8 @@
   </rule>
   <rule weight="1.0">
     <or>
-      <match lemma="homme" tags="adj.*"/>
-      <match lemma="femme" tags="adj.*"/>
+      <match lemma="homme" tags="n.*"/>
+      <match lemma="femme" tags="n.*"/>
     </or>
     <match lemma="de" tags="pr"/>
     <match lemma="lettre" tags="n.*"><select lemma="lletra"/></match>
@@ -6909,6 +7063,24 @@
   </rule>
   <rule weight="1.0">
     <match lemma="un" tags="det.*"/>
+    <match lemma="pêche" tags="n.*"><select lemma="préssec"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pêche" tags="n.*"><select lemma="préssec"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <seq n="fruit"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="fruit"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
     <match lemma="pêche" tags="n.*"><select lemma="préssec"/></match>
   </rule>
 
@@ -8666,8 +8838,8 @@
     </or>
     <repeat from="0" upto="2">
       <or>
-        <match lemma="adv"/>
-        <match lemma="preadv"/>
+        <match tags="adv"/>
+        <match tags="preadv"/>
       </or>
     </repeat>
     <match lemma="haut" tags="adv"><select lemma="alt"/></match>
@@ -8675,7 +8847,31 @@
   <rule weight="1.0">
     <match lemma="n.*"/>
     <match lemma="haut" tags="adv"><select lemma="altament"/></match>
-    <match lemma="vblex.pp.*"/>
+    <match tags="vblex.pp.*"/>
+  </rule>
+
+  <!-- assez >> prou, força -->
+  <rule weight="0.8">
+    <match lemma="assez" tags="adv"><select lemma="prou"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="assez" tags="adv"><select lemma="força"/></match>
+    <or>
+      <match tags="adj.*"/>
+      <match tags="adv"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="assez" tags="adv"><select lemma="prou"/></match>
+    <or>
+      <match tags="adj.*"/>
+      <match tags="adv"/>
+    </or>
+    <match lemma="pour" tags="pr"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="pas" tags="adv"/>
+    <match lemma="assez" tags="adv"><select lemma="prou"/></match>
   </rule>
 
   <!-- encore >> encara, també -->
@@ -8742,14 +8938,8 @@
 
 <!-- **************** NP **************** -->
 
-  <!-- Hercule >> Hèrcules, Hercule -->
-  <rule weight="0.8">
-    <match lemma="Hercule" tags="np.*"><select lemma="Hèrcules"/></match>
-  </rule>
-  <rule weight="1.0">
-    <match lemma="Hercule" tags="np.*"><select lemma="Hercule"/></match>
-    <match tags="np.cog.*"/>
-  </rule>
+  <macro name="ant_antcog" p1="Hercule" p2="Hèrcules" />
+  <macro name="ant_antcog" p1="Horace" p2="Horaci" />
 
   <macro name="noms_propres" p1="Charles" p2="Carles" />
   <macro name="noms_propres" p1="Philippe" p2="Felip" />
