@@ -7707,6 +7707,15 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- laborieux >> laboriós, treballador -->
+  <rule weight="0.8">
+    <match lemma="laborieux" tags="adj.*"><select lemma="laboriós"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="classe" tags="n.*"/>
+    <match lemma="laborieux" tags="adj.*"><select lemma="treballador"/></match>
+  </rule>
+
   <!-- familier >> familiar -->
   <rule weight="0.8">
     <match lemma="familier" tags="adj.*"><select lemma="familiar"/></match>
@@ -8943,8 +8952,12 @@
 
 <!-- **************** NP **************** -->
 
+  <macro name="ant_antcog" p1="Auguste" p2="August" />
+  <macro name="ant_antcog" p1="Geoffroy" p2="Jofré" />
   <macro name="ant_antcog" p1="Hercule" p2="Hèrcules" />
   <macro name="ant_antcog" p1="Horace" p2="Horaci" />
+  <macro name="ant_antcog" p1="Octave" p2="Octavi" />
+  <macro name="ant_antcog" p1="Jérémie" p2="Jeremies" />
 
   <macro name="noms_propres" p1="Charles" p2="Carles" />
   <macro name="noms_propres" p1="Philippe" p2="Felip" />

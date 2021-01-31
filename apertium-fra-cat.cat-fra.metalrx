@@ -4487,7 +4487,7 @@
     <match tags="prn.enc.ref.*"/>
   </rule>
 
-<!-- ADJ -->
+<!-- **************** ADJ **************** -->
 
   <!-- laboral >> de travail, du travail, au travail, professionnel -->
   <rule weight="0.8">
@@ -7815,8 +7815,13 @@
      <match lemma="pas de Calais" tags="np.*"><select lemma="pas de Calais"/></match>
   </rule>
 
+  <macro name="ant_antcog" p1="August" p2="Auguste" />
+  <macro name="ant_antcog" p1="Eliseu" p2="Élisée" />
   <macro name="ant_antcog" p1="Horaci" p2="Horace" />
   <macro name="ant_antcog" p1="Jesús" p2="Jésus" />
+  <macro name="ant_antcog" p1="Jofré" p2="Geoffroy" />
+  <macro name="ant_antcog" p1="Miquel Àngel" p2="Michel-Ange" />
+  <macro name="ant_antcog" p1="Octavi" p2="Octave" />
   <macro name="ant_antcog" p1="Virgili" p2="Virgile" />
 
   <rule weight="1.0">
