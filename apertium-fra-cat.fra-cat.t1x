@@ -11782,6 +11782,68 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
 
 
+    <rule comment="REGLA: PRN NE VERB ADV PAS (il n'arrive cependant pas: no arriba tanmateix, il n'épouse cependant pas: no es casa amb tanmateix)">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="pas"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_set_pron">
+          <with-param pos="3"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lem"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="tags"/>
+          </lu>
+          <b pos="2"/>
+        </out>
+        <choose>
+	  <when>
+	    <test>
+	      <equal><var n="pronom"/><lit v=""/></equal>
+	    </test>
+            <out>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+            </out>
+	  </when>
+	  <otherwise>
+            <out>
+              <lu>
+	        <var n="pronom"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+            </out>
+	  </otherwise>
+        </choose>
+        <out>
+          <b pos="4"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+
     <rule comment="REGLA: PRN NE VERB PAS DE (il ne veut pas de: no vol)">
       <pattern>
         <pattern-item n="prnsubj"/>
@@ -11847,6 +11909,85 @@ is not applicable because gender and number cannot be taken from previous rules 
               <b pos="4"/>
               <lu>
                 <clip pos="5" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: PRN NE VERB ADV PAS DE (il ne veut cependant pas de: no vol tanmateix)">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="deprep"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_set_pron">
+          <with-param pos="3"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="2"/>
+        </out>
+        <choose>
+	  <when>
+	    <test>
+	      <not><equal><var n="pronom"/><lit v=""/></equal></not>
+	    </test>
+            <out>
+              <lu>
+                <get-case-from pos="3">
+	          <var n="pronom"/>
+                </get-case-from>
+              </lu>
+              <b/>
+            </out>
+	  </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+          <b pos="4"/>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="4"/><with-param pos="5"/></call-macro>
+        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="agir"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="parler"/></equal>
+                <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="finir"/></equal>
+                <not><equal><clip pos="3" side="sl" part="lemq"/><lit v=""/></equal></not>
+              </or>
+            </test>
+            <out>
+              <lu>
+                <clip pos="6" side="tl" part="whole"/>
               </lu>
             </out>
           </when>
