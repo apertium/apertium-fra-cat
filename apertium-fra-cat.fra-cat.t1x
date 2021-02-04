@@ -359,6 +359,11 @@
       <cat-item tags="num.*"/>
       <cat-item tags="det.ind.*"/>
     </def-cat>
+    <def-cat n="detindpl">
+      <cat-item tags="det.ind.*.pl"/>
+      <cat-item lemma="beaucoup de" tags="det.ind.*"/>
+      <cat-item lemma="peu de" tags="det.ind.*"/>
+    </def-cat>
     <def-cat n="en">
       <cat-item lemma="en" tags="pr"/>
       <cat-item lemma="en" tags="prn.*"/>
@@ -449,23 +454,6 @@
       <cat-item tags="vbmod.inf"/>
       <cat-item tags="vbmod.ger"/>
     </def-cat>
-    <def-cat n="haber3p">
-<!--	  <cat-item tags="vbhaver.pri.p3.sg"/> -->
-      <cat-item tags="vbhaver.prs.p1.sg"/>
-      <cat-item tags="vbhaver.prs.p3.sg"/>
-      <cat-item tags="vbhaver.pii.p1.sg"/>
-      <cat-item tags="vbhaver.pii.p3.sg"/>
-      <cat-item tags="vbhaver.pis.p1.sg"/>
-      <cat-item tags="vbhaver.pis.p3.sg"/>
-      <cat-item tags="vbhaver.ifi.p3.sg"/>
-      <cat-item tags="vbhaver.fts.p1.sg"/>
-      <cat-item tags="vbhaver.fts.p3.sg"/>
-      <cat-item tags="vbhaver.fti.p3.sg"/>
-      <cat-item tags="vbhaver.cni.p1.sg"/>
-      <cat-item tags="vbhaver.cni.p3.sg"/>
-      <cat-item tags="vbhaver.inf"/>
-      <cat-item tags="vbhaver.ger"/>
-    </def-cat>
     <def-cat n="pp_nohaver">
       <cat-item tags="vblex.pp.*"/>
       <cat-item tags="vbser.pp.*"/>
@@ -475,6 +463,17 @@
       <cat-item lemma="appeler" tags="vblex.pri.*"/>
       <cat-item lemma="appeler" tags="vblex.pii.*"/>
       <cat-item lemma="appeler" tags="vblex.fti.*"/>
+    </def-cat>
+    <def-cat n="resterp3sg_noifi">
+      <cat-item lemma="rester" tags="vblex.pri.p3.sg"/>
+      <cat-item lemma="rester" tags="vblex.prs.p3.sg"/>
+      <cat-item lemma="rester" tags="vblex.pii.p3.sg"/>
+      <cat-item lemma="rester" tags="vblex.pis.p3.sg"/>
+      <cat-item lemma="rester" tags="vblex.fti.p3.sg"/>
+      <cat-item lemma="rester" tags="vblex.cni.p3.sg"/>
+    </def-cat>
+    <def-cat n="resterpp">
+      <cat-item lemma="rester" tags="vblex.pp.*"/>
     </def-cat>
     <def-cat n="verbospron"> <!-- verbs pronominals en fra però amb l'equivalent cat no pronominal -->
       <cat-item lemma="asseoir" tags="vblex.*"/>
@@ -573,6 +572,9 @@
     </def-cat>
     <def-cat n="cnjcoo">
       <cat-item tags="cnjcoo"/>
+    </def-cat>
+    <def-cat n="cm">
+      <cat-item tags="cm"/>
     </def-cat>
     <def-cat n="sent">
       <cat-item tags="sent"/>
@@ -10540,6 +10542,233 @@ is not applicable because gender and number cannot be taken from previous rules 
 
 <!--fi regles per a eliminar el partitiu-->
 
+<!--regles per a rester-->
+
+    <rule comment="REGLA: . RESTER_PP ADJ > ADJ: resté seul > sol">
+      <pattern>
+        <pattern-item n="sent"/>
+        <pattern-item n="resterpp"/>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <!-- reset variables -->
+        <let><var n="numero"/><lit-tag v="sg"/></let>
+        <let><var n="genero"/><lit-tag v="m"/></let>
+        <call-macro n="f_concord1">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="2">
+              <clip pos="3" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: , RESTER_PP ADJ > ADJ: resté seul > sol">
+      <pattern>
+        <pattern-item n="cm"/>
+        <pattern-item n="resterpp"/>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="2">
+              <clip pos="3" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: . ADV RESTER_PP ADJ > ADJ: longtemps resté seul > molt de temps sol">
+      <pattern>
+        <pattern-item n="sent"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="resterpp"/>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <!-- reset variables -->
+        <let><var n="numero"/><lit-tag v="sg"/></let>
+        <let><var n="genero"/><lit-tag v="m"/></let>
+        <call-macro n="f_concord1">
+          <with-param pos="4"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="3">
+              <clip pos="4" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: , ADV RESTER_PP ADJ > ADJ: longtemps resté seul > molt de temps sol">
+      <pattern>
+        <pattern-item n="cm"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="resterpp"/>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="4"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="3">
+              <clip pos="4" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: il reste detindpl nom > queden detindpl nom">
+      <pattern>
+        <pattern-item n="il"/>
+        <pattern-item n="resterp3sg_noifi"/>
+        <pattern-item n="detindpl"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="4"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <lit-tag v="pl"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: il reste detindpl nom adj > queden detindpl nom adj">
+      <pattern>
+        <pattern-item n="il"/>
+        <pattern-item n="resterp3sg_noifi"/>
+        <pattern-item n="detindpl"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord3">
+          <with-param pos="4"/>
+          <with-param pos="5"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <lit-tag v="pl"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="tags"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+<!--fi regles per a rester-->
+
+
 <!--<rule>
  REGLA: Passé composé/perifràstic -->
 <!-- Per traduir "ai fait" per "vaig fer"
@@ -15842,19 +16071,26 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
+    <rule comment="REGLA: cm">
+      <pattern>
+        <pattern-item n="cm"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
     <rule comment="REGLA: reset variables">
       <pattern>
         <pattern-item n="sent"/>
       </pattern>
       <action>
-        <let>
-          <var n="numero"/>
-          <lit-tag v="sg"/>
-        </let>
-        <let>
-          <var n="genero"/>
-          <lit-tag v="m"/>
-        </let>
+        <let><var n="numero"/><lit-tag v="sg"/></let>
+        <let><var n="genero"/><lit-tag v="m"/></let>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>

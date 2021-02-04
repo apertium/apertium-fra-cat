@@ -21694,14 +21694,8 @@ is not applicable because gender and number can not be taken from previous rules
         <pattern-item n="sent"/>
       </pattern>
       <action>
-        <let>
-         <var n="numero"/>
-          <lit-tag v="sg"/>
-        </let>
-        <let>
-          <var n="genero"/>
-          <lit-tag v="m"/>
-        </let>
+        <let><var n="numero"/><lit-tag v="sg"/></let>
+        <let><var n="genero"/><lit-tag v="m"/></let>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -21717,14 +21711,8 @@ is not applicable because gender and number can not be taken from previous rules
         <pattern-item n="cm"/>
       </pattern>
       <action>
-        <let>
-         <var n="numero"/>
-          <lit-tag v="sg"/>
-        </let>
-        <let>
-          <var n="genero"/>
-          <lit-tag v="m"/>
-        </let>
+        <let><var n="numero"/><lit-tag v="sg"/></let>
+        <let><var n="genero"/><lit-tag v="m"/></let>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -21760,7 +21748,7 @@ is not applicable because gender and number can not be taken from previous rules
           </test>
           <out>
             <lu>
-              <get-case-from pos="2">
+              <get-case-from pos="1">
                 <lit v="non"/>
               </get-case-from>
               <lit-tag v="adv"/>
