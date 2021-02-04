@@ -4489,6 +4489,11 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- dolç >> doux, ensucré -->
+  <rule weight="0.8">
+    <match lemma="dolç" tags="adj.*"><select lemma="doux"/></match>
+  </rule>
+
   <!-- laboral >> de travail, du travail, au travail, professionnel -->
   <rule weight="0.8">
     <match lemma="laboral" tags="adj.*"><select lemma="de travail"/></match>
@@ -4977,6 +4982,42 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- totxo >> brique, balourd -->
+  <rule weight="0.8">
+    <match lemma="totxo" tags="n.*"><select lemma="brique"/></match>
+  </rule>
+
+  <!-- variant >> variante, variant -->
+  <rule weight="0.8">
+    <match lemma="variant" tags="n.*"><select lemma="variante"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="Covid" tags="np.*"/>
+      <match lemma="Covid-19" tags="np.*"/>
+      <match lemma="SARS" tags="np.*"/>
+      <match lemma="SARS-CoV-2" tags="np.*"/>
+      <match lemma="virus" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="variant" tags="n.*"><select lemma="variant"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="variant" tags="n.*"><select lemma="variant"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="Covid" tags="np.*"/>
+      <match lemma="Covid-19" tags="np.*"/>
+      <match lemma="SARS" tags="np.*"/>
+      <match lemma="SARS-CoV-2" tags="np.*"/>
+      <match lemma="virus" tags="n.*"/>
+    </or>
+  </rule>
 
   <!-- resum >> résumé, compte rendu -->
   <rule weight="0.8">

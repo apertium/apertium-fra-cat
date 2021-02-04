@@ -1142,7 +1142,7 @@
     <match lemma="par" tags="pr"><select lemma="de"/></match>
   </rule>
 
-  <!-- dans >> en, a -->
+  <!-- dans >> en, a, (a) dins (de), (a) dintre (de) -->
   <rule weight="0.6">
     <match lemma="dans" tags="pr"><select lemma="en"/></match>
   </rule>
@@ -1192,6 +1192,18 @@
       <match lemma="ouest"/>
       <match lemma="orient"/>
       <match lemma="occident"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="jusque" tags="pr"/>
+    <match lemma="dans" tags="pr"><select lemma="dins de"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="jusque" tags="pr"/>
+    <match lemma="dans" tags="pr"><select lemma="a"/></match>
+    <match tags="det"/>
+    <or>
+      <seq n="temps"/>
     </or>
   </rule>
 
@@ -1335,6 +1347,7 @@
       <match lemma="rébellion" tags="n.*"/>
       <match lemma="désobéissance" tags="n.*"/>
       <match lemma="malversation" tags="n.*"/>
+      <match lemma="manquement" tags="n.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -1368,6 +1381,7 @@
   </rule>
   <rule weight="1.0">
     <or>
+      <match lemma="avoir" tags="vblex.*"/>
       <match lemma="féliciter" tags="vblex.*"/>
       <match lemma="excuser" tags="vblex.*"/>
       <match lemma="arrêter" tags="vblex.*"/>
@@ -1674,6 +1688,11 @@
 
 <!-- **************** V **************** -->
 
+  <!-- baiser >> cardar, besar -->
+  <rule weight="0.8">
+    <match lemma="baiser" tags="vblex.*"><select lemma="cardar"/></match>
+  </rule>
+
   <!-- toucher >> tocar, afectar -->
   <rule weight="0.8">
     <match lemma="toucher" tags="vblex.*"><select lemma="tocar"/></match>
@@ -1689,6 +1708,26 @@
   <!-- arrêter >> aturar, arrestar -->
   <rule weight="0.8">
     <match lemma="arrêter" tags="vblex.*"><select lemma="aturar"/></match>
+  </rule>
+
+  <!-- fuir >> fugir, fugir# de -->
+  <rule weight="0.8">
+    <match lemma="fuir" tags="vblex.*"><select lemma="fugir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fuir" tags="vblex.*"><select lemma="fugir# de"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <seq n="personne"/>
+      <seq n="parent"/>
+      <seq n="pays_hab"/>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+      <match tags="np.top.*"/>
+      <match tags="np.al.*"/>
+    </or>
   </rule>
 
   <!-- mettre# à jour >> actualitzar, posar# al dia -->
@@ -1747,7 +1786,7 @@
     <match lemma="mettre# à jour" tags="vblex.pp.*"><select lemma="posar# al dia"/></match>
   </rule>
 
-  <!-- rester >> quedar, quedar-se, continuar# sent -->
+  <!-- rester >> quedar, quedar-se, continuar, continuar# sent -->
   <rule weight="0.8">
     <match lemma="rester" tags="vblex.*"><select lemma="quedar"/></match>
   </rule>
@@ -1767,12 +1806,22 @@
     <match tags="*.inf"/>
   </rule>
   <rule weight="1.0">
-    <match lemma="rester" tags="vblex.*"><select lemma="continuar# sent"/></match>
+    <match lemma="rester" tags="vblex.*"><select lemma="continuar"/></match>
     <match tags="adj.*"/>
   </rule>
   <rule weight="1.0">
     <match lemma="rester" tags="vblex.*"><select lemma="continuar# sent"/></match>
     <match tags="det.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="il" tags="prn.*"/>
+    <match lemma="rester" tags="vblex.*"><select lemma="quedar"/></match>
+    <or>
+      <match lemma="beaucoup de" tags="det.*"/>
+      <match lemma="peu de" tags="det.*"/>
+      <match lemma="beaucoup" tags="adv"/>
+      <match lemma="peu" tags="adv"/>
+    </or>
   </rule>
 
   <!-- doubler >> duplicar, doublar -->
@@ -3841,6 +3890,23 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- terme >> terme, termini -->
+  <rule weight="0.8">
+    <match lemma="terme" tags="n.*"><select lemma="terme"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="court" tags="adj.*"/>
+      <match lemma="moyen" tags="adj.*"/>
+      <match lemma="long" tags="adj.*"/>
+    </or>
+    <match lemma="terme" tags="n.*"><select lemma="termini"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="à" tags="pr.*"/>
+    <match lemma="terme" tags="n.*"><select lemma="termini"/></match>
+  </rule>
 
   <!-- volée >> vol, volada, volea, etc. -->
   <rule weight="0.8">
@@ -6022,6 +6088,13 @@
     </or>
     <match lemma="chance" tags="n.*"><select lemma="possibilitat"/></match>
   </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="petite" tags="adj.*"/>
+      <match lemma="grande" tags="adj.*"/>
+    </or>
+    <match lemma="chance" tags="n.*"><select lemma="possibilitat"/></match>
+  </rule>
 
   <!-- atteinte >> abast, atac, dany -->
   <rule weight="0.8">
@@ -7707,6 +7780,45 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- coincé >> tímid, atrapar -->
+  <rule weight="0.8">
+    <match lemma="coincé" tags="adj.*"><select lemma="tímid"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="coincé" tags="adj.*"><select lemma="atrapar"/></match>
+    <or>
+      <match lemma="entre" tags="pr"/>
+      <match lemma="dans" tags="pr"/>
+      <match lemma="à" tags="pr"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="vbser.*"/>
+      <match lemma="rester" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="coincé" tags="adj.*"><select lemma="atrapar"/></match>
+  </rule>
+
+  <!-- doux >> suau, dolç -->
+  <rule weight="0.8">
+    <match lemma="doux" tags="adj.*"><select lemma="suau"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="eau" tags="n.*"/>
+      <match lemma="vin" tags="n.*"/>
+      <match lemma="voix" tags="n.*"/>
+    </or>
+    <match lemma="doux" tags="adj.*"><select lemma="dolç"/></match>
+  </rule>
+
   <!-- laborieux >> laboriós, treballador -->
   <rule weight="0.8">
     <match lemma="laborieux" tags="adj.*"><select lemma="laboriós"/></match>
@@ -8377,6 +8489,8 @@
     </repeat>
     <or>
       <match lemma="amoureux" tags="adj.*"/>
+      <match lemma="coincé" tags="adj.*"/>
+      <match lemma="coincer" tags="vblex.pp.*"/>
       <match lemma="content" tags="adj.*"/>
       <match lemma="consterné" tags="adj.*"/>
       <match lemma="consterner" tags="vblex.pp.*"/>
@@ -8385,10 +8499,16 @@
       <match lemma="convaincu" tags="adj.*"/>
       <match lemma="convaincre" tags="vblex.pp.*"/>
       <match lemma="d'accord" tags="adv"/>
+      <match lemma="disponible" tags="adj.*"/>
       <match lemma="divisé" tags="adj.*"/>
       <match lemma="diviser" tags="vblex.pp.*"/>
       <match lemma="dopé" tags="adj.*"/>
       <match lemma="doper" tags="vblex.pp.*"/>
+      <match lemma="émerveillé" tags="adj.*"/>
+      <match lemma="émerveiller" tags="vblex.pp.*"/>
+      <match lemma="enchanté" tags="adj.*"/>
+      <match lemma="enchanter" tags="vblex.pp.*"/>
+      <match lemma="émerveillé" tags="adj.*"/>
       <match lemma="engagé" tags="adj.*"/>
       <match lemma="engager" tags="vblex.pp.*"/>
       <match lemma="enrhumé" tags="adj.*"/>
