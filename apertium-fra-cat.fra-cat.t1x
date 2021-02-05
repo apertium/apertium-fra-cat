@@ -86,6 +86,10 @@
     <def-cat n="enprep">
       <cat-item lemma="en" tags="pr"/>
     </def-cat>
+    <def-cat n="adeprep">
+      <cat-item lemma="à" tags="pr"/>
+      <cat-item lemma="de" tags="pr"/>
+    </def-cat>
     <def-cat n="deprep">
       <cat-item lemma="de" tags="pr"/>
     </def-cat>
@@ -463,6 +467,9 @@
       <cat-item lemma="appeler" tags="vblex.pri.*"/>
       <cat-item lemma="appeler" tags="vblex.pii.*"/>
       <cat-item lemma="appeler" tags="vblex.fti.*"/>
+    </def-cat>
+    <def-cat n="continuer">
+      <cat-item lemma="continuer" tags="vblex.*"/>
     </def-cat>
     <def-cat n="resterp3sg_noifi">
       <cat-item lemma="rester" tags="vblex.pri.p3.sg"/>
@@ -10541,6 +10548,306 @@ is not applicable because gender and number cannot be taken from previous rules 
 
 
 <!--fi regles per a eliminar el partitiu-->
+
+<!--regles per a continuer à/de inf -->
+
+    <rule comment="REGLA: continuer à/de inf > continuar ger">
+      <pattern>
+        <pattern-item n="continuer"/>
+        <pattern-item n="adeprep"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <out>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <lit-tag v="ger"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: prnsubj continuer à/de inf > continuar ger">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="continuer"/>
+        <pattern-item n="adeprep"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+               <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="2"/>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <out>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="a_verb"/>
+            <lit-tag v="ger"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: continuer à/de adv inf > continuar ger adv">
+      <pattern>
+        <pattern-item n="continuer"/>
+        <pattern-item n="adeprep"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <out>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="a_verb"/>
+            <lit-tag v="ger"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: prnsubj continuer à/de adv inf > continuar ger adv">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="continuer"/>
+        <pattern-item n="adeprep"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+               <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="2"/>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <out>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="a_verb"/>
+            <lit-tag v="ger"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: continuer à/de ne pas inf > continuar no ger">
+      <pattern>
+        <pattern-item n="continuer"/>
+        <pattern-item n="adeprep"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <out>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <out>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="a_verb"/>
+            <lit-tag v="ger"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: prnsubj continuer à/de ne pas inf > continuar no ger">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="continuer"/>
+        <pattern-item n="adeprep"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+               <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="2"/>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <out>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="4"/><with-param pos="5"/></call-macro>
+        <out>
+          <b pos="5"/>
+          <lu>
+            <clip pos="6" side="tl" part="lemh"/>
+            <clip pos="6" side="tl" part="a_verb"/>
+            <lit-tag v="ger"/>
+            <clip pos="6" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: continuer à/de ne pas adv inf > continuar no ger adv">
+      <pattern>
+        <pattern-item n="continuer"/>
+        <pattern-item n="adeprep"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <out>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <out>
+          <b pos="4"/>
+          <lu>
+            <clip pos="6" side="tl" part="lemh"/>
+            <clip pos="6" side="tl" part="a_verb"/>
+            <lit-tag v="ger"/>
+            <clip pos="6" side="tl" part="lemq"/>
+          </lu>
+          <b pos="5"/>
+          <lu>
+            <clip pos="5" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: prnsubj continuer à/de ne pas adv inf > continuar no ger adv">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="continuer"/>
+        <pattern-item n="adeprep"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+               <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="2"/>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <out>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="4"/><with-param pos="5"/></call-macro>
+        <out>
+          <b pos="5"/>
+          <lu>
+            <clip pos="7" side="tl" part="lemh"/>
+            <clip pos="7" side="tl" part="a_verb"/>
+            <lit-tag v="ger"/>
+            <clip pos="7" side="tl" part="lemq"/>
+          </lu>
+          <b pos="6"/>
+          <lu>
+            <clip pos="6" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+<!--fi regles per a continuer à/de inf -->
 
 <!--regles per a rester-->
 
