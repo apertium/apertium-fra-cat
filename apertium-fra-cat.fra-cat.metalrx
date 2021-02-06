@@ -1330,6 +1330,12 @@
     <match tags="prn.pro.*"/>
     <or><match tags="vblex.inf"/><match tags="vbser.inf"/><match tags="vbhaver.inf"/><match tags="vbmod.inf"/></or>
   </rule>
+<!--
+  <rule weight="1.0">
+    <match lemma="pour" tags="pr"><select lemma="per"/></match>
+    <match tags="n.*"/>
+  </rule>
+-->
   <rule weight="1.0">
     <match lemma="pour" tags="pr"><select lemma="per"/></match>
     <repeat from="0" upto="1">
@@ -1348,6 +1354,7 @@
       <match lemma="désobéissance" tags="n.*"/>
       <match lemma="malversation" tags="n.*"/>
       <match lemma="manquement" tags="n.*"/>
+      <match lemma="diffamation" tags="n.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -1399,6 +1406,17 @@
         <match tags="cnjadv"/>
       </or>
     </repeat>
+    <match lemma="pour" tags="pr"><select lemma="per"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="meilleur" tags="adj.*"/>
+    <or>
+      <match lemma="film" tags="n.*"/>
+      <match lemma="longmétrage" tags="n.*"/>
+      <match lemma="courtmétrage" tags="n.*"/>
+      <match lemma="directeur" tags="n.*"/>
+      <match lemma="acteur" tags="n.*"/>
+    </or>
     <match lemma="pour" tags="pr"><select lemma="per"/></match>
   </rule>
   <rule weight="1.0">
@@ -3316,6 +3334,10 @@
     <or>
     <match lemma="étude" tags="n.*"/>
     <match lemma="marche" tags="n.*"/>
+    <match lemma="visite" tags="n.*"/>
+    <match lemma="voyage" tags="n.*"/>
+    <match lemma="exploration" tags="n.*"/>
+    <match lemma="recherche" tags="n.*"/>
     </or>
   </rule>
 
@@ -3324,6 +3346,9 @@
 
   <!-- tromper >> enganyar, equivocar -->
   <macro name="verb_nopron_pron" p1="tromper" p2="enganyar" p3="equivocar" />
+
+  <!-- désengager >> desengatjar, descompometre -->
+  <macro name="verb_nopron_pron" p1="désengager" p2="desengatjar" p3="descompometre" />
 
   <!-- battre >> derrotar, batre, bategar, barallar -->
   <macro name="verb_nopron_pron" p1="battre" p2="derrotar" p3="barallar" />
@@ -3890,6 +3915,48 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- flou >> difuminació, flou -->
+  <rule weight="0.8">
+    <match lemma="flou" tags="n.*"><select lemma="difuminació"/></match>
+  </rule>
+
+  <!-- loustic >> mala peça, bona peça -->
+  <rule weight="0.8">
+    <match lemma="loustic" tags="n.*"><select lemma="mala peça"/></match>
+  </rule>
+
+  <!-- opposant >> opositor, oponent -->
+  <rule weight="0.8">
+    <match lemma="opposant" tags="n.*"><select lemma="opositor"/></match>
+  </rule>
+
+  <!-- fondation >> fundació, fonament -->
+  <rule weight="0.8">
+    <match lemma="fondation" tags="n.*"><select lemma="fundació"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fondation" tags="n.f.pl"><select lemma="fonament"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="fondation" tags="n.*"><select lemma="fundació"/></match>
+    <or>
+      <match lemma="privé" tags="adj.*"/>
+      <match lemma="caritatif" tags="adj.*"/>
+      <match lemma="religieux" tags="adj.*"/>
+      <match lemma="chrétien" tags="adj.*"/>
+      <match lemma="catholique" tags="adj.*"/>
+      <match lemma="islamique" tags="adj.*"/>
+    </or>
+  </rule>
+
+  <!-- estime >> estima, estimació -->
+  <rule weight="0.8">
+    <match lemma="estime" tags="n.*"><select lemma="estima"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="estime" tags="n.f.pl"><select lemma="estimació"/></match>
+  </rule>
 
   <!-- terme >> terme, termini -->
   <rule weight="0.8">
@@ -6311,6 +6378,9 @@
       <match lemma="ouvert" tags="vblex.pp.*"/>
       <match lemma="soutenu" tags="adj.*"/>
       <match lemma="soutenir" tags="vblex.pp.*"/>
+      <match lemma="impartial" tags="adj.*"/>
+      <match lemma="indépendant" tags="adj.*"/>
+      <match lemma="externe" tags="adj.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -6534,6 +6604,13 @@
   <rule weight="1.0">
     <match lemma="saison" tags="n.*"><select lemma="temporada"/></match>
     <match tags="num"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="saison" tags="n.*"><select lemma="temporada"/></match>
+    <or>
+      <match lemma="suivant" tags="adj.*"/>
+      <match lemma="suivant" tags="adj.*"/>
+    </or>
   </rule>
 
   <!-- ordre >> ordre m, ordre f, orde -->
@@ -7593,6 +7670,13 @@
     <match tags="adj.*"/>
     <match lemma="prix" tags="n.*"><select lemma="preu"/></match>
   </rule>
+  <rule weight="1.0">
+    <match lemma="prix" tags="n.*"><select lemma="preu"/></match>
+    <or>
+      <match lemma="fixé" tags="adj.*"/>
+      <match lemma="fixer" tags="vblex.pp.*"/>
+    </or>
+  </rule>
   <rule weight="1.2">
     <or>
       <match tags="det.ind.*"/>
@@ -7779,6 +7863,46 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- portage >> port, transport, distribució, frec -->
+  <rule weight="0.8">
+    <match lemma="portage" tags="adj.*"><select lemma="port"/></match>
+  </rule>
+
+  <!-- interdit >> prohibit, astorat -->
+  <rule weight="0.8">
+    <match lemma="interdit" tags="adj.*"><select lemma="prohibit"/></match>
+  </rule>
+
+  <!-- en berne >> a mig pal, alacaigut, abatut -->
+  <rule weight="0.8">
+    <match lemma="en berne" tags="adj.*"><select lemma="a mig pal"/></match>
+  </rule>
+
+  <!-- lourd >> pesat, fort -->
+  <rule weight="0.8">
+    <match lemma="lourd" tags="adj.*"><select lemma="pesat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="lourd" tags="adj.*"><select lemma="fort"/></match>
+    <match lemma="ammende" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ammende" tags="n.*"/>
+    <match lemma="lourd" tags="adj.*"><select lemma="fort"/></match>
+  </rule>
+
+  <!-- en berne >> abatut, a mig pal -->
+  <rule weight="0.8">
+    <match lemma="en berne" tags="adj.*"><select lemma="abatut"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="drapeau" tags="n.*"/>
+      <match lemma="pavillon" tags="n.*"/>
+    </or>
+    <match lemma="en berne" tags="adj.*"><select lemma="a mig pal"/></match>
+  </rule>
 
   <!-- coincé >> tímid, atrapar -->
   <rule weight="0.8">
@@ -8331,6 +8455,11 @@
 
 <!-- **************** VBLEX **************** -->
 
+  <!-- instrumenter >> instrumentar, escripturar -->
+  <rule weight="0.8">
+    <match lemma="instrumenter" tags="vblex.*"><select lemma="instrumentar"/></match>
+  </rule>
+
   <!-- défrayer# la cronique >> ser# notícia, fer# parlar -->
   <rule weight="0.8">
     <match lemma="défrayer# la cronique" tags="vblex.*"><select lemma="ser# notícia"/></match>
@@ -8528,6 +8657,8 @@
       <match lemma="mourir" tags="vblex.pp.*"/>
       <match lemma="ouvert" tags="adj.*"/>
       <match lemma="ouvrir" tags="vblex.pp.*"/>
+      <match lemma="placé" tags="adj.*"/>
+      <match lemma="placer" tags="vblex.pp.*"/>
       <match lemma="préoccupé" tags="adj.*"/>
       <match lemma="préoccuper" tags="vblex.pp.*"/>
       <match lemma="persuadé" tags="adj.*"/>
@@ -8536,6 +8667,8 @@
       <match lemma="réglementer" tags="vblex.pp.*"/>
       <match lemma="satisfait" tags="adj.*"/>
       <match lemma="satisfaire" tags="vblex.pp.*"/>
+      <match lemma="situé" tags="adj.*"/>
+      <match lemma="situer" tags="vblex.pp.*"/>
       <match lemma="timbré" tags="adj.*"/>
       <match lemma="timbrer" tags="vblex.pp.*"/>
     </or>

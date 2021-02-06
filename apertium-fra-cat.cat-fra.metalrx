@@ -2685,6 +2685,11 @@
 
 <!-- **************** V **************** -->
 
+  <!-- rétrécir >> estrènyer, encongir -->
+  <rule weight="0.8">
+    <match lemma="rétrécir" tags="vblex.*"><select lemma="estrènyer"/></match>
+  </rule>
+
   <!-- desafinar >> chanter# faux, jouer# faux -->
   <rule weight="0.8">
     <match lemma="desafinar" tags="vblex.*"><select lemma="chanter# faux"/></match>
@@ -3630,6 +3635,9 @@
   <!-- florir >> fleurir, moisir -->
   <macro name="verb_nopron_pron" p1="florir" p2="fleurir" p3="moisir" />
 
+  <!-- insubordinar >> soulever, rebeller -->
+  <macro name="verb_nopron_pron" p1="insubordinar" p2="soulever" p3="rebeller" />
+
   <!-- pondre >> pondre, coucher -->
   <macro name="verb_nopron_pron" p1="pondre" p2="pondre" p3="coucher" />
 
@@ -4489,6 +4497,19 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- fort >> fort, lourd -->
+  <rule weight="0.8">
+    <match lemma="fort" tags="adj.*"><select lemma="fort"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fort" tags="adj.*"><select lemma="lourd"/></match>
+    <match lemma="multa" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="multa" tags="n.*"/>
+    <match lemma="fort" tags="adj.*"><select lemma="lourd"/></match>
+  </rule>
+
   <!-- dolç >> doux, ensucré -->
   <rule weight="0.8">
     <match lemma="dolç" tags="adj.*"><select lemma="doux"/></match>
@@ -4983,6 +5004,19 @@
 
 <!-- **************** N **************** -->
 
+  <!-- opositor >> opposant, adversaire -->
+  <rule weight="0.8">
+    <match lemma="opositor" tags="n.*"><select lemma="opposant"/></match>
+  </rule>
+
+  <!-- fonament >> fondement, fondation -->
+  <rule weight="0.8">
+    <match lemma="fonament" tags="n.*"><select lemma="fondement"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fonament" tags="n.m.pl"><select lemma="fondation"/></match>
+  </rule>
+
   <!-- totxo >> brique, balourd -->
   <rule weight="0.8">
     <match lemma="totxo" tags="n.*"><select lemma="brique"/></match>
@@ -5079,6 +5113,26 @@
   <!-- clip >> clip, trombone -->
   <rule weight="0.8">
     <match lemma="clip" tags="n.*"><select lemma="clip"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="clip" tags="n.*"><select lemma="trombone"/></match>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="paper" tags="n.*"/>
+      <match lemma="full" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="paper" tags="n.*"/>
+      <match lemma="full" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="clip" tags="n.*"><select lemma="trombone"/></match>
   </rule>
 
   <!-- cintura >> ceinture, taille -->
