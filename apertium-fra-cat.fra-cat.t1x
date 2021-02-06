@@ -248,6 +248,7 @@
       <cat-item lemma="accueillir" tags="vblex.*"/>
       <cat-item lemma="avoir" tags="vblex.*"/>
       <cat-item lemma="avoir# besoin" tags="vblex.*"/>
+      <cat-item lemma="accumuler" tags="vblex.*"/>
       <cat-item lemma="acheter" tags="vblex.*"/>
       <cat-item lemma="boire" tags="vblex.*"/>
       <cat-item lemma="chercher" tags="vblex.*"/>
@@ -1172,6 +1173,7 @@
       <list-item v="Mandchourie"/>
       <list-item v="Hubei"/>
       <list-item v="Xinjiang"/>
+      <list-item v="Wuhan"/>
       <list-item v="Corée"/>
       <list-item v="Corée du Nord"/>
       <list-item v="Corée du Sud"/>
@@ -8600,7 +8602,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
         <out>
           <lu>
-            <clip pos="2" side="tl" part="whole"/>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
           </lu>
           <b pos="2"/>
           <lu>
