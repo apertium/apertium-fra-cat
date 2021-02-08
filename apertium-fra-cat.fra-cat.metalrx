@@ -3243,9 +3243,54 @@
   <!-- affronter >> afrontar, enfrontar -->
   <macro name="verb_nopron_pron" p1="affronter" p2="afrontar" p3="enfrontar" />
 
-  <!-- rendre >> retre, arribar, fer# cap a -->
-  <macro name="verb_nopron_pron" p1="rendre" p2="retre" p3="arribar" />
+  <!-- rendre >> retre, arribar, fer, tornar, fer# cap a -->
+  <macro name="verb_nopron_pron" p1="rendre" p2="tornar" p3="arribar" />
   <rule weight="1.2">
+    <match lemma="rendre" tags="vblex.*"><select lemma="fer"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="rendre" tags="vblex.*"><select lemma="fer"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="det.*"/>
+    <match tags="n.*"/>
+    <or>
+      <match lemma="plus" tags="adv"/>
+      <match lemma="moins" tags="adv"/>
+    </or>
+    <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="rendre" tags="vblex.*"><select lemma="fer"/></match>
+    <match tags="det.*"/>
+    <match tags="n.*"/>
+    <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="rendre" tags="vblex.*"><select lemma="retre"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="hommage" tags="n.*"/>
+      <match lemma="honneur" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.4">
     <match lemma="se" tags="prn.*"/>
     <match lemma="rendre" tags="vblex.ger"><select lemma="fer# cap a"/></match>
   </rule>
@@ -8631,6 +8676,8 @@
       <match lemma="disponible" tags="adj.*"/>
       <match lemma="divisé" tags="adj.*"/>
       <match lemma="diviser" tags="vblex.pp.*"/>
+      <match lemma="divorcé" tags="adj.*"/>
+      <match lemma="divorcer" tags="vblex.pp.*"/>
       <match lemma="dopé" tags="adj.*"/>
       <match lemma="doper" tags="vblex.pp.*"/>
       <match lemma="émerveillé" tags="adj.*"/>
@@ -8648,6 +8695,8 @@
       <match lemma="fatiguer" tags="vblex.pp.*"/>
       <match lemma="fermé" tags="adj.*"/>
       <match lemma="fermer" tags="vblex.pp.*"/>
+      <match lemma="fini" tags="adj.*"/>
+      <match lemma="finir" tags="vblex.pp.*"/>
       <match lemma="intéressé" tags="adj.*"/>
       <match lemma="intéresser" tags="vblex.pp.*"/>
       <match lemma="malade" tags="adj.*"/>
@@ -8669,6 +8718,8 @@
       <match lemma="satisfaire" tags="vblex.pp.*"/>
       <match lemma="situé" tags="adj.*"/>
       <match lemma="situer" tags="vblex.pp.*"/>
+      <match lemma="terminé" tags="adj.*"/>
+      <match lemma="terminer" tags="vblex.pp.*"/>
       <match lemma="timbré" tags="adj.*"/>
       <match lemma="timbrer" tags="vblex.pp.*"/>
     </or>
@@ -9209,8 +9260,9 @@
   <macro name="ant_antcog" p1="Geoffroy" p2="Jofré" />
   <macro name="ant_antcog" p1="Hercule" p2="Hèrcules" />
   <macro name="ant_antcog" p1="Horace" p2="Horaci" />
-  <macro name="ant_antcog" p1="Octave" p2="Octavi" />
+  <macro name="ant_antcog" p1="Hector" p2="Hèctor" />
   <macro name="ant_antcog" p1="Jérémie" p2="Jeremies" />
+  <macro name="ant_antcog" p1="Octave" p2="Octavi" />
 
   <macro name="noms_propres" p1="Charles" p2="Carles" />
   <macro name="noms_propres" p1="Philippe" p2="Felip" />
