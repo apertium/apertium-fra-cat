@@ -168,6 +168,9 @@
       <cat-item lemma="eux" tags="prn.tn.p3.m.pl"/>
       <cat-item lemma="il" tags="prn.tn.p3.f.pl"/>
     </def-cat>
+    <def-cat n="un_detmsg">
+      <cat-item lemma="un" tags="det.ind.m.sg"/>
+    </def-cat>
     <def-cat n="unpron">
       <cat-item lemma="un" tags="prn.*"/>
     </def-cat>
@@ -577,6 +580,11 @@
     </def-cat>
     <def-cat n="fin">
       <cat-item lemma="fin" tags="n.f.sg"/>
+    </def-cat>
+    <def-cat n="milliard">
+      <cat-item lemma="milliard" tags="n.*"/>
+      <cat-item lemma="demi-milliard" tags="n.*"/>
+      <cat-item lemma="demi-million" tags="n.*"/>
     </def-cat>
     <def-cat n="cnjcoo">
       <cat-item tags="cnjcoo"/>
@@ -4360,6 +4368,29 @@ is not applicable because gender and number cannot be taken from previous rules 
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: un milliard > mil milions">
+      <pattern>
+        <pattern-item n="un_detmsg"/>
+        <pattern-item n="milliard"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
@@ -15007,16 +15038,41 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="ger"/>
       </pattern>
       <action>
-        <out>
-          <lu>
-            <get-case-from pos="1">
-              <clip pos="2" side="tl" part="lemh"/>
-            </get-case-from>
-            <clip pos="2" side="tl" part="a_ger"/>
-            <clip pos="2" side="tl" part="lemq"/>
-          </lu>
-        </out>
-        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+      <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+      <choose>
+        <when>
+          <test>
+            <equal><clip pos="2" side="tl" part="a_verb_pron"/><lit-tag v="vblex.pron"/></equal>
+          </test>
+          <out>
+            <mlu>
+              <lu>
+                <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="lemh"/>
+                </get-case-from>
+                <clip pos="2" side="tl" part="a_verb"/>
+                <lit-tag v="ger"/>
+              </lu>
+              <lu>
+                <lit v="es"/>
+                <lit-tag v="prn.enc.ref.p3.mf.sp"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+            </mlu>
+          </out>
+        </when>
+        <otherwise>
+          <out>
+            <lu>
+              <get-case-from pos="1">
+                <clip pos="2" side="tl" part="lemh"/>
+              </get-case-from>
+              <clip pos="2" side="tl" part="a_ger"/>
+              <clip pos="2" side="tl" part="lemq"/>
+            </lu>
+          </out>
+        </otherwise>
+      </choose>
       </action>
     </rule>
 
