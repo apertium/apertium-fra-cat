@@ -1207,7 +1207,7 @@
     </or>
   </rule>
 
-  <!-- de >> de, a -->
+  <!-- de >> de, a, per -->
   <rule weight="0.8">
     <match lemma="de" tags="pr"><select lemma="de"/></match>
   </rule>
@@ -1220,6 +1220,20 @@
       </or>
     </repeat>
     <match lemma="de" tags="pr"><select lemma="a"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="vbser.*"/>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="connaître" tags="vblex.pp.*"/>
+      <match lemma="priser" tags="vblex.pp.*"/>
+    </or>
+    <match lemma="de" tags="pr"><select lemma="per"/></match>
   </rule>
 
   <!-- après >> després de, rere -->
@@ -1263,6 +1277,19 @@
       </or>
     </repeat>
     <match lemma="à" tags="pr"><select lemma="en"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="continuer" tags="vblex.*"/>
+      <match lemma="continuer" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="à" tags="pr"><select lemma="de"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="maillot" tags="n.*"/>
@@ -1342,19 +1369,22 @@
       <match tags="det.*"/>
     </repeat>
     <or>
-      <match lemma="corruption" tags="n.*"/>
-      <match lemma="trafic" tags="n.*"/>
       <match lemma="assassinat" tags="n.*"/>
-      <match lemma="meurtre" tags="n.*"/>
-      <match lemma="homicide" tags="n.*"/>
-      <match lemma="enlèvement" tags="n.*"/>
-      <match lemma="viol" tags="n.*"/>
-      <match lemma="sédition" tags="n.*"/>
-      <match lemma="rébellion" tags="n.*"/>
+      <match lemma="blanchiment" tags="n.*"/>
+      <match lemma="corruption" tags="n.*"/>
       <match lemma="désobéissance" tags="n.*"/>
+      <match lemma="détournement# de fonds" tags="n.*"/>
+      <match lemma="diffamation" tags="n.*"/>
+      <match lemma="enlèvement" tags="n.*"/>
+      <match lemma="escroquerie" tags="n.*"/>
+      <match lemma="homicide" tags="n.*"/>
       <match lemma="malversation" tags="n.*"/>
       <match lemma="manquement" tags="n.*"/>
-      <match lemma="diffamation" tags="n.*"/>
+      <match lemma="meurtre" tags="n.*"/>
+      <match lemma="rébellion" tags="n.*"/>
+      <match lemma="sédition" tags="n.*"/>
+      <match lemma="trafic" tags="n.*"/>
+      <match lemma="viol" tags="n.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -1813,9 +1843,19 @@
     <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
-    <match lemma="à" tags="pr"/>
+    <or>
+      <match tags="cm"/>
+      <match tags="sent"/>
+    </or>
   </rule>
   <rule weight="1.0">
+    <match lemma="rester" tags="vblex.*"><select lemma="quedar" tags="vblex.pron.*"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="à" tags="pr"/>
+  </rule>
+  <rule weight="1.2">
     <match lemma="rester" tags="vblex.*"><select lemma="quedar" tags="vblex.*"/></match>
     <repeat from="0" upto="2">
       <match tags="adv"/>
@@ -3960,6 +4000,102 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- étonnement >> sorpresa, estranyesa, desconcert -->
+  <rule weight="0.8">
+    <match lemma="étonnement" tags="n.*"><select lemma="sorpresa"/></match>
+  </rule>
+
+  <!-- embarras >> molèstia, trastorn, tràngol -->
+  <rule weight="0.8">
+    <match lemma="embarras" tags="n.*"><select lemma="molèstia"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="embarras" tags="n.*"><select lemma="trastorn"/></match>
+    <or>
+      <match lemma="gastrique" tags="adj.*"/>
+      <match lemma="intestinal" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="dans" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="embarras" tags="n.*"><select lemma="tràngol"/></match>
+  </rule>
+
+  <!-- pair >> par, parió -->
+  <rule weight="0.8">
+    <match lemma="pair" tags="n.*"><select lemma="par" tags="n.f.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="sans" tags="pr"/>
+      <match lemma="hors" tags="pr"/>
+      <match lemma="hors de" tags="pr"/>
+    </or>
+    <match lemma="pair" tags="n.*"><select lemma="parió"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.pos.*"/>
+    <match lemma="pair" tags="n.*"><select lemma="par" tags="n.m.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="chambre" tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.def.*"/>
+    <match lemma="pair" tags="n.*"><select lemma="par" tags="n.m.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="aider" tags="vblex.*"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="pair" tags="n.*"><select lemma="par" tags="n.m.*"/></match>
+  </rule>
+
+  <!-- accroc >> entrebanc, esquinç -->
+  <rule weight="0.8">
+    <match lemma="accroc" tags="n.*"><select lemma="entrebanc"/></match>
+  </rule>
+
+  <!-- portage >> port, transport, distribució, frec -->
+  <rule weight="0.8">
+    <match lemma="portage" tags="n.*"><select lemma="port"/></match>
+  </rule>
+
+  <!-- grenade >> granada, magrana -->
+  <rule weight="0.8">
+    <match lemma="grenade" tags="n.*"><select lemma="granada"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="grenade" tags="n.*"><select lemma="magrana"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <seq n="fruit"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="fruit"/>
+      <match lemma="manger" tags="vblex.*"/>
+      <match lemma="goûter" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="grenade" tags="n.*"><select lemma="magrana"/></match>
+  </rule>
+
+  <!-- marais >> aiguamoll, pantà -->
+  <rule weight="0.8">
+    <match lemma="marais" tags="n.*"><select lemma="aiguamoll"/></match>
+  </rule>
 
   <!-- flou >> difuminació, flou -->
   <rule weight="0.8">
@@ -7909,9 +8045,38 @@
 
 <!-- **************** ADJ **************** -->
 
-  <!-- portage >> port, transport, distribució, frec -->
+  <!-- sacré >> sagrat, sacre, del dimoni, reconsagrat -->
   <rule weight="0.8">
-    <match lemma="portage" tags="adj.*"><select lemma="port"/></match>
+    <match lemma="sacré" tags="adj.*"><select lemma="sagrat"/></match>
+  </rule>
+  <rule weight="0.9">
+    <match lemma="sacré" tags="adj.*"><select lemma="reconsagrat"/></match>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.*"/>
+    <match lemma="sacré" tags="adj.*"><select lemma="del dimoni"/></match>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sacré" tags="adj.*"><select lemma="reconsagrat"/></match>
+    <match tags="n.*"/>
+    <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="sacré" tags="adj.*"><select lemma="sagrat"/></match>
+    <or>
+      <match lemma="cœur" tags="n.*"/>
+      <match lemma="congrégation" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="sacré" tags="adj.*"><select lemma="sacre"/></match>
+    <match lemma="collège" tags="n.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="musique" tags="n.*"/>
+    <match lemma="sacré" tags="adj.*"><select lemma="sacre"/></match>
   </rule>
 
   <!-- interdit >> prohibit, astorat -->
@@ -9098,6 +9263,15 @@
   </rule>
 
 <!-- **************** ADV **************** -->
+
+  <!-- de même >> igual, així mateix -->
+  <rule weight="0.8">
+    <match lemma="de même" tags="adv"><select lemma="així mateix"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="de même" tags="adv"><select lemma="igual"/></match>
+    <match lemma="que"/>
+  </rule>
 
   <!-- à cœur ouvert >> a cor obert, amb el cor a la mà -->
   <rule weight="0.8">

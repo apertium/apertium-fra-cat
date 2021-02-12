@@ -4497,6 +4497,11 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- mans >> paisible, doux -->
+  <rule weight="0.8">
+    <match lemma="mans" tags="adj.*"><select lemma="paisible"/></match>
+  </rule>
+
   <!-- fort >> fort, lourd -->
   <rule weight="0.8">
     <match lemma="fort" tags="adj.*"><select lemma="fort"/></match>
@@ -4867,13 +4872,42 @@
     <match lemma="sonor" tags="adj.*"><select lemma="parlant"/></match>
   </rule>
 
+  <!-- puríssim >> très pur, immaculé -->
+  <rule weight="0.8">
+    <match lemma="puríssim" tags="adj.*"><select lemma="très pur"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="puríssim" tags="adj.*"><select lemma="immaculé"/></match>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="Puríssim" tags="adj.*"><select lemma="immaculé"/></match>
+  </rule>
+
+  <!-- sacre >> saint, sacré -->
+  <rule weight="0.8">
+    <match lemma="sacre" tags="adj.*"><select lemma="saint"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sacre" tags="adj.*"><select lemma="sacré"/></match>
+    <or>
+      <match lemma="col·legi" tags="n.*"/>
+      <match lemma="congregació" tags="n.*"/>
+      <match lemma="cor" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="música" tags="n.*"/>
+    <match lemma="sacre" tags="adj.*"><select lemma="sacré"/></match>
+  </rule>
+
   <!-- sagrat >> sacré, saint -->
   <rule weight="0.8">
     <match lemma="sagrat" tags="adj.*"><select lemma="sacré"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="sagrat" tags="adj.*"><select lemma="saint"/></match>
-    <match lemma="família" tags="n.*"/>
+    <match tags="n.*"/>
   </rule>
 
   <!-- habitual >> habituel, habitué -->
@@ -5003,6 +5037,29 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- pantà >> lac artificiel, marais -->
+  <rule weight="0.8">
+    <match lemma="pantà" tags="n.*"><select lemma="lac artificiel"/></match>
+  </rule>
+
+  <!-- presa >> prise, proie, barrage -->
+  <rule weight="0.8">
+    <match lemma="presa" tags="n.*"><select lemma="prise"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="de" tags="pr"/>
+    <match lemma="presa" tags="n.*"><select lemma="proie"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="caçar" tags="vblex.*"/>
+      <match lemma="matar" tags="vblex.*"/>
+      <match lemma="menjar" tags="vblex.*"/>
+    </or>
+    <match tags="det.*"/>
+    <match lemma="presa" tags="n.*"><select lemma="proie"/></match>
+  </rule>
 
   <!-- opositor >> opposant, adversaire -->
   <rule weight="0.8">
