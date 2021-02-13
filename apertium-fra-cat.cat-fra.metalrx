@@ -2685,9 +2685,17 @@
 
 <!-- **************** V **************** -->
 
-  <!-- rétrécir >> estrènyer, encongir -->
+  <!-- eixugar >> essuyer, éponger -->
   <rule weight="0.8">
-    <match lemma="rétrécir" tags="vblex.*"><select lemma="estrènyer"/></match>
+    <match lemma="eixugar" tags="vblex.*"><select lemma="essuyer"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="eixugar" tags="vblex.*"><select lemma="éponger"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="deute" tags="n.*"/>
   </rule>
 
   <!-- desafinar >> chanter# faux, jouer# faux -->
@@ -3088,6 +3096,12 @@
 
   <!-- embolicar >> envelopper, emmêler -->
   <macro name="verb_nopron_pron" p1="embolicar" p2="envelopper" p3="emmêler" />
+
+  <!-- empantanar >> inonder, stagner -->
+  <macro name="verb_nopron_pron" p1="empantanar" p2="inonder" p3="stagner" />
+
+  <!-- empantanegar >> paralyser, stagner -->
+  <macro name="verb_nopron_pron" p1="empantanegar" p2="paralyser" p3="stagner" />
 
   <!-- encimbellar >> hisser, grimper -->
   <macro name="verb_nopron_pron" p1="encimbellar" p2="hisser" p3="grimper" />
@@ -5037,6 +5051,29 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- ban >> ban, bàndol -->
+  <rule weight="0.8">
+    <match lemma="ban" tags="n.*"><select lemma="ban"/></match>
+  </rule>
+
+  <!-- marge >> marge, rive, ban -->
+  <rule weight="0.8">
+    <match lemma="marge" tags="n.*"><select lemma="marge"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="marge" tags="n.*"><select lemma="rive"/></match>
+    <or>
+      <match lemma="dret" tags="adj.*"/>
+      <match lemma="esquerre" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="marge" tags="n.*"><select lemma="ban"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.def.*"/>
+    <match lemma="societat" tags="n.*"/>
+  </rule>
 
   <!-- pantà >> lac artificiel, marais -->
   <rule weight="0.8">

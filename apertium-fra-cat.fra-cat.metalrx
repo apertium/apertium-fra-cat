@@ -1736,6 +1736,29 @@
 
 <!-- **************** V **************** -->
 
+  <!-- éponger >> esponjar, eixugar -->
+  <rule weight="0.8">
+    <match lemma="éponger" tags="vblex.*"><select lemma="esponjar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="éponger" tags="vblex.*"><select lemma="eixugar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="dette" tags="n.*"/>
+  </rule>
+
+  <!-- rétrécir >> estrènyer, encongir -->
+  <rule weight="0.8">
+    <match lemma="rétrécir" tags="vblex.*"><select lemma="estrènyer"/></match>
+  </rule>
+
+  <!-- confluer >> confluir, aiguabarrejar-se -->
+  <rule weight="0.8">
+    <match lemma="confluer" tags="vblex.*"><select lemma="confluir"/></match>
+  </rule>
+
   <!-- baiser >> cardar, besar -->
   <rule weight="0.8">
     <match lemma="baiser" tags="vblex.*"><select lemma="cardar"/></match>
@@ -4000,6 +4023,65 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- ban >> ban, marge -->
+  <rule weight="0.8">
+    <match lemma="ban" tags="n.*"><select lemma="ban"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ban" tags="n.*"><select lemma="marge"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.def.*"/>
+    <match lemma="société" tags="n.*"/>
+  </rule>
+
+  <!-- recette >> recepta, recaptació, ingrés -->
+  <rule weight="0.8">
+    <match lemma="recette" tags="n.*"><select lemma="recepta"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="recette" tags="n.f.pl"><select lemma="recaptació"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="recette" tags="n.*"><select lemma="recepta"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="cuisine" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="recette" tags="n.*"><select lemma="recepta"/></match>
+    <match lemma="médical" tags="adj.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="recette" tags="n.*"><select lemma="recepta"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="médecin" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="recette" tags="n.*"><select lemma="recaptació"/></match>
+    <or>
+      <match lemma="fiscal" tags="adj.*"/>
+      <match lemma="annuel" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="recette" tags="n.*"><select lemma="recaptació"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="taxe" tags="n.*"/>
+      <match lemma="impôt" tags="n.*"/>
+      <match lemma="exportation" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="recette" tags="n.*"><select lemma="ingrés"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="vente" tags="n.*"/>
+    </or>
+  </rule>
 
   <!-- étonnement >> sorpresa, estranyesa, desconcert -->
   <rule weight="0.8">
@@ -8045,6 +8127,15 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- exprès >> exprés, urgent -->
+  <rule weight="0.8">
+    <match lemma="exprès" tags="adj.*"><select lemma="exprés"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="correu" tags="n.*"/>
+    <match lemma="exprès" tags="adj.*"><select lemma="urgent"/></match>
+  </rule>
+
   <!-- sacré >> sagrat, sacre, del dimoni, reconsagrat -->
   <rule weight="0.8">
     <match lemma="sacré" tags="adj.*"><select lemma="sagrat"/></match>
@@ -9263,6 +9354,11 @@
   </rule>
 
 <!-- **************** ADV **************** -->
+
+  <!-- exprès >> expressament, exprés, a posta -->
+  <rule weight="0.8">
+    <match lemma="exprès" tags="adv"><select lemma="expressament"/></match>
+  </rule>
 
   <!-- de même >> igual, així mateix -->
   <rule weight="0.8">
