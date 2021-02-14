@@ -5052,6 +5052,24 @@
 
 <!-- **************** N **************** -->
 
+  <!-- eficiència >> efficacité, efficience -->
+  <rule weight="0.8">
+    <match lemma="eficiència" tags="n.*"><select lemma="efficacité"/></match>
+  </rule>
+
+  <!-- entitat >> entité, collectivité -->
+  <rule weight="0.8">
+    <match lemma="entitat" tags="n.*"><select lemma="entité"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="entitat" tags="n.*"><select lemma="collectivité"/></match>
+    <or>
+      <match lemma="local" tags="adj.*"/>
+      <match lemma="territorial" tags="adj.*"/>
+      <match lemma="metropolità" tags="adj.*"/>
+    </or>
+  </rule>
+
   <!-- ban >> ban, bàndol -->
   <rule weight="0.8">
     <match lemma="ban" tags="n.*"><select lemma="ban"/></match>

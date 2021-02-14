@@ -4024,6 +4024,40 @@
 
 <!-- **************** N **************** -->
 
+  <!-- efficacité >> eficàcia, eficiència -->
+  <rule weight="0.8">
+    <match lemma="efficacité" tags="n.*"><select lemma="eficàcia"/></match>
+  </rule>
+
+  <!-- collectivité >> col·lectivitat, entitat -->
+  <rule weight="0.8">
+    <match lemma="collectivité" tags="n.*"><select lemma="col·lectivitat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="collectivité" tags="n.*"><select lemma="entitat"/></match>
+    <or>
+      <match lemma="local" tags="adj.*"/>
+      <match lemma="territorial" tags="adj.*"/>
+      <match lemma="métropolitain" tags="adj.*"/>
+    </or>
+  </rule>
+
+  <!-- médiateur >> mediador, defensor# del poble, síndic# de greuges -->
+  <rule weight="0.8">
+    <match lemma="médiateur" tags="n.*"><select lemma="mediador"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="Médiateur" tags="n.*"><select lemma="defensor# del poble"/></match>
+    <or>
+      <match lemma="européen" tags="adj.*"/>
+      <match lemma="espagnol" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="Médiateur" tags="n.*"><select lemma="síndic# de greuges"/></match>
+    <match lemma="catalan" tags="adj.*"/>
+  </rule>
+
   <!-- ban >> ban, marge -->
   <rule weight="0.8">
     <match lemma="ban" tags="n.*"><select lemma="ban"/></match>
@@ -8126,6 +8160,23 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- semi-présidentiel >> semipresidencial, semipresidencialista -->
+  <rule weight="0.8">
+    <match lemma="semi-présidentiel" tags="adj.*"><select lemma="semipresidencialista"/></match>
+  </rule>
+
+  <!-- présidentiel >> presidencial, presidencialista -->
+  <rule weight="0.8">
+    <match lemma="présidentiel" tags="adj.*"><select lemma="presidencial"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="régime" tags="n.*"/>
+      <match lemma="république" tags="n.*"/>
+    </or>
+    <match lemma="présidentiel" tags="adj.*"><select lemma="presidencialista"/></match>
+  </rule>
 
   <!-- exprès >> exprés, urgent -->
   <rule weight="0.8">
