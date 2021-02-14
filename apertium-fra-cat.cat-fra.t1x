@@ -14122,7 +14122,7 @@ is not applicable because gender and number can not be taken from previous rules
 
     <rule comment="REGLA: SENT,que,coma,i anar inf">
       <pattern>
-        <pattern-item n="sentquecm"/>
+        <pattern-item n="sentque_nocm"/>
         <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
       </pattern>
@@ -14201,7 +14201,7 @@ is not applicable because gender and number can not be taken from previous rules
 
     <rule comment="REGLA: SENT,que,coma,i anar inf enc: Van comprar-me > Ils m'ont acheté">
       <pattern>
-        <pattern-item n="sentquecm"/>
+        <pattern-item n="sentque_nocm"/>
         <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
         <pattern-item n="prnenc"/>
@@ -14340,7 +14340,7 @@ is not applicable because gender and number can not be taken from previous rules
 
     <rule comment="REGLA: SENT,que,coma,i NO anar inf enc: No van comprar-me > Ils ne m'ont pas acheté">
       <pattern>
-        <pattern-item n="sentquecm"/>
+        <pattern-item n="sentque_nocm"/>
         <pattern-item n="noadv"/>
         <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
@@ -14861,9 +14861,8 @@ is not applicable because gender and number can not be taken from previous rules
   </rule>
 
     <rule comment="REGLA: SENT,que,coma,i ser pp: seria expulsada > elle serait expulsée">
-<!-- TBD després de coma, millor no afegir prn -->
       <pattern>
-        <pattern-item n="sentquecm"/>
+        <pattern-item n="sentque_nocm"/>
         <pattern-item n="vbser_conj"/>
         <pattern-item n="pp"/>
       </pattern>
@@ -14957,7 +14956,7 @@ is not applicable because gender and number can not be taken from previous rules
     <rule>
 <!--REGLA: SENT,que,coma,i + No + VERB -->
       <pattern>
-        <pattern-item n="sentquecm"/>
+        <pattern-item n="sentque_nocm"/>
         <pattern-item n="noadv"/>
         <pattern-item n="verb_conj"/>
       </pattern>
@@ -15144,7 +15143,7 @@ is not applicable because gender and number can not be taken from previous rules
 <!-- ara amb pronom -->
     <rule comment="REGLA: SENT,que,coma,i PRNPRO VERB: Li escriuen >> Ils lui écrivent">
       <pattern>
-        <pattern-item n="sentquecm"/>
+        <pattern-item n="sentque_nocm"/>
         <pattern-item n="prnpro"/>
         <pattern-item n="verb_conj"/>
       </pattern>
@@ -15242,7 +15241,7 @@ is not applicable because gender and number can not be taken from previous rules
 
     <rule comment="REGLA: PRNREF HAVER PP > PRNREF SER PP: s'ha incorporat > il s'est incorporé">
       <pattern>
-        <pattern-item n="sentquecm"/>
+        <pattern-item n="sentque_nocm"/>
         <pattern-item n="prnproref"/>
         <pattern-item n="haver"/>
         <pattern-item n="pp"/>
@@ -15396,7 +15395,7 @@ is not applicable because gender and number can not be taken from previous rules
     <rule>
 <!--REGLA: NO PRNREF HAVER PP > NE PRNREF SER PAS PP: no s'ha incorporat > il ne s'est pas incorporé -->
       <pattern>
-        <pattern-item n="sentquecm"/>
+        <pattern-item n="sentque_nocm"/>
         <pattern-item n="noadv"/>
         <pattern-item n="prnproref"/>
         <pattern-item n="haver"/>
@@ -15569,7 +15568,7 @@ is not applicable because gender and number can not be taken from previous rules
     <rule>
 <!--REGLA: SENT,que,coma,i No PRN VERB: No li escriuen >> Ils ne lui écrivent pas -->
       <pattern>
-        <pattern-item n="sentquecm"/>
+        <pattern-item n="sentque_nocm"/>
         <pattern-item n="noadv"/>
         <pattern-item n="prnpro"/>
         <pattern-item n="verb_conj"/>
@@ -15698,7 +15697,7 @@ is not applicable because gender and number can not be taken from previous rules
 
     <rule comment="REGLA: SENT,que,coma,i PRN VERB : Li vas dir >> Tu lui as dit, Hi vas anar >> Tu y es allé">
       <pattern>
-        <pattern-item n="sentquecm"/>
+        <pattern-item n="sentque_nocm"/>
         <pattern-item n="prnpro"/>
         <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
@@ -15844,7 +15843,7 @@ is not applicable because gender and number can not be taken from previous rules
 
     <rule comment="REGLA: SENT,que,coma,i NO PRN VERB : NO li vas dir >> Tu ne lui as pas dit, No hi vas anar >> Tu n'y es pas allé">
       <pattern>
-        <pattern-item n="sentquecm"/>
+        <pattern-item n="sentque_nocm"/>
         <pattern-item n="noadv"/>
         <pattern-item n="prnpro"/>
         <pattern-item n="anarpri"/>
@@ -16002,7 +16001,7 @@ is not applicable because gender and number can not be taken from previous rules
 <!--ara amb nom-->
     <rule comment="REGLA: SENT,que,coma,i + VERB + NOM">
       <pattern>
-        <pattern-item n="sentquecm"/>
+        <pattern-item n="sentque_nocm"/>
         <pattern-item n="verb_conj"/>
         <pattern-item n="nom"/>
       </pattern>
@@ -16210,7 +16209,7 @@ is not applicable because gender and number can not be taken from previous rules
 
     <rule comment="REGLA: SENT,que,coma,i + ANAR + INF + NOM">
       <pattern>
-        <pattern-item n="sentquecm"/>
+        <pattern-item n="sentque_nocm"/>
         <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
         <pattern-item n="nom"/>
@@ -16495,7 +16494,7 @@ is not applicable because gender and number can not be taken from previous rules
 
     <rule comment="REGLA: SENT,que,coma,i + VERB + VERB + NOM">
       <pattern>
-        <pattern-item n="sentquecm"/>
+        <pattern-item n="sentque_nocm"/>
         <pattern-item n="verb_conj"/>
         <pattern-item n="verbnp"/>
         <pattern-item n="nom"/>
@@ -16716,9 +16715,9 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="REGLA: sentquecm no + verb en forma personal + nom: no tinc amics > je n'ai pas d'amis">
+    <rule comment="REGLA: sentque_nocm no + verb en forma personal + nom: no tinc amics > je n'ai pas d'amis">
       <pattern>
-        <pattern-item n="sentquecm"/>
+        <pattern-item n="sentque_nocm"/>
         <pattern-item n="noadv"/>
         <pattern-item n="verb_conj"/>
         <pattern-item n="nom"/>
@@ -16938,9 +16937,9 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="sentquecm PRNREF ANAR INF > PRNREF SER PP: es va incorporar > il s'est incorporé, em va dir > il m'a dit">
+    <rule comment="sentque_nocm PRNREF ANAR INF > PRNREF SER PP: es va incorporar > il s'est incorporé, em va dir > il m'a dit">
       <pattern>
-        <pattern-item n="sentquecm"/>
+        <pattern-item n="sentque_nocm"/>
         <pattern-item n="prnproref"/>
         <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
@@ -17100,9 +17099,9 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
     </rule>
 
-    <rule comment="sentquecm NO PRNREF ANAR INF > NE PRNREF SER PAS PP: no es va incorporar > il ne s'est pas incorporé, no em va dir > il ne m'a pas dit">
+    <rule comment="sentque_nocm NO PRNREF ANAR INF > NE PRNREF SER PAS PP: no es va incorporar > il ne s'est pas incorporé, no em va dir > il ne m'a pas dit">
       <pattern>
-        <pattern-item n="sentquecm"/>
+        <pattern-item n="sentque_nocm"/>
         <pattern-item n="noadv"/>
         <pattern-item n="prnproref"/>
         <pattern-item n="anarpri"/>
@@ -17304,9 +17303,9 @@ is not applicable because gender and number can not be taken from previous rules
 
 
     <rule>
-<!--REGLA: sentquecm No + VERB + VERB + NOM-->
+<!--REGLA: sentque_nocm No + VERB + VERB + NOM-->
       <pattern>
-        <pattern-item n="sentquecm"/>
+        <pattern-item n="sentque_nocm"/>
         <pattern-item n="noadv"/>
         <pattern-item n="verb_conj"/>
         <pattern-item n="verbnp"/>
@@ -18336,7 +18335,7 @@ is not applicable because gender and number can not be taken from previous rules
           <with-param pos="2"/>
         </call-macro>
         <out>
- <lu>
+          <lu>
             <clip pos="1" side="tl" part="whole"/>
           </lu>
           <b pos="1"/>
