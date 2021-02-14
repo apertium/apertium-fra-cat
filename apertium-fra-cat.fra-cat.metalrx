@@ -4024,6 +4024,19 @@
 
 <!-- **************** N **************** -->
 
+  <!-- défilé >> desfilada, congost -->
+  <rule weight="0.8">
+    <match lemma="défilé" tags="n.*"><select lemma="desfilada"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="défilé" tags="n.*"><select lemma="congost"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <match tags="np.*"/>
+  </rule>
+
   <!-- efficacité >> eficàcia, eficiència -->
   <rule weight="0.8">
     <match lemma="efficacité" tags="n.*"><select lemma="eficàcia"/></match>
@@ -8160,6 +8173,16 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- ancien >> antic, vell, ancià -->
+  <rule weight="0.8">
+    <match lemma="ancien" tags="adj.*"><select lemma="antic"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="np.ant.*"/>
+    <match tags="det.def.*"/>
+    <match lemma="Ancien" tags="adj.*"><select lemma="vell"/></match>
+  </rule>
 
   <!-- semi-présidentiel >> semipresidencial, semipresidencialista -->
   <rule weight="0.8">

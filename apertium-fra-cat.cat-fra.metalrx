@@ -3033,7 +3033,11 @@
     <repeat from="0" upto="1">
       <match tags="adv"/>
     </repeat>
-    <match tags="det.*"/>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num.*"/>
+      <match tags="num"/>
+    </or>
     <or>
       <match lemma="carta" tags="n.*"/>
       <match lemma="postal" tags="n.*"/>
@@ -4511,6 +4515,21 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- vell >> vieux, vieil, ancien -->
+  <rule weight="0.8">
+    <match lemma="vell" tags="adj.*"><select lemma="vieux"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="np.ant.*"/>
+    <match tags="det.def.*"/>
+    <match lemma="Vell" tags="adj.*"><select lemma="ancien"/></match>
+  </rule>
+
+  <!-- ancià >> âgé, ancien -->
+  <rule weight="0.8">
+    <match lemma="ancià" tags="adj.*"><select lemma="âgé"/></match>
+  </rule>
+
   <!-- mans >> paisible, doux -->
   <rule weight="0.8">
     <match lemma="mans" tags="adj.*"><select lemma="paisible"/></match>
@@ -5051,6 +5070,15 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- toile >> tela, xarxa -->
+  <rule weight="0.8">
+    <match lemma="toile" tags="n.*"><select lemma="tela"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.f.sg"/>
+    <match lemma="Toile" tags="n.*"><select lemma="xarxa"/></match>
+  </rule>
 
   <!-- eficiència >> efficacité, efficience -->
   <rule weight="0.8">
@@ -6601,6 +6629,10 @@
       <match lemma="pluja" tags="n.*"/>
       <match lemma="neu" tags="n.*"/>
     </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="quatre" tags="num.*"/>
+    <match lemma="estació" tags="n.*"><select lemma="saison"/></match>
   </rule>
 
   <!-- laic >> laïque, laïc -->
