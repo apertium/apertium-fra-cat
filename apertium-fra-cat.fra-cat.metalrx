@@ -4024,6 +4024,15 @@
 
 <!-- **************** N **************** -->
 
+  <!-- toile >> tela, xarxa -->
+  <rule weight="0.8">
+    <match lemma="toile" tags="n.*"><select lemma="tela"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.f.sg"/>
+    <match lemma="Toile" tags="n.*"><select lemma="xarxa"/></match>
+  </rule>
+
   <!-- défilé >> desfilada, congost -->
   <rule weight="0.8">
     <match lemma="défilé" tags="n.*"><select lemma="desfilada"/></match>
@@ -9607,6 +9616,8 @@
   <macro name="ant_antcog" p1="Hector" p2="Hèctor" />
   <macro name="ant_antcog" p1="Jérémie" p2="Jeremies" />
   <macro name="ant_antcog" p1="Octave" p2="Octavi" />
+  <macro name="ant_antcog" p1="Marie-Antoinette" p2="Maria Antonieta" />
+  <macro name="ant_antcog" p1="Marie-Christine" p2="Maria Cristina" />
 
   <macro name="noms_propres" p1="Charles" p2="Carles" />
   <macro name="noms_propres" p1="Philippe" p2="Felip" />
@@ -9617,8 +9628,6 @@
   <macro name="noms_propres" p1="Isabelle" p2="Isabel" />
   <macro name="noms_propres" p1="Élisabeth" p2="Isabel" />
   <macro name="noms_propres" p1="Marie" p2="Maria" />
-  <macro name="noms_propres" p1="Marie-Antoinette" p2="Maria Antonieta" />
-  <macro name="noms_propres" p1="Marie-Christine" p2="Maria Cristina" />
   <macro name="noms_propres" p1="Christine" p2="Cristina" />
   <macro name="noms_propres" p1="Jeanne" p2="Joana" />
   <macro name="noms_propres" p1="Jean" p2="Joan" />

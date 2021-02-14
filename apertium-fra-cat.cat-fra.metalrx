@@ -5071,13 +5071,102 @@
 
 <!-- **************** N **************** -->
 
-  <!-- toile >> tela, xarxa -->
+  <!-- longitud >> longueur, longitude -->
   <rule weight="0.8">
-    <match lemma="toile" tags="n.*"><select lemma="tela"/></match>
+    <match lemma="longitud" tags="n.*"><select lemma="longueur"/></match>
   </rule>
   <rule weight="1.0">
-    <match tags="det.def.f.sg"/>
-    <match lemma="Toile" tags="n.*"><select lemma="xarxa"/></match>
+    <match lemma="longitud" tags="n.*"><select lemma="longitude"/></match>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="latitud" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="latitud" tags="n.*"/>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="longitud" tags="n.*"><select lemma="longitude"/></match>
+  </rule>
+
+  <!-- ona >> vague, onde -->
+  <rule weight="0.8">
+    <match lemma="ona" tags="n.*"><select lemma="vague"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ona" tags="n.*"><select lemma="onde"/></match>
+    <or>
+      <match lemma="electromagnètic" tags="adj.*"/>
+      <match lemma="gravitatòria" tags="adj.*"/>
+      <match lemma="lumínic" tags="adj.*"/>
+      <match lemma="sonor" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="longitud" tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <match lemma="ona" tags="n.*"><select lemma="onde"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ona" tags="n.*"><select lemma="onde"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="ràdio" tags="n.*"/>
+      <match lemma="televisió" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ona" tags="n.*"><select lemma="onde"/></match>
+    <match lemma="corpuscle" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ona" tags="n.*"><select lemma="onde"/></match>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="electricitat" tags="n.*"/>
+      <match lemma="electromagnetisme" tags="n.*"/>
+      <match lemma="magnetisme" tags="n.*"/>
+      <match lemma="propagació" tags="n.*"/>
+      <match lemma="propagar" tags="vblex.*"/>
+      <match lemma="quàntic" tags="adj.*"/>
+      <match lemma="partícula" tags="n.*"/>
+      <match lemma="radià" tags="n.*"/>
+      <match lemma="senyal" tags="n.*"/>
+      <match lemma="sinusoidal" tags="adj.*"/>
+      <match lemma="infraroig" tags="adj.*"/>
+      <match lemma="ultravioleta" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="electricitat" tags="n.*"/>
+      <match lemma="electromagnetisme" tags="n.*"/>
+      <match lemma="magnetisme" tags="n.*"/>
+      <match lemma="propagació" tags="n.*"/>
+      <match lemma="propagar" tags="vblex.*"/>
+      <match lemma="quàntic" tags="adj.*"/>
+      <match lemma="partícula" tags="n.*"/>
+      <match lemma="radià" tags="n.*"/>
+      <match lemma="senyal" tags="n.*"/>
+      <match lemma="sinusoidal" tags="adj.*"/>
+      <match lemma="infraroig" tags="adj.*"/>
+      <match lemma="ultravioleta" tags="adj.*"/>
+    </or>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="ona" tags="n.*"><select lemma="onde"/></match>
+  </rule>
+
+  <!-- competència >> concurrence, compétence -->
+  <rule weight="0.8">
+    <match lemma="competència" tags="n.*"><select lemma="concurrence"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="competència" tags="n.f.pl"><select lemma="compétence"/></match>
   </rule>
 
   <!-- eficiència >> efficacité, efficience -->
@@ -8063,6 +8152,8 @@
   <macro name="ant_antcog" p1="Miquel Àngel" p2="Michel-Ange" />
   <macro name="ant_antcog" p1="Octavi" p2="Octave" />
   <macro name="ant_antcog" p1="Virgili" p2="Virgile" />
+  <macro name="ant_antcog" p1="Maria Antonieta" p2="Marie-Antoinette" />
+  <macro name="ant_antcog" p1="Maria Cristina" p2="Marie-Cristine" />
 
   <rule weight="1.0">
      <or><match tags="np.cog.*"/><match lemma="Rovira"/></or>
@@ -8096,8 +8187,6 @@
   <macro name="noms_propis" p1="Ermengol" p2="Armengol" />
   <macro name="noms_propis" p1="Isabel" p2="Isabelle" />
   <macro name="noms_propis" p1="Maria" p2="Marie" />
-  <macro name="noms_propis" p1="Maria Antonieta" p2="Marie-Antoinette" />
-  <macro name="noms_propis" p1="Maria Cristina" p2="Marie-Cristine" />
   <macro name="noms_propis" p1="Cristina" p2="Cristine" />
   <macro name="noms_propis" p1="Joana" p2="Jeanne" />
   <macro name="noms_propis" p1="Joan" p2="Jean" />
