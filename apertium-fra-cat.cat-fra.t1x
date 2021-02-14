@@ -19600,8 +19600,43 @@ is not applicable because gender and number can not be taken from previous rules
             <lit-tag v="pr"/>
           </lu>
           <b pos="1"/>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <out>
           <lu>
             <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="prep l'any 1998 > prep l'an 1998">
+      <pattern>
+        <pattern-item n="prep"/>
+        <pattern-item n="detdef"/>
+        <pattern-item n="any"/>
+        <pattern-item n="xifra"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
           </lu>
         </out>
       </action>
