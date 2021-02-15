@@ -954,7 +954,7 @@
     <match lemma="un" tags="det.*"><select lemma="un"/></match>
   </rule>
 
-<!-- PRN -->
+<!-- **************** PRN **************** -->
 
   <!-- aquell >> celui-là, celui -->
   <rule weight="0.8">
@@ -996,15 +996,12 @@
     <match lemma="el qual" tags="rel.*"/>
   </rule>
 
-  <!-- el >> le, lui, leur (per a corregir anàlisis errònies) -->
+  <!-- el(s) >> le, leur -->
   <rule weight="0.8">
     <match lemma="el" tags="prn.pro.*"><select lemma="le"/></match>
   </rule>
   <rule weight="1.0">
-    <or>
-      <match lemma="el" tags="prn.pro.*.sg"><select lemma="lui"/></match>
-      <match lemma="el" tags="prn.pro.*.pl"><select lemma="leur"/></match>
-    </or>
+    <match lemma="el" tags="prn.pro.*.pl"><select lemma="leur"/></match>
     <or>
       <match lemma="dir" tags="vblex.*"/>
       <match lemma="prometre" tags="vblex.*"/>
@@ -1016,10 +1013,7 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <or>
-      <match lemma="el" tags="prn.pro.*.sg"><select lemma="lui"/></match>
-      <match lemma="el" tags="prn.pro.*.pl"><select lemma="leur"/></match>
-    </or>
+    <match lemma="el" tags="prn.pro.*.pl"><select lemma="leur"/></match>
     <or>
       <match tags="vbhaver.*.p3.sg"/>
       <match tags="vbhaver.*.p3.pl"/>
@@ -1035,10 +1029,7 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <or>
-      <match lemma="el" tags="prn.pro.*.sg"><select lemma="lui"/></match>
-      <match lemma="el" tags="prn.pro.*.pl"><select lemma="leur"/></match>
-    </or>
+    <match lemma="el" tags="prn.pro.*.pl"><select lemma="leur"/></match>
     <or>
       <match lemma="anar" tags="vblex.pri.p3.sg"/>
       <match lemma="anar" tags="vblex.pri.p3.pl"/>
@@ -1070,6 +1061,10 @@
 
   <!-- es >> se, on -->
   <rule weight="0.8">
+    <match lemma="es" tags="prn.*"><select lemma="se"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="no" tags="adv"/>
     <match lemma="es" tags="prn.*"><select lemma="se"/></match>
   </rule>
   <rule weight="1.0">
@@ -8144,14 +8139,16 @@
   </rule>
 
   <macro name="ant_antcog" p1="August" p2="Auguste" />
+  <macro name="ant_antcog" p1="Cèsar" p2="César" />
   <macro name="ant_antcog" p1="Eliseu" p2="Élisée" />
+  <macro name="ant_antcog" p1="Hèctor" p2="Hector" />
   <macro name="ant_antcog" p1="Horaci" p2="Horace" />
   <macro name="ant_antcog" p1="Jesús" p2="Jésus" />
-  <macro name="ant_antcog" p1="Hèctor" p2="Hector" />
   <macro name="ant_antcog" p1="Jofré" p2="Geoffroy" />
   <macro name="ant_antcog" p1="Miquel Àngel" p2="Michel-Ange" />
   <macro name="ant_antcog" p1="Octavi" p2="Octave" />
   <macro name="ant_antcog" p1="Virgili" p2="Virgile" />
+
   <macro name="ant_antcog" p1="Maria Antonieta" p2="Marie-Antoinette" />
   <macro name="ant_antcog" p1="Maria Cristina" p2="Marie-Cristine" />
 
@@ -8178,66 +8175,68 @@
      <or><match tags="np.loc"/><match tags="np.top.*"/></or>
   </rule>
 
-  <macro name="noms_propis" p1="Carles" p2="Charles" />
-  <macro name="noms_propis" p1="Felip" p2="Philippe" />
-  <macro name="noms_propis" p1="Filip" p2="Philippe" />
-  <macro name="noms_propis" p1="Guifré" p2="Guifred" />
-  <macro name="noms_propis" p1="Gregori" p2="Grégoire" />
-  <macro name="noms_propis" p1="Ramir" p2="Ramire" />
-  <macro name="noms_propis" p1="Ermengol" p2="Armengol" />
-  <macro name="noms_propis" p1="Isabel" p2="Isabelle" />
-  <macro name="noms_propis" p1="Maria" p2="Marie" />
-  <macro name="noms_propis" p1="Cristina" p2="Cristine" />
-  <macro name="noms_propis" p1="Joana" p2="Jeanne" />
-  <macro name="noms_propis" p1="Joan" p2="Jean" />
-  <macro name="noms_propis" p1="Joan Carles" p2="Juan Carlos" />
-  <macro name="noms_propis" p1="Sofia" p2="Sophie" />
-  <macro name="noms_propis" p1="Pau" p2="Paul" />
-  <macro name="noms_propis" p1="Joan Pau" p2="Jean-Paul" />
-  <macro name="noms_propis" p1="Benet" p2="Benoît" />
-  <macro name="noms_propis" p1="Francesc" p2="François" />
-  <macro name="noms_propis" p1="Sixt" p2="Sixte" />
-  <macro name="noms_propis" p1="Innocenci" p2="Innocent" />
-  <macro name="noms_propis" p1="Lleó" p2="Léon" />
-  <macro name="noms_propis" p1="Pere" p2="Pierre" />
-  <macro name="noms_propis" p1="Jaume" p2="Jacques" />
-  <macro name="noms_propis" p1="Ferran" p2="Ferdinand" />
-  <macro name="noms_propis" p1="Ricard" p2="Richard" />
-  <macro name="noms_propis" p1="Martí" p2="Martin" />
   <macro name="noms_propis" p1="Alfons" p2="Alphonse" />
-  <macro name="noms_propis" p1="Lluís" p2="Louis" />
-  <macro name="noms_propis" p1="Guillem" p2="Guillaume" />
-  <macro name="noms_propis" p1="Enric" p2="Henri" />
-  <macro name="noms_propis" p1="Nicolau" p2="Nicolas" />
-  <macro name="noms_propis" p1="Maximilià" p2="Maximilien" />
-  <macro name="noms_propis" p1="Caterina" p2="Catherine" />
-  <macro name="noms_propis" p1="Bernat" p2="Bernard" />
-  <macro name="noms_propis" p1="Frederic" p2="Frédéric" />
-  <macro name="noms_propis" p1="Josep" p2="Joseph" />
-  <macro name="noms_propis" p1="Juli" p2="Jules" />
-  <macro name="noms_propis" p1="Lluc" p2="Luc" />
-  <macro name="noms_propis" p1="Elionor" p2="Aliénor" />
-  <macro name="noms_propis" p1="Ramon" p2="Raymond" />
-  <macro name="noms_propis" p1="Esteve" p2="Stéphane" />
-  <macro name="noms_propis" p1="Estefania" p2="Stéphanie" />
-  <macro name="noms_propis" p1="Segimon" p2="Sigismond" />
-  <macro name="noms_propis" p1="Claudi" p2="Claude" />
-  <macro name="noms_propis" p1="Bonifaci" p2="Boniface" />
-  <macro name="noms_propis" p1="Climent" p2="Clément" />
-  <macro name="noms_propis" p1="Jordi" p2="Georges" />
-  <macro name="noms_propis" p1="Germànic" p2="Germain" />
-  <macro name="noms_propis" p1="Antoni" p2="Antoine" />
-  <macro name="noms_propis" p1="Renat" p2="René" />
-  <macro name="noms_propis" p1="Eduard" p2="Édouard" />
-  <macro name="noms_propis" p1="Anna" p2="Anne" />
-  <macro name="noms_propis" p1="Eugènia" p2="Eugénie" />
-  <macro name="noms_propis" p1="Balduí" p2="Baudouin" />
-  <macro name="noms_propis" p1="Leopold" p2="Léopold" />
   <macro name="noms_propis" p1="Amadeu" p2="Amédée" />
   <macro name="noms_propis" p1="Andreu" p2="André" />
-  <macro name="noms_propis" p1="Blanca" p2="Blanche" />
+  <macro name="noms_propis" p1="Antoni" p2="Antoine" />
+  <macro name="noms_propis" p1="Balduí" p2="Baudouin" />
+  <macro name="noms_propis" p1="Benet" p2="Benoît" />
+  <macro name="noms_propis" p1="Bernat" p2="Bernard" />
+  <macro name="noms_propis" p1="Bonifaci" p2="Boniface" />
+  <macro name="noms_propis" p1="Carles" p2="Charles" />
+  <macro name="noms_propis" p1="Claudi" p2="Claude" />
+  <macro name="noms_propis" p1="Climent" p2="Clément" />
+  <macro name="noms_propis" p1="Eduard" p2="Édouard" />
+  <macro name="noms_propis" p1="Enric" p2="Henri" />
+  <macro name="noms_propis" p1="Ermengol" p2="Armengol" />
+  <macro name="noms_propis" p1="Esteve" p2="Stéphane" />
+  <macro name="noms_propis" p1="Felip" p2="Philippe" />
+  <macro name="noms_propis" p1="Ferran" p2="Ferdinand" />
+  <macro name="noms_propis" p1="Filip" p2="Philippe" />
+  <macro name="noms_propis" p1="Francesc" p2="François" />
+  <macro name="noms_propis" p1="Frederic" p2="Frédéric" />
+  <macro name="noms_propis" p1="Gastó" p2="Gaston" />
+  <macro name="noms_propis" p1="Germànic" p2="Germain" />
+  <macro name="noms_propis" p1="Guifré" p2="Guifred" />
+  <macro name="noms_propis" p1="Gregori" p2="Grégoire" />
+  <macro name="noms_propis" p1="Guillem" p2="Guillaume" />
+  <macro name="noms_propis" p1="Innocenci" p2="Innocent" />
+  <macro name="noms_propis" p1="Jaume" p2="Jacques" />
+  <macro name="noms_propis" p1="Joan" p2="Jean" />
+  <macro name="noms_propis" p1="Joan Carles" p2="Juan Carlos" />
+  <macro name="noms_propis" p1="Joan Pau" p2="Jean-Paul" />
+  <macro name="noms_propis" p1="Jordi" p2="Georges" />
+  <macro name="noms_propis" p1="Josep" p2="Joseph" />
+  <macro name="noms_propis" p1="Juli" p2="Jules" />
+  <macro name="noms_propis" p1="Leopold" p2="Léopold" />
+  <macro name="noms_propis" p1="Lleó" p2="Léon" />
+  <macro name="noms_propis" p1="Lluc" p2="Luc" />
+  <macro name="noms_propis" p1="Lluís" p2="Louis" />
+  <macro name="noms_propis" p1="Martí" p2="Martin" />
+  <macro name="noms_propis" p1="Maximilià" p2="Maximilien" />
   <macro name="noms_propis" p1="Miquel" p2="Michel" />
+  <macro name="noms_propis" p1="Nicolau" p2="Nicolas" />
+  <macro name="noms_propis" p1="Pau" p2="Paul" />
+  <macro name="noms_propis" p1="Pere" p2="Pierre" />
+  <macro name="noms_propis" p1="Ramir" p2="Ramire" />
+  <macro name="noms_propis" p1="Ramon" p2="Raymond" />
+  <macro name="noms_propis" p1="Renat" p2="René" />
+  <macro name="noms_propis" p1="Ricard" p2="Richard" />
+  <macro name="noms_propis" p1="Segimon" p2="Sigismond" />
+  <macro name="noms_propis" p1="Sixt" p2="Sixte" />
+
+  <macro name="noms_propis" p1="Anna" p2="Anne" />
+  <macro name="noms_propis" p1="Blanca" p2="Blanche" />
+  <macro name="noms_propis" p1="Caterina" p2="Catherine" />
+  <macro name="noms_propis" p1="Cristina" p2="Cristine" />
+  <macro name="noms_propis" p1="Elionor" p2="Aliénor" />
+  <macro name="noms_propis" p1="Estefania" p2="Stéphanie" />
+  <macro name="noms_propis" p1="Eugènia" p2="Eugénie" />
+  <macro name="noms_propis" p1="Isabel" p2="Isabelle" />
+  <macro name="noms_propis" p1="Joana" p2="Jeanne" />
   <macro name="noms_propis" p1="Margarida" p2="Marguerite" />
+  <macro name="noms_propis" p1="Maria" p2="Marie" />
+  <macro name="noms_propis" p1="Sofia" p2="Sophie" />
 
 </rules>
 </metalrx>
