@@ -2116,7 +2116,29 @@
     <match lemma="què" tags="rel.an.*"><select lemma="ce que"/></match>
   </rule>
 
-<!-- PR -->
+<!-- **************** PREP **************** -->
+
+  <!-- en temps de >> en temps de, sur -->
+  <rule weight="0.8">
+    <match lemma="en temps de" tags="pr"><select lemma="en temps de"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="en temps de" tags="pr"><select lemma="au temps de"/></match>
+    <or>
+      <match tags="det.*"/>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+    </or>
+  </rule>
+
+  <!-- en època de >> en temps de, sur -->
+  <rule weight="0.8">
+    <match lemma="en època de" tags="pr"><select lemma="en temps de"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="en època de" tags="pr"><select lemma="à l'époque de"/></match>
+    <match tags="det.*"/>
+  </rule>
 
   <!-- contra >> contre, sur -->
   <rule weight="0.8">
@@ -2491,6 +2513,10 @@
   </rule>
   <rule weight="1.0">
     <match lemma="en" tags="pr"><select lemma="en"/></match>
+    <match lemma="temps" tags="n."/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="en" tags="pr"><select lemma="en"/></match>
     <match tags="adj.*"/>
   </rule>
   <rule weight="1.2">
@@ -2520,7 +2546,7 @@
     <match lemma="canviar" tags="vblex.*"><select lemma="changer"/></match>
   </rule>
 
-<!-- IJ -->
+<!-- **************** IJ **************** -->
 
   <!-- oh >> oh, ô -->
   <rule weight="0.8">
@@ -2534,7 +2560,7 @@
     </or>
   </rule>
 
-<!-- CNJADV -->
+<!-- **************** CNJADV **************** -->
 
   <!-- perquè (cnjadv) >> parce que, pour que -->
   <rule weight="0.8">
@@ -2574,7 +2600,7 @@
     <match tags="n.*"/>
   </rule>
 
-<!-- PREADV -->
+<!-- **************** PREADV **************** -->
 
   <!-- molt >> très, beaucoup -->
   <rule weight="0.8">
@@ -2604,7 +2630,12 @@
     </or>
   </rule>
 
-<!-- ADV -->
+<!-- **************** ADV **************** -->
+
+  <!-- debades >> en vain, gratis -->
+  <rule weight="0.8">
+    <match lemma="debades" tags="adv"><select lemma="en vain"/></match>
+  </rule>
 
   <!-- alt >> haut -->
   <rule weight="0.8">
@@ -5065,6 +5096,37 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- rap >> rap, baudroie -->
+  <rule weight="0.8">
+    <match lemma="rap" tags="n.*"><select lemma="rap"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="menjar" tags="vblex.*"/>
+      <match lemma="cuinar" tags="vblex.*"/>
+      <match lemma="forn" tags="n.*"/>
+      <match lemma="aigua" tags="n.*"/>
+      <match lemma="peix" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="rap" tags="n.*"><select lemma="baudroie"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rap" tags="n.*"><select lemma="baudroie"/></match>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="menjar" tags="vblex.*"/>
+      <match lemma="cuinar" tags="vblex.*"/>
+      <match lemma="forn" tags="n.*"/>
+      <match lemma="aigua" tags="n.*"/>
+      <match lemma="peix" tags="n.*"/>
+    </or>
+  </rule>
 
   <!-- longitud >> longueur, longitude -->
   <rule weight="0.8">

@@ -1037,6 +1037,11 @@
 
 <!-- **************** PREP **************** -->
 
+  <!-- à l'issue de >> al final de, en sortir de, arran de -->
+  <rule weight="0.6">
+    <match lemma="à l'issue de" tags="pr"><select lemma="al final de"/></match>
+  </rule>
+
   <!-- comme >> com, com a -->
   <rule weight="0.6">
     <match lemma="comme" tags="pr"><select lemma="com"/></match>
@@ -4024,6 +4029,71 @@
 
 <!-- **************** N **************** -->
 
+  <!-- retournement >> tomb, canvi -->
+  <rule weight="0.8">
+    <match lemma="retournement" tags="n.*"><select lemma="tomb"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="retournement" tags="n.*"><select lemma="canvi"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
+
+  <!-- rapport >> informe, relació -->
+  <rule weight="0.8">
+    <match lemma="rapport" tags="n.*"><select lemma="informe"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rapport" tags="n.*"><select lemma="relació"/></match>
+    <or>
+      <match lemma="avec" tags="pr"/>
+      <match lemma="entre" tags="pr"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rapport" tags="n.*"><select lemma="relació"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="force" tags="n.*"/>
+      <match lemma="pouvoir" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rapport" tags="n.*"><select lemma="relació"/></match>
+    <or>
+      <match lemma="sexuel" tags="adj.*"/>
+      <match lemma="social" tags="adj.*"/>
+      <match tags="n.*"/>
+<!--
+      <match lemma="amour" tags="n.*"/>
+      <match lemma="clientèle" tags="n.*"/>
+      <match lemma="coût" tags="n.*"/>
+      <match lemma="efficacité" tags="n.*"/>
+      <match lemma="qualité" tags="n.*"/>
+      <match lemma="prix" tags="n.*"/>
+-->
+    </or>
+  </rule>
+
+  <!-- attelage >> tir, ganxo -->
+  <rule weight="0.8">
+    <match lemma="attelage" tags="n.*"><select lemma="tir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="attelage" tags="n.*"><select lemma="ganxo"/></match>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <match lemma="remorque" tags="n.*"/>
+  </rule>
+
+  <!-- déblai >> terrabuit, rebaix, desmunt, décombre -->
+  <rule weight="0.8">
+    <match lemma="déblai" tags="n.*"><select lemma="terrabuit"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="déblai" tags="n.m.pl"><select lemma="décombre"/></match>
+  </rule>
+
   <!-- reble >> rivetage, décombre -->
   <rule weight="0.8">
     <match lemma="reble" tags="n.*"><select lemma="rivetage"/></match>
@@ -6957,6 +7027,7 @@
       <match lemma="alphabétique" tags="adj.*"/>
       <match lemma="croissant" tags="adj.*"/>
       <match lemma="décroissant" tags="adj.*"/>
+      <match lemma="publique" tags="adj.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -9504,6 +9575,10 @@
       <match lemma="plus" tags="adv"/>
       <match lemma="moins" tags="adv"/>
     </or>
+  </rule>
+  <rule weight="1.0">
+    <match tags="cm"/>
+    <match lemma="pas" tags="adv"><select lemma="no"/></match>
   </rule>
 
   <!-- haut >> amunt, alt, altament -->
