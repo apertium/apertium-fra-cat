@@ -1722,9 +1722,12 @@
       <list-item v="de"/>
       <list-item v="à côté de"/>
       <list-item v="afin de"/>
+      <list-item v="à l'époque de"/>
       <list-item v="à l'encontre de"/>
       <list-item v="à l'exception de"/>
       <list-item v="à l'instar de"/>
+      <list-item v="à l'insu de"/>
+      <list-item v="à l'issue de"/>
       <list-item v="à l'occasion de"/>
       <list-item v="à l'égard de"/>
       <list-item v="à la demande de"/>
@@ -1755,6 +1758,8 @@
       <list-item v="en faveur de"/>
       <list-item v="en plus de"/>
       <list-item v="en raison de"/>
+      <list-item v="en période de"/>
+      <list-item v="en temps de"/>
       <list-item v="en tête de"/>
       <list-item v="lors de"/>
       <list-item v="par l'intermédiaire de"/>
@@ -1937,10 +1942,13 @@
       <choose>
         <when>
           <test>
-            <equal>
-              <clip pos="1" side="tl" part="nbr"/>
-              <lit-tag v="sg"/>
-            </equal>
+            <or>
+              <equal><clip pos="1" side="tl" part="nbr"/><lit-tag v="sg"/></equal>
+              <and>
+                <equal><clip pos="1" side="tl" part="nbr"/><lit-tag v="sp"/></equal>
+                <equal><clip pos="1" side="sl" part="nbr"/><lit-tag v="sg"/></equal>
+              </and>
+            </or>
           </test>
           <choose>
             <when>
@@ -1994,14 +2002,11 @@
             <when>
               <test>
                 <or>
-                  <equal>
-                    <clip pos="1" side="tl" part="nbr"/>
-                    <lit-tag v="pl"/>
-                  </equal>
-                  <equal>
-                    <clip pos="1" side="tl" part="nbr"/>
-                    <lit-tag v="sp"/>
-                  </equal>
+                  <equal><clip pos="1" side="tl" part="nbr"/><lit-tag v="pl"/></equal>
+                  <and>
+                    <equal><clip pos="1" side="tl" part="nbr"/><lit-tag v="sp"/></equal>
+                    <equal><clip pos="1" side="sl" part="nbr"/><lit-tag v="pl"/></equal>
+                  </and>
                 </or>
               </test>
               <let>
@@ -2020,7 +2025,7 @@
                   </test>
                   <let>
                     <clip pos="1" side="sl" part="nbr"/>
-                    <lit-tag v="pl"/>
+                    <lit-tag v="sg"/>
                   </let>
                 </when>
               </choose>
@@ -10662,19 +10667,11 @@ is not applicable because gender and number can not be taken from previous rules
   <choose>
       <when>
       <test>
-      <and>
-        <not>
-          <in caseless="yes">
-         <clip pos="1" side="tl" part="lem"/>
-         <list n="pr_de"/>
-        </in>
-        </not>
-          <equal>
-            <clip pos="2" side="sl" part="nbr"/>
-            <lit-tag v="pl"/>
-          </equal>
-      </and>
-        </test>
+        <and>
+          <not><in caseless="yes"><clip pos="1" side="tl" part="lem"/><list n="pr_de"/></in></not>
+          <equal><clip pos="2" side="sl" part="nbr"/><lit-tag v="pl"/></equal>
+        </and>
+      </test>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
