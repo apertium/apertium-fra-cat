@@ -6684,6 +6684,10 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
+<!--fi regles de concordança-->
+
+<!-- dates -->
+
     <rule comment="REGLA: NUM de MES de NUM, 20 de novembre de 1998: 20 novembre 1998">
       <pattern>
         <pattern-item n="num"/>
@@ -6693,9 +6697,13 @@ is not applicable because gender and number can not be taken from previous rules
         <pattern-item n="num"/>
       </pattern>
       <action>
-        <call-macro n="f_concord3">
+        <call-macro n="f_concord1">
           <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_concord1">
           <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_concord1">
           <with-param pos="5"/>
         </call-macro>
         <choose>
@@ -6741,8 +6749,10 @@ is not applicable because gender and number can not be taken from previous rules
         <pattern-item n="mes"/>
       </pattern>
       <action>
-        <call-macro n="f_concord2">
+        <call-macro n="f_concord1">
           <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_concord1">
           <with-param pos="1"/>
         </call-macro>
         <choose>
@@ -6776,7 +6786,117 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
     </rule>
-<!--fi regles de concordança-->
+
+    <rule comment="REGLA: DET NUM de MES de NUM, el 20 de novembre de 1998: le 20 novembre 1998">
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="num"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="mes"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="num"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="4"/>
+        </call-macro>
+        <call-macro n="f_concord1">
+          <with-param pos="6"/>
+        </call-macro>
+        <call-macro n="f_concord2">
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <choose>
+          <when>
+            <test>
+              <equal><clip pos="2" side="sl" part="lem"/><lit v="1"/></equal>
+            </test>
+            <out>
+              <lu>
+                <lit v="1er"/>
+                <lit-tag v="adj.m.sg"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <b pos="2"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="6" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: DET NUM de MES, el 20 de novembre: le 20 novembre">
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="num"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="mes"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_concord1">
+          <with-param pos="4"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <choose>
+          <when>
+            <test>
+              <equal><clip pos="2" side="sl" part="lem"/><lit v="1"/></equal>
+            </test>
+            <out>
+              <lu>
+                <lit v="1er"/>
+                <lit-tag v="adj.m.sg"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <b pos="2"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+<!-- fi dates -->
 
     <rule comment="REGLA: a principis de gener > début janvier">
       <pattern>
