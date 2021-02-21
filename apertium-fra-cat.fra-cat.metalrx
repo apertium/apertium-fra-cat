@@ -1206,9 +1206,18 @@
   <rule weight="1.2">
     <match lemma="jusque" tags="pr"/>
     <match lemma="dans" tags="pr"><select lemma="a"/></match>
-    <match tags="det"/>
+    <match tags="det.*"/>
     <or>
       <seq n="temps"/>
+    </or>
+  </rule>
+  <rule weight="1.4">
+    <match lemma="jusque" tags="pr"/>
+    <match lemma="dans" tags="pr"><select lemma="en"/></match>
+    <match tags="det.*"/>
+    <or>
+      <match n="an" tags="n.*"/>
+      <match n="année" tags="n.*"/>
     </or>
   </rule>
 
@@ -2544,6 +2553,9 @@
 
   <!-- carapater >> córrer, fugir -->
   <macro name="verb_nopron_pron" p1="carapater" p2="córrer" p3="fugir"/>
+
+  <!-- détendre >> distendre, relaxar -->
+  <macro name="verb_nopron_pron" p1="détendre" p2="distendre" p3="relaxar"/>
 
   <!-- faire# chier >> fer# sortir de polleguera, morir# de fàstic -->
   <macro name="verb_nopron_pron" p1="faire# chier" p2="fer# sortir de polleguera" p3="morir# de fàstic"/>
