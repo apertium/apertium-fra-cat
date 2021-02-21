@@ -1717,7 +1717,10 @@
   </rule>
 
   <rule weight="1.0">
-    <match tags="n.*.pl"/>
+    <or>
+      <match tags="n.*.pl"/>
+      <match tags="adj.*.pl"/>
+    </or>
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
     <repeat from="0" upto="2">
       <match tags="adv"/>
@@ -1740,7 +1743,10 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match tags="n.*.pl"/>
+    <or>
+      <match tags="n.*.pl"/>
+      <match tags="adj.*.pl"/>
+    </or>
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
     <repeat from="0" upto="2">
       <match tags="adv"/>
@@ -1764,7 +1770,10 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match tags="n.*.pl"/>
+    <or>
+      <match tags="n.*.pl"/>
+      <match tags="adj.*.pl"/>
+    </or>
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
     <repeat from="0" upto="2">
       <match tags="adv"/>
@@ -1788,7 +1797,10 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match tags="n.*.pl"/>
+    <or>
+      <match tags="n.*.pl"/>
+      <match tags="adj.*.pl"/>
+    </or>
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
     <repeat from="0" upto="2">
       <match tags="adv"/>
@@ -1802,7 +1814,10 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match tags="n.*.pl"/>
+    <or>
+      <match tags="n.*.pl"/>
+      <match tags="adj.*.pl"/>
+    </or>
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
     <repeat from="0" upto="1">
       <match tags="adv"/>
@@ -1817,7 +1832,10 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match tags="n.*.pl"/>
+    <or>
+      <match tags="n.*.pl"/>
+      <match tags="adj.*.pl"/>
+    </or>
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
     <repeat from="0" upto="2">
       <match tags="adv"/>
@@ -1833,7 +1851,10 @@
   </rule>
 
   <rule weight="1.0">
-    <match tags="n.*.pl"/>
+    <or>
+      <match tags="n.*.pl"/>
+      <match tags="adj.*.pl"/>
+    </or>
     <match tags="cm"/>
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
     <repeat from="0" upto="2">
@@ -1857,7 +1878,10 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match tags="n.*.pl"/>
+    <or>
+      <match tags="n.*.pl"/>
+      <match tags="adj.*.pl"/>
+    </or>
     <match tags="cm"/>
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
     <repeat from="0" upto="2">
@@ -1882,7 +1906,10 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match tags="n.*.pl"/>
+    <or>
+      <match tags="n.*.pl"/>
+      <match tags="adj.*.pl"/>
+    </or>
     <match tags="cm"/>
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
     <repeat from="0" upto="2">
@@ -1907,7 +1934,10 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match tags="n.*.pl"/>
+    <or>
+      <match tags="n.*.pl"/>
+      <match tags="adj.*.pl"/>
+    </or>
     <match tags="cm"/>
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
     <repeat from="0" upto="2">
@@ -1922,7 +1952,10 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match tags="n.*.pl"/>
+    <or>
+      <match tags="n.*.pl"/>
+      <match tags="adj.*.pl"/>
+    </or>
     <match tags="cm"/>
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
     <repeat from="0" upto="1">
@@ -1938,7 +1971,10 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match tags="n.*.pl"/>
+    <or>
+      <match tags="n.*.pl"/>
+      <match tags="adj.*.pl"/>
+    </or>
     <match tags="cm"/>
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
     <repeat from="0" upto="2">
@@ -1955,7 +1991,10 @@
   </rule>
 
   <rule weight="1.0">
-    <match tags="n.*.sg"/>
+    <or>
+      <match tags="n.*.sg"/>
+      <match tags="adj.*.sg"/>
+    </or>
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
     <repeat from="0" upto="2">
       <match tags="adv"/>
@@ -1978,7 +2017,10 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match tags="n.*.sg"/>
+    <or>
+      <match tags="n.*.sg"/>
+      <match tags="adj.*.sg"/>
+    </or>
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
     <repeat from="0" upto="2">
       <match tags="adv"/>
@@ -2002,7 +2044,10 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match tags="n.*.sg"/>
+    <or>
+      <match tags="n.*.sg"/>
+      <match tags="adj.*.sg"/>
+    </or>
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
     <repeat from="0" upto="2">
       <match tags="adv"/>
@@ -2026,7 +2071,9 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match tags="n.*.sg"/>
+    <or>
+      <match tags="adj.*.sg"/>
+    </or>
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
     <repeat from="0" upto="2">
       <match tags="adv"/>
@@ -2041,7 +2088,10 @@
   </rule>
 
   <rule weight="1.0">
-    <match tags="n.*.sg"/>
+    <or>
+      <match tags="n.*.sg"/>
+      <match tags="adj.*.sg"/>
+    </or>
     <match tags="cm"/>
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
     <repeat from="0" upto="2">
@@ -2065,7 +2115,10 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match tags="n.*.sg"/>
+    <or>
+      <match tags="n.*.sg"/>
+      <match tags="adj.*.sg"/>
+    </or>
     <match tags="cm"/>
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
     <repeat from="0" upto="2">
@@ -2090,7 +2143,10 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match tags="n.*.sg"/>
+    <or>
+      <match tags="n.*.sg"/>
+      <match tags="adj.*.sg"/>
+    </or>
     <match tags="cm"/>
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
     <repeat from="0" upto="2">
@@ -2116,7 +2172,10 @@
   </rule>
 
   <rule weight="1.0">
-    <match tags="n.*.sg"/>
+    <or>
+      <match tags="n.*.sg"/>
+      <match tags="adj.*.sg"/>
+    </or>
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
     <repeat from="0" upto="2">
       <match tags="adv"/>
