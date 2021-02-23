@@ -3154,6 +3154,44 @@
 
 <!-- **************** V **************** -->
 
+  <!-- pujar >> monter, télécharger -->
+  <rule weight="0.8">
+    <match lemma="pujar" tags="vblex.*"><select lemma="monter"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="penjar" tags="vblex.*"><select lemma="télécharger"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="fitxer" tags="n.*"/>
+      <match lemma="document" tags="n.*"/>
+      <match lemma="presentació" tags="n.*"/>
+      <match lemma="foto" tags="n.*"/>
+      <match lemma="pel·lícula" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- penjar >> pendre, télécharger -->
+  <rule weight="0.8">
+    <match lemma="penjar" tags="vblex.*"><select lemma="pendre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="penjar" tags="vblex.*"><select lemma="télécharger"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="fitxer" tags="n.*"/>
+      <match lemma="document" tags="n.*"/>
+      <match lemma="presentació" tags="n.*"/>
+      <match lemma="foto" tags="n.*"/>
+      <match lemma="pel·lícula" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- eixugar >> essuyer, éponger -->
   <rule weight="0.8">
     <match lemma="eixugar" tags="vblex.*"><select lemma="essuyer"/></match>
@@ -5548,6 +5586,27 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- penjada >> téléchargement, téléversement -->
+  <rule weight="0.8">
+    <match lemma="penjada" tags="n.*"><select lemma="téléchargement"/></match>
+  </rule>
+
+  <!-- pujada >> montée, téléchargement, téléversement -->
+  <rule weight="0.8">
+    <match lemma="pujada" tags="n.*"><select lemma="montée"/></match>
+  </rule>
+
+  <!-- carn >> viande, chair -->
+  <rule weight="0.8">
+    <match lemma="carn" tags="n.*"><select lemma="viande"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="plaer" tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.def.*"/>
+    <match lemma="carn" tags="n.f.sg"><select lemma="chair"/></match>
+  </rule>
 
   <!-- majoria >> majorité, plupart -->
   <rule weight="0.8">
@@ -8689,6 +8748,7 @@
 
   <macro name="ant_antcog" p1="Maria Antonieta" p2="Marie-Antoinette" />
   <macro name="ant_antcog" p1="Maria Cristina" p2="Marie-Cristine" />
+  <macro name="ant_antcog" p1="Roxana" p2="Roxanne" />
 
   <rule weight="1.0">
      <or><match tags="np.cog.*"/><match lemma="Rovira"/></or>

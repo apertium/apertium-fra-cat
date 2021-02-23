@@ -1750,6 +1750,75 @@
 
 <!-- **************** V **************** -->
 
+  <!-- relever >> aixecar, correspondre -->
+  <macro name="verb_nopron_pron" p1="relever" p2="aixecar" p3="aixecar"/>
+  <rule weight="0.9">
+    <match lemma="relever" tags="vblex.*"><select lemma="correspondre"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="de" tags="pr"><select lemma="a"/></match>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="état" tags="n.*"/>
+      <match lemma="nation" tags="n.*"/>
+      <match lemma="agence" tags="n.*"/>
+      <match lemma="ministère" tags="n.*"/>
+      <match lemma="ministère# des affaires étrangères" tags="n.*"/>
+      <match lemma="ministère# des finances" tags="n.*"/>
+      <match lemma="ministère# du travail" tags="n.*"/>
+      <match lemma="région" tags="n.*"/>
+      <match lemma="département" tags="n.*"/>
+      <match lemma="comune" tags="n.*"/>
+      <match lemma="conseil" tags="n.*"/>
+      <match lemma="police" tags="n.*"/>
+      <match lemma="tribunal" tags="n.*"/>
+      <match lemma="tribunal judiciaire" tags="n.*"/>
+      <match lemma="tribunal# d'instance" tags="n.*"/>
+      <match lemma="tribunal# de proximité" tags="n.*"/>
+      <match lemma="cour" tags="n.*"/>
+      <match lemma="cour# d'assises" tags="n.*"/>
+      <match lemma="cour# d'assises d'appel" tags="n.*"/>
+      <match lemma="cour# d'appel" tags="n.*"/>
+      <match lemma="cour# des comptes" tags="n.*"/>
+      <match lemma="Cour# des comptes" tags="np.*"/>
+      <match lemma="agence" tags="n.*"/>
+      <match lemma="ONU" tags="n.*"/>
+      <match lemma="Nations Unies" tags="np.*"/>
+      <match lemma="OTAN" tags="n.*"/>
+
+      <match lemma="ministre" tags="n.*"/>
+      <match lemma="ministre# des affaires étrangères" tags="n.*"/>
+      <match lemma="ministre# des finances" tags="n.*"/>
+      <match lemma="ministre# du travail" tags="n.*"/>
+      <match lemma="vice-ministre" tags="n.*"/>
+      <match lemma="président" tags="n.*"/>
+      <match lemma="vice-président" tags="n.*"/>
+      <match lemma="recteur" tags="n.*"/>
+      <match lemma="vice-recteur" tags="n.*"/>
+      <match lemma="doyen" tags="n.*"/>
+      <match lemma="vice-doyen" tags="n.*"/>
+      <match lemma="directeur" tags="n.*"/>
+      <match lemma="secrétaire" tags="n.*"/>
+      <match lemma="PDG" tags="n.*"/>
+
+      <match lemma="compétence" tags="n.*"/>
+      <match lemma="catégorie" tags="n.*"/>
+      <match lemma="forme" tags="n.*"/>
+      <match lemma="hypothèse" tags="n.*"/>
+      <match lemma="définition" tags="n.*"/>
+      <match lemma="discrimination" tags="n.*"/>
+      <match lemma="division" tags="n.*"/>
+      <match lemma="problème" tags="n.*"/>
+      <match lemma="débat" tags="n.*"/>
+      <match lemma="discussion" tags="n.*"/>
+      <match lemma="subsidiarité" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- éponger >> esponjar, eixugar -->
   <rule weight="0.8">
     <match lemma="éponger" tags="vblex.*"><select lemma="esponjar"/></match>
@@ -4040,6 +4109,86 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- ouate >> cotó fluix, buata -->
+  <rule weight="0.8">
+    <match lemma="ouate" tags="n.*"><select lemma="cotó fluix"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="de" tags="pr"/>
+    <match lemma="ouate" tags="n.*"><select lemma="buata"/></match>
+  </rule>
+
+  <!-- novice >> novici, novençà -->
+  <rule weight="0.8">
+    <match lemma="novice" tags="n.*"><select lemma="novici"/></match>
+  </rule>
+
+  <!-- désengagement >> desengatjament, trencament# de contracte -->
+  <rule weight="0.8">
+    <match lemma="désengagement" tags="n.*"><select lemma="desengatjament"/></match>
+  </rule>
+
+  <!-- accro >> addicte, jonqui -->
+  <rule weight="0.8">
+    <match lemma="accro" tags="n.*"><select lemma="addicte"/></match>
+  </rule>
+
+  <!-- tube >> tub, èxit -->
+  <rule weight="0.8">
+    <match lemma="tube" tags="n.*"><select lemma="tub"/></match>
+  </rule>
+
+  <!-- verbiage >> verbositat, vèrbola, parola, xerramenta -->
+  <rule weight="0.8">
+    <match lemma="verbiage" tags="n.*"><select lemma="verbositat"/></match>
+  </rule>
+
+  <!-- déblai >> desmunt, rebaix, terrabuit, enderroc -->
+  <rule weight="0.8">
+    <match lemma="déblai" tags="n.*"><select lemma="desmunt"/></match>
+  </rule>
+
+  <!-- téléchargement >> descàrrega, pujada, penjada -->
+  <rule weight="0.8">
+    <match lemma="téléchargement" tags="n.*"><select lemma="descàrrega"/></match>
+  </rule>
+
+  <!-- crampon >> grampó, grapa -->
+  <rule weight="0.8">
+    <match lemma="crampon" tags="n.*"><select lemma="grampó"/></match>
+  </rule>
+
+  <!-- outsider >> estrany, nouvingut -->
+  <rule weight="0.8">
+    <match lemma="outsider" tags="n.*"><select lemma="estrany"/></match>
+  </rule>
+
+  <!-- ménage >> parament, casa, parella, família -->
+  <rule weight="0.8">
+    <match lemma="ménage" tags="n.*"><select lemma="parament"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="un" tags="det.*"/>
+    <match lemma="ménage" tags="n.*"><select lemma="parella"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.*"/>
+    <match lemma="ménage" tags="n.*"><select lemma="família"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <match lemma="ménage" tags="n.*"><select lemma="família"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="travail" tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.def.*"/>
+    <match lemma="ménage" tags="n.*"><select lemma="casa"/></match>
+  </rule>
 
   <!-- retournement >> tomb, canvi -->
   <rule weight="0.8">
@@ -8274,6 +8423,11 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- glauque >> sòrdid, glauc -->
+  <rule weight="0.8">
+    <match lemma="glauque" tags="adj.*"><select lemma="sòrdid"/></match>
+  </rule>
+
   <!-- ancien >> antic, vell, ancià -->
   <rule weight="0.8">
     <match lemma="ancien" tags="adj.*"><select lemma="antic"/></match>
@@ -9529,6 +9683,11 @@
 
 <!-- **************** ADV **************** -->
 
+  <!-- à rebours >> a l'inrevés, a contrapel, a repel -->
+  <rule weight="0.8">
+    <match lemma="à rebours" tags="adv"><select lemma="a l'inrevés"/></match>
+  </rule>
+
   <!-- exprès >> expressament, exprés, a posta -->
   <rule weight="0.8">
     <match lemma="exprès" tags="adv"><select lemma="expressament"/></match>
@@ -9715,6 +9874,7 @@
 
   <macro name="ant_antcog" p1="Marie-Antoinette" p2="Maria Antonieta" />
   <macro name="ant_antcog" p1="Marie-Christine" p2="Maria Cristina" />
+  <macro name="ant_antcog" p1="Roxanne" p2="Roxana" />
 
   <macro name="noms_propres" p1="Alphonse" p2="Alfons" />
   <macro name="noms_propres" p1="Amédée" p2="Amadeu" />
