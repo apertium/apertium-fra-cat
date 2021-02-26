@@ -5730,6 +5730,16 @@
     <match lemma="shooter" tags="n.*"><select lemma="golejador"/></match>
   </rule>
 
+  <!-- cran >> osca, etc. -->
+  <rule weight="0.8">
+    <match lemma="cran" tags="n.*"><select lemma="osca"/></match>
+  </rule>
+
+  <!-- édile >> regidor, edil -->
+  <rule weight="0.8">
+    <match lemma="édile" tags="n.*"><select lemma="regidor"/></match>
+  </rule>
+
   <!-- panier >> cistell, cistella -->
   <rule weight="0.8">
     <match lemma="panier" tags="n.*"><select lemma="cistell"/></match>
@@ -5743,6 +5753,10 @@
   <!-- culot >> barra, penques, culot -->
   <rule weight="0.8">
     <match lemma="culot" tags="n.*"><select lemma="barra"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="quel"/>
+    <match lemma="culot" tags="n.m.sg"><select lemma="penca"/></match>
   </rule>
 
   <!-- rouleau >> rotllo, corró -->

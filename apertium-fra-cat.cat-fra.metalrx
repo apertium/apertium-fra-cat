@@ -5587,6 +5587,33 @@
 
 <!-- **************** N **************** -->
 
+  <!-- penca >> tranche, culot -->
+  <rule weight="0.8">
+    <match lemma="penca" tags="n.*"><select lemma="tranche"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="quin"/>
+    <match lemma="penca" tags="n.f.pl"><select lemma="culot"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tenir" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="penca" tags="n.f.pl"><select lemma="culot"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tenir" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match lemma="molt"/>
+    </or>
+    <match lemma="penca" tags="n.f.pl"><select lemma="culot"/></match>
+  </rule>
+
   <!-- penjada >> téléchargement, téléversement -->
   <rule weight="0.8">
     <match lemma="penjada" tags="n.*"><select lemma="téléchargement"/></match>
@@ -6514,6 +6541,11 @@
     <match lemma="punt" tags="n.*"/>
     <match lemma="de" tags="pr"/>
     <match lemma="avantatge" tags="n.*"><select lemma="avance"/></match>
+  </rule>
+
+  <!-- edil >> conseiller municipal, édile -->
+  <rule weight="0.8">
+    <match lemma="edil" tags="n.*"><select lemma="conseiller municipal"/></match>
   </rule>
 
   <!-- barra >> barre, culot, toupet -->
