@@ -3154,6 +3154,47 @@
 
 <!-- **************** V **************** -->
 
+  <!-- ensorrar >> enfoncer, écrouler, ensabler -->
+  <rule weight="0.8">
+    <match lemma="ensorrar" tags="vblex.*"><select lemma="enfoncer"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="casa" tags="n.*"/>
+      <match lemma="edifici" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="prn.pro.*"/>
+    <match lemma="ensorrar" tags="vblex.*"><select lemma="écrouler"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="casa" tags="n.*"/>
+      <match lemma="edifici" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="prn.pro.*"/>
+    <match tags="vbser.*"/>
+    <match lemma="ensorrar" tags="vblex.pp.*"><select lemma="écrouler"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="casa" tags="n.*"/>
+      <match lemma="edifici" tags="n.*"/>
+    </or>
+    <match tags="adv"/>
+    <match tags="prn.pro.*"/>
+    <match tags="vbser.*"/>
+    <repeat from="1" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="ensorrar" tags="vblex.pp.*"><select lemma="écrouler"/></match>
+  </rule>
+
   <!-- pujar >> monter, télécharger -->
   <rule weight="0.8">
     <match lemma="pujar" tags="vblex.*"><select lemma="monter"/></match>
@@ -5586,6 +5627,11 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- xat >> tchat, chat -->
+  <rule weight="0.8">
+    <match lemma="xat" tags="n.*"><select lemma="tchat"/></match>
+  </rule>
 
   <!-- penca >> tranche, culot -->
   <rule weight="0.8">
@@ -8852,6 +8898,7 @@
   <macro name="noms_propis" p1="Ramon" p2="Raymond" />
   <macro name="noms_propis" p1="Renat" p2="René" />
   <macro name="noms_propis" p1="Ricard" p2="Richard" />
+  <macro name="noms_propis" p1="Salman" p2="Salmane" />
   <macro name="noms_propis" p1="Segimon" p2="Sigismond" />
   <macro name="noms_propis" p1="Sixt" p2="Sixte" />
 

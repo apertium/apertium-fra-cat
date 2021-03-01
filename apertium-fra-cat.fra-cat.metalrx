@@ -612,6 +612,7 @@
       <match lemma="femme politique" tags="n.*"/>
       <match lemma="joueur" tags="n.*"/>
       <match lemma="sportif" tags="n.*"/>
+      <match lemma="quelqu'un" tags="prn.*"/>
     </def-seq>
 
     <def-seq n="parent">
@@ -1750,7 +1751,7 @@
 
 <!-- **************** V **************** -->
 
-  <!-- relever >> aixecar, correspondre -->
+  <!-- relever >> aixecar, correspondre, assenyalar -->
   <macro name="verb_nopron_pron" p1="relever" p2="aixecar" p3="aixecar"/>
   <rule weight="0.9">
     <match lemma="relever" tags="vblex.*"><select lemma="correspondre"/></match>
@@ -1818,6 +1819,16 @@
       <match lemma="subsidiarité" tags="n.*"/>
     </or>
   </rule>
+  <rule weight="0.9">
+    <match lemma="relever" tags="vblex.*"><select lemma="assenyalar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="cnjsub"/>
+  </rule>
 
   <!-- éponger >> esponjar, eixugar -->
   <rule weight="0.8">
@@ -1864,7 +1875,7 @@
     <match lemma="arrêter" tags="vblex.*"><select lemma="aturar"/></match>
   </rule>
 
-  <!-- fuir >> fugir, fugir# de -->
+  <!-- fuir >> fugir, fugir# de, defugir -->
   <rule weight="0.8">
     <match lemma="fuir" tags="vblex.*"><select lemma="fugir"/></match>
   </rule>
@@ -1874,13 +1885,36 @@
       <match tags="adv"/>
     </repeat>
     <or>
-      <seq n="personne"/>
-      <seq n="parent"/>
-      <seq n="pays_hab"/>
       <match tags="np.ant.*"/>
       <match tags="np.cog.*"/>
       <match tags="np.top.*"/>
       <match tags="np.al.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fuir" tags="vblex.*"><select lemma="fugir# de"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <seq n="personne"/>
+      <seq n="parent"/>
+      <seq n="pays_hab"/>
+      <match tags="np.top.*"/>
+      <match tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="fuir" tags="vblex.*"><select lemma="defugir"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="devoir" tags="n.*"/>
+      <match lemma="obligation" tags="n.*"/>
+      <match lemma="responsabilité" tags="n.*"/>
     </or>
   </rule>
 
@@ -3379,6 +3413,12 @@
   </rule>
   <rule weight="1.2">
     <match lemma="habiller" tags="vblex.*"><select lemma="vestir"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
     <match tags="det.*"/>
     <or>
       <seq n="personne"/>
@@ -3386,6 +3426,84 @@
       <seq n="pays_hab"/>
       <match tags="np.ant.*"/>
       <match tags="np.cog.*"/>
+    </or>
+  </rule>
+
+  <!-- entraîner >> portar, comportar, entrenar -->
+  <!-- entrainer >> portar, comportar, entrenar -->
+  <macro name="verb_nopron_pron" p1="entraîner" p2="comportar" p3="entrenar" />
+  <macro name="verb_nopron_pron" p1="entrainer" p2="comportar" p3="entrenar" />
+  <rule weight="0.9">
+    <or>
+      <match lemma="entraîner" tags="vblex.*"><select lemma="portar"/></match>
+      <match lemma="entrainer" tags="vblex.*"><select lemma="portar"/></match>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+   <match lemma="à" tags="pr"/>
+  </rule>
+  <rule weight="0.9">
+    <or>
+      <match lemma="entraîner" tags="vblex.*"><select lemma="portar"/></match>
+      <match lemma="entrainer" tags="vblex.*"><select lemma="portar"/></match>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <or>
+      <seq n="personne"/>
+      <seq n="parent"/>
+      <seq n="pays_hab"/>
+    </or>
+  </rule>
+  <rule weight="0.9">
+    <or>
+      <match lemma="entraîner" tags="vblex.*"><select lemma="portar"/></match>
+      <match lemma="entrainer" tags="vblex.*"><select lemma="portar"/></match>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+    </or>
+  </rule>
+  <rule weight="0.9">
+    <or>
+      <match lemma="entraîner" tags="vblex.*"><select lemma="entrenar"/></match>
+      <match lemma="entrainer" tags="vblex.*"><select lemma="entrenar"/></match>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <or>
+      <match lemma="équipe" tags="n.*"/>
+      <match lemma="bleu"/>
+      <match tags="np.al.*"/>
     </or>
   </rule>
 
@@ -3516,22 +3634,38 @@
 
   <!-- poursuivre >> perseguir, prolongar -->
   <macro name="verb_nopron_pron" p1="poursuivre" p2="perseguir" p3="prolongar" />
-  <rule weight="1.0">
+  <rule weight="0.9">
     <match lemma="poursuivre" tags="vblex.*"><select lemma="continuar"/></match>
     <repeat from="0" upto="2">
-      <or>
-        <match tags="adv"/>
-        <match tags="cnjadv"/>
-      </or>
+      <match tags="adv"/>
     </repeat>
     <match tags="det.*"/>
     <or>
-    <match lemma="étude" tags="n.*"/>
-    <match lemma="marche" tags="n.*"/>
-    <match lemma="visite" tags="n.*"/>
-    <match lemma="voyage" tags="n.*"/>
-    <match lemma="exploration" tags="n.*"/>
-    <match lemma="recherche" tags="n.*"/>
+      <match lemma="lecture" tags="n.*"/>
+      <match lemma="marche" tags="n.*"/>
+      <match lemma="visite" tags="n.*"/>
+      <match lemma="voyage" tags="n.*"/>
+      <match lemma="chemin" tags="n.*"/>
+      <match lemma="étude" tags="n.*"/>
+      <match lemma="éducation" tags="n.*"/>
+      <match lemma="exploration" tags="n.*"/>
+      <match lemma="recherche" tags="n.*"/>
+      <match lemma="travail" tags="n.*"/>
+      <match lemma="effort" tags="n.*"/>
+      <match lemma="initiative" tags="n.*"/>
+      <match lemma="consultation" tags="n.*"/>
+      <match lemma="discussion" tags="n.*"/>
+      <match lemma="dialogue" tags="n.*"/>
+      <match lemma="action" tags="n.*"/>
+      <match lemma="enquête" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="0.9">
+    <match lemma="poursuivre" tags="vblex.*"><select lemma="continuar"/></match>
+    <match tags="cnjcoo.*"/>
+    <or>
+      <match lemma="approfondir" tags="vblex.*"/>
+      <match lemma="développer" tags="vblex.*"/>
     </or>
   </rule>
 
@@ -4050,8 +4184,6 @@
       <seq n="personne"/>
       <seq n="parent"/>
       <seq n="pays_hab"/>
-      <match tags="np.ant.*"/>
-      <match tags="np.cog.*"/>
     </or>
   </rule>
   <rule weight="1.2">
@@ -4062,8 +4194,6 @@
       <seq n="personne"/>
       <seq n="parent"/>
       <seq n="pays_hab"/>
-      <match tags="np.ant.*"/>
-      <match tags="np.cog.*"/>
     </or>
   </rule>
 
@@ -4095,6 +4225,18 @@
     <or>
       <match tags="np.ant.*"/>
       <match tags="np.cog.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="chasser" tags="vblex.*."><select lemma="expulsar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
       <seq n="personne"/>
       <seq n="parent"/>
       <seq n="pays_hab"/>
@@ -4109,6 +4251,19 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- milliard >> miler# de milions, mil milions -->
+  <rule weight="0.8">
+    <match lemma="milliard" tags="n.*"><select lemma="miler# de milions"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="un" tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <match lemma="milliard" tags="n.*"><select lemma="mil milions"/></match>
+  </rule>
 
   <!-- ouate >> cotó fluix, buata -->
   <rule weight="0.8">
@@ -4245,6 +4400,41 @@
       <match tags="det.*"/>
     </repeat>
     <match lemma="remorque" tags="n.*"/>
+  </rule>
+
+  <!-- service# d'information >> servei# d'informació, servei# d'intel·ligència -->
+  <rule weight="0.8">
+    <match lemma="service# d'information" tags="n.*"><select lemma="servei# d'informació"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="service# d'information" tags="n.m.pl"><select lemma="servei# d'intel·ligència"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="service# d'information" tags="n.*"><select lemma="servei# d'intel·ligència"/></match>
+    <or>
+      <match lemma="militaire" tags="adj.*"/>
+      <match lemma="américain" tags="adj.*"/>
+      <match lemma="européen" tags="adj.*"/>
+      <match lemma="russe" tags="adj.*"/>
+      <match lemma="chinois" tags="adj.*"/>
+      <match lemma="français" tags="adj.*"/>
+      <match lemma="allemand" tags="adj.*"/>
+      <match lemma="britannique" tags="adj.*"/>
+      <match lemma="anglais" tags="adj.*"/>
+      <match lemma="canadien" tags="adj.*"/>
+      <match lemma="espagnol" tags="adj.*"/>
+      <match lemma="italien" tags="adj.*"/>
+      <match lemma="japonais" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="service# d'information" tags="n.*"><select lemma="servei# d'intel·ligència"/></match>
+   <match lemma="de" tags="pr"/>
+   <match tags="det.*"/>
+   <or>
+     <match lemma="ministère" tags="n.*"/>
+     <match lemma="défense" tags="n.*"/>
+   </or>
   </rule>
 
   <!-- déblai >> terrabuit, rebaix, desmunt, décombre -->
@@ -8437,6 +8627,11 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- éminent >> eminent, prominent -->
+  <rule weight="0.8">
+    <match lemma="éminent" tags="adj.*"><select lemma="eminent"/></match>
+  </rule>
+
   <!-- glauque >> sòrdid, glauc -->
   <rule weight="0.8">
     <match lemma="glauque" tags="adj.*"><select lemma="sòrdid"/></match>
@@ -9150,6 +9345,25 @@
     </repeat>
     <match lemma="épargner" tags="vblex.pp.*"><select lemma="salvar"/></match>
   </rule>
+  <rule weight="1.0">
+    <match lemma="épargner" tags="vblex.*"><select lemma="salvar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="np.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="épargner" tags="vblex.*"><select lemma="salvar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <seq n="personne"/>
+      <seq n="parent"/>
+      <seq n="pays_hab"/>
+    </or>
+  </rule>
 
   <!-- filer >> passar, anar, filar -->
   <rule weight="0.8">
@@ -9295,6 +9509,8 @@
       <match lemma="fermer" tags="vblex.pp.*"/>
       <match lemma="fini" tags="adj.*"/>
       <match lemma="finir" tags="vblex.pp.*"/>
+      <match lemma="impliqué" tags="adj.*"/>
+      <match lemma="impliquer" tags="vblex.pp.*"/>
       <match lemma="intéressé" tags="adj.*"/>
       <match lemma="intéresser" tags="vblex.pp.*"/>
       <match lemma="malade" tags="adj.*"/>
