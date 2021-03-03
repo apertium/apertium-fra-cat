@@ -4213,6 +4213,15 @@
             <let><clip pos="1" side="tl" part="gen"/><lit-tag v="GD"/></let>
             <let><clip pos="1" side="tl" part="nbr"/><lit-tag v="ND"/></let>
           </when>
+          <when>
+            <test>
+              <or>
+	        <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="nombreux"/></equal>
+	        <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="beaucoup"/></equal>
+              </or>
+            </test>
+            <let><var n="numero"/><lit-tag v="pl"/></let>
+          </when>
         </choose>
         <call-macro n="f_concord1">
           <with-param pos="1"/>
