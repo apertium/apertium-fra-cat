@@ -5621,6 +5621,102 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
+   <rule comment="REGLA: DET JOUR 1er MOIS (le mercredi 1er novembre: el dilluns 1 de novembre)">
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="jour_n"/>
+        <pattern-item n="_1er"/>
+        <pattern-item n="nom_mois"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord3">
+          <with-param pos="4"/>
+          <with-param pos="3"/>
+          <with-param pos="1"/>
+        </call-macro>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <lit v="1"/>
+                <lit-tag v="num"/>
+              </lu>
+              <b pos="3"/>
+              <lu>
+                <lit v="de"/>
+                <lit-tag v="pr"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="4" side="tl" part="lemh"/>
+            	<clip pos="4" side="tl" part="a_nom"/>
+            	<clip pos="4" side="tl" part="gen"/>
+            	<lit-tag v="sg"/>
+                <clip pos="4" side="tl" part="lemq"/>
+              </lu>
+            </out>
+      </action>
+    </rule>
+
+   <rule comment="REGLA: DET JOUR 1er MOIS NUM (le mercredi 1er novembre 2004: el dilluns 1 de novembre de 2004)">
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="jour_n"/>
+        <pattern-item n="_1er"/>
+        <pattern-item n="nom_mois"/>
+        <pattern-item n="num"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord3">
+          <with-param pos="4"/>
+          <with-param pos="3"/>
+          <with-param pos="1"/>
+        </call-macro>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <lit v="1"/>
+                <lit-tag v="num"/>
+              </lu>
+              <b pos="3"/>
+              <lu>
+                <lit v="de"/>
+                <lit-tag v="pr"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="4" side="tl" part="lemh"/>
+            	<clip pos="4" side="tl" part="a_nom"/>
+            	<clip pos="4" side="tl" part="gen"/>
+            	<lit-tag v="sg"/>
+                <clip pos="4" side="tl" part="lemq"/>
+              </lu>
+              <b pos="4"/>
+              <lu>
+                <lit v="de"/>
+                <lit-tag v="pr"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="5" side="tl" part="whole"/>
+              </lu>
+            </out>
+      </action>
+    </rule>
+
     <rule comment="REGLA: DET NUMERAL NOM NUM (le 20 novembre 1998: el 20 de novembre de 1998)">
       <pattern>
         <pattern-item n="det"/>
