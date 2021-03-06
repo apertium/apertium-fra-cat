@@ -81,6 +81,12 @@
       <cat-item lemma="gaire" tags="adv"/>
       <cat-item lemma="ni" tags="cnjcoo"/>
     </def-cat>
+    <def-cat n="cnjsub">
+      <cat-item tags="cnjsub"/>
+    </def-cat>
+    <def-cat n="cnjadv">
+      <cat-item tags="cnjadv"/>
+    </def-cat>
     <def-cat n="prep">
       <cat-item tags="pr"/>
     </def-cat>
@@ -89,6 +95,10 @@
     </def-cat>
     <def-cat n="deprep">
       <cat-item lemma="de" tags="pr"/>
+    </def-cat>
+    <def-cat n="comprep">
+      <cat-item lemma="com" tags="pr"/>
+      <cat-item lemma="com a" tags="pr"/>
     </def-cat>
     <def-cat n="principi_prep">
       <cat-item lemma="al començament de" tags="pr"/>
@@ -126,6 +136,10 @@
     </def-cat>
     <def-cat n="relat">
       <cat-item tags="rel.*"/>
+    </def-cat>
+    <def-cat n="elqual">
+      <cat-item lemma="el qual" tags="rel.*"/>
+      <cat-item lemma="què" tags="rel.*"/>
     </def-cat>
     <def-cat n="prn">
       <cat-item tags="prn.tn.*"/>
@@ -5347,6 +5361,27 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
   </rule>
+
+    <rule comment="REGLA: PREP RELAT">
+      <pattern>
+        <pattern-item n="prep"/>
+        <pattern-item n="elqual"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
 
     <rule comment="REGLA: DET NOM">
       <pattern>
@@ -23109,6 +23144,67 @@ is not applicable because gender and number can not be taken from previous rules
 -->
 
 <!-- fi canvi de verb auxiliar en oracions reflexives o impersonals -->
+
+    <rule comment="REGLA: comprep (per impedir el la reinicialització de les variables)">
+      <pattern>
+        <pattern-item n="comprep"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: prep">
+      <pattern>
+        <pattern-item n="prep"/>
+      </pattern>
+      <action>
+        <!-- reset variables -->
+        <let><var n="numero"/><lit-tag v="sg"/></let>
+        <let><var n="genero"/><lit-tag v="m"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: cnjsub">
+      <pattern>
+        <pattern-item n="cnjsub"/>
+      </pattern>
+      <action>
+        <!-- reset variables -->
+        <let><var n="numero"/><lit-tag v="sg"/></let>
+        <let><var n="genero"/><lit-tag v="m"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: cnjadv">
+      <pattern>
+        <pattern-item n="cnjadv"/>
+      </pattern>
+      <action>
+        <!-- reset variables -->
+        <let><var n="numero"/><lit-tag v="sg"/></let>
+        <let><var n="genero"/><lit-tag v="m"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
 
     <rule comment="regla: reset variables">
       <pattern>

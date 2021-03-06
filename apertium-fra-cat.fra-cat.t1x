@@ -80,6 +80,12 @@
       <cat-item tags="adv"/>
       <cat-item tags="preadv"/>
     </def-cat>
+    <def-cat n="cnjsub">
+      <cat-item tags="cnjsub"/>
+    </def-cat>
+    <def-cat n="cnjadv">
+      <cat-item tags="cnjadv"/>
+    </def-cat>
     <def-cat n="prep">
       <cat-item tags="pr"/>
     </def-cat>
@@ -98,6 +104,9 @@
     </def-cat>
     <def-cat n="chez">
       <cat-item lemma="chez" tags="pr"/>
+    </def-cat>
+    <def-cat n="commeprep">
+      <cat-item lemma="comme" tags="pr"/>
     </def-cat>
     <def-cat n="sur_avec">
       <cat-item lemma="sur" tags="pr"/>
@@ -137,6 +146,9 @@
     </def-cat>
     <def-cat n="rel">
       <cat-item tags="rel.*"/>
+    </def-cat>
+    <def-cat n="lequel">
+      <cat-item lemma="lequel" tags="rel.*"/>
     </def-cat>
     <def-cat n="prntn">
       <cat-item tags="prn.tn.*"/>
@@ -837,6 +849,16 @@
       <attr-item tags="mf"/>
       <attr-item tags="GD"/>
       <attr-item tags="nt"/>
+<attr-item tags="m0"/>
+<attr-item tags="m1"/>
+<attr-item tags="m2"/>
+<attr-item tags="m3"/>
+<attr-item tags="m4"/>
+<attr-item tags="m5"/>
+<attr-item tags="m6"/>
+<attr-item tags="m7"/>
+<attr-item tags="m8"/>
+<attr-item tags="m9"/>
     </def-attr>
     <def-attr n="nbr">
       <attr-item tags="sg"/>
@@ -1872,6 +1894,7 @@
     </def-macro>
 
     <def-macro n="f_concord2" npar="2">
+      <call-macro n="f_concord0"><with-param pos="1"/></call-macro>
       <choose>
         <when>
           <test>
@@ -2139,10 +2162,28 @@
           </let>
         </when>
         <otherwise>
-          <let>
-            <var n="genero"/>
-            <lit-tag v="m"/>
-          </let>
+          <choose>
+            <when>
+              <test>
+                <not>
+                  <or>
+                    <equal>
+                      <var n="genero"/>
+                      <lit-tag v="m"/>
+                    </equal>
+                    <equal>
+                      <var n="genero"/>
+                      <lit-tag v="f"/>
+                    </equal>
+                  </or>
+                </not>
+              </test>
+              <let>
+                <var n="genero"/>
+                <lit-tag v="m"/>
+              </let>
+            </when>
+          </choose>
         </otherwise>
       </choose>
       <choose>
@@ -3927,11 +3968,59 @@
       </action>
     </rule>
 
+    <rule comment="REGLA: commeprep (per impedir el la reinicialització de les variables)">
+      <pattern>
+        <pattern-item n="commeprep"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
     <rule comment="REGLA: PREP">
       <pattern>
         <pattern-item n="prep"/>
       </pattern>
       <action>
+        <!-- reset variables -->
+        <let><var n="numero"/><lit-tag v="sg"/></let>
+        <let><var n="genero"/><lit-tag v="m"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: cnjsub">
+      <pattern>
+        <pattern-item n="cnjsub"/>
+      </pattern>
+      <action>
+        <!-- reset variables -->
+        <let><var n="numero"/><lit-tag v="sg"/></let>
+        <let><var n="genero"/><lit-tag v="m"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: cnjadv">
+      <pattern>
+        <pattern-item n="cnjadv"/>
+      </pattern>
+      <action>
+        <!-- reset variables -->
+        <let><var n="numero"/><lit-tag v="sg"/></let>
+        <let><var n="genero"/><lit-tag v="m"/></let>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -4387,6 +4476,9 @@ is not applicable because gender and number cannot be taken from previous rules 
             <clip pos="1" side="tl" part="whole"/>
           </lu>
         </out>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
       </action>
     </rule>
 
@@ -4440,6 +4532,27 @@ is not applicable because gender and number cannot be taken from previous rules 
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: PREP RELATIF">
+      <pattern>
+        <pattern-item n="prep"/>
+        <pattern-item n="lequel"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
           </lu>
         </out>
       </action>
@@ -6470,12 +6583,15 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: PREP">
+    <rule comment="REGLA: PREP DE">
       <pattern>
         <pattern-item n="sur_avec"/>
         <pattern-item n="deprep"/>
       </pattern>
       <action>
+        <!-- reset variables -->
+        <let><var n="numero"/><lit-tag v="sg"/></let>
+        <let><var n="genero"/><lit-tag v="m"/></let>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -6492,6 +6608,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
+        <!-- reset variables -->
+        <let><var n="numero"/><lit-tag v="sg"/></let>
+        <let><var n="genero"/><lit-tag v="m"/></let>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -6509,6 +6628,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="adjindpl"/>
       </pattern>
       <action>
+        <!-- reset variables -->
+        <let><var n="numero"/><lit-tag v="sg"/></let>
+        <let><var n="genero"/><lit-tag v="m"/></let>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -6534,6 +6656,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="unite_temps"/>
       </pattern>
       <action>
+        <!-- reset variables -->
+        <let><var n="numero"/><lit-tag v="sg"/></let>
+        <let><var n="genero"/><lit-tag v="m"/></let>
         <call-macro n="f_concord2">
           <with-param pos="4"/>
           <with-param pos="3"/>
@@ -6570,6 +6695,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <!-- reset variables -->
+        <let><var n="numero"/><lit-tag v="sg"/></let>
+        <let><var n="genero"/><lit-tag v="m"/></let>
         <call-macro n="f_concord2">
           <with-param pos="4"/>
           <with-param pos="3"/>
@@ -6600,6 +6728,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <!-- reset variables -->
+        <let><var n="numero"/><lit-tag v="sg"/></let>
+        <let><var n="genero"/><lit-tag v="m"/></let>
         <call-macro n="f_concord2">
           <with-param pos="4"/>
           <with-param pos="3"/>
