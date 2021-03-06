@@ -3154,6 +3154,11 @@
 
 <!-- **************** V **************** -->
 
+  <!-- observar >> observer, remarquer -->
+  <rule weight="0.8">
+    <match lemma="observar" tags="vblex.*"><select lemma="observer"/></match>
+  </rule>
+
   <!-- ensorrar >> enfoncer, écrouler, ensabler -->
   <rule weight="0.8">
     <match lemma="ensorrar" tags="vblex.*"><select lemma="enfoncer"/></match>
@@ -5633,6 +5638,14 @@
     <match lemma="xat" tags="n.*"><select lemma="tchat"/></match>
   </rule>
 
+  <!-- pit >> poitrine, sein -->
+  <rule weight="0.8">
+    <match lemma="pit" tags="n.*"><select lemma="poitrine"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pit" tags="n.m.pl"><select lemma="sein"/></match>
+  </rule>
+
   <!-- penca >> tranche, culot -->
   <rule weight="0.8">
     <match lemma="penca" tags="n.*"><select lemma="tranche"/></match>
@@ -7552,6 +7565,10 @@
     <match tags="n.*.sg"/>
   </rule>
   <rule weight="1.0">
+    <match lemma="partit" tags="n.*"><select lemma="match"/></match>
+    <match lemma="amistós" tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
     <or>
       <match lemma="guanyador" tags="n.*"/>
       <match lemma="perdedor" tags="n.*"/>
@@ -7560,6 +7577,76 @@
     </or>
     <match lemma="de" tags="pr"/>
     <match lemma="partit" tags="n.*"><select lemma="match"/></match>
+  </rule>
+
+  <!-- partida >> partie, départ, acte, groupe -->
+  <rule weight="0.8">
+    <match lemma="partida" tags="n.*"><select lemma="partie"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="punt" tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <match lemma="partida" tags="n.*"><select lemma="départ"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="partida" tags="n.*"><select lemma="départ"/></match>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adj.*"/>
+        <match tags="vblex.pp.*"/>
+      </or>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+      <match tags="np.top.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="partida" tags="n.*"><select lemma="départ"/></match>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adj.*"/>
+        <match tags="vblex.pp.*"/>
+      </or>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="ciutat" tags="n.*"/>
+      <match lemma="poble" tags="n.*"/>
+      <match lemma="casa" tags="n.*"/>
+      <match lemma="escola" tags="n.*"/>
+      <match lemma="universitat" tags="n.*"/>
+      <match lemma="govern" tags="n.*"/>
+      <match lemma="ministeri" tags="n.*"/>
+      <match lemma="presidència" tags="n.*"/>
+      <match lemma="direcció" tags="n.*"/>
+      </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="partida" tags="n.*"><select lemma="acte"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="naixement" tags="n.*"/>
+      <match lemma="naixença" tags="n.*"/>
+      <match lemma="matrimoni" tags="n.*"/>
+      <match lemma="defunció" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="partida" tags="n.*"><select lemma="groupe"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="caçador" tags="n.*"/>
+      <match lemma="guerriller" tags="n.*"/>
+      <match lemma="soldat" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="partida" tags="n.*"><select lemma="groupe"/></match>
+    <match lemma="guerriller" tags="adj.*"/>
   </rule>
 
   <!-- mitjà >> moyen, moitié -->

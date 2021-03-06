@@ -1620,6 +1620,34 @@
     <match lemma="sur" tags="pr"><select lemma="en"/></match>
   </rule>
   <rule weight="1.0">
+    <match lemma="sur" tags="pr"><select lemma="en"/></match>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="site" tags="n.*"><select lemma="web"/></match>
+      <match lemma="chaine" tags="n.*"/>
+      <match lemma="plan" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sur" tags="pr"><select lemma="en"/></match>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="groupe" tags="n.*"/>
+      <match lemma="canal" tags="n.*"/>
+    </or>
+    <or>
+      <match lemma="internet" tags="n.*"/>
+      <match lemma="Facebook" tags="np.*"/>
+      <match lemma="Instagram" tags="np.*"/>
+      <match lemma="Twitter" tags="np.*"/>
+      <match lemma="WhatsApp" tags="np.*"/>
+      <match lemma="Telegram" tags="np.*"/>
+      <match lemma="Viber" tags="np.*"/>
+      <match lemma="YouTube" tags="np.*"/>
+      <match lemma="IRC" tags="n.acr.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
     <match lemma="sur" tags="pr"><select lemma="a"/></match>
     <or>
       <match lemma="internet" tags="n.*"/>
@@ -1629,6 +1657,8 @@
       <match lemma="WhatsApp" tags="np.*"/>
       <match lemma="Telegram" tags="np.*"/>
       <match lemma="Viber" tags="np.*"/>
+      <match lemma="YouTube" tags="np.*"/>
+      <match lemma="IRC" tags="n.acr.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -1750,6 +1780,21 @@
   </rule>
 
 <!-- **************** V **************** -->
+
+  <!-- paraître >> aparèixer, semblar -->
+  <rule weight="0.8">
+    <match lemma="paraître" tags="vblex.*"><select lemma="aparèixer"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="paraître" tags="vblex.*"><select lemma="semblar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="*.inf"/>
+  </rule>
 
   <!-- relever >> aixecar, correspondre, assenyalar -->
   <macro name="verb_nopron_pron" p1="relever" p2="aixecar" p3="aixecar"/>
@@ -3656,8 +3701,10 @@
       <match lemma="consultation" tags="n.*"/>
       <match lemma="discussion" tags="n.*"/>
       <match lemma="dialogue" tags="n.*"/>
+      <match lemma="conversation" tags="n.*"/>
       <match lemma="action" tags="n.*"/>
       <match lemma="enquête" tags="n.*"/>
+      <match lemma="démostration" tags="n.*"/>
     </or>
   </rule>
   <rule weight="0.9">
@@ -4251,6 +4298,77 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- partie >> part, partida -->
+  <rule weight="0.8">
+    <match lemma="partie" tags="n.*"><select lemma="part"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="partie" tags="n.*"><select lemma="partida"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="carte" tags="n.*"/>
+      <match lemma="poker" tags="n.*"/>
+      <match lemma="belote" tags="n.*"/>
+      <match lemma="échecs" tags="n.*"/>
+      <match lemma="dame" tags="n.*"/>
+      <match lemma="go" tags="n.*"/>
+      <match lemma="dé" tags="n.*"/>
+      <match lemma="pétanque" tags="n.*"/>
+      <match lemma="boule" tags="n.*"/>
+      <match lemma="jeu" tags="n.*"/>
+      <match lemma="ping-pong" tags="n.*"/>
+      <match lemma="chasse" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- acte >> acte, partida -->
+  <rule weight="0.8">
+    <match lemma="acte" tags="n.*"><select lemma="acte"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="acte" tags="n.*"><select lemma="partida"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="naissance" tags="n.*"/>
+      <match lemma="mariage" tags="n.*"/>
+      <match lemma="decès" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- sein >> pit, si -->
+  <rule weight="0.8">
+    <match lemma="sein" tags="n.*"><select lemma="pit"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="à" tags="pr"/>
+      <match lemma="dans" tags="pr"/>
+      <match lemma="en" tags="pr"/>
+    </or>
+    <or>
+      <match tags="det.def.*"/>
+      <match tags="det.pos.*"/>
+    </or>
+    <match lemma="sein" tags="n.m.sg"><select lemma="si"/></match>
+  </rule>
+
+  <!-- film >> pel·lícula, film -->
+  <rule weight="0.8">
+    <match lemma="film" tags="n.*"><select lemma="pel·lícula"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="Film" tags="n.*"><select lemma="film"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="festival" tags="n.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="film" tags="n.*"><select lemma="film"/></match>
+  </rule>
 
   <!-- milliard >> miler# de milions, mil milions -->
   <rule weight="0.8">
@@ -7136,6 +7254,7 @@
     </repeat>
     <or>
       <match lemma="criminelle" tags="adj.*"/>
+      <match lemma="judiciaire" tags="adj.*"/>
       <match lemma="ouvert" tags="adj.*"/>
       <match lemma="ouvert" tags="vblex.pp.*"/>
       <match lemma="soutenu" tags="adj.*"/>
@@ -7681,6 +7800,10 @@
     <match tags="det.*"/>
     <match lemma="question" tags="n.*"><select lemma="pregunta"/></match>
   </rule>
+  <rule weight="1.0">
+    <match tags="det.pos.*"/>
+    <match lemma="question" tags="n.*"><select lemma="pregunta"/></match>
+  </rule>
 
   <!-- sursis >> pròrroga, suspensió# de condemna -->
   <rule weight="0.8">
@@ -8038,7 +8161,7 @@
     <match lemma="argent" tags="n.*"><select lemma="plata"/></match>
   </rule>
 
-  <!-- chambre >> habitació, cambra, tribunal -->
+  <!-- chambre >> habitació, cambra, tribunal, sala -->
   <rule weight="0.8">
     <match lemma="chambre" tags="n.*"><select lemma="habitació"/></match>
   </rule>
@@ -8056,6 +8179,10 @@
   <rule weight="1.0">
     <match lemma="chambre" tags="n.*"><select lemma="tribunal"/></match>
     <match lemma="correctionnel" tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="chambre" tags="n.*"><select lemma="sala"/></match>
+    <match lemma="civil" tags="adj.*"/>
   </rule>
 
   <!-- moelle >> medu·la, moll -->
@@ -8246,6 +8373,19 @@
     </or>
   </rule>
 
+  <!-- site >> lloc, web -->
+  <rule weight="0.8">
+    <match lemma="site" tags="n.*"><select lemma="lloc"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="site" tags="n.*"><select lemma="web"/></match>
+    <or>
+      <match tags="url"/>
+      <match lemma="www"/>
+      <match tags=""/>
+    </or>
+  </rule>
+`
   <!-- internet >> internet, web -->
 <!--
   <rule weight="0.8">
@@ -8354,7 +8494,7 @@
     <match lemma="garçon" tags="n.*"><select lemma="noi" tags="n.*"/></match>
   </rule>
 
-  <!-- enfant >> nen, fill -->
+  <!-- enfant >> nen, fill, infant -->
   <rule weight="0.8">
     <match lemma="enfant" tags="n.*"><select lemma="xic" tags="n.*"/></match>
   </rule>
@@ -8398,6 +8538,10 @@
       <seq n="personne"/>
       <seq n="parent"/>
     </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="enfant" tags="n.*"><select lemma="infant" tags="n.*"/></match>
+    <match lemma="terrible" tags="adj.*"/>
   </rule>
 
   <rule weight="0.8" v="val">
@@ -8626,6 +8770,11 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- incapable >> incapaç, inhabil -->
+  <rule weight="0.8">
+    <match lemma="incapable" tags="adj.*"><select lemma="incapaç"/></match>
+  </rule>
 
   <!-- éminent >> eminent, prominent -->
   <rule weight="0.8">
