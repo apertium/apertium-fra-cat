@@ -259,6 +259,9 @@
     <def-cat n="haverinf">
       <cat-item tags="vbhaver.inf"/>
     </def-cat>
+    <def-cat n="estarinf">
+      <cat-item lemma="estar" tags="vblex.inf"/>
+    </def-cat>
     <def-cat n="ger">
       <cat-item tags="vblex.ger"/>
       <cat-item tags="vbser.ger"/>
@@ -292,6 +295,9 @@
     </def-cat>
     <def-cat n="anarppmsg">
       <cat-item lemma="anar" tags="vblex.pp.m.sg"/>
+    </def-cat>
+    <def-cat n="estarpp">
+      <cat-item lemma="estar" tags="vblex.pp.*"/>
     </def-cat>
     <def-cat n="ppf">
       <cat-item tags="vblex.pp.f.sg"/>
@@ -14007,7 +14013,7 @@ is not applicable because gender and number can not be taken from previous rules
 </rule>
 
 
-<rule comment="regla: haver pp: han passat camions > sont passés des camions">
+<rule comment="regla: haver pp nom: han passat camions > sont passés des camions">
    <pattern>
      <pattern-item n="haver"/>
      <pattern-item n="pp"/>
@@ -14250,6 +14256,174 @@ is not applicable because gender and number can not be taken from previous rules
          <clip pos="5" side="tl" part="lemh"/>
          <clip pos="5" side="tl" part="tags"/>
          <clip pos="5" side="tl" part="lemq"/>
+       </lu>
+     </out>
+   </action>
+</rule>
+
+
+<rule comment="regla: haver estarpp ger: han estat cantant > ont été en train de chanter">
+   <pattern>
+     <pattern-item n="haver"/>
+     <pattern-item n="estarpp"/>
+     <pattern-item n="ger"/>
+   </pattern>
+   <action>
+     <out>
+       <lu>
+         <clip pos="1" side="tl" part="lem"/>
+         <clip pos="1" side="tl" part="tags"/>
+         <clip pos="1" side="tl" part="lemq"/>
+       </lu>
+       <b pos="1"/>
+       <lu>
+         <clip pos="2" side="tl" part="lemh"/>
+         <clip pos="2" side="tl" part="tags"/>
+         <clip pos="2" side="tl" part="lemq"/>
+       </lu>
+       <b/>
+       <lu>
+         <lit v="en train de"/>
+         <lit-tag v="pr"/>
+       </lu>
+       <b pos="2"/>
+       <lu>
+         <clip pos="3" side="tl" part="lemh"/>
+         <clip pos="3" side="tl" part="a_verb"/>
+         <lit-tag v="inf"/>
+         <clip pos="3" side="tl" part="lemq"/>
+       </lu>
+     </out>
+   </action>
+</rule>
+
+
+<rule comment="regla: no haver estarpp ger: no han estat cantant > n'ont pas été en train de chanter">
+   <pattern>
+     <pattern-item n="noadv"/>
+     <pattern-item n="haver"/>
+     <pattern-item n="estarpp"/>
+     <pattern-item n="ger"/>
+   </pattern>
+   <action>
+     <out>
+       <lu>
+         <clip pos="1" side="tl" part="whole"/>
+       </lu>
+       <b pos="1"/>
+       <lu>
+         <clip pos="2" side="tl" part="lem"/>
+         <clip pos="2" side="tl" part="tags"/>
+         <clip pos="2" side="tl" part="lemq"/>
+       </lu>
+       <b/>
+       <lu>
+         <lit v="pas"/>
+         <lit-tag v="adv"/>
+       </lu>
+       <b pos="2"/>
+       <lu>
+         <clip pos="3" side="tl" part="lemh"/>
+         <clip pos="3" side="tl" part="tags"/>
+         <clip pos="3" side="tl" part="lemq"/>
+       </lu>
+       <b/>
+       <lu>
+         <lit v="en train de"/>
+         <lit-tag v="pr"/>
+       </lu>
+       <b pos="3"/>
+       <lu>
+         <clip pos="4" side="tl" part="lemh"/>
+         <clip pos="4" side="tl" part="a_verb"/>
+         <lit-tag v="inf"/>
+         <clip pos="4" side="tl" part="lemq"/>
+       </lu>
+     </out>
+   </action>
+</rule>
+
+
+<rule comment="regla: anarpri estarinf ger: van estar cantant > ont été en train de chanter">
+   <pattern>
+     <pattern-item n="anarpri"/>
+     <pattern-item n="estarinf"/>
+     <pattern-item n="ger"/>
+   </pattern>
+   <action>
+     <out>
+       <lu>
+         <lit v="avoir"/>
+         <lit-tag v="vbhaver"/>
+         <lit-tag v="pri"/>
+         <clip pos="1" side="tl" part="persona"/>
+         <clip pos="1" side="tl" part="nbr"/>
+       </lu>
+       <b pos="1"/>
+       <lu>
+         <clip pos="2" side="tl" part="lemh"/>
+         <clip pos="2" side="tl" part="a_verb"/>
+         <lit-tag v="pp.m.sg"/>
+       </lu>
+       <b/>
+       <lu>
+         <lit v="en train de"/>
+         <lit-tag v="pr"/>
+       </lu>
+       <b pos="2"/>
+       <lu>
+         <clip pos="3" side="tl" part="lemh"/>
+         <clip pos="3" side="tl" part="a_verb"/>
+         <lit-tag v="inf"/>
+         <clip pos="3" side="tl" part="lemq"/>
+       </lu>
+     </out>
+   </action>
+</rule>
+
+
+<rule comment="regla: no anarpri estarinf ger: no van estar cantant > n'ont pas été en train de chanter">
+   <pattern>
+     <pattern-item n="noadv"/>
+     <pattern-item n="anarpri"/>
+     <pattern-item n="estarinf"/>
+     <pattern-item n="ger"/>
+   </pattern>
+   <action>
+     <out>
+       <lu>
+         <clip pos="1" side="tl" part="whole"/>
+       </lu>
+       <b pos="1"/>
+       <lu>
+         <lit v="avoir"/>
+         <lit-tag v="vbhaver"/>
+         <lit-tag v="pri"/>
+         <clip pos="2" side="tl" part="persona"/>
+         <clip pos="2" side="tl" part="nbr"/>
+       </lu>
+       <b/>
+       <lu>
+         <lit v="pas"/>
+         <lit-tag v="adv"/>
+       </lu>
+       <b pos="2"/>
+       <lu>
+         <clip pos="3" side="tl" part="lemh"/>
+         <clip pos="3" side="tl" part="a_verb"/>
+         <lit-tag v="pp.m.sg"/>
+       </lu>
+       <b/>
+       <lu>
+         <lit v="en train de"/>
+         <lit-tag v="pr"/>
+       </lu>
+       <b pos="3"/>
+       <lu>
+         <clip pos="4" side="tl" part="lemh"/>
+         <clip pos="4" side="tl" part="a_verb"/>
+         <lit-tag v="inf"/>
+         <clip pos="4" side="tl" part="lemq"/>
        </lu>
      </out>
    </action>
@@ -20096,7 +20270,7 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
               <lu>
-        <lit v="être"/>
+                <lit v="être"/>
                 <lit-tag v="vbser"/>
                 <clip pos="1" side="tl" part="temps"/>
                 <clip pos="1" side="tl" part="persona"/>
@@ -20105,17 +20279,7 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
               <lu>
-        <lit v="en"/>
-      <lit-tag v="pr"/>
-      </lu>
-      <b/>
-              <lu>
-        <lit v="train"/>
-      <lit-tag v="n.m.sg"/>
-      </lu>
-      <b/>
-      <lu>
-        <lit v="de"/>
+        <lit v="en train de"/>
       <lit-tag v="pr"/>
       </lu>
       <b/>
@@ -20147,17 +20311,7 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
               <lu>
-        <lit v="en"/>
-      <lit-tag v="pr"/>
-      </lu>
-      <b/>
-              <lu>
-        <lit v="train"/>
-      <lit-tag v="n.m.sg"/>
-      </lu>
-      <b/>
-      <lu>
-        <lit v="de"/>
+        <lit v="en train de"/>
       <lit-tag v="pr"/>
       </lu>
       <b/>
@@ -20213,17 +20367,7 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
               <lu>
-        <lit v="en"/>
-      <lit-tag v="pr"/>
-      </lu>
-      <b/>
-              <lu>
-        <lit v="train"/>
-      <lit-tag v="n.m.sg"/>
-      </lu>
-      <b/>
-      <lu>
-        <lit v="de"/>
+        <lit v="en train de"/>
       <lit-tag v="pr"/>
       </lu>
       <b/>
@@ -20261,17 +20405,7 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
               <lu>
-        <lit v="en"/>
-      <lit-tag v="pr"/>
-      </lu>
-      <b/>
-              <lu>
-        <lit v="train"/>
-      <lit-tag v="n.m.sg"/>
-      </lu>
-      <b/>
-      <lu>
-        <lit v="de"/>
+        <lit v="en train de"/>
       <lit-tag v="pr"/>
       </lu>
       <b/>
@@ -20330,17 +20464,7 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
               <lu>
-        <lit v="en"/>
-      <lit-tag v="pr"/>
-      </lu>
-      <b/>
-              <lu>
-        <lit v="train"/>
-      <lit-tag v="n.m.sg"/>
-      </lu>
-      <b/>
-      <lu>
-        <lit v="de"/>
+        <lit v="en train de"/>
       <lit-tag v="pr"/>
       </lu>
               <b/>
@@ -20376,17 +20500,7 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
               <lu>
-        <lit v="en"/>
-      <lit-tag v="pr"/>
-      </lu>
-      <b/>
-              <lu>
-        <lit v="train"/>
-      <lit-tag v="n.m.sg"/>
-      </lu>
-      <b/>
-      <lu>
-        <lit v="de"/>
+        <lit v="en train de"/>
       <lit-tag v="pr"/>
       </lu>
               <b/>
@@ -20461,20 +20575,10 @@ is not applicable because gender and number can not be taken from previous rules
 	      </lu>
 	      <b pos="2"/>
 	      <lu>
-	<lit v="en"/>
+	<lit v="en train de"/>
       <lit-tag v="pr"/>
       </lu>
-      <b/>
-	      <lu>
-	<lit v="train"/>
-      <lit-tag v="n.m.sg"/>
-      </lu>
-      <b/>
-      <lu>
-	<lit v="de"/>
-      <lit-tag v="pr"/>
-      </lu>
-      <b/>
+	      <b/>
 	      <lu>
 		<clip pos="3" side="tl" part="lemh"/>
 		<clip pos="3" side="tl" part="a_verb"/>
@@ -20503,17 +20607,7 @@ is not applicable because gender and number can not be taken from previous rules
 	      </lu>
 	      <b pos="2"/>
 	      <lu>
-	<lit v="en"/>
-      <lit-tag v="pr"/>
-      </lu>
-      <b/>
-	      <lu>
-	<lit v="train"/>
-      <lit-tag v="n.m.sg"/>
-      </lu>
-      <b/>
-      <lu>
-	<lit v="de"/>
+	<lit v="en train de"/>
       <lit-tag v="pr"/>
       </lu>
       <b/>
@@ -20576,17 +20670,7 @@ is not applicable because gender and number can not be taken from previous rules
 	      </lu>
 	      <b pos="2"/>
 	      <lu>
-	<lit v="en"/>
-      <lit-tag v="pr"/>
-      </lu>
-      <b/>
-	      <lu>
-	<lit v="train"/>
-	      <lit-tag v="n.m.sg"/>
-      </lu>
-      <b/>
-      <lu>
-	<lit v="de"/>
+	<lit v="en train de"/>
       <lit-tag v="pr"/>
       </lu>
       <b/>
@@ -20624,17 +20708,7 @@ is not applicable because gender and number can not be taken from previous rules
       </lu>
 	      <b pos="2"/>
 	      <lu>
-	<lit v="en"/>
-      <lit-tag v="pr"/>
-      </lu>
-      <b/>
-	      <lu>
-	<lit v="train"/>
-      <lit-tag v="n.m.sg"/>
-      </lu>
-      <b/>
-      <lu>
-	<lit v="de"/>
+	<lit v="en train de"/>
       <lit-tag v="pr"/>
       </lu>
       <b/>
@@ -20700,17 +20774,7 @@ is not applicable because gender and number can not be taken from previous rules
 	      </lu>
 	      <b pos="2"/>
 	      <lu>
-	<lit v="en"/>
-      <lit-tag v="pr"/>
-      </lu>
-      <b/>
-	      <lu>
-	<lit v="train"/>
-      <lit-tag v="n.m.sg"/>
-      </lu>
-      <b/>
-      <lu>
-	<lit v="de"/>
+	<lit v="en train de"/>
       <lit-tag v="pr"/>
       </lu>
 	      <b/>
@@ -20737,7 +20801,7 @@ is not applicable because gender and number can not be taken from previous rules
 	  <otherwise>
 	    <out>
      <lu>
-	<lit v="être"/>
+		<lit v="être"/>
 		<lit-tag v="vbser"/>
 		<clip pos="2" side="tl" part="temps"/>
 		<clip pos="2" side="tl" part="persona"/>
@@ -20746,17 +20810,7 @@ is not applicable because gender and number can not be taken from previous rules
 	      </lu>
 	      <b pos="2"/>
 	      <lu>
-	<lit v="en"/>
-      <lit-tag v="pr"/>
-      </lu>
-      <b/>
-	      <lu>
-	<lit v="train"/>
-      <lit-tag v="n.m.sg"/>
-      </lu>
-      <b/>
-      <lu>
-	<lit v="de"/>
+	<lit v="en train de"/>
       <lit-tag v="pr"/>
       </lu>
 	      <b/>
