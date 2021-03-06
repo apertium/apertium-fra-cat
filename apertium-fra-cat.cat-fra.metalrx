@@ -5659,6 +5659,24 @@
 
 <!-- **************** N **************** -->
 
+  <!-- tauler >> panneau, échiquier -->
+  <rule weight="0.8">
+    <match lemma="tauler" tags="n.*"><select lemma="échiquier"/></match>
+  </rule>
+
+  <!-- recaiguda >> retombée, rechute -->
+  <rule weight="0.8">
+    <match lemma="recaiguda" tags="n.*"><select lemma="retombée"/></match>
+  </rule>
+
+  <!-- filmoteca >> filmothèque, cinémathèque -->
+  <rule weight="0.8">
+    <match lemma="filmoteca" tags="n.*"><select lemma="filmothèque"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="Filmoteca" tags="n.*"><select lemma="cinémathèque"/></match>
+  </rule>
+
   <!-- xat >> tchat, chat -->
   <rule weight="0.8">
     <match lemma="xat" tags="n.*"><select lemma="tchat"/></match>
@@ -7602,6 +7620,18 @@
       <match lemma="àrbitre" tags="n.*"/>
     </or>
     <match lemma="de" tags="pr"/>
+    <match lemma="partit" tags="n.*"><select lemma="match"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="a" tags="pr"/>
+    <or>
+      <match lemma="un" tags="det.*"/>
+      <match tags="num.*"/>
+      <match tags="num"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
     <match lemma="partit" tags="n.*"><select lemma="match"/></match>
   </rule>
 

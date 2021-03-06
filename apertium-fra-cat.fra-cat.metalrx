@@ -1781,6 +1781,45 @@
 
 <!-- **************** V **************** -->
 
+  <!-- relaxer >> relaxar, alliberar -->
+  <macro name="verb_nopron_pron" p1="relaxer" p2="relaxar" p3="relaxar" />
+  <rule weight="0.9">
+    <match lemma="relaxer" tags="vblex.*"><select lemma="alliberar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <seq n="personne"/>
+      <seq n="parent"/>
+      <seq n="pays_hab"/>
+    </or>
+  </rule>
+  <rule weight="0.9">
+    <match lemma="relaxer" tags="vblex.*"><select lemma="alliberar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <seq n="np.ant.*"/>
+      <seq n="np.cog.*"/>
+    </or>
+  </rule>
+  <rule weight="0.9">
+    <match tags="vbser.*"/>
+    <match lemma="relaxer" tags="vblex.pp.*"><select lemma="alliberar"/></match>
+  </rule>
+
+  <!-- dépecer >> espedaçar, especejar -->
+  <rule weight="0.8">
+    <match lemma="dépecer" tags="vblex.*"><select lemma="espedaçar"/></match>
+  </rule>
+
+  <!-- lacérer >> esquinçar, lacerar -->
+  <rule weight="0.8">
+    <match lemma="lacérer" tags="vblex.*"><select lemma="esquinçar"/></match>
+  </rule>
+
   <!-- paraître >> aparèixer, semblar -->
   <rule weight="0.8">
     <match lemma="paraître" tags="vblex.*"><select lemma="aparèixer"/></match>
@@ -4299,6 +4338,11 @@
 
 <!-- **************** N **************** -->
 
+  <!-- cuve >> tina, cubeta -->
+  <rule weight="0.8">
+    <match lemma="cuve" tags="n.*"><select lemma="tina"/></match>
+  </rule>
+
   <!-- partie >> part, partida -->
   <rule weight="0.8">
     <match lemma="partie" tags="n.*"><select lemma="part"/></match>
@@ -6617,6 +6661,11 @@
     </or>
   </rule>
 
+  <!-- gratin >> gratinat, rasclum, flor i nata -->
+  <rule weight="0.8">
+    <match lemma="gratin" tags="n.*"><select lemma="gratinat"/></match>
+  </rule>
+
   <!-- partition >> partició, partitura -->
   <rule weight="0.8">
     <match lemma="partition" tags="n.*"><select lemma="partició"/></match>
@@ -8770,6 +8819,11 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- laineux >> llanut, llanós -->
+  <rule weight="0.8">
+    <match lemma="laineux" tags="adj.*"><select lemma="llanut"/></match>
+  </rule>
 
   <!-- incapable >> incapaç, inhabil -->
   <rule weight="0.8">
