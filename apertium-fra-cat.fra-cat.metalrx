@@ -1169,6 +1169,8 @@
     <match lemma="dans" tags="pr"><select lemma="a"/></match>
     <match lemma="le" tags="det.def.*"/>
     <or>
+      <match tags="np.top.*"/>
+<!--
       <match tags="np.top.f.sg"/>
       <match lemma="Afghanistan" tags="np.top.m.sg"/>
       <match lemma="Angola" tags="np.top.m.sg"/>
@@ -1194,6 +1196,7 @@
       <match lemma="Utah" tags="np.top.m.sg"/>
       <match lemma="Alberta" tags="np.top.m.sg"/>
       <match lemma="Ontario" tags="np.top.m.sg"/>
+-->
       <match lemma="est"/>
       <match lemma="ouest"/>
       <match lemma="orient"/>
@@ -1377,15 +1380,19 @@
     <match lemma="pour" tags="pr"><select lemma="per"/></match>
     <match tags="n.*"/>
   </rule>
--->
+	-->
   <rule weight="1.0">
     <match lemma="pour" tags="pr"><select lemma="per"/></match>
-    <repeat from="0" upto="1">
-      <match tags="det.*"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match lemma="«"/>
+      </or>
     </repeat>
     <or>
       <match lemma="assassinat" tags="n.*"/>
       <match lemma="blanchiment" tags="n.*"/>
+      <match lemma="complicité" tags="n.*"/>
       <match lemma="corruption" tags="n.*"/>
       <match lemma="désobéissance" tags="n.*"/>
       <match lemma="détournement# de fonds" tags="n.*"/>
@@ -1568,6 +1575,10 @@
       <match lemma="Jordanie"/>
       <match lemma="Israel"/>
       <match lemma="Palestine"/>
+      <match lemma="Myanmar"/>
+      <match lemma="Népal"/>
+      <match lemma="Pakistan"/>
+      <match lemma="Bangladesh"/>
       <match lemma="Afrique"/>
       <match lemma="Amérique"/>
       <match lemma="Amérique Central"/>
@@ -4295,6 +4306,9 @@
   <!-- plafonner >> atènyer# un màxim, fixar# un màxim -->
   <macro name="verb_intrans_trans" p1="plafonner" p2="atènyer# un màxim" p3="fixar# un màxim"/>
 
+  <!-- souffrir >> sufrir, patir -->
+  <macro name="verb_prep" p1="souffrir" p2="sufrir" p3="de" p4="patir" />
+
   <!-- découler >> gotejar, resultar -->
   <macro name="verb_prep" p1="découler" p2="gotejar" p3="de" p4="resultar" />
 
@@ -4337,6 +4351,19 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- pige >> unitat, any -->
+  <rule weight="0.8">
+    <match lemma="pige" tags="n.*"><select lemma="unitat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="un" tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <match lemma="pige" tags="n.*"><select lemma="any"/></match>
+  </rule>
 
   <!-- cuve >> tina, cubeta -->
   <rule weight="0.8">
@@ -6946,6 +6973,15 @@
     <or>
       <match tags="pr"/>
       <match tags="rel.*"/>
+      <match tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.4">
+    <match tags="det.def.*"/>
+    <match lemma="campagne" tags="n.f.sg"><select lemma="campanya"/></match>
+    <or>
+      <match lemma="voisin" tags="adj.*"/>
+      <seq n="pays_adj"/>
     </or>
   </rule>
 

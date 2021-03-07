@@ -577,6 +577,10 @@
       <match lemma="Irak"/>
       <match lemma="Iraq"/>
       <match lemma="Iran"/>
+      <match lemma="Myanmar"/>
+      <match lemma="Nepal"/>
+      <match lemma="Pakistan"/>
+      <match lemma="Bangladesh"/>
       <match lemma="Aràbia"/>
       <match lemma="Síria"/>
       <match lemma="Jordània"/>
@@ -2710,8 +2714,11 @@
     <match tags="*.inf"/>
   </rule>
   <rule weight="1.0">
-    <match lemma="felicitar" tags="vblex.*"/>
-    <repeat from="0" upto="1">
+    <or>
+      <match lemma="felicitar" tags="vblex.*"/>
+      <match lemma="vetllar" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match lemma="per" tags="pr"><select lemma="pour"/></match>
@@ -2723,7 +2730,7 @@
       <match lemma="allò" tags="prn.*"/>
     </or>
   </rule>
-  <rule weight="1.0">
+  <rule weight="1.2">
     <match lemma="caracteritzar" tags="vblex.*"/>
     <repeat from="0" upto="1">
       <match tags="adv"/>
@@ -2789,7 +2796,7 @@
   <rule weight="1.2">
     <match lemma="médaille" tags="n.*"/>
     <repeat from="0" upto="1">
-      <match tags="adj.f.*"/>
+      <match tags="adj.*"/>
     </repeat>
     <match lemma="de" tags="pr"><select lemma="de"/></match>
     <or>
@@ -2849,6 +2856,11 @@
       <match lemma="península" tags="n.*"/>
       <match lemma="oceà" tags="n.*"/>
       <match lemma="mar" tags="n.*"/>
+<!--
+      <match lemma="golf" tags="n.*"/>
+      <match lemma="badia" tags="n.*"/>
+      <match lemma="cala" tags="n.*"/>
+-->
       <match lemma="muntanya" tags="n.*"/>
       <match lemma="bosc" tags="n.*"/>
       <match lemma="platja" tags="n.*"/>
@@ -2858,27 +2870,44 @@
       <match lemma="Mediterrània" tags="np.*"/>
       <match lemma="Adriàtic" tags="np.*"/>
       <match lemma="Egeu" tags="np.*"/>
+      <match lemma="Egeu" tags="np.*"/>
       <match lemma="Tirrè" tags="np.*"/>
       <match lemma="Cantàbric" tags="np.*"/>
       <match lemma="mar Mediterrani" tags="np.*"/>
       <match lemma="mar Blanc" tags="np.*"/>
       <match lemma="mar Negre" tags="np.*"/>
+      <match lemma="mar Negra" tags="np.*"/>
       <match lemma="mar Roig" tags="np.*"/>
       <match lemma="mar Bàltic" tags="np.*"/>
+      <match lemma="mar Bàltica" tags="np.*"/>
       <match lemma="mar Caspi" tags="np.*"/>
+      <match lemma="mar Càspia" tags="np.*"/>
+      <match lemma="mar d'Aral" tags="np.*"/>
+      <match lemma="mar d'Azov" tags="np.*"/>
+      <match lemma="mar de Màrmara" tags="np.*"/>
+      <match lemma="mar de Beaufort" tags="np.*"/>
+      <match lemma="mar de Beaufort" tags="np.*"/>
+      <match lemma="mar de Bohai" tags="np.*"/>
+      <match lemma="mar del Nord" tags="np.*"/>
       <match lemma="mar Mort" tags="np.*"/>
+      <match lemma="mar Morta" tags="np.*"/>
       <match lemma="mar Egeu" tags="np.*"/>
       <match lemma="mar Egea" tags="np.*"/>
       <match lemma="mar Adriàtic" tags="np.*"/>
       <match lemma="mar Adriàtica" tags="np.*"/>
       <match lemma="mar Tirrè" tags="np.*"/>
       <match lemma="mar Tirrena" tags="np.*"/>
+      <match lemma="mar Jònic" tags="np.*"/>
+      <match lemma="mar Jònica" tags="np.*"/>
       <match lemma="mar Cantàbric" tags="np.*"/>
       <match lemma="mar Cantàbrica" tags="np.*"/>
+      <match lemma="mar Carib" tags="np.*"/>
       <match lemma="oceà Atlàntic" tags="np.*"/>
       <match lemma="oceà Pacífic" tags="np.*"/>
       <match lemma="oceà Índic" tags="np.*"/>
+      <match lemma="oceà Àrtic" tags="np.*"/>
       <match lemma="oceà Glacial Àrtic" tags="np.*"/>
+      <match lemma="oceà Antàrtic" tags="np.*"/>
     </or>
   </rule>
   <rule weight="1.2">
