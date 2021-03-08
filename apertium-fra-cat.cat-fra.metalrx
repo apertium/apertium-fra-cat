@@ -3166,6 +3166,72 @@
     <match tags="n.*"/>
   </rule>
 
+  <!-- més >> plus, plus de -->
+  <rule weight="0.8">
+    <match lemma="més" tags="adv"><select lemma="plus"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="més" tags="adv"><select lemma="plus de"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match tags="det.*"/>
+    <match lemma="més" tags="adv"><select lemma="plus"/></match>
+    <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.2"> <!-- el 'de' s'afegeix en la transferència -->
+    <match lemma="més" tags="adv"><select lemma="plus"/></match>
+    <match tags="n.*"/>
+    <match lemma="que"/>
+  </rule>
+
+  <!-- menys >> moins, moins de -->
+  <rule weight="0.8">
+    <match lemma="menys" tags="adv"><select lemma="moins"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="menys" tags="adv"><select lemma="moins de"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match tags="det.*"/>
+    <match lemma="menys" tags="adv"><select lemma="moins"/></match>
+    <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.2"> <!-- el 'de' s'afegeix en la transferència -->
+    <match lemma="menys" tags="adv"><select lemma="moins"/></match>
+    <match tags="n.*"/>
+    <match lemma="que"/>
+  </rule>
+
+  <!-- manco >> moins, moins de -->
+  <rule weight="0.8">
+    <match lemma="manco" tags="adv"><select lemma="moins"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="manco" tags="adv"><select lemma="moins de"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match tags="det.*"/>
+    <match lemma="manco" tags="adv"><select lemma="moins"/></match>
+    <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.2"> <!-- el 'de' s'afegeix en la transferència -->
+    <match lemma="manco" tags="adv"><select lemma="moins"/></match>
+    <match tags="n.*"/>
+    <match lemma="que"/>
+  </rule>
+
   <!-- no >> ne, non, pas -->
   <rule weight="0.8">
     <match lemma="no" tags="adv"><select lemma="ne"/></match>
