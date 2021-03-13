@@ -358,8 +358,9 @@
       <cat-item tags="vbser.ifi.*"/>
       <cat-item tags="vbmod.ifi.*"/>
     </def-cat>
-    <def-cat n="aller">
+    <def-cat n="aller_venir">
       <cat-item lemma="aller" tags="vblex.*"/>
+      <cat-item lemma="venir" tags="vblex.*"/>
     </def-cat>
     <def-cat n="aller_imp">
       <cat-item lemma="aller" tags="vblex.imp.*"/>
@@ -1398,6 +1399,8 @@
       <list-item v="wallon"/>
       <list-item v="flamand"/>
       <list-item v="hollandais"/>
+      <list-item v="brabançon"/>
+      <list-item v="limbourgeois"/>
       <list-item v="frison"/>
       <list-item v="allemand"/>
       <list-item v="bavarois"/>
@@ -1422,6 +1425,8 @@
       <list-item v="bachkir"/>
       <list-item v="oudmourte"/>
       <list-item v="mordve"/>
+      <list-item v="khanty"/>
+      <list-item v="mansi"/>
       <list-item v="kalmouk"/>
       <list-item v="yakoute"/>
       <list-item v="iakoute"/>
@@ -1499,9 +1504,16 @@
       <list-item v="ouïghour"/>
       <list-item v="cachemiri"/>
       <list-item v="cachemirien"/>
+      <list-item v="baloutche"/>
+      <list-item v="sindi"/>
+      <list-item v="sindhi"/>
+      <list-item v="pendjabi"/>
+      <list-item v="panjabi"/>
+      <list-item v="punjabi"/>
       <list-item v="arabe"/>
       <list-item v="sarrasin"/>
       <list-item v="hébreu"/>
+      <list-item v="cananéen"/>
       <list-item v="nabatéen"/>
       <list-item v="amazigh"/>
       <list-item v="amazighe"/>
@@ -1591,7 +1603,6 @@
       <list-item v="bactrien"/>
       <list-item v="perse"/>
       <list-item v="persan"/>
-      <list-item v="baloutche"/>
       <list-item v="sumérien"/>
       <list-item v="akkadien"/>
       <list-item v="nabatéen"/>
@@ -7483,7 +7494,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     <rule comment="REGLA: aller +  INF (aller manger : anar a menjar)">
 <!-- difícil de dir si és "anar a" o futur, però segur que cal canviar l'estructura -->
       <pattern>
-        <pattern-item n="aller"/>
+        <pattern-item n="aller_venir"/>
         <pattern-item n="inf"/>
      </pattern>	
       <action>
@@ -7512,7 +7523,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     <rule comment="REGLA: aller + PRO+ INF (aller en manger : anar a menjar-ne)">
 <!-- difícil de dir si és "anar a" o futur, però segur que cal canviar l'estructura -->
       <pattern>
-        <pattern-item n="aller"/>
+        <pattern-item n="aller_venir"/>
         <pattern-item n="prnproref"/>
         <pattern-item n="inf"/>
       </pattern>	
@@ -7549,7 +7560,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     <rule comment="REGLA: aller + ADV * INF (aller bien manger : anar a menjar bé)">
 <!-- difícil de dir si és "anar a" o futur, però segur que cal canviar l'estructura -->
       <pattern>
-        <pattern-item n="aller"/>
+        <pattern-item n="aller_venir"/>
         <pattern-item n="adv"/>
         <pattern-item n="inf"/>
      </pattern>	
@@ -7586,7 +7597,7 @@ is not applicable because gender and number cannot be taken from previous rules 
 <!-- difícil de dir si és "anar a" o futur, però segur que cal canviar l'estructura -->
       <pattern>
         <pattern-item n="on"/>
-        <pattern-item n="aller"/>
+        <pattern-item n="aller_venir"/>
         <pattern-item n="inf"/>
      </pattern>	
       <action>
@@ -7620,7 +7631,7 @@ is not applicable because gender and number cannot be taken from previous rules 
 <!-- difícil de dir si és "anar a" o futur, però segur que cal canviar l'estructura -->
       <pattern>
         <pattern-item n="on"/>
-        <pattern-item n="aller"/>
+        <pattern-item n="aller_venir"/>
         <pattern-item n="prnproref"/>
         <pattern-item n="inf"/>
       </pattern>	
@@ -7662,7 +7673,7 @@ is not applicable because gender and number cannot be taken from previous rules 
 <!-- difícil de dir si és "anar a" o futur, però segur que cal canviar l'estructura -->
       <pattern>
         <pattern-item n="on"/>
-        <pattern-item n="aller"/>
+        <pattern-item n="aller_venir"/>
         <pattern-item n="adv"/>
         <pattern-item n="inf"/>
      </pattern>	
@@ -7702,7 +7713,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     <rule comment="REGLA: aller + prnsubj * INF (vont-ils manger : van a menjar)">
 <!-- difícil de dir si és "anar a" o futur, però segur que cal canviar l'estructura -->
       <pattern>
-        <pattern-item n="aller"/>
+        <pattern-item n="aller_venir"/>
         <pattern-item n="prnsubj"/>
         <pattern-item n="inf"/>
      </pattern>	
