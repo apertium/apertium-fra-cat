@@ -2730,6 +2730,20 @@
       <match lemma="allò" tags="prn.*"/>
     </or>
   </rule>
+  <rule weight="1.0">
+    <match lemma="per" tags="pr"><select lemma="pour"/></match>
+    <or>
+      <match lemma="Nadal" tags="n.*"/>
+      <match lemma="Nadal" tags="np.*"/>
+      <match lemma="pasqua" tags="n.*"/>
+      <match lemma="Pasqua" tags="np.*"/>
+      <match lemma="Pasqua florida" tags="n.*"/>
+      <match lemma="Pasqua granada" tags="n.*"/>
+      <match lemma="setmana santa" tags="n.*"/>
+      <match lemma="carnestoltes" tags="n.*"/>
+      <match lemma="Carnestoltes" tags="np.*"/>
+    </or>
+  </rule>
   <rule weight="1.2">
     <match lemma="caracteritzar" tags="vblex.*"/>
     <repeat from="0" upto="1">
@@ -3274,6 +3288,73 @@
   </rule>
 
 <!-- **************** V **************** -->
+
+  <!-- picar >> taper, hacher, piquer, sonner -->
+  <rule weight="0.8">
+    <match lemma="picar" tags="vblex.*"><select lemma="taper"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="picar" tags="vblex.*"><select lemma="hacher"/></match>
+    <repeat from="0" upto="2">
+      <or>
+      <match tags="det.*"/>
+      <match tags="adj.*"/>
+      <match tags="adv"/>
+      </or>
+    </repeat>
+    <match lemma="carn" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="carn" tags="n.*"/>
+    <match lemma="picar" tags="vblex.pp.*"><select lemma="hacher"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="mosquit" tags="n.*"/>
+      <match lemma="abella" tags="n.*"/>
+      <match lemma="vespa" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="picar" tags="vblex.*"><select lemma="hacher"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.*"/>
+    <match lemma="picar" tags="vblex.*"><select lemma="piquer"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="picar" tags="vblex.*"><select lemma="piquer"/></match>
+    <match tags="prn.enc.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="picar" tags="vblex.*"><select lemma="piquer"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="mosquit" tags="n.*"/>
+      <match lemma="abella" tags="n.*"/>
+      <match lemma="vespa" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="picar" tags="vblex.*"><select lemma="sonner"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="porta" tags="n.*"/>
+      <match lemma="timbre" tags="n.*"/>
+      <match lemma="campana" tags="n.*"/>
+      <match lemma="campaneta" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- puntejar >> pointer, poindre -->
+  <rule weight="0.8">
+    <match lemma="puntejar" tags="vblex.*"><select lemma="pointer"/></match>
+  </rule>
 
   <!-- observar >> observer, remarquer -->
   <rule weight="0.8">
@@ -5753,6 +5834,20 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- paixtu >> Pachtoune, pachto -->
+  <rule weight="0.8">
+    <match lemma="paixtu" tags="n.*"><select lemma="Pachtoune"/></match>
+  </rule>
+  <rule weight="1.0">
+<!--
+    <or>
+      <match tags="det.def.m.sg"/>
+      <match tags="det.pos.m.sg"/>
+    </or>
+-->
+    <match lemma="paixtu" tags="n.*.sg"><select lemma="pachto"/></match>
+  </rule>
 
   <!-- tauler >> panneau, échiquier -->
   <rule weight="0.8">
@@ -9051,20 +9146,33 @@
      <match lemma="pas de Calais" tags="np.*"><select lemma="pas de Calais"/></match>
   </rule>
 
+  <!-- Mèxic > Mexique, Mexico -->
+  <rule weight="0.6">
+     <match lemma="Mèxic" tags="np.*"><select lemma="Mexique"/></match>
+  </rule>
+  <rule weight="1.0">
+     <match lemma="catedral" tags="n.f.sg"/>
+     <match lemma="de" tags="pr"/>
+     <match lemma="Mèxic" tags="np.*"><select lemma="Mexico"/></match>
+  </rule>
+
   <macro name="ant_antcog" p1="August" p2="Auguste" />
   <macro name="ant_antcog" p1="Cèsar" p2="César" />
   <macro name="ant_antcog" p1="Eliseu" p2="Élisée" />
+  <macro name="ant_antcog" p1="Ezequiel" p2="Ézéchiel" />
   <macro name="ant_antcog" p1="Hèctor" p2="Hector" />
   <macro name="ant_antcog" p1="Horaci" p2="Horace" />
   <macro name="ant_antcog" p1="Jesús" p2="Jésus" />
   <macro name="ant_antcog" p1="Jofré" p2="Geoffroy" />
   <macro name="ant_antcog" p1="Miquel Àngel" p2="Michel-Ange" />
   <macro name="ant_antcog" p1="Octavi" p2="Octave" />
+  <macro name="ant_antcog" p1="Salomó" p2="Salomon" />
   <macro name="ant_antcog" p1="Virgili" p2="Virgile" />
 
   <macro name="ant_antcog" p1="Maria Antonieta" p2="Marie-Antoinette" />
   <macro name="ant_antcog" p1="Maria Cristina" p2="Marie-Cristine" />
   <macro name="ant_antcog" p1="Roxana" p2="Roxanne" />
+  <macro name="ant_antcog" p1="Rut" p2="Ruth" />
 
   <rule weight="1.0">
      <or><match tags="np.cog.*"/><match lemma="Rovira"/></or>
