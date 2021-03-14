@@ -7492,7 +7492,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: aller +  INF (aller manger : anar a menjar)">
+    <rule comment="REGLA: aller + INF (aller manger : anar a menjar)">
 <!-- difícil de dir si és "anar a" o futur, però segur que cal canviar l'estructura -->
       <pattern>
         <pattern-item n="aller_venir"/>
@@ -7521,7 +7521,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: aller + PRO+ INF (aller en manger : anar a menjar-ne)">
+    <rule comment="REGLA: aller + PRO + INF (aller en manger : anar a menjar-ne)">
 <!-- difícil de dir si és "anar a" o futur, però segur que cal canviar l'estructura -->
       <pattern>
         <pattern-item n="aller_venir"/>
@@ -7558,7 +7558,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: aller + ADV * INF (aller bien manger : anar a menjar bé)">
+    <rule comment="REGLA: aller + ADV + INF (aller bien manger : anar a menjar bé)">
 <!-- difícil de dir si és "anar a" o futur, però segur que cal canviar l'estructura -->
       <pattern>
         <pattern-item n="aller_venir"/>
@@ -12291,7 +12291,6 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-
     <rule comment="REGLA: On VERB (on arrive: s'arriba)">
       <pattern>
         <pattern-item n="on"/>
@@ -12363,6 +12362,208 @@ is not applicable because gender and number cannot be taken from previous rules 
             </out>
 	  </otherwise>
         </choose>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: PRN + aller + INF (il va manger : va a menjar)">
+<!-- difícil de dir si és "anar a" o futur, però segur que cal canviar l'estructura -->
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="aller_venir"/>
+        <pattern-item n="inf"/>
+     </pattern>	
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_set_pron">
+          <with-param pos="2"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <choose>
+	  <when>
+	    <test>
+	      <equal><var n="pronom"/><lit v=""/></equal>
+	    </test>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="whole"/>
+                </get-case-from>
+              </lu>
+            </out>
+	  </when>
+	  <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+	          <var n="pronom"/>
+                </get-case-from>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+            </out>
+	  </otherwise>
+        </choose>
+        <out>
+          <b/>
+          <lu>
+            <lit v="a"/>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: PRN + aller + PRO + INF (il va en manger : va a menjar-ne)">
+<!-- difícil de dir si és "anar a" o futur, però segur que cal canviar l'estructura -->
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="aller_venir"/>
+        <pattern-item n="prnpro"/>
+        <pattern-item n="inf"/>
+      </pattern>	
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_set_pron">
+          <with-param pos="2"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <choose>
+	  <when>
+	    <test>
+	      <equal><var n="pronom"/><lit v=""/></equal>
+	    </test>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="whole"/>
+                </get-case-from>
+              </lu>
+            </out>
+	  </when>
+	  <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+	          <var n="pronom"/>
+                </get-case-from>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+            </out>
+	  </otherwise>
+        </choose>
+        <out>
+	  <b pos="2"/>
+          <lu>
+            <lit v="a"/>
+            <lit-tag v="pr"/>
+          </lu>
+	  <b pos="3"/>
+          <mlu>
+	    <lu>
+	      <clip pos="4" side="tl" part="lemh"/>
+	      <clip pos="4" side="tl" part="tags"/>
+            </lu>
+            <lu>
+              <clip pos="3" side="tl" part="lem"/>
+              <lit-tag v="prn.enc"/>
+              <clip pos="3" side="tl" part="tipoenc_pro"/>
+              <clip pos="4" side="tl" part="lemq"/>
+            </lu>
+          </mlu>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: PRN + aller + ADV + INF (il va bien manger : va a menjar bé)">
+<!-- difícil de dir si és "anar a" o futur, però segur que cal canviar l'estructura -->
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="aller_venir"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="inf"/>
+     </pattern>	
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_set_pron">
+          <with-param pos="2"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <choose>
+	  <when>
+	    <test>
+	      <equal><var n="pronom"/><lit v=""/></equal>
+	    </test>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="whole"/>
+                </get-case-from>
+              </lu>
+            </out>
+	  </when>
+	  <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+	          <var n="pronom"/>
+                </get-case-from>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+            </out>
+	  </otherwise>
+        </choose>
+        <out>
+          <b/>
+          <lu>
+            <lit v="a"/>
+            <lit-tag v="pr"/>
+          </lu>
+	  <b pos="2"/>
+	  <lu>
+	    <clip pos="4" side="tl" part="lemh"/>
+	    <clip pos="4" side="tl" part="tags"/>
+	    <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+	  <b pos="3"/>
+	  <lu>
+	    <clip pos="3" side="tl" part="lemh"/>
+	    <clip pos="3" side="tl" part="tags"/>
+	    <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
       </action>
     </rule>
 
