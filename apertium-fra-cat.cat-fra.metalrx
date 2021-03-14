@@ -3296,6 +3296,11 @@
 
 <!-- **************** V **************** -->
 
+  <!-- segellar >> sceller, cacheter -->
+  <rule weight="0.8">
+    <match lemma="segellar" tags="vblex.*"><select lemma="sceller"/></match>
+  </rule>
+
   <!-- picar >> taper, hacher, piquer, sonner -->
   <rule weight="0.8">
     <match lemma="picar" tags="vblex.*"><select lemma="taper"/></match>

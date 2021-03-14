@@ -1975,9 +1975,29 @@
     <match lemma="par" tags="pr"/>
   </rule>
 
-  <!-- arrêter >> aturar, arrestar -->
-  <rule weight="0.8">
-    <match lemma="arrêter" tags="vblex.*"><select lemma="aturar"/></match>
+  <!-- arrêter >> aturar, detenir, arrestar -->
+  <macro name="verb_nopron_pron" p1="arrêter" p2="aturar" p3="aturar"/>
+  <rule weight="0.9">
+    <match lemma="arrêter" tags="vblex.*"><select lemma="detenir"/></match>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="police" tags="n.*"/>
+      <match lemma="commissariat" tags="n.*"/>
+      <match lemma="fourgon" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="0.9">
+    <or>
+      <match lemma="police" tags="n.*"/>
+      <match lemma="commissariat" tags="n.*"/>
+      <match lemma="fourgon" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="arrêter" tags="vblex.*"><select lemma="detenir"/></match>
   </rule>
 
   <!-- fuir >> fugir, fugir# de, defugir -->
@@ -9624,6 +9644,11 @@
 
 <!-- **************** VBLEX **************** -->
 
+  <!-- sceller >> segellar, precintar -->
+  <rule weight="0.8">
+    <match lemma="sceller" tags="vblex.*"><select lemma="segellar"/></match>
+  </rule>
+
   <!-- hanter >> turmentar, visitar, rondar, freqüentar -->
   <rule weight="0.8">
     <match lemma="hanter" tags="vblex.*"><select lemma="turmentar"/></match>
@@ -9885,6 +9910,8 @@
       <match lemma="marier" tags="vblex.pp.*"/>
       <match lemma="mort" tags="adj.*"/>
       <match lemma="mourir" tags="vblex.pp.*"/>
+      <match lemma="organisé" tags="adj.*"/>
+      <match lemma="organiser" tags="vblex.pp.*"/>
       <match lemma="ouvert" tags="adj.*"/>
       <match lemma="ouvrir" tags="vblex.pp.*"/>
       <match lemma="placé" tags="adj.*"/>
