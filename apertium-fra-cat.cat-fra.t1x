@@ -10896,13 +10896,16 @@ is not applicable because gender and number can not be taken from previous rules
     <pattern-item n="nom"/>
   </pattern>
   <action>
-      <call-macro n="f_concord1">
-   <with-param pos="2"/>
+    <!-- reset variables -->
+    <let><var n="numero"/><lit-tag v="sg"/></let>
+    <let><var n="genero"/><lit-tag v="m"/></let>
+    <call-macro n="f_concord1">
+      <with-param pos="2"/>
     </call-macro>
     <call-macro n="f_lang_dial1">
       <with-param pos="2"/>
     </call-macro>
-      <call-macro n="f_setgen">
+    <call-macro n="f_setgen">
       <with-param pos="2"/>
     </call-macro>
   <choose>
@@ -10975,6 +10978,9 @@ is not applicable because gender and number can not be taken from previous rules
     <pattern-item n="adj"/>
   </pattern>
   <action>
+    <!-- reset variables -->
+    <let><var n="numero"/><lit-tag v="sg"/></let>
+    <let><var n="genero"/><lit-tag v="m"/></let>
     <call-macro n="f_concord2">
       <with-param pos="2"/>
       <with-param pos="3"/>
@@ -11076,6 +11082,9 @@ is not applicable because gender and number can not be taken from previous rules
     <pattern-item n="adj"/>
   </pattern>
   <action>
+    <!-- reset variables -->
+    <let><var n="numero"/><lit-tag v="sg"/></let>
+    <let><var n="genero"/><lit-tag v="m"/></let>
     <call-macro n="f_concord2">
       <with-param pos="2"/>
       <with-param pos="4"/>
