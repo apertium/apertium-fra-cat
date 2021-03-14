@@ -4362,6 +4362,16 @@
 
 <!-- **************** N **************** -->
 
+  <!-- commune >> municipi, comuna -->
+  <rule weight="0.8">
+    <match lemma="commune" tags="n.*"><select lemma="municipi"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="commune" tags="n.*"><select lemma="comuna"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="Paris" tags="np.*"/>
+  </rule>
+
   <!-- levée >> lleva, aixecament -->
   <rule weight="0.8">
     <match lemma="levée" tags="n.*"><select lemma="lleva"/></match>
@@ -6977,7 +6987,23 @@
   <rule weight="1.0">
     <match lemma="frappe" tags="n.*"><select lemma="atac"/></match>
     <match lemma="de" tags="pr"/>
-    <match lemma="drone" tags="n.*"/>
+    <repeat from="0" upto="2">
+      <match tags="det.*"/>
+    </repeat>
+    <or>
+      <match lemma="armée" tags="n.*"/>
+      <match lemma="aviation" tags="n.*"/>
+      <match lemma="avion" tags="n.*"/>
+      <match lemma="chasseur" tags="n.*"/>
+      <match lemma="bombardier" tags="n.*"/>
+      <match lemma="chasseur-bombardier" tags="n.*"/>
+      <match lemma="drone" tags="n.*"/>
+      <match lemma="roquette" tags="n.*"/>
+      <match lemma="missile" tags="n.*"/>
+      <match lemma="marine" tags="n.*"/>
+      <match lemma="porte-avions" tags="n.*"/>
+      <match lemma="destroyer" tags="n.*"/>
+    </or>
   </rule>
   <rule weight="1.0">
     <or>

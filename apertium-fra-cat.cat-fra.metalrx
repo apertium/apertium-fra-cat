@@ -2589,6 +2589,13 @@
     <match lemma="què" tags="rel.an.*"><select lemma="ce que"/></match>
   </rule>
 
+<!-- **************** NUM **************** -->
+
+  <!-- cent >> cent sg, cent pl -->
+  <rule weight="0.6">
+    <match lemma="cent" tags="num.*"><select lemma="cent" tags="num.mf.sp"/></match>
+  </rule>
+
 <!-- **************** PREP **************** -->
 
   <!-- en temps de >> en temps de, sur -->
