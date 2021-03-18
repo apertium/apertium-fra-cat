@@ -3840,8 +3840,14 @@
   <!-- desbarrar >> déraisonner, démantibuler, débarrer, déjanter -->
   <macro name="verb_intrans_trans" p1="desbarrar" p2="déraisonner" p3="débarrer" />
 
+  <!-- pasturar >> paître, faire# paître -->
+  <macro name="verb_intrans_trans" p1="pasturar" p2="paître" p3="faire# paître" />
+
   <!-- pastifejar >> bâcler, barbouiller -->
   <macro name="verb_intrans_trans" p1="pastifejar" p2="bâcler" p3="barbouiller" />
+
+  <!-- sovintejar >> abonder, multiplier -->
+  <macro name="verb_intrans_trans" p1="sovintejar" p2="abonder" p3="multiplier" />
 
   <!-- voltar >> tourner, parcourir -->
   <macro name="verb_intrans_trans" p1="voltar" p2="tourner" p3="parcourir" />
@@ -5846,6 +5852,22 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- brossa >> débris, ordures, poussière, brosse -->
+  <rule weight="0.8">
+    <match lemma="brossa" tags="n.*"><select lemma="débris"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="llençar" tags="vblex.*"/>
+      <match lemma="tirar" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.def.f.sg"/>
+    <match lemma="brossa" tags="n.*"><select lemma="ordures"/></match>
+  </rule>
 
   <!-- paixtu >> Pachtoune, pachto -->
   <rule weight="0.8">

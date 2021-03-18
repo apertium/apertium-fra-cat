@@ -1022,6 +1022,24 @@
     <match lemma="de" tags="pr"><remove tags="pr"/></match>
     <match lemma="le" tags="det.*"><remove tags="det.*"/></match>
   </rule>
+  <rule weight="1.0">
+    <match lemma="le" tags="det.def.f.sg"><remove tags="det.*"/></match>
+    <or>
+      <match lemma="mi-janvier" tags="n.*"/>
+      <match lemma="mi-février" tags="n.*"/>
+      <match lemma="mi-mars" tags="n.*"/>
+      <match lemma="mi-avril" tags="n.*"/>
+      <match lemma="mi-mai" tags="n.*"/>
+      <match lemma="mi-juin" tags="n.*"/>
+      <match lemma="mi-juillet" tags="n.*"/>
+      <match lemma="mi-août" tags="n.*"/>
+      <match lemma="mi-aout" tags="n.*"/>
+      <match lemma="mi-septembre" tags="n.*"/>
+      <match lemma="mi-octobre" tags="n.*"/>
+      <match lemma="mi-novembre" tags="n.*"/>
+      <match lemma="mi-décembre" tags="n.*"/>
+    </or>
+  </rule>
 
   <!-- beaucoup de >> molt, molt de -->
   <rule weight="0.6">
@@ -1797,6 +1815,18 @@
 
 <!-- **************** V **************** -->
 
+  <!-- bousculer >> empentar, sacsejar -->
+  <rule weight="0.8">
+    <match lemma="bousculer" tags="vblex.*"><select lemma="empentar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="bousculer" tags="vblex.pp.*"><select lemma="sacsejar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="par" tags="pr"/>
+  </rule>
+
   <!-- desserrer >> afluixar, descenyir -->
   <rule weight="0.8">
     <match lemma="desserrer" tags="vblex.*"><select lemma="afluixar"/></match>
@@ -1968,8 +1998,8 @@
     <match lemma="toucher" tags="vblex.*"><select lemma="tocar"/></match>
   </rule>
   <rule weight="1.0">
-    <match lemma="toucher" tags="vblex.*"><select lemma="tocar"/></match>
-    <repeat from="0" upto="1">
+    <match lemma="toucher" tags="vblex.pp.*"><select lemma="tocar"/></match>
+    <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match lemma="par" tags="pr"/>
@@ -2326,7 +2356,6 @@
     </or>
     <match lemma="caler" tags="vblex.*"><select lemma="afluixar"/></match>
   </rule>
-
 
   <!-- mettre# en place >> establir, endreçar -->
   <rule weight="0.8">
@@ -4381,6 +4410,33 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- fin >> fin f, fin m -->
+  <rule weight="0.8">
+    <match lemma="fin" tags="n.*"><select lemma="fi" tags="n.f.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fin" tags="n.*"><select lemma="fi" tags="n.m.*"/></match>
+    <or>
+      <match lemma="légitime" tags="adj.*"/>
+      <match lemma="sexuel" tags="adj.*"/>
+      <match lemma="social" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="à" tags="pr"/>
+    <or>
+      <match lemma="ce" tags="det.*"/>
+      <match lemma="quel" tags="adj.*"/>
+      <match lemma="seul" tags="adj.*"/>
+    </or>
+    <match lemma="fin" tags="n.*"><select lemma="fi" tags="n.m.*"/></match>
+  </rule>
+
+  <!-- borderau >> albarà, nòmina, llista -->
+  <rule weight="0.8">
+    <match lemma="borderau" tags="n.*"><select lemma="albarà"/></match>
+  </rule>
 
   <!-- commune >> municipi, comuna -->
   <rule weight="0.8">
@@ -6868,6 +6924,7 @@
     <or>
       <match lemma="central" tags="adj.*"/>
       <match lemma="royal" tags="adj.*"/>
+      <match lemma="rouge" tags="adj.*"><select lemma="roig"/></match>
     </or>
   </rule>
   <rule weight="1.2">
@@ -8944,6 +9001,26 @@
     <match lemma="piquant" tags="adj.*"><select lemma="picant"/></match>
   </rule>
 
+  <!-- en porte-à-faux >> en fals, voladís -->
+  <rule weight="0.8">
+    <match lemma="en porte-à-faux" tags="adj.*"><select lemma="en fals"/></match>
+  </rule>
+
+  <!-- en porte-à-faux >> voladís, en fals -->
+  <rule weight="0.8">
+    <match lemma="en porte-à-faux" tags="adj.*"><select lemma="voladís"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="vbser.*"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="en porte-à-faux" tags="adj.*"><select lemma="voladís"/></match>
+  </rule>
+
   <!-- manqué >> desaprofitat, fracassat -->
   <rule weight="0.8">
     <match lemma="manqué" tags="adj.*"><select lemma="desaprofitat"/></match>
@@ -9884,6 +9961,8 @@
       <match lemma="divorcer" tags="vblex.pp.*"/>
       <match lemma="dopé" tags="adj.*"/>
       <match lemma="doper" tags="vblex.pp.*"/>
+      <match lemma="drogué" tags="adj.*"/>
+      <match lemma="droguer" tags="vblex.pp.*"/>
       <match lemma="émerveillé" tags="adj.*"/>
       <match lemma="émerveiller" tags="vblex.pp.*"/>
       <match lemma="enchanté" tags="adj.*"/>
