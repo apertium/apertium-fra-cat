@@ -775,6 +775,7 @@
     <def-attr n="a_verb_pron">
       <attr-item tags="vblex"/>
       <attr-item tags="vblex.pron"/>
+      <attr-item tags="vblex.nopron"/>
       <attr-item tags="vbser"/>
       <attr-item tags="vbhaver"/>
       <attr-item tags="vaux"/>
@@ -1775,7 +1776,10 @@
       <choose>
         <when>
           <test>
-            <equal><clip pos="1" side="tl" part="a_verb_pron"/><lit-tag v="vblex.pron"/></equal>
+            <or>
+              <equal><clip pos="1" side="tl" part="a_verb_pron"/><lit-tag v="vblex.pron"/></equal>
+              <equal><clip pos="1" side="tl" part="a_verb_pron"/><lit-tag v="vblex.nopron"/></equal>
+            </or>
           </test>
           <let><clip pos="1" side="tl" part="a_verb_pron"/><lit-tag v="vblex"/></let>
         </when>
@@ -3781,7 +3785,19 @@
       <call-macro n="f_concord_pedac"><with-param pos="4"/></call-macro>
     </def-macro>
 
+    <def-macro n="f_unset_nopron" npar="1"> <!-- elimina nopron a vblex.nopron -->
+      <choose>
+	<when>
+	  <test>
+	    <equal><clip pos="1" side="tl" part="a_verb_pron"/><lit-tag v="vblex.nopron"/></equal>
+	  </test>
+	  <let><clip pos="1" side="tl" part="a_verb_pron"/><lit-tag v="vblex"/></let>
+	</when>
+      </choose>
+    </def-macro>
+
     <def-macro n="f_set_pron" npar="2"> <!-- posa a la variable 'pronom' el pronom reflexiu que calgui si el verb és reflexiu. El segon paramàtre és la repetició del primer, si és una forma conjugada (personal) del verb, altrament és l'auxiliar-->
+      <call-macro n="f_unset_nopron"><with-param pos="1"/></call-macro>
       <let>
 	<var n="pronom"/>
 	<lit v=""/>
@@ -4242,9 +4258,8 @@
         <pattern-item n="verbnoser_inf_ger"/>
       </pattern>
       <action>
-        <call-macro n="f_set_pron_enc">
-          <with-param pos="1"/>
-        </call-macro>
+        <call-macro n="f_unset_nopron"><with-param pos="1"/></call-macro>
+        <call-macro n="f_set_pron_enc"><with-param pos="1"/></call-macro>
         <choose>
 	  <when>
 	    <test>
@@ -4302,7 +4317,10 @@
         <choose>
           <when>
             <test>
-              <equal><clip pos="1" side="tl" part="a_verb_pron"/><lit-tag v="vblex.pron"/></equal>
+              <or>
+                <equal><clip pos="1" side="tl" part="a_verb_pron"/><lit-tag v="vblex.pron"/></equal>
+                <equal><clip pos="1" side="tl" part="a_verb_pron"/><lit-tag v="vblex.nopron"/></equal>
+              </or>
             </test>
             <let><clip pos="1" side="tl" part="a_verb_pron"/><lit-tag v="vblex"/></let>
           </when>
@@ -15500,6 +15518,7 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="ger"/>
       </pattern>
       <action>
+      <call-macro n="f_unset_nopron"><with-param pos="2"/></call-macro>
       <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
       <choose>
         <when>
