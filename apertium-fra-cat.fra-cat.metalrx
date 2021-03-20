@@ -983,6 +983,14 @@
       <match lemma="décembre" tags="n.*"/>
     </def-seq>
 
+    <def-seq n="navire">
+      <match lemma="navire" tags="n.*"/>
+      <match lemma="porte-avions" tags="n.*"/>
+      <match lemma="destroyer" tags="n.*"/>
+      <match lemma="barque" tags="n.*"/>
+      <match lemma="Titanic" tags="np.*"/>
+    </def-seq>
+
     <def-seq n="adj_ord">
       <match lemma="premier" tags="adj.*"/>
       <match lemma="second" tags="adj.*"/>
@@ -1815,6 +1823,19 @@
 
 <!-- **************** V **************** -->
 
+  <!-- charger >> carregar, encarregar -->
+  <rule weight="0.8">
+    <match lemma="charger" tags="vblex.*"><select lemma="carregar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="charger" tags="vblex.*"><select lemma="encarregar"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.def.*"/>
+    </repeat>
+    <match tags="np.top.*"/>
+  </rule>
+
   <!-- bousculer >> empentar, sacsejar -->
   <rule weight="0.8">
     <match lemma="bousculer" tags="vblex.*"><select lemma="empentar"/></match>
@@ -1830,6 +1851,18 @@
   <!-- desserrer >> afluixar, descenyir -->
   <rule weight="0.8">
     <match lemma="desserrer" tags="vblex.*"><select lemma="afluixar"/></match>
+  </rule>
+
+  <!-- déménager >> traslladar, traslladar-se -->
+  <rule weight="0.8">
+    <match lemma="déménager" tags="vblex.*"><select lemma="traslladar" tags="vblex.pron.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="déménager" tags="vblex.*"><select lemma="traslladar" tags="vblex.nopron.*"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
   </rule>
 
   <!-- relaxer >> relaxar, alliberar -->
@@ -4354,7 +4387,46 @@
   </rule>
 
   <!-- couler >> fluir, enfonsar -->
-  <macro name="verb_intrans_trans" p1="couler" p2="fluir" p3="enfonsar"/>
+  <rule weight="0.8">
+    <match lemma="couler" tags="vblex.*"><select lemma="fluir"/></match>
+  </rule>
+  <rule weight="0.9">
+    <or>
+      <seq n="navire"/>
+    </or>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="couler" tags="vblex.*"><select lemma="enfonsar" tags="vblex.pron.*"/></match>
+  </rule>
+  <rule weight="0.9">
+    <or>
+      <seq n="navire"/>
+    </or>
+    <match tags="vbhaver.*"/>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="couler" tags="vblex.*"><select lemma="enfonsar" tags="vblex.pron.*"/></match>
+  </rule>
+  <rule weight="0.9">
+    <or>
+      <seq n="navire"/>
+    </or>
+    <match tags="adv"/>
+    <match tags="vbhaver.*"/>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="couler" tags="vblex.*"><select lemma="enfonsar" tags="vblex.pron.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="couler" tags="vblex.*"><select lemma="enfonsar" tags="vblex.nopron.*"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+  </rule>
 
   <!-- culbuter >> bolcar, fer# caure -->
   <macro name="verb_intrans_trans" p1="culbuter" p2="bolcar" p3="fer# caure"/>
@@ -4410,6 +4482,22 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- bouton >> botó, gra -->
+  <rule weight="0.8">
+    <match lemma="bouton" tags="n.*"><select lemma="botó"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="bouton" tags="n.*"><select lemma="gra"/></match>
+    <match tags="pr"/>
+    <match tags="det.def.*"/>
+    <match lemma="peau" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="avoir" tags="vblex.*"/>
+    <match tags="det.*"/>
+    <match lemma="bouton" tags="n.*"><select lemma="gra"/></match>
+  </rule>
 
   <!-- fin >> fin f, fin m -->
   <rule weight="0.8">
@@ -9720,6 +9808,11 @@
   </rule>
 
 <!-- **************** VBLEX **************** -->
+
+  <!-- handicaper >> desafavorir, handicapar -->
+  <rule weight="0.8">
+    <match lemma="handicaper" tags="vblex.*"><select lemma="desafavorir"/></match>
+  </rule>
 
   <!-- sceller >> segellar, precintar -->
   <rule weight="0.8">

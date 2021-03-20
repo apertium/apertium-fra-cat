@@ -3757,6 +3757,13 @@
     <match tags="adj.*"/>
     <match tags="n.*"/>
   </rule>
+  <rule weight="1.0">
+    <match lemma="patir" tags="vblex.*"><select lemma="subir"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="n.*.pl"/>
+  </rule>
 
   <!-- xutar >> shooter, botter -->
   <rule weight="0.8">
@@ -5852,6 +5859,32 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- llitera >> couchette, litière -->
+  <rule weight="0.8">
+    <match lemma="llitera" tags="n.*"><select lemma="couchette"/></match>
+  </rule>
+
+  <!-- gra >> grain, bouton -->
+  <rule weight="0.8">
+    <match lemma="gra" tags="n.*"><select lemma="grain"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="gra" tags="n.*"><select lemma="bouton"/></match>
+    <match tags="pr"/>
+    <match tags="det.def.*"/>
+    <match lemma="pell" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sortir" tags="vblex.*"/>
+    <match tags="det.*"/>
+    <match lemma="gra" tags="n.*"><select lemma="bouton"/></match>
+  </rule>
+
+  <!-- bany >> bain, toilette -->
+  <rule weight="0.8">
+    <match lemma="bany" tags="n.*"><select lemma="bain"/></match>
+  </rule>
 
   <!-- brossa >> débris, ordures, poussière, brosse -->
   <rule weight="0.8">
