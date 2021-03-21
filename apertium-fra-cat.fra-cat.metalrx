@@ -1064,6 +1064,18 @@
 
 <!-- **************** PREP **************** -->
 
+  <!-- hors >> excepte, hors -->
+  <rule weight="0.6">
+    <match lemma="hors" tags="pr"><select lemma="excepte"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="hors" tags="pr"><select lemma="fora de"/></match>
+    <repeat from="0" upto="1">
+      <match tags="det.def.*"/>
+    </repeat>
+    <match tags="np.top.*"/>
+  </rule>
+
   <!-- aux dépens de >> a càrrec de, en detriment de -->
   <rule weight="0.6">
     <match lemma="aux dépens de" tags="pr"><select lemma="a càrrec de"/></match>
@@ -9084,6 +9096,15 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- pareil >> igual, semblant, tal -->
+  <rule weight="0.8">
+    <match lemma="pareil" tags="adj.*"><select lemma="igual"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pareil" tags="adj.*"><select lemma="tal"/></match>
+    <match tags="n.*"/>
+  </rule>
+
   <!-- piquant >> picant, punxant -->
   <rule weight="0.8">
     <match lemma="piquant" tags="adj.*"><select lemma="picant"/></match>
@@ -10037,6 +10058,8 @@
     </repeat>
     <or>
       <match lemma="amoureux" tags="adj.*"/>
+      <match lemma="basé" tags="adj.*"/>
+      <match lemma="baser" tags="vblex.pp.*"/>
       <match lemma="coincé" tags="adj.*"/>
       <match lemma="coincer" tags="vblex.pp.*"/>
       <match lemma="content" tags="adj.*"/>
