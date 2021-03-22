@@ -4231,6 +4231,7 @@
       </action>
     </rule>
 
+
     <rule comment="REGLA: VERBnoserconj (per a multiparaules + verbs pronominals)">
       <pattern>
         <pattern-item n="verbnoserconj"/>
@@ -7848,6 +7849,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_ifi1">
           <with-param pos="1"/>
         </call-macro>
+        <!-- partial reset of variables -->
+        <let><var n="genero"/><lit-tag v="m"/></let>
+        <let><var n="numero"/><lit-tag v="pl"/></let>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -7886,10 +7890,10 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="detdefpl"/>
       </pattern>
       <action>
-      <call-macro n="test_pr_i_verb">
-        <with-param pos="1"/>
-        <with-param pos="2"/>
-      </call-macro>	
+        <call-macro n="test_pr_i_verb">
+          <with-param pos="1"/>
+          <with-param pos="2"/>
+        </call-macro>	
         <choose>
 	  <when>
 	    <test>
@@ -7967,6 +7971,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
       </otherwise>
       </choose>	
+        <!-- partial reset of variables -->
+        <let><var n="genero"/><lit-tag v="m"/></let>
+        <let><var n="numero"/><lit-tag v="pl"/></let>
       </action>
     </rule>
 
@@ -8047,6 +8054,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
       </otherwise>
       </choose>	
+        <!-- partial reset of variables -->
+        <let><var n="genero"/><lit-tag v="m"/></let>
+        <let><var n="numero"/><lit-tag v="pl"/></let>
       </action>
     </rule>
 
@@ -8078,6 +8088,9 @@ is not applicable because gender and number cannot be taken from previous rules 
             <clip pos="2" side="tl" part="whole"/>
           </lu>
         </out>
+        <!-- partial reset of variables -->
+        <let><var n="genero"/><lit-tag v="m"/></let>
+        <let><var n="numero"/><lit-tag v="pl"/></let>
       </action>
     </rule>
 
@@ -8161,6 +8174,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
       </otherwise>
       </choose>	
+        <!-- partial reset of variables -->
+        <let><var n="genero"/><lit-tag v="m"/></let>
+        <let><var n="numero"/><lit-tag v="pl"/></let>
       </action>
     </rule>
 
@@ -8230,6 +8246,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
       </otherwise>
       </choose>	
+        <!-- partial reset of variables -->
+        <let><var n="genero"/><lit-tag v="m"/></let>
+        <let><var n="numero"/><lit-tag v="pl"/></let>
       </action>
     </rule>
 
@@ -8257,6 +8276,9 @@ is not applicable because gender and number cannot be taken from previous rules 
             <clip pos="2" side="tl" part="whole"/>
           </lu>
         </out>
+        <!-- partial reset of variables -->
+        <let><var n="genero"/><lit-tag v="m"/></let>
+        <let><var n="numero"/><lit-tag v="pl"/></let>
       </action>
     </rule>
 
@@ -8351,6 +8373,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
       </otherwise>
       </choose>	
+        <!-- partial reset of variables -->
+        <let><var n="genero"/><lit-tag v="m"/></let>
+        <let><var n="numero"/><lit-tag v="pl"/></let>
       </action>
     </rule>
 
@@ -8430,6 +8455,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
       </otherwise>
       </choose>	
+        <!-- partial reset of variables -->
+        <let><var n="genero"/><lit-tag v="m"/></let>
+        <let><var n="numero"/><lit-tag v="pl"/></let>
       </action>
     </rule>
 
@@ -8462,6 +8490,9 @@ is not applicable because gender and number cannot be taken from previous rules 
             <clip pos="3" side="tl" part="whole"/>
           </lu>
         </out>
+        <!-- partial reset of variables -->
+        <let><var n="genero"/><lit-tag v="m"/></let>
+        <let><var n="numero"/><lit-tag v="pl"/></let>
       </action>
     </rule>
 
@@ -8503,6 +8534,9 @@ is not applicable because gender and number cannot be taken from previous rules 
             </out>
           </when>
         </choose>
+        <!-- partial reset of variables -->
+        <let><var n="genero"/><lit-tag v="m"/></let>
+        <let><var n="numero"/><lit-tag v="pl"/></let>
       </action>
     </rule>
 
@@ -8546,6 +8580,9 @@ is not applicable because gender and number cannot be taken from previous rules 
             </out>
           </when>
         </choose>
+        <!-- partial reset of variables -->
+        <let><var n="genero"/><lit-tag v="m"/></let>
+        <let><var n="numero"/><lit-tag v="pl"/></let>
       </action>
     </rule>
 
@@ -8572,6 +8609,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
         <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
         <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <call-macro n="f_concord1">
+          <with-param pos="4"/>
+        </call-macro>
       </action>
     </rule>
 
@@ -8598,6 +8638,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
         <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
         <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <call-macro n="f_concord1">
+          <with-param pos="4"/>
+        </call-macro>
       </action>
     </rule>
 
@@ -8691,6 +8734,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
         <call-macro n="f_bcond"><with-param pos="4"/><with-param pos="5"/></call-macro>
         <call-macro n="f_bcond"><with-param pos="5"/><with-param pos="6"/></call-macro>
+        <!-- partial reset of variables -->
+        <let><var n="genero"/><lit-tag v="m"/></let>
+        <let><var n="numero"/><lit-tag v="pl"/></let>
       </action>
     </rule>
 
@@ -8737,6 +8783,9 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
         <call-macro n="f_bcond"><with-param pos="4"/><with-param pos="5"/></call-macro>
         <call-macro n="f_bcond"><with-param pos="5"/><with-param pos="6"/></call-macro>
+        <!-- partial reset of variables -->
+        <let><var n="genero"/><lit-tag v="m"/></let>
+        <let><var n="numero"/><lit-tag v="pl"/></let>
       </action>
     </rule>
 
