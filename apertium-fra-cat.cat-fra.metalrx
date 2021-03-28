@@ -5860,9 +5860,59 @@
 
 <!-- **************** N **************** -->
 
+  <!-- pesta >> peste, puanteur -->
+  <rule weight="0.8">
+    <match lemma="pesta" tags="n.*"><select lemma="peste"/></match>
+  </rule>
+
+  <!-- respecte >> respecte, égard -->
+  <rule weight="0.8">
+    <match lemma="respecte" tags="n.*"><select lemma="respect"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="a" tags="pr"/>
+    <match tags="det.dem.*"/>
+    <match lemma="respecte" tags="n.*"><select lemma="égard"/></match>
+  </rule>
+
   <!-- llitera >> couchette, litière -->
   <rule weight="0.8">
     <match lemma="llitera" tags="n.*"><select lemma="couchette"/></match>
+  </rule>
+
+  <!-- rebrot >> pousse, rebond -->
+  <rule weight="0.8">
+    <match lemma="rebrot" tags="n.*"><select lemma="pousse"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rebrot" tags="n.*"><select lemma="rebond"/></match>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="epidèmia" tags="n.*"/>
+      <match lemma="epidèmic" tags="adj.*"/>
+      <match lemma="pandèmia" tags="n.*"/>
+      <match lemma="coronavirus" tags="n.*"/>
+      <match lemma="virus" tags="n.*"/>
+      <match lemma="Covid" tags="np.*"/>
+      <match lemma="Covid-19" tags="np.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="epidèmia" tags="n.*"/>
+      <match lemma="epidèmic" tags="adj.*"/>
+      <match lemma="pandèmia" tags="n.*"/>
+      <match lemma="coronavirus" tags="n.*"/>
+      <match lemma="virus" tags="n.*"/>
+      <match lemma="Covid" tags="np.*"/>
+      <match lemma="Covid-19" tags="np.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="rebrot" tags="n.*"><select lemma="rebond"/></match>
   </rule>
 
   <!-- gra >> grain, bouton -->
@@ -6063,7 +6113,7 @@
     <match lemma="ona" tags="n.*"><select lemma="onde"/></match>
     <or>
       <match lemma="electromagnètic" tags="adj.*"/>
-      <match lemma="gravitatòria" tags="adj.*"/>
+      <match lemma="gravitatori" tags="adj.*"/>
       <match lemma="lumínic" tags="adj.*"/>
       <match lemma="sonor" tags="adj.*"/>
     </or>

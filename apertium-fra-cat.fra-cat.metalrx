@@ -1064,6 +1064,11 @@
 
 <!-- **************** PREP **************** -->
 
+  <!-- à l'égard de >> respecte a, pel que fa a -->
+  <rule weight="0.6">
+    <match lemma="à l'égard de" tags="pr"><select lemma="respecte a"/></match>
+  </rule>
+
   <!-- hors >> excepte, hors -->
   <rule weight="0.6">
     <match lemma="hors" tags="pr"><select lemma="excepte"/></match>
@@ -1835,6 +1840,11 @@
 
 <!-- **************** V **************** -->
 
+  <!-- draguer >> dragar, flirtejar -->
+  <rule weight="0.8">
+    <match lemma="draguer" tags="vblex.*"><select lemma="dragar"/></match>
+  </rule>
+
   <!-- charger >> carregar, encarregar -->
   <rule weight="0.8">
     <match lemma="charger" tags="vblex.*"><select lemma="carregar"/></match>
@@ -1864,6 +1874,9 @@
   <rule weight="0.8">
     <match lemma="desserrer" tags="vblex.*"><select lemma="afluixar"/></match>
   </rule>
+
+  <!-- draper >> vestir, embolicar -->
+  <macro name="verb_nopron_pron" p1="draper" p2="vestir" p3="embolicar" />
 
   <!-- déménager >> traslladar, traslladar-se -->
   <rule weight="0.8">
@@ -2993,6 +3006,9 @@
   <!-- presser >> acuitar, afanyar -->
   <macro name="verb_intrans_trans" p1="presser" p2="acuitar" p3="afanyar"/>
 
+  <!-- risquer >> córrer# el risc, arriscar-se# a -->
+  <macro name="verb_intrans_trans" p1="córrer# el risc" p2="acuitar" p3="arriscar# a"/>
+
   <!-- saisir >> agafar/agarrar, apoderar, entrar, segrestar, decomissar, requisar, apel·lar# a -->
   <macro name="verb_nopron_pron" p1="saisir" p2="agafar" p3="apoderar"/>
   <rule weight="1.2">
@@ -3825,8 +3841,15 @@
   <!-- faufiler >> embastar, esquitllar-se, esmunyir-se -->
   <macro name="verb_nopron_pron" p1="faufiler" p2="embastar" p3="esquitllar" />
 
-  <!-- concurrencer >> competir# amb, fer# la competència -->
-  <macro name="verb_nopron_pron" p1="concurrencer" p2="competir# amb" p3="fer# la competència" />
+  <!-- concurrencer >> competir, fer# la competència -->
+  <macro name="verb_nopron_pron" p1="concurrencer" p2="competir" p3="fer# la competència" />
+  <rule weight="0.9">
+    <match lemma="concurrencer" tags="vblex.*"><select lemma="competir# amb"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+  </rule>
 
   <!-- investir >> invertir, implicar -->
   <macro name="verb_nopron_pron" p1="investir" p2="invertir" p3="implicar" />
@@ -4497,6 +4520,97 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- puanteur >> pudor, pesta -->
+  <rule weight="0.8">
+    <match lemma="puanteur" tags="n.*"><select lemma="pudor"/></match>
+  </rule>
+
+  <!-- colère >> cólera, ira -->
+  <rule weight="0.8">
+    <match lemma="colère" tags="n.*"><select lemma="cólera"/></match>
+  </rule>
+
+  <!-- donne >> situació, donada -->
+  <rule weight="0.8">
+    <match lemma="donne" tags="n.*"><select lemma="situació"/></match>
+  </rule>
+
+  <!-- adage >> adagi, adagio -->
+  <rule weight="0.8">
+    <match lemma="adage" tags="n.*"><select lemma="adagi"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="adage" tags="n.*"><select lemma="adagio"/></match>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="concerto" tags="n.*"/>
+      <match lemma="symphonie" tags="n.*"/>
+      <match lemma="sonate" tags="n.*"/>
+      <match lemma="musique" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="concerto" tags="n.*"/>
+      <match lemma="symphonie" tags="n.*"/>
+      <match lemma="sonate" tags="n.*"/>
+      <match lemma="musique" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="adage" tags="n.*"><select lemma="adagio"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="adage" tags="n.*"><select lemma="adagio"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+      <match tags=""/>
+    </or>
+  </rule>
+
+  <!-- égard >> consideració, respecte -->
+  <rule weight="0.8">
+    <match lemma="égard" tags="n.*"><select lemma="consideració"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="à" tags="pr"/>
+    <or>
+      <match lemma="ce" tags="det.*"/>
+      <match tags="det.dem.*"/>
+      <match tags="det.pos.*"/>
+    </or>
+    <match lemma="égard" tags="n.*"><select lemma="respecte"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="à" tags="pr"/>
+    <match lemma="tout" tags="predet.*"/>
+    <repeat from="0" upto="1">
+      <match tags="det.def.*"/>
+    </repeat>
+    <match lemma="égard" tags="n.m.pl"><select lemma="respecte"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="à" tags="pr"><select lemma="en"/></match>
+    <match lemma="beaucoup de" tags="det.*"/>
+    <match lemma="égard" tags="n.*"><select lemma="respecte"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="à" tags="pr"><select lemma="en"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="nombreux" tags="adj.*"/>
+    <match lemma="égard" tags="n.*"><select lemma="respecte"/></match>
+  </rule>
+
+  <!-- drague >> flirteig, draga -->
+  <rule weight="0.8">
+    <match lemma="drague" tags="n.*"><select lemma="flirteig"/></match>
+  </rule>
 
   <!-- bouton >> botó, gra -->
   <rule weight="0.8">
@@ -6294,6 +6408,41 @@
     <match lemma="lotissement" tags="n.*"><select lemma="parcel·lació"/></match>
   </rule>
 
+  <!-- rebond >> rebot, rebrot -->
+  <rule weight="0.8">
+    <match lemma="rebond" tags="n.*"><select lemma="rebot"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rebond" tags="n.*"><select lemma="rebrot"/></match>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="épidemie" tags="n.*"/>
+      <match lemma="épidemique" tags="adj.*"/>
+      <match lemma="pandémie" tags="n.*"/>
+      <match lemma="coronavirus" tags="n.*"/>
+      <match lemma="virus" tags="n.*"/>
+      <match lemma="Covid" tags="np.*"/>
+      <match lemma="Covid-19" tags="np.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="épidemie" tags="n.*"/>
+      <match lemma="épidemique" tags="adj.*"/>
+      <match lemma="pandémie" tags="n.*"/>
+      <match lemma="coronavirus" tags="n.*"/>
+      <match lemma="virus" tags="n.*"/>
+      <match lemma="Covid" tags="np.*"/>
+      <match lemma="Covid-19" tags="np.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="rebond" tags="n.*"><select lemma="rebrot"/></match>
+  </rule>
+
   <!-- blessure >> ferida, lesió -->
   <rule weight="0.8">
     <match lemma="blessure" tags="n.*"><select lemma="ferida"/></match>
@@ -6523,7 +6672,7 @@
   </rule>
   <rule weight="1.0">
     <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <match tags="*"/>
     </repeat>
     <match lemma="pour" tags="pr"/>
