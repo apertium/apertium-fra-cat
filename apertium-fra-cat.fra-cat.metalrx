@@ -1327,7 +1327,7 @@
     <match lemma="année" tags="n.*"/>
   </rule>
 
-  <!-- à >> a, en, amb, de -->
+  <!-- à >> a, en, amb, de, per -->
   <rule weight="0.8">
     <match lemma="à" tags="pr"><select lemma="a"/></match>
   </rule>
@@ -1384,6 +1384,11 @@
       </or>
     </repeat>
     <match lemma="à" tags="pr"><select lemma="amb"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="à" tags="pr"><select lemma="per"/></match>
+    <match tags="det.pos.*"/>
+    <match lemma="compte" tags="n.*"/>
   </rule>
 
   <!-- pour >> per, per a, a favor de, cap a -->
@@ -4520,6 +4525,23 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- étalage >> aparador, ostentació -->
+  <rule weight="0.8">
+    <match lemma="étalage" tags="n.*"><select lemma="aparador"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="faire" tags="vblex.*"/>
+    <repeat from="0" upto="4">
+      <or>
+        <match tags="adv"/>
+        <match tags="det.*"/>
+        <match tags="preadv"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
+    <match lemma="étalage" tags="n.*"><select lemma="ostentació"/></match>
+  </rule>
 
   <!-- puanteur >> pudor, pesta -->
   <rule weight="0.8">
