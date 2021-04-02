@@ -1880,6 +1880,9 @@
     <match lemma="desserrer" tags="vblex.*"><select lemma="afluixar"/></match>
   </rule>
 
+  <!-- moquer >> burlar, riure -->
+  <macro name="verb_nopron_pron" p1="moquer" p2="burlar" p3="riure" />
+
   <!-- draper >> vestir, embolicar -->
   <macro name="verb_nopron_pron" p1="draper" p2="vestir" p3="embolicar" />
 

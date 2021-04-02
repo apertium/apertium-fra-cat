@@ -2780,10 +2780,15 @@
   <rule weight="0.8">
     <match lemma="des de" tags="pr"><select lemma="depuis"/></match>
   </rule>
+<!--
   <rule weight="1.0">
     <match lemma="des de" tags="pr"><select lemma="de"/></match>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
     <or><match tags="np.loc"/><match tags="np.top.*"/><match tags="np.hyd.*"/></or>
   </rule>
+-->
   <rule weight="1.0">
     <match lemma="des de" tags="pr"><select lemma="selon"/></match>
     <match tags="det.*"/>
@@ -3907,6 +3912,9 @@
 
   <!-- rebolcar >> renverser, rouler -->
   <macro name="verb_nopron_pron" p1="rebolcar" p2="renverser" p3="rouler" />
+
+  <!-- riure >> rire, moquer -->
+  <macro name="verb_nopron_pron" p1="riure" p2="rire" p3="moquer" />
 
   <!-- entaforar >> enfouir, fourrer -->
   <macro name="verb_nopron_pron" p1="entaforar" p2="enfouir" p3="fourrer" />
@@ -5860,6 +5868,48 @@
 
 <!-- **************** N **************** -->
 
+  <!-- superfície >> surface, superficie -->
+  <rule weight="0.8">
+    <match lemma="superfície" tags="n.*"><select lemma="surface"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="superfície" tags="n.*"><select lemma="surface"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <or><match tags="np.top.*"/><match tags="np.loc"/></or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="superfície" tags="n.*"><select lemma="surface"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="terra" tags="n.*"/>
+      <match lemma="camp" tags="n.*"/>
+      <match lemma="municipi" tags="n.*"/>
+      <match lemma="ciutat" tags="n.*"/>
+      <match lemma="comarca" tags="n.*"/>
+      <match lemma="districte" tags="n.*"/>
+      <match lemma="país" tags="n.*"/>
+      <match lemma="província" tags="n.*"/>
+      <match lemma="regió" tags="n.*"/>
+      <match lemma="comunitat" tags="n.*"/>
+      <match lemma="estat" tags="n.*"/>
+      <match lemma="república" tags="n.*"/>
+      <match lemma="regne" tags="n.*"/>
+      <match lemma="reialme" tags="n.*"/>
+      <match lemma="imperi" tags="n.*"/>
+      <match lemma="baronia" tags="n.*"/>
+      <match lemma="comtat" tags="n.*"/>
+      <match lemma="marquesat" tags="n.*"/>
+      <match lemma="ducat" tags="n.*"/>
+      <match lemma="principat" tags="n.*"/>
+      <match lemma="emirat" tags="n.*"/>
+      <match lemma="sultanat" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- ostentació >> ostentation, étalage -->
   <rule weight="0.8">
     <match lemma="ostentació" tags="n.*"><select lemma="ostentation"/></match>
@@ -7631,6 +7681,9 @@
   <rule weight="1.0">
     <match lemma="primat" tags="n.m.sg"><select lemma="primat"/></match>
     <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
     <match tags="np.top.*"/>
   </rule>
   <rule weight="1.0">
@@ -7901,6 +7954,9 @@
   <rule weight="1.0">
     <match lemma="banc" tags="n.*"><select lemma="banque"/></match>
     <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
     <match tags="np.top.*"/>
   </rule>
 
@@ -8459,11 +8515,16 @@
      <match lemma="got" tags="n.*"><select lemma="verre"/></match>
      <match lemma="de" tags="pr"/>
   </rule>
+<!--
   <rule weight="1.0">
      <match lemma="got" tags="n.*"><select lemma="verre"/></match>
      <match lemma="de" tags="pr"/>
+     <repeat from="0" upto="1">
+       <match tags="det.*"/>
+     </repeat>
      <or><match tags="np.loc"/><match tags="np.top.*"/><match tags="np.hyd.*"/></or>
   </rule>
+-->
 
   <!-- domini >> domaine, domination -->
   <rule weight="0.8">
@@ -8849,6 +8910,9 @@
   <rule weight="1.0">
     <match lemma="cor" tags="n.*"><select lemma="chœur"/></match>
     <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
     <or><match tags="np.top.*"/><match tags="np.loc"/></or>
   </rule>
   <rule weight="1.0">
@@ -9316,10 +9380,10 @@
 
   <!-- Oliba > Oliva, Olibia -->
   <rule weight="0.6">
-     <match lemma="Oliba" tags="np.*"><select lemma="Oliva"/></match>
+    <match lemma="Oliba" tags="np.*"><select lemma="Oliva"/></match>
   </rule>
   <rule weight="1.0">
-     <match lemma="Oliba" tags="np.*"><select lemma="Olibia"/></match>
+    <match lemma="Oliba" tags="np.*"><select lemma="Olibia"/></match>
     <repeat from="0" upto="1">
       <or>
         <match tags="num.*"/>
@@ -9327,8 +9391,8 @@
         <match tags="adj.*"/>
       </or>
     </repeat>
-     <match lemma="de" tags="pr"/>
-     <or><match tags="np.loc"/><match tags="np.top.*"/></or>
+    <match lemma="de" tags="pr"/>
+    <or><match tags="np.loc"/><match tags="np.top.*"/></or>
   </rule>
 
   <macro name="noms_propis" p1="Alfons" p2="Alphonse" />
