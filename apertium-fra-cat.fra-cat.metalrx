@@ -374,12 +374,20 @@
         <match lemma="le" tags="prn.pro.*"/>
         <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p3}}"/></match>
       </rule>
+      <rule weight="1.0">
+        <or>
+          <match tags="n.*"/>
+          <match tags="adj.*"/>
+          <match tags="vblex.pp.*"/>
+        </or>
+        <match lemma="{{p1}}" tags="vblex.pp.*"><select lemma="{{p3}}"/></match>
+      </rule>
     </def-macro>
 
     <!-- Aquesta macro tria el verb p2 si p1 no és pronominal i p3 si p1 és pronominal -->
     <!-- p1 = verb fra, p2 = verb cat no pron, p3 = verb cat pron -->
     <def-macro name="verb_nopron_pron">
-      <rule weight="0.8">
+      <rule weight="0.6">
         <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p2}}"/></match>
       </rule>
       <rule weight="1.0">
@@ -1301,6 +1309,22 @@
     </or>
     <match lemma="de" tags="pr"><select lemma="per"/></match>
   </rule>
+<!--
+  <rule weight="1.0">
+    <match tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="plus" tags="adv"/>
+      <match lemma="moins" tags="adv"/>
+    </or>
+    <match lemma="de" tags="pr"><remove tags="pr"/></match>
+  </rule>
+-->
 
   <!-- après >> després de, rere -->
   <rule weight="0.8">
@@ -3011,8 +3035,103 @@
   <!-- fricoter >> donar(-se)# la gran vida, preparar -->
   <macro name="verb_intrans_trans" p1="fricoter" p2="donar# la gran vida" p3="preparar"/>
 
-  <!-- presser >> acuitar, afanyar -->
-  <macro name="verb_intrans_trans" p1="presser" p2="acuitar" p3="afanyar"/>
+  <!-- presser >> córrer# pressa, afanyar, prémer, esprémer, premsar, apressar -->
+  <macro name="verb_nopron_pron" p1="presser" p2="córrer# pressa" p3="afanyar"/>
+  <rule weight="0.8">
+    <match lemma="presser" tags="vblex.*"><select lemma="prémer"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+  </rule>
+  <rule weight="0.9">
+    <match lemma="presser" tags="vblex.*"><select lemma="esprémer"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <or>
+      <match lemma="citron" tags="n.*"/>
+      <match lemma="orange" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="0.9">
+    <match lemma="presser" tags="vblex.*"><select lemma="esprémer"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="citron" tags="n.*"/>
+      <match lemma="orange" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="0.9">
+    <match lemma="presser" tags="vblex.*"><select lemma="premsar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <or>
+      <match lemma="raisin" tags="n.*"/>
+      <match lemma="livre" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="0.9">
+    <match lemma="presser" tags="vblex.*"><select lemma="premsar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="raisin" tags="n.*"/>
+      <match lemma="livre" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="0.8">
+    <match lemma="presser" tags="vblex.pp.*"><select lemma="prémer"/></match>
+  </rule>
+  <rule weight="0.9">
+    <or>
+      <match lemma="citron" tags="n.*"/>
+      <match lemma="orange" tags="n.*"/>
+    </or>
+    <match lemma="presser" tags="vblex.pp.*"><select lemma="esprémer"/></match>
+  </rule>
+  <rule weight="0.9">
+    <match lemma="presser" tags="vblex.pp.*"><select lemma="apressar"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="*.inf"/>
+  </rule>
 
   <!-- risquer >> córrer# el risc, arriscar-se# a -->
   <macro name="verb_intrans_trans" p1="córrer# el risc" p2="acuitar" p3="arriscar# a"/>
@@ -4082,7 +4201,12 @@
         <match tags="cnjadv"/>
       </or>
     </repeat>
-    <match tags="det.*"/>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num.*"/>
+      <match tags="num"/>
+      <match lemma="de" tags="pr"/>
+    </or>
     <match lemma="problème" tags="n.*"/>
   </rule>
   <rule weight="1.0">
@@ -4145,6 +4269,7 @@
       <match tags="det.*"/>
       <match tags="num.*"/>
       <match tags="num"/>
+      <match lemma="de" tags="pr"/>
     </or>
     <match lemma="question" tags="n.*"><select lemma="pregunta"/></match>
   </rule>
@@ -4474,6 +4599,9 @@
     <match tags="det.*"/>
   </rule>
 
+  <!-- foirer >> fer# figa, esguerrar -->
+  <macro name="verb_intrans_trans" p1="foirer" p2="fer# figa" p3="esguerrar"/>
+
   <!-- culbuter >> bolcar, fer# caure -->
   <macro name="verb_intrans_trans" p1="culbuter" p2="bolcar" p3="fer# caure"/>
 
@@ -4528,6 +4656,107 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- propos >> propòsit, paraules -->
+  <rule weight="0.8">
+    <match lemma="propos" tags="n.*"><select lemma="propòsit"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.*.pl"/>
+    <match lemma="propos" tags="n.*"><select lemma="paraula"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="ministre" tags="n.*"/>
+      <match lemma="ministre# des affaires étrangères" tags="n.*"/>
+      <match lemma="ministre# des finances" tags="n.*"/>
+      <match lemma="ministre# du travail" tags="n.*"/>
+      <match lemma="vice-ministre" tags="n.*"/>
+      <match lemma="président" tags="n.*"/>
+      <match lemma="vice-président" tags="n.*"/>
+      <match lemma="recteur" tags="n.*"/>
+      <match lemma="vice-recteur" tags="n.*"/>
+      <match lemma="doyen" tags="n.*"/>
+      <match lemma="vice-doyen" tags="n.*"/>
+      <match lemma="directeur" tags="n.*"/>
+      <match lemma="secrétaire" tags="n.*"/>
+      <match lemma="PDG" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.*.pl"/>
+    <match lemma="propos" tags="n.*"><select lemma="paraula"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+      <match tags=""/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="propos" tags="n.*"><select lemma="paraula"/></match>
+    <or>
+      <match lemma="recueillir" tags="vblex.pp.m.pl"/>
+      <match lemma="dire" tags="vblex.pp.m.pl"/>
+      <match lemma="exprimer" tags="vblex.pp.m.pl"/>
+      <match lemma="déclarer" tags="vblex.pp.m.pl"/>
+    </or>
+  </rule>
+
+  <!-- filière >> filera, sector, xarxa, tràmits -->
+  <rule weight="0.8">
+    <match lemma="filière" tags="n.*"><select lemma="filera"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="filière" tags="n.*"><select lemma="sector"/></match>
+    <or>
+      <match tags="n.*"/>
+      <match lemma="technique" tags="adj.*"/>
+      <match lemma="électrique" tags="adj.*"/>
+      <match lemma="hydraulique" tags="adj.*"/>
+      <match lemma="thermique" tags="adj.*"/>
+      <match lemma="nucléaire" tags="adj.*"/>
+      <match lemma="gazier" tags="adj.*"/>
+      <match lemma="hydro-électrique" tags="adj.*"/>
+      <match lemma="hydroélectrique" tags="adj.*"/>
+      <match lemma="thermoélectrique" tags="adj.*"/>
+      <match lemma="thermo-électrique" tags="adj.*"/>
+      <match lemma="aéronautique" tags="adj.*"/>
+      <match lemma="spatial" tags="adj.*"/>
+      <match lemma="cinématographique" tags="adj.*"/>
+      <match lemma="alimentaire" tags="adj.*"/>
+      <match lemma="agroalimentaire" tags="adj.*"/>
+      <match lemma="agricole" tags="adj.*"/>
+      <match lemma="apicole" tags="adj.*"/>
+      <match lemma="semancier" tags="adj.*"/>
+      <match lemma="bovin" tags="adj.*"/>
+      <match lemma="ovin" tags="adj.*"/>
+      <match lemma="porcin" tags="adj.*"/>
+      <match lemma="viticole" tags="adj.*"/>
+      <match lemma="vitivinicole" tags="adj.*"/>
+      <match lemma="laitier" tags="adj.*"/>
+      <match lemma="forestier" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="filière" tags="n.*"><select lemma="xarxa"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="trafic" tags="n.*"/>
+      <match lemma="trafiquant" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="suivre" tags="vblex.*"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="filière" tags="n.*"><select lemma="tràmit"/></match>
+  </rule>
 
   <!-- étalage >> aparador, ostentació -->
   <rule weight="0.8">
@@ -10235,6 +10464,7 @@
     <or>
       <match tags="preadv"/>
       <match tags="adv"/>
+      <match lemma="tout"/>
     </or>
     </repeat>
     <or>
@@ -10277,6 +10507,8 @@
       <match lemma="fermer" tags="vblex.pp.*"/>
       <match lemma="fini" tags="adj.*"/>
       <match lemma="finir" tags="vblex.pp.*"/>
+      <match lemma="hâté" tags="adj.*"/>
+      <match lemma="hâter" tags="vblex.pp.*"/>
       <match lemma="impliqué" tags="adj.*"/>
       <match lemma="impliquer" tags="vblex.pp.*"/>
       <match lemma="intéressé" tags="adj.*"/>
@@ -10290,12 +10522,14 @@
       <match lemma="organiser" tags="vblex.pp.*"/>
       <match lemma="ouvert" tags="adj.*"/>
       <match lemma="ouvrir" tags="vblex.pp.*"/>
+      <match lemma="persuadé" tags="adj.*"/>
+      <match lemma="persuader" tags="vblex.pp.*"/>
       <match lemma="placé" tags="adj.*"/>
       <match lemma="placer" tags="vblex.pp.*"/>
       <match lemma="préoccupé" tags="adj.*"/>
       <match lemma="préoccuper" tags="vblex.pp.*"/>
-      <match lemma="persuadé" tags="adj.*"/>
-      <match lemma="persuader" tags="vblex.pp.*"/>
+      <match lemma="pressé" tags="adj.*"/>
+      <match lemma="presser" tags="vblex.pp.*"/>
       <match lemma="réglementé" tags="adj.*"/>
       <match lemma="réglementer" tags="vblex.pp.*"/>
       <match lemma="satisfait" tags="adj.*"/>
