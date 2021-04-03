@@ -3578,7 +3578,7 @@
     </repeat>
     <match tags="det.*"/>
     <or>
-      <match lemma="pièce" tags="n.*"/>
+      <match lemma="pièce" tags="n.*"><select lemma="obra"/></match>
       <match lemma="rôle" tags="n.*"/>
     </or>
   </rule>
@@ -3620,7 +3620,7 @@
     </repeat>
     <match tags="det.*"/>
     <or>
-      <match lemma="pièce" tags="n.*"/>
+      <match lemma="pièce" tags="n.*"><select lemma="obra"/></match>
       <match lemma="rôle" tags="n.*"/>
     </or>
   </rule>
@@ -3635,7 +3635,7 @@
     <match lemma="de" tags="pr"/>
     <match lemma="le" tags="det.*.pl"/>
     <or>
-      <match lemma="pièce" tags="n.*"/>
+      <match lemma="pièce" tags="n.*"><select lemma="obra"/></match>
       <match lemma="rôle" tags="n.*"/>
     </or>
   </rule>
@@ -4677,6 +4677,40 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- pièce >> peça, obra, habitació -->
+  <rule weight="0.8">
+    <match lemma="pièce" tags="n.*"><select lemma="peça"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pièce" tags="n.*"><select lemma="obra"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="2">
+      <match tags="np.ant.*"/>
+    </repeat>
+    <or>
+      <match lemma="théâtre" tags="n.*"/>
+      <match lemma="Shakespeare" tags="np.*"/>
+      <match lemma="Calderón" tags="np.*"/>
+      <match lemma="Pitarra" tags="np.*"/>
+      <match lemma="Belbel" tags="np.*"/>
+      <match lemma="Molière" tags="np.*"/>
+      <match lemma="Racine" tags="np.*"/>
+      <match lemma="Corneille" tags="np.*"/>
+      <match lemma="Rostand" tags="np.*"/>
+      <match lemma="Jarry" tags="np.*"/>
+      <match lemma="Beckett" tags="np.*"/>
+      <match lemma="Camus" tags="np.*"/>
+      <match lemma="Sartre" tags="np.*"/>
+      <match lemma="Ionesco" tags="np.*"/>
+      <match lemma="Anouilh" tags="np.*"/>
+      <match lemma="Ibsen" tags="np.*"/>
+      <match lemma="Strindberg" tags="np.*"/>
+      <match lemma="Tchekhov" tags="np.*"/>
+      <match lemma="Tchékhov" tags="np.*"/>
+      <match tags="np.cog.*"/>
+    </or>
+  </rule>
 
   <!-- propos >> propòsit, paraules -->
   <rule weight="0.8">

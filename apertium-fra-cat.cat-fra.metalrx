@@ -4122,7 +4122,7 @@
     </repeat>
     <match tags="det.*"/>
     <or>
-      <match lemma="obra" tags="n.*"/>
+      <match lemma="obra" tags="n.*"><select lemma="pièce"/></match>
       <match lemma="peça" tags="n.*"/>
       <match lemma="paper" tags="n.*"/>
     </or>
@@ -4967,7 +4967,7 @@
     </repeat>
     <match tags="det.*"/>
     <or>
-      <match lemma="obra" tags="n.*"/>
+      <match lemma="obra" tags="n.*"><select lemma="pièce"/></match>
       <match lemma="peça" tags="n.*"/>
       <match lemma="paper" tags="n.*"/>
     </or>
@@ -5891,6 +5891,31 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- obra >> œuvre, pièce -->
+  <rule weight="0.8">
+    <match lemma="obra" tags="n.*"><select lemma="œuvre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="obra" tags="n.*"><select lemma="pièce"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="2">
+      <match tags="np.ant.*"/>
+    </repeat>
+    <or>
+      <match lemma="teatre" tags="n.*"/>
+      <match lemma="Shakespeare" tags="np.*"/>
+      <match lemma="Calderón" tags="np.*"/>
+      <match lemma="Pitarra" tags="np.*"/>
+      <match lemma="Belbel" tags="np.*"/>
+      <match lemma="Molière" tags="np.*"/>
+      <match lemma="Racine" tags="np.*"/>
+      <match lemma="Corneille" tags="np.*"/>
+      <match lemma="Ibsen" tags="np.*"/>
+      <match lemma="Strindberg" tags="np.*"/>
+      <match lemma="Txékhov" tags="np.*"/>
+    </or>
+  </rule>
 
   <!-- mullader >> cafouillage, cafouillis, vacarme -->
   <rule weight="0.8">
