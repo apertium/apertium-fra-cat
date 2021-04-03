@@ -4265,9 +4265,25 @@
     <match lemma="població" tags="n.*"/>
   </rule>
 
-  <!-- mantenir >> entretenir, maintenir -->
+  <!-- mantenir >> maintenir, tenir -->
   <rule weight="0.8">
     <match lemma="mantenir" tags="vblex.*"><select lemma="maintenir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="mantenir" tags="vblex.*"><select lemma="tenir"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="preadv"/>
+        <match tags="adv"/>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="paraula" tags="n.*"/>
+      <match lemma="promesa" tags="n.*"/>
+      <match lemma="regna" tags="n.*"/>
+    </or>
   </rule>
 <!--
   <rule weight="0.8">

@@ -3133,6 +3133,27 @@
     <match tags="*.inf"/>
   </rule>
 
+  <!-- tenir >> sostenir, mantenir -->
+  <rule weight="0.8">
+    <match lemma="tenir" tags="vblex.*"><select lemma="sostenir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tenir" tags="vblex.*"><select lemma="mantenir"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="preadv"/>
+        <match tags="adv"/>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="parole" tags="n.*"/>
+      <match lemma="promesse" tags="n.*"/>
+      <match lemma="rêne" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- risquer >> córrer# el risc, arriscar-se# a -->
   <macro name="verb_intrans_trans" p1="córrer# el risc" p2="acuitar" p3="arriscar# a"/>
 
