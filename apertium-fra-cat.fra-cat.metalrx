@@ -4712,6 +4712,11 @@
     </or>
   </rule>
 
+  <!-- amas >> cúmul, munt -->
+  <rule weight="0.8">
+    <match lemma="amas" tags="n.*"><select lemma="cúmul"/></match>
+  </rule>
+
   <!-- propos >> propòsit, paraules -->
   <rule weight="0.8">
     <match lemma="propos" tags="n.*"><select lemma="propòsit"/></match>

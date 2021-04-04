@@ -5892,6 +5892,16 @@
 
 <!-- **************** N **************** -->
 
+  <!-- habitació >> chambre, pièce -->
+  <rule weight="0.8">
+    <match lemma="habitació" tags="n.*"><select lemma="chambre"/></match>
+  </rule>
+
+  <!-- cúmul >> amas, tas -->
+  <rule weight="0.8">
+    <match lemma="cúmul" tags="n.*"><select lemma="amas"/></match>
+  </rule>
+
   <!-- obra >> œuvre, pièce -->
   <rule weight="0.8">
     <match lemma="obra" tags="n.*"><select lemma="œuvre"/></match>
