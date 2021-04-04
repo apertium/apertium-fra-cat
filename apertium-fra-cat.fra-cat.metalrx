@@ -10300,6 +10300,62 @@
 
 <!-- **************** VBLEX **************** -->
 
+  <!-- encaisser >> encaixonar, encaixar, ingressar -->
+  <rule weight="0.8">
+    <match lemma="encaisser" tags="vblex.*"><select lemma="encaixonar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="encaisser" tags="vblex.*"><select lemma="encaixar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match lemma="de" tags="pr"/>
+      </or>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <or>
+      <match lemma="coup" tags="n.*"/>
+      <match lemma="nouvelle" tags="n.*"/>
+      <match lemma="situation" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="encaisser" tags="vblex.*"><select lemma="encaixar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match lemma="de" tags="pr"/>
+      </or>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <match tags="adj.*"/>
+    <or>
+      <match lemma="coup" tags="n.*"/>
+      <match lemma="nouvelle" tags="n.*"/>
+      <match lemma="situation" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="encaisser" tags="vblex.*"><select lemma="ingressar"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <match lemma="chèque" tags="n.*"/>
+  </rule>
+
   <!-- handicaper >> desafavorir, handicapar -->
   <rule weight="0.8">
     <match lemma="handicaper" tags="vblex.*"><select lemma="desafavorir"/></match>

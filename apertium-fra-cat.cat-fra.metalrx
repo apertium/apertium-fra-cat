@@ -3304,10 +3304,35 @@
     <or>
       <match lemma="més" tags="adv"/>
       <match lemma="menys" tags="adv"/>
+      <match lemma="molt" tags="adv"/>
+      <match lemma="molt" tags="preadv"/>
+      <match lemma="gaire" tags="adv"/>
+      <match lemma="gaire" tags="preadv"/>
     </or>
   </rule>
 
 <!-- **************** V **************** -->
+
+  <!-- processar >> accuser, inculper, traiter -->
+  <rule weight="0.8">
+    <match lemma="processar" tags="vblex.*"><select lemma="accuser"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="processar" tags="vblex.*"><select lemma="traiter"/></match>
+    <repeat from="0" upto="2">
+      <or>
+      <match tags="det.*"/>
+      <match tags="adj.*"/>
+      <match tags="adv"/>
+      <match tags="preadv"/>
+      </or>
+    </repeat>
+    <match lemma="dada" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="dada" tags="n.*"/>
+    <match lemma="processar" tags="vblex.pp.*"><select lemma="traiter"/></match>
+  </rule>
 
   <!-- segellar >> sceller, cacheter -->
   <rule weight="0.8">
@@ -3325,6 +3350,7 @@
       <match tags="det.*"/>
       <match tags="adj.*"/>
       <match tags="adv"/>
+      <match tags="preadv"/>
       </or>
     </repeat>
     <match lemma="carn" tags="n.*"/>
@@ -5095,18 +5121,46 @@
     <match lemma="esclatar" tags="vblex.*"><select lemma="éclater"/></match>
   </rule>
 
-  <!-- encaixar >> emboîter, accorder -->
-  <rule weight="0.8">
-    <match lemma="encaixar" tags="vblex.*"><select lemma="accorder"/></match>
-  </rule>
+  <!-- encaixar >> emboîter, accorder, encaisser -->
+  <macro name="verb_intrans_trans" p1="encaixar" p2="accorder" p3="encaisser" />
 
-  <!-- rendre >> tornar, retre -->
-  <rule weight="0.8">
-    <match lemma="rendre" tags="vblex.*"><select lemma="tornar"/></match>
+  <!-- ingressar >> entrer, faire# entrer, déposer, hospitaliser -->
+  <macro name="verb_intrans_trans" p1="ingressar" p2="entrer" p3="faire# entrer" />
+  <rule weight="1.2">
+    <match lemma="ingressar" tags="vblex.*"><select lemma="déposer"/></match>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="compte" tags="n.*"/>
+      <match lemma="banc" tags="n.*"/>
+      <match lemma="banca" tags="n.*"/>
+      <match lemma="euro" tags="n.*"/>
+      <match lemma="dòlar" tags="n.*"/>
+      <match lemma="franc" tags="n.*"/>
+    </or>
   </rule>
-  <rule weight="1.0">
-    <match lemma="rendre" tags="vblex.*"><select lemma="retre"/></match>
-    <match lemma="hommage" tags="n.*"/>
+  <rule weight="1.2">
+    <or>
+      <match lemma="compte" tags="n.*"/>
+      <match lemma="banc" tags="n.*"/>
+      <match lemma="banca" tags="n.*"/>
+      <match lemma="euro" tags="n.*"/>
+      <match lemma="dòlar" tags="n.*"/>
+      <match lemma="franc" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="ingressar" tags="vblex.*"><select lemma="déposer"/></match>
+  </rule>
+  <rule weight="1.4">
+    <or>
+      <match lemma="n.*"/>
+      <match lemma="adj.*"/>
+      <match lemma="vblex.pp.*"/>
+    </or>
+    <match lemma="ingressar" tags="vblex.pp.*"><select lemma="hospitaliser"/></match>
   </rule>
 
   <!-- passar >> passer, arriver -->
@@ -6006,6 +6060,32 @@
     <match lemma="respecte" tags="n.*"><select lemma="égard"/></match>
   </rule>
 
+  <!-- ingrés >> revenu, admission, entrée -->
+  <rule weight="0.8">
+    <match lemma="ingrés" tags="n.*"><select lemma="revenu"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="num"/>
+      <match tags="num.*"/>
+      <match tags="det.pos.*.sg"/>
+    </or>
+    <match lemma="ingrés" tags="n.*"><select lemma="admission"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="examen" tags="n.*"/>
+      <match lemma="prova" tags="n.*"/>
+      <match lemma="oposició" tags="n.*"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <match lemma="ingrés" tags="n.*"><select lemma="admission"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ingrés" tags="n.*"><select lemma="admission"/></match>
+    <match lemma="a" tags="pr"/>
+  </rule>
+
   <!-- llitera >> couchette, litière -->
   <rule weight="0.8">
     <match lemma="llitera" tags="n.*"><select lemma="couchette"/></match>
@@ -6028,6 +6108,10 @@
       <match lemma="virus" tags="n.*"/>
       <match lemma="Covid" tags="np.*"/>
       <match lemma="Covid-19" tags="np.*"/>
+      <match lemma="risc" tags="n.*"/>
+      <match lemma="hospital" tags="n.*"/>
+      <match lemma="ingrés" tags="n.*"/>
+      <match lemma="ingressar" tags="vblex.*"/>
     </or>
   </rule>
   <rule weight="1.0">
