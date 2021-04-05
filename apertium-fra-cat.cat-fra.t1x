@@ -6398,9 +6398,9 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="REGLA: SENT,que,coma,i anar inf + enc + enc: , va donar-te-la, il te les a données">
+    <rule comment="REGLA: SENT,que anar inf + enc + enc: , va donar-te-la, il te les a données">
       <pattern>
-        <pattern-item n="sentquecm"/>
+        <pattern-item n="sentque_nocm"/>
         <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
         <pattern-item n="prnenc"/>
@@ -12662,7 +12662,6 @@ is not applicable because gender and number can not be taken from previous rules
         <pattern-item n="aprep"/>
         <pattern-item n="inf"/>
         <pattern-item n="prnenc"/>
-
       </pattern>
       <action>
         <call-macro n="f_vaux_pp2_enc">
@@ -13114,6 +13113,254 @@ is not applicable because gender and number can not be taken from previous rules
          </choose>
        </otherwise>
      </choose>
+     <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+     <call-macro n="f_bcond"><with-param pos="4"/><with-param pos="5"/></call-macro>
+     <out>
+       <b/>
+       <lu>
+         <get-case-from pos="5">
+           <lit v="à nouveau"/>
+         </get-case-from>
+         <lit-tag v="adv"/>
+       </lu>
+     </out>
+  </action>
+</rule>
+
+    <rule comment="REGLA: SENT,que vaig tornar a verb_inf > SENT,que j'ai verb_pp à nouveau">
+      <pattern>
+        <pattern-item n="sentque_nocm"/>
+        <pattern-item n="anarpri"/>
+        <pattern-item n="tornar_inf"/>
+        <pattern-item n="aprep"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_vaux_pp2">
+          <with-param pos="2"/>
+          <with-param pos="5"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <choose>
+           <when>
+             <test>
+               <equal><clip pos="2" side="sl" part="persona"/><lit-tag v="p3"/></equal>
+             </test>
+             <out>
+               <lu>
+                 <get-case-from pos="2">
+                   <clip pos="2" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="2" side="sl" part="persona"/>
+                 <lit-tag v="m"/>
+                 <clip pos="2" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+             <modify-case>
+               <clip pos="2" side="tl" part="lemh"/>
+               <lit v="aa"/>
+             </modify-case>
+             <out>
+               <lu>
+                 <clip pos="2" side="tl" part="lemh"/>
+                 <clip pos="2" side="tl" part="tags"/>
+                 <clip pos="2" side="tl" part="lemq"/>
+               </lu>
+               <b pos="2"/>
+               <lu>
+                 <clip pos="5" side="tl" part="lemh"/>
+                 <clip pos="5" side="tl" part="a_verb"/>
+                 <lit-tag v="pp"/>
+                 <var n="genero_tmp"/>
+                 <var n="numero_tmp"/>
+                 <clip pos="5" side="tl" part="lemq"/>
+               </lu>
+             </out>
+           </when>
+           <otherwise>
+             <out>
+               <lu>
+                 <get-case-from pos="2">
+                   <clip pos="2" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="2" side="sl" part="persona"/>
+                 <lit-tag v="mf"/>
+                 <clip pos="2" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+             <modify-case>
+               <clip pos="2" side="tl" part="lemh"/>
+               <lit v="aa"/>
+             </modify-case>
+             <out>
+               <lu>
+                 <clip pos="2" side="tl" part="lemh"/>
+                 <clip pos="2" side="tl" part="tags"/>
+                 <clip pos="2" side="tl" part="lemq"/>
+               </lu>
+               <b pos="2"/>
+               <lu>
+                 <clip pos="5" side="tl" part="lemh"/>
+                 <clip pos="5" side="tl" part="a_verb"/>
+                 <lit-tag v="pp"/>
+                 <var n="genero_tmp"/>
+                 <var n="numero_tmp"/>
+                 <clip pos="5" side="tl" part="lemq"/>
+               </lu>
+             </out>
+           </otherwise>
+         </choose>
+     <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+     <call-macro n="f_bcond"><with-param pos="4"/><with-param pos="5"/></call-macro>
+     <out>
+       <b/>
+       <lu>
+         <get-case-from pos="5">
+           <lit v="à nouveau"/>
+         </get-case-from>
+         <lit-tag v="adv"/>
+       </lu>
+     </out>
+  </action>
+</rule>
+
+    <rule comment="REGLA: SENT,que vaig tornar a verb_inf prnenc > SENT,que je prnpro ai verb_pp à nouveau">
+      <pattern>
+        <pattern-item n="sentque_nocm"/>
+        <pattern-item n="anarpri"/>
+        <pattern-item n="tornar_inf"/>
+        <pattern-item n="aprep"/>
+        <pattern-item n="inf"/>
+        <pattern-item n="prnenc"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_vaux_pp2_enc">
+          <with-param pos="2"/>
+          <with-param pos="5"/>
+          <with-param pos="6"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <choose>
+           <when>
+             <test>
+               <equal><clip pos="2" side="sl" part="persona"/><lit-tag v="p3"/></equal>
+             </test>
+             <out>
+               <lu>
+                 <get-case-from pos="2">
+                   <clip pos="2" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="2" side="sl" part="persona"/>
+                 <lit-tag v="m"/>
+                 <clip pos="2" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+               <lu>
+                 <get-case-from pos="3">
+                   <clip pos="6" side="tl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.pro"/>
+                 <clip pos="6" side="tl" part="tipoenc_pro"/>
+               </lu>
+               <b/>
+             </out>
+             <modify-case>
+               <clip pos="2" side="tl" part="lemh"/>
+               <lit v="aa"/>
+             </modify-case>
+             <out>
+               <lu>
+                 <clip pos="2" side="tl" part="lemh"/>
+                 <clip pos="2" side="tl" part="tags"/>
+                 <clip pos="2" side="tl" part="lemq"/>
+               </lu>
+               <b pos="2"/>
+               <lu>
+                 <clip pos="5" side="tl" part="lemh"/>
+                 <clip pos="5" side="tl" part="a_verb"/>
+                 <lit-tag v="pp"/>
+                 <var n="genero_tmp"/>
+                 <var n="numero_tmp"/>
+                 <clip pos="5" side="tl" part="lemq"/>
+               </lu>
+             </out>
+           </when>
+           <otherwise>
+             <out>
+               <lu>
+                 <get-case-from pos="2">
+                   <clip pos="2" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="2" side="sl" part="persona"/>
+                 <lit-tag v="mf"/>
+                 <clip pos="2" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+               <lu>
+                 <get-case-from pos="3">
+                   <clip pos="6" side="tl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.pro"/>
+                 <clip pos="6" side="tl" part="tipoenc_pro"/>
+               </lu>
+               <b/>
+             </out>
+             <modify-case>
+               <clip pos="2" side="tl" part="lemh"/>
+               <lit v="aa"/>
+             </modify-case>
+             <out>
+               <lu>
+                 <clip pos="2" side="tl" part="lemh"/>
+                 <clip pos="2" side="tl" part="tags"/>
+                 <clip pos="2" side="tl" part="lemq"/>
+               </lu>
+               <b pos="2"/>
+               <lu>
+                 <clip pos="5" side="tl" part="lemh"/>
+                 <clip pos="5" side="tl" part="a_verb"/>
+                 <lit-tag v="pp"/>
+                 <var n="genero_tmp"/>
+                 <var n="numero_tmp"/>
+                 <clip pos="5" side="tl" part="lemq"/>
+               </lu>
+             </out>
+           </otherwise>
+         </choose>
      <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
      <call-macro n="f_bcond"><with-param pos="4"/><with-param pos="5"/></call-macro>
      <out>
@@ -16295,7 +16542,7 @@ is not applicable because gender and number can not be taken from previous rules
     </rule>
 
 <!-- regles de generació de pronoms-->
-    <rule comment="REGLA: SENT,que,coma,i VERB">
+    <rule comment="REGLA: SENT,que VERB">
       <pattern>
         <pattern-item n="sentque_nocm"/>
         <pattern-item n="verb_conj"/>
@@ -16423,7 +16670,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="REGLA: SENT,que,coma,i anar inf">
+    <rule comment="REGLA: SENT,que anar inf">
       <pattern>
         <pattern-item n="sentque_nocm"/>
         <pattern-item n="anarpri"/>
@@ -16499,7 +16746,100 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="REGLA: SENT,que,coma,i anar inf enc: Van comprar-me > Ils m'ont acheté">
+    <rule comment="REGLA: SENT,que NO anar inf">
+      <pattern>
+        <pattern-item n="sentque_nocm"/>
+        <pattern-item n="noadv"/>
+        <pattern-item n="anarpri"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_setpronom">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="3" side="sl" part="lem"/>
+            <lit-tag v="prn.tn"/>
+            <clip pos="3" side="sl" part="persona"/>
+            <lit-tag v="m"/>
+            <clip pos="3" side="sl" part="nbr"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="3">
+              <clip pos="2" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+          <b pos="2"/>
+        </out>
+      <choose>
+          <when>
+            <test>
+              <in caseless="yes"><clip pos="4" side="tl" part="lem"/><list n="vbambser"/></in>
+            </test>
+       <out>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="être"/>
+            </get-case-from>
+            <lit-tag v="vbser"/>
+            <lit-tag v="pri"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="a_verb"/>
+            <lit-tag v="pp.m"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+       </when>
+       <otherwise>
+        <out>
+          <lu>
+            <get-case-from pos="3">
+              <lit v="avoir"/>
+            </get-case-from>
+            <lit-tag v="vbhaver"/>
+            <lit-tag v="pri"/>
+            <clip pos="3" side="tl" part="persona"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="a_verb"/>
+            <lit-tag v="pp.m.sg"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </otherwise>
+    </choose>        
+      </action>
+  </rule>
+
+    <rule comment="REGLA: SENT,que anar inf enc: Van comprar-me > Ils m'ont acheté">
       <pattern>
         <pattern-item n="sentque_nocm"/>
         <pattern-item n="anarpri"/>
@@ -16638,7 +16978,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
     </rule>
 
-    <rule comment="REGLA: SENT,que,coma,i NO anar inf enc: No van comprar-me > Ils ne m'ont pas acheté">
+    <rule comment="REGLA: SENT,que NO anar inf enc: No van comprar-me > Ils ne m'ont pas acheté">
       <pattern>
         <pattern-item n="sentque_nocm"/>
         <pattern-item n="noadv"/>
@@ -17154,7 +17494,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="REGLA: SENT,que,coma,i ser pp: seria expulsada > elle serait expulsée">
+    <rule comment="REGLA: SENT,que ser pp: seria expulsada > elle serait expulsée">
       <pattern>
         <pattern-item n="sentque_nocm"/>
         <pattern-item n="vbser_conj"/>
@@ -17248,7 +17588,7 @@ is not applicable because gender and number can not be taken from previous rules
   </rule>
 
     <rule>
-<!--REGLA: SENT,que,coma,i + No + VERB -->
+<!--REGLA: SENT,que + No + VERB -->
       <pattern>
         <pattern-item n="sentque_nocm"/>
         <pattern-item n="noadv"/>
@@ -17435,7 +17775,7 @@ is not applicable because gender and number can not be taken from previous rules
 -->
 
 <!-- ara amb pronom -->
-    <rule comment="REGLA: SENT,que,coma,i PRNPRO VERB: Li escriuen >> Ils lui écrivent">
+    <rule comment="REGLA: SENT,que PRNPRO VERB: Li escriuen >> Ils lui écrivent">
       <pattern>
         <pattern-item n="sentque_nocm"/>
         <pattern-item n="prnpro"/>
@@ -17860,7 +18200,7 @@ is not applicable because gender and number can not be taken from previous rules
     </rule>
 
     <rule>
-<!--REGLA: SENT,que,coma,i No PRN VERB: No li escriuen >> Ils ne lui écrivent pas -->
+<!--REGLA: SENT,que No PRN VERB: No li escriuen >> Ils ne lui écrivent pas -->
       <pattern>
         <pattern-item n="sentque_nocm"/>
         <pattern-item n="noadv"/>
@@ -17989,7 +18329,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="REGLA: SENT,que,coma,i PRN VERB : Li vas dir >> Tu lui as dit, Hi vas anar >> Tu y es allé">
+    <rule comment="REGLA: SENT,que PRN VERB : Li vas dir >> Tu lui as dit, Hi vas anar >> Tu y es allé">
       <pattern>
         <pattern-item n="sentque_nocm"/>
         <pattern-item n="prnpro"/>
@@ -18135,7 +18475,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="REGLA: SENT,que,coma,i NO PRN VERB : NO li vas dir >> Tu ne lui as pas dit, No hi vas anar >> Tu n'y es pas allé">
+    <rule comment="REGLA: SENT,que NO PRN VERB : NO li vas dir >> Tu ne lui as pas dit, No hi vas anar >> Tu n'y es pas allé">
       <pattern>
         <pattern-item n="sentque_nocm"/>
         <pattern-item n="noadv"/>
@@ -18293,7 +18633,7 @@ is not applicable because gender and number can not be taken from previous rules
   </rule>
 
 <!--ara amb nom-->
-    <rule comment="REGLA: SENT,que,coma,i + VERB + NOM">
+    <rule comment="REGLA: SENT,que + VERB + NOM">
       <pattern>
         <pattern-item n="sentque_nocm"/>
         <pattern-item n="verb_conj"/>
@@ -18501,7 +18841,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="REGLA: SENT,que,coma,i + ANAR + INF + NOM">
+    <rule comment="REGLA: SENT,que + ANAR + INF + NOM">
       <pattern>
         <pattern-item n="sentque_nocm"/>
         <pattern-item n="anarpri"/>
@@ -18786,7 +19126,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="REGLA: SENT,que,coma,i + VERB + VERB + NOM">
+    <rule comment="REGLA: SENT,que + VERB + VERB + NOM">
       <pattern>
         <pattern-item n="sentque_nocm"/>
         <pattern-item n="verb_conj"/>
