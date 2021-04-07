@@ -4678,6 +4678,40 @@
 
 <!-- **************** N **************** -->
 
+  <!-- bassin >> estany, conca, pelvis -->
+  <rule weight="0.8">
+    <match lemma="bassin" tags="n.*"><select lemma="estany"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="bassin" tags="n.*"><select lemma="conca"/></match>
+    <or>
+      <match lemma="minier" tags="adj.*"/>
+      <match lemma="houiller" tags="adj.*"/>
+      <match lemma="fluvial" tags="adj.*"/>
+      <match lemma="hydrologique" tags="adj.*"/>
+      <match lemma="sédimentaire" tags="adj.*"/>
+      <match lemma="méditerranéen" tags="adj.*"/>
+      <match lemma="atlantique" tags="adj.*"/>
+      <match lemma="pacifique" tags="adj.*"/>
+      <match lemma="indien" tags="adj.*"/>
+      <match lemma="caraïbe" tags="adj.*"/>
+      <match lemma="intérieur" tags="adj.*"/>
+      <match tags="np.top.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="bassin" tags="n.*"><select lemma="conca"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="mer" tags="n.*"/>
+      <match lemma="fleuve" tags="n.*"/>
+      <match lemma="rivière" tags="n.*"/>
+      <match tags="np.top.*"/>
+      <match tags=""/>
+    </or>
+  </rule>
+
   <!-- pièce >> peça, obra, habitació -->
   <rule weight="0.8">
     <match lemma="pièce" tags="n.*"><select lemma="peça"/></match>
@@ -9565,6 +9599,27 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- déchu >> destituït, caigut, habitació -->
+  <rule weight="0.8">
+    <match lemma="déchu" tags="adj.*"><select lemma="destituir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ange" tags="n.*"/>
+    <match lemma="déchu" tags="adj.*"><select lemma="caure"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="roi" tags="n.*"/>
+      <match lemma="président" tags="n.*"/>
+      <match lemma="dictateur" tags="n.*"/>
+    </or>
+    <match lemma="déchu" tags="adj.*"><select lemma="enderrocar"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="déchu" tags="adj.*"><select lemma="desposseir"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
 
   <!-- pareil >> igual, semblant, tal -->
   <rule weight="0.8">

@@ -5946,6 +5946,77 @@
 
 <!-- **************** N **************** -->
 
+  <!-- mig segle >> un demi-siècle, demi-siècle -->
+  <rule weight="0.8">
+    <match lemma="mig segle" tags="n.*"><select lemma="un demi-siècle"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="det.*"/>
+      <match tags="adj.*"/>
+    </or>
+    <match lemma="mig segle" tags="n.*"><select lemma="demi-siècle"/></match>
+  </rule>
+
+  <!-- mineral >> minéral, minerai -->
+  <rule weight="0.8">
+    <match lemma="mineral" tags="n.*"><select lemma="minerai"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="mineral" tags="n.*"><select lemma="minéral"/></match>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="vegetal" tags="n.*"/>
+      <match lemma="animal" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="vegetal" tags="n.*"/>
+      <match lemma="animal" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="mineral" tags="n.*"><select lemma="minéral"/></match>
+  </rule>
+<!--
+  <rule weight="1.0">
+    <match lemma="mineral" tags="n.*"><select lemma="minerai"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="mineral" tags="n.*"><select lemma="minerai"/></match>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="mina" tags="n.*"/>
+      <match lemma="miner" tags="n.*"/>
+      <match lemma="mineria" tags="n.*"/>
+      <match lemma="extraure" tags="vblex.*"/>
+      <match lemma="garbellar" tags="vblex.*"/>
+      <match lemma="fondre" tags="vblex.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="mina" tags="n.*"/>
+      <match lemma="miner" tags="n.*"/>
+      <match lemma="mineria" tags="n.*"/>
+      <match lemma="extraure" tags="vblex.*"/>
+      <match lemma="garbellar" tags="vblex.*"/>
+      <match lemma="fondre" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="mineral" tags="n.*"><select lemma="minerai"/></match>
+  </rule>
+-->
+
   <!-- habitació >> chambre, pièce -->
   <rule weight="0.8">
     <match lemma="habitació" tags="n.*"><select lemma="chambre"/></match>
