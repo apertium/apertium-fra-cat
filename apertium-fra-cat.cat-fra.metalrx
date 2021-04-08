@@ -3893,6 +3893,25 @@
     <match lemma="amanyagar" tags="vblex.*"><select lemma="choyer"/></match>
   </rule>
 
+  <!-- donar# la cara >> prendre# la responsabilité, répondre -->
+  <!-- treure# la cara >> prendre# la responsabilité, répondre -->
+  <rule weight="0.8">
+    <or>
+      <match lemma="donar# la cara" tags="vblex.*"><select lemma="prendre# la responsabilité"/></match>
+      <match lemma="treure# la cara" tags="vblex.*"><select lemma="prendre# la responsabilité"/></match>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="donar# la cara" tags="vblex.*"><select lemma="répondre"/></match>
+      <match lemma="treure# la cara" tags="vblex.*"><select lemma="répondre"/></match>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="per" tags="pr"><select lemma="pour"/></match>
+  </rule>
+
   <!-- esberlar >> fendre, écuisser -->
   <rule weight="0.8">
     <match lemma="esberlar" tags="vblex.*"><select lemma="fendre"/></match>
@@ -3902,6 +3921,9 @@
   <rule weight="0.8">
     <match lemma="atalaiar" tags="vblex.*"><select lemma="guetter"/></match>
   </rule>
+
+  <!-- comissariar >> organiser, être# le commissaire de -->
+  <macro name="verb_intrans_trans" p1="comissariar" p2="organiser" p3="être# le commissaire de" />
 
   <!-- desbarrar >> déraisonner, démantibuler, débarrer, déjanter -->
   <macro name="verb_intrans_trans" p1="desbarrar" p2="déraisonner" p3="débarrer" />
