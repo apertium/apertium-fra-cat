@@ -2759,6 +2759,26 @@
       <match lemma="Carnestoltes" tags="np.*"/>
     </or>
   </rule>
+  <rule weight="1.0">
+    <match lemma="per" tags="pr"><select lemma="pour"/></match>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="autodeterminació" tags="n.*"/>
+      <match lemma="independència" tags="n.*"/>
+      <match lemma="llibertat" tags="np.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="lluita" tags="n.*"/>
+      <match lemma="manifestació" tags="n.*"/>
+      <match lemma="moviment" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="per" tags="pr"><select lemma="pour"/></match>
+  </rule>
   <rule weight="1.2">
     <match lemma="caracteritzar" tags="vblex.*"/>
     <repeat from="0" upto="1">
@@ -3925,6 +3945,9 @@
 
   <!-- empantanegar >> paralyser, stagner -->
   <macro name="verb_nopron_pron" p1="empantanegar" p2="paralyser" p3="stagner" />
+
+  <!-- encabir >> mettre, rentrer -->
+  <macro name="verb_nopron_pron" p1="encabir" p2="mettre" p3="rentrer" />
 
   <!-- encimbellar >> hisser, grimper -->
   <macro name="verb_nopron_pron" p1="encimbellar" p2="hisser" p3="grimper" />
