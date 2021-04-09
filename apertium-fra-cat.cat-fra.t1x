@@ -5010,6 +5010,56 @@
       </action>
     </rule>
 
+    <rule comment="REGLA: per NPtop ">
+      <pattern>
+        <pattern-item n="per"/>
+        <pattern-item n="nptop"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <choose>
+          <when>
+            <test>
+              <in><clip pos="2" side="tl" part="lem"/><list n="pais"/></in>
+            </test>
+            <out>
+              <lu>
+                <lit v="le"/>
+                <lit-tag v="det.def"/>
+                <var n="genero"/>
+                <var n="numero"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+
     <rule comment="REGLA: sent NP">
       <pattern>
         <pattern-item n="sent"/>
