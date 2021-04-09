@@ -2857,7 +2857,7 @@
     <match lemma="pour" tags="pr"><select lemma="per"/></match>
     <match tags="n.*"/>
   </rule>
-	-->
+-->
   <rule weight="1.0">
     <match lemma="pour" tags="pr"><select lemma="per"/></match>
     <repeat from="0" upto="2">
@@ -2927,7 +2927,8 @@
       <match lemma="guillotiner" tags="vblex.*"/>
       <match lemma="tuer" tags="vblex.*"/>
       <match lemma="périr" tags="vblex.*"/>
-      <match lemma="mort" tags="vblex.*"/>
+      <match lemma="mourir" tags="vblex.*"/>
+      <match lemma="voter" tags="vblex.*"/>
     </or>
     <repeat from="0" upto="1">
       <or>
@@ -3285,6 +3286,30 @@
       <match tags="det.def.*"/>
     </repeat>
     <match tags="np.top.*"/>
+  </rule>
+
+  <!-- habiter >> viure, habitar -->
+  <rule weight="0.8">
+    <match lemma="habiter" tags="vblex.*"><select lemma="viure"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="maison" tags="n.*"/>
+      <match lemma="château" tags="n.*"/>
+      <match lemma="palais" tags="n.*"/>
+      <match lemma="tour" tags="n.*"/>
+      <match lemma="île" tags="n.*"/>
+      <match lemma="atoll" tags="n.*"/>
+      <match lemma="station" tags="n.*"/>
+      <match lemma="sonde" tags="n.*"/>
+      <match lemma="mission" tags="n.*"/>
+      <match lemma="planète" tags="n.*"/>
+      <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
+    </or>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="habiter" tags="vblex.pp.*"><select lemma="habitar"/></match>
   </rule>
 
   <!-- bousculer >> empentar, sacsejar -->
@@ -5812,30 +5837,30 @@
   <rule weight="0.8">
     <match lemma="appeler" tags="vblex.*"><select lemma="cridar"/></match>
   </rule>
-  <rule weight="1.0">
+  <rule weight="1.2">
     <match tags="prn.pro.p1.*.sg"/>
     <match lemma="appeler" tags="vblex.*.p1.sg"><select lemma="dir"/></match>
   </rule>
-  <rule weight="1.0">
+  <rule weight="1.2">
     <match tags="prn.pro.p2.*.sg"/>
     <match lemma="appeler" tags="vblex.*.p2.sg"><select lemma="dir"/></match>
   </rule>
-  <rule weight="1.0">
+  <rule weight="1.2">
     <match tags="prn.pro.ref.p3.*.sp"/>
     <or>
       <match lemma="appeler" tags="vblex.*.p3.sg"><select lemma="dir"/></match>
       <match lemma="appeler" tags="vblex.*.p3.pl"><select lemma="dir"/></match>
     </or>
   </rule>
-  <rule weight="1.0">
+  <rule weight="1.2">
     <match tags="prn.pro.p1.*.pl"/>
     <match lemma="appeler" tags="vblex.*.p1.pl"><select lemma="dir"/></match>
   </rule>
-  <rule weight="1.0">
+  <rule weight="1.2">
     <match tags="prn.pro.p2.*.pl"/>
     <match lemma="appeler" tags="vblex.*.p2.pl"><select lemma="dir"/></match>
   </rule>
-  <rule weight="1.0">
+  <rule weight="1.2">
     <or>
       <match lemma="aller" tags="vblex.*.p3.sg"/>
       <match lemma="aller" tags="vblex.*.p3.pl"/>
@@ -5844,24 +5869,29 @@
       <or>
         <match tags="adv"/>
         <match tags="cnjadv"/>
-        <match tags="preadv"/>
       </or>
     </repeat>
     <match tags="prn.pro.ref.p3.*.sp"/>
     <match lemma="appeler" tags="vblex.inf"><select lemma="dir"/></match>
   </rule>
-  <rule weight="1.0">
+  <rule weight="1.2">
     <match tags="vbser.*"/>
-    <match lemma="appeler" tags="vblex.pp.*"><select lemma="dir"/></match>
-  </rule>
-  <rule weight="1.0">
-    <match tags="prn.pro.p3.*"/>
-    <match lemma="appeler" tags="vblex.*.p3.*"><select lemma="anomenar"/></match>
     <repeat from="0" upto="1">
       <or>
         <match tags="adv"/>
         <match tags="cnjadv"/>
-        <match tags="preadv"/>
+      </or>
+    </repeat>
+    <match lemma="appeler" tags="vblex.pp.*"><select lemma="dir"/></match>
+  </rule>
+
+  <rule weight="1.0">
+    <match tags="prn.pro.*"/>
+    <match lemma="appeler" tags="vblex.*"><select lemma="anomenar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
       </or>
     </repeat>
     <or>
@@ -5872,7 +5902,125 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match lemma="appeler" tags="vblex.*.p3.*"><select lemma="anomenar"/></match>
+    <match tags="prn.pro.*"/>
+    <match lemma="appeler" tags="vblex.*"><select lemma="anomenar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="det.pos.*"/>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.*"/>
+    <match lemma="appeler" tags="vblex.*"><select lemma="anomenar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="det.pos.*"/>
+    <match tags="adj.*"/>
+    <match tags="n.*"/>
+  </rule>
+
+  <rule weight="1.0">
+    <match tags="prn.pro.*"/>
+    <match tags="vbhaver.*"/>
+    <match lemma="appeler" tags="vblex.pp.*"><select lemma="anomenar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match tags="np.ant"/>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+      <match tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.*"/>
+    <match tags="vbhaver.*"/>
+    <match lemma="appeler" tags="vblex.pp.*"><select lemma="anomenar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="det.pos.*"/>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.*"/>
+    <match tags="vbhaver.*"/>
+    <match lemma="appeler" tags="vblex.pp.*"><select lemma="anomenar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="det.pos.*"/>
+    <match tags="adj.*"/>
+    <match tags="n.*"/>
+  </rule>
+
+  <rule weight="1.0">
+    <match tags="rel.*"/>
+    <match tags="prn.tn.*"/>
+    <match lemma="appeler" tags="vblex.*"><select lemma="anomenar"/></match>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match tags="np.ant"/>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+      <match tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match tags="rel.*"/>
+    <match tags="prn.tn.*"/>
+    <match lemma="appeler" tags="vblex.*"><select lemma="anomenar"/></match>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="det.pos.*"/>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match tags="rel.*"/>
+    <match tags="prn.tn.*"/>
+    <match lemma="appeler" tags="vblex.*"><select lemma="anomenar"/></match>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="det.pos.*"/>
+    <match tags="adj.*"/>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match tags="rel.*"/>
+    <match tags="prn.tn.*"/>
+    <match tags="adv"/>
+    <match lemma="appeler" tags="vblex.*"><select lemma="anomenar"/></match>
     <repeat from="0" upto="2">
       <or>
         <match tags="adv"/>
@@ -5881,6 +6029,129 @@
     </repeat>
     <match tags="n.*"/>
   </rule>
+  <rule weight="1.0">
+    <match tags="rel.*"/>
+    <match tags="prn.tn.*"/>
+    <match tags="adv"/>
+    <match lemma="appeler" tags="vblex.*"><select lemma="anomenar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="det.pos.*"/>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match tags="rel.*"/>
+    <match tags="prn.tn.*"/>
+    <match tags="adv"/>
+    <match lemma="appeler" tags="vblex.*"><select lemma="anomenar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="det.pos.*"/>
+    <match tags="adj.*"/>
+    <match tags="n.*"/>
+  </rule>
+
+  <rule weight="1.0">
+    <match tags="rel.*"/>
+    <match tags="prn.tn.*"/>
+    <match tags="vbhaver.*"/>
+    <match lemma="appeler" tags="vblex.pp.*"><select lemma="anomenar"/></match>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match tags="np.ant"/>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+      <match tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match tags="rel.*"/>
+    <match tags="prn.tn.*"/>
+    <match tags="vbhaver.*"/>
+    <match lemma="appeler" tags="vblex.pp.*"><select lemma="anomenar"/></match>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="det.pos.*"/>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match tags="rel.*"/>
+    <match tags="prn.tn.*"/>
+    <match tags="vbhaver.*"/>
+    <match lemma="appeler" tags="vblex.pp.*"><select lemma="anomenar"/></match>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="det.pos.*"/>
+    <match tags="adj.*"/>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match tags="rel.*"/>
+    <match tags="prn.tn.*"/>
+    <match tags="vbhaver.*"/>
+    <match tags="adv"/>
+    <match lemma="appeler" tags="vblex.pp.*"><select lemma="anomenar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match tags="rel.*"/>
+    <match tags="prn.tn.*"/>
+    <match tags="vbhaver.*"/>
+    <match tags="adv"/>
+    <match lemma="appeler" tags="vblex.pp.*"><select lemma="anomenar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="det.pos.*"/>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match tags="rel.*"/>
+    <match tags="prn.tn.*"/>
+    <match tags="vbhaver.*"/>
+    <match tags="adv"/>
+    <match lemma="appeler" tags="vblex.pp.*"><select lemma="anomenar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="det.pos.*"/>
+    <match tags="adj.*"/>
+    <match tags="n.*"/>
+  </rule>
+
   <rule weight="1.0">
     <match lemma="quelqu'un" tags="prn.*"/>
     <match lemma="appeler" tags="vblex.pp.m.*"><select lemma="anomenar"/></match>
@@ -6078,6 +6349,58 @@
 
 <!-- **************** N **************** -->
 
+  <!-- prélèvement >> deducció, extracció -->
+  <rule weight="0.8">
+    <match lemma="prélèvement" tags="n.*"><select lemma="deducció"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="prélèvement" tags="n.*"><select lemma="extracció"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="échantillon" tags="n.*"/>
+      <match lemma="peau" tags="n.*"/>
+      <match lemma="organe" tags="n.*"/>
+      <match lemma="cœur" tags="n.*"/>
+      <match lemma="foie" tags="n.*"/>
+      <match lemma="rein" tags="n.*"/>
+      <match lemma="paroi" tags="n.*"/>
+      <match lemma="ovule" tags="n.*"/>
+      <match lemma="sang" tags="n.*"/>
+      <match lemma="ADN" tags="n.*"/>
+      <match lemma="eau" tags="n.*"/>
+      <match lemma="pétrole" tags="n.*"/>
+      <match lemma="gaz" tags="n.*"/>
+      <match lemma="charbon" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="prélèvement" tags="n.*"><select lemma="extracció"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="échantillon" tags="n.*"/>
+      <match lemma="peau" tags="n.*"/>
+      <match lemma="organe" tags="n.*"/>
+      <match lemma="cœur" tags="n.*"/>
+      <match lemma="foie" tags="n.*"/>
+      <match lemma="rein" tags="n.*"/>
+      <match lemma="paroi" tags="n.*"/>
+      <match lemma="ovule" tags="n.*"/>
+      <match lemma="sang" tags="n.*"/>
+      <match lemma="ADN" tags="n.*"/>
+      <match lemma="eau" tags="n.*"/>
+      <match lemma="pétrole" tags="n.*"/>
+      <match lemma="gaz" tags="n.*"/>
+      <match lemma="charbon" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- bassin >> estany, conca, pelvis -->
   <rule weight="0.8">
     <match lemma="bassin" tags="n.*"><select lemma="estany"/></match>
@@ -6101,6 +6424,9 @@
   </rule>
   <rule weight="1.0">
     <match lemma="bassin" tags="n.*"><select lemma="conca"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
     <match lemma="de" tags="pr"/>
     <match tags="det.*"/>
     <or>
@@ -6158,6 +6484,9 @@
   <rule weight="1.0">
     <match tags="det.*.pl"/>
     <match lemma="propos" tags="n.*"><select lemma="paraula"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
     <match lemma="de" tags="pr"/>
     <match tags="det.*"/>
     <or>
@@ -6180,6 +6509,9 @@
   <rule weight="1.0">
     <match tags="det.*.pl"/>
     <match lemma="propos" tags="n.*"><select lemma="paraula"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
     <match lemma="de" tags="pr"/>
     <or>
       <match tags="np.ant.*"/>
@@ -6234,6 +6566,9 @@
   </rule>
   <rule weight="1.0">
     <match lemma="filière" tags="n.*"><select lemma="xarxa"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
     <match lemma="de" tags="pr"/>
     <or>
       <match lemma="trafic" tags="n.*"/>
@@ -6463,6 +6798,9 @@
   </rule>
   <rule weight="1.0">
     <match lemma="partie" tags="n.*"><select lemma="partida"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
     <match lemma="de" tags="pr"/>
     <or>
       <match lemma="carte" tags="n.*"/>
@@ -6805,6 +7143,9 @@
   </rule>
   <rule weight="1.2">
     <match lemma="recette" tags="n.*"><select lemma="recepta"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
     <match lemma="de" tags="pr"/>
     <match lemma="cuisine" tags="n.*"/>
   </rule>
@@ -6814,6 +7155,9 @@
   </rule>
   <rule weight="1.2">
     <match lemma="recette" tags="n.*"><select lemma="recepta"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
     <match lemma="de" tags="pr"/>
     <match tags="det.*"/>
     <match lemma="médecin" tags="n.*"/>
@@ -6827,6 +7171,9 @@
   </rule>
   <rule weight="1.0">
     <match lemma="recette" tags="n.*"><select lemma="recaptació"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
     <match lemma="de" tags="pr"/>
     <match tags="det.*"/>
     <or>
@@ -8649,6 +8996,12 @@
       <match lemma="montagne" tags="n.*"/>
       <match lemma="mont" tags="n.*"/>
       <match lemma="volcan" tags="n.*"/>
+      <match lemma="état" tags="n.*"/>
+      <match lemma="administration" tags="n.*"/>
+      <match lemma="pouvoir" tags="n.*"/>
+      <match lemma="puissance" tags="n.*"/>
+      <match lemma="carrière" tags="n.*"/>
+      <match lemma="expansion" tags="n.*"/>
       <match tags="np.top.*"/>
     </or>
   </rule>
@@ -11084,6 +11437,28 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- flamboyant >> flamejant, flamíger, flamant, encès -->
+  <rule weight="0.8">
+    <match lemma="flamboyant" tags="adj.*"><select lemma="flamejant"/></match>
+  </rule>
+  <rule weight="0.9">
+    <match lemma="flamboyant" tags="adj.*"><select lemma="encès"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="gothique" tags="n.*"/>
+      <match lemma="gothique" tags="adj.*"/>
+      <match lemma="cathédrale" tags="n.*"/>
+      <match lemma="style" tags="n.*"/>
+    </or>
+    <match lemma="flamboyant" tags="adj.*"><select lemma="flamíger"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="flamboyant" tags="adj.*"><select lemma="flamant"/></match>
+    <match tags="n.*"/>
+  </rule>
+
   <!-- déchu >> destituït, caigut, habitació -->
   <rule weight="0.8">
     <match lemma="déchu" tags="adj.*"><select lemma="destituir"/></match>
@@ -11912,7 +12287,7 @@
   <rule weight="0.9">
     <or>
       <match lemma="maison" tags="n.*"/>
-      <match lemma="chateau" tags="n.*"/>
+      <match lemma="château" tags="n.*"/>
       <match lemma="palais" tags="n.*"/>
       <match lemma="tour" tags="n.*"/>
       <match lemma="bois" tags="n.*"/>

@@ -2779,6 +2779,24 @@
     </repeat>
     <match lemma="per" tags="pr"><select lemma="pour"/></match>
   </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="caigut" tags="n.*"/>
+      <match lemma="caure" tags="vblex.pp.*"/>
+      <match lemma="mort" tags="n.*"/>
+      <match lemma="mort" tags="adj.*"/>
+      <match lemma="vot" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
+    <match lemma="per" tags="pr"><select lemma="pour"/></match>
+    <match tags="np.*"/>
+  </rule>
   <rule weight="1.2">
     <match lemma="caracteritzar" tags="vblex.*"/>
     <repeat from="0" upto="1">
