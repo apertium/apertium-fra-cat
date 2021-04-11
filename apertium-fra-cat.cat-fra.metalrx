@@ -5444,6 +5444,20 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- indentificatiu >> d'identification, identificatoire -->
+  <rule weight="0.8">
+    <match lemma="indentificatiu" tags="adj.*"><select lemma="d'identification"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="més"/>
+      <match lemma="menys"/>
+      <match tags="adv"/>
+      <match tags="preadv"/>
+    </or>
+    <match lemma="indentificatiu" tags="adj.*"><select lemma="identificatoire"/></match>
+  </rule>
+
   <!-- determinat >> determiné, certain -->
   <rule weight="0.8">
     <match lemma="determinat" tags="adj.*"><select lemma="determiné"/></match>
@@ -5506,6 +5520,10 @@
       <match lemma="relació" tags="n.*"/>
       <match lemma="vida" tags="n.*"/>
       <match lemma="vincle" tags="n.*"/>
+      <match lemma="més"/>
+      <match lemma="menys"/>
+      <match tags="adv"/>
+      <match tags="preadv"/>
     </or>
     <match lemma="laboral" tags="adj.*"><select lemma="professionnel"/></match>
   </rule>
@@ -6008,6 +6026,74 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- cara >> visage, face -->
+  <rule weight="0.8">
+    <match lemma="cara" tags="n.*"><select lemma="visage"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cara" tags="n.*"><select lemma="face"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="disque" tags="n.*"/>
+      <match lemma="album" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="disque" tags="n.*"/>
+      <match lemma="album" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="cara" tags="n.*"><select lemma="face"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cara" tags="n.*"><select lemma="face"/></match>
+    <repeat from="0" upto="1">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="A" tags="n.*"/>
+      <match lemma="B" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- caldera >> chaudière, caldeira, caldera -->
+  <rule weight="0.8">
+    <match lemma="caldera" tags="n.*"><select lemma="chaudière"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="caldera" tags="n.*"><select lemma="caldeira"/></match>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="volcà" tags="n.*"/>
+      <match lemma="volcanisme" tags="n.*"/>
+      <match lemma="cràter" tags="n.*"/>
+      <match lemma="erupció" tags="n.*"/>
+      <match lemma="lava" tags="n.*"/>
+      <match lemma="volcànic" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="volcà" tags="n.*"/>
+      <match lemma="volcanisme" tags="n.*"/>
+      <match lemma="cràter" tags="n.*"/>
+      <match lemma="erupció" tags="n.*"/>
+      <match lemma="lava" tags="n.*"/>
+      <match lemma="volcànic" tags="adj.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="caldera" tags="n.*"><select lemma="caldeira"/></match>
+  </rule>
 
   <!-- mig segle >> un demi-siècle, demi-siècle -->
   <rule weight="0.8">
@@ -9728,6 +9814,7 @@
   <macro name="noms_propis" p1="Segimon" p2="Sigismond" />
   <macro name="noms_propis" p1="Sixt" p2="Sixte" />
 
+  <macro name="noms_propis" p1="Adelaida" p2="Adélaïde" />
   <macro name="noms_propis" p1="Anna" p2="Anne" />
   <macro name="noms_propis" p1="Blanca" p2="Blanche" />
   <macro name="noms_propis" p1="Caterina" p2="Catherine" />

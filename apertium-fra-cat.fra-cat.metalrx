@@ -3270,6 +3270,60 @@
 
 <!-- **************** V **************** -->
 
+  <!-- flanquer >> flanquejar, endinyar -->
+  <rule weight="0.8">
+    <match lemma="flanquer" tags="vblex.*"><select lemma="flanquejar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="flanquer" tags="vblex.*"><select lemma="endinyar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+        <match tags="det.*"/>
+        <match tags="num"/>
+        <match tags="num.*"/>
+        <match lemma="de" tags="pr"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="coup" tags="n.*"/>
+      <match lemma="claque" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="flanquer" tags="vblex.*"><select lemma="encomenar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+        <match tags="det.*"/>
+        <match tags="num"/>
+        <match tags="num.*"/>
+        <match lemma="de" tags="pr"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="grippe" tags="n.*"/>
+      <match lemma="rhume" tags="n.*"/>
+      <match lemma="catarrhe" tags="n.*"/>
+      <match lemma="herpès" tags="n.*"/>
+      <match lemma="syphilis" tags="n.*"/>
+      <match lemma="gonorrhée" tags="n.*"/>
+      <match lemma="blénorragie" tags="n.*"/>
+      <match lemma="infection" tags="n.*"/>
+      <match lemma="virus" tags="n.*"/>
+      <match lemma="coronavirus" tags="n.*"/>
+      <match lemma="Covid" tags="np.*"/>
+      <match lemma="Covid-19" tags="np.*"/>
+      <match lemma="SARS" tags="np.*"/>
+      <match lemma="SARS-CoV-2" tags="np.*"/>
+      <match lemma="VIH" tags="n.*"/>
+      <match lemma="sida" tags="n.*"/>
+      <match lemma="SIDA" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- draguer >> dragar, flirtejar -->
   <rule weight="0.8">
     <match lemma="draguer" tags="vblex.*"><select lemma="dragar"/></match>
@@ -6348,6 +6402,45 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- reprise >> represa, reconquesta, vegada -->
+  <rule weight="0.8">
+    <match lemma="reprise" tags="n.*"><select lemma="represa"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="reprise" tags="n.*"><select lemma="reconquesta"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="ville" tags="n.*"/>
+      <match lemma="cité" tags="n.*"/>
+      <match lemma="village" tags="n.*"/>
+      <match lemma="château" tags="n.*"/>
+      <match lemma="château-fort" tags="n.*"/>
+      <match lemma="fort" tags="n.*"/>
+      <match lemma="colline" tags="n.*"/>
+      <match tags="np.top.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="reprise" tags="n.*"><select lemma="reconquesta"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="np.top.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="à" tags="pr"><remove tags="pr"/></match>
+    <or>
+      <match tags="num"/>
+      <match tags="num.*"/>
+      <match tags="adj.*"/>
+    </or>
+    <match lemma="reprise" tags="n.*"><select lemma="vegada"/></match>
+  </rule>
+
+  <!-- dinde >> gall dindi, indiot -->
+  <rule weight="0.8">
+    <match lemma="dinde" tags="n.*"><select lemma="gall dindi"/></match>
+  </rule>
 
   <!-- prélèvement >> deducció, extracció -->
   <rule weight="0.8">
@@ -13207,6 +13300,7 @@
   <macro name="noms_propres" p1="Sixte" p2="Sixt" />
   <macro name="noms_propres" p1="Stéphane" p2="Esteve" />
 
+  <macro name="noms_propres" p1="Adélaïde" p2="Adelaida" />
   <macro name="noms_propres" p1="Aliénor" p2="Elionor" />
   <macro name="noms_propres" p1="Anne" p2="Anna" />
   <macro name="noms_propres" p1="Blanche" p2="Blanca" />
