@@ -3270,6 +3270,11 @@
 
 <!-- **************** V **************** -->
 
+  <!-- entailler >> fer# un senyal, entallar -->
+  <rule weight="0.8">
+    <match lemma="entailler" tags="vblex.*"><select lemma="fer# un senyal"/></match>
+  </rule>
+
   <!-- flanquer >> flanquejar, endinyar -->
   <rule weight="0.8">
     <match lemma="flanquer" tags="vblex.*"><select lemma="flanquejar"/></match>
