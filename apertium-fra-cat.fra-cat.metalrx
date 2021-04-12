@@ -6408,6 +6408,24 @@
 
 <!-- **************** N **************** -->
 
+  <!-- procédure >> procediment, causa -->
+  <rule weight="0.8">
+    <match lemma="procédure" tags="n.*"><select lemma="procediment"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="procédure" tags="n.*"><select lemma="causa"/></match>
+    <match lemma="pénal" tags="adj.*"/>
+  </rule>
+
+  <!-- poursuite >> persecució, causa -->
+  <rule weight="0.8">
+    <match lemma="poursuite" tags="n.*"><select lemma="persecució"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="poursuite" tags="n.*"><select lemma="causa"/></match>
+    <match lemma="pénal" tags="adj.*"/>
+  </rule>
+
   <!-- reprise >> represa, reconquesta, vegada -->
   <rule weight="0.8">
     <match lemma="reprise" tags="n.*"><select lemma="represa"/></match>
@@ -12311,6 +12329,27 @@
   </rule>
 
 <!-- **************** VBLEX **************** -->
+
+  <!-- engager >> comprometre, engager -->
+  <rule weight="0.8">
+    <match lemma="engager" tags="vblex.*"><select lemma="comprometre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="engager" tags="vblex.*"><select lemma="obrir"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match lemma="de" tags="pr"/>
+        <match tags="adj.*"/>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="poursuite" tags="n.f.pl"><select lemma="causa"/></match>
+      <match lemma="procédure" tags="n.*"><select lemma="causa"/></match>
+    </or>
+  </rule>
 
   <!-- encaisser >> encaixonar, encaixar, ingressar -->
   <rule weight="0.8">

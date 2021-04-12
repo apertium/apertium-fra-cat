@@ -1669,11 +1669,11 @@
   </rule>
 -->
 
-  <!-- això >> ça, cela -->
+  <!-- això >> ça, cela, ce -->
   <rule weight="0.8">
     <match lemma="això" tags="prn.*"><select lemma="ça"/></match>
   </rule>
-  <rule weight="1.0">
+   <rule weight="1.4">
     <match tags="pr"/>
     <match lemma="això" tags="prn.*"><select lemma="cela"/></match>
   </rule>
@@ -1681,8 +1681,19 @@
     <match lemma="això" tags="prn.*"><select lemma="cela"/></match>
     <or><match tags="vblex.*"/><match tags="vbhaver.*"/><match tags="vbmod.*"/></or>
   </rule>
+  <rule weight="1.2">
+    <match lemma="això" tags="prn.*"><select lemma="ce"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match tags="vbser.*.p3.sg"/>
+      <match lemma="estar" tags="vblex.*.p3.sg"/>
+    </or>
+  </rule>
 
-<!-- REL -->
+
+<!-- **************** REL **************** -->
 
   <!-- que >> que, qui -->
   <rule weight="0.8">
@@ -2712,7 +2723,7 @@
     <match lemma="any" tags="n.*"><select lemma="année"/></match>
   </rule>
 
-  <!-- per >> par, pour, de -->
+  <!-- per >> par, pour, de, à cause de -->
   <rule weight="0.8">
     <match lemma="per" tags="pr"><select lemma="par"/></match>
   </rule>
@@ -2739,6 +2750,22 @@
     <match lemma="per" tags="pr"><select lemma="pour"/></match>
   </rule>
   <rule weight="1.0">
+    <match lemma="per" tags="pr"><select lemma="à cause de"/></match>
+    <or>
+      <match lemma="això" tags="prn.*"/>
+      <match lemma="allò" tags="prn.*"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <or>
+      <match lemma="competició" tags="n.*"/>
+      <match lemma="lluita" tags="n.*"/>
+      <match lemma="interès" tags="n.*"/>
+      <match lemma="preocupació" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <match tags="adj.*"/>
+    </repeat>
     <match lemma="per" tags="pr"><select lemma="pour"/></match>
     <or>
       <match lemma="això" tags="prn.*"/>
@@ -3340,18 +3367,37 @@
   <rule weight="1.0">
     <match lemma="no" tags="adv"><select lemma="pas"/></match>
     <or>
+<!--
       <match lemma="més" tags="adv"/>
       <match lemma="menys" tags="adv"/>
       <match lemma="molt" tags="adv"/>
       <match lemma="molt" tags="preadv"/>
       <match lemma="gaire" tags="adv"/>
       <match lemma="gaire" tags="preadv"/>
+-->
       <match tags="adv"/>
       <match tags="preadv"/>
     </or>
   </rule>
 
 <!-- **************** V **************** -->
+
+  <!-- obrir >> ouvrir, engager -->
+  <rule weight="0.8">
+    <match lemma="obrir" tags="vblex.*"><select lemma="ouvrir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="obrir" tags="vblex.*"><select lemma="engager"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
+    </repeat>
+    <match lemma="causa" tags="n.*"><select lemma="procédure"/></match>
+  </rule>
 
   <!-- processar >> accuser, inculper, traiter -->
   <rule weight="0.8">
@@ -3361,10 +3407,10 @@
     <match lemma="processar" tags="vblex.*"><select lemma="traiter"/></match>
     <repeat from="0" upto="2">
       <or>
-      <match tags="det.*"/>
-      <match tags="adj.*"/>
-      <match tags="adv"/>
-      <match tags="preadv"/>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+        <match tags="adv"/>
+        <match tags="preadv"/>
       </or>
     </repeat>
     <match lemma="dada" tags="n.*"/>
@@ -6028,6 +6074,34 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- porter >> portier, gardien# de but -->
+  <rule weight="0.8">
+    <match lemma="porter" tags="n.*"><select lemma="portier"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="porter" tags="n.*"><select lemma="gardien# de but"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <or>
+      <match tags="np.top.*"/>
+      <match tags="np.al.*"/>
+      <match tags=""/>
+      <match lemma="équipe" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- notícia >> nouvelle, dépêche -->
+  <rule weight="0.8">
+    <match lemma="notícia" tags="n.*"><select lemma="nouvelle"/></match>
+  </rule>
+
+  <!-- causa >> cause, procédure -->
+  <rule weight="0.8">
+    <match lemma="causa" tags="n.*"><select lemma="cause"/></match>
+  </rule>
 
   <!-- cara >> visage, face -->
   <rule weight="0.8">
