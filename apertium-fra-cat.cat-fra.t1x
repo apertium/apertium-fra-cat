@@ -112,6 +112,46 @@
       <cat-item lemma="al final de" tags="pr"/>
       <cat-item lemma="a finals de" tags="pr"/>
     </def-cat>
+    <def-cat n="espai_prepadv">
+      <cat-item lemma="darrere" tags="pr"/>
+      <cat-item lemma="rere" tags="pr"/>
+      <cat-item lemma="davant" tags="pr"/>
+      <cat-item lemma="sobre" tags="pr"/>
+      <cat-item lemma="sota" tags="pr"/>
+      <cat-item lemma="al davant" tags="pr"/>
+      <cat-item lemma="al darrere" tags="pr"/>
+      <cat-item lemma="al damunt" tags="pr"/>
+      <cat-item lemma="a sobre" tags="pr"/>
+      <cat-item lemma="a sota" tags="pr"/>
+      <cat-item lemma="prop" tags="pr"/>
+      <cat-item lemma="a prop" tags="pr"/>
+      <cat-item lemma="a la vora" tags="pr"/>
+      <cat-item lemma="al voltant" tags="pr"/>
+      <cat-item lemma="a l'entorn" tags="pr"/>
+      <cat-item lemma="a dins" tags="pr"/>
+      <cat-item lemma="a fora" tags="pr"/>
+      <cat-item lemma="a l'interior" tags="pr"/>
+      <cat-item lemma="a l'exterior" tags="pr"/>
+      <cat-item lemma="darrere" tags="adv"/>
+      <cat-item lemma="rere" tags="adv"/>
+      <cat-item lemma="davant" tags="adv"/>
+      <cat-item lemma="sobre" tags="adv"/>
+      <cat-item lemma="sota" tags="adv"/>
+      <cat-item lemma="al davant" tags="adv"/>
+      <cat-item lemma="al darrere" tags="adv"/>
+      <cat-item lemma="al damunt" tags="adv"/>
+      <cat-item lemma="a sobre" tags="adv"/>
+      <cat-item lemma="a sota" tags="adv"/>
+      <cat-item lemma="prop" tags="adv"/>
+      <cat-item lemma="a prop" tags="adv"/>
+      <cat-item lemma="a la vora" tags="adv"/>
+      <cat-item lemma="al voltant" tags="adv"/>
+      <cat-item lemma="a l'entorn" tags="adv"/>
+      <cat-item lemma="a dins" tags="adv"/>
+      <cat-item lemma="a fora" tags="adv"/>
+      <cat-item lemma="a l'interior" tags="adv"/>
+      <cat-item lemma="a l'exterior" tags="adv"/>
+    </def-cat>
     <def-cat n="cnjcoo">
       <cat-item tags="cnjcoo"/>
     </def-cat>
@@ -189,6 +229,21 @@
     </def-cat>
     <def-cat n="ells">
       <cat-item lemma="ell" tags="prn.tn.p3.m.pl"/>
+    </def-cat>
+    <def-cat n="meu">
+      <cat-item lemma="meu" tags="adj.pos.m.sg"/>
+    </def-cat>
+    <def-cat n="teu">
+      <cat-item lemma="teu" tags="adj.pos.m.sg"/>
+    </def-cat>
+    <def-cat n="seu">
+      <cat-item lemma="seu" tags="adj.pos.m.sg"/>
+    </def-cat>
+    <def-cat n="nostre">
+      <cat-item lemma="nostre" tags="adj.pos.m.sg"/>
+    </def-cat>
+    <def-cat n="vostre">
+      <cat-item lemma="vostre" tags="adj.pos.m.sg"/>
     </def-cat>
     <def-cat n="tot">
       <cat-item lemma="tot" tags="prn.tn.m.sg"/>
@@ -2191,6 +2246,126 @@
               <let><clip pos="2" side="tl" part="a_prnenc"/><lit-tag v="prn.enc"/></let>
             </when>
           </choose>
+        </when>
+      </choose>
+    </def-macro>
+
+    <def-macro n="f_espai_prepadv" npar="1"> <!-- canviem els adv per prep -->
+      <let><clip pos="1" side="tl" part="a_adv"/><lit-tag v="pr"/></let>
+      <choose>
+        <when>
+          <test>
+            <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="darrere"/></equal>
+          </test>
+          <let><clip pos="1" side="tl" part="lem"/><lit v="derrière"/></let>
+        </when>
+        <when>
+          <test>
+            <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="rere"/></equal>
+          </test>
+          <let><clip pos="1" side="tl" part="lem"/><lit v="derrière"/></let>
+        </when>
+        <when>
+          <test>
+            <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="davant"/></equal>
+          </test>
+          <let><clip pos="1" side="tl" part="lem"/><lit v="devant"/></let>
+        </when>
+        <when>
+          <test>
+            <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="sobre"/></equal>
+          </test>
+          <let><clip pos="1" side="tl" part="lem"/><lit v="sur"/></let>
+        </when>
+        <when>
+          <test>
+            <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="sota"/></equal>
+          </test>
+          <let><clip pos="1" side="tl" part="lem"/><lit v="sous"/></let>
+        </when>
+        <when>
+          <test>
+            <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="al davant"/></equal>
+          </test>
+          <let><clip pos="1" side="tl" part="lem"/><lit v="devant"/></let>
+        </when>
+        <when>
+          <test>
+            <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="al darrere"/></equal>
+          </test>
+          <let><clip pos="1" side="tl" part="lem"/><lit v="derrière"/></let>
+        </when>
+        <when>
+          <test>
+            <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="al damunt"/></equal>
+          </test>
+          <let><clip pos="1" side="tl" part="lem"/><lit v="au-dessus de"/></let>
+        </when>
+        <when>
+          <test>
+            <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="a sobre"/></equal>
+          </test>
+          <let><clip pos="1" side="tl" part="lem"/><lit v="au-dessus de"/></let>
+        </when>
+        <when>
+          <test>
+            <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="a sota"/></equal>
+          </test>
+          <let><clip pos="1" side="tl" part="lem"/><lit v="au-dessous de"/></let>
+        </when>
+        <when>
+          <test>
+            <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="prop"/></equal>
+          </test>
+          <let><clip pos="1" side="tl" part="lem"/><lit v="près de"/></let>
+        </when>
+        <when>
+          <test>
+            <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="a prop"/></equal>
+          </test>
+          <let><clip pos="1" side="tl" part="lem"/><lit v="près de"/></let>
+        </when>
+        <when>
+          <test>
+            <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="a la vora"/></equal>
+          </test>
+          <let><clip pos="1" side="tl" part="lem"/><lit v="près de"/></let>
+        </when>
+        <when>
+          <test>
+            <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="al voltant"/></equal>
+          </test>
+          <let><clip pos="1" side="tl" part="lem"/><lit v="autour de"/></let>
+        </when>
+        <when>
+          <test>
+            <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="a l'entorn"/></equal>
+          </test>
+          <let><clip pos="1" side="tl" part="lem"/><lit v="autour de"/></let>
+        </when>
+        <when>
+          <test>
+            <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="a dins"/></equal>
+          </test>
+          <let><clip pos="1" side="tl" part="lem"/><lit v="dans"/></let>
+        </when>
+        <when>
+          <test>
+            <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="a fora"/></equal>
+          </test>
+          <let><clip pos="1" side="tl" part="lem"/><lit v="hors de"/></let>
+        </when>
+        <when>
+          <test>
+            <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="a l'interior"/></equal>
+          </test>
+          <let><clip pos="1" side="tl" part="lem"/><lit v="a l'intérieur de"/></let>
+        </when>
+        <when>
+          <test>
+            <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="a l'exterior"/></equal>
+          </test>
+          <let><clip pos="1" side="tl" part="lem"/><lit v="a l'extérieur de"/></let>
         </when>
       </choose>
     </def-macro>
@@ -11345,8 +11520,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-     <rule>
-<!--REGLA: prep + ell -->
+     <rule comment="REGLA: prep + ell">
       <pattern>
         <pattern-item n="prep"/>
         <pattern-item n="ell"/>
@@ -11365,8 +11539,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-     <rule>
-<!--REGLA: prep + ells -->
+     <rule comment="REGLA: prep + ells">
       <pattern>
         <pattern-item n="prep"/>
         <pattern-item n="ells"/>
@@ -11380,6 +11553,116 @@ is not applicable because gender and number can not be taken from previous rules
           <lu>
             <lit v="eux"/>
             <lit-tag v="prn.tn.p3.m.pl"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+     <rule comment="REGLA: espai_prep + meu">
+      <pattern>
+        <pattern-item n="espai_prepadv"/>
+        <pattern-item n="meu"/>
+      </pattern>
+      <action>
+        <call-macro n="f_espai_prepadv"><with-param pos="1"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="1" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+            <b pos="1"/>
+          <lu>
+            <lit v="moi"/>
+            <lit-tag v="prn.tn.p1.mf.sg"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+     <rule comment="REGLA: espai_prep + teu">
+      <pattern>
+        <pattern-item n="espai_prepadv"/>
+        <pattern-item n="teu"/>
+      </pattern>
+      <action>
+        <call-macro n="f_espai_prepadv"><with-param pos="1"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="1" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+            <b pos="1"/>
+          <lu>
+            <lit v="toi"/>
+            <lit-tag v="prn.tn.p2.mf.sg"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+     <rule comment="REGLA: espai_prep + seu">
+      <pattern>
+        <pattern-item n="espai_prepadv"/>
+        <pattern-item n="seu"/>
+      </pattern>
+      <action>
+        <call-macro n="f_espai_prepadv"><with-param pos="1"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="1" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+            <b pos="1"/>
+          <lu>
+            <lit v="lui"/>
+            <lit-tag v="prn.tn.p3.m.sg"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+     <rule comment="REGLA: espai_prep + nostre">
+      <pattern>
+        <pattern-item n="espai_prepadv"/>
+        <pattern-item n="nostre"/>
+      </pattern>
+      <action>
+        <call-macro n="f_espai_prepadv"><with-param pos="1"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="1" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+            <b pos="1"/>
+          <lu>
+            <lit v="nous"/>
+            <lit-tag v="prn.tn.p1.mf.pl"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+     <rule comment="REGLA: espai_prep + vostre">
+      <pattern>
+        <pattern-item n="espai_prepadv"/>
+        <pattern-item n="vostre"/>
+      </pattern>
+      <action>
+        <call-macro n="f_espai_prepadv"><with-param pos="1"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="1" side="tl" part="whole"/>
+            </get-case-from>
+          </lu>
+            <b pos="1"/>
+          <lu>
+            <lit v="vous"/>
+            <lit-tag v="prn.tn.p2.mf.pl"/>
           </lu>
         </out>
       </action>
