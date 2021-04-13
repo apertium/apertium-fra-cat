@@ -1129,6 +1129,9 @@
       <match lemma="comptar" tags="vblex.*"/>
       <match lemma="comptar# amb" tags="vblex.*"/>
       <match lemma="necessitar" tags="vblex.*"/>
+      <match lemma="mirar" tags="vblex.*"/>
+      <match lemma="observar" tags="vblex.*"/>
+      <match lemma="investigar" tags="vblex.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -1144,6 +1147,9 @@
       <match lemma="comptar" tags="vblex.*"/>
       <match lemma="comptar# amb" tags="vblex.*"/>
       <match lemma="necessitar" tags="vblex.*"/>
+      <match lemma="mirar" tags="vblex.*"/>
+      <match lemma="observar" tags="vblex.*"/>
+      <match lemma="investigar" tags="vblex.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -1159,6 +1165,9 @@
       <match lemma="comptar" tags="vblex.*"/>
       <match lemma="comptar# amb" tags="vblex.*"/>
       <match lemma="necessitar" tags="vblex.*"/>
+      <match lemma="mirar" tags="vblex.*"/>
+      <match lemma="observar" tags="vblex.*"/>
+      <match lemma="investigar" tags="vblex.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -1400,6 +1409,9 @@
       <match lemma="negar" tags="vblex.*"/>
       <match lemma="permetre" tags="vblex.*"/>
       <match lemma="deixar" tags="vblex.*"/>
+      <match lemma="mirar" tags="vblex.*"/>
+      <match lemma="observar" tags="vblex.*"/>
+      <match lemma="investigar" tags="vblex.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -1424,6 +1436,9 @@
       <match lemma="negar" tags="vblex.pp.*"/>
       <match lemma="permetre" tags="vblex.pp.*"/>
       <match lemma="deixar" tags="vblex.pp.*"/>
+      <match lemma="mirar" tags="vblex.*"/>
+      <match lemma="observar" tags="vblex.*"/>
+      <match lemma="investigar" tags="vblex.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -1448,6 +1463,9 @@
       <match lemma="negar" tags="vblex.inf"/>
       <match lemma="permetre" tags="vblex.inf"/>
       <match lemma="deixar" tags="vblex.inf"/>
+      <match lemma="mirar" tags="vblex.*"/>
+      <match lemma="observar" tags="vblex.*"/>
+      <match lemma="investigar" tags="vblex.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -2960,11 +2978,13 @@
       <match lemma="badia" tags="n.*"/>
       <match lemma="cala" tags="n.*"/>
 -->
+      <match lemma="conca" tags="n.*"/>
       <match lemma="muntanya" tags="n.*"/>
       <match lemma="bosc" tags="n.*"/>
       <match lemma="platja" tags="n.*"/>
       <match lemma="costa" tags="n.*"/>
       <match lemma="ciutat" tags="n.*"/>
+      <match lemma="municipi" tags="n.*"/>
       <match lemma="Mediterrani" tags="np.*"/>
       <match lemma="Mediterrània" tags="np.*"/>
       <match lemma="Adriàtic" tags="np.*"/>
@@ -3022,6 +3042,7 @@
   <rule weight="1.2">
     <or>
       <seq n="verbs_moviment"/>
+      <match lemma="pertànyer" tags="vblex.*"/>
       <match lemma="proximitat" tags="n.*"/>
       <match lemma="viatge" tags="n.*"/>
       <match lemma="peregrinació" tags="n.*"/>
@@ -3032,11 +3053,13 @@
       <match lemma="península" tags="n.*"/>
       <match lemma="oceà" tags="n.*"/>
       <match lemma="mar" tags="n.*"/>
+      <match lemma="conca" tags="n.*"/>
       <match lemma="muntanya" tags="n.*"/>
       <match lemma="bosc" tags="n.*"/>
       <match lemma="platja" tags="n.*"/>
       <match lemma="costa" tags="n.*"/>
       <match lemma="ciutat" tags="n.*"/>
+      <match lemma="municipi" tags="n.*"/>
       <match lemma="Mediterrani" tags="np.*"/>
       <match lemma="Mediterrània" tags="np.*"/>
     </or>
@@ -8496,6 +8519,7 @@
     <or>
       <match lemma="ciutat" tags="n.*"/>
       <match lemma="poble" tags="n.*"/>
+      <match lemma="municipi" tags="n.*"/>
       <match lemma="casa" tags="n.*"/>
       <match lemma="escola" tags="n.*"/>
       <match lemma="universitat" tags="n.*"/>
