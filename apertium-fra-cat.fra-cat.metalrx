@@ -6408,6 +6408,53 @@
 
 <!-- **************** N **************** -->
 
+  <!-- scénario >> guió, escenari -->
+  <rule weight="0.8">
+    <match lemma="scénario" tags="n.*"><select lemma="escenari"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="scénario" tags="n.*"><select lemma="guió"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+      <match tags=""/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="scénario" tags="n.*"><select lemma="guió"/></match>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="film" tags="n.*"/>
+      <match lemma="direction" tags="n.*"/>
+      <match lemma="dessin" tags="n.*"/>
+      <match lemma="bande dessinée" tags="n.*"/>
+      <match lemma="bande animée" tags="n.*"/>
+      <match lemma="écrire" tags="vblex.*"/>
+      <match lemma="signer" tags="vblex.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="film" tags="n.*"/>
+      <match lemma="direction" tags="n.*"/>
+      <match lemma="dessin" tags="n.*"/>
+      <match lemma="bande dessinée" tags="n.*"/>
+      <match lemma="bande animée" tags="n.*"/>
+      <match lemma="écrire" tags="vblex.*"/>
+      <match lemma="signer" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="scénario" tags="n.*"><select lemma="guió"/></match>
+  </rule>
+
   <!-- procédure >> procediment, causa -->
   <rule weight="0.8">
     <match lemma="procédure" tags="n.*"><select lemma="procediment"/></match>
@@ -9254,9 +9301,54 @@
     <match lemma="paquet" tags="n.*"><select lemma="paquet"/></match>
   </rule>
 
-  <!-- plateau >> altiplà, safata -->
+  <!-- théâtre >> teatre, escenari -->
+  <rule weight="0.8">
+    <match lemma="théâtre" tags="n.*"><select lemma="teatre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="théâtre" tags="n.*"><select lemma="escenari"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="bataille" tags="n.*"/>
+      <match lemma="guerre" tags="n.*"/>
+      <match lemma="lutte" tags="n.*"/>
+      <match lemma="massacre" tags="n.*"/>
+      <match lemma="horreur" tags="n.*"/>
+      <match lemma="conflit" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- plateau >> altiplà, safata, escenari -->
   <rule weight="0.8">
     <match lemma="plateau" tags="n.*"><select lemma="altiplà"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="plateau" tags="n.*"><select lemma="escenari"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="théâtre" tags="n.*"/>
+      <match lemma="théâtral" tags="adj.*"/>
+      <match lemma="pièce" tags="n.*"/>
+      <match lemma="acteur" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="théâtre" tags="n.*"/>
+      <match lemma="théâtral" tags="adj.*"/>
+      <match lemma="pièce" tags="n.*"/>
+      <match lemma="acteur" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="plateau" tags="n.*"><select lemma="escenari"/></match>
   </rule>
 
   <!-- détente >> distensió, esbarjo -->

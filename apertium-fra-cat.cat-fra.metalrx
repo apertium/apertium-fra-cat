@@ -2750,6 +2750,15 @@
     <match tags="vblex.pp.*"/>
     <match lemma="per" tags="pr"><select lemma="par"/></match>
   </rule>
+  <rule weight="1.2">
+    <match tags="vbser.*"/>
+    <match tags="vblex.pp.*"/>
+    <match lemma="per" tags="pr"><select lemma="pour"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="*.inf"/>
+  </rule>
   <rule weight="1.0">
     <match lemma="per" tags="pr"><select lemma="pour"/></match>
     <repeat from="0" upto="1">
@@ -6098,6 +6107,130 @@
 
 <!-- **************** N **************** -->
 
+  <!-- estany >> bassin, étain -->
+  <rule weight="0.8">
+    <match lemma="estany" tags="n.*"><select lemma="bassin"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="estany" tags="n.*"><select lemma="étain"/></match>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="element" tags="n.*"/>
+      <match lemma="aliatge" tags="n.*"/>
+      <match lemma="metall" tags="n.*"/>
+      <match lemma="metàl·lic" tags="adj.*"/>
+      <match lemma="plom" tags="n.*"/>
+      <match lemma="plata" tags="n.*"/>
+      <match lemma="argent" tags="n.*"/>
+      <match lemma="or" tags="n.*"/>
+      <match lemma="coure" tags="n.*"/>
+      <match lemma="bronze" tags="n.*"/>
+      <match lemma="zinc" tags="n.*"/>
+      <match lemma="arsènic" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="element" tags="n.*"/>
+      <match lemma="aliatge" tags="n.*"/>
+      <match lemma="metall" tags="n.*"/>
+      <match lemma="metàl·lic" tags="adj.*"/>
+      <match lemma="plom" tags="n.*"/>
+      <match lemma="plata" tags="n.*"/>
+      <match lemma="argent" tags="n.*"/>
+      <match lemma="or" tags="n.*"/>
+      <match lemma="coure" tags="n.*"/>
+      <match lemma="bronze" tags="n.*"/>
+      <match lemma="zinc" tags="n.*"/>
+      <match lemma="arsènic" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="estany" tags="n.*"><select lemma="étain"/></match>
+  </rule>
+
+  <!-- oració >> oraison, phrase -->
+  <rule weight="0.8">
+    <match lemma="oració" tags="n.*"><select lemma="oraison"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="part" tags="n.*"/>
+      <match lemma="element" tags="n.*"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <match lemma="oració" tags="n.*"><select lemma="phrase"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="oració" tags="n.*"><select lemma="phrase"/></match>
+    <or>
+      <match lemma="subordinat" tags="adj.*"/>
+      <match lemma="enunciatiu" tags="adj.*"/>
+      <match lemma="interrogatiu" tags="adj.*"/>
+      <match lemma="exclamatiu" tags="adj.*"/>
+      <match lemma="compost" tags="adj.*"/>
+      <match lemma="relatiu" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="oració" tags="n.*"><select lemma="phrase"/></match>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="gramàtica" tags="n.*"/>
+      <match lemma="morfologia" tags="n.*"/>
+      <match lemma="sintaxi" tags="n.*"/>
+      <match lemma="substantiu" tags="n.*"/>
+      <match lemma="nom" tags="vblex.*"/>
+      <match lemma="adjectiu" tags="n.*"/>
+      <match lemma="adverbi" tags="n.*"/>
+      <match lemma="verb" tags="n.*"/>
+      <match lemma="preposició" tags="n.*"/>
+      <match lemma="conjunció" tags="n.*"/>
+      <match lemma="llengua" tags="n.*"/>
+      <match lemma="subordinació" tags="n.*"/>
+      <match lemma="coordinació" tags="n.*"/>
+      <match lemma="sintàctic" tags="adj.*"/>
+      <match lemma="morfològic" tags="adj.*"/>
+      <match lemma="lingüístic" tags="adj.*"/>
+      <match lemma="sintagmàtic" tags="adj.*"/>
+      <match lemma="paradigmàtic" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="gramàtica" tags="n.*"/>
+      <match lemma="morfologia" tags="n.*"/>
+      <match lemma="sintaxi" tags="n.*"/>
+      <match lemma="substantiu" tags="n.*"/>
+      <match lemma="nom" tags="vblex.*"/>
+      <match lemma="adjectiu" tags="n.*"/>
+      <match lemma="adverbi" tags="n.*"/>
+      <match lemma="verb" tags="n.*"/>
+      <match lemma="preposició" tags="n.*"/>
+      <match lemma="conjunció" tags="n.*"/>
+      <match lemma="llengua" tags="n.*"/>
+      <match lemma="subordinació" tags="n.*"/>
+      <match lemma="coordinació" tags="n.*"/>
+      <match lemma="sintàctic" tags="adj.*"/>
+      <match lemma="morfològic" tags="adj.*"/>
+      <match lemma="lingüístic" tags="adj.*"/>
+      <match lemma="sintagmàtic" tags="adj.*"/>
+      <match lemma="paradigmàtic" tags="adj.*"/>
+    </or>
+    <repeat from="0" upto="6">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="oració" tags="n.*"><select lemma="phrase"/></match>
+  </rule>
+
   <!-- porter >> portier, gardien# de but -->
   <rule weight="0.8">
     <match lemma="porter" tags="n.*"><select lemma="portier"/></match>
@@ -6112,7 +6245,8 @@
       <match tags="np.top.*"/>
       <match tags="np.al.*"/>
       <match tags=""/>
-      <match lemma="équipe" tags="n.*"/>
+      <match lemma="equip" tags="n.*"/>
+      <match lemma="selecció" tags="n.*"/>
     </or>
   </rule>
 
@@ -6126,6 +6260,92 @@
     <match lemma="causa" tags="n.*"><select lemma="cause"/></match>
   </rule>
 
+  <!-- pal >> bâton, poteau -->
+  <rule weight="0.8">
+    <match lemma="pal" tags="n.*"><select lemma="bâton"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pal" tags="n.*"><select lemma="poteau"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="pilota" tags="n.*"/>
+      <match lemma="telègraf" tags="n.*"/>
+      <match lemma="llum" tags="n.*"/>
+      <match lemma="electricitat" tags="n.*"/>
+      <match lemma="llançar" tags="vblex.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="pilota" tags="n.*"/>
+      <match lemma="telègraf" tags="n.*"/>
+      <match lemma="llum" tags="n.*"/>
+      <match lemma="electricitat" tags="n.*"/>
+      <match lemma="llançar" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="pal" tags="n.*"><select lemma="poteau"/></match>
+  </rule>
+
+  <!-- escenari >> scénario, plateau, théâtre -->
+  <rule weight="0.8">
+    <match lemma="escenari" tags="n.*"><select lemma="scénario"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="escenari" tags="n.*"><select lemma="plateau"/></match>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="teatre" tags="n.*"/>
+      <match lemma="teatral" tags="adj.*"/>
+      <match lemma="circ" tags="n.*"/>
+      <match lemma="escena" tags="n.*"/>
+      <match lemma="escènic" tags="adj.*"/>
+      <match lemma="actor" tags="n.*"/>
+      <match lemma="públic" tags="n.*"/>
+      <match lemma="pujar" tags="vblex.*"/>
+      <match lemma="baixar" tags="vblex.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="teatre" tags="n.*"/>
+      <match lemma="teatral" tags="adj.*"/>
+      <match lemma="circ" tags="n.*"/>
+      <match lemma="escena" tags="n.*"/>
+      <match lemma="escènic" tags="adj.*"/>
+      <match lemma="actor" tags="n.*"/>
+      <match lemma="públic" tags="n.*"/>
+      <match lemma="pujar" tags="vblex.*"/>
+      <match lemma="baixar" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="escenari" tags="n.*"><select lemma="plateau"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="escenari" tags="n.*"><select lemma="théâtre"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="batalla" tags="n.*"/>
+      <match lemma="guerra" tags="n.*"/>
+      <match lemma="lluita" tags="n.*"/>
+      <match lemma="massacre" tags="n.*"/>
+      <match lemma="horror" tags="n.*"/>
+      <match lemma="conflicte" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- cara >> visage, face -->
   <rule weight="0.8">
     <match lemma="cara" tags="n.*"><select lemma="visage"/></match>
@@ -6136,14 +6356,14 @@
       <match tags="*"/>
     </repeat>
     <or>
-      <match lemma="disque" tags="n.*"/>
-      <match lemma="album" tags="n.*"/>
+      <match lemma="disc" tags="n.*"/>
+      <match lemma="àlbum" tags="n.*"/>
     </or>
   </rule>
   <rule weight="1.0">
     <or>
-      <match lemma="disque" tags="n.*"/>
-      <match lemma="album" tags="n.*"/>
+      <match lemma="disc" tags="n.*"/>
+      <match lemma="àlbum" tags="n.*"/>
     </or>
     <repeat from="0" upto="4">
       <match tags="*"/>
@@ -6650,6 +6870,8 @@
       <match lemma="gravitatori" tags="adj.*"/>
       <match lemma="lumínic" tags="adj.*"/>
       <match lemma="sonor" tags="adj.*"/>
+      <match lemma="llarg" tags="adj.*"/>
+      <match lemma="curt" tags="adj.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -8347,12 +8569,36 @@
     <match lemma="golf" tags="n.*"><select lemma="golf"/></match>
   </rule>
   <rule weight="1.0">
-    <match lemma="partit" tags="n.*"/>
+    <match lemma="practicar" tags="vblex.*"/>
+    <repeat from="0" upto="2">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="golf" tags="n.*"><select lemma="golf"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="partit" tags="n.*"/>
+      <match lemma="pal" tags="n.*"><select lemma="bâton"/></match>
+    </or>
     <repeat from="0" upto="1">
       <match tags="adj.*"/>
     </repeat>
     <match lemma="de" tags="pr"/>
     <match lemma="golf" tags="n.*"><select lemma="golf"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="esport" tags="n.*"/>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="golf" tags="n.*"><select lemma="golf"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="golf" tags="n.*"><select lemma="golf"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="esport" tags="n.*"/>
   </rule>
 
   <!-- trànsit >> transit, trafic, circulation -->
