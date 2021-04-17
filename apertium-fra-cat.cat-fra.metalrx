@@ -733,6 +733,21 @@
       <match lemma="desembre" tags="n.*"/>
     </def-seq>
 
+    <def-seq n="mes">
+      <match lemma="gener" tags="n.*"/>
+      <match lemma="febrer" tags="n.*"/>
+      <match lemma="març" tags="n.*"/>
+      <match lemma="abril" tags="n.*"/>
+      <match lemma="maig" tags="n.*"/>
+      <match lemma="juny" tags="n.*"/>
+      <match lemma="juliol" tags="n.*"/>
+      <match lemma="agost" tags="n.*"/>
+      <match lemma="setembre" tags="n.*"/>
+      <match lemma="octubre" tags="n.*"/>
+      <match lemma="novembre" tags="n.*"/>
+      <match lemma="desembre" tags="n.*"/>
+    </def-seq>
+
     <def-seq n="periode">
       <match lemma="minut" tags="n.*"/>
       <match lemma="hora" tags="n.*"/>
@@ -2657,6 +2672,18 @@
     <match tags="det.*"/>
   </rule>
 
+  <!-- fins a >> jusqu'à, jusque -->
+  <rule weight="0.8">
+    <match lemma="fins a" tags="pr"><select lemma="jusqu'à"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fins a" tags="pr"><select lemma="jusque"/></match>
+    <match tags="det.def.*"/>
+    <or>
+      <seq n="mes"/>
+    </or>
+  </rule>
+
   <!-- contra >> contre, sur -->
   <rule weight="0.8">
     <match lemma="contra" tags="pr"><select lemma="contre"/></match>
@@ -3261,6 +3288,16 @@
 
 <!-- **************** ADV **************** -->
 
+  <!-- a càrrec seu >> à son charge, à leur charge -->
+  <rule weight="0.8">
+    <match lemma="a càrrec seu" tags="adv"><select lemma="à son charge"/></match>
+  </rule>
+
+  <!-- a casa seva >> chez lui, chez elle, chez eux, chez elles, chez soi -->
+  <rule weight="0.8">
+    <match lemma="a casa seva" tags="adv"><select lemma="chez lui"/></match>
+  </rule>
+
   <!-- debades >> en vain, gratis -->
   <rule weight="0.8">
     <match lemma="debades" tags="adv"><select lemma="en vain"/></match>
@@ -3413,6 +3450,31 @@
   </rule>
 
 <!-- **************** V **************** -->
+
+  <!-- viure >> habiter, vivre -->
+  <rule weight="0.8">
+    <match lemma="viure" tags="vblex.*"><select lemma="habiter"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="viure" tags="vblex.*"><select lemma="vivre"/></match>
+    <or>
+      <match tags="det.*"/>
+      <match tags="adj.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <or>
+      <seq n="temps"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="viure" tags="vblex.*"><select lemma="vivre"/></match>
+    <or>
+      <match lemma="molt" tags="adv"/>
+      <match lemma="poc" tags="adv"/>
+      <match lemma="gaire" tags="adv"/>
+    </or>
+  </rule>
 
   <!-- obrir >> ouvrir, engager -->
   <rule weight="0.8">
@@ -5815,6 +5877,23 @@
     </or>
     <match lemma="pròxim" tags="adj.*"><select lemma="prochain"/></match>
   </rule>
+  <rule weight="1.0">
+    <match lemma="pròxim" tags="adj.*"><select lemma="prochain"/></match>
+    <or>
+      <seq n="temps"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pròxim" tags="adj.*"><select lemma="prochain"/></match>
+    <or>
+      <match tags="num.*"/>
+      <match tags="num"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <seq n="mes"/>
+    </or>
+  </rule>
 
   <!-- brut >> sale, brut -->
   <rule weight="0.8">
@@ -6107,6 +6186,14 @@
 
 <!-- **************** N **************** -->
 
+  <!-- executiu >> exécutif, quadre -->
+  <rule weight="0.8">
+    <match lemma="executiu" tags="n.*"><select lemma="exécutif"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="executiu" tags="n.m.pl"><select lemma="quadre"/></match>
+  </rule>
+
   <!-- estany >> bassin, étain -->
   <rule weight="0.8">
     <match lemma="estany" tags="n.*"><select lemma="bassin"/></match>
@@ -6145,6 +6232,42 @@
       <match lemma="bronze" tags="n.*"/>
       <match lemma="zinc" tags="n.*"/>
       <match lemma="arsènic" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="estany" tags="n.*"><select lemma="étain"/></match>
+  </rule>
+
+  <!-- providència >> providence, ordonnance -->
+  <rule weight="0.8">
+    <match lemma="providència" tags="n.*"><select lemma="providence"/></match>
+  </rule>
+
+  <!-- recepta >> recette, ordonnance -->
+  <rule weight="0.8">
+    <match lemma="recepta" tags="n.*"><select lemma="recette"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="estany" tags="n.*"><select lemma="étain"/></match>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="metge" tags="n.*"/>
+      <match lemma="infirmer" tags="n.*"/>
+      <match lemma="hospital" tags="n.*"/>
+      <match lemma="farmàcia" tags="n.*"/>
+      <match lemma="medicament" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="metge" tags="n.*"/>
+      <match lemma="infirmer" tags="n.*"/>
+      <match lemma="hospital" tags="n.*"/>
+      <match lemma="farmàcia" tags="n.*"/>
+      <match lemma="medicament" tags="n.*"/>
     </or>
     <repeat from="0" upto="8">
       <match tags="*"/>
@@ -6192,11 +6315,18 @@
       <match lemma="adjectiu" tags="n.*"/>
       <match lemma="adverbi" tags="n.*"/>
       <match lemma="verb" tags="n.*"/>
+      <match lemma="subjecte" tags="n.*"/>
+      <match lemma="predicat" tags="n.*"/>
+      <match lemma="complement" tags="n.*"/>
       <match lemma="preposició" tags="n.*"/>
       <match lemma="conjunció" tags="n.*"/>
       <match lemma="llengua" tags="n.*"/>
       <match lemma="subordinació" tags="n.*"/>
       <match lemma="coordinació" tags="n.*"/>
+      <match lemma="lingüística" tags="n.*"/>
+      <match lemma="filologia" tags="n.*"/>
+      <match lemma="lingüístic" tags="adj.*"/>
+      <match lemma="gramatical" tags="adj.*"/>
       <match lemma="sintàctic" tags="adj.*"/>
       <match lemma="morfològic" tags="adj.*"/>
       <match lemma="lingüístic" tags="adj.*"/>
@@ -6214,11 +6344,18 @@
       <match lemma="adjectiu" tags="n.*"/>
       <match lemma="adverbi" tags="n.*"/>
       <match lemma="verb" tags="n.*"/>
+      <match lemma="subjecte" tags="n.*"/>
+      <match lemma="predicat" tags="n.*"/>
+      <match lemma="complement" tags="n.*"/>
       <match lemma="preposició" tags="n.*"/>
       <match lemma="conjunció" tags="n.*"/>
       <match lemma="llengua" tags="n.*"/>
       <match lemma="subordinació" tags="n.*"/>
       <match lemma="coordinació" tags="n.*"/>
+      <match lemma="lingüística" tags="n.*"/>
+      <match lemma="filologia" tags="n.*"/>
+      <match lemma="lingüístic" tags="adj.*"/>
+      <match lemma="gramatical" tags="adj.*"/>
       <match lemma="sintàctic" tags="adj.*"/>
       <match lemma="morfològic" tags="adj.*"/>
       <match lemma="lingüístic" tags="adj.*"/>
@@ -8630,9 +8767,59 @@
     <match lemma="fuga" tags="n.*"><select lemma="fuite"/></match>
   </rule>
 
-  <!-- càrrec >> poste, chef# d'accusation -->
+  <!-- càrrec >> poste, dirigeant, chef# d'accusation, charge -->
   <rule weight="0.8">
     <match lemma="càrrec" tags="n.*"><select lemma="poste"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="alt" tags="adj.*"/>
+    <match lemma="càrrec" tags="n.*"><select lemma="dirigeant"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="alt" tags="adj.*"/>
+    <match lemma="càrrec" tags="n.*"><select lemma="poste"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="responsabilitat" tags="n.*"/>
+      <match lemma="comandament" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="a" tags="pr"/>
+    <match lemma="càrrec" tags="n.*"><select lemma="charge"/></match>
+<!--
+    <match tags="adj.pos.*"/>
+-->
+  </rule>
+  <rule weight="1.0">
+    <match lemma="a" tags="pr"/>
+    <match tags="det.pos.*"/>
+    <match lemma="càrrec" tags="n.*"><select lemma="charge"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="càrrec" tags="n.*"><select lemma="chef# d'accusation"/></match>
+    <or>
+      <match lemma="de" tags="pr"/>
+      <match lemma="per" tags="pr"/>
+    </or>
+    <or>
+      <match lemma="homicidi" tags="n.*"/>
+      <match lemma="assassinat" tags="n.*"/>
+      <match lemma="robatori" tags="n.*"/>
+      <match lemma="violació" tags="n.*"/>
+      <match lemma="tràfic" tags="n.*"/>
+      <match lemma="possessió" tags="n.*"/>
+      <match lemma="malversació" tags="n.*"/>
+      <match lemma="suborn" tags="n.*"/>
+      <match lemma="prevaricació" tags="n.*"/>
+      <match lemma="alçament" tags="n.*"/>
+      <match lemma="resistència" tags="n.*"/>
+      <match lemma="sedició" tags="n.*"/>
+      <match lemma="rebel·lió" tags="n.*"/>
+      <match lemma="organització" tags="n.*"/>
+      <match lemma="desobediència" tags="n.*"/>
+      <match lemma="complicitat" tags="n.*"/>
+    </or>
   </rule>
 
   <!-- quarter >> caserne, quartier -->

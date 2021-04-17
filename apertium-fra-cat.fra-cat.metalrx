@@ -6408,6 +6408,46 @@
 
 <!-- **************** N **************** -->
 
+  <!-- ordonnance >> ordenança, recepta -->
+  <rule weight="0.8">
+    <match lemma="ordonnance" tags="n.*"><select lemma="ordenança"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="faire" tags="vblex.*"/>
+      <match lemma="écrire" tags="vblex.*"/>
+      <match lemma="donner" tags="vblex.*"/>
+      <match lemma="chercher" tags="vblex.*"/>
+      <match lemma="nécessiter" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="ordonnance" tags="n.*"><select lemma="recepta"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="faire" tags="vblex.*"/>
+      <match lemma="écrire" tags="vblex.*"/>
+      <match lemma="donner" tags="vblex.*"/>
+      <match lemma="chercher" tags="vblex.*"/>
+      <match lemma="nécessiter" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="det.*"/>
+    <match tags="adj.*"/>
+    <match lemma="ordonnance" tags="n.*"><select lemma="recepta"/></match>
+  </rule>
+
   <!-- scénario >> guió, escenari -->
   <rule weight="0.8">
     <match lemma="scénario" tags="n.*"><select lemma="escenari"/></match>
@@ -6562,6 +6602,67 @@
       <match lemma="gaz" tags="n.*"/>
       <match lemma="charbon" tags="n.*"/>
     </or>
+  </rule>
+
+  <!-- compliment >> compliment, félicitation -->
+  <rule weight="0.8">
+    <match lemma="compliment" tags="n.*"><select lemma="compliment"/></match>
+  </rule>
+
+  <!-- vœu >> desig, vot, felicitation -->
+  <rule weight="0.8">
+    <match lemma="vœu" tags="n.*"><select lemma="vot"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="meilleur" tags="adj.*"/>
+      <match lemma="dernier" tags="adj.*"/>
+    </or>
+    <match lemma="vœu" tags="n.*"><select lemma="desig"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="vœu" tags="n.*"><select lemma="desig"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="bonheur" tags="n.*"/>
+      <match lemma="santé" tags="n.*"/>
+      <match lemma="rétablissement" tags="n.*"/>
+      <match lemma="Noël" tags="n.*"/>
+      <match lemma="Noël" tags="np.*"/>
+      <match lemma="anniversaire" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="adresser" tags="vblex.*"/>
+      <match lemma="exprimer" tags="vblex.*"/>
+      <match lemma="traduire" tags="vblex.*"/>
+      <match lemma="réaliser" tags="vblex.*"/>
+      <match lemma="ajouter" tags="vblex.*"/>
+      <match lemma="respecter" tags="vblex.*"/>
+      <match lemma="combler" tags="vblex.*"/>
+      <match lemma="accomplir" tags="vblex.*"/>
+      <match lemma="exaucer" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+        <match tags="predet.*"/>
+      </or>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="vœu" tags="n.*"><select lemma="desig"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.pos.*"/>
+    <match lemma="vœu" tags="n.m.pl"><select lemma="felicitació"/></match>
   </rule>
 
   <!-- bassin >> estany, conca, pelvis -->
@@ -7079,6 +7180,21 @@
   <!-- déblai >> desmunt, rebaix, terrabuit, enderroc -->
   <rule weight="0.8">
     <match lemma="déblai" tags="n.*"><select lemma="desmunt"/></match>
+  </rule>
+
+  <!-- dirigeant >> dirigent, directiu, càrrec -->
+  <rule weight="0.8">
+    <match lemma="dirigeant" tags="n.*"><select lemma="dirigent"/></match>
+  </rule>
+
+  <!-- charge >> càrrega, càrrec -->
+  <rule weight="0.8">
+    <match lemma="charge" tags="n.*"><select lemma="càrrega"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="à" tags="pr"/>
+    <match tags="det.pos.*"/>
+    <match lemma="charge" tags="n.*"><select lemma="càrrec"/></match>
   </rule>
 
   <!-- téléchargement >> descàrrega, pujada, penjada -->
