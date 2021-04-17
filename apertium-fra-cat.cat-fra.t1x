@@ -112,6 +112,10 @@
       <cat-item lemma="al final de" tags="pr"/>
       <cat-item lemma="a finals de" tags="pr"/>
     </def-cat>
+    <def-cat n="finsprep">
+      <cat-item lemma="fins" tags="pr"/>
+      <cat-item lemma="fins a" tags="pr"/>
+    </def-cat>
     <def-cat n="espai_prepadv">
       <cat-item lemma="darrere" tags="pr"/>
       <cat-item lemma="rere" tags="pr"/>
@@ -429,6 +433,7 @@
       <cat-item lemma="ensopegar" tags="vblex.*"/>
       <cat-item lemma="entrebancar" tags="vblex.*"/>
       <cat-item lemma="estirar" tags="vblex.*"/>
+      <cat-item lemma="fer# càrrec de" tags="vblex.*"/>
       <cat-item lemma="florir" tags="vblex.*"/>
       <cat-item lemma="gitar" tags="vblex.*"/>
       <cat-item lemma="moure" tags="vblex.*"/>
@@ -463,6 +468,7 @@
       <cat-item lemma="ensopegar" tags="vblex.inf"/>
       <cat-item lemma="entrebancar" tags="vblex.inf"/>
       <cat-item lemma="estirar" tags="vblex.inf"/>
+      <cat-item lemma="fer# càrrec de" tags="vblex.inf"/>
       <cat-item lemma="florir" tags="vblex.inf"/>
       <cat-item lemma="gitar" tags="vblex.inf"/>
       <cat-item lemma="moure" tags="vblex.inf"/>
@@ -497,6 +503,7 @@
       <cat-item lemma="ensopegar" tags="vblex.ger"/>
       <cat-item lemma="entrebancar" tags="vblex.ger"/>
       <cat-item lemma="estirar" tags="vblex.ger"/>
+      <cat-item lemma="fer# càrrec de" tags="vblex.ger"/>
       <cat-item lemma="florir" tags="vblex.ger"/>
       <cat-item lemma="gitar" tags="vblex.ger"/>
       <cat-item lemma="moure" tags="vblex.ger"/>
@@ -531,6 +538,7 @@
       <cat-item lemma="ensopegar" tags="vblex.pp.*"/>
       <cat-item lemma="entrebancar" tags="vblex.pp.*"/>
       <cat-item lemma="estirar" tags="vblex.pp.*"/>
+      <cat-item lemma="fer# càrrec de" tags="vblex.pp.*"/>
       <cat-item lemma="florir" tags="vblex.pp.*"/>
       <cat-item lemma="gitar" tags="vblex.pp.*"/>
       <cat-item lemma="moure" tags="vblex.pp.*"/>
@@ -7381,6 +7389,39 @@ is not applicable because gender and number can not be taken from previous rules
             <clip pos="2" side="tl" part="lemh"/>
             <clip pos="2" side="tl" part="tags"/>
             <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    
+    <rule comment="REGLA: fins al gener > jusqu'en janvier">
+      <pattern>
+        <pattern-item n="finsprep"/>
+        <pattern-item n="detdef"/>
+        <pattern-item n="mes"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="1"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="en"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
