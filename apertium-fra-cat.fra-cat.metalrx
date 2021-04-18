@@ -7212,6 +7212,82 @@
     <match lemma="outsider" tags="n.*"><select lemma="estrany"/></match>
   </rule>
 
+  <!-- échancrure >> escot, pissarra -->
+  <rule weight="0.8">
+    <match lemma="échancrure" tags="n.*"><select lemma="escot"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="échancrure" tags="n.*"><select lemma="cala"/></match>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="mer" tags="n.*"/>
+      <match lemma="ĉote" tags="n.*"/>
+      <match lemma="terre" tags="n.*"/>
+      <match lemma="pénétrer" tags="vblex.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="mer" tags="n.*"/>
+      <match lemma="ĉote" tags="n.*"/>
+      <match lemma="terre" tags="n.*"/>
+      <match lemma="pénétrer" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="échancrure" tags="n.*"><select lemma="cala"/></match>
+  </rule>
+
+  <!-- dorien >> dòric, dori -->
+  <rule weight="0.8">
+    <match lemma="dorien" tags="n.*"><select lemma="dòric"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="Dorien" tags="n.*"><select lemma="dori"/></match>
+  </rule>
+
+  <!-- ionien >> jònic, joni -->
+  <rule weight="0.8">
+    <match lemma="ionien" tags="n.*"><select lemma="jònic"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="Ionien" tags="n.*"><select lemma="joni"/></match>
+  </rule>
+
+  <!-- tableau >> quadre, pissarra -->
+  <rule weight="0.8">
+    <match lemma="tableau" tags="n.*"><select lemma="quadre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tableau" tags="n.*"><select lemma="pissarra"/></match>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="école" tags="n.*"/>
+      <match lemma="classe" tags="n.*"/>
+      <match lemma="élève" tags="n.*"/>
+      <match lemma="professeur" tags="n.*"/>
+      <match lemma="prof" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="école" tags="n.*"/>
+      <match lemma="classe" tags="n.*"/>
+      <match lemma="élève" tags="n.*"/>
+      <match lemma="professeur" tags="n.*"/>
+      <match lemma="prof" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="tableau" tags="n.*"><select lemma="pissarra"/></match>
+  </rule>
+
   <!-- ménage >> parament, casa, parella, família -->
   <rule weight="0.8">
     <match lemma="ménage" tags="n.*"><select lemma="parament"/></match>
@@ -11760,6 +11836,15 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- ionien >> joni, jònic -->
+  <rule weight="0.8">
+    <match lemma="ionien" tags="adj.*"><select lemma="joni"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="mer" tags="n.*"/>
+    <match lemma="ionien" tags="adj.*"><select lemma="jònic"/></match>
+  </rule>
 
   <!-- flamboyant >> flamejant, flamíger, flamant, encès -->
   <rule weight="0.8">

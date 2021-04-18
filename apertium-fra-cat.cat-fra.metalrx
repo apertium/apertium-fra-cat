@@ -307,6 +307,14 @@
         </or>
       </rule>
       <rule weight="1.0">
+        <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p3}}"/></match>
+        <or>
+          <match tags="num.*"/>
+          <match tags="num"/>
+        </or>
+        <match tags="n.*"/>
+      </rule>
+      <rule weight="1.0">
         <match lemma="el" tags="prn.pro.*"/>
         <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p3}}"/></match>
       </rule>
@@ -3215,6 +3223,42 @@
       <match tags="n.*"/>
     </or>
   </rule>
+
+<!-- **************** CNJCOO **************** -->
+
+  <!-- i >> et, i -->
+  <rule weight="0.8">
+    <match lemma="i" tags="cnjcoo"><select lemma="et"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="np.ant.*"/>
+      <match tags=""/>
+    </or>
+    <match tags="np.cog.*"/>
+    <match lemma="i" tags="cnjcoo"><select lemma="i"/></match>
+    <match tags="np.cog.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match tags="np.ant.*"/>
+    <or>
+      <match tags="np.cog.*"/>
+      <match tags=""/>
+    </or>
+    <match lemma="i" tags="cnjcoo"><select lemma="i"/></match>
+    <match tags="np.cog.*"/>
+  </rule>
+<!--
+  <rule weight="1.0">
+    <match tags="np.ant.*"/>
+    <match tags="np.cog.*"/>
+    <match lemma="i" tags="cnjcoo"><select lemma="i"/></match>
+    <or>
+      <match tags="np.cog.*"/>
+      <match tags=""/>
+    </or>
+  </rule>
+-->
 
 <!-- **************** CNJADV **************** -->
 
@@ -6185,6 +6229,53 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- albor >> aube, lueur -->
+  <rule weight="0.8">
+    <match lemma="albor" tags="n.*"><select lemma="aube"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="albor" tags="n.m.pl"><select lemma="lueur"/></match>
+  </rule>
+
+  <!-- plateret >> soucoupe, cymbale -->
+  <rule weight="0.8">
+    <match lemma="plateret" tags="n.*"><select lemma="soucoupe"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="plateret" tags="n.m.pl"><select lemma="cymbale"/></match>
+  </rule>
+
+  <!-- pissarra >> ardoise, tableau -->
+  <rule weight="0.8">
+    <match lemma="pissarra" tags="n.*"><select lemma="ardoise"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pissarra" tags="n.*"><select lemma="tableau"/></match>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="escola" tags="n.*"/>
+      <match lemma="col·legi" tags="n.*"/>
+      <match lemma="classe" tags="n.*"/>
+      <match lemma="alumne" tags="n.*"/>
+      <match lemma="professor" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="escola" tags="n.*"/>
+      <match lemma="col·legi" tags="n.*"/>
+      <match lemma="classe" tags="n.*"/>
+      <match lemma="alumne" tags="n.*"/>
+      <match lemma="professor" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="pissarra" tags="n.*"><select lemma="tableau"/></match>
+  </rule>
 
   <!-- executiu >> exécutif, quadre -->
   <rule weight="0.8">
