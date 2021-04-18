@@ -251,6 +251,10 @@
     <def-cat n="y">
       <cat-item lemma="y" tags="prn.pro.adv"/>
     </def-cat>
+    <def-cat n="ça">
+      <cat-item lemma="ça" tags="prn.tn.nt"/>
+      <cat-item lemma="cela" tags="prn.tn.nt"/>
+    </def-cat>
     <def-cat n="beaucoup_de">
       <cat-item lemma="beaucoup de" tags="prn.tn.mf.sp"/>
     </def-cat>
@@ -479,6 +483,9 @@
       <cat-item tags="vblex.pp.*"/>
       <cat-item tags="vbser.pp.*"/>
       <cat-item tags="vbmod.pp.*"/>
+    </def-cat>
+    <def-cat n="faire">
+      <cat-item lemma="faire" tags="vblex.*"/>
     </def-cat>
     <def-cat n="appeler">
       <cat-item lemma="appeler" tags="vblex.pri.*"/>
@@ -12331,6 +12338,53 @@ is not applicable because gender and number cannot be taken from previous rules 
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="verb"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_set_pron">
+          <with-param pos="2"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <choose>
+	  <when>
+	    <test>
+	      <equal><var n="pronom"/><lit v=""/></equal>
+	    </test>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="whole"/>
+                </get-case-from>
+              </lu>
+            </out>
+	  </when>
+	  <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+	          <var n="pronom"/>
+                </get-case-from>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+            </out>
+	  </otherwise>
+        </choose>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: ÇA FAIT (ça fait : fa)">
+      <pattern>
+        <pattern-item n="ça"/>
+        <pattern-item n="faire"/>
       </pattern>
       <action>
         <call-macro n="f_concord0">
