@@ -371,6 +371,14 @@
         </or>
       </rule>
       <rule weight="1.0">
+        <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p3}}"/></match>
+        <or>
+          <match tags="num.*"/>
+          <match tags="num"/>
+        </or>
+        <match tags="n.*"/>
+      </rule>
+      <rule weight="1.0">
         <match lemma="le" tags="prn.pro.*"/>
         <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p3}}"/></match>
       </rule>

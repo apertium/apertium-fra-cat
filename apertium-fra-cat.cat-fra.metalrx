@@ -1544,6 +1544,34 @@
       <match lemma="deixar" tags="vblex.inf"/>
     </or>
   </rule>
+<!--
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <match tags="vblex.*.p3.sg"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="vblex.ger"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <match tags="vbhaver.*.p3.sg"/>
+    <match tags="vblex.pp.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="vblex.ger"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <match lemma="anar" tags="vblex.pri.p3.sg"/>
+    <match tags="vblex.inf"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="vblex.ger"/>
+  </rule>
+-->
 
   <rule weight="1.2">
     <match tags="n.*.sg"/>
@@ -2805,6 +2833,7 @@
     <or>
       <match lemma="felicitar" tags="vblex.*"/>
       <match lemma="vetllar" tags="vblex.*"/>
+      <match lemma="apostar" tags="vblex.*"/>
     </or>
     <repeat from="0" upto="2">
       <match tags="adv"/>
@@ -3494,6 +3523,15 @@
   </rule>
 
 <!-- **************** V **************** -->
+
+  <!-- provar >> essayer, prouver -->
+  <rule weight="0.8">
+    <match lemma="provar" tags="vblex.*"><select lemma="essayer"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="quedar" tags="vblex.*"/>
+    <match lemma="provar" tags="vblex.pp.*"><select lemma="prouver"/></match>
+  </rule>
 
   <!-- viure >> habiter, vivre -->
   <rule weight="0.8">
@@ -5629,6 +5667,51 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- diari >> quotidien, par jour -->
+  <rule weight="0.8">
+    <match lemma="diari" tags="adj.*"><select lemma="quotidien"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="num.*"/>
+      <match tags="num"/>
+    </or>
+    <repeat from="0" upto="2">
+      <match tags="preadv"/>
+      <match tags="adv"/>
+      <match tags="adj.*"/>
+    </repeat>
+    <match tags="n.*"/>
+    <match lemma="diari" tags="adj.*"><select lemma="par jour"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="num.*"/>
+      <match tags="num"/>
+    </or>
+    <match tags="n.*"/>
+    <repeat from="0" upto="2">
+      <match tags="preadv"/>
+      <match tags="adv"/>
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="diari" tags="adj.*"><select lemma="par jour"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="num.*"/>
+      <match tags="num"/>
+    </or>
+    <match tags="adj.*"/>
+    <match tags="n.*"/>
+    <repeat from="0" upto="2">
+      <match tags="preadv"/>
+      <match tags="adv"/>
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="diari" tags="adj.*"><select lemma="par jour"/></match>
+  </rule>
 
   <!-- indentificatiu >> d'identification, identificatoire -->
   <rule weight="0.8">
