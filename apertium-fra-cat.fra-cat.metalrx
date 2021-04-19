@@ -319,7 +319,7 @@
 	</def-macro>
 
 	<!-- p1 verb fra, p2 verb cat estandard, p3 i p4 prep fra, p5 verb cat alternatiu -->
- 	<!-- <macro name="verb_prep" p1="foncer" p2="enfosquir" p3="sur" p4="dans" p5="abalançar" /> -->
+ 	<!-- <macro name="verb_prep2" p1="foncer" p2="enfosquir" p3="sur" p4="dans" p5="abalançar" /> -->
 	<def-macro name="verb_prep2">
 	  <rule weight="0.6">
 		 <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p2}}"/></match>
@@ -376,6 +376,15 @@
           <match tags="num.*"/>
           <match tags="num"/>
         </or>
+        <match tags="n.*"/>
+      </rule>
+      <rule weight="1.0">
+        <match lemma="{{p1}}" tags="vblex.*"><select lemma="{{p3}}"/></match>
+        <or>
+          <match tags="num.*"/>
+          <match tags="num"/>
+        </or>
+        <match tags="adj.*"/>
         <match tags="n.*"/>
       </rule>
       <rule weight="1.0">
@@ -3277,6 +3286,11 @@
   </rule>
 
 <!-- **************** V **************** -->
+
+  <!-- masser >> aplegar, pastar -->
+  <rule weight="0.8">
+    <match lemma="masser" tags="vblex.*"><select lemma="aplegar"/></match>
+  </rule>
 
   <!-- entailler >> fer# un senyal, entallar -->
   <rule weight="0.8">
@@ -6370,6 +6384,9 @@
   <!-- plafonner >> atènyer# un màxim, fixar# un màxim -->
   <macro name="verb_intrans_trans" p1="plafonner" p2="atènyer# un màxim" p3="fixar# un màxim"/>
 
+  <!-- regorger >> vessar, desbordar -->
+  <macro name="verb_prep" p1="regorger" p2="vessar" p3="de" p4="desbordar" />
+
   <!-- souffrir >> sufrir, patir -->
   <macro name="verb_prep" p1="souffrir" p2="sufrir" p3="de" p4="patir" />
 
@@ -6416,6 +6433,31 @@
 
 <!-- **************** N **************** -->
 
+  <!-- fondeur >> fondista, fonedor -->
+  <rule weight="0.8">
+    <match lemma="fondeur" tags="n.*"><select lemma="fondista"/></match>
+  </rule>
+
+  <!-- fantoche >> fantotxe, titella -->
+  <rule weight="0.8">
+    <match lemma="fantoche" tags="n.*"><select lemma="fantotxe"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="état" tags="n.*"/>
+    <match lemma="fantoche" tags="n.*"><select lemma="titella"/></match>
+  </rule>
+
+  <!-- bail >> arrendament, munt -->
+  <rule weight="0.8">
+    <match lemma="bail" tags="n.*"><select lemma="arrendament"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ça" tags="prn.*"/>
+    <match lemma="faire" tags="vblex.*"/>
+    <match lemma="un" tags="det.*"/>
+    <match lemma="bail" tags="n.*"><select lemma="munt"/></match>
+  </rule>
+
   <!-- ordonnance >> ordenança, recepta -->
   <rule weight="0.8">
     <match lemma="ordonnance" tags="n.*"><select lemma="ordenança"/></match>
@@ -6427,6 +6469,7 @@
       <match lemma="donner" tags="vblex.*"/>
       <match lemma="chercher" tags="vblex.*"/>
       <match lemma="nécessiter" tags="vblex.*"/>
+      <match lemma="avoir# besoin de" tags="vblex.*"/>
     </or>
     <repeat from="0" upto="2">
       <or>
@@ -6444,6 +6487,7 @@
       <match lemma="donner" tags="vblex.*"/>
       <match lemma="chercher" tags="vblex.*"/>
       <match lemma="nécessiter" tags="vblex.*"/>
+      <match lemma="avoir# besoin de" tags="vblex.*"/>
     </or>
     <repeat from="0" upto="2">
       <or>
@@ -6453,6 +6497,36 @@
     </repeat>
     <match tags="det.*"/>
     <match tags="adj.*"/>
+    <match lemma="ordonnance" tags="n.*"><select lemma="recepta"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ordonnance" tags="n.*"><select lemma="recepta"/></match>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="médecin" tags="n.*"/>
+      <match lemma="infirmier" tags="n.*"/>
+      <match lemma="pharmacien" tags="n.*"/>
+      <match lemma="hôpital" tags="n.*"/>
+      <match lemma="clinique" tags="n.*"/>
+      <match lemma="polyclinique" tags="n.*"/>
+      <match lemma="pharmacie" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="médecin" tags="n.*"/>
+      <match lemma="infirmier" tags="n.*"/>
+      <match lemma="pharmacien" tags="n.*"/>
+      <match lemma="hôpital" tags="n.*"/>
+      <match lemma="clinique" tags="n.*"/>
+      <match lemma="polyclinique" tags="n.*"/>
+      <match lemma="pharmacie" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <match tags="*"/>
+    </repeat>
     <match lemma="ordonnance" tags="n.*"><select lemma="recepta"/></match>
   </rule>
 
@@ -10831,6 +10905,7 @@
   <rule weight="1.0">
     <match lemma="lettre" tags="n.*"><select lemma="lletra"/></match>
     <or>
+      <match lemma="latin" tags="adj.*"/>
       <match lemma="grec" tags="adj.*"/>
       <match lemma="cyrillique" tags="adj.*"/>
     </or>
@@ -10879,9 +10954,26 @@
     <match lemma="question" tags="n.*"><select lemma="pregunta"/></match>
   </rule>
 
-  <!-- sursis >> pròrroga, suspensió# de condemna -->
+  <!-- sursis >> suspensió, pròrroga, suspensió# de condemna -->
   <rule weight="0.8">
-    <match lemma="sursis" tags="n.*"><select lemma="pròrroga"/></match>
+    <match lemma="sursis" tags="n.*"><select lemma="suspensió"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sursis" tags="n.*"/>
+    <match lemma="à" tags="pr"><select lemma="de"/></match>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="det.*"/>
+        <match tags="num.*"/>
+        <match tags="num"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="exécution" tags="n.*"/>
+      <match lemma="expulsion" tags="n.*"/>
+      <match lemma="ordonnance" tags="n.*"/>
+      <match lemma="procédure" tags="n.*"/>
+    </or>
   </rule>
   <rule weight="1.0">
     <or><match tags="num"/><match tags="num.*"/></or>
@@ -12996,8 +13088,11 @@
       <match lemma="placer" tags="vblex.pp.*"/>
       <match lemma="préoccupé" tags="adj.*"/>
       <match lemma="préoccuper" tags="vblex.pp.*"/>
+      <match lemma="préparé" tags="adj.*"/>
+      <match lemma="préparer" tags="vblex.pp.*"/>
       <match lemma="pressé" tags="adj.*"/>
       <match lemma="presser" tags="vblex.pp.*"/>
+      <match lemma="prêt" tags="adj.*"/>
       <match lemma="réglementé" tags="adj.*"/>
       <match lemma="réglementer" tags="vblex.pp.*"/>
       <match lemma="satisfait" tags="adj.*"/>
