@@ -1287,6 +1287,7 @@
       <list-item v="tatar"/>
       <list-item v="tatare"/>
       <list-item v="bachkir"/>
+      <list-item v="komi"/>
       <list-item v="oudmourte"/>
       <list-item v="mordve"/>
       <list-item v="khanty"/>
@@ -1436,6 +1437,8 @@
       <list-item v="bantou"/>
       <list-item v="swahili"/>
       <list-item v="zoulou"/>
+      <list-item v="kikuyu"/>
+      <list-item v="kimbundu"/>
       <list-item v="hottentot"/>
       <list-item v="bochiman"/>
       <list-item v="apache"/>
@@ -21933,12 +21936,19 @@ is not applicable because gender and number can not be taken from previous rules
         <pattern-item n="ger"/>
       </pattern>
       <action>
-        <call-macro n="f_setpronom">
-          <with-param pos="1"/>
-        </call-macro>
         <call-macro n="f_pis2prs">
           <with-param pos="1"/>
         </call-macro>
+        <choose>
+          <when>
+            <test>
+              <not><equal><var n="inici"/><lit-tag v="si"/></equal></not>
+            </test>
+          </when>
+          <otherwise>
+            <call-macro n="f_setpronom">
+              <with-param pos="1"/>
+            </call-macro>
         <choose>
           <when>
             <test>
@@ -21956,6 +21966,103 @@ is not applicable because gender and number can not be taken from previous rules
                 <clip pos="1" side="sl" part="nbr"/>
               </lu>
               <b/>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="1" side="sl" part="lem"/>
+                <lit-tag v="prn.tn"/>
+                <clip pos="1" side="sl" part="persona"/>
+                <lit-tag v="mf"/>
+                <clip pos="1" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+          </otherwise>
+        </choose>
+        <out>
+          <lu>
+            <lit v="être"/>
+            <lit-tag v="vbser"/>
+            <clip pos="1" side="tl" part="temps"/>
+            <clip pos="1" side="tl" part="persona"/>
+            <clip pos="1" side="tl" part="gen"/>
+            <clip pos="1" side="tl" part="nbr"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <lit v="en train de"/>
+            <lit-tag v="pr"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="a_verb"/>
+            <lit-tag v="inf"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+     <rule comment="estar + ger + enc -> être en train de + enc + inf">
+      <pattern>
+        <pattern-item n="estar_conj"/>
+        <pattern-item n="ger"/>
+        <pattern-item n="prnenc"/>
+      </pattern>
+      <action>
+        <call-macro n="f_pis2prs">
+          <with-param pos="1"/>
+        </call-macro>
+        <choose>
+          <when>
+            <test>
+              <not><equal><var n="inici"/><lit-tag v="si"/></equal></not>
+            </test>
+          </when>
+          <otherwise>
+            <call-macro n="f_setpronom">
+              <with-param pos="1"/>
+            </call-macro>
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="1" side="sl" part="persona"/>
+                <lit-tag v="p3"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <clip pos="1" side="sl" part="lem"/>
+                <lit-tag v="prn.tn"/>
+                <clip pos="1" side="sl" part="persona"/>
+                <lit-tag v="m"/>
+                <clip pos="1" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="1" side="sl" part="lem"/>
+                <lit-tag v="prn.tn"/>
+                <clip pos="1" side="sl" part="persona"/>
+                <lit-tag v="mf"/>
+                <clip pos="1" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+          </otherwise>
+        </choose>
+            <out>
               <lu>
                 <lit v="être"/>
                 <lit-tag v="vbser"/>
@@ -21966,142 +22073,16 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
               <lu>
-        <lit v="en train de"/>
-      <lit-tag v="pr"/>
-      </lu>
-      <b/>
-              <lu>
-                <clip pos="2" side="tl" part="lemh"/>
-                <clip pos="2" side="tl" part="a_verb"/>
-                <lit-tag v="inf"/>
-                <clip pos="2" side="tl" part="lemq"/>
-              </lu>
-            </out>
-          </when>
-          <otherwise>
-            <out>
-              <lu>
-                <clip pos="1" side="sl" part="lem"/>
-                <lit-tag v="prn.tn"/>
-                <clip pos="1" side="sl" part="persona"/>
-                <lit-tag v="mf"/>
-                <clip pos="1" side="sl" part="nbr"/>
+                <lit v="en train de"/>
+              <lit-tag v="pr"/>
               </lu>
               <b/>
-                 <lu>
-        <lit v="être"/>
-                <lit-tag v="vbser"/>
-                <clip pos="1" side="tl" part="temps"/>
-                <clip pos="1" side="tl" part="persona"/>
-                <clip pos="1" side="tl" part="gen"/>
-                <clip pos="1" side="tl" part="nbr"/>
-              </lu>
-              <b pos="1"/>
               <lu>
-        <lit v="en train de"/>
-      <lit-tag v="pr"/>
-      </lu>
-      <b/>
-              <lu>
-                <clip pos="2" side="tl" part="lemh"/>
-                <clip pos="2" side="tl" part="a_verb"/>
-                <lit-tag v="inf"/>
-                <clip pos="2" side="tl" part="lemq"/>
-              </lu>
-            </out>
-          </otherwise>
-        </choose>
-      </action>
-    </rule>
-
-     <rule comment="estar + ger + enc -> être en train de + enc + inf">
-      <pattern>
-        <pattern-item n="estar_conj"/>
-        <pattern-item n="ger"/>
-      <pattern-item n="prnenc"/>
-      </pattern>
-      <action>
-        <call-macro n="f_setpronom">
-          <with-param pos="1"/>
-        </call-macro>
-        <call-macro n="f_pis2prs">
-          <with-param pos="1"/>
-        </call-macro>
-        <choose>
-          <when>
-            <test>
-              <equal>
-                <clip pos="1" side="sl" part="persona"/>
-                <lit-tag v="p3"/>
-              </equal>
-            </test>
-            <out>
-              <lu>
-                <clip pos="1" side="sl" part="lem"/>
-                <lit-tag v="prn.tn"/>
-                <clip pos="1" side="sl" part="persona"/>
-                <lit-tag v="m"/>
-                <clip pos="1" side="sl" part="nbr"/>
-              </lu>
-              <b/>
-                 <lu>
-        <lit v="être"/>
-                <lit-tag v="vbser"/>
-                <clip pos="1" side="tl" part="temps"/>
-                <clip pos="1" side="tl" part="persona"/>
-                <clip pos="1" side="tl" part="gen"/>
-                <clip pos="1" side="tl" part="nbr"/>
-              </lu>
-              <b pos="1"/>
-              <lu>
-        <lit v="en train de"/>
-      <lit-tag v="pr"/>
-      </lu>
-      <b/>
-      <lu>
-               <clip pos="3" side="tl" part="lem"/>
+                <clip pos="3" side="tl" part="lem"/>
                 <lit-tag v="prn.pro"/>
                 <clip pos="3" side="tl" part="tipoenc_pro"/>
-      </lu>
-     <b/>
-              <lu>
-                <clip pos="2" side="tl" part="lemh"/>
-                <clip pos="2" side="tl" part="a_verb"/>
-                <lit-tag v="inf"/>
-                <clip pos="2" side="tl" part="lemq"/>
-              </lu>
-            </out>
-          </when>
-          <otherwise>
-            <out>
-              <lu>
-                <clip pos="1" side="sl" part="lem"/>
-                <lit-tag v="prn.tn"/>
-                <clip pos="1" side="sl" part="persona"/>
-                <lit-tag v="mf"/>
-                <clip pos="1" side="sl" part="nbr"/>
               </lu>
               <b/>
-                 <lu>
-        <lit v="être"/>
-                <lit-tag v="vbser"/>
-                <clip pos="1" side="tl" part="temps"/>
-                <clip pos="1" side="tl" part="persona"/>
-                <clip pos="1" side="tl" part="gen"/>
-                <clip pos="1" side="tl" part="nbr"/>
-              </lu>
-              <b pos="1"/>
-              <lu>
-        <lit v="en train de"/>
-      <lit-tag v="pr"/>
-      </lu>
-      <b/>
-      <lu>
-        <clip pos="3" side="tl" part="lem"/>
-                <lit-tag v="prn.pro"/>
-                <clip pos="3" side="tl" part="tipoenc_pro"/>
-      </lu>
-       <b/>
               <lu>
                 <clip pos="2" side="tl" part="lemh"/>
                 <clip pos="2" side="tl" part="a_verb"/>
@@ -22109,8 +22090,6 @@ is not applicable because gender and number can not be taken from previous rules
                 <clip pos="2" side="tl" part="lemq"/>
               </lu>
             </out>
-          </otherwise>
-        </choose>
       </action>
     </rule>
 
@@ -22151,9 +22130,9 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
               <lu>
-        <lit v="en train de"/>
-      <lit-tag v="pr"/>
-      </lu>
+                <lit v="en train de"/>
+                <lit-tag v="pr"/>
+                </lu>
               <b/>
               <lu>
                 <clip pos="4" side="tl" part="lem"/>
@@ -22177,8 +22156,8 @@ is not applicable because gender and number can not be taken from previous rules
           </when>
           <otherwise>
             <out>
-     <lu>
-        <lit v="être"/>
+              <lu>
+                <lit v="être"/>
                 <lit-tag v="vbser"/>
                 <clip pos="1" side="tl" part="temps"/>
                 <clip pos="1" side="tl" part="persona"/>
@@ -22187,9 +22166,9 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b pos="1"/>
               <lu>
-        <lit v="en train de"/>
-      <lit-tag v="pr"/>
-      </lu>
+                <lit v="en train de"/>
+                <lit-tag v="pr"/>
+              </lu>
               <b/>
               <lu>
                 <clip pos="3" side="tl" part="lem"/>
