@@ -1158,6 +1158,8 @@
     </repeat>
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
     <or>
+      <match lemma="arribar" tags="vblex.*"/>
+      <match lemma="assolir" tags="vblex.*"/>
       <match lemma="comptar" tags="vblex.*"/>
       <match lemma="comptar# amb" tags="vblex.*"/>
       <match lemma="necessitar" tags="vblex.*"/>
@@ -1176,6 +1178,8 @@
       <match tags="vbhaver.*.p3.pl"/>
     </or>
     <or>
+      <match lemma="arribar" tags="vblex.*"/>
+      <match lemma="assolir" tags="vblex.*"/>
       <match lemma="comptar" tags="vblex.*"/>
       <match lemma="comptar# amb" tags="vblex.*"/>
       <match lemma="necessitar" tags="vblex.*"/>
@@ -1194,6 +1198,8 @@
       <match lemma="anar" tags="vblex.pri.p3.pl"/>
     </or>
     <or>
+      <match lemma="arribar" tags="vblex.*"/>
+      <match lemma="assolir" tags="vblex.*"/>
       <match lemma="comptar" tags="vblex.*"/>
       <match lemma="comptar# amb" tags="vblex.*"/>
       <match lemma="necessitar" tags="vblex.*"/>
@@ -1208,6 +1214,8 @@
     </repeat>
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
     <or>
+      <match lemma="arribar" tags="vblex.*"/>
+      <match lemma="assolir" tags="vblex.*"/>
       <match lemma="comptar" tags="vblex.*"/>
       <match lemma="necessitar" tags="vblex.*"/>
       <match lemma="utilitzar" tags="vblex.*"/>
@@ -1230,6 +1238,8 @@
       <match tags="vbhaver.*.p3.pl"/>
     </or>
     <or>
+      <match lemma="arribar" tags="vblex.pp.*"/>
+      <match lemma="assolir" tags="vblex.pp.*"/>
       <match lemma="comptar" tags="vblex.pp.*"/>
       <match lemma="necessitar" tags="vblex.pp.*"/>
       <match lemma="utilitzar" tags="vblex.*"/>
@@ -1252,6 +1262,8 @@
       <match lemma="anar" tags="vblex.pri.p3.pl"/>
     </or>
     <or>
+      <match lemma="arribar" tags="vblex.inf"/>
+      <match lemma="assolir" tags="vblex.inf"/>
       <match lemma="comptar" tags="vblex.inf"/>
       <match lemma="necessitar" tags="vblex.inf"/>
       <match lemma="utilitzar" tags="vblex.*"/>
@@ -1267,6 +1279,8 @@
   <rule weight="1.0">
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
     <or>
+      <match lemma="arribar" tags="vblex.*.p3.sg"/>
+      <match lemma="assolir" tags="vblex.*.p3.sg"/>
       <match lemma="comptar" tags="vblex.*.p3.sg"/>
       <match lemma="necessitar" tags="vblex.*.p3.sg"/>
       <match lemma="utilitzar" tags="vblex.*.p3.sg"/>
@@ -1285,6 +1299,8 @@
   <rule weight="1.0">
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
     <or>
+      <match lemma="arribar" tags="vblex.*.p3.pl"/>
+      <match lemma="assolir" tags="vblex.*.p3.pl"/>
       <match lemma="comptar" tags="vblex.*.p3.pl"/>
       <match lemma="necessitar" tags="vblex.*.p3.pl"/>
       <match lemma="utilitzar" tags="vblex.*.p3.pl"/>
@@ -1304,6 +1320,8 @@
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
     <match tags="vbhaver.*.p3.sg"/>
     <or>
+      <match lemma="arribar" tags="vblex.pp.*"/>
+      <match lemma="assolir" tags="vblex.pp.*"/>
       <match lemma="comptar" tags="vblex.pp.*"/>
       <match lemma="necessitar" tags="vblex.pp.*"/>
       <match lemma="utilitzar" tags="vblex.pp.*"/>
@@ -1323,6 +1341,8 @@
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
     <match tags="vbhaver.*.p3.pl"/>
     <or>
+      <match lemma="arribar" tags="vblex.pp.*"/>
+      <match lemma="assolir" tags="vblex.pp.*"/>
       <match lemma="comptar" tags="vblex.pp.*"/>
       <match lemma="necessitar" tags="vblex.pp.*"/>
       <match lemma="utilitzar" tags="vblex.pp.*"/>
@@ -1342,6 +1362,8 @@
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
     <match lemma="anar" tags="vblex.pri.p3.sg"/>
     <or>
+      <match lemma="arribar" tags="vblex.inf"/>
+      <match lemma="assolir" tags="vblex.inf"/>
       <match lemma="comptar" tags="vblex.inf"/>
       <match lemma="necessitar" tags="vblex.inf"/>
       <match lemma="utilitzar" tags="vblex.inf"/>
@@ -1361,6 +1383,8 @@
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
     <match lemma="anar" tags="vblex.pri.p3.pl"/>
     <or>
+      <match lemma="arribar" tags="vblex.inf"/>
+      <match lemma="assolir" tags="vblex.inf"/>
       <match lemma="comptar" tags="vblex.inf"/>
       <match lemma="necessitar" tags="vblex.inf"/>
       <match lemma="utilitzar" tags="vblex.inf"/>
@@ -1383,6 +1407,8 @@
     </or>
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
     <or>
+      <match lemma="arribar" tags="vblex.*"/>
+      <match lemma="assolir" tags="vblex.*"/>
       <match lemma="comptar" tags="vblex.*"/>
       <match lemma="necessitar" tags="vblex.*"/>
       <match lemma="utilitzar" tags="vblex.*"/>
@@ -1400,6 +1426,8 @@
       <match tags="vbhaver.*.p3.pl"/>
     </or>
     <or>
+      <match lemma="arribar" tags="vblex.pp.*"/>
+      <match lemma="assolir" tags="vblex.pp.*"/>
       <match lemma="comptar" tags="vblex.pp.*"/>
       <match lemma="necessitar" tags="vblex.pp.*"/>
       <match lemma="utilitzar" tags="vblex.pp.*"/>
@@ -1417,6 +1445,8 @@
       <match lemma="anar" tags="vblex.pri.p3.pl"/>
     </or>
     <or>
+      <match lemma="arribar" tags="vblex.inf"/>
+      <match lemma="assolir" tags="vblex.inf"/>
       <match lemma="comptar" tags="vblex.inf"/>
       <match lemma="necessitar" tags="vblex.inf"/>
       <match lemma="utilitzar" tags="vblex.inf"/>
@@ -1593,6 +1623,8 @@
     </repeat>
     <match lemma="es" tags="prn.*"><select lemma="se"/></match>
     <or>
+      <match lemma="arribar" tags="vblex.*.sg"/>
+      <match lemma="assolir" tags="vblex.*.sg"/>
       <match lemma="comptar" tags="vblex.*.sg"/>
       <match lemma="necessitar" tags="vblex.*.sg"/>
       <match lemma="utilitzar" tags="vblex.*.sg"/>
@@ -1611,6 +1643,8 @@
     <match lemma="es" tags="prn.*"><select lemma="se"/></match>
     <match tags="vbhaver.*.p3.sg"/>
     <or>
+      <match lemma="arribar" tags="vblex.pp.*"/>
+      <match lemma="assolir" tags="vblex.pp.*"/>
       <match lemma="comptar" tags="vblex.pp.*"/>
       <match lemma="necessitar" tags="vblex.pp.*"/>
       <match lemma="utilitzar" tags="vblex.pp.*"/>
@@ -1629,6 +1663,8 @@
     <match lemma="es" tags="prn.*"><select lemma="se"/></match>
     <match lemma="anar" tags="vblex.pri.p3.sg"/>
     <or>
+      <match lemma="arribar" tags="vblex.inf"/>
+      <match lemma="assolir" tags="vblex.inf"/>
       <match lemma="comptar" tags="vblex.inf"/>
       <match lemma="necessitar" tags="vblex.inf"/>
       <match lemma="utilitzar" tags="vblex.inf"/>
@@ -1646,6 +1682,8 @@
     </repeat>
     <match lemma="es" tags="prn.*"><select lemma="se"/></match>
     <or>
+      <match lemma="arribar" tags="vblex.*.pl"/>
+      <match lemma="assolir" tags="vblex.*.pl"/>
       <match lemma="comptar" tags="vblex.*.pl"/>
       <match lemma="necessitar" tags="vblex.*.pl"/>
       <match lemma="utilitzar" tags="vblex.*.pl"/>
@@ -1664,6 +1702,8 @@
     <match lemma="es" tags="prn.*"><select lemma="se"/></match>
     <match tags="vbhaver.*.p3.pl"/>
     <or>
+      <match lemma="arribar" tags="vblex.pp.*"/>
+      <match lemma="assolir" tags="vblex.pp.*"/>
       <match lemma="comptar" tags="vblex.pp.*"/>
       <match lemma="necessitar" tags="vblex.pp.*"/>
       <match lemma="utilitzar" tags="vblex.pp.*"/>
@@ -1682,6 +1722,8 @@
     <match lemma="es" tags="prn.*"><select lemma="se"/></match>
     <match lemma="anar" tags="vblex.pri.p3.pl"/>
     <or>
+      <match lemma="arribar" tags="vblex.inf"/>
+      <match lemma="assolir" tags="vblex.inf"/>
       <match lemma="comptar" tags="vblex.inf"/>
       <match lemma="necessitar" tags="vblex.inf"/>
       <match lemma="utilitzar" tags="vblex.inf"/>
@@ -3129,6 +3171,12 @@
       <match lemma="viatge" tags="n.*"/>
       <match lemma="peregrinació" tags="n.*"/>
     </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="prn.enc.*"/>
+        <match tags="adv"/>
+      </or>
+    </repeat>
     <match lemma="a" tags="pr"><select lemma="à"/></match>
     <match tags="det.def.*"/>
     <or>
@@ -3532,6 +3580,11 @@
   </rule>
 
 <!-- **************** V **************** -->
+
+  <!-- assolir >> atteindre, remporter -->
+  <rule weight="0.8">
+    <match lemma="assolir" tags="vblex.*"><select lemma="atteindre"/></match>
+  </rule>
 
   <!-- perjudicar >> nuire, léser -->
   <rule weight="0.8">
@@ -9000,9 +9053,30 @@
     <match lemma="càrrec" tags="n.*"><select lemma="poste"/></match>
     <match lemma="de" tags="pr"/>
     <or>
-      <match lemma="responsabilitat" tags="n.*"/>
       <match lemma="comandament" tags="n.*"/>
+      <match lemma="confiança" tags="n.*"/>
+      <match lemma="responsabilitat" tags="n.*"/>
     </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="càrrec" tags="n.*"><select lemma="dirigeant"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="ERC" tags="np.*"/>
+      <match lemma="Junts" tags="np.*"/>
+      <match lemma="JxCat" tags="np.*"/>
+      <match lemma="PSC" tags="np.*"/>
+      <match lemma="PSOE" tags="np.*"/>
+      <match lemma="PP" tags="np.*"/>
+      <match lemma="partit" tags="n.*"/>
+      <match lemma="sindicat" tags="n.*"/>
+      <match lemma="UGT" tags="np.*"/>
+      <match lemma="CCOO" tags="np.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="càrrec" tags="n.*"><select lemma="dirigeant"/></match>
+    <match lemma="electe" tags="adj.*"/>
   </rule>
   <rule weight="1.0">
     <match lemma="a" tags="pr"/>
@@ -10477,6 +10551,7 @@
 
   <macro name="ant_antcog" p1="August" p2="Auguste" />
   <macro name="ant_antcog" p1="Cèsar" p2="César" />
+  <macro name="ant_antcog" p1="Ciceró" p2="Cicéron" />
   <macro name="ant_antcog" p1="Eliseu" p2="Élisée" />
   <macro name="ant_antcog" p1="Ezequiel" p2="Ézéchiel" />
   <macro name="ant_antcog" p1="Hèctor" p2="Hector" />

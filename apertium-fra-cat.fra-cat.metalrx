@@ -2704,13 +2704,23 @@
   </rule>
   <rule weight="1.0">
     <match lemma="obliger" tags="vblex.*"/>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
       <or>
         <match tags="adv"/>
         <match tags="cnjadv"/>
       </or>
     </repeat>
     <match lemma="de" tags="pr"><select lemma="a"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="raffoler" tags="vblex.*"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="de" tags="pr"><select lemma="per"/></match>
   </rule>
   <rule weight="1.0">
     <match tags="vbser.*"/>
@@ -6433,9 +6443,24 @@
 
 <!-- **************** N **************** -->
 
+  <!-- manège >> picador, cavallets, maniobres -->
+  <rule weight="0.8">
+    <match lemma="manège" tags="n.*"><select lemma="picador"/></match>
+  </rule>
+
   <!-- fondeur >> fondista, fonedor -->
   <rule weight="0.8">
     <match lemma="fondeur" tags="n.*"><select lemma="fondista"/></match>
+  </rule>
+
+  <!-- azimut >> azimut, direcció -->
+  <rule weight="0.8">
+    <match lemma="azimut" tags="n.*"><select lemma="azimut"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tout" tags="predet.*"/>
+    <match tags="det.def.*"/>
+    <match lemma="azimut" tags="n.m.pl"><select lemma="direcció"/></match>
   </rule>
 
   <!-- fantoche >> fantotxe, titella -->
@@ -10875,7 +10900,18 @@
       <match lemma="enlever" tags="vblex.*"/>
       <match lemma="ôter" tags="vblex.*"/>
     </or>
-    <match tags="det.*"/>
+    <repeat from="0" upto="5">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+        <match lemma="de" tags="pr"/>
+        <match tags="det.*"/>
+        <match tags="num.*"/>
+        <match tags="num"/>
+        <match tags="preadv"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
     <match lemma="bas" tags="n.*"><select lemma="mitges"/></match>
   </rule>
   <rule weight="1.0">
@@ -11937,6 +11973,11 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- grondant >> descontent, grunyidor -->
+  <rule weight="0.8">
+    <match lemma="grondant" tags="adj.*"><select lemma="descontent"/></match>
+  </rule>
+
   <!-- ionien >> joni, jònic -->
   <rule weight="0.8">
     <match lemma="ionien" tags="adj.*"><select lemma="joni"/></match>
@@ -12685,7 +12726,7 @@
     <match lemma="beau" tags="adj.*"><select lemma="bo" tags="adj.*"/></match>
   </rule>
 
-  <!-- seul >> sol, únic -->
+  <!-- seul >> sol, únic, [remove] -->
   <rule weight="0.8">
     <match lemma="seul" tags="adj.*"><select lemma="sol"/></match>
   </rule>
@@ -13528,7 +13569,7 @@
     <match lemma="par hasard" tags="adv"><select lemma="per casualitat"/></match>
   </rule>
 
-  <!-- pas >> pas, no -->
+  <!-- pas >> pas, no, ni -->
   <rule weight="0.8">
     <match lemma="pas" tags="adv"><select lemma="pas"/></match>
   </rule>
@@ -13548,6 +13589,42 @@
     <match tags="cm"/>
     <match lemma="pas" tags="adv"><select lemma="no"/></match>
   </rule>
+  <rule weight="1.2">
+    <or>
+      <match tags="cm"/>
+      <match tags="sent"/>
+      <match tags="vblex.*"/>
+    </or>
+    <match lemma="pas" tags="adv"><select lemma="ni"/></match>
+    <match lemma="un"/>
+  </rule>
+<!--
+  <rule weight="1.2">
+    <or>
+      <match tags="cm"/>
+      <match tags="sent"/>
+      <match tags="vblex.*"/>
+    </or>
+    <match lemma="pas" tags="adv"><select lemma="ni"/></match>
+    <match lemma="un"/>
+    <match lemma="seul" tags="adj.*"><remove tags="adj.*"/></match>
+  </rule>
+  <rule weight="1.4">
+    <or>
+      <match tags="cm"/>
+      <match tags="sent"/>
+      <match tags="vblex.*"/>
+    </or>
+    <match lemma="pas" tags="adv"><select lemma="ni"/></match>
+    <match lemma="un"/>
+    <match lemma="seul" tags="adj.*"><remove tags="adj.*"/></match>
+    <or>
+      <match tags="n.*"/>
+      <match tags="adj.*"/>
+      <match tags="preadv"/>
+    </or>
+  </rule>
+-->
 
   <!-- haut >> amunt, alt, altament -->
   <rule weight="0.8">
