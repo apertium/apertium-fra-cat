@@ -33,6 +33,7 @@
 		 <or>
 		   <match tags="num.*"/>
 		   <match lemma="I" tags="adj.*"/>
+		   <match lemma="Ier" tags="adj.*"/>
 		   <match lemma="II" tags="adj.*"/>
 		   <match lemma="III" tags="adj.*"/>
 		   <match lemma="IV" tags="adj.*"/>
@@ -70,6 +71,7 @@
 		 <or>
 		   <match tags="num.*"/>
 		   <match lemma="I" tags="adj.*"/>
+		   <match lemma="Ier" tags="adj.*"/>
 		   <match lemma="II" tags="adj.*"/>
 		   <match lemma="III" tags="adj.*"/>
 		   <match lemma="IV" tags="adj.*"/>
@@ -4460,8 +4462,11 @@
   <!-- dérober >> robar, evitar -->
   <macro name="verb_nopron_pron" p1="dérober" p2="robar" p3="evitar"/>
 
+  <!-- dépasser >> sobresortir, superar -->
+  <macro name="verb_intrans_trans" p1="dépasser" p2="sobresortir" p3="superar"/>
+
   <!-- éclater >> esclatar, rebentar -->
-  <macro name="verb_intrans_trans" p1="éclater" p2="esclatar" p3="rebentar" />
+  <macro name="verb_intrans_trans" p1="éclater" p2="esclatar" p3="rebentar"/>
   <rule weight="1.2">
     <match lemma="éclater" tags="vblex.*"><select lemma="esclatar"/></match>
     <repeat from="0" upto="2">
@@ -6442,6 +6447,21 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- rive >> ribera, marge, riba -->
+  <rule weight="0.8">
+    <match lemma="rive" tags="n.*"><select lemma="ribera"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rive" tags="n.f.pl"><select lemma="marge"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rive" tags="n.*"><select lemma="marge"/></match>
+    <or>
+      <match lemma="droit" tags="adj.*"/>
+      <match lemma="gauche" tags="adj.*"/>
+    </or>
+  </rule>
 
   <!-- manège >> picador, cavallets, maniobres -->
   <rule weight="0.8">

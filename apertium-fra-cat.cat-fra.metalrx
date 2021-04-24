@@ -3585,6 +3585,18 @@
   <rule weight="0.8">
     <match lemma="assolir" tags="vblex.*"><select lemma="atteindre"/></match>
   </rule>
+  <rule weight="1.0">
+    <match lemma="assolir" tags="vblex.*"><select lemma="remporter"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
+    </repeat>
+    <match lemma="victòria" tags="n.*"/>
+  </rule>
 
   <!-- perjudicar >> nuire, léser -->
   <rule weight="0.8">
@@ -5026,16 +5038,67 @@
     </or>
   </rule>
 
-  <!-- aconseguir >> réussir, obtenir -->
+  <!-- aconseguir >> réussir, réussir à, obtenir -->
+  <!-- reeixir >> réussir, réussir à, obtenir -->
+  <!-- assolir >> atteindre, réussir, réussir à -->
   <rule weight="0.8">
-    <match lemma="aconseguir" tags="vblex.*"><select lemma="réussir"/></match>
+    <or>
+      <match lemma="aconseguir" tags="vblex.*"><select lemma="réussir"/></match>
+      <match lemma="reeixir" tags="vblex.*"><select lemma="réussir"/></match>
+      <match lemma="assolir" tags="vblex.*"><select lemma="atteindre"/></match>
+    </or>
   </rule>
   <rule weight="1.0">
-    <match lemma="aconseguir" tags="vblex.*"><select lemma="obtenir"/></match>
+    <or>
+      <match lemma="aconseguir" tags="vblex.*"><select lemma="réussir"/></match>
+      <match lemma="reeixir" tags="vblex.*"><select lemma="réussir"/></match>
+      <match lemma="assolir" tags="vblex.*"><select lemma="réussir"/></match>
+    </or>
+    <match lemma="de" tags="pr"><select lemma="à"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="*.inf"/>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="aconseguir" tags="vblex.*"><select lemma="réussir# à"/></match>
+      <match lemma="reeixir" tags="vblex.*"><select lemma="réussir# à"/></match>
+      <match lemma="assolir" tags="vblex.*"><select lemma="réussir# à"/></match>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="*.inf"/>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="aconseguir" tags="vblex.*"><select lemma="obtenir"/></match>
+      <match lemma="reeixir" tags="vblex.*"><select lemma="obtenir"/></match>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
     <match tags="det.*"/>
   </rule>
   <rule weight="1.0">
-    <match lemma="aconseguir" tags="vblex.*"><select lemma="obtenir"/></match>
+    <repeat from="0" upto="1">
+      <match lemma="el" tags="prn.*"/>
+      <match lemma="ho" tags="prn.*"/>
+    </repeat>
+    <or>
+      <match lemma="aconseguir" tags="vblex.*"><select lemma="obtenir"/></match>
+      <match lemma="reeixir" tags="vblex.*"><select lemma="obtenir"/></match>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="aconseguir" tags="vblex.*"><select lemma="obtenir"/></match>
+      <match lemma="reeixir" tags="vblex.*"><select lemma="obtenir"/></match>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
     <match tags="prn.*"/>
   </rule>
 
@@ -6338,7 +6401,12 @@
     <or>
       <match lemma="poble" tags="n.*"/>
       <match lemma="rei" tags="n.*"/>
+      <match lemma="monarca" tags="n.*"/>
+      <match lemma="regne" tags="n.*"/>
+      <match lemma="monarquia" tags="n.*"/>
       <match lemma="capdill" tags="n.*"/>
+      <match lemma="capitost" tags="n.*"/>
+      <match lemma="guerrer" tags="n.*"/>
       <match lemma="exèrcit" tags="n.*"/>
       <match lemma="costum" tags="n.*"/>
       <match lemma="religió" tags="n.*"/>
@@ -6392,6 +6460,18 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- riba >> rivage, rive -->
+  <rule weight="0.8">
+    <match lemma="riba" tags="n.*"><select lemma="rivage"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="riba" tags="n.*"><select lemma="rive"/></match>
+    <or>
+      <match lemma="dret" tags="adj.*"/>
+      <match lemma="esquerre" tags="adj.*"/>
+    </or>
+  </rule>
 
   <!-- fondista >> fondeur, aubergiste -->
   <rule weight="0.8">
