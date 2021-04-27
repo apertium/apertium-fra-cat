@@ -8825,10 +8825,18 @@
     <repeat from="0" upto="6">
       <match tags="*"/>
     </repeat>
-    <match lemma="lettre" tags="n.*"/>
+    <or>
+      <match lemma="lettre" tags="n.*"/>
+      <match lemma="poste" tags="n.f.*"/>
+      <match lemma="la poste" tags="n.f.*"/>
+    </or>
   </rule>
   <rule weight="1.0">
-    <match lemma="lettre" tags="n.*"/>
+    <or>
+      <match lemma="lettre" tags="n.*"/>
+      <match lemma="poste" tags="n.f.*"/>
+      <match lemma="la poste" tags="n.f.*"/>
+    </or>
     <repeat from="0" upto="6">
       <match tags="*"/>
     </repeat>
@@ -11873,6 +11881,11 @@
     <match lemma="prix" tags="n.*"><select lemma="premi"/></match>
     <match lemma="de" tags="pr"/>
     <match lemma="consolation" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="prix" tags="n.*"><select lemma="premi"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="Hollywood" tags="np.*"/>
   </rule>
   <rule weight="1.0">
     <match lemma="à" tags="pr"/>
