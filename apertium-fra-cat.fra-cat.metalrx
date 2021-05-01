@@ -3428,6 +3428,17 @@
   <!-- draper >> vestir, embolicar -->
   <macro name="verb_nopron_pron" p1="draper" p2="vestir" p3="embolicar" />
 
+  <!-- aigualir >> noyer, diluer, gâcher -->
+  <macro name="verb_nopron_pron" p1="aigualir" p2="noyer" p3="diluer" />
+  <rule weight="1.2">
+    <match lemma="aigualir" tags="vblex.*"><select lemma="gâcher"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="fête" tags="n.*"/>
+  </rule>
+
   <!-- déménager >> traslladar, traslladar-se -->
   <rule weight="0.8">
     <match lemma="déménager" tags="vblex.*"><select lemma="traslladar" tags="vblex.pron.*"/></match>
@@ -4493,32 +4504,9 @@
       <match lemma="affaire" tags="n.*"/>
     </or>
   </rule>
-  <macro name="verb_intrans_trans" p1="éclater" p2="esclatar" p3="rebentar" />
   <rule weight="1.2">
-    <match lemma="éclater" tags="vblex.*"><select lemma="esclatar"/></match>
-    <repeat from="0" upto="2">
-      <or>
-        <match tags="adv"/>
-        <match tags="cnjadv"/>
-      </or>
-    </repeat>
-    <or>
-      <match tags="det.*"/>
-      <match tags="num"/>
-      <match tags="num.*"/>
-    </or>
-    <match tags="adj.*"/>
-    <or>
-      <match lemma="révolte" tags="n.*"/>
-      <match lemma="révolution" tags="n.*"/>
-      <match lemma="rébellion" tags="n.*"/>
-      <match lemma="soulèvement" tags="n.*"/>
-      <match lemma="guerre" tags="n.*"/>
-      <match lemma="Première Guerre Mondiale" tags="np.*"/>
-      <match lemma="Deuxième Guerre Mondiale" tags="np.*"/>
-      <match lemma="scandale" tags="n.*"/>
-      <match lemma="affaire" tags="n.*"/>
-    </or>
+    <match tags="n.*"/>
+    <match lemma="éclater" tags="vblex.pp.*"><select lemma="trencar"/></match>
   </rule>
 
   <!-- bouder >> fer# mala cara/fer# morros, fer# mala cara a/fer# morros a -->
@@ -6448,6 +6436,73 @@
 
 <!-- **************** N **************** -->
 
+  <!-- acquis >> coneixement, conquesta -->
+  <rule weight="0.8">
+    <match lemma="acquis" tags="n.*"><select lemma="coneixement"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="acquis" tags="n.*"><select lemma="conquesta"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="travailleur" tags="n.*"/>
+      <match lemma="syndicat" tags="n.*"/>
+      <match lemma="ouvrier" tags="n.*"/>
+      <match lemma="prolétariat" tags="n.*"/>
+      <match lemma="prolétaire" tags="n.*"/>
+      <match lemma="ouvrier" tags="adj.*"/>
+      <match lemma="laborieux" tags="adj.*"/>
+      <match lemma="prolétaire" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="travailleur" tags="n.*"/>
+      <match lemma="syndicat" tags="n.*"/>
+      <match lemma="ouvrier" tags="n.*"/>
+      <match lemma="prolétariat" tags="n.*"/>
+      <match lemma="prolétaire" tags="n.*"/>
+      <match lemma="ouvrier" tags="adj.*"/>
+      <match lemma="laborieux" tags="adj.*"/>
+      <match lemma="prolétaire" tags="adj.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="acquis" tags="n.*"><select lemma="conquesta"/></match>
+  </rule>
+
+  <!-- ticket >> tiquet, entrada -->
+  <rule weight="0.8">
+    <match lemma="ticket" tags="n.*"><select lemma="tiquet"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ticket" tags="n.*"><select lemma="entrada"/></match>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="spectacle" tags="n.*"/>
+      <match lemma="théâtre" tags="n.*"/>
+      <match lemma="cinéma" tags="n.*"/>
+      <match lemma="musée" tags="n.*"/>
+      <match lemma="cirque" tags="n.*"/>
+      <match lemma="match" tags="n.*"/>
+      <match lemma="course" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="acheter" tags="vblex.*"/>
+      <match lemma="vendre" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="ticket" tags="n.*"><select lemma="entrada"/></match>
+  </rule>
+
   <!-- rive >> ribera, marge, riba -->
   <rule weight="0.8">
     <match lemma="rive" tags="n.*"><select lemma="ribera"/></match>
@@ -7496,6 +7551,22 @@
       <match tags="det.*"/>
     </repeat>
     <match lemma="remorque" tags="n.*"/>
+  </rule>
+
+  <!-- service >> servei, favor -->
+  <rule weight="0.8">
+    <match lemma="service" tags="n.*"><select lemma="servei"/></match>
+  </rule>
+  <rule weight="0.8">
+    <match lemma="demander" tags="vblex.*"/>
+    <repeat from="0" upto="4">
+      <match tags="adv"/>
+      <match tags="pretdet.*"/>
+      <match tags="det.*"/>
+      <match tags="preadv"/>
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="service" tags="n.*"><select lemma="favor"/></match>
   </rule>
 
   <!-- service# d'information >> servei# d'informació, servei# d'intel·ligència -->
@@ -9787,7 +9858,7 @@
     <match lemma="responsabilité" tags="n.*"/>
   </rule>
 
-  <!-- place >> lloc, plaça -->
+  <!-- place >> lloc, plaça, entrada -->
   <rule weight="0.8">
     <match lemma="place" tags="n.*"><select lemma="lloc"/></match>
   </rule>
@@ -9827,6 +9898,35 @@
       <seq n="adj_ord"/>
     </or>
     <match lemma="place" tags="n.*"><select lemma="lloc"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="place" tags="n.*"><select lemma="entrada"/></match>
+    <repeat from="0" upto="4">
+      <match tags="pr"/>
+      <match tags="det.*"/>
+      <match tags="num.*"/>
+      <match tags="num"/>
+      <match tags="adj.*"/>
+    </repeat>
+    <or>
+      <match lemma="spectacle" tags="n.*"/>
+      <match lemma="théâtre" tags="n.*"/>
+      <match lemma="cinéma" tags="n.*"/>
+      <match lemma="musée" tags="n.*"/>
+      <match lemma="cirque" tags="n.*"/>
+      <match lemma="match" tags="n.*"/>
+      <match lemma="course" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="acheter" tags="vblex.*"/>
+      <match lemma="vendre" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <match tags="*"/>
+    </repeat>
+    <match lemma="place" tags="n.*"><select lemma="entrada"/></match>
   </rule>
 
   <!-- protecteur >> protector, patró -->
@@ -12005,6 +12105,15 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- le plus capé >> amb més partits disputats, el més granat -->
+  <rule weight="0.8">
+    <match lemma="le plus capé" tags="adj.*"><select lemma="amb més partits disputats"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="le plus capé" tags="adj.*"><select lemma="el més granat"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
 
   <!-- grondant >> descontent, grunyidor -->
   <rule weight="0.8">

@@ -5798,6 +5798,20 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- granat >> illustre, grenu -->
+  <rule weight="0.8">
+    <match lemma="granat" tags="adj.*"><select lemma="illustre"/></match>
+  </rule>
+
+  <!-- tou >> mou, doux -->
+  <rule weight="0.8">
+    <match lemma="tou" tags="adj.*"><select lemma="mou"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="droga" tags="n.*"/>
+    <match lemma="tou" tags="adj.*"><select lemma="doux"/></match>
+  </rule>
+
   <!-- consitent >> consistant, cohérant -->
   <rule weight="0.8">
     <match lemma="consitent" tags="adj.*"><select lemma="consistant"/></match>
@@ -6460,6 +6474,22 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- favor >> servei, faveur -->
+  <rule weight="0.8">
+    <match lemma="favor" tags="n.*"><select lemma="faveur"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="demanar" tags="vblex.*"/>
+    <repeat from="0" upto="4">
+      <match tags="adv"/>
+      <match tags="pretdet.*"/>
+      <match tags="det.*"/>
+      <match tags="preadv"/>
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="favor" tags="n.*"><select lemma="service"/></match>
+  </rule>
 
   <!-- riba >> rivage, rive -->
   <rule weight="0.8">
