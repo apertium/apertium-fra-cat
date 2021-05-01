@@ -147,6 +147,10 @@
     <def-cat n="rel">
       <cat-item tags="rel.*"/>
     </def-cat>
+    <def-cat n="qui">
+      <cat-item lemma="qui" tags="rel.*"/>
+      <cat-item lemma="qui" tags="prn.itg.*"/>
+    </def-cat>
     <def-cat n="lequel">
       <cat-item lemma="lequel" tags="rel.*"/>
     </def-cat>
@@ -1540,6 +1544,7 @@
       <list-item v="touareg"/>
       <list-item v="copte"/>
       <list-item v="nubien"/>
+      <list-item v="bhojpuri"/>
       <list-item v="bengali"/>
       <list-item v="bengalais"/>
       <list-item v="marathe"/>
@@ -8644,6 +8649,35 @@ is not applicable because gender and number cannot be taken from previous rules 
     <rule comment="REGLA: ON VERB DE LE (on veut de l'eau: es vol aigua)">
       <pattern>
         <pattern-item n="on"/>
+        <pattern-item n="verb_partitiu"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefsg"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <call-macro n="f_concord1">
+          <with-param pos="4"/>
+        </call-macro>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: QUI VERB DE LE (qui veut de l'eau: que vol aigua)">
+      <pattern>
+        <pattern-item n="qui"/>
         <pattern-item n="verb_partitiu"/>
         <pattern-item n="deprep"/>
         <pattern-item n="detdefsg"/>
