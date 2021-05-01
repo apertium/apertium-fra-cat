@@ -6475,6 +6475,11 @@
 
 <!-- **************** N **************** -->
 
+  <!-- rampa >> rampe, crampe -->
+  <rule weight="0.8">
+    <match lemma="rampa" tags="n.*"><select lemma="rampe"/></match>
+  </rule>
+
   <!-- favor >> servei, faveur -->
   <rule weight="0.8">
     <match lemma="favor" tags="n.*"><select lemma="faveur"/></match>

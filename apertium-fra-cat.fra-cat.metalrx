@@ -6436,6 +6436,15 @@
 
 <!-- **************** N **************** -->
 
+  <!-- sommeil >> son n.f, son n.m -->
+  <rule weight="0.8">
+    <match lemma="sommeil" tags="n.*"><select lemma="son" tags="n.f.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sommeil" tags="n.*"><select lemma="son" tags="n.m.*"/></match>
+    <match tags="adj.*"/>
+  </rule>
+
   <!-- acquis >> coneixement, conquesta -->
   <rule weight="0.8">
     <match lemma="acquis" tags="n.*"><select lemma="coneixement"/></match>
