@@ -1166,6 +1166,8 @@
       <match lemma="mirar" tags="vblex.*"/>
       <match lemma="observar" tags="vblex.*"/>
       <match lemma="investigar" tags="vblex.*"/>
+      <match lemma="saber" tags="vblex.*"/>
+      <match lemma="conèixer" tags="vblex.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -1186,6 +1188,8 @@
       <match lemma="mirar" tags="vblex.*"/>
       <match lemma="observar" tags="vblex.*"/>
       <match lemma="investigar" tags="vblex.*"/>
+      <match lemma="saber" tags="vblex.*"/>
+      <match lemma="conèixer" tags="vblex.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -1198,14 +1202,16 @@
       <match lemma="anar" tags="vblex.pri.p3.pl"/>
     </or>
     <or>
-      <match lemma="arribar" tags="vblex.*"/>
-      <match lemma="assolir" tags="vblex.*"/>
-      <match lemma="comptar" tags="vblex.*"/>
-      <match lemma="comptar# amb" tags="vblex.*"/>
-      <match lemma="necessitar" tags="vblex.*"/>
-      <match lemma="mirar" tags="vblex.*"/>
-      <match lemma="observar" tags="vblex.*"/>
-      <match lemma="investigar" tags="vblex.*"/>
+      <match lemma="arribar" tags="vblex.inf"/>
+      <match lemma="assolir" tags="vblex.inf"/>
+      <match lemma="comptar" tags="vblex.inf"/>
+      <match lemma="comptar# amb" tags="vblex.inf"/>
+      <match lemma="necessitar" tags="vblex.inf"/>
+      <match lemma="mirar" tags="vblex.inf"/>
+      <match lemma="observar" tags="vblex.inf"/>
+      <match lemma="investigar" tags="vblex.inf"/>
+      <match lemma="saber" tags="vblex.inf"/>
+      <match lemma="conèixer" tags="vblex.inf"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -1268,6 +1274,7 @@
       <match lemma="necessitar" tags="vblex.inf"/>
       <match lemma="utilitzar" tags="vblex.*"/>
       <match lemma="usar" tags="vblex.*"/>
+      <match lemma="conèixer" tags="vblex.*"/>
     </or>
     <or>
       <match lemma="per" tags="pr"/>
@@ -1285,6 +1292,8 @@
       <match lemma="necessitar" tags="vblex.*.p3.sg"/>
       <match lemma="utilitzar" tags="vblex.*.p3.sg"/>
       <match lemma="usar" tags="vblex.*.p3.sg"/>
+      <match lemma="saber" tags="vblex.*.p3.sg"/>
+      <match lemma="conèixer" tags="vblex.*.p3.sg"/>
     </or>
     <repeat from="0" upto="3">
       <or>
@@ -1305,6 +1314,8 @@
       <match lemma="necessitar" tags="vblex.*.p3.pl"/>
       <match lemma="utilitzar" tags="vblex.*.p3.pl"/>
       <match lemma="usar" tags="vblex.*.p3.pl"/>
+      <match lemma="saber" tags="vblex.*.p3.pl"/>
+      <match lemma="conèixer" tags="vblex.*.p3.pl"/>
     </or>
     <repeat from="0" upto="3">
       <or>
@@ -1314,7 +1325,7 @@
         <match tags="adj.*.pl"/>
       </or>
     </repeat>
-    <match tags="n.*.sg"/>
+    <match tags="n.*.pl"/>
   </rule>
   <rule weight="1.0">
     <match lemma="es" tags="prn.*"><select lemma="on"/></match>
@@ -1326,6 +1337,8 @@
       <match lemma="necessitar" tags="vblex.pp.*"/>
       <match lemma="utilitzar" tags="vblex.pp.*"/>
       <match lemma="usar" tags="vblex.pp.*"/>
+      <match lemma="saber" tags="vblex.pp.*"/>
+      <match lemma="conèixer" tags="vblex.pp.*"/>
     </or>
     <repeat from="0" upto="3">
       <or>
@@ -1347,6 +1360,8 @@
       <match lemma="necessitar" tags="vblex.pp.*"/>
       <match lemma="utilitzar" tags="vblex.pp.*"/>
       <match lemma="usar" tags="vblex.pp.*"/>
+      <match lemma="saber" tags="vblex.pp.*"/>
+      <match lemma="conèixer" tags="vblex.pp.*"/>
     </or>
     <repeat from="0" upto="3">
       <or>
@@ -1368,6 +1383,8 @@
       <match lemma="necessitar" tags="vblex.inf"/>
       <match lemma="utilitzar" tags="vblex.inf"/>
       <match lemma="usar" tags="vblex.inf"/>
+      <match lemma="saber" tags="vblex.inf"/>
+      <match lemma="conèixer" tags="vblex.inf"/>
     </or>
     <repeat from="0" upto="3">
       <or>
@@ -1389,6 +1406,8 @@
       <match lemma="necessitar" tags="vblex.inf"/>
       <match lemma="utilitzar" tags="vblex.inf"/>
       <match lemma="usar" tags="vblex.inf"/>
+      <match lemma="saber" tags="vblex.inf"/>
+      <match lemma="conèixer" tags="vblex.inf"/>
     </or>
     <repeat from="0" upto="3">
       <or>
@@ -3707,7 +3726,10 @@
       <match lemma="vespa" tags="n.*"/>
     </or>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="picar" tags="vblex.*"><select lemma="hacher"/></match>
   </rule>
@@ -3722,7 +3744,10 @@
   <rule weight="1.0">
     <match lemma="picar" tags="vblex.*"><select lemma="piquer"/></match>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="mosquit" tags="n.*"/>
@@ -3733,7 +3758,10 @@
   <rule weight="1.0">
     <match lemma="picar" tags="vblex.*"><select lemma="sonner"/></match>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="porta" tags="n.*"/>
@@ -3852,14 +3880,20 @@
   <rule weight="1.0">
     <seq n="instruments_musicals"/>
     <repeat from="0" upto="8">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="desafinar" tags="vblex.*"><select lemma="jouer# faux"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="desafinar" tags="vblex.*"><select lemma="jouer# faux"/></match>
     <repeat from="0" upto="8">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <seq n="instruments_musicals"/>
   </rule>
@@ -3961,7 +3995,10 @@
       <match tags="np.ant.*"/>
     </or>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="segrestar" tags="vblex.pp.*"><select lemma="kidnapper"/></match>
   </rule>
@@ -4014,7 +4051,10 @@
   <rule weight="1.0">
     <match lemma="doblar" tags="vblex.*"><select lemma="doubler"/></match>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="pel·lícula" tags="n.*"/>
@@ -4031,7 +4071,10 @@
       <match lemma="aposta" tags="n.*"/>
     </or>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="doblar" tags="vblex.*"><select lemma="doubler"/></match>
   </rule>
@@ -4048,7 +4091,10 @@
   <rule weight="1.0">
     <match lemma="onejar" tags="vblex.*"><select lemma="flotter"/></match>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="bandera" tags="n.*"/>
@@ -4063,7 +4109,10 @@
       <match lemma="estendard" tags="n.*"/>
     </or>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="onejar" tags="vblex.*"><select lemma="flotter"/></match>
   </rule>
@@ -4241,6 +4290,21 @@
   <!-- atalaiar >> guetter, épier -->
   <rule weight="0.8">
     <match lemma="atalaiar" tags="vblex.*"><select lemma="guetter"/></match>
+  </rule>
+
+  <!-- fer# malbé >> abîmer, gâter -->
+  <rule weight="0.8">
+    <match lemma="fer# malbé" tags="vblex.*"><select lemma="abîmer"/></match>
+  </rule>
+
+  <!-- aviciar >> gâter, vicier -->
+  <rule weight="0.8">
+    <match lemma="aviciar" tags="vblex.*"><select lemma="gâter"/></match>
+  </rule>
+
+  <!-- mimar >> gâter, mimer -->
+  <rule weight="0.8">
+    <match lemma="mimar" tags="vblex.*"><select lemma="gâter"/></match>
   </rule>
 
   <!-- comissariar >> organiser, être# le commissaire de -->
@@ -4455,7 +4519,10 @@
   <rule weight="1.0">
     <match lemma="cardar" tags="vblex.*"><select lemma="lainer"/></match>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="llana" tags="n.*"/>
@@ -5437,7 +5504,10 @@
   <rule weight="1.0">
     <match lemma="gol" tags="n.*"/>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="fer" tags="vblex.pp.*"><select lemma="marquer"/></match>
@@ -5546,7 +5616,10 @@
   <rule weight="1.2">
     <match lemma="ingressar" tags="vblex.*"><select lemma="déposer"/></match>
     <repeat from="0" upto="6">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="compte" tags="n.*"/>
@@ -5567,7 +5640,10 @@
       <match lemma="franc" tags="n.*"/>
     </or>
     <repeat from="0" upto="6">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="ingressar" tags="vblex.*"><select lemma="déposer"/></match>
   </rule>
@@ -6550,7 +6626,10 @@
   <rule weight="1.0">
     <match lemma="pissarra" tags="n.*"><select lemma="tableau"/></match>
     <repeat from="0" upto="8">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="escola" tags="n.*"/>
@@ -6569,7 +6648,10 @@
       <match lemma="professor" tags="n.*"/>
     </or>
     <repeat from="0" upto="8">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="pissarra" tags="n.*"><select lemma="tableau"/></match>
   </rule>
@@ -6589,7 +6671,10 @@
   <rule weight="1.0">
     <match lemma="estany" tags="n.*"><select lemma="étain"/></match>
     <repeat from="0" upto="8">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="element" tags="n.*"/>
@@ -6622,7 +6707,10 @@
       <match lemma="arsènic" tags="n.*"/>
     </or>
     <repeat from="0" upto="8">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="estany" tags="n.*"><select lemma="étain"/></match>
   </rule>
@@ -6639,7 +6727,10 @@
   <rule weight="1.0">
     <match lemma="estany" tags="n.*"><select lemma="étain"/></match>
     <repeat from="0" upto="8">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="metge" tags="n.*"/>
@@ -6658,7 +6749,10 @@
       <match lemma="medicament" tags="n.*"/>
     </or>
     <repeat from="0" upto="8">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="estany" tags="n.*"><select lemma="étain"/></match>
   </rule>
@@ -6692,7 +6786,10 @@
   <rule weight="1.0">
     <match lemma="oració" tags="n.*"><select lemma="phrase"/></match>
     <repeat from="0" upto="6">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="gramàtica" tags="n.*"/>
@@ -6751,7 +6848,10 @@
       <match lemma="paradigmàtic" tags="adj.*"/>
     </or>
     <repeat from="0" upto="6">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="oració" tags="n.*"><select lemma="phrase"/></match>
   </rule>
@@ -6792,7 +6892,10 @@
   <rule weight="1.0">
     <match lemma="pal" tags="n.*"><select lemma="poteau"/></match>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="pilota" tags="n.*"/>
@@ -6811,7 +6914,10 @@
       <match lemma="llançar" tags="vblex.*"/>
     </or>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="pal" tags="n.*"><select lemma="poteau"/></match>
   </rule>
@@ -6823,7 +6929,10 @@
   <rule weight="1.0">
     <match lemma="escenari" tags="n.*"><select lemma="plateau"/></match>
     <repeat from="0" upto="8">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="teatre" tags="n.*"/>
@@ -6850,7 +6959,10 @@
       <match lemma="baixar" tags="vblex.*"/>
     </or>
     <repeat from="0" upto="8">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="escenari" tags="n.*"><select lemma="plateau"/></match>
   </rule>
@@ -6878,7 +6990,10 @@
   <rule weight="1.0">
     <match lemma="cara" tags="n.*"><select lemma="face"/></match>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="disc" tags="n.*"/>
@@ -6891,7 +7006,10 @@
       <match lemma="àlbum" tags="n.*"/>
     </or>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="cara" tags="n.*"><select lemma="face"/></match>
   </rule>
@@ -6913,7 +7031,10 @@
   <rule weight="1.0">
     <match lemma="caldera" tags="n.*"><select lemma="caldeira"/></match>
     <repeat from="0" upto="8">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="volcà" tags="n.*"/>
@@ -6934,7 +7055,10 @@
       <match lemma="volcànic" tags="adj.*"/>
     </or>
     <repeat from="0" upto="8">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="caldera" tags="n.*"><select lemma="caldeira"/></match>
   </rule>
@@ -6958,7 +7082,10 @@
   <rule weight="1.0">
     <match lemma="mineral" tags="n.*"><select lemma="minéral"/></match>
     <repeat from="0" upto="8">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="vegetal" tags="n.*"/>
@@ -6971,7 +7098,10 @@
       <match lemma="animal" tags="n.*"/>
     </or>
     <repeat from="0" upto="8">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="mineral" tags="n.*"><select lemma="minéral"/></match>
   </rule>
@@ -6983,7 +7113,10 @@
   <rule weight="1.0">
     <match lemma="mineral" tags="n.*"><select lemma="minerai"/></match>
     <repeat from="0" upto="8">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="mina" tags="n.*"/>
@@ -7004,7 +7137,10 @@
       <match lemma="fondre" tags="vblex.*"/>
     </or>
     <repeat from="0" upto="8">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="mineral" tags="n.*"><select lemma="minerai"/></match>
   </rule>
@@ -7162,7 +7298,10 @@
   <rule weight="1.0">
     <match lemma="rebrot" tags="n.*"><select lemma="rebond"/></match>
     <repeat from="0" upto="8">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="epidèmia" tags="n.*"/>
@@ -7189,7 +7328,10 @@
       <match lemma="Covid-19" tags="np.*"/>
     </or>
     <repeat from="0" upto="8">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="rebrot" tags="n.*"><select lemma="rebond"/></match>
   </rule>
@@ -7347,14 +7489,20 @@
       <match lemma="peix" tags="n.*"/>
     </or>
     <repeat from="0" upto="6">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="rap" tags="n.*"><select lemma="baudroie"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="rap" tags="n.*"><select lemma="baudroie"/></match>
     <repeat from="0" upto="6">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="menjar" tags="vblex.*"/>
@@ -7372,14 +7520,20 @@
   <rule weight="1.0">
     <match lemma="longitud" tags="n.*"><select lemma="longitude"/></match>
     <repeat from="0" upto="6">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="latitud" tags="n.*"/>
   </rule>
   <rule weight="1.0">
     <match lemma="latitud" tags="n.*"/>
     <repeat from="0" upto="6">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="longitud" tags="n.*"><select lemma="longitude"/></match>
   </rule>
@@ -7419,7 +7573,10 @@
   <rule weight="1.0">
     <match lemma="ona" tags="n.*"><select lemma="onde"/></match>
     <repeat from="0" upto="6">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="electricitat" tags="n.*"/>
@@ -7452,7 +7609,10 @@
       <match lemma="ultravioleta" tags="adj.*"/>
     </or>
     <repeat from="0" upto="6">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="ona" tags="n.*"><select lemma="onde"/></match>
   </rule>
@@ -7560,14 +7720,20 @@
       <match lemma="virus" tags="n.*"/>
     </or>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="variant" tags="n.*"><select lemma="variant"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="variant" tags="n.*"><select lemma="variant"/></match>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="Covid" tags="np.*"/>
@@ -7651,7 +7817,10 @@
   <rule weight="1.0">
     <match lemma="clip" tags="n.*"><select lemma="trombone"/></match>
     <repeat from="0" upto="6">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="paper" tags="n.*"/>
@@ -7664,7 +7833,10 @@
       <match lemma="full" tags="n.*"/>
     </or>
     <repeat from="0" upto="6">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="clip" tags="n.*"><select lemma="trombone"/></match>
   </rule>
@@ -7697,14 +7869,20 @@
       <match lemma="signar" tags="vblex.*"/>
     </or>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="carta" tags="n.*"><select lemma="lettre"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="carta" tags="n.*"><select lemma="lettre"/></match>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="enviar" tags="vblex.*"/>
@@ -7736,7 +7914,10 @@
   <rule weight="1.0">
     <match lemma="atorgar" tags="vblex.*"/>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="carta" tags="n.*"><select lemma="charte"/></match>
   </rule>
@@ -7773,7 +7954,10 @@
       <match lemma="desxifrar" tags="vblex.*"/>
     </or>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="despatx" tags="n.*"><select lemma="dépêche"/></match>
   </rule>
@@ -7791,7 +7975,10 @@
       <match lemma="fer" tags="vblex.*"/>
     </or>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="còmic" tags="n.*"><select lemma="bande dessinée"/></match>
   </rule>
@@ -7814,14 +8001,20 @@
       <match lemma="Spiderman" tags="np.*"/>
     </or>
     <repeat from="0" upto="8">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="còmic" tags="n.*"><select lemma="bande dessinée"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="còmic" tags="n.*"><select lemma="bande dessinée"/></match>
     <repeat from="0" upto="8">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="manga" tags="n.*"/>
@@ -7938,7 +8131,10 @@
       <match lemma="posar" tags="vblex.*"/>
     </or>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="rellotge" tags="n.*"><select lemma="montre"/></match>
   </rule>
@@ -7974,7 +8170,10 @@
   <rule weight="1.0">
     <match lemma="entrada" tags="n.*"><select lemma="billet"/></match>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="espectacle" tags="n.*"/>
@@ -7994,7 +8193,10 @@
       <match lemma="vendre" tags="vblex.*"/>
     </or>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="entrada" tags="n.*"><select lemma="billet"/></match>
   </rule>
@@ -8021,7 +8223,10 @@
   <rule weight="1.0">
     <match lemma="ducat" tags="n.*"><select lemma="ducat"/></match>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="moneda" tags="n.*"/>
   </rule>
@@ -8463,7 +8668,10 @@
   <rule weight="1.0">
     <match lemma="call" tags="n.*"><select lemma="durillon"/></match>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="peu" tags="n.*"/>
@@ -8476,7 +8684,10 @@
       <match lemma="mà" tags="n.*"/>
     </or>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="call" tags="n.*"><select lemma="durillon"/></match>
   </rule>
@@ -8505,12 +8716,16 @@
     <or>
       <match tags="np.*"/>
       <match tags="*"/>
+      <match tags=""/>
     </or>
   </rule>
   <rule weight="1.0">
     <match lemma="pica" tags="n.*"><select lemma="évier"/></match>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="lavabo" tags="n.*"/>
@@ -8521,7 +8736,10 @@
   <rule weight="1.0">
     <match lemma="pica" tags="n.*"><select lemma="bénitier"/></match>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="església" tags="n.*"/>
@@ -9114,14 +9332,20 @@
   <rule weight="1.0">
     <match lemma="esport" tags="n.*"/>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="golf" tags="n.*"><select lemma="golf"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="golf" tags="n.*"><select lemma="golf"/></match>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="esport" tags="n.*"/>
   </rule>
@@ -9504,7 +9728,10 @@
       <match lemma="cargol" tags="n.*"><select lemma="vis"/></match>
     </or>
     <repeat from="0" upto="6">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="tornavís" tags="n.*"/>
@@ -9519,7 +9746,10 @@
       <match lemma="cargolar" tags="vblex.*"/>
     </or>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <match lemma="caragol" tags="n.*"><select lemma="vis"/></match>
@@ -10425,7 +10655,10 @@
   <rule weight="1.0">
     <match lemma="cap" tags="n.*"><select lemma="tête"/></match>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <or>
       <seq n="animals"/>
@@ -10440,7 +10673,10 @@
       <match lemma="anatomia" tags="n.*"/>
     </or>
     <repeat from="0" upto="4">
-      <match tags="*"/>
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
     </repeat>
     <match lemma="cap" tags="n.*"><select lemma="tête"/></match>
   </rule>
