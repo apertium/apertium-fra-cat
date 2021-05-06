@@ -3316,6 +3316,11 @@
 
 <!-- **************** V **************** -->
 
+  <!-- il y a >> hi ha, fer -->
+  <rule weight="0.8">
+    <match lemma="il y a" tags="vblex.*"><select lemma="hi ha"/></match>
+  </rule>
+
   <!-- masser >> aplegar, pastar -->
   <rule weight="0.8">
     <match lemma="masser" tags="vblex.*"><select lemma="aplegar"/></match>
@@ -13490,19 +13495,22 @@
   <rule weight="1.0">
     <match lemma="être"><select lemma="estar" tags="vblex.*"/></match>
     <repeat from="0" upto="2">
-    <or>
-      <match tags="preadv"/>
-      <match tags="adv"/>
-      <match lemma="tout"/>
-    </or>
+      <or>
+        <match tags="preadv"/>
+        <match tags="adv"/>
+        <match lemma="tout"/>
+      </or>
     </repeat>
     <or>
       <match lemma="amoureux" tags="adj.*"/>
+      <match lemma="à l'aise" tags="adj.*"/>
       <match lemma="basé" tags="adj.*"/>
       <match lemma="baser" tags="vblex.pp.*"/>
       <match lemma="coincé" tags="adj.*"/>
       <match lemma="coincer" tags="vblex.pp.*"/>
       <match lemma="content" tags="adj.*"/>
+      <match lemma="concerné" tags="adj.*"/>
+      <match lemma="concerner" tags="vblex.pp.*"/>
       <match lemma="consterné" tags="adj.*"/>
       <match lemma="consterner" tags="vblex.pp.*"/>
       <match lemma="contrôlé" tags="adj.*"/>
@@ -13542,6 +13550,7 @@
       <match lemma="impliquer" tags="vblex.pp.*"/>
       <match lemma="intéressé" tags="adj.*"/>
       <match lemma="intéresser" tags="vblex.pp.*"/>
+      <match lemma="mal à l'aise" tags="adj.*"/>
       <match lemma="malade" tags="adj.*"/>
       <match lemma="marié" tags="adj.*"/>
       <match lemma="marier" tags="vblex.pp.*"/>
@@ -13568,10 +13577,13 @@
       <match lemma="satisfaire" tags="vblex.pp.*"/>
       <match lemma="situé" tags="adj.*"/>
       <match lemma="situer" tags="vblex.pp.*"/>
+      <match lemma="surpris" tags="adj.*"/>
+      <match lemma="surprendre" tags="vblex.pp.*"/>
       <match lemma="terminé" tags="adj.*"/>
       <match lemma="terminer" tags="vblex.pp.*"/>
       <match lemma="timbré" tags="adj.*"/>
       <match lemma="timbrer" tags="vblex.pp.*"/>
+      <match lemma="vivant" tags="adj.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -13949,6 +13961,11 @@
 
 <!-- **************** ADV **************** -->
 
+  <!-- longtemps >> molt de temps, molt -->
+  <rule weight="0.8">
+    <match lemma="longtemps" tags="adv"><select lemma="molt de temps"/></match>
+  </rule>
+
   <!-- à rebours >> a l'inrevés, a contrapel, a repel -->
   <rule weight="0.8">
     <match lemma="à rebours" tags="adv"><select lemma="a l'inrevés"/></match>
@@ -14190,10 +14207,12 @@
   <macro name="ant_antcog" p1="Auguste" p2="August" />
   <macro name="ant_antcog" p1="César" p2="Cèsar" />
   <macro name="ant_antcog" p1="Geoffroy" p2="Jofré" />
+  <macro name="ant_antcog" p1="Hadrien" p2="Adrià" />
+  <macro name="ant_antcog" p1="Hector" p2="Hèctor" />
   <macro name="ant_antcog" p1="Hercule" p2="Hèrcules" />
   <macro name="ant_antcog" p1="Horace" p2="Horaci" />
-  <macro name="ant_antcog" p1="Hector" p2="Hèctor" />
   <macro name="ant_antcog" p1="Jérémie" p2="Jeremies" />
+  <macro name="ant_antcog" p1="Marc-Aurèle" p2="Marc Aureli" />
   <macro name="ant_antcog" p1="Octave" p2="Octavi" />
   <macro name="ant_antcog" p1="Salomon" p2="Salomó" />
 

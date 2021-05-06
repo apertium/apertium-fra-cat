@@ -3407,6 +3407,23 @@
 
 <!-- **************** PREADV **************** -->
 
+  <!-- molt >> molt, longtemps -->
+  <rule weight="0.8">
+    <match lemma="molt" tags="adv"><select lemma="molt"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="fer" tags="vblex.pri.p3.sg"><select lemma="il y a"/></match>
+    <match lemma="molt" tags="adv"><select lemma="longtemps"/></match>
+  </rule>
+  <rule weight="1.4">
+    <match lemma="fer" tags="vblex.pri.p3.sg"/>
+    <match lemma="molt" tags="adv"><select lemma="molt"/></match>
+    <or>
+      <match tags="adj.*"/>
+      <match tags="adv"/>
+    </or>
+  </rule>
+
   <!-- molt >> très, beaucoup -->
   <rule weight="0.8">
     <match lemma="molt" tags="preadv"><select lemma="très"/></match>
@@ -6656,6 +6673,48 @@
     <match lemma="pissarra" tags="n.*"><select lemma="tableau"/></match>
   </rule>
 
+  <!-- hòstia >> hostie, beigne, humeur -->
+  <rule weight="0.8">
+    <match lemma="hòstia" tags="n.*"><select lemma="hostie"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="clavar" tags="vblex.*"/>
+      <match lemma="fotre" tags="vblex.*"/>
+      <match lemma="fúmer" tags="vblex.*"/>
+      <match lemma="engegar" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="4">
+      <or>
+        <match tags="adv"/>
+        <match tags="det.*"/>
+        <match tags="preadv"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
+    <match lemma="hòstia" tags="n.*"><select lemma="beigne"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="gec" tags="n.*"/>
+      <match lemma="parell" tags="n.*"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <match lemma="hòstia" tags="n.*"><select lemma="beigne"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="gec" tags="n.*"/>
+      <match lemma="parell" tags="n.*"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <match lemma="hòstia" tags="n.*"><select lemma="beigne"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="mal" tags="adj.*"/>
+    <match lemma="hòstia" tags="n.*"><select lemma="humeur"/></match>
+  </rule>
+
   <!-- executiu >> exécutif, quadre -->
   <rule weight="0.8">
     <match lemma="executiu" tags="n.*"><select lemma="exécutif"/></match>
@@ -6796,7 +6855,7 @@
       <match lemma="morfologia" tags="n.*"/>
       <match lemma="sintaxi" tags="n.*"/>
       <match lemma="substantiu" tags="n.*"/>
-      <match lemma="nom" tags="vblex.*"/>
+      <match lemma="nom" tags="n.*"/>
       <match lemma="adjectiu" tags="n.*"/>
       <match lemma="adverbi" tags="n.*"/>
       <match lemma="verb" tags="n.*"/>
@@ -6825,7 +6884,7 @@
       <match lemma="morfologia" tags="n.*"/>
       <match lemma="sintaxi" tags="n.*"/>
       <match lemma="substantiu" tags="n.*"/>
-      <match lemma="nom" tags="vblex.*"/>
+      <match lemma="nom" tags="n.*"/>
       <match lemma="adjectiu" tags="n.*"/>
       <match lemma="adverbi" tags="n.*"/>
       <match lemma="verb" tags="n.*"/>
@@ -7749,6 +7808,7 @@
       <match lemma="anglès" tags="adj.*"/>
       <match lemma="britànic" tags="adj.*"/>
       <match lemma="brasiler" tags="adj.*"/>
+      <match lemma="indi" tags="adj.*"/>
       <match lemma="sud-africà" tags="adj.*"/>
     </or>
   </rule>
@@ -10910,6 +10970,7 @@
   <macro name="ant_antcog" p1="Jesús" p2="Jésus" />
   <macro name="ant_antcog" p1="Jofré" p2="Geoffroy" />
   <macro name="ant_antcog" p1="Miquel Àngel" p2="Michel-Ange" />
+  <macro name="ant_antcog" p1="Marc Aureli" p2="Marc-Aurèle" />
   <macro name="ant_antcog" p1="Octavi" p2="Octave" />
   <macro name="ant_antcog" p1="Salomó" p2="Salomon" />
   <macro name="ant_antcog" p1="Virgili" p2="Virgile" />
@@ -10942,6 +11003,7 @@
     <or><match tags="np.loc"/><match tags="np.top.*"/></or>
   </rule>
 
+  <macro name="noms_propis" p1="Adrià" p2="Hadrien" />
   <macro name="noms_propis" p1="Alfons" p2="Alphonse" />
   <macro name="noms_propis" p1="Amadeu" p2="Amédée" />
   <macro name="noms_propis" p1="Andreu" p2="André" />
