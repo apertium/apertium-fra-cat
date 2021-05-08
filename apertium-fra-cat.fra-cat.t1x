@@ -269,6 +269,7 @@
     <def-cat n="verb_partitiu">
       <cat-item tags="vbhaver.*"/>
       <cat-item lemma="accueillir" tags="vblex.*"/>
+      <cat-item lemma="ajouter" tags="vblex.*"/>
       <cat-item lemma="avoir" tags="vblex.*"/>
       <cat-item lemma="avoir# besoin" tags="vblex.*"/>
       <cat-item lemma="accumuler" tags="vblex.*"/>
@@ -282,6 +283,7 @@
       <cat-item lemma="gagner" tags="vbmod.*"/>
       <cat-item lemma="imaginer" tags="vblex.*"/>
       <cat-item lemma="manger" tags="vblex.*"/>
+      <cat-item lemma="rajouter" tags="vblex.*"/>
       <cat-item lemma="sentir" tags="vblex.*"/>
       <cat-item lemma="voler" tags="vblex.*"/>
       <cat-item lemma="vouloir" tags="vblex.*"/>
@@ -1157,6 +1159,7 @@
       <list-item v="Hongrie"/>
       <list-item v="Autriche"/>
       <list-item v="Suisse"/>
+<!--      <list-item v="Valais"/> -->
       <list-item v="Tessin"/>
       <list-item v="Italie"/>
       <list-item v="Ligurie"/>
@@ -1322,10 +1325,10 @@
       <list-item v="Angola"/>
       <list-item v="Mozambique"/>
       <list-item v="Groenland"/>
-      <list-item v="Canada"/>
+<!--      <list-item v="Canada"/> -->
       <list-item v="Manitoba"/>
       <list-item v="Ontario"/>
-      <list-item v="Québec"/>
+<!--      <list-item v="Québec"/> -->
       <list-item v="Saskatchewan"/>
       <list-item v="Nouvelle-Orléans"/>
       <list-item v="Alabama"/>
@@ -1494,6 +1497,7 @@
       <list-item v="tchèque"/>
       <list-item v="slovaque"/>
       <list-item v="hongrois"/>
+      <list-item v="vaudois"/>
       <list-item v="italien"/>
       <list-item v="sarde"/>
       <list-item v="piémontais"/>

@@ -2822,6 +2822,11 @@
     <match lemma="à" tags="pr"><select lemma="de"/></match>
   </rule>
   <rule weight="1.0">
+    <match lemma="impossible" tags="adj.*"/>
+    <match lemma="à" tags="pr"><select lemma="de"/></match>
+    <match tags="*.inf"/>
+  </rule>
+  <rule weight="1.0">
     <match lemma="maillot" tags="n.*"/>
     <repeat from="0" upto="1">
       <match tags="adj"/>
@@ -3315,6 +3320,11 @@
   </rule>
 
 <!-- **************** V **************** -->
+
+  <!-- majorer >> sobreestimar, majorar -->
+  <rule weight="0.8">
+    <match lemma="majorer" tags="vblex.*"><select lemma="sobreestimar"/></match>
+  </rule>
 
   <!-- il y a >> hi ha, fer -->
   <rule weight="0.8">
@@ -6478,6 +6488,25 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- despreniment >> décollement, désintéressement -->
+  <rule weight="0.8">
+    <match lemma="despreniment" tags="n.*"><select lemma="décollement"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.pos.*"/>
+    <match lemma="despreniment" tags="n.*"><select lemma="désintéressement"/></match>
+  </rule>
+
+  <!-- tapis roulant >> cinta mecànica, cinta transportadora, cinta# de córrer -->
+  <rule weight="0.8">
+    <match lemma="tapis roulant" tags="n.*"><select lemma="cinta mecànica"/></match>
+  </rule>
+
+  <!-- plaque tournante >> centre, plataforma giratòria -->
+  <rule weight="0.8">
+    <match lemma="plaque tournante" tags="n.*"><select lemma="centre"/></match>
+  </rule>
 
   <!-- gouverne >> direcció, informació -->
   <rule weight="0.8">
@@ -9794,12 +9823,23 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match lemma="sommet" tags="n.*"><select lemma="cim"/></match>
     <or>
       <match lemma="enneigé" tags="adj.*"/>
       <match lemma="enneiger" tags="vblex.pp.*"/>
       <match lemma="culminant" tags="adj.*"/>
     </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sommet" tags="n.*"><select lemma="cim"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="4">
+      <or>
+        <match tags="adj.*"/>
+        <match tags="num.*"/>
+        <match tags="num"/>
+      </or>
+    </repeat>
+    <match lemma="catégorie" tags="n.*"/>
   </rule>
 
   <!-- nouvelle >> notícia, relat -->
@@ -13518,6 +13558,8 @@
       <match lemma="convaincu" tags="adj.*"/>
       <match lemma="convaincre" tags="vblex.pp.*"/>
       <match lemma="d'accord" tags="adv"/>
+      <match lemma="décoré" tags="adj.*"/>
+      <match lemma="décorer" tags="vblex.pp.*"/>
       <match lemma="disponible" tags="adj.*"/>
       <match lemma="divisé" tags="adj.*"/>
       <match lemma="diviser" tags="vblex.pp.*"/>
@@ -13571,8 +13613,12 @@
       <match lemma="pressé" tags="adj.*"/>
       <match lemma="presser" tags="vblex.pp.*"/>
       <match lemma="prêt" tags="adj.*"/>
+      <match lemma="redécoré" tags="adj.*"/>
+      <match lemma="redécorer" tags="vblex.pp.*"/>
       <match lemma="réglementé" tags="adj.*"/>
       <match lemma="réglementer" tags="vblex.pp.*"/>
+      <match lemma="représenté" tags="adj.*"/>
+      <match lemma="représenter" tags="vblex.pp.*"/>
       <match lemma="satisfait" tags="adj.*"/>
       <match lemma="satisfaire" tags="vblex.pp.*"/>
       <match lemma="situé" tags="adj.*"/>
@@ -13960,6 +14006,11 @@
   </rule>
 
 <!-- **************** ADV **************** -->
+
+  <!-- tellement >> tant, així -->
+  <rule weight="0.8">
+    <match lemma="tellement" tags="adv"><select lemma="tant"/></match>
+  </rule>
 
   <!-- longtemps >> molt de temps, molt -->
   <rule weight="0.8">

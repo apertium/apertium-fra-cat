@@ -3086,6 +3086,11 @@
     </or>
   </rule>
   <rule weight="1.0">
+    <match lemma="impossible" tags="adj.*"/>
+    <match lemma="de" tags="pr"><select lemma="à"/></match>
+    <match tags="*.inf"/>
+  </rule>
+  <rule weight="1.0">
     <or>
       <match lemma="fer# amic" tags="vblex.*"/>
       <match lemma="fer# amiga" tags="vblex.*"/>
@@ -3454,6 +3459,11 @@
 
 <!-- **************** ADV **************** -->
 
+  <!-- tant >> autant, tellement, tant -->
+  <rule weight="0.8">
+    <match lemma="tant" tags="adv"><select lemma="autant"/></match>
+  </rule>
+
   <!-- a càrrec seu >> à son charge, à leur charge -->
   <rule weight="0.8">
     <match lemma="a càrrec seu" tags="adv"><select lemma="à son charge"/></match>
@@ -3616,6 +3626,58 @@
   </rule>
 
 <!-- **************** V **************** -->
+
+  <!-- prendre# possessió >> prendre# les fonctions, prendre# ses fonctions, prendre# leurs fonctions, prendre possession -->
+  <rule weight="0.8">
+    <match lemma="prendre# possessió" tags="vblex.*"><select lemma="prendre# les fonctions"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="prendre# possessió" tags="vblex.*.p3.sg"><select lemma="prendre# ses fonctions"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="prendre# possessió" tags="vblex.*.p3.pl"><select lemma="prendre# leurs fonctions"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="vbhaver.*.p3.sg"/>
+    <match lemma="prendre# possessió" tags="vblex.pp.*"><select lemma="prendre# ses fonctions"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="vbhaver.*.p3.pl"/>
+    <match lemma="prendre# possessió" tags="vblex.pp.*"><select lemma="prendre# leurs fonctions"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="anar" tags="vblex.pri.p3.sg"/>
+    <match lemma="prendre# possessió" tags="vblex.inf"><select lemma="prendre# ses fonctions"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="anar" tags="vblex.pri.p3.pl"/>
+    <match lemma="prendre# possessió" tags="vblex.inf"><select lemma="prendre# leurs fonctions"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="prendre# possessió" tags="vblex.*"><select lemma="prendre# possession"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="castell" tags="n.*"/>
+      <match lemma="plaça" tags="n.*"/>
+      <match lemma="ciutat" tags="n.*"/>
+      <match lemma="vila" tags="n.*"/>
+      <match lemma="regió" tags="n.*"/>
+      <match lemma="baronia" tags="n.*"/>
+      <match lemma="comtat" tags="n.*"/>
+      <match lemma="marquesat" tags="n.*"/>
+      <match lemma="ducat" tags="n.*"/>
+      <match lemma="principat" tags="n.*"/>
+      <match lemma="regne" tags="n.*"/>
+      <match lemma="reialme" tags="n.*"/>
+      <match lemma="imperi" tags="n.*"/>
+      <match lemma="emirat" tags="n.*"/>
+      <match lemma="sultanat" tags="n.*"/>
+      <match lemma="khanat" tags="n.*"/>
+      <match lemma="país" tags="n.*"/>
+      <match lemma="enclau" tags="n.*"/>
+      <match tags="np.*"/>
+    </or>
+  </rule>
 
   <!-- assolir >> atteindre, remporter -->
   <rule weight="0.8">
@@ -6568,6 +6630,56 @@
 
 <!-- **************** N **************** -->
 
+  <!-- franqueig >> timbrage, franchissement -->
+  <rule weight="0.8">
+    <match lemma="franqueig" tags="n.*"><select lemma="timbrage"/></match>
+  </rule>
+
+  <!-- cinta mecànica >> tapis roulant, bande transporteuse -->
+  <rule weight="0.8">
+    <match lemma="cinta mecànica" tags="n.*"><select lemma="tapis roulant"/></match>
+  </rule>
+
+  <!-- torniquet >> tourniquet, portillon -->
+  <rule weight="0.8">
+    <match lemma="torniquet" tags="n.*"><select lemma="tourniquet"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="torniquet" tags="n.*"><select lemma="portillon"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="accés" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="torniquet" tags="n.*"><select lemma="portillon"/></match>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="transport" tags="n.*"/>
+      <match lemma="metro" tags="n.*"/>
+      <match lemma="autobús" tags="n.*"/>
+      <match lemma="bus" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="transport" tags="n.*"/>
+      <match lemma="metro" tags="n.*"/>
+      <match lemma="autobús" tags="n.*"/>
+      <match lemma="bus" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="torniquet" tags="n.*"><select lemma="portillon"/></match>
+  </rule>
+
   <!-- rampa >> rampe, crampe -->
   <rule weight="0.8">
     <match lemma="rampa" tags="n.*"><select lemma="rampe"/></match>
@@ -7284,6 +7396,7 @@
       <match lemma="principat" tags="n.*"/>
       <match lemma="emirat" tags="n.*"/>
       <match lemma="sultanat" tags="n.*"/>
+      <match lemma="khanat" tags="n.*"/>
     </or>
   </rule>
 
