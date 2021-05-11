@@ -432,6 +432,8 @@
       <cat-item lemma="enfonsar" tags="vblex.*"/>
       <cat-item lemma="ensopegar" tags="vblex.*"/>
       <cat-item lemma="entrebancar" tags="vblex.*"/>
+      <cat-item lemma="escarrufar" tags="vblex.*"/>
+      <cat-item lemma="esgarrifar" tags="vblex.*"/>
       <cat-item lemma="estirar" tags="vblex.*"/>
       <cat-item lemma="fer# càrrec de" tags="vblex.*"/>
       <cat-item lemma="florir" tags="vblex.*"/>
@@ -467,6 +469,8 @@
       <cat-item lemma="enfonsar" tags="vblex.inf"/>
       <cat-item lemma="ensopegar" tags="vblex.inf"/>
       <cat-item lemma="entrebancar" tags="vblex.inf"/>
+      <cat-item lemma="escarrufar" tags="vblex.inf"/>
+      <cat-item lemma="esgarrifar" tags="vblex.inf"/>
       <cat-item lemma="estirar" tags="vblex.inf"/>
       <cat-item lemma="fer# càrrec de" tags="vblex.inf"/>
       <cat-item lemma="florir" tags="vblex.inf"/>
@@ -502,6 +506,8 @@
       <cat-item lemma="enfonsar" tags="vblex.ger"/>
       <cat-item lemma="ensopegar" tags="vblex.ger"/>
       <cat-item lemma="entrebancar" tags="vblex.ger"/>
+      <cat-item lemma="escarrufar" tags="vblex.ger"/>
+      <cat-item lemma="esgarrifar" tags="vblex.ger"/>
       <cat-item lemma="estirar" tags="vblex.ger"/>
       <cat-item lemma="fer# càrrec de" tags="vblex.ger"/>
       <cat-item lemma="florir" tags="vblex.ger"/>
@@ -537,6 +543,8 @@
       <cat-item lemma="enfonsar" tags="vblex.pp.*"/>
       <cat-item lemma="ensopegar" tags="vblex.pp.*"/>
       <cat-item lemma="entrebancar" tags="vblex.pp.*"/>
+      <cat-item lemma="escarrufar" tags="vblex.pp.*"/>
+      <cat-item lemma="esgarrifar" tags="vblex.pp.*"/>
       <cat-item lemma="estirar" tags="vblex.pp.*"/>
       <cat-item lemma="fer# càrrec de" tags="vblex.pp.*"/>
       <cat-item lemma="florir" tags="vblex.pp.*"/>
@@ -22240,6 +22248,189 @@ is not applicable because gender and number can not be taken from previous rules
         </choose>
       </action>
   </rule>
+
+  <rule comment="no estar + ger -> n'être pas en train de + inf">
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="estar_conj"/>
+        <pattern-item n="ger"/>
+      </pattern>
+      <action>
+        <call-macro n="f_pis2prs">
+          <with-param pos="2"/>
+        </call-macro>
+        <choose>
+          <when>
+            <test>
+              <not><equal><var n="inici"/><lit-tag v="si"/></equal></not>
+            </test>
+          </when>
+          <otherwise>
+            <call-macro n="f_setpronom">
+              <with-param pos="2"/>
+            </call-macro>
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="2" side="sl" part="persona"/>
+                <lit-tag v="p3"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <clip pos="2" side="sl" part="lem"/>
+                <lit-tag v="prn.tn"/>
+                <clip pos="2" side="sl" part="persona"/>
+                <lit-tag v="m"/>
+                <clip pos="2" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="2" side="sl" part="lem"/>
+                <lit-tag v="prn.tn"/>
+                <clip pos="2" side="sl" part="persona"/>
+                <lit-tag v="mf"/>
+                <clip pos="2" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+          </otherwise>
+        </choose>
+        <out>
+	  <lu>
+	    <clip pos="1" side="tl" part="whole"/>
+	  </lu>
+	  <b pos="1"/>
+          <lu>
+            <lit v="être"/>
+            <lit-tag v="vbser"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="en train de"/>
+            <lit-tag v="pr"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <lit-tag v="inf"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+  <rule comment="no estar + ger + enc -> n'être pas en train de + pro + inf">
+      <pattern>
+        <pattern-item n="noadv"/>
+        <pattern-item n="estar_conj"/>
+        <pattern-item n="ger"/>
+        <pattern-item n="prnenc"/>
+      </pattern>
+      <action>
+        <call-macro n="f_pis2prs">
+          <with-param pos="2"/>
+        </call-macro>
+        <choose>
+          <when>
+            <test>
+              <not><equal><var n="inici"/><lit-tag v="si"/></equal></not>
+            </test>
+          </when>
+          <otherwise>
+            <call-macro n="f_setpronom">
+              <with-param pos="2"/>
+            </call-macro>
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="2" side="sl" part="persona"/>
+                <lit-tag v="p3"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <clip pos="2" side="sl" part="lem"/>
+                <lit-tag v="prn.tn"/>
+                <clip pos="2" side="sl" part="persona"/>
+                <lit-tag v="m"/>
+                <clip pos="2" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="2" side="sl" part="lem"/>
+                <lit-tag v="prn.tn"/>
+                <clip pos="2" side="sl" part="persona"/>
+                <lit-tag v="mf"/>
+                <clip pos="2" side="sl" part="nbr"/>
+              </lu>
+              <b/>
+            </out>
+          </otherwise>
+        </choose>
+          </otherwise>
+        </choose>
+        <out>
+	  <lu>
+	    <clip pos="1" side="tl" part="whole"/>
+	  </lu>
+	  <b pos="1"/>
+          <lu>
+            <lit v="être"/>
+            <lit-tag v="vbser"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <lit v="pas"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="en train de"/>
+            <lit-tag v="pr"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="4" side="tl" part="lem"/>
+            <lit-tag v="prn.pro"/>
+            <clip pos="4" side="tl" part="tipoenc_pro"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+            <lit-tag v="inf"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
 
   <rule comment="SENT + estar + ger -> SENT + être en train de + inf">
       <pattern>
