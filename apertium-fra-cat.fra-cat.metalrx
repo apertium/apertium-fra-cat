@@ -5893,24 +5893,38 @@
     <match lemma="coucher" tags="vblex.*"><select lemma="jeure"/></match>
   </rule>
   <rule weight="1.2">
+    <or>
+      <match tags="n.*"/>
+      <match tags="np.*"/>
+      <match tags="adj.*"/>
+    </or>
     <match lemma="coucher" tags="vblex.pp.*"><select lemma="ajeure"/></match>
   </rule>
   <rule weight="1.4">
     <match lemma="se" tags="prn.pro.ref.*"/>
-    <match lemma="coucher" tags="vblex.pp.*"><select lemma="ficar# al llit"/></match>
+    <match lemma="coucher" tags="vblex.*.p3.*"><select lemma="ficar# al llit"/></match>
   </rule>
-  <rule weight="1.6">
+  <rule weight="1.4">
     <match lemma="se" tags="prn.pro.ref.*"/>
-    <match tags="vbser.*"/>
-    <repeat from="0" upto="1">
-      <or>
-        <match tags="adv"/>
-        <match tags="cnjadv"/>
-      </or>
-    </repeat>
-    <match lemma="coucher" tags="vblex.pp.*"><select lemma="ficar# al llit"/></match>
+    <match lemma="coucher" tags="vblex.inf"><select lemma="ficar# al llit"/></match>
   </rule>
-  <rule weight="1.8">
+  <rule weight="1.4">
+    <match lemma="me" tags="prn.pro.*"/>
+    <match lemma="coucher" tags="vblex.*.p1.sg"><select lemma="ficar# al llit"/></match>
+  </rule>
+  <rule weight="1.4">
+    <match lemma="te" tags="prn.pro.*"/>
+    <match lemma="coucher" tags="vblex.*.p2.sg"><select lemma="ficar# al llit"/></match>
+  </rule>
+  <rule weight="1.4">
+    <match lemma="nous" tags="prn.pro.*"/>
+    <match lemma="coucher" tags="vblex.*.p1.pl"><select lemma="ficar# al llit"/></match>
+  </rule>
+  <rule weight="1.4">
+    <match lemma="vous" tags="prn.pro.*"/>
+    <match lemma="coucher" tags="vblex.*.p2.pl"><select lemma="ficar# al llit"/></match>
+  </rule>
+  <rule weight="1.2">
     <match tags="vbser.*"/>
     <repeat from="0" upto="1">
       <or>
@@ -5920,10 +5934,53 @@
     </repeat>
     <match lemma="coucher" tags="vblex.pp.*"><select lemma="ajeure"/></match>
   </rule>
-  <rule weight="1.8">
+  <rule weight="1.4">
     <match lemma="se" tags="prn.pro.ref.*"/>
     <match tags="vbser.*"/>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+  </rule>
+  <rule weight="1.4">
+    <match lemma="me" tags="prn.pro.*"/>
+    <match tags="vbser.*.p1.sg"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="coucher" tags="vblex.pp.*.sg"><select lemma="ficar# al llit"/></match>
+  </rule>
+  <rule weight="1.4">
+    <match lemma="te" tags="prn.pro.*"/>
+    <match tags="vbser.*.p2.sg"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="coucher" tags="vblex.pp.*.sg"><select lemma="ficar# al llit"/></match>
+  </rule>
+  <rule weight="1.4">
+    <match lemma="nous" tags="prn.pro.*"/>
+    <match tags="vbser.*.p1.pl"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="coucher" tags="vblex.pp.*.pl"><select lemma="ficar# al llit"/></match>
+  </rule>
+  <rule weight="1.4">
+    <match lemma="vous" tags="prn.pro.*"/>
+    <match tags="vbser.*.p2.pl"/>
+    <repeat from="0" upto="2">
       <or>
         <match tags="adv"/>
         <match tags="cnjadv"/>
