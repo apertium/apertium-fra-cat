@@ -3228,6 +3228,10 @@
     <match tags="*.inf"/>
   </rule>
   <rule weight="1.0">
+    <match lemma="trasllat# de la causa" tags="n.*"/>
+    <match lemma="a" tags="pr"><select lemma="de"/></match>
+  </rule>
+  <rule weight="1.0">
     <match lemma="a" tags="pr"><select lemma="sur"/></match>
     <or>
       <match lemma="internet" tags="n.*"/>
@@ -4432,6 +4436,9 @@
   <!-- empantanegar >> paralyser, stagner -->
   <macro name="verb_nopron_pron" p1="empantanegar" p2="paralyser" p3="stagner" />
 
+  <!-- emprenyar >> agacer, mettre# en colère -->
+  <macro name="verb_nopron_pron" p1="emprenyar" p2="agacer" p3="mettre# en colère" />
+
   <!-- encabir >> mettre, rentrer -->
   <macro name="verb_nopron_pron" p1="encabir" p2="mettre" p3="rentrer" />
 
@@ -4446,6 +4453,12 @@
 
   <!-- entrebancar >> entraver, trébucher -->
   <macro name="verb_nopron_pron" p1="entrebancar" p2="entraver" p3="trébucher" />
+
+  <!-- escarrufar >> effrayer, frémir -->
+  <macro name="verb_nopron_pron" p1="escarrufar" p2="effrayer" p3="frémir" />
+
+  <!-- esgarrifar >> effrayer, frémir -->
+  <macro name="verb_nopron_pron" p1="esgarrifar" p2="effrayer" p3="frémir" />
 
   <!-- estintolar >> étayer, appuyer -->
   <macro name="verb_nopron_pron" p1="estintolar" p2="étayer" p3="appuyer" />
@@ -6629,6 +6642,74 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- guarnició >> garniture, garnison -->
+  <rule weight="0.8">
+    <match lemma="guarnició" tags="n.*"><select lemma="garniture"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="guarnició" tags="n.*"><select lemma="garnison"/></match>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="castell" tags="n.*"/>
+      <match lemma="ciutat" tags="n.*"/>
+      <match lemma="vila" tags="n.*"/>
+      <match lemma="presoner" tags="n.*"/>
+      <match lemma="atac" tags="n.*"/>
+      <match lemma="defensa" tags="n.*"/>
+      <match lemma="assalt" tags="n.*"/>
+      <match lemma="captura" tags="n.*"/>
+      <match lemma="defensor" tags="n.*"/>
+      <match lemma="atacant" tags="n.*"/>
+      <match lemma="assaltant" tags="n.*"/>
+      <match lemma="rendir" tags="vblex.*"/>
+      <match lemma="capturar" tags="vblex.*"/>
+      <match lemma="assetjar" tags="vblex.*"/>
+      <match lemma="atacar" tags="vblex.*"/>
+      <match lemma="assaltar" tags="vblex.*"/>
+      <match lemma="defensar" tags="vblex.*"/>
+      <match lemma="reforçar" tags="vblex.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="castell" tags="n.*"/>
+      <match lemma="ciutat" tags="n.*"/>
+      <match lemma="vila" tags="n.*"/>
+      <match lemma="presoner" tags="n.*"/>
+      <match lemma="atac" tags="n.*"/>
+      <match lemma="defensa" tags="n.*"/>
+      <match lemma="assalt" tags="n.*"/>
+      <match lemma="captura" tags="n.*"/>
+      <match lemma="defensor" tags="n.*"/>
+      <match lemma="atacant" tags="n.*"/>
+      <match lemma="assaltant" tags="n.*"/>
+      <match lemma="rendir" tags="vblex.*"/>
+      <match lemma="capturar" tags="vblex.*"/>
+      <match lemma="assetjar" tags="vblex.*"/>
+      <match lemma="atacar" tags="vblex.*"/>
+      <match lemma="assaltar" tags="vblex.*"/>
+      <match lemma="defensar" tags="vblex.*"/>
+      <match lemma="reforçar" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="guarnició" tags="n.*"><select lemma="garnison"/></match>
+  </rule>
+
+  <!-- porta giratòria >> porte tournante, porte# tambour -->
+  <rule weight="0.8">
+    <match lemma="porta giratòria" tags="n.*"><select lemma="porte tournante"/></match>
+  </rule>
 
   <!-- franqueig >> timbrage, franchissement -->
   <rule weight="0.8">
@@ -10208,9 +10289,39 @@
        <match lemma="americà" tags="adj.*"/>
      </or>
   </rule>
+  <rule weight="1.0">
+    <match lemma="pinya" tags="n.*"><select lemma="ananas"/></match>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="postre" tags="n.*"/>
+      <match lemma="fruita" tags="n.*"/>
+      <match lemma="mango" tags="n.*"/>
+      <match lemma="alvocats" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="postre" tags="n.*"/>
+      <match lemma="fruita" tags="n.*"/>
+      <match lemma="mango" tags="n.*"/>
+      <match lemma="alvocats" tags="n.*"/>
+      <match lemma="menjar" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="pinya" tags="n.*"><select lemma="ananas"/></match>
+  </rule>
 
   <!-- poble > village, peuple -->
-
   <rule weight="0.6">
      <match lemma="poble" tags="n.*"><select lemma="village"/></match>
   </rule>
@@ -10220,7 +10331,6 @@
   </rule>
 
   <!-- got > Goth, verre -->
-
   <rule weight="0.6">
      <match lemma="got" tags="n.*"><select lemma="Goth"/></match>
   </rule>

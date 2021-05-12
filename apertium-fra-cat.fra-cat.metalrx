@@ -2726,6 +2726,10 @@
     <match lemma="de" tags="pr"><select lemma="a"/></match>
   </rule>
   <rule weight="1.0">
+    <match lemma="saisine" tags="n.*"/>
+    <match lemma="de" tags="pr"><select lemma="a"/></match>
+  </rule>
+  <rule weight="1.0">
     <match lemma="raffoler" tags="vblex.*"/>
     <repeat from="0" upto="2">
       <or>
@@ -3425,10 +3429,13 @@
       <match lemma="tour" tags="n.*"/>
       <match lemma="île" tags="n.*"/>
       <match lemma="atoll" tags="n.*"/>
+      <match lemma="terre" tags="n.*"/>
+      <match lemma="région" tags="n.*"/>
       <match lemma="station" tags="n.*"/>
       <match lemma="sonde" tags="n.*"/>
       <match lemma="mission" tags="n.*"/>
       <match lemma="planète" tags="n.*"/>
+      <match lemma="zone" tags="n.*"/>
       <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
     </or>
     <repeat from="0" upto="2">
@@ -6488,6 +6495,24 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- station >> estació, parada, emissora -->
+  <rule weight="0.8">
+    <match lemma="station" tags="n.*"><select lemma="estació"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="station" tags="n.*"><select lemma="emissora"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match lemma="radio" tags="n.*"/>
+  </rule>
+
+  <!-- couverture >> cobertura, coberta -->
+  <rule weight="0.8">
+    <match lemma="couverture" tags="n.*"><select lemma="cobertura"/></match>
+  </rule>
 
   <!-- despreniment >> décollement, désintéressement -->
   <rule weight="0.8">
@@ -11784,6 +11809,36 @@
     <match lemma="de" tags="pr"/>
     <match lemma="argent" tags="n.*"><select lemma="plata"/></match>
   </rule>
+  <rule weight="1.0">
+    <match lemma="argent" tags="n.*"><select lemma="plata"/></match>
+    <repeat from="0" upto="6">
+      <match/>
+    </repeat>
+    <or>
+      <match lemma="or" tags="n.*"/>
+      <match lemma="bronze" tags="n.*"/>
+      <match lemma="campionat" tags="n.*"/>
+      <match lemma="olimpíada" tags="n.*"/>
+      <match lemma="olímpic" tags="adj.*"/>
+      <match lemma="Jocs Olímpics" tags="np.*"/>
+      <match lemma="Jocs Paralímpics" tags="np.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="or" tags="n.*"/>
+      <match lemma="bronze" tags="n.*"/>
+      <match lemma="campionat" tags="n.*"/>
+      <match lemma="olimpíada" tags="n.*"/>
+      <match lemma="olímpic" tags="adj.*"/>
+      <match lemma="Jocs Olímpics" tags="np.*"/>
+      <match lemma="Jocs Paralímpics" tags="np.*"/>
+    </or>
+    <repeat from="0" upto="6">
+      <match/>
+    </repeat>
+    <match lemma="argent" tags="n.*"><select lemma="plata"/></match>
+  </rule>
 
   <!-- chambre >> habitació, cambra, tribunal, sala -->
   <rule weight="0.8">
@@ -12189,10 +12244,6 @@
     <match lemma="soustraction" tags="n.*"><select lemma="substracció" tags="n.*"/></match>
   </rule>
 
-  <rule weight="1.0">
-    <match lemma="argent" tags="n.*"><select lemma="diners" tags="n.*"/></match>
-  </rule>
-
 <!-- prix >> premi / preu -->
   <rule weight="0.8">
     <match lemma="prix" tags="n.*"><select lemma="premi"/></match>
@@ -12399,6 +12450,15 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- indien >> indi, índic -->
+  <rule weight="0.8">
+    <match lemma="indien" tags="adj.*"><select lemma="indi"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="océan" tags="n.*"/>
+    <match lemma="indien" tags="adj.*"><select lemma="índic"/></match>
+  </rule>
 
   <!-- le plus capé >> amb més partits disputats, el més granat -->
   <rule weight="0.8">
@@ -13549,6 +13609,8 @@
       <match lemma="coincé" tags="adj.*"/>
       <match lemma="coincer" tags="vblex.pp.*"/>
       <match lemma="content" tags="adj.*"/>
+      <match lemma="contre" tags="pr"/>
+      <match lemma="contre" tags="adv"/>
       <match lemma="concerné" tags="adj.*"/>
       <match lemma="concerner" tags="vblex.pp.*"/>
       <match lemma="consterné" tags="adj.*"/>
@@ -13606,6 +13668,7 @@
       <match lemma="persuader" tags="vblex.pp.*"/>
       <match lemma="placé" tags="adj.*"/>
       <match lemma="placer" tags="vblex.pp.*"/>
+      <match lemma="pour" tags="adv"/>
       <match lemma="préoccupé" tags="adj.*"/>
       <match lemma="préoccuper" tags="vblex.pp.*"/>
       <match lemma="préparé" tags="adj.*"/>
