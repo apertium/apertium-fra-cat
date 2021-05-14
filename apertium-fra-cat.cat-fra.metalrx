@@ -6643,6 +6643,22 @@
 
 <!-- **************** N **************** -->
 
+  <!-- ruandès >> Rwandais, kinyarwanda -->
+  <rule weight="0.8">
+    <match lemma="ruandès" tags="n.*"><select lemma="Rwandais"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.m.sg"/>
+    <match lemma="ruandès" tags="n.*"><select lemma="kinyarwanda"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="parlar" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="ruandès" tags="n.*"><select lemma="kinyarwanda"/></match>
+  </rule>
+
   <!-- guarnició >> garniture, garnison -->
   <rule weight="0.8">
     <match lemma="guarnició" tags="n.*"><select lemma="garniture"/></match>
@@ -7235,7 +7251,7 @@
     </or>
   </rule>
 
-  <!-- cara >> visage, face -->
+  <!-- cara >> visage, face, mine -->
   <rule weight="0.8">
     <match lemma="cara" tags="n.*"><select lemma="visage"/></match>
   </rule>
@@ -7274,6 +7290,13 @@
       <match lemma="A" tags="n.*"/>
       <match lemma="B" tags="n.*"/>
     </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="bo" tags="adj.*"/>
+      <match lemma="mal" tags="adj.*"/>
+    </or>
+    <match lemma="cara" tags="n.*"><select lemma="mine"/></match>
   </rule>
 
   <!-- caldera >> chaudière, caldeira, caldera -->

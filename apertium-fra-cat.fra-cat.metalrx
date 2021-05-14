@@ -6553,6 +6553,28 @@
 
 <!-- **************** N **************** -->
 
+  <!-- mine >> mina, cara, semblant -->
+  <rule weight="0.8">
+    <match lemma="mine" tags="n.*"><select lemma="mina"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="bon" tags="adj.*"/>
+      <match lemma="mauvais" tags="adj.*"/>
+    </or>
+    <match lemma="mine" tags="n.*"><select lemma="cara"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="faire" tags="vblex.*"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="mine" tags="n.*"><select lemma="semblant"/></match>
+  </rule>
+
   <!-- station >> estació, parada, emissora -->
   <rule weight="0.8">
     <match lemma="station" tags="n.*"><select lemma="estació"/></match>
