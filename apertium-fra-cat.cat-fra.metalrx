@@ -1112,6 +1112,34 @@
     <match lemma="es" tags="prn.*"><select lemma="se"/></match>
   </rule>
   <rule weight="1.0">
+    <or>
+      <match lemma="que" tags="rel.an.*"><select lemma="que"/></match>
+      <match tags="cnjsub"/>
+      <match tags="cm"/>
+      <match tags="sent"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <match tags="prn.pro.adv"/>
+    <or>
+      <match tags="vblex.*.p3.sg"/>
+      <match tags="vbhaver.*.p3.sg"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="es" tags="prn.*"><select lemma="se"/></match>
+    <match lemma="en" tags="prn.pro.adv"/>
+    <match lemma="anar" tags="vblex.*.p3.sg"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="es" tags="prn.*"><select lemma="se"/></match>
+    <match lemma="en" tags="prn.pro.adv"/>
+    <match tags="vbhaver.*.p3.sg"/>
+    <match lemma="anar" tags="vblex.pp.*"/>
+  </rule>
+  <rule weight="1.0">
     <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
     <match tags="vblex.*.p3.sg"/>
     <repeat from="0" upto="1">
@@ -3715,10 +3743,12 @@
   </rule>
 
   <!-- viure >> habiter, vivre -->
-  <rule weight="0.8">
-    <match lemma="viure" tags="vblex.*"><select lemma="habiter"/></match>
+  <macro name="verb_nopron_pron" p1="viure" p2="habiter" p3="vivre" />
+  <rule weight="0.9">
+    <match lemma="ho" tags="prn.*"/>
+    <match lemma="viure" tags="vblex.*"><select lemma="vivre"/></match>
   </rule>
-  <rule weight="1.0">
+  <rule weight="0.9">
     <match lemma="viure" tags="vblex.*"><select lemma="vivre"/></match>
     <or>
       <match tags="det.*"/>
@@ -3730,13 +3760,50 @@
       <seq n="temps"/>
     </or>
   </rule>
-  <rule weight="1.0">
+  <rule weight="0.9">
     <match lemma="viure" tags="vblex.*"><select lemma="vivre"/></match>
     <or>
       <match lemma="molt" tags="adv"/>
       <match lemma="poc" tags="adv"/>
       <match lemma="gaire" tags="adv"/>
     </or>
+  </rule>
+  <rule weight="0.9">
+    <or>
+      <match tags="np.top.*"/>
+      <match tags="np.al.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+      </or>
+    </repeat>
+    <match lemma="viure" tags="vblex.*"><select lemma="vivre"/></match>
+  </rule>
+  <rule weight="0.9">
+    <or>
+      <match tags="np.top.*"/>
+      <match tags="np.al.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+      </or>
+    </repeat>
+    <or>
+      <match tags="vbhaver.*"/>
+      <match lemma="anar" tags="vblex.pri.*"/>
+    </or>
+    <match lemma="viure" tags="vblex.*"><select lemma="vivre"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="viure" tags="vblex.*"><select lemma="habiter"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+      </or>
+    </repeat>
+    <match lemma="a" tags="pr"/>
   </rule>
 
   <!-- obrir >> ouvrir, engager -->
@@ -4401,6 +4468,9 @@
 
   <!-- pastifejar >> bâcler, barbouiller -->
   <macro name="verb_intrans_trans" p1="pastifejar" p2="bâcler" p3="barbouiller" />
+
+  <!-- piular >> pépier, gazouiller -->
+  <macro name="verb_intrans_trans" p1="piular" p2="pépier" p3="gazouiller" />
 
   <!-- sovintejar >> abonder, multiplier -->
   <macro name="verb_intrans_trans" p1="sovintejar" p2="abonder" p3="multiplier" />
@@ -5966,6 +6036,16 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- golafreria >> glutonnerie, gourmandise -->
+  <rule weight="0.8">
+    <match lemma="golafreria" tags="adj.*"><select lemma="glutonnerie"/></match>
+  </rule>
+
+  <!-- rústec >> grossier, rustique, fruste, rustaud -->
+  <rule weight="0.8">
+    <match lemma="rústec" tags="adj.*"><select lemma="grossier"/></match>
+  </rule>
+
   <!-- granat >> illustre, grenu -->
   <rule weight="0.8">
     <match lemma="granat" tags="adj.*"><select lemma="illustre"/></match>
@@ -6642,6 +6722,49 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- pastera >> embarcation# de fortune, radeau# de fortune, pétrin -->
+  <rule weight="0.8">
+    <match lemma="pastera" tags="n.*"><select lemma="embarcation# de fortune"/></match>
+  </rule>
+
+  <!-- trau >> brèche, butonnière -->
+  <rule weight="0.8">
+    <match lemma="trau" tags="n.*"><select lemma="brèche"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="trau" tags="n.*"><select lemma="butonnière"/></match>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="flor" tags="n.*"/>
+      <match lemma="clavell" tags="n.*"/>
+      <match lemma="rosa" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="flor" tags="n.*"/>
+      <match lemma="clavell" tags="n.*"/>
+      <match lemma="rosa" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="trau" tags="n.*"><select lemma="butonnière"/></match>
+  </rule>
+
+  <!-- anacard >> anacarde, anacardier -->
+  <rule weight="0.8">
+    <match lemma="anacard" tags="n.*"><select lemma="anacarde"/></match>
+  </rule>
 
   <!-- ruandès >> Rwandais, kinyarwanda -->
   <rule weight="0.8">
@@ -7668,7 +7791,7 @@
     <match lemma="tauler" tags="n.*"><select lemma="échiquier"/></match>
   </rule>
 
-  <!-- recaiguda >> retombée, rechute -->
+  <!-- recaiguda >> retombée, rechute, récidive -->
   <rule weight="0.8">
     <match lemma="recaiguda" tags="n.*"><select lemma="retombée"/></match>
   </rule>
@@ -8506,6 +8629,15 @@
       </or>
     </repeat>
     <match lemma="moneda" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ducat" tags="n.*"><select lemma="ducat"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="or" tags="n.*"/>
+      <match lemma="plata" tags="n.*"/>
+      <match lemma="argent" tags="n.*"/>
+    </or>
   </rule>
 
   <!-- incompliment >> non-respect, manquement -->
@@ -9787,6 +9919,10 @@
   <rule weight="1.0">
     <match lemma="tribunal" tags="n.*"><select lemma="cour"/></match>
     <match lemma="suprem" tags="adj"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="Tribunal" tags="n.*"><select lemma="cour"/></match>
+    <match lemma="Europeu" tags="adj"/>
   </rule>
 
   <!-- partit >> parti, match -->
@@ -11187,6 +11323,11 @@
 
 <!-- **************** NP **************** -->
 
+  <!-- Hamas > le Hamas, Hamas -->
+  <rule weight="0.6">
+    <match lemma="Hamas" tags="np.*"><select lemma="le Hamas"/></match>
+  </rule>
+
   <!-- pas de Calais > pas-de-Calais, pas de Calais -->
   <rule weight="0.6">
      <match lemma="pas de Calais" tags="np.*"><select lemma="pas-de-Calais"/></match>
@@ -11194,6 +11335,42 @@
   <rule weight="1.0">
      <match tags="det.def.*"/>
      <match lemma="pas de Calais" tags="np.*"><select lemma="pas de Calais"/></match>
+  </rule>
+
+  <!-- Breda > Breda, Bréda -->
+  <rule weight="0.6">
+     <match lemma="Breda" tags="np.*"><select lemma="Breda"/></match>
+  </rule>
+  <rule weight="1.0">
+     <match lemma="rendició" tags="n.*"/>
+     <match lemma="de" tags="pr"/>
+     <match lemma="Breda" tags="np.*"><select lemma="Bréda"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="Països Baixos" tags="np.*"/>
+      <match lemma="Holanda" tags="np.*"/>
+    </or>
+    <repeat from="0" upto="6">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="Breda" tags="np.*"><select lemma="Bréda"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="Breda" tags="np.*"><select lemma="Bréda"/></match>
+    <repeat from="0" upto="6">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="Països Baixos" tags="np.*"/>
+      <match lemma="Holanda" tags="np.*"/>
+    </or>
   </rule>
 
   <!-- Mèxic > Mexique, Mexico -->
@@ -11221,6 +11398,7 @@
   <macro name="ant_antcog" p1="Salomó" p2="Salomon" />
   <macro name="ant_antcog" p1="Virgili" p2="Virgile" />
 
+  <macro name="ant_antcog" p1="Cassandra" p2="Cassandre" />
   <macro name="ant_antcog" p1="Maria Antonieta" p2="Marie-Antoinette" />
   <macro name="ant_antcog" p1="Maria Cristina" p2="Marie-Cristine" />
   <macro name="ant_antcog" p1="Roxana" p2="Roxanne" />
@@ -11314,6 +11492,7 @@
   <macro name="noms_propis" p1="Margarida" p2="Marguerite" />
   <macro name="noms_propis" p1="Maria" p2="Marie" />
   <macro name="noms_propis" p1="Sofia" p2="Sophie" />
+  <macro name="noms_propis" p1="Victoria" p2="Victòria" />
 
 </rules>
 </metalrx>

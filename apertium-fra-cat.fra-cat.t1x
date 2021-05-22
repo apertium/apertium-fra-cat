@@ -268,6 +268,7 @@
     </def-cat>
     <def-cat n="verb_partitiu">
       <cat-item tags="vbhaver.*"/>
+      <cat-item lemma="abriter" tags="vblex.*"/>
       <cat-item lemma="accueillir" tags="vblex.*"/>
       <cat-item lemma="ajouter" tags="vblex.*"/>
       <cat-item lemma="avoir" tags="vblex.*"/>
@@ -1268,6 +1269,7 @@
       <list-item v="Cochinchine"/>
       <list-item v="Cambodge"/>
       <list-item v="Birmanie"/>
+      <list-item v="État Karen"/>
       <list-item v="Myanmar"/>
       <list-item v="Laos"/>
       <list-item v="Taïlande"/>
@@ -1518,6 +1520,7 @@
       <list-item v="napolitain"/>
       <list-item v="calabrais"/>
       <list-item v="toscan"/>
+      <list-item v="florentin"/>
       <list-item v="vénitien"/>
       <list-item v="istriote"/>
       <list-item v="frioulan"/>
@@ -1614,6 +1617,8 @@
       <list-item v="laotien"/>
       <list-item v="cambodgien"/>
       <list-item v="khmer"/>
+      <list-item v="karen"/>
+      <list-item v="karène"/>
       <list-item v="malais"/>
       <list-item v="tagal"/>
       <list-item v="indonésien"/>

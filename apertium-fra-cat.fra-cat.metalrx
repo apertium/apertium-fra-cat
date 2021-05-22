@@ -3325,6 +3325,11 @@
 
 <!-- **************** V **************** -->
 
+  <!-- arpenter >> recórrer, mesurar -->
+  <rule weight="0.8">
+    <match lemma="arpenter" tags="vblex.*"><select lemma="recórrer"/></match>
+  </rule>
+
   <!-- majorer >> sobreestimar, majorar -->
   <rule weight="0.8">
     <match lemma="majorer" tags="vblex.*"><select lemma="sobreestimar"/></match>
@@ -3460,6 +3465,9 @@
   <rule weight="0.8">
     <match lemma="desserrer" tags="vblex.*"><select lemma="afluixar"/></match>
   </rule>
+
+  <!-- appuyer# sur >> polzar, recolzar# sobre -->
+  <macro name="verb_nopron_pron" p1="appuyer# sur" p2="polzar" p3="recolzar# sobre" />
 
   <!-- moquer >> burlar, riure -->
   <macro name="verb_nopron_pron" p1="moquer" p2="burlar" p3="riure" />
@@ -5607,8 +5615,8 @@
     </or>
   </rule>
 
-  <!-- faire# chier >> sortir# de polleguera, morir# de fàstic -->
-  <macro name="verb_nopron_pron" p1="faire# chier" p2="sortir# de polleguera" p3="morir# de fàstic" />
+  <!-- faire# chier >> fer# sortir de polleguera, morir# de fàstic -->
+  <macro name="verb_nopron_pron" p1="faire# chier" p2="fer# sortir de polleguera" p3="morir# de fàstic" />
 
   <!-- tromper >> enganyar, equivocar -->
   <macro name="verb_nopron_pron" p1="tromper" p2="enganyar" p3="equivocar" />
@@ -5618,6 +5626,9 @@
 
   <!-- agir >> actuar, tractar -->
   <macro name="verb_nopron_pron" p1="agir" p2="actuar" p3="tractar" />
+
+  <!-- abriter >> albergar, protegir -->
+  <macro name="verb_nopron_pron" p1="abriter" p2="albergar" p3="protegir" />
 
   <!-- battre >> derrotar, batre, bategar, barallar -->
   <macro name="verb_nopron_pron" p1="battre" p2="derrotar" p3="barallar" />
@@ -6553,6 +6564,39 @@
 
 <!-- **************** N **************** -->
 
+  <!-- gourmandise >> llaminadura, golafreria -->
+  <rule weight="0.8">
+    <match lemma="gourmandise" tags="n.*"><select lemma="llaminadura"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.*"/>
+    <match lemma="gourmandise" tags="n.*"><select lemma="golafreria"/></match>
+  </rule>
+
+  <!-- majeur >> major, major# d'edat -->
+  <rule weight="0.8">
+    <match lemma="majeur" tags="n.*"><select lemma="major"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.ind.*"/>
+    <match lemma="majeur" tags="n.*"><select lemma="major# d'edat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="majeur" tags="n.*.pl"><select lemma="major# d'edat"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="Majeur" tags="n.*"><select lemma="major"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="majeur" tags="n.*"><select lemma="major"/></match>
+    <match tags="adj.*"/>
+  </rule>
+
+  <!-- récidive >> reincidència, recaiguda -->
+  <rule weight="0.8">
+    <match lemma="récidive" tags="n.*"><select lemma="reincidència"/></match>
+  </rule>
+
   <!-- mine >> mina, cara, semblant -->
   <rule weight="0.8">
     <match lemma="mine" tags="n.*"><select lemma="mina"/></match>
@@ -7112,7 +7156,7 @@
     </or>
   </rule>
 
-  <!-- pièce >> peça, obra, habitació -->
+  <!-- pièce >> peça, obra, habitació, moneda -->
   <rule weight="0.8">
     <match lemma="pièce" tags="n.*"><select lemma="peça"/></match>
   </rule>
@@ -8389,7 +8433,7 @@
     </or> 
   </rule>
 
-  <!-- chat >> gat, xat -->
+  <!-- chat >> gat, xat, cony -->
   <rule weight="0.8">
     <match lemma="chat" tags="n.*"><select lemma="gat"/></match>
   </rule>
@@ -11868,6 +11912,10 @@
     <match lemma="argent" tags="n.*"><select lemma="diners"/></match>
   </rule>
   <rule weight="1.0">
+    <match lemma="en" tags="pr"><select lemma="de"/></match>
+    <match lemma="argent" tags="n.*"><select lemma="plata"/></match>
+  </rule>
+  <rule weight="1.0">
     <or>
       <match lemma="medaille" tags="n.*"/>
       <match lemma="coupe" tags="n.*"/>
@@ -12012,6 +12060,10 @@
   <rule weight="1.0">
     <match lemma="cour" tags="n.*"><select lemma="tribunal"/></match>
     <match lemma="suprême" tags="adj"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="Cour" tags="n.*"><select lemma="tribunal"/></match>
+    <match lemma="européen" tags="adj"/>
   </rule>
   <rule weight="1.0">
     <match lemma="cour" tags="n.*"><select lemma="pati"/></match>
@@ -12529,6 +12581,27 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- composite >> compost, heterogeni -->
+  <rule weight="0.8">
+    <match lemma="composite" tags="adj.*"><select lemma="compost"/></match>
+  </rule>
+
+  <!-- rare >> escàs, rar -->
+  <rule weight="0.8">
+    <match lemma="rare" tags="adj.*"><select lemma="escàs"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rare" tags="adj.*"><select lemma="rar"/></match>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="métal" tags="n.*"/>
+      <match lemma="terre" tags="n.*"/>
+    </or>
+    <match lemma="indien" tags="adj.*"><select lemma="índic"/></match>
+  </rule>
 
   <!-- indien >> indi, índic -->
   <rule weight="0.8">
@@ -13100,6 +13173,12 @@
   <!-- prochain >> proper, pròxim -->
   <rule weight="0.8">
     <match lemma="prochain" tags="adj.*"><select lemma="proper"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="prochain" tags="adj.*"><select lemma="pròxim"/></match>
+    <or>
+      <seq n="temps"/>
+    </or>
   </rule>
 
   <!-- proche >> proper, pròxim -->
@@ -13715,6 +13794,7 @@
       <match lemma="enchanté" tags="adj.*"/>
       <match lemma="enchanter" tags="vblex.pp.*"/>
       <match lemma="émerveillé" tags="adj.*"/>
+      <match lemma="enceinte" tags="adj.*"/>
       <match lemma="engagé" tags="adj.*"/>
       <match lemma="engager" tags="vblex.pp.*"/>
       <match lemma="enrhumé" tags="adj.*"/>
@@ -13723,6 +13803,8 @@
       <match lemma="éveiller" tags="vblex.pp.*"/>
       <match lemma="fatigué" tags="adj.*"/>
       <match lemma="fatiguer" tags="vblex.pp.*"/>
+      <match lemma="fauché" tags="adj.*"/>
+      <match lemma="faucher" tags="vblex.pp.*"/>
       <match lemma="fermé" tags="adj.*"/>
       <match lemma="fermer" tags="vblex.pp.*"/>
       <match lemma="fini" tags="adj.*"/>
@@ -13731,6 +13813,8 @@
       <match lemma="hâter" tags="vblex.pp.*"/>
       <match lemma="impliqué" tags="adj.*"/>
       <match lemma="impliquer" tags="vblex.pp.*"/>
+      <match lemma="imprégné" tags="adj.*"/>
+      <match lemma="imprégner" tags="vblex.pp.*"/>
       <match lemma="intéressé" tags="adj.*"/>
       <match lemma="intéresser" tags="vblex.pp.*"/>
       <match lemma="mal à l'aise" tags="adj.*"/>
@@ -13739,6 +13823,8 @@
       <match lemma="marier" tags="vblex.pp.*"/>
       <match lemma="mort" tags="adj.*"/>
       <match lemma="mourir" tags="vblex.pp.*"/>
+      <match lemma="occupé" tags="adj.*"/>
+      <match lemma="occuper" tags="vblex.pp.*"/>
       <match lemma="organisé" tags="adj.*"/>
       <match lemma="organiser" tags="vblex.pp.*"/>
       <match lemma="ouvert" tags="adj.*"/>
@@ -14478,6 +14564,7 @@
   <macro name="noms_propres" p1="Marie" p2="Maria" />
   <macro name="noms_propres" p1="Sophie" p2="Sofia" />
   <macro name="noms_propres" p1="Stéphanie" p2="Estefania" />
+  <macro name="noms_propres" p1="Victoria" p2="Victòria" />
 
 </rules>
 </metalrx>
