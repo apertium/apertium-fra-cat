@@ -252,6 +252,9 @@
     <def-cat n="tot">
       <cat-item lemma="tot" tags="prn.tn.m.sg"/>
     </def-cat>
+    <def-cat n="que_itg">
+      <cat-item lemma="què" tags="prn.itg.*"/>
+    </def-cat>
     <def-cat n="vbser">
       <cat-item tags="vbser.*"/>
     </def-cat>
@@ -865,6 +868,9 @@
     <def-cat n="tornar_pp">
       <cat-item lemma="tornar" tags="vblex.pp.*"/>
     </def-cat>
+    <def-cat n="ij">
+      <cat-item tags="ij"/>
+    </def-cat>
     <def-cat n="sent">
       <cat-item tags="sent"/>
     </def-cat>
@@ -1077,6 +1083,7 @@
     <def-var n="concTercero"/>
     <def-var n="interrogativa"/>
     <def-var n="exclamativa"/>
+    <def-var n="afegir_putain"/>
   </section-def-vars>
 
   <section-def-lists>
@@ -1340,6 +1347,7 @@
       <list-item v="napolitain"/>
       <list-item v="calabrais"/>
       <list-item v="toscan"/>
+      <list-item v="florentin"/>
       <list-item v="vénitien"/>
       <list-item v="frioulan"/>
       <list-item v="istriote"/>
@@ -1436,6 +1444,8 @@
       <list-item v="laotien"/>
       <list-item v="cambodgien"/>
       <list-item v="khmer"/>
+      <list-item v="karen"/>
+      <list-item v="karène"/>
       <list-item v="malais"/>
       <list-item v="tagal"/>
       <list-item v="indonésien"/>
@@ -1792,6 +1802,7 @@
       <list-item v="Cambodge"/>
       <list-item v="Birmanie"/>
       <list-item v="Myanmar"/>
+      <list-item v="État Karen"/>
       <list-item v="Laos"/>
       <list-item v="Taïlande"/>
       <list-item v="Indonésie"/>
@@ -25588,6 +25599,22 @@ is not applicable because gender and number can not be taken from previous rules
 
 <!-- fi canvi de verb auxiliar en oracions reflexives o impersonals -->
 
+    <rule comment="REGLA: què + ij > qu'est-ce que">
+      <pattern>
+        <pattern-item n="que_itg"/>
+        <pattern-item n="ij"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <let><var n="afegir_putain"/><lit-tag v="si"/></let>
+      </action>
+    </rule>
+
     <rule comment="REGLA: comprep (per impedir el la reinicialització de les variables)">
       <pattern>
         <pattern-item n="comprep"/>
@@ -25654,6 +25681,25 @@ is not applicable because gender and number can not be taken from previous rules
         <pattern-item n="sent"/>
       </pattern>
       <action>
+        <choose>
+          <when>
+            <test>
+              <equal><var n="afegir_putain"/><lit-tag v="si"/></equal>
+            </test>
+            <out>
+              <lu>
+                <lit v=","/>
+                <lit-tag v="cm"/>
+              </lu>
+              <b/>
+              <lu>
+                <lit v="putain"/>
+                <lit-tag v="ij"/>
+              </lu>
+            </out>
+            <let><var n="afegir_putain"/><lit-tag v="no"/></let>
+          </when>
+        </choose>
         <let><var n="numero"/><lit-tag v="sg"/></let>
         <let><var n="genero"/><lit-tag v="m"/></let>
         <out>
