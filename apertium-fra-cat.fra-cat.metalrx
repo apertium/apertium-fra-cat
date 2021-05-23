@@ -2541,7 +2541,7 @@
     <match tags="n.*"/>
   </rule>
 
-  <!-- chez >> en, a casa de, a ca -->
+  <!-- chez >> en, a casa de, a ca, a -->
   <rule weight="0.6">
     <match lemma="chez" tags="pr"><select lemma="en"/></match>
   </rule>
@@ -2597,7 +2597,17 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match lemma="sortir" tags="vblex.*"/>
+    <or>
+      <match lemma="publier" tags="vblex.*"/>
+      <match lemma="sortir" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="prn.enc.*"/>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
     <match lemma="chez" tags="pr"><select lemma="a"/></match>
   </rule>
 

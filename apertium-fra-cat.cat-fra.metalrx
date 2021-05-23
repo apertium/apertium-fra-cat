@@ -3131,7 +3131,7 @@
     <match lemma="de" tags="pr"><select lemma="avec"/></match>
   </rule>
 
-  <!-- a >> à, en, dans, de, sur -->
+  <!-- a >> à, en, dans, de, sur, chez -->
   <rule weight="0.8">
     <match lemma="a" tags="pr"><select lemma="à"/></match>
   </rule>
@@ -3269,6 +3269,20 @@
       <match lemma="WhatsApp" tags="np.*"/>
       <match lemma="Telegram" tags="np.*"/>
       <match lemma="Viber" tags="np.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="publicar" tags="vblex.*"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="prn.enc.*"/>
+        <match tags="adv"/>
+      </or>
+    </repeat>
+    <match lemma="a" tags="pr"><select lemma="chez"/></match>
+    <or>
+      <match tags="np.al.*"/>
+      <match tags="np.cog.*"/>
     </or>
   </rule>
 
