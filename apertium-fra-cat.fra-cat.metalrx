@@ -3335,6 +3335,22 @@
 
 <!-- **************** V **************** -->
 
+  <!-- tenter# de >> intentar, temptar# de -->
+  <rule weight="0.8">
+    <match lemma="tenter# de" tags="vblex.*"><select lemma="intentar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="vbser.*"/>
+      <match tags="n.*"/>
+      <match tags="adj.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="tenter# de" tags="vblex.*"><select lemma="temptar# de"/></match>
+  </rule>
+
   <!-- arpenter >> recórrer, mesurar -->
   <rule weight="0.8">
     <match lemma="arpenter" tags="vblex.*"><select lemma="recórrer"/></match>
@@ -3710,6 +3726,15 @@
       </or>
     </repeat>
     <match lemma="arrêter" tags="vblex.*"><select lemma="detenir"/></match>
+  </rule>
+  <rule weight="0.9">
+    <match tags="vbhaver.*"/>
+    <match lemma="arrêter" tags="vblex.pp.*"><select lemma="detenir"/></match>
+  </rule>
+  <rule weight="0.9">
+    <match tags="vbhaver.*"/>
+    <match tags="vbser.pp.*"/>
+    <match lemma="arrêter" tags="vblex.pp.*"><select lemma="detenir"/></match>
   </rule>
 
   <!-- fuir >> fugir, fugir# de, defugir -->
@@ -9700,12 +9725,30 @@
       <match lemma="prendre" tags="vblex.*"/>
       <match lemma="rater" tags="vblex.*"/>
       <match lemma="réserver" tags="vblex.*"/>
+      <match lemma="détourner" tags="vblex.*"/>
+      <match lemma="intercepter" tags="vblex.*"/>
+      <match lemma="réserve" tags="n.*"/>
+      <match lemma="détournement" tags="n.*"/>
+      <match lemma="interception" tags="n.*"/>
     </or>
     <repeat from="0" upto="2">
       <match tags="adv"/>
     </repeat>
     <match tags="det.*"/>
     <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match lemma="prendre" tags="vblex.pp.*"/>
+      <match lemma="rater" tags="vblex.pp.*"/>
+      <match lemma="réserver" tags="vblex.pp.*"/>
+      <match lemma="détourner" tags="vblex.pp.*"/>
+      <match lemma="intercepter" tags="vblex.pp.*"/>
+    </or>
   </rule>
   <rule weight="1.0">
     <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
@@ -9735,6 +9778,13 @@
       <match lemma="nuit" tags="n.*"/>
       <match lemma="jour" tags="n.*"/>
       <match tags="np.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
+    <or>
+      <match tags="np.al.*"/>
+      <match tags=""/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -12592,6 +12642,11 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- imparfait >> imperfecte, imperfet -->
+  <rule weight="0.8">
+    <match lemma="imparfait" tags="adj.*"><select lemma="imperfecte"/></match>
+  </rule>
+
   <!-- composite >> compost, heterogeni -->
   <rule weight="0.8">
     <match lemma="composite" tags="adj.*"><select lemma="compost"/></match>
@@ -13783,6 +13838,8 @@
       <match lemma="concerner" tags="vblex.pp.*"/>
       <match lemma="consterné" tags="adj.*"/>
       <match lemma="consterner" tags="vblex.pp.*"/>
+      <match lemma="contaminé" tags="adj.*"/>
+      <match lemma="contaminer" tags="vblex.pp.*"/>
       <match lemma="contrôlé" tags="adj.*"/>
       <match lemma="contrôler" tags="vblex.pp.*"/>
       <match lemma="convaincu" tags="adj.*"/>
@@ -13821,6 +13878,8 @@
       <match lemma="finir" tags="vblex.pp.*"/>
       <match lemma="hâté" tags="adj.*"/>
       <match lemma="hâter" tags="vblex.pp.*"/>
+      <match lemma="immunisé" tags="adj.*"/>
+      <match lemma="immuniser" tags="vblex.pp.*"/>
       <match lemma="impliqué" tags="adj.*"/>
       <match lemma="impliquer" tags="vblex.pp.*"/>
       <match lemma="imprégné" tags="adj.*"/>

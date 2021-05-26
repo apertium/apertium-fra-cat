@@ -6737,6 +6737,16 @@
 
 <!-- **************** N **************** -->
 
+  <!-- marquesina >> abri, auvent, abribus -->
+  <rule weight="0.8">
+    <match lemma="marquesina" tags="n.*"><select lemma="abri"/></match>
+  </rule>
+
+  <!-- cavalcada >> chevauchée, parada -->
+  <rule weight="0.8">
+    <match lemma="cavalcada" tags="n.*"><select lemma="parada"/></match>
+  </rule>
+
   <!-- pastera >> embarcation# de fortune, radeau# de fortune, pétrin -->
   <rule weight="0.8">
     <match lemma="pastera" tags="n.*"><select lemma="embarcation# de fortune"/></match>
