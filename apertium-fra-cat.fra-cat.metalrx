@@ -3711,6 +3711,23 @@
       <match lemma="police" tags="n.*"/>
       <match lemma="commissariat" tags="n.*"/>
       <match lemma="fourgon" tags="n.*"/>
+      <match lemma="opposant" tags="n.*"/>
+      <match lemma="manifestant" tags="n.*"/>
+      <match lemma="indépendantiste" tags="n.*"/>
+      <match lemma="journaliste" tags="n.*"/>
+      <match lemma="squatter" tags="n.*"/>
+      <match lemma="squatteur" tags="n.*"/>
+      <match lemma="président" tags="n.*"/>
+      <match lemma="ministre" tags="n.*"/>
+      <match lemma="général" tags="n.*"/>
+      <match lemma="directeur" tags="n.*"/>
+      <match lemma="PDG" tags="n.*"/>
+      <match lemma="voleur" tags="n.*"/>
+      <match lemma="assassin" tags="n.*"/>
+      <match lemma="meutrier" tags="n.*"/>
+      <match lemma="homicide" tags="n.*"/>
+      <match lemma="ravisseur" tags="n.*"/>
+      <match lemma="violeur" tags="n.*"/>
     </or>
   </rule>
   <rule weight="0.9">
@@ -3718,6 +3735,23 @@
       <match lemma="police" tags="n.*"/>
       <match lemma="commissariat" tags="n.*"/>
       <match lemma="fourgon" tags="n.*"/>
+      <match lemma="opposant" tags="n.*"/>
+      <match lemma="manifestant" tags="n.*"/>
+      <match lemma="indépendantiste" tags="n.*"/>
+      <match lemma="journaliste" tags="n.*"/>
+      <match lemma="squatter" tags="n.*"/>
+      <match lemma="squatteur" tags="n.*"/>
+      <match lemma="président" tags="n.*"/>
+      <match lemma="ministre" tags="n.*"/>
+      <match lemma="général" tags="n.*"/>
+      <match lemma="directeur" tags="n.*"/>
+      <match lemma="PDG" tags="n.*"/>
+      <match lemma="voleur" tags="n.*"/>
+      <match lemma="assassin" tags="n.*"/>
+      <match lemma="meutrier" tags="n.*"/>
+      <match lemma="homicide" tags="n.*"/>
+      <match lemma="ravisseur" tags="n.*"/>
+      <match lemma="violeur" tags="n.*"/>
     </or>
     <repeat from="0" upto="8">
       <or>
@@ -5730,36 +5764,52 @@
 
   <!-- tourner >> girar, rodar -->
   <rule weight="0.8">
-    <match lemma="tourner" tags="vblex.*"><select lemma="girar" tags="vblex.*"/></match>
-  </rule>
-  <rule weight="1.0">
-    <match lemma="tourner" tags="vblex.*"><select lemma="rodar" tags="vblex.*"/></match>
-    <repeat from="0" upto="2">
-      <or>
-        <match tags="adv"/>
-        <match tags="cnjadv"/>
-      </or>
-    </repeat>
-    <or>
-      <match lemma="de" tags="pr"/>
-      <match tags="det.*"/>
-    </or>
-    <match lemma="film" tags="n.*"/>
+    <match lemma="tourner" tags="vblex.*"><select lemma="girar"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="tourner" tags="vblex.*"><select lemma="rodar"/></match>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="de" tags="pr"/>
+      <match tags="det.*"/>
+    </or>
+    <or>
+      <match lemma="film" tags="n.*"/>
+      <match lemma="téléfilm" tags="n.*"/>
+      <match lemma="spot" tags="n.*"/>
+      <match lemma="vidéo" tags="n.*"/>
+      <match lemma="long-métrage" tags="n.*"/>
+      <match lemma="court-métrage" tags="n.*"/>
+      <match lemma="documentaire" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tourner" tags="vblex.*"><select lemma="rodar"/></match>
+    <repeat from="0" upto="2">
       <or>
         <match tags="adv"/>
         <match tags="cnjadv"/>
       </or>
     </repeat>
     <match lemma="de" tags="pr"/>
-    <match lemma="le" tags="det.*.pl"/>
-    <match lemma="film" tags="n.*"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="film" tags="n.*"/>
+      <match lemma="téléfilm" tags="n.*"/>
+      <match lemma="spot" tags="n.*"/>
+      <match lemma="vidéo" tags="n.*"/>
+      <match lemma="long-métrage" tags="n.*"/>
+      <match lemma="court-métrage" tags="n.*"/>
+      <match lemma="documentaire" tags="n.*"/>
+    </or>
   </rule>
   <rule weight="1.0">
-    <match lemma="tourner" tags="vblex.*"><select lemma="rodar" tags="vblex.*"/></match>
+    <match lemma="tourner" tags="vblex.*"><select lemma="rodar"/></match>
     <repeat from="0" upto="2">
       <or>
         <match tags="adv"/>
@@ -5771,7 +5821,15 @@
       <match tags="det.*"/>
     </or>
     <match tags="adj.*"/>
-    <match lemma="film" tags="n.*"/>
+    <or>
+      <match lemma="film" tags="n.*"/>
+      <match lemma="téléfilm" tags="n.*"/>
+      <match lemma="spot" tags="n.*"/>
+      <match lemma="vidéo" tags="n.*"/>
+      <match lemma="long-métrage" tags="n.*"/>
+      <match lemma="court-métrage" tags="n.*"/>
+      <match lemma="documentaire" tags="n.*"/>
+    </or>
   </rule>
   <rule weight="1.0">
     <match lemma="tourner" tags="vblex.*"><select lemma="rodar" tags="vblex.*"/></match>
@@ -5782,9 +5840,17 @@
       </or>
     </repeat>
     <match lemma="de" tags="pr"/>
-    <match lemma="le" tags="det.*.pl"/>
+    <match lemma="le" tags="det.*"/>
     <match tags="adj.*"/>
-    <match lemma="film" tags="n.*"/>
+    <or>
+      <match lemma="film" tags="n.*"/>
+      <match lemma="téléfilm" tags="n.*"/>
+      <match lemma="spot" tags="n.*"/>
+      <match lemma="vidéo" tags="n.*"/>
+      <match lemma="long-métrage" tags="n.*"/>
+      <match lemma="court-métrage" tags="n.*"/>
+      <match lemma="documentaire" tags="n.*"/>
+    </or>
   </rule>
 
   <!-- décrocher >> sonar, picar -->
@@ -6598,6 +6664,11 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- contrôleur >> controlador, interventor -->
+  <rule weight="0.8">
+    <match lemma="contrôleur" tags="n.*"><select lemma="controlador"/></match>
+  </rule>
 
   <!-- gourmandise >> llaminadura, golafreria -->
   <rule weight="0.8">
@@ -9727,6 +9798,7 @@
       <match lemma="réserver" tags="vblex.*"/>
       <match lemma="détourner" tags="vblex.*"/>
       <match lemma="intercepter" tags="vblex.*"/>
+      <match lemma="dérouter" tags="vblex.*"/>
       <match lemma="réserve" tags="n.*"/>
       <match lemma="détournement" tags="n.*"/>
       <match lemma="interception" tags="n.*"/>
@@ -9748,6 +9820,7 @@
       <match lemma="réserver" tags="vblex.pp.*"/>
       <match lemma="détourner" tags="vblex.pp.*"/>
       <match lemma="intercepter" tags="vblex.pp.*"/>
+      <match lemma="dérouter" tags="vblex.pp.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -9759,6 +9832,31 @@
       <match lemma="partir" tags="vblex.*"/>
       <match lemma="arriver" tags="vblex.*"/>
     </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="prn.pro.*"/>
+    <or>
+      <match lemma="poser" tags="vblex.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="au-dessus de" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="détournement" tags="n.*"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
   </rule>
   <rule weight="1.0">
     <or>
@@ -9847,6 +9945,11 @@
       <match lemma="compagnie aérienne" tags="n.*"/>
       <match lemma="passager" tags="n.*"/>
       <match lemma="aérien" tags="adj.*"/>
+      <match lemma="Air France" tags="np.al.*"/>
+      <match lemma="Iberia" tags="np.al.*"/>
+      <match lemma="KLM" tags="np.al.*"/>
+      <match lemma="Lufthansa" tags="np.al.*"/>
+      <match lemma="Alitalia" tags="np.al.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -9876,6 +9979,11 @@
       <match lemma="compagnie aérienne" tags="n.*"/>
       <match lemma="passager" tags="n.*"/>
       <match lemma="aérien" tags="adj.*"/>
+      <match lemma="Air France" tags="np.al.*"/>
+      <match lemma="Iberia" tags="np.al.*"/>
+      <match lemma="KLM" tags="np.al.*"/>
+      <match lemma="Lufthansa" tags="np.al.*"/>
+      <match lemma="Alitalia" tags="np.al.*"/>
     </or>
     <repeat from="0" upto="4">
       <or>

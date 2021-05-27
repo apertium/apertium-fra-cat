@@ -6050,9 +6050,13 @@
 
 <!-- **************** ADJ **************** -->
 
-  <!-- golafreria >> glutonnerie, gourmandise -->
+  <!-- summe >> suprême, suprême -->
   <rule weight="0.8">
-    <match lemma="golafreria" tags="adj.*"><select lemma="glutonnerie"/></match>
+    <match lemma="summe" tags="adj.*"><select lemma="suprême"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="summe" tags="adj.*"><select lemma="suprême"/></match>
+    <match lemma="pontífex" tags="n.*"/>
   </rule>
 
   <!-- rústec >> grossier, rustique, fruste, rustaud -->
@@ -6736,6 +6740,30 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- golafreria >> glutonnerie, gourmandise -->
+  <rule weight="0.8">
+    <match lemma="golafreria" tags="n.*"><select lemma="glutonnerie"/></match>
+  </rule>
+
+  <!-- pietat >> pitié, piété -->
+  <rule weight="0.8">
+    <match lemma="pietat" tags="n.*"><select lemma="pitié"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pietat" tags="n.*"><select lemma="piété"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match lemma="filial" tags="adj.*"/>
+      <match lemma="religiós" tags="adj.*"/>
+      <match lemma="cristià" tags="adj.*"/>
+      <match lemma="catòlic" tags="adj.*"/>
+      <match lemma="musulmà" tags="adj.*"/>
+      <match lemma="islàmic" tags="adj.*"/>
+    </or>
+  </rule>
 
   <!-- marquesina >> abri, auvent, abribus -->
   <rule weight="0.8">
