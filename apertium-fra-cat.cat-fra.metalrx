@@ -6050,12 +6050,12 @@
 
 <!-- **************** ADJ **************** -->
 
-  <!-- summe >> suprême, suprême -->
+  <!-- summe >> suprême, souverain -->
   <rule weight="0.8">
     <match lemma="summe" tags="adj.*"><select lemma="suprême"/></match>
   </rule>
   <rule weight="1.0">
-    <match lemma="summe" tags="adj.*"><select lemma="suprême"/></match>
+    <match lemma="summe" tags="adj.*"><select lemma="souverain"/></match>
     <match lemma="pontífex" tags="n.*"/>
   </rule>
 

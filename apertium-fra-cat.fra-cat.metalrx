@@ -3335,6 +3335,86 @@
 
 <!-- **************** V **************** -->
 
+  <!-- convenir >> convenir, acordar -->
+  <rule weight="0.8">
+    <match lemma="convenir" tags="vblex.*"><select lemma="convenir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="convenir" tags="vblex.*"><select lemma="acceptar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="de" tags="pr"><remove tags="pr"/></match>
+      <match tags="cnjsub"/>
+    </or>
+  </rule>
+  <rule weight="1.4">
+   <match lemma="il" tags="prn.tn.p3.m.sg"/>
+    <match lemma="convenir" tags="vblex.*"><select lemma="convenir"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="de" tags="pr"><remove tags="pr"/></match>
+    <or><match tags="vblex.*"/><match tags="vbser.*"/><match tags="vbhaver.*"/><match tags="vbmod.*"/></or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="convenir" tags="vblex.*"><select lemma="acordar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="de" tags="pr"><remove tags="pr"/></match>
+    <or><match tags="vblex.*"/><match tags="vbser.*"/><match tags="vbhaver.*"/><match tags="vbmod.*"/></or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="convenir" tags="vblex.*"><select lemma="acordar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+        <match tags="prn.pro."/>
+      </or>
+    </repeat>
+    <match lemma="de" tags="pr"><remove tags="pr"/></match>
+    <or>
+      <match tags="adv"/>
+      <match tags="cnjadv"/>
+      <match tags="prn.pro."/>
+    </or>
+    <or><match tags="vblex.*"/><match tags="vbser.*"/><match tags="vbhaver.*"/><match tags="vbmod.*"/></or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="convenir" tags="vblex.*"><select lemma="acordar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+        <match tags="prn.pro."/>
+      </or>
+    </repeat>
+    <match lemma="de" tags="pr"><remove tags="pr"/></match>
+    <or>
+      <match tags="adv"/>
+      <match tags="cnjadv"/>
+      <match tags="prn.pro."/>
+    </or>
+    <or>
+      <match tags="adv"/>
+      <match tags="cnjadv"/>
+      <match tags="prn.pro."/>
+    </or>
+    <or><match tags="vblex.*"/><match tags="vbser.*"/><match tags="vbhaver.*"/><match tags="vbmod.*"/></or>
+  </rule>
+
   <!-- tenter# de >> intentar, temptar# de -->
   <rule weight="0.8">
     <match lemma="tenter# de" tags="vblex.*"><select lemma="intentar"/></match>
@@ -3578,7 +3658,7 @@
     <match tags="*.inf"/>
   </rule>
 
-  <!-- relever >> aixecar, correspondre, assenyalar -->
+  <!-- relever >> aixecar, correspondre, assenyalar, ser# una qüestió -->
   <macro name="verb_nopron_pron" p1="relever" p2="aixecar" p3="aixecar"/>
   <rule weight="0.9">
     <match lemma="relever" tags="vblex.*"><select lemma="correspondre"/></match>
@@ -3655,6 +3735,26 @@
       </or>
     </repeat>
     <match tags="cnjsub"/>
+  </rule>
+  <rule weight="0.9">
+    <match lemma="relever" tags="vblex.*"><select lemma="ser# una qüestió"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+  </rule>
+  <rule weight="0.9">
+    <match tags="vbser.*"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="relever" tags="vblex.*"><select lemma="aixecar"/></match>
   </rule>
 
   <!-- éponger >> esponjar, eixugar -->
@@ -6664,6 +6764,26 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- calotte >> casquet, solideu, calbot -->
+  <rule weight="0.8">
+    <match lemma="calotte" tags="n.*"><select lemma="casquet"/></match>
+  </rule>
+
+  <!-- carottage >> estafada, extracció# de mostres -->
+  <rule weight="0.8">
+    <match lemma="carottage" tags="n.*"><select lemma="estafada"/></match>
+  </rule>
+
+  <!-- énarque >> antic estudiant de l'Escola d'Administració Pública, estudiant# de l'Escola d'Administració Pública -->
+  <rule weight="0.8">
+    <match lemma="énarque" tags="n.*"><select lemma="antic estudiant de l'Escola d'Administració Pública"/></match>
+  </rule>
+
+  <!-- polytechnicien >> antic estudiant de l'Escola Politècnica, estudiant# de l'Escola Politècnica -->
+  <rule weight="0.8">
+    <match lemma="polytechnicien" tags="n.*"><select lemma="antic estudiant de l'Escola Politècnica"/></match>
+  </rule>
 
   <!-- contrôleur >> controlador, interventor -->
   <rule weight="0.8">
@@ -13933,8 +14053,10 @@
       </or>
     </repeat>
     <or>
-      <match lemma="amoureux" tags="adj.*"/>
       <match lemma="à l'aise" tags="adj.*"/>
+      <match lemma="amoureux" tags="adj.*"/>
+      <match lemma="avéré" tags="adj.*"/>
+      <match lemma="avérer" tags="vblex.pp.*"/>
       <match lemma="basé" tags="adj.*"/>
       <match lemma="baser" tags="vblex.pp.*"/>
       <match lemma="coincé" tags="adj.*"/>
