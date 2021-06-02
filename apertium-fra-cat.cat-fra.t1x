@@ -564,6 +564,13 @@
     <def-cat n="fa">
       <cat-item lemma="fer" tags="vblex.pri.p3.sg"/>
     </def-cat>
+    <def-cat n="feia">
+      <cat-item lemma="fer" tags="vblex.pii.p3.sg"/>
+    </def-cat>
+    <def-cat n="fa_feia">
+      <cat-item lemma="fer" tags="vblex.pri.p3.sg"/>
+      <cat-item lemma="fer" tags="vblex.pii.p3.sg"/>
+    </def-cat>
     <def-cat n="inf_que">
       <cat-item tags="vblex.inf"/>
       <cat-item tags="vbser.inf"/>
@@ -886,6 +893,15 @@
     <def-cat n="sentquecm">
       <cat-item tags="sent"/>
       <cat-item tags="cnjsub"/>
+      <cat-item tags="cnjadv"/>
+      <cat-item tags="cm"/>
+      <cat-item tags="cnjcoo"/>
+      <cat-item lemma="comme que" tags="cnjadv"/>
+    </def-cat>
+    <def-cat n="sentquecmrel">
+      <cat-item tags="sent"/>
+      <cat-item tags="cnjsub"/>
+      <cat-item tags="rel"/>
       <cat-item tags="cnjadv"/>
       <cat-item tags="cm"/>
       <cat-item tags="cnjcoo"/>
@@ -23783,6 +23799,306 @@ is not applicable because gender and number can not be taken from previous rules
             <clip pos="5" side="tl" part="lemq"/>
           </lu>
         </out>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: feia NUM temps > depuis NUM temps">
+      <pattern>
+        <pattern-item n="feia"/>
+        <pattern-item n="num"/>
+        <pattern-item n="n_temps"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="depuis"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: feia DETIND temps > depuis DETIND temps">
+      <pattern>
+        <pattern-item n="feia"/>
+        <pattern-item n="detind"/>
+        <pattern-item n="n_temps"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="depuis"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: PREP feia NUM temps > PREP il y a NUM temps">
+      <pattern>
+        <pattern-item n="prep"/>
+        <pattern-item n="feia"/>
+        <pattern-item n="num"/>
+        <pattern-item n="n_temps"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="4"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="il y a"/>
+            </get-case-from>
+            <lit-tag v="vblex.pri.p3.sg"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: PREP feia DETIND temps > PREP il y a DETIND temps">
+      <pattern>
+        <pattern-item n="prep"/>
+        <pattern-item n="feia"/>
+        <pattern-item n="detind"/>
+        <pattern-item n="n_temps"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="4"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="il y a"/>
+            </get-case-from>
+            <lit-tag v="vblex.pri.p3.sg"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: fa NUM temps que > depuis NUM temps">
+      <pattern>
+        <pattern-item n="fa_feia"/>
+        <pattern-item n="num"/>
+        <pattern-item n="n_temps"/>
+        <pattern-item n="que"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="depuis"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: fa DETIND temps que > depuis DETIND temps">
+      <pattern>
+        <pattern-item n="fa_feia"/>
+        <pattern-item n="detind"/>
+        <pattern-item n="n_temps"/>
+        <pattern-item n="que"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="depuis"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: SENT fa NUM temps que > SENT depuis NUM temps">
+      <pattern>
+        <pattern-item n="sentquecmrel"/>
+        <pattern-item n="fa_feia"/>
+        <pattern-item n="num"/>
+        <pattern-item n="n_temps"/>
+        <pattern-item n="que"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="4"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="depuis"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="4"/><with-param pos="5"/></call-macro>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: SENT fa DETIND temps que > SENT depuis DETIND temps">
+      <pattern>
+        <pattern-item n="sentquecmrel"/>
+        <pattern-item n="fa_feia"/>
+        <pattern-item n="detind"/>
+        <pattern-item n="n_temps"/>
+        <pattern-item n="que"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="4"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="depuis"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="4"/><with-param pos="5"/></call-macro>
       </action>
   </rule>
 
