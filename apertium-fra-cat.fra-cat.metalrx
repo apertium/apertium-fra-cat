@@ -3246,6 +3246,11 @@
     <match lemma="cela" tags="prn.*"><select lemma="això"/></match>
   </rule>
 
+  <!-- se >> es, remove -->
+  <rule weight="0.8">
+    <match lemma="se" tags="prn.*"><select lemma="es"/></match>
+  </rule>
+
 <!-- **************** CNJADV **************** -->
 
   <!-- plus >> més, com més -->
@@ -3334,6 +3339,22 @@
   </rule>
 
 <!-- **************** V **************** -->
+
+  <!-- pencher >> inclinar, examinar -->
+  <rule weight="0.8">
+    <match lemma="pencher" tags="vblex.*"><select lemma="inclinar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="se" tags="prn.*"><remove tags="prn.*"/></match>
+    <match lemma="pencher" tags="vblex.*"><select lemma="examinar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="sur" tags="pr"><remove tags="pr"/></match>
+  </rule>
 
   <!-- convenir >> convenir, acordar -->
   <rule weight="0.8">
@@ -12869,6 +12890,11 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- goûteux >> saborós, gustós, gotós -->
+  <rule weight="0.8">
+    <match lemma="goûteux" tags="adj.*"><select lemma="saborós"/></match>
+  </rule>
 
   <!-- imparfait >> imperfecte, imperfet -->
   <rule weight="0.8">
