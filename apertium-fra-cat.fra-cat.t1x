@@ -15962,22 +15962,39 @@ is not applicable because gender and number cannot be taken from previous rules 
         <call-macro n="f_concord1">
           <with-param pos="1"/>
         </call-macro>
-        <out>
-          <mlu>
-            <lu>
-              <get-case-from pos="1">
-                <clip pos="2" side="tl" part="lemh"/>
-              </get-case-from>
-              <clip pos="2" side="tl" part="a_inf"/>
-            </lu>
-            <lu>
-              <clip pos="1" side="tl" part="lem"/>
-              <lit-tag v="prn.enc"/>
-              <clip pos="1" side="tl" part="tipoenc_pro"/>
-              <clip pos="2" side="tl" part="lemq"/>
-            </lu>
-          </mlu>
-        </out>
+        <choose>
+          <when>
+            <test>
+              <equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v=""/></equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="lemh"/>
+                </get-case-from>
+                <clip pos="2" side="tl" part="a_inf"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <mlu>
+                <lu>
+                  <get-case-from pos="1">
+                    <clip pos="2" side="tl" part="lemh"/>
+                  </get-case-from>
+                  <clip pos="2" side="tl" part="a_inf"/>
+                </lu>
+                <lu>
+                  <clip pos="1" side="tl" part="lem"/>
+                  <lit-tag v="prn.enc"/>
+                  <clip pos="1" side="tl" part="tipoenc_pro"/>
+                  <clip pos="2" side="tl" part="lemq"/>
+                </lu>
+              </mlu>
+            </out>
+          </otherwise>
+        </choose>
       </action>
     </rule>
 
