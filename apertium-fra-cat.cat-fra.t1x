@@ -116,6 +116,14 @@
       <cat-item lemma="fins" tags="pr"/>
       <cat-item lemma="fins a" tags="pr"/>
     </def-cat>
+    <def-cat n="des_de_mitjan">
+      <cat-item lemma="des de mitjan" tags="pr"/>
+      <cat-item lemma="des de mitjans" tags="pr"/>
+      <cat-item lemma="a partir de mitjan" tags="pr"/>
+      <cat-item lemma="a partir de mitjans" tags="pr"/>
+      <cat-item lemma="fins a mitjan" tags="pr"/>
+      <cat-item lemma="fins a mitjans" tags="pr"/>
+    </def-cat>
     <def-cat n="espai_prepadv">
       <cat-item lemma="darrere" tags="pr"/>
       <cat-item lemma="rere" tags="pr"/>
@@ -6246,6 +6254,50 @@ is not applicable because gender and number can not be taken from previous rules
             <clip pos="1" side="tl" part="lemh"/>
             <clip pos="1" side="tl" part="tags"/>
             <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: PREP segle num: des de mitjan segle I > depuis le début du Ier siècle">
+      <pattern>
+        <pattern-item n="des_de_mitjan"/>
+        <pattern-item n="segle"/>
+        <pattern-item n="num_romans"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <let><var n="numero"/><lit-tag v="sg"/></let>
+        <call-macro n="f_concord1">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="f_concord1"> <!-- repeteixo per a la regla següent -->
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <lit v="le"/>
+            <lit-tag v="det.def"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <var n="numero"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
           </lu>
         </out>
       </action>
