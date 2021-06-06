@@ -893,22 +893,8 @@
       <match lemma="a dins de" tags="pr"/>
       <match lemma="a dintre de" tags="pr"/>
       <match lemma="a finals de" tags="pr"/>
-      <match lemma="a la vora de" tags="pr"/>
-      <match lemma="al capdavant de" tags="pr"/>
-      <match lemma="al cap de" tags="pr"/>
-      <match lemma="al cim de" tags="pr"/>
-      <match lemma="al començament de" tags="pr"/>
-      <match lemma="al costat de" tags="pr"/>
-      <match lemma="al damunt de" tags="pr"/>
-      <match lemma="al davant de" tags="pr"/>
       <match lemma="a l'entorn de" tags="pr"/>
-      <match lemma="al final de" tags="pr"/>
-      <match lemma="al llarg de" tags="pr"/>
-      <match lemma="al principi de" tags="pr"/>
-      <match lemma="als voltants de" tags="pr"/>
-      <match lemma="als volts de" tags="pr"/>
-      <match lemma="al voltant de" tags="pr"/>
-      <match lemma="amb la finalitat de" tags="pr"/>
+      <match lemma="a la vora de" tags="pr"/>
       <match lemma="a més a més de" tags="pr"/>
       <match lemma="a més de" tags="pr"/>
       <match lemma="a part de" tags="pr"/>
@@ -916,15 +902,39 @@
       <match lemma="a primers de" tags="pr"/>
       <match lemma="a principis de" tags="pr"/>
       <match lemma="a prop de" tags="pr"/>
-      <match lemma="arran de" tags="pr"/>
       <match lemma="a sobre de" tags="pr"/>
       <match lemma="a sota de" tags="pr"/>
       <match lemma="a través de" tags="pr"/>
+      <match lemma="al cap de" tags="pr"/>
+      <match lemma="al capdavant de" tags="pr"/>
+      <match lemma="al cim de" tags="pr"/>
+      <match lemma="al començament de" tags="pr"/>
+      <match lemma="al costat de" tags="pr"/>
+      <match lemma="al damunt de" tags="pr"/>
+      <match lemma="al davant de" tags="pr"/>
+      <match lemma="al final de" tags="pr"/>
+      <match lemma="al llarg de" tags="pr"/>
+      <match lemma="al principi de" tags="pr"/>
+      <match lemma="al voltant de" tags="pr"/>
+      <match lemma="als voltants de" tags="pr"/>
+      <match lemma="als volts de" tags="pr"/>
+      <match lemma="amb la finalitat de" tags="pr"/>
+      <match lemma="arran de" tags="pr"/>
+      <match lemma="cap a començaments de" tags="pr"/>
+      <match lemma="cap a inicis de" tags="pr"/>
+      <match lemma="cap a finals de" tags="pr"/>
+      <match lemma="cap al final de" tags="pr"/>
+      <match lemma="cap a mitjans de" tags="pr"/>
       <match lemma="damunt de" tags="pr"/>
       <match lemma="darrere de" tags="pr"/>
       <match lemma="davant de" tags="pr"/>
       <match lemma="d'ençà de" tags="pr"/>
       <match lemma="des de" tags="pr"/>
+      <match lemma="des de començaments de" tags="pr"/>
+      <match lemma="des de inicis de" tags="pr"/>
+      <match lemma="des de finals de" tags="pr"/>
+      <match lemma="des del final de" tags="pr"/>
+      <match lemma="des de mitjans de" tags="pr"/>
       <match lemma="després de" tags="pr"/>
       <match lemma="dins de" tags="pr"/>
       <match lemma="dintre de" tags="pr"/>
@@ -941,7 +951,11 @@
       <match lemma="en lloc de" tags="pr"/>
       <match lemma="entorn de" tags="pr"/>
       <match lemma="en vista de" tags="pr"/>
+      <match lemma="fins a començaments de" tags="pr"/>
+      <match lemma="fins a inicis de" tags="pr"/>
       <match lemma="fins a finals de" tags="pr"/>
+      <match lemma="fins al final de" tags="pr"/>
+      <match lemma="fins a mitjans de" tags="pr"/>
       <match lemma="fora de" tags="pr"/>
       <match lemma="just després de" tags="pr"/>
       <match lemma="llevat de" tags="pr"/>
@@ -2804,6 +2818,70 @@
   <rule weight="1.0">
     <match lemma="en època de" tags="pr"><select lemma="à l'époque de"/></match>
     <match tags="det.*"/>
+  </rule>
+
+  <!-- des de finals de >> depuis la fin de, depuis fin -->
+  <rule weight="0.8">
+    <match lemma="des de finals de" tags="pr"><select lemma="depuis la fin de"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="des de finals de" tags="pr"><select lemma="depuis fin"/></match>
+    <or>
+      <seq n="mes"/>
+    </or>
+  </rule>
+
+  <!-- fins a finals de >> jusqu'à la fin de, jusqu'en fin -->
+  <rule weight="0.8">
+    <match lemma="fins a finals de" tags="pr"><select lemma="jusqu'à la fin de"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fins a finals de" tags="pr"><select lemma="jusqu'en fin"/></match>
+    <or>
+      <seq n="mes"/>
+    </or>
+  </rule>
+
+  <!-- des de començaments de >> depuis le début de, depuis début -->
+  <!-- des de principis de >> depuis le début de, depuis début -->
+  <!-- a partir de començaments de >> depuis le début de, depuis début -->
+  <!-- a partir de principis de >> depuis le début de, depuis début -->
+  <rule weight="0.8">
+    <or>
+      <match lemma="des de començaments de" tags="pr"><select lemma="depuis le début de"/></match>
+      <match lemma="des de principis de" tags="pr"><select lemma="depuis le début de"/></match>
+      <match lemma="a partir de començaments de" tags="pr"><select lemma="depuis le début de"/></match>
+      <match lemma="a partir de principis de" tags="pr"><select lemma="depuis le début de"/></match>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="des de començaments de" tags="pr"><select lemma="depuis début"/></match>
+      <match lemma="des de principis de" tags="pr"><select lemma="depuis début"/></match>
+      <match lemma="a partir de començaments de" tags="pr"><select lemma="depuis début"/></match>
+      <match lemma="a partir de principis de" tags="pr"><select lemma="depuis début"/></match>
+    </or>
+    <or>
+      <seq n="mes"/>
+    </or>
+  </rule>
+
+  <!-- fins a començaments de >> jusqu'au début de, jusqu'en début -->
+  <!-- fins a principis de >> jusqu'au début de, jusqu'en début -->
+  <rule weight="0.8">
+    <or>
+      <match lemma="fins a començaments de" tags="pr"><select lemma="jusqu'au début de"/></match>
+      <match lemma="fins a principis de" tags="pr"><select lemma="jusqu'au début de"/></match>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="fins a començaments de" tags="pr"><select lemma="jusqu'en début"/></match>
+      <match lemma="fins a principis de" tags="pr"><select lemma="jusqu'en début"/></match>
+    </or>
+    <or>
+      <seq n="mes"/>
+    </or>
   </rule>
 
   <!-- fins a >> jusqu'à, jusque -->
@@ -6049,6 +6127,17 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- passat >> passé, dernier -->
+  <rule weight="0.8">
+    <match lemma="passat" tags="adj.*"><select lemma="passé"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="temps"/>
+    </or>
+    <match lemma="passat" tags="adj.*"><select lemma="dernier"/></match>
+  </rule>
 
   <!-- summe >> suprême, souverain -->
   <rule weight="0.8">

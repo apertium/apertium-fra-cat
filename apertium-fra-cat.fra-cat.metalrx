@@ -12891,6 +12891,26 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- dernier >> últim, passat -->
+  <rule weight="0.8">
+    <match lemma="dernier" tags="adj.*"><select lemma="últim"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="temps"/>
+    </or>
+    <match lemma="dernier" tags="adj.*"><select lemma="passat"/></match>
+  </rule>
+
+  <!-- bon >> bo, bon -->
+  <rule weight="0.8">
+    <match lemma="bon" tags="adj.*"><select lemma="bo"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="bon" tags="adj.*"><select lemma="bon"/></match>
+    <match tags="n.*"/>
+  </rule>
+
   <!-- goûteux >> saborós, gustós, gotós -->
   <rule weight="0.8">
     <match lemma="goûteux" tags="adj.*"><select lemma="saborós"/></match>
