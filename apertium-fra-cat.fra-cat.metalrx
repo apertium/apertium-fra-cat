@@ -6811,6 +6811,53 @@
     <match lemma="contrôleur" tags="n.*"><select lemma="controlador"/></match>
   </rule>
 
+  <!-- auditeur >> auditor, oient -->
+  <rule weight="0.8">
+    <match lemma="auditeur" tags="n.*"><select lemma="auditor"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="auditeur" tags="n.*"><select lemma="oient"/></match>
+    <repeat from="0" upto="6">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="radio" tags="n.*"/>
+      <match lemma="programme" tags="n.*"/>
+      <match lemma="station" tags="n.*"/>
+      <match lemma="station# de radio" tags="n.*"/>
+      <match lemma="chaîne" tags="n.*"/>
+      <match lemma="album" tags="n.*"/>
+      <match lemma="disque" tags="n.*"/>
+      <match lemma="musique" tags="n.*"/>
+      <match lemma="chanson" tags="n.*"/>
+      <match lemma="pièce" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="radio" tags="n.*"/>
+      <match lemma="programme" tags="n.*"/>
+      <match lemma="station" tags="n.*"/>
+      <match lemma="station# de radio" tags="n.*"/>
+      <match lemma="chaîne" tags="n.*"/>
+      <match lemma="album" tags="n.*"/>
+      <match lemma="disque" tags="n.*"/>
+      <match lemma="musique" tags="n.*"/>
+      <match lemma="chanson" tags="n.*"/>
+      <match lemma="pièce" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="6">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="auditeur" tags="n.*"><select lemma="oient"/></match>
+  </rule>
+
   <!-- gourmandise >> llaminadura, golafreria -->
   <rule weight="0.8">
     <match lemma="gourmandise" tags="n.*"><select lemma="llaminadura"/></match>
@@ -12890,6 +12937,11 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- sans faille >> indoblegable, incondicional -->
+  <rule weight="0.8">
+    <match lemma="sans faille" tags="adj.*"><select lemma="indoblegable"/></match>
+  </rule>
 
   <!-- dernier >> últim, passat -->
   <rule weight="0.8">

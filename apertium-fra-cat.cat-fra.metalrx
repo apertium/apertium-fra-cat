@@ -6830,6 +6830,11 @@
 
 <!-- **************** N **************** -->
 
+  <!-- focus >> foyer, projecteur -->
+  <rule weight="0.8">
+    <match lemma="focus" tags="n.*"><select lemma="foyer"/></match>
+  </rule>
+
   <!-- golafreria >> glutonnerie, gourmandise -->
   <rule weight="0.8">
     <match lemma="golafreria" tags="n.*"><select lemma="glutonnerie"/></match>
