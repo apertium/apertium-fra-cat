@@ -1673,6 +1673,94 @@
   </rule>
 -->
 
+  <rule weight="2.2">
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <match lemma="tornar" tags="vblex.*.p3.sg"/>
+    <match lemma="a" tags="pr"/>
+    <match tags="*.inf"/>
+  </rule>
+  <rule weight="2.2">
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <match tags="vbhaver.*.p3.sg"/>
+    <match lemma="tornar" tags="vblex.pp.*"/>
+    <match lemma="a" tags="pr"/>
+    <match tags="*.inf"/>
+  </rule>
+  <rule weight="2.2">
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <match lemma="anar" tags="vblex.pri.p3.sg"/>
+    <match lemma="tornar" tags="vblex.inf"/>
+    <match lemma="a" tags="pr"/>
+    <match tags="*.inf"/>
+  </rule>
+  <rule weight="2.4">
+    <or>
+      <match tags="n.*.pl"/>
+      <match tags="adj.*.pl"/>
+    </or>
+    <match lemma="es" tags="prn.pro.*"><select lemma="se"/></match>
+    <match lemma="tornar" tags="vblex.*.p3.pl"/>
+    <match lemma="a" tags="pr"/>
+    <match tags="*.inf"/>
+  </rule>
+  <rule weight="2.4">
+    <or>
+      <match tags="n.*.pl"/>
+      <match tags="adj.*.pl"/>
+    </or>
+    <match lemma="es" tags="prn.pro.*"><select lemma="se"/></match>
+    <match tags="vbhaver.*.p3.pl"/>
+    <match lemma="tornar" tags="vblex.pp.*"/>
+    <match lemma="a" tags="pr"/>
+    <match tags="*.inf"/>
+  </rule>
+  <rule weight="2.4">
+    <or>
+      <match tags="n.*.pl"/>
+      <match tags="adj.*.pl"/>
+    </or>
+    <match lemma="es" tags="prn.pro.*"><select lemma="se"/></match>
+    <match lemma="anar" tags="vblex.pri.p3.pl"/>
+    <match lemma="tornar" tags="vblex.inf"/>
+    <match lemma="a" tags="pr"/>
+    <match tags="*.inf"/>
+  </rule>
+  <rule weight="2.4">
+    <match lemma="es" tags="prn.pro.*"><select lemma="se"/></match>
+    <match lemma="tornar" tags="vblex.*"/>
+    <match lemma="a" tags="pr"/>
+    <or>
+      <match lemma="revoltar" tags="*.inf"/>
+      <match lemma="traslladar" tags="*.inf"/>
+      <match lemma="deplaçar" tags="*.inf"/>
+      <match lemma="moure" tags="*.inf"/>
+    </or>
+  </rule>
+  <rule weight="2.4">
+    <match lemma="es" tags="prn.pro.*"><select lemma="se"/></match>
+    <match tags="vbhaver.*"/>
+    <match lemma="tornar" tags="vblex.pp.*"/>
+    <match lemma="a" tags="pr"/>
+    <or>
+      <match lemma="revoltar" tags="*.inf"/>
+      <match lemma="traslladar" tags="*.inf"/>
+      <match lemma="deplaçar" tags="*.inf"/>
+      <match lemma="moure" tags="*.inf"/>
+    </or>
+  </rule>
+  <rule weight="2.4">
+    <match lemma="es" tags="prn.pro.*"><select lemma="se"/></match>
+    <match lemma="anar" tags="vblex.pri.*"/>
+    <match lemma="tornar" tags="vblex.inf"/>
+    <match lemma="a" tags="pr"/>
+    <or>
+      <match lemma="revoltar" tags="*.inf"/>
+      <match lemma="traslladar" tags="*.inf"/>
+      <match lemma="deplaçar" tags="*.inf"/>
+      <match lemma="moure" tags="*.inf"/>
+    </or>
+  </rule>
+
   <rule weight="1.2">
     <match tags="n.*.sg"/>
     <repeat from="0" upto="4">
@@ -1871,6 +1959,15 @@
       <match tags="vbser.*.p3.sg"/>
       <match lemma="estar" tags="vblex.*.p3.sg"/>
     </or>
+  </rule>
+
+  <!-- allò >> cela, ce -->
+  <rule weight="0.8">
+    <match lemma="allò" tags="prn.*"><select lemma="cela"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="allò" tags="prn.*"><select lemma="ce"/></match>
+    <match tags="rel.*"/>
   </rule>
 
 
@@ -3803,6 +3900,45 @@
     </or>
   </rule>
 
+  <!-- defraudar >> décevoir, frauder -->
+  <rule weight="0.8">
+    <match lemma="defraudar" tags="vblex.*"><select lemma="décevoir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="defraudar" tags="vblex.*"><select lemma="frauder"/></match>
+    <repeat from="0" upto="6">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="hisenda" tags="n.*"/>
+      <match lemma="impost" tags="n.*"/>
+      <match lemma="fiscal" tags="adj.*"/>
+      <match lemma="diners" tags="n.*"/>
+      <match lemma="euro" tags="n.*"/>
+      <match lemma="dolar" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="hisenda" tags="n.*"/>
+      <match lemma="impost" tags="n.*"/>
+      <match lemma="fiscal" tags="adj.*"/>
+      <match lemma="diners" tags="n.*"/>
+      <match lemma="euro" tags="n.*"/>
+      <match lemma="dolar" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="6">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="defraudar" tags="vblex.*"><select lemma="frauder"/></match>
+  </rule>
+
   <!-- assolir >> atteindre, remporter -->
   <rule weight="0.8">
     <match lemma="assolir" tags="vblex.*"><select lemma="atteindre"/></match>
@@ -3832,6 +3968,18 @@
   <rule weight="1.0">
     <match lemma="quedar" tags="vblex.*"/>
     <match lemma="provar" tags="vblex.pp.*"><select lemma="prouver"/></match>
+  </rule>
+
+  <!-- tornar >> revenir, devenir -->
+  <macro name="verb_nopron_pron" p1="tornar" p2="revenir" p3="devenir" />
+  <rule weight="1.0">
+    <match lemma="tornar" tags="vblex.*"><select lemma="revenir"/></match>
+    <or>
+      <match tags="adv"/>
+      <match tags="cnjadv"/>
+    </or>
+    <match lemma="a" tags="pr"/>
+    <match tags="*.inf"/>
   </rule>
 
   <!-- viure >> habiter, vivre -->
@@ -5767,6 +5915,14 @@
       <match lemma="fer" tags="vblex.pp.*"><select lemma="marquer"/></match>
       <match lemma="fer" tags="vblex.inf"><select lemma="marquer"/></match>
     </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fer" tags="vblex.*"><select lemma="donner"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="encaixada" tags="n.*"/>
   </rule>
 
   <!-- posar >> poser, mettre -->
@@ -8162,6 +8318,16 @@
     <match lemma="ona" tags="n.*"><select lemma="onde"/></match>
   </rule>
 
+  <!-- instància >> instance, ressort -->
+  <rule weight="0.8">
+    <match lemma="instància" tags="n.*"><select lemma="instance"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="de" tags="pr"/>
+    <match lemma="últim" tags="adj.*"/>
+    <match lemma="instància" tags="n.*"><select lemma="ressort"/></match>
+  </rule>
+
   <!-- competència >> concurrence, compétence -->
   <rule weight="0.8">
     <match lemma="competència" tags="n.*"><select lemma="concurrence"/></match>
@@ -8296,6 +8462,7 @@
       <match lemma="brasiler" tags="adj.*"/>
       <match lemma="indi" tags="adj.*"/>
       <match lemma="sud-africà" tags="adj.*"/>
+      <match lemma="delta" tags="n.*"/>
     </or>
   </rule>
 
@@ -11266,6 +11433,14 @@
         <match tags=""/>
       </or>
     </repeat>
+    <match lemma="cap" tags="n.*"><select lemma="tête"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="demanar" tags="vblex.*"/>
+      <match lemma="voler" tags="vblex.*"/>
+    </or>
+    <match tags="det.*"/>
     <match lemma="cap" tags="n.*"><select lemma="tête"/></match>
   </rule>
 

@@ -656,6 +656,9 @@
       <match lemma="directeur" tags="n.*"/>
       <match lemma="secrétaire" tags="n.*"/>
       <match lemma="PDG" tags="n.*"/>
+      <match lemma="chef" tags="n.*"/>
+      <match lemma="conseiller" tags="n.*"/>
+      <match lemma="client" tags="n.*"/>
       <match lemma="artiste" tags="n.*"/>
       <match lemma="peintre" tags="n.*"/>
       <match lemma="écrivain" tags="n.*"/>
@@ -666,6 +669,7 @@
       <match lemma="metteur# en scène" tags="n.*"/>
       <match lemma="travailleur" tags="n.*"/>
       <match lemma="ouvrier" tags="n.*"/>
+      <match lemma="prolétaire" tags="n.*"/>
       <match lemma="plombier" tags="n.*"/>
       <match lemma="anarchiste" tags="n.*"/>
       <match lemma="communiste" tags="n.*"/>
@@ -675,9 +679,14 @@
       <match lemma="chrétien-démocrate" tags="n.*"/>
       <match lemma="chrétien" tags="n.*"/>
       <match lemma="musulman" tags="n.*"/>
+      <match lemma="catholique" tags="n.*"/>
+      <match lemma="cathare" tags="n.*"/>
       <match lemma="protestant" tags="n.*"/>
       <match lemma="orthodoxe" tags="n.*"/>
+      <match lemma="juif" tags="n.*"/>
+      <match lemma="hébreu" tags="n.*"/>
       <match lemma="bouddhiste" tags="n.*"/>
+      <match lemma="athée" tags="n.*"/>
       <match lemma="médecin" tags="n.*"/>
       <match lemma="infirmier" tags="n.*"/>
       <match lemma="policier" tags="n.*"/>
@@ -2159,16 +2168,27 @@
     </def-seq>
 
     <def-seq n="pays_adj">
+      <match lemma="européen" tags="adj.*"/>
       <match lemma="portugais" tags="adj.*"/>
       <match lemma="espagnol" tags="adj.*"/>
       <match lemma="catalan" tags="adj.*"/>
       <match lemma="valencien" tags="adj.*"/>
       <match lemma="castillan" tags="adj.*"/>
+      <match lemma="galicien" tags="adj.*"/>
+      <match lemma="basque" tags="adj.*"/>
+      <match lemma="aragonais" tags="adj.*"/>
+      <match lemma="andalou" tags="adj.*"/>
       <match lemma="français" tags="adj.*"/>
       <match lemma="breton" tags="adj.*"/>
       <match lemma="normand" tags="adj.*"/>
-      <match lemma="occitan" tags="adj.*"/>
       <match lemma="alsacien" tags="adj.*"/>
+      <match lemma="lorrain" tags="adj.*"/>
+      <match lemma="occitan" tags="adj.*"/>
+      <match lemma="gascon" tags="adj.*"/>
+      <match lemma="limousin" tags="adj.*"/>
+      <match lemma="auvergnat" tags="adj.*"/>
+      <match lemma="languedocien" tags="adj.*"/>
+      <match lemma="provençal" tags="adj.*"/>
       <match lemma="bourgonde" tags="adj.*"/>
       <match lemma="bourguignon" tags="adj.*"/>
       <match lemma="italien" tags="adj.*"/>
@@ -2199,6 +2219,7 @@
       <match lemma="belge" tags="adj.*"/>
       <match lemma="hollandais" tags="adj.*"/>
       <match lemma="flamand" tags="adj.*"/>
+      <match lemma="wallon" tags="adj.*"/>
       <match lemma="luxembougeois" tags="adj.*"/>
       <match lemma="allemand" tags="adj.*"/>
       <match lemma="prussien" tags="adj.*"/>
@@ -2210,8 +2231,6 @@
       <match lemma="estonien" tags="adj.*"/>
       <match lemma="léton" tags="adj.*"/>
       <match lemma="lithuanien" tags="adj.*"/>
-      <match lemma="polonais" tags="adj.*"/>
-      <match lemma="autrichien" tags="adj.*"/>
       <match lemma="tchèque" tags="adj.*"/>
       <match lemma="slovaque" tags="adj.*"/>
       <match lemma="tchécoslovaque" tags="adj.*"/>
@@ -2257,28 +2276,98 @@
       <match lemma="touvinien" tags="adj.*"/>
       <match lemma="altaïen" tags="adj.*"/>
       <match lemma="nogaï" tags="adj.*"/>
-      <match lemma="estonien" tags="adj.*"/>
-      <match lemma="letton" tags="adj.*"/>
-      <match lemma="lithuanien" tags="adj.*"/>
+      <match lemma="israélien" tags="adj.*"/>
+      <match lemma="israélite" tags="adj.*"/>
+      <match lemma="palestinien" tags="adj.*"/>
+      <match lemma="libanais" tags="adj.*"/>
+      <match lemma="syrien" tags="adj.*"/>
+      <match lemma="jordanien" tags="adj.*"/>
+      <match lemma="irakien" tags="adj.*"/>
+      <match lemma="iranien" tags="adj.*"/>
+      <match lemma="perse" tags="adj.*"/>
+      <match lemma="arabe" tags="adj.*"/>
+      <match lemma="saoudien" tags="adj.*"/>
+      <match lemma="saoudite" tags="adj.*"/>
+      <match lemma="qatari" tags="adj.*"/>
+      <match lemma="qatarien" tags="adj.*"/>
+      <match lemma="yéménite" tags="adj.*"/>
+      <match lemma="omanais" tags="adj.*"/>
+      <match lemma="égyptien" tags="adj.*"/>
+      <match lemma="lybien" tags="adj.*"/>
+      <match lemma="tunisien" tags="adj.*"/>
+      <match lemma="algérien" tags="adj.*"/>
+      <match lemma="marocain" tags="adj.*"/>
+      <match lemma="mauritanien" tags="adj.*"/>
+      <match lemma="afghan" tags="adj.*"/>
+      <match lemma="kazakh" tags="adj.*"/>
+      <match lemma="kirghiz" tags="adj.*"/>
+      <match lemma="ouzbek" tags="adj.*"/>
+      <match lemma="tadjik" tags="adj.*"/>
+      <match lemma="turkmène" tags="adj.*"/>
+      <match lemma="pakistanais" tags="adj.*"/>
+      <match lemma="chinois" tags="adj.*"/>
+      <match lemma="japonais" tags="adj.*"/>
       <match lemma="chinois" tags="adj.*"/>
       <match lemma="japonais" tags="adj.*"/>
       <match lemma="coréen" tags="adj.*"/>
       <match lemma="vietnamien" tags="adj.*"/>
+      <match lemma="malais" tags="adj.*"/>
+      <match lemma="malaisien" tags="adj.*"/>
+      <match lemma="indonésien" tags="adj.*"/>
+      <match lemma="thaïlandais" tags="adj.*"/>
+      <match lemma="birman" tags="adj.*"/>
+      <match lemma="cambodgien" tags="adj.*"/>
+      <match lemma="khmer" tags="adj.*"/>
+      <match lemma="laosien" tags="adj.*"/>
+      <match lemma="australien" tags="adj.*"/>
+      <match lemma="néo-zélandais" tags="adj.*"/>
       <match lemma="américain" tags="adj.*"/>
       <match lemma="indien" tags="adj.*"/>
+      <match lemma="maldivien" tags="adj.*"/>
+      <match lemma="malawien" tags="adj.*"/>
+      <match lemma="malawite" tags="adj.*"/>
+      <match lemma="malgache" tags="adj.*"/>
+      <match lemma="malien" tags="adj.*"/>
+      <match lemma="nigérian" tags="adj.*"/>
+      <match lemma="nigérien" tags="adj.*"/>
+      <match lemma="sénégalais" tags="adj.*"/>
+      <match lemma="tchadien" tags="adj.*"/>
+      <match lemma="burkinabé" tags="adj.*"/>
+      <match lemma="burkinabè" tags="adj.*"/>
+      <match lemma="tutsi" tags="adj.*"/>
+      <match lemma="hutu" tags="adj.*"/>
+      <match lemma="rwandais" tags="adj.*"/>
+      <match lemma="burundais" tags="adj.*"/>
+      <match lemma="ougandais" tags="adj.*"/>
+      <match lemma="congolais" tags="adj.*"/>
+      <match lemma="comorien" tags="adj.*"/>
+      <match lemma="mauricien" tags="adj.*"/>
+      <match lemma="seychellois" tags="adj.*"/>
+      <match lemma="sud-africain" tags="adj.*"/>
     </def-seq>
 
     <def-seq n="pays_hab">
+      <match lemma="Européen" tags="n.*"/>
       <match lemma="portugais" tags="n.*"/>
       <match lemma="espagnol" tags="n.*"/>
       <match lemma="catalan" tags="n.*"/>
       <match lemma="valencien" tags="n.*"/>
       <match lemma="castillan" tags="n.*"/>
+      <match lemma="galicien" tags="n.*"/>
+      <match lemma="basque" tags="n.*"/>
+      <match lemma="aragonais" tags="n.*"/>
+      <match lemma="andalou" tags="n.*"/>
       <match lemma="français" tags="n.*"/>
       <match lemma="breton" tags="n.*"/>
       <match lemma="normand" tags="n.*"/>
-      <match lemma="occitan" tags="n.*"/>
       <match lemma="alsacien" tags="n.*"/>
+      <match lemma="lorrain" tags="n.*"/>
+      <match lemma="occitan" tags="n.*"/>
+      <match lemma="gascon" tags="n.*"/>
+      <match lemma="limousin" tags="n.*"/>
+      <match lemma="auvergnat" tags="n.*"/>
+      <match lemma="languedocien" tags="n.*"/>
+      <match lemma="provençal" tags="n.*"/>
       <match lemma="bourgonde" tags="n.*"/>
       <match lemma="bourguignon" tags="n.*"/>
       <match lemma="italien" tags="n.*"/>
@@ -2309,6 +2398,7 @@
       <match lemma="belge" tags="n.*"/>
       <match lemma="hollandais" tags="n.*"/>
       <match lemma="flamand" tags="n.*"/>
+      <match lemma="wallon" tags="n.*"/>
       <match lemma="luxembougeois" tags="n.*"/>
       <match lemma="allemand" tags="n.*"/>
       <match lemma="prussien" tags="n.*"/>
@@ -2367,15 +2457,72 @@
       <match lemma="touvinien" tags="n.*"/>
       <match lemma="altaïen" tags="n.*"/>
       <match lemma="nogaï" tags="n.*"/>
-      <match lemma="estonien" tags="n.*"/>
-      <match lemma="letton" tags="n.*"/>
-      <match lemma="lithuanien" tags="n.*"/>
+      <match lemma="Israélien" tags="n.*"/>
+      <match lemma="Israélite" tags="n.*"/>
+      <match lemma="Palestinien" tags="n.*"/>
+      <match lemma="Libanais" tags="n.*"/>
+      <match lemma="Syrien" tags="n.*"/>
+      <match lemma="Jordanien" tags="n.*"/>
+      <match lemma="Irakien" tags="n.*"/>
+      <match lemma="Iranien" tags="n.*"/>
+      <match lemma="perse" tags="n.*"/>
+      <match lemma="arabe" tags="n.*"/>
+      <match lemma="Saoudien" tags="n.*"/>
+      <match lemma="Saoudite" tags="n.*"/>
+      <match lemma="Qatari" tags="n.*"/>
+      <match lemma="Qatarien" tags="n.*"/>
+      <match lemma="Yéménite" tags="n.*"/>
+      <match lemma="Omanais" tags="n.*"/>
+      <match lemma="Égyptien" tags="n.*"/>
+      <match lemma="Lybien" tags="n.*"/>
+      <match lemma="Tunisien" tags="n.*"/>
+      <match lemma="Algérien" tags="n.*"/>
+      <match lemma="Marocain" tags="n.*"/>
+      <match lemma="Mauritanien" tags="n.*"/>
+      <match lemma="Afghan" tags="n.*"/>
+      <match lemma="kazakh" tags="n.*"/>
+      <match lemma="kirghiz" tags="n.*"/>
+      <match lemma="ouzbek" tags="n.*"/>
+      <match lemma="tadjik" tags="n.*"/>
+      <match lemma="turkmène" tags="n.*"/>
+      <match lemma="Pakistanais" tags="n.*"/>
       <match lemma="chinois" tags="n.*"/>
       <match lemma="japonais" tags="n.*"/>
       <match lemma="coréen" tags="n.*"/>
       <match lemma="vietnamien" tags="n.*"/>
+      <match lemma="malais" tags="n.*"/>
+      <match lemma="Malaisien" tags="n.*"/>
+      <match lemma="Indonésien" tags="n.*"/>
+      <match lemma="thaïlandais" tags="n.*"/>
+      <match lemma="birman" tags="n.*"/>
+      <match lemma="cambodgien" tags="n.*"/>
+      <match lemma="khmer" tags="n.*"/>
+      <match lemma="laosien" tags="n.*"/>
+      <match lemma="Australien" tags="n.*"/>
+      <match lemma="Néo-Zélandais" tags="n.*"/>
       <match lemma="Américain" tags="n.*"/>
-      <match lemma="indien" tags="n.*"/>
+      <match lemma="Indien" tags="n.*"/>
+      <match lemma="Maldivien" tags="n.*"/>
+      <match lemma="Malawien" tags="n.*"/>
+      <match lemma="Malawite" tags="n.*"/>
+      <match lemma="malgache" tags="n.*"/>
+      <match lemma="Malien" tags="n.*"/>
+      <match lemma="Nigérian" tags="n.*"/>
+      <match lemma="Nigérien" tags="n.*"/>
+      <match lemma="Sénégalais" tags="n.*"/>
+      <match lemma="Tchadien" tags="n.*"/>
+      <match lemma="Burkinabé" tags="n.*"/>
+      <match lemma="Burkinabè" tags="n.*"/>
+      <match lemma="Tutsi" tags="n.*"/>
+      <match lemma="Hutu" tags="n.*"/>
+      <match lemma="Rwandais" tags="n.*"/>
+      <match lemma="Burundais" tags="n.*"/>
+      <match lemma="Ougandais" tags="n.*"/>
+      <match lemma="Congolais" tags="n.*"/>
+      <match lemma="Comorien" tags="n.*"/>
+      <match lemma="Mauricien" tags="n.*"/>
+      <match lemma="Seychellois" tags="n.*"/>
+      <match lemma="Sud-Africain" tags="n.*"/>
     </def-seq>
 
     <def-seq n="temps">
@@ -3246,6 +3393,15 @@
     <match lemma="cela" tags="prn.*"><select lemma="això"/></match>
   </rule>
 
+  <!-- ce >> això, allò, el -->
+  <rule weight="0.8">
+    <match lemma="ce" tags="prn.*"><select lemma="això"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ce" tags="prn.*"><select lemma="el"/></match>
+    <match tags="rel.*"/>
+  </rule>
+
   <!-- se >> es, remove -->
   <rule weight="0.8">
     <match lemma="se" tags="prn.*"><select lemma="es"/></match>
@@ -3340,6 +3496,66 @@
 
 <!-- **************** V **************** -->
 
+  <!-- terrasser >> derribar, derrotar, cavar -->
+  <rule weight="0.8">
+    <match lemma="terrasser" tags="vblex.*"><select lemma="derribar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="terrasser" tags="vblex.*"><select lemma="derrotar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <or>
+      <match lemma="équipe" tags="n.*"/>
+      <match lemma="ennemi" tags="n.*"/>
+      <match lemma="soldat" tags="n.*"/>
+      <match lemma="homme" tags="n.*"/>
+      <match lemma="gens" tags="n.*"/>
+      <match lemma="habitant" tags="n.*"/>
+      <match lemma="attaquant" tags="n.*"/>
+      <match lemma="assaillant" tags="n.*"/>
+      <match lemma="dragon" tags="n.*"/>
+      <match lemma="mal" tags="n.*"/>
+      <match tags="np.*"/>
+      <seq n="pays_hab"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="terrasser" tags="vblex.*"><select lemma="derrotar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+   <match tags="np.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="terrasser" tags="vblex.*"><select lemma="cavar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <or>
+      <match lemma="jardin" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- pencher >> inclinar, examinar -->
   <rule weight="0.8">
     <match lemma="pencher" tags="vblex.*"><select lemma="inclinar"/></match>
@@ -3347,6 +3563,18 @@
   <rule weight="1.0">
     <match lemma="se" tags="prn.*"><remove tags="prn.*"/></match>
     <match lemma="pencher" tags="vblex.*"><select lemma="examinar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="sur" tags="pr"><remove tags="pr"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="se" tags="prn.*"><remove tags="prn.*"/></match>
+    <match tags="vbser"/>
+    <match lemma="pencher" tags="vblex.pp.*"><select lemma="examinar"/></match>
     <repeat from="0" upto="2">
       <or>
         <match tags="adv"/>
@@ -6785,6 +7013,97 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- poignée >> grapat, pom, maneta, empunyadura -->
+  <rule weight="0.8">
+    <match lemma="poignée" tags="n.*"><select lemma="grapat"/></match>
+  </rule>
+
+  <!-- piège >> parany, trampa -->
+  <rule weight="0.8">
+    <match lemma="piège" tags="n.*"><select lemma="parany"/></match>
+  </rule>
+
+  <!-- bourdon >> borinot, bordó -->
+  <rule weight="0.8">
+    <match lemma="bourdon" tags="n.*"><select lemma="borinot"/></match>
+  </rule>
+
+  <!-- découpage >> retall, divisió -->
+  <rule weight="0.8">
+    <match lemma="découpage" tags="n.*"><select lemma="retall"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="découpage" tags="n.*"><select lemma="divisió"/></match>
+    <match lemma="administratif" tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="découpage" tags="n.*"><select lemma="divisió"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
+
+  <!-- delta >> delta n.m, delta n.f -->
+  <rule weight="0.8">
+    <match lemma="delta" tags="n.*"><select lemma="delta" tags="n.m.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="n.*"/>
+    <match lemma="delta" tags="n.*"><select lemma="delta" tags="n.f.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="delta" tags="n.*"><select lemma="delta" tags="n.f.*"/></match>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="mathématique" tags="n.*"/>
+      <match lemma="math" tags="n.*"/>
+      <match lemma="algèbre" tags="n.*"/>
+      <match lemma="epsilon" tags="n.*"/>
+      <match lemma="alpha" tags="n.*"/>
+      <match lemma="bêta" tags="n.*"/>
+      <match lemma="gamma" tags="n.*"/>
+<!--
+      <match lemma="analyse" tags="n.*"/>
+      <match lemma="limite" tags="n.*"/>
+-->
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="mathématique" tags="n.*"/>
+      <match lemma="math" tags="n.*"/>
+      <match lemma="algèbre" tags="n.*"/>
+      <match lemma="epsilon" tags="n.*"/>
+      <match lemma="alpha" tags="n.*"/>
+      <match lemma="bêta" tags="n.*"/>
+      <match lemma="gamma" tags="n.*"/>
+<!--
+      <match lemma="analyse" tags="n.*"/>
+      <match lemma="limite" tags="n.*"/>
+-->
+    </or>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="delta" tags="n.*"><select lemma="delta" tags="n.f.*"/></match>
+  </rule>
+
+  <!-- ressort >> ressort, instància -->
+  <rule weight="0.8">
+    <match lemma="ressort" tags="n.*"><select lemma="ressort"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="de" tags="pr"/>
+    <match lemma="dernier" tags="adj.*"/>
+    <match lemma="ressort" tags="n.*"><select lemma="instància"/></match>
+  </rule>
 
   <!-- calotte >> casquet, solideu, calbot -->
   <rule weight="0.8">
@@ -11266,6 +11585,9 @@
       <match lemma="écouter" tags="vblex.*"/>
       <match lemma="entendre" tags="vblex.*"/>
     </or>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
     <match tags="det.*"/>
     <match lemma="trafic" tags="n.*"><select lemma="trànsit"/></match>
   </rule>
@@ -11286,7 +11608,12 @@
   <rule weight="1.0">
     <match lemma="crash" tags="n.*"><select lemma="crac"/></match>
     <match lemma="de" tags="pr"/>
-    <match tags="np.*"/>
+    <or>
+      <match tags="np.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+      <match tags=""/>
+    </or>
   </rule>
 
   <!-- entretien >> manteniment, conversa -->
@@ -11298,11 +11625,19 @@
     <repeat from="0" upto="2">
       <match tags="adj.*"/>
     </repeat>
-    <match lemma="avec" tags="pr"/>
+    <or>
+      <match lemma="avec" tags="pr"/>
+      <match lemma="par" tags="pr"/>
+    </or>
   </rule>
   <rule weight="1.0">
     <match lemma="entretien" tags="n.*"><select lemma="conversa"/></match>
-    <match lemma="téléphonique" tags="adj.*"/>
+    <or>
+      <match lemma="téléphonique" tags="adj.*"/>
+      <match lemma="épistolaire" tags="adj.*"/>
+      <match lemma="amical" tags="adj.*"/>
+      <match lemma="tendu" tags="adj.*"/>
+    </or>
   </rule>
 
   <!-- cadet >> cadet, cabaler, fadristern -->
@@ -12937,6 +13272,16 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- gros >> gros, gruix -->
+  <rule weight="0.8">
+    <match lemma="gros" tags="adj.*"><select lemma="gros"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.m.sg"/>
+    <match lemma="gros" tags="adj.*"><select lemma="gruix"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
 
   <!-- sans faille >> indoblegable, incondicional -->
   <rule weight="0.8">
