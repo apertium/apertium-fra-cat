@@ -2167,6 +2167,25 @@
       <match lemma="kiwi" tags="n.*"/>
     </def-seq>
 
+    <def-seq n="nombres_aprox">
+      <match lemma="paire" tags="n.*"/>
+      <match lemma="dizaine" tags="n.*"/>
+      <match lemma="douzaine" tags="n.*"/>
+      <match lemma="quinzaine" tags="n.*"/>
+      <match lemma="vintaine" tags="n.*"/>
+      <match lemma="trentaine" tags="n.*"/>
+      <match lemma="quarantaine" tags="n.*"/>
+      <match lemma="cinquantaine" tags="n.*"/>
+      <match lemma="soixantaine" tags="n.*"/>
+      <match lemma="soixante-dizaine" tags="n.*"/>
+      <match lemma="septantaine" tags="n.*"/>
+      <match lemma="quatre-vingtaine" tags="n.*"/>
+      <match lemma="huitantaine" tags="n.*"/>
+      <match lemma="quatre-vingt-dizaine" tags="n.*"/>
+      <match lemma="nonantaine" tags="n.*"/>
+      <match lemma="centaine" tags="n.*"/>
+    </def-seq>
+
     <def-seq n="pays_adj">
       <match lemma="européen" tags="adj.*"/>
       <match lemma="portugais" tags="adj.*"/>
@@ -2652,6 +2671,37 @@
   <!-- à l'égard de >> respecte a, pel que fa a -->
   <rule weight="0.6">
     <match lemma="à l'égard de" tags="pr"><select lemma="respecte a"/></match>
+  </rule>
+
+  <!-- au bout de >> al cap de, al final de -->
+  <rule weight="0.6">
+    <match lemma="au bout de" tags="pr"><select lemma="al final de"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="au bout de" tags="pr"><select lemma="al cap de"/></match>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <or>
+      <seq n="temps"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="au bout de" tags="pr"><select lemma="al cap de"/></match>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <or>
+      <seq n="nombres_aprox"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <seq n="temps"/>
+    </or>
   </rule>
 
   <!-- hors >> excepte, hors -->
@@ -3495,6 +3545,28 @@
   </rule>
 
 <!-- **************** V **************** -->
+
+  <!-- essuyer >> eixugar, patir -->
+  <rule weight="0.8">
+    <match lemma="essuyer" tags="vblex.*"><select lemma="eixugar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="essuyer" tags="vblex.*"><select lemma="patir"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+        <match tags="det.*"/>
+        <match tags="num"/>
+        <match tags="num.*"/>
+        <match lemma="de" tags="pr"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="refus" tags="n.*"/>
+      <match lemma="revers" tags="n.*"><select lemma="revés"/></match>
+    </or>
+  </rule>
 
   <!-- terrasser >> derribar, derrotar, cavar -->
   <rule weight="0.8">
@@ -7013,6 +7085,15 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- revers >> revers, revés -->
+  <rule weight="0.8">
+    <match lemma="revers" tags="n.*"><select lemma="revers"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.ind.*"/>
+    <match lemma="revers" tags="n.*"><select lemma="revés"/></match>
+  </rule>
 
   <!-- poignée >> grapat, pom, maneta, empunyadura -->
   <rule weight="0.8">
@@ -14529,6 +14610,8 @@
       <match lemma="doper" tags="vblex.pp.*"/>
       <match lemma="drogué" tags="adj.*"/>
       <match lemma="droguer" tags="vblex.pp.*"/>
+      <match lemma="éloigné" tags="adj.*"/>
+      <match lemma="éloigner" tags="vblex.pp.*"/>
       <match lemma="émerveillé" tags="adj.*"/>
       <match lemma="émerveiller" tags="vblex.pp.*"/>
       <match lemma="enchanté" tags="adj.*"/>
@@ -14539,6 +14622,7 @@
       <match lemma="engager" tags="vblex.pp.*"/>
       <match lemma="enrhumé" tags="adj.*"/>
       <match lemma="enrhumer" tags="vblex.pp.*"/>
+      <match lemma="en vigueur" tags="adv"/>
       <match lemma="éveillé" tags="adj.*"/>
       <match lemma="éveiller" tags="vblex.pp.*"/>
       <match lemma="fatigué" tags="adj.*"/>

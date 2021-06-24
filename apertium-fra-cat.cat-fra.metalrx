@@ -4046,7 +4046,7 @@
     <match lemma="a" tags="pr"/>
   </rule>
 
-  <!-- obrir >> ouvrir, engager -->
+  <!-- obrir >> ouvrir, engager, allumer -->
   <rule weight="0.8">
     <match lemma="obrir" tags="vblex.*"><select lemma="ouvrir"/></match>
   </rule>
@@ -4055,12 +4055,55 @@
     <repeat from="0" upto="2">
       <or>
         <match tags="det.*"/>
+        <match tags="num"/>
+        <match tags="num.*"/>
         <match tags="adj.*"/>
         <match tags="adv"/>
         <match tags="preadv"/>
       </or>
     </repeat>
     <match lemma="causa" tags="n.*"><select lemma="procédure"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="obrir" tags="vblex.*"><select lemma="allumer"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="num"/>
+        <match tags="num.*"/>
+        <match tags="adj.*"/>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="llum" tags="n.*"/>
+      <match lemma="fanal" tags="n.*"/>
+      <match lemma="reflector" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- tancar >> fermer, éteindre -->
+  <rule weight="0.8">
+    <match lemma="tancar" tags="vblex.*"><select lemma="fermer"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tancar" tags="vblex.*"><select lemma="éteindre"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="num"/>
+        <match tags="num.*"/>
+        <match tags="adj.*"/>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="llum" tags="n.*"/>
+      <match lemma="fanal" tags="n.*"/>
+      <match lemma="reflector" tags="n.*"/>
+    </or>
   </rule>
 
   <!-- processar >> accuser, inculper, traiter -->
@@ -4555,7 +4598,7 @@
     <match lemma="pintar# grafits" tags="vblex.*"><select lemma="taguer"/></match>
   </rule>
 
-  <!-- patir >> souffrir, subir -->
+  <!-- patir >> souffrir, subir, essuyer -->
   <rule weight="0.8">
     <match lemma="patir" tags="vblex.*"><select lemma="souffrir"/></match>
   </rule>
@@ -4582,6 +4625,29 @@
       <match tags="adv"/>
     </repeat>
     <match tags="n.*.pl"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="patir" tags="vblex.*"><select lemma="essuyer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="refús" tags="n.*"/>
+      <match lemma="derrota" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="patir" tags="vblex.*"><select lemma="essuyer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match tags="adj.*"/>
+    <or>
+      <match lemma="refús" tags="n.*"/>
+      <match lemma="derrota" tags="n.*"/>
+    </or>
   </rule>
 
   <!-- xutar >> shooter, botter -->
@@ -6985,6 +7051,15 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- revés >> envers, revers -->
+  <rule weight="0.8">
+    <match lemma="revés" tags="n.*"><select lemma="envers"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.ind.*"/>
+    <match lemma="revés" tags="n.*"><select lemma="revers"/></match>
+  </rule>
 
   <!-- focus >> foyer, projecteur -->
   <rule weight="0.8">
