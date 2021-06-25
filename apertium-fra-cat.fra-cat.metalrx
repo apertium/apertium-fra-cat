@@ -9305,6 +9305,15 @@
   </rule>
   <rule weight="1.0">
     <match lemma="côte" tags="n.*"><select lemma="costella"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="porc" tags="n.*"/>
+      <match lemma="bœuf" tags="n.*"/>
+      <match lemma="veau" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="côte" tags="n.*"><select lemma="costella"/></match>
     <repeat from="0" upto="8">
       <or>
         <match tags="*"/>
@@ -10384,6 +10393,8 @@
       <match lemma="prendre" tags="vblex.*"/>
       <match lemma="rater" tags="vblex.*"/>
       <match lemma="réserver" tags="vblex.*"/>
+      <match lemma="annuler" tags="vblex.*"/>
+      <match lemma="reprogrammer" tags="vblex.*"/>
       <match lemma="détourner" tags="vblex.*"/>
       <match lemma="intercepter" tags="vblex.*"/>
       <match lemma="dérouter" tags="vblex.*"/>
@@ -10406,9 +10417,12 @@
       <match lemma="prendre" tags="vblex.pp.*"/>
       <match lemma="rater" tags="vblex.pp.*"/>
       <match lemma="réserver" tags="vblex.pp.*"/>
+      <match lemma="annuler" tags="vblex.pp.*"/>
+      <match lemma="reprogrammer" tags="vblex.*"/>
       <match lemma="détourner" tags="vblex.pp.*"/>
       <match lemma="intercepter" tags="vblex.pp.*"/>
       <match lemma="dérouter" tags="vblex.pp.*"/>
+      <match lemma="en avance" tags="adj.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -10441,6 +10455,8 @@
   <rule weight="1.0">
     <or>
       <match lemma="détournement" tags="n.*"/>
+      <match lemma="reprogrammation" tags="n.*"/>
+      <match lemma="annulation" tags="n.*"/>
     </or>
     <match lemma="de" tags="pr"/>
     <match tags="det.*"/>
@@ -10464,6 +10480,14 @@
       <match lemma="nuit" tags="n.*"/>
       <match lemma="jour" tags="n.*"/>
       <match tags="np.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
+    <match lemma="en" tags="pr"/>
+    <or>
+      <match lemma="retard" tags="n.*"/>
+      <match lemma="avance" tags="n.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -15329,6 +15353,7 @@
   <macro name="noms_propres" p1="Alphonse" p2="Alfons" />
   <macro name="noms_propres" p1="Amédée" p2="Amadeu" />
   <macro name="noms_propres" p1="André" p2="Andreu" />
+  <macro name="noms_propres" p1="Anselme" p2="Anselm" />
   <macro name="noms_propres" p1="Antoine" p2="Antoine" />
   <macro name="noms_propres" p1="Armengol" p2="Ermengol" />
   <macro name="noms_propres" p1="Baudouin" p2="Balduí" />

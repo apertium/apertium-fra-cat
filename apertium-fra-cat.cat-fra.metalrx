@@ -8403,6 +8403,33 @@
     <match lemma="instància" tags="n.*"><select lemma="ressort"/></match>
   </rule>
 
+  <!-- au pair >> au pair, jeune fille au pair -->
+  <!-- au-pair >> au pair, jeune fille au pair -->
+  <rule weight="0.8">
+    <or>
+      <match lemma="au pair" tags="n.*"><select lemma="au pair"/></match>
+      <match lemma="au-pair" tags="n.*"><select lemma="au pair"/></match>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="det.*.f.*"/>
+      <match tags="num.f.*"/>
+    </or>
+    <or>
+      <match lemma="au pair" tags="n.*"><select lemma="jeune fille au pair"/></match>
+      <match lemma="au-pair" tags="n.*"><select lemma="jeune fille au pair"/></match>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="au pair" tags="n.*"><select lemma="jeune fille au pair"/></match>
+      <match lemma="au-pair" tags="n.*"><select lemma="jeune fille au pair"/></match>
+    </or>
+    <match tags="adj.f.*"/>
+  </rule>
+
+
   <!-- competència >> concurrence, compétence -->
   <rule weight="0.8">
     <match lemma="competència" tags="n.*"><select lemma="concurrence"/></match>
@@ -11827,6 +11854,7 @@
   <macro name="noms_propis" p1="Alfons" p2="Alphonse" />
   <macro name="noms_propis" p1="Amadeu" p2="Amédée" />
   <macro name="noms_propis" p1="Andreu" p2="André" />
+  <macro name="noms_propis" p1="Anselm" p2="Anselme" />
   <macro name="noms_propis" p1="Antoni" p2="Antoine" />
   <macro name="noms_propis" p1="Balduí" p2="Baudouin" />
   <macro name="noms_propis" p1="Benet" p2="Benoît" />
