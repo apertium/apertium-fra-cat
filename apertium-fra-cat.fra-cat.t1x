@@ -80,6 +80,10 @@
       <cat-item tags="adv"/>
       <cat-item tags="preadv"/>
     </def-cat>
+    <def-cat n="adv_cnjadv">
+      <cat-item tags="adv"/>
+      <cat-item tags="cnjadv"/>
+    </def-cat>
     <def-cat n="cnjsub">
       <cat-item tags="cnjsub"/>
     </def-cat>
@@ -8380,10 +8384,10 @@ is not applicable because gender and number cannot be taken from previous rules 
     </rule>
 
 
-    <rule comment="REGLA:VERB adv PREP DET (avoir toujours des: tenir encara)">
+    <rule comment="REGLA:VERB adv_cnjadv PREP DET (avoir toujours des: tenir encara, sont donc des enfants: sont doncs nens)">
       <pattern>
         <pattern-item n="verb"/>
-        <pattern-item n="adv"/>
+        <pattern-item n="adv_cnjadv"/>
         <pattern-item n="deprep"/>
         <pattern-item n="detdefpl"/>
       </pattern>
@@ -9382,7 +9386,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="verb"/>
-        <pattern-item n="adv"/>
+        <pattern-item n="adv_cnjadv"/>
         <pattern-item n="deprep"/>
         <pattern-item n="detdefpl"/>
       </pattern>
@@ -9490,7 +9494,7 @@ is not applicable because gender and number cannot be taken from previous rules 
         <pattern-item n="prnsubj"/>
         <pattern-item n="verb"/>
         <pattern-item n="adv"/>
-        <pattern-item n="adv"/>
+        <pattern-item n="adv_cnjadv"/>
         <pattern-item n="deprep"/>
         <pattern-item n="detdefpl"/>
       </pattern>
