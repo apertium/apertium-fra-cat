@@ -293,6 +293,9 @@
       <cat-item tags="vbhaver.*.p2.*"/>
       <cat-item tags="vbhaver.*.p3.*"/>
     </def-cat>
+    <def-cat n="haver_p3">
+      <cat-item tags="vbhaver.*.p3.*"/>
+    </def-cat>
     <def-cat n="estar_conj">
       <cat-item lemma="estar" tags="vblex.*.p1.*"/>
       <cat-item lemma="estar" tags="vblex.*.p2.*"/>
@@ -305,6 +308,15 @@
       <cat-item lemma="voler" tags="vblex.*.p1.*"/>
       <cat-item lemma="voler" tags="vblex.*.p2.*"/>
       <cat-item lemma="voler" tags="vblex.*.p3.*"/>
+    </def-cat>
+    <def-cat n="poder_inf">
+      <cat-item lemma="poder" tags="vbmod.inf"/>
+    </def-cat>
+    <def-cat n="poder_pp">
+      <cat-item lemma="poder" tags="vbmod.pp.*"/>
+    </def-cat>
+    <def-cat n="poder_p3">
+      <cat-item lemma="poder" tags="vbmod.*.p3.*"/>
     </def-cat>
     <def-cat n="verbnp">
       <cat-item tags="vblex.inf"/>
@@ -784,6 +796,9 @@
     </def-cat>
     <def-cat n="anarpri">
       <cat-item lemma="anar" tags="vblex.pri.*"/>
+    </def-cat>
+    <def-cat n="anarprip3">
+      <cat-item lemma="anar" tags="vblex.pri.p3.*"/>
     </def-cat>
     <def-cat n="molt">
       <cat-item lemma="molt" tags="preadv"/>
@@ -15303,6 +15318,139 @@ is not applicable because gender and number can not be taken from previous rules
             <clip pos="3" side="tl" part="lemq"/>
           </lu>
         </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: es + poder -> on + pouvoir ">
+      <pattern>
+        <pattern-item n="es"/>
+        <pattern-item n="poder_p3"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test>
+              <and>
+                <equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="on"/></equal>
+                <equal><clip pos="2" side="sl" part="persona"/><lit-tag v="p3"/></equal>
+                <equal><clip pos="2" side="sl" part="nbr"/><lit-tag v="pl"/></equal>
+              </and>
+            </test>
+            <let><clip pos="2" side="tl" part="nbr"/><lit-tag v="sg"/></let>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: es + haver + pogut -> on + avoir + pu ">
+      <pattern>
+        <pattern-item n="es"/>
+        <pattern-item n="haver_p3"/>
+        <pattern-item n="poder_pp"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test>
+              <and>
+                <equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="on"/></equal>
+                <equal><clip pos="2" side="sl" part="persona"/><lit-tag v="p3"/></equal>
+                <equal><clip pos="2" side="sl" part="nbr"/><lit-tag v="pl"/></equal>
+              </and>
+            </test>
+            <let><clip pos="2" side="tl" part="nbr"/><lit-tag v="sg"/></let>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="regla: es + anar + poder_inf -> on + avoir + pu ">
+      <pattern>
+        <pattern-item n="es"/>
+        <pattern-item n="anarprip3"/>
+        <pattern-item n="poder_inf"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test>
+              <equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="on"/></equal>
+            </test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <get-case-from pos="2">
+                  <lit v="avoir"/>
+                </get-case-from>
+                <lit-tag v="vbhaver.pri.p3.sg"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="a_verb"/>
+                <lit-tag v="pp"/>
+                <lit-tag v="m"/>
+                <lit-tag v="sg"/>
+                <clip pos="3" side="tl" part="lemq"/>
+               </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <get-case-from pos="2">
+                  <lit v="être"/>
+                </get-case-from>
+                <lit-tag v="vbser.pri.p3"/>
+                <clip pos="2" side="tl" part="nbr"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="a_verb"/>
+                <lit-tag v="pp"/>
+                <lit-tag v="m"/>
+                <clip pos="2" side="tl" part="nbr"/>
+                <clip pos="3" side="tl" part="lemq"/>
+               </lu>
+            </out>
+          </otherwise>
+        </choose>
       </action>
     </rule>
 
