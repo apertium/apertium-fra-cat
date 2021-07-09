@@ -1673,6 +1673,51 @@
   </rule>
 -->
 
+  <rule weight="1.0">
+    <or>
+      <match lemma="que" tags="rel.an.*"><select lemma="que"/></match>
+      <match tags="cnjsub"/>
+      <match tags="cm"/>
+      <match tags="sent"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <match lemma="poder" tags="vbmod.*.p3.*"/>
+    <match tags="vblex.inf"/>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="que" tags="rel.an.*"><select lemma="que"/></match>
+      <match tags="cnjsub"/>
+      <match tags="cm"/>
+      <match tags="sent"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <match tags="vbhaver.*.p3.*"/>
+    <match lemma="poder" tags="vbmod.pp.*"/>
+    <match tags="vblex.inf"/>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="que" tags="rel.an.*"><select lemma="que"/></match>
+      <match tags="cnjsub"/>
+      <match tags="cm"/>
+      <match tags="sent"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <match lemma="anar" tags="vbmod.pri.p3.*"/>
+    <match lemma="poder" tags="vbmod.inf"/>
+    <match tags="vblex.inf"/>
+  </rule>
+
   <rule weight="2.2">
     <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
     <match lemma="tornar" tags="vblex.*.p3.sg"/>
@@ -3691,11 +3736,15 @@
   </rule>
 
   <!-- a casa seva >> chez lui, chez elle, chez eux, chez elles, chez soi -->
+  <!-- a ca seva >> chez lui, chez elle, chez eux, chez elles, chez soi -->
   <rule weight="0.8">
-    <match lemma="a casa seva" tags="adv"><select lemma="chez lui"/></match>
+    <or>
+      <match lemma="a casa seva" tags="adv"><select lemma="chez lui"/></match>
+      <match lemma="a ca seva" tags="adv"><select lemma="chez lui"/></match>
+    </or>
   </rule>
 
-  <!-- debades >> en vain, gratis -->
+  <!-- debades >> en vain, gratuitement -->
   <rule weight="0.8">
     <match lemma="debades" tags="adv"><select lemma="en vain"/></match>
   </rule>
@@ -3969,6 +4018,12 @@
     <match lemma="quedar" tags="vblex.*"/>
     <match lemma="provar" tags="vblex.pp.*"><select lemma="prouver"/></match>
   </rule>
+
+  <!-- albergar >> héberger, loger -->
+  <macro name="verb_nopron_pron" p1="albergar" p2="héberger" p3="loger" />
+
+  <!-- hostatjar >> héberger, loger -->
+  <macro name="verb_nopron_pron" p1="hostatjar" p2="héberger" p3="loger" />
 
   <!-- tornar >> revenir, devenir -->
   <macro name="verb_nopron_pron" p1="tornar" p2="revenir" p3="devenir" />
@@ -6350,6 +6405,29 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- elevat >> élevé, haut -->
+  <rule weight="0.8">
+    <match lemma="elevat" tags="adj.*"><select lemma="élevé"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="elevat" tags="adj.*"><select lemma="haut"/></match>
+    <match tags="n.*"/>
+  </rule>
+
+  <!-- maliciós >> malicieux, malveillant -->
+  <rule weight="0.8">
+    <match lemma="maliciós" tags="adj.*"><select lemma="malicieux"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="programari" tags="n.*"/>
+      <match lemma="software" tags="n.*"/>
+      <match lemma="soft" tags="n.*"/>
+      <match lemma="programa" tags="n.*"/>
+    </or>
+    <match lemma="maliciós" tags="adj.*"><select lemma="malveillant"/></match>
+  </rule>
+
   <!-- passat >> passé, dernier -->
   <rule weight="0.8">
     <match lemma="passat" tags="adj.*"><select lemma="passé"/></match>
@@ -7051,6 +7129,35 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- antiquitat >> antiquité, ancienneté -->
+  <rule weight="0.8">
+    <match lemma="antiquitat" tags="n.*"><select lemma="antiquité"/></match>
+  </rule>
+
+  <!-- penal >> tir# au but, penalty, pénalty -->
+  <rule weight="0.8">
+    <match lemma="penal" tags="n.*"><select lemma="tir# au but"/></match>
+  </rule>
+
+  <!-- escata >> écaille, squame -->
+  <rule weight="0.8">
+    <match lemma="escata" tags="n.*"><select lemma="écaille"/></match>
+  </rule>
+
+  <!-- esbandida >> débarras, rinçage -->
+  <!-- esbaldida >> débarras, rinçage -->
+  <rule weight="0.8">
+    <or>
+      <match lemma="esbandida" tags="n.*"><select lemma="débarras"/></match>
+      <match lemma="esbaldida" tags="n.*"><select lemma="débarras"/></match>
+    </or>
+  </rule>
+
+  <!-- escama >> écaille, squame -->
+  <rule weight="0.8">
+    <match lemma="escama" tags="n.*"><select lemma="écaille"/></match>
+  </rule>
 
   <!-- revés >> envers, revers -->
   <rule weight="0.8">

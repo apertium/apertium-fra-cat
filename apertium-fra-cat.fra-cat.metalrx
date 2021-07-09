@@ -3546,6 +3546,11 @@
 
 <!-- **************** V **************** -->
 
+  <!-- larguer >> deixar# anar, arriar, amollar -->
+  <rule weight="0.8">
+    <match lemma="larguer" tags="vblex.*"><select lemma="deixar# anar"/></match>
+  </rule>
+
   <!-- essuyer >> eixugar, patir -->
   <rule weight="0.8">
     <match lemma="essuyer" tags="vblex.*"><select lemma="eixugar"/></match>
@@ -6170,7 +6175,10 @@
       <match tags="num"/>
       <match tags="num.*"/>
     </or>
-    <match lemma="œuf" tags="n.*"/>
+    <or>
+      <match lemma="œuf" tags="n.*"/>
+      <match lemma="record" tags="n.*"/>
+    </or>
   </rule>
   <rule weight="1.2">
     <match lemma="cœur" tags="n.*"/>
@@ -7093,6 +7101,11 @@
   <rule weight="1.0">
     <match tags="det.ind.*"/>
     <match lemma="revers" tags="n.*"><select lemma="revés"/></match>
+  </rule>
+
+  <!-- tir# au but >> rematada, penal -->
+  <rule weight="0.8">
+    <match lemma="tir# au but" tags="n.*"><select lemma="rematada"/></match>
   </rule>
 
   <!-- poignée >> grapat, pom, maneta, empunyadura -->
@@ -10548,6 +10561,8 @@
       <match lemma="avion" tags="n.*"/>
       <match lemma="avionnette" tags="n.*"/>
       <match lemma="hélicoptère" tags="n.*"/>
+      <match lemma="missile" tags="n.*"/>
+      <match lemma="drone" tags="n.*"/>
       <match lemma="ballon" tags="n.*"/>
       <match lemma="ballon dirigeable" tags="n.*"/>
       <match lemma="zeppelin" tags="n.*"/>
@@ -10582,6 +10597,8 @@
       <match lemma="avion" tags="n.*"/>
       <match lemma="avionnette" tags="n.*"/>
       <match lemma="hélicoptère" tags="n.*"/>
+      <match lemma="missile" tags="n.*"/>
+      <match lemma="drone" tags="n.*"/>
       <match lemma="ballon" tags="n.*"/>
       <match lemma="ballon dirigeable" tags="n.*"/>
       <match lemma="zeppelin" tags="n.*"/>
@@ -13378,6 +13395,20 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- malveillant >> malèvol, maliciós -->
+  <rule weight="0.8">
+    <match lemma="malveillant" tags="adj.*"><select lemma="malèvol"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="logiciel" tags="n.*"/>
+      <match lemma="software" tags="n.*"/>
+      <match lemma="soft" tags="n.*"/>
+      <match lemma="programme" tags="n.*"/>
+    </or>
+    <match lemma="malveillant" tags="adj.*"><select lemma="maliciós"/></match>
+  </rule>
+
   <!-- gros >> gros, gruix -->
   <rule weight="0.8">
     <match lemma="gros" tags="adj.*"><select lemma="gros"/></match>
@@ -13849,7 +13880,7 @@
       <match lemma="beau-frère" tags="n.*"/>
       <match lemma="beau-fils" tags="n.*"/>
 -->
-      <match tags="n..*"/>
+      <match tags="n.*"/>
       <match tags="np.top.*"/>
     </or>
   </rule>
@@ -13858,6 +13889,10 @@
     <or>
       <match lemma="monsieur" tags="n.*"/>
       <match lemma="madame" tags="n.*"/>
+      <match lemma="mademoiselle" tags="n.*"/>
+      <match lemma="M." tags="n.*"/>
+      <match lemma="Mme" tags="n.*"/>
+      <match lemma="Mlle" tags="n.*"/>
       <match lemma="ami" tags="n.*"/>
       <match lemma="collègue" tags="n.*"/>
       <match tags="np.ant.*"/>
