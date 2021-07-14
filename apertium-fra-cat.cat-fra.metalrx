@@ -1023,6 +1023,7 @@
     <or>
       <match tags="rel.*"/>
       <match tags="pr"/>
+      <match tags="vblex.pp.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -3350,6 +3351,16 @@
     </repeat>
     <match lemma="de" tags="pr"><select lemma="avec"/></match>
   </rule>
+  <rule weight="1.0">
+    <match lemma="prescindir" tags="vblex.*"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="prn.enc.*"/>
+        <match tags="adv"/>
+      </or>
+    </repeat>
+    <match lemma="de" tags="pr"><select lemma="à"/></match>
+  </rule>
 
   <!-- a >> à, en, dans, de, sur, chez -->
   <rule weight="0.8">
@@ -5325,9 +5336,25 @@
 
   <!-- acostumar >> avoir# l'habitude, habituer -->
   <macro name="verb_nopron_pron" p1="acostumar" p2="avoir# l'habitude" p3="habituer"/>
+  <rule weight="1.2">
+    <or>
+      <match tags="n.*"/>
+      <match tags="adj.*"/>
+      <match tags="prn.*"/>
+    </or>
+    <match lemma="acostumar" tags="vblex.pp.*"><select lemma="habituer"/></match>
+  </rule>
 
   <!-- acostumar# a >> avoir# l'habitude de, habituer# à -->
   <macro name="verb_nopron_pron" p1="acostumar# a" p2="avoir# l'habitude de" p3="habituer# à"/>
+  <rule weight="1.2">
+    <or>
+      <match tags="n.*"/>
+      <match tags="adj.*"/>
+      <match tags="prn.*"/>
+    </or>
+    <match lemma="acostumar# a" tags="vblex.pp.*"><select lemma="habituer# à"/></match>
+  </rule>
 
   <!-- acovardir >> intimider, troubler -->
   <macro name="verb_nopron_pron" p1="acovardir" p2="intimider" p3="troubler"/>
@@ -6138,6 +6165,12 @@
     </or>
     <match lemma="esclatar" tags="vblex.*"><select lemma="éclater"/></match>
   </rule>
+
+  <!-- collar >> donner# un tour de vis, donner# un tour de vis à -->
+  <macro name="verb_intrans_trans" p1="collar" p2="donner# un tour de vis" p3="donner# un tour de vis à" />
+
+  <!-- fer# passar per l'adreçador >> serrer# la vis, serrer# la vis à -->
+  <macro name="verb_intrans_trans" p1="fer# passar per l'adreçador" p2="serrer# la vis" p3="serrer# la vis à" />
 
   <!-- encaixar >> emboîter, accorder, encaisser -->
   <macro name="verb_intrans_trans" p1="encaixar" p2="accorder" p3="encaisser" />
