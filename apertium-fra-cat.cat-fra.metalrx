@@ -11141,6 +11141,11 @@
       <match lemma="hongarès" tags="adj.*"/>
     </or>
   </rule>
+  <rule weight="1.0">
+    <match lemma="baralla" tags="n.*"><select lemma="jeu# de cartes"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="pòquer" tags="n.*"/>
+  </rule>
 
   <!-- coll >> cou, col -->
   <rule weight="0.8">

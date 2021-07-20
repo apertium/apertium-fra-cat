@@ -3853,6 +3853,11 @@
   <rule weight="1.0">
     <match lemma="charger" tags="vblex.*"><select lemma="encarregar"/></match>
     <match lemma="de" tags="pr"/>
+    <match tags="det.def.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="charger" tags="vblex.*"><select lemma="encarregar"/></match>
+    <match lemma="de" tags="pr"/>
     <repeat from="0" upto="1">
       <match tags="det.def.*"/>
     </repeat>
@@ -6200,6 +6205,7 @@
   <rule weight="0.8">
     <match lemma="tourner" tags="vblex.*"><select lemma="girar"/></match>
   </rule>
+<!--
   <rule weight="1.0">
     <match lemma="tourner" tags="vblex.*"><select lemma="rodar"/></match>
     <repeat from="0" upto="2">
@@ -6285,6 +6291,97 @@
       <match lemma="court-métrage" tags="n.*"/>
       <match lemma="documentaire" tags="n.*"/>
     </or>
+  </rule>
+-->
+  <rule weight="1.0">
+    <match lemma="tourner" tags="vblex.*"><select lemma="rodar" tags="vblex.*"/></match>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="film" tags="n.*"/>
+      <match lemma="téléfilm" tags="n.*"/>
+      <match lemma="spot" tags="n.*"/>
+      <match lemma="vidéo" tags="n.*"/>
+      <match lemma="long-métrage" tags="n.*"/>
+      <match lemma="court-métrage" tags="n.*"/>
+      <match lemma="documentaire" tags="n.*"/>
+      <match lemma="scène" tags="n.*"/>
+      <match lemma="tournage" tags="n.*"/>
+      <match lemma="pellicule" tags="n.*"/>
+      <match lemma="Metro-Goldwyn-Mayer" tags="np.*"/>
+      <match lemma="Pathé" tags="np.*"/>
+      <match lemma="Gaumont" tags="np.*"/>
+      <match lemma="Hitchcock" tags="np.*"/>
+      <match lemma="Godard" tags="np.*"/>
+      <match lemma="Renoir" tags="np.*"/>
+      <match lemma="Polanski" tags="np.*"/>
+      <match lemma="Costa-Gavras" tags="np.*"/>
+      <match lemma="Tavernier" tags="np.*"/>
+      <match lemma="Ophüls" tags="np.*"/>
+      <match lemma="Spielberg" tags="np.*"/>
+      <match lemma="Lucas" tags="np.*"/>
+      <match lemma="Coppola" tags="np.*"/>
+      <match lemma="Lynch" tags="np.*"/>
+      <match lemma="Scorsese" tags="np.*"/>
+      <match lemma="Tarantino" tags="np.*"/>
+      <match lemma="Eastwood" tags="np.*"/>
+      <match lemma="Coen" tags="np.*"/>
+      <match lemma="Malick" tags="np.*"/>
+      <match lemma="Nolan" tags="np.*"/>
+      <match lemma="Burton" tags="np.*"/>
+      <match lemma="Allen" tags="np.*"/>
+      <match lemma="Ford" tags="np.*"/>
+      <match lemma="Chaplin" tags="np.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="film" tags="n.*"/>
+      <match lemma="téléfilm" tags="n.*"/>
+      <match lemma="spot" tags="n.*"/>
+      <match lemma="vidéo" tags="n.*"/>
+      <match lemma="long-métrage" tags="n.*"/>
+      <match lemma="court-métrage" tags="n.*"/>
+      <match lemma="documentaire" tags="n.*"/>
+      <match lemma="scène" tags="n.*"/>
+      <match lemma="tournage" tags="n.*"/>
+      <match lemma="pellicule" tags="n.*"/>
+      <match lemma="Metro-Goldwyn-Mayer" tags="np.*"/>
+      <match lemma="Pathé" tags="np.*"/>
+      <match lemma="Gaumont" tags="np.*"/>
+      <match lemma="Hitchcock" tags="np.*"/>
+      <match lemma="Godard" tags="np.*"/>
+      <match lemma="Renoir" tags="np.*"/>
+      <match lemma="Polanski" tags="np.*"/>
+      <match lemma="Costa-Gavras" tags="np.*"/>
+      <match lemma="Tavernier" tags="np.*"/>
+      <match lemma="Ophüls" tags="np.*"/>
+      <match lemma="Spielberg" tags="np.*"/>
+      <match lemma="Lucas" tags="np.*"/>
+      <match lemma="Coppola" tags="np.*"/>
+      <match lemma="Lynch" tags="np.*"/>
+      <match lemma="Scorsese" tags="np.*"/>
+      <match lemma="Tarantino" tags="np.*"/>
+      <match lemma="Eastwood" tags="np.*"/>
+      <match lemma="Coen" tags="np.*"/>
+      <match lemma="Malick" tags="np.*"/>
+      <match lemma="Nolan" tags="np.*"/>
+      <match lemma="Burton" tags="np.*"/>
+      <match lemma="Allen" tags="np.*"/>
+      <match lemma="Ford" tags="np.*"/>
+      <match lemma="Chaplin" tags="np.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="tourner" tags="vblex.*"><select lemma="rodar" tags="vblex.*"/></match>
   </rule>
 
   <!-- décrocher >> sonar, picar -->
