@@ -7163,6 +7163,11 @@
 
 <!-- **************** N **************** -->
 
+  <!-- pregadeu >> mante religieuse, prie-Dieu -->
+  <rule weight="0.8">
+    <match lemma="pregadeu" tags="n.*"><select lemma="mante religieuse"/></match>
+  </rule>
+
   <!-- antiquitat >> antiquité, ancienneté -->
   <rule weight="0.8">
     <match lemma="antiquitat" tags="n.*"><select lemma="antiquité"/></match>
