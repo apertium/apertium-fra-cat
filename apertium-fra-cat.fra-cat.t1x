@@ -635,6 +635,19 @@
       <cat-item tags="sent"/>
     </def-cat>
 
+    <def-cat n="tout">
+      <cat-item lemma="tout" tags="det.*"/>
+      <cat-item lemma="tout" tags="predet.*"/>
+      <cat-item lemma="tout" tags="prn.*"/>
+      <cat-item lemma="tout" tags="preadv"/>
+      <cat-item lemma="tout" tags="adv"/>
+    </def-cat>
+    <def-cat n="juste">
+      <cat-item lemma="juste" tags="adj.*"/>
+      <cat-item lemma="juste" tags="n.*"/>
+      <cat-item lemma="juste" tags="adv"/>
+    </def-cat>
+
     <def-cat n="jour_n">
       <cat-item lemma="lundi" tags="n.*"/>
       <cat-item lemma="mardi" tags="n.*"/>
@@ -17292,6 +17305,44 @@ is not applicable because gender and number cannot be taken from previous rules 
           </lu>
         </out>
         <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: tout juste PP > acabat de INF">
+      <pattern>
+        <pattern-item n="tout"/>
+        <pattern-item n="juste"/>
+        <pattern-item n="pp"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord3">
+          <with-param pos="3"/>
+          <with-param pos="1"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+               <lit v="acabar"/>
+            </get-case-from>
+            <lit-tag v="vblex"/>
+            <lit-tag v="pp"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <lit v="de"/>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="a_verb"/>
+	    <lit-tag v="inf"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
       </action>
     </rule>
 
