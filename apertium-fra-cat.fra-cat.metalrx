@@ -14749,6 +14749,8 @@
       <match lemma="avérer" tags="vblex.pp.*"/>
       <match lemma="basé" tags="adj.*"/>
       <match lemma="baser" tags="vblex.pp.*"/>
+      <match lemma="classé" tags="adj.*"/>
+      <match lemma="classer" tags="vblex.pp.*"/>
       <match lemma="coincé" tags="adj.*"/>
       <match lemma="coincer" tags="vblex.pp.*"/>
       <match lemma="content" tags="adj.*"/>
@@ -14799,6 +14801,10 @@
       <match lemma="fermer" tags="vblex.pp.*"/>
       <match lemma="fini" tags="adj.*"/>
       <match lemma="finir" tags="vblex.pp.*"/>
+<!--
+      <match lemma="groupé" tags="adj.*"/>
+      <match lemma="grouper" tags="vblex.pp.*"/>
+-->
       <match lemma="hâté" tags="adj.*"/>
       <match lemma="hâter" tags="vblex.pp.*"/>
       <match lemma="immunisé" tags="adj.*"/>
@@ -14837,6 +14843,12 @@
       <match lemma="redécorer" tags="vblex.pp.*"/>
       <match lemma="réglementé" tags="adj.*"/>
       <match lemma="réglementer" tags="vblex.pp.*"/>
+<!--
+      <match lemma="regroupé" tags="adj.*"/>
+      <match lemma="regrouper" tags="vblex.pp.*"/>
+-->
+      <match lemma="régulé" tags="adj.*"/>
+      <match lemma="réguler" tags="vblex.pp.*"/>
       <match lemma="représenté" tags="adj.*"/>
       <match lemma="représenter" tags="vblex.pp.*"/>
       <match lemma="satisfait" tags="adj.*"/>
