@@ -3546,6 +3546,11 @@
 
 <!-- **************** V **************** -->
 
+  <!-- alléguer >> al·legar, adduir -->
+  <rule weight="0.8">
+    <match lemma="alléguer" tags="vblex.*"><select lemma="al·legar"/></match>
+  </rule>
+
   <!-- filouter >> enredar, robar -->
   <rule weight="0.8">
     <match lemma="filouter" tags="vblex.*"><select lemma="enredar"/></match>
@@ -11997,11 +12002,11 @@
     <match lemma="mise" tags="n.*"><select lemma="aposta"/></match>
   </rule>
   <rule weight="1.0">
-    <match lemma="mise" tags="n.*"><select lemma="aposta"/></match>
+    <match lemma="mise" tags="n.*"><select lemma="posada"/></match>
     <match lemma="à" tags="pr"/>
   </rule>
   <rule weight="1.0">
-    <match lemma="mise" tags="n.*"><select lemma="aposta"/></match>
+    <match lemma="mise" tags="n.*"><select lemma="posada"/></match>
     <match lemma="en" tags="pr"/>
   </rule>
 
@@ -13366,6 +13371,13 @@
       <match tags="adv"/>
     </repeat>
     <match tags="adj.*"/>
+  </rule>
+  <rule weight="2.0">
+    <match lemma="prix" tags="n.*"><select lemma="premi"/></match>
+    <or>
+      <match lemma="masculin" tags="adj.*"/>
+      <match lemma="féminin" tags="adj.*"/>
+    </or>
   </rule>
   <rule weight="1.0">
     <match lemma="le" tags="det.*"/>
@@ -15311,6 +15323,14 @@
     <match lemma="però" tags="cnjcoo"/>
     <match lemma="pas" tags="adv"><select lemma="no"/></match>
     <match tags="vblex.pp.*"/>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="sent"/>
+      <match tags="cm"/>
+    </or>
+    <match lemma="pas" tags="adv"><select lemma="no"/></match>
+    <match tags="adv"/>
   </rule>
   <rule weight="1.0">
     <match lemma="pas" tags="adv"><select lemma="no"/></match>
