@@ -5345,6 +5345,9 @@
   <!-- grouiller >> formiguejar, afanyar -->
   <macro name="verb_nopron_pron" p1="grouiller" p2="formiguejar" p3="afanyar"/>
 
+  <!-- écraser >> aixafar, estavellar -->
+  <macro name="verb_nopron_pron" p1="écraser" p2="aixafar" p3="estavellar" />
+
   <!-- débarrasser >> desembarassar, desparar -->
   <macro name="verb_nopron_pron" p1="débarrasser" p2="desembarassar" p3="desfer" />
   <rule weight="1.2">
