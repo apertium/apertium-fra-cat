@@ -7166,6 +7166,21 @@
 
 <!-- **************** N **************** -->
 
+  <!-- viabilitat >> faisabilité, viabilité -->
+  <rule weight="0.8">
+    <match lemma="viabilitat" tags="n.*"><select lemma="faisabilité"/></match>
+  </rule>
+
+  <!-- moma >> aubaine, magot, pognon -->
+  <rule weight="0.8">
+    <match lemma="moma" tags="n.*"><select lemma="aubaine"/></match>
+  </rule>
+
+  <!-- pasta >> pâte, fric, pognon -->
+  <rule weight="0.8">
+    <match lemma="pasta" tags="n.*"><select lemma="pâte"/></match>
+  </rule>
+
   <!-- pregadeu >> mante religieuse, prie-Dieu -->
   <rule weight="0.8">
     <match lemma="pregadeu" tags="n.*"><select lemma="mante religieuse"/></match>

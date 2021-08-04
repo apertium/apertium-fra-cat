@@ -7204,6 +7204,11 @@
 
 <!-- **************** N **************** -->
 
+  <!-- pognon >> pasta, moma, calés, etc. -->
+  <rule weight="0.8">
+    <match lemma="pognon" tags="n.*"><select lemma="pasta"/></match>
+  </rule>
+
   <!-- rafraîchissement >> refrescament, refresc -->
   <rule weight="0.8">
     <match lemma="rafraîchissement" tags="n.*"><select lemma="refresc"/></match>
