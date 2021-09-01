@@ -532,6 +532,7 @@
       <cat-item lemma="reposer" tags="vblex.*"/>
       <cat-item lemma="serrer# la main" tags="vblex.*"/>
       <cat-item lemma="taire" tags="vblex.*"/>
+      <cat-item lemma="tirer# d'affaire" tags="vblex.*"/>
     </def-cat>
     <def-cat n="verbospron_pp">
       <cat-item lemma="asseoir" tags="vblex.pp.*"/>
@@ -548,6 +549,7 @@
       <cat-item lemma="reposer" tags="vblex.pp.*"/>
       <cat-item lemma="serrer# la main" tags="vblex.pp.*"/>
       <cat-item lemma="taire" tags="vblex.pp.*"/>
+      <cat-item lemma="tirer# d'affaire" tags="vblex.pp.*"/>
     </def-cat>
     <def-cat n="verbospron_inf">
       <cat-item lemma="asseoir" tags="vblex.inf"/>
@@ -564,6 +566,7 @@
       <cat-item lemma="reposer" tags="vblex.inf"/>
       <cat-item lemma="serrer# la main" tags="vblex.inf"/>
       <cat-item lemma="taire" tags="vblex.inf"/>
+      <cat-item lemma="tirer# d'affaire" tags="vblex.inf"/>
     </def-cat>
     <def-cat n="verbospron_ger">
       <cat-item lemma="asseoir" tags="vblex.ger"/>
@@ -580,6 +583,7 @@
       <cat-item lemma="reposer" tags="vblex.ger"/>
       <cat-item lemma="serrer# la main" tags="vblex.ger"/>
       <cat-item lemma="taire" tags="vblex.ger"/>
+      <cat-item lemma="tirer# d'affaire" tags="vblex.ger"/>
     </def-cat>
     <def-cat n="vbambser_pp">
       <cat-item lemma="aller" tags="vblex.pp.*"/>
@@ -1023,6 +1027,7 @@
       <list-item v="reposer"/>
       <list-item v="serrer# la main"/>
       <list-item v="taire"/>
+      <list-item v="tirer# d'affaire"/>
     </def-list>
 
     <def-list n="pays">
@@ -1271,6 +1276,8 @@
 <!--      <list-item v="Émirats arabes unis"/> -->
       <list-item v="Afghanistan"/>
       <list-item v="Pakistan"/>
+      <list-item v="Baloutchistan"/>
+      <list-item v="Sind"/>
       <!-- <list-item v="Inde"/> -->
       <!-- <list-item v="Gujarat"/> -->
       <list-item v="Maharashtra"/>
@@ -1336,6 +1343,7 @@
 <!--      <list-item v="Cameroun"/> -->
       <list-item v="Gabon"/>
       <list-item v="Éthiopie"/>
+      <list-item v="Tigré"/>
       <list-item v="Érythrée"/>
       <list-item v="Somalie"/>
       <list-item v="Somaliland"/>
@@ -1659,6 +1667,8 @@
       <list-item v="nauruan"/>
       <list-item v="maori"/>
       <list-item v="éthiopien"/>
+      <list-item v="afar"/>
+      <list-item v="amhara"/>
       <list-item v="oromo"/>
       <list-item v="somalien"/>
       <list-item v="malgache"/>
@@ -8686,7 +8696,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: ON VERB DES (on croit des choses, es creuen coses)">
+    <rule comment="REGLA: ON VERB DES (on croit des choses > es creuen coses ; on est des Indiens > som indis)">
       <pattern>
         <pattern-item n="on"/>
         <pattern-item n="verb"/>
@@ -8695,36 +8705,56 @@ is not applicable because gender and number cannot be taken from previous rules 
       </pattern>
       <action>
         <let><clip pos="2" side="tl" part="nbr"/><lit-tag v="pl"/></let>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="lemh"/>
-            <clip pos="1" side="tl" part="tags"/>
-            <clip pos="1" side="tl" part="lemq"/>
-          </lu>
-          <b pos="1"/>
-          <lu>
-            <clip pos="2" side="tl" part="lemh"/>
-            <clip pos="2" side="tl" part="tags"/>
-            <clip pos="2" side="tl" part="lemq"/>
-          </lu>
-        </out>
-        <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
         <choose>
           <when>
             <test>
-              <or>
-                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="agir"/></equal>
-                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="parler"/></equal>
-                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="finir"/></equal>
-              </or>
+              <equal><clip pos="2" side="sl" part="a_verb"/><lit-tag v="vbser"/></equal>
             </test>
+            <let><clip pos="2" side="tl" part="persona"/><lit-tag v="p1"/></let>
+            <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
             <out>
-              <b pos="2"/>
               <lu>
-                <clip pos="3" side="tl" part="whole"/>
+                <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="lemh"/>
+                </get-case-from>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
               </lu>
             </out>
           </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lemh"/>
+                <clip pos="1" side="tl" part="tags"/>
+                <clip pos="1" side="tl" part="lemq"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+            </out>
+            <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+            <choose>
+              <when>
+                <test>
+                  <or>
+                    <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="agir"/></equal>
+                    <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="parler"/></equal>
+                    <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="finir"/></equal>
+                  </or>
+                </test>
+                <out>
+                  <b pos="2"/>
+                  <lu>
+                    <clip pos="3" side="tl" part="whole"/>
+                  </lu>
+                </out>
+              </when>
+            </choose>
+          </otherwise>
         </choose>
         <!-- partial reset of variables -->
         <let><var n="genero"/><lit-tag v="m"/></let>
@@ -16908,6 +16938,93 @@ is not applicable because gender and number cannot be taken from previous rules 
             <clip pos="3" side="tl" part="whole"/>
           </lu>
         </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: ON NE VERB PAS DES (on ne croit pas des choses, no es creuen coses; on n'est pas des Chinois > no som xinesos)">
+      <pattern>
+        <pattern-item n="on"/>
+        <pattern-item n="neadv"/>
+        <pattern-item n="verbconj"/>
+        <pattern-item n="pas"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="detdefpl"/>
+      </pattern>
+      <action>
+        <let><clip pos="3" side="tl" part="nbr"/><lit-tag v="pl"/></let>
+        <choose>
+          <when>
+            <test>
+              <equal><clip pos="3" side="sl" part="a_verb"/><lit-tag v="vbser"/></equal>
+            </test>
+            <let><clip pos="3" side="tl" part="persona"/><lit-tag v="p1"/></let>
+            <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="lemh"/>
+                </get-case-from>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+              <b pos="3"/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+            </out>
+            <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="1">
+                  <clip pos="2" side="tl" part="lemh"/>
+                </get-case-from>
+                <clip pos="2" side="tl" part="tags"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <get-case-from pos="3">
+                  <clip pos="1" side="tl" part="lemh"/>
+                </get-case-from>
+                <clip pos="1" side="tl" part="tags"/>
+                <clip pos="1" side="tl" part="lemq"/>
+              </lu>
+              <b pos="3"/>
+              <lu>
+                <clip pos="3" side="tl" part="lemh"/>
+                <clip pos="3" side="tl" part="tags"/>
+                <clip pos="3" side="tl" part="lemq"/>
+              </lu>
+            </out>
+            <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+            <!-- per a alguns verbs sí que cal mantenir la preposició "de" -->
+            <choose>
+              <when>
+                <test>
+                  <or>
+                    <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="agir"/></equal>
+                    <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="parler"/></equal>
+                    <equal caseless="yes"><clip pos="3" side="sl" part="lem"/><lit v="finir"/></equal>
+                  </or>
+                </test>
+                <out>
+                  <b pos="4"/>
+                  <lu>
+                    <clip pos="5" side="tl" part="whole"/>
+                  </lu>
+                </out>
+              </when>
+            </choose>
+          </otherwise>
+        </choose>
+        <call-macro n="f_bcond"><with-param pos="5"/><with-param pos="6"/></call-macro>
+        <!-- partial reset of variables -->
+        <let><var n="genero"/><lit-tag v="m"/></let>
+        <let><var n="numero"/><lit-tag v="pl"/></let>
       </action>
     </rule>
 
