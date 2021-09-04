@@ -301,6 +301,14 @@
       <cat-item lemma="estar" tags="vblex.*.p2.*"/>
       <cat-item lemma="estar" tags="vblex.*.p3.*"/>
     </def-cat>
+    <def-cat n="estar_portar_conj">
+      <cat-item lemma="estar" tags="vblex.*.p1.*"/>
+      <cat-item lemma="estar" tags="vblex.*.p2.*"/>
+      <cat-item lemma="estar" tags="vblex.*.p3.*"/>
+      <cat-item lemma="portar" tags="vblex.*.p1.*"/>
+      <cat-item lemma="portar" tags="vblex.*.p2.*"/>
+      <cat-item lemma="portar" tags="vblex.*.p3.*"/>
+    </def-cat>
     <def-cat n="tenir_voler_conj">
       <cat-item lemma="tenir" tags="vblex.*.p1.*"/>
       <cat-item lemma="tenir" tags="vblex.*.p2.*"/>
@@ -344,6 +352,10 @@
     <def-cat n="estarinf">
       <cat-item lemma="estar" tags="vblex.inf"/>
     </def-cat>
+    <def-cat n="estar_portar_inf">
+      <cat-item lemma="estar" tags="vblex.inf"/>
+      <cat-item lemma="portar" tags="vblex.inf"/>
+    </def-cat>
     <def-cat n="anarinf">
       <cat-item lemma="anar" tags="vblex.inf"/>
     </def-cat>
@@ -383,6 +395,10 @@
     </def-cat>
     <def-cat n="estarpp">
       <cat-item lemma="estar" tags="vblex.pp.*"/>
+    </def-cat>
+    <def-cat n="estar_portar_pp">
+      <cat-item lemma="estar" tags="vblex.pp.*"/>
+      <cat-item lemma="portar" tags="vblex.pp.*"/>
     </def-cat>
     <def-cat n="ppf">
       <cat-item tags="vblex.pp.f.sg"/>
@@ -1512,6 +1528,8 @@
       <list-item v="nauruan"/>
       <list-item v="maori"/>
       <list-item v="éthiopien"/>
+      <list-item v="afar"/>
+      <list-item v="amhara"/>
       <list-item v="oromo"/>
       <list-item v="somalien"/>
       <list-item v="malgache"/>
@@ -1833,6 +1851,8 @@
 <!--      <list-item v="Émirats arabes unis"/> -->
       <list-item v="Afghanistan"/>
       <list-item v="Pakistan"/>
+      <list-item v="Baloutchistan"/>
+      <list-item v="Sind"/>
       <list-item v="Inde"/>
       <list-item v="Bengale"/>
       <list-item v="Gujarat"/>
@@ -1898,6 +1918,7 @@
 <!--      <list-item v="Cameroun"/> -->
       <list-item v="Gabon"/>
       <list-item v="Éthiopie"/>
+      <list-item v="Tigré"/>
       <list-item v="Érythrée"/>
       <list-item v="Somalie"/>
       <list-item v="Somaliland"/>
@@ -17040,7 +17061,7 @@ is not applicable because gender and number can not be taken from previous rules
 <rule comment="regla: haver estarpp ger: han estat cantant > ont été en train de chanter">
    <pattern>
      <pattern-item n="haver"/>
-     <pattern-item n="estarpp"/>
+     <pattern-item n="estar_portar_pp"/>
      <pattern-item n="ger"/>
    </pattern>
    <action>
@@ -17077,7 +17098,7 @@ is not applicable because gender and number can not be taken from previous rules
    <pattern>
      <pattern-item n="noadv"/>
      <pattern-item n="haver"/>
-     <pattern-item n="estarpp"/>
+     <pattern-item n="estar_portar_pp"/>
      <pattern-item n="ger"/>
    </pattern>
    <action>
@@ -17122,7 +17143,7 @@ is not applicable because gender and number can not be taken from previous rules
 <rule comment="regla: anarpri estarinf ger: van estar cantant > ont été en train de chanter">
    <pattern>
      <pattern-item n="anarpri"/>
-     <pattern-item n="estarinf"/>
+     <pattern-item n="estar_portar_inf"/>
      <pattern-item n="ger"/>
    </pattern>
    <action>
@@ -17161,7 +17182,7 @@ is not applicable because gender and number can not be taken from previous rules
    <pattern>
      <pattern-item n="noadv"/>
      <pattern-item n="anarpri"/>
-     <pattern-item n="estarinf"/>
+     <pattern-item n="estar_portar_inf"/>
      <pattern-item n="ger"/>
    </pattern>
    <action>
@@ -23111,7 +23132,7 @@ is not applicable because gender and number can not be taken from previous rules
 
   <rule comment="estar + ger -> être en train de + inf">
       <pattern>
-        <pattern-item n="estar_conj"/>
+        <pattern-item n="estar_portar_conj"/>
         <pattern-item n="ger"/>
       </pattern>
       <action>
@@ -23189,7 +23210,7 @@ is not applicable because gender and number can not be taken from previous rules
 
      <rule comment="estar + ger + enc -> être en train de + enc + inf">
       <pattern>
-        <pattern-item n="estar_conj"/>
+        <pattern-item n="estar_portar_conj"/>
         <pattern-item n="ger"/>
         <pattern-item n="prnenc"/>
       </pattern>
@@ -23275,7 +23296,7 @@ is not applicable because gender and number can not be taken from previous rules
 
  <rule comment="estar GER + enc + enc : être en train de pro pro inf">
       <pattern>
-        <pattern-item n="estar_conj"/>
+        <pattern-item n="estar_portar_conj"/>
         <pattern-item n="ger"/>
         <pattern-item n="prnenc"/>
         <pattern-item n="prnenc"/>
@@ -23376,7 +23397,7 @@ is not applicable because gender and number can not be taken from previous rules
   <rule comment="no estar + ger -> n'être pas en train de + inf">
       <pattern>
         <pattern-item n="noadv"/>
-        <pattern-item n="estar_conj"/>
+        <pattern-item n="estar_portar_conj"/>
         <pattern-item n="ger"/>
       </pattern>
       <action>
@@ -23464,7 +23485,7 @@ is not applicable because gender and number can not be taken from previous rules
   <rule comment="no estar + ger + enc -> n'être pas en train de + pro + inf">
       <pattern>
         <pattern-item n="noadv"/>
-        <pattern-item n="estar_conj"/>
+        <pattern-item n="estar_portar_conj"/>
         <pattern-item n="ger"/>
         <pattern-item n="prnenc"/>
       </pattern>
@@ -23559,7 +23580,7 @@ is not applicable because gender and number can not be taken from previous rules
   <rule comment="SENT + estar + ger -> SENT + être en train de + inf">
       <pattern>
         <pattern-item n="sentquecm"/>
-        <pattern-item n="estar_conj"/>
+        <pattern-item n="estar_portar_conj"/>
         <pattern-item n="ger"/>
       </pattern>
       <action>
@@ -23653,7 +23674,7 @@ is not applicable because gender and number can not be taken from previous rules
      <rule comment="SENT + estar + ger + enc -> SENT + être en train de + enc + inf">
       <pattern>
 	<pattern-item n="sentquecm"/>
-	<pattern-item n="estar_conj"/>
+	<pattern-item n="estar_portar_conj"/>
 	<pattern-item n="ger"/>
       <pattern-item n="prnenc"/>
       </pattern>
@@ -23761,7 +23782,7 @@ is not applicable because gender and number can not be taken from previous rules
  <rule comment="SENT + estar GER + enc + enc : SENT + être en train de pro pro inf">
       <pattern>
 	<pattern-item n="sentquecm"/>
-	<pattern-item n="estar_conj"/>
+	<pattern-item n="estar_portar_conj"/>
 	<pattern-item n="ger"/>
 	<pattern-item n="prnenc"/>
 	<pattern-item n="prnenc"/>
@@ -23868,7 +23889,7 @@ is not applicable because gender and number can not be taken from previous rules
   <rule comment="PRNPROREF estar + ger -> s'être en train de + inf">
       <pattern>
         <pattern-item n="prnproref"/>
-        <pattern-item n="estar_conj"/>
+        <pattern-item n="estar_portar_conj"/>
         <pattern-item n="ger"/>
       </pattern>
       <action>
@@ -23909,7 +23930,7 @@ is not applicable because gender and number can not be taken from previous rules
       <pattern>
         <pattern-item n="noadv"/>
         <pattern-item n="prnproref"/>
-        <pattern-item n="estar_conj"/>
+        <pattern-item n="estar_portar_conj"/>
         <pattern-item n="ger"/>
       </pattern>
       <action>
@@ -23959,7 +23980,7 @@ is not applicable because gender and number can not be taken from previous rules
       <pattern>
 	<pattern-item n="sentquecm"/>
         <pattern-item n="prnproref"/>
-        <pattern-item n="estar_conj"/>
+        <pattern-item n="estar_portar_conj"/>
         <pattern-item n="ger"/>
       </pattern>
       <action>
@@ -24050,7 +24071,7 @@ is not applicable because gender and number can not be taken from previous rules
 	<pattern-item n="sentquecm"/>
 	<pattern-item n="noadv"/>
         <pattern-item n="prnproref"/>
-        <pattern-item n="estar_conj"/>
+        <pattern-item n="estar_portar_conj"/>
         <pattern-item n="ger"/>
       </pattern>
       <action>
