@@ -308,6 +308,9 @@
       <cat-item lemma="portar" tags="vblex.*.p1.*"/>
       <cat-item lemma="portar" tags="vblex.*.p2.*"/>
       <cat-item lemma="portar" tags="vblex.*.p3.*"/>
+      <cat-item lemma="dur" tags="vblex.*.p1.*"/>
+      <cat-item lemma="dur" tags="vblex.*.p2.*"/>
+      <cat-item lemma="dur" tags="vblex.*.p3.*"/>
     </def-cat>
     <def-cat n="tenir_voler_conj">
       <cat-item lemma="tenir" tags="vblex.*.p1.*"/>
@@ -355,6 +358,7 @@
     <def-cat n="estar_portar_inf">
       <cat-item lemma="estar" tags="vblex.inf"/>
       <cat-item lemma="portar" tags="vblex.inf"/>
+      <cat-item lemma="dur" tags="vblex.inf"/>
     </def-cat>
     <def-cat n="anarinf">
       <cat-item lemma="anar" tags="vblex.inf"/>
@@ -399,6 +403,7 @@
     <def-cat n="estar_portar_pp">
       <cat-item lemma="estar" tags="vblex.pp.*"/>
       <cat-item lemma="portar" tags="vblex.pp.*"/>
+      <cat-item lemma="dur" tags="vblex.pp.*"/>
     </def-cat>
     <def-cat n="ppf">
       <cat-item tags="vblex.pp.f.sg"/>
@@ -781,6 +786,15 @@
       <cat-item lemma="segle" tags="n.*"/>
       <cat-item lemma="mil·leni" tags="n.*"/>
     </def-cat>
+    <def-cat n="dia_setmana">
+      <cat-item lemma="dilluns" tags="n.*"/>
+      <cat-item lemma="dimarts" tags="n.*"/>
+      <cat-item lemma="dimecres" tags="n.*"/>
+      <cat-item lemma="dijous" tags="n.*"/>
+      <cat-item lemma="divendres" tags="n.*"/>
+      <cat-item lemma="dissabte" tags="n.*"/>
+      <cat-item lemma="diumenge" tags="n.*"/>
+    </def-cat>
     <def-cat n="n_temps">
       <cat-item lemma="dia" tags="n.*"/>
       <cat-item lemma="setmana" tags="n.*"/>
@@ -793,6 +807,22 @@
       <cat-item lemma="divendres" tags="n.*"/>
       <cat-item lemma="dissabte" tags="n.*"/>
       <cat-item lemma="diumenge" tags="n.*"/>
+    </def-cat>
+    <def-cat n="part_dia_n">
+      <cat-item lemma="matí" tags="n.*"/>
+      <cat-item lemma="tarda" tags="n.*"/>
+      <cat-item lemma="vesprada" tags="n.*"/>
+      <cat-item lemma="vespre" tags="n.*"/>
+      <cat-item lemma="nit" tags="n.*"/>
+      <cat-item lemma="matinada" tags="n.*"/>
+    </def-cat>
+    <def-cat n="part_dia_adv">
+      <cat-item lemma="al matí" tags="adv"/>
+      <cat-item lemma="a la tarda" tags="adv"/>
+      <cat-item lemma="a la vesprada" tags="adv"/>
+      <cat-item lemma="al vespre" tags="adv"/>
+      <cat-item lemma="a la nit" tags="adv"/>
+      <cat-item lemma="de matinada" tags="adv"/>
     </def-cat>
     <def-cat n="n_senyor">
       <cat-item lemma="senyor" tags="n.*"/>
@@ -1530,6 +1560,7 @@
       <list-item v="éthiopien"/>
       <list-item v="afar"/>
       <list-item v="amhara"/>
+      <list-item v="sidama"/>
       <list-item v="oromo"/>
       <list-item v="somalien"/>
       <list-item v="malgache"/>
@@ -24730,6 +24761,157 @@ is not applicable because gender and number can not be taken from previous rules
             <clip pos="2" side="tl" part="lemq"/>
           </lu>
         </out>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: dilluns al matí > lundi matin">
+      <pattern>
+        <pattern-item n="dia_setmana"/>
+        <pattern-item n="aprep"/>
+        <pattern-item n="detdef"/>
+        <pattern-item n="part_dia_n"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="4"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="4" side="tl" part="lemh"/>
+            <clip pos="4" side="tl" part="tags"/>
+            <clip pos="4" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: el dilluns al matí > lundi matin">
+      <pattern>
+        <pattern-item n="detdef"/>
+        <pattern-item n="dia_setmana"/>
+        <pattern-item n="aprep"/>
+        <pattern-item n="detdef"/>
+        <pattern-item n="part_dia_n"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="5"/>
+          <with-param pos="4"/>
+        </call-macro>
+        <call-macro n="f_bcond"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <clip pos="2" side="tl" part="lemh"/>
+            </get-case-from>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="5" side="tl" part="lemh"/>
+            <clip pos="5" side="tl" part="tags"/>
+            <clip pos="5" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <call-macro n="f_bcond"><with-param pos="4"/><with-param pos="5"/></call-macro>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: dilluns al matí > lundi matin">
+      <pattern>
+        <pattern-item n="dia_setmana"/>
+        <pattern-item n="part_dia_adv"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <choose>
+          <when>
+            <test>
+              <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="al matí"/></equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <lit v="matin"/>
+                </get-case-from>
+                  <lit-tag v="n.m.sg"/>
+              </lu>
+            </out>
+          </when>
+          <when>
+            <test>
+              <or>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="a la tarda"/></equal>
+                <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="a la vesprada"/></equal>
+              </or>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <lit v="après-midi"/>
+                </get-case-from>
+                  <lit-tag v="n.m.sp"/>
+              </lu>
+            </out>
+          </when>
+          <when>
+            <test>
+              <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="al vespre"/></equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <lit v="soir"/>
+                </get-case-from>
+                  <lit-tag v="n.m.sg"/>
+              </lu>
+            </out>
+          </when>
+          <when>
+            <test>
+              <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="a la nit"/></equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <lit v="soir"/>
+                </get-case-from>
+                  <lit-tag v="n.m.sg"/>
+              </lu>
+            </out>
+          </when>
+          <when>
+            <test>
+              <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="de matinada"/></equal>
+            </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <lit v="matin"/>
+                </get-case-from>
+                  <lit-tag v="n.m.sg"/>
+              </lu>
+            </out>
+          </when>
+        </choose>
       </action>
   </rule>
 
