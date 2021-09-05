@@ -1118,7 +1118,7 @@
     <match tags="sent"/>
   </rule>
 
-  <!-- es >> se, on -->
+  <!-- es >> se, on, remove -->
   <rule weight="0.8">
     <match lemma="es" tags="prn.*"><select lemma="se"/></match>
   </rule>
@@ -3578,6 +3578,13 @@
     <match lemma="com"/>
     <match lemma="en" tags="pr"><select lemma="dans"/></match>
   </rule>
+  <rule weight="1.0"> <!-- es tracte de l'article, però s'analitza com una preposició -->
+    <match lemma="en" tags="pr"><select lemma="en"/></match>
+    <or>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+    </or>
+  </rule>
 
   <!-- dues vegades DE cinc >> deux fois sur cinq -->
   <rule weight="0.8">
@@ -3908,6 +3915,22 @@
 
 <!-- **************** V **************** -->
 
+  <!-- negar >> nier, refuser -->
+  <rule weight="0.8">
+    <match lemma="negar" tags="vblex.*"><select lemma="nier"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="es" tags="prn.*"><remove tags="prn.*"/></match>
+    <match lemma="negar" tags="vblex.*.p3.*"><select lemma="refuser"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+      </or>
+    </repeat>
+    <match lemma="a" tags="pr"><select lemma="de"/></match>
+    <match tags="*.inf"/>
+  </rule>
+
   <!-- prendre# possessió >> prendre# les fonctions, prendre# ses fonctions, prendre# leurs fonctions, prendre possession -->
   <rule weight="0.8">
     <match lemma="prendre# possessió" tags="vblex.*"><select lemma="prendre# les fonctions"/></match>
@@ -4055,6 +4078,10 @@
   <macro name="verb_nopron_pron" p1="viure" p2="habiter" p3="vivre" />
   <rule weight="0.9">
     <match lemma="ho" tags="prn.*"/>
+    <match lemma="viure" tags="vblex.*"><select lemma="vivre"/></match>
+  </rule>
+  <rule weight="0.9">
+    <match lemma="en" tags="prn.*"/>
     <match lemma="viure" tags="vblex.*"><select lemma="vivre"/></match>
   </rule>
   <rule weight="0.9">
@@ -5260,6 +5287,46 @@
     <match tags="det.*"/>
     <match lemma="població" tags="n.*"/>
   </rule>
+  <rule weight="1.0">
+    <match lemma="qui"/>
+    <repeat from="0" upto="1">
+      <match tags="prn.pro.*"/>
+    </repeat>
+    <match lemma="estimar" tags="vblex.*"><select lemma="aimer"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="estimar" tags="vblex.*"><select lemma="aimer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv.*"/>
+    </repeat>
+    <match lemma="qui"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="estimar" tags="vblex.*"><select lemma="aimer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv.*"/>
+    </repeat>
+    <match lemma="a" tags="pr"/>
+    <match lemma="qui"/>
+  </rule>
+
+  <!-- fitxar >> ficher, engager -->
+  <rule weight="0.8">
+    <match lemma="fitxar" tags="vblex.*"><select lemma="ficher"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="np.al.*"/>
+      <match tags="np.top.*"/>
+      <match tags="np.cog.*"/>
+      <match lemma="equip" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="vbhaver.*"/>
+      <match lemma="anar" tags="vblex.pri.*"/>
+    </repeat>
+    <match lemma="fitxar" tags="vblex.*"><select lemma="engager"/></match>
+  </rule>
 
   <!-- mantenir >> maintenir, tenir -->
   <rule weight="0.8">
@@ -6100,6 +6167,22 @@
     <match tags="det.*"/>
     <match lemma="accent" tags="n.*"/>
   </rule>
+  <rule weight="1.0">
+    <match lemma="posar" tags="vblex.inf"><select lemma="mettre"/></match>
+    <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="posar" tags="vblex.inf"><select lemma="mettre"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <or>
+      <match lemma="fi" tags="n.*"/>
+      <match lemma="termini" tags="n.*"/>
+      <match lemma="punt" tags="n.*"/>
+      <match lemma="terme" tags="n.*"/>
+    </or>
+  </rule>
 
   <!-- esclatar >> exploser, éclater -->
   <rule weight="0.8">
@@ -6440,6 +6523,30 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- tigrinya >> tigréen, tigrigna -->
+  <rule weight="0.8">
+    <match lemma="tigrinya" tags="adj.*"><select lemma="tigréen"/></match>
+  </rule>
+
+  <!-- balutxi >> baloutche, baloutchi -->
+  <rule weight="0.8">
+    <match lemma="balutxi" tags="adj.*"><select lemma="baloutche"/></match>
+  </rule>
+
+  <!-- viu >> vivant, vif -->
+  <rule weight="0.8">
+    <match lemma="viu" tags="adj.*"><select lemma="vivant"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="aigua" tags="n.*"/>
+      <match lemma="calç" tags="n.*"/>
+      <match lemma="força" tags="n.*"/>
+      <match lemma="fred" tags="n.*"/>
+    </or>
+    <match lemma="viu" tags="adj.*"><select lemma="vif"/></match>
+  </rule>
 
   <!-- elevat >> élevé, haut -->
   <rule weight="0.8">
@@ -7137,6 +7244,20 @@
     <match tags="n.*"/>
   </rule>
 
+  <!-- ciutadà >> citadin, civil -->
+  <rule weight="0.8">
+    <match lemma="ciutadà" tags="adj.*"><select lemma="citadin"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="protesta" tags="n.*"/>
+      <match lemma="manifestació" tags="n.*"/>
+      <match lemma="acció" tags="n.*"/>
+      <match lemma="acte" tags="n.*"/>
+    </or>
+    <match lemma="ciutadà" tags="adj.*"><select lemma="civil"/></match>
+  </rule>
+
   <!-- bàltic >> baltique, balte -->
   <rule weight="0.8">
     <match lemma="bàltic" tags="adj.*"><select lemma="baltique"/></match>
@@ -7165,6 +7286,71 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- gruix >> épaisseur, gros -->
+  <rule weight="0.8">
+    <match lemma="gruix" tags="n.*"><select lemma="épaisseur"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.m.sg"/>
+    <match lemma="gruix" tags="n.*"><select lemma="gros"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
+
+  <!-- pic >> pic, pioche -->
+  <rule weight="0.8">
+    <match lemma="pic" tags="n.*"><select lemma="pic"/></match>
+  </rule>
+
+  <!-- viu >> vivant, vif -->
+  <rule weight="0.8">
+    <match lemma="viu" tags="n.*"><select lemma="vivant"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.m.sg"/>
+    <match lemma="viu" tags="n.*"><select lemma="vif"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
+
+  <!-- bestiesa >> bêtise, tas -->
+  <rule weight="0.8">
+    <match lemma="bestiesa" tags="n.*"><select lemma="bêtise"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="un" tags="det.ind.*"/>
+    <match lemma="bestiesa" tags="n.*"><select lemma="tas"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
+
+  <!-- animalada >> bêtise, tas -->
+  <rule weight="0.8">
+    <match lemma="animalada" tags="n.*"><select lemma="bêtise"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="un" tags="det.ind.*"/>
+    <match lemma="animalada" tags="n.*"><select lemma="tas"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
+
+  <!-- burrada >> ânerie, tas -->
+  <rule weight="0.8">
+    <match lemma="burrada" tags="n.*"><select lemma="ânerie"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="un" tags="det.ind.*"/>
+    <match lemma="burrada" tags="n.*"><select lemma="tas"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
+
+  <!-- barbaritat >> barbarie, tas -->
+  <rule weight="0.8">
+    <match lemma="barbaritat" tags="n.*"><select lemma="barbarie"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="un" tags="det.ind.*"/>
+    <match lemma="barbaritat" tags="n.*"><select lemma="tas"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
 
   <!-- viabilitat >> faisabilité, viabilité -->
   <rule weight="0.8">
@@ -7789,6 +7975,21 @@
 
   <!-- porter >> portier, gardien# de but -->
   <rule weight="0.8">
+    <match lemma="porter" tags="n.*"><select lemma="gardien# de but"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="porter" tags="n.*"><select lemma="portier"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <or>
+      <match lemma="casa" tags="n.*"/>
+      <match lemma="edifici" tags="n.*"/>
+    </or>
+  </rule>
+<!--
+  <rule weight="0.8">
     <match lemma="porter" tags="n.*"><select lemma="portier"/></match>
   </rule>
   <rule weight="1.0">
@@ -7805,6 +8006,7 @@
       <match lemma="selecció" tags="n.*"/>
     </or>
   </rule>
+-->
 
   <!-- notícia >> nouvelle, dépêche -->
   <rule weight="0.8">
@@ -8275,6 +8477,26 @@
     <match lemma="rebrot" tags="n.*"><select lemma="rebond"/></match>
   </rule>
 
+  <!-- pipa >> pipe, graine# de tournesol, graine -->
+  <rule weight="0.8">
+    <match lemma="pipa" tags="n.*"><select lemma="pipa"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="menjar" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="pipa" tags="n.f.pl"><select lemma="graine# de tournesol"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="menjar" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="pipa" tags="n.f.pl"><select lemma="graine"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
+
   <!-- gra >> grain, bouton -->
   <rule weight="0.8">
     <match lemma="gra" tags="n.*"><select lemma="grain"/></match>
@@ -8312,9 +8534,35 @@
     <match lemma="brossa" tags="n.*"><select lemma="ordures"/></match>
   </rule>
 
-  <!-- paixtu >> Pachtoune, pachto -->
+  <!-- bitlla >> quille, jeu# de quilles -->
   <rule weight="0.8">
-    <match lemma="paixtu" tags="n.*"><select lemma="Pachtoune"/></match>
+    <or>
+      <match lemma="bitlla" tags="n.*"><select lemma="quille"/></match>
+      <match lemma="birla" tags="n.*"><select lemma="quille"/></match>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="bitlla" tags="n.f.pl"><select lemma="jeu# de quilles"/></match>
+      <match lemma="birla" tags="n.*"><select lemma="jeu# de quilles"/></match>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <or>
+      <match tags="det.ind.*"/>
+      <match tags="det.det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <or>
+      <match lemma="bitlla" tags="n.*"><select lemma="quille"/></match>
+      <match lemma="birla" tags="n.*"><select lemma="quille"/></match>
+    </or>
+  </rule>
+
+  <!-- tigrinya >> Tigréen, tigrigna -->
+  <rule weight="0.8">
+    <match lemma="tigrinya" tags="n.*"><select lemma="Tigréen"/></match>
   </rule>
   <rule weight="1.0">
 <!--
@@ -8323,6 +8571,22 @@
       <match tags="det.pos.m.sg"/>
     </or>
 -->
+    <match lemma="tigrinya" tags="n.*.sg"><select lemma="tigrigna"/></match>
+  </rule>
+
+  <!-- balutxi >> Baloutche, baloutchi -->
+  <rule weight="0.8">
+    <match lemma="balutxi" tags="n.*"><select lemma="Baloutche"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="balutxi" tags="n.*.sg"><select lemma="baloutchi"/></match>
+  </rule>
+
+  <!-- paixtu >> Pachtoune, pachto -->
+  <rule weight="0.8">
+    <match lemma="paixtu" tags="n.*"><select lemma="Pachtoune"/></match>
+  </rule>
+  <rule weight="1.0">
     <match lemma="paixtu" tags="n.*.sg"><select lemma="pachto"/></match>
   </rule>
 
@@ -11671,6 +11935,8 @@
     <or>
       <seq n="animals"/>
       <seq n="material"/>
+      <match lemma="raqueta" tags="n.*"/>
+      <match lemma="míssil" tags="n.*"/>
     </or>
   </rule>
   <rule weight="1.0">

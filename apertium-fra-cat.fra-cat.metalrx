@@ -3546,6 +3546,23 @@
 
 <!-- **************** V **************** -->
 
+  <!-- ficher >> fitxar, fúmer, clavar -->
+  <rule weight="0.8">
+    <match lemma="ficher" tags="vblex.*"><select lemma="fitxar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.*"/>
+    <match lemma="en" tags="prn.pro.*"/>
+    <match lemma="ficher" tags="vblex.*"><select lemma="fúmer"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ficher" tags="vblex.pp.*"><select lemma="clavar"/></match>
+    <or>
+      <match lemma="dans" tags="pr"/>
+      <match lemma="sur" tags="pr"/>
+    </or>
+  </rule>
+
   <!-- alléguer >> al·legar, adduir -->
   <rule weight="0.8">
     <match lemma="alléguer" tags="vblex.*"><select lemma="al·legar"/></match>
@@ -3915,6 +3932,9 @@
 
   <!-- appuyer# sur >> polzar, recolzar# sobre -->
   <macro name="verb_nopron_pron" p1="appuyer# sur" p2="polzar" p3="recolzar# sobre" />
+
+  <!-- épancher >> vessar, escampar -->
+  <macro name="verb_nopron_pron" p1="épancher" p2="vessar" p3="escampar" />
 
   <!-- moquer >> burlar, riure -->
   <macro name="verb_nopron_pron" p1="moquer" p2="burlar" p3="riure" />
@@ -7204,9 +7224,69 @@
 
 <!-- **************** N **************** -->
 
+  <!-- gros >> gras, gruix -->
+  <rule weight="0.8">
+    <match lemma="gros" tags="n.*"><select lemma="gras"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.m.sg"/>
+    <match lemma="gros" tags="n.*"><select lemma="gruix"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
+
+  <!-- sablier >> rellotge# de sorra, sorrera, etc. -->
+  <rule weight="0.8">
+    <match lemma="sablier" tags="n.*"><select lemma="rellotge# de sorra"/></match>
+  </rule>
+
+  <!-- sidama >> sidama, sidamo -->
+  <rule weight="0.8">
+    <match lemma="sidama" tags="n.*"><select lemma="sidama"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sidama" tags="n.*.sg"><select lemma="sidamo"/></match>
+  </rule>
+
   <!-- pognon >> pasta, moma, calés, etc. -->
   <rule weight="0.8">
     <match lemma="pognon" tags="n.*"><select lemma="pasta"/></match>
+  </rule>
+
+  <!-- daube >> estofat, porqueria -->
+  <rule weight="0.8">
+    <match lemma="daube" tags="n.*"><select lemma="estofat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ce" tags="prn.*"/>
+    <match tags="vbser.*"/>
+    <match tags="det.ind.*"/>
+    <match lemma="daube" tags="n.*"><select lemma="porqueria"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="daube" tags="n.*"><select lemma="porqueria"/></match>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="film" tags="n.*"/>
+      <match lemma="livre" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="film" tags="n.*"/>
+      <match lemma="livre" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="daube" tags="n.*"><select lemma="porqueria"/></match>
   </rule>
 
   <!-- rafraîchissement >> refrescament, refresc -->
@@ -13504,23 +13584,44 @@
 
 <!-- maître >> amo / mestre -->
   <rule weight="0.8">
-    <match lemma="maître" tags="n.*"><select lemma="amo"/></match>
+    <or>
+      <match lemma="maître" tags="n.*"><select lemma="amo"/></match>
+      <match lemma="maitre" tags="n.*"><select lemma="amo"/></match>
+    </or>
   </rule>
   <rule weight="1.0">
-    <match lemma="maître" tags="n.*"><select lemma="mestre"/></match>
-    <match lemma="de" tags="pr"/>
-  </rule>
-
-<!-- maitre >> amo / mestre -->
-  <rule weight="0.8">
-    <match lemma="maitre" tags="n.*"><select lemma="amo"/></match>
-  </rule>
-  <rule weight="1.0">
-    <match lemma="maitre" tags="n.*"><select lemma="mestre"/></match>
+    <or>
+      <match lemma="maître" tags="n.*"><select lemma="mestre"/></match>
+      <match lemma="maitre" tags="n.*"><select lemma="mestre"/></match>
+    </or>
     <match lemma="de" tags="pr"/>
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- gros >> gros, gras -->
+  <rule weight="0.8">
+    <match lemma="gros" tags="adj.*"><select lemma="gros"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="np.ant.*"/>
+    <match tags="det.def.m.sg"/>
+    <match lemma="Gros" tags="adj.*"><select lemma="gras"/></match>
+  </rule>
+
+  <!-- sidama >> sidama, sidamo -->
+  <rule weight="0.8">
+    <match lemma="sidama" tags="adj.*"><select lemma="sidama"/></match>
+  </rule>
+
+  <!-- fourmillant >> efervescent, ple -->
+  <rule weight="0.8">
+    <match lemma="fourmillant" tags="adj.*"><select lemma="efervescent"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fourmillant" tags="adj.*"><select lemma="ple"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
 
   <!-- malveillant >> malèvol, maliciós -->
   <rule weight="0.8">
@@ -13534,16 +13635,6 @@
       <match lemma="programme" tags="n.*"/>
     </or>
     <match lemma="malveillant" tags="adj.*"><select lemma="maliciós"/></match>
-  </rule>
-
-  <!-- gros >> gros, gruix -->
-  <rule weight="0.8">
-    <match lemma="gros" tags="adj.*"><select lemma="gros"/></match>
-  </rule>
-  <rule weight="1.0">
-    <match tags="det.def.m.sg"/>
-    <match lemma="gros" tags="adj.*"><select lemma="gruix"/></match>
-    <match lemma="de" tags="pr"/>
   </rule>
 
   <!-- sans faille >> indoblegable, incondicional -->
