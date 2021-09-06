@@ -8560,6 +8560,11 @@
     </or>
   </rule>
 
+  <!-- compliment >> compliment, félicitation -->
+  <rule weight="0.8">
+    <match lemma="compliment" tags="n.*"><select lemma="compliment"/></match>
+  </rule>
+
   <!-- tigrinya >> Tigréen, tigrigna -->
   <rule weight="0.8">
     <match lemma="tigrinya" tags="n.*"><select lemma="Tigréen"/></match>

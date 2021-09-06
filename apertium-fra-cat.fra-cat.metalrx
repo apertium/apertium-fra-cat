@@ -3600,9 +3600,9 @@
     </or>
   </rule>
 
-  <!-- terrasser >> derribar, derrotar, cavar -->
+  <!-- terrasser >> fer# caure, derrotar, cavar -->
   <rule weight="0.8">
-    <match lemma="terrasser" tags="vblex.*"><select lemma="derribar"/></match>
+    <match lemma="terrasser" tags="vblex.*"><select lemma="fer# caure"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="terrasser" tags="vblex.*"><select lemma="derrotar"/></match>
@@ -7224,6 +7224,19 @@
 
 <!-- **************** N **************** -->
 
+  <!-- senyoret >> jeune homme, monsieur -->
+  <rule weight="0.8">
+    <match lemma="senyoret" tags="n.*"><select lemma="jeune homme"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="senyoret" tags="n.*"><select lemma="monsieur"/></match>
+    <or>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+      <match tags=""/>
+    </or>
+  </rule>
+
   <!-- gros >> gras, gruix -->
   <rule weight="0.8">
     <match lemma="gros" tags="n.*"><select lemma="gras"/></match>
@@ -7965,9 +7978,20 @@
     </or>
   </rule>
 
-  <!-- compliment >> compliment, félicitation -->
+  <!-- manœuvre >> maniobra, manobre -->
   <rule weight="0.8">
-    <match lemma="compliment" tags="n.*"><select lemma="compliment"/></match>
+    <match lemma="manœuvre" tags="n.*"><select lemma="maniobra"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="det.*.m.*"/>
+      <match tags="num.m.*"/>
+    </or>
+    <match lemma="manœuvre" tags="n.*"><select lemma="manobre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="manœuvre" tags="n.*"><select lemma="manobre"/></match>
+    <match tags="adj.m.*"/>
   </rule>
 
   <!-- vœu >> desig, vot, felicitation -->
@@ -13598,6 +13622,11 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- carné >> ric# en carn, encarnat -->
+  <rule weight="0.8">
+    <match lemma="carné" tags="adj.*"><select lemma="ric# en carn"/></match>
+  </rule>
 
   <!-- gros >> gros, gras -->
   <rule weight="0.8">
