@@ -51,6 +51,9 @@
     <def-cat n="detdef">
       <cat-item tags="det.def.*"/>
     </def-cat>
+    <def-cat n="eldetmsg">
+      <cat-item lemma="el" tags="det.def.m.sg"/>
+    </def-cat>
     <def-cat n="lesdetdef">
       <cat-item lemma="el" tags="det.def.f.pl"/>
     </def-cat>
@@ -5925,6 +5928,27 @@ is not applicable because gender and number can not be taken from previous rules
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: el que > ce que ">
+      <pattern>
+        <pattern-item n="eldetmsg"/>
+        <pattern-item n="que_rel"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="ce"/>
+            </get-case-from>
+            <lit-tag v="prn.tn.nt"/>
           </lu>
           <b pos="1"/>
           <lu>
