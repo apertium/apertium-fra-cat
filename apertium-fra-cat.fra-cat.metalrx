@@ -12036,6 +12036,40 @@
     <match lemma="enquête" tags="n.*"><select lemma="investigació"/></match>
     <match lemma="sur" tags="pr"/>
   </rule>
+  <rule weight="1.0"> 
+    <match lemma="enquête" tags="n.*"><select lemma="investigació"/></match>
+    <repeat from="0" upto="6">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="police" tags="n.*"/>
+      <match lemma="commissaire" tags="n.*"/>
+      <match lemma="policier" tags="n.*"/>
+      <match lemma="gendarme" tags="n.*"/>
+      <match lemma="gendarmerie" tags="n.*"/>
+      <match lemma="juge" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0"> 
+    <or>
+      <match lemma="police" tags="n.*"/>
+      <match lemma="commissaire" tags="n.*"/>
+      <match lemma="policier" tags="n.*"/>
+      <match lemma="gendarme" tags="n.*"/>
+      <match lemma="gendarmerie" tags="n.*"/>
+      <match lemma="juge" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="6">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="enquête" tags="n.*"><select lemma="investigació"/></match>
+  </rule>
 
   <!-- parquet >> fiscalia, parquet -->
   <rule weight="0.8">
@@ -15387,6 +15421,56 @@
   <!-- longtemps >> molt de temps, molt -->
   <rule weight="0.8">
     <match lemma="longtemps" tags="adv"><select lemma="molt de temps"/></match>
+  </rule>
+
+  <!-- depuis longtemps >> des de fa temps, des de feia temps -->
+  <rule weight="0.8">
+    <match lemma="depuis longtemps" tags="adv"><select lemma="des de fa temps"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or><match tags="vblex.pii.*"/><match tags="vbser.pii.*"/><match tags="vbhaver.pii.*"/><match tags="vbmod.pii.*"/></or>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="depuis longtemps" tags="adv"><select lemma="des de feia temps"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="depuis longtemps" tags="adv"><select lemma="des de feia temps"/></match>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or><match tags="vblex.pii.*"/><match tags="vbser.pii.*"/><match tags="vbhaver.pii.*"/><match tags="vbmod.pii.*"/></or>
+  </rule>
+
+  <!-- depuis un certain temps >> des de fa un temps, des de feia un temps -->
+  <rule weight="0.8">
+    <match lemma="depuis un certain temps" tags="adv"><select lemma="des de fa un temps"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or><match tags="vblex.pii.*"/><match tags="vbser.pii.*"/><match tags="vbhaver.pii.*"/><match tags="vbmod.pii.*"/></or>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="depuis un certain temps" tags="adv"><select lemma="des de feia un temps"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="depuis un certain temps" tags="adv"><select lemma="des de feia un temps"/></match>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or><match tags="vblex.pii.*"/><match tags="vbser.pii.*"/><match tags="vbhaver.pii.*"/><match tags="vbmod.pii.*"/></or>
   </rule>
 
   <!-- à rebours >> a l'inrevés, a contrapel, a repel -->
