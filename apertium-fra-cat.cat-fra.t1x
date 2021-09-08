@@ -801,6 +801,10 @@
       <cat-item lemma="setmana" tags="n.*"/>
       <cat-item lemma="mes" tags="n.*"/>
       <cat-item lemma="any" tags="n.*"/>
+      <cat-item lemma="lustre" tags="n.*"/>
+      <cat-item lemma="dècada" tags="n.*"/>
+      <cat-item lemma="segle" tags="n.*"/>
+      <cat-item lemma="mil·leni" tags="n.*"/>
       <cat-item lemma="dilluns" tags="n.*"/>
       <cat-item lemma="dimarts" tags="n.*"/>
       <cat-item lemma="dimecres" tags="n.*"/>
@@ -808,6 +812,16 @@
       <cat-item lemma="divendres" tags="n.*"/>
       <cat-item lemma="dissabte" tags="n.*"/>
       <cat-item lemma="diumenge" tags="n.*"/>
+    </def-cat>
+    <def-cat n="n_temps_pl">
+      <cat-item lemma="dia" tags="n.*.pl"/>
+      <cat-item lemma="setmana" tags="n.*.pl"/>
+      <cat-item lemma="mes" tags="n.*.pl"/>
+      <cat-item lemma="any" tags="n.*.pl"/>
+      <cat-item lemma="lustre" tags="n.*.pl"/>
+      <cat-item lemma="dècada" tags="n.*.pl"/>
+      <cat-item lemma="segle" tags="n.*.pl"/>
+      <cat-item lemma="mil·leni" tags="n.*.pl"/>
     </def-cat>
     <def-cat n="part_dia_n">
       <cat-item lemma="matí" tags="n.*"/>
@@ -25162,7 +25176,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    <rule comment="REGLA: PREP feia NUM temps > PREP il y a NUM temps">
+    <rule comment="REGLA: PREP feia NUM temps > PREP NUM temps">
       <pattern>
         <pattern-item n="prep"/>
         <pattern-item n="feia"/>
@@ -25178,14 +25192,7 @@ is not applicable because gender and number can not be taken from previous rules
           <lu>
             <clip pos="1" side="tl" part="whole"/>
           </lu>
-          <b pos="2"/>
-          <lu>
-            <get-case-from pos="2">
-              <lit v="il y a"/>
-            </get-case-from>
-            <lit-tag v="vblex.pri.p3.sg"/>
-          </lu>
-          <b pos="2"/>
+          <b pos="1"/>
           <lu>
             <clip pos="3" side="tl" part="lemh"/>
             <clip pos="3" side="tl" part="tags"/>
@@ -25237,6 +25244,44 @@ is not applicable because gender and number can not be taken from previous rules
             <clip pos="4" side="tl" part="lemq"/>
           </lu>
         </out>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: fa temps_pl que > depuis des temps">
+      <pattern>
+        <pattern-item n="fa_feia"/>
+        <pattern-item n="n_temps_pl"/>
+        <pattern-item n="que"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="depuis"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="de"/>
+            <lit-tag v="pr"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="le"/>
+            <lit-tag v="det.def.mf.pl"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+        <call-macro n="f_bcond"><with-param pos="2"/><with-param pos="3"/></call-macro>
       </action>
   </rule>
 
