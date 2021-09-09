@@ -4185,6 +4185,15 @@
     </or>
     <match lemma="viure" tags="vblex.*"><select lemma="vivre"/></match>
   </rule>
+  <rule weight="1.0">
+    <match lemma="viure" tags="vblex.*"><select lemma="vivre"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+      </or>
+    </repeat>
+    <match lemma="amb" tags="pr"/>
+  </rule>
   <rule weight="1.2">
     <match lemma="viure" tags="vblex.*"><select lemma="habiter"/></match>
     <repeat from="0" upto="2">
@@ -12044,6 +12053,22 @@
     </or>
     <match tags="det.*"/>
     <match lemma="cap" tags="n.*"><select lemma="tête"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="cap" tags="n.*"><select lemma="chef"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="estat" tags="n.*"/>
+      <match lemma="govern" tags="n.*"/>
+      <match lemma="redacció" tags="n.*"/>
+      <match lemma="consell" tags="n.*"/>
+    </or>
   </rule>
 
   <!-- capital >> capitale, chef-lieu -->
