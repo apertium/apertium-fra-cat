@@ -7224,16 +7224,25 @@
 
 <!-- **************** N **************** -->
 
-  <!-- senyoret >> jeune homme, monsieur -->
+  <!-- coup# d'arrêt >> frenada, fre -->
   <rule weight="0.8">
-    <match lemma="senyoret" tags="n.*"><select lemma="jeune homme"/></match>
+    <match lemma="coup# d'arrêt" tags="n.*"><select lemma="frenada"/></match>
   </rule>
   <rule weight="1.0">
-    <match lemma="senyoret" tags="n.*"><select lemma="monsieur"/></match>
     <or>
-      <match tags="np.ant.*"/>
-      <match tags="np.cog.*"/>
-      <match tags=""/>
+      <match lemma="mettre" tags="vblex.*"/>
+      <match lemma="donner" tags="vblex.*"/>
+      <match lemma="marquer" tags="vblex.*"/>
+    </or>
+    <match lemma="un" tags="det.ind.*"/>
+    <match lemma="coup# d'arrêt" tags="n.*"><select lemma="fre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="coup# d'arrêt" tags="n.*"><select lemma="fre"/></match>
+    <or>
+      <match lemma="mettre" tags="vblex.pp.*"/>
+      <match lemma="donner" tags="vblex.pp.*"/>
+      <match lemma="marquer" tags="vblex.pp.*"/>
     </or>
   </rule>
 
