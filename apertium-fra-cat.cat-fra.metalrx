@@ -3795,6 +3795,19 @@
   <rule weight="0.8">
     <match lemma="tant" tags="adv"><select lemma="autant"/></match>
   </rule>
+  <rule weight="1.0">
+    <match lemma="tant" tags="adv"><select lemma="tant"/></match>
+    <repeat from="0" upto="3">
+      <or>
+        <match tags="n.*"/>
+        <match tags="adj.*"/>
+        <match tags="preadv"/>
+        <match tags="adv"/>
+        <match tags="pr"/>
+      </or>
+    </repeat>
+    <match lemma="com"/>
+  </rule>
 
   <!-- a càrrec seu >> à son charge, à leur charge -->
   <rule weight="0.8">
@@ -4952,6 +4965,29 @@
   <!-- desbarrar >> déraisonner, démantibuler, débarrer, déjanter -->
   <macro name="verb_intrans_trans" p1="desbarrar" p2="déraisonner" p3="débarrer" />
 
+  <!-- escridassar >> crier, crier# sur, crier# dessus -->
+  <macro name="verb_intrans_trans" p1="escridassar" p2="crier" p3="crier# sur" />
+  <rule weight="1.2">
+    <match lemma="es" tags="prn.*"/>
+    <match lemma="escridassar" tags="vblex.*.p3.pl"><select lemma="crier# dessus"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="es" tags="prn.*"/>
+    <match lemma="escridassar" tags="vblex.*.p3.pl"><select lemma="crier# dessus"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="el" tags="prn.pro.*.sg"><select lemma="lui"/></match>
+    <match lemma="escridassar" tags="vblex.*"><select lemma="crier# dessus"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="el" tags="prn.pro.*.pl"><select lemma="leur"/></match>
+    <match lemma="escridassar" tags="vblex.*"><select lemma="crier# dessus"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="escridassar" tags="vblex.inf"><select lemma="crier# dessus"/></match>
+    <match lemma="lo" tags="prn.enc.*"><select lemma="lui"/></match>
+  </rule>
+
   <!-- pasturar >> paître, faire# paître -->
   <macro name="verb_intrans_trans" p1="pasturar" p2="paître" p3="faire# paître" />
 
@@ -5469,7 +5505,7 @@
     <match lemma="negociació" tags="n.*"/>
   </rule>
 
-  <!-- tenir# pressa >> être# empressé, être#empressés, être#empressée, être#empressées  -->
+  <!-- tenir# pressa >> être# empressé, être# empressés, être# empressée, être# empressées  -->
   <rule weight="0.8">
     <match lemma="tenir# pressa" tags="vblex.*"><select lemma="être# empressé"/></match>
   </rule>
@@ -5483,6 +5519,54 @@
   <rule weight="1.2">
     <match tags="*.f.*"/>
     <match lemma="tenir# pressa" tags="vblex.*.pl"><select lemma="être# empressées"/></match>
+  </rule>
+
+  <!-- tenir# molta pressa >> être# très empressé, être# très empressés, être# très empressée, être# très empressées  -->
+  <rule weight="0.8">
+    <match lemma="tenir# molta pressa" tags="vblex.*"><select lemma="être# très empressé"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tenir# molta pressa" tags="vblex.*.pl"><select lemma="être# très empressés"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="*.f.*"/>
+    <match lemma="tenir# molta pressa" tags="vblex.*.sg"><select lemma="être# très empressée"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match tags="*.f.*"/>
+    <match lemma="tenir# molta pressa" tags="vblex.*.pl"><select lemma="être# très empressées"/></match>
+  </rule>
+
+  <!-- passar# vergonya >> être# embarrassé, être# embarrassés, être# embarrassée, être# embarrassées  -->
+  <rule weight="0.8">
+    <match lemma="passar# vergonya" tags="vblex.*"><select lemma="être# embarrassé"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="passar# vergonya" tags="vblex.*.pl"><select lemma="être# embarrassés"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="*.f.*"/>
+    <match lemma="passar# vergonya" tags="vblex.*.sg"><select lemma="être# embarrassée"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match tags="*.f.*"/>
+    <match lemma="passar# vergonya" tags="vblex.*.pl"><select lemma="être# embarrassées"/></match>
+  </rule>
+
+  <!-- passar# molta vergonya >> être# très embarrassé, être# très embarrassés, être# très embarrassée, être# très embarrassées  -->
+  <rule weight="0.8">
+    <match lemma="passar# molta vergonya" tags="vblex.*"><select lemma="être# très embarrassé"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="passar# molta vergonya" tags="vblex.*.pl"><select lemma="être# très embarrassés"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="*.f.*"/>
+    <match lemma="passar# molta vergonya" tags="vblex.*.sg"><select lemma="être# très embarrassée"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match tags="*.f.*"/>
+    <match lemma="passar# molta vergonya" tags="vblex.*.pl"><select lemma="être# très embarrassées"/></match>
   </rule>
 
   <!-- abocar >> verser, pencher -->
@@ -6248,10 +6332,10 @@
   </rule>
   <rule weight="1.0">
     <match lemma="posar" tags="vblex.inf"><select lemma="mettre"/></match>
+    <match tags="det.*"/>
     <repeat from="0" upto="1">
       <match tags="adj.*"/>
     </repeat>
-    <match tags="det.*"/>
     <match lemma="accent" tags="n.*"/>
   </rule>
   <rule weight="1.0">
@@ -6265,9 +6349,14 @@
     </repeat>
     <or>
       <match lemma="fi" tags="n.*"/>
+      <match lemma="terme" tags="n.*"/>
       <match lemma="termini" tags="n.*"/>
       <match lemma="punt" tags="n.*"/>
-      <match lemma="terme" tags="n.*"/>
+      <match lemma="accent" tags="n.*"/>
+      <match lemma="trava" tags="n.*"/>
+      <match lemma="obstacle" tags="n.*"/>
+      <match lemma="impediment" tags="n.*"/>
+      <match lemma="empatx" tags="n.*"/>
     </or>
   </rule>
 
@@ -6483,8 +6572,14 @@
     <or><match tags="vblex.inf"/><match tags="vbser.inf"/><match tags="vbhaver.inf"/><match tags="vbmod.inf"/></or>
   </rule>
 
+  <!-- enfitar >> causer# une indigestion, avoir# une indigestion -->
+  <macro name="verb_nopron_pron" p1="enfitar" p2="causer# une indigestion" p3="avoir# une indigestion" />
+
+  <!-- fer# fonedís >> faire# tourner la tête, évaporer -->
+  <macro name="verb_nopron_pron" p1="fer# fonedís" p2="défaire" p3="évaporer" />
+
   <!-- marejar >> faire# tourner la tête, sentir# mal -->
-  <macro name="verb_nopron_pron" p1="faire# tourner la tête" p2="défaire" p3="sentir# mal" />
+  <macro name="verb_nopron_pron" p1="marejar" p2="faire# tourner la tête" p3="sentir# mal" />
 
   <!-- tractar >> traiter, tâcher, agir -->
   <rule weight="0.8">
@@ -7374,6 +7469,35 @@
 
 <!-- **************** N **************** -->
 
+  <!-- empatx >> indigestion, obstacle -->
+  <!-- empatxament >> indigestion, obstacle -->
+  <rule weight="0.8">
+    <or>
+      <match lemma="empatx" tags="n.*"><select lemma="indigestion"/></match>
+      <match lemma="empatxament" tags="n.*"><select lemma="indigestion"/></match>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sense" tags="pr"/>
+    <or>
+      <match lemma="empatx" tags="n.*"><select lemma="obstacle"/></match>
+      <match lemma="empatxament" tags="n.*"><select lemma="obstacle"/></match>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="posar" tags="vblex.*"/>
+    <or>
+      <match lemma="empatx" tags="n.*"><select lemma="obstacle"/></match>
+      <match lemma="empatxament" tags="n.*"><select lemma="obstacle"/></match>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="empatx" tags="n.*.pl"><select lemma="obstacle"/></match>
+      <match lemma="empatxament" tags="n.*.pl"><select lemma="obstacle"/></match>
+    </or>
+  </rule>
+
   <!-- dot >> dot, qualité -->
   <rule weight="0.8">
     <match lemma="dot" tags="n.*"><select lemma="dot"/></match>
@@ -7877,9 +8001,14 @@
     <match lemma="executiu" tags="n.m.pl"><select lemma="quadre"/></match>
   </rule>
 
-  <!-- estany >> bassin, étain -->
+  <!-- estany >> bassin, lac, étain -->
   <rule weight="0.8">
     <match lemma="estany" tags="n.*"><select lemma="bassin"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="estany" tags="n.*"><select lemma="lac"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="np.top.*"/>
   </rule>
   <rule weight="1.0">
     <match lemma="estany" tags="n.*"><select lemma="étain"/></match>
@@ -8957,7 +9086,6 @@
     <match tags="adj.f.*"/>
   </rule>
 
-
   <!-- competència >> concurrence, compétence -->
   <rule weight="0.8">
     <match lemma="competència" tags="n.*"><select lemma="concurrence"/></match>
@@ -9768,6 +9896,21 @@
     <match lemma="carrera" tags="n.*"><select lemma="carrière"/></match>
   </rule>
   <rule weight="1.0">
+    <match lemma="carrera" tags="n.*"><select lemma="carrière"/></match>
+    <or>
+      <match lemma="cinematogràfic" tags="adj.*"/>
+      <match lemma="laboral" tags="adj.*"/>
+      <match lemma="musical" tags="adj.*"/>
+      <match lemma="periodístic" tags="adj.*"/>
+      <match lemma="polític" tags="adj.*"/>
+      <match lemma="professional" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="carrera" tags="n.*"><select lemma="carrière"/></match>
+    <match lemma="com a" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
     <or>
       <match lemma="estudiar" tags="vblex.*"><select lemma="faire"/></match>
       <match lemma="fer" tags="vblex.*"/>
@@ -10379,6 +10522,15 @@
   <rule weight="1.0">
     <match tags="det.pos.*"/>
     <match lemma="cigala" tags="n.*"><select lemma="bite"/></match>
+  </rule>
+
+  <!-- placa >> plaque, panneau -->
+  <rule weight="0.8">
+    <match lemma="placa" tags="n.*"><select lemma="plaque"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="placa" tags="n.*"><select lemma="panneau"/></match>
+    <match lemma="solar" tags="adj.*"/>
   </rule>
 
   <!-- cartell >> affiche, panneau, placard -->
@@ -12202,7 +12354,10 @@
       <match lemma="colp" tags="n.*"><select lemma="coup"/></match>
     </or>
     <repeat from="0" upto="1">
-      <match tags="adv"/>
+      <or>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
     </repeat>
     <match tags="adj.*"/>
   </rule>

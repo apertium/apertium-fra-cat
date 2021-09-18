@@ -488,6 +488,76 @@
         </or>
         <match lemma="{{p1}}" tags="vblex.pp.*"><select lemma="{{p3}}"/></match>
       </rule>
+
+      <rule weight="1.0">
+        <match tags="vbmod.*.p1.sg"/>
+        <match tags="prn.pro.p1.*.sg"/>
+        <match lemma="{{p1}}" tags="vblex.inf"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match tags="vbmod.*.p2.sg"/>
+        <match tags="prn.pro.p2.*.sg"/>
+        <match lemma="{{p1}}" tags="vblex.inf"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match tags="vbmod.*.p1.pl"/>
+        <match tags="prn.pro.p1.*.pl"/>
+        <match lemma="{{p1}}" tags="vblex.inf"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match tags="vbmod.*.p2.pl"/>
+        <match tags="prn.pro.p2.*.pl"/>
+        <match lemma="{{p1}}" tags="vblex.inf"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <or>
+          <match tags="vbmod.*.p3.sg"/>
+          <match tags="vbmod.*.p3.pl"/>
+        </or>
+        <match tags="prn.pro.ref.p3.*.sp"/>
+        <match lemma="{{p1}}" tags="vblex.inf"><select lemma="{{p3}}"/></match>
+      </rule>
+
+      <rule weight="1.0">
+        <match tags="vbmod.*.p1.sg"/>
+        <match tags="prn.tn.p1.*.sg"/>
+        <match tags="prn.pro.p1.*.sg"/>
+        <match lemma="{{p1}}" tags="vblex.inf"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match tags="vbmod.*.p2.sg"/>
+        <match tags="prn.tn.p2.*.sg"/>
+        <match tags="prn.pro.p2.*.sg"/>
+        <match lemma="{{p1}}" tags="vblex.inf"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match tags="vbmod.*.p1.pl"/>
+        <match tags="prn.tn.p1.*.pl"/>
+        <match tags="prn.pro.p1.*.pl"/>
+        <match lemma="{{p1}}" tags="vblex.inf"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match tags="vbmod.*.p2.pl"/>
+        <match tags="prn.tn.p2.*.pl"/>
+        <match tags="prn.pro.p2.*.pl"/>
+        <match lemma="{{p1}}" tags="vblex.inf"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match tags="vbmod.*.p3.sg"/>
+        <or>
+          <match tags="prn.tn.p3.*.sg"/>
+          <match tags="np.*.sg"/>
+          <match tags="np.cog.*"/>
+        </or>
+        <match tags="prn.pro.ref.p3.*.sp"/>
+        <match lemma="{{p1}}" tags="vblex.inf"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match tags="vbmod.*.p3.pl"/>
+        <match tags="prn.tn.p3.*.pl"/>
+        <match tags="prn.pro.ref.p3.*.sp"/>
+        <match lemma="{{p1}}" tags="vblex.inf"><select lemma="{{p3}}"/></match>
+      </rule>
     </def-macro>
 
     <!-- Aquesta macro tria, per defecte, el nom p2 per traduir p1 (mf) i p3 si p1 està en un context d'un femení -->
@@ -2274,6 +2344,8 @@
       <match lemma="ukrainien" tags="adj.*"/>
       <match lemma="arménien" tags="adj.*"/>
       <match lemma="géorgien" tags="adj.*"/>
+      <match lemma="abkhaze" tags="adj.*"/>
+      <match lemma="mingrélien" tags="adj.*"/>
       <match lemma="azerbaïdjanais" tags="adj.*"/>
       <match lemma="balte" tags="adj.*"/>
       <match lemma="slave" tags="adj.*"/>
@@ -2455,6 +2527,8 @@
       <match lemma="ukrainien" tags="n.*"/>
       <match lemma="arménien" tags="n.*"/>
       <match lemma="géorgien" tags="n.*"/>
+      <match lemma="abkhaze" tags="n.*"/>
+      <match lemma="mingrélien" tags="n.*"/>
       <match lemma="azerbaïdjanais" tags="n.*"/>
       <match lemma="balte" tags="n.*"/>
       <match lemma="slave" tags="n.*"/>
@@ -5773,6 +5847,39 @@
     <match lemma="comprendre" tags="vblex.*"><select lemma="entendre" tags="vblex.*"/></match>
   </rule>
 
+  <!-- défaire >> desfer, derrotar -->
+  <rule weight="0.8">
+    <match lemma="défaire" tags="vblex.*"><select lemma="desfer"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="défaire" tags="vblex.*"><select lemma="derrotar"/></match>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="np.top.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="défaire" tags="vblex.*"><select lemma="derrotar"/></match>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <match tags="np.top.*"/>
+      <match lemma="révolution" tags="n.*"/>
+      <match lemma="insurrection" tags="n.*"/>
+      <seq n="personne"/>
+      <seq n="parent"/>
+      <seq n="pays_hab"/>
+    </or>
+  </rule>
+
   <!-- bénéficier >> beneficiar, beneficiar-se -->
   <rule weight="0.8">
     <match lemma="bénéficier" tags="vblex.*"><select lemma="beneficiar" tags="vblex.*"/></match>
@@ -6096,7 +6203,7 @@
   <!-- faufiler >> embastar, esquitllar-se, esmunyir-se -->
   <macro name="verb_nopron_pron" p1="faufiler" p2="embastar" p3="esquitllar" />
 
-  <!-- concurrencer >> competir, fer# la competència -->
+  <!-- concurrencer >> competir, competir amb, fer# la competència, fer# la competència a -->
   <macro name="verb_nopron_pron" p1="concurrencer" p2="competir" p3="fer# la competència" />
   <rule weight="0.9">
     <match lemma="concurrencer" tags="vblex.*"><select lemma="competir# amb"/></match>
@@ -6162,6 +6269,9 @@
 
   <!-- abriter >> albergar, protegir -->
   <macro name="verb_nopron_pron" p1="abriter" p2="albergar" p3="protegir" />
+
+  <!-- demander >> demanar, preguntar -->
+  <macro name="verb_nopron_pron" p1="demander" p2="demanar" p3="preguntar" />
 
   <!-- battre >> derrotar, batre, bategar, barallar -->
   <macro name="verb_nopron_pron" p1="battre" p2="derrotar" p3="barallar" />
@@ -7223,6 +7333,11 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- décharge >> descàrrega, ferralleria -->
+  <rule weight="0.8">
+    <match lemma="décharge" tags="n.*"><select lemma="descàrrega"/></match>
+  </rule>
 
   <!-- coup# d'arrêt >> frenada, fre -->
   <rule weight="0.8">
@@ -12875,7 +12990,22 @@
     <match lemma="avocat" tags="n.*"><select lemma="alvocat"/></match>
   </rule>
 
-  <!-- panneau >> cartell, tauler -->
+  <!-- biblio >> biblioteca, bibliografia -->
+  <rule weight="0.8">
+    <match lemma="biblio" tags="n.*"><select lemma="biblioteca"/></match>
+  </rule>
+
+  <!-- bibli >> biblioteca, bibliografia -->
+  <rule weight="0.8">
+    <match lemma="bibli" tags="n.*"><select lemma="biblioteca"/></match>
+  </rule>
+
+  <!-- justificatif >> justificant, comprovant -->
+  <rule weight="0.8">
+    <match lemma="justificatif" tags="n.*"><select lemma="justificant"/></match>
+  </rule>
+
+  <!-- panneau >> cartell, tauler, placa -->
   <rule weight="0.8">
     <match lemma="panneau" tags="n.*"><select lemma="cartell"/></match>
   </rule>
@@ -12886,6 +13016,10 @@
       <match lemma="en" tags="pr"/>
     </or>
     <match lemma="bois" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="panneau" tags="n.*"><select lemma="placa"/></match>
+    <match lemma="solaire" tags="adj.*"/>
   </rule>
 
   <!-- bois >> bosc, fusta, llenya -->
@@ -13669,6 +13803,15 @@
   <!-- carné >> ric# en carn, encarnat -->
   <rule weight="0.8">
     <match lemma="carné" tags="adj.*"><select lemma="ric# en carn"/></match>
+  </rule>
+
+  <!-- jurisdiccionnel >> jurisdiccional, judicial -->
+  <rule weight="0.8">
+    <match lemma="jurisdiccionnel" tags="adj.*"><select lemma="jurisdiccional"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="decisió" tags="n.*"/>
+    <match lemma="jurisdiccionnel" tags="adj.*"><select lemma="judicial"/></match>
   </rule>
 
   <!-- gros >> gros, gras -->
@@ -15738,6 +15881,7 @@
   <macro name="ant_antcog" p1="Jérémie" p2="Jeremies" />
   <macro name="ant_antcog" p1="Marc-Aurèle" p2="Marc Aureli" />
   <macro name="ant_antcog" p1="Octave" p2="Octavi" />
+  <macro name="ant_antcog" p1="Mahmoud" p2="Mahmud" />
   <macro name="ant_antcog" p1="Salomon" p2="Salomó" />
 
   <macro name="ant_antcog" p1="Marie-Antoinette" p2="Maria Antonieta" />
@@ -15776,6 +15920,7 @@
   <macro name="noms_propres" p1="Joseph" p2="Josep" />
   <macro name="noms_propres" p1="Juan Carlos" p2="Joan Carles" />
   <macro name="noms_propres" p1="Jules" p2="Juli" />
+  <macro name="noms_propres" p1="Ladislas" p2="Ladislau" />
   <macro name="noms_propres" p1="Léon" p2="Lleó" />
   <macro name="noms_propres" p1="Léopold" p2="Leopold" />
   <macro name="noms_propres" p1="Louis" p2="Lluís" />
