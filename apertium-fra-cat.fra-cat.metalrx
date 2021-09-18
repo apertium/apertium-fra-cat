@@ -3494,6 +3494,11 @@
 
 <!-- **************** PRN **************** -->
 
+  <!-- quel que soit >> sigui quin sigui, sigui el que sigui -->
+  <rule weight="0.8">
+    <match lemma="quel que soit" tags="prn.*"><select lemma="sigui quin sigui"/></match>
+  </rule>
+
   <!-- on >> es, remove -->
   <rule weight="0.8">
     <match lemma="on" tags="prn.*"><select lemma="es"/></match>
@@ -7333,6 +7338,19 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- rappel >> record, crida# a consultes -->
+  <rule weight="0.8">
+    <match lemma="rappel" tags="n.*"><select lemma="record"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="rappel" tags="n.*"><select lemma="crida# a consultes"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+     <match tags="det.*"/>
+    </repeat>
+    <match lemma="embassadeur" tags="n.*"/>
+  </rule>
 
   <!-- décharge >> descàrrega, ferralleria -->
   <rule weight="0.8">

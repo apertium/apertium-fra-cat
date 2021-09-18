@@ -5505,6 +5505,38 @@
     <match lemma="negociació" tags="n.*"/>
   </rule>
 
+  <!-- patir# la competència >> être# concurrencé, être# concurrencés, être# concurrencée, être# concurrencées  -->
+  <rule weight="0.8">
+    <match lemma="patir# la competència" tags="vblex.*"><select lemma="être# concurrencé"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="patir# la competència" tags="vblex.*.pl"><select lemma="être# concurrencés"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="*.f.*"/>
+    <match lemma="patir# la competència" tags="vblex.*.sg"><select lemma="être# concurrencée"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match tags="*.f.*"/>
+    <match lemma="patir# la competència" tags="vblex.*.pl"><select lemma="être# concurrencées"/></match>
+  </rule>
+
+  <!-- tenir# la competència >> être# concurrencé, être# concurrencés, être# concurrencée, être# concurrencées  -->
+  <rule weight="0.8">
+    <match lemma="tenir# la competència" tags="vblex.*"><select lemma="être# concurrencé"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tenir# la competència" tags="vblex.*.pl"><select lemma="être# concurrencés"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="*.f.*"/>
+    <match lemma="tenir# la competència" tags="vblex.*.sg"><select lemma="être# concurrencée"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match tags="*.f.*"/>
+    <match lemma="tenir# la competència" tags="vblex.*.pl"><select lemma="être# concurrencées"/></match>
+  </rule>
+
   <!-- tenir# pressa >> être# empressé, être# empressés, être# empressée, être# empressées  -->
   <rule weight="0.8">
     <match lemma="tenir# pressa" tags="vblex.*"><select lemma="être# empressé"/></match>
