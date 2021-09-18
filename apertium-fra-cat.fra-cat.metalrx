@@ -6824,6 +6824,10 @@
   <rule weight="0.8">
     <match lemma="appeler" tags="vblex.*"><select lemma="cridar"/></match>
   </rule>
+  <rule weight="1.8">
+    <match lemma="appeler" tags="vblex.*"><select lemma="cridar"/></match>
+    <match lemma="à" tags="pr"/>
+  </rule>
   <rule weight="1.2">
     <match tags="prn.pro.p1.*.sg"/>
     <match lemma="appeler" tags="vblex.*.p1.sg"><select lemma="dir"/></match>
