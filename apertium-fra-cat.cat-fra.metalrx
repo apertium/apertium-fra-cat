@@ -7501,6 +7501,116 @@
 
 <!-- **************** N **************** -->
 
+  <!-- corredor >> corridor, coureur -->
+  <rule weight="0.8">
+    <match lemma="corredor" tags="n.*"><select lemma="corridor"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="corredor" tags="n.*"><select lemma="coureur"/></match>
+    <or>
+      <match lemma="nord-americà" tags="adj.*"/>
+      <match lemma="anglès" tags="adj.*"/>
+      <match lemma="britànic" tags="adj.*"/>
+      <match lemma="portuguès" tags="adj.*"/>
+      <match lemma="espanyol" tags="adj.*"/>
+      <match lemma="català" tags="adj.*"/>
+      <match lemma="basc" tags="adj.*"/>
+      <match lemma="italià" tags="adj.*"/>
+      <match lemma="francès" tags="adj.*"/>
+      <match lemma="alemany" tags="adj.*"/>
+      <match lemma="rus" tags="adj.*"/>
+      <match lemma="xinès" tags="adj.*"/>
+      <match lemma="japonès" tags="adj.*"/>
+      <match lemma="coreà" tags="adj.*"/>
+      <match lemma="indi" tags="adj.*"/>
+      <match lemma="canadenc" tags="adj.*"/>
+      <match lemma="mexicà" tags="adj.*"/>
+      <match lemma="cubà" tags="adj.*"/>
+      <match lemma="jamaicà" tags="adj.*"/>
+      <match lemma="brasiler" tags="adj.*"/>
+      <match lemma="marroquí" tags="adj.*"/>
+      <match lemma="algerià" tags="adj.*"/>
+      <match lemma="tunisià" tags="adj.*"/>
+      <match lemma="libi" tags="adj.*"/>
+      <match lemma="egipci" tags="adj.*"/>
+      <match lemma="kenià" tags="adj.*"/>
+      <match lemma="tanzanià" tags="adj.*"/>
+      <match lemma="sud-africà" tags="adj.*"/>
+      <match lemma="australià" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="corredor" tags="n.*"><select lemma="coureur"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="fons" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="corredor" tags="n.*"><select lemma="coureur"/></match>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="relleu" tags="n.*"/>
+      <match lemma="atletisme" tags="n.*"/>
+      <match lemma="olimpíada" tags="n.*"/>
+      <match lemma="olímpic" tags="adj.*"/>
+      <match lemma="paralímpic" tags="adj.*"/>
+      <match lemma="estadi" tags="n.*"/>
+      <match lemma="pista" tags="n.*"/>
+      <match lemma="campionat" tags="n.*"/>
+      <match lemma="campió" tags="n.*"/>
+      <match lemma="cursa" tags="n.*"/>
+      <match lemma="competició" tags="n.*"/>
+      <match lemma="esprint" tags="n.*"/>
+      <match lemma="medalla" tags="n.*"/>
+      <match lemma="victòria" tags="n.*"/>
+      <match lemma="derrota" tags="n.*"/>
+      <match lemma="final" tags="n.*"/>
+      <match lemma="semifinal" tags="n.*"/>
+      <match lemma="classificació" tags="n.*"/>
+      <match lemma="córrer" tags="vblex.*"/>
+      <match lemma="esprintar" tags="vblex.*"/>
+      <match lemma="accelerar" tags="vblex.*"/>
+      <match lemma="classificar" tags="vblex.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="relleu" tags="n.*"/>
+      <match lemma="atletisme" tags="n.*"/>
+      <match lemma="olimpíada" tags="n.*"/>
+      <match lemma="olímpic" tags="adj.*"/>
+      <match lemma="paralímpic" tags="adj.*"/>
+      <match lemma="estadi" tags="n.*"/>
+      <match lemma="pista" tags="n.*"/>
+      <match lemma="campionat" tags="n.*"/>
+      <match lemma="campió" tags="n.*"/>
+      <match lemma="cursa" tags="n.*"/>
+      <match lemma="competició" tags="n.*"/>
+      <match lemma="esprint" tags="n.*"/>
+      <match lemma="medalla" tags="n.*"/>
+      <match lemma="victòria" tags="n.*"/>
+      <match lemma="derrota" tags="n.*"/>
+      <match lemma="final" tags="n.*"/>
+      <match lemma="semifinal" tags="n.*"/>
+      <match lemma="classificació" tags="n.*"/>
+      <match lemma="córrer" tags="vblex.*"/>
+      <match lemma="esprintar" tags="vblex.*"/>
+      <match lemma="accelerar" tags="vblex.*"/>
+      <match lemma="classificar" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="corredor" tags="n.*"><select lemma="coureur"/></match>
+  </rule>
+
   <!-- empatx >> indigestion, obstacle -->
   <!-- empatxament >> indigestion, obstacle -->
   <rule weight="0.8">
@@ -12141,11 +12251,6 @@
     <match lemma="mosso# d'esquadra" tags="n.m.pl"><select lemma="police"/></match>
   </rule>
 
-  <!-- prova >> preuve, essai -->
-  <rule weight="0.8">
-    <match lemma="prova" tags="n.*"><select lemma="preuve"/></match>
-  </rule>
-
   <!-- conseller >> conseiller, ministre -->
   <rule weight="0.8">
     <match lemma="conseller" tags="n.*"><select lemma="conseiller"/></match>
@@ -12307,9 +12412,32 @@
     </or>
   </rule>
 
-  <!-- prova >> preuve, épreuve -->
+  <!-- prova >> preuve, épreuve essai -->
   <rule weight="0.8">
     <match lemma="prova" tags="n.*"><select lemma="preuve"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="guanyar" tags="vblex.*"/>
+      <match lemma="vèncer" tags="vblex.*"/>
+      <match lemma="perdre" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="num.*"/>
+        <match tags="num"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
+    <match lemma="prova" tags="n.*"><select lemma="épreuve"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="prova" tags="n.*"><select lemma="épreuve"/></match>
+    <or>
+      <match lemma="reina" tags="n.*"/>
+      <match lemma="rei" tags="n.f.*"/>
+    </or>
   </rule>
   <rule weight="1.0">
     <match lemma="prova" tags="n.*"><select lemma="épreuve"/></match>
@@ -12326,6 +12454,9 @@
       <match lemma="atletisme" tags="n.*"/>
       <match lemma="natació" tags="n.*"/>
       <match lemma="gimnàstica" tags="n.*"/>
+      <match lemma="marató" tags="n.*"/>
+      <match lemma="salt" tags="n.*"/>
+      <match lemma="llançament" tags="n.*"/>
     </or>
   </rule>
 

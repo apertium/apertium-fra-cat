@@ -13989,6 +13989,15 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- brave >> valent, bon -->
+  <rule weight="0.8">
+    <match lemma="brave" tags="adj.*"><select lemma="valent"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="brave" tags="adj.*"><select lemma="bon"/></match>
+    <match tags="n.*"/>
+  </rule>
+
   <!-- blessé >> lesionat, ferit -->
   <rule weight="0.8">
     <match lemma="blessé" tags="adj.*"><select lemma="lesionat"/></match>
