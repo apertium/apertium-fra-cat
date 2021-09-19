@@ -132,6 +132,7 @@
 		   <match lemma="archiduchesse" tags="n.*"/>
 		   <match lemma="marquis" tags="n.*"/>
 		   <match lemma="baron" tags="n.*"/>
+		   <match lemma="chevalier" tags="n.*"/>
 		 </or>
 		 <match tags="np.ant.*"/>
 		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
@@ -165,6 +166,7 @@
 		   <match lemma="archiduchesse" tags="n.*"/>
 		   <match lemma="marquis" tags="n.*"/>
 		   <match lemma="baron" tags="n.*"/>
+		   <match lemma="chevalier" tags="n.*"/>
 		 </or>
 		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
 	  </rule>
@@ -199,6 +201,7 @@
 		   <match lemma="archiduchesse" tags="n.*"/>
 		   <match lemma="marquis" tags="n.*"/>
 		   <match lemma="baron" tags="n.*"/>
+		   <match lemma="chevalier" tags="n.*"/>
 		 </or>
 	  </rule>
 	  <rule weight="1.0">
@@ -233,6 +236,7 @@
 		   <match lemma="archiduchesse" tags="n.*"/>
 		   <match lemma="marquis" tags="n.*"/>
 		   <match lemma="baron" tags="n.*"/>
+		   <match lemma="chevalier" tags="n.*"/>
 		 </or>
 	  </rule>
 	  <rule weight="1.0">
@@ -627,6 +631,96 @@
        <match lemma="gypse" tags="n.*"/>
     </def-seq>
 
+    <def-seq n="charge">
+      <match lemma="pape" tags="n.*"/>
+      <match lemma="patriarche" tags="n.*"/>
+      <match lemma="cardinal" tags="n.*"/>
+      <match lemma="évêque" tags="n.*"/>
+      <match lemma="archevêque" tags="n.*"/>
+      <match lemma="abbé" tags="n.*"/>
+      <match lemma="abbesse" tags="n.*"/>
+      <match lemma="saint" tags="n.*"/>
+      <match lemma="saint" tags="adj.*"/>
+      <match lemma="apôtre" tags="n.*"/>
+      <match lemma="empereur" tags="n.*"/>
+      <match lemma="roi" tags="n.*"/>
+      <match lemma="tsar" tags="n.*"/>
+      <match lemma="vice-roi" tags="n.*"/>
+      <match lemma="régent" tags="n.*"/>
+      <match lemma="prince" tags="n.*"/>
+      <match lemma="infant" tags="n.*"/>
+      <match lemma="dauphin" tags="n.*"/>
+      <match lemma="comte" tags="n.*"/>
+      <match lemma="comtesse" tags="n.*"/>
+      <match lemma="vicomte" tags="n.*"/>
+      <match lemma="vicomtesse" tags="n.*"/>
+      <match lemma="duc" tags="n.*"/>
+      <match lemma="duchesse" tags="n.*"/>
+      <match lemma="archiduc" tags="n.*"/>
+      <match lemma="grand-duc" tags="n.*"/>
+      <match lemma="grande-duchesse" tags="n.*"/>
+      <match lemma="archiduchesse" tags="n.*"/>
+      <match lemma="marquis" tags="n.*"/>
+      <match lemma="baron" tags="n.*"/>
+      <match lemma="chevalier" tags="n.*"/>
+      <match lemma="maréchal" tags="n.*"/>
+      <match lemma="général" tags="n.*"/>
+      <match lemma="lieutenant-général" tags="n.*"/>
+      <match lemma="officier" tags="n.*"/>
+      <match lemma="sous-officier" tags="n.*"/>
+      <match lemma="colonel" tags="n.*"/>
+      <match lemma="lieutenant-colonel" tags="n.*"/>
+      <match lemma="commandant" tags="n.*"/>
+      <match lemma="capitaine" tags="n.*"/>
+      <match lemma="lieutenant" tags="n.*"/>
+      <match lemma="sous-lieutenant" tags="n.*"/>
+      <match lemma="sergent" tags="n.*"/>
+      <match lemma="caporal" tags="n.*"/>
+      <match lemma="pasteur" tags="n.*"/>
+      <match lemma="prêtre" tags="n.*"/>
+      <match lemma="ministre" tags="n.*"/>
+      <match lemma="ministre# des affaires étrangères" tags="n.*"/>
+      <match lemma="ministre# des finances" tags="n.*"/>
+      <match lemma="ministre# du travail" tags="n.*"/>
+      <match lemma="ministre# de l'éducation" tags="n.*"/>
+      <match lemma="ministre# de l'éducation nationale" tags="n.*"/>
+      <match lemma="vice-ministre" tags="n.*"/>
+      <match lemma="président" tags="n.*"/>
+      <match lemma="vice-président" tags="n.*"/>
+      <match lemma="préfet" tags="n.*"/>
+      <match lemma="sous-préfet" tags="n.*"/>
+      <match lemma="sultan" tags="n.*"/>
+      <match lemma="émir" tags="n.*"/>
+      <match lemma="visir" tags="n.*"/>
+      <match lemma="commandeur" tags="n.*"/>
+      <match lemma="recteur" tags="n.*"/>
+      <match lemma="vice-recteur" tags="n.*"/>
+      <match lemma="doyen" tags="n.*"/>
+      <match lemma="vice-doyen" tags="n.*"/>
+      <match lemma="directeur" tags="n.*"/>
+      <match lemma="secrétaire" tags="n.*"/>
+      <match lemma="secrétaire# d'État" tags="n.*"/>
+      <match lemma="sous-secrétaire" tags="n.*"/>
+      <match lemma="PDG" tags="n.*"/>
+      <match lemma="chef" tags="n.*"/>
+      <match lemma="conseiller" tags="n.*"/>
+      <match lemma="administrateur" tags="n.*"/>
+      <match lemma="membre" tags="n.*"/>
+      <match lemma="peintre" tags="n.*"/>
+      <match lemma="écrivain" tags="n.*"/>
+      <match lemma="sculpteur" tags="n.*"/>
+      <match lemma="travailleur" tags="n.*"/>
+      <match lemma="ouvrier" tags="n.*"/>
+      <match lemma="professeur" tags="n.*"/>
+      <match lemma="maître" tags="n.*"/>
+      <match lemma="maître# d'école" tags="n.*"/>
+      <match lemma="entraîneur" tags="n.*"/>
+      <match lemma="entraineur" tags="n.*"/>
+      <match lemma="commissaire" tags="n.*"/>
+      <match lemma="homme" tags="n.*"/>
+      <match lemma="femme" tags="n.*"/>
+    </def-seq>
+
     <def-seq n="personne">
       <match lemma="personne" tags="n.*"/>
       <match lemma="homme" tags="n.*"/>
@@ -661,6 +755,8 @@
       <match lemma="cardinal" tags="n.*"/>
       <match lemma="évêque" tags="n.*"/>
       <match lemma="archevêque" tags="n.*"/>
+      <match lemma="abbé" tags="n.*"/>
+      <match lemma="abbesse" tags="n.*"/>
       <match lemma="saint" tags="n.*"/>
       <match lemma="saint" tags="adj.*"/>
       <match lemma="apôtre" tags="n.*"/>
@@ -684,11 +780,20 @@
       <match lemma="archiduchesse" tags="n.*"/>
       <match lemma="marquis" tags="n.*"/>
       <match lemma="baron" tags="n.*"/>
+      <match lemma="chevalier" tags="n.*"/>
       <match lemma="maréchal" tags="n.*"/>
       <match lemma="général" tags="n.*"/>
+      <match lemma="lieutenant-général" tags="n.*"/>
+      <match lemma="officier" tags="n.*"/>
+      <match lemma="sous-officier" tags="n.*"/>
       <match lemma="colonel" tags="n.*"/>
+      <match lemma="lieutenant-colonel" tags="n.*"/>
+      <match lemma="commandant" tags="n.*"/>
       <match lemma="capitaine" tags="n.*"/>
+      <match lemma="lieutenant" tags="n.*"/>
+      <match lemma="sous-lieutenant" tags="n.*"/>
       <match lemma="sergent" tags="n.*"/>
+      <match lemma="caporal" tags="n.*"/>
       <match lemma="pasteur" tags="n.*"/>
       <match lemma="prêtre" tags="n.*"/>
       <match lemma="ami" tags="n.*"/>
@@ -716,18 +821,29 @@
       <match lemma="ministre# des affaires étrangères" tags="n.*"/>
       <match lemma="ministre# des finances" tags="n.*"/>
       <match lemma="ministre# du travail" tags="n.*"/>
+      <match lemma="ministre# de l'éducation" tags="n.*"/>
+      <match lemma="ministre# de l'éducation nationale" tags="n.*"/>
       <match lemma="vice-ministre" tags="n.*"/>
       <match lemma="président" tags="n.*"/>
       <match lemma="vice-président" tags="n.*"/>
+      <match lemma="préfet" tags="n.*"/>
+      <match lemma="sous-préfet" tags="n.*"/>
+      <match lemma="sultan" tags="n.*"/>
+      <match lemma="émir" tags="n.*"/>
+      <match lemma="visir" tags="n.*"/>
+      <match lemma="commandeur" tags="n.*"/>
       <match lemma="recteur" tags="n.*"/>
       <match lemma="vice-recteur" tags="n.*"/>
       <match lemma="doyen" tags="n.*"/>
       <match lemma="vice-doyen" tags="n.*"/>
       <match lemma="directeur" tags="n.*"/>
       <match lemma="secrétaire" tags="n.*"/>
+      <match lemma="secrétaire# d'État" tags="n.*"/>
+      <match lemma="sous-secrétaire" tags="n.*"/>
       <match lemma="PDG" tags="n.*"/>
       <match lemma="chef" tags="n.*"/>
       <match lemma="conseiller" tags="n.*"/>
+      <match lemma="administrateur" tags="n.*"/>
       <match lemma="client" tags="n.*"/>
       <match lemma="artiste" tags="n.*"/>
       <match lemma="peintre" tags="n.*"/>
@@ -762,6 +878,22 @@
       <match lemma="policier" tags="n.*"/>
       <match lemma="gendarme" tags="n.*"/>
       <match lemma="pompier" tags="n.*"/>
+      <match lemma="metteur# en scène" tags="n.*"/>
+      <match lemma="entraîneur" tags="n.*"/>
+      <match lemma="entraineur" tags="n.*"/>
+      <match lemma="joueur" tags="n.*"/>
+      <match lemma="joueur# d'échecs" tags="n.*"/>
+      <match lemma="joueur# de golf" tags="n.*"/>
+      <match lemma="joueur# de tennis" tags="n.*"/>
+      <match lemma="pianiste" tags="n.*"/>
+      <match lemma="violoniste" tags="n.*"/>
+      <match lemma="joueur# de viole" tags="n.*"/>
+      <match lemma="violoncelliste" tags="n.*"/>
+      <match lemma="contrebassiste" tags="n.*"/>
+      <match lemma="flûtiste" tags="n.*"/>
+      <match lemma="saxophoniste" tags="n.*"/>
+      <match lemma="trompettiste" tags="n.*"/>
+      <match lemma="commissaire" tags="n.*"/>
       <match lemma="quelqu'un" tags="prn.*"/>
 
       <match lemma="accidentologue" tags="n.*"/>
@@ -4142,15 +4274,21 @@
       <match lemma="ministre# des affaires étrangères" tags="n.*"/>
       <match lemma="ministre# des finances" tags="n.*"/>
       <match lemma="ministre# du travail" tags="n.*"/>
+      <match lemma="ministre# de l'éducation" tags="n.*"/>
+      <match lemma="ministre# de l'éducation nationale" tags="n.*"/>
       <match lemma="vice-ministre" tags="n.*"/>
       <match lemma="président" tags="n.*"/>
       <match lemma="vice-président" tags="n.*"/>
+      <match lemma="préfet" tags="n.*"/>
+      <match lemma="sous-préfet" tags="n.*"/>
       <match lemma="recteur" tags="n.*"/>
       <match lemma="vice-recteur" tags="n.*"/>
       <match lemma="doyen" tags="n.*"/>
       <match lemma="vice-doyen" tags="n.*"/>
       <match lemma="directeur" tags="n.*"/>
       <match lemma="secrétaire" tags="n.*"/>
+      <match lemma="secrétaire# d'État" tags="n.*"/>
+      <match lemma="sous-secrétaire" tags="n.*"/>
       <match lemma="PDG" tags="n.*"/>
 
       <match lemma="compétence" tags="n.*"/>
@@ -4259,6 +4397,12 @@
       <match lemma="squatteur" tags="n.*"/>
       <match lemma="président" tags="n.*"/>
       <match lemma="ministre" tags="n.*"/>
+      <match lemma="ministre# des affaires étrangères" tags="n.*"/>
+      <match lemma="ministre# des finances" tags="n.*"/>
+      <match lemma="ministre# du travail" tags="n.*"/>
+      <match lemma="ministre# de l'éducation" tags="n.*"/>
+      <match lemma="ministre# de l'éducation nationale" tags="n.*"/>
+      <match lemma="vice-ministre" tags="n.*"/>
       <match lemma="général" tags="n.*"/>
       <match lemma="directeur" tags="n.*"/>
       <match lemma="PDG" tags="n.*"/>
@@ -4283,6 +4427,12 @@
       <match lemma="squatteur" tags="n.*"/>
       <match lemma="président" tags="n.*"/>
       <match lemma="ministre" tags="n.*"/>
+      <match lemma="ministre# des affaires étrangères" tags="n.*"/>
+      <match lemma="ministre# des finances" tags="n.*"/>
+      <match lemma="ministre# du travail" tags="n.*"/>
+      <match lemma="ministre# de l'éducation" tags="n.*"/>
+      <match lemma="ministre# de l'éducation nationale" tags="n.*"/>
+      <match lemma="vice-ministre" tags="n.*"/>
       <match lemma="général" tags="n.*"/>
       <match lemma="directeur" tags="n.*"/>
       <match lemma="PDG" tags="n.*"/>
@@ -6775,6 +6925,11 @@
     <match lemma="coucher" tags="vblex.pp.*"><select lemma="ficar# al llit"/></match>
   </rule>
 
+  <!-- nommer >> nomenar, anomenar -->
+  <rule weight="0.8">
+    <match lemma="nommer" tags="vblex.*"><select lemma="nomenar"/></match>
+  </rule>
+
   <!-- sonner >> sonar, picar -->
   <rule weight="0.8">
     <match lemma="sonner" tags="vblex.*"><select lemma="sonar"/></match>
@@ -6826,6 +6981,12 @@
   </rule>
   <rule weight="1.8">
     <match lemma="appeler" tags="vblex.*"><select lemma="cridar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
     <match lemma="à" tags="pr"/>
   </rule>
   <rule weight="1.2">
@@ -8289,15 +8450,21 @@
       <match lemma="ministre# des affaires étrangères" tags="n.*"/>
       <match lemma="ministre# des finances" tags="n.*"/>
       <match lemma="ministre# du travail" tags="n.*"/>
+      <match lemma="ministre# de l'éducation" tags="n.*"/>
+      <match lemma="ministre# de l'éducation nationale" tags="n.*"/>
       <match lemma="vice-ministre" tags="n.*"/>
       <match lemma="président" tags="n.*"/>
       <match lemma="vice-président" tags="n.*"/>
+      <match lemma="préfet" tags="n.*"/>
+      <match lemma="sous-préfet" tags="n.*"/>
       <match lemma="recteur" tags="n.*"/>
       <match lemma="vice-recteur" tags="n.*"/>
       <match lemma="doyen" tags="n.*"/>
       <match lemma="vice-doyen" tags="n.*"/>
       <match lemma="directeur" tags="n.*"/>
       <match lemma="secrétaire" tags="n.*"/>
+      <match lemma="secrétaire# d'État" tags="n.*"/>
+      <match lemma="sous-secrétaire" tags="n.*"/>
       <match lemma="PDG" tags="n.*"/>
     </or>
   </rule>
@@ -13821,6 +13988,69 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- blessé >> lesionat, ferit -->
+  <rule weight="0.8">
+    <match lemma="blessé" tags="adj.*"><select lemma="lesionat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="empereur" tags="n.*"/>
+      <match lemma="roi" tags="n.*"/>
+      <match lemma="tsar" tags="n.*"/>
+      <match lemma="vice-roi" tags="n.*"/>
+      <match lemma="régent" tags="n.*"/>
+      <match lemma="prince" tags="n.*"/>
+      <match lemma="infant" tags="n.*"/>
+      <match lemma="dauphin" tags="n.*"/>
+      <match lemma="comte" tags="n.*"/>
+      <match lemma="comtesse" tags="n.*"/>
+      <match lemma="vicomte" tags="n.*"/>
+      <match lemma="vicomtesse" tags="n.*"/>
+      <match lemma="duc" tags="n.*"/>
+      <match lemma="duchesse" tags="n.*"/>
+      <match lemma="archiduc" tags="n.*"/>
+      <match lemma="grand-duc" tags="n.*"/>
+      <match lemma="grande-duchesse" tags="n.*"/>
+      <match lemma="archiduchesse" tags="n.*"/>
+      <match lemma="marquis" tags="n.*"/>
+      <match lemma="baron" tags="n.*"/>
+      <match lemma="chevalier" tags="n.*"/>
+      <match lemma="maréchal" tags="n.*"/>
+      <match lemma="général" tags="n.*"/>
+      <match lemma="lieutenant-général" tags="n.*"/>
+      <match lemma="officier" tags="n.*"/>
+      <match lemma="sous-officier" tags="n.*"/>
+      <match lemma="colonel" tags="n.*"/>
+      <match lemma="lieutenant-colonel" tags="n.*"/>
+      <match lemma="commandant" tags="n.*"/>
+      <match lemma="capitaine" tags="n.*"/>
+      <match lemma="lieutenant" tags="n.*"/>
+      <match lemma="sous-lieutenant" tags="n.*"/>
+      <match lemma="sergent" tags="n.*"/>
+      <match lemma="caporal" tags="n.*"/>
+      <match lemma="soldat" tags="n.*"/>
+      <match lemma="policier" tags="n.*"/>
+      <match lemma="manifestant" tags="n.*"/>
+      <match lemma="travailleur" tags="n.*"/>
+      <match lemma="ouvrier" tags="n.*"/>
+      <match lemma="agriculteur" tags="n.*"/>
+      <match lemma="homme" tags="n.*"/>
+      <match lemma="femme" tags="n.*"/>
+    </or>
+    <match lemma="blessé" tags="adj.*"><select lemma="ferir"/></match>
+  </rule>
+
+  <!-- nommé >> anomenat, nomenat -->
+  <rule weight="0.8">
+    <match lemma="nommé" tags="adj.*"><select lemma="anomenat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="nommé" tags="adj.*"><select lemma="nomenar"/></match>
+    <or>
+      <seq n="charge"/>
+    </or>
+  </rule>
 
   <!-- carné >> ric# en carn, encarnat -->
   <rule weight="0.8">
