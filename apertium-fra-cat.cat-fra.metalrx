@@ -111,8 +111,6 @@
 		 <or>
 		   <match lemma="papa" tags="n.*"/>
 		   <match lemma="patriarca" tags="n.*"/>
-		   <match lemma="bisbe" tags="n.*"/>
-		   <match lemma="arquebisbe" tags="n.*"/>
 		   <match lemma="sant" tags="n.*"/>
 		   <match lemma="sant" tags="adj.*"/>
 		   <match lemma="apòstol" tags="n.*"/>
@@ -138,8 +136,6 @@
 		 <or>
 		   <match lemma="papa" tags="n.*"/>
 		   <match lemma="patriarca" tags="n.*"/>
-		   <match lemma="bisbe" tags="n.*"/>
-		   <match lemma="arquebisbe" tags="n.*"/>
 		   <match lemma="sant" tags="n.*"/>
 		   <match lemma="sant" tags="adj.*"/>
 		   <match lemma="apòstol" tags="n.*"/>
@@ -168,8 +164,6 @@
 		 <or>
 		   <match lemma="papa" tags="n.*"/>
 		   <match lemma="patriarca" tags="n.*"/>
-		   <match lemma="bisbe" tags="n.*"/>
-		   <match lemma="arquebisbe" tags="n.*"/>
 		   <match lemma="sant" tags="n.*"/>
 		   <match lemma="sant" tags="adj.*"/>
 		   <match lemma="apòstol" tags="n.*"/>
@@ -197,8 +191,6 @@
 		 <or>
 		   <match lemma="papa" tags="n.*"/>
 		   <match lemma="patriarca" tags="n.*"/>
-		   <match lemma="bisbe" tags="n.*"/>
-		   <match lemma="arquebisbe" tags="n.*"/>
 		   <match lemma="sant" tags="n.*"/>
 		   <match lemma="sant" tags="adj.*"/>
 		   <match lemma="apòstol" tags="n.*"/>
@@ -6607,8 +6599,11 @@
   <!-- enfitar >> causer# une indigestion, avoir# une indigestion -->
   <macro name="verb_nopron_pron" p1="enfitar" p2="causer# une indigestion" p3="avoir# une indigestion" />
 
-  <!-- fer# fonedís >> faire# tourner la tête, évaporer -->
+  <!-- fer# fonedís >> défaire, évaporer -->
   <macro name="verb_nopron_pron" p1="fer# fonedís" p2="défaire" p3="évaporer" />
+
+  <!-- fer# un embolic >> faire# toute une histoire, embrouiller -->
+  <macro name="verb_nopron_pron" p1="fer# un embolic" p2="faire# toute une histoire" p3="embrouiller" />
 
   <!-- marejar >> faire# tourner la tête, sentir# mal -->
   <macro name="verb_nopron_pron" p1="marejar" p2="faire# tourner la tête" p3="sentir# mal" />
@@ -6737,6 +6732,18 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- altre >> autre, d'autre -->
+  <rule weight="0.8">
+    <match lemma="altre" tags="adj.*"><select lemma="autre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="amb" tags="pr"/>
+      <match lemma="sense" tags="pr"/>
+    </or>
+    <match lemma="altre" tags="adj.*"><select lemma="d'autre"/></match>
+  </rule>
 
   <!-- tigrinya >> tigréen, tigrigna -->
   <rule weight="0.8">
@@ -7500,6 +7507,33 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- reassentament >> réinstallation, relogement -->
+  <rule weight="0.8">
+    <match lemma="reassentament" tags="n.*"><select lemma="réinstallation"/></match>
+  </rule>
+
+  <!-- ganyot >> gosier, grimace -->
+  <rule weight="0.8">
+    <match lemma="ganyot" tags="n.*"><select lemma="gosier"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fer" tags="vblex.*"/>
+    <repeat from="0" upto="3">
+      <or>
+        <match tags="adv"/>
+        <match tags="det.*"/>
+        <match tags="preadv"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
+    <match lemma="ganyot" tags="n.*"><select lemma="grimace"/></match>
+  </rule>
+
+  <!-- veta >> veine, ruban -->
+  <rule weight="0.8">
+    <match lemma="veta" tags="n.*"><select lemma="veine"/></match>
+  </rule>
 
   <!-- corredor >> corridor, coureur -->
   <rule weight="0.8">
@@ -9299,6 +9333,19 @@
     <match tags="det.*"/>
     <match lemma="presa" tags="n.*"><select lemma="proie"/></match>
   </rule>
+<!--
+  <rule weight="1.0">
+    <match lemma="presa" tags="n.*"><select lemma="barrage"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <or>
+      <match tags="np.top.*"/>
+      <match tags="np.cog.*"/>
+    </or>
+  </rule>
+-->
 
   <!-- opositor >> opposant, adversaire -->
   <rule weight="0.8">
