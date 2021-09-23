@@ -3749,6 +3749,18 @@
 
 <!-- **************** V **************** -->
 
+  <!-- plébisciter >> donar# suport, aprovar -->
+  <rule weight="0.8">
+    <match lemma="plébisciter" tags="vblex.*"><select lemma="donar# suport"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="n.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="plébisciter" tags="vblex.pp.*"><select lemma="aprovar"/></match>
+  </rule>
+
   <!-- ficher >> fitxar, fúmer, clavar -->
   <rule weight="0.8">
     <match lemma="ficher" tags="vblex.*"><select lemma="fitxar"/></match>
@@ -5476,6 +5488,23 @@
       <match lemma="parole" tags="n.*"/>
       <match lemma="promesse" tags="n.*"/>
       <match lemma="rêne" tags="n.*"/>
+      <match lemma="débat" tags="n.*"/>
+      <match lemma="discussion" tags="n.*"/>
+      <match lemma="conversation" tags="n.*"/>
+      <match lemma="dialogue" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tenir" tags="vblex.*"><select lemma="mantenir"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="preadv"/>
+        <match tags="adv"/>
+      </or>
+    </repeat>
+    <or>
+      <match tags="adj.*"/>
+      <match tags="vblex.pp.*"/>
     </or>
   </rule>
 

@@ -488,6 +488,7 @@
       <cat-item lemma="florir" tags="vblex.*"/>
       <cat-item lemma="gitar" tags="vblex.*"/>
       <cat-item lemma="moure" tags="vblex.*"/>
+      <cat-item lemma="negar" tags="vblex.*"/>
       <cat-item lemma="oblidar# de" tags="vblex.*"/>
       <cat-item lemma="penedir" tags="vblex.*"/>
       <cat-item lemma="podrir" tags="vblex.*"/>
@@ -527,6 +528,7 @@
       <cat-item lemma="florir" tags="vblex.inf"/>
       <cat-item lemma="gitar" tags="vblex.inf"/>
       <cat-item lemma="moure" tags="vblex.inf"/>
+      <cat-item lemma="negar" tags="vblex.inf"/>
       <cat-item lemma="oblidar# de" tags="vblex.inf"/>
       <cat-item lemma="penedir" tags="vblex.inf"/>
       <cat-item lemma="podrir" tags="vblex.inf"/>
@@ -566,6 +568,7 @@
       <cat-item lemma="florir" tags="vblex.ger"/>
       <cat-item lemma="gitar" tags="vblex.ger"/>
       <cat-item lemma="moure" tags="vblex.ger"/>
+      <cat-item lemma="negar" tags="vblex.ger"/>
       <cat-item lemma="oblidar# de" tags="vblex.ger"/>
       <cat-item lemma="penedir" tags="vblex.ger"/>
       <cat-item lemma="podrir" tags="vblex.ger"/>
@@ -605,6 +608,7 @@
       <cat-item lemma="florir" tags="vblex.pp.*"/>
       <cat-item lemma="gitar" tags="vblex.pp.*"/>
       <cat-item lemma="moure" tags="vblex.pp.*"/>
+      <cat-item lemma="negar" tags="vblex.pp.*"/>
       <cat-item lemma="oblidar# de" tags="vblex.pp.*"/>
       <cat-item lemma="penedir" tags="vblex.pp.*"/>
       <cat-item lemma="podrir" tags="vblex.pp.*"/>
@@ -20127,8 +20131,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
     </rule>
 
-    <rule>
-<!--REGLA: SENT,que No PRN VERB: No li escriuen >> Ils ne lui écrivent pas -->
+    <rule comment="REGLA: SENT,que No PRN VERB: No li escriuen >> Ils ne lui écrivent pas">
       <pattern>
         <pattern-item n="sentque_nocm"/>
         <pattern-item n="noadv"/>
@@ -20169,6 +20172,7 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
               <b/>
             </out>
+            <let><clip pos="4" side="tl" part="nbr"/><lit-tag v="sg"/></let>
           </when>
           <when>
             <test>
