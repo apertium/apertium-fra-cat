@@ -1666,6 +1666,310 @@
   </rule>
 -->
 
+  <rule weight="3.0">
+    <match tags="sent"/>
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <or>
+      <match lemma="dir" tags="vblex.*.p3.sg"/>
+      <match lemma="assegurar" tags="vblex.*.p3.sg"/>
+      <match lemma="prometre" tags="vblex.*.p3.sg"/>
+      <match lemma="jurar" tags="vblex.*.p3.sg"/>
+      <match lemma="afirmar" tags="vblex.*.p3.sg"/>
+      <match lemma="negar" tags="vblex.*.p3.sg"/>
+      <match lemma="permetre" tags="vblex.*.p3.sg"/>
+      <match lemma="deixar" tags="vblex.*.p3.sg"/>
+      <match lemma="conèixer" tags="vblex.*.p3.sg"/>
+      <match lemma="desconèixer" tags="vblex.*.p3.sg"/>
+      <match lemma="saber" tags="vblex.*.p3.sg"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
+    <match tags="n.*.sg"/>
+  </rule>
+  <rule weight="3.0">
+    <match tags="sent"/>
+    <match tags="adv"/>
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <or>
+      <match lemma="dir" tags="vblex.*.p3.sg"/>
+      <match lemma="assegurar" tags="vblex.*.p3.sg"/>
+      <match lemma="prometre" tags="vblex.*.p3.sg"/>
+      <match lemma="jurar" tags="vblex.*.p3.sg"/>
+      <match lemma="afirmar" tags="vblex.*.p3.sg"/>
+      <match lemma="negar" tags="vblex.*.p3.sg"/>
+      <match lemma="permetre" tags="vblex.*.p3.sg"/>
+      <match lemma="deixar" tags="vblex.*.p3.sg"/>
+      <match lemma="conèixer" tags="vblex.*.p3.sg"/>
+      <match lemma="desconèixer" tags="vblex.*.p3.sg"/>
+      <match lemma="saber" tags="vblex.*.p3.sg"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
+    <match tags="n.*.sg"/>
+  </rule>
+  <rule weight="3.0">
+    <match tags="sent"/>
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <or>
+      <match lemma="dir" tags="vblex.*.p3.pl"/>
+      <match lemma="assegurar" tags="vblex.*.p3.pl"/>
+      <match lemma="prometre" tags="vblex.*.p3.pl"/>
+      <match lemma="jurar" tags="vblex.*.p3.pl"/>
+      <match lemma="afirmar" tags="vblex.*.p3.pl"/>
+      <match lemma="negar" tags="vblex.*.p3.pl"/>
+      <match lemma="permetre" tags="vblex.*.p3.pl"/>
+      <match lemma="deixar" tags="vblex.*.p3.pl"/>
+      <match lemma="conèixer" tags="vblex.*.p3.pl"/>
+      <match lemma="desconèixer" tags="vblex.*.p3.pl"/>
+      <match lemma="saber" tags="vblex.*.p3.pl"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
+    <match tags="n.*.pl"/>
+  </rule>
+  <rule weight="3.0">
+    <match tags="sent"/>
+    <match tags="adv"/>
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <or>
+      <match lemma="dir" tags="vblex.*.p3.pl"/>
+      <match lemma="assegurar" tags="vblex.*.p3.pl"/>
+      <match lemma="prometre" tags="vblex.*.p3.pl"/>
+      <match lemma="jurar" tags="vblex.*.p3.pl"/>
+      <match lemma="afirmar" tags="vblex.*.p3.pl"/>
+      <match lemma="negar" tags="vblex.*.p3.pl"/>
+      <match lemma="permetre" tags="vblex.*.p3.pl"/>
+      <match lemma="deixar" tags="vblex.*.p3.pl"/>
+      <match lemma="conèixer" tags="vblex.*.p3.pl"/>
+      <match lemma="desconèixer" tags="vblex.*.p3.pl"/>
+      <match lemma="saber" tags="vblex.*.p3.pl"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
+    <match tags="n.*.pl"/>
+  </rule>
+  <rule weight="3.0">
+    <match tags="sent"/>
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <match tags="vbhaver.*.p3.sg"/>
+    <or>
+      <match lemma="dir" tags="vblex.pp.*"/>
+      <match lemma="assegurar" tags="vblex.pp.*"/>
+      <match lemma="prometre" tags="vblex.pp.*"/>
+      <match lemma="jurar" tags="vblex.pp.*"/>
+      <match lemma="afirmar" tags="vblex.pp.*"/>
+      <match lemma="negar" tags="vblex.pp.*"/>
+      <match lemma="permetre" tags="vblex.pp.*"/>
+      <match lemma="deixar" tags="vblex.pp.*"/>
+      <match lemma="conèixer" tags="vblex.pp.*"/>
+      <match lemma="desconèixer" tags="vblex.pp.*"/>
+      <match lemma="saber" tags="vblex.pp.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
+    <match tags="n.*.sg"/>
+  </rule>
+  <rule weight="3.0">
+    <match tags="sent"/>
+    <match tags="adv"/>
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <match tags="vbhaver.*.p3.sg"/>
+    <or>
+      <match lemma="dir" tags="vblex.pp.*"/>
+      <match lemma="assegurar" tags="vblex.pp.*"/>
+      <match lemma="prometre" tags="vblex.pp.*"/>
+      <match lemma="jurar" tags="vblex.pp.*"/>
+      <match lemma="afirmar" tags="vblex.pp.*"/>
+      <match lemma="negar" tags="vblex.pp.*"/>
+      <match lemma="permetre" tags="vblex.pp.*"/>
+      <match lemma="deixar" tags="vblex.pp.*"/>
+      <match lemma="conèixer" tags="vblex.pp.*"/>
+      <match lemma="desconèixer" tags="vblex.pp.*"/>
+      <match lemma="saber" tags="vblex.pp.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
+    <match tags="n.*.sg"/>
+  </rule>
+  <rule weight="3.0">
+    <match tags="sent"/>
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <match tags="vbhaver.*.p3.pl"/>
+    <or>
+      <match lemma="dir" tags="vblex.pp.*"/>
+      <match lemma="assegurar" tags="vblex.pp.*"/>
+      <match lemma="prometre" tags="vblex.pp.*"/>
+      <match lemma="jurar" tags="vblex.pp.*"/>
+      <match lemma="afirmar" tags="vblex.pp.*"/>
+      <match lemma="negar" tags="vblex.pp.*"/>
+      <match lemma="permetre" tags="vblex.pp.*"/>
+      <match lemma="deixar" tags="vblex.pp.*"/>
+      <match lemma="conèixer" tags="vblex.pp.*"/>
+      <match lemma="desconèixer" tags="vblex.pp.*"/>
+      <match lemma="saber" tags="vblex.pp.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
+    <match tags="n.*.pl"/>
+  </rule>
+  <rule weight="3.0">
+    <match tags="sent"/>
+    <match tags="adv"/>
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <match tags="vbhaver.*.p3.pl"/>
+    <or>
+      <match lemma="dir" tags="vblex.pp.*"/>
+      <match lemma="assegurar" tags="vblex.pp.*"/>
+      <match lemma="prometre" tags="vblex.pp.*"/>
+      <match lemma="jurar" tags="vblex.pp.*"/>
+      <match lemma="afirmar" tags="vblex.pp.*"/>
+      <match lemma="negar" tags="vblex.pp.*"/>
+      <match lemma="permetre" tags="vblex.pp.*"/>
+      <match lemma="deixar" tags="vblex.pp.*"/>
+      <match lemma="conèixer" tags="vblex.pp.*"/>
+      <match lemma="desconèixer" tags="vblex.pp.*"/>
+      <match lemma="saber" tags="vblex.pp.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
+    <match tags="n.*.pl"/>
+  </rule>
+  <rule weight="3.0">
+    <match tags="sent"/>
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <match lemma="anar" tags="vblex.pri.p3.sg"/>
+    <or>
+      <match lemma="dir" tags="vblex.inf"/>
+      <match lemma="assegurar" tags="vblex.inf"/>
+      <match lemma="prometre" tags="vblex.inf"/>
+      <match lemma="jurar" tags="vblex.inf"/>
+      <match lemma="afirmar" tags="vblex.inf"/>
+      <match lemma="negar" tags="vblex.inf"/>
+      <match lemma="permetre" tags="vblex.inf"/>
+      <match lemma="deixar" tags="vblex.inf"/>
+      <match lemma="conèixer" tags="vblex.inf"/>
+      <match lemma="desconèixer" tags="vblex.inf"/>
+      <match lemma="saber" tags="vblex.inf"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
+    <match tags="n.*.sg"/>
+  </rule>
+  <rule weight="3.0">
+    <match tags="sent"/>
+    <match tags="adv"/>
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <match lemma="anar" tags="vblex.pri.p3.sg"/>
+    <or>
+      <match lemma="dir" tags="vblex.inf"/>
+      <match lemma="assegurar" tags="vblex.inf"/>
+      <match lemma="prometre" tags="vblex.inf"/>
+      <match lemma="jurar" tags="vblex.inf"/>
+      <match lemma="afirmar" tags="vblex.inf"/>
+      <match lemma="negar" tags="vblex.inf"/>
+      <match lemma="permetre" tags="vblex.inf"/>
+      <match lemma="deixar" tags="vblex.inf"/>
+      <match lemma="conèixer" tags="vblex.inf"/>
+      <match lemma="desconèixer" tags="vblex.inf"/>
+      <match lemma="saber" tags="vblex.inf"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
+    <match tags="n.*.sg"/>
+  </rule>
+  <rule weight="3.0">
+    <match tags="sent"/>
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <match lemma="anar" tags="vblex.pri.p3.pl"/>
+    <or>
+      <match lemma="dir" tags="vblex.inf"/>
+      <match lemma="assegurar" tags="vblex.inf"/>
+      <match lemma="prometre" tags="vblex.inf"/>
+      <match lemma="jurar" tags="vblex.inf"/>
+      <match lemma="afirmar" tags="vblex.inf"/>
+      <match lemma="negar" tags="vblex.inf"/>
+      <match lemma="permetre" tags="vblex.inf"/>
+      <match lemma="deixar" tags="vblex.inf"/>
+      <match lemma="conèixer" tags="vblex.inf"/>
+      <match lemma="desconèixer" tags="vblex.inf"/>
+      <match lemma="saber" tags="vblex.inf"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
+    <match tags="n.*.pl"/>
+  </rule>
+  <rule weight="3.0">
+    <match tags="sent"/>
+    <match tags="adv"/>
+    <match lemma="es" tags="prn.pro.*"><select lemma="on"/></match>
+    <match lemma="anar" tags="vblex.pri.p3.pl"/>
+    <or>
+      <match lemma="dir" tags="vblex.inf"/>
+      <match lemma="assegurar" tags="vblex.inf"/>
+      <match lemma="prometre" tags="vblex.inf"/>
+      <match lemma="jurar" tags="vblex.inf"/>
+      <match lemma="afirmar" tags="vblex.inf"/>
+      <match lemma="negar" tags="vblex.inf"/>
+      <match lemma="permetre" tags="vblex.inf"/>
+      <match lemma="deixar" tags="vblex.inf"/>
+      <match lemma="conèixer" tags="vblex.inf"/>
+      <match lemma="desconèixer" tags="vblex.inf"/>
+      <match lemma="saber" tags="vblex.inf"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
+    <match tags="n.*.pl"/>
+  </rule>
+
+
   <rule weight="1.0">
     <or>
       <match lemma="que" tags="rel.an.*"><select lemma="que"/></match>
@@ -3997,6 +4301,55 @@
   </rule>
 
 <!-- **************** V **************** -->
+
+  <!-- parar >> arrêter, tendre, faire, mettre -->
+  <rule weight="0.8">
+    <match lemma="parar" tags="vblex.*"><select lemma="arrêter"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="parar" tags="vblex.*"><select lemma="tendre"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="trampa" tags="n.*"/>
+      <match lemma="parany" tags="n.*"/>
+      <match lemma="emboscada" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="parar" tags="vblex.*"><select lemma="faire"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="atenció" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="parar" tags="vblex.*"><select lemma="mettre"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="taula" tags="n.*"/>
+    </or>
+  </rule>
 
   <!-- negar >> nier, refuser -->
   <rule weight="0.8">
