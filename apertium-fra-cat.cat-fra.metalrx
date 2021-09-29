@@ -817,49 +817,82 @@
     </def-seq>
 
     <def-seq n="part_cos">
-      <match lemma="braç"/>
-      <match lemma="mà"/>
-      <match lemma="cama"/>
-      <match lemma="peu"/>
-      <match lemma="cap"/>
-      <match lemma="coll"/>
-      <match lemma="cos"/>
-      <match lemma="coll"/>
-      <match lemma="pit"/>
-      <match lemma="panxa"/>
-      <match lemma="cintura"/>
-      <match lemma="cul"/>
-      <match lemma="maluc"/>
-      <match lemma="front"/>
-      <match lemma="nas"/>
-      <match lemma="galta"/>
-      <match lemma="boca"/>
-      <match lemma="barbeta"/>
-      <match lemma="mentó"/>
-      <match lemma="ull"/>
-      <match lemma="orella"/>
-      <match lemma="cabell"/>
-      <match lemma="genoll"/>
-      <match lemma="turmell"/>
+      <match lemma="braç" tags="n.*"/>
+      <match lemma="mà" tags="n.*"/>
+      <match lemma="cama" tags="n.*"/>
+      <match lemma="peu" tags="n.*"/>
+      <match lemma="cap" tags="n.*"/>
+      <match lemma="coll" tags="n.*"/>
+      <match lemma="cos" tags="n.*"/>
+      <match lemma="coll" tags="n.*"/>
+      <match lemma="pit" tags="n.*"/>
+      <match lemma="panxa" tags="n.*"/>
+      <match lemma="cintura" tags="n.*"/>
+      <match lemma="cul" tags="n.*"/>
+      <match lemma="maluc" tags="n.*"/>
+      <match lemma="front" tags="n.*"/>
+      <match lemma="nas" tags="n.*"/>
+      <match lemma="galta" tags="n.*"/>
+      <match lemma="boca" tags="n.*"/>
+      <match lemma="barbeta" tags="n.*"/>
+      <match lemma="mentó" tags="n.*"/>
+      <match lemma="ull" tags="n.*"/>
+      <match lemma="orella" tags="n.*"/>
+      <match lemma="cabell" tags="n.*"/>
+      <match lemma="genoll" tags="n.*"/>
+      <match lemma="turmell" tags="n.*"/>
 
-      <match lemma="fetge"/>
-      <match lemma="estòmac"/>
-      <match lemma="cor"/>
+      <match lemma="fetge" tags="n.*"/>
+      <match lemma="estòmac" tags="n.*"/>
+      <match lemma="cor" tags="n.*"/>
       <match lemma="pulmó"/>
-      <match lemma="budell"/>
+      <match lemma="budell" tags="n.*"/>
     </def-seq>
 
     <def-seq n="vestit">
-      <match lemma="samarreta"/>
-      <match lemma="camisa"/>
-      <match lemma="pantaló"/>
-      <match lemma="faldilla"/>
-      <match lemma="calces"/>
-      <match lemma="calçotets"/>
-      <match lemma="màniga"/>
-      <match lemma="mitjó"/>
-      <match lemma="mitja"/>
-      <match lemma="sabata"/>
+      <match lemma="samarreta" tags="n.*"/>
+      <match lemma="camisa" tags="n.*"/>
+      <match lemma="pantaló" tags="n.*"/>
+      <match lemma="faldilla" tags="n.*"/>
+      <match lemma="calces" tags="n.*"/>
+      <match lemma="calçotets" tags="n.*"/>
+      <match lemma="màniga" tags="n.*"/>
+      <match lemma="mitjó" tags="n.*"/>
+      <match lemma="mitja" tags="n.*"/>
+      <match lemma="sabata" tags="n.*"/>
+    </def-seq>
+
+    <def-seq n="gentilici_adj">
+      <match lemma="nord-americà" tags="adj.*"/>
+      <match lemma="britànic" tags="adj.*"/>
+      <match lemma="anglès" tags="adj.*"/>
+      <match lemma="escocès" tags="adj.*"/>
+      <match lemma="gal·lès" tags="adj.*"/>
+      <match lemma="portuguès" tags="adj.*"/>
+      <match lemma="espanyol" tags="adj.*"/>
+      <match lemma="català" tags="adj.*"/>
+      <match lemma="basc" tags="adj.*"/>
+      <match lemma="italià" tags="adj.*"/>
+      <match lemma="francès" tags="adj.*"/>
+      <match lemma="alemany" tags="adj.*"/>
+      <match lemma="rus" tags="adj.*"/>
+      <match lemma="xinès" tags="adj.*"/>
+      <match lemma="japonès" tags="adj.*"/>
+      <match lemma="coreà" tags="adj.*"/>
+      <match lemma="indi" tags="adj.*"/>
+      <match lemma="canadenc" tags="adj.*"/>
+      <match lemma="mexicà" tags="adj.*"/>
+      <match lemma="cubà" tags="adj.*"/>
+      <match lemma="jamaicà" tags="adj.*"/>
+      <match lemma="brasiler" tags="adj.*"/>
+      <match lemma="marroquí" tags="adj.*"/>
+      <match lemma="algerià" tags="adj.*"/>
+      <match lemma="tunisià" tags="adj.*"/>
+      <match lemma="libi" tags="adj.*"/>
+      <match lemma="egipci" tags="adj.*"/>
+      <match lemma="kenià" tags="adj.*"/>
+      <match lemma="tanzanià" tags="adj.*"/>
+      <match lemma="sud-africà" tags="adj.*"/>
     </def-seq>
 
     <def-seq n="verbs_moviment">
@@ -7922,6 +7955,90 @@
 
 <!-- **************** N **************** -->
 
+  <!-- llançador >> lanceur, composition -->
+  <rule weight="0.8">
+    <match lemma="llançador" tags="n.m.*"><select lemma="lanceur" tags="n.m.*"/></match>
+  </rule>
+  <rule weight="0.8">
+    <match lemma="llançador" tags="n.f.*"><select lemma="lanceur" tags="n.f.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="llançador" tags="n.f.*"><select lemma="lanceur" tags="n.m.*"/></match>
+    <match lemma="espacial" tags="adj.*"/>
+  </rule>
+
+  <!-- alineació >> alignement, composition -->
+  <rule weight="0.8">
+    <match lemma="alineació" tags="n.*"><select lemma="alignement"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="alineació" tags="n.*"><select lemma="composition"/></match>
+    <or>
+      <match lemma="inicial" tags="adj.*"/>
+      <match lemma="titular" tags="adj.*"/>
+      <match lemma="habitual" tags="adj.*"/>
+      <match lemma="estelar" tags="adj.*"/>
+      <match lemma="blaugrana" tags="adj.*"/>
+      <seq n="gentilici_adj"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="alineació" tags="n.*"><select lemma="composition"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match tags="np.al.*"/>
+      <match tags="np.top.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="alineació" tags="n.*"><select lemma="composition"/></match>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="futbol" tags="n.*"/>
+      <match lemma="rugbi" tags="n.*"/>
+      <match lemma="bàsquet" tags="n.*"/>
+      <match lemma="basquetbol" tags="n.*"/>
+      <match lemma="handbol" tags="n.*"/>
+      <match lemma="voleibol" tags="n.*"/>
+      <match lemma="estadi" tags="n.*"/>
+      <match lemma="equip" tags="n.*"/>
+      <match lemma="blaugrana" tags="adj.*"/>
+      <match lemma="Camp Nou" tags="np.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="futbol" tags="n.*"/>
+      <match lemma="rugbi" tags="n.*"/>
+      <match lemma="bàsquet" tags="n.*"/>
+      <match lemma="basquetbol" tags="n.*"/>
+      <match lemma="handbol" tags="n.*"/>
+      <match lemma="voleibol" tags="n.*"/>
+      <match lemma="estadi" tags="n.*"/>
+      <match lemma="equip" tags="n.*"/>
+      <match lemma="blaugrana" tags="adj.*"/>
+      <match lemma="Camp Nou" tags="np.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="alineació" tags="n.*"><select lemma="composition"/></match>
+  </rule>
+
+  <!-- lector >> lecteur, liseuse -->
+  <rule weight="0.8">
+    <match lemma="lector" tags="n.*"><select lemma="lecteur"/></match>
+  </rule>
+
   <!-- reassentament >> réinstallation, relogement -->
   <rule weight="0.8">
     <match lemma="reassentament" tags="n.*"><select lemma="réinstallation"/></match>
@@ -7956,35 +8073,7 @@
   <rule weight="1.0">
     <match lemma="corredor" tags="n.*"><select lemma="coureur"/></match>
     <or>
-      <match lemma="nord-americà" tags="adj.*"/>
-      <match lemma="anglès" tags="adj.*"/>
-      <match lemma="britànic" tags="adj.*"/>
-      <match lemma="portuguès" tags="adj.*"/>
-      <match lemma="espanyol" tags="adj.*"/>
-      <match lemma="català" tags="adj.*"/>
-      <match lemma="basc" tags="adj.*"/>
-      <match lemma="italià" tags="adj.*"/>
-      <match lemma="francès" tags="adj.*"/>
-      <match lemma="alemany" tags="adj.*"/>
-      <match lemma="rus" tags="adj.*"/>
-      <match lemma="xinès" tags="adj.*"/>
-      <match lemma="japonès" tags="adj.*"/>
-      <match lemma="coreà" tags="adj.*"/>
-      <match lemma="indi" tags="adj.*"/>
-      <match lemma="canadenc" tags="adj.*"/>
-      <match lemma="mexicà" tags="adj.*"/>
-      <match lemma="cubà" tags="adj.*"/>
-      <match lemma="jamaicà" tags="adj.*"/>
-      <match lemma="brasiler" tags="adj.*"/>
-      <match lemma="marroquí" tags="adj.*"/>
-      <match lemma="algerià" tags="adj.*"/>
-      <match lemma="tunisià" tags="adj.*"/>
-      <match lemma="libi" tags="adj.*"/>
-      <match lemma="egipci" tags="adj.*"/>
-      <match lemma="kenià" tags="adj.*"/>
-      <match lemma="tanzanià" tags="adj.*"/>
-      <match lemma="sud-africà" tags="adj.*"/>
-      <match lemma="australià" tags="adj.*"/>
+      <seq n="gentilici_adj"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -8822,6 +8911,19 @@
     </or>
   </rule>
 -->
+
+  <!-- ull# de poll >> cor# au pied, cor# aux pieds -->
+  <rule weight="0.8">
+    <match lemma="ull# de poll" tags="n.*"><select lemma="cor# au pied"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ull# de poll" tags="n.*.pl"><select lemma="cor# aux pieds"/></match>
+  </rule>
+
+  <!-- espècia >> épice, espèce -->
+  <rule weight="0.8">
+    <match lemma="espècia" tags="n.*"><select lemma="épice"/></match>
+  </rule>
 
   <!-- notícia >> nouvelle, dépêche -->
   <rule weight="0.8">

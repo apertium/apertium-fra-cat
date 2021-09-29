@@ -1371,6 +1371,7 @@
       <list-item v="Lesotho"/>
       <list-item v="Botswana"/>
       <list-item v="Zimbabwe"/>
+      <list-item v="Rhodésie"/>
       <list-item v="Namibie"/>
       <list-item v="Zambie"/>
       <list-item v="Swaziland"/>
@@ -1382,6 +1383,7 @@
       <list-item v="Manitoba"/>
       <list-item v="Ontario"/>
 <!--      <list-item v="Québec"/> -->
+      <list-item v="Nouveau-Brunswick"/>
       <list-item v="Saskatchewan"/>
       <list-item v="Nouvelle-Orléans"/>
       <list-item v="Alabama"/>
@@ -4894,7 +4896,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     <rule comment="REGLA: DET NOM ADJ">
       <pattern>
         <pattern-item n="det"/>
-        <pattern-item n="nom"/>
+		<pattern-item n="nom"/>
         <pattern-item n="adjec"/>
       </pattern>
       <action>
@@ -4922,6 +4924,132 @@ is not applicable because gender and number cannot be taken from previous rules 
             <clip pos="3" side="tl" part="a_adjec"/>
             <clip pos="3" side="tl" part="gen"/>
             <clip pos="3" side="tl" part="nbr"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: TOP ADJ">
+      <pattern>
+	<pattern-item n="nptop"/>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="1"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="tags"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+	    <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="a_adjec"/>
+            <clip pos="2" side="tl" part="gen"/>
+            <clip pos="2" side="tl" part="nbr"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: DET TOP ADJ">
+      <pattern>
+        <pattern-item n="det"/>
+	<pattern-item n="nptop"/>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord3">
+          <with-param pos="2"/>
+          <with-param pos="3"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+	    <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="a_adjec"/>
+            <clip pos="3" side="tl" part="gen"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: DET ADJ ANT">
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="adj"/>
+	<pattern-item n="npant"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord3">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: DET ADJ TOP">
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="adj"/>
+	<pattern-item n="nptop"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord3">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
             <clip pos="3" side="tl" part="lemq"/>
           </lu>
         </out>

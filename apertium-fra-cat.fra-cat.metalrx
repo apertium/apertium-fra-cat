@@ -6618,6 +6618,7 @@
     <or>
       <match lemma="film" tags="n.*"/>
       <match lemma="téléfilm" tags="n.*"/>
+      <match lemma="feuilleton" tags="n.*"/>
       <match lemma="spot" tags="n.*"/>
       <match lemma="vidéo" tags="n.*"/>
       <match lemma="long-métrage" tags="n.*"/>
@@ -6656,6 +6657,7 @@
     <or>
       <match lemma="film" tags="n.*"/>
       <match lemma="téléfilm" tags="n.*"/>
+      <match lemma="feuilleton" tags="n.*"/>
       <match lemma="spot" tags="n.*"/>
       <match lemma="vidéo" tags="n.*"/>
       <match lemma="long-métrage" tags="n.*"/>
@@ -7524,6 +7526,18 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- lanceur >> llançador, composition -->
+  <rule weight="0.8">
+    <match lemma="lanceur" tags="n.m.*"><select lemma="llançador" tags="n.m.*"/></match>
+  </rule>
+  <rule weight="0.8">
+    <match lemma="lanceur" tags="n.f.*"><select lemma="llançador" tags="n.m.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="lanceur" tags="n.f.*"><select lemma="llançador" tags="n.f.*"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
 
   <!-- rappel >> record, crida# a consultes -->
   <rule weight="0.8">
@@ -9370,6 +9384,52 @@
     <match lemma="grenade" tags="n.*"><select lemma="granada"/></match>
   </rule>
   <rule weight="1.0">
+    <or>
+      <match lemma="manger" tags="vblex.*"/>
+      <match lemma="goûter" tags="vblex.*"/>
+      <match lemma="aimer" tags="vblex.*"/>
+      <match lemma="kiffer" tags="vblex.*"/>
+      <match lemma="adorer" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match lemma="de" tags="pr"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="grenade" tags="n.*"><select lemma="magrana"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="manger" tags="vblex.*"/>
+      <match lemma="goûter" tags="vblex.*"/>
+      <match lemma="aimer" tags="vblex.*"/>
+      <match lemma="kiffer" tags="vblex.*"/>
+      <match lemma="adorer" tags="vblex.*"/>
+    </or>
+    <match tags="adv"/>
+    <match tags="det.*"/>
+    <match lemma="grenade" tags="n.*"><select lemma="magrana"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="manger" tags="vblex.*"/>
+      <match lemma="goûter" tags="vblex.*"/>
+      <match lemma="aimer" tags="vblex.*"/>
+      <match lemma="kiffer" tags="vblex.*"/>
+      <match lemma="adorer" tags="vblex.*"/>
+    </or>
+    <match tags="adv"/>
+    <match lemma="de" tags="pr"/>
+    <match lemma="grenade" tags="n.*"><select lemma="magrana"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="goût" tags="n.*"/>
+      <match lemma="odeur" tags="n.*"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <match lemma="grenade" tags="n.*"><select lemma="magrana"/></match>
+  </rule>
+  <rule weight="1.0">
     <match lemma="grenade" tags="n.*"><select lemma="magrana"/></match>
     <repeat from="0" upto="4">
       <or>
@@ -9379,13 +9439,14 @@
     </repeat>
     <or>
       <seq n="fruit"/>
+      <seq n="fruit_avec_noyau"/>
+      <match lemma="mûr" tags="adj.*"/>
     </or>
   </rule>
   <rule weight="1.0">
     <or>
       <seq n="fruit"/>
-      <match lemma="manger" tags="vblex.*"/>
-      <match lemma="goûter" tags="vblex.*"/>
+      <seq n="fruit_avec_noyau"/>
     </or>
     <repeat from="0" upto="4">
       <or>
@@ -9966,6 +10027,16 @@
   </rule>
   <rule weight="1.0">
     <match lemma="pilonnement" tags="vblex.*"><select lemma="bombardeig"/></match>
+  </rule>
+
+  <!-- cor >> banyam, cornamenta, ull# de poll -->
+  <rule weight="0.8">
+    <match lemma="cor" tags="n.*"><select lemma="banyam"/></match>
+  </rule>
+
+  <!-- espèce >> espècie, espècia -->
+  <rule weight="0.8">
+    <match lemma="espèce" tags="n.*"><select lemma="espècie"/></match>
   </rule>
 
   <!-- punaise >> xinxeta, xinxa -->
@@ -12631,8 +12702,22 @@
   </rule>
 
   <!-- ordre >> ordre m, ordre f, orde -->
-  <rule weight="0.8">
+  <rule weight="0.6">
     <match lemma="ordre" tags="n.*"><select lemma="ordre" tags="n.f.*"/></match>
+  </rule>
+  <rule weight="0.7">
+    <match lemma="Ordre" tags="n.*"><select lemma="orde"/></match>
+  </rule>
+  <rule weight="0.8">
+    <match tags="sent"/>
+    <match lemma="ordre" tags="n.*"><select lemma="ordre" tags="n.f.*"/></match>
+  </rule>
+  <rule weight="0.9">
+    <or>
+      <match lemma="nouveau" tags="adj.*"/>
+      <match lemma="ancien" tags="adj.*"/>
+    </or>
+    <match lemma="ordre" tags="n.*"><select lemma="ordre" tags="n.m.*"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="en" tags="pr"/>
@@ -12698,19 +12783,64 @@
   <rule weight="1.0">
     <match lemma="ordre" tags="n.*"><select lemma="orde"/></match>
     <or>
+      <match lemma="religieux"/>
+      <match lemma="monastique"/>
+      <match lemma="militaire"/>
+      <match lemma="royal"/>
       <match lemma="cistercien"/>
       <match lemma="franciscain"/>
       <match lemma="dominicain"/>
+      <match lemma="hospitalier"/>
+      <match lemma="templier"/>
+      <match lemma="carmélitain"/>
+      <match lemma="teutonique"/>
     </or>
   </rule>
   <rule weight="1.0">
     <match lemma="ordre" tags="n.*"><select lemma="orde"/></match>
     <match lemma="de" tags="pr"/>
     <or>
+      <match lemma="chevalerie" tags="n.*"/>
+      <match lemma="chevalier" tags="n.*"/>
+      <match lemma="moine" tags="n.*"/>
+      <match lemma="prédicateur" tags="n.*"/>
+      <match lemma="mendiant" tags="n.*"/>
       <match lemma="saint" tags="n.*"/>
       <match lemma="saint" tags="adj.*"/>
       <match tags="np.top.*"/>
     </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ordre" tags="n.*"><select lemma="orde"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="le" tags="det.*"/>
+    <or>
+      <match lemma="chevalier" tags="n.*"/>
+      <match lemma="prédicateur" tags="n.*"/>
+      <match lemma="mendiant" tags="n.*"/>
+      <match lemma="temple" tags="n.*"/>
+      <match lemma="jarretière" tags="n.*"/>
+      <match lemma="toison" tags="n.*"/>
+      <match lemma="étoile" tags="n.*"/>
+      <match lemma="lion" tags="n.*"/>
+      <match tags="np.top.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="chevalier" tags="n.*"/>
+      <match lemma="maître" tags="n.*"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <match lemma="le" tags="det.*"/>
+    <match lemma="ordre" tags="n.*"><select lemma="orde"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="grand" tags="adj.*"/>
+    <match tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <match lemma="le" tags="det.*"/>
+    <match lemma="ordre" tags="n.*"><select lemma="orde"/></match>
   </rule>
   <rule weight="1.2">
     <match lemma="à" tags="pr"/>
@@ -13160,46 +13290,6 @@
     <match lemma="rayon" tags="n.*"><select lemma="departament"/></match>
   </rule>
 
-  <!-- avocat >> advocat, alvocat -->
-  <rule weight="0.8">
-    <match lemma="avocat" tags="n.*"><select lemma="advocat"/></match>
-  </rule>
-  <rule weight="1.0">
-    <or>
-      <match lemma="manger" tags="vblex.*"/>
-      <match lemma="aimer" tags="vblex.*"/>
-      <match lemma="kiffer" tags="vblex.*"/>
-      <match lemma="adorer" tags="vblex.*"/>
-    </or>
-    <repeat from="0" upto="1">
-      <match lemma="de" tags="pr"/>
-    </repeat>
-    <match tags="det.*"/>
-    <match lemma="avocat" tags="n.*"><select lemma="alvocat"/></match>
-  </rule>
-  <rule weight="1.0">
-    <or>
-      <match lemma="manger" tags="vblex.*"/>
-      <match lemma="aimer" tags="vblex.*"/>
-      <match lemma="kiffer" tags="vblex.*"/>
-      <match lemma="adorer" tags="vblex.*"/>
-    </or>
-    <match tags="adv"/>
-    <match tags="det.*"/>
-    <match lemma="avocat" tags="n.*"><select lemma="alvocat"/></match>
-  </rule>
-  <rule weight="1.0">
-    <or>
-      <match lemma="manger" tags="vblex.*"/>
-      <match lemma="aimer" tags="vblex.*"/>
-      <match lemma="kiffer" tags="vblex.*"/>
-      <match lemma="adorer" tags="vblex.*"/>
-    </or>
-    <match tags="adv"/>
-    <match lemma="de" tags="pr"/>
-    <match lemma="avocat" tags="n.*"><select lemma="alvocat"/></match>
-  </rule>
-
   <!-- biblio >> biblioteca, bibliografia -->
   <rule weight="0.8">
     <match lemma="biblio" tags="n.*"><select lemma="biblioteca"/></match>
@@ -13285,6 +13375,83 @@
     </or>
   </rule>
 
+  <!-- avocat >> advocat, alvocat -->
+  <rule weight="0.8">
+    <match lemma="avocat" tags="n.*"><select lemma="advocat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="manger" tags="vblex.*"/>
+      <match lemma="goûter" tags="vblex.*"/>
+      <match lemma="aimer" tags="vblex.*"/>
+      <match lemma="kiffer" tags="vblex.*"/>
+      <match lemma="adorer" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match lemma="de" tags="pr"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="avocat" tags="n.*"><select lemma="alvocat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="manger" tags="vblex.*"/>
+      <match lemma="goûter" tags="vblex.*"/>
+      <match lemma="aimer" tags="vblex.*"/>
+      <match lemma="kiffer" tags="vblex.*"/>
+      <match lemma="adorer" tags="vblex.*"/>
+    </or>
+    <match tags="adv"/>
+    <match tags="det.*"/>
+    <match lemma="avocat" tags="n.*"><select lemma="alvocat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="manger" tags="vblex.*"/>
+      <match lemma="goûter" tags="vblex.*"/>
+      <match lemma="aimer" tags="vblex.*"/>
+      <match lemma="kiffer" tags="vblex.*"/>
+      <match lemma="adorer" tags="vblex.*"/>
+    </or>
+    <match tags="adv"/>
+    <match lemma="de" tags="pr"/>
+    <match lemma="avocat" tags="n.*"><select lemma="alvocat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="goût" tags="n.*"/>
+      <match lemma="odeur" tags="n.*"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <match lemma="avocat" tags="n.*"><select lemma="alvocat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="avocat" tags="n.*"><select lemma="alvocat"/></match>
+    <repeat from="0" upto="4">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <seq n="fruit"/>
+      <seq n="fruit_avec_noyau"/>
+      <match lemma="mûr" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="fruit"/>
+    </or>
+    <repeat from="0" upto="4">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="avocat" tags="n.*"><select lemma="alvocat"/></match>
+  </rule>
+
   <!-- pêche >> pesca, préssec -->
   <rule weight="0.8">
     <match lemma="pêche" tags="n.*"><select lemma="pesca"/></match>
@@ -13297,6 +13464,52 @@
     <match lemma="pêche" tags="n.*"><select lemma="préssec"/></match>
   </rule>
   <rule weight="1.0">
+    <or>
+      <match lemma="manger" tags="vblex.*"/>
+      <match lemma="goûter" tags="vblex.*"/>
+      <match lemma="aimer" tags="vblex.*"/>
+      <match lemma="kiffer" tags="vblex.*"/>
+      <match lemma="adorer" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match lemma="de" tags="pr"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="pêche" tags="n.*"><select lemma="préssec"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="manger" tags="vblex.*"/>
+      <match lemma="goûter" tags="vblex.*"/>
+      <match lemma="aimer" tags="vblex.*"/>
+      <match lemma="kiffer" tags="vblex.*"/>
+      <match lemma="adorer" tags="vblex.*"/>
+    </or>
+    <match tags="adv"/>
+    <match tags="det.*"/>
+    <match lemma="pêche" tags="n.*"><select lemma="préssec"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="manger" tags="vblex.*"/>
+      <match lemma="goûter" tags="vblex.*"/>
+      <match lemma="aimer" tags="vblex.*"/>
+      <match lemma="kiffer" tags="vblex.*"/>
+      <match lemma="adorer" tags="vblex.*"/>
+    </or>
+    <match tags="adv"/>
+    <match lemma="de" tags="pr"/>
+    <match lemma="pêche" tags="n.*"><select lemma="préssec"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="goût" tags="n.*"/>
+      <match lemma="odeur" tags="n.*"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <match lemma="pêche" tags="n.*"><select lemma="préssec"/></match>
+  </rule>
+  <rule weight="1.0">
     <match lemma="pêche" tags="n.*"><select lemma="préssec"/></match>
     <repeat from="0" upto="4">
       <or>
@@ -13306,11 +13519,16 @@
     </repeat>
     <or>
       <seq n="fruit"/>
+      <seq n="fruit_avec_noyau"/>
+      <match lemma="raisin sec" tags="n.*"/>
+      <match lemma="mûr" tags="adj.*"/>
     </or>
   </rule>
   <rule weight="1.0">
     <or>
       <seq n="fruit"/>
+      <seq n="fruit_avec_noyau"/>
+      <match lemma="raisin sec" tags="n.*"/>
     </or>
     <repeat from="0" upto="4">
       <or>
