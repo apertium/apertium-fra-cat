@@ -4351,6 +4351,11 @@
 
 <!-- **************** V **************** -->
 
+  <!-- desallotjar >> évacuer, déloger -->
+  <rule weight="0.8">
+    <match lemma="desallotjar" tags="vblex.*"><select lemma="évacuer"/></match>
+  </rule>
+
   <!-- parar >> arrêter, tendre, faire, mettre -->
   <rule weight="0.8">
     <match lemma="parar" tags="vblex.*"><select lemma="arrêter"/></match>
@@ -7180,6 +7185,15 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- salomònic >> équitable, salomonique -->
+  <rule weight="0.8">
+    <match lemma="salomònic" tags="adj.*"><select lemma="équitable"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="columna" tags="n.*"/>
+    <match lemma="salomònic" tags="adj.*"><select lemma="salomonique"/></match>
+  </rule>
+
   <!-- altre >> autre, d'autre -->
   <rule weight="0.8">
     <match lemma="altre" tags="adj.*"><select lemma="autre"/></match>
@@ -8175,6 +8189,19 @@
       <match lemma="empatx" tags="n.*.pl"><select lemma="obstacle"/></match>
       <match lemma="empatxament" tags="n.*.pl"><select lemma="obstacle"/></match>
     </or>
+  </rule>
+
+  <!-- lavabo >> toilette, lavabo -->
+  <rule weight="0.8">
+    <match lemma="lavabo" tags="n.*"><select lemma="toilette" tags="n.f.pl"/></match>
+  </rule>
+
+  <!-- felicitat >> félicité, félicitation -->
+  <rule weight="0.8">
+    <match lemma="felicitat" tags="n.*"><select lemma="félicité"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="felicitat" tags="n.*.pl"><select lemma="félicitation"/></match>
   </rule>
 
   <!-- dot >> dot, qualité -->

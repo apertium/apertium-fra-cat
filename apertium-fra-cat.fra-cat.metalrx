@@ -3749,6 +3749,11 @@
 
 <!-- **************** V **************** -->
 
+  <!-- évacuer >> evacuar, desallotjar -->
+  <rule weight="0.8">
+    <match lemma="évacuer" tags="vblex.*"><select lemma="evacuar"/></match>
+  </rule>
+
   <!-- plébisciter >> donar# suport, aprovar -->
   <rule weight="0.8">
     <match lemma="plébisciter" tags="vblex.*"><select lemma="donar# suport"/></match>
@@ -7537,6 +7542,35 @@
   <rule weight="1.0">
     <match lemma="lanceur" tags="n.f.*"><select lemma="llançador" tags="n.f.*"/></match>
     <match lemma="de" tags="pr"/>
+  </rule>
+
+  <!-- félicitation >> felicitació, felicitat -->
+  <rule weight="0.8">
+    <match lemma="félicitation" tags="n.*"><select lemma="felicitació"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="félicitation" tags="n.*.pl"><select lemma="felicitat"/></match>
+  </rule>
+
+  <!-- coiffeur >> perruquer, tocador -->
+  <rule weight="0.8">
+    <match lemma="coiffeur" tags="n.*"><select lemma="perruquer"/></match>
+  </rule>
+
+  <!-- toilette >> higiene, lavabo -->
+  <rule weight="0.8">
+    <match lemma="toilette" tags="n.*"><select lemma="higiene"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="toilette" tags="n.*.pl"><select lemma="lavabo" tags="n.m.sg"/></match>
+  </rule>
+  <rule weight="1.2">
+    <or>
+      <match tags="num"/>
+      <match tags="num.*"/>
+      <match lemma="beaucoup de"/>
+    </or>
+    <match lemma="toilette" tags="n.*.pl"><select lemma="lavabo" tags="n.m.pl"/></match>
   </rule>
 
   <!-- rappel >> record, crida# a consultes -->
