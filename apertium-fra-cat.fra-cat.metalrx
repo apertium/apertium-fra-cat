@@ -7532,6 +7532,11 @@
 
 <!-- **************** N **************** -->
 
+  <!-- brimade >> càstig, quintada -->
+  <rule weight="0.8">
+    <match lemma="brimade" tags="n.*"><select lemma="càstig"/></match>
+  </rule>
+
   <!-- lanceur >> llançador, composition -->
   <rule weight="0.8">
     <match lemma="lanceur" tags="n.m.*"><select lemma="llançador" tags="n.m.*"/></match>
