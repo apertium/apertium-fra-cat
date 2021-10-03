@@ -3623,6 +3623,21 @@
     <match lemma="quel que soit" tags="prn.*"><select lemma="sigui quin sigui"/></match>
   </rule>
 
+  <!-- combien >> quant, quant -->
+  <rule weight="0.8">
+    <match lemma="combien" tags="prn.itg.*"><select lemma="quant" tags="prn.itg.GD.ND"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="combien" tags="prn.itg.*"><select lemma="quant" tags="prn.itg.GD.pl"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="prn.pro.*"/>
+      </or>
+    </repeat>
+    <or><match tags="vblex.*.pl"/><match tags="vbser.*.pl"/><match tags="vbhaver.*.pl"/><match tags="vbmod.*.pl"/></or>
+  </rule>
+
   <!-- on >> es, remove -->
   <rule weight="0.8">
     <match lemma="on" tags="prn.*"><select lemma="es"/></match>
