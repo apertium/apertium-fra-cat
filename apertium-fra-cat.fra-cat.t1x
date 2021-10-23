@@ -15772,7 +15772,7 @@ is not applicable because gender and number cannot be taken from previous rules 
     </action>
 </rule>
 
-    <rule comment="REGLA: être en train de = estar ger">
+    <rule comment="REGLA: être en train de inf = estar ger">
       <pattern>
         <pattern-item n="vbser"/>
         <pattern-item n="enprep"/>
@@ -15802,7 +15802,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: prn être en train de = estar ger">
+    <rule comment="REGLA: prn être en train de inf = estar ger">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="vbser"/>
@@ -15839,7 +15839,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: prn être adv en train de = estar adv ger : il est toujours en train de manger > està sempre menjant">
+    <rule comment="REGLA: prn être adv en train de inf = estar adv ger : il est toujours en train de manger > està sempre menjant">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="vbser"/>
@@ -15883,7 +15883,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: n'être pas en train de = no estar ger">
+    <rule comment="REGLA: n'être pas en train de inf = no estar ger">
       <pattern>
         <pattern-item n="neadv"/>
         <pattern-item n="vbser"/>
@@ -15921,7 +15921,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: prn n'être pas en train de = no estar ger">
+    <rule comment="REGLA: prn n'être pas en train de inf = no estar ger">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="neadv"/>
@@ -15968,7 +15968,7 @@ is not applicable because gender and number cannot be taken from previous rules 
       </action>
     </rule>
 
-    <rule comment="REGLA: prn n'être adv en train de = no estar adv ger">
+    <rule comment="REGLA: prn n'être adv en train de inf = no estar adv ger">
       <pattern>
         <pattern-item n="prnsubj"/>
         <pattern-item n="neadv"/>
@@ -16020,6 +16020,90 @@ is not applicable because gender and number cannot be taken from previous rules 
         </out>
       </action>
     </rule>
+
+    <rule comment="REGLA: être en train de prnpro inf = estar ger prnenc">
+      <pattern>
+        <pattern-item n="vbser"/>
+        <pattern-item n="enprep"/>
+        <pattern-item n="train"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="prnproobj"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="estar"/>
+            </get-case-from>
+            <lit-tag v="vblex"/>
+            <clip pos="1" side="tl" part="temps"/>
+            <clip pos="1" side="tl" part="persona"/>
+            <clip pos="1" side="tl" part="nbr"/>
+          </lu>
+          <b pos="1"/>
+          <mlu>
+            <lu>
+              <clip pos="6" side="tl" part="lemh"/>
+              <clip pos="6" side="tl" part="a_verb"/>
+              <lit-tag v="ger"/>
+            </lu>
+            <lu>
+              <clip pos="5" side="tl" part="lem"/>
+              <lit-tag v="prn.enc"/>
+              <clip pos="5" side="tl" part="tipoenc_pro"/>
+              <clip pos="6" side="tl" part="lemq"/>
+            </lu>
+          </mlu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: prn être en train de prnpro inf = estar ger prnenc">
+      <pattern>
+        <pattern-item n="prnsubj"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="enprep"/>
+        <pattern-item n="train"/>
+        <pattern-item n="deprep"/>
+        <pattern-item n="prnproobj"/>
+        <pattern-item n="inf"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord0">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="f_ifi1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="estar"/>
+            </get-case-from>
+            <lit-tag v="vblex"/>
+            <clip pos="2" side="tl" part="temps"/>
+            <clip pos="2" side="tl" part="persona"/>
+            <clip pos="2" side="tl" part="nbr"/>
+          </lu>
+          <b pos="2"/>
+          <mlu>
+            <lu>
+              <clip pos="7" side="tl" part="lemh"/>
+              <clip pos="7" side="tl" part="a_verb"/>
+              <lit-tag v="ger"/>
+            </lu>
+            <lu>
+              <clip pos="6" side="tl" part="lem"/>
+              <lit-tag v="prn.enc"/>
+              <clip pos="6" side="tl" part="tipoenc_pro"/>
+              <clip pos="7" side="tl" part="lemq"/>
+            </lu>
+          </mlu>
+        </out>
+      </action>
+    </rule>
+
 
     <rule comment="REGLA: en + ger = ger : en chantant -> cantant">
       <pattern>
