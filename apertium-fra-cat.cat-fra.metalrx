@@ -564,8 +564,10 @@
       <match lemma="vuitè" tags="adj.*"/>
       <match lemma="novè" tags="adj.*"/>
       <match lemma="desè" tags="adj.*"/>
+      <match lemma="antepenúltim" tags="adj.*"/>
       <match lemma="penúltim" tags="adj.*"/>
       <match lemma="últim" tags="adj.*"/>
+      <match lemma="darrer" tags="adj.*"/>
       <match tags="adj.ord.*"/>
     </def-seq>
 
@@ -1029,6 +1031,15 @@
       <match lemma="vora de" tags="pr"/>
     </def-seq>
 
+    <def-seq n="nota_musical">
+      <match lemma="do" tags="n.*"/>
+      <match lemma="re" tags="n.*"/>
+      <match lemma="mi" tags="n.*"/>
+      <match lemma="fa" tags="n.*"/>
+      <match lemma="sol" tags="n.*"/>
+      <match lemma="la" tags="n.*"/>
+      <match lemma="si" tags="n.*"/>
+    </def-seq>
   </def-seqs>
 
 <rules>
@@ -7209,6 +7220,17 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- sostingut >> soutenu, dièse -->
+  <rule weight="0.8">
+    <match lemma="sostingut" tags="adj.*"><select lemma="soutenu"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="nota_musical"/>
+    </or>
+    <match lemma="sostingut" tags="adj.*"><select lemma="dièse"/></match>
+  </rule>
+
   <!-- deixat >> négligent, négligé -->
   <rule weight="0.8">
     <match lemma="deixat" tags="adj.*"><select lemma="négligent"/></match>
@@ -8007,6 +8029,57 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- contraprova >> contre-épreuve, contre-essai -->
+  <rule weight="0.8">
+    <match lemma="contraprova" tags="n.*"><select lemma="contre-épreuve"/></match>
+  </rule>
+
+  <!-- do >> don, do -->
+  <rule weight="0.8">
+    <match lemma="do" tags="n.*"><select lemma="don"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="do" tags="n.*"><select lemma="don"/></match>
+    <or>
+      <match lemma="major" tags="adj.*"/>
+      <match lemma="menor" tags="adj.*"/>
+      <match lemma="bemoll" tags="adj.*"/>
+      <match lemma="sostingut" tags="adj.*"/>
+      <seq n="nota_musical"/>
+    </or>
+  </rule>
+
+  <!-- sol >> soleil, sol -->
+  <rule weight="0.8">
+    <match lemma="sol" tags="n.*"><select lemma="soleil"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sol" tags="n.*"><select lemma="sol"/></match>
+    <or>
+      <match lemma="major" tags="adj.*"/>
+      <match lemma="menor" tags="adj.*"/>
+      <match lemma="bemoll" tags="adj.*"/>
+      <match lemma="sostingut" tags="adj.*"/>
+      <seq n="nota_musical"/>
+    </or>
+  </rule>
+
+  <!-- abús >> abus, sévice -->
+  <rule weight="0.8">
+    <match lemma="abús" tags="n.m.*"><select lemma="abus"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="patir" tags="vblex.*"/>
+    <repeat from="0" upto="3">
+      <or>
+        <match tags="adv"/>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
+    <match lemma="abús" tags="n.m.pl"><select lemma="sévice"/></match>
+  </rule>
 
   <!-- llançador >> lanceur, composition -->
   <rule weight="0.8">
@@ -11444,6 +11517,39 @@
     </or>
   </rule>
 
+  <!-- grill >> grillon, germe -->
+  <rule weight="0.8">
+    <match lemma="grill" tags="n.*"><select lemma="grillon"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="grill" tags="n.*"><select lemma="germe"/></match>
+    <repeat from="0" upto="3">
+      <match tags="*"/>
+    </repeat>
+    <or>
+      <match lemma="tubercle" tags="n.*"/>
+      <match lemma="patata" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- terme >> terme, plan -->
+  <rule weight="0.8">
+    <match lemma="terme" tags="n.*"><select lemma="terme"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="ordinals"/>
+    </or>
+    <match lemma="terme" tags="n.*"><select lemma="plan"/></match>
+  </rule>
+  <rule weight="1.2">
+    <or>
+      <match lemma="darrer" tags="adj.*"/>
+      <match lemma="últim" tags="adj.*"/>
+    </or>
+    <match lemma="terme" tags="n.*"><select lemma="terme"/></match>
+  </rule>
+
   <!-- termini >> terme, délai -->
   <rule weight="0.8">
     <match lemma="termini" tags="n.*"><select lemma="terme"/></match>
@@ -11665,6 +11771,89 @@
   <!-- fuga >> fuite, fugue -->
   <rule weight="0.8">
     <match lemma="fuga" tags="n.*"><select lemma="fuite"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fuga" tags="n.*"><select lemma="fugue"/></match>
+    <match lemma="en" tags="pr"/>
+    <or>
+      <match lemma="do" tags="n.*"/>
+      <match lemma="re" tags="n.*"/>
+      <match lemma="mi" tags="n.*"/>
+      <match lemma="fa" tags="n.*"/>
+      <match lemma="sol" tags="n.*"/>
+      <match lemma="la" tags="n.*"/>
+      <match lemma="si" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fuga" tags="n.*"><select lemma="fugue"/></match>
+    <match lemma="en" tags="pr"/>
+    <or>
+      <match tags="*"/>
+      <match tags=""/>
+    </or>
+    <or>
+      <match lemma="major" tags="adj.*"/>
+      <match lemma="menor" tags="adj.*"/>
+      <match lemma="bemoll"/>
+      <match lemma="sostingut"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="art" tags="n.*"/>
+    <match lemma="de" tags="pr"/>
+    <match lemma="el" tags="det.*"/>
+    <match lemma="fuga" tags="n.*"><select lemma="fugue"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fuga" tags="n.*"><select lemma="fugue"/></match>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="Bach" tags="np.cog.*"/>
+      <match lemma="Buxtehude" tags="np.cog.*"/>
+      <match lemma="Pachelbel" tags="np.cog.*"/>
+      <match lemma="Beethoven" tags="np.cog.*"/>
+      <match lemma="Xostakóvitx" tags="np.cog.*"/>
+      <match lemma="contrapunt" tags="n.*"/>
+      <match lemma="contrapuntístic" tags="adj.*"/>
+      <match lemma="música" tags="n.*"/>
+      <match lemma="composició" tags="n.*"/>
+      <match lemma="compositor" tags="n.*"/>
+      <match lemma="barroc" tags="n.*"/>
+      <match lemma="barroc" tags="adj.*"/>
+      <match lemma="sonata" tags="n.*"/>
+      <match lemma="compondre" tags="vblex.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="Bach" tags="np.cog.*"/>
+      <match lemma="Buxtehude" tags="np.cog.*"/>
+      <match lemma="Pachelbel" tags="np.cog.*"/>
+      <match lemma="Beethoven" tags="np.cog.*"/>
+      <match lemma="Xostakóvitx" tags="np.cog.*"/>
+      <match lemma="contrapunt" tags="n.*"/>
+      <match lemma="contrapuntístic" tags="adj.*"/>
+      <match lemma="música" tags="n.*"/>
+      <match lemma="composició" tags="n.*"/>
+      <match lemma="compositor" tags="n.*"/>
+      <match lemma="barroc" tags="n.*"/>
+      <match lemma="barroc" tags="adj.*"/>
+      <match lemma="sonata" tags="n.*"/>
+      <match lemma="compondre" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="fuga" tags="n.*"><select lemma="fugue"/></match>
   </rule>
 
   <!-- càrrec >> poste, dirigeant, chef# d'accusation, charge -->
@@ -11997,9 +12186,52 @@
     <match lemma="retallada" tags="n.*"><select lemma="coupe"/></match>
   </rule>
 
-  <!-- tall >> coupe, coupure, tranche -->
+  <!-- fil >> fil, tranchant -->
+  <rule weight="0.8">
+    <match lemma="fil" tags="n.*"><select lemma="fil"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fil" tags="n.*"><select lemma="tranchant"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="espasa" tags="n.*"/>
+      <match lemma="sabre" tags="n.*"/>
+      <match lemma="ganivet" tags="n.*"/>
+      <match lemma="navalla" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="doble" tags="adj.*"/>
+      <match lemma="dos" tags="num.*"/>
+    </or>
+    <match lemma="fil" tags="n.*"><select lemma="tranchant"/></match>
+  </rule>
+
+  <!-- tall >> coupe, coupure, tranche, tranchant -->
   <rule weight="0.8">
     <match lemma="tall" tags="n.*"><select lemma="coupure"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tall" tags="n.*"><select lemma="tranchant"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="espasa" tags="n.*"/>
+      <match lemma="sabre" tags="n.*"/>
+      <match lemma="ganivet" tags="n.*"/>
+      <match lemma="navalla" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="doble" tags="adj.*"/>
+      <match lemma="dos" tags="num.*"/>
+    </or>
+    <match lemma="tall" tags="n.*"><select lemma="tranchant"/></match>
   </rule>
 
   <!-- samarreta >> tee-shirt, débardeur, maillot -->
@@ -13443,6 +13675,7 @@
   <macro name="ant_antcog" p1="Miquel Àngel" p2="Michel-Ange" />
   <macro name="ant_antcog" p1="Marc Aureli" p2="Marc-Aurèle" />
   <macro name="ant_antcog" p1="Octavi" p2="Octave" />
+  <macro name="ant_antcog" p1="Pompeu" p2="Pompée" />
   <macro name="ant_antcog" p1="Salomó" p2="Salomon" />
   <macro name="ant_antcog" p1="Virgili" p2="Virgile" />
 
