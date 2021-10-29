@@ -3950,6 +3950,12 @@
     <match lemma="en" tags="pr"><select lemma="en"/></match>
     <match tags="adj.*"/>
   </rule>
+  <rule weight="1.0">
+    <match lemma="en" tags="pr"><select lemma="en"/></match>
+    <or>
+      <seq n="nota_musical"/>
+    </or>
+  </rule>
   <rule weight="1.2">
     <match lemma="en" tags="pr"><select lemma="dans"/></match>
     <match tags="adj.ind.*"/>
@@ -4152,6 +4158,15 @@
   </rule>
 
 <!-- **************** ADV **************** -->
+
+  <!-- ni (adv) >> pas, même pas -->
+  <rule weight="0.8">
+    <match lemma="ni" tags="adv"><select lemma="pas"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or><match tags="vblex.*"/><match tags="vbser.*"/><match tags="vbhaver.*"/><match tags="vbmod.*"/></or>
+    <match lemma="ni" tags="adv"><select lemma="même pas"/></match>
+  </rule>
 
   <!-- més aviat >> plutôt, plus tôt -->
   <rule weight="0.8">
@@ -4389,6 +4404,23 @@
   <!-- desallotjar >> évacuer, déloger -->
   <rule weight="0.8">
     <match lemma="desallotjar" tags="vblex.*"><select lemma="évacuer"/></match>
+  </rule>
+
+  <!-- anar# a fer punyetes >> aller# se faire voir, etc. -->
+  <rule weight="0.8">
+    <match lemma="anar# a fer punyetes" tags="vblex.*"><select lemma="aller# se faire voir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="anar# a fer punyetes" tags="vblex.*.p1.sg"><select lemma="aller# me faire voir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="anar# a fer punyetes" tags="vblex.*.p2.sg"><select lemma="aller# te faire voir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="anar# a fer punyetes" tags="vblex.*.p1.pl"><select lemma="aller# nous faire voir"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="anar# a fer punyetes" tags="vblex.*.p2.pl"><select lemma="aller# vous faire voir"/></match>
   </rule>
 
   <!-- parar >> arrêter, tendre, faire, mettre -->
@@ -4632,14 +4664,50 @@
   <!-- hostatjar >> héberger, loger -->
   <macro name="verb_nopron_pron" p1="hostatjar" p2="héberger" p3="loger" />
 
-  <!-- tornar >> revenir, devenir -->
+  <!-- tornar >> revenir, devenir, rendre -->
   <macro name="verb_nopron_pron" p1="tornar" p2="revenir" p3="devenir" />
+  <rule weight="0.9">
+    <or>
+      <match lemma="el" tags="prn.pro.*"/>
+      <match lemma="ho" tags="prn.pro.*"/>
+    </or>
+    <match lemma="tornar" tags="vblex.*"><select lemma="rendre"/></match>
+  </rule>
+  <rule weight="0.9">
+    <match lemma="tornar" tags="vblex.*"><select lemma="rendre"/></match>
+    <or>
+      <match lemma="el" tags="prn.enc.*"/>
+      <match lemma="ho" tags="prn.enc.*"/>
+    </or>
+  </rule>
+  <rule weight="0.9"> <!-- hi ha moltes inversions de subjecte: ens assegurem que no és el cas mirant que no hi ha concordança -->
+    <match lemma="tornar" tags="vblex.*.sg"><select lemma="rendre"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="det.*.pl"/>
+  </rule>
+  <rule weight="0.9">
+    <match lemma="tornar" tags="vblex.*.pl"><select lemma="rendre"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="det.*.sg"/>
+  </rule>
   <rule weight="1.0">
     <match lemma="tornar" tags="vblex.*"><select lemma="revenir"/></match>
-    <or>
-      <match tags="adv"/>
-      <match tags="cnjadv"/>
-    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
     <match lemma="a" tags="pr"/>
     <match tags="*.inf"/>
   </rule>
@@ -7220,6 +7288,11 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- concret >> particulier, concret -->
+  <rule weight="0.8">
+    <match lemma="concret" tags="adj.*"><select lemma="particulier"/></match>
+  </rule>
+
   <!-- sostingut >> soutenu, dièse -->
   <rule weight="0.8">
     <match lemma="sostingut" tags="adj.*"><select lemma="soutenu"/></match>
@@ -7595,6 +7668,7 @@
     <or>
       <match lemma="ós" tags="n.f.*"/>
       <match lemma="festa" tags="n.*"/>
+      <seq n="nota_musical"/>
     </or>
     <match lemma="major" tags="adj.*"><select lemma="majeur"/></match>
   </rule>
@@ -7616,6 +7690,7 @@
     <or>
       <match lemma="ós" tags="n.f.*"/>
       <match lemma="planeta" tags="n.*"/>
+      <seq n="nota_musical"/>
     </or>
     <match lemma="menor" tags="adj.*"><select lemma="mineur"/></match>
   </rule>
@@ -8030,24 +8105,87 @@
 
 <!-- **************** N **************** -->
 
+  <!-- assassí >> assassin, tueur -->
+  <rule weight="0.8">
+    <match lemma="assassí" tags="n.*"><select lemma="assassin"/></match>
+  </rule>
+
   <!-- contraprova >> contre-épreuve, contre-essai -->
   <rule weight="0.8">
     <match lemma="contraprova" tags="n.*"><select lemma="contre-épreuve"/></match>
   </rule>
 
+  <!-- escorta >> escorte, arrière -->
+  <rule weight="0.8">
+    <match lemma="escorta" tags="n.*"><select lemma="escorte"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="escorta" tags="n.*"><select lemma="arrière"/></match>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="bàsquet" tags="n.*"/>
+      <match lemma="basquetbol" tags="n.*"/>
+      <match lemma="jugador# de bàsquet" tags="n.*"/>
+      <match lemma="base" tags="n.m.*"/>
+      <match lemma="pivot" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="bàsquet" tags="n.*"/>
+      <match lemma="basquetbol" tags="n.*"/>
+      <match lemma="jugador# de bàsquet" tags="n.*"/>
+      <match lemma="base" tags="n.m.*"/>
+      <match lemma="pivot" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="escorta" tags="n.*"><select lemma="arrière"/></match>
+  </rule>
   <!-- do >> don, do -->
   <rule weight="0.8">
     <match lemma="do" tags="n.*"><select lemma="don"/></match>
   </rule>
   <rule weight="1.0">
-    <match lemma="do" tags="n.*"><select lemma="don"/></match>
+    <match lemma="do" tags="n.*"><select lemma="do"/></match>
     <or>
       <match lemma="major" tags="adj.*"/>
       <match lemma="menor" tags="adj.*"/>
-      <match lemma="bemoll" tags="adj.*"/>
+      <match lemma="bemoll"/>
       <match lemma="sostingut" tags="adj.*"/>
       <seq n="nota_musical"/>
     </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="do" tags="n.*"><select lemma="do"/></match>
+    <or>
+      <match lemma="i" tags="cnjcoo"/>
+      <match lemma="o" tags="cnjcoo"/>
+      <match tags="cm"/>
+    </or>
+    <or>
+      <seq n="nota_musical"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="nota_musical"/>
+    </or>
+    <or>
+      <match lemma="i" tags="cnjcoo"/>
+      <match lemma="o" tags="cnjcoo"/>
+      <match tags="cm"/>
+    </or>
+    <match lemma="do" tags="n.*"><select lemma="do"/></match>
   </rule>
 
   <!-- sol >> soleil, sol -->
@@ -8063,6 +8201,28 @@
       <match lemma="sostingut" tags="adj.*"/>
       <seq n="nota_musical"/>
     </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sol" tags="n.*"><select lemma="sol"/></match>
+    <or>
+      <match lemma="i" tags="cnjcoo"/>
+      <match lemma="o" tags="cnjcoo"/>
+      <match tags="cm"/>
+    </or>
+    <or>
+      <seq n="nota_musical"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="nota_musical"/>
+    </or>
+    <or>
+      <match lemma="i" tags="cnjcoo"/>
+      <match lemma="o" tags="cnjcoo"/>
+      <match tags="cm"/>
+    </or>
+    <match lemma="sol" tags="n.*"><select lemma="sol"/></match>
   </rule>
 
   <!-- abús >> abus, sévice -->
@@ -13339,6 +13499,22 @@
     </or>
   </rule>
 
+  <!-- volta >> tour, voûte, fois -->
+  <rule weight="0.8">
+    <match lemma="volta" tags="n.*"><select lemma="tour"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="algun" tags="det.*"/>
+      <match lemma="un altre" tags="det.*"/>
+    </or>
+    <match lemma="volta" tags="n.*"><select lemma="fois"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="volta" tags="n.*"><select lemma="voûte"/></match>
+    <match lemma="català" tags="adj.*"/>
+  </rule>
+
   <!-- cop > fois, coup -->
   <!-- colp > fois, coup -->
   <!--
@@ -13687,7 +13863,7 @@
 
   <rule weight="1.0">
      <or><match tags="np.cog.*"/><match lemma="Rovira"/></or>
-     <match lemma="i" tags="pr"/>
+     <match lemma="i" tags="cnjcoo"><select lemma="i"/></match>
      <match lemma="Virgili" tags="np.*"><select lemma="Virgili"/></match>
   </rule>
 

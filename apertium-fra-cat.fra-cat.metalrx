@@ -3775,6 +3775,11 @@
 
 <!-- **************** V **************** -->
 
+  <!-- décortiquer >> analitzar, escorçar, decorticar -->
+  <rule weight="0.8">
+    <match lemma="décortiquer" tags="vblex.*"><select lemma="analitzar"/></match>
+  </rule>
+
   <!-- évacuer >> evacuar, desallotjar -->
   <rule weight="0.8">
     <match lemma="évacuer" tags="vblex.*"><select lemma="evacuar"/></match>
@@ -4736,6 +4741,11 @@
   <rule weight="1.0">
     <match lemma="reléguer" tags="vblex.*"><select lemma="descendir"/></match>
     <match lemma="en" tags="pr"><select lemma="a"/></match>
+  </rule>
+
+  <!-- téléverser >> pujar, penjar -->
+  <rule weight="0.8">
+    <match lemma="téléverser" tags="vblex.*"><select lemma="pujar"/></match>
   </rule>
 
   <!-- gravir >> pujar, escalar -->
@@ -7561,6 +7571,121 @@
   <!-- bocal >> pot, peixera -->
   <rule weight="0.8">
     <match lemma="bocal" tags="n.*"><select lemma="pot"/></match>
+  </rule>
+
+  <!-- meneur >> líder, base -->
+  <rule weight="0.8">
+    <match lemma="meneur" tags="n.*"><select lemma="líder"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="meneur" tags="n.*"><select lemma="base"/></match>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="basket" tags="n.*"/>
+      <match lemma="basketball" tags="n.*"/>
+      <match lemma="joueur# de basket" tags="n.*"/>
+      <match lemma="joueur# de basketball" tags="n.*"/>
+      <match lemma="arrière" tags="n.*"/>
+      <match lemma="pivot" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="basket" tags="n.*"/>
+      <match lemma="basketball" tags="n.*"/>
+      <match lemma="joueur# de basket" tags="n.*"/>
+      <match lemma="joueur# de basketball" tags="n.*"/>
+      <match lemma="arrière" tags="n.*"/>
+      <match lemma="pivot" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="meneur" tags="n.*"><select lemma="base"/></match>
+  </rule>
+
+  <!-- arrière >> darrere, defensa -->
+  <rule weight="0.8">
+    <match lemma="arrière" tags="n.*"><select lemma="darrere"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="arrière" tags="n.*"><select lemma="defensa"/></match>
+    <or>
+      <match lemma="droit" tags="adj.*"/>
+      <match lemma="gauche" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="arrière" tags="n.*"><select lemma="defensa"/></match>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="foot" tags="n.*"/>
+      <match lemma="football" tags="n.*"/>
+      <match lemma="joueur# de foot" tags="n.*"/>
+      <match lemma="joueur# de football" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="foot" tags="n.*"/>
+      <match lemma="football" tags="n.*"/>
+      <match lemma="joueur# de foot" tags="n.*"/>
+      <match lemma="joueur# de football" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="arrière" tags="n.*"><select lemma="defensa"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="arrière" tags="n.*"><select lemma="escorta"/></match>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="basket" tags="n.*"/>
+      <match lemma="basketball" tags="n.*"/>
+      <match lemma="joueur# de basket" tags="n.*"/>
+      <match lemma="joueur# de basketball" tags="n.*"/>
+      <match lemma="meneur" tags="n.*"/>
+      <match lemma="pivot" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="basket" tags="n.*"/>
+      <match lemma="basketball" tags="n.*"/>
+      <match lemma="joueur# de basket" tags="n.*"/>
+      <match lemma="joueur# de basketball" tags="n.*"/>
+      <match lemma="meneur" tags="n.*"/>
+      <match lemma="pivot" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="arrière" tags="n.*"><select lemma="escorta"/></match>
   </rule>
 
   <!-- sol >> terra, sol -->
@@ -15432,6 +15557,7 @@
       <match lemma="pas" tags="adv"/>
       <match lemma="plus" tags="adv"/>
       <match lemma="jamais" tags="adv"/>
+      <match lemma="nulle part" tags="adv"/>
     </or>
     <match lemma="assez de" tags="adj.*"><select lemma="prou"/></match>
   </rule>
@@ -15915,9 +16041,10 @@
   <rule weight="1.0">
     <match lemma="être"><select lemma="estar" tags="vblex.*"/></match>
     <or>
-      <match lemma="pas"/>
-      <match lemma="jamais"/>
-      <match lemma="nulle part"/>
+      <match lemma="pas" tags="adv"/>
+      <match lemma="plus" tags="adv"/>
+      <match lemma="jamais" tags="adv"/>
+      <match lemma="nulle part" tags="adv"/>
     </or>
     <repeat from="0" upto="1">
     <or>
@@ -15969,9 +16096,10 @@
     <match lemma="être"><select lemma="estar" tags="vblex.*"/></match>
     <repeat from="0" upto="1">
       <or>
-        <match lemma="pas"/>
-        <match lemma="jamais"/>
-        <match lemma="nulle part"/>
+        <match lemma="pas" tags="adv"/>
+        <match lemma="plus" tags="adv"/>
+        <match lemma="jamais" tags="adv"/>
+        <match lemma="nulle part" tags="adv"/>
       </or>
     </repeat>
     <or>
@@ -15985,9 +16113,10 @@
     <match lemma="être"><select lemma="estar" tags="vblex.*"/></match>
     <repeat from="0" upto="1">
       <or>
-        <match lemma="pas"/>
-        <match lemma="jamais"/>
-        <match lemma="nulle part"/>
+        <match lemma="pas" tags="adv"/>
+        <match lemma="plus" tags="adv"/>
+        <match lemma="jamais" tags="adv"/>
+        <match lemma="nulle part" tags="adv"/>
       </or>
     </repeat>
     <match lemma="en" tags="pr"/>
@@ -16366,6 +16495,15 @@
     <match lemma="de même" tags="adv"><select lemma="igual"/></match>
     <match lemma="que"/>
   </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="pas" tags="adv"/>
+      <match lemma="plus" tags="adv"/>
+      <match lemma="jamais" tags="adv"/>
+      <match lemma="nulle part" tags="adv"/>
+    </or>
+    <match lemma="de même" tags="adv"><select lemma="igual"/></match>
+  </rule>
 
   <!-- à cœur ouvert >> a cor obert, amb el cor a la mà -->
   <rule weight="0.8">
@@ -16402,7 +16540,7 @@
     <match lemma="par hasard" tags="adv"><select lemma="per casualitat"/></match>
   </rule>
 
-  <!-- pas >> pas, no, ni -->
+  <!-- pas >> pas, no, ni, [remove] -->
   <rule weight="0.8">
     <match lemma="pas" tags="adv"><select lemma="pas"/></match>
   </rule>
@@ -16466,6 +16604,15 @@
     </or>
   </rule>
 -->
+  <rule weight="1.0">
+    <match lemma="pas" tags="adv"><remove tags="adv"/></match>
+    <match lemma="ni"/>
+  </rule>
+
+  <!-- même pas >> ni, ni tan sols -->
+  <rule weight="0.8">
+    <match lemma="même pas" tags="adv"><select lemma="ni"/></match>
+  </rule>
 
   <!-- haut >> amunt, alt, altament -->
   <rule weight="0.8">
