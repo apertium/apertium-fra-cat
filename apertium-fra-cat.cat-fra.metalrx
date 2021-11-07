@@ -7288,6 +7288,17 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- il·lustrat >> illustré, cultivé, éclairé -->
+  <rule weight="0.8">
+    <match lemma="il·lustrat" tags="adj.*"><select lemma="illustré"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="persona" tags="n.*"/>
+    </or>
+    <match lemma="il·lustrat" tags="adj.*"><select lemma="cultivé"/></match>
+  </rule>
+
   <!-- concret >> particulier, concret -->
   <rule weight="0.8">
     <match lemma="concret" tags="adj.*"><select lemma="particulier"/></match>
@@ -8108,6 +8119,18 @@
   <!-- assassí >> assassin, tueur -->
   <rule weight="0.8">
     <match lemma="assassí" tags="n.*"><select lemma="assassin"/></match>
+  </rule>
+
+  <!-- top >> haut, top -->
+  <rule weight="0.8">
+    <match lemma="top" tags="n.*"><select lemma="top"/></match>	<!-- anglicismes -->
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.*"/>
+    <match lemma="top" tags="n.*"><select lemma="haut"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="Top" tags="n.*"><select lemma="top"/></match>
   </rule>
 
   <!-- contraprova >> contre-épreuve, contre-essai -->

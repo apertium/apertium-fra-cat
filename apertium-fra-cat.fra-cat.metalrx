@@ -754,6 +754,8 @@
       <match lemma="apôtre" tags="n.*"/>
       <match lemma="empereur" tags="n.*"/>
       <match lemma="roi" tags="n.*"/>
+      <match lemma="monarque" tags="n.*"/>
+      <match lemma="souverain" tags="n.*"/>
       <match lemma="tsar" tags="n.*"/>
       <match lemma="vice-roi" tags="n.*"/>
       <match lemma="régent" tags="n.*"/>
@@ -6490,6 +6492,9 @@
   <!-- demander >> demanar, preguntar -->
   <macro name="verb_nopron_pron" p1="demander" p2="demanar" p3="preguntar" />
 
+  <!-- embrigader >> reclutar, allistar -->
+  <macro name="verb_nopron_pron" p1="embrigader" p2="reclutar" p3="allistar" />
+
   <!-- battre >> derrotar, batre, bategar, barallar -->
   <macro name="verb_nopron_pron" p1="battre" p2="derrotar" p3="barallar" />
   <rule weight="1.2">
@@ -7568,9 +7573,117 @@
 
 <!-- **************** N **************** -->
 
+  <!-- haut >> altura, top -->
+  <rule weight="0.8">
+    <match lemma="haut" tags="n.*"><select lemma="altura"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or> 
+      <match lemma="mettre" tags="vblex.*"/>
+      <match lemma="porter" tags="vblex.*"/>
+      <match lemma="changer" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="6">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="haut" tags="n.*"><select lemma="top"/></match>
+  </rule>
+
+  <!-- mauvais tour >> mala passada, jugada, etc. -->
+  <rule weight="0.8">
+    <match lemma="mauvais tour" tags="n.*"><select lemma="mala passada"/></match>
+  </rule>
+
+  <!-- astreinte >> guàrdia, multa -->
+  <rule weight="0.8">
+    <match lemma="astreinte" tags="n.*"><select lemma="guàrdia"/></match>
+  </rule>
+
   <!-- bocal >> pot, peixera -->
   <rule weight="0.8">
     <match lemma="bocal" tags="n.*"><select lemma="pot"/></match>
+  </rule>
+
+  <!-- benne# à ordures >> contenidor# d'escombraries, camió# d'escombraries -->
+  <rule weight="0.8">
+    <or>
+      <match lemma="benne# à ordures" tags="n.*"><select lemma="contenidor# d'escombraries"/></match>
+      <match lemma="camion# à ordures" tags="n.*"><select lemma="contenidor# d'escombraries"/></match>
+      <match lemma="BOM" tags="n.*"><select lemma="contenidor# d'escombraries"/></match>
+    </or>
+  </rule>
+
+  <!-- bâtiment >> edifici, nau -->
+  <rule weight="0.8">
+    <match lemma="bâtiment" tags="n.*"><select lemma="edifici"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="bâtiment" tags="n.*"><select lemma="nau"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="combat" tags="n.*"/>
+      <match lemma="guerre" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="bâtiment" tags="n.*"><select lemma="nau"/></match>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="marine" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="marine" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="bâtiment" tags="n.*"><select lemma="nau"/></match>
+  </rule>
+
+  <!-- coiffe >> còfia, punta -->
+  <rule weight="0.8">
+    <match lemma="coiffe" tags="n.*"><select lemma="còfia"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="coiffe" tags="n.*"><select lemma="punta"/></match>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="avion" tags="n.*"/>
+      <match lemma="fusée" tags="n.*"/>
+      <match lemma="navette" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="avion" tags="n.*"/>
+      <match lemma="fusée" tags="n.*"/>
+      <match lemma="navette" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="coiffe" tags="n.*"><select lemma="punta"/></match>
   </rule>
 
   <!-- meneur >> líder, base -->
@@ -7767,7 +7880,7 @@
     <match lemma="rappel" tags="n.*"><select lemma="crida# a consultes"/></match>
     <match lemma="de" tags="pr"/>
     <repeat from="0" upto="1">
-     <match tags="det.*"/>
+      <match tags="det.*"/>
     </repeat>
     <match lemma="embassadeur" tags="n.*"/>
   </rule>
@@ -14470,6 +14583,22 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- éclairé >> il·luminat, il·lustrat -->
+  <rule weight="0.8">
+    <match lemma="éclairé" tags="adj.*"><select lemma="il·luminat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="personne"/>
+      <seq n="parent"/>
+      <seq n="pays_hab"/>
+      <match lemma="monarchie" tags="n.*"/>
+      <match lemma="règne" tags="n.*"/>
+      <match lemma="gouvernement" tags="n.*"/>
+    </or>
+    <match lemma="éclairé" tags="adj.*"><select lemma="il·lustrat"/></match>
+  </rule>
+
   <!-- large >> ample, ampli -->
   <rule weight="0.8">
     <match lemma="large" tags="adj.*"><select lemma="ample"/></match>
@@ -14480,7 +14609,7 @@
   </rule>
   <rule weight="1.0">
     <or>
-      <match lemma="publique" tags="n.*"/>
+      <match lemma="public" tags="n.*"/>
       <match lemma="audience" tags="n.*"/>
       <match lemma="clientèle" tags="n.*"/>
     </or>
