@@ -31,11 +31,11 @@
         <file name="apertium-fra-cat.fra-cat.t4x"/>
         <file name="fra-cat.t4x.bin"/>
       </program>
-      <program name="lt-proc $1">
+      <program name="lt-proc $1 -b">
         <file name="fra-cat.autogen.bin"/>
       </program>
-      <program name="lt-proc -x" debug-suff="intergen">
-        <file name="fra-cat.autopgen-diacritics-nous.bin"/>
+      <program name="cg-proc -1 -n -g" debug-suff="prefs">
+        <file name="fra-cat.prefs.rlx.bin"/>
       </program>
       <program name="lt-proc -p">
         <file name="fra-cat.autopgen.bin"/>
@@ -249,11 +249,14 @@
         <file name="apertium-fra-cat.fra-cat.t4x"/>
         <file name="fra-cat.t4x.bin"/>
       </program>
-      <program name="lt-proc $1">
+      <program name="lt-proc $1 -b">
         <file name="fra-cat.autogen.bin"/>
       </program>
-      <program name="lt-proc -x" debug-suff="intergen">
-        <file name="fra-cat.autopgen-diacritics-vells.bin"/>
+      <program name="cg-proc" debug-suff="pre2017prefs">
+        <file name="fra-cat.pre2017_prefs.rlx.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -g" debug-suff="prefs">
+        <file name="fra-cat.prefs.rlx.bin"/>
       </program>
       <program name="lt-proc -p">
         <file name="fra-cat.autopgen.bin"/>

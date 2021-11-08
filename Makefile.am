@@ -18,8 +18,8 @@ TARGETS_COMMON =		\
 	$(PREFIX1).autogen.bin	\
 	$(PREFIX1).autosep.bin	\
 	$(PREFIX1).autopgen.bin	\
-	$(PREFIX1).autopgen-diacritics-vells.bin 	\
-	$(PREFIX1).autopgen-diacritics-nous.bin	\
+	$(PREFIX1).prefs.rlx.bin	\
+	$(PREFIX1).pre2017_prefs.rlx.bin \
 	$(PREFIX1).t1x.bin	\
 	$(PREFIX1).t4x.bin	\
 	$(PREFIX2).automorf.bin	\
@@ -31,7 +31,8 @@ TARGETS_COMMON =		\
 	$(PREFIX2).autosep.bin	\
 	$(PREFIX2).autopgen.bin	\
 	$(PREFIX2).t1x.bin	\
-	$(PREFIX2).t4x.bin
+	$(PREFIX2).t4x.bin	\
+ 	prefs/$(PREFIX1).xml
 
 #	$(PREFIX1).t2x.bin	\
 #	$(PREFIX1).t3x.bin	\
@@ -178,14 +179,39 @@ $(PREFIX2).t4x.bin: $(BASENAME).$(PREFIX2).t4x
 $(PREFIX1).autopgen.bin: $(AP_SRC2)/$(LANG2).autopgen.bin
 	cp $< $@
 
-$(PREFIX1).autopgen-diacritics-vells.bin: $(AP_SRC2)/$(LANG2).autopgen-diacritics-vells.bin
-	cp $< $@
-
-$(PREFIX1).autopgen-diacritics-nous.bin: $(AP_SRC2)/$(LANG2).autopgen-diacritics-nous.bin
-	cp $< $@
-
 $(PREFIX2).autopgen.bin: $(AP_SRC1)/$(LANG1).autopgen.bin
 	cp $< $@
+
+###############################################################################
+## Variant preferences
+###############################################################################
+
+$(PREFIX1).pre2017_prefs.rlx.bin: $(AP_SRC2)/$(LANG2).pre2017_prefs.rlx.bin
+	cp $< $@
+
+$(PREFIX1).prefs.rlx.bin: $(AP_SRC2)/$(LANG2).prefs.rlx.bin
+	cp $< $@
+
+###############################################################################
+## Preferences
+###############################################################################
+
+prefs/$(LANG2).preferences.xml: $(AP_SRC2)/$(LANG2).preferences.xml
+	$(MKDIR_P) prefs
+	cp $< $@
+
+define mergePrefs =
+$(MKDIR_P) prefs
+echo '<preferences>' >$@.tmp
+for f in $^; do xmllint --xpath '/preferences/preference' "$$f"; done >>$@.tmp
+echo '</preferences>' >>$@.tmp
+mv $@.tmp $@
+endef
+
+# uncomment when we have bilingual preferences
+# prefs/$(PREFIX1).xml: $(LANG2).preferences.xml $(PREFIX1).preferences.xml
+prefs/$(PREFIX1).xml: prefs/$(LANG2).preferences.xml 
+		$(mergePrefs)
 
 ###############################################################################
 ## Distribution
@@ -201,7 +227,8 @@ EXTRA_DIST=					\
 		$(BASENAME).$(PREFIX2).t4x	\
 		$(BASENAME).$(PREFIX1).l1x	\
 		$(BASENAME).$(PREFIX2).l2x	\
-		modes.xml
+		modes.xml	\
+		$(PREFIX1).preferences.xml
 
 #		$(BASENAME).$(PREFIX1).t2x	\
 #		$(BASENAME).$(PREFIX1).t3x	\
