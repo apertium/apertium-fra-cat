@@ -16253,7 +16253,8 @@ is not applicable because gender and number cannot be taken from previous rules 
                 <get-case-from pos="1">
                   <clip pos="2" side="tl" part="lemh"/>
                 </get-case-from>
-                <clip pos="2" side="tl" part="a_inf"/>
+                <clip pos="2" side="tl" part="a_verb"/>
+                <clip pos="2" side="tl" part="temps"/>
               </lu>
             </out>
           </when>
@@ -16264,7 +16265,8 @@ is not applicable because gender and number cannot be taken from previous rules 
                   <get-case-from pos="1">
                     <clip pos="2" side="tl" part="lemh"/>
                   </get-case-from>
-                  <clip pos="2" side="tl" part="a_inf"/>
+                  <clip pos="2" side="tl" part="a_verb"/>
+                  <clip pos="2" side="tl" part="temps"/>
                 </lu>
                 <lu>
                   <clip pos="1" side="tl" part="lem"/>
