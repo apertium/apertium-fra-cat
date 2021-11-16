@@ -8116,6 +8116,11 @@
 
 <!-- **************** N **************** -->
 
+  <!-- mossegada >> morsure, comission -->
+  <rule weight="0.8">
+    <match lemma="mossegada" tags="n.*"><select lemma="morsure"/></match>
+  </rule>
+
   <!-- assassí >> assassin, tueur -->
   <rule weight="0.8">
     <match lemma="assassí" tags="n.*"><select lemma="assassin"/></match>
