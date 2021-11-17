@@ -4618,6 +4618,66 @@
       </action>
   </rule>
 
+     <rule comment="REGLA: tout ce livre-ci >> tot aquest llibre, tout ce livre-là >> tot aquell llibre">
+      <pattern>
+        <pattern-item n="predet"/>
+        <pattern-item n="ce_det"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="ci_la"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord3">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+        </out>
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="4" side="sl" part="lem"/><lit v="ci"/></equal>
+              </test>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <lit v="aquest"/>
+                </get-case-from>
+                <lit-tag v="det.dem"/>
+                <clip pos="2" side="tl" part="gen"/>
+                <clip pos="2" side="tl" part="nbr"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <get-case-from pos="2">
+                  <lit v="aquell"/>
+                </get-case-from>
+                <lit-tag v="det.dem"/>
+                <clip pos="2" side="tl" part="gen"/>
+                <clip pos="2" side="tl" part="nbr"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+  </rule>
+
     <rule comment="REGLA: est-ce que > 0">
       <pattern>
         <pattern-item n="est-ce_que"/>
