@@ -7511,6 +7511,13 @@
     </repeat>
     <match tags="det.*"/>
   </rule>
+  <rule weight="1.0">
+    <match lemma="couler" tags="vblex.pp.*"><select lemma="enfonsar" tags="vblex.nopron.*"/></match>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="par" tags="pr"/>
+  </rule>
 
   <!-- foirer >> fer# figa, esguerrar -->
   <macro name="verb_intrans_trans" p1="foirer" p2="fer# figa" p3="esguerrar"/>
