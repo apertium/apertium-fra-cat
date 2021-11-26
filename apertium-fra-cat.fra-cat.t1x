@@ -8,6 +8,10 @@
     <def-cat n="nom">
       <cat-item tags="n.*"/>
     </def-cat>
+    <def-cat n="n_mf_sp">
+      <cat-item tags="n.mf.*"/>
+      <cat-item tags="n.*.sp"/>
+    </def-cat>
     <def-cat n="n_sp">
       <cat-item tags="n.*.sp"/>
     </def-cat>
@@ -377,6 +381,9 @@
     <def-cat n="aller_venir">
       <cat-item lemma="aller" tags="vblex.*"/>
       <cat-item lemma="venir" tags="vblex.*"/>
+    </def-cat>
+    <def-cat n="parler">
+      <cat-item lemma="parler" tags="vblex.*"/>
     </def-cat>
     <def-cat n="aller_imp">
       <cat-item lemma="aller" tags="vblex.imp.*"/>
@@ -4286,6 +4293,47 @@
               <equal><clip pos="2" side="tl" part="nbr"/><lit-tag v="pl"/></equal>
             </test>
             <let><clip pos="2" side="tl" part="nbr"/><lit-tag v="sg"/></let>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lemh"/>
+            <clip pos="2" side="tl" part="tags"/>
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: parler + nom.mf/nom.*.sg = parlar + nom.m.sg: parler russe -> parlar rus, parler français -> parlar francès (per a evitar la generació de femenins i/o plurals)">
+      <pattern>
+        <pattern-item n="parler"/>
+        <pattern-item n="n_mf_sp"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord1">
+          <with-param pos="2"/>
+        </call-macro>
+        <choose>
+          <when>
+            <test>
+              <equal><clip pos="2" side="tl" part="gen"/><lit-tag v="f"/></equal>
+            </test>
+            <let><clip pos="2" side="tl" part="gen"/><lit-tag v="m"/></let>
+            <let><var n="genero"/><lit-tag v="m"/></let>
+          </when>
+        </choose>
+        <choose>
+          <when>
+            <test>
+              <equal><clip pos="2" side="tl" part="nbr"/><lit-tag v="pl"/></equal>
+            </test>
+            <let><clip pos="2" side="tl" part="nbr"/><lit-tag v="sg"/></let>
+            <let><var n="numero"/><lit-tag v="sg"/></let>
           </when>
         </choose>
         <out>
