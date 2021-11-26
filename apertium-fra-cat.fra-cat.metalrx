@@ -3777,6 +3777,33 @@
 
 <!-- **************** V **************** -->
 
+  <!-- jeter >> tirar, desembocar -->
+  <rule weight="0.8">
+    <match lemma="jeter" tags="vblex.*"><select lemma="tirar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="se" tags="prn.*"><remove tags="prn.*"/></match>
+    <match lemma="jeter" tags="vblex.*"><select lemma="desembocar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="dans" tags="pr"><select lemma="en"/></match>
+    <match tags="det.def.*"/>
+    <or>
+      <match lemma="mer" tags="n.*"/>
+      <match lemma="océan" tags="n.*"/>
+      <match lemma="lac" tags="n.*"/>
+      <match lemma="oued" tags="n.*"/>
+      <match lemma="fleuve" tags="n.*"/>
+      <match lemma="rivière" tags="n.*"/>
+      <match tags="np.top.*"/>
+      <match tags=""/>
+    </or>
+  </rule>
+
   <!-- décortiquer >> analitzar, escorçar, decorticar -->
   <rule weight="0.8">
     <match lemma="décortiquer" tags="vblex.*"><select lemma="analitzar"/></match>
@@ -9731,34 +9758,25 @@
       <match lemma="kiffer" tags="vblex.*"/>
       <match lemma="adorer" tags="vblex.*"/>
     </or>
-    <repeat from="0" upto="1">
+    <repeat from="0" upto="4">
+      <match tags="adv"/>
       <match lemma="de" tags="pr"/>
+      <match tags="det.*"/>
+      <match tags="adj.*"/>
+      <match tags="num.*"/>
+      <match tags="num"/>
     </repeat>
-    <match tags="det.*"/>
     <match lemma="grenade" tags="n.*"><select lemma="magrana"/></match>
   </rule>
   <rule weight="1.0">
     <or>
-      <match lemma="manger" tags="vblex.*"/>
-      <match lemma="goûter" tags="vblex.*"/>
-      <match lemma="aimer" tags="vblex.*"/>
-      <match lemma="kiffer" tags="vblex.*"/>
-      <match lemma="adorer" tags="vblex.*"/>
+      <match lemma="goût" tags="n.*"/>
+      <match lemma="odeur" tags="n.*"/>
     </or>
-    <match tags="adv"/>
-    <match tags="det.*"/>
-    <match lemma="grenade" tags="n.*"><select lemma="magrana"/></match>
-  </rule>
-  <rule weight="1.0">
-    <or>
-      <match lemma="manger" tags="vblex.*"/>
-      <match lemma="goûter" tags="vblex.*"/>
-      <match lemma="aimer" tags="vblex.*"/>
-      <match lemma="kiffer" tags="vblex.*"/>
-      <match lemma="adorer" tags="vblex.*"/>
-    </or>
-    <match tags="adv"/>
     <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
     <match lemma="grenade" tags="n.*"><select lemma="magrana"/></match>
   </rule>
   <rule weight="1.0">
