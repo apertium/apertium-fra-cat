@@ -720,6 +720,9 @@
       <match lemma="jeune homme" tags="n.*"/>
       <match lemma="jeune femme" tags="n.*"/>
       <match lemma="jeune fille" tags="n.*"/>
+      <match lemma="jeune" tags="n.*"/>
+      <match lemma="adolescent" tags="n.*"/>
+      <match lemma="ado" tags="n.*"/>
       <match lemma="enfant" tags="n.*"/>
       <match lemma="garçon" tags="n.*"/>
       <match lemma="fille" tags="n.*"/>
@@ -3776,6 +3779,32 @@
   </rule>
 
 <!-- **************** V **************** -->
+
+  <!-- apprendre >> aprendre, ensenyar, explicar -->
+  <rule weight="0.8">
+    <match lemma="apprendre" tags="vblex.*"><select lemma="aprendre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="me" tags="prn.pro.*"/>
+      <match lemma="te" tags="prn.pro.*"/>
+      <match lemma="lui" tags="prn.pro.*"/>
+      <match lemma="nous" tags="prn.pro.*"/>
+      <match lemma="vous" tags="prn.pro.*"/>
+    </or>
+    <match lemma="apprendre" tags="vblex.*"><select lemma="ensenyar"/></match>
+  </rule>
+  <rule weight="1.2">
+    <or>
+      <match lemma="me" tags="prn.pro.*"/>
+      <match lemma="te" tags="prn.pro.*"/>
+      <match lemma="lui" tags="prn.pro.*"/>
+      <match lemma="nous" tags="prn.pro.*"/>
+      <match lemma="vous" tags="prn.pro.*"/>
+    </or>
+    <match lemma="apprendre" tags="vblex.*"><select lemma="explicar"/></match>
+    <match lemma="que"/>
+  </rule>
 
   <!-- jeter >> tirar, desembocar -->
   <rule weight="0.8">
@@ -14607,6 +14636,49 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- amoureux >> amorós, enamorat -->
+  <rule weight="0.8">
+    <match lemma="amoureux" tags="adj.*"><select lemma="amorós"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <seq n="personne"/>
+      <seq n="parent"/>
+      <seq n="pays_hab"/>
+    </or>
+    <match lemma="amoureux" tags="adj.*"><select lemma="enamorat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="vbser.*"/>
+      <match lemma="tomber" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="amoureux" tags="adj.*"><select lemma="enamorat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="amoureux" tags="adj.*"><select lemma="enamorat"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+    <match tags="cm"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="amoureux" tags="adj.*"><select lemma="enamorat"/></match>
+  </rule>
+
 
   <!-- éclairé >> il·luminat, il·lustrat -->
   <rule weight="0.8">
