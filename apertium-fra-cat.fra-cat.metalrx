@@ -11408,6 +11408,72 @@
     <match lemma="bégaiement" tags="n.*"><select lemma="quequesa"/></match>
   </rule>
 
+  <!-- toast >> brindis, torrada -->
+  <rule weight="0.8">
+    <match lemma="toast" tags="n.*"><select lemma="brindis"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="manger" tags="vblex.*"/>
+      <match lemma="goûter" tags="vblex.*"/>
+      <match lemma="aimer" tags="vblex.*"/>
+      <match lemma="kiffer" tags="vblex.*"/>
+      <match lemma="adorer" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match lemma="de" tags="pr"/>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="toast" tags="n.*"><select lemma="torrada"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="manger" tags="vblex.*"/>
+      <match lemma="goûter" tags="vblex.*"/>
+      <match lemma="aimer" tags="vblex.*"/>
+      <match lemma="kiffer" tags="vblex.*"/>
+      <match lemma="adorer" tags="vblex.*"/>
+    </or>
+    <match tags="adv"/>
+    <match tags="det.*"/>
+    <match lemma="toast" tags="n.*"><select lemma="torrada"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="manger" tags="vblex.*"/>
+      <match lemma="goûter" tags="vblex.*"/>
+      <match lemma="aimer" tags="vblex.*"/>
+      <match lemma="kiffer" tags="vblex.*"/>
+      <match lemma="adorer" tags="vblex.*"/>
+    </or>
+    <match tags="adv"/>
+    <match lemma="de" tags="pr"/>
+    <match lemma="toast" tags="n.*"><select lemma="torrada"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="goût" tags="n.*"/>
+      <match lemma="odeur" tags="n.*"/>
+    </or>
+    <match lemma="de" tags="pr"/>
+    <match lemma="toast" tags="n.*"><select lemma="torrada"/></match>
+  </rule>
+
+  <!-- poche >> butxaca, bossa -->
+  <rule weight="0.8">
+    <match lemma="poche" tags="n.*"><select lemma="butxaca"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="poche" tags="n.*"><select lemma="bossa"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="gaz" tags="n.*"/>
+      <match lemma="pétrole" tags="n.*"/>
+      <match lemma="grisou" tags="n.*"/>
+      <match tags="np.top.*"/>
+    </or>
+  </rule>
+
   <!-- pochette >> funda, butxaqueta -->
   <rule weight="0.8">
     <match lemma="pochette" tags="n.*"><select lemma="funda"/></match>

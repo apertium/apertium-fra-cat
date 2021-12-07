@@ -9170,6 +9170,21 @@
 
 <!-- **************** N **************** -->
 
+  <!-- bossa >> sac, poche -->
+  <rule weight="0.8">
+    <match lemma="bossa" tags="n.*"><select lemma="sac"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="bossa" tags="n.*"><select lemma="poche"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="gas" tags="n.*"/>
+      <match lemma="petroli" tags="n.*"/>
+      <match lemma="grisú" tags="n.*"/>
+      <match tags="np.top.*"/>
+    </or>
+  </rule>
+
   <!-- mossegada >> morsure, comission -->
   <rule weight="0.8">
     <match lemma="mossegada" tags="n.*"><select lemma="morsure"/></match>
