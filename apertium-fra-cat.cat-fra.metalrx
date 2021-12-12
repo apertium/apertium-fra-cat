@@ -1094,6 +1094,11 @@
       <match lemma="caporal" tags="n.*"/>
       <match lemma="pastor" tags="n.*"/>
       <match lemma="capellà" tags="n.*"/>
+      <match lemma="esclau" tags="n.*"/>
+      <match lemma="serf" tags="n.*"/>
+      <match lemma="servent" tags="n.*"/>
+      <match lemma="cambrer" tags="n.*"/>
+      <match lemma="dona# de la neteja" tags="n.*"/>
       <match lemma="veí" tags="n.*"/>
       <match lemma="policia" tags="n.mf.*"/>
       <match lemma="criminal" tags="n.*"/>
@@ -3535,6 +3540,8 @@
       <match tags="det.*"/>
       <match tags="n.*"/>
       <match tags="adj.*"/>
+      <match tags="num.*"/>
+      <match tags="num"/>
       <match tags="cnjsub"/>
     </or>
   </rule>
@@ -3554,6 +3561,8 @@
       <match tags="det.*"/>
       <match tags="n.*"/>
       <match tags="adj.*"/>
+      <match tags="num.*"/>
+      <match tags="num"/>
       <match tags="cnjsub"/>
     </or>
   </rule>
@@ -3573,6 +3582,8 @@
       <match tags="det.*"/>
       <match tags="n.*"/>
       <match tags="adj.*"/>
+      <match tags="num.*"/>
+      <match tags="num"/>
       <match tags="cnjsub"/>
     </or>
   </rule>
@@ -3679,6 +3690,8 @@
       <match tags="det.*"/>
       <match tags="n.*"/>
       <match tags="adj.*"/>
+      <match tags="num.*"/>
+      <match tags="num"/>
       <match tags="cnjsub"/>
     </or>
   </rule>
@@ -3699,6 +3712,8 @@
       <match tags="det.*"/>
       <match tags="n.*"/>
       <match tags="adj.*"/>
+      <match tags="num.*"/>
+      <match tags="num"/>
       <match tags="cnjsub"/>
     </or>
   </rule>
@@ -3719,6 +3734,8 @@
       <match tags="det.*"/>
       <match tags="n.*"/>
       <match tags="adj.*"/>
+      <match tags="num.*"/>
+      <match tags="num"/>
       <match tags="cnjsub"/>
     </or>
   </rule>
@@ -4253,6 +4270,39 @@
     <match lemma="anar" tags="vblex.pri.*"/>
     <match lemma="necessitar" tags="vblex.inf"/>
     <match tags="vblex.inf"/>
+  </rule>
+
+  <rule weight="1.2">
+    <match lemma="que" tags="rel.*"><select lemma="que"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="prn.pro.*"/>
+      </or>
+    </repeat>
+    <match lemma="caler" tags="vbmod.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="que" tags="rel.*"><select lemma="que"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="prn.pro.*"/>
+      </or>
+    </repeat>
+    <match tags="vbhaver.*"/>
+    <match lemma="caler" tags="vbmod.pp.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="que" tags="rel.*"><select lemma="que"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="prn.pro.*"/>
+      </or>
+    </repeat>
+    <match lemma="anar" tags="vblex.pri.*"/>
+    <match commit="caler" tags="vbmod.inf"/>
   </rule>
 
   <!-- el que >> celui que, celui qui -->

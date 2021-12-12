@@ -793,6 +793,10 @@
       <match lemma="caporal" tags="n.*"/>
       <match lemma="pasteur" tags="n.*"/>
       <match lemma="prêtre" tags="n.*"/>
+      <match lemma="esclave" tags="n.*"/>
+      <match lemma="serf" tags="n.*"/>
+      <match lemma="servant" tags="n.*"/>
+      <match lemma="femme# de ménage" tags="n.*"/>
       <match lemma="ami" tags="n.*"/>
       <match lemma="voisin" tags="n.*"/>
       <match lemma="copain" tags="n.*"/>
@@ -2531,6 +2535,7 @@
       <match lemma="japonais" tags="adj.*"/>
       <match lemma="coréen" tags="adj.*"/>
       <match lemma="vietnamien" tags="adj.*"/>
+      <match lemma="indien" tags="adj.*"/>
       <match lemma="malais" tags="adj.*"/>
       <match lemma="malaisien" tags="adj.*"/>
       <match lemma="indonésien" tags="adj.*"/>
@@ -2542,7 +2547,16 @@
       <match lemma="australien" tags="adj.*"/>
       <match lemma="néo-zélandais" tags="adj.*"/>
       <match lemma="américain" tags="adj.*"/>
-      <match lemma="indien" tags="adj.*"/>
+      <match lemma="canadien" tags="adj.*"/>
+      <match lemma="mexicain" tags="adj.*"/>
+      <match lemma="cubain" tags="adj.*"/>
+      <match lemma="vénézuélien" tags="adj.*"/>
+      <match lemma="colombien" tags="adj.*"/>
+      <match lemma="péruvien" tags="adj.*"/>
+      <match lemma="bolivien" tags="adj.*"/>
+      <match lemma="brésilien" tags="adj.*"/>
+      <match lemma="argentin" tags="adj.*"/>
+      <match lemma="chilien" tags="adj.*"/>
       <match lemma="maldivien" tags="adj.*"/>
       <match lemma="malawien" tags="adj.*"/>
       <match lemma="malawite" tags="adj.*"/>
@@ -3137,7 +3151,10 @@
     <match lemma="de" tags="pr"><select lemma="de"/></match>
   </rule>
   <rule weight="1.0">
-    <match lemma="obliger" tags="vblex.*"/>
+    <or>
+      <match lemma="obliger" tags="vblex.*"/>
+      <match lemma="contraindre" tags="vblex.*"/>
+    </or>
     <repeat from="0" upto="2">
       <or>
         <match tags="adv"/>
@@ -3780,6 +3797,76 @@
 
 <!-- **************** V **************** -->
 
+  <!-- chiffrer >> xifrar, avaluar -->
+  <rule weight="0.8">
+    <match lemma="chiffrer" tags="vblex.*"><select lemma="xifrar"/></match>
+  </rule>
+
+  <!-- bercer >> bressolar, bressar, apaivagar, il·lusionar -->
+  <rule weight="0.8">
+    <match lemma="bercer" tags="vblex.*"><select lemma="bressolar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.p1.*.sg"/>
+    <match lemma="bercer" tags="vblex.*.p1.sg"><select lemma="il·lusionar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="de" tags="pr"><select lemma="amb"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.p2.*.sg"/>
+    <match lemma="bercer" tags="vblex.*.p2.sg"><select lemma="il·lusionar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="de" tags="pr"><select lemma="amb"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.p1.*.pl"/>
+    <match lemma="bercer" tags="vblex.*.p1.pl"><select lemma="il·lusionar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="de" tags="pr"><select lemma="amb"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.p2.*.pl"/>
+    <match lemma="bercer" tags="vblex.*.p2.pl"><select lemma="il·lusionar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="de" tags="pr"><select lemma="amb"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.ref.p3.*.sp"/>
+    <or>
+      <match lemma="bercer" tags="vblex.*.p3.sg"><select lemma="il·lusionar"/></match>
+      <match lemma="bercer" tags="vblex.*.p3.pl"><select lemma="il·lusionar"/></match>
+      <match lemma="bercer" tags="vblex.inf"><select lemma="il·lusionar"/></match>
+      <match lemma="bercer" tags="vblex.ger"><select lemma="il·lusionar"/></match>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="de" tags="pr"><select lemma="amb"/></match>
+  </rule>
+
   <!-- apprendre >> aprendre, ensenyar, explicar -->
   <rule weight="0.8">
     <match lemma="apprendre" tags="vblex.*"><select lemma="aprendre"/></match>
@@ -4241,6 +4328,9 @@
 
   <!-- appuyer# sur >> polzar, recolzar# sobre -->
   <macro name="verb_nopron_pron" p1="appuyer# sur" p2="polzar" p3="recolzar# sobre" />
+
+  <!-- casser# la gueule >> inflar# els morros, trencar# els morros -->
+  <macro name="verb_nopron_pron" p1="casser# la gueule" p2="inflar# els morros" p3="trencar# els morros" />
 
   <!-- épancher >> vessar, escampar -->
   <macro name="verb_nopron_pron" p1="épancher" p2="vessar" p3="escampar" />
@@ -6551,6 +6641,28 @@
   <!-- embrigader >> reclutar, allistar -->
   <macro name="verb_nopron_pron" p1="embrigader" p2="reclutar" p3="allistar" />
 
+  <!-- racheter >> tornar# a comprar, redimir -->
+  <macro name="verb_nopron_pron" p1="racheter" p2="tornar# a comprar" p3="redimir" />
+  <rule weight="1.2">
+    <match lemma="racheter" tags="vblex.*"><select lemma="redimir"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <or>
+      <match tags="det.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <or>
+      <seq n="personne"/>
+      <seq n="parent"/>
+      <seq n="pays_hab"/>
+    </or>
+  </rule>
+
   <!-- battre >> derrotar, batre, bategar, barallar -->
   <macro name="verb_nopron_pron" p1="battre" p2="derrotar" p3="barallar" />
   <rule weight="1.2">
@@ -7635,6 +7747,17 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- boîte >> caixa, empresa -->
+  <rule weight="0.8">
+    <match lemma="boîte" tags="n.*"><select lemma="caixa"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="boîte" tags="n.*"><select lemma="empresa"/></match>
+    <or>
+      <seq n="pays_adj"/>
+    </or>
+  </rule>
 
   <!-- haut >> altura, top -->
   <rule weight="0.8">
@@ -10127,6 +10250,10 @@
     <match lemma="carte" tags="n.*"><select lemma="targeta"/></match>
     <match lemma="de" tags="pr"/>
     <match lemma="visite" tags="n.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="carte" tags="n.*"><select lemma="targeta"/></match>
+    <match lemma="orange" tags="adj.*"/>
   </rule>
 
   <!-- bureau >> despatx, escriptori, oficina -->
@@ -13060,6 +13187,7 @@
     <match lemma="retraite" tags="n.*"><select lemma="retirada"/></match>
     <or>
       <match lemma="tactique" tags="adj.*"/>
+      <match lemma="stratégique" tags="adj.*"/>
       <match lemma="possible" tags="adj.*"/>
       <match lemma="massive" tags="adj.*"/>
       <match lemma="total" tags="adj.*"/>
@@ -13071,6 +13199,8 @@
       <match lemma="sonner" tags="vblex.*"/>
       <match lemma="provoquer" tags="vblex.*"/>
       <match lemma="causer" tags="vblex.*"/>
+      <match lemma="effectuer" tags="vblex.*"/>
+      <match lemma="feindre" tags="vblex.*"/>
     </or>
     <repeat from="0" upto="2">
       <match tags="adv"/>
