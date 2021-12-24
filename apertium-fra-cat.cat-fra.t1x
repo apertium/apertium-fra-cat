@@ -488,6 +488,7 @@
       <cat-item lemma="fer# càrrec de" tags="vblex.*"/>
       <cat-item lemma="florir" tags="vblex.*"/>
       <cat-item lemma="gitar" tags="vblex.*"/>
+      <cat-item lemma="jubilar" tags="vblex.*"/>
       <cat-item lemma="moure" tags="vblex.*"/>
       <cat-item lemma="negar" tags="vblex.*"/>
       <cat-item lemma="oblidar# de" tags="vblex.*"/>
@@ -530,6 +531,7 @@
       <cat-item lemma="fer# càrrec de" tags="vblex.inf"/>
       <cat-item lemma="florir" tags="vblex.inf"/>
       <cat-item lemma="gitar" tags="vblex.inf"/>
+      <cat-item lemma="jubilar" tags="vblex.inf"/>
       <cat-item lemma="moure" tags="vblex.inf"/>
       <cat-item lemma="negar" tags="vblex.inf"/>
       <cat-item lemma="oblidar# de" tags="vblex.inf"/>
@@ -572,6 +574,7 @@
       <cat-item lemma="fer# càrrec de" tags="vblex.ger"/>
       <cat-item lemma="florir" tags="vblex.ger"/>
       <cat-item lemma="gitar" tags="vblex.ger"/>
+      <cat-item lemma="jubilar" tags="vblex.ger"/>
       <cat-item lemma="moure" tags="vblex.ger"/>
       <cat-item lemma="negar" tags="vblex.ger"/>
       <cat-item lemma="oblidar# de" tags="vblex.ger"/>
@@ -614,6 +617,7 @@
       <cat-item lemma="fer# càrrec de" tags="vblex.pp.*"/>
       <cat-item lemma="florir" tags="vblex.pp.*"/>
       <cat-item lemma="gitar" tags="vblex.pp.*"/>
+      <cat-item lemma="jubilar" tags="vblex.pp.*"/>
       <cat-item lemma="moure" tags="vblex.pp.*"/>
       <cat-item lemma="negar" tags="vblex.pp.*"/>
       <cat-item lemma="oblidar# de" tags="vblex.pp.*"/>
@@ -11597,7 +11601,13 @@ is not applicable because gender and number can not be taken from previous rules
       <test>
         <and>
           <not><in caseless="yes"><clip pos="1" side="tl" part="lem"/><list n="pr_de"/></in></not>
-          <equal><clip pos="2" side="sl" part="nbr"/><lit-tag v="pl"/></equal>
+          <or>
+            <equal><clip pos="2" side="tl" part="nbr"/><lit-tag v="pl"/></equal>
+            <and>
+              <equal><clip pos="2" side="sl" part="nbr"/><lit-tag v="pl"/></equal>
+              <equal><clip pos="2" side="tl" part="nbr"/><lit-tag v="sp"/></equal>
+            </and>
+          </or>
         </and>
       </test>
         <out>
@@ -11678,19 +11688,17 @@ is not applicable because gender and number can not be taken from previous rules
   <choose>
     <when>
       <test>
-      <and>
-        <not>
-          <in caseless="yes">
-           <clip pos="1" side="tl" part="lem"/>
-           <list n="pr_de"/>
-          </in>
-        </not>
-          <equal>
-            <clip pos="2" side="sl" part="nbr"/>
-            <lit-tag v="pl"/>
-          </equal>
-      </and>
-        </test>
+        <and>
+          <not><in caseless="yes"><clip pos="1" side="tl" part="lem"/><list n="pr_de"/></in></not>
+          <or>
+            <equal><clip pos="2" side="tl" part="nbr"/><lit-tag v="pl"/></equal>
+            <and>
+              <equal><clip pos="2" side="sl" part="nbr"/><lit-tag v="pl"/></equal>
+              <equal><clip pos="2" side="tl" part="nbr"/><lit-tag v="sp"/></equal>
+            </and>
+          </or>
+        </and>
+      </test>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -11782,18 +11790,18 @@ is not applicable because gender and number can not be taken from previous rules
   <choose>
     <when>
       <test>
-      <and>
-        <not>
-          <in caseless="yes">
-           <clip pos="1" side="tl" part="lem"/>
-           <list n="pr_de"/>
-          </in>
-        </not>
-          <equal>
-            <clip pos="2" side="sl" part="nbr"/>
-            <lit-tag v="pl"/>
-          </equal>
-      </and>
+        <and>
+          <not>
+            <in caseless="yes"><clip pos="1" side="tl" part="lem"/><list n="pr_de"/></in>
+          </not>
+          <or>
+            <equal><clip pos="2" side="tl" part="nbr"/><lit-tag v="pl"/></equal>
+            <and>
+              <equal><clip pos="2" side="sl" part="nbr"/><lit-tag v="pl"/></equal>
+              <equal><clip pos="2" side="tl" part="nbr"/><lit-tag v="sp"/></equal>
+            </and>
+          </or>
+        </and>
         </test>
         <out>
           <lu>
