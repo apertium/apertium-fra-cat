@@ -3164,11 +3164,25 @@
     <match lemma="de" tags="pr"><select lemma="a"/></match>
   </rule>
   <rule weight="1.0">
+    <match lemma="passionné" tags="n.*"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="preadv"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
+    <match lemma="de" tags="pr"><select lemma="a"/></match>
+  </rule>
+  <rule weight="1.0">
     <match lemma="saisine" tags="n.*"/>
     <match lemma="de" tags="pr"><select lemma="a"/></match>
   </rule>
   <rule weight="1.0">
-    <match lemma="raffoler" tags="vblex.*"/>
+    <or>
+      <match lemma="raffoler" tags="vblex.*"/>
+      <match lemma="passionner" tags="vblex.*"/>
+      <match lemma="passionné" tags="adj.*"/>
+    </or>
     <repeat from="0" upto="2">
       <or>
         <match tags="adv"/>
@@ -3566,6 +3580,14 @@
   <rule weight="1.0">
     <match lemma="en" tags="pr"><select lemma="de"/></match>
     <match lemma="vacances" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="être"/>
+    <repeat from="0" upto="2">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="en" tags="pr"><select lemma="de"/></match>
+    <match lemma="arrêt# maladie" tags="n.*"/>
   </rule>
   <rule weight="1.0">
     <match lemma="étude" tags="n.*"/>
@@ -6459,6 +6481,7 @@
     <repeat from="0" upto="2">
       <or>
         <match tags="adv"/>
+        <match tags="preadv"/>
         <match tags="cnjadv"/>
       </or>
     </repeat>
@@ -7747,6 +7770,107 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- classement >> classificació, rànquing, ordenació -->
+  <rule weight="0.8">
+    <match lemma="classement" tags="n.*"><select lemma="classificació"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="classement" tags="n.*"><select lemma="ordenació"/></match>
+    <match lemma="alphabétique" tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="classement" tags="n.*"><select lemma="rànquing"/></match>
+    <or>
+      <match tags="np.al.*"/>
+      <match tags="np.al"/>
+      <match tags="n.acr.*"/>
+      <match tags=""/>
+    </or>
+  </rule>
+
+  <!-- borne >> fita, estació, màquina, límit, born -->
+  <rule weight="0.8">
+    <match lemma="borne" tags="n.*"><select lemma="fita"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="borne" tags="n.*"><select lemma="fita"/></match>
+    <or>
+      <match lemma="kilométrique" tags="adj.*"/>
+      <match lemma="supérieur" tags="adj.*"/>
+      <match lemma="inférieur" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="borne" tags="n.*"><select lemma="estació"/></match>
+    <or>
+      <match lemma="téléphonique" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sans" tags="pr"/>
+    <match lemma="borne" tags="n.*"><select lemma="límit"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="borne" tags="n.*"><select lemma="màquina"/></match>
+    <or>
+      <match lemma="automatique" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="borne" tags="n.*"><select lemma="born"/></match>
+    <or>
+      <match lemma="électrique" tags="adj.*"/>
+      <match lemma="positif" tags="adj.*"/>
+      <match lemma="négatif" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="borne" tags="n.*"><select lemma="born"/></match>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="batterie" tags="n.*"/>
+      <match lemma="circuit" tags="n.*"/>
+      <match lemma="électricité" tags="n.*"/>
+      <match lemma="électrique" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="batterie" tags="n.*"/>
+      <match lemma="circuit" tags="n.*"/>
+      <match lemma="électricité" tags="n.*"/>
+      <match lemma="électrique" tags="adj.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="borne" tags="n.*"><select lemma="born"/></match>
+  </rule>
+
+  <!-- chute >> caiguda, cascada -->
+  <rule weight="0.8">
+    <match lemma="chute" tags="n.*"><select lemma="caiguda"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="chute" tags="n.f.pl"><select lemma="cascada"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.def.*"/>
+    </repeat>
+    <or>
+      <match tags="np.top.*"/>
+      <match tags=""/>
+    </or>
+  </rule>
 
   <!-- boîte >> caixa, empresa -->
   <rule weight="0.8">
@@ -10072,6 +10196,24 @@
 
   <!-- masque >> màscara, mascareta -->
   <rule weight="0.8">
+    <match lemma="masque" tags="n.*"><select lemma="mascareta"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="masque" tags="n.*"><select lemma="màscara"/></match>
+    <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="sous" tags="pr"/>
+      <match lemma="derrière" tags="pr"/>
+    </or>
+    <match tags="det.*"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="preadv"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
     <match lemma="masque" tags="n.*"><select lemma="màscara"/></match>
   </rule>
 
@@ -12896,6 +13038,7 @@
     <match lemma="de" tags="pr"/>
     <or>
       <match lemma="automobile" tags="n.*"/>
+      <match lemma="auto" tags="n.*"/>
       <match lemma="avion" tags="n.*"/>
       <match lemma="bateau" tags="n.*"/>
       <match lemma="camion" tags="n.*"/>
@@ -14321,7 +14464,15 @@
     <match lemma="cour" tags="n.*"><select lemma="pati"/></match>
     <match lemma="de" tags="pr"/>
     <match tags="det.def.*"/>
-    <match lemma="école" tags="n.*"/>
+    <or>
+      <match lemma="école" tags="n.*"/>
+      <match lemma="lycée" tags="n.*"/>
+      <match lemma="université" tags="n.*"/>
+      <match lemma="faculté" tags="n.*"/>
+      <match lemma="maison" tags="n.*"/>
+      <match lemma="villa" tags="n.*"/>
+      <match lemma="école" tags="n.*"/>
+    </or>
   </rule>
 
   <!-- emploi >> ús, ocupació -->
@@ -16386,6 +16537,7 @@
       <match lemma="fermer" tags="vblex.pp.*"/>
       <match lemma="fini" tags="adj.*"/>
       <match lemma="finir" tags="vblex.pp.*"/>
+      <match lemma="fou" tags="adj.*"/>
 <!--
       <match lemma="groupé" tags="adj.*"/>
       <match lemma="grouper" tags="vblex.pp.*"/>
@@ -16440,6 +16592,7 @@
       <match lemma="satisfaire" tags="vblex.pp.*"/>
       <match lemma="situé" tags="adj.*"/>
       <match lemma="situer" tags="vblex.pp.*"/>
+      <match lemma="stagiaire" tags="adj.*"/>
       <match lemma="surpris" tags="adj.*"/>
       <match lemma="surprendre" tags="vblex.pp.*"/>
       <match lemma="terminé" tags="adj.*"/>

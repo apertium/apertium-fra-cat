@@ -3402,6 +3402,35 @@
   <rule weight="0.8">
     <match lemma="que" tags="rel.an.*"><select lemma="que"/></match>
   </rule>
+  <rule weight="1.2">
+    <or>
+      <match lemma="això" tags="prn.*"/>
+      <match lemma="allò" tags="prn.*"/>
+    </or>
+    <match lemma="que" tags="rel.an.*"><select lemma="que"/></match>
+  </rule>
+  <rule weight="1.4">
+    <or>
+      <match lemma="això" tags="prn.*"><select lemma="ce"/></match>
+      <match lemma="allò" tags="prn.*"><select lemma="ce"/></match>
+    </or>
+    <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="vbhaver.*"/>
+        <match lemma="anar" tags="vblex.pri.p3.*"/>
+      </or>
+    </repeat>
+    <or>
+      <match tags="vbser.*"/>
+      <match lemma="diferenciar" tags="vblex.*"/>
+      <match lemma="distingir" tags="vblex.*"/>
+      <match lemma="entrar" tags="vblex.*"/>
+      <match lemma="importar" tags="vblex.*"/>
+      <match lemma="interessar" tags="vblex.*"/>
+    </or>
+  </rule>
 
   <rule weight="1.0">
     <match lemma="que" tags="rel.an.*"><select lemma="qui"/></match>
@@ -3456,6 +3485,7 @@
       <match tags="vbser.*.p3.pl"/>
       <match lemma="estar" tags="vblex.*.p3.pl"/>
       <match lemma="semblar" tags="vblex.*.p3.pl"/>
+      <match lemma="parèixer" tags="vblex.*.p3.pl"/>
       <match lemma="venir" tags="vblex.*.p3.pl"/>
       <match lemma="anar" tags="vblex.*.p3.pl"/>
       <match lemma="arribar" tags="vblex.*.p3.pl"/>
@@ -3484,6 +3514,7 @@
       <match tags="vbser.pp.*"/>
       <match lemma="estar" tags="vblex.pp.*"/>
       <match lemma="semblar" tags="vblex.pp.*"/>
+      <match lemma="parèixer" tags="vblex.pp.*"/>
       <match lemma="venir" tags="vblex.pp.*"/>
       <match lemma="anar" tags="vblex.pp.*"/>
       <match lemma="arribar" tags="vblex.pp.*"/>
@@ -3512,6 +3543,7 @@
       <match tags="vbser.inf"/>
       <match lemma="estar" tags="vblex.inf"/>
       <match lemma="semblar" tags="vblex.inf"/>
+      <match lemma="parèixer" tags="vblex.inf"/>
       <match lemma="venir" tags="vblex.inf"/>
       <match lemma="anar" tags="vblex.inf"/>
       <match lemma="arribar" tags="vblex.inf"/>
@@ -3603,6 +3635,7 @@
       <match tags="vbser.*.p3.pl"/>
       <match lemma="estar" tags="vblex.*.p3.pl"/>
       <match lemma="semblar" tags="vblex.*.p3.pl"/>
+      <match lemma="parèixer" tags="vblex.*.p3.pl"/>
       <match lemma="venir" tags="vblex.*.p3.pl"/>
       <match lemma="anar" tags="vblex.*.p3.pl"/>
       <match lemma="arribar" tags="vblex.*.p3.pl"/>
@@ -3632,6 +3665,7 @@
       <match tags="vbser.pp.*"/>
       <match lemma="estar" tags="vblex.pp.*"/>
       <match lemma="semblar" tags="vblex.pp.*"/>
+      <match lemma="parèixer" tags="vblex.pp.*"/>
       <match lemma="venir" tags="vblex.pp.*"/>
       <match lemma="anar" tags="vblex.pp.*"/>
       <match lemma="arribar" tags="vblex.pp.*"/>
@@ -3661,6 +3695,7 @@
       <match tags="vbser.inf"/>
       <match lemma="estar" tags="vblex.inf"/>
       <match lemma="semblar" tags="vblex.inf"/>
+      <match lemma="parèixer" tags="vblex.inf"/>
       <match lemma="venir" tags="vblex.inf"/>
       <match lemma="anar" tags="vblex.inf"/>
       <match lemma="arribar" tags="vblex.inf"/>
@@ -3755,6 +3790,7 @@
       <match tags="vbser.*.p3.sg"/>
       <match lemma="estar" tags="vblex.*.p3.sg"/>
       <match lemma="semblar" tags="vblex.*.p3.sg"/>
+      <match lemma="parèixer" tags="vblex.*.p3.sg"/>
       <match lemma="venir" tags="vblex.*.p3.sg"/>
       <match lemma="anar" tags="vblex.*.p3.sg"/>
       <match lemma="arribar" tags="vblex.*.p3.sg"/>
@@ -3784,6 +3820,7 @@
       <match tags="vbser.pp.*"/>
       <match lemma="estar" tags="vblex.pp.*"/>
       <match lemma="semblar" tags="vblex.pp.*"/>
+      <match lemma="parèixer" tags="vblex.pp.*"/>
       <match lemma="venir" tags="vblex.pp.*"/>
       <match lemma="anar" tags="vblex.pp.*"/>
       <match lemma="arribar" tags="vblex.pp.*"/>
@@ -3813,6 +3850,7 @@
       <match tags="vbser.inf"/>
       <match lemma="estar" tags="vblex.inf"/>
       <match lemma="semblar" tags="vblex.inf"/>
+      <match lemma="parèixer" tags="vblex.inf"/>
       <match lemma="venir" tags="vblex.inf"/>
       <match lemma="anar" tags="vblex.inf"/>
       <match lemma="arribar" tags="vblex.inf"/>
@@ -3859,6 +3897,7 @@
       <match tags="vbser.*.p3.sg"/>
       <match lemma="estar" tags="vblex.*.p3.sg"/>
       <match lemma="semblar" tags="vblex.*.p3.sg"/>
+      <match lemma="parèixer" tags="vblex.*.p3.sg"/>
       <match lemma="venir" tags="vblex.*.p3.sg"/>
       <match lemma="anar" tags="vblex.*.p3.sg"/>
       <match lemma="arribar" tags="vblex.*.p3.sg"/>
@@ -3889,6 +3928,7 @@
       <match tags="vbser.pp.*"/>
       <match lemma="estar" tags="vblex.pp.*"/>
       <match lemma="semblar" tags="vblex.pp.*"/>
+      <match lemma="parèixer" tags="vblex.pp.*"/>
       <match lemma="venir" tags="vblex.pp.*"/>
       <match lemma="anar" tags="vblex.pp.*"/>
       <match lemma="arribar" tags="vblex.pp.*"/>
@@ -3919,6 +3959,7 @@
       <match tags="vbser.inf"/>
       <match lemma="estar" tags="vblex.inf"/>
       <match lemma="semblar" tags="vblex.inf"/>
+      <match lemma="parèixer" tags="vblex.inf"/>
       <match lemma="venir" tags="vblex.inf"/>
       <match lemma="anar" tags="vblex.inf"/>
       <match lemma="arribar" tags="vblex.inf"/>
@@ -4156,6 +4197,7 @@
       <match tags="vbser.*"/>
       <match lemma="estar" tags="vbser.*"/>
       <match lemma="semblar" tags="vblex.*"/>
+      <match lemma="parèixer" tags="vblex.*"/>
       <match lemma="venir" tags="vblex.*"/>
       <match lemma="anar" tags="vblex.*"/>
       <match lemma="arribar" tags="vblex.*"/>
@@ -4179,6 +4221,7 @@
       <match tags="vbser.pp.*"/>
       <match lemma="estar" tags="vbser.pp.*"/>
       <match lemma="semblar" tags="vblex.pp.*"/>
+      <match lemma="parèixer" tags="vblex.pp.*"/>
       <match lemma="venir" tags="vblex.pp.*"/>
       <match lemma="anar" tags="vblex.pp.*"/>
       <match lemma="arribar" tags="vblex.pp.*"/>
@@ -4202,6 +4245,7 @@
       <match tags="vbser.inf"/>
       <match lemma="estar" tags="vbser.inf"/>
       <match lemma="semblar" tags="vblex.inf"/>
+      <match lemma="parèixer" tags="vblex.inf"/>
       <match lemma="venir" tags="vblex.inf"/>
       <match lemma="anar" tags="vblex.inf"/>
       <match lemma="arribar" tags="vblex.inf"/>
@@ -4728,7 +4772,7 @@
     <match lemma="vista" tags="n.*"/>
   </rule>
 
-  <!-- de >> de, en, à, avec -->
+  <!-- de >> de, en, à, avec, entre -->
   <rule weight="0.8">
     <match lemma="de" tags="pr"><select lemma="de"/></match>
   </rule>
@@ -4765,6 +4809,14 @@
   <rule weight="1.0">
     <match lemma="de" tags="pr"><select lemma="en"/></match>
     <match lemma="vacances" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="estar" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="de" tags="pr"><select lemma="en"/></match>
+    <match lemma="baixa" tags="n.*"/>
   </rule>
   <rule weight="1.2">
     <match tags="n.*"/>
@@ -7406,6 +7458,116 @@
 
   <!-- jubilar >> mettre# à la retraite, prendre# sa retraite -->
   <macro name="verb_nopron_pron" p1="jubilar" p2="mettre# à la retraite" p3="prendre# sa retraite" />
+  <rule weight="1.4">
+    <match tags="prn.pro.p1.*.sg"/>
+    <match lemma="jubilar" tags="vblex.*.p1.sg"><select lemma="prendre# ma retraite"/></match>
+  </rule>
+  <rule weight="1.4">
+    <match tags="prn.pro.p2.*.sg"/>
+    <match lemma="jubilar" tags="vblex.*.p2.sg"><select lemma="prendre# ta retraite"/></match>
+  </rule>
+  <rule weight="1.4">
+    <match tags="prn.pro.p1.*.pl"/>
+    <match lemma="jubilar" tags="vblex.*.p1.pl"><select lemma="prendre# notre retraite"/></match>
+  </rule>
+  <rule weight="1.4">
+    <match tags="prn.pro.p2.*.pl"/>
+    <match lemma="jubilar" tags="vblex.*.p2.pl"><select lemma="prendre# votre retraite"/></match>
+  </rule>
+  <rule weight="1.4">
+    <match tags="prn.pro.ref.p3.*.sp"/>
+    <match lemma="jubilar" tags="vblex.*.p3.pl"><select lemma="prendre# leur retraite"/></match>
+  </rule>
+  <rule weight="1.4">
+    <match tags="prn.pro.p1.*.sg"/>
+    <match tags="vbhaver.*.p1.sg"/>
+    <match lemma="jubilar" tags="vblex.pp.*"><select lemma="prendre# ma retraite"/></match>
+  </rule>
+  <rule weight="1.4">
+    <match tags="prn.pro.p2.*.sg"/>
+    <match tags="vbhaver.*.p2.sg"/>
+    <match lemma="jubilar" tags="vblex.pp.*"><select lemma="prendre# ta retraite"/></match>
+  </rule>
+  <rule weight="1.4">
+    <match tags="prn.pro.p1.*.pl"/>
+    <match tags="vbhaver.*.p1.pl"/>
+    <match lemma="jubilar" tags="vblex.pp.*"><select lemma="prendre# notre retraite"/></match>
+  </rule>
+  <rule weight="1.4">
+    <match tags="prn.pro.p2.*.pl"/>
+    <match tags="vbhaver.*.p2.pl"/>
+    <match lemma="jubilar" tags="vblex.pp.*"><select lemma="prendre# votre retraite"/></match>
+  </rule>
+  <rule weight="1.4">
+    <match tags="prn.pro.ref.p3.*.sp"/>
+    <match tags="vbhaver.*.p3.pl"/>
+    <match lemma="jubilar" tags="vblex.pp.*"><select lemma="prendre# leur retraite"/></match>
+  </rule>
+  <rule weight="1.4">
+    <match tags="prn.pro.p1.*.sg"/>
+    <match lemma="anar" tags="vblex.pri.p1.sg"/>
+    <match lemma="jubilar" tags="vblex.inf"><select lemma="prendre# ma retraite"/></match>
+  </rule>
+  <rule weight="1.4">
+    <match tags="prn.pro.p2.*.sg"/>
+    <match lemma="anar" tags="vblex.pri.p2.sg"/>
+    <match lemma="jubilar" tags="vblex.inf"><select lemma="prendre# ta retraite"/></match>
+  </rule>
+  <rule weight="1.4">
+    <match tags="prn.pro.p1.*.pl"/>
+    <match lemma="anar" tags="vblex.pri.p1.pl"/>
+    <match lemma="jubilar" tags="vblex.inf"><select lemma="prendre# notre retraite"/></match>
+  </rule>
+  <rule weight="1.4">
+    <match tags="prn.pro.p2.*.pl"/>
+    <match lemma="anar" tags="vblex.pri.p2.pl"/>
+    <match lemma="jubilar" tags="vblex.inf"><select lemma="prendre# votre retraite"/></match>
+  </rule>
+  <rule weight="1.4">
+    <match tags="prn.pro.ref.p3.*.sp"/>
+    <match lemma="anar" tags="vblex.pri.p3.pl"/>
+    <match lemma="jubilar" tags="vblex.inf"><select lemma="prendre# leur retraite"/></match>
+  </rule>
+  <rule weight="1.4">
+    <or>
+      <match lemma="jubilar" tags="vblex.inf"><select lemma="prendre# ma retraite"/></match>
+      <match lemma="jubilar" tags="vblex.ger"><select lemma="prendre# ma retraite"/></match>
+      <match lemma="jubilar" tags="vblex.*.p1.sg"><select lemma="prendre# ma retraite"/></match>
+    </or>
+    <match tags="prn.enc.p1.*.sg"/>
+  </rule>
+  <rule weight="1.4">
+    <or>
+      <match lemma="jubilar" tags="vblex.inf"><select lemma="prendre# ma retraite"/></match>
+      <match lemma="jubilar" tags="vblex.ger"><select lemma="prendre# ma retraite"/></match>
+      <match lemma="jubilar" tags="vblex.*.p2.sg"><select lemma="prendre# ma retraite"/></match>
+    </or>
+    <match tags="prn.enc.p2.*.sg"/>
+  </rule>
+  <rule weight="1.4">
+    <or>
+      <match lemma="jubilar" tags="vblex.inf"><select lemma="prendre# ma retraite"/></match>
+      <match lemma="jubilar" tags="vblex.ger"><select lemma="prendre# ma retraite"/></match>
+      <match lemma="jubilar" tags="vblex.*.p1.pl"><select lemma="prendre# ma retraite"/></match>
+    </or>
+    <match tags="prn.enc.p1.*.pl"/>
+  </rule>
+  <rule weight="1.4">
+    <or>
+      <match lemma="jubilar" tags="vblex.inf"><select lemma="prendre# ma retraite"/></match>
+      <match lemma="jubilar" tags="vblex.ger"><select lemma="prendre# ma retraite"/></match>
+      <match lemma="jubilar" tags="vblex.*.p2.pl"><select lemma="prendre# ma retraite"/></match>
+    </or>
+    <match tags="prn.enc.p2.*.pl"/>
+  </rule>
+  <rule weight="1.4">
+    <or>
+      <match lemma="jubilar" tags="vblex.inf"><select lemma="prendre# ma retraite"/></match>
+      <match lemma="jubilar" tags="vblex.ger"><select lemma="prendre# ma retraite"/></match>
+      <match lemma="jubilar" tags="vblex.*.p3.pl"><select lemma="prendre# ma retraite"/></match>
+    </or>
+    <match tags="prn.enc.ref.p3.*.sp"/>
+  </rule>
 
   <!-- acotxar >> border, accroupir -->
   <macro name="verb_nopron_pron" p1="acotxar" p2="border" p3="accroupir" />
@@ -7420,7 +7582,7 @@
     <match lemma="de" tags="pr"/>
   </rule>
 
-  <!-- tocar >> toucher, jouer# de -->
+  <!-- tocar >> toucher, jouer# de, revenir -->
   <rule weight="0.8">
     <match lemma="tocar" tags="vblex.*"><select lemma="toucher"/></match>
   </rule>
@@ -7443,6 +7605,14 @@
     <match tags="det.*"/>
     <match lemma="instrument" tags="n.*"/>
     <match lemma="musical" tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.*"/>
+    <match lemma="tocar" tags="vblex.*"><select lemma="revenir"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv.*"/>
+    </repeat>
+    <match tags="vblex.inf"/>
   </rule>
 
   <!-- embogir, enfollir >> devenir fou, folle, foux, folles -->
@@ -8392,6 +8562,28 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- familiar >> familial, familier -->
+  <rule weight="0.8">
+    <match lemma="familiar" tags="adj.*"><select lemma="familial"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="llenguatge" tags="n.*"/>
+      <match lemma="alguna cosa" tags="prn.*"/>
+      <match lemma="semblar" tags="vblex.*"/>
+      <match lemma="parèixer" tags="vblex.*"/>
+      <match tags="vbser.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+        <match lemma="de" tags="pr"/>
+      </or>
+    </repeat>
+    <match lemma="familiar" tags="adj.*"><select lemma="familier"/></match>
+  </rule>
+
   <!-- il·lustrat >> illustré, cultivé, éclairé -->
   <rule weight="0.8">
     <match lemma="il·lustrat" tags="adj.*"><select lemma="illustré"/></match>
@@ -8451,6 +8643,7 @@
     <or>
       <match lemma="amb" tags="pr"/>
       <match lemma="sense" tags="pr"/>
+      <match lemma="sens" tags="pr"/>
     </or>
     <match lemma="altre" tags="adj.*"><select lemma="d'autre"/></match>
   </rule>
@@ -9220,6 +9413,128 @@
 
 <!-- **************** N **************** -->
 
+  <!-- fill >> fils, enfant -->
+  <rule weight="0.8">
+    <match lemma="fill" tags="n.*"><select lemma="fils"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fill" tags="n.m.pl"><select lemma="enfant"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="fill" tags="n.m.*"><select lemma="fils"/></match>
+    <match tags="cnjcoo"/>
+    <match lemma="fill" tags="n.f.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="fill" tags="n.f.*"/>
+    <match tags="cnjcoo"/>
+    <match lemma="fill" tags="n.m.*"><select lemma="fils"/></match>
+  </rule>
+
+  <!-- ordenació >> classement, aménagement, ordination -->
+  <rule weight="0.8">
+    <match lemma="ordenació" tags="n.*"><select lemma="classement"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="ordenació" tags="n.*"><select lemma="aménagement"/></match>
+    <or>
+      <match lemma="urbà" tags="adj.*"/>
+      <match lemma="urbanístic" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="ordenació" tags="n.*"><select lemma="aménagement"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.def.*"/>
+    </repeat>
+    <or>
+      <match lemma="ciutat" tags="n.*"/>
+      <match lemma="vila" tags="n.*"/>
+      <match tags="np.top.*"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="pla" tags="n.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match lemma="ordenació" tags="n.*"><select lemma="aménagement"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ordenació" tags="n.*"><select lemma="ordination"/></match>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="capellà" tags="n.*"/>
+      <match lemma="bisbe" tags="n.*"/>
+      <match lemma="arquebisbe" tags="n.*"/>
+      <match lemma="abat" tags="n.*"/>
+      <match lemma="papa" tags="n.*"/>
+      <match lemma="església" tags="n.*"/>
+      <match lemma="catedral" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="capellà" tags="n.*"/>
+      <match lemma="bisbe" tags="n.*"/>
+      <match lemma="arquebisbe" tags="n.*"/>
+      <match lemma="abat" tags="n.*"/>
+      <match lemma="papa" tags="n.*"/>
+      <match lemma="església" tags="n.*"/>
+      <match lemma="catedral" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="ordenació" tags="n.*"><select lemma="ordination"/></match>
+  </rule>
+
+  <!-- conciliació >> conciliation, équilibre -->
+  <rule weight="0.8">
+    <match lemma="conciliació" tags="n.*"><select lemma="conciliation"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="conciliació" tags="n.*"><select lemma="équilibre"/></match>
+    <match lemma="de" tags="pr"><select lemma="entre"/></match>
+    <repeat from="0" upto="4">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="vida" tags="n.*"/>
+      <match lemma="treball" tags="n.*"/>
+      <match lemma="família" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- cascada >> cascade, chute -->
+  <rule weight="0.8">
+    <match lemma="cascada" tags="n.*"><select lemma="cascade"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cascada" tags="n.f.pl"><select lemma="chute"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.def.*"/>
+    </repeat>
+    <or>
+      <match tags="np.top.*"/>
+      <match tags=""/>
+    </or>
+  </rule>
+
   <!-- bossa >> sac, poche -->
   <rule weight="0.8">
     <match lemma="bossa" tags="n.*"><select lemma="sac"/></match>
@@ -9590,7 +9905,10 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match lemma="sense" tags="pr"/>
+    <or>
+      <match lemma="sense" tags="pr"/>
+      <match lemma="sens" tags="pr"/>
+    </or>
     <or>
       <match lemma="empatx" tags="n.*"><select lemma="obstacle"/></match>
       <match lemma="empatxament" tags="n.*"><select lemma="obstacle"/></match>
@@ -11774,6 +12092,18 @@
     <match lemma="rellotge" tags="n.*"><select lemma="montre"/></match>
   </rule>
 
+  <!-- límit >> limite, borne -->
+  <rule weight="0.8">
+    <match lemma="límit" tags="n.*"><select lemma="limite"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="sense" tags="pr"/>
+      <match lemma="sens" tags="pr"/>
+    </or>
+    <match lemma="límit" tags="n.m.pl"><select lemma="borne"/></match>
+  </rule>
+
   <!-- pana >> panne, velours -->
   <rule weight="0.8">
     <match lemma="pana" tags="n.*"><select lemma="panne"/></match>
@@ -11788,9 +12118,37 @@
     <match lemma="pols" tags="n.*"><select lemma="pouls"/></match>
   </rule>
 
-  <!-- born >> pôle, joute -->
+  <!-- born >> borne, pôle, joute -->
   <rule weight="0.8">
-    <match lemma="born" tags="n.*"><select lemma="pôle"/></match>
+    <match lemma="born" tags="n.*"><select lemma="borne"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="born" tags="n.*"><select lemma="joute"/></match>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="cavaller" tags="n.*"/>
+      <match lemma="cavall" tags="n.*"/>
+      <match lemma="llança" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="cavaller" tags="n.*"/>
+      <match lemma="cavall" tags="n.*"/>
+      <match lemma="llança" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="born" tags="n.*"><select lemma="joute"/></match>
   </rule>
 
   <!-- repel·lent >> repoussant, repoussoir -->
