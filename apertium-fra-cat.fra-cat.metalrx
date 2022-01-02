@@ -14902,8 +14902,18 @@
   <rule weight="1.0">
     <or>
       <match lemma="hausser"/>
+      <match lemma="monter"/>
       <match lemma="baisser"/>
       <match lemma="chuter"/>
+      <match lemma="augmenter"/>
+      <match lemma="relever"/>
+      <match lemma="accroître"/>
+      <match lemma="majorer"/>
+      <match lemma="relever"/>
+      <match lemma="réduire"/>
+      <match lemma="diminuer"/>
+      <match lemma="rabaisser"/>
+      <match lemma="minorer"/>
     </or>
     <repeat from="0" upto="1">
       <match tags="adv"/>
@@ -14922,6 +14932,15 @@
       <match lemma="monter"/>
       <match lemma="baisser"/>
       <match lemma="chuter"/>
+      <match lemma="augmenter"/>
+      <match lemma="relever"/>
+      <match lemma="accroître"/>
+      <match lemma="majorer"/>
+      <match lemma="relever"/>
+      <match lemma="réduire"/>
+      <match lemma="diminuer"/>
+      <match lemma="rabaisser"/>
+      <match lemma="minorer"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -14936,6 +14955,15 @@
       <match lemma="monter"/>
       <match lemma="baisser"/>
       <match lemma="chuter"/>
+      <match lemma="augmenter"/>
+      <match lemma="relever"/>
+      <match lemma="accroître"/>
+      <match lemma="majorer"/>
+      <match lemma="relever"/>
+      <match lemma="réduire"/>
+      <match lemma="diminuer"/>
+      <match lemma="rabaisser"/>
+      <match lemma="minorer"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -14944,6 +14972,9 @@
       <match lemma="montée"/>
       <match lemma="baisse"/>
       <match lemma="chute"/>
+      <match lemma="augmentation"/>
+      <match lemma="réduction"/>
+      <match lemma="diminution"/>
     </or>
     <repeat from="0" upto="1">
       <match tags="adj"/>
@@ -14983,6 +15014,17 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- migrateur >> migrador, migratori -->
+  <rule weight="0.8">
+    <match lemma="migrateur" tags="adj.*"><select lemma="migrador"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="oiseau" tags="n.*"/>
+    </or>
+    <match lemma="migrateur" tags="adj.*"><select lemma="migratori"/></match>
+  </rule>
 
   <!-- amoureux >> amorós, enamorat -->
   <rule weight="0.8">

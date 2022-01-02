@@ -2189,6 +2189,10 @@
     <match lemma="què" tags="prn.itg.*"><select lemma="qu'est-ce que"/></match>
   </rule>
   <rule weight="1.0">
+    <match tags="pr"/>
+    <match lemma="què" tags="prn.itg.*"><select lemma="quoi"/></match>
+  </rule>
+  <rule weight="1.0">
     <match lemma="què" tags="prn.itg.*"><select lemma="quoi"/></match>
     <match tags="sent"/>
   </rule>
