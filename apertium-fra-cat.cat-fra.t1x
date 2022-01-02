@@ -2665,7 +2665,7 @@
         <when>
           <test>
             <and>
-              <equal><clip pos="1" side="tl" part="lem"/><lit v="joyeux"/></equal>
+              <equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="joyeux"/></equal>
               <equal><clip pos="1" side="tl" part="gen"/><lit-tag v="m"/></equal>
               <equal><clip pos="1" side="tl" part="nbr"/><lit-tag v="sg"/></equal>
             </and>
