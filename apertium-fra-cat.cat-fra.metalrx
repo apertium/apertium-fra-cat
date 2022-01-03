@@ -340,11 +340,21 @@
         <match lemma="{{p1}}" tags="vblex.*.p1.sg"><select lemma="{{p3}}"/></match>
       </rule>
       <rule weight="1.0">
+        <match tags="prn.pro.p1.*.sg"/>
+        <match tags="prn.pro.*"/>
+        <match lemma="{{p1}}" tags="vblex.*.p1.sg"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
         <match lemma="{{p1}}" tags="vblex.*.p1.sg"><select lemma="{{p3}}"/></match>
         <match tags="prn.enc.p1.*.sg"/>
       </rule>
       <rule weight="1.0">
         <match tags="prn.pro.p2.*.sg"/>
+        <match lemma="{{p1}}" tags="vblex.*.p2.sg"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match tags="prn.pro.p2.*.sg"/>
+        <match tags="prn.pro.*"/>
         <match lemma="{{p1}}" tags="vblex.*.p2.sg"><select lemma="{{p3}}"/></match>
       </rule>
       <rule weight="1.0">
@@ -380,11 +390,21 @@
         <match lemma="{{p1}}" tags="vblex.*.p1.pl"><select lemma="{{p3}}"/></match>
       </rule>
       <rule weight="1.0">
+        <match tags="prn.pro.p1.*.pl"/>
+        <match tags="prn.pro.*"/>
+        <match lemma="{{p1}}" tags="vblex.*.p1.pl"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
         <match lemma="{{p1}}" tags="vblex.*.p1.pl"><select lemma="{{p3}}"/></match>
         <match tags="prn.enc.p1.*.pl"/>
       </rule>
       <rule weight="1.0">
         <match tags="prn.pro.p2.*.pl"/>
+        <match lemma="{{p1}}" tags="vblex.*.p2.pl"><select lemma="{{p3}}"/></match>
+      </rule>
+      <rule weight="1.0">
+        <match tags="prn.pro.p2.*.pl"/>
+        <match tags="prn.pro.*"/>
         <match lemma="{{p1}}" tags="vblex.*.p2.pl"><select lemma="{{p3}}"/></match>
       </rule>
       <rule weight="1.0">
@@ -479,6 +499,12 @@
         <match lemma="{{p4}}" tags="pr"/>
       </rule>
       <rule weight="1.0">
+        <match tags="prn.pro.p1.*.sg"/>
+        <match tags="prn.pro.*"/>
+        <match lemma="{{p1}}" tags="vblex.*.p1.sg"><select lemma="{{p3}}"/></match>
+        <match lemma="{{p4}}" tags="pr"/>
+      </rule>
+      <rule weight="1.0">
         <match lemma="{{p1}}" tags="vblex.*.p1.sg"><select lemma="{{p3}}"/></match>
         <match tags="prn.enc.p1.*.sg"/>
         <match lemma="{{p4}}" tags="pr"/>
@@ -489,12 +515,27 @@
         <match lemma="{{p4}}" tags="pr"/>
       </rule>
       <rule weight="1.0">
+        <match tags="prn.pro.p2.*.sg"/>
+        <match tags="prn.pro.*"/>
+        <match lemma="{{p1}}" tags="vblex.*.p2.sg"><select lemma="{{p3}}"/></match>
+        <match lemma="{{p4}}" tags="pr"/>
+      </rule>
+      <rule weight="1.0">
         <match lemma="{{p1}}" tags="vblex.*.p2.sg"><select lemma="{{p3}}"/></match>
         <match tags="prn.enc.p2.*.sg"/>
         <match lemma="{{p4}}" tags="pr"/>
       </rule>
       <rule weight="1.0">
         <match tags="prn.pro.ref.p3.*.sp"/>
+        <or>
+          <match lemma="{{p1}}" tags="vblex.*.p3.sg"><select lemma="{{p3}}"/></match>
+          <match lemma="{{p1}}" tags="vblex.*.p3.pl"><select lemma="{{p3}}"/></match>
+        </or>
+        <match lemma="{{p4}}" tags="pr"/>
+      </rule>
+      <rule weight="1.0">
+        <match tags="prn.pro.ref.p3.*.sp"/>
+        <match tags="prn.pro.*"/>
         <or>
           <match lemma="{{p1}}" tags="vblex.*.p3.sg"><select lemma="{{p3}}"/></match>
           <match lemma="{{p1}}" tags="vblex.*.p3.pl"><select lemma="{{p3}}"/></match>
@@ -517,12 +558,24 @@
         <match lemma="{{p4}}" tags="pr"/>
       </rule>
       <rule weight="1.0">
+        <match tags="prn.pro.p1.*.pl"/>
+        <match tags="prn.pro.*"/>
+        <match lemma="{{p1}}" tags="vblex.*.p1.pl"><select lemma="{{p3}}"/></match>
+        <match lemma="{{p4}}" tags="pr"/>
+      </rule>
+      <rule weight="1.0">
         <match lemma="{{p1}}" tags="vblex.*.p1.pl"><select lemma="{{p3}}"/></match>
         <match tags="prn.enc.p1.*.pl"/>
         <match lemma="{{p4}}" tags="pr"/>
       </rule>
       <rule weight="1.0">
         <match tags="prn.pro.p2.*.pl"/>
+        <match lemma="{{p1}}" tags="vblex.*.p2.pl"><select lemma="{{p3}}"/></match>
+        <match lemma="{{p4}}" tags="pr"/>
+      </rule>
+      <rule weight="1.0">
+        <match tags="prn.pro.p2.*.pl"/>
+        <match tags="prn.pro.*"/>
         <match lemma="{{p1}}" tags="vblex.*.p2.pl"><select lemma="{{p3}}"/></match>
         <match lemma="{{p4}}" tags="pr"/>
       </rule>
