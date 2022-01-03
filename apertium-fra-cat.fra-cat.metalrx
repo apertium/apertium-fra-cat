@@ -7709,6 +7709,10 @@
     </repeat>
     <match lemma="par" tags="pr"/>
   </rule>
+  <rule weight="1.0">
+    <match tags="n.*"/>
+    <match lemma="couler" tags="vblex.pp.*"><select lemma="enfonsar" tags="vblex.nopron.*"/></match>
+  </rule>
 
   <!-- foirer >> fer# figa, esguerrar -->
   <macro name="verb_intrans_trans" p1="foirer" p2="fer# figa" p3="esguerrar"/>
@@ -16869,14 +16873,17 @@
     <match tags="det.*"/>
   </rule>
 
-<!-- élever >> elevar, alçar, educar, criar -->
+  <!-- élever >> elevar, alçar, educar, criar -->
   <rule weight="0.8">
     <match lemma="élever" tags="vblex.*"><select lemma="elevar"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="élever" tags="vblex.*"><select lemma="alçar"/></match>
     <repeat from="0" upto="2">
-      <match tags="prn.*"/>
+      <or>
+        <match tags="prn.*"/>
+        <match tags="adv"/>
+      </or>
     </repeat>
     <match tags="det.*"/>
     <or>
@@ -16886,25 +16893,16 @@
   </rule>
   <rule weight="1.0">
     <match lemma="élever" tags="vblex.*"><select lemma="criar"/></match>
-    <repeat from="0" upto="2">
-      <match tags="prn.*"/>
-    </repeat>
-    <or>
-      <match tags="det.*"/>
-      <match tags="num"/>
-      <match tags="num.*"/>
-      <match lemma="de" tags="pr"/>
-    </or>
-    <or>
-      <seq n="bétail"/>
-    </or>
-  </rule>
-  <rule weight="1.0">
-    <match lemma="élever" tags="vblex.*"><select lemma="criar"/></match>
-    <match lemma="de" tags="pr"/>
-    <match tags="det.*"/>
-    <repeat from="0" upto="2">
-      <match tags="prn.*"/>
+    <repeat from="0" upto="4">
+      <or>
+        <match tags="prn.*"/>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+        <match lemma="de" tags="pr"/>
+        <match tags="det.*"/>
+        <match tags="num"/>
+        <match tags="num.*"/>
+      </or>
     </repeat>
     <or>
       <seq n="bétail"/>
@@ -16912,18 +16910,17 @@
   </rule>
   <rule weight="1.0">
     <match lemma="élever" tags="vblex.*"><select lemma="educar"/></match>
-    <repeat from="0" upto="2">
+    <repeat from="0" upto="4">
       <or>
+        <match tags="prn.*"/>
         <match tags="adv"/>
         <match tags="cnjadv"/>
+        <match lemma="de" tags="pr"/>
+        <match tags="det.*"/>
+        <match tags="num"/>
+        <match tags="num.*"/>
       </or>
     </repeat>
-    <or>
-      <match tags="det.*"/>
-      <match tags="num"/>
-      <match tags="num.*"/>
-      <match lemma="de" tags="pr"/>
-    </or>
     <or>
       <match lemma="enfant" tags="n.*"/>
       <match lemma="fils" tags="n.*"/>
@@ -16967,13 +16964,15 @@
       <match lemma="neuveu" tags="n.*"/>
       <match lemma="nièce" tags="n.*"/>
     </or>
-    <repeat from="0" upto="2">
+    <repeat from="0" upto="4">
+      <match tags="vbser.*"/>
       <match tags="adj.*"/>
+      <match tags="adv"/>
+      <match tags="preadv"/>
     </repeat>
-    <match tags="vbser.*"/>
     <or>
       <match lemma="élever" tags="vblex.pp.*"><select lemma="educar"/></match>
-      <match lemma="élevé" tags="adj.*"><select lemma="educar"/></match>
+      <match lemma="élevé" tags="adj.*"><select lemma="educat"/></match>
     </or>
   </rule>
   <rule weight="1.0">
@@ -16997,7 +16996,6 @@
       <match lemma="tante" tags="n.*"/>
     </or>
   </rule>
-
   <rule weight="1.0">
     <match lemma="élever" tags="vblex.*"><select lemma="educar"/></match>
     <repeat from="0" upto="2">
@@ -17006,17 +17004,18 @@
         <match tags="cnjadv"/>
       </or>
     </repeat>
+    <match lemma="par" tags="pr"/>
     <match lemma="de" tags="pr"/>
     <match tags="det.*"/>
     <or>
-      <match lemma="enfant" tags="n.*"/>
-      <match lemma="fils" tags="n.*"/>
-      <match lemma="fille" tags="n.*"/>
-      <match lemma="petit-fils" tags="n.*"/>
-      <match lemma="frère" tags="n.*"/>
-      <match lemma="sœur" tags="n.*"/>
-      <match lemma="neuveu" tags="n.*"/>
-      <match lemma="nièce" tags="n.*"/>
+      <match lemma="père" tags="n.*"/>
+      <match lemma="mère" tags="n.*"/>
+      <match lemma="parent" tags="n.*"/>
+      <match lemma="grand-père" tags="n.*"/>
+      <match lemma="aïel" tags="n.*"/>
+      <match lemma="arrière-grand-père" tags="n.*"/>
+      <match lemma="oncle" tags="n.*"/>
+      <match lemma="tante" tags="n.*"/>
     </or>
   </rule>
 
