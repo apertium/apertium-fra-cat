@@ -359,6 +359,14 @@
         </or>
       </rule>
       <rule weight="1.0">
+        <match tags="prn.pro.ref.p3.*.sp"/>
+        <match tags="prn.pro.*"/>
+        <or>
+          <match lemma="{{p1}}" tags="vblex.*.p3.sg"><select lemma="{{p3}}"/></match>
+          <match lemma="{{p1}}" tags="vblex.*.p3.pl"><select lemma="{{p3}}"/></match>
+        </or>
+      </rule>
+      <rule weight="1.0">
         <or>
           <match lemma="{{p1}}" tags="vblex.*.p3.sg"><select lemma="{{p3}}"/></match>
           <match lemma="{{p1}}" tags="vblex.*.p3.pl"><select lemma="{{p3}}"/></match>
@@ -2195,6 +2203,31 @@
   <rule weight="1.0">
     <match lemma="què" tags="prn.itg.*"><select lemma="quoi"/></match>
     <match tags="sent"/>
+  </rule>
+
+  <!-- en >> en, remove -->
+  <rule weight="0.8">
+    <match lemma="en" tags="prn.*"><select lemma="en"/></match>
+  </rule>
+
+  <!-- em >> me, remove -->
+  <rule weight="0.8">
+    <match lemma="em" tags="prn.*"><select lemma="me"/></match>
+  </rule>
+
+  <!-- et >> te, remove -->
+  <rule weight="0.8">
+    <match lemma="et" tags="prn.*"><select lemma="te"/></match>
+  </rule>
+
+  <!-- ens >> nous, remove -->
+  <rule weight="0.8">
+    <match lemma="ens" tags="prn.*"><select lemma="nous"/></match>
+  </rule>
+
+  <!-- us >> vos, remove -->
+  <rule weight="0.8">
+    <match lemma="us" tags="prn.*"><select lemma="vous"/></match>
   </rule>
 
   <!-- es >> se, on, remove -->
@@ -5872,6 +5905,111 @@
     <match tags="*.inf"/>
   </rule>
 
+  <rule weight="1.2">
+    <match tags="prn.pro.p1.*.sg"><remove tags="prn.*"/></match>
+    <match lemma="en" tags="prn.pro.adv"><remove tags="prn.pro.adv"/></match>
+    <match lemma="tornar" tags="vblex.*.p1.sg"><select lemma="revenir"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="tornar" tags="vblex.*.p1.sg"><select lemma="revenir"/></match>
+    <match tags="prn.enc.p1.*.sg"><remove tags="prn.*"/></match>
+    <match lemma="en" tags="prn.enc.adv"><remove tags="prn.enc.adv"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match tags="prn.pro.p2.*.sg"><remove tags="prn.*"/></match>
+    <match lemma="en" tags="prn.pro.adv"><remove tags="prn.pro.adv"/></match>
+    <match lemma="tornar" tags="vblex.*.p2.sg"><select lemma="revenir"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="tornar" tags="vblex.*.p2.sg"><select lemma="revenir"/></match>
+    <match tags="prn.enc.p2.*.sg"><remove tags="prn.*"/></match>
+    <match lemma="en" tags="prn.enc.adv"><remove tags="prn.enc.adv"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match tags="prn.pro.ref.p3.*.sp"><remove tags="prn.*"/></match>
+    <match lemma="en" tags="prn.pro.adv"><remove tags="prn.pro.adv"/></match>
+    <or>
+      <match lemma="tornar" tags="vblex.*.p3.sg"><select lemma="revenir"/></match>
+      <match lemma="tornar" tags="vblex.*.p3.pl"><select lemma="revenir"/></match>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <or>
+      <match lemma="tornar" tags="vblex.*.p3.sg"><select lemma="revenir"/></match>
+      <match lemma="tornar" tags="vblex.*.p3.pl"><select lemma="revenir"/></match>
+      <match lemma="tornar" tags="vblex.inf"><select lemma="revenir"/></match>
+      <match lemma="tornar" tags="vblex.ger"><select lemma="revenir"/></match>
+    </or>
+    <match tags="prn.enc.ref.p3.*.sp"><remove tags="prn.*"/></match>
+    <match lemma="en" tags="prn.enc.adv"><remove tags="prn.enc.adv"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match tags="prn.pro.p1.*.pl"><remove tags="prn.*"/></match>
+    <match lemma="en" tags="prn.pro.adv"><remove tags="prn.pro.adv"/></match>
+    <match lemma="tornar" tags="vblex.*.p1.pl"><select lemma="revenir"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="tornar" tags="vblex.*.p1.pl"><select lemma="revenir"/></match>
+    <match tags="prn.enc.p1.*.pl"><remove tags="prn.*"/></match>
+    <match lemma="en" tags="prn.enc.adv"><remove tags="prn.enc.adv"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match tags="prn.pro.p2.*.pl"><remove tags="prn.*"/></match>
+    <match lemma="en" tags="prn.pro.adv"><remove tags="prn.pro.adv"/></match>
+    <match lemma="tornar" tags="vblex.*.p2.pl"><select lemma="revenir"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="tornar" tags="vblex.*.p2.pl"><select lemma="revenir"/></match>
+    <match tags="prn.enc.p2.*.pl"><remove tags="prn.*"/></match>
+    <match lemma="en" tags="prn.enc.adv"><remove tags="prn.enc.adv"/></match>
+  </rule>
+
+  <!-- quedar-se > rester -->
+  <rule weight="1.0">
+    <match tags="prn.pro.p1.*.sg"><remove tags="prn.*"/></match>
+    <match lemma="quedar" tags="vblex.*.p1.sg"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="quedar" tags="vblex.*.p1.sg"/>
+    <match tags="prn.enc.p1.*.sg"><remove tags="prn.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.p2.*.sg"><remove tags="prn.*"/></match>
+    <match lemma="quedar" tags="vblex.*.p2.sg"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="quedar" tags="vblex.*.p2.sg"/>
+    <match tags="prn.enc.p2.*.sg"><remove tags="prn.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.ref.p3.*.sp"><remove tags="prn.*"/></match>
+    <match lemma="quedar" tags="vblex.*.p3.*"/>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="quedar" tags="vblex.*.p3.*"/>
+      <match lemma="quedar" tags="vblex.inf"/>
+      <match lemma="quedar" tags="vblex.ger"/>
+    </or>
+    <match tags="prn.enc.ref.p3.*.sp"><remove tags="prn.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.p1.*.pl"><remove tags="prn.*"/></match>
+    <match lemma="quedar" tags="vblex.*.p1.pl"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="quedar" tags="vblex.*.p1.pl"/>
+    <match tags="prn.enc.p1.*.pl"><remove tags="prn.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="prn.pro.p2.*.pl"><remove tags="prn.*"/></match>
+    <match lemma="quedar" tags="vblex.*.p2.pl"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="quedar" tags="vblex.*.p2.pl"/>
+    <match tags="prn.enc.p2.*.pl"><remove tags="prn.*"/></match>
+  </rule>
+
   <!-- viure >> habiter, vivre -->
   <macro name="verb_nopron_pron" p1="viure" p2="habiter" p3="vivre" />
   <rule weight="0.9">
@@ -6654,6 +6792,11 @@
   <!-- fer# malbé >> abîmer, gâter -->
   <rule weight="0.8">
     <match lemma="fer# malbé" tags="vblex.*"><select lemma="abîmer"/></match>
+  </rule>
+
+  <!-- adapter >> adaptar, enternir -->
+  <rule weight="0.8">
+    <match lemma="adapter" tags="vblex.*"><select lemma="adaptar"/></match>
   </rule>
 
   <!-- aviciar >> gâter, vicier -->
