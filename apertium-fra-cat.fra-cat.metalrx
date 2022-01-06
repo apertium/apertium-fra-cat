@@ -2825,8 +2825,17 @@
 
     <def-seq n="navire">
       <match lemma="navire" tags="n.*"/>
+      <match lemma="bateau" tags="n.*"/>
+      <match lemma="vaisseau" tags="n.*"/>
       <match lemma="porte-avions" tags="n.*"/>
       <match lemma="destroyer" tags="n.*"/>
+      <match lemma="cuirassé" tags="n.*"/>
+      <match lemma="démineur" tags="n.*"/>
+      <match lemma="patrouilleur" tags="n.*"/>
+      <match lemma="garde-côte" tags="n.*"/>
+      <match lemma="caravelle" tags="n.*"/>
+      <match lemma="frégate" tags="n.*"/>
+      <match lemma="navire# de ligne" tags="n.*"/>
       <match lemma="barque" tags="n.*"/>
       <match lemma="Titanic" tags="np.*"/>
     </def-seq>
@@ -6501,6 +6510,9 @@
     </or>
   </rule>
 
+  <!-- affranchir >> franquejar, alliberar -->
+  <macro name="verb_nopron_pron" p1="affranchir" p2="franquejar" p3="alliberar" />
+
   <!-- affronter >> afrontar, enfrontar -->
   <macro name="verb_nopron_pron" p1="affronter" p2="afrontar" p3="enfrontar" />
 
@@ -7804,6 +7816,20 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- fruit >> fruit, fruita -->
+  <rule weight="0.8">
+    <match lemma="fruit" tags="n.*"><select lemma="fruit"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.mf.pl"/>
+    <match lemma="fruit" tags="n.*"><select lemma="fruita" tags="n.f.sg"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match tags="det.def.mf.pl"/>
+    <match lemma="fruit" tags="n.*"><select lemma="fruit"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
 
   <!-- classement >> classificació, rànquing, ordenació -->
   <rule weight="0.8">
@@ -10709,6 +10735,11 @@
   <!-- chavirement >> capgirament, etc. -->
   <rule weight="0.8">
     <match lemma="chavirement" tags="n.*"><select lemma="capgirament"/></match>
+  </rule>
+
+  <!-- virement >> gir, transferència -->
+  <rule weight="0.8">
+    <match lemma="virement" tags="n.*"><select lemma="gir"/></match>
   </rule>
 
   <!-- pilonnement >> piconament, bombardeig -->
@@ -16885,8 +16916,7 @@
     </or>
   </rule>
 
-<!-- voler >> volar / robar -->
-
+  <!-- voler >> volar / robar -->
   <rule weight="0.8">
     <match lemma="voler" tags="vblex.*"><select lemma="volar"/></match>
   </rule>
@@ -16894,13 +16924,54 @@
     <match lemma="voler" tags="vblex.pp.*"><select lemma="robar"/></match>
   </rule>
   <rule weight="1.0">
+    <match tags="prn.pro.*"/>
+    <match lemma="voler" tags="vblex.pp.*"><select lemma="robar"/></match>
+  </rule>
+  <rule weight="1.0">
     <match lemma="voler" tags="vblex.*"><select lemma="robar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
     <match tags="det.*"/>
   </rule>
   <rule weight="1.0">
     <match lemma="voler" tags="vblex.*"><select lemma="robar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
     <match lemma="de" tags="pr"/>
     <match tags="det.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="voler" tags="vblex.*"><select lemma="robar"/></match>
+    <match tags="adv"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match tags="n.*.pl"/>
+      <match tags="adj.*.pl"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="voler" tags="vblex.*"><select lemma="robar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="prn.tn.*"/>
   </rule>
 
   <!-- élever >> elevar, alçar, educar, criar -->

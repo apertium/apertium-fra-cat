@@ -6913,6 +6913,9 @@
     </or>
   </rule>
 
+  <!-- alliberar# de >> libérer# de, affranchir# de -->
+  <macro name="verb_nopron_pron" p1="alliberar# de" p2="libérer# de" p3="affranchir# de" />
+
   <!-- assabentar >> informer, apprendre -->
   <macro name="verb_nopron_pron" p1="assabentar" p2="informer" p3="apprendre" />
 
@@ -9629,6 +9632,15 @@
     <match lemma="fill" tags="n.f.*"/>
     <match tags="cnjcoo"/>
     <match lemma="fill" tags="n.m.*"><select lemma="fils"/></match>
+  </rule>
+
+  <!-- fruita sg >> fruit sg, fruit pl -->
+  <rule weight="0.8">
+    <match lemma="fruita" tags="n.f.sg"><select lemma="fruit" tags="n.f.sg"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.f.sg"/>
+    <match lemma="fruita" tags="n.f.sg"><select lemma="fruit" tags="n.f.pl"/></match>
   </rule>
 
   <!-- ordenació >> classement, aménagement, ordination -->
