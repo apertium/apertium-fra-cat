@@ -9114,6 +9114,7 @@
       <match lemma="caraïbe" tags="adj.*"/>
       <match lemma="intérieur" tags="adj.*"/>
       <match tags="np.top.*"/>
+      <match tags="" case="Aa"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -9128,6 +9129,7 @@
       <match lemma="fleuve" tags="n.*"/>
       <match lemma="rivière" tags="n.*"/>
       <match tags="np.top.*"/>
+      <match tags="" case="Aa"/>
       <match tags=""/>
     </or>
   </rule>
@@ -11932,11 +11934,17 @@
       <match tags="*"/>
     </repeat>
     <match lemma="pour" tags="pr"/>
-    <match tags="np.top.*"/>
+    <or>
+      <match tags="np.top.*"/>
+      <match tags="" case="Aa"/>
+    </or>
   </rule>
   <rule weight="1.0">
     <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
-    <match tags="np.top.*"/>
+    <or>
+      <match tags="np.top.*"/>
+      <match tags="" case="Aa"/>
+    </or>
   </rule>
   <rule weight="1.0">
     <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
