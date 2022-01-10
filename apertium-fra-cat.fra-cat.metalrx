@@ -7817,6 +7817,11 @@
 
 <!-- **************** N **************** -->
 
+  <!-- âne >> ase, ruc, burro -->
+  <rule weight="0.8">
+    <match lemma="âne" tags="n.*"><select lemma="ase"/></match>
+  </rule>
+
   <!-- fruit >> fruit, fruita -->
   <rule weight="0.8">
     <match lemma="fruit" tags="n.*"><select lemma="fruit"/></match>
@@ -10215,6 +10220,20 @@
   <rule weight="1.0">
     <match lemma="à" tags="pr.*"/>
     <match lemma="terme" tags="n.*"><select lemma="termini"/></match>
+  </rule>
+
+  <!-- police >> policia, pòlissa -->
+  <rule weight="0.8">
+    <match lemma="police" tags="n.*"><select lemma="policia"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="police" tags="n.*"><select lemma="pòlissa"/></match>
+    <match lemma="de" tags="pr"/>
+    <or> 
+      <match lemma="assurance" tags="n.*"/>
+      <match lemma="accident" tags="n.*"/>
+      <match lemma="incendie" tags="n.*"/>
+    </or> 
   </rule>
 
   <!-- volée >> vol, volada, volea, etc. -->
@@ -15087,6 +15106,26 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- mouvant >> movedís, movent -->
+  <rule weight="0.8">
+    <match lemma="mouvant" tags="adj.*"><select lemma="movedís"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="vbser.*"/>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
+    </repeat>
+    <match lemma="mouvant" tags="adj.*"><select lemma="movent"/></match>
+  </rule>
+
+  <!-- fortuné >> afortunat, ric -->
+  <rule weight="0.8">
+    <match lemma="fortuné" tags="adj.*"><select lemma="ric"/></match>
+  </rule>
 
   <!-- migrateur >> migrador, migratori -->
   <rule weight="0.8">

@@ -6546,7 +6546,7 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <match lemma="segrestar" tags="vblex.*"><select lemma="kidnapper"/></match>
+    <match lemma="segrestar" tags="vblex.*"><select lemma="saisir"/></match>
     <repeat from="0" upto="1">
       <match tags="adv"/>
     </repeat>
@@ -9494,6 +9494,26 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- despesa >> dépense, frais -->
+  <rule weight="0.8">
+    <match lemma="despesa" tags="n.*"><select lemma="dépense"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="despesa" tags="n.f.pl"><select lemma="frais"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="desplaçament" tags="n.*"/>
+      <match lemma="emmagatzemament" tags="n.*"/>
+      <match lemma="emmagatzematge" tags="n.*"/>
+      <match lemma="escolaritat" tags="n.*"/>
+      <match lemma="funcionament" tags="n.*"/>
+      <match lemma="gestió" tags="n.*"/>
+      <match lemma="manteniment" tags="n.*"/>
+      <match lemma="transport" tags="n.*"/>
+      <match lemma="viatge" tags="n.*"/>
+    </or>
+  </rule>
 
   <!-- fill >> fils, enfant -->
   <rule weight="0.8">
@@ -14485,6 +14505,25 @@
     <match lemma="de" tags="pr"/>
     <or><match tags="np.ant.*"/><match tags="np.cog.*"/></or>
   </rule>
+  <rule weight="1.2">
+    <match lemma="coll" tags="n.*"><select lemma="cou"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <or>
+      <match lemma="persona" tags="n.*"/>
+      <seq n="animals"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="coll" tags="n.*"><select lemma="col"/></match>
+    <or>
+      <match lemma="rodó" tags="adj.*"/>
+      <match lemma="redó" tags="adj.*"/>
+      <match tags="n.*"/>
+    </or>
+  </rule>
 
   <!-- principi >> principe, début -->
   <rule weight="0.8">
@@ -15276,15 +15315,17 @@
   <rule weight="1.2">
      <match lemma="paper" tags="n.*"><select lemma="papier"/></match>
      <match lemma="de" tags="pr"/>
-     <match lemma="estrassa" tags="n.*"/>
+     <or>
+       <match lemma="estrassa" tags="n.*"/>
+       <match lemma="color" tags="n.*"/>
+     </or>
   </rule>
   <rule weight="1.0">
      <match lemma="paper" tags="n.*"><select lemma="rôle"/></match>
      <match lemma="com"/>
   </rule>
 
-<!-- recurs > ressource, recours -->
-
+  <!-- recurs > ressource, recours -->
   <rule weight="0.6">
      <match lemma="recurs" tags="n.*"><select lemma="ressource"/></match>
   </rule>
