@@ -7817,6 +7817,11 @@
 
 <!-- **************** N **************** -->
 
+  <!-- dépistage >> detecció, cribrage -->
+  <rule weight="0.8">
+    <match lemma="dépistage" tags="n.*"><select lemma="detecció"/></match>
+  </rule>
+
   <!-- âne >> ase, ruc, burro -->
   <rule weight="0.8">
     <match lemma="âne" tags="n.*"><select lemma="ase"/></match>

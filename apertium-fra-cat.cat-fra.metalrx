@@ -9495,6 +9495,27 @@
 
 <!-- **************** N **************** -->
 
+  <!-- endarreriment >> retard, arriéré -->
+  <rule weight="0.8">
+    <match lemma="endarreriment" tags="n.*"><select lemma="retard"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="pagar" tags="vblex.*"/>
+      <match lemma="liquidar" tags="vblex.*"/>
+      <match lemma="saldar" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="3">
+      <or>
+        <match tags="adv"/>
+        <match tags="det.*"/>
+        <match tags="adj.*"/>
+      </or>
+    </repeat>
+    <match lemma="endarreriment" tags="n.*"><select lemma="arriéré"/></match>
+  </rule>
+
+
   <!-- despesa >> dépense, frais -->
   <rule weight="0.8">
     <match lemma="despesa" tags="n.*"><select lemma="dépense"/></match>
