@@ -14870,7 +14870,7 @@
     <match lemma="soustraction" tags="n.*"><select lemma="substracció" tags="n.*"/></match>
   </rule>
 
-<!-- prix >> premi / preu -->
+  <!-- prix >> premi / preu -->
   <rule weight="0.8">
     <match lemma="prix" tags="n.*"><select lemma="premi"/></match>
   </rule>
@@ -14901,7 +14901,12 @@
   </rule>
   <rule weight="1.2">
     <match lemma="prix" tags="n.*"><select lemma="premi"/></match>
-    <match tags="np.*"/>
+    <or>
+      <match tags="np.*"/>
+      <match tags="" case="Aa"/>
+      <match tags="n.*" case="Aa"/>
+      <match tags="adj.*" case="Aa"/>
+    </or>
   </rule>
   <rule weight="1.2">
     <or>
