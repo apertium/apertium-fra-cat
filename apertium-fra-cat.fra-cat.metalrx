@@ -3858,9 +3858,78 @@
 
 <!-- **************** V **************** -->
 
+  <!-- déposer >> dipositar, presentar, interposar, deposar -->
+  <rule weight="0.8">
+    <match lemma="déposer" tags="vblex.*"><select lemma="dipositar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="déposer" tags="vblex.*"><select lemma="presentar"/></match>
+    <repeat from="0" upto="4">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+        <match tags="det.*"/>
+        <match tags="num.*"/>
+        <match tags="num"/>
+        <match lemma="de" tags="pr"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="plainte" tags="n.*"/>
+      <match lemma="requette" tags="n.*"/>
+      <match lemma="recours" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="déposer" tags="vblex.*"><select lemma="deposar"/></match>
+    <repeat from="0" upto="4">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+        <match tags="det.*"/>
+        <match tags="num.*"/>
+        <match tags="num"/>
+        <match lemma="de" tags="pr"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="président" tags="n.*"/>
+      <match lemma="général" tags="n.*"/>
+      <match lemma="colonel" tags="n.*"/>
+      <match lemma="dictateur" tags="n.*"/>
+      <match lemma="ministre" tags="n.*"/>
+      <match lemma="premier ministre" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- chiffrer >> xifrar, avaluar -->
   <rule weight="0.8">
     <match lemma="chiffrer" tags="vblex.*"><select lemma="xifrar"/></match>
+  </rule>
+
+  <!-- nouer >> lligar, cordar -->
+  <rule weight="0.8">
+    <match lemma="nouer" tags="vblex.*"><select lemma="lligar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="nouer" tags="vblex.*"><select lemma="cordar"/></match>
+    <repeat from="0" upto="4">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="lacet" tags="n.*"/>
+      <match lemma="soulier" tags="n.*"/>
+      <match lemma="chaussure" tags="n.*"/>
+      <match lemma="botte" tags="n.*"/>
+      <match lemma="basket" tags="n.*"/>
+      <match lemma="tennis" tags="n.*"/>
+      <match lemma="ranger" tags="n.*"/>
+      <match lemma="chaussure# de randonnée" tags="n.*"/>
+      <match lemma="botte# de randonnée" tags="n.*"/>
+    </or>
   </rule>
 
   <!-- bercer >> bressolar, bressar, apaivagar, il·lusionar -->
@@ -7834,6 +7903,10 @@
   <rule weight="1.0">
     <match tags="det.def.mf.pl"/>
     <match lemma="fruit" tags="n.*"><select lemma="fruita" tags="n.f.sg"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fruit" tags="n.*"><select lemma="fruita" tags="n.f.sg"/></match>
+    <match lemma="confit" tags="adj.*"/>
   </rule>
   <rule weight="1.2">
     <match tags="det.def.mf.pl"/>
@@ -15100,18 +15173,21 @@
     <match lemma="garde" tags="n.*"><select lemma="guarda"/></match>
   </rule>
 
-<!-- maître >> amo / mestre -->
+  <!-- maître >> amo / mestre -->
   <rule weight="0.8">
-    <or>
-      <match lemma="maître" tags="n.*"><select lemma="amo"/></match>
-      <match lemma="maitre" tags="n.*"><select lemma="amo"/></match>
-    </or>
+    <match lemma="maître" tags="n.*"><select lemma="amo"/></match>
   </rule>
   <rule weight="1.0">
-    <or>
-      <match lemma="maître" tags="n.*"><select lemma="mestre"/></match>
-      <match lemma="maitre" tags="n.*"><select lemma="mestre"/></match>
-    </or>
+    <match lemma="maître" tags="n.*"><select lemma="mestre"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
+
+  <!-- maitre >> amo / mestre -->
+  <rule weight="0.8">
+    <match lemma="maitre" tags="n.*"><select lemma="amo"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="maitre" tags="n.*"><select lemma="mestre"/></match>
     <match lemma="de" tags="pr"/>
   </rule>
 
@@ -16720,6 +16796,8 @@
       <match lemma="malade" tags="adj.*"/>
       <match lemma="marié" tags="adj.*"/>
       <match lemma="marier" tags="vblex.pp.*"/>
+      <match lemma="mélangé" tags="adj.*"/>
+      <match lemma="mélanger" tags="vblex.pp.*"/>
       <match lemma="mort" tags="adj.*"/>
       <match lemma="mourir" tags="vblex.pp.*"/>
       <match lemma="occupé" tags="adj.*"/>
@@ -16763,6 +16841,7 @@
       <match lemma="terminer" tags="vblex.pp.*"/>
       <match lemma="timbré" tags="adj.*"/>
       <match lemma="timbrer" tags="vblex.pp.*"/>
+      <match lemma="vacciner" tags="vblex.pp.*"/>
       <match lemma="vivant" tags="adj.*"/>
     </or>
   </rule>

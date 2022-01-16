@@ -5611,6 +5611,52 @@
 
 <!-- **************** V **************** -->
 
+  <!-- presentar >> présenter, déposer -->
+  <rule weight="0.8">
+    <match lemma="presentar" tags="vblex.*"><select lemma="présenter"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="presentar" tags="vblex.*"><select lemma="déposer"/></match>
+    <repeat from="0" upto="4">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+        <match tags="det.*"/>
+        <match tags="num.*"/>
+        <match tags="num"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="denúncia" tags="n.*"/>
+      <match lemma="queixa" tags="n.*"/>
+      <match lemma="recurs" tags="n.*"/>
+      <match lemma="demanda" tags="n.*"/>
+    </or>
+  </rule>
+
+  <!-- interposar >> interposer, déposer -->
+  <rule weight="0.8">
+    <match lemma="interposar" tags="vblex.*"><select lemma="interposer"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="interposar" tags="vblex.*"><select lemma="déposer"/></match>
+    <repeat from="0" upto="4">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+        <match tags="det.*"/>
+        <match tags="num.*"/>
+        <match tags="num"/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="denúncia" tags="n.*"/>
+      <match lemma="queixa" tags="n.*"/>
+      <match lemma="recurs" tags="n.*"/>
+      <match lemma="demanda" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- reprendre >> reprendre, réprimander, renouer -->
   <rule weight="0.8">
     <match lemma="reprendre" tags="vblex.*"><select lemma="reprendre"/></match>
@@ -7236,7 +7282,11 @@
       </or>
     </repeat>
     <match tags="det.*"/>
-    <match lemma="sabata" tags="n.*"/>
+    <or>
+      <match lemma="sabata" tags="n.*"/>
+      <match lemma="sabatilla" tags="n.*"/>
+      <match lemma="bota" tags="n.*"/>
+    </or>
   </rule>
   <rule weight="1.0">
     <match lemma="cordar" tags="vblex.*"><select lemma="attacher"/></match>
@@ -9494,6 +9544,40 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- cordó >> cordon, lacet -->
+  <rule weight="0.8">
+    <match lemma="cordó" tags="n.*"><select lemma="cordon"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="cordó" tags="n.*"><select lemma="lacet"/></match>
+    <repeat from="0" upto="6">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="sabata" tags="n.*"/>
+      <match lemma="sabatilla" tags="n.*"/>
+      <match lemma="bota" tags="n.*"/>
+      <match lemma="cordar" tags="vblex.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="sabata" tags="n.*"/>
+      <match lemma="bota" tags="n.*"/>
+      <match lemma="cordar" tags="vblex.*"/>
+    </or>
+    <repeat from="0" upto="6">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="cordó" tags="n.*"><select lemma="lacet"/></match>
+  </rule>
 
   <!-- endarreriment >> retard, arriéré -->
   <rule weight="0.8">
