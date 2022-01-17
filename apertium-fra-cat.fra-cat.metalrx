@@ -3531,6 +3531,15 @@
     <match lemma="près de" tags="pr"><select lemma="prop de"/></match>
     <or><match tags="num"/><match tags="num.*"/></or>
   </rule>
+  <rule weight="1.0">
+    <match lemma="près de" tags="pr"><select lemma="prop de"/></match>
+    <match lemma="un" tags="det.*"/>
+    <repeat from="0" upto="1">
+      <match tags="n.*"/>
+    </repeat>
+    <match lemma="sur" tags="pr"/>
+    <or><match tags="num"/><match tags="num.*"/></or>
+  </rule>
 
   <!-- à proximité de >> a prop de, prop de -->
   <rule weight="0.8">
@@ -7885,6 +7894,19 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- règle >> regla, regle -->
+  <rule weight="0.8">
+    <match lemma="règle" tags="n.*"><select lemma="regla"/></match>
+  </rule>
+
+  <!-- ranger >> rànger, ranger -->
+  <rule weight="0.8">
+    <match lemma="ranger" tags="n.m.*"><select lemma="rànger"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="Ranger" tags="n.m.*"><select lemma="ranger"/></match>
+  </rule>
 
   <!-- dépistage >> detecció, cribrage -->
   <rule weight="0.8">
@@ -13589,6 +13611,19 @@
   </rule>
   <rule weight="1.0">
     <or>
+      <match lemma="début" tags="n.*"/>
+      <match lemma="fin" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="2">
+      <or>
+        <match lemma="de" tags="pr"/>
+        <match tags="det.*"/>
+      </or>
+    </repeat>
+    <match lemma="saison" tags="n.*"><select lemma="temporada"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
       <match lemma="après" tags="pr"/>
       <match lemma="avant" tags="pr"/>
     </or>
@@ -17032,8 +17067,7 @@
     <match lemma="vernir" tags="vblex.*"><select lemma="vernissar" tags="vblex.*"/></match>
   </rule>
 
-<!-- verser >> pagar / vessar -->
-
+  <!-- verser >> pagar / vessar -->
   <rule weight="0.8">
     <match lemma="verser" tags="vblex.*"><select lemma="pagar"/></match>
   </rule>
@@ -17256,7 +17290,96 @@
     </or>
   </rule>
 
+  <!-- déposer plainte >> posar# una queixa, posar# una denúncia, posar# una demanda -->
+  <rule weight="0.8">
+    <match lemma="déposer plainte" tags="vblex.*"><select lemma="posar# una queixa"/></match>
+  </rule>
+
+  <!-- maintenir# en retention >> mantenir# retingut, mantenir# retinguts, mantenir# retinguda, mantenir# retingudes  -->
+  <rule weight="0.8">
+    <match lemma="maintenir# en retention" tags="vblex.*"><select lemma="mantenir# retingut"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="maintenir# en retention" tags="vblex.*.pl"><select lemma="mantenir# retinguts"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="*.f.*"/>
+    <match lemma="maintenir# en retention" tags="vblex.*.sg"><select lemma="mantenir# retinguda"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match tags="*.f.*"/>
+    <match lemma="maintenir# en retention" tags="vblex.*.pl"><select lemma="mantenir# retingudes"/></match>
+  </rule>
+
+  <!-- maintenir# en retention administrative >> mantenir# retingut, mantenir# retinguts, mantenir# retinguda, mantenir# retingudes  -->
+  <rule weight="0.8">
+    <match lemma="maintenir# en retention administrative" tags="vblex.*"><select lemma="mantenir# retingut"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="maintenir# en retention administrative" tags="vblex.*.pl"><select lemma="mantenir# retinguts"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="*.f.*"/>
+    <match lemma="maintenir# en retention administrative" tags="vblex.*.sg"><select lemma="mantenir# retinguda"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match tags="*.f.*"/>
+    <match lemma="maintenir# en retention administrative" tags="vblex.*.pl"><select lemma="mantenir# retingudes"/></match>
+  </rule>
+
+  <!-- retourner# en retention >> tornar# a ser retingut, tornar# a ser retinguts, tornar# a ser retinguda, tornar# a ser retingudes  -->
+  <rule weight="0.8">
+    <match lemma="retourner# en retention" tags="vblex.*"><select lemma="tornar# a ser retingut"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="retourner# en retention" tags="vblex.*.pl"><select lemma="tornar# a ser retinguts"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="*.f.*"/>
+    <match lemma="retourner# en retention" tags="vblex.*.sg"><select lemma="tornar# a ser retinguda"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match tags="*.f.*"/>
+    <match lemma="retourner# en retention" tags="vblex.*.pl"><select lemma="tornar# a ser retingudes"/></match>
+  </rule>
+
+  <!-- retourner# en retention administrative >> tornar# a ser retingut, tornar# a ser retinguts, tornar# a ser retinguda, tornar# a ser retingudes  -->
+  <rule weight="0.8">
+    <match lemma="retourner# en retention administrative" tags="vblex.*"><select lemma="tornar# a ser retingut"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="retourner# en retention administrative" tags="vblex.*.pl"><select lemma="tornar# a ser retinguts"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="*.f.*"/>
+    <match lemma="retourner# en retention administrative" tags="vblex.*.sg"><select lemma="tornar# a ser retinguda"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match tags="*.f.*"/>
+    <match lemma="retourner# en retention administrative" tags="vblex.*.pl"><select lemma="tornar# a ser retingudes"/></match>
+  </rule>
+
 <!-- **************** ADV **************** -->
+
+  <!-- bien sûr >> ben segur, és clar -->
+  <rule weight="0.8">
+    <match lemma="bien sûr" tags="adv"><select lemma="ben segur"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match tags="sent"/>
+      <match tags="cm"/>
+    </or>
+    <match lemma="bien sûr" tags="adv"><select lemma="és clar"/></match>
+  </rule>
+  <rule weight="1.2">
+    <or>
+      <match tags="sent"/>
+      <match tags="cm"/>
+    </or>
+    <match lemma="bien sûr" tags="adv"><select lemma="ben segur"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
 
   <!-- en flèche >> en fletxa, ràpidament -->
   <rule weight="0.8">
