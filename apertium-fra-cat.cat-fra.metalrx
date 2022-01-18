@@ -8694,6 +8694,19 @@
 
 <!-- **************** ADJ **************** -->
 
+  <!-- graduat >> gradué, gradé, diplômé -->
+  <rule weight="0.8">
+    <match lemma="graduat" tags="adj.*"><select lemma="diplômé"/></match>
+  </rule>
+  <rule weight="0.8">
+    <or>
+      <match lemma="ullera" tags="n.*"/>
+      <match lemma="lent" tags="n.*"/>
+      <match lemma="vidre" tags="n.*"/>
+    </or>
+    <match lemma="graduat" tags="adj.*"><select lemma="gradué"/></match>
+  </rule>
+
   <!-- familiar >> familial, familier -->
   <rule weight="0.8">
     <match lemma="familiar" tags="adj.*"><select lemma="familial"/></match>
@@ -12859,9 +12872,34 @@
     <match lemma="postal" tags="adj.*"/>
   </rule>
 
-  <!-- plat >> plat, assiette -->
+  <!-- plataforma >> plate-forme, plateau -->
+  <rule weight="0.8">
+    <match lemma="plataforma" tags="n.*"><select lemma="plate-forme"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="plataforma" tags="n.*"><select lemma="plateau"/></match>
+    <match lemma="continental" tags="adj.*"/>
+  </rule>
+
+  <!-- plat >> plat, assiette, plateau -->
   <rule weight="0.8">
     <match lemma="plat" tags="n.*"><select lemma="plat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="plat" tags="n.*"><select lemma="plateau"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <or>
+      <match lemma="balança" tags="n.*"/>
+      <match lemma="bicicleta" tags="n.*"/>
+      <match lemma="bici" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="doble" tags="adj.*"/>
+    <match lemma="plat" tags="n.*"><select lemma="plateau"/></match>
   </rule>
 
   <!-- falla >> faille, défaut -->

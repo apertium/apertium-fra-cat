@@ -7846,6 +7846,19 @@
   <!-- plafonner >> atènyer# un màxim, fixar# un màxim -->
   <macro name="verb_intrans_trans" p1="plafonner" p2="atènyer# un màxim" p3="fixar# un màxim"/>
 
+  <!-- prendre# en charge >> fer# càrrec, fer# càrrec de -->
+  <macro name="verb_intrans_trans" p1="prendre# en charge" p2="fer# càrrec" p3="fer# càrrec de"/>
+  <rule weight="1.4">
+    <match tags="vbser.*"/>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match lemma="prendre# en charge" tags="vblex.pp.*"><select lemma="atendre"/></match>
+  </rule>
+
   <!-- regorger >> vessar, desbordar -->
   <macro name="verb_prep" p1="regorger" p2="vessar" p3="de" p4="desbordar" />
 
@@ -12481,9 +12494,48 @@
     </or>
   </rule>
 
-  <!-- plateau >> altiplà, safata, escenari -->
+  <!-- plateau >> altiplà, safata, plat, escenari, plató, plataforma, planassa -->
   <rule weight="0.8">
     <match lemma="plateau" tags="n.*"><select lemma="altiplà"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="plateau" tags="n.*"><select lemma="plat"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <or>
+      <match lemma="balance" tags="n.*"/>
+      <match lemma="vélo" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="double" tags="adj.*"/>
+    <match lemma="plateau" tags="n.*"><select lemma="plat"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="plateau" tags="n.*"><select lemma="plató"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="cinéma" tags="n.*"/>
+      <match lemma="télévision" tags="n.*"/>
+      <match lemma="tournage" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="plateau" tags="n.*"><select lemma="safata"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="argent" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="plateau" tags="n.*"><select lemma="plataforma"/></match>
+    <match lemma="continental" tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="plateau" tags="n.*"><select lemma="planassa"/></match>
+    <match lemma="sous-marin" tags="adj.*"/>
   </rule>
   <rule weight="1.0">
     <match lemma="plateau" tags="n.*"><select lemma="escenari"/></match>
@@ -15227,6 +15279,15 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- construible >> construïble, urbanitzable -->
+  <rule weight="0.8">
+    <match lemma="construible" tags="adj.*"><select lemma="construïble"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="terrain" tags="n.*"/>
+    <match lemma="construible" tags="adj.*"><select lemma="urbanitzable"/></match>
+  </rule>
 
   <!-- mouvant >> movedís, movent -->
   <rule weight="0.8">
