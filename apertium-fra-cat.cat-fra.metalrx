@@ -613,7 +613,7 @@
   </def-macros>
 
   <def-seqs>
-    <def-seq n="ordinals">
+    <def-seq n="ordinals"><or>
       <match lemma="primer" tags="adj.*"/>
       <match lemma="segon" tags="adj.*"/>
       <match lemma="tercer" tags="adj.*"/>
@@ -630,9 +630,9 @@
       <match lemma="últim" tags="adj.*"/>
       <match lemma="darrer" tags="adj.*"/>
       <match tags="adj.ord.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="paisos">
+    <def-seq n="paisos"><or>
       <match lemma="Catalunya"/>
       <match lemma="Aragó"/>
       <match lemma="Castella"/>
@@ -693,9 +693,9 @@
       <match lemma="Oceania"/>
       <match lemma="occident"/>
       <match lemma="orient"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="material">
+    <def-seq n="material"><or>
        <match lemma="cotó" tags="n.*"/>
        <match lemma="llana" tags="n.*"/>
        <match lemma="seda" tags="n.*"/>
@@ -734,9 +734,9 @@
        <match lemma="maragda" tags="n.*"/>
 
        <match lemma="fusta" tags="n.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="instruments_musicals">
+    <def-seq n="instruments_musicals"><or>
        <match lemma="piano" tags="n.*"/>
        <match lemma="violí" tags="n.*"/>
        <match lemma="viola" tags="n.*"/>
@@ -755,9 +755,9 @@
        <match lemma="òrgan" tags="n.*"/>
        <match lemma="arpa" tags="n.*"/>
        <match lemma="guitarra" tags="n.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="animals">
+    <def-seq n="animals"><or>
       <match lemma="animal" tags="n.*"/>
       <match lemma="peix" tags="n.*"/>
       <match lemma="gos" tags="n.*"/>
@@ -787,9 +787,9 @@
       <match lemma="elefant" tags="n.*"/>
       <match lemma="girafa" tags="n.*"/>
       <match lemma="tigre" tags="n.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="temps">
+    <def-seq n="temps"><or>
       <match lemma="segon" tags="n.*"/>
       <match lemma="minut" tags="n.*"/>
       <match lemma="hora" tags="n.*"/>
@@ -819,9 +819,9 @@
       <match lemma="octubre" tags="n.*"/>
       <match lemma="novembre" tags="n.*"/>
       <match lemma="desembre" tags="n.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="mes">
+    <def-seq n="mes"><or>
       <match lemma="gener" tags="n.*"/>
       <match lemma="febrer" tags="n.*"/>
       <match lemma="març" tags="n.*"/>
@@ -834,9 +834,9 @@
       <match lemma="octubre" tags="n.*"/>
       <match lemma="novembre" tags="n.*"/>
       <match lemma="desembre" tags="n.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="periode">
+    <def-seq n="periode"><or>
       <match lemma="minut" tags="n.*"/>
       <match lemma="hora" tags="n.*"/>
       <match lemma="dia" tags="n.*"/>
@@ -877,9 +877,9 @@
       <match lemma="pliocè" tags="n.*"/>
       <match lemma="plistocè" tags="n.*"/>
       <match lemma="holocè" tags="n.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="part_cos">
+    <def-seq n="part_cos"><or>
       <match lemma="braç" tags="n.*"/>
       <match lemma="mà" tags="n.*"/>
       <match lemma="cama" tags="n.*"/>
@@ -910,9 +910,9 @@
       <match lemma="cor" tags="n.*"/>
       <match lemma="pulmó"/>
       <match lemma="budell" tags="n.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="vestit">
+    <def-seq n="vestit"><or>
       <match lemma="samarreta" tags="n.*"/>
       <match lemma="camisa" tags="n.*"/>
       <match lemma="pantaló" tags="n.*"/>
@@ -923,9 +923,9 @@
       <match lemma="mitjó" tags="n.*"/>
       <match lemma="mitja" tags="n.*"/>
       <match lemma="sabata" tags="n.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="gentilici_adj">
+    <def-seq n="gentilici_adj"><or>
       <match lemma="nord-americà" tags="adj.*"/>
       <match lemma="britànic" tags="adj.*"/>
       <match lemma="anglès" tags="adj.*"/>
@@ -956,9 +956,9 @@
       <match lemma="kenià" tags="adj.*"/>
       <match lemma="tanzanià" tags="adj.*"/>
       <match lemma="sud-africà" tags="adj.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="verbs_moviment">
+    <def-seq n="verbs_moviment"><or>
       <match lemma="anar" tags="vblex.*"/>
       <match lemma="traslladar" tags="vblex.*"/>
       <match lemma="viatjar" tags="vblex.*"/>
@@ -985,10 +985,10 @@
       <match lemma="marxar" tags="vblex.*"/>
       <match lemma="apropar" tags="vblex.*"/>
       <match lemma="aproximar" tags="vblex.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="pr_de">
-      <match lemma="de" tags="pr"/>"/>
+    <def-seq n="pr_de"><or>
+      <match lemma="de" tags="pr"/>
       <match lemma="a banda de" tags="pr"/>
       <match lemma="abans de" tags="pr"/>
       <match lemma="a causa de" tags="pr"/>
@@ -1090,9 +1090,9 @@
       <match lemma="una miqueta menys de" tags="pr"/>
       <match lemma="una miqueta més de" tags="pr"/>
       <match lemma="vora de" tags="pr"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="nota_musical">
+    <def-seq n="nota_musical"><or>
       <match lemma="do" tags="n.*"/>
       <match lemma="re" tags="n.*"/>
       <match lemma="mi" tags="n.*"/>
@@ -1100,9 +1100,9 @@
       <match lemma="sol" tags="n.*"/>
       <match lemma="la" tags="n.*"/>
       <match lemma="si" tags="n.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="persona">
+    <def-seq n="persona"><or>
       <match lemma="persona" tags="n.*"/>
       <match lemma="home" tags="n.*"/>
       <match lemma="dona" tags="n.*"/>
@@ -2123,7 +2123,7 @@
       <match lemma="escapista" tags="n.*"/>
       <match lemma="terraplanista" tags="n.*"/>
       <match lemma="mazdeista" tags="n.*"/>
-    </def-seq>
+    </or></def-seq>
   </def-seqs>
 
 <rules>

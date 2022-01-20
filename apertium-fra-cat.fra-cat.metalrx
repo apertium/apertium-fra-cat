@@ -613,7 +613,7 @@
   </def-macros>
 
   <def-seqs>
-    <def-seq n="matériel">
+    <def-seq n="matériel"><or>
        <match lemma="coton" tags="n.*"/>
        <match lemma="laine" tags="n.*"/>
        <match lemma="soie" tags="n.*"/>
@@ -651,9 +651,9 @@
        <match lemma="bois" tags="n.*"/>
        <match lemma="plâtre" tags="n.*"/>
        <match lemma="gypse" tags="n.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="charge">
+    <def-seq n="charge"><or>
       <match lemma="pape" tags="n.*"/>
       <match lemma="patriarche" tags="n.*"/>
       <match lemma="cardinal" tags="n.*"/>
@@ -741,9 +741,9 @@
       <match lemma="commissaire" tags="n.*"/>
       <match lemma="homme" tags="n.*"/>
       <match lemma="femme" tags="n.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="personne">
+    <def-seq n="personne"><or>
       <match lemma="personne" tags="n.*"/>
       <match lemma="homme" tags="n.*"/>
       <match lemma="femme" tags="n.*"/>
@@ -2282,9 +2282,9 @@
       <match lemma="vaccinologiste" tags="n.*"/>
       <match lemma="suffragiste" tags="n.*"/>
       <match lemma="houthiste" tags="n.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="parent">
+    <def-seq n="parent"><or>
       <match lemma="parent" tags="n.*"/>
       <match lemma="enfant" tags="n.*"/>
       <match lemma="père" tags="n.*"/>
@@ -2324,9 +2324,9 @@
       <match lemma="belle-fille" tags="n.*"/>
       <match lemma="beau-frère" tags="n.*"/>
       <match lemma="belle-sœur" tags="n.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="bétail">
+    <def-seq n="bétail"><or>
       <match lemma="poulet" tags="n.*"/>
       <match lemma="poussin" tags="n.*"/>
       <match lemma="coq" tags="n.*"/>
@@ -2346,9 +2346,9 @@
       <match lemma="poulain" tags="n.*"/>
       <match lemma="âne" tags="n.*"/>
       <match lemma="bétail" tags="n.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="animaux_non_bétail">
+    <def-seq n="animaux_non_bétail"><or>
       <match lemma="animal" tags="n.*"/>
       <match lemma="poisson" tags="n.*"/>
       <match lemma="chien" tags="n.*"/>
@@ -2364,9 +2364,9 @@
       <match lemma="elephant" tags="n.*"/>
       <match lemma="girafe" tags="n.*"/>
       <match lemma="tigre" tags="n.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="fruit_avec_noyau">
+    <def-seq n="fruit_avec_noyau"><or>
       <match lemma="pêche" tags="n.*"/>
       <match lemma="nectarine" tags="n.*"/>
       <match lemma="abricot" tags="n.*"/>
@@ -2375,9 +2375,9 @@
       <match lemma="olive" tags="n.*"/>
       <match lemma="amande" tags="n.*"/>
       <match lemma="datte" tags="n.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="fruit">
+    <def-seq n="fruit"><or>
       <match lemma="pomme" tags="n.*"/>
       <match lemma="poire" tags="n.*"/>
       <match lemma="pêche" tags="n.*"/>
@@ -2398,9 +2398,9 @@
       <match lemma="mangue" tags="n.*"/>
       <match lemma="papaye" tags="n.*"/>
       <match lemma="kiwi" tags="n.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="nombres_aprox">
+    <def-seq n="nombres_aprox"><or>
       <match lemma="paire" tags="n.*"/>
       <match lemma="dizaine" tags="n.*"/>
       <match lemma="douzaine" tags="n.*"/>
@@ -2417,9 +2417,9 @@
       <match lemma="quatre-vingt-dizaine" tags="n.*"/>
       <match lemma="nonantaine" tags="n.*"/>
       <match lemma="centaine" tags="n.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="pays_adj">
+    <def-seq n="pays_adj"><or>
       <match lemma="européen" tags="adj.*"/>
       <match lemma="portugais" tags="adj.*"/>
       <match lemma="espagnol" tags="adj.*"/>
@@ -2608,9 +2608,9 @@
       <match lemma="mauricien" tags="adj.*"/>
       <match lemma="seychellois" tags="adj.*"/>
       <match lemma="sud-africain" tags="adj.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="pays_hab">
+    <def-seq n="pays_hab"><or>
       <match lemma="Européen" tags="n.*"/>
       <match lemma="portugais" tags="n.*"/>
       <match lemma="espagnol" tags="n.*"/>
@@ -2789,9 +2789,9 @@
       <match lemma="Mauricien" tags="n.*"/>
       <match lemma="Seychellois" tags="n.*"/>
       <match lemma="Sud-Africain" tags="n.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="temps">
+    <def-seq n="temps"><or>
       <match lemma="seconde" tags="n.*"/>
       <match lemma="minute" tags="n.*"/>
       <match lemma="heure" tags="n.*"/>
@@ -2821,9 +2821,9 @@
       <match lemma="octobre" tags="n.*"/>
       <match lemma="novembre" tags="n.*"/>
       <match lemma="décembre" tags="n.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="navire">
+    <def-seq n="navire"><or>
       <match lemma="navire" tags="n.*"/>
       <match lemma="bateau" tags="n.*"/>
       <match lemma="vaisseau" tags="n.*"/>
@@ -2838,9 +2838,9 @@
       <match lemma="navire# de ligne" tags="n.*"/>
       <match lemma="barque" tags="n.*"/>
       <match lemma="Titanic" tags="np.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="adj_ord">
+    <def-seq n="adj_ord"><or>
       <match lemma="premier" tags="adj.*"/>
       <match lemma="second" tags="adj.*"/>
       <match lemma="deuxième" tags="adj.*"/>
@@ -2856,9 +2856,9 @@
       <match lemma="1er" tags="adj.*"/>
       <match lemma="2nd" tags="adj.*"/>
       <match lemma="3ème" tags="adj.*"/>
-    </def-seq>
+    </or></def-seq>
 
-    <def-seq n="note_musicale">
+    <def-seq n="note_musicale"><or>
       <match lemma="do" tags="n.*"/>
       <match lemma="ut" tags="n.*"/>
       <match lemma="ré" tags="n.*"/>
@@ -2867,7 +2867,7 @@
       <match lemma="sol" tags="n.*"/>
       <match lemma="la" tags="n.*"/>
       <match lemma="si" tags="n.*"/>
-    </def-seq>
+    </or></def-seq>
   </def-seqs>
 
 <rules>
@@ -4517,7 +4517,7 @@
       <seq n="pays_hab"/>
     </or>
   </rule>
-  <rule weight="0.9">
+<!--  <rule weight="0.9">
     <match lemma="relaxer" tags="vblex.*"><select lemma="alliberar"/></match>
     <repeat from="0" upto="2">
       <match tags="adv"/>
@@ -4526,7 +4526,7 @@
       <seq n="np.ant.*"/>
       <seq n="np.cog.*"/>
     </or>
-  </rule>
+  </rule>-->
   <rule weight="0.9">
     <match tags="vbser.*"/>
     <match lemma="relaxer" tags="vblex.pp.*"><select lemma="alliberar"/></match>
