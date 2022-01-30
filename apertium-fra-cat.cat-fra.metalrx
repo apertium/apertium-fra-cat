@@ -5420,12 +5420,23 @@
   </rule>
 
   <!-- a casa seva >> chez lui, chez elle, chez eux, chez elles, chez soi -->
+  <rule weight="0.8">
+    <match lemma="a casa seva" tags="adv"><select lemma="chez lui"/></match>
+  </rule>
+
   <!-- a ca seva >> chez lui, chez elle, chez eux, chez elles, chez soi -->
   <rule weight="0.8">
-    <or>
-      <match lemma="a casa seva" tags="adv"><select lemma="chez lui"/></match>
-      <match lemma="a ca seva" tags="adv"><select lemma="chez lui"/></match>
-    </or>
+    <match lemma="a ca seva" tags="adv"><select lemma="chez lui"/></match>
+  </rule>
+
+  <!-- de casa seva >> de chez lui, de chez elle, de chez eux, de chez elles, de chez soi -->
+  <rule weight="0.8">
+    <match lemma="de casa seva" tags="adv"><select lemma="de chez lui"/></match>
+  </rule>
+
+  <!-- des de casa seva >> de chez lui, de chez elle, de chez eux, de chez elles, de chez soi -->
+  <rule weight="0.8">
+    <match lemma="des de casa seva" tags="adv"><select lemma="de chez lui"/></match>
   </rule>
 
   <!-- fa poc >> récemment, un peu plus tôt -->
@@ -5610,6 +5621,22 @@
   </rule>
 
 <!-- **************** V **************** -->
+
+  <!-- eixugar >> essuyer, sécher -->
+  <rule weight="0.8">
+    <match lemma="eixugar" tags="vblex.*"><select lemma="essuyer"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="eixugar" tags="vblex.*"><select lemma="sécher"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="cabell" tags="n.*"/>
+  </rule>
 
   <!-- presentar >> présenter, déposer -->
   <rule weight="0.8">

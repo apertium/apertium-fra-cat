@@ -3867,6 +3867,22 @@
 
 <!-- **************** V **************** -->
 
+  <!-- sécher >> assecar, eixugar -->
+  <rule weight="0.8">
+    <match lemma="sécher" tags="vblex.*"><select lemma="assecar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="sécher" tags="vblex.*"><select lemma="eixugar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
+    </repeat>
+    <match tags="det.*"/>
+    <match lemma="cheveu" tags="n.*"/>
+  </rule>
+
   <!-- déposer >> dipositar, presentar, interposar, deposar -->
   <rule weight="0.8">
     <match lemma="déposer" tags="vblex.*"><select lemma="dipositar"/></match>
