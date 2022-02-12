@@ -7420,7 +7420,7 @@
     <match lemma="qui"/>
   </rule>
 
-  <!-- fitxar >> ficher, engager -->
+  <!-- fitxar >> ficher, engager, pointer -->
   <rule weight="0.8">
     <match lemma="fitxar" tags="vblex.*"><select lemma="ficher"/></match>
   </rule>
@@ -7436,6 +7436,20 @@
       <match lemma="anar" tags="vblex.pri.*"/>
     </repeat>
     <match lemma="fitxar" tags="vblex.*"><select lemma="engager"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fitxar" tags="vblex.*"><select lemma="pointer"/></match>
+    <repeat from="0" upto="1">
+      <match tags="adv"/>
+    </repeat>
+    <match lemma="a" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="entrada" tags="n.*"/>
+      <match lemma="sortida" tags="n.*"/>
+      <match lemma="entrar" tags="vblex.inf"/>
+      <match lemma="sortir" tags="vblex.inf"/>
+    </or>
   </rule>
 
   <!-- mantenir >> maintenir, tenir -->

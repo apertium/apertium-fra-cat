@@ -3867,6 +3867,56 @@
 
 <!-- **************** V **************** -->
 
+  <!-- faillir >> fallar, estar# a punt de -->
+  <rule weight="0.8">
+    <match lemma="faillir" tags="vblex.*"><select lemma="fallar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="faillir" tags="vblex.*"><select lemma="estar# a punt de"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="cnjadv"/>
+      </or>
+    </repeat>
+    <match tags="*.inf"/>
+  </rule>
+
+  <!-- pointer >> apuntar, fitxar -->
+  <rule weight="0.8">
+    <match lemma="pointer" tags="vblex.*"><select lemma="apuntar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pointer" tags="vblex.*"><select lemma="fitxar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
+    </repeat>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="entrée" tags="n.*"/>
+      <match lemma="sortie" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pointer" tags="vblex.*"><select lemma="fitxar"/></match>
+    <repeat from="0" upto="2">
+      <or>
+        <match tags="adv"/>
+        <match tags="preadv"/>
+      </or>
+    </repeat>
+    <match lemma="pour" tags="pr"/>
+    <or>
+      <match tags="prn.tn.*"/>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+      <match tags="" case="Aa"/>
+    </or>
+  </rule>
+
   <!-- sécher >> assecar, eixugar -->
   <rule weight="0.8">
     <match lemma="sécher" tags="vblex.*"><select lemma="assecar"/></match>
@@ -4486,6 +4536,9 @@
 
   <!-- casser# la gueule >> inflar# els morros, trencar# els morros -->
   <macro name="verb_nopron_pron" p1="casser# la gueule" p2="inflar# els morros" p3="trencar# els morros" />
+
+  <!-- creuser >> excavar, aprofundir -->
+  <macro name="verb_nopron_pron" p1="creuser" p2="excavar" p3="aprofundir" />
 
   <!-- épancher >> vessar, escampar -->
   <macro name="verb_nopron_pron" p1="épancher" p2="vessar" p3="escampar" />
@@ -7446,6 +7499,7 @@
       <match tags="np.ant"/>
       <match tags="np.ant.*"/>
       <match tags="np.cog.*"/>
+      <match tags="" case="Aa"/>
       <match tags="n.*"/>
     </or>
   </rule>
@@ -7489,6 +7543,7 @@
       <match tags="np.ant"/>
       <match tags="np.ant.*"/>
       <match tags="np.cog.*"/>
+      <match tags="" case="Aa"/>
       <match tags="n.*"/>
     </or>
   </rule>
@@ -7534,6 +7589,7 @@
       <match tags="np.ant"/>
       <match tags="np.ant.*"/>
       <match tags="np.cog.*"/>
+      <match tags="" case="Aa"/>
       <match tags="n.*"/>
     </or>
   </rule>
@@ -7622,6 +7678,7 @@
       <match tags="np.ant"/>
       <match tags="np.ant.*"/>
       <match tags="np.cog.*"/>
+      <match tags="" case="Aa"/>
       <match tags="n.*"/>
     </or>
   </rule>
@@ -16424,6 +16481,10 @@
   <rule weight="1.0">
     <match lemma="propre" tags="adj.*"><select lemma="propi"/></match>
     <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="propre" tags="adj.*"><select lemma="propi"/></match>
+    <match lemma="à" tags="pr"><select lemma="de"/></match>
   </rule>
   <rule weight="1.0">
     <or>
