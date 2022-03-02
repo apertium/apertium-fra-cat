@@ -8815,10 +8815,22 @@
     </repeat>
     <or>
       <match lemma="mar" tags="n.*"/>
+      <match lemma="oceà" tags="n.*"/>
+      <match lemma="fossa" tags="n.*"/>
+      <match lemma="cala" tags="n.*"/>
+      <match lemma="badia" tags="n.*"/>
+      <match lemma="golf" tags="n.*"/>
+      <match lemma="riu" tags="n.*"/>
+      <match lemma="llac" tags="n.*"/>
+      <match lemma="vall" tags="n.*"/>
       <match lemma="pou" tags="n.*"/>
       <match lemma="sac" tags="n.*"/>
       <match lemma="cor" tags="n.*"/>
       <match lemma="ànima" tags="n.*"/>
+      <match lemma="Mediterrani" tags="n.*"/>
+      <match lemma="Mediterrània" tags="n.*"/>
+      <match lemma="Atlàntic" tags="n.*"/>
+      <match lemma="Pacífic" tags="n.*"/>
     </or>
   </rule>
 
