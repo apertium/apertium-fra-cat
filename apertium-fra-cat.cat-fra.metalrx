@@ -2128,6 +2128,18 @@
       <match lemma="terraplanista" tags="n.*"/>
       <match lemma="mazdeista" tags="n.*"/>
     </or></def-seq>
+
+    <def-seq n="color"><or>
+       <match lemma="blanc" tags="adj.*"/>
+       <match lemma="negre" tags="adj.*"/>
+       <match lemma="roig" tags="adj.*"/>
+       <match lemma="verd" tags="adj.*"/>
+       <match lemma="blau" tags="adj.*"/>
+       <match lemma="groc" tags="adj.*"/>
+       <match lemma="taronja" tags="adj.*"/>
+       <match lemma="gris" tags="adj.*"/>
+    </or></def-seq>
+
   </def-seqs>
 
 <rules>
@@ -8738,6 +8750,77 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- fons >> fond, fonds -->
+  <rule weight="0.8">
+    <match lemma="fons" tags="n.*"><select lemma="fonds"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.m.sg"/>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="fons" tags="n.*"><select lemma="fond"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="sobre" tags="pr"/>
+      <match lemma="damunt de" tags="pr"/>
+    </or>
+    <match lemma="fons" tags="n.*"><select lemma="fond"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="article" tags="n.*"/>
+      <match lemma="qüestió" tags="n.*"/>
+      <match lemma="pregunta" tags="n.*"/>
+      <match lemma="discussió" tags="n.*"/>
+      <match lemma="tema" tags="n.*"/>
+      <match lemma="problema" tags="n.*"/>
+      <match lemma="línia" tags="n.*"/>
+      <match lemma="radiació" tags="n.*"/>
+      <match lemma="cursa" tags="n.*"/>
+      <match lemma="carrera" tags="n.*"/>
+      <match lemma="esquí" tags="n.*"/>
+      <match lemma="conca" tags="n.*"/>
+      <match lemma="teló" tags="n.*"/>
+      <match lemma="cortina" tags="n.*"/>
+      <match lemma="música" tags="n.*"/>
+      <match lemma="melodia" tags="n.*"/>
+      <match lemma="soroll" tags="n.*"/>
+      <match lemma="imatge" tags="n.*"/>
+      <match lemma="fotografia" tags="n.*"/>
+      <match lemma="foto" tags="n.*"/>
+      <match lemma="quadre" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match lemma="fons" tags="n.*"><select lemma="fond"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fons" tags="n.*"><select lemma="fond"/></match>
+    <or>
+      <seq n="color"/>
+      <match lemma="marí" tags="adj.*"/>
+      <match lemma="còsmic" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fons" tags="n.*"><select lemma="fond"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <or>
+      <match lemma="mar" tags="n.*"/>
+      <match lemma="pou" tags="n.*"/>
+      <match lemma="sac" tags="n.*"/>
+      <match lemma="cor" tags="n.*"/>
+      <match lemma="ànima" tags="n.*"/>
+    </or>
+  </rule>
 
   <!-- graduat >> gradué, gradé, diplômé -->
   <rule weight="0.8">
@@ -15775,6 +15858,7 @@
   <macro name="noms_propis" p1="Joana" p2="Jeanne" />
   <macro name="noms_propis" p1="Margarida" p2="Marguerite" />
   <macro name="noms_propis" p1="Maria" p2="Marie" />
+  <macro name="noms_propis" p1="Sibil·la" p2="Sybille" />
   <macro name="noms_propis" p1="Sofia" p2="Sophie" />
   <macro name="noms_propis" p1="Victoria" p2="Victòria" />
 
@@ -15788,4 +15872,3 @@ Resources:
     https://wiki.apertium.org/wiki/Lexical_selection
     https://wiki.apertium.org/wiki/Learning_rules_from_parallel_and_non-parallel_corpora
 -->
-

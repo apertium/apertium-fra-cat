@@ -282,7 +282,7 @@
          <match lemma="{{p1}}" tags="np.ant.*"><select lemma="{{p1}}"/></match>
          <or>
            <match tags="np.*"/>
-           <match tags=""/>
+           <match tags="" case="Aa"/>
          </or>
       </rule>
     </def-macro>
@@ -2369,6 +2369,7 @@
     <def-seq n="fruit_avec_noyau"><or>
       <match lemma="pêche" tags="n.*"/>
       <match lemma="nectarine" tags="n.*"/>
+      <match lemma="brugnon" tags="n.*"/>
       <match lemma="abricot" tags="n.*"/>
       <match lemma="prune" tags="n.*"/>
       <match lemma="cerise" tags="n.*"/>
@@ -2382,6 +2383,7 @@
       <match lemma="poire" tags="n.*"/>
       <match lemma="pêche" tags="n.*"/>
       <match lemma="nectarine" tags="n.*"/>
+      <match lemma="brugnon" tags="n.*"/>
       <match lemma="abricot" tags="n.*"/>
       <match lemma="prune" tags="n.*"/>
       <match lemma="cerise" tags="n.*"/>
@@ -3057,7 +3059,7 @@
     <match lemma="chez" tags="pr"><select lemma="a"/></match>
     <or>
       <match tags="np.al.*"/>
-      <match tags=""/>
+      <match tags="" case="Aa"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -3320,6 +3322,13 @@
     <match lemma="impossible" tags="adj.*"/>
     <match lemma="à" tags="pr"><select lemma="de"/></match>
     <match tags="*.inf"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="moulin" tags="n.*"/>
+    <repeat from="0" upto="1">
+      <match tags="adj"/>
+    </repeat>
+    <match lemma="à" tags="pr"><select lemma="de"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="maillot" tags="n.*"/>
@@ -4121,7 +4130,7 @@
       <match lemma="fleuve" tags="n.*"/>
       <match lemma="rivière" tags="n.*"/>
       <match tags="np.top.*"/>
-      <match tags=""/>
+      <match tags="" case="Aa"/>
     </or>
   </rule>
 
@@ -5360,7 +5369,7 @@
       <match tags="np.ant.*"/>
       <match tags="np.cog.*"/>
       <match tags="*.sg"/>
-      <match tags=""/>
+      <match tags="" case="Aa"/>
     </or>
     <match lemma="et" tags="cnjcoo"/>
     <repeat from="0" upto="1">
@@ -5370,7 +5379,7 @@
       <match tags="np.ant.*"/>
       <match tags="np.cog.*"/>
       <match tags="*.sg"/>
-      <match tags=""/>
+      <match tags="" case="Aa"/>
     </or>
     <match lemma="entretuer" tags="vblex.*"><select lemma="matar# l'un a l'altre"/></match>
   </rule>
@@ -8036,7 +8045,7 @@
       <match tags="np.al.*"/>
       <match tags="np.al"/>
       <match tags="n.acr.*"/>
-      <match tags=""/>
+      <match tags="" case="Aa"/>
     </or>
   </rule>
 
@@ -8119,7 +8128,7 @@
     </repeat>
     <or>
       <match tags="np.top.*"/>
-      <match tags=""/>
+      <match tags="" case="Aa"/>
     </or>
   </rule>
 
@@ -9409,7 +9418,7 @@
     <or>
       <match tags="np.ant.*"/>
       <match tags="np.cog.*"/>
-      <match tags=""/>
+      <match tags="" case="Aa"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -9552,7 +9561,7 @@
     <or>
       <match tags="np.ant.*"/>
       <match tags="np.cog.*"/>
-      <match tags=""/>
+      <match tags="" case="Aa"/>
     </or>
   </rule>
 
@@ -13193,7 +13202,7 @@
     <match lemma="monsieur" tags="n.*"><select lemma="el senyor"/></match>
     <or>
       <match tags="np.*"/>
-      <match tags=""/>
+      <match tags="" case="Aa"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -13205,7 +13214,7 @@
     <match lemma="monsieur" tags="n.*"><select lemma="senyor"/></match>
     <or>
       <match tags="np.*"/>
-      <match tags=""/>
+      <match tags="" case="Aa"/>
     </or>
   </rule>
   <rule weight="1.2">
@@ -13228,7 +13237,7 @@
     <match lemma="madame" tags="n.*"><select lemma="el senyor"/></match>
     <or>
       <match tags="np.*"/>
-      <match tags=""/>
+      <match tags="" case="Aa"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -13240,7 +13249,7 @@
     <match lemma="madame" tags="n.*"><select lemma="senyor"/></match>
     <or>
       <match tags="np.*"/>
-      <match tags=""/>
+      <match tags="" case="Aa"/>
     </or>
   </rule>
   <rule weight="1.2">
@@ -13263,7 +13272,7 @@
     <match lemma="mademoiselle" tags="n.*"><select lemma="el senyoret"/></match>
     <or>
       <match tags="np.*"/>
-      <match tags=""/>
+      <match tags="" case="Aa"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -13275,7 +13284,7 @@
     <match lemma="mademoiselle" tags="n.*"><select lemma="senyoret"/></match>
     <or>
       <match tags="np.*"/>
-      <match tags=""/>
+      <match tags="" case="Aa"/>
     </or>
   </rule>
   <rule weight="1.2">
@@ -13417,7 +13426,7 @@
       <match tags="np.*"/>
       <match tags="num"/>
       <match tags="num.*"/>
-      <match tags=""/>
+      <match tags="" case="Aa"/>
     </or>
   </rule>
 
@@ -15017,7 +15026,7 @@
     <or>
       <match tags="np.ant.*"/>
       <match tags="np.cog.*"/>
-      <match tags=""/>
+      <match tags="" case="Aa"/>
       <match lemma="monsieur" tags="n.*"/>
       <match lemma="madame" tags="n.*"/>
       <match lemma="monseigneur" tags="n.*"/>
@@ -17948,6 +17957,7 @@
   <macro name="noms_propres" p1="Marie" p2="Maria" />
   <macro name="noms_propres" p1="Sophie" p2="Sofia" />
   <macro name="noms_propres" p1="Stéphanie" p2="Estefania" />
+  <macro name="noms_propres" p1="Sybille" p2="Sibil·la" />
   <macro name="noms_propres" p1="Victoria" p2="Victòria" />
 
 </rules>
