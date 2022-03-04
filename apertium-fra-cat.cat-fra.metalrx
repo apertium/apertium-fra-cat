@@ -14046,11 +14046,11 @@
   </rule>
   <rule weight="1.0">
     <match lemma="tribunal" tags="n.*"><select lemma="cour"/></match>
-    <match lemma="suprem" tags="adj"/>
+    <match lemma="suprem" tags="adj.*"/>
   </rule>
   <rule weight="1.0">
     <match lemma="Tribunal" tags="n.*"><select lemma="cour"/></match>
-    <match lemma="Europeu" tags="adj"/>
+    <match lemma="Europeu" tags="adj.*"/>
   </rule>
 
   <!-- partit >> parti, match -->

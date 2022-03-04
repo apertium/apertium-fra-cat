@@ -3002,7 +3002,7 @@
   <rule weight="1.0">
     <match lemma="comme" tags="pr"><select lemma="com a"/></match>
     <repeat from="0" upto="1">
-      <match tags="adj"/>
+      <match tags="adj.*"/>
     </repeat>
     <match tags="n.*"/>
   </rule>
@@ -3326,14 +3326,14 @@
   <rule weight="1.0">
     <match lemma="moulin" tags="n.*"/>
     <repeat from="0" upto="1">
-      <match tags="adj"/>
+      <match tags="adj.*"/>
     </repeat>
     <match lemma="à" tags="pr"><select lemma="de"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="maillot" tags="n.*"/>
     <repeat from="0" upto="1">
-      <match tags="adj"/>
+      <match tags="adj.*"/>
     </repeat>
     <match lemma="à" tags="pr"><select lemma="de"/></match>
   </rule>
@@ -14788,11 +14788,11 @@
   </rule>
   <rule weight="1.0">
     <match lemma="cour" tags="n.*"><select lemma="tribunal"/></match>
-    <match lemma="suprême" tags="adj"/>
+    <match lemma="suprême" tags="adj.*"/>
   </rule>
   <rule weight="1.0">
     <match lemma="Cour" tags="n.*"><select lemma="tribunal"/></match>
-    <match lemma="européen" tags="adj"/>
+    <match lemma="européen" tags="adj.*"/>
   </rule>
   <rule weight="1.0">
     <match lemma="cour" tags="n.*"><select lemma="pati"/></match>
@@ -15321,7 +15321,7 @@
       <match lemma="diminution"/>
     </or>
     <repeat from="0" upto="1">
-      <match tags="adj"/>
+      <match tags="adj.*"/>
     </repeat>
     <match lemma="de" tags="pr"/>
     <match tags="det.*"/>
