@@ -13,6 +13,11 @@
 	  </rule>
 	  <rule weight="1.0">
 		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
+		 <match lemma="de" tags="pr"/>
+		 <match lemma="Borbó" tags="np.cog.*"/>
+	  </rule>
+	  <rule weight="1.0">
+		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
 		 <match tags="np.ant.*"/>
 		 <match lemma="de" tags="pr"/>
 		 <or><match tags="np.loc"/><match tags="np.top.*"/></or>
@@ -4931,6 +4936,14 @@
     </repeat>
     <match lemma="de" tags="pr"><select lemma="de"/></match>
     <match lemma="vacances" tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="comissari" tags="n.*"/>
+      <match lemma="comissariat" tags="n.*"/>
+    </or>
+    <match lemma="europeu" tags="adj.*"/>
+    <match lemma="de" tags="pr"><select lemma="à"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="de" tags="pr"><select lemma="à"/></match>

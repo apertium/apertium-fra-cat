@@ -12,6 +12,11 @@
 		 <or><match tags="np.loc"/><match tags="np.top.*"/></or>
 	  </rule>
 	  <rule weight="1.0">
+		 <match lemma="{{p1}}" tags="np.*"><select lemma="{{p2}}"/></match>
+		 <match lemma="de" tags="pr"/>
+		 <match lemma="Bourbon" tags="np.cog.*"/>
+	  </rule>
+	  <rule weight="1.0">
 		 <match lemma="{{p1}}" tags="np.ant.*"><select lemma="{{p2}}"/></match>
 		 <match tags="np.ant.*"/>
 		 <match lemma="de" tags="pr"/>
@@ -3322,6 +3327,14 @@
     <match lemma="impossible" tags="adj.*"/>
     <match lemma="à" tags="pr"><select lemma="de"/></match>
     <match tags="*.inf"/>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="commissaire" tags="n.*"/>
+      <match lemma="commissariat" tags="n.*"/>
+    </or>
+    <match lemma="européen" tags="adj.*"/>
+    <match lemma="à" tags="pr"><select lemma="de"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="moulin" tags="n.*"/>
