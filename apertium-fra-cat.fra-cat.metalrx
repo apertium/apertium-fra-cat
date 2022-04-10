@@ -13525,6 +13525,15 @@
     <match tags="np.top.*"/>
   </rule>
 
+  <!-- banque# d'affaires >> banc# d'inversió, banca# d'inversió -->
+  <rule weight="0.8">
+    <match lemma="banque# d'affaires" tags="n.*"><select lemma="banc# d'inversió"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.*"/>
+    <match lemma="banque# d'affaires" tags="n.*"><select lemma="banca# d'inversió"/></match>
+  </rule>
+
   <!-- mise >> aposta, posada -->
   <rule weight="0.8">
     <match lemma="mise" tags="n.*"><select lemma="aposta"/></match>
