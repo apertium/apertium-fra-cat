@@ -13534,6 +13534,24 @@
     <match lemma="banque# d'affaires" tags="n.*"><select lemma="banca# d'inversió"/></match>
   </rule>
 
+  <!-- banque# de dépôt >> banc comercial, banca comercial -->
+  <rule weight="0.8">
+    <match lemma="banque# de dépôt" tags="n.*"><select lemma="banc comercial"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.*"/>
+    <match lemma="banque# de dépôt" tags="n.*"><select lemma="banca comercial"/></match>
+  </rule>
+
+  <!-- banque# de dépôts >> banc comercial, banca comercial -->
+  <rule weight="0.8">
+    <match lemma="banque# de dépôts" tags="n.*"><select lemma="banc comercial"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.*"/>
+    <match lemma="banque# de dépôts" tags="n.*"><select lemma="banca comercial"/></match>
+  </rule>
+
   <!-- mise >> aposta, posada -->
   <rule weight="0.8">
     <match lemma="mise" tags="n.*"><select lemma="aposta"/></match>
