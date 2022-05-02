@@ -7904,6 +7904,18 @@
 
 <!-- **************** N **************** -->
 
+  <!-- croissant >> croissant, creixent -->
+  <rule weight="0.8">
+    <match lemma="croissant" tags="n.*"><select lemma="croissant"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="croissant" tags="n.*"><select lemma="creixent"/></match>
+    <or>
+      <match lemma="fertile" tags="adj.*"/>
+      <match lemma="rouge" tags="adj.*"/>
+    </or>
+  </rule>
+
   <!-- règle >> regla, regle -->
   <rule weight="0.8">
     <match lemma="règle" tags="n.*"><select lemma="regla"/></match>
