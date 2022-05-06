@@ -2907,6 +2907,7 @@
     <or>
       <match tags="np.ant.*"/>
       <match tags="np.cog.*"/>
+      <match tags="" case="Aa"/>
       <match tags="det.pos.*"/>
     </or>
   </rule>
@@ -4517,6 +4518,7 @@
     <or>
       <seq n="np.ant.*"/>
       <seq n="np.cog.*"/>
+      <match tags="" case="Aa"/>
     </or>
   </rule>-->
   <rule weight="0.9">
@@ -4794,6 +4796,7 @@
       <match tags="np.cog.*"/>
       <match tags="np.top.*"/>
       <match tags="np.al.*"/>
+      <match tags="" case="Aa"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -4836,6 +4839,7 @@
       <match tags="np.cog.*"/>
       <match tags="np.top.*"/>
       <match tags="np.al.*"/>
+      <match tags="" case="Aa"/>
     </or>
     <repeat from="0" upto="1">
       <match tags="adv"/>
@@ -4852,6 +4856,7 @@
       <match tags="np.cog.*"/>
       <match tags="np.top.*"/>
       <match tags="np.al.*"/>
+      <match tags="" case="Aa"/>
     </or>
     <repeat from="0" upto="1">
       <match tags="adv"/>
@@ -4869,6 +4874,7 @@
       <match tags="np.cog.*"/>
       <match tags="np.top.*"/>
       <match tags="np.al.*"/>
+      <match tags="" case="Aa"/>
     </or>
     <repeat from="0" upto="1">
       <match tags="adv"/>
@@ -5060,6 +5066,7 @@
       <match tags="np.cog.*"/>
       <match tags="np.top.*"/>
       <match tags="np.al.*"/>
+      <match tags="" case="Aa"/>
     </or>
     <repeat from="0" upto="1">
       <or>
@@ -5078,6 +5085,7 @@
       <match tags="np.cog.*"/>
       <match tags="np.top.*"/>
       <match tags="np.al.*"/>
+      <match tags="" case="Aa"/>
     </or>
     <repeat from="0" upto="1">
       <or>
@@ -5097,6 +5105,7 @@
       <match tags="np.cog.*"/>
       <match tags="np.top.*"/>
       <match tags="np.al.*"/>
+      <match tags="" case="Aa"/>
     </or>
     <repeat from="0" upto="1">
       <or>
@@ -5282,6 +5291,7 @@
     <or>
       <match tags="np.ant.*"/>
       <match tags="np.cog.*"/>
+      <match tags="" case="Aa"/>
       <match tags="*.sg"/>
       <match tags="" case="Aa"/>
     </or>
@@ -5292,6 +5302,7 @@
     <or>
       <match tags="np.ant.*"/>
       <match tags="np.cog.*"/>
+      <match tags="" case="Aa"/>
       <match tags="*.sg"/>
       <match tags="" case="Aa"/>
     </or>
@@ -6497,8 +6508,6 @@
       <seq n="personne"/>
       <seq n="parent"/>
       <seq n="pays_hab"/>
-      <match tags="np.ant.*"/>
-      <match tags="np.cog.*"/>
     </or>
   </rule>
 
@@ -6555,6 +6564,7 @@
     <or>
       <match tags="np.ant.*"/>
       <match tags="np.cog.*"/>
+      <match tags="" case="Aa"/>
     </or>
   </rule>
   <rule weight="0.9">
@@ -7877,6 +7887,7 @@
     <or>
       <match tags="np.ant.*"/>
       <match tags="np.cog.*"/>
+      <match tags="" case="Aa"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -9000,7 +9011,7 @@
     <or>
       <match tags="np.ant.*"/>
       <match tags="np.cog.*"/>
-      <match tags=""/>
+      <match tags="" case="Aa"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -12356,6 +12367,15 @@
     <match lemma="nouvelle" tags="n.*"><select lemma="notícia"/></match>
   </rule>
   <rule weight="1.0">
+    <match lemma="nouvelle" tags="n.f.sg"><select lemma="relat"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match tags="np.ant.*"/>
+      <match tags="np.cog.*"/>
+      <match tags="" case="Aa"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
     <or>
       <match lemma="roman" tags="n.*"/>
       <match lemma="conte" tags="n.*"/>
@@ -13019,6 +13039,7 @@
     <or>
       <match tags="np.ant.*"/>
       <match tags="np.cog.*"/>
+      <match tags="" case="Aa"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -14254,7 +14275,11 @@
   <rule weight="1.0">
     <match lemma="siège" tags="n.*"><select lemma="setge"/></match>
     <match lemma="de" tags="pr"/>
-    <or><match tags="np.loc"/><match tags="np.top.*"/><match tags="np.cog.*"/></or>
+    <or>
+      <match tags="np.top.*"/>
+      <match tags="np.cog.*"/>	<!-- sovint es tracta del nom d'una ciutat, p. ex. Boulogne -->
+      <match tags="" case="Aa"/>
+    </or>
   </rule>
   <rule weight="1.0">
     <match lemma="siège" tags="n.*"><select lemma="setge"/></match>
@@ -15503,6 +15528,7 @@
       <seq n="pays_hab"/>
       <match tags="np.ant.*"/>
       <match tags="np.cog.*"/>
+      <match tags="" case="Aa"/>
     </or>
     <match tags="vbser.*"/>
     <repeat from="0" upto="2">
@@ -16163,6 +16189,7 @@
       <match lemma="collègue" tags="n.*"/>
       <match tags="np.ant.*"/>
       <match tags="np.cog.*"/>
+      <match tags="" case="Aa"/>
     </or>
   </rule>
 
