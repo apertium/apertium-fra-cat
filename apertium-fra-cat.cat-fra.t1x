@@ -1385,9 +1385,6 @@
       <list-item v="mozarabe"/>
       <list-item v="français"/>
       <list-item v="breton"/>
-      <list-item v="poitevin"/>
-      <list-item v="saintongeais"/>
-      <list-item v="angevin"/>
       <list-item v="normand"/>
       <list-item v="champenois"/>
       <list-item v="franc-comtois"/>
@@ -1398,6 +1395,9 @@
       <list-item v="alsacien"/>
       <list-item v="bourgonde"/>
       <list-item v="bourguignon"/>
+      <list-item v="poitevin"/>
+      <list-item v="saintongeais"/>
+      <list-item v="angevin"/>
       <list-item v="occitan"/>
       <list-item v="aranais"/>
       <list-item v="corse"/>
@@ -1751,6 +1751,8 @@
       <list-item v="Ardèche"/>
 <!--      <list-item v="Vivarais"/> -->
       <list-item v="Var"/>
+      <list-item v="Saintonge"/>
+      <list-item v="Poitou"/>
       <list-item v="Bourgogne"/>
       <list-item v="Lorraine"/>
       <list-item v="Alsace"/>
