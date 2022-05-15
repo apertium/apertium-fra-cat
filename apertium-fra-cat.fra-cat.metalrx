@@ -7915,6 +7915,19 @@
 
 <!-- **************** N **************** -->
 
+  <!-- dos >> esquena, llom -->
+  <rule weight="0.8">
+    <match lemma="dos" tags="n.*"><select lemma="esquena"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="dos" tags="n.*"><select lemma="llom"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="det.def.*"/>
+    </repeat>
+    <match lemma="livre" tags="n.*"/>
+  </rule>
+
   <!-- croissant >> croissant, creixent -->
   <rule weight="0.8">
     <match lemma="croissant" tags="n.*"><select lemma="croissant"/></match>
