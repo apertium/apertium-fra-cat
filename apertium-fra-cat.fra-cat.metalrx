@@ -3316,6 +3316,7 @@
       </or>
     </repeat>
     <or>
+      <match lemma="crime" tags="n.*"/>
       <match lemma="assassinat" tags="n.*"/>
       <match lemma="blanchiment" tags="n.*"/>
       <match lemma="complicité" tags="n.*"/>
@@ -3378,6 +3379,7 @@
       <match lemma="périr" tags="vblex.*"/>
       <match lemma="mourir" tags="vblex.*"/>
       <match lemma="voter" tags="vblex.*"/>
+      <match lemma="juger" tags="vblex.*"/>
     </or>
     <repeat from="0" upto="1">
       <or>
@@ -7914,6 +7916,31 @@
 
 
 <!-- **************** N **************** -->
+
+  <!-- accolade >> clau, abraçada -->
+  <rule weight="0.8">
+    <match lemma="accolade" tags="n.*"><select lemma="clau"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="accolade" tags="n.*"><select lemma="abraçada"/></match>
+    <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match tags="adj.*"/>
+    <match lemma="accolade" tags="n.*"><select lemma="abraçada"/></match>
+  </rule>
+  <rule weight="1.2">
+    <or>
+      <match lemma="double" tags="adj.*"/>
+      <match lemma="triple" tags="adj.*"/>
+    </or>
+    <match lemma="accolade" tags="n.*"><select lemma="clau"/></match>
+  </rule>
+
+  <!-- post >> post, etc. -->
+  <rule weight="0.8">
+    <match lemma="post" tags="n.*"><select lemma="post"/></match>
+  </rule>
 
   <!-- dos >> esquena, llom -->
   <rule weight="0.8">
@@ -15405,6 +15432,23 @@
   </rule>
 
 <!-- **************** ADJ **************** -->
+
+  <!-- ruisselant >> regalimant, ple, xop -->
+  <rule weight="0.8">
+    <match lemma="ruisselant" tags="adj.*"><select lemma="regalimant"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="ruisselant" tags="adj.*"><select lemma="ple"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="ruisselant" tags="adj.*"><select lemma="xop"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="sueur" tags="n.*"/>
+      <match lemma="sang" tags="n.*"/>
+    </or>
+  </rule>
 
   <!-- construible >> construïble, urbanitzable -->
   <rule weight="0.8">

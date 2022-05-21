@@ -9629,6 +9629,26 @@
 
 <!-- **************** N **************** -->
 
+  <!-- clau n.f >> clé, accolade -->
+  <rule weight="0.8">
+    <match lemma="clau" tags="n.f.*"><select lemma="clé"/></match>
+  </rule>
+
+  <!-- llenca >> tranche, bande -->
+  <rule weight="0.8">
+    <match lemma="llenca" tags="n.*"><select lemma="tranche"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="llenca" tags="n.*"><select lemma="bande"/></match>
+    <match lemma="de" tags="pr"/>
+    <or>
+      <match lemma="terra" tags="n.*"/>
+      <match lemma="costa" tags="n.*"/>
+      <match lemma="paper" tags="n.*"/>
+      <match lemma="roba" tags="n.*"/>
+    </or>
+  </rule>
+
   <!-- llom >> longe, dos -->
   <rule weight="0.8">
     <match lemma="llom" tags="n.*"><select lemma="longe"/></match>
