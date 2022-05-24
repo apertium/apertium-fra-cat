@@ -9109,6 +9109,90 @@
     <match lemma="pénal" tags="adj.*"/>
   </rule>
 
+  <!-- coffre >> cofre, maleter -->
+  <rule weight="0.8">
+    <match lemma="coffre" tags="n.*"><select lemma="cofre"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="coffre" tags="n.*"><select lemma="maleter"/></match>
+    <match lemma="de" tags="pr"/>
+    <match tags="det.*"/>
+    <or>
+      <match lemma="voiture" tags="n.*"/>
+      <match lemma="auto" tags="n.*"/>
+      <match lemma="scarabée" tags="n.*"/>
+      <match lemma="2CV"/>
+      <match lemma="DS"/>
+      <match tags="np.al.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="coffre" tags="n.*"><select lemma="maleter"/></match>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="voiture" tags="n.*"/>
+      <match lemma="auto" tags="n.*"/>
+      <match lemma="scarabée" tags="n.*"/>
+      <match lemma="2CV"/>
+      <match lemma="DS"/>
+      <match lemma="Renault" tags="np.*"/>
+      <match lemma="Citroën" tags="np.*"/>
+      <match lemma="Peugeot" tags="np.*"/>
+      <match lemma="Volkswagen" tags="np.*"/>
+      <match lemma="Audi" tags="np.*"/>
+      <match lemma="Fiat" tags="np.*"/>
+      <match lemma="Ferrari" tags="np.*"/>
+      <match lemma="Lamborghini" tags="np.*"/>
+      <match lemma="Seat" tags="np.*"/>
+      <match lemma="Skoda" tags="np.*"/>
+      <match lemma="Lada" tags="np.*"/>
+      <match lemma="Suzuki" tags="np.*"/>
+      <match lemma="Toyota" tags="np.*"/>
+      <match lemma="Hyundai" tags="np.*"/>
+      <match lemma="Subaru" tags="np.*"/>
+      <match lemma="Ford" tags="np.*"/>
+      <match lemma="Jeep" tags="np.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="voiture" tags="n.*"/>
+      <match lemma="auto" tags="n.*"/>
+      <match lemma="scarabée" tags="n.*"/>
+      <match lemma="2CV"/>
+      <match lemma="DS"/>
+      <match lemma="Renault" tags="np.*"/>
+      <match lemma="Citroën" tags="np.*"/>
+      <match lemma="Peugeot" tags="np.*"/>
+      <match lemma="Volkswagen" tags="np.*"/>
+      <match lemma="Audi" tags="np.*"/>
+      <match lemma="Fiat" tags="np.*"/>
+      <match lemma="Ferrari" tags="np.*"/>
+      <match lemma="Lamborghini" tags="np.*"/>
+      <match lemma="Seat" tags="np.*"/>
+      <match lemma="Skoda" tags="np.*"/>
+      <match lemma="Lada" tags="np.*"/>
+      <match lemma="Suzuki" tags="np.*"/>
+      <match lemma="Toyota" tags="np.*"/>
+      <match lemma="Hyundai" tags="np.*"/>
+      <match lemma="Subaru" tags="np.*"/>
+      <match lemma="Ford" tags="np.*"/>
+      <match lemma="Jeep" tags="np.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="coffre" tags="n.*"><select lemma="maleter"/></match>
+  </rule>
+
   <!-- reprise >> represa, reconquesta, vegada -->
   <rule weight="0.8">
     <match lemma="reprise" tags="n.*"><select lemma="represa"/></match>
