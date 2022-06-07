@@ -12228,11 +12228,19 @@
   <rule weight="1.0">
     <match lemma="vol" tags="n.*"><select lemma="vol"/></match>
     <or>
+      <match lemma="direct" tags="adj.*"/>
       <match lemma="inaugural" tags="adj.*"/>
       <match lemma="transatlantique" tags="adj.*"/>
       <match lemma="transocéanique" tags="adj.*"/>
       <match lemma="transpacifique" tags="adj.*"/>
       <match lemma="transcontinental" tags="adj.*"/>
+      <match lemma="intercontinental" tags="adj.*"/>
+      <match lemma="interplanétaire" tags="adj.*"/>
+      <match lemma="interstellaire" tags="adj.*"/>
+      <match lemma="lunaire" tags="adj.*"/>
+      <match lemma="spacial" tags="adj.*"/>
+      <match lemma="habité" tags="adj.*"/>
+      <match lemma="habiter" tags="vblex.pp.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -12259,7 +12267,11 @@
       <match lemma="bourdon" tags="n.*"/>
       <match lemma="avion" tags="n.*"/>
       <match lemma="avionnette" tags="n.*"/>
+      <match lemma="hydroavion" tags="n.*"/>
       <match lemma="hélicoptère" tags="n.*"/>
+      <match lemma="hélico" tags="n.*"/>
+      <match lemma="avion# de chasse" tags="n.*"/>
+      <match lemma="chasseur-bombardier" tags="n.*"/>
       <match lemma="missile" tags="n.*"/>
       <match lemma="drone" tags="n.*"/>
       <match lemma="ballon" tags="n.*"/>
@@ -12269,13 +12281,32 @@
       <match lemma="aéroport" tags="n.*"/>
       <match lemma="héliport" tags="n.*"/>
       <match lemma="compagnie aérienne" tags="n.*"/>
+      <match lemma="pilote" tags="n.*"/>
+      <match lemma="hôtesse" tags="n.*"/>
+      <match lemma="hôtesse# de l'aire" tags="n.*"/>
+      <match lemma="steward" tags="n.*"/>
       <match lemma="passager" tags="n.*"/>
+      <match lemma="espace" tags="n.*"/>
       <match lemma="aérien" tags="adj.*"/>
+      <match lemma="spacial" tags="adj.*"/>
+      <match lemma="Air" tags="np.al.*"/>
       <match lemma="Air France" tags="np.al.*"/>
       <match lemma="Iberia" tags="np.al.*"/>
       <match lemma="KLM" tags="np.al.*"/>
       <match lemma="Lufthansa" tags="np.al.*"/>
       <match lemma="Alitalia" tags="np.al.*"/>
+      <match lemma="NASA" tags="np.al.*"/>
+      <match lemma="ESA" tags="np.al.*"/>
+      <match lemma="lune" tags="n.*"/>
+      <match lemma="astéroïde" tags="n.*"/>
+      <match lemma="comète" tags="n.*"/>
+      <match lemma="Mercure" tags="np.*"/>
+      <match lemma="Vénus" tags="np.*"/>
+      <match lemma="Mars" tags="np.*"/>
+      <match lemma="Jupiter" tags="np.*"/>
+      <match lemma="Saturne" tags="np.*"/>
+      <match lemma="Uranus" tags="np.*"/>
+      <match lemma="Neptune" tags="np.*"/>
     </or>
   </rule>
   <rule weight="1.0">
@@ -12295,7 +12326,11 @@
       <match lemma="bourdon" tags="n.*"/>
       <match lemma="avion" tags="n.*"/>
       <match lemma="avionnette" tags="n.*"/>
+      <match lemma="hydroavion" tags="n.*"/>
       <match lemma="hélicoptère" tags="n.*"/>
+      <match lemma="hélico" tags="n.*"/>
+      <match lemma="avion# de chasse" tags="n.*"/>
+      <match lemma="chasseur-bombardier" tags="n.*"/>
       <match lemma="missile" tags="n.*"/>
       <match lemma="drone" tags="n.*"/>
       <match lemma="ballon" tags="n.*"/>
@@ -12305,13 +12340,32 @@
       <match lemma="aéroport" tags="n.*"/>
       <match lemma="héliport" tags="n.*"/>
       <match lemma="compagnie aérienne" tags="n.*"/>
+      <match lemma="pilote" tags="n.*"/>
+      <match lemma="hôtesse" tags="n.*"/>
+      <match lemma="hôtesse# de l'aire" tags="n.*"/>
+      <match lemma="steward" tags="n.*"/>
       <match lemma="passager" tags="n.*"/>
+      <match lemma="espace" tags="n.*"/>
       <match lemma="aérien" tags="adj.*"/>
+      <match lemma="spacial" tags="adj.*"/>
+      <match lemma="Air" tags="np.al.*"/>
       <match lemma="Air France" tags="np.al.*"/>
       <match lemma="Iberia" tags="np.al.*"/>
       <match lemma="KLM" tags="np.al.*"/>
       <match lemma="Lufthansa" tags="np.al.*"/>
       <match lemma="Alitalia" tags="np.al.*"/>
+      <match lemma="NASA" tags="np.al.*"/>
+      <match lemma="ESA" tags="np.al.*"/>
+      <match lemma="lune" tags="n.*"/>
+      <match lemma="astéroïde" tags="n.*"/>
+      <match lemma="comète" tags="n.*"/>
+      <match lemma="Mercure" tags="np.*"/>
+      <match lemma="Vénus" tags="np.*"/>
+      <match lemma="Mars" tags="np.*"/>
+      <match lemma="Jupiter" tags="np.*"/>
+      <match lemma="Saturne" tags="np.*"/>
+      <match lemma="Uranus" tags="np.*"/>
+      <match lemma="Neptune" tags="np.*"/>
     </or>
     <repeat from="0" upto="4">
       <or>

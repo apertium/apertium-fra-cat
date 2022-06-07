@@ -1115,6 +1115,9 @@
       <list-item v="Saintonge"/>
       <list-item v="Poitou"/>
       <list-item v="Bourgogne"/>
+<!--      <list-item v="Berry"/> -->
+<!--      <list-item v="Aisne"/> -->
+      <list-item v="Picardie"/>
       <list-item v="Lorraine"/>
       <list-item v="Alsace"/>
       <list-item v="Corse"/>
@@ -1497,6 +1500,7 @@
       <list-item v="catalan"/>
       <list-item v="valencien"/>
       <list-item v="majorquin"/>
+      <list-item v="majorquain"/>
       <list-item v="minorquin"/>
       <list-item v="mahonnais"/>
       <list-item v="ibizois"/>
@@ -5368,7 +5372,7 @@ is not applicable because gender and number cannot be taken from previous rules 
               <lu>
                 <clip pos="2" side="tl" part="lemh"/>
                 <clip pos="2" side="tl" part="tags"/>
-                <clip pos="2" side="tl" part="lemg"/>
+                <clip pos="2" side="tl" part="lemq"/>
               </lu>
             </out>
           </when>
@@ -5393,7 +5397,7 @@ is not applicable because gender and number cannot be taken from previous rules 
               <lu>
                 <clip pos="2" side="tl" part="lemh"/>
                 <clip pos="2" side="tl" part="tags"/>
-                <clip pos="2" side="tl" part="lemg"/>
+                <clip pos="2" side="tl" part="lemq"/>
               </lu>
             </out>
           </when>
