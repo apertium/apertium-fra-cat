@@ -12238,7 +12238,7 @@
       <match lemma="interplanétaire" tags="adj.*"/>
       <match lemma="interstellaire" tags="adj.*"/>
       <match lemma="lunaire" tags="adj.*"/>
-      <match lemma="spacial" tags="adj.*"/>
+      <match lemma="spatial" tags="adj.*"/>
       <match lemma="habité" tags="adj.*"/>
       <match lemma="habiter" tags="vblex.pp.*"/>
     </or>
@@ -12283,12 +12283,15 @@
       <match lemma="compagnie aérienne" tags="n.*"/>
       <match lemma="pilote" tags="n.*"/>
       <match lemma="hôtesse" tags="n.*"/>
-      <match lemma="hôtesse# de l'aire" tags="n.*"/>
+      <match lemma="hôtesse# de l'air" tags="n.*"/>
       <match lemma="steward" tags="n.*"/>
       <match lemma="passager" tags="n.*"/>
       <match lemma="espace" tags="n.*"/>
+      <match lemma="navette" tags="n.*"/>
+      <match lemma="satellite" tags="n.*"/>
       <match lemma="aérien" tags="adj.*"/>
-      <match lemma="spacial" tags="adj.*"/>
+      <match lemma="spatial" tags="adj.*"/>
+      <match lemma="aérospatial" tags="adj.*"/>
       <match lemma="Air" tags="np.al.*"/>
       <match lemma="Air France" tags="np.al.*"/>
       <match lemma="Iberia" tags="np.al.*"/>
@@ -12297,6 +12300,7 @@
       <match lemma="Alitalia" tags="np.al.*"/>
       <match lemma="NASA" tags="np.al.*"/>
       <match lemma="ESA" tags="np.al.*"/>
+      <match lemma="Apollo" tags="np.al.*"/>
       <match lemma="lune" tags="n.*"/>
       <match lemma="astéroïde" tags="n.*"/>
       <match lemma="comète" tags="n.*"/>
@@ -12342,12 +12346,15 @@
       <match lemma="compagnie aérienne" tags="n.*"/>
       <match lemma="pilote" tags="n.*"/>
       <match lemma="hôtesse" tags="n.*"/>
-      <match lemma="hôtesse# de l'aire" tags="n.*"/>
+      <match lemma="hôtesse# de l'air" tags="n.*"/>
       <match lemma="steward" tags="n.*"/>
       <match lemma="passager" tags="n.*"/>
       <match lemma="espace" tags="n.*"/>
+      <match lemma="navette" tags="n.*"/>
+      <match lemma="satellite" tags="n.*"/>
       <match lemma="aérien" tags="adj.*"/>
-      <match lemma="spacial" tags="adj.*"/>
+      <match lemma="spatial" tags="adj.*"/>
+      <match lemma="aérospatial" tags="adj.*"/>
       <match lemma="Air" tags="np.al.*"/>
       <match lemma="Air France" tags="np.al.*"/>
       <match lemma="Iberia" tags="np.al.*"/>
@@ -12356,6 +12363,7 @@
       <match lemma="Alitalia" tags="np.al.*"/>
       <match lemma="NASA" tags="np.al.*"/>
       <match lemma="ESA" tags="np.al.*"/>
+      <match lemma="Apollo" tags="np.al.*"/>
       <match lemma="lune" tags="n.*"/>
       <match lemma="astéroïde" tags="n.*"/>
       <match lemma="comète" tags="n.*"/>
