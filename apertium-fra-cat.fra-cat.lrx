@@ -3074,8 +3074,8 @@
     <match lemma="dans" tags="pr"><select lemma="en"/></match>
     <match tags="det.*"/>
     <or>
-      <match n="an" tags="n.*"/>
-      <match n="année" tags="n.*"/>
+      <match lemma="an" tags="n.*"/>
+      <match lemma="année" tags="n.*"/>
     </or>
   </rule>
 
@@ -3773,7 +3773,7 @@
       <match tags="prn.tn.*"/>
       <match lemma="on" tags="prn.pro.*"/>
     </or>
-    <match lemma="avoir# besoin" vblex="vblex.*"/>
+    <match lemma="avoir# besoin" tags="vblex.*"/>
   </rule>
 
 <!-- **************** V **************** -->
@@ -15152,7 +15152,7 @@
       <match tags=""/>
     </or>
   </rule>
-`
+
   <!-- internet >> internet, web -->
 <!--
   <rule weight="0.8">
@@ -17346,7 +17346,7 @@
       <match lemma="mal"/>
       <match lemma="assez"/>
     </or>
-    <match tagger="vblex.pp.*"/>
+    <match tags="vblex.pp.*"/>
   </rule>
   <rule weight="1.0">
     <match lemma="être"><select lemma="estar" tags="vblex.*"/></match>

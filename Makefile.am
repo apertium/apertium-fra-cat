@@ -122,9 +122,11 @@ $(PREFIX2).autobil.bin: $(BASENAME).$(PREFIX1).dix
 ###############################################################################
 
 $(PREFIX1).autolex.bin: $(BASENAME).$(PREFIX1).lrx
+	apertium-validate-lrx $<
 	lrx-comp $< $@
 
 $(PREFIX2).autolex.bin: $(BASENAME).$(PREFIX2).lrx
+	apertium-validate-lrx $<
 	lrx-comp $< $@
 
 ###############################################################################
@@ -212,8 +214,8 @@ prefs/$(PREFIX1).xml: prefs/$(LANG2).preferences.xml
 ###############################################################################
 
 EXTRA_DIST=					\
-		.deps/$(BASENAME).$(PREFIX1).lrx	\
-		.deps/$(BASENAME).$(PREFIX2).lrx	\
+		$(BASENAME).$(PREFIX1).lrx	\
+		$(BASENAME).$(PREFIX2).lrx	\
 		$(BASENAME).$(PREFIX1).dix	\
 		$(BASENAME).$(PREFIX1).t1x	\
 		$(BASENAME).$(PREFIX1).t4x	\

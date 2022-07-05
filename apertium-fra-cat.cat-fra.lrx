@@ -1254,7 +1254,7 @@
       <match lemma="angiòleg" tags="n.*"/>
       <match lemma="paremiòleg" tags="n.*"/>
       <match lemma="otorrinolaringòleg" tags="n.*"/>
-      <match lemma="otorrinolaringòleg" r="LR" tags="n.*"/>
+      <!--<match lemma="otorrinolaringòleg" r="LR" tags="n.*"/>-->
       <match lemma="hidròleg" tags="n.*"/>
       <match lemma="neuropsicòleg" tags="n.*"/>
       <match lemma="psicooncòleg" tags="n.*"/>
@@ -1377,12 +1377,12 @@
       <match lemma="autodeterminista" tags="n.*"/>
       <match lemma="autoentrevista" tags="n.*"/>
       <match lemma="automobilista" tags="n.*"/>
-      <match lemma="avalista" r="LR" tags="n.*"/>
+      <!--<match lemma="avalista" r="LR" tags="n.*"/>-->
       <match lemma="baixista" tags="n.*"/>
       <match lemma="banyista" tags="n.*"/>
       <match lemma="barcelonista" tags="n.*"/>
       <match lemma="bel·licista" tags="n.*"/>
-      <match lemma="LR" lm="bel·licista" tags="n.*"/>
+      <!--<match lemma="LR" lm="bel·licista" tags="n.*"/>-->
       <match lemma="benfiquista" tags="n.*"/>
       <match lemma="bipartidista" tags="n.*"/>
       <match lemma="brigadista" tags="n.*"/>
@@ -1403,9 +1403,9 @@
       <match lemma="ciclista" tags="n.*"/>
       <match lemma="coguionista" tags="n.*"/>
       <match lemma="col·laboracionista" tags="n.*"/>
-      <match lemma="LR" lm="col·laboracionista" tags="n.*"/>
+      <!--<match lemma="LR" lm="col·laboracionista" tags="n.*"/>-->
       <match lemma="col·leccionista" tags="n.*"/>
-      <match lemma="LR" lm="col·leccionista" tags="n.*"/>
+      <!--<match lemma="LR" lm="col·leccionista" tags="n.*"/>-->
       <match lemma="colonialista" tags="n.*"/>
       <match lemma="colorista" tags="n.*"/>
       <match lemma="colpista" tags="n.*"/>
@@ -1482,7 +1482,7 @@
       <match lemma="fondista" tags="n.*"/>
       <match lemma="foneticista" tags="n.*"/>
       <match lemma="fonetista" tags="n.*"/>
-      <match lemma="LR" lm="fonologista" tags="n.*"/>
+      <!--<match lemma="LR" lm="fonologista" tags="n.*"/>-->
       <match lemma="franquista" tags="n.*"/>
       <match lemma="salazarista" tags="n.*"/>
       <match lemma="fujimorista" tags="n.*"/>
@@ -1499,12 +1499,12 @@
       <match lemma="guitarrista" tags="n.*"/>
       <match lemma="hedonista" tags="n.*"/>
       <match lemma="hel·lenista" tags="n.*"/>
-      <match lemma="LR" lm="hel·lenista" tags="n.*"/>
+      <!--<match lemma="LR" lm="hel·lenista" tags="n.*"/>-->
       <match lemma="humanista" tags="n.*"/>
       <match lemma="humorista" tags="n.*"/>
       <match lemma="idealista" tags="n.*"/>
       <match lemma="il·lusionista" tags="n.*"/>
-      <match lemma="LR" lm="il·lusionista" tags="n.*"/>
+      <!--<match lemma="LR" lm="il·lusionista" tags="n.*"/>-->
       <match lemma="immobilista" tags="n.*"/>
       <match lemma="imperialista" tags="n.*"/>
       <match lemma="impressionista" tags="n.*"/>
@@ -1565,7 +1565,7 @@
       <match lemma="neonacionalista" tags="n.*"/>
       <match lemma="nihilista" tags="n.*"/>
       <match lemma="novel·lista" tags="n.*"/>
-      <match lemma="LR" lm="novel·lista" tags="n.*"/>
+      <!--<match lemma="LR" lm="novel·lista" tags="n.*"/>-->
       <match lemma="nudista" tags="n.*"/>
       <match lemma="nutricionista" tags="n.*"/>
       <match lemma="obligacionista" tags="n.*"/>
@@ -1674,12 +1674,12 @@
       <match lemma="violinista" tags="n.*"/>
       <match lemma="violista" tags="n.*"/>
       <match lemma="violoncel·lista" tags="n.*"/>
-      <match lemma="LR" lm="violoncel·lista" tags="n.*"/>
+      <!--<match lemma="LR" lm="violoncel·lista" tags="n.*"/>-->
       <match lemma="vocalista" tags="n.*"/>
       <match lemma="xabolista" tags="n.*"/>
       <match lemma="xantatgista" tags="n.*"/>
       <match lemma="xapista" tags="n.*"/>
-      <match lemma="yihadista" r="LR" tags="n.*"/>
+      <!--<match lemma="yihadista" r="LR" tags="n.*"/>-->
       <match lemma="jihadista" tags="n.*"/>
       <match lemma="gihadista" tags="n.*"/>
       <match lemma="zapatista" tags="n.*"/>
@@ -1720,8 +1720,8 @@
       <match lemma="telegrafista" tags="n.*"/>
       <match lemma="tractorista" tags="n.*"/>
       <match lemma="tradicionalista" tags="n.*"/>
-      <match lemma="LR" lm="trampista" tags="n.*"/>
-      <match lemma="LR" lm="pugilista" tags="n.*"/>
+      <!--<match lemma="LR" lm="trampista" tags="n.*"/>-->
+      <!--<match lemma="LR" lm="pugilista" tags="n.*"/>-->
       <match lemma="dadaista" tags="n.*"/>
       <match lemma="decadentista" tags="n.*"/>
       <match lemma="expressionista" tags="n.*"/>
@@ -1800,7 +1800,7 @@
       <match lemma="halterofilista" tags="n.*"/>
       <match lemma="paletista" tags="n.*"/>
       <match lemma="xintoista" tags="n.*"/>
-      <match lemma="xintoista" r="LR" tags="n.*"/>
+      <!--<match lemma="xintoista" r="LR" tags="n.*"/>-->
       <match lemma="fauvista" tags="n.*"/>
       <match lemma="dodecafonista" tags="n.*"/>
       <match lemma="absolutista" tags="n.*"/>
@@ -1837,14 +1837,14 @@
       <match lemma="exfutbolista" tags="n.*"/>
       <match lemma="caixista" tags="n.*"/>
       <match lemma="tractadista" tags="n.*"/>
-      <match lemma="lobbista" r="LR" tags="n.*"/>
+      <!--<match lemma="lobbista" r="LR" tags="n.*"/>-->
       <match lemma="cabaretista" tags="n.*"/>
       <match lemma="catequista" tags="n.*"/>
       <match lemma="canonista" tags="n.*"/>
       <match lemma="hisendista" tags="n.*"/>
       <match lemma="hebraista" tags="n.*"/>
-      <match lemma="gaulista" r="LR" tags="n.*"/>
-      <match lemma="neogaulista" r="LR" tags="n.*"/>
+      <!--<match lemma="gaulista" r="LR" tags="n.*"/>-->
+      <!--<match lemma="neogaulista" r="LR" tags="n.*"/>-->
       <match lemma="falsetista" tags="n.*"/>
       <match lemma="llaütista" tags="n.*"/>
       <match lemma="vestuarista" tags="n.*"/>
@@ -4375,7 +4375,7 @@
       </or>
     </repeat>
     <match lemma="anar" tags="vblex.pri.*"/>
-    <match commit="caler" tags="vbmod.inf"/>
+    <match lemma="caler" tags="vbmod.inf"/>
   </rule>
 
   <!-- el que >> celui que, celui qui -->
