@@ -193,7 +193,7 @@
 	  </rule>
 	</def-macro>
 
-    <!-- Aquesta macro tria el verb p2 per traduir el prenom p1, però manté p1 si va seguit de cognom (o paraula desconeguda) -->
+    <!-- Aquesta macro tria p2 per traduir el prenom p1, però manté p1 si va seguit de cognom (o paraula desconeguda) -->
     <def-macro n="ant_antcog" npar="2">
       <rule weight="0.6">
          <match plemma="1" tags="np.ant.*"><select plemma="2"/></match>
@@ -9628,6 +9628,19 @@
   </rule>
 
 <!-- **************** N **************** -->
+
+  <!-- compromís >> engagement, compromis -->
+  <rule weight="0.8">
+    <match lemma="compromís" tags="n.*"><select lemma="engagement"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="Compromís" tags="n.*"><select lemma="compromis"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="compromís" tags="n.*"><select lemma="compromis"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="Casp" tags="np.*"/>
+  </rule>
 
   <!-- clau n.f >> clé, accolade -->
   <rule weight="0.8">

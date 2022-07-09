@@ -164,7 +164,7 @@
 	  </rule>
 	</def-macro>
 
-    <!-- Aquesta macro tria el verb p2 per traduir el prenom p1, però manté p1 si va seguit de cognom (o paraula desconeguda) -->
+    <!-- Aquesta macro tria p2 per traduir el prenom p1, però manté p1 si va seguit de cognom (o paraula desconeguda) -->
     <def-macro n="ant_antcog" npar="2">
       <rule weight="0.6">
          <match plemma="1" tags="np.ant.*"><select plemma="2"/></match>
