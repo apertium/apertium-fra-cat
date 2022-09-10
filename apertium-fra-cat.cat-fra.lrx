@@ -7779,34 +7779,30 @@
   </rule>
   <rule weight="1.4">
     <or>
-      <match lemma="jubilar" tags="vblex.inf"><select lemma="prendre# ma retraite"/></match>
-      <match lemma="jubilar" tags="vblex.ger"><select lemma="prendre# ma retraite"/></match>
-      <match lemma="jubilar" tags="vblex.*.p2.sg"><select lemma="prendre# ma retraite"/></match>
+      <match lemma="jubilar" tags="vblex.inf"><select lemma="prendre# ta retraite"/></match>
+      <match lemma="jubilar" tags="vblex.ger"><select lemma="prendre# ta retraite"/></match>
+      <match lemma="jubilar" tags="vblex.*.p2.sg"><select lemma="prendre# ta retraite"/></match>
     </or>
     <match tags="prn.enc.p2.*.sg"/>
   </rule>
   <rule weight="1.4">
     <or>
-      <match lemma="jubilar" tags="vblex.inf"><select lemma="prendre# ma retraite"/></match>
-      <match lemma="jubilar" tags="vblex.ger"><select lemma="prendre# ma retraite"/></match>
-      <match lemma="jubilar" tags="vblex.*.p1.pl"><select lemma="prendre# ma retraite"/></match>
+      <match lemma="jubilar" tags="vblex.inf"><select lemma="prendre# notre retraite"/></match>
+      <match lemma="jubilar" tags="vblex.ger"><select lemma="prendre# notre retraite"/></match>
+      <match lemma="jubilar" tags="vblex.*.p1.pl"><select lemma="prendre# notre retraite"/></match>
     </or>
     <match tags="prn.enc.p1.*.pl"/>
   </rule>
   <rule weight="1.4">
     <or>
-      <match lemma="jubilar" tags="vblex.inf"><select lemma="prendre# ma retraite"/></match>
-      <match lemma="jubilar" tags="vblex.ger"><select lemma="prendre# ma retraite"/></match>
-      <match lemma="jubilar" tags="vblex.*.p2.pl"><select lemma="prendre# ma retraite"/></match>
+      <match lemma="jubilar" tags="vblex.inf"><select lemma="prendre# votre retraite"/></match>
+      <match lemma="jubilar" tags="vblex.ger"><select lemma="prendre# votre retraite"/></match>
+      <match lemma="jubilar" tags="vblex.*.p2.pl"><select lemma="prendre# votre retraite"/></match>
     </or>
     <match tags="prn.enc.p2.*.pl"/>
   </rule>
   <rule weight="1.4">
-    <or>
-      <match lemma="jubilar" tags="vblex.inf"><select lemma="prendre# ma retraite"/></match>
-      <match lemma="jubilar" tags="vblex.ger"><select lemma="prendre# ma retraite"/></match>
-      <match lemma="jubilar" tags="vblex.*.p3.pl"><select lemma="prendre# ma retraite"/></match>
-    </or>
+    <match lemma="jubilar" tags="vblex.*.p3.pl"><select lemma="prendre# leur retraite"/></match>
     <match tags="prn.enc.ref.p3.*.sp"/>
   </rule>
 
