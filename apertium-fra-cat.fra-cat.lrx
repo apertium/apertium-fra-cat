@@ -16188,6 +16188,11 @@
     </or>
   </rule>
   <rule weight="1.2">
+    <match tags="det.def.*"/>
+    <match lemma="Sacré" tags="adj.*"><select lemma="sagrat"/></match>
+    <match lemma="Famille" tags="n.*"/>
+  </rule>
+  <rule weight="1.2">
     <match lemma="sacré" tags="adj.*"><select lemma="sacre"/></match>
     <match lemma="collège" tags="n.*"/>
   </rule>
