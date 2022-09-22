@@ -511,6 +511,7 @@
        <match lemma="cuir" tags="n.*"/>
        <match lemma="velours" tags="n.*"/>
        <match lemma="sparte" tags="n.*"/>
+       <match lemma="spart" tags="n.*"/>
        <match lemma="fil" tags="n.*"/>
        <match lemma="papier" tags="n.*"/>
        <match lemma="drap" tags="n.*"/>
@@ -526,6 +527,12 @@
        <match lemma="argile" tags="n.*"/>
        <match lemma="brique" tags="n.*"/>
        <match lemma="ciment" tags="n.*"/>
+       <match lemma="béton" tags="n.*"/>
+       <match lemma="pierre" tags="n.*"/>
+       <match lemma="marbre" tags="n.*"/>
+       <match lemma="ardoise" tags="n.*"/>
+       <match lemma="plâtre" tags="n.*"/>
+       <match lemma="gypse" tags="n.*"/>
 
        <match lemma="métal" tags="n.*"/>
        <match lemma="fer" tags="n.*"/>
@@ -538,10 +545,16 @@
        <match lemma="diamant" tags="n.*"/>
        <match lemma="rubis" tags="n.*"/>
        <match lemma="émeraude" tags="n.*"/>
+       <match lemma="ivoire" tags="n.*"/>
 
        <match lemma="bois" tags="n.*"/>
-       <match lemma="plâtre" tags="n.*"/>
-       <match lemma="gypse" tags="n.*"/>
+       <match lemma="chêne" tags="n.*"/>
+       <match lemma="hêtre" tags="n.*"/>
+       <match lemma="pin" tags="n.*"/>
+       <match lemma="bouleau" tags="n.*"/>
+       <match lemma="châtaignier" tags="n.*"/>
+       <match lemma="noyer" tags="n.*"/>
+       <match lemma="ébène" tags="n.*"/>
     </or></def-seq>
 
     <def-seq n="charge"><or>
@@ -3532,6 +3545,16 @@
   </rule>
   <rule weight="1.0">
     <match lemma="en" tags="pr"><select lemma="de"/></match>
+    <or>
+      <seq n="matériel"/>
+    </or>
+  </rule>
+  <rule weight="1.2">
+    <or>
+      <match lemma="riche" tags="adj.*"/>
+      <match lemma="pauvre" tags="adj.*"/>
+    </or>
+    <match lemma="en" tags="pr"><select lemma="en"/></match>
     <or>
       <seq n="matériel"/>
     </or>

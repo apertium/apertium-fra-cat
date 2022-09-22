@@ -642,13 +642,23 @@
        <match lemma="bambú" tags="n.*"/>
        <match lemma="fang" tags="n.*"/>
        <match lemma="palla" tags="n.*"/>
+       <match lemma="argila" tags="n.*"/>
+       <match lemma="morter" tags="n.*"/>
+       <match lemma="estuc" tags="n.*"/>
        <match lemma="maó" tags="n.*"/>
        <match lemma="ciment" tags="n.*"/>
+       <match lemma="formigó" tags="n.*"/>
+       <match lemma="pedra" tags="n.*"/>
+       <match lemma="marbre" tags="n.*"/>
+       <match lemma="pissarra" tags="n.*"/>
+       <match lemma="guix" tags="n.*"/>
 
        <match lemma="metall" tags="n.*"/>
        <match lemma="ferro" tags="n.*"/>
        <match lemma="acer" tags="n.*"/>
        <match lemma="niquel" tags="n.*"/>
+       <match lemma="zinc" tags="n.*"/>
+       <match lemma="plomb" tags="n.*"/>
        <match lemma="alumini" tags="n.*"/>
        <match lemma="bauxita" tags="n.*"/>
        <match lemma="titani" tags="n.*"/>
@@ -659,8 +669,16 @@
        <match lemma="diamant" tags="n.*"/>
        <match lemma="rubí" tags="n.*"/>
        <match lemma="maragda" tags="n.*"/>
+       <match lemma="ivori" tags="n.*"/>
 
        <match lemma="fusta" tags="n.*"/>
+       <match lemma="pi" tags="n.*"/>
+       <match lemma="roure" tags="n.*"/>
+       <match lemma="alzina" tags="n.*"/>
+       <match lemma="faig" tags="n.*"/>
+       <match lemma="bedoll" tags="n.*"/>
+       <match lemma="noguera" tags="n.*"/>
+       <match lemma="banús" tags="n.*"/>
     </or></def-seq>
 
     <def-seq n="instruments_musicals"><or>
@@ -4806,6 +4824,13 @@
     <match lemma="de" tags="pr"><select lemma="de"/></match>
   </rule>
   <rule weight="1.0">
+    <or>
+      <match tags="n.*"/>
+      <match tags="adj.*"/>
+      <match lemma="un" tags="prn.tn.*"/>
+      <match lemma="algun" tags="prn.tn.*"/>
+      <match lemma="fer" tags="vblex.*"/>
+    </or>
     <match lemma="de" tags="pr"><select lemma="en"/></match>
     <or>
       <seq n="material"/>
@@ -4814,9 +4839,27 @@
   <rule weight="1.2">
     <or>
       <match lemma="mina" tags="n.*"/>
+      <match lemma="bosc" tags="n.*"/>
       <match lemma="reserva" tags="n.*"/>
       <match lemma="tipus" tags="n.*"/>
       <match lemma="noces" tags="n.*"/>
+      <match lemma="peça" tags="n.*"/>
+      <match lemma="troç" tags="n.*"/>
+      <match lemma="bany" tags="n.*"/>
+      <match lemma="edat" tags="n.*"/>
+      <match lemma="fabricant" tags="n.*"/>
+      <match lemma="productor" tags="n.*"/>
+      <match lemma="traficant" tags="n.*"/>
+      <match lemma="venedor" tags="n.*"/>
+      <match lemma="comprador" tags="n.*"/>
+      <match lemma="fabricació" tags="n.*"/>
+      <match lemma="producció" tags="n.*"/>
+      <match lemma="explotació" tags="n.*"/>
+      <match lemma="plantació" tags="n.*"/>
+      <match lemma="fàbrica" tags="n.*"/>
+      <match lemma="qüestió" tags="n.*"/>
+      <match lemma="òxid" tags="n.*"/>
+      <match lemma="clorur" tags="n.*"/>
     </or>
     <match lemma="de" tags="pr"><select lemma="de"/></match>
     <or>
@@ -4824,7 +4867,7 @@
     </or>
   </rule>
   <rule weight="1.2">
-    <match lemma="médaille" tags="n.*"/>
+    <match lemma="medalla" tags="n.*"/>
     <repeat from="0" upto="1">
       <match tags="adj.*"/>
     </repeat>
@@ -4834,6 +4877,25 @@
       <match lemma="argent" tags="n.*"/>
       <match lemma="bronze" tags="n.*"/>
     </or>
+  </rule>
+  <rule weight="1.2">
+    <or>
+      <match lemma="vedell" tags="n.*"/>
+      <match lemma="toisó" tags="n.*"/>
+      <match lemma="llibre" tags="n.*"/>
+    </or>
+    <match lemma="de" tags="pr"><select lemma="de"/></match>
+    <match lemma="òr" tags="n.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="teló" tags="n.*"/>
+    <match lemma="de" tags="pr"><select lemma="de"/></match>
+    <match lemma="acer" tags="n.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="paper" tags="n.*"/>
+    <match lemma="de" tags="pr"><select lemma="de"/></match>
+    <match lemma="seda" tags="n.*"/>
   </rule>
   <rule weight="1.0">
     <match lemma="de" tags="pr"><select lemma="en"/></match>
@@ -13901,6 +13963,44 @@
       </or>
     </repeat>
     <match lemma="fuga" tags="n.*"><select lemma="fugue"/></match>
+  </rule>
+
+  <!-- correu >> courrier, poste, la poste, courriel -->
+  <rule weight="0.8">
+    <match lemma="correu" tags="n.*"><select lemma="courrier"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="Correu" tags="n.m.pl"><select lemma="la poste"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="anar" tags="vblex.*"/>
+      <match lemma="arribar" tags="n.*"/>
+    </or>
+    <match lemma="a" tags="pr"/>
+    <match lemma="correu" tags="n.m.pl"><select lemma="la poste"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="rebre" tags="vblex.*"/>
+      <match lemma="enviar" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <or>
+        <match tags="det.*"/>
+        <match tags="num.*"/>
+        <match tags="num"/>
+      </or>
+    </repeat>
+    <match lemma="correu" tags="n.*"><select lemma="courriel"/></match>
+  </rule>
+  <rule weight="1.2">
+    <or>
+      <match lemma="rebre" tags="vblex.*"/>
+      <match lemma="enviar" tags="n.*"/>
+    </or>
+    <match tags="det.def.m.sg"/>
+    <match lemma="correu" tags="n.*"><select lemma="poste"/></match>
   </rule>
 
   <!-- càrrec >> poste, dirigeant, chef# d'accusation, charge -->
