@@ -17,6 +17,8 @@
           <match lemma="Bourbon" tags="np.cog.*"/>
           <match lemma="Bourbon-Parme" tags="np.cog.*"/>
           <match lemma="Bourbon-Siciles" tags="np.cog.*"/>
+          <match lemma="Médicis" tags="np.cog.*"/>
+          <match lemma="Medici" tags="np.cog.*"/>
           <match tags="np.loc"/>
         </or>
       </rule>
