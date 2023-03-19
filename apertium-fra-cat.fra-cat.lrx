@@ -17809,6 +17809,33 @@
     <match lemma="en flèche" tags="adv"><select lemma="ràpidament"/></match>
   </rule>
 
+  <!-- même >> fins i tot, mateix -->
+  <rule weight="0.8">
+    <match lemma="même" tags="adv"><select lemma="fins i tot"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.*"/>
+    <match tags="n.*"/>
+    <match lemma="même" tags="adv"><select lemma="mateix"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="np.*"/>
+    <match lemma="même" tags="adv"><select lemma="mateix"/></match>
+  </rule>
+  <rule weight="1.2">
+    <or>
+      <match tags="n.*"/>
+      <match tags="np.*"/>
+    </or>
+    <match lemma="même" tags="adv"><select lemma="fins i tot"/></match>
+    <or>
+      <match lemma="avant" tags="pr"/>
+      <match lemma="après" tags="pr"/>
+      <match lemma="pendant" tags="pr"/>
+      <match lemma="sous" tags="pr"/>
+    </or>
+  </rule>
+
   <!-- tellement >> tant, així -->
   <rule weight="0.8">
     <match lemma="tellement" tags="adv"><select lemma="tant"/></match>
