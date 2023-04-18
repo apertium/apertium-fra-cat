@@ -4920,6 +4920,14 @@
     <match lemma="vacances" tags="n.*"/>
   </rule>
   <rule weight="1.0">
+    <match lemma="màquina" tags="n.*"/>
+    <match lemma="de" tags="pr"><select lemma="à"/></match>
+    <or>
+      <match tags="*.inf"/>
+      <match tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
     <or>
       <match lemma="comissari" tags="n.*"/>
       <match lemma="comissariat" tags="n.*"/>

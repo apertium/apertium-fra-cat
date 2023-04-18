@@ -3231,6 +3231,14 @@
     <match tags="*.inf"/>
   </rule>
   <rule weight="1.0">
+    <match lemma="machine" tags="n.*"/>
+    <match lemma="à" tags="pr"><select lemma="de"/></match>
+    <or>
+      <match tags="*.inf"/>
+      <match tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
     <or>
       <match lemma="commissaire" tags="n.*"/>
       <match lemma="commissariat" tags="n.*"/>
