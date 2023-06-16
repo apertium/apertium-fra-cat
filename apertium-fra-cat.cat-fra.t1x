@@ -878,6 +878,68 @@
       <cat-item lemma="continuar" tags="vblex.*"/>
       <cat-item lemma="seguir" tags="vblex.*"/>
     </def-cat>
+    <def-cat n="anar_continuar_inf">
+      <cat-item lemma="anar" tags="vblex.inf"/>
+      <cat-item lemma="continuar" tags="vblex.inf"/>
+      <cat-item lemma="seguir" tags="vblex.inf"/>
+    </def-cat>
+    <def-cat n="anar_continuar_ppmsg">
+      <cat-item lemma="anar" tags="vblex.pp.m.sg"/>
+      <cat-item lemma="continuar" tags="vblex.pp.m.sg"/>
+      <cat-item lemma="seguir" tags="vblex.pp.m.sg"/>
+    </def-cat>
+    <def-cat n="anar_continuar_cnj">
+      <cat-item lemma="anar" tags="vblex.pri.*"/>
+      <cat-item lemma="anar" tags="vblex.prs.*"/>
+      <cat-item lemma="anar" tags="vblex.pii.*"/>
+      <cat-item lemma="anar" tags="vblex.pis.*"/>
+      <cat-item lemma="anar" tags="vblex.cni.*"/>
+      <cat-item lemma="anar" tags="vblex.ifi.*"/>
+      <cat-item lemma="anar" tags="vblex.fti.*"/>
+      <cat-item lemma="anar" tags="vblex.imp.*"/>
+      <cat-item lemma="continuar" tags="vblex.pri.*"/>
+      <cat-item lemma="continuar" tags="vblex.prs.*"/>
+      <cat-item lemma="continuar" tags="vblex.pii.*"/>
+      <cat-item lemma="continuar" tags="vblex.pis.*"/>
+      <cat-item lemma="continuar" tags="vblex.cni.*"/>
+      <cat-item lemma="continuar" tags="vblex.ifi.*"/>
+      <cat-item lemma="continuar" tags="vblex.fti.*"/>
+      <cat-item lemma="continuar" tags="vblex.imp.*"/>
+      <cat-item lemma="seguir" tags="vblex.pri.*"/>
+      <cat-item lemma="seguir" tags="vblex.prs.*"/>
+      <cat-item lemma="seguir" tags="vblex.pii.*"/>
+      <cat-item lemma="seguir" tags="vblex.pis.*"/>
+      <cat-item lemma="seguir" tags="vblex.cni.*"/>
+      <cat-item lemma="seguir" tags="vblex.ifi.*"/>
+      <cat-item lemma="seguir" tags="vblex.fti.*"/>
+      <cat-item lemma="seguir" tags="vblex.imp.*"/>
+    </def-cat>
+    <def-cat n="anar_continuar_p3">
+      <cat-item lemma="anar" tags="vblex.pri.p3.*"/>
+      <cat-item lemma="anar" tags="vblex.prs.p3.*"/>
+      <cat-item lemma="anar" tags="vblex.pii.p3.*"/>
+      <cat-item lemma="anar" tags="vblex.pis.p3.*"/>
+      <cat-item lemma="anar" tags="vblex.cni.p3.*"/>
+      <cat-item lemma="anar" tags="vblex.ifi.p3.*"/>
+      <cat-item lemma="anar" tags="vblex.fti.p3.*"/>
+      <cat-item lemma="anar" tags="vblex.imp.p3.*"/>
+      <cat-item lemma="continuar" tags="vblex.pri.p3.*"/>
+      <cat-item lemma="continuar" tags="vblex.prs.p3.*"/>
+      <cat-item lemma="continuar" tags="vblex.pii.p3.*"/>
+      <cat-item lemma="continuar" tags="vblex.pis.p3.*"/>
+      <cat-item lemma="continuar" tags="vblex.cni.p3.*"/>
+      <cat-item lemma="continuar" tags="vblex.ifi.p3.*"/>
+      <cat-item lemma="continuar" tags="vblex.fti.p3.*"/>
+      <cat-item lemma="continuar" tags="vblex.imp.p3.*"/>
+      <cat-item lemma="seguir" tags="vblex.pri.p3.*"/>
+      <cat-item lemma="seguir" tags="vblex.prs.p3.*"/>
+      <cat-item lemma="seguir" tags="vblex.pii.p3.*"/>
+      <cat-item lemma="seguir" tags="vblex.pis.p3.*"/>
+      <cat-item lemma="seguir" tags="vblex.cni.p3.*"/>
+      <cat-item lemma="seguir" tags="vblex.ifi.p3.*"/>
+      <cat-item lemma="seguir" tags="vblex.fti.p3.*"/>
+      <cat-item lemma="seguir" tags="vblex.imp.p3.*"/>
+    </def-cat>
     <def-cat n="anarpri">
       <cat-item lemma="anar" tags="vblex.pri.*"/>
     </def-cat>
@@ -2135,7 +2197,7 @@
       <list-item v="Paraguay"/>
       <list-item v="Uruguay"/>
     </def-list>
-  
+
     <def-list n="pp_estat">
       <list-item v="marier"/>
       <list-item v="divorcer"/>
@@ -6154,7 +6216,7 @@ is not applicable because gender and number can not be taken from previous rules
         </out>
       </action>
     </rule>
-    
+
     <rule comment="REGLA: det nom npant_unk num_romans: el rei Pere II > le roi Pierre II">
       <pattern>
         <pattern-item n="det"/>
@@ -7045,7 +7107,7 @@ is not applicable because gender and number can not be taken from previous rules
           </otherwise>
         </choose>
       </otherwise>
-    </choose>        
+    </choose>
       </action>
   </rule>
 
@@ -7149,7 +7211,7 @@ is not applicable because gender and number can not be taken from previous rules
           </otherwise>
         </choose>
       </otherwise>
-    </choose>        
+    </choose>
       </action>
   </rule>
 
@@ -7777,7 +7839,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
     </rule>
 
-    
+
     <rule comment="REGLA: a finals de gener > fin janvier">
       <pattern>
         <pattern-item n="fi_prep"/>
@@ -7804,7 +7866,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
     </rule>
 
-    
+
     <rule comment="REGLA: fins al gener > jusqu'en janvier">
       <pattern>
         <pattern-item n="finsprep"/>
@@ -7837,7 +7899,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
     </rule>
 
-    
+
     <rule comment="REGLA: de la senyora X > de madame X">
       <pattern>
         <pattern-item n="prep"/>
@@ -7869,7 +7931,7 @@ is not applicable because gender and number can not be taken from previous rules
       </action>
   </rule>
 
-    
+
     <rule comment="REGLA: DETDEF DE: el de l'esquerra: celui de la gauche">
       <pattern>
         <pattern-item n="detdef"/>
@@ -10143,7 +10205,7 @@ is not applicable because gender and number can not be taken from previous rules
 <!-- FI REGLES VERBS QUE SÓN PRONOMINALS EN CATALÀ PERÒ NO EN FRANCÈS -->
 
 
-    <rule comment="vaig fer >> ai fait"> 
+    <rule comment="vaig fer >> ai fait">
       <pattern>
         <pattern-item n="anarpri"/>
         <pattern-item n="inf"/>
@@ -10262,7 +10324,7 @@ is not applicable because gender and number can not be taken from previous rules
   </action>
 </rule>
 
-    <rule comment="no vaig fer >> n'ai pas fait"> 
+    <rule comment="no vaig fer >> n'ai pas fait">
       <pattern>
         <pattern-item n="noadv"/>
         <pattern-item n="anarpri"/>
@@ -10480,7 +10542,7 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
         </out>
       </otherwise>
-    </choose>        
+    </choose>
       </action>
   </rule>
 
@@ -10621,7 +10683,7 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
         </out>
       </otherwise>
-    </choose>        
+    </choose>
       </action>
   </rule>
 
@@ -11094,7 +11156,7 @@ is not applicable because gender and number can not be taken from previous rules
             <clip pos="2" side="tl" part="a_verb"/>
             <clip pos="2" side="tl" part="temps"/>
             <clip pos="2" side="tl" part="persona"/>
-            <clip pos="2" side="tl" part="gen"/>            
+            <clip pos="2" side="tl" part="gen"/>
             <clip pos="2" side="tl" part="nbr"/>
             <clip pos="2" side="tl" part="lemq"/>
           </lu>
@@ -11140,7 +11202,7 @@ is not applicable because gender and number can not be taken from previous rules
                  <clip pos="2" side="tl" part="a_verb"/>
                  <clip pos="2" side="tl" part="temps"/>
                  <clip pos="2" side="tl" part="persona"/>
-                 <clip pos="2" side="tl" part="gen"/>            
+                 <clip pos="2" side="tl" part="gen"/>
                  <clip pos="2" side="tl" part="nbr"/>
                  <clip pos="2" side="tl" part="lemq"/>
                </lu>
@@ -11178,7 +11240,7 @@ is not applicable because gender and number can not be taken from previous rules
                  <clip pos="2" side="tl" part="a_verb"/>
                  <clip pos="2" side="tl" part="temps"/>
                  <clip pos="2" side="tl" part="persona"/>
-                 <clip pos="2" side="tl" part="gen"/>            
+                 <clip pos="2" side="tl" part="gen"/>
                  <clip pos="2" side="tl" part="nbr"/>
                  <clip pos="2" side="tl" part="lemq"/>
                </lu>
@@ -11217,7 +11279,7 @@ is not applicable because gender and number can not be taken from previous rules
                  <clip pos="2" side="tl" part="a_verb"/>
                   <clip pos="2" side="tl" part="temps"/>
                   <clip pos="2" side="tl" part="persona"/>
-      <clip pos="2" side="tl" part="gen"/>            
+      <clip pos="2" side="tl" part="gen"/>
                   <clip pos="2" side="tl" part="nbr"/>
                   <clip pos="2" side="tl" part="lemq"/>
           </lu>
@@ -11246,7 +11308,7 @@ is not applicable because gender and number can not be taken from previous rules
                  <clip pos="2" side="tl" part="a_verb"/>
                   <clip pos="2" side="tl" part="temps"/>
                   <clip pos="2" side="tl" part="persona"/>
-      <clip pos="2" side="tl" part="gen"/>            
+      <clip pos="2" side="tl" part="gen"/>
                   <clip pos="2" side="tl" part="nbr"/>
                   <clip pos="2" side="tl" part="lemq"/>
           </lu>
@@ -11291,7 +11353,7 @@ is not applicable because gender and number can not be taken from previous rules
              <clip pos="3" side="tl" part="a_verb"/>
              <clip pos="3" side="tl" part="temps"/>
              <clip pos="3" side="tl" part="persona"/>
-             <clip pos="3" side="tl" part="gen"/>            
+             <clip pos="3" side="tl" part="gen"/>
              <clip pos="3" side="tl" part="nbr"/>
              <clip pos="3" side="tl" part="lemq"/>
            </lu>
@@ -11341,7 +11403,7 @@ is not applicable because gender and number can not be taken from previous rules
                  <clip pos="3" side="tl" part="a_verb"/>
                  <clip pos="3" side="tl" part="temps"/>
                  <clip pos="3" side="tl" part="persona"/>
-                 <clip pos="3" side="tl" part="gen"/>            
+                 <clip pos="3" side="tl" part="gen"/>
                  <clip pos="3" side="tl" part="nbr"/>
                  <clip pos="3" side="tl" part="lemq"/>
                </lu>
@@ -11383,7 +11445,7 @@ is not applicable because gender and number can not be taken from previous rules
                  <clip pos="3" side="tl" part="a_verb"/>
                  <clip pos="3" side="tl" part="temps"/>
                  <clip pos="3" side="tl" part="persona"/>
-                 <clip pos="3" side="tl" part="gen"/>            
+                 <clip pos="3" side="tl" part="gen"/>
                  <clip pos="3" side="tl" part="nbr"/>
                  <clip pos="3" side="tl" part="lemq"/>
                </lu>
@@ -11436,7 +11498,7 @@ is not applicable because gender and number can not be taken from previous rules
                  <clip pos="4" side="tl" part="a_verb"/>
                   <clip pos="4" side="tl" part="temps"/>
                   <clip pos="4" side="tl" part="persona"/>
-      <clip pos="4" side="tl" part="gen"/>            
+      <clip pos="4" side="tl" part="gen"/>
                   <clip pos="4" side="tl" part="nbr"/>
                   <clip pos="4" side="tl" part="lemq"/>
           </lu>
@@ -18791,7 +18853,7 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
         </out>
       </otherwise>
-    </choose>        
+    </choose>
       </action>
   </rule>
 
@@ -18884,7 +18946,7 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
         </out>
       </otherwise>
-    </choose>        
+    </choose>
       </action>
   </rule>
 
@@ -19023,7 +19085,7 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
             </out>
           </otherwise>
-        </choose>        
+        </choose>
       </action>
     </rule>
 
@@ -19189,7 +19251,7 @@ is not applicable because gender and number can not be taken from previous rules
               </lu>
             </out>
           </otherwise>
-        </choose>        
+        </choose>
       </action>
     </rule>
 
@@ -19432,7 +19494,7 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
         </out>
       </otherwise>
-    </choose>        
+    </choose>
       </action>
   </rule>
 
@@ -19539,7 +19601,7 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
         </out>
       </otherwise>
-    </choose>        
+    </choose>
       </action>
   </rule>
 
@@ -22497,7 +22559,7 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
         </out>
       </otherwise>
-    </choose>        
+    </choose>
   </action>
 </rule>
 
@@ -22576,7 +22638,7 @@ is not applicable because gender and number can not be taken from previous rules
           </lu>
         </out>
       </otherwise>
-    </choose>        
+    </choose>
   </action>
 </rule>
 
@@ -25750,7 +25812,7 @@ is not applicable because gender and number can not be taken from previous rules
 
 <!-- "anar + ger" -->
 
-    <rule comment="anar GER >> continuer à INF"> 
+    <rule comment="anar GER >> continuer à INF">
       <pattern>
         <pattern-item n="anar_continuar"/>
         <pattern-item n="ger"/>
@@ -25835,10 +25897,10 @@ is not applicable because gender and number can not be taken from previous rules
   </action>
 </rule>
 
-    <rule comment="haver anat GER >> avoir continué à INF"> 
+    <rule comment="haver anat GER >> avoir continué à INF">
       <pattern>
         <pattern-item n="haver"/>
-        <pattern-item n="anarppmsg"/>
+        <pattern-item n="anar_continuar_ppmsg"/>
         <pattern-item n="ger"/>
       </pattern>
       <action>
@@ -25927,10 +25989,10 @@ is not applicable because gender and number can not be taken from previous rules
   </action>
 </rule>
 
-    <rule comment="va anar GER >> avoir continué à INF"> 
+    <rule comment="va anar GER >> avoir continué à INF">
       <pattern>
         <pattern-item n="anarpri"/>
-        <pattern-item n="anarinf"/>
+        <pattern-item n="anar_continuar_inf"/>
         <pattern-item n="ger"/>
       </pattern>
       <action>
@@ -26019,10 +26081,10 @@ is not applicable because gender and number can not be taken from previous rules
   </action>
 </rule>
 
-    <rule comment="no anar GER >> ne continuer pas à INF"> 
+    <rule comment="no anar GER >> ne continuer pas à INF">
       <pattern>
         <pattern-item n="noadv"/>
-        <pattern-item n="anar-cnj"/>
+        <pattern-item n="anar_continuar_cnj"/>
         <pattern-item n="ger"/>
       </pattern>
       <action>
@@ -26117,11 +26179,11 @@ is not applicable because gender and number can not be taken from previous rules
   </action>
 </rule>
 
-    <rule comment="no haver anat GER >> n'avoir pas continué à INF"> 
+    <rule comment="no haver anat GER >> n'avoir pas continué à INF">
       <pattern>
         <pattern-item n="noadv"/>
         <pattern-item n="haver-cnj"/>
-        <pattern-item n="anarppmsg"/>
+        <pattern-item n="anar_continuar_ppmsg"/>
         <pattern-item n="ger"/>
       </pattern>
       <action>
@@ -26223,11 +26285,11 @@ is not applicable because gender and number can not be taken from previous rules
   </action>
 </rule>
 
-    <rule comment="no va anar GER >> n'avoir pas continué à INF"> 
+    <rule comment="no va anar GER >> n'avoir pas continué à INF">
       <pattern>
         <pattern-item n="noadv"/>
         <pattern-item n="anarpri"/>
-        <pattern-item n="anarinf"/>
+        <pattern-item n="anar_continuar_inf"/>
         <pattern-item n="ger"/>
       </pattern>
       <action>
@@ -26329,7 +26391,7 @@ is not applicable because gender and number can not be taken from previous rules
   </action>
 </rule>
 
-    <rule comment="anar GER PRNENC >> continuer à PRNPRO INF"> 
+    <rule comment="anar GER PRNENC >> continuer à PRNPRO INF">
       <pattern>
         <pattern-item n="anar_continuar"/>
         <pattern-item n="ger"/>
@@ -26421,10 +26483,10 @@ is not applicable because gender and number can not be taken from previous rules
   </action>
 </rule>
 
-    <rule comment="haver anat GER PRNENC >> avoir continué à PRNPRO INF"> 
+    <rule comment="haver anat GER PRNENC >> avoir continué à PRNPRO INF">
       <pattern>
         <pattern-item n="haver"/>
-        <pattern-item n="anarppmsg"/>
+        <pattern-item n="anar_continuar_ppmsg"/>
         <pattern-item n="ger"/>
         <pattern-item n="prnenc"/>
       </pattern>
@@ -26520,10 +26582,108 @@ is not applicable because gender and number can not be taken from previous rules
   </action>
 </rule>
 
-    <rule comment="no anar GER PRNENC >> ne continuer pas à PRNPRO INF"> 
+    <rule comment="va anar GER PRNENC >> avoir continué à PRNPRO INF">
+      <pattern>
+        <pattern-item n="anarpri"/>
+        <pattern-item n="anar_continuar_inf"/>
+        <pattern-item n="ger"/>
+        <pattern-item n="prnenc"/>
+      </pattern>
+      <action>
+     <choose>
+       <when>
+         <test>
+           <equal><var n="inici"/><lit-tag v="si"/></equal>
+         </test>
+         <call-macro n="f_setpronom">
+           <with-param pos="1"/>
+         </call-macro>
+         <choose>
+           <when>
+             <test>
+               <equal><clip pos="1" side="sl" part="persona"/><lit-tag v="p3"/></equal>
+             </test>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="1" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="1" side="sl" part="persona"/>
+                 <lit-tag v="m"/>
+                 <clip pos="1" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </when>
+           <otherwise>
+             <out>
+               <lu>
+                 <get-case-from pos="1">
+                   <clip pos="1" side="sl" part="lem"/>
+                 </get-case-from>
+                 <lit-tag v="prn.tn"/>
+                 <clip pos="1" side="sl" part="persona"/>
+                 <lit-tag v="mf"/>
+                 <clip pos="1" side="sl" part="nbr"/>
+               </lu>
+               <b/>
+             </out>
+           </otherwise>
+         </choose>
+         <modify-case>
+           <clip pos="1" side="sl" part="lemh"/>
+           <lit v="aa"/>
+         </modify-case>
+       </when>
+     </choose>
+        <out>
+          <lu>
+            <get-case-from pos="1">
+              <lit v="avoir"/>
+            </get-case-from>
+            <lit-tag v="vbhaver"/>
+            <lit-tag v="pri"/>
+            <clip pos="1" side="tl" part="persona"/>
+            <clip pos="1" side="tl" part="nbr"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="continuer"/>
+            </get-case-from>
+            <lit-tag v="vblex.pp.m.sg"/>
+          </lu>
+          <b/>
+          <lu>
+            <get-case-from pos="2">
+              <lit v="à"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="2"/>
+        </out>
+        <let><clip pos="3" side="tl" part="temps"/><lit-tag v="inf"/></let>
+        <out>
+          <lu>
+            <clip pos="4" side="tl" part="lem"/>
+            <lit-tag v="prn.pro"/>
+            <clip pos="4" side="tl" part="tipoenc_pro"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="3" side="tl" part="lemh"/>
+            <clip pos="3" side="tl" part="tags"/>
+            <clip pos="3" side="tl" part="lemq"/>
+          </lu>
+        </out>
+  </action>
+</rule>
+
+    <rule comment="no anar GER PRNENC >> ne continuer pas à PRNPRO INF">
       <pattern>
         <pattern-item n="noadv"/>
-        <pattern-item n="anar-cnj"/>
+        <pattern-item n="anar_continuar_cnj"/>
         <pattern-item n="ger"/>
         <pattern-item n="prnenc"/>
       </pattern>
@@ -26625,11 +26785,11 @@ is not applicable because gender and number can not be taken from previous rules
   </action>
 </rule>
 
-    <rule comment="no haver anat GER PRNENC >> n'avoir pas continué à PRNPRO INF"> 
+    <rule comment="no haver anat GER PRNENC >> n'avoir pas continué à PRNPRO INF">
       <pattern>
         <pattern-item n="noadv"/>
         <pattern-item n="haver-cnj"/>
-        <pattern-item n="anarppmsg"/>
+        <pattern-item n="anar_continuar_ppmsg"/>
         <pattern-item n="ger"/>
         <pattern-item n="prnenc"/>
       </pattern>
@@ -26738,10 +26898,10 @@ is not applicable because gender and number can not be taken from previous rules
   </action>
 </rule>
 
-    <rule comment="PRNPROREF anar GER >> continuer à PRNPROREF INF"> 
+    <rule comment="PRNPROREF anar GER >> continuer à PRNPROREF INF">
       <pattern>
         <pattern-item n="es"/>
-        <pattern-item n="anar-cnj-p3"/>
+        <pattern-item n="anar_continuar_p3"/>
         <pattern-item n="ger"/>
       </pattern>
       <action>
@@ -26830,11 +26990,11 @@ is not applicable because gender and number can not be taken from previous rules
   </action>
 </rule>
 
-    <rule comment="PRNPROREF haver anat GER >> avoir continué à PRNPROREF INF"> 
+    <rule comment="PRNPROREF haver anat GER >> avoir continué à PRNPROREF INF">
       <pattern>
         <pattern-item n="es"/>
         <pattern-item n="haver-cnj-p3"/>
-        <pattern-item n="anarppmsg"/>
+        <pattern-item n="anar_continuar_ppmsg"/>
         <pattern-item n="ger"/>
       </pattern>
       <action>
@@ -26929,11 +27089,11 @@ is not applicable because gender and number can not be taken from previous rules
   </action>
 </rule>
 
-    <rule comment="no PRNPROREF anar GER >> ne continuer pas à PRNPROREF INF"> 
+    <rule comment="no PRNPROREF anar GER >> ne continuer pas à PRNPROREF INF">
       <pattern>
         <pattern-item n="noadv"/>
         <pattern-item n="es"/>
-        <pattern-item n="anar-cnj-p3"/>
+        <pattern-item n="anar_continuar_p3"/>
         <pattern-item n="ger"/>
       </pattern>
       <action>
@@ -27035,12 +27195,12 @@ is not applicable because gender and number can not be taken from previous rules
   </action>
 </rule>
 
-    <rule comment="no PRNPROREF haver anat GER >> no avoir pas continué à PRNPROREF INF"> 
+    <rule comment="no PRNPROREF haver anat GER >> no avoir pas continué à PRNPROREF INF">
       <pattern>
         <pattern-item n="noadv"/>
         <pattern-item n="es"/>
         <pattern-item n="haver-cnj-p3"/>
-        <pattern-item n="anarppmsg"/>
+        <pattern-item n="anar_continuar_ppmsg"/>
         <pattern-item n="ger"/>
       </pattern>
       <action>
