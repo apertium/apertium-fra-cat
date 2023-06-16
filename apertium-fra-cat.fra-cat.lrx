@@ -5673,6 +5673,9 @@
   <!-- dépasser >> sobresortir, superar -->
   <macro n="verb_intrans_trans"><with-param v="dépasser"/><with-param v="sobresortir"/><with-param v="superar"/></macro>
 
+  <!-- gamberger >> barrinar, tramar -->
+  <macro n="verb_intrans_trans"><with-param v="gamberger"/><with-param v="barrinar"/><with-param v="tramar"/></macro>
+
   <!-- éclater >> esclatar, rebentar -->
   <macro n="verb_intrans_trans"><with-param v="éclater"/><with-param v="esclatar"/><with-param v="rebentar"/></macro>
   <rule weight="1.2">
@@ -17251,6 +17254,7 @@
       <match lemma="imprégner" tags="vblex.pp.*"/>
       <match lemma="intéressé" tags="adj.*"/>
       <match lemma="intéresser" tags="vblex.pp.*"/>
+      <match lemma="jumeler" tags="vblex.pp.*"/>
       <match lemma="mal à l'aise" tags="adj.*"/>
       <match lemma="malade" tags="adj.*"/>
       <match lemma="marié" tags="adj.*"/>
