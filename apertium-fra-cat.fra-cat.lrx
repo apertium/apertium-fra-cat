@@ -16648,13 +16648,13 @@
     <match lemma="criminel" tags="adj.*"><select lemma="penal"/></match>
   </rule>
 
-  <!-- faible >> fluix, dèbil, baix -->
+  <!-- faible >> fluix, dèbil, baix, feble -->
   <rule weight="0.8">
     <match lemma="faible" tags="adj.*"><select lemma="fluix"/></match>
   </rule>
   <rule weight="1.0">
     <match lemma="faible" tags="adj.*"><select lemma="baix"/></match>
-    <match lemma="vitesse" tags="n.*"/>
+    <match tags="n.*"/>
   </rule>
   <rule weight="1.0">
     <match lemma="vitesse" tags="n.*"/>
