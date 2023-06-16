@@ -8750,87 +8750,13 @@
 
 <!-- **************** ADJ **************** -->
 
-  <!-- fons >> fond, fonds -->
+  <!-- suïcida >> suicidaire, suicide -->
   <rule weight="0.8">
-    <match lemma="fons" tags="n.*"><select lemma="fonds"/></match>
+    <match lemma="suïcida" tags="adj.*"><select lemma="suicidaire"/></match>
   </rule>
   <rule weight="1.0">
-    <match tags="det.def.m.sg"/>
-    <repeat from="0" upto="1">
-      <match tags="adj.*"/>
-    </repeat>
-    <match lemma="fons" tags="n.*"><select lemma="fond"/></match>
-  </rule>
-  <rule weight="1.0">
-    <or>
-      <match lemma="sobre" tags="pr"/>
-      <match lemma="damunt de" tags="pr"/>
-    </or>
-    <match lemma="fons" tags="n.*"><select lemma="fond"/></match>
-  </rule>
-  <rule weight="1.0">
-    <or>
-      <match lemma="article" tags="n.*"/>
-      <match lemma="qüestió" tags="n.*"/>
-      <match lemma="pregunta" tags="n.*"/>
-      <match lemma="discussió" tags="n.*"/>
-      <match lemma="tema" tags="n.*"/>
-      <match lemma="problema" tags="n.*"/>
-      <match lemma="línia" tags="n.*"/>
-      <match lemma="radiació" tags="n.*"/>
-      <match lemma="cursa" tags="n.*"/>
-      <match lemma="carrera" tags="n.*"/>
-      <match lemma="esquí" tags="n.*"/>
-      <match lemma="conca" tags="n.*"/>
-      <match lemma="teló" tags="n.*"/>
-      <match lemma="cortina" tags="n.*"/>
-      <match lemma="música" tags="n.*"/>
-      <match lemma="melodia" tags="n.*"/>
-      <match lemma="soroll" tags="n.*"/>
-      <match lemma="imatge" tags="n.*"/>
-      <match lemma="fotografia" tags="n.*"/>
-      <match lemma="foto" tags="n.*"/>
-      <match lemma="quadre" tags="n.*"/>
-    </or>
-    <repeat from="0" upto="1">
-      <match tags="adj.*"/>
-    </repeat>
-    <match lemma="de" tags="pr"/>
-    <match lemma="fons" tags="n.*"><select lemma="fond"/></match>
-  </rule>
-  <rule weight="1.0">
-    <match lemma="fons" tags="n.*"><select lemma="fond"/></match>
-    <or>
-      <seq n="color"/>
-      <match lemma="marí" tags="adj.*"/>
-      <match lemma="còsmic" tags="adj.*"/>
-    </or>
-  </rule>
-  <rule weight="1.0">
-    <match lemma="fons" tags="n.*"><select lemma="fond"/></match>
-    <match lemma="de" tags="pr"/>
-    <repeat from="0" upto="1">
-      <match tags="adj.*"/>
-    </repeat>
-    <or>
-      <match lemma="mar" tags="n.*"/>
-      <match lemma="oceà" tags="n.*"/>
-      <match lemma="fossa" tags="n.*"/>
-      <match lemma="cala" tags="n.*"/>
-      <match lemma="badia" tags="n.*"/>
-      <match lemma="golf" tags="n.*"/>
-      <match lemma="riu" tags="n.*"/>
-      <match lemma="llac" tags="n.*"/>
-      <match lemma="vall" tags="n.*"/>
-      <match lemma="pou" tags="n.*"/>
-      <match lemma="sac" tags="n.*"/>
-      <match lemma="cor" tags="n.*"/>
-      <match lemma="ànima" tags="n.*"/>
-      <match lemma="Mediterrani" tags="n.*"/>
-      <match lemma="Mediterrània" tags="n.*"/>
-      <match lemma="Atlàntic" tags="n.*"/>
-      <match lemma="Pacífic" tags="n.*"/>
-    </or>
+    <match lemma="dron" tags="n.*"/>
+    <match lemma="suïcida" tags="adj.*"><select lemma="suicide"/></match>
   </rule>
 
   <!-- graduat >> gradué, gradé, diplômé -->
@@ -9708,6 +9634,89 @@
     <match lemma="compromís" tags="n.*"><select lemma="compromis"/></match>
     <match lemma="de" tags="pr"/>
     <match lemma="Casp" tags="np.*"/>
+  </rule>
+
+  <!-- fons >> fond, fonds -->
+  <rule weight="0.8">
+    <match lemma="fons" tags="n.*"><select lemma="fonds"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.def.m.sg"/>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="fons" tags="n.*"><select lemma="fond"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="sobre" tags="pr"/>
+      <match lemma="damunt de" tags="pr"/>
+    </or>
+    <match lemma="fons" tags="n.*"><select lemma="fond"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="article" tags="n.*"/>
+      <match lemma="qüestió" tags="n.*"/>
+      <match lemma="pregunta" tags="n.*"/>
+      <match lemma="discussió" tags="n.*"/>
+      <match lemma="tema" tags="n.*"/>
+      <match lemma="problema" tags="n.*"/>
+      <match lemma="línia" tags="n.*"/>
+      <match lemma="radiació" tags="n.*"/>
+      <match lemma="cursa" tags="n.*"/>
+      <match lemma="carrera" tags="n.*"/>
+      <match lemma="esquí" tags="n.*"/>
+      <match lemma="conca" tags="n.*"/>
+      <match lemma="teló" tags="n.*"/>
+      <match lemma="cortina" tags="n.*"/>
+      <match lemma="música" tags="n.*"/>
+      <match lemma="melodia" tags="n.*"/>
+      <match lemma="soroll" tags="n.*"/>
+      <match lemma="imatge" tags="n.*"/>
+      <match lemma="fotografia" tags="n.*"/>
+      <match lemma="foto" tags="n.*"/>
+      <match lemma="quadre" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <match lemma="de" tags="pr"/>
+    <match lemma="fons" tags="n.*"><select lemma="fond"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fons" tags="n.*"><select lemma="fond"/></match>
+    <or>
+      <seq n="color"/>
+      <match lemma="marí" tags="adj.*"/>
+      <match lemma="còsmic" tags="adj.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="fons" tags="n.*"><select lemma="fond"/></match>
+    <match lemma="de" tags="pr"/>
+    <repeat from="0" upto="1">
+      <match tags="adj.*"/>
+    </repeat>
+    <or>
+      <match lemma="mar" tags="n.*"/>
+      <match lemma="oceà" tags="n.*"/>
+      <match lemma="fossa" tags="n.*"/>
+      <match lemma="cala" tags="n.*"/>
+      <match lemma="badia" tags="n.*"/>
+      <match lemma="golf" tags="n.*"/>
+      <match lemma="riu" tags="n.*"/>
+      <match lemma="llac" tags="n.*"/>
+      <match lemma="vall" tags="n.*"/>
+      <match lemma="pou" tags="n.*"/>
+      <match lemma="sac" tags="n.*"/>
+      <match lemma="cor" tags="n.*"/>
+      <match lemma="ànima" tags="n.*"/>
+      <match lemma="Mediterrani" tags="n.*"/>
+      <match lemma="Mediterrània" tags="n.*"/>
+      <match lemma="Atlàntic" tags="n.*"/>
+      <match lemma="Pacífic" tags="n.*"/>
+    </or>
   </rule>
 
   <!-- clau n.f >> clé, accolade -->
