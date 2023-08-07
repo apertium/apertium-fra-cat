@@ -178,6 +178,14 @@
            <match tags="" case="Aa"/>
          </or>
       </rule>
+      <rule weight="1.0">
+         <or>
+           <match lemma="monsieur" tags="n.*"/>
+           <match lemma="madame" tags="n.*"/>
+           <match lemma="mademoiselle" tags="n.*"/>
+         </or>
+         <match plemma="1" tags="np.*"><select plemma="1"/></match>
+      </rule>
     </def-macro>
 
 	<!-- p1 verb fra, p2 verb cat estandard, p3 prep fra, p3 verb cat alternatiu -->
