@@ -3208,6 +3208,15 @@
     <match lemma="à" tags="pr"><select lemma="a"/></match>
   </rule>
   <rule weight="1.0">
+    <match lemma="à" tags="pr"><select lemma="en"/></match>
+    <or>
+      <match lemma="moto" tags="n.*"/>
+      <match lemma="motocyclette" tags="n.*"/>
+      <match lemma="vélo" tags="n.*"/>
+      <match lemma="bicyclette" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
     <or>
       <match lemma="penser" tags="vblex.*"/>
       <match lemma="croire" tags="vblex.*"/>

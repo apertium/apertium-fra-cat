@@ -5138,6 +5138,15 @@
     <match lemma="en" tags="pr"><select lemma="dans"/></match>
   </rule>
   <rule weight="1.0">
+    <match lemma="en" tags="pr"><select lemma="à"/></match>
+    <or>
+      <match lemma="moto" tags="n.*"/>
+      <match lemma="motocicleta" tags="n.*"/>
+      <match lemma="bici" tags="n.*"/>
+      <match lemma="bicicleta" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
     <or>
       <match lemma="creure"/>
       <match lemma="classificar"/>
