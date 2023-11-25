@@ -15563,34 +15563,34 @@
   # cops forts, cop molt dur, cops al pit
   -->
   <rule weight="0.6">
-    <or> 
+    <or>
       <match lemma="cop" tags="n.*"><select lemma="fois"/></match>
       <match lemma="colp" tags="n.*"><select lemma="fois"/></match>
     </or>
   </rule>
   <rule weight="1.0">
     <match lemma="el" tags="det.*"/>
-    <or> 
+    <or>
       <match lemma="cop" tags="n.*"><select lemma="coup"/></match>
       <match lemma="colp" tags="n.*"><select lemma="coup"/></match>
     </or>
   </rule>
   <rule weight="1.0">
-    <or> 
+    <or>
       <match lemma="cop" tags="n.*"><select lemma="coup"/></match>
       <match lemma="colp" tags="n.*"><select lemma="coup"/></match>
     </or>
     <match lemma="de" tags="pr"/>
   </rule>
   <rule weight="1.0">
-    <or> 
+    <or>
       <match lemma="cop" tags="n.*"><select lemma="coup"/></match>
       <match lemma="colp" tags="n.*"><select lemma="coup"/></match>
     </or>
     <match lemma="a" tags="pr"/>
   </rule>
   <rule weight="1.0">
-    <or> 
+    <or>
       <match lemma="cop" tags="n.*"><select lemma="coup"/></match>
       <match lemma="colp" tags="n.*"><select lemma="coup"/></match>
     </or>
@@ -15603,7 +15603,7 @@
     <match tags="adj.*"/>
   </rule>
   <rule weight="1.2">
-    <or> 
+    <or>
       <match lemma="cop" tags="n.*"><select lemma="fois"/></match>
       <match lemma="colp" tags="n.*"><select lemma="fois"/></match>
     </or>
@@ -15614,7 +15614,7 @@
     </or>
   </rule>
   <rule weight="1.0">
-    <or> 
+    <or>
       <match lemma="donar" tags="vblex.*"/>
       <match lemma="clavar" tags="vblex.*"/>
       <match lemma="etzibar" tags="vblex.*"/>
@@ -15624,13 +15624,13 @@
       <match tags="adv"/>
     </repeat>
     <match tags="det.*"/>
-    <or> 
+    <or>
       <match lemma="cop" tags="n.*"><select lemma="coup"/></match>
       <match lemma="colp" tags="n.*"><select lemma="coup"/></match>
     </or>
   </rule>
   <rule weight="1.0">
-    <or> 
+    <or>
       <match lemma="donar" tags="vblex.*"/>
       <match lemma="clavar" tags="vblex.*"/>
       <match lemma="etzibar" tags="vblex.*"/>
@@ -15648,7 +15648,7 @@
   </rule>
   <rule weight="1.2">
     <match lemma="el" tags="det.*"/>
-    <or> 
+    <or>
       <match lemma="cop" tags="n.*"><select lemma="coup"/></match>
       <match lemma="colp" tags="n.*"><select lemma="coup"/></match>
     </or>
@@ -15656,7 +15656,7 @@
   </rule>
   <rule weight="1.4">
     <match lemma="el" tags="det.*"/>
-    <or> 
+    <or>
       <match lemma="cop" tags="n.*"><select lemma="coup"/></match>
       <match lemma="colp" tags="n.*"><select lemma="coup"/></match>
     </or>
@@ -15664,7 +15664,7 @@
     <repeat from="0" upto="6">
       <match tags="*"/>
     </repeat>
-    <or> 
+    <or>
       <match lemma="donar" tags="vblex.*"/>
       <match lemma="clavar" tags="vblex.*"/>
       <match lemma="etzibar" tags="vblex.*"/>
@@ -16000,8 +16000,8 @@
 </rules>
 </lrx>
 
-<!-- 
-Resources: 
+<!--
+Resources:
     https://wiki.apertium.org/wiki/How_to_get_started_with_lexical_selection_rules
     https://wiki.apertium.org/wiki/Constraint-based_lexical_selection
     https://wiki.apertium.org/wiki/Lexical_selection
