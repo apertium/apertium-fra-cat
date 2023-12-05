@@ -3161,6 +3161,14 @@
     </or>
     <match lemma="de" tags="pr"><select lemma="per"/></match>
   </rule>
+  <rule weight="1.0">
+    <match lemma="hâte" tags="n.*"/>
+    <match lemma="de" tags="pr"><select lemma="per"/></match>
+    <repeat from="0" upto="2">
+      <match tags="prn.pro.*"/>
+    </repeat>
+    <match tags="*.inf"/>
+  </rule>
 <!--
   <rule weight="1.0">
     <match tags="vblex.*"/>
