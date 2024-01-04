@@ -15153,6 +15153,47 @@
   <rule weight="0.8">
     <match lemma="poll" tags="n.*"><select lemma="peuplier"/></match>
   </rule>
+  <rule weight="1.0">
+    <match lemma="poll" tags="n.*"><select lemma="poussin"/></match>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <or>
+      <match lemma="ou" tags="n.*"/>
+      <match lemma="gall" tags="n.*"/>
+      <match lemma="gallina" tags="n.*"/>
+      <match lemma="galliner" tags="n.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="ou" tags="n.*"/>
+      <match lemma="gall" tags="n.*"/>
+      <match lemma="gallina" tags="n.*"/>
+      <match lemma="galliner" tags="n.*"/>
+    </or>
+    <repeat from="0" upto="8">
+      <or>
+        <match tags="*"/>
+        <match tags=""/>
+      </or>
+    </repeat>
+    <match lemma="poll" tags="n.*"><select lemma="poussin"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="tenir" tags="vblex.*"/>
+    <match lemma="poll" tags="n.m.pl"><select lemma="pou"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="treure" tags="vblex.*"/>
+    <repeat from="0" upto="1">
+      <match tags="det.*"/>
+    </repeat>
+    <match lemma="poll" tags="n.m.pl"><select lemma="pou"/></match>
+  </rule>
 
   <!-- grafiter >> graffiteur, graffeur, tagueur, bombeur -->
   <rule weight="0.8">
